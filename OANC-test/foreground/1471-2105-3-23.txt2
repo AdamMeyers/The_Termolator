@@ -1,0 +1,244 @@
+
+  
+    
+      
+        Background
+        Affymetrix microarrays are used by many laboratories to
+        study differences in gene expression associated with
+        experimental treatments, diseases, development, aging, and
+        other conditions. Typically, an arbitrary value for
+        expression ratios (or fold-change values) is chosen to
+        define significant differences in gene expression between
+        conditions. For example, in several studies of aging [ 1 2
+        3 4 5 6 ] , only differences > 1.7-fold in magnitude
+        were considered to be significant. None of the reports
+        indicated whether there were smaller effects that were
+        statistically significant. It has been pointed out that
+        statistically significant differences in gene expression
+        often are of small magnitude (sometimes as low as
+        1.2-fold), and that larger effects often are artefacts of
+        high variance [ 7 8 ] . For those interested in detecting
+        these smaller effects, it is important to minimize
+        nonspecific sources of inter-array variance.
+        To understand the approach described in this report, it
+        is necessary to understand the design of Affymetrix
+        microarrays and analysis software (Microarray Suite). There
+        are multiple probe pairs for each mRNA (8-20 for the arrays
+        used in the present study). A probe pair consists of a 25
+        base oligonucleotide that matches an mRNA sequence (perfect
+        match, or PM probe) and an oligonucleotide with a
+        mismatched base in the center (MM probe). The specific
+        hybridization signal for each probe pair is the difference
+        between the PM intensity and the MM intensity (although the
+        latest version of Affymetrix Microarray Suite, 5.0, has
+        special rules for handling MM probes that have higher
+        signals than their PM partner). No single hybridization
+        condition is optimal for all oligonucleotide probes, so it
+        is inevitable that there is variability among the signals
+        within a probe set. The expression level reported for each
+        probe set (by the Affymetrix "absolute analysis" algorithm)
+        is based on a weighted average of the signals from the
+        individual probe pairs, with signals near the median given
+        more weight than those far from the median. We refer to
+        this as the signal method in this report. The weights
+        assigned to each probe pair can vary from one array to
+        another, but it is unclear whether variable weighting adds
+        significantly to inter-array variance. Microarray Suite
+        also has a procedure ("comparative analysis" algorithm) for
+        comparing two arrays at the level of individual probe
+        pairs. With this algorithm, ratios of signals (PM-MM for
+        each probe pair) from one array to those of the other array
+        are computed first. Weighted averages of these ratios are
+        then computed. We refer to this as the ratio method. This
+        method is supposed to be more precise than the signal
+        method for inter-array comparisons. Thus, many
+        investigators use this algorithm for all possible
+        one-to-one comparisons across groups (e.g., 9 comparisons
+        for 3 arrays per group) and report the average of the
+        ratios as the change in gene expression [ 1 2 3 4 5 9 ] . A
+        problem with this approach is that there is no absolute or
+        relative expression level assigned to each mRNA on
+        individual arrays, so that formal statistical approaches
+        (e.g., t-tests) cannot be used to rate the statistical
+        significance of differences. In this report, we describe
+        how we circumvented this problem by using the ratio method
+        to generate a composite gene expression score for each mRNA
+        on each array.
+        The procedure used to estimate the statistical
+        significance of differences determines which genes, and how
+        many genes, are defined as being differentially expressed.
+        For a comparison between two groups, the t-test is the most
+        commonly used procedure in biological research. However,
+        with 6 arrays per group, even a single outlier can markedly
+        reduce the value of t even when there is no overlap between
+        groups. Therefore, we also used the nonparametric rank sum
+        test, which is insensitive to a skewed distribution. False
+        detection rates were estimated with the Significance
+        Analysis of Microarrays (SAM) program [ 8 ] .
+      
+      
+        Results
+        
+          Normalization method
+          Comparisons among arrays are meaningful only after
+          accounting for variability in overall target
+          concentration ("target" is the Affymetrix nomenclature
+          for a labeled cRNA that hybridizes with a probe),
+          hybridization efficiency, staining, etc. The
+          normalization procedure recommended by Affymetrix is to
+          multiply raw signals by a scaling factor such that the
+          trimmed mean (excluding 2% highest and 2% lowest) of
+          signals is always the same (500 in this study). This
+          procedure could be problematic if a variable proportion
+          (>2%) of the signals are beyond the linear range of
+          the system. Another concern about the normalization
+          procedure was that the majority of the targets did not
+          produce signals that were significantly greater than
+          those caused by nonspecific hybridization. After the
+          recommended normalization procedure was applied, we
+          confirmed that there was negligible inter-array
+          variability of the mean signal (with 5% of signals
+          trimmed from both the high and low ends) across the 4629
+          targets that passed the presence / absence filter
+          (described in the next section). The trimmed mean was 649
+          ± 14 (standard deviation) arbitrary units for the 6
+          arrays probing RNA from young muscle, and 643 ± 18 for
+          the 6 arrays probing RNA from older muscle. These data
+          were not used to re-scale the arrays because the variance
+          would have been reduced by less than 2%. Plots of signals
+          from individual arrays versus the average of all 12
+          arrays generally showed the expected scatter around the
+          line of identity (Figure 1A), but a few showed systematic
+          deviations either above or below the line of identity for
+          signals > ~10 4arbitrary units (worst-case array shown
+          in Figure 1B). While this problem might be addressed by
+          using a different scaling factor for high-intensity
+          signals [ 10 ] , few targets produced such high signals,
+          and the magnitude of the effect was small. Thus, the
+          Affymetrix normalization method was employed without
+          modification.
+        
+        
+          Exclusion of targets based on the absolute
+          detection algorithm
+          Microarray Suite estimates probabilities that targets
+          are absent (P 
+          detection ) based on ratios of signals
+          from PM probes to those of MM probes, together with the
+          degree of consistency across the multiple probe pairs for
+          each target. As illustrated in Figure 2, the average
+          signal from the multiple probe pairs cannot be used to
+          decide whether a target should be considered present or
+          absent. We restricted the data analyses to targets for
+          which P 
+          detection was less than 0.1 for at
+          least 3 of the 6 samples from either the younger or older
+          group. This filter reduced the number of targets included
+          in the statistical analyses to 4629. While excluding data
+          does not affect the nominal value of P for each
+          comparison made with a t-test or rank sum test, it
+          significantly reduces the estimated false detection rate
+          (see 
+          t-Tests and 
+          SAM below).
+        
+        
+          Signal method vs. ratio method
+          When two arrays are compared, the gene expression
+          ratios obtained by the signal method and those obtained
+          by the ratio method (see 
+          Background for explanation of terms)
+          are highly correlated. However, the results often differ
+          by more than 1.5-fold (Figure 3). The advantage of the
+          signal method is that Microarray Suite provides, for each
+          target, a number describing the level of gene expression
+          (in arbitrary units) that can be used for t-tests or
+          other statistical procedures. However, according to
+          Affymetrix (Microarray Suite 5.0 User's Guide),
+          comparisons between arrays are more precise when the
+          ratio method is used, so the values on the horizontal
+          axis of Figure 3should be more accurate. The Affymetrix
+          ratio method only provides ratios between two arrays, and
+          does not provide gene expression values for the
+          individual arrays that can be used with standard tests of
+          statistical significance. We therefore extended the ratio
+          method to generate a relative expression score for each
+          target on each array, as follows:
+          The first step was to name one of the arrays as the
+          baseline in the comparative analysis program (Microarray
+          Suite 5.0). Every other array included in the study was
+          then compared with that baseline array. This procedure
+          yielded, for each target, a set of 11 expression ratios (
+          
+          r ) representing the relative
+          expression level on each array compared with the baseline
+          array.
+          The next step was to compute, for each target, the
+          expression level ( 
+          R ) of the baseline array relative
+          to all 12 arrays included in the study. For array #1, 
+          R was computed with the
+          formula:
+          
+          R 
+          1 = 12/(1 + 
+          r 
+          2 vs. 1 + 
+          r 
+          3 vs. 1 + ... + 
+          r 
+          12 vs. 1 )
+          The value of 1 in the denominator of this formula
+          represents the comparison of array #1 with itself. The
+          number of arrays is the numerator rather than the
+          denominator in this formula because the Affymetrix
+          comparative analysis program sets the baseline array as
+          the denominator, so that values of 
+          r are the inverse of the relevant
+          ratios.
+          A different array was then named as the baseline.
+          E.g., for array #2 as the baseline:
+          
+          R 
+          2 = 12/( 
+          r 
+          1 vs. 2 + 1 + 
+          r 
+          3 vs. 2 + ... + 
+          r 
+          12 vs. 2 )
+          These steps were repeated until all 12 arrays had been
+          named as the baseline. The values R 
+          1 through R 
+          12 were then used for comparisons
+          between age groups with t-tests, rank sum tests, and SAM
+          as described below.
+          For the 4629 probe sets that passed the presence /
+          absence filter, the expression ratios (mean value in old
+          group / mean value in young group) generated by the
+          signal method and those generated by the ratio method
+          were highly correlated (r = 0.89). There also was a
+          fairly good correlation between the signal and ratio
+          methods with respect to the level of statistical
+          significance (log P) of the age-related differences (r =
+          0.74). The advantage of the ratio method was that it
+          usually reduced the within-group variance so that the
+          same mean difference between young and old was associated
+          with a higher level of statistical significance. The
+          average within-group coefficient of variation (CV,
+          standard deviation / mean) was 20% with the ratio method
+          and 25% with the signal method (average CVs were the same
+          for young and old groups). The distribution of CVs
+          improved significantly with the ratio method (Figure 4).
+          Table 1shows that more differences were detected by the
+          ratio method whether we used t-tests, rank sum tests, or
+          SAM to define significant differences. Moreover,
+          consistency between the initial scan and the
+          antibody-enhanced scan was significantly improved by the
+          ratio method, for both expression ratios and for the
+          statistical significance of differences between young and
+          old (Table 2). With the signal method, 38% of the
+          differences significant at P < 0.01 (by t-test) on the
+          initial scan were also significant at P < 0.01 on the
+          antibody-enhanced scan, and 65% were significant at P
+  

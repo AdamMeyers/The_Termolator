@@ -1,0 +1,262 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE us-patent-application SYSTEM "us-patent-application-v42-2006-08-23.dtd" [ ]>
+<us-patent-application lang="EN" dtd-version="v4.2 2006-08-23" file="US20070005187A1-20070104.XML" status="PRODUCTION" id="us-patent-application" country="US" date-produced="20061221" date-publ="20070104">
+<us-bibliographic-data-application lang="EN" country="US">
+<publication-reference>
+<document-id>
+<country>US</country>
+<doc-number>20070005187</doc-number>
+<kind>A1</kind>
+<date>20070104</date>
+</document-id>
+</publication-reference>
+<application-reference appl-type="utility">
+<document-id>
+<country>US</country>
+<doc-number>10553468</doc-number>
+<date>20040413</date>
+</document-id>
+</application-reference>
+<us-application-series-code>10</us-application-series-code>
+<priority-claims>
+<priority-claim sequence="01" kind="national">
+<country>FR</country>
+<doc-number>03/04804</doc-number>
+<date>20030417</date>
+</priority-claim>
+</priority-claims>
+<classifications-ipcr>
+<classification-ipcr>
+<ipc-version-indicator><date>20060101</date></ipc-version-indicator>
+<classification-level>A</classification-level>
+<section>G</section>
+<class>06</class>
+<subclass>F</subclass>
+<main-group>19</main-group>
+<subgroup>00</subgroup>
+<symbol-position>F</symbol-position>
+<classification-value>I</classification-value>
+<action-date><date>20070104</date></action-date>
+<generating-office><country>US</country></generating-office>
+<classification-status>B</classification-status>
+<classification-data-source>H</classification-data-source>
+</classification-ipcr>
+</classifications-ipcr>
+<classification-national>
+<country>US</country>
+<main-classification>700245000</main-classification>
+</classification-national>
+<invention-title id="d0e117">Interactive method and device for providing assistance with manual movements during material processing</invention-title>
+<parties>
+<applicants>
+<applicant sequence="00" app-type="applicant-inventor" designation="us-only">
+<addressbook>
+<last-name>Bellanger</last-name>
+<first-name>Philippe</first-name>
+<address>
+<city>Izeron</city>
+<country>FR</country>
+</address>
+</addressbook>
+<nationality>
+<country>FR</country>
+</nationality>
+<residence>
+<country>FR</country>
+</residence>
+</applicant>
+</applicants>
+<correspondence-address>
+<addressbook>
+<name>C. IRVIN MCCLELLAND;OBLON, SPIVAK, MCCLELLAND, MAIER &#x26; NEUSTADT, P.C.</name>
+<address>
+<address-1>1940 DUKE STREET</address-1>
+<city>ALEXANDRIA</city>
+<state>VA</state>
+<postcode>22314</postcode>
+<country>US</country>
+</address>
+</addressbook>
+</correspondence-address>
+</parties>
+<pct-or-regional-filing-data>
+<document-id>
+<country>WO</country>
+<doc-number>PCT/FR04/00903</doc-number>
+<date>20040413</date>
+</document-id>
+<us-371c124-date><date>20051103</date></us-371c124-date>
+</pct-or-regional-filing-data>
+</us-bibliographic-data-application>
+<abstract id="abstract">
+<p id="p-0001" num="0000">A method for providing assistance and computer-aided learning with regard to manual movements of an operator during processing of a material, for example in the fields of plastic arts, design, industrial machining, paramedical professions, and surgery. The method is based on a device that includes one or more metrologic systems used for continuously measuring a position of a tool and the material. A computer acquires data issued by the metrologic system and propagates the effect of displacements of the tool relative to the material that is to be machined to one or more digital models, and an interface generates acoustic and/or optical and/or haptic stimuli that supply information to the operator by increasing the reality of the actions/reactions which his/her job involves. </p>
+</abstract>
+<drawings id="DRAWINGS">
+<figure id="figure-D00000" num="00000">
+<img id="EMI-D00000" he="177.16mm" wi="120.27mm" file="US20070005187A1-20070104-D00000.TIF" alt="embedded image" img-content="drawing" img-format="tif"/>
+</figure>
+<figure id="figure-D00001" num="00001">
+<img id="EMI-D00001" he="238.00mm" wi="171.37mm" file="US20070005187A1-20070104-D00001.TIF" alt="embedded image" img-content="drawing" img-format="tif"/>
+</figure>
+<figure id="figure-D00002" num="00002">
+<img id="EMI-D00002" he="239.10mm" wi="173.82mm" file="US20070005187A1-20070104-D00002.TIF" alt="embedded image" img-content="drawing" img-format="tif"/>
+</figure>
+</drawings>
+<description id="description">
+<?summary-of-invention description="Summary of Invention" end="lead"?>
+<heading level="2" id="h-0001">TECHNICAL FIELD </heading>
+<p id="p-0002" num="0001"> The invention relates to a method and device for providing assistance and computer-aided learning with regard to the manual movements of an operator, for the purpose of either reproducing an existing shape or creating a new shape. </p>
+<p id="p-0003" num="0002"> The invention is capable of being integrated into or arranged in a material design or processing line, especially, but not exclusively, in the fields of plastic arts, design, industrial machining, paramedical professions and surgery. </p>
+<p id="p-0004" num="0003"> The invention relates more particularly to a method that is based on a device which, in order to provide assistance and aid in learning with regard to movements, uses a digital representation of the shape being reproduced and the material being processed. </p>
+<p id="p-0005" num="0004"> The problem of reproducing shapes from a digital model can be partially resolved by the use of robotic solutions. However, this technique reaches its limits when the complexity of the shapes being reproduced necessitates specific movements but also when the number of objects being reproduced is small compared with the investment required to program the paths or trajectories. </p>
+<p id="p-0006" num="0005"> Another approach consists in keeping those skilled in the art at the center of the reproduction process loop, while continuously furnishing them with all of the data necessary and sufficient to enable them to work on the material safely. </p>
+<p id="p-0007" num="0006"> For this approach, a certain number of documents describe devices that integrate, on one hand, metrologic means and, on the other hand, a system of three-dimensional representations of a digital object. Thus, French Patent FR 2 808 366 (AZERAD J.; BLANCHARD J.; MAURIN Y.) describes a method for virtual reality training consisting of various elements: sensing data concerning the spatial position of a real hand-held unit, a three-dimensional representation of a digital object, supplying a digital tool capable of operating on the digital object. At no time does the method allow for the machining of a real material, and even less so a possible resumption of the machining of the real material in a digital model, thereby enabling a conceptual intervention in both worlds. For this reason, it is impossible to provide data for complete training by means of manual movements during processing of a material. Consequently, this method does not meet the needs expressed by the professions that process the material. </p>
+<heading level="2" id="h-0002">SUMMARY OF THE INVENTION </heading>
+<p id="p-0008" num="0007"> A purpose of this invention is to propose an iterative action/information method based on a device enabling assistance with manual movements so as to confer a shape on a material that approximates a digital model. A device such as this makes it possible to optimize the nature and amount of data required for spatially controlling the treatment of the material. </p>
+<p id="p-0009" num="0008"> Another purpose of the invention is to propose a device to provide assistance and learning with regard to manual movements during processing of the material that, on the one hand, enables analysis of the methodology of the movements and, on the other hand, reading of the result in the form of a digital model of the machined material. </p>
+<p id="p-0010" num="0009"> To this end, the invention relates to a device that implements one or more digital models, among which the following are identified: 
+<ul id="ul0001" list-style="none">
+    <li id="ul0001-0001" num="0000">
+    <ul id="ul0002" list-style="none">
+        <li id="ul0002-0001" num="0010"> the model to be attained, referred to as the &#x201c;mother model&#x201d;, built from a source model (digitization data, CAD model) enhanced with profession-related data and/or transformed (scaling, simplification, etc.) </li>
+        <li id="ul0002-0002" num="0011"> the model of the material to work or process, referred to as the &#x201c;material to process model&#x201d; built from data derived from a physical volume or from digital data specifying the dimensions of the material to process. </li>
+        <li id="ul0002-0003" num="0012"> the &#x201c;tool model&#x201d; specifying the physical and geometric parameters of the work tool (reaction reserve, diameter of the tool, eccentricity, etc.). This model is used to calculate the effect of the tool on the material, and the result of this calculation serves to continuously update the &#x201c;machined material model&#x201d;. </li>
+        <li id="ul0002-0004" num="0013"> the &#x201c;movements model&#x201d; contains the description of the tool's configurations during processing of the material. </li>
+        <li id="ul0002-0005" num="0014"> the &#x201c;machined material model&#x201d; is the result of the actions of the tool on the material being machined. </li>
+    </ul>
+    </li>
+</ul>
+</p>
+<p id="p-0011" num="0015"> These models enable those skilled in the art to express their needs and to explore the possible alternatives within the space being machined. They may be the basis of an identical reproduction or a partial or global homothety, or a transformation by addition or subtraction in the virtual as well as in the real world. Another possibility offered by this system is to be able to take into account the displacements of the material by continuously measuring them, making it possible to maintain the action of the tool on the material, thanks to a continuous balancing of the various models.</p>
+<?summary-of-invention description="Summary of Invention" end="tail"?>
+<?brief-description-of-drawings description="Brief Description of Drawings" end="lead"?>
+<heading level="2" id="h-0003">BRIEF DESCRIPTION OF THE DRAWINGS </heading>
+<p id="p-0012" num="0016"> The invention will be well understood upon reading the following description, with reference to the appended drawings which, by way of a non-limiting example, represent an assistance and learning device for providing assistance with manual movements within a space, wherein: </p>
+<p id="p-0013" num="0017"> <figref idref="DRAWINGS">FIG. 1</figref> represents an overall schematic view of the assistance and learning device for providing assistance with manual movements within a space, according to the invention. </p>
+<p id="p-0014" num="0018"> <figref idref="DRAWINGS">FIGS. 2 and 3</figref> represent possible visual data and display examples (video projection and monitor screen) according to the invention;</p>
+<?brief-description-of-drawings description="Brief Description of Drawings" end="tail"?>
+<?detailed-description description="Detailed Description" end="lead"?>
+<p id="p-0015" num="0019"> According to the invention, the assistance and learning device for manual movements within a space is designed to be used in several ways, depending on the field of application. </p>
+<p id="p-0016" num="0020"> A first way consists in processing a material <b>19</b> without relying on a &#x201c;mother model&#x201d; M<b>1</b>; in this case the manual movements free of any constraints enable direct creation processing, and the result derived therefrom is stored in a &#x201c;machined material model&#x201d; M<b>4</b>. The iterative process belonging to this invention makes it possible to reuse this result for a reproduction, after it has been adapted as a &#x201c;mother model&#x201d; M<b>1</b>. </p>
+<p id="p-0017" num="0021"> A second way consists in continuously representing the action of a tool <b>3</b> on the material <b>19</b> by a transformation of the state of the &#x201c;machined material model&#x201d; M<b>4</b>. In this case, for the purposes of dimensional inspection, it is possible to compare the &#x201c;machined material model&#x201d; M<b>4</b> and the &#x201c;mother model&#x201d; M<b>1</b>, so as to produce a three-dimensional map of the errors. Another use of this result is to track the evolution of the processing over time. </p>
+<p id="p-0018" num="0022"> A third but non-exclusive way consists in using the position measurements of the tool <b>3</b> supplied by a metrologic system <b>4</b> to specify the elements for generating a reference movement, with a view to re-executing it by means of an automated system such as a robot. </p>
+<p id="p-0019" num="0023"> In reality, this device may be introduced as a design tool and/or a pedagogical and play tool. Therefore, it is a question of the needs anticipated by the professions, especially, but not exclusively, in the fields of plastic arts, design, industrial machining, paramedical professions and surgery. </p>
+<p id="p-0020" num="0024"> Thus, the example cited in the appended diagrams shows the use of the device in the field of plastic arts (reproduction of a digitized sculpture). It may be assumed that the invention is not limited to this embodiment but, on the contrary, the invention may include other alternatives associated with the various fields. </p>
+<p id="p-0021" num="0025"> As illustrated in <figref idref="DRAWINGS">FIG. 1</figref>, the device consists primarily of the following elements 
+<ul id="ul0003" list-style="none">
+    <li id="ul0003-0001" num="0000">
+    <ul id="ul0004" list-style="none">
+        <li id="ul0004-0001" num="0026"> an operator <b>1</b>. </li>
+        <li id="ul0004-0002" num="0027"> a work station <b>9</b>, associated with an absolute reference system R<b>1</b> consisting of a material support modeled by a three-dimensional reference system R<b>3</b>, an tool calibration system <b>16</b> modeled by a three-dimensional reference system R<b>2</b>, and a set of target objects <b>20</b> used for resetting, and defined, respectively, in relation to the absolute three-dimensional reference system R<b>1</b>. </li>
+        <li id="ul0004-0003" num="0028"> a calculator or computer (of the microcomputer type) <b>2</b> integrating the data from the models and their effects. </li>
+    </ul>
+    </li>
+</ul>
+</p>
+<p id="p-0022" num="0029"> a tool <b>3</b> modeled by a three-dimensional reference system R<b>4</b> arranged on a metrologic system <b>4</b> (an articulated arm swivel arm or follower) associated with a three-dimensional reference system R<b>5</b> defined in relation to the absolute three-dimensional reference system R<b>1</b>, continuously delivering to the computer <b>2</b> the data relating to the position and orientation of the tool <b>3</b>. </p>
+<p id="p-0023" num="0030"> a stimuli generator <b>5</b> consisting of optical <b>6</b>, acoustic <b>7</b> and/or haptic <b>8</b> channels informing the operator <b>1</b> of the effect of his/her movements on the material <b>19</b>. </p>
+<p id="p-0024" num="0031"> According to <figref idref="DRAWINGS">FIG. 1</figref>, the microcomputer-type computer <b>2</b>, which integrates the data from the digital models and their effects, comprises a hardware portion consisting of highly-integrated electronic circuits and software programs. The function of a computer is limited to sequencing, classifying, calculating, sorting, searching, editing and representing data that have been pre-encoded according to a binary representation. </p>
+<p id="p-0025" num="0032"> As can be seen in <figref idref="DRAWINGS">FIG. 1</figref>, the device, as concerns its metrologic system <b>4</b>, consists of a measuring arm having several degrees of freedom, which continuously informs the computer <b>2</b> of all of the displacements of the free end induced by manual movements. Based on this data, the computer <b>2</b> updates all of the models. </p>
+<p id="p-0026" num="0033"> The first function of the metrologic system <b>4</b> is to serve in measuring the reference systems such as the material reference system R<b>3</b>, and the reference system R<b>2</b> of the tool calibration system <b>16</b>, so as to calibrate the work station <b>9</b>. Owing to the entire set of target objects <b>20</b>, the position of the metrologic system <b>4</b> can be modulated, thereby enabling the intervention space to be increased beyond its own work volume. </p>
+<p id="p-0027" num="0034"> The second function of the metrologic system <b>4</b> is to serve in continuously measuring the position and orientation of a tool <b>3</b> in relation to the machined material <b>19</b>. </p>
+<p id="p-0028" num="0035"> The tool <b>3</b> designed to machine the material <b>19</b> is rigidly connected to the metrologic system <b>4</b>. It may consist of a milling cutter, disk, spherical spatula or any other work tool, depending on the applications and materials selected. As a result of the measurement, the effect of the tool <b>3</b> is translated into the &#x201c;machined material model&#x201d; M<b>4</b> by way of the &#x201c;tool model&#x201d; M<b>3</b>, while being based on the &#x201c;mother model&#x201d; M<b>1</b> placed inside the &#x201c;material to process model&#x201d; M<b>2</b>. </p>
+<p id="p-0029" num="0036"> The metrologic system <b>4</b> might be a localization system of the optical or magnetic &#x201c;follower&#x201d; type, preferable for certain applications or for certain work phases. </p>
+<p id="p-0030" num="0037"> The metrologic system <b>4</b> must be manually and freely manipulatable. </p>
+<p id="p-0031" num="0038"> In the case where a measuring arm is used and for easier handling, the metrologic system <b>4</b> is balanced by an adjustable pull-back system, such as an equalizer or lifting device <b>10</b>, conferring an increased degree of fluidity upon the movements of the operator. This lifting unit <b>10</b> is installed above the arm by means of a rotating jib <b>11</b> whose axis of rotation is aligned with the base axis of the measuring arm. </p>
+<p id="p-0032" num="0039"> In the examples shown in <figref idref="DRAWINGS">FIG. 1</figref>, the device consists of a work station <b>9</b>, which is a rigid system enabling the operator to adjust the height of the material support. The tool calibration system consists of a trihedral object <b>16</b> serving as a reference in calibrating the tools <b>3</b> installed at the end of the arm. </p>
+<p id="p-0033" num="0040"> The stimuli generator <b>5</b>, remotely controlled by the operator <b>1</b> by means of a device <b>12</b> mounted on the metrologic system <b>4</b>, makes available to the latter optical <b>6</b>, acoustic <b>7</b> or haptic <b>8</b> stimuli used separately or in combination. </p>
+<p id="p-0034" num="0041"> According to one possibility and as in <figref idref="DRAWINGS">FIG. 2</figref>, an optical stimulus may be a video projection <b>6</b> of the digital models as seen in one or more views <b>13</b> and <b>13</b>&#x2032; characterized, among other things, by a viewpoint and a scaling factor that can be programmed by the operator <b>1</b>, in which the tool <b>3</b> is represented continuously and throughout all of its movements, displayed as a reaction sphere <b>14</b> that can be programmed in relation to the density/scale factor of the material being machined, the representation of the latter being enhanced by the physical representation of the axis of support <b>15</b> of the tool and of the shortest path <b>22</b> separating the tool from the closest possible punctual contact in the &#x201c;mother model&#x201d; M<b>1</b>. One-important feature of the display is that of having a locally improved resolution <b>21</b>, by adjusting certain characteristics, such as the surface menu or the light, to the exact sequence of the movements of the tool in space, enabling the operator <b>1</b> to continuously interpret the locations of the tool M<b>3</b> in relation to the &#x201c;mother model&#x201d; M<b>1</b> and to the shape machined from the material <b>19</b>. </p>
+<p id="p-0035" num="0042"> According to another possibility, an acoustic stimulus is transmitted by modulatable sounds <b>7</b> (<figref idref="DRAWINGS">FIG. 3</figref>) and received in a headset <b>7</b>&#x2032; (<figref idref="DRAWINGS">FIG. 1</figref>); these sounds can be adjusted in frequency and amplitude. The frequency is determined continuously during processing of the material, on the basis of the distance of the tool and its back-up M<b>3</b> to the closest possible punctual contact calculated in the &#x201c;mother model&#x201d; M<b>1</b>. The frequency and distance scales can be programmed by the operator. The amplitude can be manually adjusted in relation to the sound level in the workstation environment. </p>
+<p id="p-0036" num="0043"> According to another possibility, a haptic stimulus <b>8</b> can be generated by a pull-back in force in relation to the distance of the tool and its back-up M<b>3</b> from the closest possible punctual contact calculated in the &#x201c;mother model&#x201d; M<b>1</b>. The pull-back in force might be ensured by a system consisting of a bracelet <b>17</b>, positioned on the operator's <b>1</b> wrist or on the metrologic system <b>4</b>, and joined by a flexible connection <b>18</b> to a motorized mechanism which gradually exerts a pull-back force until the end of the tool M<b>3</b> reaches a point on the envelope of the &#x201c;mother model&#x201d; M<b>1</b>. </p>
+<p id="p-0037" num="0044"> Based on this, the invention relates to a method for providing assistance and learning with regard to the manual movements of an operator for the purpose of processing a material, on the one hand, it includes the following elements: 
+<ul id="ul0005" list-style="none">
+    <li id="ul0005-0001" num="0000">
+    <ul id="ul0006" list-style="none">
+        <li id="ul0006-0001" num="0045"> a digital representation of the shape to be attained (designated as &#x201c;mother model&#x201d; M<b>1</b>), </li>
+        <li id="ul0006-0002" num="0046"> a digital representation of the material to work or process set in relation to an absolute three-dimensional reference system R<b>1</b> (designated as &#x201c;material to process or to work model&#x201d; M<b>2</b>), </li>
+        <li id="ul0006-0003" num="0047"> a digital representation of the tool resulting from a scaling step (designated as &#x201c;tool model&#x201d; M<b>3</b>), </li>
+        <li id="ul0006-0004" num="0048"> a material to be transformed <b>19</b>, set in relation to an absolute three-dimensional reference system R<b>1</b>, </li>
+        <li id="ul0006-0005" num="0049"> data and action means in the device as described, </li>
+    </ul>
+    </li>
+</ul>
+</p>
+<p id="p-0038" num="0050"> and, on the other hand, in that it includes the following steps: </p>
+<p id="p-0039" num="0051"> Step 1: the purpose in creating the &#x201c;mother model&#x201d; M<b>1</b> is to convert the geometric envelope of the volume being reproduced into three-dimensional coordinates capable of being manipulated by a computer. A created digital model can be enhanced, simplified or sectored according to the needs specific to each profession. This step can be carried out independently of the other steps. </p>
+<p id="p-0040" num="0052"> Step 2: by means of measurements taken in the absolute three-dimensional reference system R<b>1</b>, the scaling of the work station <b>9</b> makes it possible to specify, on one hand, the three-dimensional reference system R<b>3</b> of the material support and the three-dimensional reference system R<b>2</b> of the tool scaling system and, on the other hand, the three-dimensional reference system R<b>5</b> of the metrologic system. </p>
+<p id="p-0041" num="0053"> Step 3: the creation of the &#x201c;material to process model&#x201d; M<b>2</b> is achieved either by acquiring the digital data of a pre-existing external volume, or by determining the volume to be machined that corresponds to the external envelope of the volume being reproduced. </p>
+<p id="p-0042" num="0054"> Step 3: the scaling of the tool <b>3</b> consists in relying on a preset reference surface <b>16</b> of the scaling system in the absolute three-dimensional reference system R<b>1</b> in order to determine certain parameters of the &#x201c;tool model&#x201d; M<b>3</b>, such as length and eccentricity, and to specify the other parameters such as the reaction sphere. This makes it necessary that the work station <b>9</b> be scaled. </p>
+<p id="p-0043" num="0055"> Step 4: the placement of the &#x201c;mother model&#x201d; M<b>1</b> in relation to the &#x201c;material to process model&#x201d; M<b>2</b> enables a computer-aided positioning of the digital representation of the shape to be attained inside of the digital representation of the block of material to process. The parameterization of the position, orientation and scale of the shape to be attained in relation to the block of material enables a rapid placement in order to produce reproductions that are identical (scale 1/1) or enlarged (scale&#x3e;1) or reduced (scale&#x3c;1). Using this approach, the &#x201c;mother model&#x201d; M<b>1</b> is plotted in the &#x201c;material to process model&#x201d; M<b>2</b>, for the duration of the job, either by being obligated to respect the dimensions of the volume being reproduced (identical, larger, smaller) or by respecting the volume of the material in order to best plot therein the volume being reproduced. </p>
+<p id="p-0044" num="0056"> Step 5: the processing of the material can be carried out according to two possible approaches: the creation of a shape by direct carving, which requires that the three steps 2, 3 and 4 be accomplished, or a reproduction, which requires the four steps 1, 2, 3 and 4. With the operator <b>1</b> having pre-selected and adjusted the stimuli <b>5</b> (<b>6</b>, <b>7</b> and <b>8</b>) that he/she wishes to have in return, the position and orientation of the tool <b>3</b> in space are processed constantly by the computer <b>2</b> which, based on knowledge of the various models M<b>1</b>, M<b>2</b>, M<b>3</b> and M<b>4</b>, calculates the characteristic quantities (collisions, minimal distance, scanned volume) of the effect of the tool <b>3</b> on the material <b>19</b>. This effect is then translated into the form of stimuli <b>5</b> sent to the operator. Owing to the multi-view display <b>6</b>, among other things, the operator is able to know at any moment, on the one hand, the position of the tool <b>3</b> in relation to the shape to be attained M<b>1</b> and, on the other hand, the effect of the tool on the material by way of the evolution of the &#x201c;machined material model&#x201d; M<b>4</b>. </p>
+<p id="p-0045" num="0057"> It is possible for the operator to suspend processing of the material at any moment to analyze the results furnished by the digital models of the machined material M<b>4</b> and of the movements M<b>5</b> and/or to change tools <b>3</b> based on the evolution of the processing carried out and/or to save onto the computer <b>2</b> all of the data translating the status of his/her job. </p>
+<p id="p-0046" num="0058"> Changing the tool <b>3</b> involves carrying out a scaling of the tool (cf. Step 3) for the purpose of determining the parameters of the new tool <b>3</b>. Once this step has been carried out, the identified changes are propagated automatically and it becomes possible to resume processing of the material <b>19</b>. </p>
+<p id="p-0047" num="0059"> The operator <b>1</b> must perform the same operations on the material <b>19</b> as those routinely practiced by his/her profession. One of the primary difficulties that must be dealt with in order to obtain high-quality processing of the material is the mental transcription of the shape to be attained from the material, which must be performed continuously by the operator. Thanks to the adaptation of the various stimuli sent to the operator with respect to the position of the tool in relation to the material, the operator receives on-going assistance with his/her movements, the quality of which is irrespective of the ambient conditions of the work environment. This relieves the operator of the mental transcription work and enables him/her to concentrate on processing the material that has been made transparent. The device possesses measuring means that make it possible to learn movements for training purposes, for pedagogical purposes, for analysis of movements or for programming robot systems, among others. </p>
+<?detailed-description description="Detailed Description" end="tail"?>
+</description>
+<claims id="claims">
+<claim id="CLM-001-9" num="001-9">
+<claim-text><b>1</b>-<b>9</b>. (canceled) </claim-text>
+ </claim>
+<claim id="CLM-00010" num="00010">
+<claim-text><b>10</b>. A device for providing computer-aided assistance with movements continuously during processing of a material, comprising: 
+<claim-text>a referent of the material to process defined according to an absolute reference system; </claim-text>
+<claim-text>a work station equipped with target objects having a function of resetting a metrologic system after it has been displaced; </claim-text>
+<claim-text>a tool scaling system; </claim-text>
+<claim-text>at least one tool for machining the material; </claim-text>
+<claim-text>an absolute reference system serving as a referent for a computer carrying out acquisition, storage, and processing of data issued by the metrologic system and continuously propagating an effect of displacements of the at least one tool, relative to the material to be machined and that is being processed, to one or more digital models, wherein the metrologic system has a function of continuously measuring a position of the at least one tool and of the material to be machined and that is being processed; and </claim-text>
+<claim-text>a stimuli generator continuously informing an operator of the position of the at least one tool relative to the material to be machined and that is being processed, by increasing reality of actions/reactions that the operator's job involves, by a choice of multiple and simultaneous sensory returns. </claim-text>
+</claim-text>
+ </claim>
+<claim id="CLM-00011" num="00011">
+<claim-text><b>11</b>. A device according to <claim-ref idref="CLM-00010">claim 10</claim-ref>, wherein the metrologic system comprises an articulated arm for measuring or a localization system holding the at least one tool, and is balanced by an adjustable lifting system. </claim-text>
+ </claim>
+<claim id="CLM-00012" num="00012">
+<claim-text><b>12</b>. A device according to <claim-ref idref="CLM-00010">claim 10</claim-ref>, wherein the position of the metrologic system is modulated and identified with aid of an entire set of target objects placed on the work station. </claim-text>
+ </claim>
+<claim id="CLM-00013" num="00013">
+<claim-text><b>13</b>. A device according to <claim-ref idref="CLM-00010">claim 10</claim-ref>, wherein, at any instant, measurable displacements of the material are taken into account to enable action of the at least one tool on the material, based on continuous balancing of the one or more digital models with the absolute reference system. </claim-text>
+ </claim>
+<claim id="CLM-00014" num="00014">
+<claim-text><b>14</b>. A device according to <claim-ref idref="CLM-00010">claim 10</claim-ref>, wherein the stimuli generator supplies sensory returns of multiple view type, at variable scales, of the one or more digital models in which the at least one tool is represented throughout all its displacements, displayed as a reaction reserve that can be programmed in relation to density/scale factor of the material being machined. </claim-text>
+ </claim>
+<claim id="CLM-00015" num="00015">
+<claim-text><b>15</b>. A device according to <claim-ref idref="CLM-00010">claim 10</claim-ref>, wherein the stimuli generator supplies sensory returns of sound type and/or a pull-back in force that have variable and increasing intensity in relation to a gradual approach of the at least one tool and its reserve in the one or more digital models with respect to a closest possible punctual contact. </claim-text>
+ </claim>
+<claim id="CLM-00016" num="00016">
+<claim-text><b>16</b>. A device according to <claim-ref idref="CLM-00010">claim 10</claim-ref>, wherein representation of the at least one tool in views is enhanced by a physical representation of an axis of support of the at least one tool and of a shortest path separating a tool model from a closest possible punctual contact in the one or more digital models. </claim-text>
+ </claim>
+<claim id="CLM-00017" num="00017">
+<claim-text><b>17</b>. A device according to <claim-ref idref="CLM-00010">claim 10</claim-ref>, wherein display of the one or more digital models of a shape to be attained has a locally improved resolution, and is preset by characteristics to an exact sequence of movements of the at least one tool in space. </claim-text>
+ </claim>
+<claim id="CLM-00018" num="00018">
+<claim-text><b>18</b>. A device for providing computer-aided assistance with movements continuously during processing of a material, comprising: 
+<claim-text>a referent of the material to process defined according to an absolute reference system; </claim-text>
+<claim-text>a work station equipped with target objects having a function of resetting a metrologic system that can be modulated and identified with aid of an entire set of target objects placed on the work station after it has been displaced; </claim-text>
+<claim-text>a tool scaling system; </claim-text>
+<claim-text>at least one tool for machining the material; </claim-text>
+<claim-text>an absolute reference system serving as a referent for a computer carrying out acquisition, storage, and processing of data issued by the metrologic system and continuously propagating an effect of displacements of the at least one tool relative to the material to be machined and that is being processed, to one or more digital models, wherein the metrologic system has a function of continuously measuring a position of the at least one tool and of the material to be machined and that is being processed; </claim-text>
+<claim-text>a stimuli generator continuously informing an operator of the position of the at least one tool relative to the material to be machined and that is being processed, by increasing reality of actions/reactions that the operator's job involves, by a choice of multiple and simultaneous sensory returns, the stimuli generator supplying sensory returns of multiple view type, at variable scales, of the one or more digital models in which the at least one tool is represented throughout all its displacements, displayed as a reaction reserve that can be programmed in relation to density/scale factor of the material being machined, or the stimuli generator supplying sensory returns of sound type and/or a pull-back in force that have variable and increasing intensity in relation to a gradual approach of the at least one tool and its reserve in the one or more digital models with respect to a closest possible punctual contact. </claim-text>
+</claim-text>
+ </claim>
+<claim id="CLM-00019" num="00019">
+<claim-text><b>19</b>. A device according to <claim-ref idref="CLM-00018">claim 18</claim-ref>, wherein the metrologic system comprises an articulated arm for measuring or a localization system holding the at least one tool, and is balanced by an adjustable lifting system. </claim-text>
+ </claim>
+<claim id="CLM-00020" num="00020">
+<claim-text><b>20</b>. A device according to <claim-ref idref="CLM-00018">claim 18</claim-ref>, wherein, at any instant, measurable displacements of the material are taken into account to enable action of the at least one tool on the material, based on continuous balancing of the one or more digital models with the absolute reference system. </claim-text>
+ </claim>
+<claim id="CLM-00021" num="00021">
+<claim-text><b>21</b>. A device according to <claim-ref idref="CLM-00018">claim 18</claim-ref>, wherein representation of the at least one tool in views is enhanced by a physical representation of an axis of support of the at least one tool and of a shortest path separating a tool model from a closest possible punctual contact in the one or more digital models. </claim-text>
+ </claim>
+<claim id="CLM-00022" num="00022">
+<claim-text><b>22</b>. An iterative action/information method for providing continuous computer-aided assistance and learning with regard to manual movements during processing of a material, comprising: 
+<claim-text>defining at least one reference system with a view to scaling a work station; </claim-text>
+<claim-text>defining at least one digital model of a shape to be attained of a material to process, in relation to a referent known at any instant in relation to an absolute reference system; </claim-text>
+<claim-text>establishing a placement of the at least one digital model of a shape to be attained in the at least one digital model of the material to process; </claim-text>
+<claim-text>defining a digital model of the tool specified by the physical and geometric parameters designed to machine the material by scaling it according to a reference system known at any instant in relation to the absolute reference system; </claim-text>
+<claim-text>obtaining necessary data for knowing a position of the at least one tool in relation to the at least one digital model of the shape to be attained; </claim-text>
+<claim-text>obtaining a quasi-simultaneous updating of the at least one digital model of a machined material with respect to effect of the at least one tool on the material, which is induced by manual movements of an operator; and </claim-text>
+<claim-text>obtaining a quasi-simultaneous analysis of the work results furnished by the at least one digital model of the machined material and of the movements.</claim-text>
+</claim-text>
+ </claim>
+</claims>
+</us-patent-application>

@@ -1,0 +1,2568 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.1//EN' 'http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd'>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="Docutils 0.8.1: http://docutils.sourceforge.net/" />
+<style type="text/css">
+/* 
+Project Gutenberg common docutils stylesheet.
+
+This stylesheet contains styles common to HTML and EPUB.  Put styles
+that are specific to HTML and EPUB into their relative stylesheets.
+
+:Author: Marcello Perathoner (webmaster@gutenberg.org)
+:Copyright: This stylesheet has been placed in the public domain.
+
+This stylesheet is based on:
+
+  :Author: David Goodger (goodger@python.org)
+  :Copyright: This stylesheet has been placed in the public domain.
+
+  Default cascading style sheet for the HTML output of Docutils.
+
+*/
+
+/* ADE 1.7.2 chokes on !important and throws all css out. */
+
+/* FONTS */
+
+.italics    { font-style: italic }
+.no-italics { font-style: normal }
+
+.bold       { font-weight: bold }
+.no-bold    { font-weight: normal }
+
+.small-caps { } /* Epub needs italics */
+.gesperrt   { } /* Epub needs italics */
+.antiqua    { font-style: italic } /* what else can we do ? */
+.monospaced { font-family: monospace }
+
+.smaller    { font-size: smaller }
+.larger     { font-size: larger }
+
+.xx-small   { font-size: xx-small }
+.x-small    { font-size: x-small }
+.small      { font-size: small }
+.medium     { font-size: medium }
+.large      { font-size: large }
+.x-large    { font-size: x-large }
+.xx-large   { font-size: xx-large }
+
+.text-transform-uppercase { text-transform: uppercase }
+.text-transform-lowercase { text-transform: lowercase }
+.text-transform-none      { text-transform: none }
+
+.red        { color: red }
+.green      { color: green }
+.blue       { color: blue }
+.yellow     { color: yellow }
+.white      { color: white }
+.gray       { color: gray }
+.black      { color: black }
+
+/* ALIGN */
+
+.left       { text-align: left }
+.center     { text-align: center }
+.right      { text-align: right }
+.justify    { text-align: justify }
+
+/* LINE HEIGHT */
+
+body        { line-height: 1.5 }
+p           { margin: 0; 
+	      text-indent: 2em }
+
+/* PAGINATION */
+
+.title, .subtitle     { page-break-after:  avoid }
+
+.container, .title, .subtitle, #pg-header            
+                      { page-break-inside: avoid }
+
+/* SECTIONS */
+
+body         { text-align: justify }
+
+p.pfirst,
+p.center,
+p.right,
+div.center p,
+div.right p,
+p.noindent   { text-indent: 0 }
+
+.boxed         { border: 1px solid black; padding: 1em }
+.topic, .note  { margin: 5% 0; border: 1px solid black; padding: 1em }
+div.section    { clear: both }
+
+div.line-block       { margin: 1.5em 0 }  /* same leading as p */
+div.line-block.inner { margin: 0 0 0 10% }
+div.line             { margin-left: 20%; text-indent: -20%; }
+.line-block.noindent div.line { margin-left: 0; text-indent: 0; }
+
+hr.docutils          { margin: 1.5em 40%; border: none; border-bottom: 1px solid black; }
+
+.vfill, .vspace      { border: 0px solid white }
+
+.title               { margin: 1.5em 0 }
+.title.with-subtitle { margin-bottom: 0 }
+.subtitle            { margin: 1.5em 0 }
+
+/* header font style */
+/* http://dev.w3.org/csswg/css3-fonts/#propdef-font-size */
+
+h1.title                        { font-size: 200%; }  /* for book title only */
+h2.title, p.subtitle.level-1    { font-size: 150%; margin-top: 4.5em;  margin-bottom: 2em }
+h3.title, p.subtitle.level-2    { font-size: 120%; margin-top: 2.25em; margin-bottom: 1.25em }
+h4.title, p.subtitle.level-3    { font-size: 100%; margin-top: 1.5em;  margin-bottom: 1.5em;  font-weight: bold; }
+h5.title, p.subtitle.level-4    { font-size:  89%; margin-top: 1.87em; margin-bottom: 1.69em; font-style: italic; }
+h6.title, p.subtitle.level-5    { font-size:  60%; margin-top: 3.5em;  margin-bottom: 2.5em }
+
+/* title page */
+
+h1.title, p.subtitle.level-1,
+h2.title, p.subtitle.level-2    { text-align: center }
+
+#pg-header,
+h1.document-title               { margin: 10% 0 5% 0 }
+p.document-subtitle             { margin:  0  0 5% 0 }
+
+/* PG header and footer */
+#pg-machine-header { }
+#pg-produced-by { }
+
+li.toc-entry            { list-style-type: none }
+ul.open li, ol.open li  { margin-bottom: 1.5em }
+
+p.attribution           { margin-top: 0 }
+
+.example-rendered { 
+    margin: 1em 5%; border: 1px dotted red;  padding: 1em; background-color: #ffd }
+.literal-block.example-source   { 
+    margin: 1em 5%; border: 1px dotted blue; padding: 1em; background-color: #eef }
+
+/* DROPCAPS */
+
+/* BLOCKQUOTES */
+
+blockquote { margin: 1.5em 10% }
+
+blockquote.epigraph { }
+
+blockquote.highlights { }
+
+div.local-contents { margin: 1.5em 10% }
+
+div.abstract { margin: 3em 10% }
+div.caption  { margin: 1.5em 10%; text-align: center; font-style: italic }
+div.legend   { margin: 1.5em 10% }
+
+.hidden { display: none }
+
+.invisible { visibility: hidden; color: white } /* white: mozilla print bug */
+
+a.toc-backref {
+  text-decoration: none ;
+  color: black }
+
+dl.docutils dd {
+  margin-bottom: 0.5em }
+
+div.figure { margin-top: 3em; margin-bottom: 3em }
+
+img { max-width: 100% }
+
+div.footer, div.header {
+  clear: both;
+  font-size: smaller }
+
+div.sidebar {
+  margin: 0 0 0.5em 1em ;
+  border: medium outset ;
+  padding: 1em ;
+  background-color: #ffffee ;
+  width: 40% ;
+  float: right ;
+  clear: right }
+
+div.sidebar p.rubric {
+  font-family: sans-serif ;
+  font-size: medium }
+
+ol.simple, ul.simple { margin: 1.5em 0 }
+
+ol.toc-list,    ul.toc-list    { padding-left:  0  }
+ol ol.toc-list, ul ul.toc-list { padding-left:  5% }
+
+ol.arabic {
+  list-style: decimal }
+
+ol.loweralpha {
+  list-style: lower-alpha }
+
+ol.upperalpha {
+  list-style: upper-alpha }
+
+ol.lowerroman {
+  list-style: lower-roman }
+
+ol.upperroman {
+  list-style: upper-roman }
+
+p.credits {
+  font-style: italic ;
+  font-size: smaller }
+
+p.label {
+  white-space: nowrap }
+
+p.rubric {
+  font-weight: bold ;
+  font-size: larger ;
+  color: maroon ;
+  text-align: center }
+
+p.sidebar-title {
+  font-family: sans-serif ;
+  font-weight: bold ;
+  font-size: larger }
+
+p.sidebar-subtitle {
+  font-family: sans-serif ;
+  font-weight: bold }
+
+p.topic-title, p.admonition-title {
+  font-weight: bold }
+
+pre.address {
+  margin-bottom: 0 ;
+  margin-top: 0 ;
+  font: inherit }
+
+.literal-block, .doctest-block {
+  margin-left: 2em ;
+  margin-right: 2em; }
+
+span.classifier {
+  font-family: sans-serif ;
+  font-style: oblique }
+
+span.classifier-delimiter {
+  font-family: sans-serif ;
+  font-weight: bold }
+
+span.interpreted {
+  font-family: sans-serif }
+
+span.option {
+  white-space: nowrap }
+
+span.pre {
+  white-space: pre }
+
+span.problematic {
+  color: red }
+
+span.section-subtitle {
+  /* font-size relative to parent (h1..h6 element) */
+  font-size: 100% }
+
+table { margin-top: 1.5em; margin-bottom: 1.5em; border-spacing: 0 }
+table.align-left, table.align-right { margin-top: 0 }
+
+table.table                { border-collapse: collapse; }
+
+table.table.hrules-table thead          { border: 1px solid black; border-width: 2px 0 0 }
+table.table.hrules-table tbody          { border: 1px solid black; border-width: 2px 0 }
+table.table.hrules-rows  tr             { border: 1px solid black; border-width: 0 0 1px }
+table.table.hrules-rows  tr.last        { border-width: 0 }
+table.table.hrules-rows  td, 
+table.table.hrules-rows  th             { padding: 1ex 1em; vertical-align: middle }
+
+table.table tr             { border-width: 0 }
+table.table td, 
+table.table th             { padding: 0.5ex 1em }
+table.table tr.first td    { padding-top: 1ex }
+table.table tr.last td     { padding-bottom: 1ex }
+table.table tr.first th    { padding-top: 1ex }
+table.table tr.last th     { padding-bottom: 1ex }
+
+
+table.citation {
+  border-left: solid 1px gray;
+  margin-left: 1px }
+
+table.docinfo {
+  margin: 3em 4em }
+
+table.docutils { }
+
+tr.footnote.footnote td, tr.footnote.footnote th { 
+  padding: 0 0.5em 1.5em;
+}
+
+table.docutils td, table.docutils th,
+table.docinfo td, table.docinfo th {
+  padding: 0 0.5em;
+  vertical-align: top }
+
+table.docutils th.field-name, table.docinfo th.docinfo-name {
+  font-weight: bold ;
+  text-align: left ;
+  white-space: nowrap ;
+  padding-left: 0 }
+
+/* used to remove borders from tables and images */
+.borderless, table.borderless td, table.borderless th {
+  border: 0 }
+
+table.borderless td, table.borderless th {
+  /* Override padding for "table.docutils td" with "!important".
+     The right padding separates the table cells. */
+  padding: 0 0.5em 0 0 } /* FIXME: was !important */
+
+h1 tt.docutils, h2 tt.docutils, h3 tt.docutils,
+h4 tt.docutils, h5 tt.docutils, h6 tt.docutils {
+  font-size: 100% }
+
+ul.auto-toc {
+  list-style-type: none }
+</style>
+<style type="text/css">
+/* 
+Project Gutenberg HTML docutils stylesheet.
+
+This stylesheet contains styles specific to HTML.
+*/
+
+/* FONTS */
+
+/* em                { font-style: normal }
+strong            { font-weight: normal } */
+
+.small-caps       { font-variant: small-caps }
+.gesperrt         { letter-spacing: 0.1em }
+
+/* ALIGN */
+
+.align-left       { clear: left;
+		    float: left;
+		    margin-right: 1em }
+
+.align-right      { clear: right;
+		    float: right;
+		    margin-left: 1em }
+
+.align-center     { margin-left: auto;
+		    margin-right: auto }
+
+div.shrinkwrap    { display: table; }
+
+/* SECTIONS */
+
+body              { margin: 5% 10% 5% 10% }
+
+/* compact list items containing just one p */
+li p.pfirst       { margin-top: 0; margin-bottom: 0 } 
+
+.first            { margin-top: 0 !important; 
+		    text-indent: 0 !important } 
+.last             { margin-bottom: 0 !important }
+
+span.dropcap      { float: left; margin: 0 0.1em 0 0; line-height: 1 }
+img.dropcap       { float: left; margin: 0 0.5em 0 0; max-width: 25% }
+span.dropspan     { font-variant: small-caps }
+
+.no-page-break    { page-break-before: avoid !important }
+
+/* PAGINATION */
+
+@media screen {
+   .coverpage, .frontispiece, .titlepage, .verso, .dedication, .plainpage
+                       { margin: 10% 0; }
+
+   div.clearpage, div.cleardoublepage
+                       { margin: 10% 0; border: none; border-top: 1px solid gray; }
+
+   .vfill              { margin:  5% 10% }
+}
+
+@media print {
+   div.clearpage       { page-break-before: always; padding-top: 10% }
+   div.cleardoublepage { page-break-before: right;  padding-top: 10%  }
+
+   .vfill              { margin-top: 20% }
+   h2.title            { margin-top: 20% }
+}
+
+</style>
+<title>BACON AND SHAKSPERE</title>
+<meta name="PG.Rights" content="Public Domain" />
+<meta name="PG.Title" content="Bacon And Shakspere" />
+<meta name="PG.Producer" content="David Widger" />
+<meta name="DC.Creator" content="William Henry Burr" />
+<meta name="DC.Created" content="1886" />
+<meta name="PG.Id" content="39121" />
+<meta name="PG.Released" content="2012-03-12" />
+<meta name="DC.Language" content="en" />
+<meta name="DC.Title" content="Bacon And Shakspere" />
+
+<link href="http://purl.org/dc/terms/" rel="schema.DCTERMS" />
+<link href="http://id.loc.gov/vocabulary/relators" rel="schema.MARCREL" />
+<meta content="Bacon And Shakspere" name="DCTERMS.title" />
+<meta content="bacon.rst" name="DCTERMS.source" />
+<meta content="en" scheme="DCTERMS.RFC4646" name="DCTERMS.language" />
+<meta content="2012-03-12T22:29:01.900933+00:00" scheme="DCTERMS.W3CDTF" name="DCTERMS.modified" />
+<meta content="Project Gutenberg" name="DCTERMS.publisher" />
+<meta content="Public Domain in the USA." name="DCTERMS.rights" />
+<link href="http://www.gutenberg.org/ebooks/39121" rel="DCTERMS.isFormatOf" />
+<meta content="William Henry Burr" name="DCTERMS.creator" />
+<meta content="2012-03-12" scheme="DCTERMS.W3CDTF" name="DCTERMS.created" />
+<meta content="width=device-width" name="viewport" />
+<meta content="EpubMaker 0.3 by Marcello Perathoner &lt;webmaster@gutenberg.org&gt;" name="generator" />
+<style type="text/css">
+.pageno       { position: absolute; right: 95%; font: medium sans-serif; text-indent: 0 }
+.pageno:after { color: gray; content: '[' attr(title) ']' }
+.lineno       { position: absolute; left:  95%; font: medium sans-serif; text-indent: 0 }
+.lineno:after { color: gray; content: '[' attr(title) ']' }
+.toc-pageref  { float: right }
+pre           { font-family: monospace; font-size: 0.9em; white-space: pre-wrap }
+</style>
+</head>
+<body>
+<div class="document" id="bacon-and-shakspere">
+<h1 class="document-title level-1 pfirst title">BACON AND SHAKSPERE</h1>
+
+<!-- -*- encoding: utf-8 -*- -->
+<!-- -*- encoding: utf-8 -*- -->
+<div class="align-None container language-en noindent pgheader" id="pg-header" xml:lang="en" lang="en">
+<p class="noindent pfirst">This eBook is for the use of anyone anywhere at no cost and with
+almost no restrictions whatsoever. You may copy it, give it away or
+re-use it under the terms of the <a class="reference internal" href="#project-gutenberg-license">Project Gutenberg License</a>
+included with this eBook or online at
+<a class="reference external" href="http://www.gutenberg.org/license">http://www.gutenberg.org/license</a>.</p>
+<p class="noindent pnext"></p>
+<div class="noindent vspace" style="height: 2em">
+</div>
+<div class="align-None container noindent white-space-pre-line" id="pg-machine-header">
+<p class="noindent pfirst white-space-pre-line"><span class="white-space-pre-line">Title: Bacon And Shakspere<br />
+<br />
+Author: William Henry Burr<br />
+<br />
+Release Date: March 12, 2012 [EBook #39121]<br />
+<br />
+Language: English<br />
+<br />
+Character set encoding: UTF-8</span></p>
+</div>
+<div class="noindent vspace" style="height: 2em">
+</div>
+<p class="noindent pfirst" id="pg-start-line">*** START OF THIS PROJECT GUTENBERG EBOOK <span>BACON AND SHAKSPERE</span> ***</p>
+<div class="noindent vspace" style="height: 4em">
+</div>
+<p class="noindent pfirst" id="pg-produced-by"><span>Produced by David Widger.</span></p>
+<div class="noindent vspace" style="height: 1em">
+</div>
+<p class="noindent pfirst"><span></span></p>
+</div>
+<div class="clearpage">
+</div>
+<div class="center line-block noindent outermost">
+<div class="line"><span class="bold x-large">BACON AND SHAKSPERE</span></div>
+<div class="line"> </div>
+<div class="line"> </div>
+<div class="line"><cite class="italics">By</cite></div>
+<div class="line"> </div>
+<div class="line"><span class="bold x-large">William Henry Burr</span></div>
+<div class="line"> </div>
+<div class="line"><span class="small-caps">PROOF THAT WILLIAM SHAKSPERE COULD NOT WRITE</span></div>
+<div class="line"> </div>
+<div class="line"><span class="italics small">BACON IDENTIFIED AS THE CONCEALED POET IGNOTO</span></div>
+<div class="line"> </div>
+<div class="line"><span class="small-caps">1886</span></div>
+</div>
+<div class="clearpage">
+</div>
+<div class="level-2 section" id="id1">
+<h2 class="level-2 pfirst section-title title">CONTENTS</h2>
+<div class="container contents">
+<ul class="compact simple toc-list">
+<li class="level-2 toc-entry"><p class="first pfirst"><a class="reference internal" href="#proof-that-shakspere-could-not-write" id="id2">PROOF THAT SHAKSPERE COULD NOT WRITE</a></p>
+</li>
+<li class="level-2 toc-entry"><p class="first pfirst"><a class="reference internal" href="#no-true-likeness-of-shakspere" id="id3">NO TRUE LIKENESS OF SHAKSPERE</a></p>
+</li>
+<li class="level-2 toc-entry"><p class="first pfirst"><a class="reference internal" href="#the-sonnets-of-shakspere" id="id4">THE SONNETS OF SHAKSPERE</a></p>
+</li>
+<li class="level-2 toc-entry"><p class="first pfirst"><a class="reference internal" href="#bacon-identified-as-the-concealed-poet-ignoto" id="id5">BACON IDENTIFIED AS THE CONCEALED POET IGNOTO</a></p>
+</li>
+<li class="level-2 toc-entry"><p class="first pfirst"><a class="reference internal" href="#as-the-concealed-poet-ignoto" id="id6">AS THE CONCEALED POET IGNOTO</a></p>
+</li>
+<li class="level-2 toc-entry"><p class="first pfirst"><a class="reference internal" href="#bacon-and-shakspere-a-chronograph" id="id7">BACON AND SHAKSPERE A CHRONOGRAPH</a></p>
+</li>
+<li class="level-2 toc-entry"><p class="first pfirst"><a class="reference internal" href="#a-chronographic-parallel" id="id8">A CHRONOGRAPHIC PARALLEL</a></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="clearpage">
+</div>
+<div class="align-center auto-scaled figure" style="width: 100%">
+<img style="display: block; width: 100%" alt=" " src="images/titlepage.jpg" />
+</div>
+<div class="align-center auto-scaled figure" style="width: 100%">
+<img style="display: block; width: 100%" alt=" " src="images/frontispiece.jpg" />
+</div>
+<p class="pfirst">QUEEN ELIZABETH’S “YOUNG LORD KEEPER.” FROM BUST.</p>
+<div class="clearpage">
+</div>
+<p class="pfirst">[3]</p>
+<div class="level-2 section" id="proof-that-shakspere-could-not-write">
+<h2 class="level-2 pfirst section-title title"><a class="toc-backref" href="#id2">PROOF THAT SHAKSPERE COULD NOT WRITE</a></h2>
+<p class="pfirst"><span class="dropcap" style="font-size: 3.00em">N</span><span class="dropspan">o</span> handwriting of Shakspere has ever been discovered
+except five autographs. In March 1613, when
+he was nearly 49 years old, he signed his name to a
+mortgage, and again to a deed relative to the same
+transaction. Three years later he subscribed his name
+to three briefs or sheets of his will. The five facsimiles
+are here reproduced:</p>
+<div class="align-center auto-scaled figure" style="width: 100%">
+<img style="display: block; width: 100%" alt=" " src="images/page3a.jpg" />
+</div>
+<p class="pfirst">They are all such signatures as an illiterate person,
+unaccustomed to write, would be likely to scrawl; and</p>
+<p class="pnext">[4]</p>
+<p class="pnext">they are so different that an acquaintance with one is
+little help to the recognition of another.</p>
+<p class="pnext">In the first signature he writes Wm. for William.</p>
+<p class="pnext">The second and third autographs have William
+written above Shakspere. Who but an illiterate
+person would sign his name thus?</p>
+<p class="pnext">In the last two signatures (being told perhaps that
+his name ought to be written on one line) he puts
+William before Shakspere; but the fourth William
+reads Willin.</p>
+<p class="pnext">See now how differently each letter is formed in the
+name Shakspere, beginning with the initial:</p>
+<div class="align-center auto-scaled figure" style="width: 86%">
+<img style="display: block; width: 100%" alt=" " src="images/page4a.jpg" />
+</div>
+<p class="pfirst">Did anybody ever write the first letter of his name
+so differently? After four attempts to form a capital
+S he succeeds tolerably well the fifth time. The second
+S, though of singular shape, appears to have been a
+customary one as early as 1598. (See examples of that
+year below.) Shakspere’s first attempt to form the
+crooked letter is a failure, but the second passably
+good. So again in 1616, when he has a different form
+to copy, his first attempt is futile, the second is passable,
+and the third quite successful.</p>
+<p class="pnext">But in attempting the next letter he makes it worse
+every time:</p>
+<div class="align-center auto-scaled figure" style="width: 79%">
+<img style="display: block; width: 100%" alt=" " src="images/page4b.jpg" />
+</div>
+<p class="pfirst">With the letter a he is more successful, making it
+legible three times out of five:</p>
+<div class="align-center auto-scaled figure" style="width: 65%">
+<img style="display: block; width: 100%" alt=" " src="images/page4c.jpg" />
+</div>
+<p class="pfirst">[5]</p>
+<p class="pnext">But the attempt to form a k is a signal failure:</p>
+<div class="align-center auto-scaled figure" style="width: 56%">
+<img style="display: block; width: 100%" alt=" " src="images/page5a.jpg" />
+</div>
+<p class="pfirst">With the long s he succeeds best the first time, and
+worst the second and third:</p>
+<div class="align-center auto-scaled figure" style="width: 58%">
+<img style="display: block; width: 100%" alt=" " src="images/page5b.jpg" />
+</div>
+<p class="pfirst">The letter p is legible the first time, but grows worse
+and worse to the last:</p>
+<div class="align-center auto-scaled figure" style="width: 53%">
+<img style="display: block; width: 100%" alt=" " src="images/page5c.jpg" />
+</div>
+<p class="pfirst">It seems as if in the first attempt to sign his name in
+1613 he thought it was complete when he made it end
+with sp e; but being reminded that it lacked a letter
+or two he undertook to add one by putting an a over
+the e thus:</p>
+<div class="align-center auto-scaled figure" style="width: 8%">
+<img style="display: block; width: 100%" alt=" " src="images/page5d.jpg" />
+</div>
+<p class="pfirst">The next time, which was probably the same day,(1)
+he seems to have written his name Shaksper, though
+the terminal letters are uncertain:</p>
+<div class="align-center auto-scaled figure" style="width: 10%">
+<img style="display: block; width: 100%" alt=" " src="images/page5e.jpg" />
+</div>
+<p class="pfirst">The third time he gets it more like Shakspoze:</p>
+<div class="align-center auto-scaled figure" style="width: 14%">
+<img style="display: block; width: 100%" alt=" " src="images/page5f.jpg" />
+</div>
+<p class="pfirst">The deed to Shakspere and two other trustees is dated March
+10 and signed Henry Walker. The mortgage from Shakspere
+and the other trustees is dated March 11. But for some
+unaccountable reason a duplicate verbatim copy of the deed from
+Henry Walker is signed by William Shakspere. This duplicate
+is in the Library of the city of London; the mortgage is in the
+British Museum. The duplicate deed we suspect was signed
+after the mortgage. Hence the improvement in the autograph;
+it was probably Shakspere’s second attempt to write. Compare
+it with the third.</p>
+<p class="pnext">[6]</p>
+<p class="pnext">The fourth time he seems to have tried to disguise
+the termination with awkward flourishes, making the letters totally illegible:</p>
+<div class="align-center auto-scaled figure" style="width: 27%">
+<img style="display: block; width: 100%" alt=" " src="images/page6a.jpg" />
+</div>
+<p class="pfirst">Finally, he omits the flourishes and comes nearer
+legibility, but still it is impossible to tell whether he
+meant to write <em class="italics">ear, ere, or eare</em>:</p>
+<div class="align-center auto-scaled figure" style="width: 22%">
+<img style="display: block; width: 100%" alt=" " src="images/page6b.jpg" />
+</div>
+<p class="pfirst">And now let the reader mark, that notwithstanding
+the orthodox spelling of the name from 1593 to 1616,
+and indeed up to the present time, was and is Shakespeare, there is no e in the first syllable and no a in
+the last, although some have imagined the letter a to
+exist in the last part of the final autograph.</p>
+<p class="pnext">We have said that these signatures are all that.
+Shakspere is known to have written; we ought to add
+that he prefixed to the last one the following scrawl:</p>
+<div class="align-center auto-scaled figure" style="width: 46%">
+<img style="display: block; width: 100%" alt=" " src="images/page6c.jpg" />
+</div>
+<p class="pfirst">For a long time we puzzled over this. Could it be
+an attempt to write “25th of March,” the day of the
+execution of the will? At last we read the following in
+Hallowell-Phillipps’s Shakspere:</p>
+<p class="pnext">“It may be observed that the words By me, which, the autograph excepted, are the only ones in the poet’s handwriting
+known to exist, appear to have been penned with ordinary
+firmness.”</p>
+<p class="pnext">Presuming that the signatures were made in a sick
+bed, the author concedes that the words “By me” were
+penned with ordinary firmness. Very good; but could
+not almost any five-year-old boy do as well the first
+time?</p>
+<p class="pnext">[7]</p>
+<p class="pnext">In 1775 certain papers and legal instruments were
+published, attributed to Shakspere, Queen Elizabeth,
+and Southampton. In 1796 Edmund Malone proved
+them to be forgeries. Here is one of the forged autographs of Shakspere:</p>
+<div class="align-center auto-scaled figure" style="width: 100%">
+<img style="display: block; width: 100%" alt=" " src="images/page7a.jpg" />
+</div>
+<p class="pfirst">This is superior to any of the genuine ones, which in
+some degree it resembles. The letter a is pretty clearly
+written in the last syllable, as if the forger meant to
+establish the proper spelling of that part of the name.
+Malone, who at first pronounced the genuine orthography to be Shakspeare, subsequently declared Shakspere
+to be the poet’s own mode of spelling his name beyond
+all doubt. But others do not accede to this decision,
+because they think there is an a in the last of the five
+genuine signatures.</p>
+<p class="pnext">The solution of the whole mystery is in the fact that
+Shakspere was unable to write or even to spell his own
+name.</p>
+<p class="pnext">In 1598 Richard Quiney addressed a letter to him
+asking for a loan of £30, and the name was written
+Shackesper:</p>
+<div class="align-center auto-scaled figure" style="width: 40%">
+<img style="display: block; width: 100%" alt=" " src="images/page7b.jpg" />
+</div>
+<p class="pfirst">In the same year among thirteen names of holders of
+corn in Stratford the last but one is Shakesper:</p>
+<div class="align-center auto-scaled figure" style="width: 42%">
+<img style="display: block; width: 100%" alt=" " src="images/page7c.jpg" />
+</div>
+<p class="pfirst">The form of the letter a in both these fac-similes</p>
+<p class="pnext">[8]</p>
+<p class="pnext">was peculiar to that time. It occurs in Shakspere’s
+second autograph. Why did he thus vary the form?
+Probably because he followed the copy set for him.</p>
+<p class="pnext">Note now the various spellings of his name:</p>
+<p class="pnext">In 1582, as a bridegroom, Shagsper.</p>
+<p class="pnext">In 1593 and 1594, as a poet, Shakespeare; and the
+same uniformly as a playwright from 1598 to 1623.
+but sometimes with a hyphen—Shake-speare.</p>
+<p class="pnext">In 1596, as an inhabitant of Southwark, Shaksper.</p>
+<p class="pnext">In 1598, as addressed by letter, Shackesper.</p>
+<p class="pnext">In 1598, as owner of corn, Shakesper.</p>
+<p class="pnext">In 1604, as plaintiff in a suit, Shexpere.</p>
+<p class="pnext">In 1604 and 1605, as author of plays performed at
+Whitehall before King James, Shaxberd.</p>
+<p class="pnext">In 1609, as plaintiff in a suit, Shackspeare.</p>
+<p class="pnext">In 1612, as plaintiff in a suit, Schackspeare.</p>
+<p class="pnext">In 1614, as written by his cousin, Shakspear.</p>
+<p class="pnext">In 1616, as twice written in his will, Shackspeare; but
+in signing the same three times he omits the c in
+the first syllable, and it is impossible to tell what
+the last three or four letters are. And although
+in the two Deeds of 1613 the name is written
+repeatedly Shakespeare, in signing them he omits
+the e in the first syllable both times, and varies
+the termination of the name, just as an illiterate
+person would be likely to do.</p>
+<p class="pnext">But there are more of these various spellings. All
+the records of Shakspere’s lifetime have been hunted
+up and printed. From these documents, consisting of
+deeds, bills of complaint, letters, poems, plays, etc.,—
+most of which especially concerned either the father or
+son or both—we extract the following spellings, giving;
+the dates:</p>
+<p class="pnext">[9]</p>
+<dl class="docutils">
+<dt>Shakspere 1558, ’62, ’63, ’64, ’66, ’69, ’71, ’79, 80, ’83,</dt>
+<dd><p class="first last pfirst">’85, ’90, ’96, 1616, ’17. (John Shakspere and all
+his offspring so registered, except Richard Shaks     peer, baptized 1574.)</p>
+</dd>
+</dl>
+<p class="pfirst">Shaxpere 1558, ’79, 1607, ’08.</p>
+<p class="pnext">Shakspeyr 1567, (“Mr.,” meaning John.)</p>
+<p class="pnext">Shakysper 1568, (“Mr. John.”)</p>
+<p class="pnext">Shackespere 1573, ’89, 1602.</p>
+<dl class="docutils">
+<dt>Shakespere 1575, ’79, ’96, ’97, ’98, ’99,1602, ’04, ’06, ’08,</dt>
+<dd><p class="first last pfirst">’09, ’10, ’11, ’13.</p>
+</dd>
+</dl>
+<p class="pfirst">Shackspere 1579, (Deed. “Joannis Shaxpere -j-.”) 1608.</p>
+<p class="pnext">Shagsper 1582, (Marriage bond—twice so written.)</p>
+<p class="pnext">Shake-scene 1592, (Greene, the playwright, in derision.)</p>
+<p class="pnext">Shakespeare 1593-1594, (Poems,) 1596, ’98, 1603, ’05,
+’13, (and all Plays from 1598 to 1623.)</p>
+<p class="pnext">Shaksper 1596, ’98, 1613, (Signature,) 1616.</p>
+<p class="pnext">Shakesper 1598, (Owner of corn.)</p>
+<p class="pnext">Shackesper 1598, (Letter from Quiney to Shakspere.)</p>
+<p class="pnext">Shakspeare 1601, ’03, ’07, ’12, ’13, ’14, 1623.</p>
+<p class="pnext">Shackespeare 1603, ’14, (Agreement.)</p>
+<p class="pnext">Shexpere 1604, (Suit for mult sold.)</p>
+<p class="pnext">Shaxberd 1604, ’05, (Dramatist, Whitehall.)</p>
+<p class="pnext">Shakespear 1605, (Conveyance.)</p>
+<p class="pnext">Shakesphear 1605, (Same conveyance.)</p>
+<p class="pnext">Shackspeare 1608, ’12, ’14, ’16.</p>
+<p class="pnext">Scliackspeare 1612, ’14, (Complaint and agreement.)
+Shaksp; 1613, (Signature.)</p>
+<p class="pnext">Shakspear 1614, (Cousin’s letter.)</p>
+<p class="pnext">Shaksp.... 1616, (Signatures to Will.)</p>
+<dl class="docutils">
+<dt>Shaxper 1616, (“Bell and pall for Mr. Shaxpers</dt>
+<dd><p class="first last pfirst">dawghter, viii. d.”)</p>
+</dd>
+</dl>
+<p class="pfirst">If we divide the name between the s and p we have
+the following variations of each part:</p>
+<p class="pnext">Shaks, Shakes, Shakys, Shacks, Shackes, Schacks,
+Shags, Shax, Shex; per, pere, peer, pear, peare, peyr,
+phear, berd, pj, p ....</p>
+<p class="pnext">Shakspere’s daughter Judith in 1611 witnessed two
+instruments by making her mark. And his other</p>
+<p class="pnext">[10]</p>
+<p class="pnext">daughter Susanna in 1642 disputed the unmistakable
+handwriting of her deceased husband in such a manner
+as to betray her illiteracy.</p>
+<p class="pnext">Mr. C. F. Gunther, of Chicago, claims to have obtained a copy of the Shakspere Folio of 1632, (i.e., the
+second Folio,) containing the author’s autograph pasted
+on a fly-leaf, underneath which is written:</p>
+<p class="pnext">“The works of William Shakespeare. Born in April, 1564,
+and died in April, 1616.     John Ward.”</p>
+<p class="pnext">And on the same fly-leaf is pasted a letter from
+Charles Godwin, of Bath, dated February 16, 1839, to
+Dr. Charles Severn, of London, who was then editing
+“The Diary of the Rev. John Ward, A. M.,” Vicar of
+Stratford-upon-Avon from 1648 to 1679.</p>
+<p class="pnext">The book is said to have been owned by a Mormon,
+and is supposed to have been brought from England
+by an emigrant to Utah. Aside from the impossibility
+of such an autograph escaping from England to the
+wilds of America and remaining undiscovered so many
+years, the fac-simile in the Chicago <em class="italics">Current</em> of May 23,
+1885, betrays most certain evidence of fraud. Compare
+it with the five genuine scrawls of Shakspere. It is so
+exact a copy of the last signature to the will as to indicate that it was traced therefrom.</p>
+<p class="pnext">Shakspere’s last signature:</p>
+<div class="align-center auto-scaled figure" style="width: 100%">
+<img style="display: block; width: 100%" alt=" " src="images/page10a.jpg" />
+</div>
+<p class="pfirst">Pretended autograph in Chicago:</p>
+<div class="align-center auto-scaled figure" style="width: 100%">
+<img style="display: block; width: 100%" alt=" " src="images/page10b.jpg" />
+</div>
+<p class="pfirst">[11]</p>
+<p class="pnext">This close resemblance in so clumsy an autograph
+would be extraordinary, if not impossible; but how
+easy to forge it by first tracing it lightly with a pencil
+and then completing it with a pen. Here is a hair-line
+tracing of the spurious over the genuine autograph:</p>
+<div class="align-center auto-scaled figure" style="width: 100%">
+<img style="display: block; width: 100%" alt=" " src="images/page11a.jpg" />
+</div>
+<p class="pfirst">Even the most illiterate man who is obliged often to
+sign his name, will do it uniformly, so that when you
+have seen his signature once you will know it again.
+For example, take the following autographs:</p>
+<div class="align-center auto-scaled figure" style="width: 100%">
+<img style="display: block; width: 100%" alt=" " src="images/page11b.jpg" />
+</div>
+<p class="pfirst">The undersigned, aged 78 years, wrote the above autographs
+in presence of the two subscribing witnesses. And he never
+wrote and cannot write anything but his name, though he can
+read print with ease. And he further says that he learned to
+write his name in the course of one month in the administration
+of President Polk (1845-’9) while serving as a Capitol policeman; otherwise he would have been obliged to sign the pay-roll
+with his cross.</p>
+<p class="pnext">Witness:</p>
+<ol class="upperalpha simple">
+<li><p class="first pfirst">Watson,            JOHN W. SMITH.</p>
+</li>
+</ol>
+<p class="pfirst">Wm. Henry Burr.</p>
+<p class="pnext">Bacon required a mask, and he found it in the
+illiterate play-actor Shakspere.</p>
+<p class="pnext">Washington, D. C., May 31, 1885.</p>
+<div class="clearpage">
+</div>
+<p class="pfirst">[12]</p>
+</div>
+<div class="level-2 section" id="no-true-likeness-of-shakspere">
+<h2 class="level-2 pfirst section-title title"><a class="toc-backref" href="#id3">NO TRUE LIKENESS OF SHAKSPERE</a></h2>
+<p class="pfirst"><span class="dropcap" style="font-size: 3.00em">T</span><span class="dropspan">he</span> likeness of Shakspere in the Folio of 1623 has frequently
+been called “an abominable libel on humanity.” And yet its
+fidelity is certified by Ben Jonson in laudatory lines. Jonson
+was Bacon’s friend and enthusiastic admirer. If there was an
+original portrait of that wooden face it has never been found.
+If there was a better likeness of Shakspere in existence why
+was it not reproduced in that famous Folio? The same ugly
+engraving reappeared in all the later editions up tu 1685.</p>
+<p class="pnext">The bust on the monument at Stratford was first noticed in
+1623. It was not taken from life, and is unlike any picture of
+Shakspere. It presents him in the act of composition, and
+“the <em class="italics">vis comica</em>", says Boaden, “so broadens his countenance,
+that it is hardly a stretch of fancy to suppose him in the actual
+creation of Falstaff himself.” More likely, we should say,
+Falltaff was Shakspere—Fall-staff, Shake-spear.</p>
+<p class="pnext">The most familiar pictures of Shakspere are very different
+from either of these, and generally far more intellectual and
+refined. They are pretended copies of what is called the
+Chandos portrait, but are not much like it. The Chandos picture was painted by an unknown artist, and has been altered
+by a later hand. It is said to have been owned by Sir William
+Davenant, who died in 1668; and he is said to have obtained
+it from an actor named Joseph Taylor, who died about 1653 at
+the age of 70. This we gather from Boaden’s “Portraits of
+Shakspere,” 1824. But now comes a further statement purporting to be written in Mr. Gunther’s Folio, by one Charles Lomax,,
+in 1781, as follows:</p>
+<p class="pnext">“The only original picture now extant of Shakespeare was
+painted by Joseph Taylor, one of the actors,” &amp;c.</p>
+<p class="pnext">The rest of the pretended information agrees with what we
+find in Boaden’s book, which has a picture taken from the
+Chandos portrait quite different from those we generally see,
+and not much like the Droeshout engraving in the Shakspere
+Folio.</p>
+<p class="pnext">Shakspere probably never had a portrait taken.</p>
+<div class="clearpage">
+</div>
+<p class="pfirst">[13]</p>
+</div>
+<div class="level-2 section" id="the-sonnets-of-shakspere">
+<h2 class="level-2 pfirst section-title title"><a class="toc-backref" href="#id4">THE SONNETS OF SHAKSPERE</a></h2>
+<p class="pfirst">WRITTEN BY FRANCIS BACON TO THE EARL OF ESSEX  AND HIS BRIDE, A. D. 1590</p>
+<p class="pnext">“The mystery of the Sonnets will never be unfolded.”
+—Richard Grant White, 1865.</p>
+<p class="pnext">“All is supposition; the mystery is insoluble.”
+—Dr. Charles Mackay, 1884.</p>
+<p class="pnext">The mystery unfolded by W. H. Burr, July 31, 1883.</p>
+<p class="pnext"><span class="dropcap" style="font-size: 3.00em">T</span><span class="dropspan">he</span> first published poem of Shakspere, so far as
+known, was “Venus and Adonis,” in 1593. It was
+dedicated to the Earl of Southampton, then about
+twenty years of age. Five or six editions were called
+for in nine years. The “Sonnets” did not appear till
+1609. The latter poem has 154 stanzas of 14 lines
+each; the first 126 are addressed to a beautiful and
+ardently beloved youth; the remainder to the young
+man’s betrothed.</p>
+<p class="pnext">As to the merits of the composition, the American
+Cyclopedia says:</p>
+<p class="pnext">“These ‘Sonnets,’ though deformed with occasional conceits,
+far surpass all other poems of their kind in our own language,
+or perhaps any other.”</p>
+<p class="pnext">The dedication is in these words:</p>
+<p class="pnext">“To the onlie begetter of | these insuing Sonnets | Mr. W.
+H. all happinesse | and that eternitie | promised by | our everliving poet | wisheth | the well-wishing | adventurer in | setting
+forth | T. T.”</p>
+<p class="pnext">[14]</p>
+<p class="pnext">Some have believed that “Mr. W. H.” was William
+Herbert; and a German critic supposes the initials to
+signify “William Himself.” But the American Cyclopedia says:</p>
+<p class="pnext">“To whom they were written, and in whose person is among
+the most difficult of unsolved literary problems.... Who
+this ‘onlie begetter’ was no man has yet been able satisfactorily
+to show.”(1)</p>
+<blockquote>
+<div>
+<p class="pfirst">(1) Dr. Charles Mackay attempts to solve the problem in an
+elaborate article in the Nineteenth Century, August, 1884,
+entitled “A Tangled Skein Unravelled.” He claims only to
+have found indications of mixed authorship. But this only
+makes the tangle worse, which began with Shakspere’s
+ostensible authorship; and the last despairing words of the
+astute un-raveller are: “All is supposition, the mystery is
+insoluble.”</p>
+</div>
+</blockquote>
+<p class="pfirst">In regard to the hypothesis that “W. H.” was William Herbert, the same authority says there is almost
+as much ground for the notion that the person addressed was Queen Elizabeth in doublet and hose.</p>
+<p class="pnext">In 1872 we first read Nathaniel Holmes’s “Authorship of Shakspere;” since then we have never entertained a reasonable doubt that Bacon was the author
+of the Plays. In 1882 we reread them all in the light
+of that discovery; but until July 31, 1883, we had
+never read a page of the “Sonnets,” nor when we began to read them on that day did we remember to have
+heard who “W. H.” was supposed to be. But coming
+to the twenty-fifth sonnet, we suspected that the
+poem was addressed to the Earl of Essex, and subsequent research confirmed that suspicion.</p>
+<p class="pnext">Herbert was sixteen years younger than Shakspere,
+and nineteen years younger than Bacon. If, therefore,
+the poem was written in 1590, which we purpose to
+show, it is impossible for Herbert to have been the</p>
+<p class="pnext">[15]</p>
+<p class="pnext">“onlie begetter of these Sonnets,” for he was then only
+ten years old.</p>
+<p class="pnext">Of course no one will date their composition as late
+as 1609, when Shakspere was forty-five and Bacon
+forty-eight. At that time the former had retired
+from the stage, and Bacon had been for six years
+King’s counsel and three years a married man. And
+certainly two sonnets (138 and 144) were composed as
+early as 1599, for they are repeated at the beginning
+of “The Passionate Pilgrim,” which was first published
+in that year.</p>
+<p class="pnext">All the internal and external evidence points to
+the year 1590 as the date, Francis Bacon as the
+writer, and the Earl of Essex as the person addressed.</p>
+<p class="pnext">It is said that Bacon made the acquaintance of
+Essex about 1590, but it would be remarkable if he
+did not know him years before. In sonnet 104 the
+poet says:</p>
+<pre class="literal-block">
+“Three winters cold
+   Have from the forests shook three summers’ pride,
+Three beauteous springs to yellow autumn turned
+   In process of the seasons have I seen,
+Three April perfumes in three hot Junes burned,
+    Since first I saw you fresh, which yet are green.”
+</pre>
+<p class="pfirst">Let us suppose that Bacon began to cultivate the
+Earl’s friendship in 1590. He was then twenty-two
+years old; three years earlier, when Bacon first saw
+him, the Earl was “fresh now he is yet green.”(1)</p>
+<blockquote>
+<div>
+<p class="pfirst">1. A letter from Bacon to the Earl of Leicester, asking for
+his furtherance in some suit which the Earl of Essex had
+moved in his behalf, has recently been found, written in
+1588. (Sped-ding’s “Bacon,” 1878, i, 50, note.)</p>
+</div>
+</blockquote>
+<p class="pfirst">Robert Devereux, the second Earl of Essex, was
+born Nov. 10, 1567, and was beheaded for treason</p>
+<p class="pnext">[16]</p>
+<p class="pnext">Feb. 25, 1601. He succeeded to the title at ten
+years of age. At twenty he was appointed master of
+the horse. At twenty-one the Queen created him
+captain-general of the cavalry, and conferred on him
+the honor of the garter. In the same year an expedition was undertaken against Portugal, and he secretly followed the armament. This was without the
+Queen’s permission, but he was quickly reconciled
+with her after his return, and at once assumed a superiority over Sir Walter Raleigh and Sir Charles
+Blount, rival competitors for royal favor. He was
+challenged by Blount and wounded in the knee, and
+the Queen is said to have expressed her gratification
+that some one had taken him down, as otherwise
+there would be no ruling him. He was an accomplished scholar and patron of literature. He erected
+a monument to Spenser and gave an estate to Bacon.</p>
+<p class="pnext">But we have omitted one striking characteristic
+which has an important bearing on the question of
+his identity with “Mr. W. H.” The young Earl of
+Essex was a remarkably handsome man. Now the
+beauty of the person addressed in the “Sonnets” is
+a constantly recurring theme, and the burden of the
+poem is an appeal to the beloved and beautiful young
+man to marry. It begins thus:</p>
+<pre class="literal-block">
+    “From fairest creatures we desire increase,
+That thereby beauty’s rose might never die.”
+</pre>
+<p class="pfirst">The next Sonnet begins:</p>
+<pre class="literal-block">
+       “When forty winters shall besiege thy brow,
+And dig deep trenches in thy beauty’s field,
+   Thy youth’s proud livery, so gazed on now,
+Will be a tattered weed of small worth held.”
+</pre>
+<p class="pfirst">The last line of Sonnet 13 reads:</p>
+<pre class="literal-block">
+“You had a father; let your son say so.”
+</pre>
+<p class="pfirst">[17]</p>
+<p class="pnext">The father of Essex died in 1576. In 1590 the
+second Earl married the widow of Sir Philip Sidney, Essex being twenty-two years old and she a little younger.
+The marriage was secret to avoid the opposition of
+Elizabeth. By October, concealment was no longer
+possible, and on the 22d of January, 1591, (not 1592
+as some have it,) the first child was born. (“Earls of
+Essex,” 1853.)</p>
+<p class="pnext">The mother of Essex was celebrated for her beauty;
+his father was not handsome. (See portrait in “Earls of
+Essex.”) The son’s inheritance of his mother’s features
+is told in the third Sonnet:</p>
+<pre class="literal-block">
+“Thou art thy mother’s glass, and she in thee
+         Calls back the lovely April of her prime;
+ So thou through windows of thine age shalt see,
+         Despite of wrinkles, this thy golden time.”
+</pre>
+<p class="pfirst">For further description of the young Earl’s beauty,
+take the following:</p>
+<pre class="literal-block">
+“If I could write the beauty of your eyes,
+      And in fresh numbers number all your graces,
+      The age to come would say, ‘This poet lies;
+      Such heavenly touches ne’er touched earthly faces.”
+
+“Describe Adonis, and the counterfeit
+      Is poorly imitated after you;
+      On Helen’s cheek all art of beauty set,
+      And you in Grecian ’tires are painted new.”
+</pre>
+<p class="pfirst">Essex having become the special favorite of the
+Queen, of course became an object of envy and slander.
+Mark now what the poet says:</p>
+<pre class="literal-block">
+    “Gentle thou art, and therefore to be won;
+    Beauteous thou art, therefore to be assailed.”
+
+    “That thou art blamed shall not be thy defect,
+    For slander’s mark was ever yet the fair;
+    The ornament of beauty is suspect,
+    A crow that flies in heaven’s sweetest air.
+
+[18]
+
+    So be thou good-; slander doth but approve
+    Thy worth the greater, being wooed of time.”
+</pre>
+<p class="pfirst">In 1590 Bacon had acquired a reputation as an orator
+in the House of Commons, but was without available
+means of livelihood in keeping with his wants and
+station. Up to this time his efforts for promotion
+were thwarted by the Queen’s minister, Lord Burleigh
+(Cecil) who regarded him as a dangerous rival for his
+son. With the rise of young Essex into royal favor
+Bacon turned to him as a friend at court. From 1590
+to 1594 the Earl tried in vain to advance Bacon, and
+at last, when the vacant office of Attorney General was
+filled by another, Essex, blaming himself for the
+disappointment, insisted on presenting him with an
+estate worth £1,800.</p>
+<p class="pnext">With these facts in mind, see how perfectly the following lines fit the persons and the time, 1590:</p>
+<pre class="literal-block">
+    “Let those who are in favor with their stars,
+Of public honor and proud titles boast,
+Whilst I, whom fortune of such triumph bars,
+Unlooked for joy in that I honor most.”
+
+“When in disgrace with fortune and men’s eyes,
+       I all alone beweep my outcast state,
+And trouble deaf heaven with my bootless cries,
+And look upon myself and curse my fate,
+Wishing me like to one more rich in hope.
+
+Featured like him, like him with friends possessed,
+Desiring this man’s art and that man’s scope,
+       With what I most enjoy contented least;
+Yet in these thoughts myself almost despising,
+Haply I think on thee, and then my state,
+       Like to the lark at break of day arising,
+       From sullen earth sings hymns at heaven’s gate;
+       For thy sweet love remembered such wealth brings
+       it then I scorn to change my state with kings.”
+
+       “I may not evermore acknowledge thee,
+Lest my bewailed guilt should do thee shame,
+       Nor thou with public kindness honor me,
+          Unless thou take that honor from thy name;
+        But do not so; I love thee in such sort
+        As, thou being mine, mine is thy good report.
+
+        “As a decrepit father takes delight
+         To see his active child do deeds of youth,
+So I, made lame by fortune’s dearest spite,
+          Take all my comfort of thy worth and truth.
+For whether beauty, birth, or wealth, or wit,
+           Or any of these all, or all, or more,
+        Entitled in my parts do crowned sit,
+I make my love engrafted to this store.
+
+       So then I am not lame, poor, nor despised,
+          Whilst that this shadow doth such substance give
+       That I in thy abundance am sufficed,
+           And by a part of all thy glory live.”
+</pre>
+<p class="pfirst">In 1590 Shakspere was part owner of a theater.</p>
+<p class="pnext">In 1590 Bacon obtained his first show of favor from
+the court; he became Queen’s counsel extraordinary,
+but the office was without emolument. At this time
+plays for the theater were written and rewritten again
+and again to meet the demand. Young lawyers and
+poets produced them rapidly. Each theatrical company
+kept from one to four poets in its pay (Amer. Cyc.)
+Shakspere appeared to be ready to father anything
+that promised success, and there are at least six plays
+published under his name or initials which most
+critics say are not his, nor have they ever appeared in
+the genuine canon. In 1591 a poem by Spenser was
+published containing these lines:</p>
+<pre class="literal-block">
+“And he, the man whom Nature’s self has made
+ To mock herself and truth to imitate,
+</pre>
+<p class="pfirst">With kindly counter under mimic shade:</p>
+<pre class="literal-block">
+“Our pleasant Willy, ah, is dead of late:
+    With whom all joy and jolly merriment
+    Is also deaded and in dolor drent.”
+</pre>
+<p class="pfirst">[20]</p>
+<p class="pnext">From 1590 until Shakspere retired from the stage,
+how could it be said that he was “poor,” bewailing
+his “outcast state” and “cursing his fate?” But it is
+certain that Bacon’s condition answered precisely to
+that description up to November, 1594, when Essex
+gave him an estate worth £1,800; aye, even until
+1604, when King James granted him a pension of
+£60; if not even up to 1607.</p>
+<p class="pnext">Mark now the modesty of the poet in 1590:</p>
+<pre class="literal-block">
+“If thou survive my well contented day,
+     When that churl Death with bones my dust shall cover,
+     And shalt by fortune once more resurvey
+     These poor rude lines of thy deceased lover,
+     Compare them with the bettering of the time,
+     And though they be outstripp’d by every pen,
+     Reserve them for thy love, not for their rhyme,
+     Exceeded by the height of happier men.”
+
+“My name be buried Where my body is,
+     and live no more to shame nor me nor you,
+     for I am shamed by that which I bring forth,
+     and so should you, to love things nothing worth.”
+</pre>
+<p class="pfirst">We have already quoted a verse from Spenser in
+praise of “Willy,” first published in 1591; we now
+adduce a passage from one of “Willy” Bacon’s
+poems first published in 1599 in praise of Spenser:</p>
+<pre class="literal-block">
+“Dowland to thee is dear, whose heavenly touch
+Upon the lute doth ravish human sense;
+
+Spenser to me, whose deep conceit is such
+As, passing all conceit, needs no defense.”
+</pre>
+<p class="pfirst">This verse is in “The Passionate Pilgrim,” the first
+two numbers of which are Sonnets 138 and 144 with
+slight variations. John Dowland, a musician, was born</p>
+<p class="pnext">[21]</p>
+<p class="pnext">in 1562 and died 1625. Spenser was eight years older
+than Bacon.</p>
+<p class="pnext">But coupled with this modesty of the author of the
+“Sonnets,” note how he praises his friend and how
+famous that friend appears at the time:</p>
+<pre class="literal-block">
+        “Oh, how I faint when I of you do write,
+Knowing a better spirit doth use your name,
+        And in the praise thereof spends all his might,
+To make me tongue-tied, speaking of your fame.
+
+But since your worth, wide as the ocean is,
+The humble as the proudest sail doth bear,
+        My saucy bark, inferior far to his,
+On your broad main doth wilfully appear;
+Your shallowest help will hold me up afloat,
+Whilst he upon your soundless deep doth ride;
+        Or being wrecked, I am a worthless boat,
+He of tall building and of goodly pride;
+        Then if he thrive and I be cast away,
+The worst was this: my love was my decay.”
+</pre>
+<p class="pfirst">The other superior (?) poet referred to is undoubtedly
+Spenser, among whose “Sonnets, addressed by
+the author to his friends and patrons,” in January, 1590,
+is one “To the most honorable and excellent Lord the
+Earl of Essex, great master of the horse to her highness, and knight of the noble order of the garter, etc.”
+Essex became master of the horse in 1587, and knight
+of the garter in 1588.</p>
+<p class="pnext">We proceed with the quotations from the Shaksperian Sonnets:</p>
+<pre class="literal-block">
+             “Or I shall live your epitaph to make,
+        Or you survive when I in earth am rotten,
+        From hence your memory death cannot take,
+        Although in me each part will be forgotten.
+
+                Your name from hence immortal life shall have,
+        Though, I once gone, to all the world must die;
+        The earth can yield me but a common grave,
+        When you entombed in men’s eyes shall lie.
+
+[22]
+
+        Your monument shall be my gentle verse,
+              Which eyes not yet created shall o’er-read,
+         And tongues to be your being shall rehearse
+             When all the breathers of this world are dead;
+        You shall still live—such virtue hath my pen—
+         Where breath most breathes, even in the mouths of men.
+</pre>
+<p class="pfirst">From Sonnet 42 it appears that the young Earl had
+won the heart of the widow Sidney:</p>
+<pre class="literal-block">
+“That thou hast her, it is not all my grief,
+     And yet it may be said I loved her dearly;
+     That she hath thee, is of my wailing chief,
+     A loss in love that touches me more nearly.
+
+    Loving offenders! thus I will excuse ye:
+    Thou dost love her, because thou know’st I love her,
+    And for my sake even so doth she abuse me,
+    Suffering my friend for my sake to approve her.
+
+     If I lose thee, my loss is my love’s gain,
+     And losing her, my friend hath found that loss;
+     Both find each other, and I lose both twain,
+     And both for my sake lay me on this cross:
+     But here’s the joy: my friend and I are one;
+     Sweet flattery! then she loves but me alone.”
+</pre>
+<p class="pfirst">The second part of the “Sonnets,” after 126, is addressed
+to the Earl’s bethrothed; we quote Sonnet 134:</p>
+<pre class="literal-block">
+“So now I have confessed that he is thine.
+          And I myself am mortgaged to thy will,
+          Myself I’ll forfeit, so that other mine
+          Thou wilt restore, to be my comfort still;
+          But thou wilt not, nor he will not be free,
+          For thou art covetous and he is kind;
+          He learned but surety-like to write for me,
+          Under that bond that him as fast doth bind,
+          The statute of thy beauty thou wilt take,
+          Thou usurer that put’st forth all to use,
+          And sue a friend came debtor for my sake;
+          So him I lose through my unkind abuse.
+
+ Him have I lost; thou hast both him and me,
+          He pays the whole, and yet am I not free.”
+</pre>
+<p class="pfirst">[23]</p>
+<p class="pnext">Incidentally it may be noted how familiar the writer
+of the above lines must have been with the practice of
+law. Shakspere’s legal knowledge has amazed the
+lawyers.</p>
+<p class="pnext">The next Sonnet introduces the name of “Will,”
+and puns upon it profusely:</p>
+<pre class="literal-block">
+“Whoever hath her wish thou hast thy Will,
+And Will to boot, and Will in overplus;
+More than enough am I that vex thee still,
+To thy sweet will making addition thus,
+Wilt thou whose will is large and spacious,
+Not once vouchsafe to hide my will in thine?
+
+        Shall will in others seem right gracious,
+And in my will no fair acceptance shine?
+The sea, all water, yet receives rain still,
+And in abundance addeth to his store:
+
+So thou being rich in Will add to thy Will
+One will of mine, to make thy large Will more.
+
+        Let no unkind, no fair beseechers kill;
+Think all but one, and me in that one Will.”
+</pre>
+<p class="pfirst">How preposterous to believe that a common-place
+play actor, with a wife and children, addressed such
+sentiments to the bride of his dearest friend! At no
+time do the sentiments or circumstances of the poem
+fit the person of the actor, of whom the dying and dissipated playwright, Greene, wrote in 1592:</p>
+<p class="pnext">“There is an upstart crow beautified with our feathers that
+with his Tygers heart, wrapt in a player’s hide, supposes he is
+as well able to bumbast out a blank verse as the best of you;
+and being an absolute Johannes factotum, is, in his owne conceyt, the onely Shake-scene in a countne.”</p>
+<p class="pnext">But, on the other hand, frequent evidence appears
+that Bacon, up to the time he was made Attorney-General in 1613, was constantly engaged in secret
+literary work. But not so secret as to be unknown</p>
+<p class="pnext">[24]</p>
+<p class="pnext">to a circle of friends and perchance a few enemies; for,
+in 1599, when he interceded with the Queen for his
+dear friend Essex, then under arrest on account of a
+treasonable pamphlet being dedicated to him, her
+Majesty flung at Bacon “a matter which grew from
+him, but went after about in others’ names,” being in
+fact the play of “Richard II,” which, in that and the
+preceding year, had a great run on the stage, and had
+gone through two editions, but, for prudential reasons,
+with the scene containing the deposition of the king
+left out.</p>
+<p class="pnext">But even in the “Sonnets” the fact appears that
+the author has been writing for the stage:</p>
+<pre class="literal-block">
+“Alas, ’tis true I have gone here and there,
+     And made myself a motley to the view,
+     Gored mine own thoughts, sold cheap what is most dear,
+     Made old offenses of affections new;
+     Most true it is that I have looked on truth
+     Askance and strangely; but by all above,
+     These blenches gave my heart another youth,
+     And worse essays proved thee my best of love.”
+
+“O, for my sake do you with Fortune chide,
+     The guilty goddess of my harmful deeds,
+     That did not better for my life provide
+     Than public means which public manners breeds.
+     Thence comes it that my name receives a brand,
+     And almost thence my nature is subdued
+     To what it works in, like the dyer’s hand:
+     Pity me then and wish I were renewed.”
+</pre>
+<p class="pfirst">Here is not only a private confession of being compelled to produce plays for subsistence, but a sorrowful acknowledgment that thereby his “name receives
+a brand.”</p>
+<p class="pnext">Yet it must not be supposed that Bacon was publicly known at any time as a play writer. His first</p>
+<p class="pnext">[25]</p>
+<p class="pnext">publication, the “Essays,” was in 1597, and Shakspere’s
+name first appeared on the title page of a
+Play in 1598, by which time nearly half of the Plays
+had been written or sketched, and six had been printed,
+all without the author’s name. And when the first
+collection was published in the “Folio” of 1623, (seven
+years after Shakspere’s death,) it included some Plays
+never before heard of, and eighteen never before
+printed.</p>
+<p class="pnext">Lord Coke, who was Bacon’s most jealous rival
+and adversary, seems never to have suspected him of
+play writing. Nor did the watchful Puritanic mother
+of the two bachelors of Gray’s Inn ever dream that
+her studious younger son was engaged in such sinful
+work.</p>
+<p class="pnext">In Sonnet 76 the writer deplores his want of variety
+of style, and fears that this fault will almost disclose
+his secret authorship:</p>
+<pre class="literal-block">
+ “Why is my verse so barren of new pride,
+   So far from variation or quick change?
+Why with the time do I not glance aside,
+  To new-found methods and to compounds strange?
+Why write I still all one, ever the same,
+   And keep invention in a noted weed,
+That every word doth almost tell my name,
+   Showing their birth and where they did proceed?”
+</pre>
+<p class="pfirst">Bacon having begun to produce plays for Shakspere’s
+theater before 1590, the authorship of which
+was afterward assumed by the actor and proprietor,
+it became necessary also to avoid being publicly known
+as a writer of sonnets. Therefore, in view of the circulation and ultimate publication of this poem, he facetiously disguised the identity of the writer by calling
+himself “Will.” Three years later he dedicated a</p>
+<p class="pnext">[26]</p>
+<p class="pnext">published poem to his young friend Southampton
+under the name of “William Shakespeare,” and again
+another in 1594. But the “Sonnets” were not published until 1609, when Essex had been dead eight
+years, and his widow had been married six years to a
+third husband. It would never do for the Solicitor-General to be known as the author of such a poem;
+so when it came out in print it was dedicated to “Mr.
+W. H.” by “T. T.,” and no one until a few years ago
+ever seems to have suspected that Bacon wrote the
+poem, nor, so far as we are aware, has any one ever
+suspected until July 31, 1883, that “W. H.” was the
+accomplished and famous Earl of Essex.</p>
+<p class="pnext">The young widow Sidney was the only daughter of
+the Queen’s principal secretary, Sir Francis Walsingham,
+for whom Bacon drafted an important state paper
+in 1588 on the conduct of the government toward
+Papists and Dissenters. And that Bacon was intimate
+with the Secretary’s daughter, aye, even one of her
+lovers, appears from many of the Sonnets addressed
+to her. He describes her playing on the harpsichord,
+envies the keys “that nimbly leap to kiss her hand,”
+and says:</p>
+<pre class="literal-block">
+“Since saucy jacks so happy are in this,
+Give them thy fingers, me thy lips to kiss.”
+</pre>
+<p class="pfirst">And from other passages it is quite evident that he
+had often kissed her.</p>
+<p class="pnext">No fact has been found incompatible with Bacon’s
+authorship of the “Sonnets.” The following line
+might seem to indicate a writer past the age of 29:</p>
+<pre class="literal-block">
+“Although she knows my days are past the best.”
+</pre>
+<p class="pfirst">But in 1599, when Shakspere was only 35, this very
+verse was published as his in the “Passionate Pilgrim,” where Sonnet 138 appears as number one.</p>
+<p class="pnext">[27]</p>
+<p class="pnext">But again, we have a letter written in 1592 by
+Bacon to his uncle, Lord Treasurer Burleigh, in which
+he says:</p>
+<p class="pnext">“I wax somewhat ancient; one and thirty years is a great
+deal of sand in the hour-glass.”</p>
+<p class="pnext">At the age of 31 he thinks himself “somewhat
+ancient” two years earlier he apprehends that forty
+winters will entirely deface the youthful Earl’s beauty;
+and to the lovely young widow he says: “My days
+are past the best.”</p>
+<p class="pnext">This misconception therefore, whether pretended or
+real, becomes a strong proof of Bacon’s authorship.</p>
+<p class="pnext">It has been boldly alleged by some that Bacon was
+no poet. Such, however, was not the judgment of
+his biographer, the late James Spedding. Before he
+could have heard it claimed that Shakspere did not
+write the plays he said that Bacon might have taken
+the highest rank as a poet. And that judgment was
+based upon the versification of a few Psalms by the
+old man on a sick bed. Since 1867 the substantial
+proofs of Bacon’s secret authorship have been adduced. Aside from innumerable parallels in the
+works of Bacon and Shakspere there is much external
+evidence. For example:</p>
+<p class="pnext">We know that Bacon wrote Sonnets to Queen
+Elizabeth and excused himself by saying: “I profess
+not to be a poet.”</p>
+<p class="pnext">We know that he composed Masques anonymously
+before Shakspere’s name appeared as a play writer, and
+that those Masques were essentially poetical compositions, in the nature of plays, and sometimes contained verses in rhyme equal in merit to the average
+of Shakspere’s.</p>
+<p class="pnext">[28]</p>
+<p class="pnext">In one of those Masques a speaker is made to say:
+“The monuments of wit survive the monuments of
+power; the verses of the poet endure without a syllable lost, while states and empires pass many periods.”
+Two years later, in 1596, the composer of that speech,
+writing to Sir Fulke Greville on his studies, said:
+“For poets I can commend none, being resolved to be
+ever a stranger to them.” Greville (1554-1628) was a
+poet, and wrote the life of Sir Philip Sidney.</p>
+<p class="pnext">In 1603 Bacon wrote a private letter to the poet
+John Davies, begging him to speak a good word for
+the writer to the incoming King James I., and closing
+with these words: “So, desiring you to be good to
+<em class="italics">concealed poets</em>, I continue.”</p>
+<p class="pnext">Bacon’s most intimate friend, Toby Matthew, in a
+letter with cancelled date, but as late as 1605, acknowledged the receipt of some work by Bacon, and added
+this postscript:</p>
+<p class="pnext">“I will not return you weight for weight, but <em class="italics">Measure for
+Measure</em>.”</p>
+<p class="pnext">“Mesur for Mesur,” by “Shaxberd,” was played
+before King James, at Whitehall, December 26, 1604.</p>
+<p class="pnext">Again, about the time of the publication of the
+Shakespere Folio, 1623, Matthew acknowledged in a
+letter without date, the receipt of a “great and noble
+favor,” and added the following:</p>
+<p class="pnext">“P. S.—The most prodigious wit that ever I knew, of my
+nation and of this side of the sea, is of your Lordship’s name,
+though he be known by another.”</p>
+<div class="clearpage">
+</div>
+</div>
+<div class="level-2 section" id="bacon-identified-as-the-concealed-poet-ignoto">
+<h2 class="level-2 pfirst section-title title"><a class="toc-backref" href="#id5">BACON IDENTIFIED AS THE CONCEALED POET IGNOTO</a></h2>
+<p class="pfirst"><span class="dropcap" style="font-size: 3.00em">S</span><span class="dropspan">penser’s</span> “Faery Queen” was begun in 1582, and
+published in 1590. The Dedication to Sir Walter Raleigh is dated 23 January, 1589 (i. e., 1590.) Raleigh
+in return praised the poem in two Sonnets. These,
+together with five other versified encomiums by “Hobynoll” (Gabriel Harvey,) “R. S.,” “H. B.,” “W. L.,”
+and “Ignoto,” are prefixed to Spenser’s work.</p>
+<p class="pnext">In 1599 “The Passionate Pilgrim,” a collection of
+twenty-one sonnets, songs, etc., was published with the
+name of W. Shakspere on the title page. The authorship of several of the pieces is disputed.</p>
+<p class="pnext">In regard to No. xviii. “My flocks feed not,” Mr.
+Halliwell-Phillipps, says:</p>
+<p class="pnext">“There is a somewhat brief version of this song in the collection of Madrigals, etc., by Thomas Weelkes 1597, this person
+being the composer of the music, but not necessarily the author
+of the words. A copy of it as it is seen in the Passionate Pilgrim
+also occurs in England’s Helicon, 1600, entitled ‘The Unknowne
+Sheepheards Complaint,’ and is there subscribed <em class="italics">Ignoto.</em>”</p>
+<p class="pnext">Again, in regard to No. xx, “Live with me and be
+my love,” the same author, says:</p>
+<p class="pnext">“The first of these very pretty songs is incomplete, and the
+second, called ‘Love’s answer,’ still more so. In England’s
+Helicon, 1600, the former is given to Marlowe, the latter to
+<em class="italics">Ignoto</em>; and there is good reason to believe that Christopher</p>
+<p class="pnext">[30]</p>
+<p class="pnext">Marlowe wrote the song, and Sir Walter Raleigh the nymph’s
+reply; for so we are positively assured by Isaac Walton, who has
+inserted them both in his Complete Angler under the character
+of ‘that smooth song which was made by Kit Marlowe, now at
+least fifty years ago; and an answer to it which was made by
+Sir Walter Raleigh in his younger days:—old fashioned poetry
+but choicely good.’ Both these songs were exceedingly popular
+and are afterwards found in the street ballads. The first is
+quoted in the Merry Wives of Windsor.”</p>
+<p class="pnext">Again, in regard to No. xxi, “As it fell upon a day,”
+Mr. Halliwell-Phillipps, says:</p>
+<p class="pnext">“This charming idyl occurs, with the absence of two lines,
+amongst the Poems in Divers Humours appended to Bamfield’s
+Encomion of Lady Pecunia, in 1598, and the first twenty-six
+lines with the addition of two new ones are found in England’s
+Helicon, 1600. This latter version follows in that work No.
+xviii of this list, [“My flocks feed not,”] is also subscribed
+<em class="italics">Ignoto</em>, and is headed: ‘Another of the same Sheepheards.’
+The probability is that the copies of these little poems, as given
+in the Helicon, were taken from a Common Place book in which
+the names of the authors were not recorded; the two supplementary lines just noticed having the appearance of being an
+unauthorized couplet improvised for the sake of giving a neater
+finish to the abridgment.”</p>
+<p class="pnext">We will now reproduce the aforesaid poems from
+“England’s Helicon,” second edition, 1614. A brief
+version of the first song, No. xviii of “The Passionate
+Pilgrim,” says Halliwell-Phillipps, appeared in 1597:</p>
+<pre class="literal-block">
+         *The unknown Shepherd's Complaint.*
+
+
+          My flocks feed not, my ewes breed not,
+          My rams speed not, all is amiss;
+        Love is denying, Faith is defying;
+          Hearts ren[e]ging, causer of this.
+
+        All my merry jigs are quite forgot,
+          And my lady’s love is lost, God wot:
+        Where her faith was firmly fixed in love,
+          There a nay is placed without remove.
+
+[31]
+
+       One silly cross wrought all my loss;
+       O frowning fortune, cursed fickle Dame,
+       For now I see, inconstancy
+       More in women than in men remain.
+
+       In black mourn I, all fears scorn I,
+           Love hath forlorn me, living in thrall;
+       Heart is bleeding, all help needing,
+          O cruel speeding, fraughted with gall.
+
+       My shepherd’s pipe can sound no deal,
+           My wether’s bell rings doleful knell.
+       My curtail dog that wont to have played,
+           Plays not at all, but seems afraid.
+
+       With sighs so deep, procure to weep,
+       In howling-wise to see my doleful plight,
+       How sighs resound, through heartless ground,
+       Like a thousand vanquished men in bloody fight.
+
+       Clear wells spring not, sweet birds sing not,
+           Green plants bring not forth their dye;
+       Herds stand weeping—flocks all sleeping,
+          Nymphs back peeping fearfully.
+
+       All our pleasures known to us poor swains,
+          All our merry meeting on the plains,
+       All our evening sports from us are fled,
+           All our love is lost, for love is dead.
+
+       Farewell sweet lass, thy like ne’er was,
+       For sweet content, the cause of all my moan:
+       Poor Corydon must live alone,
+       Other help for him, I see that there is none.
+
+       Finis                         Ignoto
+</pre>
+<p class="pfirst">The variations from the version of 1599 are few,
+the only important one being “ren[e]ging” for “renying.” The latter has no meaning; <em class="italics">the former is used
+twice in the plays.</em></p>
+<p class="pnext">The only question in regard to the authorship of
+this poem is, whether Shakspere or “Ignoto” wrote it.</p>
+<p class="pnext">The next poem printed in the “Helicon” is a part
+of No.xxi of the “Passionate Pilgrim.”:</p>
+<pre class="literal-block">
+[32]
+
+           Another of the Same Shepherds.
+
+            As it fell upon a day
+              In the merry month of May,
+            Sitting in a pleasant shade
+              Which a grove of myrtles made;
+            Beasts did leap, and birds did sing,
+           Trees did grow and plants did spring;
+           Everything did banish moan,
+            Save the nightingale alone.
+
+            She, poor bird, as all forlorn,
+            Lean’d her breast against a thorn;
+            And there sung the dolefull’st ditty,
+            That to hear it was great pity.
+
+            Fie, fie, fie, now would she cry;
+            Teru, teru! by and by;
+           That to hear her so complain
+             Scarce I could from tears refrain;
+            For her griefs, so lively shown,
+          Made me think upon mine own.
+
+            Ah! thought I, thou mourn’st in vain!
+            None takes pity on thy pain:
+          Senseless trees, they cannot hear thee,
+            Ruthless beasts they will not cheer thee:
+            King Pandion he is dead;
+          All thy friends are lapp’d in lead;
+            All thy fellow birds do sing,
+            Careless of thy sorrowing!
+            Even so, poor bird, like thee,
+            None alive will pity me.
+
+            Finis.          Ignoto.
+</pre>
+<p class="pfirst">The last two lines, Mr. Halliwell-Phillipps says, are
+new ones added to the first twenty-six in “The
+Passionate Pilgrim.” Our own edition of the latter has
+those two lines, and the only variation is in the tenth
+line—“up-till” for “against.” There are thirty lines
+more in our edition. But we have another version of
+the whole, omitting the aforesaid two lines and a
+subsequent couplet. This version, curiously enough, is</p>
+<p class="pnext">[33]</p>
+<p class="pnext">Leaded “Address to the Nightingale,” and is credited
+to Richard Barnfield, “about 1610.” (Encyc. of Poetry
+No. 121.) In 1598 it is said that the first twenty-six
+lines of this idyl appeared in an appendix to
+Barnfield’s “Encomium in 1599 it reappeared enlarged to
+twice the length and was credited to Shakspere; in
+1600 the first twenty-eight lines were republished in
+“England’s Helicon” and subscribed “Ignoto.”</p>
+<p class="pnext">We now transcribe from the “Helicon,” No. xx of
+“The Passionate Pilgrim” much amended and enlarged:</p>
+<pre class="literal-block">
+       The Passionate Shepherd to his love.
+         Come live with me, and be my love,
+       And we will all the pleasures prove,
+        That valleys, groves, [and] hills and fields,
+          Woods, or steeple mountains yields.(1)
+
+   (1) The grammar of this verse is shocking both here and in
+   the version of 1599. And there are considerable variations
+   in the two versions. In that of 1599 the first word “Come”
+   is omitted, without which the song could hardly be sung.
+   Other slight defects of measure appear in both. But the
+   editor of Marlowe’s Works has carefully corrected the
+   grammar and the measure.
+
+        And we will sit upon the rocks,
+       Seeing the shepherds feed their flocks,
+       By shallow rivers, to whose falls
+         Melodious birds sing madrigals.
+
+       And I will make thee beds of roses,
+       And a thousand fragrant posies,
+        A cap of flowers and a kirtle
+          Embroidered all with leaves of myrtle.
+
+       A gown made of the finest wool,
+       Which from our pretty lambs we pull,
+        Fair lined slippers for the cold,
+       With buckles of the purest gold:
+       A belt of straw, and ivy buds
+         With coral clasps and amber studs.
+
+[34]
+
+      And if these pleasures may thee move,
+      Come live with me and be my love.
+      The shepherd swains shall dance and sing
+        For thy delights each May-morning;
+      If these delights thy mind may move,
+      Then live with me and be my love.
+
+      Finis.           Chr. Marlowe.
+</pre>
+<p class="pfirst">Here we have Marlowe credited with this song in
+1600, seven years after his death. Is there any other
+evidence that he wrote it? A single line at the close of
+a ditty in his “Jew of Malta” parallels with the first
+line of this, except the first word:</p>
+<pre class="literal-block">
+“Shall live with me and be my love.”
+</pre>
+<p class="pfirst">The song, with many verbal amendments, and omitting the last stanza, is inserted in his “Works,” 1826.</p>
+<p class="pnext">In the “Merry Wives of Windsor” act iii, scene ly
+Sir Hugh Evans sings the following four lines:</p>
+<pre class="literal-block">
+ “To shallow rivers, to whose falls
+   Melodious birds sing madrigals;
+There we will make our peds of roses,
+And a thousand fragrant posies.”
+</pre>
+<p class="pfirst">This play was written in the latter part of 1599. In
+the earliest form of it Sir Hugh transposes and varies
+the lines thus:</p>
+<pre class="literal-block">
+“And then she made him beds of roses,
+And a thousand fragrant posies.”
+</pre>
+<p class="pfirst">Then after three lines of incoherent speech:</p>
+<pre class="literal-block">
+“To shallow rivers, and to falls
+  Melodious birds sing madrigals.”
+</pre>
+<p class="pfirst">It would seem as if the song was familiar to the
+public in 1599
+We now add from the “Helicon” the rest of No.
+xx of “The Passionate Pilgrim,” enlarged from one
+stanza to six:</p>
+<pre class="literal-block">
+[35]
+
+      The Nymph's reply to the Shepherd.
+      If all the world and love were young,
+      And truth in every shepherd’s tongue,
+      These pretty pleasures might me move,
+       To live with thee, and be thy love.
+
+       Time drives the flocks from field to fold,
+      When rivers rage, and rocks grow cold;
+      And Philomel becometh dumb;
+      The rest complain of cares to come.
+
+      The flowers do fade, and wanton fields
+        To wayward Winter reckoning yields;
+       A honey tongue, a heart of gall,
+       Is fancy’s Spring, but sorrow’s fall.
+
+      Thy gowns, thy shoes, thy beds of roses,
+       Thy cap, thy kirtle, and thy posies,
+      Soon break, soon wither, soon forgotten,
+       In folly ripe, in reason rotten.
+
+      Thy belt of straw, and ivy buds,
+      Thy coral clasps and amber studs,
+      All these in me no means can move,
+      To come to thee and be thy love.
+
+       But could youth last, and love still breed,
+      Had joys no date, nor age no need,
+      Then these delights my mind might move,
+       To live with thee and be thy love.
+
+       Finis.                   Ignoto.
+</pre>
+<p class="pfirst">The editor of the third edition of the “Helicon”
+1812, says in regard to “Ignoto:”</p>
+<p class="pnext">“This signature appears to have been generally, though not
+exclusively, subscribed to the pieces of Sir Walter Raleigh. It
+is also subscribed to one piece since appropriated to Shakspere,
+[No. xviii,] and to one Which, according to Ellis, belongs to
+Richard Barnfield [No. xxi.] The celebrated answer to Marlowe’s,
+'Come live with me,’ here subscribed <em class="italics">Ignoto</em>, is given
+expressly to Raleigh by Isaac Walton in his ‘Complete Angler,’
+first published in 1653.”</p>
+<p class="pnext">[36]</p>
+<p class="pnext">What could Walton know about it fifty years after
+the publication of the song and answer as above? On
+such worthless testimony the Nymph’s Answer is credited to Raleigh. And we have in the “Encyclopedia
+of Poetry,” 1873, first the song by Marlowe, “<em class="italics">about</em>
+1590,” and then the Nymph’s Reply by Raleigh “<em class="italics">about</em>
+1610.” Strange that the Nymph should wait <em class="italics">about</em>
+twenty years to reply, and should then repeat the lines
+credited to Shakspere in 1599 and to “Ignoto” in
+1600! The song perhaps existed before the death of
+Marlowe in 1593, but was probably composed by
+“Ignoto,” who also wrote “The Nymph’s Reply” and
+numerous other poetical pieces that were published
+in the “Helicon” in 1600.</p>
+<p class="pnext">“Ignoto” was undoubtedly a concealed poet.
+Marlowe, Raleigh and Barnfield were not. As early as
+January 1590, if not a little sooner, “Ignoto”
+contributed to Spenser’s first publication of the “Faery
+Queen” the following lines:</p>
+<pre class="literal-block">
+    “To look upon a work of rare devise
+       The which a workman setteth out to view,
+        And not to yield it the deserved prize
+          That unto such a workmanship is due,
+       Doth either prove the judgment to be naught,
+       Or else doth show a mind with envy fraught.
+
+    “To labor to commend a piece of work
+       Which no man goes about to discommend,
+        Would raise a jealous doubt that there did lurk
+          Some secret doubt whereto the praise did tend:
+       For when men know the goodness of the wine
+         ’Tis needless for the host to have a sign.
+
+    “Thus then, to show my judgment to be such
+      As can discern of colors black and white,
+       As als to free my mind from envy’s touch,
+        That never gives to any man his right:
+   I here pronounce this workmanship is such
+     As that no pen can set it forth too much.
+
+[37]
+
+   “And thus I hang a garland at the door;
+   Not for to show the goodness of the ware;
+   But such hath been the custom heretofore,
+   And customs very hardly broken are;
+    And when your taste shall tell you this is true,
+   Then look you give your host his utmost due.”
+</pre>
+<p class="pfirst">In No. viii of “The Passionate Pilgrim” the writer
+says:</p>
+<pre class="literal-block">
+“Dowland to thee is dear, whose heavenly touch
+  Upon the lute doth ravish human sense;
+
+Spenser to me, whose deep conceit is such
+  As, passing all conceit, needs no defense.”
+</pre>
+<p class="pfirst">Is not this praise of Spenser a substantial repetition
+of the sentiments expressed by “Ignoto”?</p>
+<p class="pnext">Again, in Shakspere’s Sonnet lxxx we read:</p>
+<pre class="literal-block">
+“O how I faint when I of you do write,
+    Knowing a better spirit doth use your name,
+And in the praise thereof spends all his might,
+    To make me tongue-tied, speaking of your fame!”
+</pre>
+<p class="pfirst">Spenser praises Essex in one of the Sonnets prefixed
+to his “Faery Queen,” which antedates the Sonnets
+of Shakspere.</p>
+<p class="pnext">Once more. In No. xviii of “The Passionate Pilgrim”
+we read:</p>
+<pre class="literal-block">
+“Poor Corydon must live alone,
+Other help for him I see that there is none.”
+</pre>
+<p class="pfirst">Compare this with the following lines from Spenser’s
+“Colin Clout,” dedicated to Sir Walter Raleigh, December 27, 1591, and published in 1595:</p>
+<pre class="literal-block">
+“And there is Corydon, though meanly waged,
+    Yet ablest wit of most I know this day.”
+</pre>
+<p class="pfirst">Was not Bacon the ablest wit of that time? Was</p>
+<p class="pnext">[38]</p>
+<p class="pnext">he not a concealed poet? Was he not “Corydon”?
+Was he not “Ignoto”?</p>
+<p class="pnext">But what evidence is there that Raleigh used that
+signature? The “Faery Queen” was publicly dedicated to him, and in the Sonnet addressed to him as
+one of Spenser’s patrons, a forthcoming poem by
+Raleigh is announced thus:</p>
+<pre class="literal-block">
+ “Yet, till that thou thy poem wilt make known,
+Let thy fair Cynthia’s praises be thus rudely shown.”
+</pre>
+<p class="pfirst">That poem was known to Spenser, who in the
+Dedication said he had fashioned his Queen
+“according to your [Raleigh’s] own excellent conceit
+of Cynthia,” i. e., Queen Elizabeth.</p>
+<p class="pnext">Furthermore, Raleigh contributed two Sonnets in
+praise of Spenser’s “Faery Queen;” these he subscribed
+with his own initials. Did he at the same time
+write another encomium and sign it “Ignoto”?</p>
+<p class="pnext">There are sixteen pieces in the “Helicon” subscribed
+“Ignoto.” One of these, “The Nymph’s Reply” is
+ascribed to Raleigh on the testimony of Walton in
+1653; and two others are believed by the editor of
+the third edition, 1812, to belong to Raleigh, because
+in an early copy of the same “Ignoto” was found
+pasted over “W. R.” Upon such flimsy evidence the
+modern editor infers that the signature “Ignoto” was
+“generally, <em class="italics">though not exclusively</em>, (his own italics,)
+subscribed to the pieces of Sir Walter Raleigh.”</p>
+<p class="pnext">The next piece after “The Nymph’s Reply” in the
+“Helicon” is the following by “Ignoto”:</p>
+<pre class="literal-block">
+         Another of the same nature made since.
+         Come live with me and be my dear,
+         And we will revel all the year,
+         In plains and groves, on hills and dales,
+         Where fragrant air breeds sweetest gates.
+
+
+         There shall you have the beauteous pine,
+         The cedar, and the spreading vine;
+         And all the woods to be a screen,
+         Lest Phoebus kiss my summer queen.
+
+         The seat for your disport shall be
+         Over some river in a tree;
+         Where silver sands and pebbles sing
+         Eternal ditties with the Spring.
+
+         There shall you see the nymphs at play,
+         And how the Satyrs spend the day;
+         The fishes gliding on the sands,
+         Offering their bellies to your hands.
+
+         The birds, with heavenly tuned throats,
+         Possess woods’ echoes with sweet notes;
+         Which to your senses will impart
+         A music to inflame the heart.
+
+         Upon the bare and leafless oak
+         The ring-dove’s wooings will provoke
+         A colder blood than you possess,
+         To play with me and do no less.
+
+         In bowers of laurel trimly dight,
+         We will outwear the silent night,
+         While Flora busy is to spread
+         Her richest treasure on our bed.
+
+         Ten thousand glow-worms shall attend,
+         And all their sparkling lights shall spend.
+         All to adorn and beautify
+         Your lodging with most majesty.
+
+         Then in mine arms will I enclose
+         Lily’s fair mixture with the rose;
+         Whose nice perfections in love’s play,
+         Shall tune to me the highest key.
+
+         Thus as we pass the welcome night
+         In sportful pleasures and delight,
+         The nimble fairies on the grounds
+         Shall dance and sing melodious sounds.
+
+[40]
+
+         If these may serve for to entice
+         Your presence to Love’s paradise,
+         Then come with me and be my dear,
+         And we will straight begin the year.
+
+         Finis.                 Ignoto.
+</pre>
+<p class="pfirst">Who will say that this is not equal to the first song
+ascribed to Marlowe? What couplet in that surpasses
+this one?:</p>
+<pre class="literal-block">
+“Where silver sands and pebbles sing
+  Eternal ditties with the Spring.”
+</pre>
+<p class="pfirst">Or this?:</p>
+<pre class="literal-block">
+“Ten thousand glow-worms shall attend.
+ And all their sparkling lights shall spend.”
+</pre>
+<p class="pfirst">For parallels with the first of these couplets take
+the following:</p>
+<pre class="literal-block">
+“Silver stream.” Much Ado, iii, 1.
+
+“Sing no more ditties.” Ibid, ii, 1.
+
+“Silver currents.” K. John, ii, 1.
+
+“The murmuring surge
+That on the unnumbered idle pebbles chafes.”
+
+                                 Ibid, iv, 6.
+</pre>
+<p class="pfirst">For a single parallel with the second couplet take
+this:</p>
+<pre class="literal-block">
+“Twenty glow-worms shall our lanterns be.”
+
+                      M. W. Windsor, v, 5.
+</pre>
+<p class="pfirst">Similar parallels may be found with other lines of
+the song. Now are we to believe that Marlowe wrote
+the first song, and Raleigh the other two signed “Ignoto”? Is it not far more rational and consistent to
+believe that all three were written by the same pen?</p>
+<p class="pnext">Again, Barnfield has two pieces in the “Helicon,”
+and the editor ascribes to him another signed “Ignoto”—No. xxi, “As it fell upon a day”—while Allibone, in his Dictionary of Authors, makes him the</p>
+<p class="pnext">[41]</p>
+<p class="pnext">author not only of xxi, but of xx—“Come live with
+me and be my love”—and says that Raleigh’s authorship of “The Nymph’s Reply” is questioned.</p>
+<p class="pnext">Thus Marlowe is robbed of the only piece ascribed
+to him in the “Helicon,” and Raleigh is left out of it entirely, unless he wrote some other poem signed “Ignoto.”</p>
+<p class="pnext">And by the way, poor neglected Shakspere has but
+a single specimen there—“On a day, alack a day”—
+taken from “Love’s Labor Lost.”</p>
+<p class="pnext">But the confusion about “Ignoto” is still more confounded. On page 112 of the “Helicon” is a song
+entitled “The Shepherd’s Dump,” subscribed “S. E.
+D.,” supposed to mean Sir Edward Dyer, and on page
+224 the same identical song reappears entitled “Thirsis, the Shepherd, to his pipe,” and signed “Ignoto.”
+The editor of 1812 supposes it was reprinted to make
+a few corrections in the last stanza; but as the verbal
+variations in that stanza make it positively worse, it
+is more likely that the compiler did not notice the
+repetition, but inadvertently put both in as he found
+them.</p>
+<p class="pnext">But even this is not all. In Ellis’s “Specimens of
+the early English Poets,” 5th edition, 1845, among the
+pieces credited to Fulke Greville (Lord Brooke) is a
+“Song,” with these words in brackets:</p>
+<p class="pnext">“To be found in ‘England’s Helicon,’ where it is signed
+Ignoto.”</p>
+<p class="pnext">On turning to the edition of 1614 we find that song
+entitled “Another, of his Cynthia.” It is preceded by
+two, evidently by the same pen, entitled, “To his
+Flocks,” and “To his Love” and is followed by still
+“Another to his Cynthia.” But all these are anonymous</p>
+<p class="pnext">[42]</p>
+<p class="pnext">in the edition of 1614, and the editor appends
+to the last one the following remark:</p>
+<p class="pnext">“These three [or four?] ditties were taken out of Maister
+John Dowland’s Book of Tableture for the Lute. The authors’
+names not there set down, and therefore left to their owners.”</p>
+<p class="pnext">But it happens that the four ditties are all credited
+to “Ignoto” in the Table of Contents, prepared by
+the <em class="italics">other editor</em>, so that in the edition of 1614
+“Ignoto” has twenty pieces, besides the one assigned to
+Marlowe.</p>
+<p class="pnext">With all this confusion what are we to believe in
+regard to “Ignoto”? Was he sometimes Raleigh,
+sometimes Barnfield, sometimes Dyer, sometimes Greville,</p>
+<p class="pnext">and sometimes Shakspere, or some one else?
+Or was he a single person who “loved better to be
+a poet than to be counted so” and who affected to
+hoodwink the above-named Greville by writing to him
+in 1596: “For poets I can commend none, being
+resolved to be ever a stranger to them”?</p>
+<p class="pnext">And here let us note a bit of internal evidence that
+Bacon wrote the little poem in praise of the “Faery
+Queen” signed “Ignoto.” One couplet of it is as follows:</p>
+<pre class="literal-block">
+“For when men know the goodness of the wine,
+’Tis needless for the host to have a sign.”
+</pre>
+<p class="pfirst">No. 517 of Bacon’s “Promus of Formularies and
+Elegancies” is this:</p>
+<pre class="literal-block">
+“Good wine needs no bush.”
+</pre>
+<p class="pfirst">The word “bush” as applied to wine is thus defined
+by Webster:</p>
+<p class="pnext">“branch of ivy (as sacred to Bacchus) hung out at
+vintners' doors, or as a tavern sign; hence a tavern sign, or the
+tavern itself.”</p>
+<p class="pnext">“‘If it be true that good wine needs no bush, ’tis true that
+a good play needs no epilogue.’”  Shak.[As You Like It.]</p>
+<p class="pnext">We leave the reader to put this and that together
+argument or comment is superfluous.</p>
+<div class="clearpage">
+</div>
+<p class="pfirst">[43]</p>
+</div>
+<div class="level-2 section" id="as-the-concealed-poet-ignoto">
+<h2 class="level-2 pfirst section-title title"><a class="toc-backref" href="#id6">AS THE CONCEALED POET IGNOTO</a></h2>
+<p class="pfirst"><span class="dropcap" style="font-size: 3.00em">A</span><span class="dropspan">nd</span> now what shall we say in regard to Marlowe’s
+ostensible authorship of a popular song, which was
+attributed to Shakspere in 1599? Is it not presumable
+that “Ignoto,” who wrote the “Nymph’s Reply,” and
+followed it with “Another of the same nature made
+since” in imitation of the song subscribed “Chr. Marlowe”—is it not probable that “Ignoto” ascribed his
+own original song to Marlowe?</p>
+<p class="pnext">Marlowe was buried June 1, 1593. In the same
+year Shakspere’s name first appeared in print as an
+author. And now among the startling revelations
+hitherto hidden in the Folio of 1623, but made known
+through Bacon’s cipher discovered by the Hon. Ignatius Donnelly, is this sentence:</p>
+<p class="pnext">“Ever since Marlowe was killed Shakspere has been my
+mask.”</p>
+<p class="pnext">Another Poem by Bacon in 1590.</p>
+<p class="pnext">The 33d anniversary of Elizabeth’s coronation was
+celebrated November 17, 1590. Sir Henry Lea, the
+Queen’s champion and master of the armory, who had
+conducted the exercises from the beginning, appeared
+for the last time, and, after the customary performances,
+resigned his office to the Earl of Cumberland, whereupon the celebrated vocalist, Mr. Hales, a servant of
+her Majesty, pronounced and sung the following verses,
+personating the aged man-at-arms:</p>
+<pre class="literal-block">
+ “My golden locks hath time to silver turned,
+   (O Time too swift, and swiftness never ceasing!)
+My youth ’gainst age, and age at youth hath spurned,
+   But spurned in vain; youth waneth, by increasing.
+Beauty and strength, and youth flowers fading been,
+ Duty, faith, love, are roots and ever green.
+
+“My helmet now shall make a hive for bees,
+   And lovers’ songs shall turn to holy psalms;
+A man-at-arms must now stand on his knees,
+   And feed on prayers that are old age’s alms.
+
+ And so from court to cottage I depart;
+My saint is sure of my unspotted heart.
+ “And when I sadly sit in lonely cell,
+   I’ll teach my swains this carol for a song:
+  ‘Blest be the hearts that wish my Sovereign well,
+   Curst be the souls that think to do her wrong.’
+
+Goddess! vouchsafe this aged man his right,
+To be your beadsman now that Was your knight.”
+</pre>
+<p class="pfirst">Parallels are found in Bacon and Shakspere with
+almost every sentiment and expression in these lines.
+(See Mrs. Pott’s “Promus,” p. 528.)</p>
+<p class="pnext">The verses were published anonymously in Dowland’s “First Book of Songs,” 1600, and again in 1844;
+both times with the pronouns changed from the first
+to the third person—e. g., “His golden locks,” etc.
+In the “Works of George Peele,” 1828, they are
+credited to that poet, but the only evidence adduced of
+his authorship is the fact that he, as an eye-witness,
+wrote a poetic description of the celebration in 1590.
+Mrs. Pott is doubtless right in claiming for Bacon the
+authorship, and is only mistaken in supposing that the
+person to whom the verses were intended to apply was
+Lord Burleigh, who about that time, on account of the
+loss of his wife, had temporarily withdrawn from court.</p>
+<div class="clearpage">
+</div>
+</div>
+<div class="level-2 section" id="bacon-and-shakspere-a-chronograph">
+<h2 class="level-2 pfirst section-title title"><a class="toc-backref" href="#id7">BACON AND SHAKSPERE A CHRONOGRAPH</a></h2>
+<div class="align-center auto-scaled figure" style="width: 100%">
+<img style="display: block; width: 100%" alt=" " src="images/page45.jpg" />
+</div>
+<div class="align-center auto-scaled figure" style="width: 100%">
+<img style="display: block; width: 100%" alt=" " src="images/page46.jpg" />
+</div>
+<p class="pfirst">1. If the Parliament met November 23, 1584, as Mr.
+Spedding distinctly says, then Bacon was not yet twenty-four.</p>
+<p class="pnext"><span class="dropcap" style="font-size: 3.00em">A</span><span class="dropspan">n</span> ideal tableau of the youthful statesman is gaily
+depicted by Wm. Hepworth Dixon, in his “Personal
+History of Lord Bacon:”</p>
+<p class="pnext">“How he appears in outward guise and aspect among these
+courtly and martial contemporaries the miniature of Hilyard
+helps us to conceive. Slight in build, rosy and round in fleshy
+dight in a sumptuous suit, the head well-set, erect, and framed
+in a thick starched fence of frill; a bloom of study and travel
+on the fat, girlish face, which looks far younger than his years;
+the hat and feather tossed aside from the white brow, over which,
+crisps and curls a mane of dark, soft hair; an English nose,
+firm, open, straight; a mouth delicate and small—a lady’s or
+jester’s mouth—a thousand pranks and humors, quibbles, whims and laughters lurking in its twinkling, tremulous lines;—such
+is Francis Bacon at the age of twenty-four.”</p>
+<p class="pnext">Bearing in mind that Bacon is three years and three months older than Shakspere, we will now parallel their
+lives by successive years.</p>
+<div class="clearpage">
+</div>
+<p class="pfirst">[47]</p>
+</div>
+<div class="level-2 section" id="a-chronographic-parallel">
+<h2 class="level-2 pfirst section-title title"><a class="toc-backref" href="#id8">A CHRONOGRAPHIC PARALLEL</a></h2>
+<ol class="upperalpha simple">
+<li><ol class="first upperalpha" start="4">
+<li><ol class="arabic first" start="1585">
+<li></li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+<p class="pfirst"><span class="dropcap" style="font-size: 3.00em">B</span><span class="dropspan">acon</span> at 24, in a letter to the Queen’s principal
+secretary, Sir Francis Walsingham, urges his some time
+pending suit, which is to determine his “course of
+practice”—supposed to mean a shortening of the five
+years’ probation required to become a pleader.</p>
+<p class="pnext">He writes an essay entitled “Greatest Birth of
+Time,” foreshadowing his scientific works.</p>
+<p class="pnext">His mother in her zeal for the Nonconformists urges
+their cause in person before Lord Treasurer Burleigh,
+and follows it by a letter to the same in which she says:</p>
+<p class="pnext">“I confess as one that hath found mercy, that I have profited
+more in the inward feeling knowledge of God his holy will,
+though but in small measure, by an ordinary preaching within
+these seven or eight years, than I did by hearing odd sermons
+at Paul’s well nigh twenty years together.”</p>
+<p class="pnext">Shakspere at 21 is still living at Stratford, the father
+of three children—two of them twins. His father is
+said to have been a butcher as well as a dealer in wool;
+and gossiping John Aubrey says he was told by some
+of the neighbors that when the boy William “kill’d
+a calfe, he wold doe it in a high style, and make a
+speeche.”</p>
+<p class="pnext">Mr. Richard Grant White guesses that William may
+have gone to London this year or the next.</p>
+<p class="pnext">[48]</p>
+<ol class="upperalpha simple">
+<li><ol class="first upperalpha" start="4">
+<li><ol class="arabic first" start="1586">
+<li></li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+<p class="pfirst">Bacon at 25 writes a letter, May 6th, to Lord Treasurer Burleigh, his uncle, saying:</p>
+<p class="pnext">“I find in my simple observation that they which live as it
+were <em class="italics">in umbra</em> and not in public or frequent action, how moderately and modestly soever they behave themselves, yet <em class="italics">laborant
+inmdia</em>. I find also that such persons as are of nature bashful
+(as myself is,) whereby they want that plausible familiarity
+which others have, are often mistaken for proud. But once I
+know well, and I most humbly beseech your Lordship to believe that arrogancy and overweening is so far from my nature,
+as, if I think well of myself in anything, it is in this, that I am
+free from that vice.”</p>
+<p class="pnext">He is again elected to Parliament. The conspirators who attempted to liberate Mary of Scotland have
+been tried, condemned, and sentenced. The case is
+brought before the Parliament. Bacon is one of the
+speakers in “the Great Cause,” and one of the committees to whom it is referred.</p>
+<p class="pnext">Shakspere at 22 is probably still at Stratford,
+though Mr. White presumes he has become connected
+with the London stage this year, or perhaps a little
+later.</p>
+<blockquote>
+<div>
+<p class="pfirst">[To be continued to the end of both lives, making a book of
+300 pages or more, including this pamphlet as an appendix,
+with important additions. All the essential facts of Lord
+Bacon’s life will be presented, whereby his secret
+authorship will be more abundantly proved, and his moral
+character vindicated against the aspersions of 260 years.]</p>
+</div>
+</blockquote>
+<div class="clearpage">
+</div>
+<hr class="docutils" />
+<!-- -*- encoding: utf-8 -*- -->
+<div class="backmatter">
+</div>
+<p class="pfirst" id="pg-end-line">*** END OF THIS PROJECT GUTENBERG EBOOK <span>BACON AND SHAKSPERE</span> ***</p>
+<div class="cleardoublepage">
+</div>
+</div>
+<div class="language-en level-2 pgfooter section" id="a-word-from-project-gutenberg" xml:lang="en" lang="en">
+<span id="pg-footer"></span><h2 class="level-2 pfirst section-title title">A Word from Project Gutenberg</h2>
+<p class="pfirst">We will update this book if we find any errors.</p>
+<p class="pnext">This book can be found under: <a class="reference external" href="http://www.gutenberg.org/ebooks/39121"><span>http://www.gutenberg.org/ebooks/39121</span></a></p>
+<p class="pnext">Creating the works from public domain print editions means that no one
+owns a United States copyright in these works, so the Foundation (and
+you!) can copy and distribute it in the United States without
+permission and without paying copyright royalties.  Special rules, set
+forth in the General Terms of Use part of this license, apply to
+copying and distributing Project Gutenberg™ electronic works to
+protect the Project Gutenberg™ concept and trademark. Project
+Gutenberg is a registered trademark, and may not be used if you charge
+for the eBooks, unless you receive specific permission. If you do not
+charge anything for copies of this eBook, complying with the rules is
+very easy. You may use this eBook for nearly any purpose such as
+creation of derivative works, reports, performances and research.
+They may be modified and printed and given away – you may do
+practically <em class="italics">anything</em> with public domain eBooks.  Redistribution is
+subject to the trademark license, especially commercial
+redistribution.</p>
+<div class="level-3 section" id="the-full-project-gutenberg-license">
+<span id="project-gutenberg-license"></span><h3 class="level-3 pfirst section-title title">The Full Project Gutenberg License</h3>
+<p class="pfirst"><em class="italics">Please read this before you distribute or use this work.</em></p>
+<p class="pnext">To protect the Project Gutenberg™ mission of promoting the free
+distribution of electronic works, by using or distributing this work
+(or any other work associated in any way with the phrase “Project
+Gutenberg”), you agree to comply with all the terms of the Full
+Project Gutenberg™ License available with this file or online at
+<a class="reference external" href="http://www.gutenberg.org/license">http://www.gutenberg.org/license</a>.</p>
+<div class="level-4 section" id="section-1-general-terms-of-use-redistributing-project-gutenberg-electronic-works">
+<h4 class="level-4 pfirst section-title title">Section 1. General Terms of Use &amp; Redistributing Project Gutenberg™ electronic works</h4>
+<p class="pfirst"><strong class="bold">1.A.</strong> By reading or using any part of this Project Gutenberg™
+electronic work, you indicate that you have read, understand, agree to
+and accept all the terms of this license and intellectual property
+(trademark/copyright) agreement. If you do not agree to abide by all
+the terms of this agreement, you must cease using and return or
+destroy all copies of Project Gutenberg™ electronic works in your
+possession. If you paid a fee for obtaining a copy of or access to a
+Project Gutenberg™ electronic work and you do not agree to be bound by
+the terms of this agreement, you may obtain a refund from the person
+or entity to whom you paid the fee as set forth in paragraph 1.E.8.</p>
+<p class="pnext"><strong class="bold">1.B.</strong> “Project Gutenberg” is a registered trademark. It may only be
+used on or associated in any way with an electronic work by people who
+agree to be bound by the terms of this agreement. There are a few
+things that you can do with most Project Gutenberg™ electronic works
+even without complying with the full terms of this agreement. See
+paragraph 1.C below. There are a lot of things you can do with Project
+Gutenberg™ electronic works if you follow the terms of this agreement
+and help preserve free future access to Project Gutenberg™ electronic
+works. See paragraph 1.E below.</p>
+<p class="pnext"><strong class="bold">1.C.</strong> The Project Gutenberg Literary Archive Foundation (“the
+Foundation” or PGLAF), owns a compilation copyright in the collection
+of Project Gutenberg™ electronic works. Nearly all the individual
+works in the collection are in the public domain in the United
+States. If an individual work is in the public domain in the United
+States and you are located in the United States, we do not claim a
+right to prevent you from copying, distributing, performing,
+displaying or creating derivative works based on the work as long as
+all references to Project Gutenberg are removed. Of course, we hope
+that you will support the Project Gutenberg™ mission of promoting free
+access to electronic works by freely sharing Project Gutenberg™ works
+in compliance with the terms of this agreement for keeping the Project
+Gutenberg™ name associated with the work. You can easily comply with
+the terms of this agreement by keeping this work in the same format
+with its attached full Project Gutenberg™ License when you share it
+without charge with others.</p>
+<p class="pnext"></p>
+<p class="pnext"><strong class="bold">1.D.</strong> The copyright laws of the place where you are located also
+govern what you can do with this work. Copyright laws in most
+countries are in a constant state of change. If you are outside the
+United States, check the laws of your country in addition to the terms
+of this agreement before downloading, copying, displaying, performing,
+distributing or creating derivative works based on this work or any
+other Project Gutenberg™ work.  The Foundation makes no
+representations concerning the copyright status of any work in any
+country outside the United States.</p>
+<p class="pnext"><strong class="bold">1.E.</strong> Unless you have removed all references to Project Gutenberg:</p>
+<p class="pnext"><strong class="bold">1.E.1.</strong> The following sentence, with active links to, or other
+immediate access to, the full Project Gutenberg™ License must appear
+prominently whenever any copy of a Project Gutenberg™ work (any work
+on which the phrase “Project Gutenberg” appears, or with which the
+phrase “Project Gutenberg” is associated) is accessed, displayed,
+performed, viewed, copied or distributed:</p>
+<blockquote>
+<div>
+<p class="pfirst">This eBook is for the use of anyone anywhere at no cost and with
+almost no restrictions whatsoever. You may copy it, give it away or
+re-use it under the terms of the Project Gutenberg License included
+with this eBook or online at <a class="reference external" href="http://www.gutenberg.org">http://www.gutenberg.org</a></p>
+</div>
+</blockquote>
+<p class="pfirst"><strong class="bold">1.E.2.</strong> If an individual Project Gutenberg™ electronic work is
+derived from the public domain (does not contain a notice indicating
+that it is posted with permission of the copyright holder), the work
+can be copied and distributed to anyone in the United States without
+paying any fees or charges. If you are redistributing or providing
+access to a work with the phrase “Project Gutenberg” associated with
+or appearing on the work, you must comply either with the requirements
+of paragraphs 1.E.1 through 1.E.7 or obtain permission for the use of
+the work and the Project Gutenberg™ trademark as set forth in
+paragraphs 1.E.8 or 1.E.9.</p>
+<p class="pnext"><strong class="bold">1.E.3.</strong> If an individual Project Gutenberg™ electronic work is
+posted with the permission of the copyright holder, your use and
+distribution must comply with both paragraphs 1.E.1 through 1.E.7 and
+any additional terms imposed by the copyright holder. Additional terms
+will be linked to the Project Gutenberg™ License for all works posted
+with the permission of the copyright holder found at the beginning of
+this work.</p>
+<p class="pnext"><strong class="bold">1.E.4.</strong> Do not unlink or detach or remove the full Project
+Gutenberg™ License terms from this work, or any files containing a
+part of this work or any other work associated with Project
+Gutenberg™.</p>
+<p class="pnext"><strong class="bold">1.E.5.</strong> Do not copy, display, perform, distribute or redistribute
+this electronic work, or any part of this electronic work, without
+prominently displaying the sentence set forth in paragraph 1.E.1 with
+active links or immediate access to the full terms of the Project
+Gutenberg™ License.</p>
+<p class="pnext"><strong class="bold">1.E.6.</strong> You may convert to and distribute this work in any binary,
+compressed, marked up, nonproprietary or proprietary form, including
+any word processing or hypertext form. However, if you provide access
+to or distribute copies of a Project Gutenberg™ work in a format other
+than “Plain Vanilla ASCII” or other format used in the official
+version posted on the official Project Gutenberg™ web site
+(<a class="reference external" href="http://www.gutenberg.org">http://www.gutenberg.org</a>), you must, at no additional cost, fee or
+expense to the user, provide a copy, a means of exporting a copy, or a
+means of obtaining a copy upon request, of the work in its original
+“Plain Vanilla ASCII” or other form. Any alternate format must include
+the full Project Gutenberg™ License as specified in paragraph 1.E.1.</p>
+<p class="pnext"><strong class="bold">1.E.7.</strong> Do not charge a fee for access to, viewing, displaying,
+performing, copying or distributing any Project Gutenberg™ works
+unless you comply with paragraph 1.E.8 or 1.E.9.</p>
+<p class="pnext"><strong class="bold">1.E.8.</strong> You may charge a reasonable fee for copies of or providing
+access to or distributing Project Gutenberg™ electronic works provided
+that</p>
+<ul class="open">
+<li><p class="first pfirst">You pay a royalty fee of 20% of the gross profits you derive from
+the use of Project Gutenberg™ works calculated using the method you
+already use to calculate your applicable taxes. The fee is owed to
+the owner of the Project Gutenberg™ trademark, but he has agreed to
+donate royalties under this paragraph to the Project Gutenberg
+Literary Archive Foundation. Royalty payments must be paid within 60
+days following each date on which you prepare (or are legally
+required to prepare) your periodic tax returns. Royalty payments
+should be clearly marked as such and sent to the Project Gutenberg
+Literary Archive Foundation at the address specified in Section 4,
+“Information about donations to the Project Gutenberg Literary
+Archive Foundation.”</p>
+</li>
+<li><p class="first pfirst">You provide a full refund of any money paid by a user who notifies
+you in writing (or by e-mail) within 30 days of receipt that s/he
+does not agree to the terms of the full Project Gutenberg™
+License. You must require such a user to return or destroy all
+copies of the works possessed in a physical medium and discontinue
+all use of and all access to other copies of Project Gutenberg™
+works.</p>
+</li>
+<li><p class="first pfirst">You provide, in accordance with paragraph 1.F.3, a full refund of
+any money paid for a work or a replacement copy, if a defect in the
+electronic work is discovered and reported to you within 90 days of
+receipt of the work.</p>
+</li>
+<li><p class="first pfirst">You comply with all other terms of this agreement for free
+distribution of Project Gutenberg™ works.</p>
+</li>
+</ul>
+<p class="pfirst"><strong class="bold">1.E.9.</strong> If you wish to charge a fee or distribute a Project
+Gutenberg™ electronic work or group of works on different terms than
+are set forth in this agreement, you must obtain permission in writing
+from both the Project Gutenberg Literary Archive Foundation and
+Michael Hart, the owner of the Project Gutenberg™ trademark. Contact
+the Foundation as set forth in Section 3. below.</p>
+<p class="pnext"><strong class="bold">1.F.</strong></p>
+<p class="pnext"><strong class="bold">1.F.1.</strong> Project Gutenberg volunteers and employees expend
+considerable effort to identify, do copyright research on, transcribe
+and proofread public domain works in creating the Project Gutenberg™
+collection. Despite these efforts, Project Gutenberg™ electronic
+works, and the medium on which they may be stored, may contain
+“Defects,” such as, but not limited to, incomplete, inaccurate or
+corrupt data, transcription errors, a copyright or other intellectual
+property infringement, a defective or damaged disk or other medium, a
+computer virus, or computer codes that damage or cannot be read by
+your equipment.</p>
+<p class="pnext"><strong class="bold">1.F.2.</strong> LIMITED WARRANTY, DISCLAIMER OF DAMAGES – Except for the
+“Right of Replacement or Refund” described in paragraph 1.F.3, the
+Project Gutenberg Literary Archive Foundation, the owner of the
+Project Gutenberg™ trademark, and any other party distributing a
+Project Gutenberg™ electronic work under this agreement, disclaim all
+liability to you for damages, costs and expenses, including legal
+fees. YOU AGREE THAT YOU HAVE NO REMEDIES FOR NEGLIGENCE, STRICT
+LIABILITY, BREACH OF WARRANTY OR BREACH OF CONTRACT EXCEPT THOSE
+PROVIDED IN PARAGRAPH 1.F.3. YOU AGREE THAT THE FOUNDATION, THE
+TRADEMARK OWNER, AND ANY DISTRIBUTOR UNDER THIS AGREEMENT WILL NOT BE
+LIABLE TO YOU FOR ACTUAL, DIRECT, INDIRECT, CONSEQUENTIAL, PUNITIVE OR
+INCIDENTAL DAMAGES EVEN IF YOU GIVE NOTICE OF THE POSSIBILITY OF SUCH
+DAMAGE.</p>
+<p class="pnext"><strong class="bold">1.F.3.</strong> LIMITED RIGHT OF REPLACEMENT OR REFUND – If you discover a
+defect in this electronic work within 90 days of receiving it, you can
+receive a refund of the money (if any) you paid for it by sending a
+written explanation to the person you received the work from. If you
+received the work on a physical medium, you must return the medium
+with your written explanation. The person or entity that provided you
+with the defective work may elect to provide a replacement copy in
+lieu of a refund. If you received the work electronically, the person
+or entity providing it to you may choose to give you a second
+opportunity to receive the work electronically in lieu of a refund. If
+the second copy is also defective, you may demand a refund in writing
+without further opportunities to fix the problem.</p>
+<p class="pnext"><strong class="bold">1.F.4.</strong> Except for the limited right of replacement or refund set
+forth in paragraph 1.F.3, this work is provided to you ‘AS-IS,’ WITH
+NO OTHER WARRANTIES OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT
+LIMITED TO WARRANTIES OF MERCHANTIBILITY OR FITNESS FOR ANY PURPOSE.</p>
+<p class="pnext"><strong class="bold">1.F.5.</strong> Some states do not allow disclaimers of certain implied
+warranties or the exclusion or limitation of certain types of
+damages. If any disclaimer or limitation set forth in this agreement
+violates the law of the state applicable to this agreement, the
+agreement shall be interpreted to make the maximum disclaimer or
+limitation permitted by the applicable state law. The invalidity or
+unenforceability of any provision of this agreement shall not void the
+remaining provisions.</p>
+<p class="pnext"><strong class="bold">1.F.6.</strong> INDEMNITY – You agree to indemnify and hold the Foundation,
+the trademark owner, any agent or employee of the Foundation, anyone
+providing copies of Project Gutenberg™ electronic works in accordance
+with this agreement, and any volunteers associated with the
+production, promotion and distribution of Project Gutenberg™
+electronic works, harmless from all liability, costs and expenses,
+including legal fees, that arise directly or indirectly from any of
+the following which you do or cause to occur: (a) distribution of this
+or any Project Gutenberg™ work, (b) alteration, modification, or
+additions or deletions to any Project Gutenberg™ work, and (c) any
+Defect you cause.</p>
+</div>
+<div class="level-4 section" id="section-2-information-about-the-mission-of-project-gutenberg">
+<h4 class="level-4 pfirst section-title title">Section 2. Information about the Mission of Project Gutenberg™</h4>
+<p class="pfirst">Project Gutenberg™ is synonymous with the free distribution of
+electronic works in formats readable by the widest variety of
+computers including obsolete, old, middle-aged and new computers. It
+exists because of the efforts of hundreds of volunteers and donations
+from people in all walks of life.</p>
+<p class="pnext">Volunteers and financial support to provide volunteers with the
+assistance they need, is critical to reaching Project Gutenberg™'s
+goals and ensuring that the Project Gutenberg™ collection will remain
+freely available for generations to come. In 2001, the Project
+Gutenberg Literary Archive Foundation was created to provide a secure
+and permanent future for Project Gutenberg™ and future generations. To
+learn more about the Project Gutenberg Literary Archive Foundation and
+how your efforts and donations can help, see Sections 3 and 4 and the
+Foundation web page at <a class="reference external" href="http://www.pglaf.org">http://www.pglaf.org</a> .</p>
+</div>
+<div class="level-4 section" id="section-3-information-about-the-project-gutenberg-literary-archive-foundation">
+<h4 class="level-4 pfirst section-title title">Section 3. Information about the Project Gutenberg Literary Archive Foundation</h4>
+<p class="pfirst">The Project Gutenberg Literary Archive Foundation is a non profit
+501(c)(3) educational corporation organized under the laws of the
+state of Mississippi and granted tax exempt status by the Internal
+Revenue Service. The Foundation's EIN or federal tax identification
+number is 64-6221541. Its 501(c)(3) letter is posted at
+<a class="reference external" href="http://www.gutenberg.org/fundraising/pglaf">http://www.gutenberg.org/fundraising/pglaf</a> . Contributions to the
+Project Gutenberg Literary Archive Foundation are tax deductible to
+the full extent permitted by U.S.  federal laws and your state's laws.</p>
+<p class="pnext">The Foundation's principal office is located at 4557 Melan Dr.
+S. Fairbanks, AK, 99712., but its volunteers and employees are
+scattered throughout numerous locations. Its business office is
+located at 809 North 1500 West, Salt Lake City, UT 84116, (801)
+596-1887, email <a class="reference external" href="mailto:business@pglaf.org">business@pglaf.org</a>. Email contact links and up to date
+contact information can be found at the Foundation's web site and
+official page at <a class="reference external" href="http://www.pglaf.org">http://www.pglaf.org</a></p>
+<p class="pnext">For additional contact information:</p>
+<blockquote>
+<div>
+<div class="line-block outermost">
+<div class="line">Dr. Gregory B. Newby</div>
+<div class="line">Chief Executive and Director</div>
+<div class="line"><a class="reference external" href="mailto:gbnewby@pglaf.org">gbnewby@pglaf.org</a></div>
+</div>
+</div>
+</blockquote>
+</div>
+<div class="level-4 section" id="section-4-information-about-donations-to-the-project-gutenberg-literary-archive-foundation">
+<h4 class="level-4 pfirst section-title title">Section 4. Information about Donations to the Project Gutenberg Literary Archive Foundation</h4>
+<p class="pfirst">Project Gutenberg™ depends upon and cannot survive without wide spread
+public support and donations to carry out its mission of increasing
+the number of public domain and licensed works that can be freely
+distributed in machine readable form accessible by the widest array of
+equipment including outdated equipment. Many small donations ($1 to
+$5,000) are particularly important to maintaining tax exempt status
+with the IRS.</p>
+<p class="pnext">The Foundation is committed to complying with the laws regulating
+charities and charitable donations in all 50 states of the United
+States. Compliance requirements are not uniform and it takes a
+considerable effort, much paperwork and many fees to meet and keep up
+with these requirements. We do not solicit donations in locations
+where we have not received written confirmation of compliance. To SEND
+DONATIONS or determine the status of compliance for any particular
+state visit <a class="reference external" href="http://www.gutenberg.org/fundraising/donate">http://www.gutenberg.org/fundraising/donate</a></p>
+<p class="pnext">While we cannot and do not solicit contributions from states where we
+have not met the solicitation requirements, we know of no prohibition
+against accepting unsolicited donations from donors in such states who
+approach us with offers to donate.</p>
+<p class="pnext">International donations are gratefully accepted, but we cannot make
+any statements concerning tax treatment of donations received from
+outside the United States. U.S. laws alone swamp our small staff.</p>
+<p class="pnext">Please check the Project Gutenberg Web pages for current donation
+methods and addresses. Donations are accepted in a number of other
+ways including checks, online payments and credit card donations. To
+donate, please visit: <a class="reference external" href="http://www.gutenberg.org/fundraising/donate">http://www.gutenberg.org/fundraising/donate</a></p>
+</div>
+<div class="level-4 section" id="section-5-general-information-about-project-gutenberg-electronic-works">
+<h4 class="level-4 pfirst section-title title">Section 5. General Information About Project Gutenberg™ electronic works.</h4>
+<p class="pfirst">Professor Michael S. Hart is the originator of the Project Gutenberg™
+concept of a library of electronic works that could be freely shared
+with anyone. For thirty years, he produced and distributed Project
+Gutenberg™ eBooks with only a loose network of volunteer support.</p>
+<p class="pnext">Project Gutenberg™ eBooks are often created from several printed
+editions, all of which are confirmed as Public Domain in the
+U.S. unless a copyright notice is included. Thus, we do not
+necessarily keep eBooks in compliance with any particular paper
+edition.</p>
+<p class="pnext">Each eBook is in a subdirectory of the same number as the eBook's
+eBook number, often in several formats including plain vanilla ASCII,
+compressed (zipped), HTML and others.</p>
+<p class="pnext">Corrected <em class="italics">editions</em> of our eBooks replace the old file and take over
+the old filename and etext number. The replaced older file is
+renamed. <em class="italics">Versions</em> based on separate sources are treated as new
+eBooks receiving new filenames and etext numbers.</p>
+<p class="pnext">Most people start at our Web site which has the main PG search
+facility:</p>
+<blockquote>
+<div>
+<p class="pfirst"><a class="reference external" href="http://www.gutenberg.org">http://www.gutenberg.org</a></p>
+</div>
+</blockquote>
+<p class="pfirst">This Web site includes information about Project Gutenberg™, including
+how to make donations to the Project Gutenberg Literary Archive
+Foundation, how to help produce our new eBooks, and how to subscribe
+to our email newsletter to hear about new eBooks.</p>
+</div>
+</div>
+</div>
+</div>
+</body>
+</html>

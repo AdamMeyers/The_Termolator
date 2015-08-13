@@ -1,0 +1,1304 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.1//EN' 'http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd'>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="Docutils 0.8.1: http://docutils.sourceforge.net/" />
+<style type="text/css">
+/* 
+Project Gutenberg common docutils stylesheet.
+
+This stylesheet contains styles common to HTML and EPUB.  Put styles
+that are specific to HTML and EPUB into their relative stylesheets.
+
+:Author: Marcello Perathoner (webmaster@gutenberg.org)
+:Copyright: This stylesheet has been placed in the public domain.
+
+This stylesheet is based on:
+
+  :Author: David Goodger (goodger@python.org)
+  :Copyright: This stylesheet has been placed in the public domain.
+
+  Default cascading style sheet for the HTML output of Docutils.
+
+*/
+
+/* ADE 1.7.2 chokes on !important and throws all css out. */
+
+/* FONTS */
+
+.italics    { font-style: italic }
+.no-italics { font-style: normal }
+
+.bold       { font-weight: bold }
+.no-bold    { font-weight: normal }
+
+.small-caps { } /* Epub needs italics */
+.gesperrt   { } /* Epub needs italics */
+.antiqua    { font-style: italic } /* what else can we do ? */
+.monospaced { font-family: monospace }
+
+.smaller    { font-size: smaller }
+.larger     { font-size: larger }
+
+.xx-small   { font-size: xx-small }
+.x-small    { font-size: x-small }
+.small      { font-size: small }
+.medium     { font-size: medium }
+.large      { font-size: large }
+.x-large    { font-size: x-large }
+.xx-large   { font-size: xx-large }
+
+.text-transform-uppercase { text-transform: uppercase }
+.text-transform-lowercase { text-transform: lowercase }
+.text-transform-none      { text-transform: none }
+
+.red        { color: red }
+.green      { color: green }
+.blue       { color: blue }
+.yellow     { color: yellow }
+.white      { color: white }
+.gray       { color: gray }
+.black      { color: black }
+
+/* ALIGN */
+
+.left       { text-align: left }
+.center     { text-align: center }
+.right      { text-align: right }
+.justify    { text-align: justify }
+
+/* LINE HEIGHT */
+
+body        { line-height: 1.5 }
+p           { margin: 0; 
+	      text-indent: 2em }
+
+/* PAGINATION */
+
+.title, .subtitle     { page-break-after:  avoid }
+
+.container, .title, .subtitle, #pg-header            
+                      { page-break-inside: avoid }
+
+/* SECTIONS */
+
+body         { text-align: justify }
+
+p.pfirst,
+p.center,
+p.right,
+div.center p,
+div.right p,
+p.noindent   { text-indent: 0 }
+
+.boxed         { border: 1px solid black; padding: 1em }
+.topic, .note  { margin: 5% 0; border: 1px solid black; padding: 1em }
+div.section    { clear: both }
+
+div.line-block       { margin: 1.5em 0 }  /* same leading as p */
+div.line-block.inner { margin: 0 0 0 10% }
+div.line             { margin-left: 20%; text-indent: -20%; }
+.line-block.noindent div.line { margin-left: 0; text-indent: 0; }
+
+hr.docutils          { margin: 1.5em 40%; border: none; border-bottom: 1px solid black; }
+div.transition       { margin: 1.5em 0 }
+
+.vfill, .vspace      { border: 0px solid white }
+
+.title               { margin: 1.5em 0 }
+.title.with-subtitle { margin-bottom: 0 }
+.subtitle            { margin: 1.5em 0 }
+
+/* header font style */
+/* http://dev.w3.org/csswg/css3-fonts/#propdef-font-size */
+
+h1.title                        { font-size: 200%; }  /* for book title only */
+h2.title, p.subtitle.level-1    { font-size: 150%; margin-top: 4.5em;  margin-bottom: 2em }
+h3.title, p.subtitle.level-2    { font-size: 120%; margin-top: 2.25em; margin-bottom: 1.25em }
+h4.title, p.subtitle.level-3    { font-size: 100%; margin-top: 1.5em;  margin-bottom: 1.5em;  font-weight: bold; }
+h5.title, p.subtitle.level-4    { font-size:  89%; margin-top: 1.87em; margin-bottom: 1.69em; font-style: italic; }
+h6.title, p.subtitle.level-5    { font-size:  60%; margin-top: 3.5em;  margin-bottom: 2.5em }
+
+/* title page */
+
+h1.title, p.subtitle.level-1,
+h2.title, p.subtitle.level-2    { text-align: center }
+
+#pg-header,
+h1.document-title               { margin: 10% 0 5% 0 }
+p.document-subtitle             { margin:  0  0 5% 0 }
+
+/* PG header and footer */
+#pg-machine-header { }
+#pg-produced-by { }
+
+li.toc-entry            { list-style-type: none }
+ul.open li, ol.open li  { margin-bottom: 1.5em }
+
+.attribution            { margin-top: 1.5em }
+
+.example-rendered { 
+    margin: 1em 5%; border: 1px dotted red;  padding: 1em; background-color: #ffd }
+.literal-block.example-source   { 
+    margin: 1em 5%; border: 1px dotted blue; padding: 1em; background-color: #eef }
+
+/* DROPCAPS */
+
+/* BLOCKQUOTES */
+
+blockquote { margin: 1.5em 10% }
+
+blockquote.epigraph { }
+
+blockquote.highlights { }
+
+div.local-contents { margin: 1.5em 10% }
+
+div.abstract { margin: 3em 10% }
+div.caption  { margin: 1.5em 10%; text-align: center; font-style: italic }
+div.legend   { margin: 1.5em 10% }
+
+.hidden { display: none }
+
+.invisible { visibility: hidden; color: white } /* white: mozilla print bug */
+
+a.toc-backref {
+  text-decoration: none ;
+  color: black }
+
+dl.docutils dd {
+  margin-bottom: 0.5em }
+
+div.figure { margin-top: 3em; margin-bottom: 3em }
+
+img { max-width: 100% }
+
+div.footer, div.header {
+  clear: both;
+  font-size: smaller }
+
+div.sidebar {
+  margin: 0 0 0.5em 1em ;
+  border: medium outset ;
+  padding: 1em ;
+  background-color: #ffffee ;
+  width: 40% ;
+  float: right ;
+  clear: right }
+
+div.sidebar p.rubric {
+  font-family: sans-serif ;
+  font-size: medium }
+
+ol.simple, ul.simple { margin: 1.5em 0 }
+
+ol.toc-list,    ul.toc-list    { padding-left:  0  }
+ol ol.toc-list, ul ul.toc-list { padding-left:  5% }
+
+ol.arabic {
+  list-style: decimal }
+
+ol.loweralpha {
+  list-style: lower-alpha }
+
+ol.upperalpha {
+  list-style: upper-alpha }
+
+ol.lowerroman {
+  list-style: lower-roman }
+
+ol.upperroman {
+  list-style: upper-roman }
+
+p.credits {
+  font-style: italic ;
+  font-size: smaller }
+
+p.label {
+  white-space: nowrap }
+
+p.rubric {
+  font-weight: bold ;
+  font-size: larger ;
+  color: maroon ;
+  text-align: center }
+
+p.sidebar-title {
+  font-family: sans-serif ;
+  font-weight: bold ;
+  font-size: larger }
+
+p.sidebar-subtitle {
+  font-family: sans-serif ;
+  font-weight: bold }
+
+p.topic-title, p.admonition-title {
+  font-weight: bold }
+
+pre.address {
+  margin-bottom: 0 ;
+  margin-top: 0 ;
+  font: inherit }
+
+.literal-block, .doctest-block {
+  margin-left: 2em ;
+  margin-right: 2em; }
+
+span.classifier {
+  font-family: sans-serif ;
+  font-style: oblique }
+
+span.classifier-delimiter {
+  font-family: sans-serif ;
+  font-weight: bold }
+
+span.interpreted {
+  font-family: sans-serif }
+
+span.option {
+  white-space: nowrap }
+
+span.pre {
+  white-space: pre }
+
+span.problematic {
+  color: red }
+
+span.section-subtitle {
+  /* font-size relative to parent (h1..h6 element) */
+  font-size: 100% }
+
+table { margin-top: 1.5em; margin-bottom: 1.5em; border-spacing: 0 }
+table.align-left, table.align-right { margin-top: 0 }
+
+table.table                { border-collapse: collapse; }
+
+table.table.hrules-table thead          { border: 1px solid black; border-width: 2px 0 0 }
+table.table.hrules-table tbody          { border: 1px solid black; border-width: 2px 0 }
+table.table.hrules-rows  tr             { border: 1px solid black; border-width: 0 0 1px }
+table.table.hrules-rows  tr.last        { border-width: 0 }
+table.table.hrules-rows  td, 
+table.table.hrules-rows  th             { padding: 1ex 1em; vertical-align: middle }
+
+table.table tr             { border-width: 0 }
+table.table td, 
+table.table th             { padding: 0.5ex 1em }
+table.table tr.first td    { padding-top: 1ex }
+table.table tr.last td     { padding-bottom: 1ex }
+table.table tr.first th    { padding-top: 1ex }
+table.table tr.last th     { padding-bottom: 1ex }
+
+
+table.citation {
+  border-left: solid 1px gray;
+  margin-left: 1px }
+
+table.docinfo {
+  margin: 3em 4em }
+
+table.docutils { }
+
+tr.footnote.footnote td, tr.footnote.footnote th { 
+  padding: 0 0.5em 1.5em;
+}
+
+table.docutils td, table.docutils th,
+table.docinfo td, table.docinfo th {
+  padding: 0 0.5em;
+  vertical-align: top }
+
+table.docutils th.field-name, table.docinfo th.docinfo-name {
+  font-weight: bold ;
+  text-align: left ;
+  white-space: nowrap ;
+  padding-left: 0 }
+
+/* used to remove borders from tables and images */
+.borderless, table.borderless td, table.borderless th {
+  border: 0 }
+
+table.borderless td, table.borderless th {
+  /* Override padding for "table.docutils td" with "!important".
+     The right padding separates the table cells. */
+  padding: 0 0.5em 0 0 } /* FIXME: was !important */
+
+h1 tt.docutils, h2 tt.docutils, h3 tt.docutils,
+h4 tt.docutils, h5 tt.docutils, h6 tt.docutils {
+  font-size: 100% }
+
+ul.auto-toc {
+  list-style-type: none }
+</style>
+<style type="text/css">
+/* 
+Project Gutenberg HTML docutils stylesheet.
+
+This stylesheet contains styles specific to HTML.
+*/
+
+/* FONTS */
+
+/* em                { font-style: normal }
+strong            { font-weight: normal } */
+
+.small-caps       { font-variant: small-caps }
+.gesperrt         { letter-spacing: 0.1em }
+
+/* ALIGN */
+
+.align-left       { clear: left;
+		    float: left;
+		    margin-right: 1em }
+
+.align-right      { clear: right;
+		    float: right;
+		    margin-left: 1em }
+
+.align-center     { margin-left: auto;
+		    margin-right: auto }
+
+div.shrinkwrap    { display: table; }
+
+/* SECTIONS */
+
+body              { margin: 5% 10% 5% 10% }
+
+/* compact list items containing just one p */
+li p.pfirst       { margin-top: 0; margin-bottom: 0 } 
+
+.first            { margin-top: 0 !important; 
+		    text-indent: 0 !important } 
+.last             { margin-bottom: 0 !important }
+
+span.dropcap      { float: left; margin: 0 0.1em 0 0; line-height: 1 }
+img.dropcap       { float: left; margin: 0 0.5em 0 0; max-width: 25% }
+span.dropspan     { font-variant: small-caps }
+
+.no-page-break    { page-break-before: avoid !important }
+
+/* PAGINATION */
+
+@media screen {
+   .coverpage, .frontispiece, .titlepage, .verso, .dedication, .plainpage
+                       { margin: 10% 0; }
+
+   div.clearpage, div.cleardoublepage
+                       { margin: 10% 0; border: none; border-top: 1px solid gray; }
+
+   .vfill              { margin:  5% 10% }
+}
+
+@media print {
+   div.clearpage       { page-break-before: always; padding-top: 10% }
+   div.cleardoublepage { page-break-before: right;  padding-top: 10%  }
+
+   .vfill              { margin-top: 20% }
+   h2.title            { margin-top: 20% }
+}
+
+</style>
+<title>THE FIRST TRUE GENTLEMAN</title>
+<meta name="PG.Rights" content="Public Domain" />
+<meta name="PG.Title" content="The First True Gentleman" />
+<meta name="PG.Producer" content="Al Haines" />
+<link rel="coverpage" href="images/img-cover.jpg" />
+<meta name="DC.Creator" content="Anonymous" />
+<meta name="DC.Created" content="1907" />
+<meta name="PG.Id" content="40153" />
+<meta name="PG.Released" content="2012-07-07" />
+<meta name="DC.Language" content="en" />
+<meta name="DC.Title" content="The First True Gentleman A Study of the Human Nature of Our Lord" />
+
+<link href="http://purl.org/dc/terms/" rel="schema.DCTERMS" />
+<link href="http://id.loc.gov/vocabulary/relators" rel="schema.MARCREL" />
+<meta content="The First True Gentleman&#10;A Study of the Human Nature of Our Lord" name="DCTERMS.title" />
+<meta content="gentle.rst" name="DCTERMS.source" />
+<meta content="en" scheme="DCTERMS.RFC4646" name="DCTERMS.language" />
+<meta content="2012-07-07T18:13:43.038360+00:00" scheme="DCTERMS.W3CDTF" name="DCTERMS.modified" />
+<meta content="Project Gutenberg" name="DCTERMS.publisher" />
+<meta content="Public Domain in the USA." name="DCTERMS.rights" />
+<link href="http://www.gutenberg.org/ebooks/40153" rel="DCTERMS.isFormatOf" />
+<meta content="Anonymous" name="DCTERMS.creator" />
+<meta content="2012-07-07" scheme="DCTERMS.W3CDTF" name="DCTERMS.created" />
+<meta content="width=device-width" name="viewport" />
+<meta content="EpubMaker 0.3.19b4 by Marcello Perathoner &lt;webmaster@gutenberg.org&gt;" name="generator" />
+<style type="text/css">
+.pageno       { position: absolute; right: 95%; font: medium sans-serif; text-indent: 0 }
+.pageno:after { color: gray; content: '[' attr(title) ']' }
+.lineno       { position: absolute; left:  95%; font: medium sans-serif; text-indent: 0 }
+.lineno:after { color: gray; content: '[' attr(title) ']' }
+.toc-pageref  { float: right }
+pre           { font-family: monospace; font-size: 0.9em; white-space: pre-wrap }
+</style>
+</head>
+<body>
+<div class="document" id="the-first-true-gentleman">
+<h1 class="document-title level-1 pfirst title">THE FIRST TRUE GENTLEMAN</h1>
+
+<!-- -*- encoding: utf-8 -*- -->
+<div class="clearpage">
+</div>
+<!-- -*- encoding: utf-8 -*- -->
+<div class="align-None container language-en noindent pgheader" id="pg-header" xml:lang="en" lang="en">
+<p class="noindent pfirst">This eBook is for the use of anyone anywhere at no cost and with
+almost no restrictions whatsoever. You may copy it, give it away or
+re-use it under the terms of the <a class="reference internal" href="#project-gutenberg-license">Project Gutenberg License</a>
+included with this eBook or online at
+<a class="reference external" href="http://www.gutenberg.org/license">http://www.gutenberg.org/license</a>.</p>
+<p class="noindent pnext"></p>
+<div class="noindent vspace" style="height: 2em">
+</div>
+<div class="align-None container noindent white-space-pre-line" id="pg-machine-header">
+<p class="noindent pfirst white-space-pre-line"><span class="white-space-pre-line">Title: The First True Gentleman<br />
+       A Study of the Human Nature of Our Lord<br />
+<br />
+Author: Anonymous<br />
+<br />
+Release Date: July 07, 2012 [EBook #40153]<br />
+<br />
+Language: English<br />
+<br />
+Character set encoding: UTF-8</span></p>
+</div>
+<div class="noindent vspace" style="height: 2em">
+</div>
+<p class="noindent pfirst" id="pg-start-line">*** START OF THIS PROJECT GUTENBERG EBOOK <span>THE FIRST TRUE GENTLEMAN</span> ***</p>
+<div class="noindent vspace" style="height: 4em">
+</div>
+<p class="noindent pfirst" id="pg-produced-by"><span>Produced by Al Haines.</span></p>
+<div class="noindent vspace" style="height: 1em">
+</div>
+<p class="noindent pfirst"><span></span></p>
+</div>
+<div class="align-None container coverpage">
+<div class="vspace" style="height: 3em">
+</div>
+<div class="align-center auto-scaled figure" style="width: 53%" id="figure-6">
+<span id="cover"></span><img class="align-center" style="display: block; width: 100%" alt=" " src="images/img-cover.jpg" />
+<div class="caption figure">
+Cover</div>
+</div>
+</div>
+<div class="vspace" style="height: 4em">
+</div>
+<div class="align-None center container titlepage white-space-pre-line">
+<p class="pfirst white-space-pre-line x-large">THE FIRST<br />
+TRUE GENTLEMAN</p>
+<div class="vspace white-space-pre-line" style="height: 2em">
+</div>
+<p class="medium pfirst white-space-pre-line"><em class="italics white-space-pre-line">A Study in the Human<br />
+Nature of Our Lord</em></p>
+<div class="vspace white-space-pre-line" style="height: 3em">
+</div>
+<p class="medium pfirst white-space-pre-line"><em class="italics white-space-pre-line">With a Foreword by</em><br />
+EDWARD EVERETT HALE, D.D.</p>
+<div class="vspace white-space-pre-line" style="height: 3em">
+</div>
+<p class="medium pfirst white-space-pre-line">BOSTON<br />
+JOHN W. LUCE &amp; COMPANY<br />
+1907</p>
+<div class="vspace white-space-pre-line" style="height: 4em">
+</div>
+</div>
+<div class="align-None center container verso white-space-pre-line">
+<p class="pfirst small white-space-pre-line"><em class="italics white-space-pre-line">Copyright</em>, 1907, <em class="italics white-space-pre-line">by</em><br />
+JOHN W. LUCE &amp; COMPANY<br />
+<em class="italics white-space-pre-line">Boston, Mass., U.S.A.</em></p>
+<div class="vspace white-space-pre-line" style="height: 3em">
+</div>
+<p class="pfirst small white-space-pre-line"><em class="italics white-space-pre-line">The Plimpton Press Norwood Mass.</em></p>
+</div>
+<div class="vspace" style="height: 4em">
+</div>
+<p class="center large pfirst">A FOREWORD</p>
+<div class="vspace" style="height: 2em">
+</div>
+<p class="pfirst">The dictionaries and the
+students of words have a great
+deal to say,--perhaps more than
+is worth while,--of the origin of
+the word Gentleman,--whether
+a gentleman in England and a
+<em class="italics">gentilhomme</em> in France mean
+the same thing, and so on.  The
+really interesting thing is that in
+a republic where a man's a man,
+the gentleman is not created by
+dictionaries or by laws.  You
+cannot make him by parchment.</p>
+<p class="pnext">As matter of philology, the
+original gentleman was <em class="italics">gentilis</em>.
+That is, he belonged to a <em class="italics">gens</em>
+or clan or family, which was
+established in Roman history.
+He was somebody.  If he had
+been nobody he would have
+had no name.  Indeed, it is
+worth observing that this was
+the condition found among the
+islanders of the South Sea.
+Exactly as on a great farm the
+distinguished sheep, when they
+were sent to a cattle fair might
+have specific names, while for
+the great flock nobody pretends
+to name the individuals, so
+certain people, even in feudal times,
+were <em class="italics">gentilis</em>, or belonged to a
+<em class="italics">gens</em>, while the great body of
+men were dignified by no such
+privilege.</p>
+<p class="pnext">The word gentleman, however,
+has bravely won for itself,
+as Christian civilisation has gone
+on, a much nobler meaning.</p>
+<p class="pnext">The reader of this little book
+will see that the poet Dekker,
+surrounded by the gentlemen
+of Queen Elizabeth's Court,
+already comprehended the larger
+sense of this great word.  The
+writer of this essay, taking the
+familiar language of the
+Established Church of England,
+follows out in some of the great
+crises of the Saviour's life some
+of the noblest illustrations of the
+poet's phrase.</p>
+<p class="pnext">It is well worth remembering
+that the Received Version of the
+New Testament, which belongs
+to Dekker's own generation,
+accepts his noble use of
+language in one of the great
+central passages.  In the very little
+which we know of the early
+arrangements of apostleship, we
+are given to understand that the
+Apostle James lived at Jerusalem,
+and that in what he wrote
+he addressed the Christians
+of every race and habit in all
+parts of that world of which
+Jerusalem is the centre.  The
+Epistle of James may be called
+the first encyclical addressed to
+all sorts and conditions of men
+who accepted Jesus of Nazareth
+as the leader of their lives.
+To this day its practical and
+straightforward simplicity
+challenges the admiration of all those
+believers who know that the tree
+is to be judged by its fruits,--that
+it is not enough to cry "Lord,
+Lord,"--that it is not enough to
+say, "I believe in this" or "I
+believe in that";--but rather
+that the follower of Christ must
+do what He says.  And how
+does this gentle apostle of
+apostles define in word the "wisdom
+which is from above?"  The
+wisdom from above is first pure,
+as the Master had said, "Blessed
+are the pure in heart."  Then the
+Wisdom from above is
+peaceable, as the angels said when
+He was born.  Then the wisdom
+from above is gentle.  The man
+who follows Christ is a gentle
+man.  The woman who follows
+Christ is a gentle woman.</p>
+<p class="pnext">And if anyone eager for
+accuracy in the use of language
+choose to hunt the Greek word
+which we find in St. James's
+Epistle through the lexicons, he
+learns that the gentleman whom
+St. James knew is he who in
+dealing with others "abates
+something from his absolute
+right."  He is so large and
+unselfish that he can grant more
+than he is compelled to grant by
+rigorous justice.  He is the man
+who can love his brothers better
+than himself.  These are phrases
+from the old dictionaries.</p>
+<p class="pnext">"Greater love hath no man
+than this, that a man lay down
+his life for his friends."</p>
+<div class="vspace" style="height: 1em">
+</div>
+<p class="left medium pfirst">EDWARD E. HALE.</p>
+<div class="vspace" style="height: 4em">
+</div>
+<p class="center large pfirst">The First True Gentleman</p>
+<div class="vspace" style="height: 2em">
+</div>
+<p class="pfirst">The Elizabethan poet
+Dekker said of our Lord that
+He was "the first true gentleman
+that ever breathed."  The
+passage is worth quotation:--</p>
+<blockquote>
+<div>
+<div class="line-block outermost">
+<div class="line">"Patience! why, 'tis the soul of peace,</div>
+<div class="line">Of all the virtues nearest kin to Heaven.</div>
+<div class="line">It makes men look like gods, the best of men</div>
+<div class="line">That e'er wore earth about him was a sufferer--</div>
+<div class="line">A soft, meek, patient, humble, tranquil spirit,</div>
+<div class="line">The first true gentleman that ever breathed."</div>
+<div class="line"> </div>
+</div>
+</div>
+</blockquote>
+<p class="pfirst">All through English literature
+the word "gentleman" has
+had two meanings, and has
+been used to describe a man
+of certain qualities as well as a
+man of a certain birth.  A
+hundred and fifty years before
+Dekker wrote it was declared that
+"truth, pity, freedom, and hardiness"
+were the essential qualities
+of a gentleman.  Our Lord
+in His human nature personified
+these things.  Every gentleman
+in Christendom derives his
+ideal from Christ whatever
+may be his dogmatic creed.  No
+virtue, perhaps, was so
+characteristic of our Lord as His
+devotion to truth.  He declared
+before Pilate that it was the
+end for which He was born.
+He condemned all those who
+hindered its diffusion and tried
+to make it the monopoly of a
+caste.  He tabooed all absurd
+asseverations, the occasional
+use of which was but a
+confession of habitual lying.  He
+taught that lies were of the
+Devil, and that it was the Holy
+Spirit who led men into all
+truth.  He said that sincerity
+was the great light of the
+Spirit, that all double-minded
+men were in the dark, and that
+their fear of the light of day was
+their own sufficient condemnation.
+The ideal gentleman all
+through the ages has conformed
+his conduct in the matter of
+truth to the Christian standard.
+He has avoided mental
+reservation, abhorred lying, and,
+though he has garnished his
+speech with oaths, his yea has
+meant yea, and his nay, nay,
+and he has regarded his word
+as his bond.</p>
+<p class="pnext">Again, courage and pity were
+combined in the character of
+Christ as they had never been
+combined before.  Now the
+combination is common enough.
+We have the seed and can grow
+the flower; but every man who
+excels in both is in some sense
+a follower of Christ.  The
+courage of our Lord, though it
+included physical courage, was
+not of that calibre which is
+more properly called animal,--animal
+courage implies a want
+of imagination, and is probably
+incompatible with pity.  Christ
+in the garden of Gethsemane
+"tasted death for every man,"
+and held out a hand of sympathy
+to that vast majority who must
+for ever regard it with strong
+dread.  Yet by His precepts,
+by His life, and by His death
+He taught men that fear can be
+mastered, though it is a form
+of suffering seldom altogether
+spared to the highest type of man.</p>
+<p class="pnext">Apart from their religious
+significance, the trial and
+crucifixion of Christ form the scene in
+the world's history of which
+humanity has most reason to
+be proud.  Christ, in His
+human nature, was a Galilean
+peasant.  He excused to his
+face the Roman Governor who
+stooped to threaten a prisoner
+in Whom he found no fault.
+Judge and prisoner changed
+places.  The distinctions of the
+world dissolved before the
+distinctions of God.  At Pilate's
+bar all gentlemen recognise
+their hero, an example for
+ever of the powerlessness of
+circumstances to humiliate.</p>
+<p class="pnext">On the Cross not only did our
+Lord maintain that composure
+which witnesses to the supreme
+power of the soul, but with still
+balanced judgment He refused
+to impute sin to the Roman
+conscripts whose orders were to
+crucify.  He made a last effort
+to console the grief of His
+mother and His friend, and set
+Himself to give hope and
+encouragement to the suffering
+thief who believed he was
+receiving the due reward of his
+deeds.  A genius however great,
+a gentleman however perfect,
+could imagine no story of
+courage more noble or more
+inspiring than the one set down in
+the Gospels.</p>
+<p class="pnext">A new pity came into the
+world with Christ.  The lump
+is not yet leavened; even the
+white race is not yet pitiful.
+All the same, the emotion of
+pity is a power, and does,
+broadly speaking, distinguish
+Christendom from the heathen
+world.  It is part of the ideal of
+all those who are conscious of
+having an ideal at all.  Gusts
+of anger, both national and
+individual, sweep it out of sight;
+it is paralysed by fear, rendered
+blind by use and wont; again
+and again its scope is narrowed
+by the reaction which follows
+upon affectations and exaggerations;
+but it is never killed.  It
+has been part of the moral
+equipment of a gentleman since
+Christ "went about doing good,"
+revealing to men the secret
+Nature could not teach
+them--breaking, as it seemed to them,
+the uniformity of her relentlessness--the
+secret of the divine
+compassion.</p>
+<p class="pnext">The independence of mind
+and manner inculcated by our
+Lord still marks a gentleman
+to-day.  Did He not teach that
+a man's conduct must at all
+times be ruled by his code and
+not regulated by his company?
+He must maintain the same
+attitude towards life whether
+he find himself among just or
+unjust, friends or enemies.  He
+must not salute his brethren
+only, nor be only kind to those
+that love him.  He must remain
+an honest man among thieves,
+ready to rebuke an offender to
+his face, but still a gentleman,
+who does not "revile again" or
+suffer the passion of revenge
+to destroy his judgment.  This
+moral independence is the rock
+on which character is built.
+The man whose actions depend
+upon his environment has but
+a sandy foundation to his moral
+nature.  Upon this strong rock
+of moral independence rest also
+the best manners.  Self-assertion
+and self-distrust are singularly
+allied.  It is the ill-assured
+who push in their ardent desire
+to be like somebody else.  It is
+dignity rather than humility
+which is recommended to us
+in the parable of those who
+chose the chief seats at feasts.
+It is a common thing to hear it
+said by simple people in praise
+of some one they regard as
+pre-eminently a gentleman that "he
+is always the same."  No doubt
+the publicans and sinners whose
+friendly advances Christ
+accepted without apparent
+condescension said this of Him.
+He was so entirely Himself
+among them that the vulgar-minded
+Pharisees whispered to
+one another that He must be
+ignorant of the sort of company
+He was in, or surely He would
+make plain the gulf fixed
+between Himself and them.  By
+conventionality our Lord seems
+never to have been bound.  On
+the other hand, He did not
+wantonly overthrow the conventions
+of His day.  When a
+social custom struck Him as
+injurious, He told those who
+gave in to it that it stood in the
+way of better things, substituting
+custom for conscience.  On
+the other hand, He fell in with
+the usual ways of respectable
+people in a great many particulars,
+praying in a village place
+of worship beside Pharisees
+who stood up to bless themselves
+and publicans who dared
+not so much as lift their eyes to
+heaven, taking part in a service
+which was far enough removed
+from the sincere, spiritual, and
+wholly unsuperstitious worship
+to which He looked forward as
+He talked beside the well.</p>
+<p class="pnext">Christ had a horror of
+tyranny in every form, and He
+seems to have regarded it as a
+peculiarly heathen vice.  "The
+kings of the Gentiles exercise
+lordship over them," He said.
+Some bold translators
+emphasise His meaning by saying
+"lord it" over them.  Dekker
+was right.  A true gentleman
+is not harsh, implacable, or
+capricious.  The breaking of
+other men's wills gives him no
+pleasure.  Christ's followers, He
+said, must avoid all selfish wish
+for ascendency.  A ruler, He
+said, should regard himself as
+the servant of all.  Where
+ruling is concerned the counsels
+of Christ seem, like all His most
+characteristic utterances, to be
+calculated rather to inspire
+aspiration in the minds of good
+men than definitely to regulate
+their action, for in more than
+one of the parables His words
+imply that an ambition to rule
+is a lawful ambition, and that
+increased responsibility may be
+looked to as a reward.</p>
+<p class="pnext">Theoretically the Christian
+attitude towards power has
+always been the gentlemanlike
+attitude.  Hall, the chronicler,
+writing in 1548, says in the
+"Chronicles of Henry VI.":
+"In this matter Lord Clyfford
+was accounted a tyrant, and
+no gentleman."</p>
+<p class="pnext">It is commonly said to-day
+that Christianity has never been
+tried.  Such a judgment is
+superficial in the extreme.  The moral
+teaching of Christ has never
+been entirely carried out by any
+community nor perhaps by any
+man, but to speak as though it
+had no great influence is sheer
+affectation.  The white people
+have wasted, it is true, their time
+and their blood in quarrelling
+about dogma; but every
+Christian sect has recognised in the
+divine character of the
+Nazarene Carpenter who suffered
+upon the Cross the
+perfectibility of the human race,
+and in their highest moments
+of aspiration and repentance
+peoples and rulers alike have
+pleaded His merits before God.
+Nothing but this recognition
+could have curbed the cruel
+pride of the ancient world,
+have undermined the barriers
+of race and caste with a sense
+of human brotherhood, have
+cast at least a suspicion upon
+the theory that might is right,
+and made respect for women a
+necessary part of every good
+man's creed.  Entirely apart
+from what is usually called
+religion in England to-day,
+"truth, pity, freedom, and
+hardiness" are the ideals of the race
+because nineteen hundred years
+ago Christ was born in the
+stable of a Jewish inn.</p>
+<div class="vspace" style="height: 6em">
+</div>
+<!-- -*- encoding: utf-8 -*- -->
+<div class="backmatter">
+</div>
+<p class="pfirst" id="pg-end-line">*** END OF THIS PROJECT GUTENBERG EBOOK <span>THE FIRST TRUE GENTLEMAN</span> ***</p>
+<div class="cleardoublepage">
+</div>
+<div class="language-en level-2 pgfooter section" id="a-word-from-project-gutenberg" xml:lang="en" lang="en">
+<span id="pg-footer"></span><h2 class="level-2 pfirst section-title title">A Word from Project Gutenberg</h2>
+<p class="pfirst">We will update this book if we find any errors.</p>
+<p class="pnext">This book can be found under: <a class="reference external" href="http://www.gutenberg.org/ebooks/40153"><span>http://www.gutenberg.org/ebooks/40153</span></a></p>
+<p class="pnext">Creating the works from public domain print editions means that no one
+owns a United States copyright in these works, so the Foundation (and
+you!) can copy and distribute it in the United States without
+permission and without paying copyright royalties.  Special rules, set
+forth in the General Terms of Use part of this license, apply to
+copying and distributing Project Gutenberg™ electronic works to
+protect the Project Gutenberg™ concept and trademark. Project
+Gutenberg is a registered trademark, and may not be used if you charge
+for the eBooks, unless you receive specific permission. If you do not
+charge anything for copies of this eBook, complying with the rules is
+very easy. You may use this eBook for nearly any purpose such as
+creation of derivative works, reports, performances and research.
+They may be modified and printed and given away – you may do
+practically <em class="italics">anything</em> with public domain eBooks.  Redistribution is
+subject to the trademark license, especially commercial
+redistribution.</p>
+<div class="level-3 section" id="the-full-project-gutenberg-license">
+<span id="project-gutenberg-license"></span><h3 class="level-3 pfirst section-title title">The Full Project Gutenberg License</h3>
+<p class="pfirst"><em class="italics">Please read this before you distribute or use this work.</em></p>
+<p class="pnext">To protect the Project Gutenberg™ mission of promoting the free
+distribution of electronic works, by using or distributing this work
+(or any other work associated in any way with the phrase “Project
+Gutenberg”), you agree to comply with all the terms of the Full
+Project Gutenberg™ License available with this file or online at
+<a class="reference external" href="http://www.gutenberg.org/license">http://www.gutenberg.org/license</a>.</p>
+<div class="level-4 section" id="section-1-general-terms-of-use-redistributing-project-gutenberg-electronic-works">
+<h4 class="level-4 pfirst section-title title">Section 1. General Terms of Use &amp; Redistributing Project Gutenberg™ electronic works</h4>
+<p class="pfirst"><strong class="bold">1.A.</strong> By reading or using any part of this Project Gutenberg™
+electronic work, you indicate that you have read, understand, agree to
+and accept all the terms of this license and intellectual property
+(trademark/copyright) agreement. If you do not agree to abide by all
+the terms of this agreement, you must cease using and return or
+destroy all copies of Project Gutenberg™ electronic works in your
+possession. If you paid a fee for obtaining a copy of or access to a
+Project Gutenberg™ electronic work and you do not agree to be bound by
+the terms of this agreement, you may obtain a refund from the person
+or entity to whom you paid the fee as set forth in paragraph 1.E.8.</p>
+<p class="pnext"><strong class="bold">1.B.</strong> “Project Gutenberg” is a registered trademark. It may only be
+used on or associated in any way with an electronic work by people who
+agree to be bound by the terms of this agreement. There are a few
+things that you can do with most Project Gutenberg™ electronic works
+even without complying with the full terms of this agreement. See
+paragraph 1.C below. There are a lot of things you can do with Project
+Gutenberg™ electronic works if you follow the terms of this agreement
+and help preserve free future access to Project Gutenberg™ electronic
+works. See paragraph 1.E below.</p>
+<p class="pnext"><strong class="bold">1.C.</strong> The Project Gutenberg Literary Archive Foundation (“the
+Foundation” or PGLAF), owns a compilation copyright in the collection
+of Project Gutenberg™ electronic works. Nearly all the individual
+works in the collection are in the public domain in the United
+States. If an individual work is in the public domain in the United
+States and you are located in the United States, we do not claim a
+right to prevent you from copying, distributing, performing,
+displaying or creating derivative works based on the work as long as
+all references to Project Gutenberg are removed. Of course, we hope
+that you will support the Project Gutenberg™ mission of promoting free
+access to electronic works by freely sharing Project Gutenberg™ works
+in compliance with the terms of this agreement for keeping the Project
+Gutenberg™ name associated with the work. You can easily comply with
+the terms of this agreement by keeping this work in the same format
+with its attached full Project Gutenberg™ License when you share it
+without charge with others.</p>
+<p class="pnext"></p>
+<p class="pnext"><strong class="bold">1.D.</strong> The copyright laws of the place where you are located also
+govern what you can do with this work. Copyright laws in most
+countries are in a constant state of change. If you are outside the
+United States, check the laws of your country in addition to the terms
+of this agreement before downloading, copying, displaying, performing,
+distributing or creating derivative works based on this work or any
+other Project Gutenberg™ work.  The Foundation makes no
+representations concerning the copyright status of any work in any
+country outside the United States.</p>
+<p class="pnext"><strong class="bold">1.E.</strong> Unless you have removed all references to Project Gutenberg:</p>
+<p class="pnext"><strong class="bold">1.E.1.</strong> The following sentence, with active links to, or other
+immediate access to, the full Project Gutenberg™ License must appear
+prominently whenever any copy of a Project Gutenberg™ work (any work
+on which the phrase “Project Gutenberg” appears, or with which the
+phrase “Project Gutenberg” is associated) is accessed, displayed,
+performed, viewed, copied or distributed:</p>
+<blockquote>
+<div>
+<p class="pfirst">This eBook is for the use of anyone anywhere at no cost and with
+almost no restrictions whatsoever. You may copy it, give it away or
+re-use it under the terms of the Project Gutenberg License included
+with this eBook or online at <a class="reference external" href="http://www.gutenberg.org">http://www.gutenberg.org</a></p>
+</div>
+</blockquote>
+<p class="pfirst"><strong class="bold">1.E.2.</strong> If an individual Project Gutenberg™ electronic work is
+derived from the public domain (does not contain a notice indicating
+that it is posted with permission of the copyright holder), the work
+can be copied and distributed to anyone in the United States without
+paying any fees or charges. If you are redistributing or providing
+access to a work with the phrase “Project Gutenberg” associated with
+or appearing on the work, you must comply either with the requirements
+of paragraphs 1.E.1 through 1.E.7 or obtain permission for the use of
+the work and the Project Gutenberg™ trademark as set forth in
+paragraphs 1.E.8 or 1.E.9.</p>
+<p class="pnext"><strong class="bold">1.E.3.</strong> If an individual Project Gutenberg™ electronic work is
+posted with the permission of the copyright holder, your use and
+distribution must comply with both paragraphs 1.E.1 through 1.E.7 and
+any additional terms imposed by the copyright holder. Additional terms
+will be linked to the Project Gutenberg™ License for all works posted
+with the permission of the copyright holder found at the beginning of
+this work.</p>
+<p class="pnext"><strong class="bold">1.E.4.</strong> Do not unlink or detach or remove the full Project
+Gutenberg™ License terms from this work, or any files containing a
+part of this work or any other work associated with Project
+Gutenberg™.</p>
+<p class="pnext"><strong class="bold">1.E.5.</strong> Do not copy, display, perform, distribute or redistribute
+this electronic work, or any part of this electronic work, without
+prominently displaying the sentence set forth in paragraph 1.E.1 with
+active links or immediate access to the full terms of the Project
+Gutenberg™ License.</p>
+<p class="pnext"><strong class="bold">1.E.6.</strong> You may convert to and distribute this work in any binary,
+compressed, marked up, nonproprietary or proprietary form, including
+any word processing or hypertext form. However, if you provide access
+to or distribute copies of a Project Gutenberg™ work in a format other
+than “Plain Vanilla ASCII” or other format used in the official
+version posted on the official Project Gutenberg™ web site
+(<a class="reference external" href="http://www.gutenberg.org">http://www.gutenberg.org</a>), you must, at no additional cost, fee or
+expense to the user, provide a copy, a means of exporting a copy, or a
+means of obtaining a copy upon request, of the work in its original
+“Plain Vanilla ASCII” or other form. Any alternate format must include
+the full Project Gutenberg™ License as specified in paragraph 1.E.1.</p>
+<p class="pnext"><strong class="bold">1.E.7.</strong> Do not charge a fee for access to, viewing, displaying,
+performing, copying or distributing any Project Gutenberg™ works
+unless you comply with paragraph 1.E.8 or 1.E.9.</p>
+<p class="pnext"><strong class="bold">1.E.8.</strong> You may charge a reasonable fee for copies of or providing
+access to or distributing Project Gutenberg™ electronic works provided
+that</p>
+<ul class="open">
+<li><p class="first pfirst">You pay a royalty fee of 20% of the gross profits you derive from
+the use of Project Gutenberg™ works calculated using the method you
+already use to calculate your applicable taxes. The fee is owed to
+the owner of the Project Gutenberg™ trademark, but he has agreed to
+donate royalties under this paragraph to the Project Gutenberg
+Literary Archive Foundation. Royalty payments must be paid within 60
+days following each date on which you prepare (or are legally
+required to prepare) your periodic tax returns. Royalty payments
+should be clearly marked as such and sent to the Project Gutenberg
+Literary Archive Foundation at the address specified in Section 4,
+“Information about donations to the Project Gutenberg Literary
+Archive Foundation.”</p>
+</li>
+<li><p class="first pfirst">You provide a full refund of any money paid by a user who notifies
+you in writing (or by e-mail) within 30 days of receipt that s/he
+does not agree to the terms of the full Project Gutenberg™
+License. You must require such a user to return or destroy all
+copies of the works possessed in a physical medium and discontinue
+all use of and all access to other copies of Project Gutenberg™
+works.</p>
+</li>
+<li><p class="first pfirst">You provide, in accordance with paragraph 1.F.3, a full refund of
+any money paid for a work or a replacement copy, if a defect in the
+electronic work is discovered and reported to you within 90 days of
+receipt of the work.</p>
+</li>
+<li><p class="first pfirst">You comply with all other terms of this agreement for free
+distribution of Project Gutenberg™ works.</p>
+</li>
+</ul>
+<p class="pfirst"><strong class="bold">1.E.9.</strong> If you wish to charge a fee or distribute a Project
+Gutenberg™ electronic work or group of works on different terms than
+are set forth in this agreement, you must obtain permission in writing
+from both the Project Gutenberg Literary Archive Foundation and
+Michael Hart, the owner of the Project Gutenberg™ trademark. Contact
+the Foundation as set forth in Section 3. below.</p>
+<p class="pnext"><strong class="bold">1.F.</strong></p>
+<p class="pnext"><strong class="bold">1.F.1.</strong> Project Gutenberg volunteers and employees expend
+considerable effort to identify, do copyright research on, transcribe
+and proofread public domain works in creating the Project Gutenberg™
+collection. Despite these efforts, Project Gutenberg™ electronic
+works, and the medium on which they may be stored, may contain
+“Defects,” such as, but not limited to, incomplete, inaccurate or
+corrupt data, transcription errors, a copyright or other intellectual
+property infringement, a defective or damaged disk or other medium, a
+computer virus, or computer codes that damage or cannot be read by
+your equipment.</p>
+<p class="pnext"><strong class="bold">1.F.2.</strong> LIMITED WARRANTY, DISCLAIMER OF DAMAGES – Except for the
+“Right of Replacement or Refund” described in paragraph 1.F.3, the
+Project Gutenberg Literary Archive Foundation, the owner of the
+Project Gutenberg™ trademark, and any other party distributing a
+Project Gutenberg™ electronic work under this agreement, disclaim all
+liability to you for damages, costs and expenses, including legal
+fees. YOU AGREE THAT YOU HAVE NO REMEDIES FOR NEGLIGENCE, STRICT
+LIABILITY, BREACH OF WARRANTY OR BREACH OF CONTRACT EXCEPT THOSE
+PROVIDED IN PARAGRAPH 1.F.3. YOU AGREE THAT THE FOUNDATION, THE
+TRADEMARK OWNER, AND ANY DISTRIBUTOR UNDER THIS AGREEMENT WILL NOT BE
+LIABLE TO YOU FOR ACTUAL, DIRECT, INDIRECT, CONSEQUENTIAL, PUNITIVE OR
+INCIDENTAL DAMAGES EVEN IF YOU GIVE NOTICE OF THE POSSIBILITY OF SUCH
+DAMAGE.</p>
+<p class="pnext"><strong class="bold">1.F.3.</strong> LIMITED RIGHT OF REPLACEMENT OR REFUND – If you discover a
+defect in this electronic work within 90 days of receiving it, you can
+receive a refund of the money (if any) you paid for it by sending a
+written explanation to the person you received the work from. If you
+received the work on a physical medium, you must return the medium
+with your written explanation. The person or entity that provided you
+with the defective work may elect to provide a replacement copy in
+lieu of a refund. If you received the work electronically, the person
+or entity providing it to you may choose to give you a second
+opportunity to receive the work electronically in lieu of a refund. If
+the second copy is also defective, you may demand a refund in writing
+without further opportunities to fix the problem.</p>
+<p class="pnext"><strong class="bold">1.F.4.</strong> Except for the limited right of replacement or refund set
+forth in paragraph 1.F.3, this work is provided to you ‘AS-IS,’ WITH
+NO OTHER WARRANTIES OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT
+LIMITED TO WARRANTIES OF MERCHANTIBILITY OR FITNESS FOR ANY PURPOSE.</p>
+<p class="pnext"><strong class="bold">1.F.5.</strong> Some states do not allow disclaimers of certain implied
+warranties or the exclusion or limitation of certain types of
+damages. If any disclaimer or limitation set forth in this agreement
+violates the law of the state applicable to this agreement, the
+agreement shall be interpreted to make the maximum disclaimer or
+limitation permitted by the applicable state law. The invalidity or
+unenforceability of any provision of this agreement shall not void the
+remaining provisions.</p>
+<p class="pnext"><strong class="bold">1.F.6.</strong> INDEMNITY – You agree to indemnify and hold the Foundation,
+the trademark owner, any agent or employee of the Foundation, anyone
+providing copies of Project Gutenberg™ electronic works in accordance
+with this agreement, and any volunteers associated with the
+production, promotion and distribution of Project Gutenberg™
+electronic works, harmless from all liability, costs and expenses,
+including legal fees, that arise directly or indirectly from any of
+the following which you do or cause to occur: (a) distribution of this
+or any Project Gutenberg™ work, (b) alteration, modification, or
+additions or deletions to any Project Gutenberg™ work, and (c) any
+Defect you cause.</p>
+</div>
+<div class="level-4 section" id="section-2-information-about-the-mission-of-project-gutenberg">
+<h4 class="level-4 pfirst section-title title">Section 2. Information about the Mission of Project Gutenberg™</h4>
+<p class="pfirst">Project Gutenberg™ is synonymous with the free distribution of
+electronic works in formats readable by the widest variety of
+computers including obsolete, old, middle-aged and new computers. It
+exists because of the efforts of hundreds of volunteers and donations
+from people in all walks of life.</p>
+<p class="pnext">Volunteers and financial support to provide volunteers with the
+assistance they need, is critical to reaching Project Gutenberg™'s
+goals and ensuring that the Project Gutenberg™ collection will remain
+freely available for generations to come. In 2001, the Project
+Gutenberg Literary Archive Foundation was created to provide a secure
+and permanent future for Project Gutenberg™ and future generations. To
+learn more about the Project Gutenberg Literary Archive Foundation and
+how your efforts and donations can help, see Sections 3 and 4 and the
+Foundation web page at <a class="reference external" href="http://www.pglaf.org">http://www.pglaf.org</a> .</p>
+</div>
+<div class="level-4 section" id="section-3-information-about-the-project-gutenberg-literary-archive-foundation">
+<h4 class="level-4 pfirst section-title title">Section 3. Information about the Project Gutenberg Literary Archive Foundation</h4>
+<p class="pfirst">The Project Gutenberg Literary Archive Foundation is a non profit
+501(c)(3) educational corporation organized under the laws of the
+state of Mississippi and granted tax exempt status by the Internal
+Revenue Service. The Foundation's EIN or federal tax identification
+number is 64-6221541. Its 501(c)(3) letter is posted at
+<a class="reference external" href="http://www.gutenberg.org/fundraising/pglaf">http://www.gutenberg.org/fundraising/pglaf</a> . Contributions to the
+Project Gutenberg Literary Archive Foundation are tax deductible to
+the full extent permitted by U.S.  federal laws and your state's laws.</p>
+<p class="pnext">The Foundation's principal office is located at 4557 Melan Dr.
+S. Fairbanks, AK, 99712., but its volunteers and employees are
+scattered throughout numerous locations. Its business office is
+located at 809 North 1500 West, Salt Lake City, UT 84116, (801)
+596-1887, email <a class="reference external" href="mailto:business@pglaf.org">business@pglaf.org</a>. Email contact links and up to date
+contact information can be found at the Foundation's web site and
+official page at <a class="reference external" href="http://www.pglaf.org">http://www.pglaf.org</a></p>
+<p class="pnext">For additional contact information:</p>
+<blockquote>
+<div>
+<div class="line-block outermost">
+<div class="line">Dr. Gregory B. Newby</div>
+<div class="line">Chief Executive and Director</div>
+<div class="line"><a class="reference external" href="mailto:gbnewby@pglaf.org">gbnewby@pglaf.org</a></div>
+</div>
+</div>
+</blockquote>
+</div>
+<div class="level-4 section" id="section-4-information-about-donations-to-the-project-gutenberg-literary-archive-foundation">
+<h4 class="level-4 pfirst section-title title">Section 4. Information about Donations to the Project Gutenberg Literary Archive Foundation</h4>
+<p class="pfirst">Project Gutenberg™ depends upon and cannot survive without wide spread
+public support and donations to carry out its mission of increasing
+the number of public domain and licensed works that can be freely
+distributed in machine readable form accessible by the widest array of
+equipment including outdated equipment. Many small donations ($1 to
+$5,000) are particularly important to maintaining tax exempt status
+with the IRS.</p>
+<p class="pnext">The Foundation is committed to complying with the laws regulating
+charities and charitable donations in all 50 states of the United
+States. Compliance requirements are not uniform and it takes a
+considerable effort, much paperwork and many fees to meet and keep up
+with these requirements. We do not solicit donations in locations
+where we have not received written confirmation of compliance. To SEND
+DONATIONS or determine the status of compliance for any particular
+state visit <a class="reference external" href="http://www.gutenberg.org/fundraising/donate">http://www.gutenberg.org/fundraising/donate</a></p>
+<p class="pnext">While we cannot and do not solicit contributions from states where we
+have not met the solicitation requirements, we know of no prohibition
+against accepting unsolicited donations from donors in such states who
+approach us with offers to donate.</p>
+<p class="pnext">International donations are gratefully accepted, but we cannot make
+any statements concerning tax treatment of donations received from
+outside the United States. U.S. laws alone swamp our small staff.</p>
+<p class="pnext">Please check the Project Gutenberg Web pages for current donation
+methods and addresses. Donations are accepted in a number of other
+ways including checks, online payments and credit card donations. To
+donate, please visit: <a class="reference external" href="http://www.gutenberg.org/fundraising/donate">http://www.gutenberg.org/fundraising/donate</a></p>
+</div>
+<div class="level-4 section" id="section-5-general-information-about-project-gutenberg-electronic-works">
+<h4 class="level-4 pfirst section-title title">Section 5. General Information About Project Gutenberg™ electronic works.</h4>
+<p class="pfirst">Professor Michael S. Hart is the originator of the Project Gutenberg™
+concept of a library of electronic works that could be freely shared
+with anyone. For thirty years, he produced and distributed Project
+Gutenberg™ eBooks with only a loose network of volunteer support.</p>
+<p class="pnext">Project Gutenberg™ eBooks are often created from several printed
+editions, all of which are confirmed as Public Domain in the
+U.S. unless a copyright notice is included. Thus, we do not
+necessarily keep eBooks in compliance with any particular paper
+edition.</p>
+<p class="pnext">Each eBook is in a subdirectory of the same number as the eBook's
+eBook number, often in several formats including plain vanilla ASCII,
+compressed (zipped), HTML and others.</p>
+<p class="pnext">Corrected <em class="italics">editions</em> of our eBooks replace the old file and take over
+the old filename and etext number. The replaced older file is
+renamed. <em class="italics">Versions</em> based on separate sources are treated as new
+eBooks receiving new filenames and etext numbers.</p>
+<p class="pnext">Most people start at our Web site which has the main PG search
+facility:</p>
+<blockquote>
+<div>
+<p class="pfirst"><a class="reference external" href="http://www.gutenberg.org">http://www.gutenberg.org</a></p>
+</div>
+</blockquote>
+<p class="pfirst">This Web site includes information about Project Gutenberg™, including
+how to make donations to the Project Gutenberg Literary Archive
+Foundation, how to help produce our new eBooks, and how to subscribe
+to our email newsletter to hear about new eBooks.</p>
+</div>
+</div>
+</div>
+</div>
+</body>
+</html>

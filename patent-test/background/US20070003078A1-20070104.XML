@@ -1,0 +1,423 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE us-patent-application SYSTEM "us-patent-application-v42-2006-08-23.dtd" [ ]>
+<us-patent-application lang="EN" dtd-version="v4.2 2006-08-23" file="US20070003078A1-20070104.XML" status="PRODUCTION" id="us-patent-application" country="US" date-produced="20061221" date-publ="20070104">
+<us-bibliographic-data-application lang="EN" country="US">
+<publication-reference>
+<document-id>
+<country>US</country>
+<doc-number>20070003078</doc-number>
+<kind>A1</kind>
+<date>20070104</date>
+</document-id>
+</publication-reference>
+<application-reference appl-type="utility">
+<document-id>
+<country>US</country>
+<doc-number>11130080</doc-number>
+<date>20050516</date>
+</document-id>
+</application-reference>
+<us-application-series-code>11</us-application-series-code>
+<classifications-ipcr>
+<classification-ipcr>
+<ipc-version-indicator><date>20060101</date></ipc-version-indicator>
+<classification-level>A</classification-level>
+<section>H</section>
+<class>03</class>
+<subclass>G</subclass>
+<main-group>3</main-group>
+<subgroup>00</subgroup>
+<symbol-position>F</symbol-position>
+<classification-value>I</classification-value>
+<action-date><date>20070104</date></action-date>
+<generating-office><country>US</country></generating-office>
+<classification-status>B</classification-status>
+<classification-data-source>H</classification-data-source>
+</classification-ipcr>
+</classifications-ipcr>
+<classification-national>
+<country>US</country>
+<main-classification>381107000</main-classification>
+</classification-national>
+<invention-title id="d0e102">Adaptive gain control system</invention-title>
+<parties>
+<applicants>
+<applicant sequence="00" app-type="applicant-inventor" designation="us-only">
+<addressbook>
+<last-name>Escott</last-name>
+<first-name>Alex</first-name>
+<address>
+<city>Vancouver</city>
+<country>CA</country>
+</address>
+</addressbook>
+<nationality>
+<country>CA</country>
+</nationality>
+<residence>
+<country>CA</country>
+</residence>
+</applicant>
+<applicant sequence="01" app-type="applicant-inventor" designation="us-only">
+<addressbook>
+<last-name>Hetherington</last-name>
+<first-name>Phillip</first-name>
+<middle-name>A.</middle-name>
+<address>
+<city>Port Moody</city>
+<country>CA</country>
+</address>
+</addressbook>
+<nationality>
+<country>CA</country>
+</nationality>
+<residence>
+<country>CA</country>
+</residence>
+</applicant>
+</applicants>
+<correspondence-address>
+<addressbook>
+<name>BRINKS HOFER GILSON &#x26; LIONE</name>
+<address>
+<address-1>P.O. BOX 10395</address-1>
+<city>CHICAGO</city>
+<state>IL</state>
+<postcode>60610</postcode>
+<country>US</country>
+</address>
+</addressbook>
+</correspondence-address>
+</parties>
+<assignees>
+<assignee>
+<orgname>Harman Becker Automotive Systems-Wavemakers, Inc.</orgname>
+<role>03</role>
+</assignee>
+</assignees>
+</us-bibliographic-data-application>
+<abstract id="abstract">
+<p id="p-0001" num="0000">An automatic gain control system maintains desired signal content level, such as voice, in an output signal. The system includes automatic gain control over an input signal, and compensates the output signal based on input signal content. When the input signal level exceeds an upper or lower processing threshold level, or is distorted (e.g., clipped), the system applies a gain to the input signal level. The system may compensate for the gain in the output signal when the input signal includes desired signal content. </p>
+</abstract>
+<drawings id="DRAWINGS">
+<figure id="figure-D00000" num="00000">
+<img id="EMI-D00000" he="141.67mm" wi="101.41mm" file="US20070003078A1-20070104-D00000.TIF" alt="embedded image" img-content="drawing" img-format="tif"/>
+</figure>
+<figure id="figure-D00001" num="00001">
+<img id="EMI-D00001" he="223.86mm" wi="132.76mm" file="US20070003078A1-20070104-D00001.TIF" alt="embedded image" img-content="drawing" img-format="tif"/>
+</figure>
+<figure id="figure-D00002" num="00002">
+<img id="EMI-D00002" he="222.25mm" wi="171.87mm" file="US20070003078A1-20070104-D00002.TIF" alt="embedded image" img-content="drawing" img-format="tif"/>
+</figure>
+<figure id="figure-D00003" num="00003">
+<img id="EMI-D00003" he="222.25mm" wi="180.93mm" file="US20070003078A1-20070104-D00003.TIF" alt="embedded image" img-content="drawing" img-format="tif"/>
+</figure>
+<figure id="figure-D00004" num="00004">
+<img id="EMI-D00004" he="244.18mm" wi="188.04mm" file="US20070003078A1-20070104-D00004.TIF" alt="embedded image" img-content="drawing" img-format="tif"/>
+</figure>
+<figure id="figure-D00005" num="00005">
+<img id="EMI-D00005" he="194.23mm" wi="154.35mm" file="US20070003078A1-20070104-D00005.TIF" alt="embedded image" img-content="drawing" img-format="tif"/>
+</figure>
+</drawings>
+<description id="description">
+<?summary-of-invention description="Summary of Invention" end="lead"?>
+<heading level="2" id="h-0001">BACKGROUND OF THE INVENTION </heading>
+<p id="p-0002" num="0001"> 1. Technical Field </p>
+<p id="p-0003" num="0002"> This invention relates to signal gain control. In particular, this invention relates to controlling input signal level without compromising the strength of desired content in an output signal derived from the input signal. </p>
+<p id="p-0004" num="0003"> 2. Related Art </p>
+<p id="p-0005" num="0004"> Signal processing systems ranging from remote sensing systems to wireless communication systems enhance dynamic performance using automatic gain control. Automatic gain control adjusts input signal gain as a function of another parameter, such as received signal level. If a signal level is too high or too low, the automatic gain control may attenuate or amplify the input signal to keep the received signal level within a specified range. </p>
+<p id="p-0006" num="0005"> Automatic gain control operates in isolation, however. Downstream processing operates on the gain-controlled signal, but without knowledge of what gains were applied or why they were applied. The downstream processing produces an output signal based on or derived from the input signal. Thus, the strength, quality, or content of the output signal may be detrimentally influenced by the automatic gain control. </p>
+<p id="p-0007" num="0006"> In speech processing systems, automatic gain control may suppress desired speech signal content in the input signal. Subsequent processing stages which depend on sufficient levels of speech signal are hampered by the suppression. Voice recognition is particularly sensitive to speech signal level, and may yield inaccurate results ultimately stemming from isolated application of automatic gain control. Wireless voice networks also are sensitive to input signal levels which must lie within established ranges for proper transmission. </p>
+<p id="p-0008" num="0007"> There is a need for a system that overcomes the detrimental impact of automatic gain control on an output signal. </p>
+<heading level="2" id="h-0002">SUMMARY </heading>
+<p id="p-0009" num="0008"> This invention provides an automatic gain control system which takes input signal content into consideration. The system maintains a consistent level for desired signal content, such as voice, in an output signal. The system compensates the output signal based on the input signal content. </p>
+<p id="p-0010" num="0009"> The system determines whether an input signal level exceeds a processing bound, such as an upper or lower signal level threshold. The system also may determine whether the input signal is distorted (e.g., clipped). When the input signal level exceeds the bound or is distorted, the system responsively attenuates the input signal level and applies a compensating gain to the output signal. </p>
+<p id="p-0011" num="0010"> The system may also determine why the input signal exceeds the bound or is distorted. When the reason is undesired signal content, but desired signal content is also present in the input signal, the system compensates the output signal for the attenuation applied to the input signal. The desired signal content passes through the processing system at a consistent level. </p>
+<p id="p-0012" num="0011"> In some cases, desired signal content causes the distortion or causes the input signal to exceed the bound. The attenuation applied to the input signal in such cases causes the desired signal content to lie in an appropriate range for downstream processing. The system may then forgo compensation of the output signal for the attenuation applied to the input signal. </p>
+<p id="p-0013" num="0012"> Other systems, methods, features and advantages of the invention will be, or will become, apparent to one with skill in the art upon examination of the following figures and detailed description. It is intended that all such additional systems, methods, features and advantages be included within this description, be within the scope of the invention, and be protected by the following claims.</p>
+<?summary-of-invention description="Summary of Invention" end="tail"?>
+<?brief-description-of-drawings description="Brief Description of Drawings" end="lead"?>
+<heading level="2" id="h-0003">BRIEF DESCRIPTION OF THE DRAWINGS </heading>
+<p id="p-0014" num="0013"> The invention can be better understood with reference to the following drawings and description. The components in the figures are not necessarily to scale, emphasis instead being placed upon illustrating the principles of the invention. Moreover, in the figures, like referenced numerals designate corresponding parts throughout the different views. </p>
+<p id="p-0015" num="0014"> <figref idref="DRAWINGS">FIG. 1</figref> is an automatic gain control system. </p>
+<p id="p-0016" num="0015"> <figref idref="DRAWINGS">FIG. 2</figref> is an automatic gain control system. </p>
+<p id="p-0017" num="0016"> <figref idref="DRAWINGS">FIG. 3</figref> is an input signal. </p>
+<p id="p-0018" num="0017"> <figref idref="DRAWINGS">FIG. 4</figref> is a sampled input signal. </p>
+<p id="p-0019" num="0018"> <figref idref="DRAWINGS">FIG. 5</figref> are acts that an automatic gain control system may take to provide consistent desired signal component level in an output signal. </p>
+<p id="p-0020" num="0019"> <figref idref="DRAWINGS">FIG. 6</figref> is a signal processing system employing an automatic gain control system.</p>
+<?brief-description-of-drawings description="Brief Description of Drawings" end="tail"?>
+<?detailed-description description="Detailed Description" end="lead"?>
+<heading level="2" id="h-0004">DETAILED DESCRIPTION OF THE PREFERRED EMBODIMENTS </heading>
+<p id="p-0021" num="0020"> An automatic gain control system includes gain control logic which maintains a consistent level for desired components in an output signal. The gain control logic may establish and adapt input gain applied to an input signal as well as output gain applied to an output signal. When input gain is applied to correct the level of an unwanted signal, the gain control system may compensate the output signal to maintain desired signal component levels. </p>
+<p id="p-0022" num="0021"> In <figref idref="DRAWINGS">FIG. 1</figref>, a processing system includes an automatic gain control system <b>100</b>. The processing system includes input gain logic <b>102</b> coupled to an analog to digital converter <b>104</b>. The analog to digital converter <b>104</b> provides digitized signal samples to the processing logic <b>106</b> in the gain control system <b>100</b>. The processing logic <b>106</b> generates an output signal which may pass through the output gain logic <b>108</b> and digital to analog converter <b>110</b>. The input signal &#x2018;x&#x2019; which the gain control system <b>100</b> processes arrives on the input line <b>112</b>. The processed output signal &#x2018;y&#x2019; may continue to additional processing on the output line <b>114</b> and includes desired signal content at a consistent level, while suppressing unwanted signal components. </p>
+<p id="p-0023" num="0022"> The input signal &#x2018;x&#x2019; may originate from many different sources. <figref idref="DRAWINGS">FIG. 1</figref> shows a microphone <b>116</b> that senses an acoustic signal and generates an audio input signal. The input signal &#x2018;x&#x2019; may include desired signal components and undesired signal components. The desired signal components originate from desired signal sources <b>118</b>, while the undesired signal components originate from undesired signal sources <b>120</b>. </p>
+<p id="p-0024" num="0023"> For a handsfree telephone call, the desired signal components may include the voice of the person speaking. The undesired signal components may include the audio output of the call. The audio output may return to the system <b>100</b> through the microphone <b>116</b> as echo noise. In a voice recognition application, the desired signal components may include the voice of the person speaking. The undesired signal components may include a voice prompt or other audio which the voice recognition application plays to the person speaking. </p>
+<p id="p-0025" num="0024"> The desired signal sources <b>118</b> vary according to the application in which the system <b>100</b> is employed. In a speech processing application, the desired signal sources <b>118</b> may include a human speaker. The speaker may interact with the speech processing application to issue voice commands to a vehicular speech recognition system, to record voice, to broadcast or transmit voice, or for other reasons. The desired signal sources <b>118</b> contribute desired signal components to the input signal &#x2018;x&#x2019;. </p>
+<p id="p-0026" num="0025"> The undesired signal sources <b>120</b> may be noise sources. In the context of vehicular speech recognition, the undesired signal sources <b>120</b> may include road noise, radio or stereo output, wind noise, or other noise sources. The noise sources contribute undesired signal components to the input signal &#x2018;x&#x2019;. </p>
+<p id="p-0027" num="0026"> The input signal &#x2018;x&#x2019; undergoes automatic gain control. The input gain logic <b>102</b> adjusts an input gain applied to the input signal &#x2018;x&#x2019;. The input gain may be a positive gain (i.e., an amplification) or a negative gain (i.e., an attenuation) applied to the input signal &#x2018;x&#x2019;. The A/D converter <b>104</b> digitizes the gain-controlled input signal and delivers digital samples of the gain-controlled input signal to the processing logic <b>106</b>. </p>
+<p id="p-0028" num="0027"> The processing logic <b>106</b> includes gain control logic <b>122</b>. The gain control logic <b>122</b> establishes and adjusts the input gain. In one implementation, the gain control logic <b>122</b> determines adjustments to the input gain to keep level of the input signal &#x2018;x&#x2019; under the upper threshold <b>124</b> and/or above the lower level threshold <b>126</b>. The thresholds <b>126</b> and/or <b>126</b> may be input signal level thresholds or may be thresholds for specific components of the input signal, such as voice. </p>
+<p id="p-0029" num="0028"> Alternatively or additionally, the gain control logic <b>122</b> establishes and/or adjusts the input gain in response to the distortion detection logic <b>128</b>. The distortion detection logic <b>128</b> may detect input signal clipping or other distortions of the input signal &#x2018;x&#x2019;. The distortion detection logic <b>128</b> may detect input signal clipping by examining the gain-controlled input signal or the digital samples produced by the A/D converter <b>104</b>. Input signal clipping may be present when the gain-controlled input signal is consistently at a maximum level, when the digital samples are consistently maximum in value, or when other conditions are present. When input signal clipping is present, the gain control logic <b>122</b> may reduce the input gain. </p>
+<p id="p-0030" num="0029"> The distortion detection logic <b>128</b> may detect clipping or other distortions that are detrimental to operation of the signal processing logic <b>130</b>. The signal processing logic <b>130</b> may be noise reduction logic such as echo cancellation logic, signal enhancement logic, or logic that implements any other type of processing. When the signal processing logic <b>130</b> is echo cancellation logic, the distortion detection logic <b>128</b> adjusts the input gain to eliminate clipping distortion in the input signal. </p>
+<p id="p-0031" num="0030"> The input gain logic <b>102</b> attenuates the input signal &#x2018;x&#x2019; to eliminate or reduce input signal distortion, such as clipping. The clipping may be caused by undesired signal components, such as wind noise from an open window. The distortion also may be caused by desired signal components, such as voice commands to a voice recognition system. When the voice level or noise level increases, the input signal may experience persistent or temporary clipping. </p>
+<p id="p-0032" num="0031"> The system <b>100</b> detects the desired signal components and undesired signal components in the input signal &#x2018;x&#x2019;. Undesired echo components in the input signal &#x2018;x&#x2019; may be reduced or eliminated using an echo cancellation program. Additionally, the detection and/or removal of the undesired signal components may be based on pattern recognition programs which employ the undesired signal models <b>132</b>. The undesired signal models <b>132</b> may provide a representation of noise characteristics that arise from wind buffeting on a microphone, mechanical artifacts, echoes from a nearby speaker, or other noise representations. </p>
+<p id="p-0033" num="0032"> An undesired signal may be identified by beamforming logic. The beamforming logic responds to signals received from multiple microphones distributed in a vehicle. The beamforming logic may correlate the signals to determine signal components originating from a driver, passenger, or other signal source in the vehicle. The source of the signal components may be identified based on a reception angle mapped to locations in the vehicle. The system <b>100</b> may then consider the signal originating from a particular signal source (e.g., a passenger) as an undesired signal, such as when the driver is interacting with a voice recognition system in the vehicle. When the gain logic <b>102</b> attenuates the input signal &#x2018;x&#x2019;, the level of desired signal components present in the input signal &#x2018;x&#x2019; are reduced. For cases in which desired signal components caused the distortion, the processing logic <b>106</b> may carry the attenuation of the input signal through without compensation in the output signal &#x2018;y&#x2019;. The desired signal components thereby remain at an appropriate level for downstream processing. </p>
+<p id="p-0034" num="0033"> When undesired signal components caused the distortion, the processing logic <b>106</b> may compensate for the attenuation of desired signal components in the input signal &#x2018;x&#x2019;. The gain control logic <b>122</b> may apply an output gain through the output gain logic <b>108</b>. The output gain compensates the output signal &#x2018;y&#x2019; for the reduction in level of the desired signal components caused by the input attenuation. The output gain may be a function of the input gain, the desired signal level, the undesired signal level, or any combination thereof, and may wholly or partially compensate for the input gain. </p>
+<p id="p-0035" num="0034"> The output gain logic <b>108</b> may be implemented in many ways. The output gain logic <b>108</b> may apply the output gain to digital signal samples prior to digital to analog conversion. Alternatively or additionally, the output gain logic <b>108</b> may include an analog signal amplifier that follows the D/A converter <b>110</b>. The output signal &#x2018;y&#x2019; is compensated for the attenuation of desired signal components in the input signal &#x2018;x&#x2019;. </p>
+<p id="p-0036" num="0035"> <figref idref="DRAWINGS">FIG. 2</figref> shows an alternative implementation of a processing system which includes an automatic gain control system <b>200</b>. The system <b>200</b> is explained below in the context of a preprocessing system for voice recognition. The system <b>200</b> may be incorporated into any other system. </p>
+<p id="p-0037" num="0036"> The processing system includes input automatic gain control (AGC) logic <b>202</b> and output automatic gain control (AGC) logic <b>204</b>. The AGCs <b>202</b> and <b>204</b> may include variable gain amplifiers. The processor <b>206</b> controls the gains applied by the input AGC <b>202</b> and output AGC <b>204</b>. The processor <b>206</b> connects to the memory <b>208</b>, which includes, in addition to the gain control program <b>216</b> itself, a voice detection program to <b>210</b>, an echo cancellation program <b>212</b>, and a distortion detection program to <b>214</b>. </p>
+<p id="p-0038" num="0037"> Voice commands mixed with undesired signal components are present in the input signal &#x2018;x&#x2019;. The processor <b>206</b> executes the echo cancellation program <b>212</b> to remove undesired echo components from the input signal &#x2018;x&#x2019;. The processor <b>206</b> also executes the voice detection program <b>210</b> to detect and/or isolate voice components in the input signal &#x2018;x&#x2019;. </p>
+<p id="p-0039" num="0038"> The voice detection program <b>210</b> may include a harmonic detector, vowel detector, or other speech detector. The voice detection program <b>210</b> may also include an endpointing program. The endpointing program determines a beginning and an end to a desired signal component, such as an utterance in the input signal &#x2018;x&#x2019; which his spoken by an individual interacting with a voice recognition system. </p>
+<p id="p-0040" num="0039"> As the system <b>200</b> processes the input signal &#x2018;x&#x2019;, the distortion detection program <b>214</b> determines whether the input signal exceeds a threshold, falls below a threshold, is clipping or is otherwise distorted. When distortion is present, the gain control program <b>216</b> adapts the input gain applied by the input AGC <b>206</b>. The gain control program <b>216</b> also adapts the output gain applied by the output AGC <b>204</b> to compensate for the input gain. The input gain may be an attenuation or an amplification. The output gain may be a compensating amplification or attenuation. </p>
+<p id="p-0041" num="0040"> The gain control program <b>216</b> may establish or adjust the input gain and/or the output gain according to gain control rules. The gain control rules may be implemented as logical tests, statements, or conditions in the gain control program <b>216</b>, as a neural network, fuzzy logic system, or in other ways. <figref idref="DRAWINGS">FIG. 2</figref> shows four gain control rules <b>218</b>, <b>220</b>, <b>222</b>, and <b>224</b> in the memory <b>208</b>. Table 1 shows one implementation of the gain control rules <b>218</b>-<b>222</b>.  
+<tables id="TABLE-US-00001" num="1">
+<table frame="none" colsep="0" rowsep="0">
+<tgroup align="left" colsep="0" rowsep="0" cols="2">
+<colspec colname="1" colwidth="42PT" align="center"/>
+<colspec colname="2" colwidth="175PT" align="left"/>
+<thead>
+<row>
+<entry namest="1" nameend="2" align="center">TABLE 1</entry>
+</row>
+<row>
+<entry/>
+</row>
+<row>
+<entry namest="1" nameend="2" align="center" rowsep="1"/>
+</row>
+<row>
+<entry>Rule</entry>
+<entry/>
+</row>
+<row>
+<entry>Number</entry>
+<entry>Gain Control Rule</entry>
+</row>
+<row>
+<entry namest="1" nameend="2" align="center" rowsep="1"/>
+</row>
+</thead>
+<tbody valign="top">
+<row>
+<entry>1</entry>
+<entry>If an undesired signal component is causing input signal</entry>
+</row>
+<row>
+<entry/>
+<entry>clipping, then increase input signal attenuation.</entry>
+</row>
+<row>
+<entry>2</entry>
+<entry>If a desired signal component is causing input signal</entry>
+</row>
+<row>
+<entry/>
+<entry>clipping, then increase input signal attenuation.</entry>
+</row>
+<row>
+<entry>3</entry>
+<entry>If a desired signal component is present in the input</entry>
+</row>
+<row>
+<entry/>
+<entry>signal, and an undesired signal component is causing</entry>
+</row>
+<row>
+<entry/>
+<entry>input signal clipping, then compensate the output signal</entry>
+</row>
+<row>
+<entry/>
+<entry>based on the input signal attenuation.</entry>
+</row>
+<row>
+<entry>4</entry>
+<entry>If a desired signal component is causing input signal</entry>
+</row>
+<row>
+<entry/>
+<entry>clipping, then forgo compensation of the output signal.</entry>
+</row>
+<row>
+<entry namest="1" nameend="2" align="center" rowsep="1"/>
+</row>
+</tbody>
+</tgroup>
+</table>
+</tables>
+</p>
+<p id="p-0042" num="0041"> The first gain control rule <b>218</b> establishes that when an undesired signal component is causing input signal clipping, the processor <b>206</b> will decrease the input gain. The second gain control rule <b>220</b> establishes that when a desired signal component is causing input signal clipping, then the processor <b>206</b> also will decrease the input gain. In either case, the input signal is attenuated to reduce or eliminate the clipping. At the same time, desired signal components in the input signal may be attenuated. </p>
+<p id="p-0043" num="0042"> The third gain control rule <b>222</b> establishes one scenario in which the processor <b>206</b> compensates for input signal attenuation. The third gain control rule <b>222</b> is applicable when a desired signal component is present in the input signal, and when the undesired signal component is causing the clipping. In that case, the processor <b>206</b> compensates the output signal by applying output gain using the output AGC <b>204</b>. </p>
+<p id="p-0044" num="0043"> The fourth gain control rule <b>224</b> establishes a scenario in which the processor <b>206</b> does not compensate the output signal. According to the gain control rule <b>224</b>, when the a desired signal component causes input signal clipping, the processor <b>206</b> forgoes compensation of the output signal. The input signal attenuation brings the desired signal components to within appropriate levels. Forgoing compensation allows the desired signal components to carry forward in the output signal &#x2018;y&#x2019;. </p>
+<p id="p-0045" num="0044"> <figref idref="DRAWINGS">FIG. 3</figref> shows an input signal <b>302</b>. The input signal <b>302</b> crosses the upper threshold <b>124</b> at point <b>304</b>, and crosses the lower threshold <b>126</b> at point <b>306</b>. The upper threshold <b>124</b> and lower threshold <b>126</b> may be signal level thresholds that establish a desired dynamic range for the input signal <b>302</b>. </p>
+<p id="p-0046" num="0045"> The desired dynamic range may depend on the limitations or capabilities of the input gain logic <b>102</b>, analog-to-digital converter <b>104</b>, or the AGC <b>202</b>. Additionally or alternatively, the desired dynamic range may depend on the processing applied to the input signal, including voice detection processing, echo cancellation, or any other processing. The system <b>200</b> may change the desired dynamic range at any time. </p>
+<p id="p-0047" num="0046"> <figref idref="DRAWINGS">FIG. 4</figref> shows the input signal <b>302</b> sampled by the analog-to-digital converter <b>104</b>. As the input signal <b>302</b> crosses the upper threshold <b>124</b>, the digital samples <b>402</b>, <b>404</b>, <b>406</b> produced by the analog-to-digital converter <b>104</b> consistently take on a maximum value consistent with input signal clipping. As the input signal <b>302</b> crosses the lower threshold <b>126</b>, the digital samples <b>408</b>, <b>410</b>, <b>412</b> consistently take on a minimum value consistent with the input signal clipping. </p>
+<p id="p-0048" num="0047"> An input attenuation applied to the input signal at point <b>304</b> reduces the input signal level to lie within the upper threshold <b>124</b> and lower threshold <b>126</b>. An input amplification applied to the input signal at point <b>304</b> may increase the input signal level to lie within that the upper threshold <b>124</b> and lower threshold <b>126</b>. In either case the systems <b>100</b>, <b>200</b> may compensate for the input gain by applying an output gain. </p>
+<p id="p-0049" num="0048"> <figref idref="DRAWINGS">FIG. 5</figref> shows the acts that the systems <b>100</b>, <b>200</b> and may take to provide automatic gain control. The systems <b>100</b>, <b>200</b> receive an input signal (Act <b>502</b>) and detect desired signal components, such as voice, in the input signal (Act <b>504</b>). The system <b>100</b>, <b>200</b> also detect undesired signal components, such as echo, in the input signal (Act <b>506</b>). </p>
+<p id="p-0050" num="0049"> The systems <b>100</b>, <b>200</b> also detect clipping or other distortions in the input signal. When clipping is present, the systems <b>100</b>, <b>200</b> apply an input gain to the input signal. The input gain attenuates the input signal to reduce or eliminate input signal clipping (Act <b>510</b>). </p>
+<p id="p-0051" num="0050"> The systems <b>100</b>, <b>200</b> also determine whether to compensate the output signal for the input signal attenuation. When a desired signal component, such as a loud voice, is causing the clipping (Act <b>512</b>), the systems <b>100</b>, <b>200</b> may forgo compensation of the output signal (Act <b>514</b>). The attenuated input signal thus carries the appropriate level of desired signal component through to the output signal. </p>
+<p id="p-0052" num="0051"> When an undesired signal component, such as echo, is causing the clipping (Act <b>512</b>), the systems <b>100</b>, <b>200</b> also may determine whether the output signal should be compensated. In one implementation, when the input signal includes a desired signal component (e.g., voice), the systems <b>100</b>, <b>200</b> compensate the output signal for the input signal attenuation. Alternatively, the systems <b>100</b>, <b>200</b> may forgo a determination of whether desired signal content is present and compensate the output signal in each instance. The level of the desired signal components in the output signal are adjusted to meet levels appropriate for any additional processing that may follow. The systems <b>100</b>, <b>200</b> continue to automatically control the input and output signal gain until the end of the input signal is reached (Act <b>520</b>). </p>
+<p id="p-0053" num="0052"> In <figref idref="DRAWINGS">FIG. 6</figref>, the automatic gain control systems <b>100</b> and/or <b>200</b> operate in conjunction with preprocessing logic <b>602</b> and post-processing logic <b>604</b>. The gain control systems may accept input from the input sources <b>606</b> directly, or after initial processing by the signal processing systems <b>608</b>. The signal processing systems <b>608</b> may accept digital or analog input from the signal sources <b>606</b>, apply any desired processing to the signals, and produce an output signal to the gain control systems <b>100</b> and/or <b>200</b>. </p>
+<p id="p-0054" num="0053"> The input sources <b>606</b> may include digital signal sources or analog signal sources such as analog sensors <b>610</b>. The input sources may include a microphone <b>612</b> or other acoustic sensor. The microphone <b>612</b> may accept voice input for a voice recognition system. Other applications may employ other types of sensors <b>614</b>. The sensors <b>614</b> may include touch, force, or motion sensors, inductive displacement sensors, laser displacement sensors, proximity detectors, photoelectric and fiber optic sensors, or other types of sensors. </p>
+<p id="p-0055" num="0054"> The digital signal sources may include a communication interface <b>616</b>, memory, or other circuitry or logic in the system in which the gain control systems <b>100</b> and/or <b>200</b> are implemented, or other signal sources. When the input source <b>606</b> is a digital signal source, the signal processing systems <b>608</b> may process the digital signal samples and generate an analog output signal. The gain control systems <b>100</b> and/or <b>200</b> may process the analog output signal. </p>
+<p id="p-0056" num="0055"> The gain control systems <b>100</b> and/or <b>200</b> also connect to post-processing logic <b>104</b>. The post-processing logic <b>104</b> may include an audio reproduction system <b>618</b>, digital and/or analog data transmission systems <b>620</b>, or a voice recognition system <b>622</b>. The gain control systems <b>100</b> and/or <b>200</b> may provide a gain compensated output signal to any other type of post-processing logic. </p>
+<p id="p-0057" num="0056"> The voice recognition system <b>618</b> may include circuitry and/or logic that interprets, takes direction from, records, or otherwise processes voice. The voice recognition system <b>618</b> may be process voice as part of a handsfree car phone, desktop or portable computer system, entertainment device, or any other system. In a handsfree car phone, the gain control systems <b>100</b> and/or <b>200</b> may remove echo noise and provide a consistent level of desired signal components in the output signal delivered to the voice recognition system <b>618</b>. </p>
+<p id="p-0058" num="0057"> The transmission system <b>620</b> may provide a network connection, digital or analog transmitter, or other transmission circuitry and/or logic. The transmission system <b>620</b> may communicate enhanced signals generated by the gain control systems <b>100</b>/<b>200</b> to other devices. In a car phone, for example, the transmission system <b>620</b> may communicate enhanced signals from the car phone to a base station or other receiver through a wireless connection such as a ZigBee, Mobile-Fi, Ultrawideband, Wi-fi, or a WiMax network. </p>
+<p id="p-0059" num="0058"> The audio reproduction system <b>622</b> may include digital to analog converters, filters, amplifiers, and other circuitry or logic. The audio reproduction system <b>622</b> may be a speech and/or music reproduction system. The audio reproduction system <b>622</b> may be implemented in a cellular phone, car phone, digital media player/recorder, radio, stereo, portable gaming device, or other devices employing sound reproduction. </p>
+<p id="p-0060" num="0059"> The gain control systems <b>100</b> and/or <b>200</b> may be implemented in hardware and/or software. The gain control systems <b>100</b> and/or <b>200</b> may include a digital signal processor (DSP), microcontroller, or other processor. The processor may execute instructions that detect input signal components, attenuate the input signal to reduce distortion, and compensate an output signal for the input signal attenuation. Alternatively, the gain control systems <b>100</b> and/or <b>200</b> may include discrete logic or circuitry, a mix of discrete logic and a processor, or may be distributed over multiple processors or programs. </p>
+<p id="p-0061" num="0060"> The gain control systems <b>100</b> and/or <b>200</b> may take the form of instructions stored on a machine readable medium such as a disk, EPROM, flash card, or other memory. The gain control systems <b>100</b> and/or <b>200</b> may be incorporated into communication devices, sound systems, gaming devices, signal processing software, or other devices and programs. The gain control systems <b>100</b> and/or <b>200</b> may pre-process microphone input signals to provide a consistent level of desired signal content for other processing logic, including speech recognition systems. </p>
+<p id="p-0062" num="0061"> While various embodiments of the invention have been described, it will be apparent to those of ordinary skill in the art that many more embodiments and implementations are possible within the scope of the invention. Accordingly, the invention is not to be restricted except in light of the attached claims and their equivalents. </p>
+<?detailed-description description="Detailed Description" end="tail"?>
+</description>
+<us-claim-statement>We claim: </us-claim-statement>
+<claims id="claims">
+<claim id="CLM-00001" num="00001">
+<claim-text><b>1</b>. An automatic gain control method comprising: 
+<claim-text>determining whether a level of an input signal exceeds a processing bound and responsively attenuating the input signal; </claim-text>
+<claim-text>determining whether desired signal content in the input signal caused the level to exceed the processing bound; </claim-text>
+<claim-text>forgoing compensation in an output signal for the attenuation of the input signal when the desired signal content caused the level to exceed the processing threshold; and </claim-text>
+<claim-text>compensating the output signal for the attenuation of the input signal when undesired signal content caused the level to exceed the processing threshold. </claim-text>
+</claim-text>
+ </claim>
+<claim id="CLM-00002" num="00002">
+<claim-text><b>2</b>. The automatic gain control method of <claim-ref idref="CLM-00001">claim 1</claim-ref>, where compensating comprises: 
+<claim-text>compensating the output signal for the attenuation of the input signal when undesired signal content caused the level of the input signal to exceed the processing threshold and when the input signal includes the desired signal content. </claim-text>
+</claim-text>
+ </claim>
+<claim id="CLM-00003" num="00003">
+<claim-text><b>3</b>. The automatic gain control method of <claim-ref idref="CLM-00001">claim 1</claim-ref>, where determining whether the input signal level exceeds the processing bound comprises: 
+<claim-text>determining whether the input signal level exceeds an upper threshold or falls below a lower threshold for processing the input signal to obtain the output signal. </claim-text>
+</claim-text>
+ </claim>
+<claim id="CLM-00004" num="00004">
+<claim-text><b>4</b>. The automatic gain control method of <claim-ref idref="CLM-00001">claim 1</claim-ref>, where determining whether the input signal level exceeds the processing bound comprises: 
+<claim-text>determining whether the input signal level exceeds an upper threshold or falls below a lower threshold for noise reduction processing of the input signal. </claim-text>
+</claim-text>
+ </claim>
+<claim id="CLM-00005" num="00005">
+<claim-text><b>5</b>. The automatic gain control method of <claim-ref idref="CLM-00001">claim 1</claim-ref>, where determining whether the input signal level exceeds the processing bound comprises: 
+<claim-text>determining whether the input signal level is clipped. </claim-text>
+</claim-text>
+ </claim>
+<claim id="CLM-00006" num="00006">
+<claim-text><b>6</b>. The automatic gain control method of <claim-ref idref="CLM-00001">claim 1</claim-ref>, where the desired signal content is voice. </claim-text>
+ </claim>
+<claim id="CLM-00007" num="00007">
+<claim-text><b>7</b>. The automatic gain control method of <claim-ref idref="CLM-00001">claim 1</claim-ref>, where determining whether the input signal level exceeds the processing bound comprises: 
+<claim-text>determining whether the input signal level results in input signal clipping. </claim-text>
+</claim-text>
+ </claim>
+<claim id="CLM-00008" num="00008">
+<claim-text><b>8</b>. An automatic gain control system comprising: 
+<claim-text>input gain logic for applying an input gain to an input signal; </claim-text>
+<claim-text>output gain logic for applying an output gain to an output signal; </claim-text>
+<claim-text>detection logic coupled to the input gain logic for detecting a noise induced distortion of the input signal; and </claim-text>
+<claim-text>amplification control logic coupled to the input and output gain logic and the detection logic, the amplification control logic operable to apply the input gain to the input signal in response to the noise induced distortion, and compensate for the input gain by applying the output gain to the output signal; </claim-text>
+<claim-text>whereby a desired component in the input signal is compensated for the application of the input gain. </claim-text>
+</claim-text>
+ </claim>
+<claim id="CLM-00009" num="00009">
+<claim-text><b>9</b>. The automatic gain control system of <claim-ref idref="CLM-00008">claim 8</claim-ref>, where the input gain is an input attenuation and where the output gain is an output amplification. </claim-text>
+ </claim>
+<claim id="CLM-00010" num="00010">
+<claim-text><b>10</b>. The automatic gain control system of <claim-ref idref="CLM-00008">claim 8</claim-ref>, where the input gain is an input amplification and where the output gain is an output attenuation. </claim-text>
+ </claim>
+<claim id="CLM-00011" num="00011">
+<claim-text><b>11</b>. The automatic gain control system of <claim-ref idref="CLM-00008">claim 8</claim-ref>, where the noise induced distortion is input signal clipping. </claim-text>
+ </claim>
+<claim id="CLM-00012" num="00012">
+<claim-text><b>12</b>. The automatic gain control system of <claim-ref idref="CLM-00011">claim 11</claim-ref>, where the input gain is an input attenuation that reduces the input signal clipping, and where the output gain is an output amplification. </claim-text>
+ </claim>
+<claim id="CLM-00013" num="00013">
+<claim-text><b>13</b>. The automatic gain control system of <claim-ref idref="CLM-00008">claim 8</claim-ref>, where the detection logic is further operable to detect a non-noise induced distortion in the input signal and where the amplification control logic is further operable to forgo compensation, in response to the non-noise induced distortion, for the input signal gain. </claim-text>
+ </claim>
+<claim id="CLM-00014" num="00014">
+<claim-text><b>14</b>. The automatic gain control system of <claim-ref idref="CLM-00008">claim 8</claim-ref>, further comprising noise processing logic operable to reduce the noise in the input signal. </claim-text>
+ </claim>
+<claim id="CLM-00015" num="00015">
+<claim-text><b>15</b>. The automatic gain control system of <claim-ref idref="CLM-00008">claim 8</claim-ref>, further comprising echo cancellation logic operable to reduce echo noise in the input signal. </claim-text>
+ </claim>
+<claim id="CLM-00016" num="00016">
+<claim-text><b>16</b>. An automatic gain control method comprising: 
+<claim-text>detecting noise induced clipping of an input signal; </claim-text>
+<claim-text>reducing input signal gain in response to the clipping; </claim-text>
+<claim-text>detecting a desired signal component in the input signal; and </claim-text>
+<claim-text>when the desired signal component is detected, compensating an output signal obtained from the input signal for reducing the input signal gain. </claim-text>
+</claim-text>
+ </claim>
+<claim id="CLM-00017" num="00017">
+<claim-text><b>17</b>. The automatic gain control method of <claim-ref idref="CLM-00016">claim 16</claim-ref>, where compensating the output signal comprises applying an output amplification to the output signal. </claim-text>
+ </claim>
+<claim id="CLM-00018" num="00018">
+<claim-text><b>18</b>. The automatic gain control method of <claim-ref idref="CLM-00016">claim 16</claim-ref>, where the desired signal component comprises voice. </claim-text>
+ </claim>
+<claim id="CLM-00019" num="00019">
+<claim-text><b>19</b>. The automatic gain control method of <claim-ref idref="CLM-00016">claim 16</claim-ref>, where compensating the output signal comprises applying an output attenuation to the output signal. </claim-text>
+ </claim>
+<claim id="CLM-00020" num="00020">
+<claim-text><b>20</b>. The automatic gain control method of <claim-ref idref="CLM-00016">claim 16</claim-ref>, where detecting noise induced clipping comprises monitoring analog to digital converter samples of the input signal. </claim-text>
+ </claim>
+<claim id="CLM-00021" num="00021">
+<claim-text><b>21</b>. An automatic gain control system comprising: 
+<claim-text>input gain logic for attenuating an input signal; </claim-text>
+<claim-text>output gain logic for amplifying an output signal; </claim-text>
+<claim-text>a memory comprising: 
+<claim-text>a detection program operable to detect a noise induced distortion in the input signal and to detect a desired component in the input signal; </claim-text>
+<claim-text>a first gain control rule to perform an attenuation of the input signal with the input gain logic in response to the noise induced distortion; </claim-text>
+<claim-text>a second gain control rule to perform an amplification of the output signal with the output gain logic when the desired component is present in the input signal; </claim-text>
+<claim-text>a gain control program that applies the gain control rules; and </claim-text>
+</claim-text>
+<claim-text>a processor coupled to the memory and the input and output gain logic, the processor operable to execute the detection program and the gain control program. </claim-text>
+</claim-text>
+ </claim>
+<claim id="CLM-00022" num="00022">
+<claim-text><b>22</b>. The automatic gain control system of <claim-ref idref="CLM-00021">claim 21</claim-ref>, where the detection program is further operable to detect a non-noise induced distortion in the input signal, and where the memory further comprises a third gain control rule to attenuate the input signal in response to the non-noise induced distortion. </claim-text>
+ </claim>
+<claim id="CLM-00023" num="00023">
+<claim-text><b>23</b>. The automatic gain control system of <claim-ref idref="CLM-00022">claim 22</claim-ref>, where the memory further comprises a fourth gain control rule to forgo amplification of the output signal in response to the non-noise induced distortion. </claim-text>
+ </claim>
+<claim id="CLM-00024" num="00024">
+<claim-text><b>24</b>. The automatic gain control system of <claim-ref idref="CLM-00021">claim 21</claim-ref>, where the non-noise component is voice. </claim-text>
+ </claim>
+<claim id="CLM-00025" num="00025">
+<claim-text><b>25</b>. The automatic gain control system of <claim-ref idref="CLM-00021">claim 21</claim-ref>, where the noise induced distortion is input signal clipping. </claim-text>
+ </claim>
+<claim id="CLM-00026" num="00026">
+<claim-text><b>26</b>. A product comprising: 
+<claim-text>a machine readable medium; and </claim-text>
+<claim-text>instructions stored on the medium that cause a processing system to: 
+<claim-text>determine whether an input signal level exceeds a processing bound and responsively attenuate the input signal level; </claim-text>
+<claim-text>determine whether desired signal content caused the input signal to exceed the processing bound; </claim-text>
+<claim-text>forgo compensation in an output signal for the attenuation of the input signal when the desired signal content caused the input signal to exceed the processing threshold; and </claim-text>
+<claim-text>compensate the output signal for the attenuation of the input signal when undesired signal content caused the input signal to exceed the processing threshold. </claim-text>
+</claim-text>
+</claim-text>
+ </claim>
+<claim id="CLM-00027" num="00027">
+<claim-text><b>27</b>. The product of <claim-ref idref="CLM-00026">claim 26</claim-ref>, where the instructions that compensate: 
+<claim-text>compensate the output signal for the attenuation of the input signal when undesired signal content caused the input signal to exceed the processing threshold and when the input signal includes the desired signal content. </claim-text>
+</claim-text>
+ </claim>
+<claim id="CLM-00028" num="00028">
+<claim-text><b>28</b>. The product of <claim-ref idref="CLM-00026">claim 26</claim-ref>, where the instructions that determine whether the input signal level exceeds the processing bound: 
+<claim-text>determine whether the input signal level exceeds an upper threshold or falls below a lower threshold for processing the input signal to obtain the output signal. </claim-text>
+</claim-text>
+ </claim>
+<claim id="CLM-00029" num="00029">
+<claim-text><b>29</b>. The product of <claim-ref idref="CLM-00026">claim 26</claim-ref>, where the instructions that determine whether the input signal level exceeds the processing bound: 
+<claim-text>determine whether the input signal level exceeds an upper threshold or falls below a lower threshold for signal processing of the input signal. </claim-text>
+</claim-text>
+ </claim>
+<claim id="CLM-00030" num="00030">
+<claim-text><b>30</b>. The product of <claim-ref idref="CLM-00029">claim 29</claim-ref>, where the signal processing comprises echo cancellation processing. </claim-text>
+ </claim>
+<claim id="CLM-00031" num="00031">
+<claim-text><b>31</b>. The product of <claim-ref idref="CLM-00029">claim 29</claim-ref>, where the signal processing comprises noise reduction processing. </claim-text>
+ </claim>
+<claim id="CLM-00032" num="00032">
+<claim-text><b>32</b>. The product of <claim-ref idref="CLM-00029">claim 29</claim-ref>, where the signal processing comprises beamforming processing. </claim-text>
+ </claim>
+<claim id="CLM-00033" num="00033">
+<claim-text><b>33</b>. The product of <claim-ref idref="CLM-00026">claim 26</claim-ref>, where the desired signal content comprises voice.</claim-text>
+ </claim>
+</claims>
+</us-patent-application>

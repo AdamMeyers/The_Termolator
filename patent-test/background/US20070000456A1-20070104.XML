@@ -1,0 +1,1357 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE us-patent-application SYSTEM "us-patent-application-v42-2006-08-23.dtd" [ ]>
+<us-patent-application lang="EN" dtd-version="v4.2 2006-08-23" file="US20070000456A1-20070104.XML" status="PRODUCTION" id="us-patent-application" country="US" date-produced="20061221" date-publ="20070104">
+<us-bibliographic-data-application lang="EN" country="US">
+<publication-reference>
+<document-id>
+<country>US</country>
+<doc-number>20070000456</doc-number>
+<kind>A1</kind>
+<date>20070104</date>
+</document-id>
+</publication-reference>
+<application-reference appl-type="utility">
+<document-id>
+<country>US</country>
+<doc-number>10552894</doc-number>
+<date>20040610</date>
+</document-id>
+</application-reference>
+<us-application-series-code>10</us-application-series-code>
+<priority-claims>
+<priority-claim sequence="01" kind="national">
+<country>GB</country>
+<doc-number>0313466.5</doc-number>
+<date>20030611</date>
+</priority-claim>
+</priority-claims>
+<classifications-ipcr>
+<classification-ipcr>
+<ipc-version-indicator><date>20060101</date></ipc-version-indicator>
+<classification-level>A</classification-level>
+<section>F</section>
+<class>02</class>
+<subclass>D</subclass>
+<main-group>19</main-group>
+<subgroup>10</subgroup>
+<symbol-position>F</symbol-position>
+<classification-value>I</classification-value>
+<action-date><date>20070104</date></action-date>
+<generating-office><country>US</country></generating-office>
+<classification-status>B</classification-status>
+<classification-data-source>H</classification-data-source>
+</classification-ipcr>
+</classifications-ipcr>
+<classification-national>
+<country>US</country>
+<main-classification>1230270GE</main-classification>
+</classification-national>
+<invention-title id="d0e117">Method and apparatus for controlling transition between operating modes in a multimode engine</invention-title>
+<parties>
+<applicants>
+<applicant sequence="00" app-type="applicant-inventor" designation="us-only">
+<addressbook>
+<last-name>Wong</last-name>
+<first-name>Hoi</first-name>
+<middle-name>Ching</middle-name>
+<address>
+<city>San Diego</city>
+<state>CA</state>
+<country>US</country>
+</address>
+</addressbook>
+<nationality>
+<country>US</country>
+</nationality>
+<residence>
+<country>US</country>
+</residence>
+</applicant>
+</applicants>
+<correspondence-address>
+<addressbook>
+<name>BOYLE FREDRICKSON NEWHOLM STEIN &#x26; GRATZ, S.C.</name>
+<address>
+<address-1>250 E. WISCONSIN AVENUE</address-1>
+<address-2>SUITE 1030</address-2>
+<city>MILWAUKEE</city>
+<state>WI</state>
+<postcode>53202</postcode>
+<country>US</country>
+</address>
+</addressbook>
+</correspondence-address>
+</parties>
+<pct-or-regional-filing-data>
+<document-id>
+<country>WO</country>
+<doc-number>PCT/US04/18539</doc-number>
+<date>20040610</date>
+</document-id>
+<us-371c124-date><date>20051012</date></us-371c124-date>
+</pct-or-regional-filing-data>
+</us-bibliographic-data-application>
+<abstract id="abstract">
+<p id="p-0001" num="0000">At least one engine operating parameter other than total fuel energy content is taken into account when transitioning between operating modes in a dual fuel or other multimode engine (<b>20</b>) in order to maintain a smooth transition between modes. The parameter preferably comprises at least one of primary fuel excess air ratio (lambda) and ignition timing and preferably is controlled in addition to total fuel energy content control. Lambda control is especially beneficial because it permits the control system to compensate for the engine's inability to substantially alter the instantaneous air mass in the combustion chamber during the transition period. For instance, during a transition from pilot ignited gaseous fuel mode to diesel mode, the controlled parameter preferably comprises diesel lambda, and the controlling step comprises setting diesel lambda at a relatively high value at the beginning of the transition period and thereafter reducing diesel lambda during the transition period. </p>
+</abstract>
+<drawings id="DRAWINGS">
+<figure id="figure-D00000" num="00000">
+<img id="EMI-D00000" he="179.20mm" wi="111.25mm" file="US20070000456A1-20070104-D00000.TIF" alt="embedded image" img-content="drawing" img-format="tif"/>
+</figure>
+<figure id="figure-D00001" num="00001">
+<img id="EMI-D00001" he="250.02mm" wi="177.04mm" file="US20070000456A1-20070104-D00001.TIF" alt="embedded image" img-content="drawing" img-format="tif"/>
+</figure>
+<figure id="figure-D00002" num="00002">
+<img id="EMI-D00002" he="113.20mm" wi="155.36mm" file="US20070000456A1-20070104-D00002.TIF" alt="embedded image" img-content="drawing" img-format="tif"/>
+</figure>
+<figure id="figure-D00003" num="00003">
+<img id="EMI-D00003" he="245.28mm" wi="149.18mm" file="US20070000456A1-20070104-D00003.TIF" alt="embedded image" img-content="drawing" img-format="tif"/>
+</figure>
+<figure id="figure-D00004" num="00004">
+<img id="EMI-D00004" he="223.69mm" wi="179.32mm" file="US20070000456A1-20070104-D00004.TIF" alt="embedded image" img-content="drawing" img-format="tif"/>
+</figure>
+</drawings>
+<description id="description">
+<?summary-of-invention description="Summary of Invention" end="lead"?>
+<heading level="2" id="h-0001">BACKGROUND OF THE INVENTION </heading>
+<p id="p-0002" num="0001"> 1. Field of the Invention </p>
+<p id="p-0003" num="0002"> This invention relates generally to multimode engines capable of operating in multiple fueling modes, and, more particularly, relates to a method and apparatus for transitioning between fueling modes in such an engine so as to reduce engine speed fluctuations and/or other undesired responses to such transitions. </p>
+<p id="p-0004" num="0003"> 2. Discussion of the Related Art </p>
+<p id="p-0005" num="0004"> So-called &#x201c;multimode&#x201d; engines are capable of operating in multiple fueling modes in that they are powered by different fuels or combinations of fuels depending, e.g., on the prevailing engine speed and load conditions. For example, a dual fuel engine can typically operate in two modes, namely, a &#x201c;diesel mode&#x201d; and a &#x201c;pilot ignited gaseous fuel mode.&#x201d; In the diesel mode, the engine is fueled solely by a liquid fuel, typically diesel fuel. In the pilot ignited gaseous fuel mode, the engine is fueled primarily by a gaseous fuel, such as natural gas or propane, which is ignited by a relatively small quantity or &#x201c;pilot&#x201d; charge of a liquid fuel, typically diesel fuel or engine lube oil. </p>
+<p id="p-0006" num="0005"> Depending upon the particular engine utilized, there are typically at least two transition points within the operating range of a dual fuel engine. Specifically, the typical engine is operated in pilot ignited gaseous fuel mode except at the condition that the excess air ratio (lambda) does not permit, such as, (1) very light load under all engine speeds and, (2) at high load, low speed conditions. The transition historically was triggered and controlled based solely as a function of speed and/or load without attempting to achieve a smooth transition. This relatively uncontrolled transition could lead to undesired speed fluctuations. For example, in a prior art dual fuel system, as the vehicle is driving up a hill while operating in pilot ignited gaseous fuel mode, the vehicle's engine speed may lug down sufficiently to trigger a changeover to diesel mode. An uncontrolled rapid switchover to diesel may cause a power surge and a resultant increase in vehicle speed back above the pilot ignited gaseous fuel transition speed for the prevailing load, whereupon the engine switches back to pilot ignited gaseous fuel mode and experiences a power drop. As a result, the vehicle speed may again drop below the transition speed with a resultant switchover to diesel mode. Hence, the engine may switch frequently and repeatedly between operating modes, resulting in noticeable speed surges and droops. </p>
+<p id="p-0007" num="0006"> Some prior systems have recognized the problem identified above and have attempted to address it by taking the total energy content of the fuel(s) into account during the transition in an attempt avoid power surges and droops. For instance, U.S. Pat. No. 6,101,986 to Brown (the Brown patent) controls the delivery of diesel and gaseous fuel to the engine during transition between the pilot ignited gaseous fuel mode and the diesel mode to maintain the energy content of combined fuel charge at the desired value of the diesel fuel charge supplied at the end of the transition period. As a result, the quantity of diesel fuel progressively increases during the transition period, while the quantity of gaseous fuel progressively decreases. The process is repeated in a cycle-by-cycle basis until the actual diesel fuel quantity equals the desired quantity for diesel only operation, at which point the transition is considered complete. </p>
+<p id="p-0008" num="0007"> U.S. Published Patent Application Serial No. 2002/07816 to Zur Loye similarly discloses a method for controlling a homogenous charge dual fuel engine to switch between diesel only mode and pilot ignited gaseous fuel mode while keeping the total fuel energy content constant. </p>
+<p id="p-0009" num="0008"> A problem associated with prior techniques for controlling the transition between operating modes in a multimode engine is that simply maintaining the total fuel energy content constant during the transition period fails to take differences in combustion efficiency into account while air charge parameters remain unchanged. That is, (1) diesel fuel has a lower heating value and a lower stoichiometric air fuel ratio than gaseous fuel per unit fuel mass and, (2) combustion efficiency of pilot ignited gaseous fuel depends on excess air ratio of gas (gas lambda) and ignition timing. Simply increasing or decreasing gaseous fuel quantity may not achieve the desired effect because gas lambda may be outside of an optimal range for the selected gaseous fuel quantity. Existing airflow control devices are incapable of adjusting airflow to the cylinders rapidly enough to immediately obtain the optimum lambda for the selected quantity of the new fuel. As a result, the engine may still exhibit power surges and droops, even if total fuel energy content remains constant. </p>
+<p id="p-0010" num="0009"> Another result of the typical dual fuel engine's inability to provide smooth transition between operating modes is that it must set a transition line between diesel mode and pilot ignited gaseous fuel mode at a higher speed than would otherwise be required at a given load, reducing the percentage of total operating range in which the engine is capable of operating in pilot ignited gaseous fuel mode. </p>
+<p id="p-0011" num="0010"> The need therefore has arisen to provide a multimode engine that more assuredly provides a smooth transition between operating modes and reduces the frequency of switching between those modes when compared to prior multimode engines. Another need that has arisen, due at least in part to the inability of prior engines to adequately meet the objective for providing a smooth transition between operating modes in a multimode engine, is to adequately maximize the percentage of the engine operating range in which the engine operates in pilot ignited gaseous fuel mode. </p>
+<heading level="2" id="h-0002">SUMMARY OF THE INVENTION </heading>
+<p id="p-0012" num="0011"> In accordance with a preferred aspect of the invention, at least one engine operating parameter other than total fuel energy content is taken into account in order to maintain a smooth transition between modes of a multimode engine. The parameter preferably comprises at least one of primary fuel excess air ratio (lambda) and ignition timing, and preferably is controlled in addition to total fuel energy content control. Lambda control is especially beneficial because it permits the control system to compensate for the engine's inability to substantially alter the instantaneous air mass in the combustion chamber during the transition period. For instance, during a transition from diesel pilot ignited gaseous fuel mode to diesel mode, the controlled parameter preferably comprises diesel lambda, and the controlling operation comprises setting a target or desired diesel lambda at a relatively high value at the beginning of the transition period and thereafter reducing diesel lambda during the transition period. In this case, the controlling operation may comprise determining a gas lambda of the gaseous fuel, determining a diesel lambda limit, and adjusting diesel fuel delivery to be at or above the diesel lambda limit. The diesel lambda limit preferably is initially determined based on the prevailing gas lambda and then adjusted downwardly on a cycle-by-cycle basis to a final value that is at or near the diesel smoke limit. The magnitude of adjustment in each cycle is preferably speed and/or time dependent. </p>
+<p id="p-0013" num="0012"> During a transition from the diesel mode to pilot ignited gaseous fuel mode, the controlling operation preferably comprises determining a gas lambda of the gaseous fuel, determining a gas lambda rich limit for prevailing engine operating conditions, comparing the determined gas lambda to the gas lambda rich limit, and making the transition from the diesel mode to pilot ignited gaseous fuel mode only if the determined gas lambda is at or above the determined gas lambda rich limit. </p>
+<p id="p-0014" num="0013"> Other aspects and advantages of the invention will become apparent to those skilled in the art from the following detailed description and the accompanying drawings. It should be understood, however, that the detailed description and specific examples, while indicating preferred embodiments of the present invention, are given by way of illustration and not of limitation. Many changes and modifications could be made within the scope of the present invention without departing from the spirit thereof, and the invention includes all such modifications.</p>
+<?summary-of-invention description="Summary of Invention" end="tail"?>
+<?brief-description-of-drawings description="Brief Description of Drawings" end="lead"?>
+<heading level="2" id="h-0003">BRIEF DESCRIPTION OF THE DRAWINGS </heading>
+<p id="p-0015" num="0014"> A preferred exemplary embodiment of the invention is illustrated in the accompanying drawings in which like reference numerals represent like parts throughout, and in which: </p>
+<p id="p-0016" num="0015"> <figref idref="DRAWINGS">FIG. 1</figref> schematically represents a dual fuel engine constructed and controlled in accordance with a preferred embodiment of the present invention; </p>
+<p id="p-0017" num="0016"> <figref idref="DRAWINGS">FIG. 2</figref> is a map showing the transition between diesel only and gas modes in the engine of <figref idref="DRAWINGS">FIG. 1</figref>; and </p>
+<p id="p-0018" num="0017"> <figref idref="DRAWINGS">FIGS. 3 and 4</figref> are flowcharts illustrating a preferred computer implemented technique for transitioning between operating modes in the engine of <figref idref="DRAWINGS">FIG. 1</figref>. </p>
+<?brief-description-of-drawings description="Brief Description of Drawings" end="tail"?>
+<?detailed-description description="Detailed Description" end="lead"?>
+<heading level="2" id="h-0004">DETAILED DESCRIPTION OF THE PREFERRED EMBODIMENTS </heading>
+<p id="p-0019" num="0018"> The mode switching concepts and transition controls described herein are applicable to a variety of multimode engines in which it is desirable to maintain engine torque and/or speed substantially constant when transitioning between operating modes. Hence, while a preferred embodiment of the invention will now be described in conjunction with a turbocharged, low pressure EGR, dual fuel engine, it is usable with tri-mode and other multimode engines as well. </p>
+<p id="p-0020" num="0019"> Referring to <figref idref="DRAWINGS">FIG. 1</figref>, a dual fuel engine <b>20</b> to which the invention is applicable includes a number of cylinders <b>22</b> (only one of which is shown), an intake system <b>24</b> supplying an air/EGR combustion mixture to the cylinders <b>22</b>, an exhaust system <b>26</b>, a fueling system <b>28</b>, an EGR system <b>30</b>, and other components (not shown) commonly found on a compression ignition engine such as intake and exhaust valves. The intake system <b>24</b> comprises an air intake manifold <b>32</b> having a split outlet connected to the various cylinders <b>22</b> and an inlet connected to an air filter <b>34</b> by an intake passage <b>36</b>. The exhaust system <b>26</b> comprises an exhaust manifold <b>38</b> having a split inlet coupled to the various cylinders and an outlet coupled to an exhaust passage <b>40</b> having an oxidation catalyst <b>42</b> thereon for catalytically reducing the exhaust gas before exhausting them to the atmosphere. The illustrated engine <b>20</b> is a turbocharged engine having a compressor <b>44</b> located in air intake passage <b>36</b> upstream of the intake manifold <b>32</b> and a turbine <b>46</b> located in the exhaust passage <b>40</b> downstream of the exhaust manifold <b>38</b>. A controllable turbo air bypass (TAB) valve <b>50</b> is also provided in the air intake system <b>24</b> for further treating and/or controlling the flow of compressed air to the airflow intake manifold <b>32</b>. The TAB valve <b>50</b> is located in a TAB line <b>51</b> bypassing the compressor <b>44</b>. </p>
+<p id="p-0021" num="0020"> The EGR system <b>30</b> of this embodiment is configured to recirculate a portion of the exhaust gases through an EGR line <b>58</b> having an inlet in fluid communication with an outlet of the turbine <b>46</b> and an outlet in fluid communication with the intake passage <b>36</b> upstream of the compressor <b>44</b>. The EGR system <b>30</b> includes, from upstream to downstream end, a diesel particulate trap <b>52</b>, an EGR cooler <b>54</b>, an EGR valve <b>56</b>, and an EGR filter <b>57</b>, all located in the EGR line <b>58</b>. The outlet of the EGR line <b>58</b> discharges into the EGR inlet of a venturi <b>60</b> that is disposed in the intake passage <b>36</b> upstream of the compressor inlet. The venturi <b>60</b> also has a fresh air inlet that receives ambient air from the air filter <b>34</b> and a mixture outlet that discharges the air/EGR mixture to the compressor inlet. </p>
+<p id="p-0022" num="0021"> The fueling system <b>28</b> includes an electronically controllable gaseous fuel source <b>62</b> and a separately electronically controllable diesel fuel source <b>64</b>. The gaseous fuel source <b>62</b> may be configured to supply gaseous fuel to each cylinder <b>22</b> of the engine <b>20</b> either in the form of a premixed charge or via high pressure direct injection (HPDI). If it is configured to supply a premixed charge, the gaseous fuel source <b>62</b> may comprise a tank that stores compressed natural gas (CNG) or liquefied natural gas (LNG), one or more shut off valves, and either a single metering valve discharging into a single throttle body at the entrance of the engine's air intake manifold <b>32</b> or a separate injector provided for each cylinder's supply passage or each cylinder's intake port. If it is configured for HPDI, the gaseous fuel supply source <b>62</b> will be configured to inject natural gas directly into each cylinder <b>22</b> using one or more dedicated high pressure injectors. </p>
+<p id="p-0023" num="0022"> The diesel fuel source <b>64</b> may supply any liquid fuel capable of auto ignition in the traditional &#x201c;diesel&#x201d; cycle. It may comprise either a &#x201c;single point&#x201d; system that injects fuel from a single injector into the engine's air intake manifold <b>32</b> or a &#x201c;multi point&#x201d; system that injects fuel directly into each cylinder <b>22</b> or into each cylinder's air intake passage. In either case, the diesel injector(s) each comprise an electronically controlled injector supplied with diesel fuel or the like from a conventional tank and a supply line. Fuel is typically directed to the injector(s) from the tank via a filter, a pump, a high pressure relief valve, and a pressure regulator, none of which are shown. </p>
+<p id="p-0024" num="0023"> A controller <b>66</b> is also provided for controlling operation of the fuel sources <b>62</b> and <b>64</b>, the TAB valve <b>50</b>, the EGR valve <b>56</b>, and possibly other components of the engine. The controller <b>66</b> receives signals indicative of O<sub>2 </sub>concentration in the intake mixture, intake mixture temperature or air charge temperature (ACT), intake mixture pressure or manifold absolute pressure (MAP), speed, load, and possibly additional data. </p>
+<p id="p-0025" num="0024"> MAP is monitored by a sensor located in or near the intake manifold. The MAP sensor may be part of a block or module <b>68</b> that also measures ACT at the same location. O<sub>2 </sub>concentration indicative data may be supplied by an O<sub>2 </sub>concentration sensor <b>70</b> located in the intake passage <b>36</b> at the compressor inlet. Crank angle, speed, load, and any other data desired for combustion control is supplied via known sensors, collectively denoted <b>72</b> in <figref idref="DRAWINGS">FIG. 1</figref>. </p>
+<p id="p-0026" num="0025"> The controller <b>66</b> can control the TAB valve <b>50</b>, the EGR valve <b>56</b>, and/or the fuel sources <b>62</b> and <b>64</b> based on the monitored and calculated parameters so as to optimize performance characteristics such as NO<sub>x </sub>reduction, HC reduction, and condensation prevention. The control preferably is implemented on a cylinder-by-cylinder, cycle-by-cycle basis. </p>
+<p id="p-0027" num="0026"> Controller <b>66</b> also ascertains actual lambda, preferably on a cylinder-by-cylinder and cycle-by-cycle basis. Lambda may be ascertained mathematically from a calibrated fuel flow together with a determination of air flow using a speed density calculation using input from one or more of the sensors <b>68</b>, <b>70</b>, and <b>72</b> and/or may be measured somewhat more directly using a lambda sensor (not shown) in the exhaust stream. </p>
+<p id="p-0028" num="0027"> The dual fuel engine <b>20</b> of this embodiment is also configured to switch between operating modes automatically with changes in speed and load conditions. </p>
+<p id="p-0029" num="0028"> The engine <b>20</b> is preferably configured so as to operate in the pilot ignited gaseous fuel mode during as much of its speed/load range as practical. It is therefore desirable to have two speed-dependent transition points for a given vehicle load (at least at low speeds), with the engine being operated in pilot ignited gaseous fuel mode except under 1) low speed and high load conditions, and 2) light load and all speed conditions. Diesel operation is desired under low speed/high load conditions, as may be present when the engine speed lugs down when a loaded vehicle climbs a hill, because the engine's turbocharger may no longer be capable supplying sufficient turbo boost air at the reduced speed to produce an optimal pilot ignited premixed natural gas combustion at the desired relatively rich lambda of, e.g., 1.5. Diesel operation is also desired at low loads under all speed conditions in order to prevent lambda from exceeding the lean limit for premixed natural gas. The speed and load conditions under which transition between operating modes takes place may vary depending upon engine design. They will preferably be selected from a map stored in the controller <b>66</b>. For instance, referring to <figref idref="DRAWINGS">FIG. 2</figref>, curves <b>80</b> and <b>82</b> illustrate the upper and lower transition lines over the entire speed/load range of a six cylinder engine to which the invention is applicable. Such an engine operates in pilot ignited gaseous fuel mode over most of its range, between curves <b>80</b> and <b>82</b> as indicated in <figref idref="DRAWINGS">FIG. 2</figref>. While operating in pilot ignited gaseous fuel mode, there will be some speed and load conditions under which the optimal gas lambda may not be achievable in an unthrottled engine. A skip fire strategy therefore is preferably employed to optimize lambda for the prevailing engine operations when the engine is operating in pilot ignited gaseous fuel mode. A suitable strategy for optimizing lambda through skip fire is disclosed in U.S. Pat. No. 5,553,575, the subject matter of which is hereby incorporated by reference. The speed/load range through which skip fire is employed in the illustrated embodiment is bordered by curves <b>84</b> and <b>82</b> in <figref idref="DRAWINGS">FIG. 2</figref>. </p>
+<p id="p-0030" num="0029"> Conventional dual fuel engines do not adequately take the primary fuel lambda, i.e., gas lambda in pilot ignited gaseous fuel mode and diesel lambda in diesel mode, into account during transition. They therefore do not always achieve a smooth transition between operating modes. For instance, conventional dual fuel engines always operate the engine at a relatively high gas lambda (on the order of 1.8) in pilot ignited gaseous fuel mode and do not monitor the diesel lambda in diesel mode. Diesel lambda may be reduced immediately to approximately the diesel smoke limit (typically on the order of lambda 1.3) upon transitioning to diesel only mode. However, as described in more detail in the Background section above, the heightened power and decrease in commanded fuel at the relatively low diesel lambda could result in a premature or undesired switching back to pilot ignited gaseous fuel mode. In order to overcome or avoid these problems, diesel lambda preferably is taken into account during this transition period by controlling fuel delivery to set the diesel lambda at a relatively high value at the beginning of the transition period and thereafter reduce diesel lambda incrementally during the transition period until it reaches a level that is at or slightly above the diesel smoke limit. The initial diesel lambda value at the beginning of the transition period and rate of diesel lambda decrease preferably are set and maintained by maintaining the actual diesel lambda to be at or above a diesel lambda limit, &#x3bb;<sub>diesel-limit</sub>. The &#x3bb;<sub>diesel-limit </sub>in turn, is in it at dependent at least in part upon the existing gas lambda, &#x3bb;<sub>gas </sub>and is thereafter reduced during the remaining of the transition period. A preferred technique for determining &#x3bb;<sub>diesel-limit </sub>at the beginning of the transition period and for controlling engine operation based on &#x3bb;<sub>diesel-limit </sub>will be now be described. </p>
+<p id="p-0031" num="0030"> Initially, during transition from pilot ignited gaseous fuel mode, the mass of diesel pilot fuel required to maintain a constant total fuel energy content can be determined on an equivalent total energy basis as follows:  
+<maths id="MATH-US-00001" num="1">
+<math overflow="scroll">
+<mtable>
+  <mtr>
+    <mtd>
+      <mrow>
+        <mi>HVR</mi>
+        <mo>=</mo>
+        <mrow>
+          <mfrac>
+            <msub>
+              <mi>LVH</mi>
+              <mi>diesel</mi>
+            </msub>
+            <msub>
+              <mi>LHV</mi>
+              <mi>DF</mi>
+            </msub>
+          </mfrac>
+          <mo>=</mo>
+          <mfrac>
+            <msub>
+              <mi>LHV</mi>
+              <mi>diesel</mi>
+            </msub>
+            <mrow>
+              <mrow>
+                <mi>x</mi>
+                <mo>&#x2061;</mo>
+                <mrow>
+                  <mo>(</mo>
+                  <msub>
+                    <mi>LHV</mi>
+                    <mi>diesel</mi>
+                  </msub>
+                  <mo>)</mo>
+                </mrow>
+              </mrow>
+              <mo>+</mo>
+              <mrow>
+                <mrow>
+                  <mo>(</mo>
+                  <mrow>
+                    <mn>1</mn>
+                    <mo>-</mo>
+                    <mi>x</mi>
+                  </mrow>
+                  <mo>)</mo>
+                </mrow>
+                <mo>&#x2062;</mo>
+                <mrow>
+                  <mo>(</mo>
+                  <msub>
+                    <mi>LHV</mi>
+                    <mi>gas</mi>
+                  </msub>
+                  <mo>)</mo>
+                </mrow>
+              </mrow>
+            </mrow>
+          </mfrac>
+        </mrow>
+      </mrow>
+    </mtd>
+    <mtd>
+      <mrow>
+        <mo>(</mo>
+        <mn>1</mn>
+        <mo>)</mo>
+      </mrow>
+    </mtd>
+  </mtr>
+</mtable>
+</math>
+</maths>
+<br/>
+ where 
+</p>
+<p id="p-0032" num="0031"> HVR is the mass ratio of diesel fuel to dual fuel on equivalent total fuel energy basis, </p>
+<p id="p-0033" num="0032"> LHV<sub>diesel</sub>=the lower heating value for diesel fuel, </p>
+<p id="p-0034" num="0033"> LHV<sub>gas</sub>=the lower heating value for gaseous fuel, and </p>
+<p id="p-0035" num="0034"> x=the pilot diesel mass fraction. </p>
+<p id="h-0005" num="0000"> Under these conditions: 
+<br/>
+<?in-line-formulae description="In-line Formulae" end="lead"?><i>Q</i><sub>diesel-equ</sub><i>=HVR&#xd7;Q</i><sub>DF</sub>&#x2003;&#x2003;(2) <?in-line-formulae description="In-line Formulae" end="tail"?>
+<br/>
+ where: 
+</p>
+<p id="p-0036" num="0035"> Q<sub>DF </sub>is the total mass of diesel and gaseous fuel, and </p>
+<p id="p-0037" num="0036"> Q<sub>diesel-equ </sub>is the mass of diesel fuel equivalent. </p>
+<p id="p-0038" num="0037"> When standard diesel fuel is used in diesel mode and natural gas is used as the gaseous fuel in pilot ignited gaseous fuel mode: </p>
+<p id="p-0039" num="0038"> LHV<sub>diesel</sub>=18272 Btu/lb, </p>
+<p id="p-0040" num="0039"> LHV<sub>gas</sub>=20440 Btu/lb, </p>
+<p id="p-0041" num="0040"> Pilot %=0.10, </p>
+<p id="p-0042" num="0041"> LHV<sub>DF</sub>=0.1&#xd7;18272+0.9&#xd7;20440=20223 Btu/lb, and </p>
+<p id="p-0043" num="0042"> HVR=0.9035, then: 
+<br/>
+<?in-line-formulae description="In-line Formulae" end="lead"?><i>Q</i><sub>diesel-gas</sub>=0.9035&#xd7;<i>Q</i><sub>DF</sub>&#x2003;&#x2003;(3) <?in-line-formulae description="In-line Formulae" end="tail"?>
+</p>
+<p id="p-0044" num="0043"> &#x3bb;<sub>diesel-limit </sub>can now be determined as a function of the &#x3bb;<sub>gas </sub>using the following equations:  
+<maths id="MATH-US-00002" num="2">
+<math overflow="scroll">
+<mtable>
+  <mtr>
+    <mtd>
+      <mrow>
+        <mrow>
+          <msub>
+            <mi>&#x3bb;</mi>
+            <mi>gas</mi>
+          </msub>
+          <mo>=</mo>
+          <mfrac>
+            <mrow>
+              <msub>
+                <mi>Mass</mi>
+                <mi>air</mi>
+              </msub>
+              <mo>-</mo>
+              <mrow>
+                <mrow>
+                  <mi>x</mi>
+                  <mo>&#x2061;</mo>
+                  <mrow>
+                    <mo>(</mo>
+                    <msub>
+                      <mi>Q</mi>
+                      <mi>DF</mi>
+                    </msub>
+                    <mo>)</mo>
+                  </mrow>
+                </mrow>
+                <mo>&#x2062;</mo>
+                <mrow>
+                  <mo>(</mo>
+                  <msub>
+                    <mi>SAFR</mi>
+                    <mi>diesel</mi>
+                  </msub>
+                  <mo>)</mo>
+                </mrow>
+              </mrow>
+            </mrow>
+            <mrow>
+              <mrow>
+                <mo>(</mo>
+                <mrow>
+                  <mn>1</mn>
+                  <mo>-</mo>
+                  <mi>x</mi>
+                </mrow>
+                <mo>)</mo>
+              </mrow>
+              <mo>&#x2062;</mo>
+              <mrow>
+                <mo>(</mo>
+                <msub>
+                  <mi>SAFR</mi>
+                  <mi>gas</mi>
+                </msub>
+                <mo>)</mo>
+              </mrow>
+              <mo>&#x2062;</mo>
+              <mrow>
+                <mo>(</mo>
+                <msub>
+                  <mi>Q</mi>
+                  <mi>DF</mi>
+                </msub>
+                <mo>)</mo>
+              </mrow>
+            </mrow>
+          </mfrac>
+        </mrow>
+        <mo>&#x2062;</mo>
+        <mstyle>
+          <mtext>
+</mtext>
+        </mstyle>
+        <mo>&#x2062;</mo>
+        <mrow>
+          <mi>Hence</mi>
+          <mo>&#x2062;</mo>
+          <mstyle>
+            <mtext>:</mtext>
+          </mstyle>
+        </mrow>
+      </mrow>
+    </mtd>
+    <mtd>
+      <mrow>
+        <mo>(</mo>
+        <mn>4</mn>
+        <mo>)</mo>
+      </mrow>
+    </mtd>
+  </mtr>
+  <mtr>
+    <mtd>
+      <mrow>
+        <msub>
+          <mi>Mass</mi>
+          <mi>air</mi>
+        </msub>
+        <mo>=</mo>
+        <mrow>
+          <mrow>
+            <mrow>
+              <mi>x</mi>
+              <mo>&#x2061;</mo>
+              <mrow>
+                <mo>(</mo>
+                <msub>
+                  <mi>Q</mi>
+                  <mi>DF</mi>
+                </msub>
+                <mo>)</mo>
+              </mrow>
+            </mrow>
+            <mo>&#x2062;</mo>
+            <mrow>
+              <mo>(</mo>
+              <msub>
+                <mi>SAFR</mi>
+                <mi>diesel</mi>
+              </msub>
+              <mo>)</mo>
+            </mrow>
+          </mrow>
+          <mo>+</mo>
+          <mrow>
+            <mrow>
+              <msub>
+                <mi>&#x3bb;</mi>
+                <mi>gas</mi>
+              </msub>
+              <mo>&#x2061;</mo>
+              <mrow>
+                <mo>(</mo>
+                <mrow>
+                  <mn>1</mn>
+                  <mo>-</mo>
+                  <mi>x</mi>
+                </mrow>
+                <mo>)</mo>
+              </mrow>
+            </mrow>
+            <mo>&#x2062;</mo>
+            <mrow>
+              <mo>(</mo>
+              <msub>
+                <mi>SAFR</mi>
+                <mi>gas</mi>
+              </msub>
+              <mo>)</mo>
+            </mrow>
+            <mo>&#x2062;</mo>
+            <mrow>
+              <mo>(</mo>
+              <msub>
+                <mi>Q</mi>
+                <mi>DF</mi>
+              </msub>
+              <mo>)</mo>
+            </mrow>
+          </mrow>
+        </mrow>
+      </mrow>
+    </mtd>
+    <mtd>
+      <mrow>
+        <mo>(</mo>
+        <mn>5</mn>
+        <mo>)</mo>
+      </mrow>
+    </mtd>
+  </mtr>
+</mtable>
+</math>
+</maths>
+<br/>
+ where: 
+</p>
+<p id="p-0045" num="0044"> Mass<sub>air </sub>is the mass of the air charge, </p>
+<p id="p-0046" num="0045"> SAFR<sub>diesel </sub>is the stoichiometric air-fuel ratio of diesel fuel, and </p>
+<p id="p-0047" num="0046"> SAFR<sub>gas </sub>is the stoichiometric air-fuel ratio of gaseous fuel. </p>
+<p id="p-0048" num="0047"> At the instant of transition from dual fuel to diesel operating modes, the air mass remains constant. &#x3bb;<sub>diesel-limit </sub>can therefore be determined as below, based on equivalent air mass and total fuel energy.  
+<maths id="MATH-US-00003" num="3">
+<math overflow="scroll">
+<mrow>
+  <mo>&#x2003;</mo>
+  <mtable>
+    <mtr>
+      <mtd>
+        <mtable>
+          <mtr>
+            <mtd>
+              <mrow>
+                <msub>
+                  <mi>&#x3bb;</mi>
+                  <mrow>
+                    <mi>diesel</mi>
+                    <mo>&#x2062;</mo>
+                    <mstyle>
+                      <mtext>-</mtext>
+                    </mstyle>
+                    <mo>&#x2062;</mo>
+                    <mi>limit</mi>
+                  </mrow>
+                </msub>
+                <mo>=</mo>
+                <mi/>
+                <mo>&#x2062;</mo>
+                <mfrac>
+                  <msub>
+                    <mi>Mass</mi>
+                    <mi>air</mi>
+                  </msub>
+                  <mrow>
+                    <mrow>
+                      <mo>(</mo>
+                      <msub>
+                        <mi>Q</mi>
+                        <mrow>
+                          <mi>diesel</mi>
+                          <mo>&#x2062;</mo>
+                          <mstyle>
+                            <mtext>-</mtext>
+                          </mstyle>
+                          <mo>&#x2062;</mo>
+                          <mi>equ</mi>
+                        </mrow>
+                      </msub>
+                      <mo>)</mo>
+                    </mrow>
+                    <mo>&#x2062;</mo>
+                    <mrow>
+                      <mo>(</mo>
+                      <msub>
+                        <mi>SAFR</mi>
+                        <mi>diesel</mi>
+                      </msub>
+                      <mo>)</mo>
+                    </mrow>
+                  </mrow>
+                </mfrac>
+              </mrow>
+            </mtd>
+          </mtr>
+          <mtr>
+            <mtd>
+              <mrow>
+                <mo>=</mo>
+                <mi/>
+                <mo>&#x2062;</mo>
+                <mfrac>
+                  <mrow>
+                    <mrow>
+                      <mrow>
+                        <mi>x</mi>
+                        <mo>&#x2061;</mo>
+                        <mrow>
+                          <mo>(</mo>
+                          <msub>
+                            <mi>Q</mi>
+                            <mi>DF</mi>
+                          </msub>
+                          <mo>)</mo>
+                        </mrow>
+                      </mrow>
+                      <mo>&#x2062;</mo>
+                      <mrow>
+                        <mo>(</mo>
+                        <msub>
+                          <mi>SAFR</mi>
+                          <mi>diesel</mi>
+                        </msub>
+                        <mo>)</mo>
+                      </mrow>
+                    </mrow>
+                    <mo>+</mo>
+                    <mrow>
+                      <mrow>
+                        <msub>
+                          <mi>&#x3bb;</mi>
+                          <mi>gas</mi>
+                        </msub>
+                        <mo>&#x2061;</mo>
+                        <mrow>
+                          <mo>(</mo>
+                          <mrow>
+                            <mn>1</mn>
+                            <mo>-</mo>
+                            <mi>x</mi>
+                          </mrow>
+                          <mo>)</mo>
+                        </mrow>
+                      </mrow>
+                      <mo>&#x2062;</mo>
+                      <mrow>
+                        <mo>(</mo>
+                        <msub>
+                          <mi>SAFR</mi>
+                          <mi>gas</mi>
+                        </msub>
+                        <mo>)</mo>
+                      </mrow>
+                      <mo>&#x2062;</mo>
+                      <mrow>
+                        <mo>(</mo>
+                        <msub>
+                          <mi>Q</mi>
+                          <mi>DF</mi>
+                        </msub>
+                        <mo>)</mo>
+                      </mrow>
+                    </mrow>
+                  </mrow>
+                  <mrow>
+                    <mrow>
+                      <msub>
+                        <mi>Q</mi>
+                        <mi>DF</mi>
+                      </msub>
+                      <mo>&#x2061;</mo>
+                      <mrow>
+                        <mo>(</mo>
+                        <mi>HVR</mi>
+                        <mo>)</mo>
+                      </mrow>
+                    </mrow>
+                    <mo>&#x2062;</mo>
+                    <mrow>
+                      <mo>(</mo>
+                      <msub>
+                        <mi>SAFR</mi>
+                        <mi>diesel</mi>
+                      </msub>
+                      <mo>)</mo>
+                    </mrow>
+                  </mrow>
+                </mfrac>
+              </mrow>
+            </mtd>
+          </mtr>
+        </mtable>
+      </mtd>
+      <mtd>
+        <mrow>
+          <mo>(</mo>
+          <mn>6</mn>
+          <mo>)</mo>
+        </mrow>
+      </mtd>
+    </mtr>
+  </mtable>
+</mrow>
+</math>
+</maths>
+<br/>
+ Using the parameters described above, Equation (6) reduces to:  
+<maths id="MATH-US-00004" num="4">
+<math overflow="scroll">
+<mtable>
+  <mtr>
+    <mtd>
+      <mrow>
+        <msub>
+          <mi>&#x3bb;</mi>
+          <mrow>
+            <mi>diesel</mi>
+            <mo>&#x2062;</mo>
+            <mstyle>
+              <mtext>-</mtext>
+            </mstyle>
+            <mo>&#x2062;</mo>
+            <mi>limit</mi>
+          </mrow>
+        </msub>
+        <mo>=</mo>
+        <mfrac>
+          <mrow>
+            <mrow>
+              <mi>x</mi>
+              <mo>&#x2061;</mo>
+              <mrow>
+                <mo>(</mo>
+                <msub>
+                  <mi>SAFR</mi>
+                  <mi>diesel</mi>
+                </msub>
+                <mo>)</mo>
+              </mrow>
+            </mrow>
+            <mo>+</mo>
+            <mrow>
+              <msub>
+                <mi>&#x3bb;</mi>
+                <mi>gas</mi>
+              </msub>
+              <mo>&#x2061;</mo>
+              <mrow>
+                <mo>(</mo>
+                <msub>
+                  <mi>SAFR</mi>
+                  <mi>gas</mi>
+                </msub>
+                <mo>)</mo>
+              </mrow>
+            </mrow>
+          </mrow>
+          <mrow>
+            <mi>HVR</mi>
+            <mo>&#x2061;</mo>
+            <mrow>
+              <mo>(</mo>
+              <msub>
+                <mi>SAFR</mi>
+                <mi>diesel</mi>
+              </msub>
+              <mo>)</mo>
+            </mrow>
+          </mrow>
+        </mfrac>
+      </mrow>
+    </mtd>
+    <mtd>
+      <mrow>
+        <mo>(</mo>
+        <mn>7</mn>
+        <mo>)</mo>
+      </mrow>
+    </mtd>
+  </mtr>
+</mtable>
+</math>
+</maths>
+<br/>
+ When 
+</p>
+<p id="p-0049" num="0048"> SAFR<sub>diesel</sub>=Stoichiometric air fuel ratio of diesel=14.5, </p>
+<p id="p-0050" num="0049"> SAFR<sub>gas</sub>=Stoichiometric air fuel ratio of natural gas=16.0, </p>
+<p id="p-0051" num="0050"> HVR=0.9035, and </p>
+<p id="p-0052" num="0051"> x=0.1.  
+<maths id="MATH-US-00005" num="5">
+<math overflow="scroll">
+<mtable>
+  <mtr>
+    <mtd>
+      <mrow>
+        <msub>
+          <mi>&#x3bb;</mi>
+          <mrow>
+            <mi>diesel</mi>
+            <mo>&#x2062;</mo>
+            <mstyle>
+              <mtext>-</mtext>
+            </mstyle>
+            <mo>&#x2062;</mo>
+            <mi>limit</mi>
+          </mrow>
+        </msub>
+        <mo>=</mo>
+        <mrow>
+          <mfrac>
+            <mrow>
+              <mrow>
+                <mn>0.1</mn>
+                <mo>&#xd7;</mo>
+                <mn>14.5</mn>
+              </mrow>
+              <mo>+</mo>
+              <mrow>
+                <mn>16</mn>
+                <mo>&#xd7;</mo>
+                <msub>
+                  <mi>&#x3bb;</mi>
+                  <mi>gas</mi>
+                </msub>
+              </mrow>
+            </mrow>
+            <mrow>
+              <mn>0.9035</mn>
+              <mo>&#xd7;</mo>
+              <mn>14.5</mn>
+            </mrow>
+          </mfrac>
+          <mo>=</mo>
+          <mrow>
+            <mn>0.11</mn>
+            <mo>+</mo>
+            <mrow>
+              <mn>1.22</mn>
+              <mo>&#x2062;</mo>
+              <mrow>
+                <mo>(</mo>
+                <msub>
+                  <mi>&#x3bb;</mi>
+                  <mi>gas</mi>
+                </msub>
+                <mo>)</mo>
+              </mrow>
+            </mrow>
+          </mrow>
+        </mrow>
+      </mrow>
+    </mtd>
+    <mtd>
+      <mrow>
+        <mo>(</mo>
+        <mn>8</mn>
+        <mo>)</mo>
+      </mrow>
+    </mtd>
+  </mtr>
+</mtable>
+</math>
+</maths>
+</p>
+<p id="p-0053" num="0052"> A preferred technique for controlling engine operation based on the &#x3bb;<sub>diesel-limit </sub>prevailing at the beginning of the transition period is illustrated in <figref idref="DRAWINGS">FIG. 3</figref>. The technique is implemented via a routine programmed into the controller <b>66</b>. The routine <b>100</b> proceeds from Start in Block <b>102</b> to Block <b>104</b>, where it determines &#x3bb;<sub>gas </sub>either directly from a sensor or indirectly from other measured values as described above. It sets the &#x3bb;<sub>diesel-limit </sub>for the prevailing &#x3bb;<sub>gas</sub>, preferably using Equation (8) above. It then proceeds to Block <b>106</b> and sets Q<sub>diesel-equ </sub>for the prevailing total fuel quantity (Q<sub>DF</sub>) using Equation (2) above. Then, in Block <b>108</b>, the routine <b>100</b> calculates the actual &#x3bb;<sub>diesel</sub>, either directly or indirectly from the known Q<sub>diesel </sub>and Q<sub>air</sub>. The routine <b>100</b> then proceeds to Block <b>110</b> and determines whether &#x3bb;<sub>diesel </sub>is less than &#x3bb;<sub>diesel-limit</sub>. If not, the routine <b>100</b> proceeds to Block <b>112</b>, where the controller <b>66</b> controls the diesel fuel source <b>64</b> to deliver the commanded fuel quantity Q<sub>diesel-equ</sub>, at which point transition is considered to be complete, and the routine <b>100</b> ends in Block <b>114</b>. </p>
+<p id="p-0054" num="0053"> If, on the other hand, the answer to the inquiry of Block <b>110</b> is YES, indicating that the transition period is not yet complete, Q<sub>diesel-limit </sub>is calculated in Block <b>116</b> using the prevailing &#x3bb;<sub>diesel-limit</sub>, and the diesel fuel source <b>64</b> is controlled in Block <b>118</b> to deliver the determined diesel quantity Q<sub>diesel-limit</sub>. </p>
+<p id="p-0055" num="0054"> Then, in Block <b>120</b>, the routine <b>100</b> adjusts &#x3bb;<sub>diesel-limit </sub>downwardly from the initial, relatively high value (typically about 2.0), toward the diesel smoke limit (typically about 1.3) pursuant to a predetermined schedule. The predetermined schedule may be engine speed dependent and/or time dependent. It is preferably engine speed dependent to allow for more diesel fuel delivery when the engine speed is being pulled down by a heavy load, with a resulting decrease in turbo speed and associated decrease in the available air quantity. </p>
+<p id="p-0056" num="0055"> The routine <b>100</b> then returns to Block <b>108</b> to update the current diesel lambda and continues to Block <b>110</b> to determine that &#x3bb;<sub>diesel-actual </sub>exceeds &#x3bb;<sub>diesel-limit</sub>, in which case the routine for <b>100</b> proceeds through Blocks <b>112</b> and <b>114</b> to complete the transition. </p>
+<p id="p-0057" num="0056"> As indicated above, it is also desirable to keep the transition line (curve <b>80</b> shown in <figref idref="DRAWINGS">FIG. 2</figref>) between diesel mode and the pilot ignited gaseous fuel mode at the highest practical load level for a given speed and to permit the engine to switch to pilot ignited natural gaseous fuel mode as soon as feasible as speed increases under heavy load. This goal can be achieved by introducing a gas lambda rich limit and by controlling engine operation to stay in diesel mode only when &#x3bb;<sub>gas-actual </sub>exceeds a lambda gas &#x3bb;<sub>gas-rich-limit </sub>Specifically: </p>
+<p id="h-0006" num="0000"> When transitioning from diesel to dual fuel mode, </p>
+<p id="p-0058" num="0057"> &#x3bb;<sub>gas-equ </sub>can be derived from Equation (7) and calculated by:  
+<maths id="MATH-US-00006" num="6">
+<math overflow="scroll">
+<mrow>
+  <mo>&#x2003;</mo>
+  <mtable>
+    <mtr>
+      <mtd>
+        <mtable>
+          <mtr>
+            <mtd>
+              <mrow>
+                <msub>
+                  <mi>&#x3bb;</mi>
+                  <mrow>
+                    <mstyle>
+                      <mtext>&#x2003;</mtext>
+                    </mstyle>
+                    <mo>&#x2062;</mo>
+                    <mrow>
+                      <mi>gas</mi>
+                      <mo>&#x2062;</mo>
+                      <mstyle>
+                        <mtext>&#x2003;</mtext>
+                      </mstyle>
+                      <mo>-</mo>
+                      <mstyle>
+                        <mtext>&#x2003;</mtext>
+                      </mstyle>
+                      <mo>&#x2062;</mo>
+                      <mi>equ</mi>
+                    </mrow>
+                  </mrow>
+                </msub>
+                <mo>=</mo>
+                <mi/>
+                <mo>&#x2062;</mo>
+                <mfrac>
+                  <mrow>
+                    <mrow>
+                      <mrow>
+                        <msub>
+                          <mi>&#x3bb;</mi>
+                          <mi>diesel</mi>
+                        </msub>
+                        <mo>&#x2061;</mo>
+                        <mrow>
+                          <mo>(</mo>
+                          <mi>HVR</mi>
+                          <mo>)</mo>
+                        </mrow>
+                      </mrow>
+                      <mo>&#x2062;</mo>
+                      <mrow>
+                        <mo>(</mo>
+                        <msub>
+                          <mi>SAFR</mi>
+                          <mi>diesel</mi>
+                        </msub>
+                        <mo>)</mo>
+                      </mrow>
+                    </mrow>
+                    <mo>-</mo>
+                    <mrow>
+                      <mi>x</mi>
+                      <mo>&#x2061;</mo>
+                      <mrow>
+                        <mo>(</mo>
+                        <msub>
+                          <mi>SAFR</mi>
+                          <mi>diesel</mi>
+                        </msub>
+                        <mo>)</mo>
+                      </mrow>
+                    </mrow>
+                  </mrow>
+                  <msub>
+                    <mi>SAFR</mi>
+                    <mi>gas</mi>
+                  </msub>
+                </mfrac>
+              </mrow>
+            </mtd>
+          </mtr>
+          <mtr>
+            <mtd>
+              <mrow>
+                <mo>=</mo>
+                <mi/>
+                <mo>&#x2062;</mo>
+                <mrow>
+                  <mrow>
+                    <mo>(</mo>
+                    <mi>HVR</mi>
+                    <mo>)</mo>
+                  </mrow>
+                  <mo>&#x2062;</mo>
+                  <mrow>
+                    <mo>(</mo>
+                    <mrow>
+                      <msub>
+                        <mi>&#x3bb;</mi>
+                        <mi>diesel</mi>
+                      </msub>
+                      <mo>-</mo>
+                      <mi>x</mi>
+                    </mrow>
+                    <mo>)</mo>
+                  </mrow>
+                  <mo>&#x2062;</mo>
+                  <mfrac>
+                    <msub>
+                      <mi>SAFR</mi>
+                      <mi>diesel</mi>
+                    </msub>
+                    <msub>
+                      <mi>SAFR</mi>
+                      <mi>gas</mi>
+                    </msub>
+                  </mfrac>
+                </mrow>
+              </mrow>
+            </mtd>
+          </mtr>
+        </mtable>
+      </mtd>
+      <mtd>
+        <mrow>
+          <mo>(</mo>
+          <mn>9</mn>
+          <mo>)</mo>
+        </mrow>
+      </mtd>
+    </mtr>
+  </mtable>
+</mrow>
+</math>
+</maths>
+<br/>
+ When the current &#x3bb;<sub>diesel </sub>is 2.0 in diesel mode, &#x3bb;<sub>gas-equ </sub>will be 1.556 in pilot ignited gaseous fuel mode at transition. 
+<br/>
+ Hence:  
+<maths id="MATH-US-00007" num="7">
+<math overflow="scroll">
+<mtable>
+  <mtr>
+    <mtd>
+      <mrow>
+        <msub>
+          <mi>Q</mi>
+          <mrow>
+            <mi>DF</mi>
+            <mo>&#x2062;</mo>
+            <mstyle>
+              <mtext>-</mtext>
+            </mstyle>
+            <mo>&#x2062;</mo>
+            <mi>equ</mi>
+          </mrow>
+        </msub>
+        <mo>=</mo>
+        <mfrac>
+          <msub>
+            <mi>Q</mi>
+            <mi>diesel</mi>
+          </msub>
+          <mi>HVR</mi>
+        </mfrac>
+      </mrow>
+    </mtd>
+    <mtd>
+      <mrow>
+        <mo>(</mo>
+        <mn>10</mn>
+        <mo>)</mo>
+      </mrow>
+    </mtd>
+  </mtr>
+</mtable>
+</math>
+</maths>
+</p>
+<p id="p-0059" num="0058"> The preferred technique for this control is illustrated in <figref idref="DRAWINGS">FIG. 4</figref>, which illustrates a routine <b>130</b> that once again is implemented via a program in the controller <b>66</b>. The routine <b>130</b> proceeds from Start in Block <b>132</b> to Block <b>134</b> where the prevailing &#x3bb;<sub>diesel </sub>is determined and the &#x3bb;<sub>gas-equ </sub>is then determined, preferable using Equation (9) above. Then, in Block <b>136</b>, Q<sub>DF-equ </sub>is set based on the current Q<sub>diesel</sub>, preferably using Equation (10) above. &#x3bb;<sub>gas-actual </sub>is then calculated in Block <b>138</b>, preferably using Equation (4) above. Then, in Block <b>140</b>, the routine <b>130</b> determines whether &#x3bb;<sub>gas-actual </sub>is less than a &#x3bb;<sub>gas-rich-limit</sub>, which is the lowest gas lambda that is acceptable for achieving the desired operating characteristic. For instance, &#x3bb;<sub>gas </sub>is usually maintained at a value of approximately 1.8. However, at low engine speeds, the turbocharger may not be capable of providing a &#x3bb;<sub>gas </sub>of 1.8. If &#x3bb;<sub>gas </sub>drops below an engine dependent minimum value, &#x3bb;<sub>gas-rich-limit</sub>, the engine may knock. &#x3bb;<sub>gas-rich-limit </sub>will typically be about 1.5 and is determined empirically based on the prevailing manifold absolute pressure, (MAP), air charge temperature (ACT), and other parameters, if desired. Switching over to diesel mode when &#x3bb;<sub>gas-actual </sub>drops below &#x3bb;<sub>gas-rich-limit </sub>will prevent engine from knocking. </p>
+<p id="p-0060" num="0059"> If the answer to the inquiry of Block <b>140</b> is NO, the routine <b>130</b> delivers natural gas and pilot fuel in the amount required to obtain the desired total energy fuel content in Block <b>142</b>, at which point the transition period is considered complete and the routine <b>130</b> ends in Block <b>144</b>. However, if the answer to the inquiry of Block <b>140</b> is YES, indicating, e.g., that engine knock is imminent, the engine <b>20</b> stays in diesel mode, and the controller <b>66</b> controls the diesel fuel source <b>64</b> in Block <b>146</b> to deliver the diesel fuel quantity Q<sub>diesel </sub>required to obtain the desired total fuel energy content. The routine <b>130</b> then returns to Block <b>132</b>, and Blocks <b>134</b>, <b>136</b>, <b>138</b>, <b>140</b>, and <b>146</b> are repeated on a cycle-by-cycle basis for the duration of the transition period. </p>
+<p id="p-0061" num="0060"> Other engine characteristics could also be controlled during the transition period. For instance, diesel pilot injection timing may be controlled in addition to lambda control. Most engine control system employs two separate diesel injection timing maps, one for diesel mode and the other for pilot ignited gaseous fuel mode. During the transition period, the diesel injection timing often will shift as a new map is selected. These shifts may be dramatic, leading to a noticeable and rapid change in engine performance. The transition can be smoothed by adjusting diesel injection timing incrementally over a number of operating cycles rather than all at once. The size of each increment &#x201c;I&#x201d; may vary with designer preference and a particular engine's sensitivity to changes in ignition timing under the prevailing operating conditions. Pilot diesel injection timing may also be adjusted during the transition from diesel mode to pilot ignited gaseous fuel mode for maintaining constant engine torque. The adjustment of pilot diesel injection timing from the nominal injection timing map is preferably determined empirically based on the actual gas lambda. </p>
+<p id="p-0062" num="0061"> To the extent that they might not be apparent from the above, the scope of variations falling within the scope of the present invention will become apparent from the appended claims. </p>
+<?detailed-description description="Detailed Description" end="tail"?>
+</description>
+<us-math idrefs="MATH-US-00001" nb-file="US20070000456A1-20070104-M00001.NB">
+<img id="EMI-M00001" he="7.03mm" wi="76.20mm" file="US20070000456A1-20070104-M00001.TIF" alt="embedded image" img-content="math" img-format="tif"/>
+</us-math>
+<us-math idrefs="MATH-US-00002" nb-file="US20070000456A1-20070104-M00002.NB">
+<img id="EMI-M00002" he="16.26mm" wi="76.20mm" file="US20070000456A1-20070104-M00002.TIF" alt="embedded image" img-content="math" img-format="tif"/>
+</us-math>
+<us-math idrefs="MATH-US-00003" nb-file="US20070000456A1-20070104-M00003.NB">
+<img id="EMI-M00003" he="15.16mm" wi="76.20mm" file="US20070000456A1-20070104-M00003.TIF" alt="embedded image" img-content="math" img-format="tif"/>
+</us-math>
+<us-math idrefs="MATH-US-00004" nb-file="US20070000456A1-20070104-M00004.NB">
+<img id="EMI-M00004" he="6.69mm" wi="76.20mm" file="US20070000456A1-20070104-M00004.TIF" alt="embedded image" img-content="math" img-format="tif"/>
+</us-math>
+<us-math idrefs="MATH-US-00005" nb-file="US20070000456A1-20070104-M00005.NB">
+<img id="EMI-M00005" he="6.35mm" wi="76.20mm" file="US20070000456A1-20070104-M00005.TIF" alt="embedded image" img-content="math" img-format="tif"/>
+</us-math>
+<us-math idrefs="MATH-US-00006" nb-file="US20070000456A1-20070104-M00006.NB">
+<img id="EMI-M00006" he="14.48mm" wi="76.20mm" file="US20070000456A1-20070104-M00006.TIF" alt="embedded image" img-content="math" img-format="tif"/>
+</us-math>
+<us-math idrefs="MATH-US-00007" nb-file="US20070000456A1-20070104-M00007.NB">
+<img id="EMI-M00007" he="6.35mm" wi="76.20mm" file="US20070000456A1-20070104-M00007.TIF" alt="embedded image" img-content="math" img-format="tif"/>
+</us-math>
+<us-math idrefs="MATH-US-00008" nb-file="US20070000456A1-20070104-M00008.NB">
+<img id="EMI-M00008" he="6.69mm" wi="76.20mm" file="US20070000456A1-20070104-M00008.TIF" alt="embedded image" img-content="math" img-format="tif"/>
+</us-math>
+<us-math idrefs="MATH-US-00009" nb-file="US20070000456A1-20070104-M00009.NB">
+<img id="EMI-M00009" he="6.69mm" wi="76.20mm" file="US20070000456A1-20070104-M00009.TIF" alt="embedded image" img-content="math" img-format="tif"/>
+</us-math>
+<us-math idrefs="MATH-US-00010" nb-file="US20070000456A1-20070104-M00010.NB">
+<img id="EMI-M00010" he="6.69mm" wi="76.20mm" file="US20070000456A1-20070104-M00010.TIF" alt="embedded image" img-content="math" img-format="tif"/>
+</us-math>
+<claims id="claims">
+<claim id="CLM-00001" num="00001">
+<claim-text><b>1</b>. A method comprising: 
+<claim-text>(A) operating an internal combustion engine in a first mode comprising one of a diesel mode and a pilot ignited gaseous fuel mode; then </claim-text>
+<claim-text>(B) operating said internal combustion engine in a second mode comprising the other of said diesel mode and said pilot ignited gaseous fuel mode; and </claim-text>
+<claim-text>(C) during a transition period between said first and second modes, controlling engine operation based on at least one engine operating parameter other than total energy fuel content to achieve an at least substantially smooth transition between operating modes. </claim-text>
+</claim-text>
+ </claim>
+<claim id="CLM-00002" num="00002">
+<claim-text><b>2</b>. The method as recited in <claim-ref idref="CLM-00001">claim 1</claim-ref>, wherein the at least substantially smooth transition is achieved by maintaining total engine torque at least substantially constant during the transition period. </claim-text>
+ </claim>
+<claim id="CLM-00003" num="00003">
+<claim-text><b>3</b>. The method as recited as <claim-ref idref="CLM-00001">claim 1</claim-ref>, wherein the controlled engine operating parameter includes at least one of lambda and diesel fuel injection timing. </claim-text>
+ </claim>
+<claim id="CLM-00004" num="00004">
+<claim-text><b>4</b>. The method as recited in <claim-ref idref="CLM-00003">claim 3</claim-ref>, wherein the transition is from pilot ignited gaseous fuel mode to diesel mode, the controlled engine operating parameter comprises diesel lambda, and the controlling step comprises controlling diesel lambda to be at a relatively high value at the beginning of the transition period and thereafter progressively reducing diesel lambda during the transition period. </claim-text>
+ </claim>
+<claim id="CLM-00005" num="00005">
+<claim-text><b>5</b>. The method as recited in <claim-ref idref="CLM-00004">claim 4</claim-ref>, wherein the controlling step comprises 
+<claim-text>determining the actual gas lambda of the gaseous fuel at the beginning of the transition period, </claim-text>
+<claim-text>determining a diesel lambda limit at the beginning of the transition period, and </claim-text>
+<claim-text>adjusting diesel fuel delivery so as to maintain the actual diesel lambda at or above the diesel lambda limit. </claim-text>
+</claim-text>
+ </claim>
+<claim id="CLM-00006" num="00006">
+<claim-text><b>6</b>. The method as recited in <claim-ref idref="CLM-00005">claim 5</claim-ref>, wherein the diesel lambda limit at the beginning of the transition period is determined by multiplying the determined actual gas lambda at the beginning of the transition period by a multiplying factor. </claim-text>
+ </claim>
+<claim id="CLM-00007" num="00007">
+<claim-text><b>7</b>. The method as recited in <claim-ref idref="CLM-00005">claim 5</claim-ref>, further comprising, during the transition period, reducing the diesel lambda limit from the determined value at the beginning of the transition period to a final value that is at or near the diesel smoke limit. </claim-text>
+ </claim>
+<claim id="CLM-00008" num="00008">
+<claim-text><b>8</b>. The method as recited in <claim-ref idref="CLM-00007">claim 7</claim-ref>, wherein the reducing step comprises incrementally reducing the diesel lambda limit using a predetermined schedule that is dependent on at least one of engine speed and time. </claim-text>
+ </claim>
+<claim id="CLM-00009" num="00009">
+<claim-text><b>9</b>. The method as recited in <claim-ref idref="CLM-00006">claim 6</claim-ref>, wherein the step of determining the diesel lambda limit at the beginning of the transition period comprises solving the following equation: </claim-text>
+<claim-text> 
+<maths id="MATH-US-00008" num="8">
+<math overflow="scroll">
+<mrow>
+  <msub>
+    <mi>&#x3bb;</mi>
+    <mrow>
+      <mi>diesel</mi>
+      <mo>&#x2062;</mo>
+      <mstyle>
+        <mtext>-</mtext>
+      </mstyle>
+      <mo>&#x2062;</mo>
+      <mi>limit</mi>
+    </mrow>
+  </msub>
+  <mo>=</mo>
+  <mfrac>
+    <mrow>
+      <mrow>
+        <mi>x</mi>
+        <mo>&#x2061;</mo>
+        <mrow>
+          <mo>(</mo>
+          <msub>
+            <mi>SAFR</mi>
+            <mi>diesel</mi>
+          </msub>
+          <mo>)</mo>
+        </mrow>
+      </mrow>
+      <mo>+</mo>
+      <mrow>
+        <msub>
+          <mi>&#x3bb;</mi>
+          <mi>gas</mi>
+        </msub>
+        <mo>&#x2061;</mo>
+        <mrow>
+          <mo>(</mo>
+          <msub>
+            <mi>SAFR</mi>
+            <mi>gas</mi>
+          </msub>
+          <mo>)</mo>
+        </mrow>
+      </mrow>
+    </mrow>
+    <mrow>
+      <mi>HVR</mi>
+      <mo>&#x2061;</mo>
+      <mrow>
+        <mo>(</mo>
+        <msub>
+          <mi>SAFR</mi>
+          <mi>diesel</mi>
+        </msub>
+        <mo>)</mo>
+      </mrow>
+    </mrow>
+  </mfrac>
+</mrow>
+</math>
+</maths>
+<claim-text>where: 
+<claim-text>x=the prevailing pilot diesel mass fraction, </claim-text>
+<claim-text>SAFR<sub>diesel</sub>=the stoichiometric air-fuel ratio for the diesel fuel, </claim-text>
+<claim-text>&#x3bb;<sub>gas</sub>=the determined actual gas lambda at the beginning of the transition period, </claim-text>
+<claim-text>SAFR<sub>gas</sub>=the stoichiometric air-fuel ratio for the gaseous fuel, and </claim-text>
+<claim-text>HVR=the prevailing mass ratio of the diesel fuel to the total fuel charge on an equivalent total fuel energy basis. </claim-text>
+</claim-text>
+</claim-text>
+ </claim>
+<claim id="CLM-00010" num="00010">
+<claim-text><b>10</b>. The method as recited in <claim-ref idref="CLM-00004">claim 4</claim-ref>, wherein the transition is from diesel mode to pilot ignited gaseous fuel mode, and wherein the controlling step comprises 
+<claim-text>determining the actual gas lambda of the gaseous fuel at the beginning of the transition period, </claim-text>
+<claim-text>determining a gas lambda-rich limit for prevailing engine operating conditions, </claim-text>
+<claim-text>comparing the determined actual gas lambda to the gas lambda-rich limit, and </claim-text>
+<claim-text>operating the engine in diesel mode if the determined gas lambda is less than the determined gas lambda-rich limit. </claim-text>
+</claim-text>
+ </claim>
+<claim id="CLM-00011" num="00011">
+<claim-text><b>11</b>. The method as recited in <claim-ref idref="CLM-00010">claim 10</claim-ref>, further comprising determining the gas lambda-rich limit based at least in part on at least one of manifold absolute pressure and air charge temperature. </claim-text>
+ </claim>
+<claim id="CLM-00012" num="00012">
+<claim-text><b>12</b>. The method as recited in <claim-ref idref="CLM-00003">claim 3</claim-ref>, wherein the controlled engine operating parameter is ignition timing. </claim-text>
+ </claim>
+<claim id="CLM-00013" num="00013">
+<claim-text><b>13</b>. The method as recited in <claim-ref idref="CLM-00012">claim 12</claim-ref>, wherein the controlling step comprises 
+<claim-text>selecting a desired ignition timing for the second mode, the desired ignition timing for the second mode being different than the existing ignition timing for the first mode, and </claim-text>
+<claim-text>adjusting ignition timing incrementally over a plurality of engine operating cycles until the actual ignition timing at least approximately equals the desired ignition timing. </claim-text>
+</claim-text>
+ </claim>
+<claim id="CLM-00014" num="00014">
+<claim-text><b>14</b>. The method as recited in <claim-ref idref="CLM-00001">claim 1</claim-ref>, wherein said engine is a dual fuel engine capable of operating only in the diesel mode and the pilot ignited gaseous fuel mode. </claim-text>
+ </claim>
+<claim id="CLM-00015" num="00015">
+<claim-text><b>15</b>. The method as recited in <claim-ref idref="CLM-00001">claim 1</claim-ref>, further comprising controlling fuel supply to maintain total fuel energy content at least substantially constant during the transition period. </claim-text>
+ </claim>
+<claim id="CLM-00016" num="00016">
+<claim-text><b>16</b>. A method comprising: 
+<claim-text>(A) operating a dual fuel internal combustion engine in a first mode comprising one of a diesel mode and a pilot ignited gaseous fuel mode; then </claim-text>
+<claim-text>(B) operating said internal combustion engine in a second mode comprising the other of said diesel mode and said pilot ignited gaseous fuel mode; and </claim-text>
+<claim-text>(C) during a transition period between said first and second modes, controlling engine operation based on multiple engine parameters including lambda to achieve an at least substantially smooth transition between operating modes by maintaining total engine torque at least substantially constant. </claim-text>
+</claim-text>
+ </claim>
+<claim id="CLM-00017" num="00017">
+<claim-text><b>17</b>. The method as recited in <claim-ref idref="CLM-00016">claim 16</claim-ref>, wherein the transition is from pilot ignited gaseous fuel mode to diesel mode, a controlled engine operating parameter comprises diesel lambda, and the controlling step comprises controlling diesel lambda to be at a relatively high value at the beginning of the transition period and thereafter reducing diesel lambda toward a smoke limit by the end of the transition period. </claim-text>
+ </claim>
+<claim id="CLM-00018" num="00018">
+<claim-text><b>18</b>. The method as recited in <claim-ref idref="CLM-00017">claim 17</claim-ref>, further comprising determining a diesel lambda limit at the beginning of the transition period using the following equation: </claim-text>
+<claim-text> 
+<maths id="MATH-US-00009" num="9">
+<math overflow="scroll">
+<mrow>
+  <msub>
+    <mi>&#x3bb;</mi>
+    <mrow>
+      <mi>diesel</mi>
+      <mo>&#x2062;</mo>
+      <mstyle>
+        <mtext>-</mtext>
+      </mstyle>
+      <mo>&#x2062;</mo>
+      <mi>limit</mi>
+    </mrow>
+  </msub>
+  <mo>=</mo>
+  <mfrac>
+    <mrow>
+      <mrow>
+        <mi>x</mi>
+        <mo>&#x2061;</mo>
+        <mrow>
+          <mo>(</mo>
+          <msub>
+            <mi>SAFR</mi>
+            <mi>diesel</mi>
+          </msub>
+          <mo>)</mo>
+        </mrow>
+      </mrow>
+      <mo>+</mo>
+      <mrow>
+        <msub>
+          <mi>&#x3bb;</mi>
+          <mi>gas</mi>
+        </msub>
+        <mo>&#x2061;</mo>
+        <mrow>
+          <mo>(</mo>
+          <msub>
+            <mi>SAFR</mi>
+            <mi>gas</mi>
+          </msub>
+          <mo>)</mo>
+        </mrow>
+      </mrow>
+    </mrow>
+    <mrow>
+      <mi>HVR</mi>
+      <mo>&#x2061;</mo>
+      <mrow>
+        <mo>(</mo>
+        <msub>
+          <mi>SAFR</mi>
+          <mi>diesel</mi>
+        </msub>
+        <mo>)</mo>
+      </mrow>
+    </mrow>
+  </mfrac>
+</mrow>
+</math>
+</maths>
+<claim-text>where: 
+<claim-text>x=the prevailing diesel fuel mass fraction, </claim-text>
+<claim-text>SAFR<sub>diesel</sub>=the stoichiometric air-fuel ratio for the diesel fuel, </claim-text>
+<claim-text>&#x3bb;<sub>gas</sub>=the determined actual gas lambda at the beginning of the transition period, </claim-text>
+<claim-text>SAFR<sub>gas</sub>=the stoichiometric air-fuel ratio for the gaseous fuel, and </claim-text>
+<claim-text>HVR=the prevailing mass ratio of the diesel fuel to the total fuel charge on an equivalent total fuel energy basis. </claim-text>
+</claim-text>
+</claim-text>
+ </claim>
+<claim id="CLM-00019" num="00019">
+<claim-text><b>19</b>. The method as recited in <claim-ref idref="CLM-00016">claim 16</claim-ref>, wherein the transition is from diesel mode to pilot ignited gaseous fuel mode, a controlled engine operating parameter comprises gas lambda, and the controlling step comprises: 
+<claim-text>determining the actual gas lambda of the gaseous fuel at the beginning of the transition period, </claim-text>
+<claim-text>determining a gas lambda-rich limit for prevailing engine operating conditions, </claim-text>
+<claim-text>comparing the determined gas lambda to the gas lambda-rich limit, and </claim-text>
+<claim-text>operating the engine in diesel mode if the determined gas lambda is less than the determined gas lambda-rich limit. </claim-text>
+</claim-text>
+ </claim>
+<claim id="CLM-00020" num="00020">
+<claim-text><b>20</b>. An internal combustion engine comprising: 
+<claim-text>(A) at least one cylinder; </claim-text>
+<claim-text>(B) a source of diesel fuel configured to supply a liquid fuel to said cylinder; </claim-text>
+<claim-text>(C) a source of a gaseous fuel configured to supply a gaseous fuel to said cylinder; and </claim-text>
+<claim-text>(D) a controller that is coupled to said diesel fuel source and said gaseous fuel source and that controls said sources to selectively 
+<claim-text>(1) supply fuel to said engine in a first mode comprising one of a diesel mode and a pilot ignited gaseous fuel mode, then </claim-text>
+<claim-text>(2) supply fuel to said engine in a second mode comprising the other of said diesel mode and said pilot ignited gaseous fuel mode, and </claim-text>
+<claim-text>(3) during a transition period between said first and second modes, control engine operation based on at least one engine operating parameter other than total energy fuel content to achieve an at least substantially smooth transition between operating modes. </claim-text>
+</claim-text>
+</claim-text>
+ </claim>
+<claim id="CLM-00021" num="00021">
+<claim-text><b>21</b>. The engine as recited as <claim-ref idref="CLM-00020">claim 20</claim-ref>, wherein the controlled engine operating parameter includes at least one of lambda and liquid fuel injection timing. </claim-text>
+ </claim>
+<claim id="CLM-00022" num="00022">
+<claim-text><b>22</b>. The engine as recited in <claim-ref idref="CLM-00021">claim 21</claim-ref>, wherein, during a transition from pilot ignited gaseous fuel mode to diesel mode, the controlled engine operating parameter comprises diesel lambda, and the controller is operable to set diesel lambda at a relatively high value at the beginning of the transition period and thereafter reduce diesel lambda during the transition period. </claim-text>
+ </claim>
+<claim id="CLM-00023" num="00023">
+<claim-text><b>23</b>. The engine as recited in <claim-ref idref="CLM-00022">claim 22</claim-ref>, wherein, during the transition from pilot ignited gaseous fuel mode to diesel mode, the controller is operable to 
+<claim-text>determine the actual gas lambda of the gaseous fuel at the beginning of the transition period, </claim-text>
+<claim-text>determine a diesel lambda limit, and </claim-text>
+<claim-text>adjust diesel fuel delivery to maintain the actual diesel lambda at or above the diesel lambda limit. </claim-text>
+</claim-text>
+ </claim>
+<claim id="CLM-00024" num="00024">
+<claim-text><b>24</b>. The engine as recited in <claim-ref idref="CLM-00023">claim 23</claim-ref>, wherein, at the beginning of the transition period, the controller is operable to determine the diesel lambda limit by multiplying the determined actual gas lambda by a multiplying factor. </claim-text>
+ </claim>
+<claim id="CLM-00025" num="00025">
+<claim-text><b>25</b>. The engine as recited in claim <b>234</b>, wherein the controller is further operable, during the transition from pilot ignited gaseous fuel mode to diesel mode, to reduce the diesel lambda limit from the determined value at the beginning of the transition period to a final value that is at or near the diesel smoke limit. </claim-text>
+ </claim>
+<claim id="CLM-00026" num="00026">
+<claim-text><b>26</b>. The engine as recited in <claim-ref idref="CLM-00025">claim 25</claim-ref>, wherein the controller is operable to reduce the determined diesel lambda limit using a predetermined schedule that is dependent on at least one of engine speed and time. </claim-text>
+ </claim>
+<claim id="CLM-00027" num="00027">
+<claim-text><b>27</b>. The engine as recited in <claim-ref idref="CLM-00023">claim 23</claim-ref>, wherein the controller is operable to determine the diesel lambda limit at the beginning of the transition period by solving the following equation for the determined gas lambda: </claim-text>
+<claim-text> 
+<maths id="MATH-US-00010" num="10">
+<math overflow="scroll">
+<mrow>
+  <msub>
+    <mi>&#x3bb;</mi>
+    <mrow>
+      <mi>diesel</mi>
+      <mo>&#x2062;</mo>
+      <mstyle>
+        <mtext>-</mtext>
+      </mstyle>
+      <mo>&#x2062;</mo>
+      <mi>limit</mi>
+    </mrow>
+  </msub>
+  <mo>=</mo>
+  <mfrac>
+    <mrow>
+      <mrow>
+        <mi>x</mi>
+        <mo>&#x2061;</mo>
+        <mrow>
+          <mo>(</mo>
+          <msub>
+            <mi>SAFR</mi>
+            <mi>diesel</mi>
+          </msub>
+          <mo>)</mo>
+        </mrow>
+      </mrow>
+      <mo>+</mo>
+      <mrow>
+        <msub>
+          <mi>&#x3bb;</mi>
+          <mi>gas</mi>
+        </msub>
+        <mo>&#x2061;</mo>
+        <mrow>
+          <mo>(</mo>
+          <msub>
+            <mi>SAFR</mi>
+            <mi>gas</mi>
+          </msub>
+          <mo>)</mo>
+        </mrow>
+      </mrow>
+    </mrow>
+    <mrow>
+      <mi>HVR</mi>
+      <mo>&#x2061;</mo>
+      <mrow>
+        <mo>(</mo>
+        <msub>
+          <mi>SAFR</mi>
+          <mi>diesel</mi>
+        </msub>
+        <mo>)</mo>
+      </mrow>
+    </mrow>
+  </mfrac>
+</mrow>
+</math>
+</maths>
+<claim-text>where: 
+<claim-text>x=the prevailing diesel fuel mass fraction, </claim-text>
+<claim-text>SAFR<sub>diesel</sub>=the stoichiometric air-fuel ratio for the diesel fuel, </claim-text>
+<claim-text>&#x3bb;<sub>gas</sub>=the determined gas lambda at the beginning of the transition period, </claim-text>
+<claim-text>SAFR<sub>gas</sub>=the stoichiometric air-fuel ratio for the gaseous fuel, and </claim-text>
+<claim-text>HVR=the prevailing mass ratio of the liquid fuel to the total fuel charge on an equivalent total fuel energy basis. </claim-text>
+</claim-text>
+</claim-text>
+ </claim>
+<claim id="CLM-00028" num="00028">
+<claim-text><b>28</b>. The engine as recited in <claim-ref idref="CLM-00021">claim 21</claim-ref>, wherein, during a transition from diesel mode to pilot ignited gaseous fuel mode, the controller is operable to 
+<claim-text>determine the actual gas lambda of the gaseous fuel at the beginning of the transition period, </claim-text>
+<claim-text>determine a gas lambda-rich limit for prevailing engine operating conditions, </claim-text>
+<claim-text>compare the determined actual gas lambda to the gas lambda limit, and </claim-text>
+<claim-text>operate the engine in diesel mode if the determined gas lambda is less than the determined gas lambda-rich limit. </claim-text>
+</claim-text>
+ </claim>
+<claim id="CLM-00029" num="00029">
+<claim-text><b>29</b>. The engine as recited in <claim-ref idref="CLM-00028">claim 28</claim-ref>, wherein the controller is operable to determine the gas lambda-rich limit based at least in part on at least one of manifold absolute pressure and air charge temperature. </claim-text>
+ </claim>
+<claim id="CLM-00030" num="00030">
+<claim-text><b>30</b>. The engine as recited in <claim-ref idref="CLM-00021">claim 21</claim-ref>, wherein, during the transition period, the controller is operable to 
+<claim-text>select a desired ignition timing for the second mode, the desired ignition timing for the second mode being different than the existing ignition timing for the first mode, </claim-text>
+<claim-text>adjust ignition timing incrementally over a plurality of engine operating cycles until the actual ignition timing at least approximately equals the desired ignition timing. </claim-text>
+</claim-text>
+ </claim>
+<claim id="CLM-00031" num="00031">
+<claim-text><b>31</b>. The engine as recited in <claim-ref idref="CLM-00020">claim 20</claim-ref>, wherein the engine is a dual fuel engine capable of operating only in the diesel mode and the pilot ignited gaseous fuel mode. </claim-text>
+ </claim>
+<claim id="CLM-00032" num="00032">
+<claim-text><b>32</b>. The engine as recited in <claim-ref idref="CLM-00020">claim 20</claim-ref>, wherein the controller is further operable to control fuel supply to maintain total fuel energy at least substantially constant during the transition period.</claim-text>
+ </claim>
+</claims>
+</us-patent-application>

@@ -1,0 +1,784 @@
+
+  
+    
+      
+        Introduction
+        The knowledge of a complete genome sequence holds the
+        potential to reveal the 'blueprints' for cellular life. The
+        genome sequence contains the information to propagate the
+        living system, and this information exists as open reading
+        frames (ORFs) and regulatory information. Computational
+        approaches have been developed (and are continuously being
+        improved) to decipher the information encoded in the DNA [
+        1, 2, 3, 4, 5, 6, 7]. However, it is becoming evident that
+        cellular functions are intricate and the integrated
+        function of biological systems involves many complex
+        interactions among the molecular components within the
+        cell. To understand the complexity inherent in cellular
+        networks, approaches that focus on the systemic properties
+        of the network are also required.
+        The complexity of integrated cellular systems leads to
+        an important point, namely that the properties of complex
+        biological processes cannot be analyzed or predicted based
+        solely on a description of the individual components, and
+        integrated systems based approaches must be applied [ 8].
+        The focus of such research represents a departure from the
+        classical 
+        reductionist approach in the
+        biological sciences, and moves toward the 
+        integrated approach to understanding
+        the interrelatedness of gene function and the role of each
+        gene in the context of multi genetic cellular functions or 
+        genetic circuits [ 8, 9, 10].
+        The engineering approach to analysis and design of
+        complex systems is to have a mathematical or computer
+        model; e.g. a dynamic simulator of a cellular process that
+        is based on fundamental physicochemical laws and
+        principles. Herein, we will analyze the integrated function
+        of the metabolic pathways, and there has been a long
+        history of mathematical modeling of metabolic networks in
+        cellular systems, which dates back to the 1960s [ 11, 12].
+        While the ultimate goal is the development of dynamic
+        models for the complete simulation of cellular metabolism,
+        the success of such approaches has been severely hampered
+        by the lack of kinetic information on the dynamics and
+        regulation of metabolism. However, in the absence of
+        kinetic information it is still possible to assess the
+        theoretical capabilities and operative modes of metabolism
+        using flux balance analysis (FBA) [ 10, 13, 14, 15, 16,
+        17].
+        We have developed an 
+        in silico representation of 
+        Escherichia coli (E. coli in
+        silico) to describe the bacterium's metabolic
+        capabilities [ 18]. 
+        E. coli in silico was derived based
+        on the annotated genetic sequence [ 19], biochemical
+        literature [ 20], and the online bioinformatic databases [
+        21, 22, 23]. The properties of 
+        E. coli in silico were analyzed and
+        compared to the 
+        in vivo properties of 
+        E. coli, and it was shown that 
+        E. coli in silico can be used to
+        interpret the metabolic phenotype of many 
+        E. coli mutants [ 18]. However, the
+        utilization of the metabolic genes is dependent on the
+        carbon source and the substrate availability [ 24, 25].
+        Thus, the mutant phenotype is also dependent on specific
+        environmental parameters. Therefore, herein we have
+        utilized 
+        E. coli in silico to computationally
+        examine the condition dependent optimal metabolic pathway
+        utilization, and we will show that the FBA can be used to
+        analyze and interpret the metabolic behavior of wildtype
+        and mutant 
+        E. coli strains.
+      
+      
+        Materials and Methods
+        
+          Flux balance analysis
+          All biological processes are subjected to physico
+          chemical constraints (such as mass balance, osmotic
+          pressure, electro neutrality, thermodynamic, and other
+          constraints). As a result of decades of metabolic
+          research and the recent genome sequencing projects, the
+          mass balance constraints on cellular metabolism can be
+          assigned on a genome scale for a number of organisms.
+          Methods have been developed to analyze the metabolic
+          capabilities of a cellular system based on the mass
+          balance constraints and this approach is known as flux
+          balance analysis (FBA) [ 13, 14, 16] (see the
+          supplementary information for an FBA primer). The mass
+          balance constraints in a metabolic network can be
+          represented mathematically by a matrix equation:
+          S • v = 0 Equation 1
+          The matrix 
+          S is the 
+          mxn stoichiometric matrix, where 
+          m is the number of metabolites and 
+          n is the number of reactions in the
+          network (The 
+          E. coli stoichiometric matrix is
+          available in matrix format in the supplementary
+          information and in a reaction list in Appendices 1-3).
+          The vector 
+          v represents all fluxes in the
+          metabolic network, including the internal fluxes,
+          transport fluxes and the growth flux.
+          For the 
+          E. coli metabolic network
+          represented by Eqn. 1, the number of fluxes was greater
+          than the number of mass balance constraints; thus, there
+          were multiple feasible flux distributions that satisfied
+          the mass balance constraints, and the solutions (or
+          feasible metabolic flux distributions) were confined to
+          the nullspace of the matrix 
+          S .
+          In addition to the mass balance constraints, we
+          imposed constraints on the magnitude of individual
+          metabolic fluxes.
+          α 
+          
+            i 
+           ≤ v 
+          
+            i 
+           ≤ β 
+          
+            i 
+           Equation 2
+          The linear inequality constraints were used to enforce
+          the reversibility of each metabolic reaction and the
+          maximal flux in the transport reactions. The
+          reversibility constraints for each reaction are indicated
+          online. The transport flux for inorganic phosphate,
+          ammonia, carbon dioxide, sulfate, potassium, and sodium
+          was unrestrained (α 
+          
+            i 
+           = -∞ and β 
+          
+            i 
+           = ∞). The transport flux for the other metabolites,
+          when available in the 
+          in silico medium, was constrained
+          between zero and the maximal level (0 ≤ v 
+          
+            i 
+           ≤ v 
+          
+            i 
+           max). The v 
+          
+            i 
+           
+          max values used in the simulations
+          are noted for each simulation (Fig. 1). When a metabolite
+          was not available in the medium, the transport flux was
+          constrained to zero. The transport flux for metabolites
+          capable of leaving the metabolic network (i.e. acetate,
+          ethanol, lactate, succinate, formate, and pyruvate) was
+          always unconstrained in the net outward direction.
+          The intersection of the nullspace and the region
+          defined by the linear inequalities defined a region in
+          flux space that we will refer to as the feasible set, and
+          the feasible set defined the capabilities of the
+          metabolic network subject to the imposed cellular
+          constraints. It should be noted that every vector 
+          v within the feasible set is not
+          reachable by the cell under a given condition due to
+          other constraints not considered in the analysis (i.e.
+          maximal internal fluxes and gene regulation). The
+          feasible set can be further reduced by imposing
+          additional constraints (i.e. kinetic or gene regulatory
+          constraints), and in the limiting condition where all
+          constraints are known, the feasible set may reduce to a
+          single point.
+          A particular metabolic flux distribution within the
+          feasible set (vector 
+          v which satisfies the constraints in
+          Eqns. 1 and 2) was found using linear programming (LP). A
+          commercially available LP package was used (LINDO, Lindo
+          Systems Inc., Chicago, II). LP identified a solution that
+          minimized a metabolic objective function (subject to the
+          imposed constraints- Eqns. 1 and 2) [ 16, 48, 49], and
+          was formulated as shown below:
+          Minimize -Z
+          where 
+          Z = Σ 
+          c 
+          
+            i 
+           v 
+          
+            i 
+           = <c • v> Equation 3
+          The vector 
+          c was used to select a linear
+          combination of metabolic fluxes to include in the
+          objective function [ 50]. Herein, 
+          c was defined as the unit vector in
+          the direction of the growth flux, and the growth flux was
+          defined in terms of the biosynthetic requirements:
+          (Equation 4)
+          where 
+          d 
+          
+            m 
+           is the biomass composition of metabolite X 
+          
+            m 
+           (we used a constant biomass composition defined from
+          the literature [ 51] (see Appendix 4)), and the growth
+          flux was modeled as a single reaction that converts all
+          the biosynthetic precursors into biomass.
+        
+        
+          Phenotype Phase Plane Analysis
+          All feasible 
+          E. coli in silico metabolic flux
+          distributions are mathematically confined to the feasible
+          set, which is a region in flux space ( n), where each
+          solution in this space corresponds to a feasible
+          metabolic flux distribution.
+          Phenotype Phase Plane (PhPP): A PhPP is a
+          two-dimensional projection of the feasible set, and below
+          we will briefly discuss the formalism for constructing
+          the PhPP. Two parameters that describe the growth
+          conditions (such as substrate and oxygen uptake rates)
+          were defined as the two axes of the two dimensional
+          space. The optimal flux distribution was calculated
+          (using LP) for all points in this plane by solving the LP
+          problem while adjusting the exchange flux constraints
+          (defining the two-dimensional space). A finite number of
+          qualitatively different patterns of metabolic pathway
+          utilization were identified in such a plane, and lines
+          were drawn to demarcate these regions. Each region is
+          denoted by Pn 
+          x, y , where 'P' indicates that the
+          region was defined by a phenotype phase plane analysis,
+          'n' denotes the number of the demarcated phase (as shown
+          in a particular PhPP figure), and 'x, y' denotes the two
+          uptake rates on the axis of the PhPP. PhPPs were also
+          generated for mutant genotypes; represented as P genen 
+          x, y .
+          One demarcation line in the PhPP was defined as the
+          line of optimality (LO). The LO represents the optimal
+          relation between exchange fluxes defined on the axes of
+          the PhPP.
+        
+        
+          Alterations of the genotype
+          FBA and 
+          E. coli in silico were used to
+          examine the systemic effects of in 
+          silico gene deletions. The genes
+          involved in the central metabolic pathways (glycolysis,
+          pentose phosphate pathway, TCA cycle, electron transport)
+          were subjected to removal from 
+          E. coli in silico. To simulate a
+          gene deletion, all metabolic reactions catalyzed by a
+          given gene product were simultaneously constrained to
+          zero. Some metabolic reactions were catalyzed by more
+          than one enzyme, and all genes that code for enzymes that
+          catalyze a given reaction were simultaneously removed
+          (i.e. 
+          rpiAB ). Furthermore, all genes
+          that make up an enzyme complex were also simultaneously
+          removed (i.e. 
+          sdhABCD ).
+          The optimal metabolic flux distribution for the
+          generation of biomass was calculated for each 
+          in silico deletion strain. The 
+          in silico gene deletion analysis
+          was performed with the transport flux constraints defined
+          by the wild-type PhPP. The constraints imposed for each
+          simulation are noted in Fig. 1.
+          For each 
+          in silico deletion strain, the
+          optimal production of the twelve biosynthetic precursors
+          and the metabolic cofactors was also calculated to
+          identify auxotrophic requirements and impaired functions
+          in the metabolic network (Table 1). The optimal
+          production of the biosynthetic precursors was calculated
+          by setting the objective function to the drain of a
+          single metabolite (i.e., ATP → ADP + P 
+          i , or PEP →). The numerical value of
+          the objective function for each 
+          in silico deletion strain was
+          reported as a fraction of the wild-type optimal value
+          (Table 1).
+        
+      
+      
+        Results
+        We have previously described the construction of
+        phenotype phase planes (PhPPs) (see materials and methods)
+        and the analysis of the glucose-oxygen PhPP. We have
+        previously described the effect of 
+        in silico 'gene deletions' on the
+        ability of 
+        E. coli in silico to 'grow' under a
+        single condition [ 18]. Since the utilization of the
+        metabolic pathways is condition dependent, herein, we have
+        investigated the link between the environmental conditions
+        and the optimal metabolic pathway utilization 
+        in silico by: 1. studying the effects
+        of gene deletions in all phases of the glucose-oxygen PhPP,
+        and 2. broadening the analysis of 
+        in silico deletion strains by
+        comparing PhPPs from isogenic 
+        in silico strains.
+        
+        Gene Deletions : A point within each
+        phase of the glucose-oxygen PhPP was chosen to define the
+        transport flux constraints (indicated in Fig. 1) for the
+        FBA simulations. At each point, the growth characteristics
+        of all 
+        in silico gene deletion strains (of
+        central metabolic pathway genes) were examined. Based on
+        the results, the genes were categorized as; 
+        essential (growth under the defined
+        condition requires the activity of the corresponding gene
+        product), 
+        critical (growth at a reduced yield
+        (< 95% of wild-type)), or 
+        non-essential (growth at near
+        wild-type yield (> 95%)). The effects of the 
+        in silico gene deletions were
+        phase-dependent, allowing us to identify optimal growth
+        phenotypes for each growth condition. Additionally, the
+        optimal production of the 12 biosynthetic precursors,
+        high-energy phosphate bonds, and redox potential was
+        calculated for each 
+        in silico deletion strain (Table 1)
+        to determine the specific effect of the gene deletion on
+        the metabolic capabilities. For instance, the 
+        in silico acnAB' strain was unable to
+        synthesize α-ketoglutarate under all simulated growth
+        conditions, and thus, 
+        acnAB was defined as essential for
+        growth in a glucose minimal media (Table 1).
+        The optimal utilization of the metabolic pathways was
+        dependent on the specific transport flux constraints, and
+        the qualitative shifts in optimal metabolic behavior as a
+        function of two transport fluxes are shown in the PhPP. The
+        optimal biomass yield and biosynthetic precursor production
+        capabilities were calculated for each 
+        E. coli in silico deletion strain for
+        a point within each region of the PhPP, and the optimal
+        values were normalized to the wild-type (Fig. 1). The
+        condition dependent metabolic phenotypes were
+        computationally analyzed, and the results are organized by
+        the overall metabolic phenotype; 
+        essential, conditionally
+        essential, or 
+        non-essential genes. 
+        
+        Essential genes : The gene products
+        that were essential for growth with conditions defined by
+        the line of optimality (LO) (see materials and methods)
+        were also identified as essential within all other phases (
+        
+        acnAB, gapAC, gltA, icdA, pgk, rpiAB,
+        tktAB ). Specifically, the 
+        gltA -, 
+        icdA -, and 
+        acnAB - 
+        in silico deletion strains were
+        unable to produce one biosynthetic precursor
+        (α-ketoglutarate, Table 1), and retained the capability to
+        synthesize the remaining biosynthetic precursors and
+        cofactors nearly equivalent to the wild-type. This
+        prediction is consistent with the defined media required
+        for the cultivation of 
+        aglt - 
+        E. coli mutant strain (glucose
+        minimal media supplemented with glutamine or proline) [
+        26]. Furthermore, the essential glycolytic gene products ( 
+        pgk, gapAC ) were required for the
+        synthesis of oxaloacetate, succinyl-CoA, α-ketoglutarate,
+        pyruvate, phosphoenolpyruvate (PEP), and 3-phosphoglycerate
+        within all conditions, and were unable to synthesize all
+        biosynthetic precursors under anaerobic growth conditions.
+        The remaining two essential gene products were in the
+        pentosephosphate pathway ( 
+        tktAB, rpiAB ). The 
+        tktAB and 
+        rpiAB gene products were required for
+        the synthesis of erythrose 4-phosphate in all phases
+        (aromatic amino acid supplement required for the
+        cultivation of 
+        tkt - 
+        E. coli mutant strains [ 27]).
+        Additionally, 
+        rpiAB -strains were identified as
+        ribose auxotrophs by the 
+        in silico analysis, which was
+        consistent with experimental data [ 28].
+        
+        Conditionally essential genes :
+        During the growth simulations with external parameters
+        defined by the LO, there were genes defined as critical for
+        growth; however, many of these genes were essential for
+        cellular growth upon oxygen limitations ( 
+        fba, pfkAB, tpiA, eno, gpmAB ). These
+        genes were termed conditionally essential. The 
+        fba -, 
+        pfkAB -, and 
+        tpiA - 
+        in silico deletion strains had a
+        limited capability to synthesize glyceraldehyde
+        3-phosphate, 3-phosphoglycerate, phosphoenolpyruvate,
+        pyruvate, acetyl-CoA, α-ketoglutarate, succinyl-CoA,
+        oxaloacetate, and high-energy phosphate bonds in all
+        phases, and were completely unable to synthesize many of
+        the biosynthetic precursors in phases 46 (Table 1) ( 
+        tpi - 
+        in silico strain discussed below).
+        The growth potential of the 
+        eno -and 
+        gpmAB - 
+        in silico deletion strains was
+        theoretically maintained under aerobic conditions by the
+        synthesis and degradation of serine, and without the serine
+        degradation pathway, the 
+        eno -and 
+        gpmAB -gene products were defined as
+        essential. However, the 
+        eno -and 
+        gpmAB - 
+        in silico deletion strains were
+        limited in their production capability of high-energy
+        phosphate bonds under all conditions, and were unable to
+        produce any of the biosynthetic precursors in phase 6 even
+        with the serine degradation pathway.
+        Additionally, several LO non-essential gene products
+        were essential ( 
+        sdhABCD, ppc, frdABCD ) for growth
+        within other phases. The 
+        in silico analysis suggested that the
+        
+        sdhABCD and 
+        frdABCD gene products were required
+        for anaerobic pyrimidine biosynthesis. Additionally, the 
+        frdABCD gene products were essential
+        for the anaerobic synthesis of the NAD cofactor. However,
+        these 
+        in silico results could be due to
+        inaccurate stoichiometric information with respect to
+        cofactor utilization and should be critically examined.
+        Finally, the 
+        ppc gene product was required for the
+        anaerobic synthesis of oxaloacetate and α-ketoglutarate,
+        but the 
+        in silico analysis suggests that this
+        gene product is not essential for growth in aerobic
+        conditions where the glyoxylate by-pass has the potential
+        to replenish the biosynthetic precursors [ 29].
+        
+        Non-essential genes : Several genes
+        that are critical for growth in conditions defined by the
+        LO were non-essential for growth in other phases ( 
+        nuo , 
+        cyoABCD, fumABC ). The 
+        in silico nuo -and 
+        cyoABCD -deletion strains were
+        limited in their production capabilities of high-energy
+        phosphate bonds for aerobic growth; however, under
+        anaerobic conditions high-energy phosphate bonds were
+        produced by substrate level phosphorylation. The production
+        capabilities of the 
+        fumABC - 
+        in silico deletion strain was not
+        limited with respect to the biosynthetic precursors shown
+        in the table (other than a slight limitation of ATP
+        production in P1 
+        glucose, oxygen ). However, the 
+        fumABC - 
+        in silico deletion strain was limited
+        in its production capabilities of several amino acids (arg,
+        gly, his- not shown in table), but under anaerobic
+        conditions, these capabilities were not limited with
+        respect to the wild-type.
+        Several LO non-essential gene products were critical ( 
+        pgi, pta, ackAB ) for growth within
+        other phases. The 
+        in silico pgi deletion strain had a
+        reduced capacity to produce all the biosynthetic precursors
+        under oxygen limitation, and this resulted in a decreased
+        normalized growth yield of this 
+        in silico deletion strain. The 
+        pta and 
+        ackAB gene products participate in
+        the metabolic pathway leading to the formation of acetate.
+        Acetate was predicted as a metabolic by-product upon oxygen
+        limitations (all phases below the LO). Under conditions
+        defined by P5-6 
+        glucose, oxygen , the production
+        capabilities of several of the biosynthetic precursors
+        (glucose 6-phosphate, fructose 6-phosphate, ribose
+        5-phosphate, erythrose 5-phosphate, glyceraldehyde
+        3-phosphate) were limited in the 
+        pta and 
+        ackAB in silico deletion strains ( 
+        pta - 
+        In silico deletion strain discussed
+        below).
+        This sub-section illustrated the condition-dependent
+        effect of gene deletions on the metabolic
+        genotype-phenotype relation. The results covered the range
+        of substrate uptake rates and defined the optimal metabolic
+        pathway utilization of isogenic strains 
+        in silico under different
+        combinations of environmental parameters. The optimal
+        utilization of the metabolic pathways was dependent on the
+        metabolic genotype; thus, different metabolic genotypes are
+        characterized by different PhPPs. The results presented
+        above provide insight into the genotype phenotype relation.
+        Next, we will compare the PhPPs from 
+        in silico deletion strains to the
+        wild-type to provide a more complete definition of optimal
+        phenotypes.
+        
+        in silico Deletion Strain Phenotype Phase
+        Plane Analysis : Comparative analysis of the phase
+        planes for several mutant strains ( 
+        tpi - 
+        , pta - 
+        , and 
+        zwf ) were performed. These case
+        studies were chosen to further investigate the metabolic
+        genotype-phenotype relation 
+        in silico and to demonstrate the use
+        of FBA to interpret and analyze cellular metabolism.
+        
+        tpi : The 
+        tpi -PhPP showed 3 distinct optimal
+        metabolic phenotypes- one glucose limited phase (P 
+        tpi 2 
+        glucose, oxygen ), and two futile phases
+        (Fig. 2A). Futile phases are characterized by a negative
+        effect of one of the substrates on the objective function.
+        One of the futile phases was due to excess oxygen (P 
+        tpi 1 
+        glucose, oxygen ) and the other was due
+        to excess glucose (P 
+        tpi 3 
+        glucose, oxygen ). Although the 
+        tpi - 
+        in silico metabolic genotype
+        theoretically supported biomass production, the feasible
+        steady states were restricted to a limited phase of the
+        phase plane and the flexibility of the metabolic network
+        was reduced to one dimension.
+        The optimal utilization of 
+        the tpi -metabolic network under
+        environmental conditions defined by the LO 
+        tpi was characterized by increased
+        PPP fluxes to bypass the TPI block. The PPP operated
+        cyclically; thus, leading to a high production of NADPH.
+        Due to the high NADPH production in the PPP, the TCA cycle
+        flux was optimally reduced and functioned only to produce
+        the biosynthetic precursors.
+        The 
+        in silico analysis suggests that the 
+        tpi -metabolic network was restricted
+        by the ability to regenerate phosphoenolpyruvate (PE) for
+        the PTS, and the 
+        in silico analysis identified 3
+        metabolic 'routes' for the regeneration of PEP. Two of the
+        'routes' were equivalent (alternate optimal solutions), (1)
+        The PEP was regenerated by the phosphoenolpyruvate synthase
+        (PPS), or (2) the glactose transporter was used for the
+        transport of glucose which was subsequently phosphorylated
+        by the glucokinase reaction. These two routes were
+        equivalent with respect to the objective function (although
+        they were structurally different). The third PEP
+        regeneration route involved the glyoxylate bypass and the
+        phosphoenolpyruvate carboxykinase, and this route was
+        characterized by a 38% reduction in the optimal biomass
+        yield. Furthermore, experimentally it was shown that
+        constitutive expression of the glyoxylate bypass suppressed
+        the PEP deficient phenotype [ 30, 31]. The PEP regeneration
+        routes (discussed above) theoretically allow the 
+        tpi -to grow, and one of these
+        solutions was required for the growth of the 
+        tpi - 
+        in silico strain.
+        
+        zwf : 
+        zwf codes for glucose-6-phosphate
+        dehydrogenase (G6PDH), the first enzyme in the oxidative
+        branch of the PPP. 
+        zwf has been shown to be a
+        non-essential gene for the growth of 
+        E. coli in glucose minimal media, and
+        
+        zwf strains grow at near wild-type
+        growth rates [ 32]. 
+        zwf was predicted by FBA to be a
+        non-essential gene for growth in glucose minimal media
+        (Fig. 1). We conducted a phenotype phase plane analysis of
+        the 
+        zwf strain and examined the systemic
+        metabolic function of 
+        zwf and its relation to the
+        environmental conditions 
+        in silico (Fig. 2B). The slope of the
+        LO 
+        zwf slightly increased (relative to
+        the wild-type), indicating a higher oxygen:glucose ratio
+        for optimal growth. Removing the G6PDH from the metabolic
+        network eliminated all metabolic pathways that utilized the
+        oxidative branch of the PPP. Therefore, the 
+        zwf PhPP was significantly changed in
+        the phases that utilized the oxidative branch of the PPP (P
+        
+        zwf 2 
+        glucose, oxygen and P 
+        zwf 3 
+        glucose, oxygen ) but was unchanged in
+        phases that did not optimally utilize the 
+        zwf gene product (P 
+        zwf 4 
+        glucose, oxygen ).
+        
+        pta : Acetate excretion is a common
+        characteristic of 
+        E. coli metabolism and several
+        approaches have been applied to reduce acetate production
+        to improve the productivity of engineering strains [ 33,
+        34, 35]. Acetate production can be interpreted using FBA [
+        36, 37], and we have used a phase plane analysis to
+        quantitatively analyze the conditions for which acetate
+        excretion optimally occurs. Acetate was optimally excreted
+        from the cell within all phases of the glucose-oxygen PhPP
+        below the LO. We have generated the 
+        pta -PhPP and analyzed the metabolic
+        characteristics of the in 
+        silico pta -strain (Fig. 2C). The 
+        pta -PhPP indicated that this mutant
+        strain maintained the potential to support growth (both
+        aerobically and anaerobically). Experimentally, 
+        the pta - 
+        E. coli strain has been shown to grow
+        aerobically and anaerobically on glucose minimal media [
+        38]. The 
+        in silico analysis predicted that 
+        the pta -strain optimally shifted the
+        carbon flux from acetate to ethanol in P 
+        pta 3. However, in P 
+        pta 4, the optimal metabolic
+        by-products included lactate, ethanol, and pyruvate, and
+        under completely anaerobic conditions, succinate was also
+        optimally produced as a metabolic byproduct. These
+        metabolic byproducts were qualitatively consistent with
+        experimental observations in the 
+        pta -strain [ 38].
+      
+      
+        Discussion
+        The rapid development of bioinformatic databases is
+        resulting in extensive information about the molecular
+        composition and function of several single cellular
+        organisms. These genetic and biochemical databases [ 21,
+        23, 39] have now been developed to the point where the
+        methods of systems science need to be used to analyze,
+        interpret, and predict the integrated behavior of complex
+        multigeneic biological processes. Herein, we have utilized
+        an 
+        in silico representation of 
+        E. coli to study the condition
+        dependent phenotype of 
+        E. coli and central metabolism gene
+        deletion strains. We have shown that a computational
+        analysis of the metabolic behavior can provide valuable
+        insight into cellular metabolism. The results presented
+        herein address a pressing question in the post-genome era; 
+        how can genome sequence information be
+        used to analyze integrated cellular functions? Given
+        the central importance of this question, we will discuss
+        the general applicability, limitations, and future
+        prospects for FBA and functional genomics.
+        The FBA metabolic modeling framework is different than
+        other well-known metabolic modeling approaches. FBA can
+        more accurately be defined as a metabolic constraining
+        approach, this is because FBA defines the 'best' the cell
+        can do, rather than predicting the metabolic behavior. To
+        accomplish this, we have constrained metabolic function
+        based on the most reliable information, the metabolic
+        stoichiometry (the stoichiometry is well known for the vast
+        majority of the metabolic processes). However, FBA does
+        have predictive capabilities when a physiologically
+        meaningful objective function can be defined, and the 
+        E. coli FBA results, with maximal
+        growth rate as the objective function, have been shown to
+        be consistent with experimental data under nutritionally
+        rich conditions [ 40]. It should be mentioned that FBA does
+        not directly consider regulation, or the regulatory
+        constraints on the metabolic network, but rather FBA
+        assumes that the regulation is such that metabolic behavior
+        is optimal. This assumption produces results that are
+        generally consistent with experimental data, however, this
+        assumption is only valid for a system that has evolved
+        toward optimality. In mutant strains, the regulation of the
+        metabolic network has not evolved to operate in an optimal
+        fashion. Therefore, the optimal utilization of the mutant
+        metabolic network does not necessarily correspond to the 
+        in vivo utilization of the metabolic
+        network. Computational analysis of metabolic processes,
+        coupled to an experimental program may provide valuable
+        information regarding the regulatory structure of metabolic
+        networks, and will provide a challenge for future
+        computational studies coupled to highly parallel
+        experimental programs, such as large-scale mutation studies
+        [ 41].
+        Currently, about one-third of the 
+        E. coli open reading frames do not
+        have a functional assignment. Thus, the metabolic network
+        studied here is incomplete and does not account for all the
+        metabolic processes carried out by 
+        E. coli. However, we have used the
+        biochemical literature to refine the 
+        in silico metabolic genotype and
+        given the long history of 
+        E. coli metabolic research [ 20], a
+        large percentage of the 
+        E. coli metabolic capabilities have
+        likely been identified. However, when additional metabolic
+        capabilities are discovered [ 42], the 
+        E. coli stoichiometric matrix can be
+        updated, leading to an iterative model building process.
+        Furthermore, inconsistencies between the model and
+        experimental data may help point to unidentified metabolic
+        functions. Additionally, the 
+        in silico analysis can help identify
+        missing or incorrect functional assignments; for example,
+        by identifying sets of metabolic reactions that are not
+        connected to the metabolic network by the mass balance
+        constraints.
+        The study presented herein is an example of the rapidly
+        growing field of 
+        in silico biology. It is clear that
+        computer modeling and simulations must be used iteratively
+        with an experimental program to continually improve 
+        in silico models and to develop
+        systemic understanding of cellular functions. Thus, an 
+        in silico analysis can be used to
+        define an experimental program. For example, the ability to
+        construct well-defined knockout strains of 
+        E. coli [ 43] opens the possibility
+        to critically evaluate the relation between the 
+        in silico representation of mutant
+        behavior and the 
+        in vivo metabolic network under
+        well-defined genetic and environmental conditions for
+        strategically chosen genes. This possibility is
+        particularly timely, given the increasing number of genome
+        scale measurements that are now possible, through 2D gels [
+        44, 45] and DNA array technology [ 46, 47].
+      
+      
+        Conclusions
+        Herein, we have utilized an 
+        in silico representation of 
+        E. coli to study the condition
+        dependent phenotype of 
+        E. coli and central metabolism gene
+        deletion strains. We have shown that a computational
+        analysis of the metabolic behavior can provide valuable
+        insight into cellular metabolism. The present 
+        in silico study builds on the ability
+        to define metabolic genotypes in bacteria and mathematical
+        methods to analyze the possible and optimal phenotypes that
+        they can express. These capabilities open the possibility
+        to perform 
+        in silico deletion studies to help
+        sort out the complexities of 
+        E. coli mutant phenotypes.
+      
+    
+  

@@ -1,0 +1,319 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE us-patent-application SYSTEM "us-patent-application-v42-2006-08-23.dtd" [ ]>
+<us-patent-application lang="EN" dtd-version="v4.2 2006-08-23" file="US20070001871A1-20070104.XML" status="PRODUCTION" id="us-patent-application" country="US" date-produced="20061221" date-publ="20070104">
+<us-bibliographic-data-application lang="EN" country="US">
+<publication-reference>
+<document-id>
+<country>US</country>
+<doc-number>20070001871</doc-number>
+<kind>A1</kind>
+<date>20070104</date>
+</document-id>
+</publication-reference>
+<application-reference appl-type="utility">
+<document-id>
+<country>US</country>
+<doc-number>11170913</doc-number>
+<date>20050630</date>
+</document-id>
+</application-reference>
+<us-application-series-code>11</us-application-series-code>
+<classifications-ipcr>
+<classification-ipcr>
+<ipc-version-indicator><date>20060101</date></ipc-version-indicator>
+<classification-level>A</classification-level>
+<section>G</section>
+<class>08</class>
+<subclass>G</subclass>
+<main-group>1</main-group>
+<subgroup>095</subgroup>
+<symbol-position>F</symbol-position>
+<classification-value>I</classification-value>
+<action-date><date>20070104</date></action-date>
+<generating-office><country>US</country></generating-office>
+<classification-status>B</classification-status>
+<classification-data-source>H</classification-data-source>
+</classification-ipcr>
+</classifications-ipcr>
+<classification-national>
+<country>US</country>
+<main-classification>340907000</main-classification>
+</classification-national>
+<invention-title id="d0e102">Method and apparatus for secure traffic light interruption</invention-title>
+<parties>
+<applicants>
+<applicant sequence="00" app-type="applicant-inventor" designation="us-only">
+<addressbook>
+<last-name>Pfleging</last-name>
+<first-name>Gerald</first-name>
+<middle-name>W.</middle-name>
+<address>
+<city>Batavia</city>
+<state>IL</state>
+<country>US</country>
+</address>
+</addressbook>
+<nationality>
+<country>US</country>
+</nationality>
+<residence>
+<country>US</country>
+</residence>
+</applicant>
+<applicant sequence="01" app-type="applicant-inventor" designation="us-only">
+<addressbook>
+<last-name>Wilkin</last-name>
+<first-name>George</first-name>
+<middle-name>Paul</middle-name>
+<address>
+<city>Bolingbrook</city>
+<state>IL</state>
+<country>US</country>
+</address>
+</addressbook>
+<nationality>
+<country>US</country>
+</nationality>
+<residence>
+<country>US</country>
+</residence>
+</applicant>
+</applicants>
+<correspondence-address>
+<addressbook>
+<name>FAY SHARPE/LUCENT</name>
+<address>
+<address-1>1100 SUPERIOR AVE</address-1>
+<address-2>SEVENTH FLOOR</address-2>
+<city>CLEVELAND</city>
+<state>OH</state>
+<postcode>44114</postcode>
+<country>US</country>
+</address>
+</addressbook>
+</correspondence-address>
+</parties>
+<assignees>
+<assignee>
+<orgname>Lucent Technologies Inc.</orgname>
+<role>02</role>
+</assignee>
+</assignees>
+</us-bibliographic-data-application>
+<abstract id="abstract">
+<p id="p-0001" num="0000">This invention relates to a method and apparatus for secure traffic light interruption. A purpose of this invention is to allow for the use of a secure system to allow the interruption of the traffic light signals by emergency (and other authorized) vehicles. An objective of this invention is to allow for the use of a more secure system than the currently installed strobe only traffic light interruption (changing) systems. This invention integrates additional wireless technologies to assure that only authorized users trigger the traffic light changes that typically make it safer for emergency vehicles when they approach a traffic light. </p>
+</abstract>
+<drawings id="DRAWINGS">
+<figure id="figure-D00000" num="00000">
+<img id="EMI-D00000" he="109.47mm" wi="170.18mm" file="US20070001871A1-20070104-D00000.TIF" alt="embedded image" img-content="drawing" img-format="tif"/>
+</figure>
+<figure id="figure-D00001" num="00001">
+<img id="EMI-D00001" he="229.53mm" wi="147.24mm" orientation="landscape" file="US20070001871A1-20070104-D00001.TIF" alt="embedded image" img-content="drawing" img-format="tif"/>
+</figure>
+<figure id="figure-D00002" num="00002">
+<img id="EMI-D00002" he="231.06mm" wi="145.97mm" orientation="landscape" file="US20070001871A1-20070104-D00002.TIF" alt="embedded image" img-content="drawing" img-format="tif"/>
+</figure>
+<figure id="figure-D00003" num="00003">
+<img id="EMI-D00003" he="241.38mm" wi="121.41mm" file="US20070001871A1-20070104-D00003.TIF" alt="embedded image" img-content="drawing" img-format="tif"/>
+</figure>
+<figure id="figure-D00004" num="00004">
+<img id="EMI-D00004" he="228.43mm" wi="149.52mm" orientation="landscape" file="US20070001871A1-20070104-D00004.TIF" alt="embedded image" img-content="drawing" img-format="tif"/>
+</figure>
+<figure id="figure-D00005" num="00005">
+<img id="EMI-D00005" he="253.07mm" wi="148.84mm" file="US20070001871A1-20070104-D00005.TIF" alt="embedded image" img-content="drawing" img-format="tif"/>
+</figure>
+</drawings>
+<description id="description">
+<?summary-of-invention description="Summary of Invention" end="lead"?>
+<heading level="2" id="h-0001">BACKGROUND OF THE INVENTION </heading>
+<p id="p-0002" num="0001"> This invention relates to a method and apparatus for secure traffic light (emergency vehicle changing) interruption. More particularly, the techniques according to the presently described embodiments provide a secure system to allow the interruption of traffic light signals by emergency (and other authorized) vehicles. This is an improvement over the conventional strobe only traffic light interruption (changing) systems. In one form, the presently described embodiments integrate wireless technologies to assure that only authorized users can trigger the traffic light changes that make it safer for emergency vehicles when they approach a traffic light. </p>
+<p id="p-0003" num="0002"> While the invention is particularly directed to the art of traffic light interruption, and will be thus described with specific reference thereto, it will be appreciated that the invention may have usefulness in other fields and applications. For example, the invention may be used in other applications where emergency interruption of a system is desired. </p>
+<p id="p-0004" num="0003"> By way of background, emergency interruption systems operative to control traffic signals, by permitting interruption by emergency (and other authorized) vehicles, are known. Typically, a system of installed traffic light sensors operate by detecting a rapidly strobing light source approaching from a line of sight distance of up to almost 1,800 feet. The detection devices are normally mounted on the cross bar of the traffic light poles. Once the sensor detects an approaching device, the sensor locks onto the device to determine if preemption should occur. </p>
+<p id="p-0005" num="0004"> Some systems simply look for a strobe in any pattern. More advanced systems look for specific strobe patterns before initiating the sequence to change the light. </p>
+<p id="p-0006" num="0005"> Referring to <figref idref="DRAWINGS">FIG. 1</figref>, an example of an emergency vehicle <b>12</b> entering an area of a traffic light system <b>10</b> with an emergency interruption system follows. The system <b>10</b> includes a traffic light <b>14</b> and a strobe unit or flood lamp system <b>16</b>, both supported by a structure <b>18</b>. The vehicle <b>12</b> includes a signaling unit <b>20</b>. </p>
+<p id="p-0007" num="0006"> In operation, if the vehicle <b>12</b> already has a green light, the light <b>14</b> will remain green. Any other direction that also has a green light (usually the opposite direction) will first get a yellow light, then a red light. </p>
+<p id="p-0008" num="0007"> When all of the lights of the traffic light <b>14</b> facing other directions are turned red, and the vehicle's direction is the only light that is green, the left turn arrow will illuminate (if one exists). A brilliant white flood lamp <b>16</b> mounted near the traffic signal <b>14</b> will then begin to flash. This flood lamp <b>16</b> tells the driver of the fire truck that he now has control of the intersection and, thus, a complete right-of-way. </p>
+<p id="p-0009" num="0008"> If the vehicle <b>12</b> sees a red light, any other direction that has a green light will transition to a yellow light, then a red light. When the lights facing all the directions (including the fire truck's) are red lights, the traffic signal facing the fire truck will then turn to a green light, along with the left turn arrow (if one exists), and the brilliant white flood lamp <b>16</b> will begin to flash. </p>
+<p id="p-0010" num="0009"> Once the vehicle <b>12</b> has passed through the intersection, optical communication with the preemption detector (on the traffic signal) is lost. At that time, the traffic signal will default back to normal operation. Conversely, until the fire truck passes through the intersection, it will have a green light, regardless of the time duration. </p>
+<p id="p-0011" num="0010"> Of course, this is merely one example of a conventional system. Other variations exist. </p>
+<p id="p-0012" num="0011"> No matter the form, however, current technology is often circumvented by persons who use a strobe to trick lights into the pass through mode, which is usually reserved for law enforcement or fire personnel. This is a danger to the community and represents a hazard. </p>
+<p id="p-0013" num="0012"> More specifically, it has become not too uncommon for non-authorized individuals to purchase emitting devices from online and other retailers. The users install the devices in their cars or other vehicles to change the lights when they do not want to be delayed by the regular sequence of the traffic light. Although this is illegal, it is difficult to identify the person or vehicle. Of course, it could have severe consequences. There have been several accidents across the country already. </p>
+<p id="p-0014" num="0013"> The present invention contemplates a new and improved traffic light interruption system that resolves the above-referenced difficulties and others. </p>
+<heading level="2" id="h-0002">SUMMARY OF THE INVENTION </heading>
+<p id="p-0015" num="0014"> A method and apparatus for an improved interruption cycle for traffic signals are provided. </p>
+<p id="p-0016" num="0015"> In one aspect of the invention, a method for providing an interruption cycle for a traffic light system, the method comprises recognizing a first signal from a signaling unit of a vehicle, locking on to the first signal, transmitting a second signal to the signaling unit of the vehicle, receiving a third signal in response to the second signal, determining if the third signal includes information validating the signaling unit of the vehicle as being authorized and, initiating the interruption cycle if the signaling unit is authorized. </p>
+<p id="p-0017" num="0016"> In another aspect of the invention, the first signal is a strobe pattern. </p>
+<p id="p-0018" num="0017"> In another aspect of the invention, the transmitting comprises transmitting at least one message requesting identification as the second signal. </p>
+<p id="p-0019" num="0018"> In another aspect of the invention, the transmitting comprises transmitting a wake up signal as the second signal. </p>
+<p id="p-0020" num="0019"> In another aspect of the invention, the third signal includes identification information. </p>
+<p id="p-0021" num="0020"> In another aspect of the invention, the determining comprises accessing a database. </p>
+<p id="p-0022" num="0021"> In another aspect of the invention, the method comprises waiting for a next detection if the signaling unit is not authorized. </p>
+<p id="p-0023" num="0022"> In another aspect of the invention, the method comprises activating a camera to record unauthorized use if the signaling unit is not authorized. </p>
+<p id="p-0024" num="0023"> In another aspect of the invention, the method comprises activating the camera to record traffic violations during the interruption cycle. </p>
+<p id="p-0025" num="0024"> In another aspect of the invention, the method further comprises communicating with a central dispatch unit if the signaling unit is authorized. </p>
+<p id="p-0026" num="0025"> In another aspect of the invention, a system for providing an interruption cycle for a traffic light system comprises means for recognizing a first signal from a signaling unit of vehicle, means for locking on to the first signal, means for transmitting a second signal to the signaling unit of the vehicle, means for receiving a third signal in response to the second signal, means for determining if the third signal includes information validating the signaling unit of the vehicle as being authorized and, means for initiating the interruption cycle if the signaling unit is authorized. </p>
+<p id="p-0027" num="0026"> In another aspect of the invention, the first signal is a strobe pattern. </p>
+<p id="p-0028" num="0027"> In another aspect of the invention, the second signal comprises at least one message requesting identification. </p>
+<p id="p-0029" num="0028"> In another aspect of the invention, the second signal comprises a wake up signal. </p>
+<p id="p-0030" num="0029"> In another aspect of the invention, the third signal includes identification information. </p>
+<p id="p-0031" num="0030"> In another aspect of the invention, the means for determining comprises means for accessing a database. </p>
+<p id="p-0032" num="0031"> In another aspect of the invention, the system further comprises a means for waiting for a next strobe detection if the signaling unit is not authorized. </p>
+<p id="p-0033" num="0032"> In another aspect of the invention, the system further comprises means for activating a camera to record unauthorized use if the signaling unit is not authorized. </p>
+<p id="p-0034" num="0033"> In another aspect of the invention, the system further comprises means for activating the camera to record traffic violations during the interruption cycle. </p>
+<p id="p-0035" num="0034"> In another aspect of the invention, a system for receiving signals from a signaling unit of a vehicle comprises a signal detector operative to detect first signals from the signaling unit and a processing module operative to receive the first signals, lock on to the first signals, transmit a second signal to the signaling unit of the vehicle, receive a third signal in response to the second signal, determine if the third signal includes information validating the signaling unit of the vehicle as being authorized, and initiate an interruption cycle if the signaling unit is authorized. </p>
+<p id="p-0036" num="0035"> In another aspect of the invention, the first signal is a strobe pattern. </p>
+<p id="p-0037" num="0036"> In another aspect of the invention, the second signal comprises at least one message requesting identification. </p>
+<p id="p-0038" num="0037"> In another aspect of the invention, the second signal comprises a wake up signal. </p>
+<p id="p-0039" num="0038"> In another aspect of the invention, the third signal includes identification information. </p>
+<p id="p-0040" num="0039"> In another aspect of the invention, the processing module is operative to determine based on accessing a database. </p>
+<p id="p-0041" num="0040"> In another aspect of the invention, the processing module is operative to wait for a next signal detection if the signaling unit is not authorized. </p>
+<p id="p-0042" num="0041"> In another aspect of the invention, the processing module is operative to activate a camera to record unauthorized use if the signaling unit is not authorized. </p>
+<p id="p-0043" num="0042"> In another aspect of the invention, the processing module is operative to activate the camera to record traffic violations during the interruption cycle. </p>
+<p id="p-0044" num="0043"> In another aspect of the invention, the processing module is operative to communicate with a central dispatch unit if the signaling unit is authorized. </p>
+<p id="p-0045" num="0044"> Further scope of the applicability of the present invention will become apparent from the detailed description provided below. It should be understood, however, that the detailed description and specific examples, while indicating preferred embodiments of the invention, are given by way of illustration only, since various changes and modifications within the spirit and scope of the invention will become apparent to those skilled in the art.</p>
+<?summary-of-invention description="Summary of Invention" end="tail"?>
+<?brief-description-of-drawings description="Brief Description of Drawings" end="lead"?>
+<heading level="2" id="h-0003">DESCRIPTION OF THE DRAWINGS </heading>
+<p id="p-0046" num="0045"> The present invention exists in the construction, arrangement, and combination of the various parts of the device, and steps of the method, whereby the objects contemplated are attained as hereinafter more fully set forth, specifically pointed out in the claims, and illustrated in the accompanying drawings in which: </p>
+<p id="p-0047" num="0046"> <figref idref="DRAWINGS">FIG. 1</figref> shows a prior art traffic interruption system; </p>
+<p id="p-0048" num="0047"> <figref idref="DRAWINGS">FIG. 2</figref> shows a traffic light interruption system according to the presently described embodiments; </p>
+<p id="p-0049" num="0048"> <figref idref="DRAWINGS">FIG. 3</figref> shows a processing module according to the presently described embodiments; </p>
+<p id="p-0050" num="0049"> <figref idref="DRAWINGS">FIG. 4</figref> shows a flow chart illustrating a method according to the presently described embodiments; </p>
+<p id="p-0051" num="0050"> <figref idref="DRAWINGS">FIG. 5</figref> shows another form of the presently described embodiments; </p>
+<p id="p-0052" num="0051"> <figref idref="DRAWINGS">FIG. 6</figref> illustrates another method according to the presently described embodiments; and, </p>
+<p id="p-0053" num="0052"> <figref idref="DRAWINGS">FIG. 7</figref> illustrates a centralized system according to the presently described embodiments.</p>
+<?brief-description-of-drawings description="Brief Description of Drawings" end="tail"?>
+<?detailed-description description="Detailed Description" end="lead"?>
+<heading level="2" id="h-0004">DETAILED DESCRIPTION OF THE PREFERRED EMBODIMENTS </heading>
+<p id="p-0054" num="0053"> According to the presently described embodiments, traffic signal interruption systems are made more secure. To date, the approach has been to simply change the way the strobe patterns work to keep unauthorized systems (e.g., home built or store bought systems) from changing the lights. However, the makers of the unauthorized devices continue to adapt to beat the system. </p>
+<p id="p-0055" num="0054"> The addition of a secure wireless device is implemented by the presently described embodiments to overcome difficulties with the conventional technology. Secure devices have already been introduced to cars to pay tolls electronically, as drivers speed through sensor locations. The addition of the present invention into emergency vehicles could combine with such current strobe sensor technology to form a more secure traffic signal interruption system. </p>
+<p id="p-0056" num="0055"> In addition, metro WANs formed by high speed wireless and/or mesh networks are being installed in many cities as well. These can also be used to strengthen the security of these light changing systems. </p>
+<p id="p-0057" num="0056"> Referring now to the drawings wherein the showings are for purposes of illustrating the preferred embodiments of the invention only and not for purposes of limiting same, <figref idref="DRAWINGS">FIG. 2</figref> provides a view of one exemplary system incorporating the teachings of the presently described embodiments. As shown, a traffic light system <b>10</b> is approached, in one form, by an emergency (or other authorized) vehicle <b>12</b>. The traffic light system <b>10</b> includes a stop light <b>14</b> as well as a strobe or flood lamp unit <b>16</b> that serves as a traffic light interruption system. </p>
+<p id="p-0058" num="0057"> According to the presently described embodiments, a processing module <b>30</b> is also incorporated in the traffic light system <b>10</b> to enhance the interruption process. All of these elements are supported by a structure <b>18</b>. In addition, the emergency vehicle <b>12</b> includes a signaling unit <b>20</b> which is also provided with an identification module <b>32</b>. </p>
+<p id="p-0059" num="0058"> The elements <b>14</b>, <b>16</b>, <b>18</b>, and <b>20</b> operate substantially as in conventional systems. For example, the unit <b>20</b> may provide strobe patterns that are recognized by the system. It will be understood that other configurations and/or elements may also exist. However, their functionality may be impacted by the implementation of a processing module <b>30</b> in the traffic light system <b>10</b>, as well as the implementation of the identification module <b>32</b> in the signaling unit <b>20</b> of the vehicle <b>12</b>. </p>
+<p id="p-0060" num="0059"> It should be appreciated that the identification module <b>32</b> operates in a manner to provide a signal including information on the identification of the unit, and/or the vehicle <b>12</b>. The module <b>32</b> may take a variety of forms that are well known in the art. For example, it may take the form of a radio frequency identification (RFID) signaling unit that is commonly used and available for toll booth applications. However, it may also simply take the form of any signaling unit that can provide suitable information in accord with the presently described embodiments. Strobe patterns or other signals may be generated thereby. The various forms of this module should be apparent to those of skill in the art. </p>
+<p id="p-0061" num="0060"> With reference now to <figref idref="DRAWINGS">FIG. 3</figref>, the processing module <b>30</b> is illustrated. This module includes a recognition module <b>50</b> and a transmit module <b>52</b>. Also shown are a key database <b>54</b> and an action module <b>56</b>. </p>
+<p id="p-0062" num="0061"> Recognition module <b>50</b> is operative to recognize signaling patterns from oncoming vehicles once detected by the strobe unit <b>16</b>. As noted above, these signals may take a variety of forms, including that of a strobe pattern. The transmit module <b>52</b> is operative to transmit signals to the oncoming vehicle to obtain identification of the oncoming vehicle. Of course, the transmit module <b>52</b> may simply provide a wake up signal to the identification module <b>32</b> or it may send one or a series of protocol messages to request identification from the identification module <b>32</b>. In either case, the objective is to obtain identification information from the oncoming vehicle. This information may be in a variety of forms, including a strobe pattern having an identification key. Once this information is obtained, the recognition module <b>50</b> accesses the key database <b>54</b> to determine if the identification key provided by the vehicle matches the list of authorized identification keys. </p>
+<p id="p-0063" num="0062"> Once this determination is made, the action module <b>56</b> then takes a variety of actions according to the results. For example, if the user is not an authorized user, the action module <b>56</b> may simply wait for another signaling pattern to be detected. However, if the identification key is determined to be an authorized key, then the action module may simply initiate the interruption cycle, as those of skill in the art will appreciate. In either case, as will be described below, the action module <b>56</b> may also perform a variety of other functions. For example, the action module <b>56</b> may activate cameras for purposes of recording unauthorized use of the traffic interruption system or it may also activate the cameras to record red light violations during the interruption cycle. </p>
+<p id="p-0064" num="0063"> It should be appreciated that the processing module <b>30</b> may be implemented in a variety of manners that will be apparent to those of skill in the art upon reading of this disclosure. However, in at least one form, the processing module <b>30</b> takes the form of suitable software routines and complementary hardware techniques to implement the modules as shown. It also, in one form, is a wireless device that is able to communicate using suitable wireless protocols such as 802.11, RFID, and others. It may also be incorporated within the housing of the traffic light or integral with the unit <b>16</b>. The module <b>30</b> may also be provided with or have access to an antenna, where necessary. Moreover, in one form, the logic of the module <b>30</b> is distributed to many light systems. However, this logic may also be centralized (e.g., in a system such as that shown in <figref idref="DRAWINGS">FIG. 7</figref>). </p>
+<p id="p-0065" num="0064"> In operation, the system described in connection with <figref idref="DRAWINGS">FIGS. 2 and 3</figref> may be implemented as a method <b>400</b>, as shown in <figref idref="DRAWINGS">FIG. 4</figref>. As illustrated, the method <b>400</b> is initiated upon recognition by the processing module that a particular signaling pattern is received (at <b>402</b>). The received signal, in one form, is a strobe pattern. The module then locks on to the signal (at <b>404</b>). This is accomplished using any of a variety of known techniques. The processing module then transmits a signal to the oncoming vehicle (at <b>406</b>). As noted above, the transmission may simply include a wake up signal or it may include a series of protocol messages. In either case, the objective is for the processing module <b>30</b> to receive an identification key from the oncoming vehicle to verify whether the use is authorized. </p>
+<p id="p-0066" num="0065"> The response from the signaling unit of the vehicle is then received by the processing module (at <b>408</b>). At this point, if an identification key is received, a determination is made as to whether the received key is valid (at <b>410</b>). If not, in one form, the system simply is put in a wait state (at <b>412</b>) to await another signaling pattern (e.g., another strobe pattern of an oncoming vehicle). If, however, the key is valid, an interruption cycle may be initiated (at <b>414</b>). </p>
+<p id="p-0067" num="0066"> In operation, the system of <figref idref="DRAWINGS">FIGS. 2-4</figref> is operative according to methods described herein. In one practical example, a fire truck strobe emits its normal signal as it nears a traffic signal. The traffic signal sees the strobe and locks onto it. The traffic signal's wireless transmitter (e.g., module <b>30</b>) emits a wireless pulse to activate the secure device in the fire truck's cab, similar to the function of an electronic toll booth. The secure device in the cab of the truck then emits a pulse of data back to the traffic signal that contains its ID number. </p>
+<p id="p-0068" num="0067"> The receiver (e.g., module <b>30</b>) at the traffic signal receives the ID and checks locally, e.g., in key database <b>54</b>, that the ID is valid to determine if the signals should be changed. In a more advanced system, such as in a large city, the system may relay the ID over a high speed network to determine if the light sequence should be altered. </p>
+<p id="p-0069" num="0068"> If the ID does match a valid one, then the light changing sequence could progress as it conventionally does. </p>
+<p id="p-0070" num="0069"> In at least one form, the wireless secure device (e.g., module <b>30</b>) uses a wireless technology that is sufficiently fast and powerful enough to emit the proper signals. Current standards such as 802.11 and 806.16 are able to be correctly tuned for this purpose. RFID may also be suitable if distance is not an issue. </p>
+<p id="p-0071" num="0070"> With reference now to <figref idref="DRAWINGS">FIG. 5</figref>, an alternative system according to the presently described embodiments is shown. In this system, the illustrated elements correspond to the elements illustrated in <figref idref="DRAWINGS">FIG. 2</figref>. <figref idref="DRAWINGS">FIG. 5</figref>, however, shows an additional element&#x2014;a camera <b>40</b>. It should be understood that this camera may take a variety of forms that are well known in the art. However, the camera, in one form, is operative to receive signals from the action module <b>56</b> of the processing module <b>30</b> to become operative as contemplated herein. </p>
+<p id="p-0072" num="0071"> With reference now to <figref idref="DRAWINGS">FIG. 6</figref>, a method according to the presently described embodiments is illustrated. In this regard, the method <b>600</b> is initiated upon recognition by the processing module <b>30</b> of a signaling pattern (at <b>602</b>). The signaling pattern is locked (at <b>604</b>). The processing modeling <b>30</b> then transmits a message, as above, to the oncoming vehicle to determine its identity (at <b>606</b>). A response is received (at <b>608</b>). The response, in one form, includes information on the identity of the oncoming vehicle. A determination is then made as to whether the identification key provided in the response is valid (at <b>610</b>). If the key is not valid, the action module <b>56</b> of the processing module <b>30</b> activates the camera <b>40</b> (at <b>612</b>). The purpose, in this context, for activation of the camera, is to record unauthorized users of the interruption system (at <b>614</b>). </p>
+<p id="p-0073" num="0072"> If, however, the key is determined to be a valid key, the interruption cycle is initiated (at <b>616</b>). In addition, the camera <b>40</b> is activated (at <b>618</b>) to record violations during the interruption cycle (at <b>620</b>). It should be appreciated that exemplary violations that may occur in this context are red light violations and the like. Suitable sensor systems could be provided at the site of the traffic light system <b>10</b> in order to identify trigger activation of the camera to record such violations. </p>
+<p id="p-0074" num="0073"> With reference now to <figref idref="DRAWINGS">FIG. 7</figref>, an alternative system according to the presently described embodiments is shown. As shown here, traffic light systems <b>10</b> according to the presently described embodiments can be configured to report to a central dispatch unit <b>60</b>, as shown. This central reporting will allow for coordination of the various traffic light systems <b>10</b> as an emergency vehicle passes therethrough. Moreover, the system as shown may also aid in providing navigation information to the drivers of the emergency vehicles and activation of preselected sequences of the traffic light systems. </p>
+<p id="p-0075" num="0074"> The above description merely provides a disclosure of particular embodiments of the invention and is not intended for the purposes of limiting the same thereto. As such, the invention is not limited to only the above-described embodiments. Rather, it is recognized that one skilled in the art could conceive alternative embodiments that fall within the scope of the invention. </p>
+<?detailed-description description="Detailed Description" end="tail"?>
+</description>
+<us-claim-statement>We claim: </us-claim-statement>
+<claims id="claims">
+<claim id="CLM-00001" num="00001">
+<claim-text><b>1</b>. A method for providing an interruption cycle for a traffic light system, the method comprising: 
+<claim-text>recognizing a first signal from a signaling unit of a vehicle; </claim-text>
+<claim-text>locking onto the first signal; </claim-text>
+<claim-text>transmitting a second signal to the signaling unit of the vehicle; </claim-text>
+<claim-text>receiving a third signal in response to the second signal; </claim-text>
+<claim-text>determining if the third signal includes information validating the signaling unit of the vehicle as being authorized; and, </claim-text>
+<claim-text>initiating the interruption cycle if the signaling unit is authorized. </claim-text>
+</claim-text>
+ </claim>
+<claim id="CLM-00002" num="00002">
+<claim-text><b>2</b>. The method as set forth in <claim-ref idref="CLM-00001">claim 1</claim-ref> wherein the first signal is a strobe pattern. </claim-text>
+ </claim>
+<claim id="CLM-00003" num="00003">
+<claim-text><b>3</b>. The method as set forth in <claim-ref idref="CLM-00001">claim 1</claim-ref> wherein the transmitting comprises transmitting at least one message requesting identification as the second signal. </claim-text>
+ </claim>
+<claim id="CLM-00004" num="00004">
+<claim-text><b>4</b>. The method as set forth in <claim-ref idref="CLM-00001">claim 1</claim-ref> wherein the transmitting comprises transmitting a wake up signal as the second signal. </claim-text>
+ </claim>
+<claim id="CLM-00005" num="00005">
+<claim-text><b>5</b>. The method as set forth in <claim-ref idref="CLM-00001">claim 1</claim-ref> wherein the third signal includes identification information. </claim-text>
+ </claim>
+<claim id="CLM-00006" num="00006">
+<claim-text><b>6</b>. The method as set forth in <claim-ref idref="CLM-00001">claim 1</claim-ref> wherein the determining comprises accessing a database. </claim-text>
+ </claim>
+<claim id="CLM-00007" num="00007">
+<claim-text><b>7</b>. The method as set forth in <claim-ref idref="CLM-00001">claim 1</claim-ref> further comprising waiting for a next detection if the signaling unit is not authorized. </claim-text>
+ </claim>
+<claim id="CLM-00008" num="00008">
+<claim-text><b>8</b>. The method as set forth in <claim-ref idref="CLM-00001">claim 1</claim-ref> further comprising activating a camera to record unauthorized use if the signaling unit is not authorized. </claim-text>
+ </claim>
+<claim id="CLM-00009" num="00009">
+<claim-text><b>9</b>. The method as set forth in <claim-ref idref="CLM-00001">claim 1</claim-ref> further comprising activating the camera to record traffic violations during the interruption cycle. </claim-text>
+ </claim>
+<claim id="CLM-00010" num="00010">
+<claim-text><b>10</b>. The method as set forth in <claim-ref idref="CLM-00001">claim 1</claim-ref> further comprising communicating with a central dispatch unit if the signaling unit is authorized. </claim-text>
+ </claim>
+<claim id="CLM-00011" num="00011">
+<claim-text><b>11</b>. A system for providing an interruption cycle for a traffic light system, the system comprising: 
+<claim-text>means for recognizing a first signal from a signaling unit of vehicle; </claim-text>
+<claim-text>means for locking onto the first signal; </claim-text>
+<claim-text>means for transmitting a second signal to the signaling unit of the vehicle; </claim-text>
+<claim-text>means for receiving a third signal in response to the second signal; </claim-text>
+<claim-text>means for determining if the third signal includes information validating the signaling unit of the vehicle as being authorized; and, </claim-text>
+<claim-text>means for initiating the interruption cycle if the signaling unit is authorized. </claim-text>
+</claim-text>
+ </claim>
+<claim id="CLM-00012" num="00012">
+<claim-text><b>12</b>. The system as set forth in <claim-ref idref="CLM-00011">claim 11</claim-ref> wherein the first signal is a strobe pattern. </claim-text>
+ </claim>
+<claim id="CLM-00013" num="00013">
+<claim-text><b>13</b>. The system as set forth in <claim-ref idref="CLM-00011">claim 11</claim-ref> wherein the second signal comprises at least one message requesting identification. </claim-text>
+ </claim>
+<claim id="CLM-00014" num="00014">
+<claim-text><b>14</b>. The system as set forth in <claim-ref idref="CLM-00011">claim 11</claim-ref> wherein the second signal comprises a wake up signal. </claim-text>
+ </claim>
+<claim id="CLM-00015" num="00015">
+<claim-text><b>15</b>. The system as set forth in <claim-ref idref="CLM-00011">claim 11</claim-ref> wherein the third signal includes identification information. </claim-text>
+ </claim>
+<claim id="CLM-00016" num="00016">
+<claim-text><b>16</b>. The system as set forth in <claim-ref idref="CLM-00011">claim 11</claim-ref> wherein the means for determining comprises means for accessing a database. </claim-text>
+ </claim>
+<claim id="CLM-00017" num="00017">
+<claim-text><b>17</b>. The system as set forth in <claim-ref idref="CLM-00011">claim 11</claim-ref> further comprising a means for waiting for a next strobe detection if the signaling unit is not authorized. </claim-text>
+ </claim>
+<claim id="CLM-00018" num="00018">
+<claim-text><b>18</b>. The system as set forth in <claim-ref idref="CLM-00011">claim 11</claim-ref> further comprising means for activating a camera to record unauthorized use if the signaling unit is not authorized. </claim-text>
+ </claim>
+<claim id="CLM-00019" num="00019">
+<claim-text><b>19</b>. The system as set forth in <claim-ref idref="CLM-00011">claim 11</claim-ref> further comprising means for activating the camera to record traffic violations during the interruption cycle. </claim-text>
+ </claim>
+<claim id="CLM-00020" num="00020">
+<claim-text><b>20</b>. A system for receiving signals from a signaling unit of a vehicle comprising: 
+<claim-text>a signal detector operative to detect first signals from the signaling unit; and, </claim-text>
+<claim-text>a processing module operative to receive the first signals, lock on to the first signals, transmit a second signal to the signaling unit of the vehicle, receive a third signal in response to the second signal, determine if the third signal includes information validating the signaling unit of the vehicle as being authorized, and initiate an interruption cycle if the signaling unit is authorized. </claim-text>
+</claim-text>
+ </claim>
+<claim id="CLM-00021" num="00021">
+<claim-text><b>21</b>. The system as set forth in <claim-ref idref="CLM-00020">claim 20</claim-ref> wherein the first signal is a strobe pattern. </claim-text>
+ </claim>
+<claim id="CLM-00022" num="00022">
+<claim-text><b>22</b>. The system as set forth in <claim-ref idref="CLM-00020">claim 20</claim-ref> wherein the second signal comprises at least one message requesting identification. </claim-text>
+ </claim>
+<claim id="CLM-00023" num="00023">
+<claim-text><b>23</b>. The system as set forth in <claim-ref idref="CLM-00020">claim 20</claim-ref> wherein the second signal comprises a wake up signal. </claim-text>
+ </claim>
+<claim id="CLM-00024" num="00024">
+<claim-text><b>24</b>. The system as set forth in <claim-ref idref="CLM-00020">claim 20</claim-ref> wherein the third signal includes identification information. </claim-text>
+ </claim>
+<claim id="CLM-00025" num="00025">
+<claim-text><b>25</b>. The system as set forth in <claim-ref idref="CLM-00020">claim 20</claim-ref> wherein the processing module is operative to determine based on accessing a database. </claim-text>
+ </claim>
+<claim id="CLM-00026" num="00026">
+<claim-text><b>26</b>. The system as set forth in <claim-ref idref="CLM-00020">claim 20</claim-ref> wherein the processing module is operative to wait for a next signal detection if the signaling unit is not authorized. </claim-text>
+ </claim>
+<claim id="CLM-00027" num="00027">
+<claim-text><b>27</b>. The system as set forth in <claim-ref idref="CLM-00020">claim 20</claim-ref> wherein the processing module is operative to activate a camera to record unauthorized use if the signaling unit is not authorized. </claim-text>
+ </claim>
+<claim id="CLM-00028" num="00028">
+<claim-text><b>28</b>. The system as set forth in <claim-ref idref="CLM-00020">claim 20</claim-ref> wherein the processing module is operative to activate the camera to record traffic violations during the interruption cycle. </claim-text>
+ </claim>
+<claim id="CLM-00029" num="00029">
+<claim-text><b>29</b>. The system as set forth in <claim-ref idref="CLM-00020">claim 20</claim-ref> wherein the processing module is operative to communicate with a central dispatch unit if the signaling unit is authorized.</claim-text>
+ </claim>
+</claims>
+</us-patent-application>

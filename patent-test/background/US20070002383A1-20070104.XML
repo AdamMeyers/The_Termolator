@@ -1,0 +1,380 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE us-patent-application SYSTEM "us-patent-application-v42-2006-08-23.dtd" [ ]>
+<us-patent-application lang="EN" dtd-version="v4.2 2006-08-23" file="US20070002383A1-20070104.XML" status="PRODUCTION" id="us-patent-application" country="US" date-produced="20061221" date-publ="20070104">
+<us-bibliographic-data-application lang="EN" country="US">
+<publication-reference>
+<document-id>
+<country>US</country>
+<doc-number>20070002383</doc-number>
+<kind>A1</kind>
+<date>20070104</date>
+</document-id>
+</publication-reference>
+<application-reference appl-type="utility">
+<document-id>
+<country>US</country>
+<doc-number>11475859</doc-number>
+<date>20060628</date>
+</document-id>
+</application-reference>
+<us-application-series-code>11</us-application-series-code>
+<priority-claims>
+<priority-claim sequence="01" kind="national">
+<country>JP</country>
+<doc-number>2005-191637</doc-number>
+<date>20050630</date>
+</priority-claim>
+</priority-claims>
+<classifications-ipcr>
+<classification-ipcr>
+<ipc-version-indicator><date>20060101</date></ipc-version-indicator>
+<classification-level>A</classification-level>
+<section>H</section>
+<class>04</class>
+<subclass>N</subclass>
+<main-group>1</main-group>
+<subgroup>405</subgroup>
+<symbol-position>F</symbol-position>
+<classification-value>I</classification-value>
+<action-date><date>20070104</date></action-date>
+<generating-office><country>US</country></generating-office>
+<classification-status>B</classification-status>
+<classification-data-source>H</classification-data-source>
+</classification-ipcr>
+</classifications-ipcr>
+<classification-national>
+<country>US</country>
+<main-classification>358003120</main-classification>
+</classification-national>
+<invention-title id="d0e117">Image forming apparatus</invention-title>
+<parties>
+<applicants>
+<applicant sequence="00" app-type="applicant-inventor" designation="us-only">
+<addressbook>
+<last-name>Ohmiya</last-name>
+<first-name>Takashi</first-name>
+<address>
+<city>Nagoya-shi</city>
+<country>JP</country>
+</address>
+</addressbook>
+<nationality>
+<country>JP</country>
+</nationality>
+<residence>
+<country>JP</country>
+</residence>
+</applicant>
+<applicant sequence="01" app-type="applicant-inventor" designation="us-only">
+<addressbook>
+<last-name>Fukasawa</last-name>
+<first-name>Nobuaki</first-name>
+<address>
+<city>Hitachi-shi</city>
+<country>JP</country>
+</address>
+</addressbook>
+<nationality>
+<country>JP</country>
+</nationality>
+<residence>
+<country>JP</country>
+</residence>
+</applicant>
+</applicants>
+<correspondence-address>
+<addressbook>
+<name>BAKER BOTTS LLP;C/O INTELLECTUAL PROPERTY DEPARTMENT</name>
+<address>
+<address-1>THE WARNER, SUITE 1300</address-1>
+<address-2>1299 PENNSYLVANIA AVE, NW</address-2>
+<city>WASHINGTON</city>
+<state>DC</state>
+<postcode>20004-2400</postcode>
+<country>US</country>
+</address>
+</addressbook>
+</correspondence-address>
+</parties>
+<assignees>
+<assignee>
+<addressbook>
+<orgname>Brother Kogyo Kabushiki Kaisha</orgname>
+<role>03</role>
+<address>
+<city>Nagoya-shi</city>
+<country>JP</country>
+</address>
+</addressbook>
+</assignee>
+<assignee>
+<addressbook>
+<orgname>Ricoh Printing Systems, Ltd.</orgname>
+<role>03</role>
+<address>
+<city>Minato-ku</city>
+<country>JP</country>
+</address>
+</addressbook>
+</assignee>
+</assignees>
+</us-bibliographic-data-application>
+<abstract id="abstract">
+<p id="p-0001" num="0000">An image forming apparatus is provided that may prevent wasteful image forming in a state in which the loss or partial loss can occur of an image portion. If the length of the supplied sheet in the transport direction is shorter than a regular size by a predetermined value or more, then the laser exposing operation based on the received image data of the second or subsequent pages is stopped. </p>
+</abstract>
+<drawings id="DRAWINGS">
+<figure id="figure-D00000" num="00000">
+<img id="EMI-D00000" he="106.93mm" wi="136.53mm" file="US20070002383A1-20070104-D00000.TIF" alt="embedded image" img-content="drawing" img-format="tif"/>
+</figure>
+<figure id="figure-D00001" num="00001">
+<img id="EMI-D00001" he="201.25mm" wi="159.85mm" orientation="landscape" file="US20070002383A1-20070104-D00001.TIF" alt="embedded image" img-content="drawing" img-format="tif"/>
+</figure>
+<figure id="figure-D00002" num="00002">
+<img id="EMI-D00002" he="214.04mm" wi="176.70mm" file="US20070002383A1-20070104-D00002.TIF" alt="embedded image" img-content="drawing" img-format="tif"/>
+</figure>
+<figure id="figure-D00003" num="00003">
+<img id="EMI-D00003" he="189.99mm" wi="170.86mm" file="US20070002383A1-20070104-D00003.TIF" alt="embedded image" img-content="drawing" img-format="tif"/>
+</figure>
+<figure id="figure-D00004" num="00004">
+<img id="EMI-D00004" he="236.05mm" wi="178.39mm" file="US20070002383A1-20070104-D00004.TIF" alt="embedded image" img-content="drawing" img-format="tif"/>
+</figure>
+<figure id="figure-D00005" num="00005">
+<img id="EMI-D00005" he="225.55mm" wi="158.92mm" orientation="landscape" file="US20070002383A1-20070104-D00005.TIF" alt="embedded image" img-content="drawing" img-format="tif"/>
+</figure>
+</drawings>
+<description id="description">
+<?summary-of-invention description="Summary of Invention" end="lead"?>
+<heading level="2" id="h-0001">CROSS REFERENCE TO RELATED APPLICATION </heading>
+<p id="p-0002" num="0001"> This application claims priority from Japanese Patent Application No. 2005-191637 filed Jun. 30, 2005. The entire content of this priority application is incorporated herein by reference. </p>
+<heading level="2" id="h-0002">TECHNICAL FIELD </heading>
+<p id="p-0003" num="0002"> The disclosure relates to an image forming apparatus having an intermediate transfer device. </p>
+<heading level="2" id="h-0003">BACKGROUND </heading>
+<p id="p-0004" num="0003"> In an image forming apparatus of this type, a scanner device uses laser light to scan each set of data for a sheet from among a number of sheet data sets of image data. As a result, electrostatic latent images are sequentially formed on a photoconductor. A developer then develops these images. An intermediate transfer object sequentially supports the individual developer images, thereby forming a full representation of the image data from the developer image data on the intermediate transfer object. The combined supported developer images are then transferred to a transported sheet, thereby forming a printed image. After which, scanning of the next set of data for a subsequent sheet is immediately started without regard to the success or failure of the printing operation of the previous sheet. </p>
+<p id="p-0005" num="0004"> The following patent documents 1 and 2 disclose the detection of a sheet at a predetermined position in order to transfer an image at a location for which the transferred image will not have missing portions (i.e., a loss of an image or a partial image) or without mutual interference from later or earlier images. In addition, the patent documents also disclose the determination of the timing for writing a developer image on the photoconductor. </p>
+<p id="p-0006" num="0005"> [Patent Document 1] Japanese Laid-Open Patent No. 08-314232. </p>
+<p id="p-0007" num="0006"> [Patent Document 2] Japanese Laid-Open Patent No. 2005-043627. </p>
+<p id="p-0008" num="0007"> However, various sizes and types of sheet are loaded into an image forming apparatus. Among these types of sheet, the length of a loaded sheet (with respect to a transport direction) may be relatively short when compared with a nominal or regular size sheet. Additionally, an inappropriately sized sheet may be inadvertently loaded for image forming (e.g., such as the use of A4 size sheet in place of 8&#xbd;&#xd7;11 in). In this case, if the image forming is performed without correcting the situation, a part of the image may not appear on the sheet. As a result, only a partial image may be formed on the sheet. These results may not cause significant problems if the image data is received from a peripheral computer or if the image data is obtained by executing the copying function of the apparatus. This is because these operations can be easily repeated after arranging for an appropriately sized sheet. </p>
+<p id="p-0009" num="0008"> However, when the image data is remotely transmitted through the communication circuit of a facsimile device, etc., for example, it may become necessary to request that the data source re-transmit the image data. In addition, in the case of a multi-page transmission, subsequent partial images may automatically continue to be output, unless the image forming operation is stopped. This wastes additional sheets. </p>
+<p id="p-0010" num="0009"> Particularly, even if an image forming apparatus, provided with the previously identified intermediate transfer device, attempts to stop the image forming operation when an image loss is detected, for example by checking an output sheet, the developer images corresponding to a subsequent set of image data may already be formed on the intermediate transfer device. Therefore, resources are wasted, including developing agent, etc. </p>
+<p id="p-0011" num="0010"> The present invention has been completed in consideration of the previously mentioned problems. An objective of this invention is to provide an image forming apparatus capable of preventing wasteful image formation when an image loss occurs. </p>
+<heading level="2" id="h-0004">SUMMARY </heading>
+<p id="p-0012" num="0011"> In order to attain this and other objectives, the image forming apparatus according to an aspect of the invention includes a photoconductor, and an exposure device exposing component image data via laser light. The exposure device forms an electrostatic latent image on the photoconductor. In addition, the image forming apparatus includes a development device forming a developer image on the photoconductor by developing the electrostatic latent image on the photoconductor, and an intermediate transfer device holding the developer image thereon, the developer image being transferred from the photoconductor and worth one page. The developer image is held by the intermediate transfer device and is transferred to a recording medium, resulting in the formation of an image. The recording medium is transported to a transfer position of the intermediate transfer device for image formation. </p>
+<p id="p-0013" num="0012"> Along with this configuration, the image forming apparatus additionally includes a detection device for detecting the size of the recording medium. A determination device determining if the size of the recording medium produced by the detection device is enough for transferring the developer image (i.e., a print image) held by the intermediate transfer device. The image forming apparatus also includes a control device inhibiting the exposure device from forming an electrostatic latent image based upon image data for a subsequent page when the determination device determines the size of the recording medium produced by the detection device is not enough for transferring the developer image on the intermediate transfer device. </p>
+<p id="p-0014" num="0013"> In the present invention, the &#x201c;image forming apparatus&#x201d; may not be only a printing device, such as a printer (for example, a laser printer, among others), but also may be a facsimile device or a composite machine having a combination of functions, such as a printer capability, copier capability, scanning capability, etc. The apparatus should not be limited to a multicolor development system of an intermediate transfer object system. In other words, a single color system can also be used. </p>
+<p id="p-0015" num="0014"> A &#x201c;recording medium&#x201d; should not be limited to sheet based recording mediums such as printer sheet, etc., but can be any acceptable recording medium, such as a plastic recording medium, an OHP (Overhead Projection) sheet for example.</p>
+<?summary-of-invention description="Summary of Invention" end="tail"?>
+<?brief-description-of-drawings description="Brief Description of Drawings" end="lead"?>
+<heading level="2" id="h-0005">BRIEF DESCRIPTION OF THE DRAWINGS </heading>
+<p id="p-0016" num="0015"> Illustrative aspects in accordance with the invention will be described in detail with reference to the following figures wherein: </p>
+<p id="p-0017" num="0016"> <figref idref="DRAWINGS">FIG. 1</figref> is a sectional view of an outline of the central portion of the color laser printer according to one aspect of the invention; </p>
+<p id="p-0018" num="0017"> <figref idref="DRAWINGS">FIG. 2</figref> is a block diagram showing an overview of the electrical configuration of the laser printer; </p>
+<p id="p-0019" num="0018"> <figref idref="DRAWINGS">FIG. 3</figref> is a complete perspective view of the color laser printer; </p>
+<p id="p-0020" num="0019"> <figref idref="DRAWINGS">FIG. 4</figref> is a flowchart of the contents of the control performed by the CPU for the image forming unit; and </p>
+<p id="p-0021" num="0020"> <figref idref="DRAWINGS">FIG. 5</figref> is a simplified schematic chart showing original image data and two examples of the printed results. </p>
+<?brief-description-of-drawings description="Brief Description of Drawings" end="tail"?>
+<?detailed-description description="Detailed Description" end="lead"?>
+<heading level="2" id="h-0006">DETAILED DESCRIPTION </heading>
+<p id="p-0022" num="0021"> Image forming apparatus according to some aspects of the invention is explained hereafter via reference to FIGS. <b>1</b> to <b>5</b>. </p>
+<p id="h-0007" num="0000"> 1. Internal Configuration of a Color Laser Printer </p>
+<p id="p-0023" num="0022"> <figref idref="DRAWINGS">FIG. 1</figref> is a sectional view of an outline of the central portion of a color laser printer <b>1</b> (corresponding to an example of an &#x201c;image forming apparatus&#x201d;) according to an aspect of the present invention. An original reading device <b>159</b> (see <figref idref="DRAWINGS">FIG. 3</figref>) is provided with an original table cover <b>160</b>, among other components, and is described later. The original reading device <b>159</b> is omitted from <figref idref="DRAWINGS">FIG. 1</figref>. </p>
+<p id="p-0024" num="0023"> In <figref idref="DRAWINGS">FIG. 1</figref>, the right portion of the drawing is described as the &#x201c;front side&#x201d; of the color laser printer <b>1</b>. The color laser printer <b>1</b> shown in <figref idref="DRAWINGS">FIG. 1</figref> is configured as a 4-cycle system color laser printer. A body casing <b>3</b> includes a sheet feed unit <b>7</b>, for feeding sheets <b>5</b> (corresponding to examples of a &#x201c;recording medium&#x201d;), and an image-forming unit <b>9</b> for forming a predetermined image on the fed sheets <b>5</b>. </p>
+<p id="h-0008" num="0000"> (1) Sheet Feed Unit </p>
+<p id="p-0025" num="0024"> The sheet feed unit <b>7</b> includes a sheet feed tray <b>11</b> containing a stack of sheets <b>5</b> (for example), a sheet feed roller <b>13</b> contacting the sheet <b>5</b> at the top of the sheet feed tray <b>11</b> and feeding each sheet <b>5</b> via the rotation of the sheet feed roller <b>13</b>, a transport roller <b>15</b> for transporting the sheet <b>5</b> to a transfer position X, and a resist roller <b>17</b>. </p>
+<p id="p-0026" num="0025"> The transfer position X is the position at which a visible image (e.g., a combination of individual developer images) supported on an intermediate transfer belt <b>51</b> is transferred to the sheet <b>5</b>. The transfer position X also corresponds to a position of contact between the intermediate transfer belt <b>51</b> and a transfer roller <b>27</b>, described later. </p>
+<p id="h-0009" num="0000"> (2) Image Forming Unit </p>
+<p id="p-0027" num="0026"> The image forming unit <b>9</b> is provided with a scanner unit <b>21</b>, a process unit <b>23</b>, an intermediate transfer belt mechanism unit <b>25</b>, a transfer roller <b>27</b>, and a fixing unit <b>29</b>, among others. </p>
+<p id="h-0010" num="0000"> a. Scanner Unit </p>
+<p id="p-0028" num="0027"> The scanner unit <b>21</b> (corresponding to an example of an &#x201c;exposure device&#x201d;) is provided with a laser emission unit, polygon mirror, a plurality of sensors, and a reflector (not shown in the attached drawings), at a central front portion of the body casing <b>3</b>. The laser beam may be emitted by the laser emission unit. The scanner unit <b>21</b> passes or reflects the laser beam, via the polygon mirror, reflector, and lenses, according to the component image data. The scanner unit <b>21</b> then illuminates the surface of a photoconductor belt <b>33</b> of a belt photoconductor mechanism unit <b>31</b>, described later along with high-speed scanning. </p>
+<p id="h-0011" num="0000"> b. Process Unit </p>
+<p id="p-0029" num="0028"> The process unit <b>23</b> is provided with a plurality (e.g., four in this aspect) of development cartridges <b>35</b> (corresponding to examples of a &#x201c;development device&#x201d;), and the belt photoconductor mechanism unit <b>31</b>, among others. Each of the four development cartridges <b>35</b> is provided for an individual color. In other words, a yellow development cartridge <b>35</b>Y contains yellow toner, a magenta development cartridge <b>35</b>M contains magenta toner, a cyan development cartridge <b>35</b>C contains cyan toner, and a black development cartridge <b>35</b>K contains black toner. The cartridges are sequentially arranged near the front of the body casing <b>3</b> in a vertical line at predetermined intervals. </p>
+<p id="p-0030" num="0029"> Each of the development cartridges <b>35</b> is respectively provided with a separate development roller <b>37</b> (e.g., a yellow development roller <b>37</b>Y, a magenta development roller <b>37</b>M, a cyan development roller <b>37</b>C, and a black development roller <b>37</b>K), a thickness restriction blade, a supply roller, and a toner container unit, among others, not all are shown in the attached drawings. Each of the development cartridges <b>35</b> is also respectively provided with a separate parting solenoid <b>38</b> (e.g., a yellow parting solenoid <b>38</b>Y, a magenta parting solenoid <b>38</b>M, a cyan parting solenoid <b>38</b>C, and a black parting solenoid <b>38</b>K) to allow each of the development cartridges <b>35</b> to contact or to be separated from the surface of the photoconductor belt <b>33</b>, which is described later. The parting solenoids <b>38</b> provide movement along a horizontal direction (e.g., as viewed in <figref idref="DRAWINGS">FIG. 1</figref>). </p>
+<p id="p-0031" num="0030"> A roller made from an elastic material, which may be a conductive rubber material, covers each of the development rollers <b>37</b>. Customarily, the roller of a development roller <b>37</b> is formed as a double structure configured with an elastic roller portion made of conductive urethane rubber, including carbon particles, silicon rubber, EPDM rubber, etc., for example, and a coating layer primarily made of urethane rubber, urethane resin, polyimide resin, etc., for example, coating the surface of the roller portion. For the development roller <b>37</b>, a predetermined development bias is applied to the belt photoconductor <b>33</b> at development (i.e., when applying toner to the belt photoconductor <b>33</b>). In addition, a predetermined collection bias is applied when the toner is collected. For example, the predetermined development bias may be +300V, and the predetermined collection bias may be &#x2212;200V. </p>
+<p id="p-0032" num="0031"> The toner container unit for each of the development cartridges <b>35</b> contains a normally electrified, non-magnetic, single-ingredient, spherical polymeric toner for a single color, e.g., yellow, magenta, cyan, and black. For development, the toner is supplied to the development roller <b>37</b> through the rotation of the supply roller and the positively friction-electrified area between the supply roller and the development roller <b>37</b>. </p>
+<p id="p-0033" num="0032"> The toner supplied to the development roller <b>37</b> enters between the thickness restriction blade and the development roller <b>37</b> via the rotation of the development roller <b>37</b>. The toner is fully friction-electrified and a thin layer of toner having a constant thickness is supported on the development roller <b>37</b>. </p>
+<p id="p-0034" num="0033"> For collection, the toner is collected from the photoconductor belt <b>33</b> by applying an inverse bias to the development roller <b>37</b>. The toner is then stored in the toner container unit. </p>
+<p id="p-0035" num="0034"> The belt photoconductor mechanism unit <b>31</b> is provided with a first roller <b>39</b>, a second roller <b>41</b>, and a third roller <b>43</b>. In addition, a photoconductor belt <b>33</b> is wound about the rollers <b>39</b>, <b>41</b>, and <b>43</b>. Also included in the belt photoconductor mechanism unit <b>31</b> are a photoconductor belt electrifier <b>45</b>, a potential adder <b>47</b>, and a potential gradient controller <b>49</b>. The configuration of the belt photoconductor mechanism unit <b>31</b> is described in detail later. </p>
+<p id="h-0012" num="0000"> c. Intermediate Transfer Belt Mechanism Unit </p>
+<p id="p-0036" num="0035"> The intermediate transfer belt mechanism unit <b>25</b> is arranged behind the belt photoconductor mechanism unit <b>31</b>. The intermediate transfer belt mechanism unit <b>25</b> has a first intermediate transfer roller <b>53</b>, arranged substantially opposite to the second organic photoconductor roller <b>41</b> via the photoconductor belt <b>33</b> and an intermediate transfer belt <b>51</b> described later. In addition, a second intermediate transfer roller <b>55</b> is arranged diagonally behind and below the first intermediate transfer roller <b>53</b>. A third intermediate transfer roller <b>57</b> is arranged opposite of the transfer roller <b>27</b> (described later), provided behind the second intermediate transfer roller <b>55</b> via the intermediate transfer belt <b>51</b>. The intermediate transfer belt <b>51</b> (corresponding to an example of an &#x201c;intermediate transfer device&#x201d;) is wound outside of the first intermediate transfer roller <b>53</b> to the third intermediate transfer roller <b>57</b>. </p>
+<p id="p-0037" num="0036"> The intermediate transfer belt <b>51</b> may be formed by an endless belt made of a resin such as a conductive polycarbonate having dispersed conductive particles of carbon, polyimide, etc., for example. The first intermediate transfer roller <b>53</b> to the third intermediate transfer roller <b>57</b> are triangularly arranged and joined together via the intermediate transfer belt <b>51</b>. The first intermediate transfer roller <b>53</b> is rotated through a drive gear (not shown in the attached drawings) by driving a main motor <b>96</b> (described later, and shown in <figref idref="DRAWINGS">FIG. 2</figref>). The second intermediate transfer roller <b>55</b> and the third intermediate transfer roller <b>57</b> are driven following the first intermediate transfer roller <b>53</b>. As a result, the intermediate transfer belt <b>51</b> is driven around the intermediate transfer rollers <b>53</b> to <b>57</b> (e.g., in a clockwise direction). </p>
+<p id="p-0038" num="0037"> A density detection sensor <b>71</b> is also provided for detecting the density of each color on the intermediate transfer belt <b>51</b>. The density detection sensor <b>71</b> is configured by a light source emitting light of an infrared spectrum, a lens projecting the light of the light source to the intermediate transfer belt <b>51</b>, and a photo transistor for receiving the reflected light. </p>
+<p id="h-0013" num="0000"> d. Transfer Roller </p>
+<p id="p-0039" num="0038"> The transfer roller <b>27</b> is arranged opposite to the third intermediate transfer roller <b>57</b> of the intermediate transfer belt mechanism unit <b>25</b> via the intermediate transfer belt <b>51</b>. A roller made of a conductive rubber material covers a metal roller axis and the axis is rotatably supported. The transfer roller <b>27</b> is configured to move to a standby position, separated apart from the intermediate transfer belt <b>51</b>, and a transferable position, close to the intermediate transfer belt <b>51</b>, due to the transfer roller contacting/separating mechanisms (not shown in the attached drawings). </p>
+<p id="p-0040" num="0039"> The transfer roller contacting/separating mechanisms are arranged opposing each other with the transport path <b>59</b> of the sheet <b>5</b> between them, in the width direction of the sheet <b>5</b> (i.e., in the depth direction of the sheet as shown in <figref idref="DRAWINGS">FIG. 1</figref>). At the transferable position, the transfer roller <b>27</b> is configured to press the sheet <b>5</b>, which passes through the transport path <b>59</b>, together with the intermediate transfer belt <b>51</b>. </p>
+<p id="p-0041" num="0040"> The transfer roller <b>27</b> is located in the standby position (described below) during printing, while a visible image for each color (i.e., a developer image) is being sequentially transferred to the intermediate transfer belt <b>51</b>. The transfer roller <b>27</b> is located in the transferable position when all of the visible images have been transferred from the photoconductor belt <b>33</b> to the intermediate transfer belt <b>51</b>. At this point, a full color image (i.e., a print image) has been formed on the intermediate transfer belt <b>51</b>. </p>
+<p id="p-0042" num="0041"> During calibration, the transfer roller <b>27</b> is controlled so as to remain located in the standby position. Furthermore, a predetermined transfer bias of the intermediate transfer belt <b>51</b> is applied to the transfer roller <b>27</b> in the transferable position by the transfer bias application circuit (not shown in the attached drawings). </p>
+<p id="h-0014" num="0000"> e. Fixing Unit </p>
+<p id="p-0043" num="0042"> The fixing unit <b>29</b> is arranged behind the intermediate transfer belt mechanism unit <b>25</b>. The fixing unit <b>29</b> is provided with a heating roller <b>61</b>, a pressure roller <b>63</b> for pressing the heating roller <b>61</b>, and a pair of transport rollers <b>65</b> mounted downstream from the heating roller <b>61</b> and the pressure roller <b>63</b>. The heating roller <b>61</b> is provided with an outside layer of silicon rubber, a metal inside layer, and a halogen lamp for heating. </p>
+<p id="h-0015" num="0000"> 2. Detailed Explanation of the Belt Photoconductor Mechanism Unit </p>
+<p id="p-0044" num="0043"> Described in detail below is the belt photoconductor mechanism unit <b>31</b> of the image-forming unit <b>9</b>. </p>
+<p id="p-0045" num="0044"> The first roller <b>39</b> is arranged behind and lower than the yellow development cartridge <b>35</b>Y, which is located at the lowest position of the four development cartridges <b>35</b> (as seen in <figref idref="DRAWINGS">FIG. 1</figref>). The first roller <b>39</b> is driven in an interlocking manner by the rest of the belt photoconductor mechanism unit <b>31</b>. </p>
+<p id="p-0046" num="0045"> The second roller <b>41</b> is arranged vertically higher than the first roller <b>39</b> and higher than the black development cartridge <b>35</b>K, which is positioned at an uppermost position of the development cartridges <b>35</b> (as seen in <figref idref="DRAWINGS">FIG. 1</figref>). The second roller <b>41</b> is driven and rotated via a driving gear (not shown in the attached drawings). </p>
+<p id="p-0047" num="0046"> The third roller <b>43</b> is arranged diagonally behind and above the first roller <b>39</b>. The third roller <b>43</b> is rotated in an interlocking manner similar to the first roller <b>39</b>. Therefore, the first roller <b>39</b>, the second roller <b>41</b>, and the third roller <b>43</b>, are triangularly arranged and associated with one another. </p>
+<p id="p-0048" num="0047"> The second roller <b>41</b> is given a potential of +800V by the potential adder <b>47</b>, which is arranged near the roller, using the power source of the photoconductor belt electrifier <b>45</b>. The first roller <b>39</b> and the third roller <b>43</b> are configured from a conductive material, aluminum for example. These rollers contact a base layer of the photoconductor belt <b>33</b> described later, and are connected to a GND (ground) terminal not shown in the attached drawings. In other words, the first roller <b>39</b> and the third roller <b>43</b> maintain the potential of the photoconductor belt <b>33</b> by being positioned in contact with each other via the ground. </p>
+<p id="p-0049" num="0048"> The photoconductor belt <b>33</b> is wound around the first roller <b>39</b>, the second roller <b>41</b>, and the third roller <b>43</b>. When the second roller <b>41</b> is rotated and driven, the first roller <b>39</b> and the third roller <b>43</b> are driven in an interlocking manner. Consequently, the photoconductor belt <b>33</b> is rotated (e.g., counterclockwise). </p>
+<p id="p-0050" num="0049"> The photoconductor belt <b>33</b> is an endless belt provided with a 0.08 mm thick base layer (i.e., conductive base layer) and a 25 &#x3bc;m photoconductive layer on one side of the base layer. A nickel conductor, formed through a nickel galvanoplastics method, for example, constitutes the base layer. A photoconductor of a polycarbonate type resin constitutes the photoconductive layer. </p>
+<p id="p-0051" num="0050"> The photoconductor belt electrifier <b>45</b> is arranged below the belt photoconductor mechanism unit <b>31</b>, upstream from the exposure portion of the scanner unit <b>21</b> to the photoconductor belt <b>33</b>. The photoconductor belt electrifier <b>45</b> is near the first roller <b>39</b> and faces the photoconductor belt <b>33</b> without contact at a predetermined spacing. The photoconductor belt electrifier <b>45</b> is a scorotron type electrifier used for positive electrification through the generation of a discharge of a corona from an electrifying wire such as tungsten, etc. The photoconductor belt electrifier <b>45</b> is designed such that the surface of the photoconductor belt <b>33</b> can be uniformly electrified as a cathode. </p>
+<p id="p-0052" num="0051"> The potential gradient controller <b>49</b> is located between the second roller <b>41</b> and the first roller <b>39</b>. The potential gradient controller <b>49</b> contacts the base layer of the photoconductor belt <b>33</b> at a position higher than the black development cartridge <b>35</b>K. The potential gradient controller <b>49</b> sets the potential of the base layer at ground level at the contact point of the potential gradient controller <b>49</b>. </p>
+<p id="h-0016" num="0000"> 3. Basic Operation During Printing of the Color Laser Printer <b>1</b> </p>
+<p id="p-0053" num="0052"> The operation of the color laser printer <b>1</b> during printing is described below. A control device <b>90</b>, which is described later, realizes these operations and controls each unit. </p>
+<p id="p-0054" num="0053"> The top sheet of the stack of sheets <b>5</b>, stored on the sheet feed tray <b>11</b> of the sheet feed unit <b>7</b>, is pressed by the sheet feed roller <b>13</b>. The sheets <b>5</b> are individually supplied sheet by sheet via the rotation of the sheet feed roller <b>13</b>. The supplied sheets <b>5</b> are brought to the transfer position X by the transport roller <b>15</b> and the resist roller <b>17</b>. The resist roller <b>17</b> applies a predetermined resistance to the fed sheet <b>5</b>. </p>
+<p id="p-0055" num="0054"> The surface of the photoconductor belt <b>33</b> is uniformly and positively electrified by the photoconductor belt electrifier <b>45</b>. Based upon the image data, the surface is then exposed through high speed scanning by a laser beam from the scanner unit <b>21</b>. Since the electrification is released on the exposed portion, an electrostatic latent image in which a positively electrified portion and a non-electrified portion are arranged is formed on the surface of the photoconductor belt <b>33</b> according to the image data. At this time, the first roller <b>39</b> and the third roller <b>43</b> supply electric power to the base layer of the photoconductor belt <b>33</b> contacted by the rollers. The rollers maintain the potential of the contacting portion as GND. </p>
+<p id="p-0056" num="0055"> The yellow development cartridge <b>35</b>Y of the development cartridges <b>35</b> is moved by the yellow parting solenoid <b>38</b>Y horizontally backward to the photoconductor belt <b>33</b>. The development roller <b>37</b>Y of the yellow development cartridge <b>35</b>Y is made to contact the photoconductor belt <b>33</b>, on which the electrostatic latent image has been formed. </p>
+<p id="p-0057" num="0056"> The yellow toner contained in the yellow development cartridge <b>35</b>Y is positively electrified and therefore only attaches to the non-electrified portions of the photoconductor belt <b>33</b>. As a result, a visible yellow image (i.e., a developer image) is formed on the photoconductor belt <b>33</b>. At this time, the magenta development cartridge <b>35</b>M, the cyan development cartridge <b>35</b>C, and the black development cartridge <b>35</b>K, are each moved horizontally forward by a corresponding parting solenoid <b>38</b>M, <b>38</b>C, and <b>38</b>K. These remaining cartridges (<b>35</b>M, <b>35</b>C, and <b>35</b>K) are separated from the photoconductor belt <b>33</b>. </p>
+<p id="p-0058" num="0057"> The visible yellow image formed on the photoconductor belt <b>33</b> is transferred to the surface of the intermediate transfer belt <b>51</b> when the developer image opposes the intermediate transfer belt <b>51</b> through the movement of the photoconductor belt <b>33</b>. </p>
+<p id="p-0059" num="0058"> At this time, a sequential bias (e.g., a potential of +300V) is added to the second roller <b>41</b> from the power source of the photoconductor belt electrifier <b>45</b>. Through the conductive base layer, the photoconductive layer near the second roller <b>41</b> then registers a potential of +300V. Therefore, a repulsion arises between the positively electrified yellow toner and the positively electrified photoconductive layer, easily accomplishing the transfer of the yellow toner to the intermediate transfer belt <b>51</b>. </p>
+<p id="p-0060" num="0059"> Similarly for magenta, an electrostatic latent image is formed on the photoconductor belt <b>33</b> as previously described. A visible magenta image is then formed. The visible magenta image (i.e., a developer image) is transferred to the intermediate transfer belt <b>51</b>. </p>
+<p id="p-0061" num="0060"> In other words, an electrostatic latent image is formed on the photoconductor belt <b>33</b>. The magenta development cartridge <b>35</b>M is then moved horizontally backward by the magenta parting solenoid <b>38</b>M, thereby causing the development roller <b>37</b>M of the magenta development cartridge <b>35</b>M to contact the photoconductor belt <b>33</b>. At this time, the yellow development cartridge <b>35</b>Y, the cyan development cartridge <b>35</b>C, and the black development cartridge <b>35</b>K, are each moved horizontally forward by the corresponding parting solenoids <b>38</b>Y, <b>38</b>C, and <b>38</b>K. As a result, the remaining development cartridges (<b>35</b>Y, <b>35</b>C, and <b>35</b>K) are separated from the photoconductor belt <b>33</b>. </p>
+<p id="p-0062" num="0061"> Therefore, a visible magenta image is formed on the photoconductor belt <b>33</b> only by the magenta toner contained in the magenta development cartridge <b>35</b>M. The visible magenta image is transferred by the movement of the photoconductor belt <b>33</b> relative to the intermediate transfer belt <b>51</b>, as previously described. The visible magenta image is superposed on the visible yellow image transferred earlier when the visible magenta image opposes the intermediate transfer belt <b>51</b>. </p>
+<p id="p-0063" num="0062"> A similar operation is repeated using the cyan toner contained in the cyan development cartridge <b>35</b>C and the black toner contained in the black development cartridge <b>35</b>K. Consequently, a full color image (i.e., a print image) is formed on the intermediate transfer belt <b>51</b>. </p>
+<p id="p-0064" num="0063"> The color images formed on the intermediate transfer belt <b>51</b> are collectively transferred to a sheet <b>5</b> by the transfer roller <b>27</b>. The transfer roller <b>27</b> is located in the transferable position when the sheet <b>5</b> passes the transfer position X, located between the intermediate transfer belt <b>51</b> and the transfer roller <b>27</b>. </p>
+<p id="p-0065" num="0064"> The heating roller <b>61</b> of the image fixing unit <b>29</b> thermally fixes the color images transferred to the sheet <b>5</b> while the sheet <b>5</b> is passing between the heating roller <b>61</b> and the pressure roller <b>63</b>. </p>
+<p id="p-0066" num="0065"> Transport rollers <b>65</b> then transport the sheet <b>5</b>, thermally fixed by the fixing unit <b>29</b>, to a pair of sheet ejection rollers <b>67</b>. The sheet <b>5</b>, transported to the sheet ejection rollers <b>67</b>, is ejected to a sheet ejection tray <b>69</b> (see <figref idref="DRAWINGS">FIG. 3</figref>) formed above the body casing <b>3</b>. </p>
+<p id="p-0067" num="0066"> Consequently, color printing may be performed on a sheet. </p>
+<p id="h-0017" num="0000"> 4. Electrical Configuration </p>
+<p id="p-0068" num="0067"> The electrical configuration of the color laser printer <b>1</b> is described next. <figref idref="DRAWINGS">FIG. 2</figref> is a block diagram showing the general organization of an electric configuration of the color laser printer <b>1</b>. </p>
+<p id="p-0069" num="0068"> The color laser printer <b>1</b> includes a control device <b>90</b> for controlling each component via a control unit <b>95</b>. The control device <b>90</b> also includes a CPU <b>91</b>, ROM <b>92</b>, RAM <b>93</b>, and an ASIC (Application Specific Integrated Circuit). Additionally, a main motor <b>96</b>, a scanner motor <b>97</b>, an operation unit <b>98</b> including an input panel, etc., a display unit <b>99</b> including various lamps, etc., a detection unit <b>100</b> including various sensors, etc. are provided and are electrically connected to the control unit <b>95</b>. Therefore, a complete control system can be constituted. </p>
+<p id="p-0070" num="0069"> The ROM <b>92</b> and the RAM <b>93</b> are connected to the CPU <b>91</b>. The CPU <b>91</b> allows the RAM <b>93</b> to store a process result in a procedure stored in the ROM <b>92</b>, thereby controlling each component via the control unit <b>95</b>. </p>
+<p id="p-0071" num="0070"> The main motor <b>96</b> synchronizes and rotates the second roller <b>41</b> and the first intermediate transfer roller <b>53</b>, etc. The scanner motor <b>97</b> rotates the polygon mirror, etc. in the scanner unit <b>21</b>. </p>
+<p id="p-0072" num="0071"> The CPU <b>91</b> functions as a drive-control for the main motor <b>96</b> and the scanner motor <b>97</b>, based upon a program previously stored in the ROM <b>92</b>. </p>
+<p id="p-0073" num="0072"> The control unit <b>95</b> controls the actions of the sheet <b>5</b> according to commands from the CPU <b>91</b>. Customarily, the control unit <b>95</b> controls the exposure on the surface of the photoconductor belt <b>33</b> via the scanner unit <b>21</b>, and controls a transfer bias when the toner is transferred from the intermediate transfer belt <b>51</b> to the sheet <b>5</b>, etc. </p>
+<p id="p-0074" num="0073"> The control device <b>90</b> is provided with a network interface <b>94</b> (network I/F) in order to connect the control device <b>90</b> to external equipment such as a personal computer, etc. The network I/F <b>94</b> may be connected to a computer <b>150</b> (corresponding to an example of a &#x201c;terminal device&#x201d;). An image forming system <b>200</b> may be constituted by the color laser printer <b>1</b> and a computer <b>150</b>. </p>
+<p id="p-0075" num="0074"> The control device <b>90</b> may be provided with a facsimile communication unit <b>153</b> connected to a telephone line <b>152</b>. The telephone line <b>152</b> may then be coupled to an exchange <b>151</b>. The facsimile communication unit <b>153</b> includes an NCU, which is connected to the telephone line <b>152</b> for line-controlling, a modem for modulating, demodulating, and transmitting image information and transmitting/receiving various procedure signals for transmission control, and a buffer for temporarily storing the data (hereinafter referred to as &#x201c;facsimile data&#x201d;) including coded image information for communication with a partner communication device (for example, a facsimile device), etc. </p>
+<p id="p-0076" num="0075"> The NCU receives a call signal transmitted from the exchange <b>151</b>, and a telephone number of a partner communication device, etc., and transmits a dial signal used for transmission, depending upon the operation of buttons on the operation panel <b>164</b>. Furthermore, the NCU transmits and receives an analog audio signal during communications. </p>
+<p id="p-0077" num="0076"> A detection unit <b>100</b> is constituted by the density detection sensor <b>71</b>, a sheet density sensor <b>82</b> for detecting the density of a sheet, for example, and a sheet length sensor <b>83</b> (corresponding to an example of a &#x201c;detection device&#x201d;) for detecting the length of a sheet in the transport direction (i.e., the length in the secondary scanning direction) between the transport roller <b>15</b> and the resist roller <b>17</b>. These sensors are electrically connected to the control unit <b>95</b>. </p>
+<p id="p-0078" num="0077"> <figref idref="DRAWINGS">FIG. 3</figref> shows the overall appearance of an entire color laser printer <b>1</b>. The &#x201c;front side&#x201d; of the color laser printer <b>1</b> refers to the diagonally left lower portion of the drawing. A color laser printer <b>1</b> according to the present aspect is provided with an original reading device <b>159</b> located above the body casing <b>3</b>. The original reading device <b>159</b> is provided with an original table cover <b>160</b>, which is freely opened and closed about one end portion (e.g., the diagonally right upper end portion, as shown in <figref idref="DRAWINGS">FIG. 3</figref>). The original table cover <b>160</b> covers the original table (not shown in the attached drawings), on which an original is placed, from above. The original table cover <b>160</b> is provided with an original storage tray <b>161</b> and an automatic original feed device <b>162</b>. </p>
+<p id="p-0079" num="0078"> An original to be transmitted to a partner communication device via the facsimile function or an original to be copied via the copy function are carried from the original storage tray <b>161</b> to an automatic original feed device <b>162</b>. These originals are then read as image data by an original reading unit <b>101</b> (corresponding to an example of an &#x201c;original reading device&#x201d;) shown in <figref idref="DRAWINGS">FIG. 2</figref>. The originals are then ejected from an original ejection slit <b>163</b> formed between the original storage tray <b>161</b> and the original table cover <b>160</b>. </p>
+<p id="p-0080" num="0079"> An operation panel <b>164</b> is provided at the front side of the original table cover <b>160</b>. The operation panel <b>164</b> includes the operation unit <b>98</b> and the display unit <b>99</b>. </p>
+<p id="p-0081" num="0080"> The CPU <b>91</b> performs the process of forming an image on the sheet <b>5</b> (i.e., recording surface) through drive-control of each unit as described above. The image may be based on image data (hereinafter also referred to as &#x201c;printer data&#x201d;), input from the computer <b>150</b> through the network I/F <b>94</b>, facsimile data, received from a partner communication device through the facsimile communication unit <b>153</b>, or scanning data from the original reading unit <b>101</b>. </p>
+<p id="h-0018" num="0000"> 5. Control of the Image Forming Unit by the CPU </p>
+<p id="p-0082" num="0081"> <figref idref="DRAWINGS">FIG. 4</figref> is a flowchart showing steps involved in the control of the sheet <b>5</b> as executed by the CPU <b>91</b> when printer data, facsimile data, or scanning data is received. In this explanation, the printer data, facsimile data, and scanning data are assumed to be the image data for three pages in a regular size (e.g., an A4 size for this aspect), as shown in <figref idref="DRAWINGS">FIG. 5</figref>. The width (i.e., the length in a direction perpendicular to the transport direction) of the sheet <b>5</b> loaded into the sheet feed tray <b>11</b> may be equal to the width of an A4 size, but the length (i.e., along the transport direction) is shorter than the length of an A4 size. </p>
+<p id="h-0019" num="0000"> (1) Start-Before-Determination Process (High-speed Printing Prioritization Mode) </p>
+<p id="p-0083" num="0082"> In the present aspect, the CPU <b>91</b> performs a &#x201c;start-before-determination process&#x201d; as described below when the received image data is printer data, received through data communication with the computer <b>150</b>, or scanning data, generated by the original reading unit <b>101</b>. The data may be customarily or ordinarily received. </p>
+<p id="p-0084" num="0083"> When one page of image data has been received, the CPU <b>91</b> determines in S<b>1</b> (shown in <figref idref="DRAWINGS">FIG. 4</figref>) whether or not the received image data is facsimile data. If the received image data is printer data or scanning data (&#x201c;N&#x201d; in S<b>1</b>), image data for each respective color (i.e., developer image) is generated in S<b>2</b> depending on a normal print area (i.e., corresponding to an &#x201c;image forming area for the recording medium&#x201d;) based on the image data received. </p>
+<p id="p-0085" num="0084"> The normal print area refers to an area in which image forming can be performed on the sheet <b>5</b> with a predetermined level of quality. In the present aspect, the normal print area is an area 3 mm, for example, inside of the circumference of an A4 sized sheet. The image data for each color is created for the generation of an electrostatic latent image on the outer surface of the photoconductor belt <b>33</b> of a size able to be contained within the normal print area. The processes in S<b>1</b> and S<b>2</b> are sequentially performed each time a new page of image data is received. </p>
+<p id="p-0086" num="0085"> Next in S<b>3</b>, the exposing operation is started when the laser exposure starting position Z of the rotating photoconductor belt <b>33</b> of the belt photoconductor mechanism unit <b>31</b> reaches an appropriate location. The laser exposure starting position Z refers to a position after which the laser exposure can begin by the scanner unit <b>21</b>. The electrostatic latent image corresponding to the yellow image data of the first page is formed upon the outer surface of the photoconductor belt <b>33</b>. In the present aspect, the laser exposure starting position Z is predetermined at a position so as to exclude a joint Y of the photoconductor belt <b>33</b> (refer to <figref idref="DRAWINGS">FIG. 1</figref>) from a developer image formation. </p>
+<p id="p-0087" num="0086"> In S<b>4</b>, the CPU <b>91</b> operates the yellow development cartridge <b>35</b>Y via the control unit <b>95</b>. The electrostatic latent image is developed as a visible yellow image (i.e., developer image). The visible yellow image is then transferred to the surface of the intermediate transfer belt <b>51</b>. The laser exposing operation of the scanner unit <b>21</b> and the developing operation of the development cartridges <b>35</b> are also sequentially performed for magenta, cyan, and black. Each operation correlates to a single rotation of the organic photoconductor <b>33</b>. As a result, a full color image (i.e., print image) is formed on the intermediate transfer belt <b>51</b> (&#x201c;Y&#x201d; in S<b>5</b>). </p>
+<p id="p-0088" num="0087"> In S<b>6</b>, it is then determined whether or not there is image data for another page. If not (&#x201c;N&#x201d; in S<b>6</b>), the sheet feeding operation is performed for a sheet <b>5</b> loaded in the sheet feed tray <b>11</b>. The full color image formed on the intermediate transfer belt <b>51</b> is transferred to the fed sheet <b>5</b> in S<b>7</b>. At this time since the &#x201c;high-speed printing prioritized mode&#x201d; is set (&#x201c;N&#x201d; in S<b>8</b>), the sheet <b>5</b> with the transferred color image is ejected (S<b>9</b>) to the sheet ejection tray <b>69</b>, thereby completing a printing operation. </p>
+<p id="p-0089" num="0088"> On the other hand, if there is image data for another subsequent page (&#x201c;Y&#x201d; in S<b>6</b>), then the laser exposing operation is allowed in S<b>11</b> based upon the image data of the next page since the &#x201c;high-speed printing prioritizing mode&#x201d; is set (&#x201c;N&#x201d; in S<b>10</b>). Control is returned to S<b>3</b> and the processes in S<b>3</b> to S<b>5</b> are started, unless the processing of all of the pages of the image data are completed (&#x201c;N&#x201d; in S<b>18</b>). In other words, in the &#x201c;high-speed printing prioritized mode&#x201d; the laser exposing operation of the scanner unit <b>21</b> and the developing operation of the development cartridges <b>35</b> are started, based upon the image data of the second page and beyond, without waiting for determination results as to whether or not a normal transfer had been previously performed. </p>
+<p id="p-0090" num="0089"> Therefore, although a sheet <b>5</b> may be loaded having a shorter than normal length in the transport direction, the printing speed is prioritized. As a result, a partial image is printed on each of the shorter pages. The last end portion of the image is lost for each of the three sheets <b>5</b> (as shown in <figref idref="DRAWINGS">FIG. 5A</figref>) that have a shorter length in the transport direction than an A4 sized sheet. </p>
+<p id="h-0020" num="0000"> (2) Start-After-Determination Process (Reliability Prioritized Mode) </p>
+<p id="p-0091" num="0090"> When the received image data is facsimile data received via the execution of the facsimile capability, the &#x201c;start-after-determination process&#x201d; is performed as described below. In particular, when a page of image data is initially received and after each subsequent page of image data is received the CPU <b>91</b> determines whether or not the received image data is facsimile data in S<b>1</b>, as shown in <figref idref="DRAWINGS">FIG. 4</figref>. If the data is facsimile data (&#x201c;Y&#x201d; in S<b>1</b>), the &#x201c;reliability prioritized mode&#x201d; is automatically set in S<b>12</b>. </p>
+<p id="p-0092" num="0091"> Based on the received image data, a developer image for each color is generated in S<b>13</b> that corresponds to a reduced print area (corresponding to an &#x201c;image forming area for the recording medium&#x201d;). The reduced print area is reduced from the above-mentioned normal print area by an additional 10 mm (for example), shortening the trailing print edge in the transport direction (e.g., 13 mm inside of the trailing perimeter of an A4 size). Developer data is generated for each color so as to form a reduced electrostatic latent image corresponding to the reduced print area. The reduced electrostatic latent image is formed on the outer surface of the photoconductor belt <b>33</b>. </p>
+<p id="p-0093" num="0092"> The sheet length sensor <b>83</b> is provided with a lever (not shown in the attached drawings) movably attached in the transport path of the sheet <b>5</b>. The sheet length sensor <b>83</b> measures the length of a sheet <b>5</b> in the transport direction based upon an amount of time and the transport speed of the sheet <b>5</b>. The amount of time is determined from the point when the lever of the sheet length sensor <b>83</b> touches the first (leading) edge of the transported sheet <b>5</b> and is held away from the transport path, to the recovery time after the last (trailing) edge of the sheet <b>5</b> passes. </p>
+<p id="p-0094" num="0093"> However, there may be a detection error (e.g., a maximum of 10 mm in the present aspect) due to an operational delay of the lever, the sheet <b>5</b> slipping in the transport process, or a distortion of the end of the sheet <b>5</b>. As a result, the reduced print area is determined by taking into account these potential errors. The reduced print area (i.e., the length of the recording medium in the transport direction) can be modified, for example, through an operation of the operation panel <b>164</b>. </p>
+<p id="p-0095" num="0094"> Afterwards, as with the start-before-determination process, the laser exposing operation of the scanner unit <b>21</b> and the developing operation of the development cartridges <b>35</b> are sequentially performed for yellow, magenta, cyan, and black, each time the photoconductor belt <b>33</b> completes a revolution. Consequently, this forms a full color image (i.e., a print image) on the intermediate transfer belt <b>51</b> (S<b>3</b> to S<b>5</b>) </p>
+<p id="p-0096" num="0095"> When there is image data for another page (&#x201c;Y&#x201d; in S<b>6</b>), the timing for the starting of the laser exposing operation based upon the next page of image data is delayed in S<b>14</b> because the reliability prioritized mode is set (&#x201c;Y&#x201d; in S<b>10</b>). For example, the photoconductor belt <b>33</b> may be idly driven through one cycle of rotation. The sheet feeding operation is then performed for the sheet <b>5</b> loaded in the sheet feed tray <b>11</b>. The color image is transferred in S<b>7</b> to the first page. At this time, since the reliability prioritized mode is set (&#x201c;Y&#x201d; in S<b>8</b>), the detection results are acquired from the sheet length sensor <b>83</b> in S<b>15</b>. </p>
+<p id="p-0097" num="0096"> Based upon the detection results, in S<b>16</b> it is determined whether or not a color image has been normally transferred to the sheet <b>5</b> currently being transported, without suffering any image loss. At this time, the CPU <b>91</b> may function as a &#x201c;determination device&#x201d;. In particular, when the transport direction length of the sheet <b>5</b> being currently transported is shorter than an A4 size by 3 mm or more, for example, it is determined that an abnormal transfer has occurred along with a loss of a portion of the color image (&#x201c;N&#x201d; in S<b>16</b>). The determination value (e.g., 3 mm) can be modified, for example, through an operation of the operation panel <b>164</b>. </p>
+<p id="p-0098" num="0097"> When the difference is less than 3 mm in the transport direction length between the sheet <b>5</b> being currently transported and an A4 sized sheet, a normal transfer is determined to be possible (&#x201c;Y&#x201d; in S<b>16</b>). As a result, the laser exposing operation for the received image data of the second (i.e., subsequent) page is allowed. After returning to S<b>3</b>, when the laser exposure starting position Z of the photoconductor belt <b>33</b> in an idle operation reaches the point where the exposing operation of the scanner unit <b>21</b> can be performed (e.g., after a revolution of the idle operation of the photoconductor belt <b>33</b> in the present aspect), the laser exposure is started again based upon the received image data for the second page. The performed process is similar to the previously described process. </p>
+<p id="p-0099" num="0098"> In other words, in the reliability prioritized mode the laser exposing operation (based on the image data of a subsequent page) is not performed until it is determined whether or not a normal transfer has been accomplished, based upon the detection of the length in the transport direction of the sheet <b>5</b>. Subsequently, unless the processing of the received image data of all pages are completed (&#x201c;N&#x201d; in S<b>18</b>) control is returned to S<b>3</b>, and the processes in S<b>3</b> to S<b>5</b> are repeated. As a result, three sheets <b>5</b> may be ejected without suffering from a partial image loss. At this time, the CPU <b>91</b> is functioning as a &#x201c;control device&#x201d;. </p>
+<p id="p-0100" num="0099"> In the reliability prioritized mode, since the image formed on the page 5 is reduced in order to correspond to the reduced print area, the loss of an image can be avoided even with the assumption of a detection error in the sheet length sensor <b>83</b>. </p>
+<p id="p-0101" num="0100"> Conversely, when it is determined that an abnormal transfer has been performed (&#x201c;N&#x201d; in S<b>16</b>), a message is displayed on the display unit <b>99</b> (for example, an LCD) prompting an operator to place an appropriate size of sheets into the sheet feed cassette. In addition, the printing operation of the facsimile data being received is stopped in S<b>17</b>. Therefore, only one sheet having a partial image on the first page, as shown in <figref idref="DRAWINGS">FIG. 5B</figref>, is ejected to the sheet ejection tray <b>69</b>. In S<b>18</b> it is determined that there is an error (&#x201c;Y&#x201d; in S<b>18</b>). As a result, the process is thereby temporarily terminated. </p>
+<p id="p-0102" num="0101"> In the present aspect, the received image data based upon facsimile data is stored in the RAM <b>93</b> for example. When an appropriate or an expected size of sheet <b>5</b> is placed within the sheet feed tray <b>11</b>, a predetermined operation realizes the reprinting operation. </p>
+<p id="h-0021" num="0000"> &#x3c;Other Aspects&#x3e;</p>
+<p id="p-0103" num="0102"> The present invention is not to be limited to the aspects described previously via reference to the attached drawings. For example, the following aspects are also included within the technical scope of the present invention. In addition, other aspects can be realized within the scope of the subject matter of the present invention. </p>
+<p id="p-0104" num="0103"> (1) In the above-mentioned aspects, the photoconductor belt <b>33</b> is used. However, the present invention is not limited to the use of a photoconductor belt <b>33</b>, a photoconductor drum may be used. Additionally, a photoconductor belt <b>33</b> without a joint in the belt may also realize a stable printing operation through the fixing of the laser exposure starting position. </p>
+<p id="p-0105" num="0104"> (2) In the above-mentioned aspect, when an abnormal transfer has been determined, a message is displayed instructing the operator to exchange the sheet. However, the present invention is not limited to this, any abnormal transfer notification or indicator may be used. For example, an abnormal transfer notification such as voice notification and/or a blinking light operation through a light-emitting unit, among others, is acceptable. </p>
+<p id="p-0106" num="0105"> (3) In the previously described aspects, a 4-cycle color laser printer is exemplified. However, the present invention is not limited to this example. In other words, any system using an intermediate transfer device may be used with this invention, for example, such as an intermediate transfer tandem color laser printer <b>1</b>, and a monochrome printer, among others. </p>
+<p id="p-0107" num="0106"> (4) In the previously described aspects, the laser exposure starting position Z is one point on the outer surface of the photoconductor belt <b>33</b>. However, the present invention is not limited to only one point. Plural points at predetermined intervals on the perimeter can be used. </p>
+<p id="p-0108" num="0107"> (5) In the previously described aspects the operation panel <b>164</b>, for example, may be used to selectively set the &#x201c;reliability prioritized mode&#x201d; or the &#x201c;high-speed printing prioritized mode.&#x201d; Using the operation panel <b>164</b> would allow the start-after-determination process to be performed for printer data and the scanning data when the reliability-prioritized mode is set. </p>
+<?detailed-description description="Detailed Description" end="tail"?>
+</description>
+<us-claim-statement>What is claimed is: </us-claim-statement>
+<claims id="claims">
+<claim id="CLM-00001" num="00001">
+<claim-text><b>1</b>. An image forming apparatus including: 
+<claim-text>a photoconductor; </claim-text>
+<claim-text>an exposure device forming an electrostatic latent image on the photoconductor based upon image data; </claim-text>
+<claim-text>a development device forming a developer image on the photoconductor by developing the electrostatic latent image on the photoconductor; </claim-text>
+<claim-text>an intermediate transfer device holding the developer image thereon, the developer image being transferred from the photoconductor and worth one page; </claim-text>
+<claim-text>a transfer device transferring the developer image from the intermediate transfer device to a recording medium; </claim-text>
+<claim-text>a detection device detecting a size of the recording medium; </claim-text>
+<claim-text>a determination device determining if the size of the recording medium produced by the detection device is enough for transferring the developer image on the intermediate transfer device; and </claim-text>
+<claim-text>a control device inhibiting the exposure device from forming an electrostatic latent image based upon image data for a subsequent page when the determination device determines the size of the recording medium produced by the detection device is not enough for transferring the developer image on the intermediate transfer device. </claim-text>
+</claim-text>
+ </claim>
+<claim id="CLM-00002" num="00002">
+<claim-text><b>2</b>. The image forming apparatus according to <claim-ref idref="CLM-00001">claim 1</claim-ref> wherein the exposure device is controlled by the control device based upon one of a plurality of processes, the plurality of processes includes: 
+<claim-text>a start-after-determination process wherein the exposure device is started after a determination result produced by the determination device is enough; and </claim-text>
+<claim-text>a start-before-determination process wherein the exposure device is started before the determination result. </claim-text>
+</claim-text>
+ </claim>
+<claim id="CLM-00003" num="00003">
+<claim-text><b>3</b>. The image forming apparatus according to <claim-ref idref="CLM-00002">claim 2</claim-ref> wherein a type of received image data includes printing data, scanning data, and facsimile data; 
+<claim-text>wherein when the received image data type is facsimile data, the control device uses the start-after-determination process; </claim-text>
+<claim-text>wherein when the received image data type is not facsimile data, the control devices uses the start-before-determination process. </claim-text>
+</claim-text>
+ </claim>
+<claim id="CLM-00004" num="00004">
+<claim-text><b>4</b>. The image forming apparatus according to <claim-ref idref="CLM-00002">claim 2</claim-ref> wherein the one of the plurality of process is selected via an operation control panel. </claim-text>
+ </claim>
+<claim id="CLM-00005" num="00005">
+<claim-text><b>5</b>. The image forming apparatus according to <claim-ref idref="CLM-00002">claim 2</claim-ref> wherein when the determination result is not enough, then a notifying device performs a notifying operation. </claim-text>
+ </claim>
+<claim id="CLM-00006" num="00006">
+<claim-text><b>6</b>. The image forming apparatus according to <claim-ref idref="CLM-00005">claim 5</claim-ref>, wherein the notifying operation is an illumination of an illumination device. </claim-text>
+ </claim>
+<claim id="CLM-00007" num="00007">
+<claim-text><b>7</b>. The image forming apparatus according to <claim-ref idref="CLM-00005">claim 5</claim-ref>, wherein the notifying operation is an error message displayed on a display device. </claim-text>
+ </claim>
+<claim id="CLM-00008" num="00008">
+<claim-text><b>8</b>. The image forming apparatus according to <claim-ref idref="CLM-00002">claim 2</claim-ref> wherein the size of recording medium is detected during transportation of the recording medium. </claim-text>
+ </claim>
+<claim id="CLM-00009" num="00009">
+<claim-text><b>9</b>. The image forming apparatus according to <claim-ref idref="CLM-00008">claim 8</claim-ref> wherein the detection device includes: 
+<claim-text>an edge detector configured to detect a leading edge and a trailing edge of the recording medium in a transportation direction; </claim-text>
+<claim-text>wherein the size of the recording medium is a length in a transportation direction of the recording medium. </claim-text>
+</claim-text>
+ </claim>
+<claim id="CLM-00010" num="00010">
+<claim-text><b>10</b>. The image forming apparatus according to <claim-ref idref="CLM-00009">claim 9</claim-ref>, wherein the edge detector includes a lever located in a transportation path of the recording medium. </claim-text>
+ </claim>
+<claim id="CLM-00011" num="00011">
+<claim-text><b>11</b>. The image forming apparatus according to <claim-ref idref="CLM-00003">claim 3</claim-ref> wherein when the control device uses the start-after-determination process, the determination device determines if a reduced size of recording medium produced by the detection device is enough for transferring the developer image on the intermediate transfer device, so as to produce the determination result. </claim-text>
+ </claim>
+<claim id="CLM-00012" num="00012">
+<claim-text><b>12</b>. An image forming apparatus including: 
+<claim-text>a photoconductor; </claim-text>
+<claim-text>an exposure device forming an electrostatic latent image on the photoconductor based upon image data; </claim-text>
+<claim-text>a development device forming a developer image on the photoconductor by developing the electrostatic latent image on the photoconductor; </claim-text>
+<claim-text>an intermediate transfer device holding the developer image thereon, the developer image being transferred from the photoconductor and worth one page; </claim-text>
+<claim-text>a transfer device transferring the developer image from the intermediate transfer device to a recording medium; </claim-text>
+<claim-text>a detection device detecting a size of the recording medium; </claim-text>
+<claim-text>a determination device determining if the size of the recording medium produced by the detection device is enough for transferring the developer image on the intermediate transfer device; and </claim-text>
+<claim-text>a control device inhibiting the exposure device from forming an electrostatic latent image based upon image data; </claim-text>
+<claim-text>wherein when image data is facsimile data an exposing operation by the exposure device is performed after a first page of the facsimile data is received, and </claim-text>
+<claim-text>wherein a subsequent exposing operation by the exposure device is performed when each subsequent page of the facsimile data is received and a determination result produced by the determination device of a previous page is enough. </claim-text>
+</claim-text>
+ </claim>
+<claim id="CLM-00013" num="00013">
+<claim-text><b>13</b>. The image forming apparatus according to <claim-ref idref="CLM-00012">claim 12</claim-ref> wherein the exposure device is controlled by the control device based upon one of a plurality of processes, the plurality of processes includes: 
+<claim-text>a start-after-determination process wherein the exposure device is started after the determination result is enough; and </claim-text>
+<claim-text>a start-before-determination process wherein the exposure device is started before the determination result. </claim-text>
+</claim-text>
+ </claim>
+<claim id="CLM-00014" num="00014">
+<claim-text><b>14</b>. The image forming apparatus according to <claim-ref idref="CLM-00013">claim 13</claim-ref>, further comprising 
+<claim-text>a notice device; </claim-text>
+<claim-text>wherein when the determination result is not enough and the control device is using the start-after-determination process, the notice device performs a notifying operation. </claim-text>
+</claim-text>
+ </claim>
+<claim id="CLM-00015" num="00015">
+<claim-text><b>15</b>. An image forming apparatus including: 
+<claim-text>a photoconductor; </claim-text>
+<claim-text>an exposure device forming an electrostatic latent image on the photoconductor based upon image data; </claim-text>
+<claim-text>a development device forming a developer image on the photoconductor by developing the electrostatic latent image on the photoconductor; </claim-text>
+<claim-text>a hold device holding the developer image; </claim-text>
+<claim-text>a transfer device transferring the developer image from the hold device to a recording medium, </claim-text>
+<claim-text>a detection device detecting a size of the recording medium; </claim-text>
+<claim-text>a determination device determining whether the size of the recording medium detected by the detection device is suitable for the developer image, so as to produce a determination result; and </claim-text>
+<claim-text>a control device inhibiting the exposure device from forming an electrostatic latent image based upon image data, when the determination result is unsuitable. </claim-text>
+</claim-text>
+ </claim>
+<claim id="CLM-00016" num="00016">
+<claim-text><b>16</b>. The image forming apparatus according to <claim-ref idref="CLM-00015">claim 15</claim-ref>, wherein the photoconductor comprises at least one predetermined exposure starting operation position; and 
+<claim-text>wherein the exposure device is controlled by the control device based upon one of a plurality of processes, the plurality of processes includes: </claim-text>
+<claim-text>a start-after-determination process wherein the exposure device is started at an initial predetermined exposure starting operation position reached after the determination result is unsuitable; and </claim-text>
+<claim-text>a start-before-determination process wherein the exposure device is started before the determination result.</claim-text>
+</claim-text>
+ </claim>
+</claims>
+</us-patent-application>

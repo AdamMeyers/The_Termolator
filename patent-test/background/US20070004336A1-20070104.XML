@@ -1,0 +1,302 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE us-patent-application SYSTEM "us-patent-application-v42-2006-08-23.dtd" [ ]>
+<us-patent-application lang="EN" dtd-version="v4.2 2006-08-23" file="US20070004336A1-20070104.XML" status="PRODUCTION" id="us-patent-application" country="US" date-produced="20061221" date-publ="20070104">
+<us-bibliographic-data-application lang="EN" country="US">
+<publication-reference>
+<document-id>
+<country>US</country>
+<doc-number>20070004336</doc-number>
+<kind>A1</kind>
+<date>20070104</date>
+</document-id>
+</publication-reference>
+<application-reference appl-type="utility">
+<document-id>
+<country>US</country>
+<doc-number>11170108</doc-number>
+<date>20050630</date>
+</document-id>
+</application-reference>
+<us-application-series-code>11</us-application-series-code>
+<classifications-ipcr>
+<classification-ipcr>
+<ipc-version-indicator><date>20060101</date></ipc-version-indicator>
+<classification-level>A</classification-level>
+<section>H</section>
+<class>04</class>
+<subclass>B</subclass>
+<main-group>1</main-group>
+<subgroup>00</subgroup>
+<symbol-position>F</symbol-position>
+<classification-value>I</classification-value>
+<action-date><date>20070104</date></action-date>
+<generating-office><country>US</country></generating-office>
+<classification-status>B</classification-status>
+<classification-data-source>H</classification-data-source>
+</classification-ipcr>
+<classification-ipcr>
+<ipc-version-indicator><date>20060101</date></ipc-version-indicator>
+<classification-level>A</classification-level>
+<section>H</section>
+<class>04</class>
+<subclass>B</subclass>
+<main-group>15</main-group>
+<subgroup>00</subgroup>
+<symbol-position>L</symbol-position>
+<classification-value>I</classification-value>
+<action-date><date>20070104</date></action-date>
+<generating-office><country>US</country></generating-office>
+<classification-status>B</classification-status>
+<classification-data-source>H</classification-data-source>
+</classification-ipcr>
+</classifications-ipcr>
+<classification-national>
+<country>US</country>
+<main-classification>455063100</main-classification>
+</classification-national>
+<invention-title id="d0e149">Device, system and method of multiple transceivers control</invention-title>
+<parties>
+<applicants>
+<applicant sequence="00" app-type="applicant-inventor" designation="us-only">
+<addressbook>
+<last-name>Aloni-Lavi</last-name>
+<first-name>Ruth</first-name>
+<address>
+<city>Raanana</city>
+<country>IL</country>
+</address>
+</addressbook>
+<nationality>
+<country>IL</country>
+</nationality>
+<residence>
+<country>IL</country>
+</residence>
+</applicant>
+<applicant sequence="01" app-type="applicant-inventor" designation="us-only">
+<addressbook>
+<last-name>Greenberg</last-name>
+<first-name>Shimeon</first-name>
+<address>
+<city>Yavne</city>
+<country>IL</country>
+</address>
+</addressbook>
+<nationality>
+<country>IL</country>
+</nationality>
+<residence>
+<country>IL</country>
+</residence>
+</applicant>
+<applicant sequence="02" app-type="applicant-inventor" designation="us-only">
+<addressbook>
+<last-name>Zipper</last-name>
+<first-name>Eliav</first-name>
+<address>
+<city>Tel Aviv</city>
+<country>IL</country>
+</address>
+</addressbook>
+<nationality>
+<country>IL</country>
+</nationality>
+<residence>
+<country>IL</country>
+</residence>
+</applicant>
+</applicants>
+<correspondence-address>
+<addressbook>
+<name>PEARL COHEN ZEDEK LATZER, LLP</name>
+<address>
+<address-1>1500 BROADWAY, 12TH FLOOR</address-1>
+<city>NEW YORK</city>
+<state>NY</state>
+<postcode>10036</postcode>
+<country>US</country>
+</address>
+</addressbook>
+</correspondence-address>
+</parties>
+</us-bibliographic-data-application>
+<abstract id="abstract">
+<p id="p-0001" num="0000">Briefly, some embodiments of the invention provide devices, systems and methods of multiple transceivers control. For example, a method in accordance with an embodiment of the invention may include determining whether interference is expected between an intended activity of a first wireless transceiver of a wireless communication station and an activity of a second wireless transceiver of said wireless communication station; and based on the determination result, modifying an operational parameter of an interference reducer of said wireless communication station. </p>
+</abstract>
+<drawings id="DRAWINGS">
+<figure id="figure-D00000" num="00000">
+<img id="EMI-D00000" he="172.97mm" wi="122.55mm" file="US20070004336A1-20070104-D00000.TIF" alt="embedded image" img-content="drawing" img-format="tif"/>
+</figure>
+<figure id="figure-D00001" num="00001">
+<img id="EMI-D00001" he="241.98mm" wi="165.78mm" file="US20070004336A1-20070104-D00001.TIF" alt="embedded image" img-content="drawing" img-format="tif"/>
+</figure>
+<figure id="figure-D00002" num="00002">
+<img id="EMI-D00002" he="242.65mm" wi="167.64mm" file="US20070004336A1-20070104-D00002.TIF" alt="embedded image" img-content="drawing" img-format="tif"/>
+</figure>
+<figure id="figure-D00003" num="00003">
+<img id="EMI-D00003" he="185.93mm" wi="165.69mm" file="US20070004336A1-20070104-D00003.TIF" alt="embedded image" img-content="drawing" img-format="tif"/>
+</figure>
+</drawings>
+<description id="description">
+<?summary-of-invention description="Summary of Invention" end="lead"?>
+<heading level="2" id="h-0001">BACKGROUND OF THE INVENTION </heading>
+<p id="p-0002" num="0001"> In the field of wireless communications, a first wireless communication station may include multiple transceivers able to communicate, for example, with a second wireless communication station, a wireless access point, or a wireless servicing station or base station. For example, a first transceiver of the first wireless communication station may send and receive wireless signals in accordance with a first wireless communication standard or protocol, e.g., Institute of Electrical and Electronics Engineers (IEEE) 802.11 standard; whereas a second transceiver of the wireless communication station may send and receive wireless signals in accordance with a second, different wireless communication standard or protocol, e.g., IEEE 802.16 standard. </p>
+<p id="p-0003" num="0002"> The first wireless transceiver may interfere with the second wireless transceiver, e.g., due to possible phase noise, crosstalk, ElectroMagnetic Interference (EMI), or the like. Such interference may be reduced using an active component, e.g., a Voltage Controlled Oscillator (VCO), or a passive component, e.g., a filter, which may produce a cleaner signal. Unfortunately, the active component may consume significant power, whereas the passive component may reduce the signal quality and the transceiver's sensitivity. </p>
+<?summary-of-invention description="Summary of Invention" end="tail"?>
+<?brief-description-of-drawings description="Brief Description of Drawings" end="lead"?>
+<heading level="2" id="h-0002">BRIEF DESCRIPTION OF THE DRAWINGS </heading>
+<p id="p-0004" num="0003"> The subject matter regarded as the invention is particularly pointed out and distinctly claimed in the concluding portion of the specification. The invention, however, both as to organization and method of operation, together with features and advantages thereof, may best be understood by reference to the following detailed description when read with the accompanied drawings in which: </p>
+<p id="p-0005" num="0004"> <figref idref="DRAWINGS">FIG. 1</figref> is a schematic block diagram illustration of a wireless communication system including a wireless communication station having multiple transceivers to communicate in multiple communication protocols, in accordance with an embodiment of the invention; </p>
+<p id="p-0006" num="0005"> <figref idref="DRAWINGS">FIG. 2</figref> is a schematic block diagram illustration of a wireless communication system including a wireless communication station having multiple transceivers to communicate in multiple communication protocols, in accordance with another embodiment of the invention; and </p>
+<p id="p-0007" num="0006"> <figref idref="DRAWINGS">FIG. 3</figref> is a schematic flow-chart of a method of selecting transmission modes of multiple transceivers in accordance with an embodiment of the invention.</p>
+<?brief-description-of-drawings description="Brief Description of Drawings" end="tail"?>
+<?detailed-description description="Detailed Description" end="lead"?>
+<p id="p-0008" num="0007"> It will be appreciated that for simplicity and clarity of illustration, elements shown in the figures have not necessarily been drawn to scale. For example, the dimensions of some of the elements may be exaggerated relative to other elements for clarity. Further, where considered appropriate, reference numerals may be repeated among the figures to indicate corresponding or analogous elements. </p>
+<heading level="2" id="h-0003">DETAILED DESCRIPTION OF THE INVENTION </heading>
+<p id="p-0009" num="0008"> In the following detailed description, numerous specific details are set forth in order to provide a thorough understanding of the invention. However, it will be understood by those of ordinary skill in the art that the invention may be practiced without these specific details. In other instances, well-known methods, procedures, components, units and/or circuits have not been described in detail so as not to obscure the invention. </p>
+<p id="p-0010" num="0009"> Embodiments of the invention may be used in a variety of applications. Some embodiments of the invention may be used in conjunction with many apparatuses and systems, for example, a transmitter, a receiver, a transceiver, a transmitter-receiver, a wireless communication station, a wireless communication device, a wireless Access Point (AP), a modem, a wireless modem, a personal computer, a desktop computer, a mobile computer, a laptop computer, a notebook computer, a Personal Digital Assistant (PDA) device, a hand-held device, a tablet computer, a server computer, a network, a wireless network, a Local Area Network (LAN), a Wireless LAN (WLAN), devices and/or networks operating in accordance with existing IEEE 802.11, 802.11a, 802.11b, 802.11e, 802.11g, 802.11 h, 802.11i, 802.11n, 802.16 standards and/or future versions of the above standards, a Wi-Fi device, a Wi-MAX device, a BlueTooth device, a ZigBee device, a Wide Area Network (WAN) device or system, a Personal Area Network (PAN), a Wireless PAN (WPAN), units and/or devices which are part of the above WLAN and/or PAN and/or WPAN networks, one way and/or two-way radio communication devices or systems, cellular radio-telephone communication devices or systems, a cellular telephone, a mobile phone, a wireless telephone, a Personal Communication Systems (PCS) device, a PDA device incorporating a wireless communication device, a Multiple Input Multiple Output (MIMO) transceiver or device, a Single Input Multiple Output (SIMO) transceiver or device, a Multiple Input Single Output (MISO) transceiver or device, a Multi Receiver Chain (MRC) transceiver or device, a transceiver or device having &#x201c;smart antenna&#x201d; technology or multiple antenna technology, or the like. It is noted that embodiments of the invention may be used in various other apparatuses, devices, systems and/or networks. </p>
+<p id="p-0011" num="0010"> <figref idref="DRAWINGS">FIG. 1</figref> schematically illustrates a block diagram of a wireless communication system <b>100</b> including a wireless communication station <b>101</b> having multiple transceivers to communicate in multiple communication protocols in accordance with an embodiment of the invention. System <b>100</b> may include one or more wireless communication stations, e.g., stations <b>101</b>, <b>102</b>, <b>103</b> and <b>104</b>. System <b>100</b> may optionally include one or more other wireless communication devices, for example, a wireless access point, a wireless base station, a wireless servicing station, or the like. In one embodiment, for example, stations <b>101</b>-<b>104</b> may communicate using a shared access medium <b>190</b>, for example, through wireless communication links. </p>
+<p id="p-0012" num="0011"> Station <b>101</b> may include, for example, a processor <b>111</b>, an input unit <b>112</b>, an output unit <b>113</b>, a memory unit <b>114</b>, and a storage unit <b>115</b>. Station <b>101</b> may further include, for example, an Interference Reduction Controller (IRC) <b>123</b> and multiple transceivers, e.g., transceivers <b>141</b>, <b>142</b> and <b>143</b>, as described in detail below. Station <b>101</b> may further include other hardware components and/or software components. </p>
+<p id="p-0013" num="0012"> Processor <b>111</b> may include, for example, a Central Processing Unit (CPU), a Digital Signal Processor (DSP), a microprocessor, a controller, a chip, a microchip, an Integrated Circuit (IC), or any other suitable multi-purpose or specific processor or controller. </p>
+<p id="p-0014" num="0013"> Input unit <b>112</b> may include, for example, a keyboard, a keypad, a mouse, a touch-pad, a pointing device, a microphone, a voice-recognition unit, or other suitable input device. Output unit <b>113</b> may include, for example, a Cathode Ray Tube (CRT) monitor or display unit, a Liquid Crystal Display (LCD) monitor or display unit, a plasma monitor or display unit, other types of monitors or display units, a speaker, an ear-phone, or other suitable output devices. </p>
+<p id="p-0015" num="0014"> Memory unit <b>114</b> may include, for example, a Random Access Memory (RAM), a Read Only Memory (ROM), a Dynamic RAM (DRAM), a Synchronous DRAM (SD-RAM), a Flash memory, a volatile memory, a non-volatile memory, a cache memory, a buffer, a short term memory unit, a long term memory unit, or other suitable memory units or storage units. </p>
+<p id="p-0016" num="0015"> Storage unit <b>115</b> may include, for example, a hard disk drive, a floppy disk drive, a Compact Disk (CD) drive, a CD-ROM drive, or other suitable removable or non-removable storage units. </p>
+<p id="p-0017" num="0016"> In some embodiments, optionally, an application <b>170</b> may be executed by one or more components of station <b>101</b>, for example, by processor <b>111</b>. The application <b>170</b> may include, for example, a software application, an Operating System (OS), a communications driver, or the like, and may be stored in memory unit <b>114</b> and/or storage unit <b>115</b>. </p>
+<p id="p-0018" num="0017"> Transceiver <b>141</b>, transceiver <b>142</b> and transceiver <b>143</b> may include, for example, a wireless transmitter/receiver able to send and receive Radio Frequency (RF) signals, e.g., through antennas <b>161</b>, <b>162</b> and <b>163</b>, respectively. Although three transceivers <b>141</b>-<b>143</b> and three antennas <b>161</b>-<b>163</b> are shown, embodiments of the invention may include, and may be used in association with, other numbers of transceivers and/or antennas. </p>
+<p id="p-0019" num="0018"> In some embodiments, the functionality of transceivers <b>141</b>, <b>142</b> and <b>143</b> may be implemented in the form of a transmitter and a receiver, or other one or more units able to perform separate or integrated functions of sending and/or receiving wireless communication signals, blocks, frames, transmission streams, packets, messages and/or data. </p>
+<p id="p-0020" num="0019"> Antenna <b>161</b>, antenna <b>162</b> and/or antenna <b>163</b> may include an internal and/or external RF antenna, for example, a dipole antenna, a monopole antenna, an omni-directional antenna, an end fed antenna, a circularly polarized antenna, a micro-strip antenna, a diversity antenna, a &#x201c;smart&#x201d; antenna, or any other type of antenna suitable for sending and/or receiving wireless communication signals, blocks, frames, transmission streams, packets, messages and/or data. </p>
+<p id="p-0021" num="0020"> Transceivers <b>141</b>, <b>142</b> and/or <b>143</b> may be able to operate in accordance with one or more wireless communication standards or protocols, for example, Institute of Electrical and Electronics Engineers (IEEE) 802.11, 802.11a, 802.11b, 802.11e, 802.11g, 802.11 h, 802.11i, 802.11n, 802.16 standards, Wi-Fi, Wi-MAX, Bluetooth, ZigBee, a mobile phone or cellular phone wireless communication standard or protocol, a WAN communication standard or protocol, the like. </p>
+<p id="p-0022" num="0021"> In some embodiments, for example, transceivers <b>141</b>-<b>143</b> may use wireless communication links <b>191</b>-<b>193</b>, respectively, to communicate through shared access medium <b>190</b>; and stations <b>102</b>, <b>103</b> and. <b>104</b> may use wireless communication links <b>194</b>, <b>196</b> and <b>197</b>, respectively, to communicate through shared access medium <b>190</b>. </p>
+<p id="p-0023" num="0022"> In one embodiment, for example, transceiver <b>141</b> and station <b>102</b> may be able to operate and/or communicate in accordance with 802.11 standard, and may communicate using wireless links <b>191</b> and <b>194</b>, respectively; transceiver <b>142</b> and station <b>103</b> may be able to operate and/or communicate in accordance with 802.16 standard, and may communicate using wireless links <b>192</b> and <b>196</b>, respectively; and transceiver <b>144</b> and station <b>104</b> may be able to operate and/or communicate in accordance with Bluetooth standard, and may communicate using wireless links <b>193</b> and <b>197</b>, respectively. </p>
+<p id="p-0024" num="0023"> Transceiver <b>141</b> may include, or may be operatively associated with, an interference reducer <b>151</b> able to reduce the noise of a wireless signal generated by transceiver <b>141</b> or able to otherwise reduce interference between two wireless communication signals. The interference reducer <b>151</b> may include, for example, an active component, e.g., an adaptive bias Voltage Controlled Oscillator (VCO), and/or a passive component, e.g., a filter. Additionally or alternatively, transceiver <b>142</b> may include, or may be operatively associated with, an interference reducer <b>152</b>, and transceiver <b>143</b> may include, or may be operatively associated with, an interference reducer <b>153</b>. In one embodiment, interference reducers <b>151</b>, <b>152</b> and/or <b>153</b> may be an integral part or component of transceivers <b>141</b>, <b>142</b> and/or <b>143</b>, respectively, for example, a Low-Noise Amplifier (LNA) having changeable bias, a Power Amplifier (PA) having changeable bias, a mixer having changeable bias, or the like. In another embodiment, interference reducers <b>151</b>, <b>152</b> and/or <b>153</b> may be a dedicated component operatively associated with transceivers <b>141</b>, <b>142</b> and/or <b>143</b>, respectively. </p>
+<p id="p-0025" num="0024"> Interference reducers <b>151</b>, <b>152</b> and/or <b>153</b> may have multiple operational modes. In one embodiment, for example, interference reducers <b>151</b>, <b>152</b> and/or <b>153</b> may be in an active mode in which the interference reducer is operational, or a non-active mode in which the interference reducer is substantially non operational. In another embodiment, for example, interference reducers <b>151</b>, <b>152</b> and/or <b>153</b> may have various operational modes, e.g., controllable by an adaptive bias VCO or other active component responsive to a supplied power level, as described below. </p>
+<p id="p-0026" num="0025"> In accordance with some embodiments of the invention, prior to transmitting or receiving data, transceiver <b>141</b> may send a signal to IRC <b>123</b> indicating a property of the intended transmission or reception, e.g., an indication of a transmission or reception mode, or an indication that the intended transmission or reception is in accordance with a pre-defined standard or protocol; the uplink signal may be referred to herein as &#x201c;transmission/reception mode indication&#x201d; or &#x201c;activity mode indication&#x201d;. For example, transceiver <b>141</b> may send to IRC <b>123</b> a first signal over an uplink <b>171</b>, indicating that transceiver <b>141</b> is about to transmit or receive in accordance with the 802.11 standard. </p>
+<p id="p-0027" num="0026"> IRC <b>123</b> may store, e.g., in a mode list <b>124</b>, the transmission/reception mode indication received from transceiver <b>141</b>. The mode list <b>124</b> may be implemented, for example, as part of IRC <b>123</b> or memory unit <b>114</b>, and may be substantially empty upon activation of station <b>101</b>. If no other transmission/reception mode indications, e.g., originating from transceivers <b>142</b> and/or <b>143</b>, are already stored in memory unit <b>114</b>, then IRC <b>123</b> may send to transceiver <b>141</b> a signal over a downlink <b>181</b>., indicating that transceiver <b>141</b> need not activate the interference reducer <b>151</b>; the downlink signal may be referred to herein as &#x201c;mode selection signal&#x201d;. Transceiver <b>141</b> may receive the mode selection signal, and in response may deactivate interference reducer <b>151</b>, and may transmit in accordance with the 802.11 standard. </p>
+<p id="p-0028" num="0027"> Then, prior to transmitting or receiving data by transceiver <b>142</b>, transceiver <b>142</b> may send to IRC <b>123</b> a transmission/reception mode indication over an uplink <b>172</b>, e.g., indicating that transceiver <b>142</b> is about to transmit or receive in accordance with <b>802</b>.<b>16</b> standard. IRC <b>123</b> may store, e.g., in mode list <b>124</b>, the transmission/reception mode indication received from transceiver <b>142</b>. IRC <b>123</b> may check if the transmission or reception intended by transceiver <b>142</b> may interfere with concurrent transmissions or receptions of transceiver <b>141</b> and/or transceiver <b>143</b>, e.g., based on prior transmission/reception mode indications. For example, IRC <b>123</b> may determine that memory unit <b>114</b> stores a prior transmission/reception mode indication, indicating that transceiver <b>141</b> transmits or receives in accordance with the 802.11 standard. Then, IRC <b>123</b> may determine whether there is possible interference between, for example, the signal transmitted or received using the transmission/reception mode of transceiver <b>141</b> and the signal intended for transmission or reception using the transmission/reception mode of transceiver <b>142</b>. Based on the determination results, IRC <b>123</b> may send one or more mode selection signals to transceivers <b>141</b> and/or <b>142</b>, e.g., indicating a requirement or instruction to activate, deactivate and/or modify an operational parameter of one or more interference reducers. </p>
+<p id="p-0029" num="0028"> For example, in one embodiment, IRC <b>123</b> may determine that no interference is expected if transceiver <b>142</b> transmits or receives wireless signals in accordance with the 802.16 standard while transceiver <b>141</b> transmits or receives wireless signals in accordance with the 802.11 standard. In such case, IRC <b>123</b> may send to transceiver <b>142</b> a mode selection signal over a downlink <b>182</b>, indicating that transceiver <b>142</b> need not activate the interference reducer <b>152</b>. Transceiver <b>142</b> may receive the mode selection signal, and in response may deactivate the interference reducer <b>152</b>, and may transmit in accordance with the 802.16 standard without noise reduction. </p>
+<p id="p-0030" num="0029"> Conversely, IRC <b>123</b> may determine that interference is expected if transceiver <b>142</b> transmits or receives wireless signals in accordance with the 802.16 standard while transceiver <b>141</b> transmits or receives wireless signals in accordance with the 802.11 standard. In such case, IRC <b>123</b> may send to transceiver <b>142</b> a mode selection signal over downlink <b>182</b>, indicating that transceiver <b>142</b> is required or instructed to activate the interference reducer <b>152</b>. Additionally or alternatively, IRC <b>123</b> may send to transceiver <b>141</b> a mode selection signal over downlink <b>181</b>, indicating that transceiver <b>141</b> is required or instructed to activate the interference reducer <b>151</b>. </p>
+<p id="p-0031" num="0030"> Similarly, prior to transmitting or receiving data by transceiver <b>143</b>, transceiver <b>143</b> may send to IRC <b>123</b> a transmission/reception mode indication over an uplink <b>173</b>. IRC <b>123</b> may check for possible interference, and may send to transceiver <b>143</b> a mode selection signal over a downlink <b>183</b>, e.g., indicating a requirement or instruction to activate, deactivate and/or modify an operational parameter of interference reducer <b>153</b>. </p>
+<p id="p-0032" num="0031"> In some embodiments, IRC <b>123</b> may check for possible interference between signals of the different transmission/reception modes based on a pre-defined algorithm, table, lookup table, list, or the like. In one embodiment, for example, IRC <b>123</b> may include, e.g., in a lookup table <b>125</b>, pre-defined or pre-stored data indicating that transmission or reception of wireless signals using a first standard or protocol is expected to interfere with transmission or reception of wireless signals using a second standard or protocol, and hence may require activation of one or more interference reducers, or may require a certain setting of an operational parameter of one of more interference reducers. Additionally or alternatively, IRC <b>123</b> may include, e.g., in lookup table <b>125</b>, pre-defined data indicating that transmission or reception of wireless signals using a first standard or protocol is not expected to interfere with transmission or reception of wireless signals using a third standard or protocol, and hence may not require activation of one or more interference reducers. </p>
+<p id="p-0033" num="0032"> In some embodiments, IRC <b>123</b> may be implemented, for example, using hardware components and/or software components, e.g., able to estimate possible interference or able to determine expected interference. In some embodiments, for example, IRC <b>123</b> may be implemented as part of processor <b>111</b>, as part of transceiver <b>141</b>, or as a separate component of station <b>101</b> or system <b>100</b>. </p>
+<p id="p-0034" num="0033"> In some embodiments, a mode selection signal may include, for example, an indication to activate an interference reducer or noise reducer, an indication to deactivate an interference reducer or noise reducer, an indication to modify or set a property, e.g., a power or voltage level, of an interference reducer or noise reducer, an indication to bypass an interference reducer or noise reducer, or the like. </p>
+<p id="p-0035" num="0034"> In one embodiment, IRC <b>123</b> and transceivers <b>141</b>-<b>143</b> may be included in station <b>101</b>, and links <b>171</b>-<b>173</b> and <b>181</b>-<b>183</b> may be wired or wireless links within station <b>101</b>. However, embodiments of the invention are not limited in this regard, and IRC <b>123</b> and/or transceivers <b>141</b>-<b>143</b> may be included in various separate devices. </p>
+<p id="p-0036" num="0035"> In some embodiments, IRC <b>123</b> may be used to perform other and/or additional operations. In one embodiment, for example, IRC <b>123</b> may instruct a transceiver or an interference reducer to operate in a &#x201c;concurrent mode&#x201d;, for example, by activating an interference reducer to eliminate or reduce possible interference expected due to concurrent transmission/reception of another transceiver; or to operate in a &#x201c;non-concurrent mode&#x201d;, for example, by deactivating an interference reducer, e.g., since interference with another concurrent transmission/reception is not expected, or if there is no other concurrent transmission/reception. </p>
+<p id="p-0037" num="0036"> Reference is made to <figref idref="DRAWINGS">FIG. 2</figref>, which schematically illustrates a block diagram of a wireless communication system <b>200</b> including wireless communication station <b>101</b> having multiple transceivers to communicate in multiple communication protocols in accordance with another embodiment of the invention. System <b>200</b> may include, for example, a wireless communication station <b>135</b> and a wireless access point <b>131</b>. </p>
+<p id="p-0038" num="0037"> Station <b>135</b> may include, for example, processor <b>111</b>, input unit <b>112</b>, output unit <b>113</b>, memory unit <b>114</b>, and storage unit <b>115</b>. Station <b>135</b> may further include, for example, transceivers <b>141</b>-<b>143</b>, antennas <b>161</b>-<b>163</b>, and interference reducers <b>151</b>-<b>153</b>. Transceivers <b>141</b>-<b>143</b> may use wireless communications links <b>191</b>-<b>193</b>, respectively, to communicate through shared access medium <b>190</b>. </p>
+<p id="p-0039" num="0038"> Access point <b>131</b> may include, for example, a wireless transceiver <b>132</b> operatively associated with a wireless antenna <b>133</b>, e.g., to transmit and/or receive wireless communication signals using a link <b>195</b> through shared access medium. Access point <b>131</b> may further include IRC <b>123</b>, optionally including the mode list <b>124</b> and/or the lookup table <b>125</b>. For example, IRC <b>123</b> of access point <b>135</b> may receive transmission/reception mode indications from transceivers <b>141</b>-<b>143</b> of station <b>135</b>, may check if a possible interference is expected to exist between wireless signals, and may send mode selection signals to transceivers <b>141</b>-<b>143</b> of station <b>135</b>, e.g., indicating a requirement or instruction to activate, deactivate and/or modify an operational parameter of one or more interference reducers <b>151</b>-<b>153</b> of station <b>135</b>. </p>
+<p id="p-0040" num="0039"> Other configurations may be used for devices and/or systems in accordance with embodiments of the invention. In one embodiment, for example, IRC <b>123</b> may be included in wireless access point <b>131</b>, whereas transceivers <b>141</b>-<b>143</b> may be included in three separate wireless communication stations. In another embodiment, for example, IRC <b>123</b> may be implemented as part of one or more transceivers <b>141</b>-<b>143</b>. Other suitable configurations may be used. </p>
+<p id="p-0041" num="0040"> Although portions of the discussion herein may relate, for demonstrative purposes, to communication between a IRC <b>123</b> and one or more transceivers <b>141</b>-<b>143</b>, embodiments of the invention are not limited in this regard, and may include, for example, direct communication between two or more transceivers, e.g., without requiring an IRC. For example, in one embodiment, a first transceiver may directly indicate to a second transceiver, that the first transceiver operates in accordance with a certain wireless communication standard or protocol; and based on the indication, the second transceiver may, for example, activate or deactivate an interference reducer or an interference reducer, or set or modify an operational parameter of an interference reducer or an interference reducer. </p>
+<p id="p-0042" num="0041"> Although portions of the discussion herein may relate, for demonstrative purposes, to IRC <b>123</b> able to receive transmission/reception mode indications, embodiments of the invention are not limited in this regard, and may include, for example, an IRC able to otherwise determine, generate or receive information about activity of transceiver(s) and/or about possible or expected interference between various activities of one or more transceivers. For example, in one embodiment, the IRC may, e.g., indirectly, independently or remotely, measure existing interference or estimate possible interference; and based on the measured or estimated information, e.g., in response to a command or requirement, a transceiver may activate or deactivate an interference reducer or an interference reducer, or may set or modify an operational parameter of an interference reducer or an interference reducer. </p>
+<p id="p-0043" num="0042"> Although portions of the discussion herein may relate, for demonstrative purposes, to reducing or eliminating interference between first and second transmitted signals, embodiments of the invention are not limited in this regard, and my include, for example, reducing or eliminating interference between first and second received signals, and/or reducing or eliminating interference between a transmitted signal and a received signal. In some embodiments, the IRC <b>123</b> may eliminate or reduce, for example, interference introduced by a transmitter to another transmitter, interference introduced by a receiver to another receiver, interference introduced by a transmitter to a receiver, and/or interference introduced by a receiver to a transmitter. </p>
+<p id="p-0044" num="0043"> Although portions of the discussion herein may relate, for demonstrative purposes, to multiple transceivers <b>141</b>-<b>143</b> implemented as separate units or components, embodiments of the invention are not limited in this regard. For example, some embodiments of the invention may be used to reduce or eliminate possible interference between a transmitter and a receiver which may be optionally implemented using a single transceiver unit, or using other suitable configurations or circuits. </p>
+<p id="p-0045" num="0044"> Although portions of the discussion herein may relate, for demonstrative purposes, to sending a transmission/reception mode indication prior to transmitting or receiving a wireless signal, embodiments of the invention are not limited in this regard, and may include, for example, sending transmission/reception mode indications at other times, and/or sending mode selection signals at other times. For example, in one embodiment, a transmission/reception mode indication may be sent periodically, or during actual transmission or reception, or immediately upon commencement of actual transmission or reception. </p>
+<p id="p-0046" num="0045"> <figref idref="DRAWINGS">FIG. 3</figref> is a schematic flow-chart of a method of selecting transmission modes of multiple transceivers in accordance with an embodiment of the invention. Operations of the method may be implemented, for example, by one or devices or components of system <b>100</b> of <figref idref="DRAWINGS">FIG. 1</figref> and/or system <b>200</b> of <figref idref="DRAWINGS">FIG. 2</figref>, for example, by station <b>101</b>, by access point <b>131</b>, by IRC <b>123</b>, or by other suitable stations, access points, controllers, modems, processors, units, devices, and/or systems. </p>
+<p id="p-0047" num="0046"> As indicated at box <b>310</b>, the method may include, for example, receiving a first transmission/reception mode indication, e.g., from transceiver <b>141</b> of <figref idref="DRAWINGS">FIG. 1</figref>. The first transmission/reception mode indication may be received by, for example, IRC <b>123</b> of <figref idref="DRAWINGS">FIG. 1</figref>. </p>
+<p id="p-0048" num="0047"> As indicated at box <b>320</b>, the method may include, for example, storing the first transmission/reception mode indication, e.g., in mode list <b>124</b> of <figref idref="DRAWINGS">FIG. 1</figref>. This may include, for example, updating or modifying in the mode list <b>124</b> a prior transmission/reception mode indication received from transceiver <b>141</b> or associated with transceiver <b>141</b>. </p>
+<p id="p-0049" num="0048"> As indicated at box <b>330</b>, the method may include, for example, checking whether interference is expected between transmission or reception of wireless signals using the transmission/reception mode indicated by the first transmission/reception mode indication, and transmission(s) or reception(s) of wireless signals using other transmission/reception mode(s) whose indications are stored in the mode list <b>124</b>. This may be performed, for example, using a pre-defined lookup table <b>125</b> linking various transmission/reception mode combinations with corresponding intended transmission/reception modes. For example, entries in the lookup table <b>125</b> may indicate whether or not interference is expected between transmission/reception of various combinations of multiple communications standards and/or protocols. </p>
+<p id="p-0050" num="0049"> As indicated by arrow <b>332</b>, if the checking result is negative, then, as indicated at box <b>234</b>, the method may include, for example, sending a mode selection signal to transceiver <b>141</b>, indicating that transceiver <b>141</b> is not required to activate its interference reducer <b>151</b>, or is required or instructed to deactivate its interference reducer <b>151</b>. Upon receiving the mode selection signal, as indicated at box <b>336</b>, the transceiver <b>141</b> may deactivate its interference reducer <b>151</b>, and may transmit or receive in accordance with the standard or protocol indicated in the first transmission/reception mode indication. </p>
+<p id="p-0051" num="0050"> Conversely, as indicated by arrow <b>342</b> and box <b>344</b>, the method may include, for example, sending one or more mode selection signals to the transceiver <b>141</b> and/or to other transceivers, e.g., transceivers <b>142</b> and/or <b>143</b>, indicating a requirement or instruction to activate one or more interference reducers <b>151</b>-<b>153</b>, or a requirement or instruction to modify or set an operational parameter or property, e.g., power or voltage level, of one or more interference reducers <b>151</b>-<b>153</b>. Upon receiving the mode selection signal(s), as indicated at box <b>346</b>, the transceiver <b>141</b> and/or the other transceivers <b>142</b>-<b>143</b> may activate one or more interference reducers <b>151</b>-<b>153</b>, or may modify or set the operational parameter of one or more interference reducers <b>151</b>-<b>153</b>, and may transmit or receive wireless signals in accordance with the standard or protocol indicated in the first transmission/reception mode indication. </p>
+<p id="p-0052" num="0051"> One or more of the above operations may be performed and/or repeated, e.g., upon activation of a transceiver, upon deactivation of a transceiver, upon modification of transmission/reception mode of a transceiver, or the like. </p>
+<p id="p-0053" num="0052"> Other suitable operations or sets of operations may be used in accordance with embodiments of the invention. </p>
+<p id="p-0054" num="0053"> Although portions of the discussion herein may relate, for demonstrative purposes, to selectively activating and/or deactivating of one or more interference reducers, embodiments of the invention are not limited in this regard, and may include, for example, modifying or setting an operational status of interference reducer(s), modifying or setting an operational parameter of interference reducer(s), turning on interference reducer(s), turning off interference reducer(s), bringing interference reducer(s) into or out of a stand-by mode, bringing interference reducer(s) into or out of a &#x201c;sleep&#x201d; mode, bringing interference reducer(s) into or out of a power-saving mode or a reduced power mode, or the like. </p>
+<p id="p-0055" num="0054"> Although portions of the discussion herein may relate, for demonstrative purposes, to communication between an IRC and one or more transceivers, embodiments of the invention are not limited in this regard, and may include, for example, communications between an IRC and one or more transmitters, one or more receivers, one or more interference reducers, or the like. For example, in one embodiment, a mode selection signal may be sent by an IRC, e.g., directly, to an interference reducer, in addition to or instead of a transceiver. </p>
+<p id="p-0056" num="0055"> Some embodiments of the invention may be implemented by software, by hardware, or by any combination of software and/or hardware as may be suitable for specific applications or in accordance with specific design requirements. Embodiments of the invention may include units and/or sub-units, which may be separate of each other or combined together, in whole or in part, and may be implemented using specific, multi-purpose or general processors or controllers, or devices as are known in the art. Some embodiments of the invention may include buffers, registers, stacks, storage units and/or memory units, for temporary or long-term storage of data or in order to facilitate the operation of a specific embodiment. </p>
+<p id="p-0057" num="0056"> Some embodiments of the invention may be implemented, for example, using a machine-readable medium or article which may store an instruction or a set of instructions that, if executed by a machine, for example, by system <b>100</b> of <figref idref="DRAWINGS">FIG. 1</figref>, by system <b>200</b> of <figref idref="DRAWINGS">FIG. 2</figref>, by station <b>101</b> of <figref idref="DRAWINGS">FIG. 1</figref>, by access point <b>131</b> of <figref idref="DRAWINGS">FIG. 2</figref>, by processor <b>111</b> of <figref idref="DRAWINGS">FIG. 1</figref>, by IRC <b>123</b> of <figref idref="DRAWINGS">FIGS. 1 and 2</figref>, or by other suitable machines, cause the machine to perform a method and/or operations in accordance with embodiments of the invention. Such machine may include, for example, any suitable processing platform, computing platform, computing device, processing device, computing system, processing system, computer, processor, or the like, and may be implemented using any suitable combination of hardware and/or software. The machine-readable medium or article may include, for example, any suitable type of memory unit (e.g., memory unit <b>114</b> or storage unit <b>115</b>), memory device, memory article, memory medium, storage device, storage article, storage medium and/or storage unit, for example, memory, removable or non-removable media, erasable or non-erasable media, writeable or re-writeable media, digital or analog media, hard disk, floppy disk, Compact Disk Read Only Memory (CD-ROM), Compact Disk Recordable (CD-R), Compact Disk Re-Writeable (CD-RW), optical disk, magnetic media, various types of Digital Versatile Disks (DVDs), a tape, a cassette, or the like. The instructions may include any suitable type of code, for example, source code, compiled code, interpreted code, executable code, static code, dynamic code, or the like, and may be implemented using any suitable high-level, low-level, object-oriented, visual, compiled and/or interpreted programming language, e.g., C, C++, Java, BASIC, Pascal, Fortran, Cobol, assembly language, machine code, or the like. </p>
+<p id="p-0058" num="0057"> While certain features of the invention have been illustrated and described herein, many modifications, substitutions, changes, and equivalents may occur to those skilled in the art. It is, therefore, to be understood that the appended claims are intended to cover all such modifications and changes as fall within the true spirit of the invention. </p>
+<?detailed-description description="Detailed Description" end="tail"?>
+</description>
+<us-claim-statement>What is claimed is: </us-claim-statement>
+<claims id="claims">
+<claim id="CLM-00001" num="00001">
+<claim-text><b>1</b>. A method comprising: 
+<claim-text>determining whether interference is expected between an intended activity of a first wireless transceiver of a wireless communication station and an activity of a second wireless transceiver of said wireless communication station; and </claim-text>
+<claim-text>based on the determination result, modifying an operational parameter of an interference reducer of said wireless communication station. </claim-text>
+</claim-text>
+ </claim>
+<claim id="CLM-00002" num="00002">
+<claim-text><b>2</b>. The method of <claim-ref idref="CLM-00001">claim 1</claim-ref>, wherein determining comprises: 
+<claim-text>determining whether interference is expected based on one or more activity mode indications received from said first and second wireless transceivers. </claim-text>
+</claim-text>
+ </claim>
+<claim id="CLM-00003" num="00003">
+<claim-text><b>3</b>. The method of <claim-ref idref="CLM-00001">claim 1</claim-ref>, wherein modifying comprises: 
+<claim-text>deactivating said interference reducer if the determination result is that interference is not expected. </claim-text>
+</claim-text>
+ </claim>
+<claim id="CLM-00004" num="00004">
+<claim-text><b>4</b>. The method of <claim-ref idref="CLM-00001">claim 1</claim-ref>, wherein modifying comprises: 
+<claim-text>activating said interference reducer if the determination result is that interference is expected. </claim-text>
+</claim-text>
+ </claim>
+<claim id="CLM-00005" num="00005">
+<claim-text><b>5</b>. The method of <claim-ref idref="CLM-00001">claim 1</claim-ref>, wherein modifying comprises: 
+<claim-text>modifying an operational voltage of said interference reducer if the determination result is that interference is expected. </claim-text>
+</claim-text>
+ </claim>
+<claim id="CLM-00006" num="00006">
+<claim-text><b>6</b>. The method of <claim-ref idref="CLM-00001">claim 1</claim-ref>, further comprising: 
+<claim-text>sending a signal to at least one of said first and second wireless transceivers indicating an instruction to modify said operational parameter of said interference reducer. </claim-text>
+</claim-text>
+ </claim>
+<claim id="CLM-00007" num="00007">
+<claim-text><b>7</b>. The method of <claim-ref idref="CLM-00001">claim 1</claim-ref>, wherein determining comprises: 
+<claim-text>determining whether interference is expected based on an entry in a lookup table indicating whether a first signal transmitted in accordance with a first wireless communication standard is expected to interfere with a second signal transmitted in accordance with a second wireless communication standard. </claim-text>
+</claim-text>
+ </claim>
+<claim id="CLM-00008" num="00008">
+<claim-text><b>8</b>. An apparatus comprising: 
+<claim-text>a controller to determine whether interference is expected between an intended activity of a first wireless transceiver of a wireless communication station and an activity of a second wireless transceiver of said wireless communication station, and, based on the determination result, to modify an operational parameter of an interference reducer of said wireless communication station. </claim-text>
+</claim-text>
+ </claim>
+<claim id="CLM-00009" num="00009">
+<claim-text><b>9</b>. The apparatus of <claim-ref idref="CLM-00008">claim 8</claim-ref>, wherein said controller is to determine whether interference is expected based on one or more activity mode indications received from said first and second wireless transceivers. </claim-text>
+ </claim>
+<claim id="CLM-00010" num="00010">
+<claim-text><b>10</b>. The apparatus of <claim-ref idref="CLM-00008">claim 8</claim-ref>, wherein said controller is to deactivate said interference reducer if the determination result is that interference is not expected. </claim-text>
+ </claim>
+<claim id="CLM-00011" num="00011">
+<claim-text><b>11</b>. The apparatus of <claim-ref idref="CLM-00008">claim 8</claim-ref>, wherein said controller is to activate said interference reducer if the determination result is that interference is expected. </claim-text>
+ </claim>
+<claim id="CLM-00012" num="00012">
+<claim-text><b>12</b>. The apparatus of <claim-ref idref="CLM-00008">claim 8</claim-ref>, wherein said controller is to modify an operational voltage of said interference reducer if the determination result is that interference is expected. </claim-text>
+ </claim>
+<claim id="CLM-00013" num="00013">
+<claim-text><b>13</b>. The apparatus of <claim-ref idref="CLM-00008">claim 8</claim-ref>, wherein said controller is to send a signal to at least one of said first and second wireless transceivers indicating an instruction to modify said operational parameter of said interference reducer. </claim-text>
+ </claim>
+<claim id="CLM-00014" num="00014">
+<claim-text><b>14</b>. The apparatus of <claim-ref idref="CLM-00008">claim 8</claim-ref>, wherein said controller is to determine whether interference is expected based on an entry in a lookup table indicating whether a first signal transmitted in accordance with a first wireless communication standard is expected to interfere with a second signal transmitted in accordance with a second wireless communication standard. </claim-text>
+ </claim>
+<claim id="CLM-00015" num="00015">
+<claim-text><b>15</b>. The apparatus of <claim-ref idref="CLM-00008">claim 8</claim-ref>, wherein said interference reducer comprises an adaptive bias Voltage Controlled Oscillator. </claim-text>
+ </claim>
+<claim id="CLM-00016" num="00016">
+<claim-text><b>16</b>. A wireless communication station comprising: 
+<claim-text>the apparatus of <claim-ref idref="CLM-00008">claim 8;</claim-ref> and </claim-text>
+<claim-text>an antenna to send and receive wireless communication signals. </claim-text>
+</claim-text>
+ </claim>
+<claim id="CLM-00017" num="00017">
+<claim-text><b>17</b>. A wireless communication system comprising: 
+<claim-text>a wireless communication station having a controller to determine whether interference is expected between an intended activity of a first wireless transceiver of a wireless communication station and an activity of a second wireless transceiver of said wireless communication station, and, based on the determination result, to modify an operational parameter of an interference reducer of said wireless communication station. </claim-text>
+</claim-text>
+ </claim>
+<claim id="CLM-00018" num="00018">
+<claim-text><b>18</b>. The wireless communication system of <claim-ref idref="CLM-00017">claim 17</claim-ref>, wherein said controller is to determine whether interference is expected based on one or more activity mode indications received from said first and second wireless transceivers. </claim-text>
+ </claim>
+<claim id="CLM-00019" num="00019">
+<claim-text><b>19</b>. The wireless communication system of <claim-ref idref="CLM-00017">claim 17</claim-ref>, wherein said controller is to deactivate said interference reducer if the determination result is that interference is not expected. </claim-text>
+ </claim>
+<claim id="CLM-00020" num="00020">
+<claim-text><b>20</b>. The wireless communication system of <claim-ref idref="CLM-00017">claim 17</claim-ref>, wherein said controller is to activate said interference reducer if the determination result is that interference is expected. </claim-text>
+ </claim>
+<claim id="CLM-00021" num="00021">
+<claim-text><b>21</b>. The wireless communication system of <claim-ref idref="CLM-00017">claim 17</claim-ref>, wherein said controller is to modify an operational voltage of said interference reducer if the determination result is that interference is expected. </claim-text>
+ </claim>
+<claim id="CLM-00022" num="00022">
+<claim-text><b>22</b>. The wireless communication system of <claim-ref idref="CLM-00017">claim 17</claim-ref>, wherein said controller is to send a signal to at least one of said first and second wireless transceivers indicating an instruction to modify said operational parameter of said interference reducer. </claim-text>
+ </claim>
+<claim id="CLM-00023" num="00023">
+<claim-text><b>23</b>. The wireless communication system of <claim-ref idref="CLM-00017">claim 17</claim-ref>, wherein said controller is to determine whether interference is expected based on an entry in a lookup table indicating whether a first signal transmitted in accordance with a first wireless communication standard is expected to interfere with a second signal transmitted in accordance with a second wireless communication standard.</claim-text>
+ </claim>
+</claims>
+</us-patent-application>

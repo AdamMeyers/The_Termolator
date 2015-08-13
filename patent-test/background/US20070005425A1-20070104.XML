@@ -1,0 +1,904 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE us-patent-application SYSTEM "us-patent-application-v42-2006-08-23.dtd" [ ]>
+<us-patent-application lang="EN" dtd-version="v4.2 2006-08-23" file="US20070005425A1-20070104.XML" status="PRODUCTION" id="us-patent-application" country="US" date-produced="20061221" date-publ="20070104">
+<us-bibliographic-data-application lang="EN" country="US">
+<publication-reference>
+<document-id>
+<country>US</country>
+<doc-number>20070005425</doc-number>
+<kind>A1</kind>
+<date>20070104</date>
+</document-id>
+</publication-reference>
+<application-reference appl-type="utility">
+<document-id>
+<country>US</country>
+<doc-number>11427226</doc-number>
+<date>20060628</date>
+</document-id>
+</application-reference>
+<us-application-series-code>11</us-application-series-code>
+<classifications-ipcr>
+<classification-ipcr>
+<ipc-version-indicator><date>20060101</date></ipc-version-indicator>
+<classification-level>A</classification-level>
+<section>G</section>
+<class>06</class>
+<subclass>Q</subclass>
+<main-group>30</main-group>
+<subgroup>00</subgroup>
+<symbol-position>F</symbol-position>
+<classification-value>I</classification-value>
+<action-date><date>20070104</date></action-date>
+<generating-office><country>US</country></generating-office>
+<classification-status>B</classification-status>
+<classification-data-source>H</classification-data-source>
+</classification-ipcr>
+</classifications-ipcr>
+<classification-national>
+<country>US</country>
+<main-classification>705014000</main-classification>
+</classification-national>
+<invention-title id="d0e102">METHOD AND SYSTEM FOR PREDICTING CONSUMER BEHAVIOR</invention-title>
+<us-related-documents>
+<us-provisional-application>
+<document-id>
+<country>US</country>
+<doc-number>60694533</doc-number>
+<date>20050628</date>
+</document-id>
+</us-provisional-application>
+</us-related-documents>
+<parties>
+<applicants>
+<applicant sequence="00" app-type="applicant-inventor" designation="us-only">
+<addressbook>
+<last-name>Bennett</last-name>
+<first-name>Dominic</first-name>
+<address>
+<city>Los Altos</city>
+<state>CA</state>
+<country>US</country>
+</address>
+</addressbook>
+<nationality>
+<country>US</country>
+</nationality>
+<residence>
+<country>US</country>
+</residence>
+</applicant>
+<applicant sequence="01" app-type="applicant-inventor" designation="us-only">
+<addressbook>
+<last-name>Paczkowski</last-name>
+<first-name>Remigiusz</first-name>
+<middle-name>K.</middle-name>
+<address>
+<city>Belmont</city>
+<state>CA</state>
+<country>US</country>
+</address>
+</addressbook>
+<nationality>
+<country>US</country>
+</nationality>
+<residence>
+<country>US</country>
+</residence>
+</applicant>
+</applicants>
+<correspondence-address>
+<addressbook>
+<name>CLARIA CORPORATION;c/o HAYNES BEFFEL &#x26; WOLFELD LLP</name>
+<address>
+<address-1>P.O. BOX 366</address-1>
+<address-2>751 KELLY STREET</address-2>
+<city>HALF MOON BAY</city>
+<state>CA</state>
+<postcode>94019</postcode>
+<country>US</country>
+</address>
+</addressbook>
+</correspondence-address>
+</parties>
+<assignees>
+<assignee>
+<addressbook>
+<orgname>Claria Corporation</orgname>
+<role>02</role>
+<address>
+<city>Redwood City</city>
+<state>CA</state>
+<country>US</country>
+</address>
+</addressbook>
+</assignee>
+</assignees>
+</us-bibliographic-data-application>
+<abstract id="abstract">
+<p id="p-0001" num="0000">A method of predicting consumer response to given content. The process begins with the step of collecting a dataset of consumer response to the content, each data item including values for a selected set of segmentation variables related to past consumer behavior. The dataset contains at least twice the number of entries required to provide statistical validity. The process continues by constructing a classification tree structure using the dataset, in which the dataset is subdivided into learning and validation datasets of substantially equal size. Also, the criterion for each successive split is the lowest entropy of segmentation variables not employed to the point of such split. Each successive split of the learning dataset is performed only if that split produces child nodes statistically different from one another, and an identical split of the validation data set produces child nodes statistically similar to child nodes produced on the learning dataset. The system estimates consumer responses by first receiving a data item related to a new consumer, including values for the segmentation variables and then computing the likely response of the new consumer to the content, employing the classification tree data structure. </p>
+</abstract>
+<drawings id="DRAWINGS">
+<figure id="figure-D00000" num="00000">
+<img id="EMI-D00000" he="109.22mm" wi="161.48mm" file="US20070005425A1-20070104-D00000.TIF" alt="embedded image" img-content="drawing" img-format="tif"/>
+</figure>
+<figure id="figure-D00001" num="00001">
+<img id="EMI-D00001" he="179.32mm" wi="112.44mm" orientation="landscape" file="US20070005425A1-20070104-D00001.TIF" alt="embedded image" img-content="drawing" img-format="tif"/>
+</figure>
+<figure id="figure-D00002" num="00002">
+<img id="EMI-D00002" he="224.54mm" wi="195.75mm" orientation="landscape" file="US20070005425A1-20070104-D00002.TIF" alt="embedded image" img-content="drawing" img-format="tif"/>
+</figure>
+<figure id="figure-D00003" num="00003">
+<img id="EMI-D00003" he="219.46mm" wi="144.61mm" orientation="landscape" file="US20070005425A1-20070104-D00003.TIF" alt="embedded image" img-content="drawing" img-format="tif"/>
+</figure>
+<figure id="figure-D00004" num="00004">
+<img id="EMI-D00004" he="181.53mm" wi="118.03mm" orientation="landscape" file="US20070005425A1-20070104-D00004.TIF" alt="embedded image" img-content="drawing" img-format="tif"/>
+</figure>
+</drawings>
+<description id="description">
+<?cross-reference-to-related-applications description="Cross Reference To Related Applications" end="lead"?>
+<heading level="2" id="h-0001">RELATED APPLICATION </heading>
+<p id="p-0002" num="0001"> This application claims the benefit of U.S. Provisional Patent Application No. 60/694,533 entitled &#x201c;Publishing Behavioral Observations to Customers&#x201d; filed on Jun. 28, 2005. That application is incorporated by reference for all purposes.</p>
+<?cross-reference-to-related-applications description="Cross Reference To Related Applications" end="tail"?>
+<?summary-of-invention description="Summary of Invention" end="lead"?>
+<heading level="2" id="h-0002">BACKGROUND OF THE INVENTION </heading>
+<p id="p-0003" num="0002"> The present invention relates generally to the field of market research, and in particular, it relates to the use of user behavior to define content offered to that user. </p>
+<p id="p-0004" num="0003"> The science of economics is both complicated and inexact, precisely because human behavior is complex. While the question whether consumers will or will not respond to a particular advertisement by taking a desired action, generally purchasing or other wise, remains a matter governed more by intuition than science. </p>
+<p id="p-0005" num="0004"> Market research as a discipline seeks to replace that intuition with objective judgments based on hard data, but to date that effort has not universally succeeded. Opinion pollsters are continually surprised by events, and multi-million dollar marketing campaigns completely fail. </p>
+<p id="p-0006" num="0005"> A weakness of conventional marketing research is a lack of detailed information about actual consumer behavior leading up to a desired action. The fact needs no repetition that neither the general survey nor the focus group truly replicates consumer behavior. Rather, researchers need some method for knowing how real consumers behave in a real marketing setting. </p>
+<p id="p-0007" num="0006"> The technique of gathering information about consumer behavior on the internet was set out in commonly-owned U.S. patent application Ser. No. 11/226,066, entitled &#x201c;Method and Device for Publishing Cross-Network User Behavioral Data&#x201d;filed on 14 Sep. 2005. (the &#x201c;'066&#x201d; Application). That application is incorporated by reference herein for all purposes. </p>
+<p id="p-0008" num="0007"> The technique of the '066 Application teaches how information about user behavior on the internet can be gathered. In sum, that application teaches that a behavior module can reside on a user computer, which module can observe and record user behavior in terms of keystrokes, mouse clicks and so on. Also, the behavior module can also observe information about websites visited by the user. In conjunction with software incorporated into the behavior module, data about the web site or web page can be analyzed and the site categorized into one of a set of categories defined by the behavior module. Information identifying the category, as well as information about the user's navigation behavior, such as the when the site was visited, how much time was spent there, and what the user did, can also be gathered by the behavior module. Finally, the behavior module can summarize the information and compact it into a form suitable for transmission, such the form generally known as a &#x201c;cookie.&#x201d;</p>
+<p id="p-0009" num="0008"> What is not taught by the '066 Application, and not seen in the art, is an understanding of how to employ such information to provide content to a user based on what that user wants to see. It remains to the present invention to provide such functionality to the art. </p>
+<heading level="2" id="h-0003">SUMMARY OF THE INVENTION </heading>
+<p id="p-0010" num="0009"> An aspect of the invention is a method of predicting consumer response to given content. The process begins with the step of collecting a dataset of consumer response to the content, each data item including values for a selected set of segmentation variables related to past consumer behavior. The dataset contains at least twice the number of entries required to provide statistical validity. The process continues by constructing a classification tree structure using the dataset, in which the dataset is subdivided into learning and validation datasets of substantially equal size. Also, the criterion for each successive split is the lowest entropy of segmentation variables not employed to the point of such split. Each successive split of the learning dataset is performed only if that split produces child nodes statistically different from one another, and an identical split of the validation data set produces child nodes statistically similar to child nodes produced on the learning dataset. The system estimates consumer responses by first receiving a data item related to a new consumer, including values for the segmentation variables and then computing the likely response of the new consumer to the content, employing the classification tree data structure.</p>
+<?summary-of-invention description="Summary of Invention" end="tail"?>
+<?brief-description-of-drawings description="Brief Description of Drawings" end="lead"?>
+<heading level="2" id="h-0004">BRIEF DESCRIPTION OF THE DRAWINGS </heading>
+<p id="p-0011" num="0010"> <figref idref="DRAWINGS">FIG. 1</figref> illustrates the initial stages of an embodiment of the process set out in the claims appended hereto. </p>
+<p id="p-0012" num="0011"> <figref idref="DRAWINGS">FIG. 2</figref> continues the process of <figref idref="DRAWINGS">FIG. 1</figref>, depicting the detailed computation and analysis portions of the embodiment described. </p>
+<p id="p-0013" num="0012"> <figref idref="DRAWINGS">FIG. 3</figref> illustrates a binary tree constructed by the process depicted in <figref idref="DRAWINGS">FIG. 3</figref>. </p>
+<p id="p-0014" num="0013"> <figref idref="DRAWINGS">FIG. 4</figref> sets out a process for employing the process described above in a production environment to provide advertising content to users.</p>
+<?brief-description-of-drawings description="Brief Description of Drawings" end="tail"?>
+<?detailed-description description="Detailed Description" end="lead"?>
+<heading level="2" id="h-0005">DETAILED DESCRIPTION </heading>
+<p id="p-0015" num="0014"> The following detailed description is made with reference to the figures. Preferred embodiments are described to illustrate the present invention, not to limit its scope, which is defined by the claims. Those of ordinary skill in the art will recognize a variety of equivalent variations on the description that follows. </p>
+<p id="p-0016" num="0015"> The key problem facing marketers can be stated as follows: What is the probability that a specific customer will respond positively to a particular advertisement? More particularly, the problem can be stated thusly: Given an inventory of existing advertisements, and given information about a consumer's actual behavior, which advertisement has the highest probability of eliciting a positive response from the consumer? </p>
+<p id="p-0017" num="0016"> Answering that question requires, first, that data regarding consumer behavior be gathered. Then, there must be provided a method for analyzing that data to relate it to the inventory of advertising material. Finally, that analysis must be harnessed to select and provide specific content to the user. In general, that process involves several parties: the user (or consumer) who is navigating the internet and is the target of the advertisement; the website operator, who provides the website content but not the advertising content; and the content provider, who selects and provides the actual advertisements. </p>
+<p id="p-0018" num="0017"> The first requirement is the topic of the '066 Application. As explained there, one method for gathering behavioral information about consumers is to monitor behavior directly as the user navigates on the internet, via behavior monitoring software resident on the user's computer. Behavior can be identified in terms of a subject-matter context, and information can also be gathered based on whether the user filled out forms on a page, or clicked on an advertisement. Such behavior records can be kept, summarized, and reported. </p>
+<p id="p-0019" num="0018"> The present invention concerns the second requirement, a process for analyzing data to relate past behavior to specific situations to produce a prediction of future action. One approach to that problem was illustrated in the embodiments set out in U.S. patent application Ser. No. 11/369,334 entitled &#x201c;Method for Quantifying the Propensity to Respond to an Advertisement,&#x201d; filed Mar. 7, 2006 by the inventors herein. A different approach is seen in the embodiments set out below. </p>
+<p id="p-0020" num="0019"> Binary trees are a powerful technique for analyzing data, particularly large datasets in which the relationships among variables are not initially well understood. Generally, a binary tree is a data structure consisting of a set of linked nodes, in which each node has zero or two &#x201c;child&#x201d; nodes. Links are referred to as &#x201c;branches,&#x201d; and the final node on each branch is called the terminal or &#x201c;leaf&#x201d; node. Each node comprises a subset of the dataset, and the set of terminal nodes constitutes a partition of the dataset as a whole. Techniques and procedures involving binary trees in general are known in the art and will not be further addressed here. </p>
+<p id="p-0021" num="0020"> The principles set out in the claims, below, are general in nature, but it is instructive to consider an exemplary embodiment of those principles. The embodiment set out here addresses the issues set out in the '066 Application, cited above. In general, the challenge can be stated as the requirement to select an advertisement to present to an internet user, representing the advertisement most likely to evoke a positive response from among the multiple advertisements available for display. Here, a &#x201c;positive response&#x201d; entails the user's clicking on an advertisement, resulting in navigation to another website, display of more detailed information, or similar behavior having commercial significance to the sponsor of the advertisement. That term may have different meanings in other environments in which different embodiments are deployed, as can be imagined by those in the art. </p>
+<p id="p-0022" num="0021"> An overall process <b>100</b> embodying the principles claimed herein is illustrated in <figref idref="DRAWINGS">FIG. 1</figref>. Initially, three data gathering steps must be accomplished. First, the response dataset must be assembled (step <b>102</b>). Then, the response variables and the segmentation variables must be selected (steps <b>104</b>, <b>106</b>). These initial steps are considered in the order presented. </p>
+<p id="p-0023" num="0022"> Response data structures are specific to the application concerned, though they are governed by general principles. As described in the '066 Application, response data are gathered at the user's computer, based on both the user's navigation history (what websites were visited) and also the activity history (what was done at a visited site). In one embodiment, the content provider prepares for processing such data by first determining an extensive list of commercially relevant categories, and then it proceeds to categorize commercially relevant websites. That process is described in U.S. patent application Ser. No. 11/377,932, entitled &#x201c;Method for Providing Content to an Internet User Based on the user's Demonstrated Content Preferences,&#x201d; filed Mar. 16, 2006 and owned by the assignee herein. As noted there, categories should be defined at a relatively fine granularity level to provide useful information. In the embodiment discussed here, over 2000 categories are employed. As a user navigates the web, websites can be categorized by an appropriate module at the user's computer, or at a central location, via messages passing back and forth between such a central server and the user's computer. </p>
+<p id="p-0024" num="0023"> The result of such activity is a record at the user's computer that includes recent internet activity, which can be represented by a data structure such as that shown in Table 1, below. As shown there, data can be aggregated by categories (indicated by a Category ID) and can include measures of how recently any activity occurred; a measure of how frequent the activity occurred; and the number of times that a banner was clicked, all further aggregated under the ID of the banner.  
+<tables id="TABLE-US-00001" num="1">
+<table frame="none" colsep="0" rowsep="0">
+<tgroup align="left" colsep="0" rowsep="0" cols="1">
+<colspec colname="1" colwidth="217PT" align="center"/>
+<thead>
+<row>
+<entry namest="1" nameend="1" align="center">TABLE 1</entry>
+</row>
+</thead>
+<tbody valign="top">
+<row>
+<entry/>
+</row>
+<row>
+<entry namest="1" nameend="1" align="center" rowsep="1"/>
+</row>
+<row>
+<entry>Data from User</entry>
+</row>
+</tbody>
+</tgroup>
+<tgroup align="left" colsep="0" rowsep="0" cols="5">
+<colspec colname="OFFSET" colwidth="14PT" align="left"/>
+<colspec colname="1" colwidth="42PT" align="center"/>
+<colspec colname="2" colwidth="56PT" align="center"/>
+<colspec colname="3" colwidth="42PT" align="center"/>
+<colspec colname="4" colwidth="63PT" align="center"/>
+<tbody valign="top">
+<row>
+<entry/>
+<entry>Category ID</entry>
+<entry>Recency</entry>
+<entry>Frequency</entry>
+<entry>Banner Clicks</entry>
+</row>
+<row>
+<entry/>
+<entry namest="OFFSET" nameend="4" align="center" rowsep="1"/>
+</row>
+</tbody>
+</tgroup>
+<tgroup align="left" colsep="0" rowsep="0" cols="5">
+<colspec colname="OFFSET" colwidth="14PT" align="left"/>
+<colspec colname="1" colwidth="42PT" align="center"/>
+<colspec colname="2" colwidth="56PT" align="char" char="."/>
+<colspec colname="3" colwidth="42PT" align="center"/>
+<colspec colname="4" colwidth="63PT" align="center"/>
+<tbody valign="top">
+<row>
+<entry/>
+<entry>10494</entry>
+<entry>3</entry>
+<entry>4</entry>
+<entry>1</entry>
+</row>
+<row>
+<entry/>
+<entry>98409</entry>
+<entry>1</entry>
+<entry>6</entry>
+<entry>4</entry>
+</row>
+<row>
+<entry/>
+<entry>65625</entry>
+<entry>14</entry>
+<entry>6</entry>
+<entry>3</entry>
+</row>
+<row>
+<entry/>
+<entry namest="OFFSET" nameend="4" align="center" rowsep="1"/>
+</row>
+</tbody>
+</tgroup>
+</table>
+</tables>
+</p>
+<p id="p-0025" num="0024"> Data such as that shown in Table 1 can be periodically provided to the content provider, either in the form of cookies or messages, as described in the '066 Application. In either event, data concerning activity for a particular user is made available to the content provider. </p>
+<p id="p-0026" num="0025"> At the content provider level, activity data (concerning only a given period of time) can be combined with results from two other data sources. One source is geographic data, concerning the user computers location as well as any demographic data available about the user. Such data do not vary, and they can be stored at the content provider level and combined with incoming activity data as needed. Additionally, the content provider has information concerning the actually user response to an advertisement&#x2014;did that user click on a given banner. That data is available separately, with the user's machine ID, and thus that data can be included. </p>
+<p id="p-0027" num="0026"> From all the data received from users, combined with that from banner clicks, a dataset can be assembled for each banner ad, having the general structure shown in Table 2, as follows:  
+<tables id="TABLE-US-00002" num="2">
+<table frame="none" colsep="0" rowsep="0">
+<tgroup align="left" colsep="0" rowsep="0" cols="1">
+<colspec colname="1" colwidth="217PT" align="center"/>
+<thead>
+<row>
+<entry namest="1" nameend="1" align="center">TABLE 2</entry>
+</row>
+<row>
+<entry/>
+</row>
+<row>
+<entry namest="1" nameend="1" align="center" rowsep="1"/>
+</row>
+<row>
+<entry>Analysis data input</entry>
+</row>
+<row>
+<entry namest="1" nameend="1" align="center" rowsep="1"/>
+</row>
+</thead>
+<tbody valign="top">
+<row>
+<entry/>
+</row>
+</tbody>
+</tgroup>
+<tgroup align="left" colsep="0" rowsep="0" cols="2">
+<colspec colname="OFFSET" colwidth="70PT" align="left"/>
+<colspec colname="1" colwidth="147PT" align="left"/>
+<tbody valign="top">
+<row>
+<entry/>
+<entry>Category 1 recency</entry>
+</row>
+<row>
+<entry/>
+<entry>Category 1 frequency</entry>
+</row>
+<row>
+<entry/>
+<entry>Category 2 recency</entry>
+</row>
+<row>
+<entry/>
+<entry>Category 2 frequency</entry>
+</row>
+<row>
+<entry/>
+<entry>. . .</entry>
+</row>
+<row>
+<entry/>
+<entry>Category n recency</entry>
+</row>
+<row>
+<entry/>
+<entry>Category n frequency</entry>
+</row>
+<row>
+<entry/>
+<entry>Banner ID</entry>
+</row>
+<row>
+<entry/>
+<entry>Number of impressions</entry>
+</row>
+<row>
+<entry/>
+<entry>Number of clicks</entry>
+</row>
+<row>
+<entry/>
+<entry>Counter</entry>
+</row>
+<row>
+<entry/>
+<entry>Geographic data</entry>
+</row>
+<row>
+<entry/>
+<entry namest="OFFSET" nameend="1" align="center" rowsep="1"/>
+</row>
+</tbody>
+</tgroup>
+</table>
+</tables>
+</p>
+<p id="p-0028" num="0027"> It should be understood that the description above addresses a single user computer, but in practice a large number of user computers all send information to a central processing repository. It should also be understood that separate datasets are assembled for each banner advertisement, differing only in the identification of the advertisement concerned. As used below, the term &#x201c;dataset&#x201d; applies to data related to one advertisement. </p>
+<p id="p-0029" num="0028"> Choosing the response variables (step <b>104</b>) requires an identification of the response desired from the user. In one embodiment, any click on the presented advertisement qualifies as a target event. Other embodiments go further and require that the user not only click on the advertisement, but also take some action after doing so, such as subscribing to the resulting website, or the like. For analytical purposes, either approach is permissible, but the content provider must think through this problem in advance. </p>
+<p id="p-0030" num="0029"> The initial step in designing a system using binary trees is selecting the variables employed in splitting nodes, known as segmentation variables (step <b>106</b>). Often, the selection of variables flows from the dataset itself. In the embodiment set out herein, the variables include category recency, category usage, and others discussed above. An associated issue is the representation of variable values. Many variables exhibit a range of values, a situation which demands choices of how to characterize such values for analysis purposes. It has been found useful to define buckets for such values, which allows the designer to draw lines based on the applied (rather than intrinsic) value of the data. Table 3, below, sets but the segmentation variables employed herein, together with the value characterizations. As seen there, the Category Recency variable is divided into reporting buckets that have greatly different lengths. The most recent time values are emphasized in this structure, as one can readily understand the value to a marketer of knowing that a consumer visited a given website only five minutes previously.  
+<tables id="TABLE-US-00003" num="3">
+<table frame="none" colsep="0" rowsep="0">
+<tgroup align="left" colsep="0" rowsep="0" cols="1">
+<colspec colname="1" colwidth="217PT" align="center"/>
+<thead>
+<row>
+<entry namest="1" nameend="1" align="center">TABLE 3</entry>
+</row>
+</thead>
+<tbody valign="top">
+<row>
+<entry/>
+</row>
+<row>
+<entry namest="1" nameend="1" align="center" rowsep="1"/>
+</row>
+<row>
+<entry>Segmentation Variables</entry>
+</row>
+</tbody>
+</tgroup>
+<tgroup align="left" colsep="0" rowsep="0" cols="3">
+<colspec colname="1" colwidth="56PT" align="left"/>
+<colspec colname="2" colwidth="70PT" align="left"/>
+<colspec colname="3" colwidth="91PT" align="left"/>
+<tbody valign="top">
+<row>
+<entry>Split</entry>
+<entry/>
+<entry/>
+</row>
+<row>
+<entry>Characteristic</entry>
+<entry>Values</entry>
+<entry>Remarks</entry>
+</row>
+<row>
+<entry namest="1" nameend="3" align="center" rowsep="1"/>
+</row>
+<row>
+<entry>Category</entry>
+<entry>15 recency buckets</entry>
+<entry>Cumulative splits i.e.</entry>
+</row>
+<row>
+<entry>recency</entry>
+<entry>within 2,000 possible</entry>
+<entry>split 1 = (recency = 1)</entry>
+</row>
+<row>
+<entry/>
+<entry>categories</entry>
+<entry>Split 2 = (recency = 1, 2)</entry>
+</row>
+<row>
+<entry/>
+<entry>0-5 min</entry>
+<entry>Split 3 = (recency = 1, 2, 3)</entry>
+</row>
+<row>
+<entry/>
+<entry>5-15 min</entry>
+<entry>etc</entry>
+</row>
+<row>
+<entry/>
+<entry>15-30 min</entry>
+</row>
+<row>
+<entry/>
+<entry>30-60 min</entry>
+</row>
+<row>
+<entry/>
+<entry>1-2 hrs</entry>
+</row>
+<row>
+<entry/>
+<entry>2-4 hrs</entry>
+</row>
+<row>
+<entry/>
+<entry>4-12 hrs</entry>
+</row>
+<row>
+<entry/>
+<entry>12-24 hrs</entry>
+</row>
+<row>
+<entry/>
+<entry>1-3 days</entry>
+</row>
+<row>
+<entry/>
+<entry>3-7 days</entry>
+</row>
+<row>
+<entry/>
+<entry>7-14 days</entry>
+</row>
+<row>
+<entry/>
+<entry>14-21 days</entry>
+</row>
+<row>
+<entry/>
+<entry>21-30 days</entry>
+</row>
+<row>
+<entry/>
+<entry>30-45 days</entry>
+</row>
+<row>
+<entry/>
+<entry>45-60 days</entry>
+</row>
+<row>
+<entry>Category</entry>
+<entry>7 usage buckets</entry>
+<entry>Cumulative splits</entry>
+</row>
+<row>
+<entry>usage</entry>
+<entry>within 2,000 possible</entry>
+<entry>Split 1 = (usage = 1)</entry>
+</row>
+<row>
+<entry/>
+<entry>categories</entry>
+<entry>Split 2 = (usage = 1, 2)</entry>
+</row>
+<row>
+<entry/>
+<entry>1 days</entry>
+<entry>etc</entry>
+</row>
+<row>
+<entry/>
+<entry>2 days</entry>
+</row>
+<row>
+<entry/>
+<entry>3 days</entry>
+</row>
+<row>
+<entry/>
+<entry>4 or 5 days</entry>
+</row>
+<row>
+<entry/>
+<entry>6 to 10 days</entry>
+</row>
+<row>
+<entry/>
+<entry>11 to 30 days</entry>
+</row>
+<row>
+<entry/>
+<entry>31 to 60 days</entry>
+</row>
+<row>
+<entry>Placement</entry>
+<entry>List of placements</entry>
+<entry>Cumulative split post</entry>
+</row>
+<row>
+<entry/>
+<entry/>
+<entry>ordering in descending</entry>
+</row>
+<row>
+<entry/>
+<entry/>
+<entry>sequence by response</entry>
+</row>
+<row>
+<entry/>
+<entry/>
+<entry>variable values</entry>
+</row>
+<row>
+<entry>US vs</entry>
+<entry>Is this machine</entry>
+</row>
+<row>
+<entry>International</entry>
+<entry>a US machine or an</entry>
+</row>
+<row>
+<entry/>
+<entry>International Machine</entry>
+</row>
+<row>
+<entry>Region Code</entry>
+<entry>List of geographic</entry>
+<entry>Cumulative split post</entry>
+</row>
+<row>
+<entry/>
+<entry>regions</entry>
+<entry>ordering in descending</entry>
+</row>
+<row>
+<entry/>
+<entry/>
+<entry>sequence by response</entry>
+</row>
+<row>
+<entry/>
+<entry/>
+<entry>variable values</entry>
+</row>
+<row>
+<entry>Country Code</entry>
+<entry>List of country</entry>
+<entry>Cumulative split post</entry>
+</row>
+<row>
+<entry/>
+<entry>codes</entry>
+<entry>ordering in descending</entry>
+</row>
+<row>
+<entry/>
+<entry/>
+<entry>sequence by response</entry>
+</row>
+<row>
+<entry/>
+<entry/>
+<entry>variable values</entry>
+</row>
+<row>
+<entry>MSA Code</entry>
+<entry>List of</entry>
+<entry>Cumulative split post</entry>
+</row>
+<row>
+<entry/>
+<entry>metropolitan</entry>
+<entry>ordering in descending</entry>
+</row>
+<row>
+<entry/>
+<entry>statistical areas</entry>
+<entry>sequence by response</entry>
+</row>
+<row>
+<entry/>
+<entry/>
+<entry>variable values</entry>
+</row>
+<row>
+<entry>DMA code</entry>
+<entry>List of direct</entry>
+<entry>Cumulative split post</entry>
+</row>
+<row>
+<entry/>
+<entry>marketing</entry>
+<entry>ordering in descending</entry>
+</row>
+<row>
+<entry/>
+<entry>association area</entry>
+<entry>sequence by response</entry>
+</row>
+<row>
+<entry/>
+<entry/>
+<entry>variable values</entry>
+</row>
+<row>
+<entry>Zipcode</entry>
+<entry>List of zipcodes</entry>
+<entry>Cumulative split post</entry>
+</row>
+<row>
+<entry/>
+<entry/>
+<entry>ordering in descending</entry>
+</row>
+<row>
+<entry/>
+<entry/>
+<entry>sequence by response</entry>
+</row>
+<row>
+<entry/>
+<entry/>
+<entry>variable values</entry>
+</row>
+<row>
+<entry>Ad frequency</entry>
+<entry>1, 2, 3 values based</entry>
+<entry>Cumulative splits</entry>
+</row>
+<row>
+<entry/>
+<entry>on the ad-frequency</entry>
+<entry>Split 1 = (ad-freq = 1)</entry>
+</row>
+<row>
+<entry/>
+<entry>cookie</entry>
+<entry>Split 2 = (ad-freq = 1, 2)</entry>
+</row>
+<row>
+<entry/>
+<entry/>
+<entry>Etc</entry>
+</row>
+<row>
+<entry>New to brand</entry>
+<entry>0 = never clicked</entry>
+</row>
+<row>
+<entry/>
+<entry>on that advertiser</entry>
+</row>
+<row>
+<entry/>
+<entry>before (based on the</entry>
+</row>
+<row>
+<entry/>
+<entry>ad-info cookie)</entry>
+</row>
+<row>
+<entry/>
+<entry>1 = has clicked on</entry>
+</row>
+<row>
+<entry/>
+<entry>the advertiser before</entry>
+</row>
+<row>
+<entry namest="1" nameend="3" align="center" rowsep="1"/>
+</row>
+</tbody>
+</tgroup>
+</table>
+</tables>
+</p>
+<p id="p-0031" num="0030"> Two points should be made about the segmentation variables employed for this embodiment. First, several of the variables are actually clusters of variables. Thus, for example, the variable Category Recency is actually some 2000 variables, one for each category, so that an actual category would be, for example, Airline Reservation Recency, measuring the time elapsed since the user has accessed a site in that category. Second, the nature of the problem indicates that selection of a segmentation variable value operates to split the population of a node into two groups. Thus, when analyzing the populations of child nodes resulting from a given split, or proposed split, one node will consist of those elements having a value less than the segmentation variable value, and the other node all elements with values equal to or greater than that value. For example, if one were considering a split employing the segmentation variable &#x201c;Airline Reservation Category Usage&#x201d;,at a value of 3 days, then one node would consist of the cumulation of the buckets labeled &#x201c;1 day&#x201d; and &#x201c;2 days&#x201d;, and the other the contents of buckets labeled &#x201c;3 days,&#x201d; &#x201c;4 or 5 days,&#x201d; &#x201c;6 to 10 days,&#x201d; &#x201c;11 to 30 days,&#x201d; and &#x201c;31 to 60 days.&#x201d;</p>
+<p id="p-0032" num="0031"> Also, it should be noted that some segmentation variables might not be ordinal in nature. Locations, for example, do not lend themselves to ordered lists such as used for time variables. Here, some arbitrary element can be used to signify a split point, such as zipcode, other codes, or simply the position of a value on a list. So long as the listing produces consistent results, the technique for such ordering can be set up as desired. </p>
+<p id="p-0033" num="0032"> These data form inputs to the process of building and validating a binary tree, step <b>108</b>. <figref idref="DRAWINGS">FIG. 2</figref> illustrates an embodiment <b>200</b> of this process. The first action, step <b>202</b>, consists of dividing the dataset into two subsets, a learning set and a validation set. These sets should be indistinguishable to the extent possible, and the selection criterion should be chosen with a view to avoiding the introduction of any biasing factors. </p>
+<p id="p-0034" num="0033"> The general process of building a binary tree is known in the art and will not be set out in any detail here. Rather, the discussion that follows will build on conventional techniques by concentrating on those additions and improvements that characterize the claimed process. </p>
+<p id="p-0035" num="0034"> Tree building proceeds on a node-by-node basis, with testing and validation accomplished on the fly. Analysis of each node, in step <b>204</b>, starts with the learning set, in step <b>210</b>. The segmentation variable is selected and tested empirically, by examining results for each possible segmentation value, step <b>212</b>. For each possible value of each possible segmentation value (step <b>208</b>) (see below), the system proceeds to calculate an entropy value, in step <b>212</b>. </p>
+<p id="p-0036" num="0035"> As used here, &#x201c;entropy&#x201d; refers to &#x201c;information entropy&#x201d;, defined as 
+<br/>
+<?in-line-formulae description="In-line Formulae" end="lead"?>Entropy=&#x2212;[<i>R </i>log<sub>2</sub><i>R+</i>(1<i>&#x2212;R</i>)log<sub>2</sub><i>R]</i><?in-line-formulae description="In-line Formulae" end="tail"?>
+<br/>
+ where R is the response variable, expressed as a percentage rate. That equation provides calculates the entropy of the complete dataset of a given node. The entropy of a given split depends on the sum of the entropies of each child node dataset (conventionally referred to as &#x201c;Right&#x201d; and &#x201c;Left&#x201d; nodes), as follows: 
+<br/>
+<?in-line-formulae description="In-line Formulae" end="lead"?>Entropy<sub>L</sub><i>=&#x2212;[R</i><sub>L </sub>log<sub>2</sub><i>R</i><sub>L</sub>+(1&#x2212;<i>R</i><sub>L</sub>)log<sub>2</sub><i>R</i><sub>L</sub>]<?in-line-formulae description="In-line Formulae" end="tail"?>
+<br/>
+<?in-line-formulae description="In-line Formulae" end="lead"?>Entropy<sub>R</sub><i>=&#x2212;[R</i><sub>R </sub>log<sub>2</sub><i>R</i><sub>R</sub>+(1<i>&#x2212;R</i><sub>R</sub>)log<sub>2</sub><i>R</i><sub>R</sub>]<?in-line-formulae description="In-line Formulae" end="tail"?>
+<br/>
+ It has been found that superior results are obtained by performing a split at the segmentation variable value that provides the minimum entropy level after the split. Thus, the splitting criterion can be expressed as follows:  
+<maths id="MATH-US-00001" num="1">
+<math overflow="scroll">
+<mrow>
+  <mi>min</mi>
+  <mo>&#x2061;</mo>
+  <mrow>
+    <mo>[</mo>
+    <mrow>
+      <mrow>
+        <mfrac>
+          <msub>
+            <mi>n</mi>
+            <mi>L</mi>
+          </msub>
+          <mrow>
+            <msub>
+              <mi>n</mi>
+              <mi>L</mi>
+            </msub>
+            <mo>+</mo>
+            <msub>
+              <mi>n</mi>
+              <mi>R</mi>
+            </msub>
+          </mrow>
+        </mfrac>
+        <mo>&#x2062;</mo>
+        <msub>
+          <mi>Entropy</mi>
+          <mi>L</mi>
+        </msub>
+      </mrow>
+      <mo>+</mo>
+      <mrow>
+        <mfrac>
+          <msub>
+            <mi>n</mi>
+            <mi>R</mi>
+          </msub>
+          <mrow>
+            <msub>
+              <mi>n</mi>
+              <mi>L</mi>
+            </msub>
+            <mo>+</mo>
+            <msub>
+              <mi>n</mi>
+              <mi>R</mi>
+            </msub>
+          </mrow>
+        </mfrac>
+        <mo>&#x2062;</mo>
+        <msub>
+          <mi>Entropy</mi>
+          <mi>R</mi>
+        </msub>
+      </mrow>
+    </mrow>
+    <mo>]</mo>
+  </mrow>
+</mrow>
+</math>
+</maths>
+<br/>
+ where n is the number of observations in a given node. 
+</p>
+<p id="p-0037" num="0036"> Those principles can be put into practice as follows. At a given node, an iterative process is performed to calculate the net entropy for every value of every available segmentation variable (see below) (step <b>214</b>). The segmentation variable yielding the lowest entropy level is selected, and the split is performed, at step <b>216</b>. </p>
+<p id="p-0038" num="0037"> The split is then subjected to a two-part test to ensure validity and robustness. The first question to be addressed is whether the split should be made at all, which is addressed by determining the statistical difference between the populations of the two child nodes. That difference is measured by performing a statistical T-test to compare the two child nodes, step <b>218</b>. That test is known in the art and will not be set out in detail here. The results of that test indicate whether any statistical difference exists between the two child nodes, step <b>220</b>. If no difference exists, then the split does not improve the analytical product of the binary tree, and the parent node in question should be treated as a terminal, or leaf, node. The proposed split is collapsed, step <b>222</b>, and the process loops back to consider other nodes. </p>
+<p id="p-0039" num="0038"> It should be noted at this point that the directions, or rules, for performing each node split are saved to provide a set of directions for replicating the binary tree. A number of possible structures for this process are known in the art, and details of the same can be left to the discretion of skilled practitioners. </p>
+<p id="p-0040" num="0039"> If the split does produce useful results, then the process proceeds to validate the split, using the validation dataset, in step <b>224</b>. There, the binary tree constructed using the learning dataset is replicated using the validation dataset, to the point at which the loop starting at step <b>210</b> had proceeded, and then the split made at step <b>216</b> is replicated with the validation dataset. At this point the question is whether the validation dataset tree is the same as or similar to the learning set tree, which again can be addressed with a statistical T-test. Instead of looking for difference, the T-test here looks for similarity, step <b>228</b>. A positive finding confirms the validity of the tree structure, step <b>230</b>, and the process loops back, retaining the newly-split node in the tree. If the T-test does not show similarity, the split is collapsed, step <b>222</b>, before looping back. </p>
+<p id="p-0041" num="0040"> The loop starting at step <b>204</b> and continuing to steps <b>222</b> or <b>230</b>, terminates at step <b>206</b>, where it is determined whether to perform another loop or end the process. The process continues until every node is determined to be a leaf node, or until a predetermined number of node levels has been reached. Both of these criteria are sufficiently known in the art to require no further explanation here. If the process does commence another loop, the segmentation variable used in the previous loop is declared unavailable for further use, precluding the selection of that variable for any other nodes. Thus, if a loop of the process employs &#x201c;Airline Reservation Recency&#x201d; as a segmentation variable, that variable cannot be used on any other nodes of the tree. </p>
+<p id="p-0042" num="0041"> A binary tree <b>250</b>, constructed according to the principles set out in the embodiment described above, is shown in <figref idref="DRAWINGS">FIG. 3</figref>. The root node <b>252</b> was found to yield minimum entropy using a segmentation variable of recency in the Airline Reservation category, at a value of less than or equal to 7 days. Thus, child nodes <b>254</b> and <b>260</b> contain all entries for which activity in the Airline Reservations category was reported within the previous 7 days and beyond that period, respectively. At node <b>254</b>, the minimum entropy was found using the recency of click in the Airline Reservation category, at a value of less than or equal to 7 days. The two child nodes <b>256</b> and <b>258</b> from that point, however, were found to be terminal, or leaf, nodes, and have no child nodes below them. The fact that a node is found to be a terminal node does not imply that other nodes at the same level are also terminal nodes. As can be seen, node <b>264</b> is a terminal node, but node <b>262</b> is not. </p>
+<p id="p-0043" num="0042"> The set of terminal nodes constitutes a complete portioning of the dataset. Here, nodes <b>256</b>, <b>258</b>, <b>266</b>, <b>268</b> and <b>264</b> are the terminal nodes. It will be noted that because the splitting rules are based on varied crieteria, no implication exists of size of the populations in the nodes. Rather, the nodes report on behavior correlations of commercial interest. </p>
+<p id="p-0044" num="0043"> It is also possible to calculate the response variable rate of the population of a terminal node, as that data is included in the response dataset (as shown in <figref idref="DRAWINGS">FIG. 1</figref>, step <b>110</b>). Here, the response variable is chosen to be the click rate, and the percentage click rate is shown for each terminal node. This latter step allows one to draw useful inference from the tree. Thus, one can see that the sample indicates that a person who had navigated to a website dealing with airline reservations in the previous week, and had clicked on an item in such a site over a week ago would have a 5% probability of clicking on the advertisement under consideration. If that person had clicked on an airline reservations site item within the past week, that person would have only a 1% probability of clicking on the advertisement. </p>
+<p id="p-0045" num="0044"> The &#x201c;response rate&#x201d; calculation can be tailored to the business environment of the content provider. For example, if the content provider is compensated by advertiser client based on a set value per click on an advertisement, then that value can be incorporated directly into the tree calculation. If, for example, the compensation was set at $1.00 per click, then showing the advertisement in question to a user who fits into node <b>258</b> has an expected return of $.05, which showing the ad to a user from node <b>256</b> can be expected to return only $.01. Those in the art can adapt the principles set out above to fit whatever compensation plans that may be devised. For example, if compensation is tied to some more detailed response than a simple click, such as subscription to a site, or an actual purchase, that criterion is straightforwardly added to the data collected, and the results are reflected in each terminal node. </p>
+<p id="p-0046" num="0045"> Using the process set out above, a tree is constructed for every advertisement in the operator's inventory. Those in the art will be able to determine appropriate intervals for refreshing these data and the resulting trees, in order to ensure the data remain valid and to identify any emerging trends. Also, as new advertisements are developed, they can be offered initially on a test basis, to gather sufficient data to enable the construction of a binary tree, and afterward they can enter a normal production cycle. These and other details of managing the use of such trees are within the skill of those in the art. </p>
+<p id="p-0047" num="0046"> process <b>300</b> for employing the embodiment discussed above in a production environment is shown in <figref idref="DRAWINGS">FIG. 4</figref>. There, a new user is acquired at step <b>302</b>, and the task is to determine what content to provide. The loop consisting of steps <b>304</b>, <b>306</b> and <b>312</b> determines the advertisement having the highest value for the user in question. That result is determined by iterating through every binary tree in the inventory (step <b>304</b>); at each stage the system uses the user profile to identify the terminal node into which the user fits, and then calculates a value for displaying the associated advertisement to the user. This step <b>306</b> is carried out exactly as set out above. When completed, at step <b>312</b>, that process allows the system to select the highest value advertisement, at step <b>308</b>, and to forward that advertisement to the user, step <b>310</b>. </p>
+<p id="p-0048" num="0047"> While the present invention is disclosed by reference to the preferred embodiments and examples detailed above, it is understood that these examples are intended in an illustrative rather than in a limiting sense. Computer-assisted processing is implicated in the described embodiments. It is contemplated that modifications and combinations will readily occur to those skilled in the art, which modifications and combinations will be within the spirit of the invention and the scope of the following claims.</p>
+<?detailed-description description="Detailed Description" end="tail"?>
+</description>
+<us-math idrefs="MATH-US-00001" nb-file="US20070005425A1-20070104-M00001.NB">
+<img id="EMI-M00001" he="6.01mm" wi="76.20mm" file="US20070005425A1-20070104-M00001.TIF" alt="embedded image" img-content="math" img-format="tif"/>
+</us-math>
+<us-claim-statement>We claim as follows: </us-claim-statement>
+<claims id="claims">
+<claim id="CLM-00001" num="00001">
+<claim-text><b>1</b>. Method of predicting consumer response to given content, including the steps of 
+<claim-text>collecting a dataset of consumer response to the content, each data item including values for a selected set of segmentation variables related to past consumer behavior and the dataset containing at least twice the number of entries to provide statistical validity; </claim-text>
+<claim-text>constructing a classification tree structure using the dataset, wherein 
+<claim-text>the dataset is subdivided into learning and validation datasets of substantially equal size; </claim-text>
+<claim-text>the criterion for each successive split is the lowest entropy of segmentation variables not employed to the point of such split; and </claim-text>
+<claim-text>each successive split of the learning dataset is performed only if such split produces child nodes statistically different from one another; and 
+<claim-text>an identical split of the validation data set produces child nodes statistically similar to child nodes produced on the learning dataset; </claim-text>
+</claim-text>
+</claim-text>
+<claim-text>receiving a data item related to a new consumer, including values for the segmentation variables; </claim-text>
+<claim-text>computing the likely response of the new consumer to the content, employing the classification tree data structure. </claim-text>
+</claim-text>
+ </claim>
+<claim id="CLM-00002" num="00002">
+<claim-text><b>2</b>. The method of <claim-ref idref="CLM-00001">claim 1</claim-ref>, wherein the segmentation variables include data relating to internet navigation history of the consumer. </claim-text>
+ </claim>
+<claim id="CLM-00003" num="00003">
+<claim-text><b>3</b>. The method of <claim-ref idref="CLM-00001">claim 1</claim-ref>, wherein the segmentation variables include information related to categories of websites visited by the consumer. </claim-text>
+ </claim>
+<claim id="CLM-00004" num="00004">
+<claim-text><b>4</b>. The method of <claim-ref idref="CLM-00001">claim 1</claim-ref>, wherein the subdivision of the dataset is made on the basis of a variable independent of the segmentation variables or the consumer response. </claim-text>
+ </claim>
+<claim id="CLM-00005" num="00005">
+<claim-text><b>5</b>. The method of <claim-ref idref="CLM-00001">claim 1</claim-ref>, further including the step of calculating the value of the consumer response to the provider of the content. </claim-text>
+ </claim>
+<claim id="CLM-00006" num="00006">
+<claim-text><b>6</b>. The method of <claim-ref idref="CLM-00001">claim 1</claim-ref>, wherein the process is repeated for a plurality of content items, producing a library of classification data structures. </claim-text>
+ </claim>
+<claim id="CLM-00007" num="00007">
+<claim-text><b>7</b>. Method of predicting consumer response to given content presented in connection with viewing a website on the internet, including the steps of 
+<claim-text>collecting a dataset of consumer response to the content, each data item including values for a selected set of segmentation variables related to past consumer internet behavior, the dataset containing at least twice the number of entries to provide statistical validity; </claim-text>
+<claim-text>constructing a classification tree structure using the dataset, wherein 
+<claim-text>the dataset is subdivided into learning and validation datasets of substantially equal size; </claim-text>
+<claim-text>the criterion for each successive split is the lowest entropy of segmentation variables not employed to the point of such split; and </claim-text>
+<claim-text>each successive split of the learning dataset is performed only if such split produces child nodes statistically different from one another; and 
+<claim-text>an identical split of the validation data set produces child nodes statistically similar to child nodes produced on the learning dataset; </claim-text>
+</claim-text>
+</claim-text>
+<claim-text>receiving a data item related to a new internet consumer, including values for the segmentation variables; </claim-text>
+<claim-text>computing the likely response of the new consumer to the content, employing the classification tree data structure. </claim-text>
+</claim-text>
+ </claim>
+<claim id="CLM-00008" num="00008">
+<claim-text><b>8</b>. The method of <claim-ref idref="CLM-00007">claim 7</claim-ref>, wherein the segmentation variables include data relating to internet navigation history of the consumer. </claim-text>
+ </claim>
+<claim id="CLM-00009" num="00009">
+<claim-text><b>9</b>. The method of <claim-ref idref="CLM-00007">claim 7</claim-ref>, wherein the segmentation variables include information related to categories of websites visited by the consumer. </claim-text>
+ </claim>
+<claim id="CLM-00010" num="00010">
+<claim-text><b>10</b>. The method of <claim-ref idref="CLM-00007">claim 7</claim-ref>, wherein the subdivision of the dataset is made on the basis of a variable independent of the segmentation variables or the consumer response. </claim-text>
+ </claim>
+<claim id="CLM-00011" num="00011">
+<claim-text><b>11</b>. The method of <claim-ref idref="CLM-00007">claim 7</claim-ref>, further including the step of calculating the value of the consumer response to the provider of the content. </claim-text>
+ </claim>
+<claim id="CLM-00012" num="00012">
+<claim-text><b>12</b>. The method of <claim-ref idref="CLM-00007">claim 7</claim-ref>, wherein the process is repeated for a plurality of content items, producing a library of classification data structures. </claim-text>
+ </claim>
+<claim id="CLM-00013" num="00013">
+<claim-text><b>13</b>. A classification tree data structure useful for predicting consumer response to given content, wherein the tree structure is constructed by a process including the steps of 
+<claim-text>subdividing the dataset into learning and validation datasets of substantially equal size; </claim-text>
+<claim-text>determining each successive split based on the lowest entropy of segmentation variables not employed to the point of such split; and </claim-text>
+<claim-text>performing successive split of the learning dataset only if 
+<claim-text>such split produces child nodes statistically different from one another; and </claim-text>
+<claim-text>an identical split of the validation data set produces child nodes statistically similar to child nodes produced on the learning dataset. </claim-text>
+</claim-text>
+</claim-text>
+ </claim>
+<claim id="CLM-00014" num="00014">
+<claim-text><b>14</b>. The classification tree structure of <claim-ref idref="CLM-00013">claim 13</claim-ref>, wherein the segmentation variables include data relating to internet navigation history of the consumer. </claim-text>
+ </claim>
+<claim id="CLM-00015" num="00015">
+<claim-text><b>15</b>. The classification tree structure of <claim-ref idref="CLM-00013">claim 13</claim-ref>, wherein the segmentation variables include information related to categories of websites visited by the consumer. </claim-text>
+ </claim>
+<claim id="CLM-00016" num="00016">
+<claim-text><b>16</b>. The classification tree structure of <claim-ref idref="CLM-00013">claim 13</claim-ref>, wherein the subdivision of the dataset is made on the basis of a variable independent of the segmentation variables or the consumer response. </claim-text>
+ </claim>
+<claim id="CLM-00017" num="00017">
+<claim-text><b>17</b>. The classification tree structure of <claim-ref idref="CLM-00013">claim 13</claim-ref>, further including the step of calculating the value of the consumer response to the provider of the content. </claim-text>
+ </claim>
+<claim id="CLM-00018" num="00018">
+<claim-text><b>18</b>. Method of predicting consumer response to given content, including the steps of 
+<claim-text>assembling a library of binary tree tools, including the steps of </claim-text>
+<claim-text>building a consumer response dataset, including the steps of 
+<claim-text>exposing consumers to selected content; </claim-text>
+<claim-text>collecting each consumer response, measured as a value of a response variable; </claim-text>
+<claim-text>collecting consumer segmentation characteristics, measured as values of each of a set of consumer segmentation variables; </claim-text>
+</claim-text>
+<claim-text>continuing the collection until the dataset consists of at least twice the number of data items required for a statistically valid sample; </claim-text>
+<claim-text>dividing the dataset into a learning set and a validation set, based on a variable independent of either the response variable or any segmentation variable, the datasets being substantially equal in size and each being sufficiently large to provide statistical reliability; </claim-text>
+<claim-text>constructing a binary tree by successively splitting nodes, each splitting step including the steps of 
+<claim-text>employing the learning dataset to obtain a proposed split, including 
+<claim-text>splitting the node hypothetically, based on each value of each segmentation variable; </claim-text>
+<claim-text>calculating the entropy of each hypothetical split; </claim-text>
+<claim-text>choosing the split having the minimum entropy as the proposed split; </claim-text>
+<claim-text>performing a statistical test on the resulting nodes to determine whether they differ statistically; </claim-text>
+<claim-text>collapsing the proposed split in the event no difference is found; </claim-text>
+</claim-text>
+<claim-text>validating the proposed split, including 
+<claim-text>replicating the proposed split on the validation dataset; </claim-text>
+<claim-text>performing a statistical test on the resulting nodes to determine whether they are statistically similar to like nodes of the proposed split; </claim-text>
+<claim-text>collapsing the proposed split in the event that no similarity is found; </claim-text>
+</claim-text>
+<claim-text>continuing the tree construction process, with each successive split employing only those segmentation variables not employed in an adopted split; </claim-text>
+</claim-text>
+<claim-text>receiving data concerning an individual consumer, including values for the set of segmentation variables; </claim-text>
+<claim-text>determining the most appropriate content to present to the consumer, including the steps of 
+<claim-text>obtaining a value for the consumer dataset for each binary tree tool in the library; and </claim-text>
+<claim-text>selecting the content associated with the binary tree tool producing the highest response value.</claim-text>
+</claim-text>
+</claim-text>
+ </claim>
+</claims>
+</us-patent-application>

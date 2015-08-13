@@ -1,0 +1,93 @@
+pattern set relation-opinion-practical;
+
+special-verb-use    := [token tokenString=use] | [token tokenString=using] | [token tokenString=uses] | [token tokenString=used];
+
+special-verb-employ := [token tokenString=employ] | [token tokenString=employing] | [token tokenString=employs] | [token tokenString=employed];
+
+special-verb-utilize    := [token tokenString=utilize] | [token tokenString=utilizing] | [token tokenString=utilizes] | [token tokenString=utilized];
+
+special-verb-apply  := [token tokenString=apply] | [token tokenString=applying] | [token tokenString=applies] | [token tokenString=applied];
+
+special-verb-obj    := special-verb-use | special-verb-employ | special-verb-utilize | special-verb-apply;
+
+special-verb-improve    := [token tokenString=improve] | [token tokenString=improving] | [token tokenString=improves] | [token tokenString=improved];
+
+special-verb-subj   := special-verb-improve;
+
+special-verb-by     := "analyzed" | "determined" | "identified" | "revealed" | "constructed" | "produced";
+
+general-verb        := [constit cat=vb] | [constit cat=vbd] | [constit cat=vbg] | [constit cat=vbn] | [constit pos=vbp] | [constit pos=vbz];
+
+gap-word            := [constit cat=dt] | [constit cat=jj] | [constit cat=nn] | [constit cat=nns];
+
+gap-words := (gap-word) | (gap-word) (gap-word) | (gap-word) (gap-word) (gap-word) | (gap-word) (gap-word) (gap-word) (gap-word) | (gap-word) (gap-word) (gap-word) (gap-word) (gap-word);
+
+term      := [term];
+
+practical-1         := (special-verb-obj):TextSignal (gap-words) (term):Arg2;
+
+when practical-1    add [opinion-candidate type=practical textSignal=TextSignal arg2=Arg2 source=p1];
+
+practical-1-0         := (special-verb-obj):TextSignal (term):Arg2;
+
+when practical-1-0    add [opinion-candidate type=practical textSignal=TextSignal arg2=Arg2 source=p1];
+
+practical-2         := (term):Arg2 (special-verb-subj):TextSignal;
+
+when practical-2    add [opinion-candidate type=practical textSignal=TextSignal arg2=Arg2 source=p2];
+
+practical-3         := (special-verb-by "by"):TextSignal (gap-words) (term):Arg2;
+
+when practical-3    add [opinion-candidate type=practical textSignal=TextSignal arg2=Arg2 source=p3];
+
+practical-3-0         := (special-verb-by "by"):TextSignal (term):Arg2;
+
+when practical-3-0    add [opinion-candidate type=practical textSignal=TextSignal arg2=Arg2 source=p3];
+
+practical-4         := (general-verb "with"):TextSignal (gap-words)? (term):Arg2;
+
+when practical-4    add [opinion-candidate type=practical textSignal=TextSignal arg2=Arg2 source=p4];
+
+practical-4-0         := (general-verb "with"):TextSignal (term):Arg2;
+
+when practical-4-0    add [opinion-candidate type=practical textSignal=TextSignal arg2=Arg2 source=p4];
+
+pattern set relation-exemplify;
+
+np-or-np-group      := [constit cat=np] | [npgroup];
+
+hearst-1            := [constit cat=np]:Arg2 ","? ("such" "as"):TextSignal (np-or-np-group):Arg1;
+
+when hearst-1       add [exemplify-candidate textSignal=TextSignal arg1=Arg1 arg2=Arg2];
+
+hearst-2            :=  ("such"):TextSignal [constit cat=np]:Arg2 "as" (np-or-np-group):Arg1;
+
+when hearst-2       add [exemplify-candidate textSignal=TextSignal arg1=Arg1 arg2=Arg2];
+
+conj                := "and" | "or";
+
+hearst-3            := (np-or-np-group):Arg1 ","? (conj "other"):TextSignal [constit cat=np]:Arg2;
+
+when hearst-3       add [exemplify-candidate textSignal=TextSignal arg1=Arg1 arg2=Arg2];
+
+hearst-4            := [constit cat=np]:Arg2 ","? ("including"):TextSignal (np-or-np-group):Arg1;
+
+when hearst-4       add [exemplify-candidate textSignal=TextSignal arg1=Arg1 arg2=Arg2];
+
+hearst-5            := [constit cat=np]:Arg2 ","? ("especially"):TextSignal (np-or-np-group):Arg1;
+
+when hearst-5       add [exemplify-candidate textSignal=TextSignal arg1=Arg1 arg2=Arg2];
+
+exemplify-eg        := [constit cat=np]:Arg2 "(" ("e.g."):TextSignal (np-or-np-group):Arg1 ")";
+
+when exemplify-eg   add [exemplify-candidate textSignal=TextSignal arg1=Arg1 arg2=Arg2];
+
+pattern set relation-originate;
+
+np      := [constit cat=np];
+
+np-or-comma     := np | ",";
+
+originate-1     := (np):Arg2 "(" (np-or-comma *):Arg1 ")";
+
+when originate-1    add [originate-candidate arg1=Arg1 arg2=Arg2];

@@ -1,0 +1,723 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE us-patent-application SYSTEM "us-patent-application-v42-2006-08-23.dtd" [ ]>
+<us-patent-application lang="EN" dtd-version="v4.2 2006-08-23" file="US20070005196A1-20070104.XML" status="PRODUCTION" id="us-patent-application" country="US" date-produced="20061221" date-publ="20070104">
+<us-bibliographic-data-application lang="EN" country="US">
+<publication-reference>
+<document-id>
+<country>US</country>
+<doc-number>20070005196</doc-number>
+<kind>A1</kind>
+<date>20070104</date>
+</document-id>
+</publication-reference>
+<application-reference appl-type="utility">
+<document-id>
+<country>US</country>
+<doc-number>11478622</doc-number>
+<date>20060703</date>
+</document-id>
+</application-reference>
+<us-application-series-code>11</us-application-series-code>
+<priority-claims>
+<priority-claim sequence="01" kind="national">
+<country>JP</country>
+<doc-number>2005-195124</doc-number>
+<date>20050704</date>
+</priority-claim>
+</priority-claims>
+<classifications-ipcr>
+<classification-ipcr>
+<ipc-version-indicator><date>20060101</date></ipc-version-indicator>
+<classification-level>A</classification-level>
+<section>G</section>
+<class>05</class>
+<subclass>D</subclass>
+<main-group>1</main-group>
+<subgroup>00</subgroup>
+<symbol-position>F</symbol-position>
+<classification-value>I</classification-value>
+<action-date><date>20070104</date></action-date>
+<generating-office><country>US</country></generating-office>
+<classification-status>B</classification-status>
+<classification-data-source>H</classification-data-source>
+</classification-ipcr>
+<classification-ipcr>
+<ipc-version-indicator><date>20060101</date></ipc-version-indicator>
+<classification-level>A</classification-level>
+<section>G</section>
+<class>06</class>
+<subclass>F</subclass>
+<main-group>17</main-group>
+<subgroup>00</subgroup>
+<symbol-position>L</symbol-position>
+<classification-value>I</classification-value>
+<action-date><date>20070104</date></action-date>
+<generating-office><country>US</country></generating-office>
+<classification-status>B</classification-status>
+<classification-data-source>H</classification-data-source>
+</classification-ipcr>
+</classifications-ipcr>
+<classification-national>
+<country>US</country>
+<main-classification>701001000</main-classification>
+</classification-national>
+<invention-title id="d0e164">Vehicle control apparatus and vehicle vibration suppression method</invention-title>
+<parties>
+<applicants>
+<applicant sequence="00" app-type="applicant-inventor" designation="us-only">
+<addressbook>
+<last-name>Oikawa</last-name>
+<first-name>Yoshitaka</first-name>
+<address>
+<city>Susono-shi</city>
+<country>JP</country>
+</address>
+</addressbook>
+<nationality>
+<country>JP</country>
+</nationality>
+<residence>
+<country>JP</country>
+</residence>
+</applicant>
+<applicant sequence="01" app-type="applicant-inventor" designation="us-only">
+<addressbook>
+<last-name>Takamatsu</last-name>
+<first-name>Hideki</first-name>
+<address>
+<city>Anjo-shi</city>
+<country>JP</country>
+</address>
+</addressbook>
+<nationality>
+<country>JP</country>
+</nationality>
+<residence>
+<country>JP</country>
+</residence>
+</applicant>
+<applicant sequence="02" app-type="applicant-inventor" designation="us-only">
+<addressbook>
+<last-name>Inagaki</last-name>
+<first-name>Shoji</first-name>
+<address>
+<city>Numazu-shi</city>
+<country>JP</country>
+</address>
+</addressbook>
+<nationality>
+<country>JP</country>
+</nationality>
+<residence>
+<country>JP</country>
+</residence>
+</applicant>
+<applicant sequence="03" app-type="applicant-inventor" designation="us-only">
+<addressbook>
+<last-name>Nakai</last-name>
+<first-name>Yasuhiro</first-name>
+<address>
+<city>Anjo-shi</city>
+<country>JP</country>
+</address>
+</addressbook>
+<nationality>
+<country>JP</country>
+</nationality>
+<residence>
+<country>JP</country>
+</residence>
+</applicant>
+<applicant sequence="04" app-type="applicant-inventor" designation="us-only">
+<addressbook>
+<last-name>Kawahara</last-name>
+<first-name>Kenji</first-name>
+<address>
+<city>Kariya-shi</city>
+<country>JP</country>
+</address>
+</addressbook>
+<nationality>
+<country>JP</country>
+</nationality>
+<residence>
+<country>JP</country>
+</residence>
+</applicant>
+</applicants>
+<correspondence-address>
+<addressbook>
+<name>C. IRVIN MCCLELLAND;OBLON, SPIVAK, MCCLELLAND, MAIER &#x26; NEUSTADT, P.C.</name>
+<address>
+<address-1>1940 DUKE STREET</address-1>
+<city>ALEXANDRIA</city>
+<state>VA</state>
+<postcode>22314</postcode>
+<country>US</country>
+</address>
+</addressbook>
+</correspondence-address>
+</parties>
+<assignees>
+<assignee>
+<addressbook>
+<orgname>TOYOTA JIDOSHA KABUSHIKI KAISHA</orgname>
+<role>03</role>
+<address>
+<city>Toyota-shi</city>
+<country>JP</country>
+</address>
+</addressbook>
+</assignee>
+<assignee>
+<addressbook>
+<orgname>DENSO CORPORATION</orgname>
+<role>03</role>
+<address>
+<city>Kariya-shi</city>
+<country>JP</country>
+</address>
+</addressbook>
+</assignee>
+</assignees>
+</us-bibliographic-data-application>
+<abstract id="abstract">
+<p id="p-0001" num="0000">A vehicle control apparatus for controlling a vehicle in response to a target control value includes a first setting unit configured to set a first target control value in response to a driver's request, a correction unit configured to correct the first target control value set by the first setting unit such as to suppress over-spring vibration of the vehicle, a second setting unit configured to set a second target control value in response to conditions different from a driver's request, and an arbitration unit configured to arbitrate between the first target control value and the second target control value, wherein if the second setting unit sets the second target control value, the correction unit is prevented from correcting the first target control value, and the arbitration unit arbitrates between the first target control value not corrected by the correction unit and the second target control value. </p>
+</abstract>
+<drawings id="DRAWINGS">
+<figure id="figure-D00000" num="00000">
+<img id="EMI-D00000" he="119.63mm" wi="199.45mm" file="US20070005196A1-20070104-D00000.TIF" alt="embedded image" img-content="drawing" img-format="tif"/>
+</figure>
+<figure id="figure-D00001" num="00001">
+<img id="EMI-D00001" he="266.53mm" wi="187.37mm" orientation="landscape" file="US20070005196A1-20070104-D00001.TIF" alt="embedded image" img-content="drawing" img-format="tif"/>
+</figure>
+<figure id="figure-D00002" num="00002">
+<img id="EMI-D00002" he="276.69mm" wi="182.37mm" orientation="landscape" file="US20070005196A1-20070104-D00002.TIF" alt="embedded image" img-content="drawing" img-format="tif"/>
+</figure>
+<figure id="figure-D00003" num="00003">
+<img id="EMI-D00003" he="197.95mm" wi="167.05mm" file="US20070005196A1-20070104-D00003.TIF" alt="embedded image" img-content="drawing" img-format="tif"/>
+</figure>
+<figure id="figure-D00004" num="00004">
+<img id="EMI-D00004" he="265.51mm" wi="159.26mm" file="US20070005196A1-20070104-D00004.TIF" alt="embedded image" img-content="drawing" img-format="tif"/>
+</figure>
+<figure id="figure-D00005" num="00005">
+<img id="EMI-D00005" he="200.41mm" wi="164.59mm" file="US20070005196A1-20070104-D00005.TIF" alt="embedded image" img-content="drawing" img-format="tif"/>
+</figure>
+<figure id="figure-D00006" num="00006">
+<img id="EMI-D00006" he="204.30mm" wi="196.17mm" file="US20070005196A1-20070104-D00006.TIF" alt="embedded image" img-content="drawing" img-format="tif"/>
+</figure>
+<figure id="figure-D00007" num="00007">
+<img id="EMI-D00007" he="269.83mm" wi="146.90mm" file="US20070005196A1-20070104-D00007.TIF" alt="embedded image" img-content="drawing" img-format="tif"/>
+</figure>
+<figure id="figure-D00008" num="00008">
+<img id="EMI-D00008" he="264.16mm" wi="141.90mm" file="US20070005196A1-20070104-D00008.TIF" alt="embedded image" img-content="drawing" img-format="tif"/>
+</figure>
+</drawings>
+<description id="description">
+<?summary-of-invention description="Summary of Invention" end="lead"?>
+<heading level="2" id="h-0001">BACKGROUND OF THE INVENTION </heading>
+<p id="p-0002" num="0001"> 1. Field of the Invention </p>
+<p id="p-0003" num="0002"> The present invention relates to an apparatus for controlling vehicle vibration that sets a predetermined target control value relating to the travel of the vehicle, and controls the vehicle based on the target control value, and also relates to a method of reducing the over-spring vibration of the vehicle. </p>
+<p id="p-0004" num="0003"> 2. Description of the Related Art </p>
+<p id="p-0005" num="0004"> Conventionally, vehicle control apparatuses for reducing the vibration of vehicles are known that control at least one of the engine and the brake in response to an input instruction that is a physical quantity corresponding to at least one of the accelerator operation, steering-wheel operation, and brake operation performed by the driver (e.g., Patent Document 1). Such vehicle control apparatuses correct an input instruction given by a driver in order to suppress vehicle vibration by use of a motion model relating to the vibration resulting from the user input instruction, such vibration including at least one of the up-and-down and/or twisting vibration caused by a reaction force applied to the tires, the under-spring vibration of the vehicle body at the suspension, and the over-spring vibration of the vehicle body that is applied to the vehicle body itself. </p>
+<p id="p-0006" num="0005"> [Patent Document 1] Japanese Patent Application Publication No. 2004-168148 </p>
+<p id="p-0007" num="0006"> In recent years, the needs to stabilize the behavior of a vehicle and to avoid a collision have been recognized in order to improve safety at the time of vehicle travel. To this end, a market progress has been being made with respect to vehicle control apparatuses that set a target control value irrespective of the driver's intension based on the measurement of states and conditions of vehicle travel, and controls the vehicle by arbitrating between the target control value and a target control value responsive to the driver's request. Even in a vehicle that is equipped with such vehicle control apparatus, it is preferable to perform the vibration suppression and correction process as previously described. Since such vibration suppression and correction process results in a change in the dynamic characteristics of the vehicle, the vibration of the vehicle may be increased to destabilize the behavior of the vehicle if the target control value set differently from the driver's request is corrected for vibration suppression, or the vibration-suppressed-and-corrected target control value and the differently-set target control value are arbitrated. When the mechanism for vibration suppression and correction is to be incorporated into a vehicle control apparatus, however, it is not desirable, from the viewpoint of cost and burden associated with the development, to design the vehicle control apparatus in conformity to the vibration-suppression-and-correction mechanism. </p>
+<p id="p-0008" num="0007"> Accordingly, there is a need for a vehicle control apparatus and vehicle vibration-suppression method that can suppress vehicle vibration satisfactorily, and can easily and properly ensure the safety of the vehicle when a target control value is set in response to conditions different from the driver's request. </p>
+<heading level="2" id="h-0002">SUMMARY OF THE INVENTION </heading>
+<p id="p-0009" num="0008"> It is a general object of the present invention to provide a vehicle control apparatus and a vehicle vibration-suppression method that substantially obviate one or more problems caused by the limitations and disadvantages of the related art. </p>
+<p id="p-0010" num="0009"> Features and advantages of the present invention will be presented in the description which follows, and in part will become apparent from the description and the accompanying drawings, or may be learned by practice of the invention according to the teachings provided in the description. Objects as well as other features and advantages of the present invention will be realized and attained by a vehicle control apparatus and vehicle vibration-suppression method particularly pointed out in the specification in such full, clear, concise, and exact terms as to enable a person having ordinary skill in the art to practice the invention. </p>
+<p id="p-0011" num="0010"> To achieve these and other advantages in accordance with the purpose of the invention, the invention provides a vehicle control apparatus for controlling a vehicle in response to a target control value that relates to a travel of the vehicle includes a first target control value setting unit configured to set a first target control value in response to a driver's request, a correction unit configured to correct the first target control value set by the first target control value setting unit such as to suppress over-spring vibration of the vehicle, a second target control value setting unit configured to set a second target control value in response to conditions different from a driver's request, and an arbitration unit configured to arbitrate between the first target control value and the second target control value, wherein if the second target control value setting unit sets the second target control value, the correction unit is prevented from correcting the first target control value, and the arbitration unit arbitrates between the first target control value not corrected by the correction unit and the second target control value. </p>
+<p id="p-0012" num="0011"> The vehicle control apparatus as described above includes the first target control value setting unit to set the first target control value in response to the driver's request, the second target control value setting unit to set the second target control value in response to conditions different from the driver's request, and the arbitration unit, and controls the vehicle by using the arbitration unit to arbitrate between the first target control value and the second target control value. Further, the vehicle control apparatus includes the correction unit configured to correct the first target control value set by the first target control value setting unit such as to suppress the over-spring vibration of the vehicle. With this arrangement, the vibration of the vehicle is satisfactorily suppressed when the first target control value responsive to the driver's request is corrected by the correction unit. In this vehicle control apparatus, moreover, when the second target control value is set in response to conditions different from the driver's request, the correction unit is prevented from correcting the first target control value, and the arbitration unit arbitrates between the first target control value that is not corrected and the second target control value supplied from the second target control value setting unit. </p>
+<p id="p-0013" num="0012"> In this manner, the vibration-suppression-&#x26;-correction process by the correction unit is prevented when the arbitration between the first and second target control values is performed, so that the vibration-suppression-&#x26;-correction process and the arbitration between the first and second target control values are prevented from helping increase the vibration of the vehicle to destabilize the behavior of the vehicle. Further, there is no need to design the second target control value setting unit in conformity with the correction unit when the correction unit is incorporated into the vehicle control apparatus. Accordingly, with this vehicle control apparatus, the vibration of the vehicle is suppressed satisfactorily, and the safety of the vehicle is easily and properly ensured when a target control value is set in response to conditions different from the driver's request. </p>
+<p id="p-0014" num="0013"> Moreover, the vehicle control apparatus according to the present invention further includes a switching unit configured to selectively switch a destination of the first target control value set by the first target control value setting unit between the correction unit and the arbitration unit, wherein the switching unit supplies the first target control value directly to the arbitration unit without the correction unit serving as an intervening unit if the second target control value sets the second target control value. </p>
+<p id="p-0015" num="0014"> Further, when the second target control value setting unit releases a setting of the second target control value, the correction unit may preferably receive a final output value of the arbitration unit that is output at a time the setting of the second target control value is released. </p>
+<p id="p-0016" num="0015"> When the inputting of the first target control value into the correction unit is stopped by the switching unit upon the setting of the second target control value, the ultimate target drive force output from the vehicle control apparatus may become discontinuous to help increase the vibration of the vehicle around the time at which the first target control value is input again into the correction unit upon the release of the setting of the second target control value. If the final output value of the arbitration unit at the time the setting of the second target control value is released is input into the correction unit when the second target control value setting unit releases the setting of the second target control value, the ultimate target drive force of the vehicle control apparatus can have its continuity preserved at the time the setting of the second target control value by the second target control value setting unit is released, thereby stabilizing the behavior of the vehicle. </p>
+<p id="p-0017" num="0016"> Moreover, the arbitration unit may select as its output value the smaller of the first target control value and the second target control value, which are substantially simultaneously supplied, or may select as its output value the larger of the first target control value and the second target control value, which are substantially simultaneously supplied. According to this arrangement, based on the travel condition and/or travel environment condition of the vehicle, an arbitration can properly be performed between the first target control value responsive to the driver's request and the second target control value responsive to conditions different from the driver's request </p>
+<p id="p-0018" num="0017"> Further, the second target control value setting unit may preferably be configured to set the second target control value in response to at least one of a travel condition of the vehicle and a travel environment of the vehicle such that the behavior of the vehicle is stabilized. </p>
+<p id="p-0019" num="0018"> With this arrangement, the first target control value responsive to the driver's request and the second target control value set by the second target control value setting unit to stabilize the behavior of the vehicle irrespective of the driver's intention are properly arbitrated, thereby satisfactorily improving the safety of the vehicle travel. </p>
+<p id="p-0020" num="0019"> According to another aspect of the present invention, a method of suppressing vibration of a vehicle by correcting, with a correction unit, a first target control value relating to a travel of the vehicle and set according to a driver's request such as to suppress over-spring vibration of the vehicle includes a step (a) of setting a second target control value in response to conditions different from the driver's request, a step (b) of preventing the correction unit from correcting the first target control value if the second target control value is set by the step (a), and a step (c) of arbitrating between the first target control value not corrected by the correction unit and the second target control value. </p>
+<p id="p-0021" num="0020"> This vehicle-vibration-suppression method may preferably include a further step of supplying a final arbitration result of the step (c) to the correction unit when a setting of the second target control value is released, the final arbitration result being a result of the step (c) that is obtained at a time the setting of the second target control value is released. </p>
+<p id="p-0022" num="0021"> According to another aspect of the present invention, a vehicle control apparatus for controlling a vehicle in response to a target control value that relates to a travel of the vehicle includes a first target control value setting unit configured to set a first target control value in response to a driver's request, a second target control value setting unit configured to set a second target control value in response to conditions different from a driver's request, and a correction unit configured to correct the first target control value set by the first target control value setting unit or the second target control value set by the second target control value setting unit such as to suppress over-spring vibration of the vehicle, wherein when the second target control value setting unit sets the second target control value, the first target control value is disabled, and the correction unit is prevented from correcting the second target control value under predetermined conditions. </p>
+<p id="p-0023" num="0022"> The vehicle control apparatus described above includes the correction unit configured to correct the first target control value set by the first target control value setting unit or the second target control value set by the second target control value setting unit such as to suppress the over-spring vibration of the vehicle. With this arrangement, the vibration of the vehicle is satisfactorily suppressed when the first target control value responsive to the driver's request or the second target control value responsive to conditions different from the driver's request is corrected by the correction unit. Moreover, the vehicle control apparatus disables the first target control value and prevents the correction unit from correcting the second target control value in the event that predetermined conditions are satisfied, e.g., when the conditions to give priority to the second target control value over the first target control value are satisfied, if the second target control value setting unit sets the second target control value. </p>
+<p id="p-0024" num="0023"> In this manner, the first target control value responsive to the driver's request is disabled and the second target control value responsive to conditions different from the driver's request is enabled under predetermined conditions, with the vibration-suppression-&#x26;-correction of the second target control value by the correction unit being prohibited, so that the vibration-suppression-&#x26;-correction process is prevented from helping increase the vibration of the vehicle to destabilize the behavior of the vehicle. Further, there is no need to design the second target control value setting unit in conformity with the correction unit when the correction unit is incorporated into the vehicle control apparatus. Accordingly, with this vehicle control apparatus, the vibration of the vehicle is suppressed satisfactorily, and the safety of the vehicle is easily and properly ensured when a target control value is set in response to conditions different from the driver's request. </p>
+<p id="p-0025" num="0024"> The vehicle control apparatus may preferably further include a first switching unit configured to selectively enable one of the first target control value set by the first target control value setting unit and the second target control value set by the second target control value setting unit, and a second switching unit configured to control whether to supply the first target control value or second target control value output from the first switching unit to the correction unit. </p>
+<p id="p-0026" num="0025"> Further, when the second target control value setting unit releases a setting of the second target control value, the correction unit may preferably receive a final setting value of the second target control value setting unit that is output at a time the setting of the second target control value is released. </p>
+<p id="p-0027" num="0026"> As previously described, when the first target control value is disabled, the ultimate target drive force output from the vehicle control apparatus may become discontinuous to help increase the vibration of the vehicle around the time at which the first target control value is input again into the correction unit. If the final setting value of the second target control value setting unit at the time the setting of the second target control value is released is input into the correction unit when the second target control value setting unit releases the setting of the second target control value, the ultimate target drive force of the vehicle control apparatus can have its continuity preserved at the time the setting of the second target control value by the second target control value setting unit is released, thereby stabilizing the behavior of the vehicle. </p>
+<p id="p-0028" num="0027"> Moreover, the second target control value setting unit may preferably be configured to set the second target control value in response to at least one of the driver's request, a travel condition of the vehicle, and a travel environment of the vehicle such that the driving of the vehicle is assisted or substituted for. </p>
+<p id="p-0029" num="0028"> With this provision, the driving of the vehicle by the driver is properly assisted or substituted for by the vehicle control apparatus, thereby improving the safety of vehicle travel satisfactorily. </p>
+<p id="p-0030" num="0029"> According to another aspect of the present invention, a method of suppressing vibration of a vehicle by correcting, with a correction unit, a first target control value relating to a travel of the vehicle and set according to a driver's request such as to suppress over-spring vibration of the vehicle includes a step (a) of setting a second target control value in response to conditions different from the driver's request, and a step (b) of disabling the first target control value and preventing the correction unit from correcting the second target control value under predetermined conditions if the second target control value is set by the step (a). </p>
+<p id="p-0031" num="0030"> This vehicle-vibration-suppression method may preferably include a further step of supplying a final setting value of the step (a) to the correction unit when a setting of the second target control value is released, the final setting value being set by the step (a) at the time the setting of the second target control value is released. </p>
+<p id="p-0032" num="0031"> According to at least one embodiment of the present invention, the vibration of the vehicle is suppressed satisfactorily, and the safety of the vehicle is easily and properly ensured when a target control value is set in response to conditions different from the driver's request.</p>
+<?summary-of-invention description="Summary of Invention" end="tail"?>
+<?brief-description-of-drawings description="Brief Description of Drawings" end="lead"?>
+<heading level="2" id="h-0003">BRIEF DESCRIPTION OF THE DRAWINGS </heading>
+<p id="p-0033" num="0032"> Other objects and further features of the present invention will be apparent from the following detailed description when read in conjunction with the accompanying drawings, in which: </p>
+<p id="p-0034" num="0033"> <figref idref="DRAWINGS">FIG. 1</figref> is a block diagram showing a vehicle to which a vehicle control apparatus according to the present invention is applied; </p>
+<p id="p-0035" num="0034"> <figref idref="DRAWINGS">FIG. 2</figref> is a control block diagram for explaining the procedure for controlling an internal combustion engine and transmitter according to the vehicle control apparatus of the present invention; </p>
+<p id="p-0036" num="0035"> <figref idref="DRAWINGS">FIG. 3</figref> is a flowchart for explaining the procedure for controlling a vehicle according to the vehicle control apparatus of the present invention; </p>
+<p id="p-0037" num="0036"> <figref idref="DRAWINGS">FIGS. 4A through 4D</figref> are drawings for explaining the procedure for setting a target drive force in the vehicle control apparatus of the present invention; </p>
+<p id="p-0038" num="0037"> <figref idref="DRAWINGS">FIG. 5</figref> is a flowchart for explaining the procedure for controlling a vehicle according to the vehicle control apparatus of the present invention; </p>
+<p id="p-0039" num="0038"> <figref idref="DRAWINGS">FIGS. 6A and 6B</figref> are drawings for explaining an ultimate target control value when an arbitration is performed between a target control value subjected to a vibration-suppression-&#x26;-correction process by a filter and a target control value set according to conditions different from the former target control value; </p>
+<p id="p-0040" num="0039"> <figref idref="DRAWINGS">FIGS. 7A and 7B</figref> are drawings for explaining an ultimate target control value when an arbitration is performed between a target control value subjected to a vibration-suppression-&#x26;-correction process by a filter and a target control value set according to conditions different from the former target control value; </p>
+<p id="p-0041" num="0040"> <figref idref="DRAWINGS">FIGS. 8A through 8D</figref> are drawings for explaining the procedure for setting a target drive force in the vehicle control apparatus of the present invention; and </p>
+<p id="p-0042" num="0041"> <figref idref="DRAWINGS">FIGS. 9A through 9D</figref> are drawings for explaining the procedure for setting a target drive force in the vehicle control apparatus of the present invention.</p>
+<?brief-description-of-drawings description="Brief Description of Drawings" end="tail"?>
+<?detailed-description description="Detailed Description" end="lead"?>
+<heading level="2" id="h-0004">DESCRIPTION OF THE PREFERRED EMBODIMENTS </heading>
+<p id="p-0043" num="0042"> In the following, the best mode for carrying out the present invention will be described in detail by referring to the accompanying drawings. </p>
+<p id="p-0044" num="0043"> <figref idref="DRAWINGS">FIG. 1</figref> is a block diagram showing a vehicle to which a vehicle control apparatus according to the present invention is applied. In <figref idref="DRAWINGS">FIG. 1</figref>, a vehicle <b>1</b> includes an internal combustion engine (not shown) such as a gasoline engine or diesel engine as a source of a drive force for travel. This internal combustion engine includes devices such as a fuel injection device <b>2</b>, an ignition device <b>3</b>, an electronically controlled throttle valve <b>4</b> (hereinafter referred to simply as &#x201c;throttle valve&#x201d; <b>4</b>). The vehicle <b>1</b> is also provided with a transmission <b>5</b> such as an automatic transmission or non-stage transmission for transmitting the drive force generated by the internal combustion engine to the drive wheels. Further, the vehicle <b>1</b> includes an electronically-controlled brake system inclusive of a brake actuator <b>6</b> electronically controlled in response to the displacement of the brake pedal, a steering apparatus inclusive of a steering-purpose actuator <b>7</b> such as a variable gear mechanism and electrical assisting unit electronically controlled in response to the operation of the steering wheel, and an electronically-controlled suspension inclusive of a plurality of shock absorbers <b>8</b> for changing an attenuating capability through electronic control. </p>
+<p id="p-0045" num="0044"> The internal combustion engine and transmission <b>5</b> of the vehicle <b>1</b> are controlled by a drive-control-purpose electronic control unit <b>10</b> (hereinafter referred to as &#x201c;drive-control ECU&#x201d; (all electronic control units will hereinafter be referred to as &#x201c;ECU&#x201d;)) . The drive-control ECU <b>10</b> of this embodiment is implemented as a multi-processor unit, for example, and includes a plurality of CPUs for performing various computations, a ROM for storing various controls programs, a RAM for use as a work area for storing data and executing programs, an input/output interface, a memory device, etc. The drive-control ECU <b>10</b> is connected to an accelerator sensor <b>11</b>, a brake sensor <b>12</b>, and a steering-wheel-angle sensor <b>14</b>. </p>
+<p id="p-0046" num="0045"> The accelerator sensor <b>11</b> detects the displacement of the accelerator pedal given by the driver, and transmits a signal indicative of the detected value to the drive-control ECU <b>10</b>. The brake sensor <b>12</b> detects the displacement of the brake pedal given by the driver, and transmits a signal indicative of the detected value to the drive-control ECU <b>10</b>. The steering-wheel-angle sensor <b>14</b> detects the angle of the steering wheel indicative of the steering displacement given by the driver, and transmits a signal indicative of the detected value to the drive-control ECU <b>10</b>. The drive-control ECU <b>10</b> controls the fuel injection device <b>2</b>, the ignition device <b>3</b>, the throttle valve <b>4</b>, and the transmission <b>5</b> in response to the driver's request indicated by the signals from the sensors <b>11</b> through <b>14</b> and the detection values of other sensors (not shown) such as to satisfy the driver's request. </p>
+<p id="p-0047" num="0046"> Further, the drive-control ECU <b>10</b> is also connected to a mode switch <b>15</b> serving as a travel-characteristics (travel-mode) determining means. The mode switch <b>15</b> is used when the attenuating capability of the shock absorbers <b>8</b> included in the electronically-controlled suspension system are switched. Operating the mode switch <b>15</b> makes it possible to change the travel characteristics, i.e., travel mode of the vehicle <b>1</b>. In this embodiment, when the mode switch <b>15</b> is turned off by the driver, the attenuating capability of the shock absorbers <b>8</b> is set to a standard value, by which the travel characteristics of the vehicle <b>1</b> are set to a normal mode. When the mode switch <b>15</b> is turned on and set to &#x201c;mode 1&#x201d;, the attenuating capability of the shock absorbers <b>8</b> is set to a harder value than the standard value, by which the travel characteristics of the vehicle <b>1</b> are set to a power mode. Under the power mode, acceleration performance is given priority over the vibration suppression of the vehicle <b>1</b>. When the mode switch <b>15</b> is turned on and set to &#x201c;mode 2&#x201d;, the attenuating capability of the shock absorbers <b>8</b> is set to a softer value than the standard value, by which the travel characteristics of the vehicle <b>1</b> are set to a comfort mode. Under the comfort mode, vibration suppression is given priority over the acceleration performance of the vehicle <b>1</b>. </p>
+<p id="p-0048" num="0047"> The drive-control ECU <b>10</b> is connected to an ECBECU <b>20</b>, a steering ECU <b>30</b>, a suspension ECU <b>40</b>, and a DSSECU <b>50</b> through an on-vehicle LAN or wireless communication. The ECBECU <b>20</b> serves to control the electronically-controlled brake system, and controls the brake actuator <b>6</b> and the like in response to the detection values of various sensors including the brake sensor <b>12</b>. In this embodiment, the ECBECU <b>20</b> is configured to perform a vehicle dynamics integrated management (VDIM) regarding the driving, steering, and breaking of the vehicle <b>1</b> such as to stabilize the behavior of the vehicle <b>1</b> by cooperating with the drive-control ECU <b>10</b>, the steering ECU <b>30</b>, and the suspension ECU <b>40</b>. </p>
+<p id="p-0049" num="0048"> The steering ECU <b>30</b> serves to control the steering mechanism of the vehicle <b>1</b>, and controls the steering-purpose actuator <b>7</b> and the like in response to the detection values of various sensors including the steering-wheel-angle sensor <b>14</b>. The suspension ECU <b>40</b> serves to control the electronically-controlled suspension, and controls the attenuating capability of each of the shock absorbers <b>8</b> in response to the setting of the mode switch <b>15</b> made by the driver. The DSSECU <b>50</b> serves to perform the overall control of drive assist and/or substitution for the driver, and functions as a cruise controller, a brake assist unit, and a crash prevention system (pre-crash safety system). Nonetheless to say, the drive-control ECU <b>10</b>, the ECBECU <b>20</b>, the steering ECU <b>30</b>, the suspension ECU <b>40</b>, and the DSSECU <b>50</b> receive the information necessary for control from various sensors such as a throttle openness sensor, a vehicle-speed sensor, a forward/backward accelerator sensor, a yaw-rate sensor, a raider unit, a monitor system for detecting an inter-vehicle distance, for example, a navigation system, a road traffic information communication system (VICS), a unit (surrounding information acquisition unit) for acquiring the travel conditions of the vehicle <b>1</b> such as an imaging unit or inter-vehicle-distance sensor for acquiring an inter-vehicle distance, etc. </p>
+<p id="p-0050" num="0049"> <figref idref="DRAWINGS">FIG. 2</figref> is a control block diagram for explaining the procedure for controlling the internal combustion engine and transmitter of the vehicle <b>1</b>. As can be seen from the figure, the internal combustion engine and the transmitter of the vehicle <b>1</b> is mainly controlled by the drive-control ECU <b>10</b>, which cooperates according to need with at least one of the ECBECU <b>20</b> and the DSSECU <b>50</b>. As shown in <figref idref="DRAWINGS">FIG. 2</figref>, the drive-control ECU <b>10</b> includes a target acceleration acquiring unit <b>111</b>, a target drive acquiring unit <b>112</b>, a first switching unit SW<b>1</b>, a second switching unit SW<b>2</b>, a filter <b>114</b>, an ultimate arbitrating unit <b>115</b>, and a control-value setting unit <b>116</b>. </p>
+<p id="p-0051" num="0050"> The target acceleration acquiring unit <b>111</b> uses a map or the like that defines the relationship between the target acceleration of the vehicle <b>1</b> and the displacement of the accelerator pedal given by the driver, thereby acquiring the target acceleration of the vehicle <b>1</b> responsive to the displacement of the accelerator pedal indicated by the signal supplied from the accelerator sensor <b>11</b>, followed by supplying a signal indicative of the acquired value to the target drive acquiring unit <b>112</b>. The target drive acquiring unit <b>112</b> uses a map or the like that defines the relationship between the target acceleration of the vehicle <b>1</b> and the target drive force of the internal combustion engine, thereby to acquire the target drive force of the internal combustion engine in response to the displacement of the accelerator pedal, i.e., the target acceleration acquired by the target acceleration acquiring unit <b>111</b>. The output terminal of the target drive acquiring unit <b>112</b> is connected to one of the input nodes (drive-request side) of the first switching unit SW<b>1</b>. </p>
+<p id="p-0052" num="0051"> The first switching unit SW<b>1</b> has two input nodes as shown in <figref idref="DRAWINGS">FIG. 2</figref>, one (driver-request side) of the two input nodes being connected to the output terminal of the target drive acquiring unit <b>112</b> as described above, and the other (DSS side) being connected to the DSSECU <b>50</b>. The first switching unit SW<b>1</b> selects one of the signal from the target drive acquiring unit <b>112</b> and the signal from the DSSECU <b>50</b> as its output in response to an instruction from the DSSECU <b>50</b> or the like. Namely, the first switching unit SW<b>1</b> outputs one of the signal from the target drive acquiring unit <b>112</b> and the signal from the DSSECU <b>50</b> as a valid signal. The output terminal of the first switching unit SW<b>1</b> is connected to one of the input nodes of the second switching unit SW<b>2</b>. The first switching unit SW<b>1</b> is usually set to select the deriver-request side, thereby supplying the output signal of the target drive acquiring unit <b>112</b> to the second switching unit SW<b>2</b> during a normal operation. </p>
+<p id="p-0053" num="0052"> The second switching unit SW<b>2</b> has a filter-side node and a bypass-side node as output nodes as shown in <figref idref="DRAWINGS">FIG. 2</figref>. Among these two output nodes, the filter-side node is connected to the input terminal of the filter <b>114</b>. The bypass-side node is connected to the ultimate arbitrating unit <b>115</b> and the ECBECU <b>20</b> by bypassing the filter <b>114</b>. The second switching unit SW<b>2</b> selectively switches the destination of the output signal of the first switching unit SW<b>1</b> between the filter side and the bypass side in response to an instruction from the ECBECU <b>20</b>. The output terminal of the filter <b>114</b> is connected to the ultimate arbitrating unit <b>115</b> and the ECBECU <b>20</b>. </p>
+<p id="p-0054" num="0053"> With this arrangement, when the second switching unit SW<b>2</b> is set to the filter side, the signal passing through the filter <b>114</b> is supplied to the ultimate arbitrating unit <b>115</b> and the ECBECU <b>20</b>. On the other hand, when the second switching unit SW<b>2</b> is set to the bypass side, the signal output from the first switching unit SW<b>1</b> is supplied to the ultimate arbitrating unit <b>115</b> and ECBECU <b>20</b> without passing through the filter <b>114</b>. The second switching unit SW<b>2</b> is usually set to select the filter side, thereby supplying the output signal of the first switching unit SW<b>1</b> to the filter <b>114</b> during a normal operation. </p>
+<p id="p-0055" num="0054"> The filter <b>114</b> serves to correct the target drive force such as to suppress the over-spring vibration of the vehicle <b>1</b>. In this embodiment, a second-order notch filter is used as the filter <b>114</b>. The ultimate arbitrating unit <b>115</b> arbitrates between the signal supplied from the second switching unit SW<b>2</b> and the signal supplied from the ECBECU <b>20</b>, thereby setting an ultimate target drive force. In this embodiment, the ultimate arbitrating unit <b>115</b> performs a priority process for preferentially outputting one of the supplied signals in response to the travel conditions and/or travel-environment conditions of the vehicle <b>1</b>, or performs a max-select process or minimum-select process for outputting the maximum value or minimum value of the signals that are almost simultaneously supplied. </p>
+<p id="p-0056" num="0055"> Further, the control-value setting unit <b>116</b> determines the control values of the fuel injection device <b>2</b>, the ignition device <b>3</b>, the throttle valve <b>4</b>, and the transmission <b>5</b> based on the output value of the ultimate arbitrating unit <b>115</b>. The drive-control ECU <b>10</b> generates control signals for the fuel injection device <b>2</b>, the ignition device <b>3</b>, the throttle valve <b>4</b>, and the transmission <b>5</b> based on the control values determined by the control-value setting unit <b>116</b>, and supplies the generated control signals to respective devices. With this provision, the internal combustion engine and transmission <b>5</b> of the vehicle <b>1</b> are controlled such as to satisfy the requests from the driver, the ECBECU <b>20</b>, and the DSSECU <b>50</b>. </p>
+<p id="p-0057" num="0056"> The reason why the filter <b>114</b> comprised of a second-order notch filter is provided for the drive-control ECU <b>10</b> of the present embodiment is as follows. If the vehicle <b>1</b> is a rear-wheel drive vehicle, the transfer function having the target drive force of the vehicle as its input and the rear suspension stroke of the vehicle as its output may generally be represented as a second-order/fourth-order transfer function as shown in formula (1).  
+<maths id="MATH-US-00001" num="1">
+<math overflow="scroll">
+<mtable>
+  <mtr>
+    <mtd>
+      <mtable>
+        <mtr>
+          <mtd>
+            <mrow>
+              <mrow>
+                <msub>
+                  <mi>Px</mi>
+                  <mi>r</mi>
+                </msub>
+                <mo>&#x2061;</mo>
+                <mrow>
+                  <mo>(</mo>
+                  <mi>s</mi>
+                  <mo>)</mo>
+                </mrow>
+              </mrow>
+              <mo>=</mo>
+              <mrow>
+                <mi>K</mi>
+                <mo>&#xb7;</mo>
+                <mfrac>
+                  <mrow>
+                    <msubsup>
+                      <mi>&#x3c9;</mi>
+                      <mrow>
+                        <mi>n</mi>
+                        <mo>&#x2062;</mo>
+                        <mstyle>
+                          <mtext>&#x2003;</mtext>
+                        </mstyle>
+                        <mo>&#x2062;</mo>
+                        <mn>1</mn>
+                      </mrow>
+                      <mn>2</mn>
+                    </msubsup>
+                    <mo>&#xb7;</mo>
+                    <msubsup>
+                      <mi>&#x3c9;</mi>
+                      <mrow>
+                        <mi>n</mi>
+                        <mo>&#x2062;</mo>
+                        <mstyle>
+                          <mtext>&#x2003;</mtext>
+                        </mstyle>
+                        <mo>&#x2062;</mo>
+                        <mn>2</mn>
+                      </mrow>
+                      <mn>2</mn>
+                    </msubsup>
+                  </mrow>
+                  <mrow>
+                    <msub>
+                      <mi>z</mi>
+                      <mn>1</mn>
+                    </msub>
+                    <mo>&#xb7;</mo>
+                    <msub>
+                      <mi>z</mi>
+                      <mn>2</mn>
+                    </msub>
+                  </mrow>
+                </mfrac>
+                <mo>&#xb7;</mo>
+                <mfrac>
+                  <mrow>
+                    <mi>s</mi>
+                    <mo>-</mo>
+                    <msub>
+                      <mi>z</mi>
+                      <mn>1</mn>
+                    </msub>
+                  </mrow>
+                  <mrow>
+                    <msup>
+                      <mi>s</mi>
+                      <mn>2</mn>
+                    </msup>
+                    <mo>+</mo>
+                    <mrow>
+                      <mn>2</mn>
+                      <mo>&#x2062;</mo>
+                      <mrow>
+                        <msub>
+                          <mi>&#x3be;</mi>
+                          <mn>1</mn>
+                        </msub>
+                        <mo>&#xb7;</mo>
+                        <msub>
+                          <mi>&#x3c9;</mi>
+                          <mrow>
+                            <mi>n</mi>
+                            <mo>&#x2062;</mo>
+                            <mstyle>
+                              <mtext>&#x2003;</mtext>
+                            </mstyle>
+                            <mo>&#x2062;</mo>
+                            <mn>1</mn>
+                          </mrow>
+                        </msub>
+                        <mo>&#xb7;</mo>
+                        <mi>s</mi>
+                      </mrow>
+                    </mrow>
+                    <mo>+</mo>
+                    <msubsup>
+                      <mi>&#x3c9;</mi>
+                      <mrow>
+                        <mi>n</mi>
+                        <mo>&#x2062;</mo>
+                        <mstyle>
+                          <mtext>&#x2003;</mtext>
+                        </mstyle>
+                        <mo>&#x2062;</mo>
+                        <mn>1</mn>
+                      </mrow>
+                      <mn>2</mn>
+                    </msubsup>
+                  </mrow>
+                </mfrac>
+                <mo>&#xb7;</mo>
+                <mfrac>
+                  <mrow>
+                    <mi>s</mi>
+                    <mo>-</mo>
+                    <msub>
+                      <mi>z</mi>
+                      <mn>2</mn>
+                    </msub>
+                  </mrow>
+                  <mrow>
+                    <msup>
+                      <mi>s</mi>
+                      <mn>2</mn>
+                    </msup>
+                    <mo>+</mo>
+                    <mrow>
+                      <mn>2</mn>
+                      <mo>&#x2062;</mo>
+                      <mrow>
+                        <msub>
+                          <mi>&#x3be;</mi>
+                          <mn>2</mn>
+                        </msub>
+                        <mo>&#xb7;</mo>
+                        <msub>
+                          <mi>&#x3c9;</mi>
+                          <mrow>
+                            <mi>n</mi>
+                            <mo>&#x2062;</mo>
+                            <mstyle>
+                              <mtext>&#x2003;</mtext>
+                            </mstyle>
+                            <mo>&#x2062;</mo>
+                            <mn>2</mn>
+                          </mrow>
+                        </msub>
+                        <mo>&#xb7;</mo>
+                        <mi>s</mi>
+                      </mrow>
+                    </mrow>
+                    <mo>+</mo>
+                    <msubsup>
+                      <mi>&#x3c9;</mi>
+                      <mrow>
+                        <mi>n</mi>
+                        <mo>&#x2062;</mo>
+                        <mstyle>
+                          <mtext>&#x2003;</mtext>
+                        </mstyle>
+                        <mo>&#x2062;</mo>
+                        <mn>2</mn>
+                      </mrow>
+                      <mn>2</mn>
+                    </msubsup>
+                  </mrow>
+                </mfrac>
+              </mrow>
+            </mrow>
+          </mtd>
+        </mtr>
+        <mtr>
+          <mtd>
+            <mrow>
+              <mo>=</mo>
+              <mrow>
+                <mi>K</mi>
+                <mo>&#xb7;</mo>
+                <mrow>
+                  <msub>
+                    <mi>G</mi>
+                    <mn>1</mn>
+                  </msub>
+                  <mo>&#x2061;</mo>
+                  <mrow>
+                    <mo>(</mo>
+                    <mi>s</mi>
+                    <mo>)</mo>
+                  </mrow>
+                </mrow>
+                <mo>&#xb7;</mo>
+                <mrow>
+                  <msub>
+                    <mi>G</mi>
+                    <mn>2</mn>
+                  </msub>
+                  <mo>&#x2061;</mo>
+                  <mrow>
+                    <mo>(</mo>
+                    <mi>s</mi>
+                    <mo>)</mo>
+                  </mrow>
+                </mrow>
+              </mrow>
+            </mrow>
+          </mtd>
+        </mtr>
+      </mtable>
+    </mtd>
+    <mtd>
+      <mrow>
+        <mo>(</mo>
+        <mn>1</mn>
+        <mo>)</mo>
+      </mrow>
+    </mtd>
+  </mtr>
+</mtable>
+</math>
+</maths>
+</p>
+<p id="p-0058" num="0057"> Such second-order/fourth-order transfer function includes two second-order transfer functions G<sub>1</sub>(s) and G<sub>2</sub>(s). As the formula (1) is identified, the value of the attenuation ratio &#x3b6;<sub>1 </sub>of the second-order transfer function G<sub>1</sub>(s) on the left-hand-side term becomes vibration inductive while the value of the attenuation ratio &#x3b6;<sub>2 </sub>of the second-order transfer function G<sub>2</sub>(s) on the right-hand-side term becomes vibration non-inductive. As a result, the second-order transfer function G<sub>2</sub>(s) on the right-hand-side term of the formula (1) becomes vibration non-inductive while the second-order transfer function G<sub>1</sub>(s) on the left-hand-side term becomes vibration inductive. Accordingly, the vibration of the vehicle <b>1</b> can be suppressed by correcting a target drive force Pt serving as the target control value by use of the filter <b>114</b> comprised of a second-order notch filter that cancels the poles of the second-order transfer function G<sub>1</sub>(s) inducing vibration contained in the second-order/fourth order transfer function of the formula (1). </p>
+<p id="p-0059" num="0058"> The second-order notch filter that cancels the poles of the second-order transfer function G<sub>1</sub>(s) of the formula (1) assumes a form of a second-order/second-order transfer function. With the standard frequency being &#x3c9;m, the standard attenuation ratio being &#x3b6;m, the plant frequency of the drive system of the vehicle <b>1</b> serving as a plant being &#x3c9;p, and the plant attenuation ratio being &#x3b6;p, such a second-order notch filter is represented by the following formula (2). In consideration of this, the drive-control ECU <b>10</b> is provided with the filter <b>114</b> that corrects the target drive force according to the correction formula (2).  
+<maths id="MATH-US-00002" num="2">
+<math overflow="scroll">
+<mtable>
+  <mtr>
+    <mtd>
+      <mrow>
+        <mrow>
+          <mi>C</mi>
+          <mo>&#x2061;</mo>
+          <mrow>
+            <mo>(</mo>
+            <mi>s</mi>
+            <mo>)</mo>
+          </mrow>
+        </mrow>
+        <mo>=</mo>
+        <mfrac>
+          <mrow>
+            <msup>
+              <mi>s</mi>
+              <mn>2</mn>
+            </msup>
+            <mo>+</mo>
+            <mrow>
+              <mn>2</mn>
+              <mo>&#x2062;</mo>
+              <mstyle>
+                <mtext>&#x2003;</mtext>
+              </mstyle>
+              <mo>&#x2062;</mo>
+              <mrow>
+                <msub>
+                  <mi>&#x3be;</mi>
+                  <mi>p</mi>
+                </msub>
+                <mo>&#xb7;</mo>
+                <msub>
+                  <mi>&#x3c9;</mi>
+                  <mi>p</mi>
+                </msub>
+                <mo>&#xb7;</mo>
+                <mi>s</mi>
+              </mrow>
+            </mrow>
+            <mo>+</mo>
+            <msubsup>
+              <mi>&#x3c9;</mi>
+              <mi>p</mi>
+              <mn>2</mn>
+            </msubsup>
+          </mrow>
+          <mrow>
+            <msup>
+              <mi>s</mi>
+              <mn>2</mn>
+            </msup>
+            <mo>+</mo>
+            <mrow>
+              <mn>2</mn>
+              <mo>&#x2062;</mo>
+              <mstyle>
+                <mtext>&#x2003;</mtext>
+              </mstyle>
+              <mo>&#x2062;</mo>
+              <mrow>
+                <msub>
+                  <mi>&#x3be;</mi>
+                  <mi>m</mi>
+                </msub>
+                <mo>&#xb7;</mo>
+                <msub>
+                  <mi>&#x3c9;</mi>
+                  <mi>m</mi>
+                </msub>
+                <mo>&#xb7;</mo>
+                <mi>s</mi>
+              </mrow>
+            </mrow>
+            <mo>+</mo>
+            <msubsup>
+              <mi>&#x3c9;</mi>
+              <mi>m</mi>
+              <mn>2</mn>
+            </msubsup>
+          </mrow>
+        </mfrac>
+      </mrow>
+    </mtd>
+    <mtd>
+      <mrow>
+        <mo>(</mo>
+        <mn>2</mn>
+        <mo>)</mo>
+      </mrow>
+    </mtd>
+  </mtr>
+</mtable>
+</math>
+</maths>
+</p>
+<p id="p-0060" num="0059"> In this case, parameters such as the standard frequency &#x3c9;m, the standard attenuation ratio &#x3b6;m, the plant frequency &#x3c9;p, and the plant attenuation ratio &#x3b6;p assume values that vary in response to changes in the travel characteristics, i.e., travel mode of the vehicle <b>1</b>, the travel conditions and/or travel environment of the vehicle <b>1</b>, etc. Accordingly, parameters such as the standard frequency &#x3c9;m, the standard attenuation ratio &#x3b6;m, the plant frequency &#x3c9;p, and the plant attenuation ratio &#x3b6;p that define the attenuation characteristics of the filter <b>114</b> may be changed in response to the travel mode of the vehicle <b>1</b> set by the driver and the travel condition and/or travel environment of the vehicle <b>1</b>. With this arrangement, it is possible to suppress the vibration of the vehicle <b>1</b> satisfactorily at all times. </p>
+<p id="p-0061" num="0060"> Instead of changing parameters such as the standard frequency &#x3c9;m, the standard attenuation ratio &#x3b6;m, the plant frequency cop, and the plant attenuation ratio &#x3b6;p for a single filter <b>114</b>, a set of second-order notch filters having respective, different attenuation characteristics may be employed. In this case, the values of the standard frequency &#x3c9;m, standard attenuation ratio &#x3b6;m, plant frequency &#x3c9;p, and plant attenuation ratio &#x3b6;p may be varied between the filters constituting the filter set, and provision may be made such that an optimum one of the filters in the filter set is selected during the travel motion of the vehicle <b>1</b> in response to the travel mode set by the driver and the travel condition and/or travel environment of the vehicle obtained from the various sensors and navigation system and the like. As the filters having differing attenuation characteristics are switched as appropriate, it is possible to achieve better responsiveness compared to the case in which the parameters of a single filter are changed in response to the travel mode and the like, for example. </p>
+<p id="p-0062" num="0061"> The DSSECU <b>50</b> that cooperates with the drive-control ECU <b>10</b> for the control of the vehicle <b>1</b> includes an ACC module <b>51</b>, a BA module <b>52</b>, a PCS module <b>53</b>, and a DSS arbitration unit <b>55</b> as shown in <figref idref="DRAWINGS">FIG. 2</figref>. The ACC module <b>51</b> serves as a cruise controller so as to assist and/or substitute for the driving of the vehicle <b>1</b> in response to a request from the driver. When the driver requests to enable the cruise control, the ACC module <b>51</b> obtains the drive force necessary for the cruse control in response to the signals from the various sensors and environment (surrounding) information acquiring unit, and supplies a signal indicative of the obtained drive force (required drive force) to the DSS arbitration unit <b>55</b>. </p>
+<p id="p-0063" num="0062"> The BA module <b>52</b> serves as a brake assist unit. When it is determined that brake assist is necessary, the BA module <b>52</b> obtains the drive force necessary for the brake assist in response to the signals from the various sensors and environment (surrounding) information acquiring unit, and supplies a signal indicative of the obtained drive force (required drive force) to the DSS arbitration unit <b>55</b>. The PCS module <b>53</b> serves as a collision prevention system (pre-crash safety system). When it is determined that there is a need to avoid the collision of the vehicle <b>1</b>, the PCS module <b>53</b> obtains the drive force necessary for the avoidance of the collision in response to the signals from the various sensors and environment (surrounding) information acquiring unit, and supplies a signal indicative of the obtained drive force (required drive force) to the DSS arbitration unit <b>55</b>. </p>
+<p id="p-0064" num="0063"> The DSS arbitration unit <b>55</b> arbitrates the signals from the ACC module <b>51</b>, the BA module <b>52</b>, and the PCS module <b>53</b> so as to set the target drive force of the DSSECU <b>50</b>. In this manner, the DSS arbitration unit <b>55</b> serves as a unit (second target control value setting unit) for setting a target drive force (second target control value) such that the driving of the vehicle <b>1</b> is assisted or substituted for in response to at least one of the driver's request, the travel condition of the vehicle <b>1</b>, and the travel environment of the vehicle <b>1</b>. With this provision, the driving of the vehicle <b>1</b> is properly assisted or substituted for, thereby improving the safety of vehicle travel satisfactorily. The arbitration performed by the DSS arbitration unit <b>55</b> includes a priority process for preferentially outputting one of the signals supplied from the modules <b>51</b> through <b>53</b> and a max-select process or minimum-select process for outputting the maximum value or minimum value of the signals that are almost simultaneously supplied from the modules <b>51</b> through <b>53</b>. </p>
+<p id="p-0065" num="0064"> Further, the DSSECU <b>50</b> includes a memory <b>54</b> for storing the output value of the DSS arbitration unit <b>55</b> as shown in <figref idref="DRAWINGS">FIG. 2</figref>, and the memory <b>54</b> is connected to the input terminal of the filter <b>114</b> via a switch <b>56</b>. When the switch <b>56</b> is turned on, the output value of the DSS arbitration unit <b>55</b> stored in the memory <b>54</b> is supplied to the filter <b>114</b>. </p>
+<p id="p-0066" num="0065"> The ECBECU <b>20</b> that cooperates with the drive-control ECU <b>10</b> for the control of the vehicle <b>1</b> also performs the control functions to stabilize the behavior of the vehicle <b>1</b> as described above, and includes a required-drive-force computing unit <b>21</b> and a VDIM arbitration unit <b>22</b>. When it is determined that the behavior of the vehicle <b>1</b> becomes unstable, the required-drive-force computing unit <b>21</b> obtains the drive force necessary to stabilize the behavior of the vehicle <b>1</b> in response to the signals from the various sensors and environment (surrounding) information acquiring unit, and supplies a signal indicative of the obtained drive force (target drive force) to the VDIM arbitration unit <b>22</b>. In this manner, the required-drive-force computing unit <b>21</b> serves as a unit (second target control value setting unit) for setting a target drive force (second target control value) such that the behavior of the vehicle <b>1</b> is stabilized in response to at least one of the travel condition of the vehicle <b>1</b> and the travel environment of the vehicle <b>1</b>. </p>
+<p id="p-0067" num="0066"> In response to the travel conditions or travel environment conditions of the vehicle <b>1</b>, the VDIM arbitration unit <b>22</b> usually sets, as its output value serving a target driving force, the larger (maximum value: max select) or smaller (minimum value: minimum select) of the target drive force supplied from the filter <b>114</b> or from the second switching unit SW<b>2</b>, or the required drive force supplied from the required-drive-force computing unit <b>21</b>. With this provision, the target drive force set according to the driver's request or set by the DSSECU <b>50</b> and the target drive force set by the required-drive-force computing unit <b>21</b> to stabilize the behavior of the vehicle irrespective of the driver's intention are properly arbitrated by taking into account the travel conditions, travel environment conditions, and so on of the vehicle <b>1</b>, thereby satisfactorily improving the safety of the vehicle travel. The arbitration performed by the VDIM arbitration unit <b>22</b> also includes a priority process for preferentially outputting one of the supplied signals. </p>
+<p id="p-0068" num="0067"> Further, the ECBECU <b>20</b> includes a memory <b>23</b> for storing the output value of the VDIM arbitration unit <b>22</b> as shown in <figref idref="DRAWINGS">FIG. 2</figref>, and the memory <b>23</b> is connected to the input terminal of the filter <b>114</b> via a switch <b>24</b>. When the switch <b>24</b> is turned on, the output value of the VDIM arbitration unit <b>22</b> stored in the memory <b>23</b> is supplied to the filter <b>114</b>. </p>
+<p id="p-0069" num="0068"> In the vehicle <b>1</b> configured as described above, the first switching unit SW<b>1</b> and second switching unit SW<b>2</b> of the drive-control ECU <b>10</b> are switched as appropriate in response to the travel conditions, travel environments, and so on of the vehicle <b>1</b>, thereby to perform a proper arbitration between the target drive force (first target drive force) set according to the driver's request and the target drive force (second target drive force) set by the ECBECU <b>20</b> and/or the DSSECU <b>50</b>. In the following, the procedure for switching the first switching unit SW<b>1</b> and the second switching unit SW<b>2</b> will be described with reference to <figref idref="DRAWINGS">FIG. 3</figref> through <figref idref="DRAWINGS">FIG. 9</figref>. </p>
+<p id="p-0070" num="0069"> <figref idref="DRAWINGS">FIG. 3</figref> is a flowchart for explaining the procedure for switching the first switching unit SW<b>1</b> and the second switching unit SW<b>2</b> when the target drive force is set by the DSSECU <b>50</b>. A routine shown in <figref idref="DRAWINGS">FIG. 3</figref> is repeatedly performed at constant intervals during the travel motion of the vehicle <b>1</b>. When the time comes to perform this routine, the drive-control ECU <b>10</b> checks (S<b>10</b>) whether a PCS flag is set &#x201c;ON&#x201d; where the PCS flag is set &#x201c;ON&#x201d; when the DSSECU <b>50</b> determines that the process to prevent the collision of the vehicle <b>1</b> is necessary. </p>
+<p id="p-0071" num="0070"> If it is determined that the PCS flag is set to &#x201c;ON&#x201d; (Yes at S<b>10</b>), the first switching unit SW<b>1</b> in the drive-control ECU <b>10</b> is set to the DSS side (as shown by a dotted line in <figref idref="DRAWINGS">FIG. 2</figref>), and the second switching unit SW<b>2</b> is set to the bypass side (as shown by a dotted line in <figref idref="DRAWINGS">FIG. 2</figref>) (S<b>12</b>). With this arrangement, the DSS arbitration unit <b>55</b> of the DSSECU <b>50</b> and the second switching unit SW<b>2</b> are connected via the first switching unit SW<b>1</b>, so that the target drive force set according to the driver's request supplied from the target drive acquiring unit <b>112</b> is disabled, and the target drive force supplied from the DSSECU <b>50</b> (i.e., the target drive force set to avoid a collision by the PCS module in this case) is supplied to the second switching unit SW<b>2</b>. Since the second switching unit SW<b>2</b> is set to the bypass side, the filter <b>114</b> is bypassed, so that the target drive force from the DSSECU <b>50</b> is supplied to the VDIM arbitration unit <b>22</b> of the ECBECU <b>20</b> and to the ultimate arbitrating unit <b>115</b> without passing through the filter <b>114</b>. </p>
+<p id="p-0072" num="0071"> In the present invention, if the DSSECU <b>50</b> requests collision prevention, and the ECBECU <b>20</b> requests behavior stabilization, the VDIM arbitration unit <b>22</b> gives priority to the collision prevention request issued by the DSSECU <b>50</b>. Accordingly, the VDIM arbitration unit <b>22</b> and the ultimate arbitrating unit <b>115</b> output the target drive force set by the DSSECU <b>50</b>, so that the ultimate target drive force set by the ultimate arbitrating unit <b>115</b> is equal to the target drive force set by the DSSECU <b>50</b>. </p>
+<p id="p-0073" num="0072"> In this manner, when the DSSECU <b>50</b> requests collision prevention, and the conditions are satisfied to give priority to the target drive force set by the DSSECU <b>50</b> over the target drive force set according to the driver's request, the target drive force according to the driver's request is disabled, and the target drive force set by the DSSECU <b>50</b> reflecting conditions different from the driver's request is enabled, with the vibration-suppression-&#x26;-correction process of the filter <b>114</b> being disabled with respect to the target drive force from the DSSECU <b>50</b>. With this arrangement, it is avoided to help increase the vibration of the vehicle <b>1</b> through the vibration-suppression-&#x26;-correction process of the filter <b>114</b> thereby to destabilize the behavior of the vehicle <b>1</b>. Further, there is no need to design the DSS arbitration unit <b>55</b> and the like of the DSSECU <b>50</b> in conformity to the filter <b>114</b> when the filter <b>114</b> is to be incorporated into the drive-control ECU <b>10</b>. Accordingly, the vibration of the vehicle <b>1</b> is suppressed satisfactorily, and the safety of the vehicle <b>1</b> is easily and properly ensured when a target control value is set in response to conditions different from the driver's request. </p>
+<p id="p-0074" num="0073"> Upon the performing of the process at step S<b>12</b>, the drive-control ECU <b>10</b> checks whether the PCS flag is set to &#x201c;ON&#x201d; (S<b>14</b>). If it is determined that the PCS flag is set to &#x201c;ON&#x201d; (Yes at S<b>14</b>), the processes at S<b>12</b> and onwards are performed again, so that the first switching unit SW<b>1</b> is set to the DSS side, and the second switching unit SW<b>2</b> is set to the bypass side. While the processes at S<b>12</b> and S<b>14</b> are repeatedly performed, the collision of the vehicle <b>1</b> is avoided, resulting in the PCS flag being set to &#x201c;OFF&#x201d;. Upon the detection of the &#x201c;OFF&#x201d; state of the PCS flag (No at S<b>14</b>), the DSSECU <b>50</b> turns on the switch <b>56</b>, so that the final output value of the DSS arbitration unit <b>55</b> at the time the PCS flag is set to &#x201c;OFF&#x201d;, i.e., at the time the setting of the target drive force by the DSSECU <b>50</b> is released (disabled), is supplied to the filter <b>114</b> (S<b>16</b>). </p>
+<p id="p-0075" num="0074"> If it is assumed that the target drive force set according to the driver's request output from the target drive acquiring unit <b>112</b> is as shown in <figref idref="DRAWINGS">FIG. 4A</figref>, and the target drive force output from the DSSECU <b>50</b> is as shown in <figref idref="DRAWINGS">FIG. 4B</figref>, with the PCS flag being set to &#x201c;OFF&#x201d; at time t<sub>1</sub>, the target drive force from the DSSECU <b>50</b> shown in <figref idref="DRAWINGS">FIG. 4B</figref> is enabled until the time t<sub>1</sub>. In this case, the first switching unit SW<b>1</b> and second switching unit SW<b>2</b> may be switched immediately at the time t<sub>1 </sub>at which the PCS flag is set to &#x201c;OFF&#x201d; to supply the output signal of the target drive acquiring unit <b>112</b> to the filter <b>114</b>. If this is done, however, the ultimate target drive force output from the ultimate arbitrating unit <b>115</b> may become discontinuous around the time (time t<sub>1</sub>) at which the target drive force of the target drive acquiring unit <b>112</b> is supplied to the filter <b>114</b> since no signal input is given to the filter <b>114</b> until the time t<sub>1</sub>. </p>
+<p id="p-0076" num="0075"> On the other hand, if the final output of the DSS arbitration unit <b>55</b> at the time the PCS flag is set to &#x201c;OFF&#x201d;, i.e., at the time the setting of the target drive force by the DSSECU <b>50</b> is released, is supplied to the filter <b>114</b> as an initial value at the time (time t<sub>1</sub>) the PCS flag is set to &#x201c;OFF&#x201d; as shown in <figref idref="DRAWINGS">FIG. 4C</figref>, then, the continuity of the target drive force output from the ultimate arbitrating unit <b>115</b> can be preserved as shown in <figref idref="DRAWINGS">FIG. 4D</figref>. With this provision, it is possible to satisfactorily suppress the destabilization of the behavior of the vehicle <b>1</b> even when the vibration-suppression-&#x26;-correction process by the filter <b>114</b> is disabled. </p>
+<p id="p-0077" num="0076"> Upon the performing of the process at step S<b>16</b>, the first switching unit SW<b>1</b> in the drive-control ECU <b>10</b> is set to the driver-request side (as shown by a solid line in <figref idref="DRAWINGS">FIG. 2</figref>), and the second switching unit SW<b>2</b> is set to the filter side (as shown by a solid line in <figref idref="DRAWINGS">FIG. 2</figref>) (S<b>18</b>). As a result, the vibration-suppression-&#x26;-correction process by the filter <b>114</b> is performed with respect to the target drive force that is set according to the driver's request, thereby satisfactorily suppressing the vibration of the vehicle <b>1</b>. After the process at step S<b>18</b> is performed, the processes at step S<b>10</b> and onwards will be performed repeatedly. If it is determined at step S<b>10</b> that the PCS flag is set to &#x201c;OFF&#x201d; (No at S<b>10</b>), the first switching unit SW<b>1</b> is set to the driver-request side at step S<b>18</b>, and the second switching unit SW<b>2</b> is set to the filter side. </p>
+<p id="p-0078" num="0077"> <figref idref="DRAWINGS">FIG. 5</figref> is a flowchart for explaining the procedure for switching the second switching unit SW<b>2</b> when the target drive force is set by the ECBECU <b>20</b>. A routine shown in <figref idref="DRAWINGS">FIG. 5</figref> is repeatedly performed at constant intervals during the travel motion of the vehicle <b>1</b>. When the time comes to perform this routine, the drive-control ECU <b>10</b> checks (S<b>20</b>) whether a VDIM flag is set to &#x201c;ON&#x201d; where the VDIM flag is set to &#x201c;ON&#x201d; when the ECBECU <b>20</b> determines that there is a need to stabilize the behavior of the vehicle <b>1</b>. </p>
+<p id="p-0079" num="0078"> If it is determined that the VDIM flag is set to &#x201c;ON&#x201d; (Yes at S<b>20</b>), the second switching unit SW<b>2</b> in the drive-control ECU <b>10</b> is set to the bypass side (as shown by a dotted line in <figref idref="DRAWINGS">FIG. 2</figref>) (S<b>22</b>). As a result, the filter <b>114</b> is bypassed, so that the signal supplied from the first switching unit SW<b>1</b> is supplied from the second switching unit SW<b>2</b> to the VDIM arbitration unit <b>22</b> of the ECBECU <b>20</b> and to the ultimate arbitrating unit <b>115</b> without passing through the filter <b>114</b>. The VDIM arbitration unit <b>22</b> then arbitrates between the target drive force computed by the required-drive-force computing unit <b>21</b> and the target drive force subjected to no vibration suppression and correction by the filter <b>114</b> supplied from the target drive acquiring unit <b>112</b> or DSSECU <b>50</b>. Further, the ultimate arbitrating unit <b>115</b> arbitrates between the target drive force set by the VDIM arbitration unit <b>22</b> of the ECBECU <b>20</b> and the target drive force subjected to no vibration suppression and correction by the filter <b>114</b> supplied from the target drive acquiring unit <b>112</b> or DSSECU <b>50</b>. </p>
+<p id="p-0080" num="0079"> In this embodiment, when the ECBECU <b>20</b> requests to suppress the drive force of the vehicle <b>1</b>, the VDIM arbitration unit <b>22</b> sets, as its output value serving as a target drive force, the smaller (minimum select) of the target drive force from the drive-control ECU <b>10</b> or the target drive force from the required-drive-force computing unit <b>21</b>. Further, when the ECBECU <b>20</b> requests to increase the drive force of the vehicle <b>1</b>, the VDIM arbitration unit <b>22</b> sets, as its output value serving as a target drive force, the greater (max select) of the target drive force from the drive-control ECU <b>10</b> or the requested drive force from the required-drive-force computing unit <b>21</b>. In such arbitration process, the vibration of the vehicle <b>1</b> may be encouraged to increase so as to destabilize the behavior of the vehicle <b>1</b> if the arbitration is performed between the target drive force from the required-drive-force computing unit <b>21</b> and the target drive force for which a vibration-suppression-&#x26;-correction process by the filter <b>114</b> is performed. </p>
+<p id="p-0081" num="0080"> Namely, when the ECBECU <b>20</b> requests to suppress the drive force of the vehicle <b>1</b>, the target drive force from the target drive acquiring unit <b>112</b> or DSSECU <b>50</b> subjected to vibration suppression and correction by the filter <b>114</b> may be as shown by a single-dot chain line in <figref idref="DRAWINGS">FIG. 6A</figref>, and the target drive force computed by the required-drive-force computing unit <b>21</b> may be as shown by a double-dot chain line in <figref idref="DRAWINGS">FIG. 6A</figref>. In such a case, the target drive force after arbitration performed based on the minimum-select method will be as shown by a solid line in <figref idref="DRAWINGS">FIG. 6B</figref>.an arbitration based on the minimum-select method is performed When the vehicle <b>1</b> is controlled based on the target control value as shown by the solid line in <figref idref="DRAWINGS">FIG. 6B</figref>, not only the vibration suppression effect by the filter <b>114</b> is absent, but also the vibration of the vehicle <b>1</b> may be encouraged to increase. </p>
+<p id="p-0082" num="0081"> By the same token, when the ECBECU <b>20</b> requests to increase the drive force of the vehicle <b>1</b>, the target drive force from the target drive acquiring unit <b>112</b> or DSSECU <b>50</b> subjected to vibration suppression and correction by the filter <b>114</b> may be as shown by a single-dot chain line in <figref idref="DRAWINGS">FIG. 7A</figref>, and the target drive force computed by the required-drive-force computing unit <b>21</b> may be as shown by a double-dot chain line in <figref idref="DRAWINGS">FIG. 7A</figref>. In such a case, the target drive force after arbitration performed based on the max-select method will be as shown by a solid line in <figref idref="DRAWINGS">FIG. 7B</figref>.an arbitration based on the minimum-select method is performed When the vehicle <b>1</b> is controlled based on the target control value as shown by the solid line in <figref idref="DRAWINGS">FIG. 7B</figref>, not only the vibration suppression effect by the filter <b>114</b> is absent, but also the vibration of the vehicle <b>1</b> may be encouraged to increase. </p>
+<p id="p-0083" num="0082"> In consideration of this, the present embodiment prohibits the filter <b>114</b> from correcting a target drive force (first target control value) supplied from the target drive acquiring unit <b>112</b> or from the DSSECU <b>50</b> if the target drive force (second target control value) is set by the required-drive-force computing unit <b>21</b> of the ECBECU <b>20</b> based on conditions different from the driver's request. Arbitration is thus performed between the non-corrected target drive force supplied from the target drive acquiring unit <b>112</b> or DSSECU <b>50</b> and the target drive force supplied from the required-drive-force computing unit <b>21</b>. This prevents the vibration-suppression-&#x26;-correction process by the filter <b>114</b> and/or the arbitration of the target drive forces by the VDIM arbitration unit <b>22</b> from helping increase the vibration of the vehicle <b>1</b> so as to destabilize the behavior of the vehicle <b>1</b>. Since the vibration-suppression-&#x26;-correction process by the filter <b>114</b> is prohibited, there is no need to design the VDIM arbitration unit <b>22</b> and the like of the ECBECU <b>20</b> in conformity to the filter <b>114</b> when the filter <b>114</b> is to be incorporated into the drive-control ECU <b>10</b>. Accordingly, the vibration of the vehicle <b>1</b> is suppressed satisfactorily, and the safety of the vehicle <b>1</b> is easily and properly ensured when a target control value is set in response to conditions different from the driver's request. </p>
+<p id="p-0084" num="0083"> It should be noted that the ultimate arbitrating unit <b>115</b> usually performs a minimum-select arbitration if the ECBECU <b>20</b> requests to suppress the drive force of the vehicle <b>1</b> and if the VDIM arbitration unit <b>22</b> performs a minimum-select arbitration. Further, the ultimate arbitrating unit <b>115</b> usually performs a max-select arbitration if the ECBECU <b>20</b> requests to increase the drive force of the vehicle <b>1</b> and if the VDIM arbitration unit <b>22</b> performs a max-select arbitration. </p>
+<p id="p-0085" num="0084"> The reason why the ultimate arbitrating unit <b>115</b> is provided at a stage following the VDIM arbitration unit <b>22</b> in the present embodiment is as follows. With the presence of the ultimate arbitrating unit <b>115</b>, a minimum-select arbitration will be performed by the ultimate arbitrating unit <b>115</b> even if the communication between the drive-control ECU <b>10</b> and the ECBECU <b>20</b> fails while the VDIM arbitration unit <b>22</b> performs a minimum-select arbitration. This ensures that the target drive force will not be larger than necessary. With this arrangement, it is possible to ensure the safety of vehicle travel satisfactorily. Even if the communication between the drive-control ECU <b>10</b> and the ECBECU <b>20</b> fails while the VDIM arbitration unit <b>22</b> performs a max-select arbitration, the ultimate arbitrating unit <b>115</b> will perform a max-select arbitration, thereby ensuring that at least the target drive force required by the driver is secured. </p>
+<p id="p-0086" num="0085"> Upon the performing of the process at step S<b>22</b>, the drive-control ECU <b>10</b> checks whether the VDIM flag is set to &#x201c;ON&#x201d; (S<b>24</b>). If it is determined that the VDIM flag is set to &#x201c;ON&#x201d; (Yes at S<b>24</b>), the processes at S<b>22</b> and onwards are performed again, so that the second switching unit SW<b>2</b> is set to the bypass side. While the processes at S<b>22</b> and S<b>24</b> are repeatedly performed, the behavior of the vehicle <b>1</b> is stabilized, resulting in the VDIM flag being set to &#x201c;OFF&#x201d;. Upon the detection of the &#x201c;OFF&#x201d; state of the VDIM flag (No at S<b>24</b>), the ECBECU <b>20</b> turns on the switch <b>24</b>, so that the final output value of the VDIM arbitration unit <b>22</b> at the time the VDIM flag is set to &#x201c;OFF&#x201d;, i.e., at the time the setting of the target drive force by the required-drive-force computing unit <b>21</b> is released (disabled), is supplied to the filter <b>114</b> (S<b>26</b>). </p>
+<p id="p-0087" num="0086"> If it is assumed that the target drive force set according to the driver's request output from the target drive acquiring unit <b>112</b> is as shown in <figref idref="DRAWINGS">FIG. 8A</figref>, and the target drive force output from the required-drive-force computing unit <b>21</b> upon the request to suppress the drive force in the ECBECU <b>20</b> (which is smaller than the target drive force set according to the driver's request in the example shown in <figref idref="DRAWINGS">FIG. 8A</figref>) is as shown in <figref idref="DRAWINGS">FIG. 8B</figref>, with the VDIM flag being set to &#x201c;OFF&#x201d; at time t<sub>a</sub>, the target drive force from the ECBECU <b>20</b> shown in <figref idref="DRAWINGS">FIG. 8B</figref> is enabled according to the minimum-select method until the time t<sub>a</sub>. In this case, the second switching unit SW<b>2</b> may be switched immediately to the filter side at the time t<sub>a </sub>at which the VDIM flag is set to &#x201c;OFF&#x201d; to supply the output signal of the target drive acquiring unit <b>112</b> to the filter <b>114</b>. If this is done, however, the ultimate target drive force output from the ultimate arbitrating unit <b>115</b> may become discontinuous around the time (time t<sub>a</sub>) at which the target drive force of the target drive acquiring unit <b>112</b> is supplied to the filter <b>114</b> since no signal input is given to the filter <b>114</b> until the time t<sub>a</sub>. </p>
+<p id="p-0088" num="0087"> By the same token, If it is assumed that the target drive force set according to the driver's request output from the target drive acquiring unit <b>112</b> is as shown in <figref idref="DRAWINGS">FIG. 9A</figref>, and the target drive force output from the required-drive-force computing unit <b>21</b> upon the request to increase the drive force in the ECBECU <b>20</b> (which is larger than the target drive force set according to the driver's request in the example shown in <figref idref="DRAWINGS">FIG. 9A</figref>) is as shown in <figref idref="DRAWINGS">FIG. 9B</figref>, with the VDIM flag being set to &#x201c;OFF&#x201d; at time t<sub>a</sub>, the target drive force from the ECBECU <b>20</b> shown in <figref idref="DRAWINGS">FIG. 9B</figref> is enabled according to the max-select method until the time t<sub>a</sub>. In this case, the second switching unit SW<b>2</b> may be switched immediately to the filter side at the time t<sub>a </sub>at which the VDIM flag is set to &#x201c;OFF&#x201d; to supply the output signal of the target drive acquiring unit <b>112</b> to the filter <b>114</b>. If this is done, however, the ultimate target drive force output from the ultimate arbitrating unit <b>115</b> may become discontinuous around the time (time t<sub>a</sub>) at which the target drive force of the target drive acquiring unit <b>112</b> is supplied to the filter <b>114</b> since no signal input is given to the filter <b>114</b> until the time t<sub>a</sub>. </p>
+<p id="p-0089" num="0088"> On the other hand, if the final output of the VDIM arbitration unit <b>22</b> at the time the VDIM flag is set to &#x201c;OFF&#x201d;, i.e., at the time the setting of the target drive force by the ECBECU <b>20</b> is released, is supplied to the filter <b>114</b> as an initial value at the time (time t<sub>a</sub>) the VDIM flag is detected as being &#x201c;OFF&#x201d; (No at S<b>24</b>) as shown in <figref idref="DRAWINGS">FIG. 8C</figref> or <figref idref="DRAWINGS">FIG. 9C</figref>, then, the continuity of the target drive force output from the ultimate arbitrating unit <b>115</b> can be preserved as shown in <figref idref="DRAWINGS">FIG. 8D</figref> or <figref idref="DRAWINGS">FIG. 9D</figref>. With this provision, it is possible to satisfactorily suppress the destabilization of the behavior of the vehicle <b>1</b> even when the vibration-suppression-&#x26;-correction process by the filter <b>114</b> is disabled. </p>
+<p id="p-0090" num="0089"> Upon the performing of the process at step S<b>26</b>, the second switching unit SW<b>2</b> in the drive-control ECU <b>10</b> is set to the filter side (as shown by a solid line in <figref idref="DRAWINGS">FIG. 2</figref>) (S<b>28</b>). As a result, the vibration-suppression-&#x26;-correction process by the filter <b>114</b> is performed with respect to the target drive force that is set according to the driver's request, thereby satisfactorily suppressing the vibration of the vehicle <b>1</b>. After the process at step S<b>28</b> is performed, the processes at step S<b>20</b> and onwards will be performed repeatedly. If it is determined at step S<b>20</b> that the VDIM flag is set to &#x201c;OFF&#x201d; (No at S<b>20</b>), the second switching unit SW<b>2</b> is kept at the filter side in step S<b>28</b>. </p>
+<p id="p-0091" num="0090"> Further, the present invention is not limited to these embodiments, but various variations and modifications may be made without departing from the scope of the present invention. </p>
+<p id="p-0092" num="0091"> The present application is based on Japanese priority application No. 2005-195124 filed on Jul. 4, 2005, with the Japanese Patent Office, the entire contents of which are hereby incorporated by reference. </p>
+<?detailed-description description="Detailed Description" end="tail"?>
+</description>
+<us-math idrefs="MATH-US-00001" nb-file="US20070005196A1-20070104-M00001.NB">
+<img id="EMI-M00001" he="11.68mm" wi="76.20mm" file="US20070005196A1-20070104-M00001.TIF" alt="embedded image" img-content="math" img-format="tif"/>
+</us-math>
+<us-math idrefs="MATH-US-00002" nb-file="US20070005196A1-20070104-M00002.NB">
+<img id="EMI-M00002" he="7.79mm" wi="76.20mm" file="US20070005196A1-20070104-M00002.TIF" alt="embedded image" img-content="math" img-format="tif"/>
+</us-math>
+<us-claim-statement>What is claimed is: </us-claim-statement>
+<claims id="claims">
+<claim id="CLM-00001" num="00001">
+<claim-text><b>1</b>. A vehicle control apparatus for controlling a vehicle in response to a target control value that relates to a travel of the vehicle, comprising: 
+<claim-text>a first target control value setting unit configured to set a first target control value in response to a driver's request; </claim-text>
+<claim-text>a correction unit configured to correct the first target control value set by the first target control value setting unit such as to suppress over-spring vibration of the vehicle; </claim-text>
+<claim-text>a second target control value setting unit configured to set a second target control value in response to conditions different from a driver's request; and </claim-text>
+<claim-text>an arbitration unit configured to arbitrate between the first target control value and the second target control value, </claim-text>
+<claim-text>wherein if the second target control value setting unit sets the second target control value, the correction unit is prevented from correcting the first target control value, and the arbitration unit arbitrates between the first target control value not corrected by the correction unit and the second target control value. </claim-text>
+</claim-text>
+ </claim>
+<claim id="CLM-00002" num="00002">
+<claim-text><b>2</b>. The vehicle control apparatus as claimed in <claim-ref idref="CLM-00001">claim 1</claim-ref>, further comprising a switching unit configured to selectively switch a destination of the first target control value set by the first target control value setting unit between the correction unit and the arbitration unit, wherein the switching unit supplies the first target control value directly to the arbitration unit without the correction unit serving as an intervening unit if the second target control value sets the second target control value. </claim-text>
+ </claim>
+<claim id="CLM-00003" num="00003">
+<claim-text><b>3</b>. The vehicle control apparatus as claimed in <claim-ref idref="CLM-00001">claim 1</claim-ref>, wherein when the second target control value setting unit releases a setting of the second target control value, the correction unit receives a final output value of the arbitration unit that is output at a time the setting of the second target control value is released </claim-text>
+ </claim>
+<claim id="CLM-00004" num="00004">
+<claim-text><b>4</b>. The vehicle control apparatus as claimed in <claim-ref idref="CLM-00001">claim 1</claim-ref>, wherein the arbitration unit is configured to select the smaller of the first target control value or the second target control value, which are substantially simultaneously supplied. </claim-text>
+ </claim>
+<claim id="CLM-00005" num="00005">
+<claim-text><b>5</b>. The vehicle control apparatus as claimed in <claim-ref idref="CLM-00001">claim 1</claim-ref>, wherein the arbitration unit is configured to select the larger of the first target control value or the second target control value, which are substantially simultaneously supplied. </claim-text>
+ </claim>
+<claim id="CLM-00006" num="00006">
+<claim-text><b>6</b>. The vehicle control apparatus as claimed in <claim-ref idref="CLM-00001">claim 1</claim-ref>, wherein the second target control value setting unit is configured to set the second target control value in response to at least one of a travel condition of the vehicle and a travel environment of the vehicle such that a behavior of the vehicle is stabilized. </claim-text>
+ </claim>
+<claim id="CLM-00007" num="00007">
+<claim-text><b>7</b>. A method of suppressing vibration of a vehicle by correcting, with a correction unit, a first target control value relating to a travel of the vehicle and set according to a driver's request such as to suppress over-spring vibration of the vehicle, comprising: 
+<claim-text>a step (a) of setting a second target control value in response to conditions different from the driver's request; </claim-text>
+<claim-text>a step (b) of preventing the correction unit from correcting the first target control value if the second target control value is set by the step (a); and </claim-text>
+<claim-text>a step (c) of arbitrating between the first target control value not corrected by the correction unit and the second target control value. </claim-text>
+</claim-text>
+ </claim>
+<claim id="CLM-00008" num="00008">
+<claim-text><b>8</b>. The method as claimed in <claim-ref idref="CLM-00007">claim 7</claim-ref>, further comprising a step (d) of supplying a final arbitration result of the step (c) to the correction unit when a setting of the second target control value is released, the final arbitration result being a result of the step (c) that is obtained at a time the setting of the second target control value is released. </claim-text>
+ </claim>
+<claim id="CLM-00009" num="00009">
+<claim-text><b>9</b>. A vehicle control apparatus for controlling a vehicle in response to a target control value that relates to a travel of the vehicle, comprising: 
+<claim-text>a first target control value setting unit configured to set a first target control value in response to a driver's request; </claim-text>
+<claim-text>a second target control value setting unit configured to set a second target control value in response to conditions different from a driver's request; and </claim-text>
+<claim-text>a correction unit configured to correct the first target control value set by the first target control value setting unit or the second target control value set by the second target control value setting unit such as to suppress over-spring vibration of the vehicle, </claim-text>
+<claim-text>wherein when the second target control value setting unit sets the second target control value, the first target control value is disabled, and the correction unit is prevented from correcting the second target control value under predetermined conditions. </claim-text>
+</claim-text>
+ </claim>
+<claim id="CLM-00010" num="00010">
+<claim-text><b>10</b>. The vehicle control apparatus as claimed in <claim-ref idref="CLM-00009">claim 9</claim-ref>, further comprising a first switching unit configured to selectively enable one of the first target control value set by the first target control value setting unit and the second target control value set by the second target control value setting unit, and a second switching unit configured to control whether to supply the first target control value or second target control value output from the first switching unit to the correction unit. </claim-text>
+ </claim>
+<claim id="CLM-00011" num="00011">
+<claim-text><b>11</b>. The vehicle control apparatus as claimed in <claim-ref idref="CLM-00009">claim 9</claim-ref>, wherein when the second target control value setting unit releases a setting of the second target control value, the correction unit receives a final output value of the second target control value setting unit that is output at a time the setting of the second target control value is released </claim-text>
+ </claim>
+<claim id="CLM-00012" num="00012">
+<claim-text><b>12</b>. The vehicle control apparatus as claimed in <claim-ref idref="CLM-00009">claim 9</claim-ref>, wherein the second target control value setting unit is configured to set the second target control value in response to at least one of the driver's request, a travel condition of the vehicle, and a travel environment of the vehicle such that driving of the vehicle is assisted or substituted for. </claim-text>
+ </claim>
+<claim id="CLM-00013" num="00013">
+<claim-text><b>13</b>. A method of suppressing vibration of a vehicle by correcting, with a correction unit, a first target control value relating to a travel of the vehicle and set according to a driver's request such as to suppress over-spring vibration of the vehicle, comprising: 
+<claim-text>a step (a) of setting a second target control value in response to conditions different from the driver's request; and </claim-text>
+<claim-text>a step (b) of disabling the first target control value and preventing the correction unit from correcting the second target control value under predetermined conditions if the second target control value is set by the step (a). </claim-text>
+</claim-text>
+ </claim>
+<claim id="CLM-00014" num="00014">
+<claim-text><b>14</b>. The method as claimed in <claim-ref idref="CLM-00013">claim 13</claim-ref>, further comprising a step (c) of supplying a final setting value of the step (a) to the correction unit when a setting of the second target control value is released, the final setting value being a value set by the step (a) at a time the setting of the second target control value is released.</claim-text>
+ </claim>
+</claims>
+</us-patent-application>

@@ -1,0 +1,312 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE us-patent-application SYSTEM "us-patent-application-v42-2006-08-23.dtd" [ ]>
+<us-patent-application lang="EN" dtd-version="v4.2 2006-08-23" file="US20070003032A1-20070104.XML" status="PRODUCTION" id="us-patent-application" country="US" date-produced="20061221" date-publ="20070104">
+<us-bibliographic-data-application lang="EN" country="US">
+<publication-reference>
+<document-id>
+<country>US</country>
+<doc-number>20070003032</doc-number>
+<kind>A1</kind>
+<date>20070104</date>
+</document-id>
+</publication-reference>
+<application-reference appl-type="utility">
+<document-id>
+<country>US</country>
+<doc-number>11168633</doc-number>
+<date>20050628</date>
+</document-id>
+</application-reference>
+<us-application-series-code>11</us-application-series-code>
+<classifications-ipcr>
+<classification-ipcr>
+<ipc-version-indicator><date>20060101</date></ipc-version-indicator>
+<classification-level>A</classification-level>
+<section>H</section>
+<class>04</class>
+<subclass>M</subclass>
+<main-group>1</main-group>
+<subgroup>64</subgroup>
+<symbol-position>F</symbol-position>
+<classification-value>I</classification-value>
+<action-date><date>20070104</date></action-date>
+<generating-office><country>US</country></generating-office>
+<classification-status>B</classification-status>
+<classification-data-source>H</classification-data-source>
+</classification-ipcr>
+</classifications-ipcr>
+<classification-national>
+<country>US</country>
+<main-classification>379088190</main-classification>
+</classification-national>
+<invention-title id="d0e102">Selection of incoming call screening treatment based on emotional state criterion</invention-title>
+<parties>
+<applicants>
+<applicant sequence="00" app-type="applicant-inventor" designation="us-only">
+<addressbook>
+<last-name>Batni</last-name>
+<first-name>Ramachendra</first-name>
+<middle-name>P.</middle-name>
+<address>
+<city>Phoenix</city>
+<state>AZ</state>
+<country>US</country>
+</address>
+</addressbook>
+<nationality>
+<country>US</country>
+</nationality>
+<residence>
+<country>US</country>
+</residence>
+</applicant>
+<applicant sequence="01" app-type="applicant-inventor" designation="us-only">
+<addressbook>
+<last-name>Sharma</last-name>
+<first-name>Ranjan</first-name>
+<address>
+<city>New Albany</city>
+<state>OH</state>
+<country>US</country>
+</address>
+</addressbook>
+<nationality>
+<country>US</country>
+</nationality>
+<residence>
+<country>US</country>
+</residence>
+</applicant>
+</applicants>
+<correspondence-address>
+<addressbook>
+<name>CARMEN B. PATTI &#x26; ASSOCIATES, LLC</name>
+<address>
+<address-1>ONE NORTH LASALLE STREET</address-1>
+<address-2>44TH FLOOR</address-2>
+<city>CHICAGO</city>
+<state>IL</state>
+<postcode>60602</postcode>
+<country>US</country>
+</address>
+</addressbook>
+</correspondence-address>
+</parties>
+</us-bibliographic-data-application>
+<abstract id="abstract">
+<p id="p-0001" num="0000">An incoming call screening treatment is selected for a call to a called communication device based on an emotional state criterion input by a user of the called communication device. </p>
+</abstract>
+<drawings id="DRAWINGS">
+<figure id="figure-D00000" num="00000">
+<img id="EMI-D00000" he="119.32mm" wi="177.23mm" file="US20070003032A1-20070104-D00000.TIF" alt="embedded image" img-content="drawing" img-format="tif"/>
+</figure>
+<figure id="figure-D00001" num="00001">
+<img id="EMI-D00001" he="234.44mm" wi="168.74mm" orientation="landscape" file="US20070003032A1-20070104-D00001.TIF" alt="embedded image" img-content="drawing" img-format="tif"/>
+</figure>
+<figure id="figure-D00002" num="00002">
+<img id="EMI-D00002" he="231.99mm" wi="148.67mm" file="US20070003032A1-20070104-D00002.TIF" alt="embedded image" img-content="drawing" img-format="tif"/>
+</figure>
+<figure id="figure-D00003" num="00003">
+<img id="EMI-D00003" he="236.05mm" wi="163.24mm" orientation="landscape" file="US20070003032A1-20070104-D00003.TIF" alt="embedded image" img-content="drawing" img-format="tif"/>
+</figure>
+</drawings>
+<description id="description">
+<?cross-reference-to-related-applications description="Cross Reference To Related Applications" end="lead"?>
+<heading level="2" id="h-0001">CROSS-REFERENCE TO RELATED APPLICATION </heading>
+<p id="p-0002" num="0001"> This application contains subject matter that is related to the subject matter of the following application, which is assigned to the same assignee as this application. The below-listed application is hereby incorporated herein by reference in its entirety: </p>
+<p id="p-0003" num="0002"> &#x201c;SELECTION OF RINGBACK TONE INDICATIVE OF EMOTIONAL STATE THAT IS INPUT BY USER OF CALLED COMMUNICATION DEVICE,&#x201d; by Ramachendra P. Batni and Ranjan Sharma, application Ser. No. 11/015,609, filed Dec. 17, 2004.</p>
+<?cross-reference-to-related-applications description="Cross Reference To Related Applications" end="tail"?>
+<?summary-of-invention description="Summary of Invention" end="lead"?>
+<heading level="2" id="h-0002">TECHNICAL FIELD </heading>
+<p id="p-0004" num="0003"> The invention relates generally to communications and more particularly to incoming call screening services. </p>
+<heading level="2" id="h-0003">BACKGROUND </heading>
+<p id="p-0005" num="0004"> Known incoming call screening services (e.g., do-not-disturb services) allow a user to specify which call treatment to use for incoming calls. The user may provision the incoming call screening treatment to apply to all incoming calls or a subset of incoming calls. Incoming calls may be given one of several possible termination treatments, such as: normal call termination, call termination with distinctive alerting, call forwarded to voicemail, call forwarded to another number, call routed to a specific announcement, or call blocked. The incoming call screening service is supported by standards (e.g., ANSI Wireless Standards TIA/EIA/IS-771, Wireless Intelligent Network Standards, December 1998, &#x201c;Incoming Call Screening (ICS)&#x201d;). </p>
+<p id="p-0006" num="0005"> The user may employ the incoming call screening service to provision different incoming call screening treatments to apply to calls with different characteristics. For example, the user may provision calls from a first calling party to receive normal call termination, and calls from a second calling party to be forwarded to voicemail. The user may provision the incoming call screening service to use a number of screening criteria related to calling party characteristics, called party characteristics, or other call characteristics to determine which incoming call screening treatment is appropriate. To select the appropriate incoming call screening treatment for an incoming call, the incoming call screening service uses specific, quantitative criteria, such as: calling party number, calling party area code and/or office code, password provided by calling party, called party location, serving mobile switching center identification, status of called party features (e.g., call forwarding feature, do-not-disturb feature), date, time, and date and time ranges. </p>
+<p id="p-0007" num="0006"> The incoming call screening service compares the objective characteristics of the incoming call to the incoming call screening criteria to determine which incoming call screening treatment to use for the incoming call. The incoming call screening service does not allow the user to create incoming call screening criteria based on subjective factors. As one shortcoming, the incoming call screening service limits the level of customization provided to the user of the called communication device by not allowing subjective incoming call screening criteria. </p>
+<p id="p-0008" num="0007"> Thus, a need exists for one or more incoming call screening treatment selection criteria based on subjective factors selected by a user of a called communication device. </p>
+<heading level="2" id="h-0004">SUMMARY </heading>
+<p id="p-0009" num="0008"> An incoming call screening service provides incoming calls with one of several possible call treatments. The incoming call screening service allows a user of the called communication device to input incoming call screening criteria that indicate which call treatment to use for incoming calls in various circumstances. The incoming call screening criteria may be based on subjective factors, such as an emotional state input by the user of the called communication device. </p>
+<p id="p-0010" num="0009"> In one embodiment, there is provided a method for selecting an incoming call screening treatment for a call to a called communication device based on an emotional state criterion input by a user of the called communication device. </p>
+<p id="p-0011" num="0010"> In another embodiment, there is provided a method for: receiving an indication of an emotional state and a corresponding incoming call screening treatment input by a user of a called communication device; receiving an indication that the user activated the emotional state as an incoming call screening treatment criterion for a call from a calling party to the called communication device; and selecting the incoming call screening treatment, that corresponds to the emotional state, for the call from the calling party to the called communication device. </p>
+<p id="p-0012" num="0011"> In yet another embodiment, there is provided an article comprising one or more computer-readable signal-bearing media. The article comprises means in the one or more media for selecting an incoming call screening treatment for a call to a called communication device based on an emotional state criterion input by a user of the called communication device. </p>
+<?summary-of-invention description="Summary of Invention" end="tail"?>
+<?brief-description-of-drawings description="Brief Description of Drawings" end="lead"?>
+<heading level="2" id="h-0005">DESCRIPTION OF THE DRAWINGS </heading>
+<p id="p-0013" num="0012"> Features of exemplary implementations of the invention will become apparent from the description, the claims, and the accompanying drawings in which: </p>
+<p id="p-0014" num="0013"> <figref idref="DRAWINGS">FIG. 1</figref> is a representation of one implementation of an apparatus that comprises one or more intelligent network platforms, one or more mobile switching centers, a calling communication device, and a called communication device. </p>
+<p id="p-0015" num="0014"> <figref idref="DRAWINGS">FIG. 2</figref> is a representation of one implementation of an incoming call screening network profile employed by the one or more of the intelligent network platforms of the apparatus of <figref idref="DRAWINGS">FIG. 1</figref>. </p>
+<p id="p-0016" num="0015"> <figref idref="DRAWINGS">FIG. 3</figref> is a representation of one implementation of an emotional state criterion result table employed by the one or more of the intelligent network platforms of the apparatus of <figref idref="DRAWINGS">FIG. 1</figref>. </p>
+<p id="p-0017" num="0016"> <figref idref="DRAWINGS">FIG. 4</figref> is a representation of one implementation of an emotional state override profile employed by the one or more of the intelligent network platforms of the apparatus of <figref idref="DRAWINGS">FIG. 1</figref>. </p>
+<p id="p-0018" num="0017"> <figref idref="DRAWINGS">FIG. 5</figref> is a representation of one exemplary message flow that illustrates an exemplary incoming call screening treatment selected by the one or more of the intelligent network platforms of the apparatus of <figref idref="DRAWINGS">FIG. 1</figref>.</p>
+<?brief-description-of-drawings description="Brief Description of Drawings" end="tail"?>
+<?detailed-description description="Detailed Description" end="lead"?>
+<heading level="2" id="h-0006">DETAILED DESCRIPTION </heading>
+<p id="p-0019" num="0018"> Turning to <figref idref="DRAWINGS">FIG. 1</figref>, an apparatus <b>100</b> provides an incoming call screening service for wireless and/or wire-line telecommunication systems. The apparatus <b>100</b> in one embodiment comprises one or more intelligent network (&#x201c;IN&#x201d;) platforms <b>102</b> and <b>104</b>, one or more mobile switching centers (&#x201c;MSCs&#x201d;) <b>106</b> and <b>108</b>, a calling communication device <b>110</b>, and a called communication device <b>112</b>. In one example, the apparatus <b>100</b> further comprises a home location register (&#x201c;HLR&#x201d;) <b>114</b> associated with the called communication device <b>112</b>. </p>
+<p id="p-0020" num="0019"> A signaling network <b>118</b> communicatively couples the intelligent network platforms <b>102</b> and <b>104</b>, the MSCs <b>106</b> and <b>108</b>, and the home location register <b>114</b>. The signaling network <b>118</b> in one example comprises a signaling system 7 (&#x201c;SS7&#x201d;) network that supports signaling traffic. A bearer network <b>120</b> communicatively couples the intelligent network platform <b>104</b> and the MSCs <b>106</b> and <b>108</b>. The bearer network <b>120</b> in one example comprises a public switched telephone network (&#x201c;PSTN&#x201d;) that supports bearer traffic. </p>
+<p id="p-0021" num="0020"> The intelligent network platforms <b>102</b> and <b>104</b> comprise telephony network platforms. The intelligent network platforms <b>102</b> and <b>104</b> support intelligent network technology and standards. In one example, the intelligent network platforms <b>102</b> and <b>104</b> comprise wireless intelligent network (&#x201c;WIN&#x201d;) platforms. In one example, the intelligent network platforms <b>102</b> and <b>104</b> comprise Customized Applications for Mobile network Enhanced Logic (&#x201c;CAMEL&#x201d;) platforms. Exemplary embodiments of the intelligent network platforms <b>102</b> and <b>104</b> comprise one or more of a service control point (&#x201c;SCP&#x201d;) <b>122</b> and a intelligent peripheral (&#x201c;IP&#x201d;) <b>124</b>. The SCP <b>122</b> comprises an instance of a recordable data storage medium <b>150</b>, as described herein. </p>
+<p id="p-0022" num="0021"> The SCP <b>122</b> serves to provide an incoming call screening service. The SCP <b>122</b> allows a user of the called communication device <b>112</b> to input incoming call screening criteria that indicate which call treatment to use for incoming calls in various circumstances. Incoming calls may be given one of several possible termination treatments, such as: normal call termination, call termination with distinctive alerting, call forwarded to voicemail, call forwarded to another number, call routed to a specific announcement, call blocked, or the like. </p>
+<p id="p-0023" num="0022"> The incoming call screening criteria in one example comprise an emotional state criterion input by the user of the called communication device <b>112</b>. The emotional state criterion associates a specific call treatment with an emotional state set by the user. The emotional state is changeable by the user and may comprise a human emotion, such as happy, sad, angry, confused, embarrassed, disappointed, or the like. In one example, the emotional state is represented on the called communication device <b>112</b> by an emoticon, such as a smiling emoticon, frowning emoticon, angry emoticon, winking emoticon, crying emoticon, hot emoticon, or the like. In another example, other methods may be used to represent the emotional state, such as: text phrases (e.g., &#x201c;happy&#x201d;, &#x201c;sad&#x201d;, etc); hand gestures (e.g., thumbs up, thumbs down, etc); pictures (e.g., sunny day picture, rainy day picture, etc); or the like. </p>
+<p id="p-0024" num="0023"> In one example, the SCP <b>122</b> employs the emotional state criterion to override one or more objective criteria to determine the incoming call screening treatment for the call. In another example, the SCP <b>122</b> employs the emotional state criterion in combination with one or more objective criteria to determine the incoming call screening treatment for the call. Examples of the available objective criteria comprise: calling party number, calling party area code and/or office code, password provided by calling party, called party location, serving mobile switching center identification, status of called party features (e.g., call forwarding feature, do-not-disturb feature), date, time, and date and time ranges. </p>
+<p id="p-0025" num="0024"> The user of the called communication device <b>112</b> may provision relative priority levels for the emotional state criterion and one or more objective criteria. For example, the user may choose an order for the SCP <b>122</b> to employ the available criteria. The SCP <b>122</b> determines the incoming call screening treatment for the call by employing the emotional state criterion and the one or more objective criteria in an order based on the relative priority levels set by the user. </p>
+<p id="p-0026" num="0025"> To set up the emotional state criterion, the user associates an incoming call treatment with an emotional state, such as happy. For example, after the user activates the emotional state criterion and sets the current emotional state to happy, the SCP <b>122</b> will select the incoming call treatment that is associated with the happy emotional state for the incoming calls. The user may also set up the emotional state criterion to associate a different incoming call treatment with a sad emotional state. After the user sets the current emotional state to sad, the SCP <b>122</b> will select the different incoming call screening treatment that is associated with the sad emotional state for the incoming calls. </p>
+<p id="p-0027" num="0026"> In one example, the user of the called communication device <b>112</b> is very happy and wishes to tell everyone the great news (e.g., birth of a child). The user in one example decides to override the default incoming call screening treatment for incoming calls. For example, the user may activate the emotional state criterion and set the emotional state to happy to override the default call screening treatment in favor of allowing connection of all incoming calls. At a later time, the user may deactivate the emotional state criterion to revert back to the default incoming call screening treatment. </p>
+<p id="p-0028" num="0027"> In another example, the user of the called communication device <b>112</b> is depressed (e.g., because of some bad news). The user does not wish to be disturbed with incoming calls for a period of time. For example, the user may activate the emotional state criterion and set the emotional state to sad to override the default call screening treatment in favor of sending incoming calls to voicemail, except for incoming calls from select important calling parties (e.g., spouse, important customers, boss). At a later time, the user may deactivate the emotional state criterion to revert back to the default incoming call screening treatment. </p>
+<p id="p-0029" num="0028"> The user of the called communication device <b>112</b> inputs incoming call screening criteria to set up the incoming call screening service. In one example, the user employs a web interface to enter the incoming call screening criteria. In another example, the user employs a feature code or short message to enter the incoming call screening criteria. In yet another example, the user employs an interactive voice response or wireless application protocol menu presented by the called communication device <b>112</b> to enter the incoming call screening criteria. The user may employ the web interface for an initial configuration of the incoming call screening service and then use a menu on the called communication device <b>112</b> to make adjustments. For example, the user may use a menu on the called communication device <b>112</b> to set the current emotional state stored in an incoming call screening network profile <b>202</b> (<figref idref="DRAWINGS">FIG. 2</figref>) for specific callers or specific caller groups. In another example, the user may use the menu on the called communication device <b>112</b> to set the current universal override emotional state for all callers. The current universal override emotional state is associated with a universal override emotional state profile <b>402</b> (<figref idref="DRAWINGS">FIG. 4</figref>). The called communication device <b>112</b> in one example displays a plurality of emoticons representative of emotional states for the user to select. For example, the user can associate the emoticons with various callers stored in the incoming call screening network profile <b>202</b>. In another example, the user can associate the emoticons with all callers in the emotional state override profile <b>402</b>. </p>
+<p id="p-0030" num="0029"> In one example, the SCP <b>122</b> determines that one or more characteristics of the incoming call match one or more incoming call screening criteria set up by the user of the called communication device <b>112</b>. If the characteristics of the incoming call match a particular call screening criterion, then the SCP <b>122</b> selects the call treatment that is associated with that matched call screening criterion to apply to the incoming call. The SCP <b>122</b> accesses an incoming call screening network profile associated with the user to determine the incoming call screening criteria and the associated call treatments. In one example, the SCP <b>122</b> stores the incoming call screening network profile. In another example, the IP <b>124</b> accesses a storage component that stores the incoming call screening network profile. </p>
+<p id="p-0031" num="0030"> In another example, the one or more characteristics of the incoming call do not match the incoming call screening criteria. In this case, the SCP <b>122</b> can either select a default call treatment for the incoming call, or alternatively respond to the MSC <b>106</b> with a Continue message to have the MSC <b>106</b> perform a normal call termination. </p>
+<p id="p-0032" num="0031"> In one example, the SCP <b>122</b> comprises service logic, American National Standards Institute (&#x201c;ANSI-41&#x201d;) message handling logic, WIN message handling logic, and an SS7 interface. In another example, the SCP <b>122</b> comprises service logic, Global System for Mobile communications (&#x201c;GSM&#x201d;) message handling logic, and Customized Applications for Mobile network Enhanced Logic message handling logic, and the SS7 interface. The SCP <b>122</b> in one example comprises a call controller and a data server. In one example, the call controller and the data server reside on a single platform. In another example, the call controller and the data server reside on different platforms. If the call controller and the data server reside on different platforms, then the call controller queries the data server on the separate platform for subscriber profile information and to determine what incoming call treatment to select for the incoming calls. Any of several messaging protocols, such as Lightweight Directory Access Protocol (&#x201c;LDAP&#x201d;) or Transmission Control Protocol/Internet Protocol (&#x201c;TCP/IP&#x201d;), can be used for communication between the call controller and the data server. </p>
+<p id="p-0033" num="0032"> The SCP <b>122</b> in one example employs one or more of WIN, CAMEL, ANSI Advanced Intelligent Network (&#x201c;AIN&#x201d;), International Telecommunication Union (&#x201c;ITU-T&#x201d;) Capability Set 1 (&#x201c;CS-1&#x201d;), and session initiation protocol (&#x201c;SIP&#x201d;) signaling to perform incoming call screening. An exemplary employment of WIN signaling is illustrated herein. The SCP <b>122</b> receives WIN signaling relating to an incoming call at the MSC <b>106</b> for the called communication device <b>112</b> and sets parameters in WIN signaling messages to indicate the desired incoming call screening treatment. The IP <b>124</b> in one example comprises a voicemail server (&#x201c;VMS&#x201d;) for the user of the called communication device <b>112</b>. For example, if the desired incoming call screening treatment is to forward the incoming call to voicemail, then the SCP <b>122</b> instructs the MSC <b>106</b> to route the incoming call to the IP <b>124</b>, so the IP <b>124</b> may serve as a voicemail server for the incoming call. To route the incoming call to the IP <b>124</b>, the SCP <b>122</b> in one example sets a TerminationList parameter of a WIN signaling message to a directory number of the IP <b>124</b>. Then, the SCP <b>122</b> sends the TerminationList parameter in the WIN signaling message to the MSC <b>106</b> that queried the SCP <b>122</b> on what action to take for the incoming call. Upon receipt of the WIN signaling message, the MSC <b>106</b> connects the call to the IP <b>124</b>. </p>
+<p id="p-0034" num="0033"> The SCP <b>122</b> in one example employs WIN signaling, Integrated Services Digital Network User Part (&#x201c;ISUP&#x201d;) signaling, and ANSI signaling to enable the incoming call screening service. The WIN signaling, ISUP signaling, and ANSI signaling are in accordance with ANSI standards. In one exemplary implementation, the signaling messages follow one or more of ANSI/TIA/EIA-41-D, TIA/EIA/IS-771, and TIA/EIA/IS-826 standards, in addition to ANSI ISUP standards for the bearer connection. </p>
+<p id="p-0035" num="0034"> The MSCs <b>106</b> and <b>108</b> support mobile telecommunication devices, for example, the communication devices <b>110</b> and <b>112</b>. The MSCs <b>106</b> and <b>108</b> in one example comprise an originating mobile switching center (&#x201c;O-MSC&#x201d;) <b>106</b> and a serving mobile switching center (&#x201c;S-MSC&#x201d;) <b>108</b>. For example, the O-MSC <b>106</b> supports a home area of the called communication device <b>112</b> and the S-MSC <b>108</b> supports the called communication device <b>112</b> if the called communication device <b>112</b> moves to a roaming area. If the called communication device <b>112</b> is within the home area supported by the O-MSC <b>106</b>, then the S-MSC <b>108</b> may not be in the call path between the calling communication device <b>110</b> and the called communication device <b>112</b>. For example, the O-MSC <b>106</b> would also serve as a S-MSC for the called communication device <b>112</b>. </p>
+<p id="p-0036" num="0035"> Referring to <figref idref="DRAWINGS">FIGS. 1-2</figref>, the user of the called communication device <b>112</b> in one example sets the emotional state criterion to different emotional states for different calling communication devices. The emotional states stored in the incoming call screening network profile <b>202</b> are used to determine the incoming call screening treatment for individual callers or user-selected groups of callers. For example, the user of the called communication device <b>112</b> may set a specific emotional state only for the calling communication device <b>110</b>. The emotional state may be based on a special relationship between the user of the called communication device <b>112</b> and the user of the calling communication device <b>110</b>. For example, if the user of the called communication device <b>112</b> and the user of the calling communication device <b>110</b> have been in a fight, then the user of the called communication device <b>112</b> could input a sad or angry emotional state for calls from the user of the calling communication device <b>110</b>. The incoming call screening network profile <b>202</b> stores the emotional states input for individual callers or user-selected groups of callers. </p>
+<p id="p-0037" num="0036"> The incoming call screening criteria that are input by the user of the called communication device <b>112</b> in one example are stored in the incoming call screening network profile <b>202</b>. The user of the called communication device <b>112</b> in one example activates a happy emotional state for calls from caller #<b>1</b> stored in entry <b>204</b> of the incoming call screening network profile <b>202</b>, a happy emotional state for calls from caller #<b>2</b> stored in entry <b>206</b> of the incoming call screening network profile <b>202</b>, a sad emotional state for calls from caller #<b>3</b> stored in entry <b>208</b> of the incoming call screening network profile <b>202</b>, and a happy emotional state for calls from group #<b>1</b> stored in entry <b>212</b> of the incoming call screening network profile <b>202</b>. The user of the called communication device <b>112</b> in one example does not set an emotional state for calls from caller #<b>4</b> stored in entry <b>210</b> of the incoming call screening network profile <b>202</b>. The incoming call screening network profile <b>202</b> may store other incoming call screening criteria (not shown) in addition to the emotional state criterion, such as time of day criteria, day of week criteria, or the like. Furthermore, some entries in the incoming call screening network profile <b>202</b> may not have one or more incoming call screening criteria specified. </p>
+<p id="p-0038" num="0037"> The emotional state criterion indicates which incoming call screening treatment to select upon receipt of a call from a specific calling party. If the emotional state criterion is not active, the call is subject to a normal call screening treatment. For example, the user of the called communication device <b>112</b> has not activated an emotional state criterion for caller #<b>4</b> stored in entry <b>210</b> of the incoming call screening network profile <b>202</b>. Therefore, caller #<b>4</b> will receive the normal call screening treatment, which in this case is having the call sent to an assistant. </p>
+<p id="p-0039" num="0038"> Referring to <figref idref="DRAWINGS">FIGS. 1-3</figref>, an emotional state criterion result table <b>302</b> indicates the resultant incoming call screening treatments that are associated with the various emotional states. For example, entry <b>304</b> indicates that the incoming call screening treatment for a call from a caller will be call completion when the user sets a happy emotional state for the caller. Entry <b>306</b> indicates that the incoming call screening treatment for a call from a caller will be to send the call to voicemail when the user sets a sad emotional state for the caller. The emotional state criterion result table <b>302</b> in one example comprises one or more additional entries to indicate the resultant incoming call screening treatments for other emotional states. </p>
+<p id="p-0040" num="0039"> The user of the called communication device <b>112</b> may activate the emotional state criterion and set the emotional state in the incoming call screening network profile <b>202</b> to override the normal call screening treatment in favor of the emotional state criterion treatment. For example, if an incoming call is received from a caller while the emotional state criterion is activated with the emotional state criterion set to happy for that caller, then the SCP <b>122</b> will connect the incoming call to the called communication device <b>112</b>, as per the information stored in entry <b>304</b> of the emotional state criterion result table <b>302</b>. If an incoming call is received from a caller while the emotional state criterion is activated with the emotional state criterion set to sad for that caller, then the SCP <b>122</b> will route the incoming call to voicemail, as per the information stored in entry <b>306</b> of the emotional state criterion result table <b>302</b>. </p>
+<p id="p-0041" num="0040"> Referring to <figref idref="DRAWINGS">FIGS. 1 and 4</figref>, the user of the called communication device <b>112</b> in one example sets the emotional state criterion to a universal override emotional state. In one example, the universal override emotional state indicates the incoming call screening treatment for all incoming calls. In another example, the universal override emotional state indicates a default incoming call screening treatment and establishes one or more exceptions to the default incoming call screening treatment. Once the user activates a universal override emotional state, the universal override emotional state is used to determine the incoming call screening treatment for all or most incoming calls. The universal override emotional state may override other incoming call screening criteria depending on the relative priority of these criteria as set by the user of the called communication device <b>112</b>. For example, if the universal override emotional state is set to happy, then the happy emotional state is used, in <figref idref="DRAWINGS">FIG. 4</figref>, to determine the incoming call screening treatment for all or most incoming calls. </p>
+<p id="p-0042" num="0041"> The emotional state override profile <b>402</b> stores the universal override emotional states. The user of the called communication device <b>112</b> in one example sets a call treatment that connects incoming calls to the called communication device <b>112</b> to be used when the universal override emotional state is set to happy. Indications of the happy emotional state and associated treatment are stored in entry <b>404</b> of the emotional state override profile <b>402</b>. The user of the called communication device <b>112</b> in one example also sets a call treatment that routes incoming calls to voicemail to be used when the universal override emotional state is set to sad. Indications of the sad emotional state and associated treatment are stored in entry <b>406</b> of the emotional state override profile <b>402</b>. The sad override emotional state in one example provides for two exceptions to the default call treatment associated with the sad override emotional state. For example, when the universal override emotional state is set to sad, then all callers except callers #<b>2</b> and #<b>3</b> will be sent to voicemail, and callers #<b>2</b> and #<b>3</b> will be connected to the called communication device <b>112</b>. </p>
+<p id="p-0043" num="0042"> Referring to <figref idref="DRAWINGS">FIGS. 1 and 5</figref>, an illustrative description of one exemplary operation of the apparatus <b>100</b> is presented, for explanatory purposes. A message flow <b>502</b> represents an exemplary incoming call screening treatment. For example, the message flow <b>502</b> illustrates forwarding the incoming call to voicemail through exemplary employment of WIN signaling. A user of the called communication device <b>112</b> in one example subscribes to the incoming call screening service provided by the SCP <b>122</b>. The message flow <b>502</b> illustrates the incoming call screening service. The user of the called communication device <b>112</b> in one example has configured and activated the incoming call screening service prior to the initiation of the message flow <b>502</b>. The user of the called communication device <b>112</b> has assigned incoming call treatments to various emotional states. For example, the message flow <b>502</b> illustrates a case where the user has activated an emotional state criterion and the current emotional state indicates to forward the incoming call to voicemail. </p>
+<p id="p-0044" num="0043"> To initiate a call to the called communication device <b>112</b>, the user of the calling communication device <b>110</b> dials the telephone number of the called communication device <b>112</b> resulting in a call setup message <b>504</b> being received at the O-MSC <b>106</b>. The call setup message <b>504</b> in one example comprises an ISUP initial address message. Upon receipt of the call setup message <b>504</b>, the O-MSC <b>106</b> sends an acknowledgement message <b>506</b> to the calling communication device <b>110</b>. The acknowledgement message <b>506</b> in one example comprises an ISUP address complete message. </p>
+<p id="p-0045" num="0044"> The call setup message <b>504</b> indicates that the call is for the called communication device <b>112</b>. Per normal ANSI-41 operation, the call processing logic in the O-MSC <b>106</b> encounters a Mobile_Termination trigger when processing the call to the called communication device <b>112</b>. Upon encountering the Mobile_Termination trigger, the O-MSC <b>106</b> sends a LOCREQ message <b>508</b> to the HLR <b>114</b> associated with the called communication device <b>112</b>. Prior to receipt of the LOCREQ message <b>508</b>, the HLR <b>114</b> has been provisioned to return appropriate triggers and address information to the O-MSC <b>106</b> based on the characteristics of the call. In another example, where the called communication device <b>112</b> comprises a landline telephone, the Central Office switch that supports the called communication device <b>112</b> is provisioned with triggers and address information based on the characteristics of the call. </p>
+<p id="p-0046" num="0045"> The LOCREQ message <b>508</b> comprises a location request invoke message to determine the current location of the called communication device <b>112</b>. The LOCREQ message <b>508</b> employs ANSI-41/WIN signaling. For example, the LOCREQ message <b>508</b> comprises an ANSI-41 message with WIN signaling enhancements. The O-MSC <b>106</b> sets a TRANSCAP parameter of the LOCREQ message <b>508</b> to indicate that the O-MSC <b>106</b> is able to process the TRIGADDRLIST parameter. The O-MSC <b>106</b> sets a WINCAP parameter to indicate the triggers that are supported by the O-MSC <b>106</b>. The O-MSC <b>106</b> sets a TRIGTYPE parameter to indicate that the Mobile_Termination trigger has been encountered. </p>
+<p id="p-0047" num="0046"> The HLR <b>114</b> returns a locreq message <b>510</b> to the O-MSC <b>106</b>. The locreq message <b>510</b> comprises a location request return result message. The locreq message <b>510</b> employs ANSI-41/WIN signaling. For example, the locreq message <b>510</b> comprises an ANSI-41 message with WIN signaling enhancements. The HLR <b>114</b> sets a TRIGADDRLIST parameter in the locreq message <b>510</b> to indicate the Advanced_Termination and Location triggers are armed. For example, the HLR <b>114</b> has been provisioned to set the triggers based on the characteristics of the call. Other triggers may be armed based on other services subscribed to by the user of the called communication device <b>112</b>, such as an Initial_Termination trigger and/or a Called_Routing_Address_Available trigger for prepaid subscribers. </p>
+<p id="p-0048" num="0047"> Upon receipt of the locreq message <b>510</b>, the O-MSC <b>106</b> continues the ANSI call processing and encounters the Advanced_Termination trigger and determines from the TRIGADDRLIST parameter to send an ANLYZD message <b>512</b> to the SCP <b>122</b>. The TRIGADDRLIST parameter of the locreq message <b>510</b> comprises an indication of the SCP <b>122</b>. The ANLYZD message <b>512</b> comprises a WIN signaling message, for example, an Analyzed Information operation message. </p>
+<p id="p-0049" num="0048"> The ANLYZD message <b>512</b> comprises calling party information, called party information, and call characteristic information for the incoming call. The ANLYZD message <b>512</b> in one example indicates one or more of: a directory number of the calling communication device <b>110</b>, a directory number of the called communication device <b>112</b>, the time and date of the incoming call, an identification of the serving mobile switching center, a password provided by the calling party, the called party location, or the like. </p>
+<p id="p-0050" num="0049"> Referring to <figref idref="DRAWINGS">FIGS. 1-3</figref> and <b>5</b>, the SCP <b>122</b> employs the information received in the ANLYZD message <b>512</b>, and information from the incoming call screening network profile <b>202</b> to determine which incoming call screening treatment to select for the incoming call. In one example, the user of the called communication device <b>112</b> activated the emotional state criterion and set the emotional state for caller #<b>3</b> to sad. The calling communication device <b>110</b> in one example is represented as caller #<b>3</b> in entry <b>208</b> of the incoming call screening network profile <b>202</b>. Therefore, upon receipt of the ANLYZD message <b>512</b>, the SCP <b>122</b> accesses the incoming call screening network profile <b>202</b> and selects the treatment based on the sad emotional state for the calling communication device <b>110</b>, per the contents of entry <b>306</b> in the emotional state criterion result table <b>302</b>. For example, the SCP <b>122</b> selects the treatment that routes the incoming call to the IP <b>124</b>. The IP <b>124</b> will provide voicemail service to the incoming call from the calling communication device <b>110</b>. </p>
+<p id="p-0051" num="0050"> To route the incoming call to the IP <b>124</b>, the SCP <b>122</b> in one example sets a TerminationList parameter of an anlyzd message <b>514</b> to a directory number of the IP <b>124</b>. The anlyzd message <b>514</b> comprises an Analyzed Information return result message. The SCP <b>122</b> sends the anlyzd message <b>514</b> to the MSC <b>106</b> that queried the SCP <b>122</b> on what action to take for the incoming call. Upon receipt of the anlyzd message <b>514</b>, the MSC <b>106</b> connects the call to the IP <b>124</b> to provide voicemail service to the incoming call. For example, the MSC <b>106</b> establishes a connection <b>516</b> between the calling communication device <b>110</b> and the IP <b>124</b>. </p>
+<p id="p-0052" num="0051"> The apparatus <b>100</b> in one example comprises a plurality of components such as computer software and/or hardware components. A number of such components can be combined or divided in the apparatus <b>100</b>. An exemplary component of the apparatus <b>100</b> employs and/or comprises a set and/or series of computer instructions written in or implemented with any of a number of programming languages, as will be appreciated by those skilled in the art. </p>
+<p id="p-0053" num="0052"> The apparatus <b>100</b> in one example employs one or more computer-readable signal-bearing media. The computer-readable signal-bearing media store software, firmware and/or assembly language for performing one or more portions of one or more embodiments of the invention. An example of a computer-readable signal-bearing medium for the apparatus <b>100</b> comprises the recordable data storage medium <b>150</b> of the service control point <b>122</b>. The computer-readable signal-bearing medium for the apparatus <b>100</b> in one example comprise one or more of a magnetic, electrical, optical, biological, and atomic data storage medium. For example, the computer-readable signal-bearing medium comprise floppy disks, magnetic tapes, CD-ROMs, DVD-ROMs, hard disk drives, and electronic memory. In another example, the computer-readable signal-bearing medium comprises a modulated carrier signal transmitted over a network comprising or coupled with the apparatus <b>100</b>, for instance, one or more of a telephone network, a local area network (&#x201c;LAN&#x201d;), a wide area network (&#x201c;WAN&#x201d;), the Internet, and a wireless network. </p>
+<p id="p-0054" num="0053"> The steps or operations described herein are just exemplary. There may be many variations to these steps or operations without departing from the spirit of the invention. For instance, the steps may be performed in a differing order, or steps may be added, deleted, or modified. </p>
+<p id="p-0055" num="0054"> Although exemplary implementations of the invention have been depicted and described in detail herein, it will be apparent to those skilled in the relevant art that various modifications, additions, substitutions, and the like can be made without departing from the spirit of the invention and these are therefore considered to be within the scope of the invention as defined in the following claims. </p>
+<?detailed-description description="Detailed Description" end="tail"?>
+</description>
+<us-claim-statement>We claim: </us-claim-statement>
+<claims id="claims">
+<claim id="CLM-00001" num="00001">
+<claim-text><b>1</b>. A method, comprising the step of: 
+<claim-text>selecting an incoming call screening treatment for a call to a called communication device based on an emotional state criterion input by a user of the called communication device. </claim-text>
+</claim-text>
+ </claim>
+<claim id="CLM-00002" num="00002">
+<claim-text><b>2</b>. The method of <claim-ref idref="CLM-00001">claim 1</claim-ref>, wherein if the emotional state criterion is not active, the call is subject to a default call screening treatment; 
+<claim-text>wherein the step of selecting the incoming call screening treatment for the call to the called communication device based on the emotional state criterion input by the user of the called communication device comprises the step of: </claim-text>
+<claim-text>overriding the default call screening treatment in favor of the incoming call screening treatment based on the emotional state criterion, if the emotional state criterion is active. </claim-text>
+</claim-text>
+ </claim>
+<claim id="CLM-00003" num="00003">
+<claim-text><b>3</b>. The method of <claim-ref idref="CLM-00002">claim 2</claim-ref>, wherein the incoming call screening treatment based on the emotional state criterion is different than the default call screening treatment for the call. </claim-text>
+ </claim>
+<claim id="CLM-00004" num="00004">
+<claim-text><b>4</b>. The method of <claim-ref idref="CLM-00001">claim 1</claim-ref>, wherein the user inputs an indication of the incoming call screening treatment to be associated with the emotional state criterion, wherein the incoming call screening treatment for the call comprises one of: 
+<claim-text>normal call termination; </claim-text>
+<claim-text>call termination with distinctive alerting; </claim-text>
+<claim-text>call forwarded to voicemail; </claim-text>
+<claim-text>call forwarded to another number; </claim-text>
+<claim-text>call routed to a specific announcement; or </claim-text>
+<claim-text>call blocked. </claim-text>
+</claim-text>
+ </claim>
+<claim id="CLM-00005" num="00005">
+<claim-text><b>5</b>. The method of <claim-ref idref="CLM-00001">claim 1</claim-ref>, wherein the step of selecting the incoming call screening treatment for the call to the called communication device based on the emotional state criterion input by the user of the called communication device comprises the steps of: 
+<claim-text>selecting a first incoming call screening treatment for the call if the emotional state criterion indicates a happy emotional state at a time of the call; and </claim-text>
+<claim-text>selecting a second incoming call screening treatment for the call if the emotional state criterion indicates a sad emotional state at the time of the call, wherein the second incoming call screening treatment is different than the first incoming call screening treatment. </claim-text>
+</claim-text>
+ </claim>
+<claim id="CLM-00006" num="00006">
+<claim-text><b>6</b>. The method of <claim-ref idref="CLM-00001">claim 1</claim-ref>, further comprising the steps of: 
+<claim-text>receiving an indication of a first emotional state from the user of the called communication device for incoming calls from a first calling party; </claim-text>
+<claim-text>storing an association between the first emotional state and the first calling party; </claim-text>
+<claim-text>receiving an indication of a second emotional state from the user of the called communication device for incoming calls from a second calling party; and </claim-text>
+<claim-text>storing an association between the second emotional state and the second calling party. </claim-text>
+</claim-text>
+ </claim>
+<claim id="CLM-00007" num="00007">
+<claim-text><b>7</b>. The method of <claim-ref idref="CLM-00006">claim 6</claim-ref>, further comprising the step of: 
+<claim-text>receiving, from a switching center handling the call, an indication of a calling party of the call; </claim-text>
+<claim-text>wherein the step of selecting the incoming call screening treatment for the call to the called communication device based on the emotional state criterion input by the user of the called communication device comprises the steps of: </claim-text>
+<claim-text>instructing the switching center to perform a first incoming call screening treatment associated with the first emotional state if the call is from the first calling party; and </claim-text>
+<claim-text>instructing the switching center to perform a second incoming call screening treatment associated with the second emotional state if the call is from the second calling party. </claim-text>
+</claim-text>
+ </claim>
+<claim id="CLM-00008" num="00008">
+<claim-text><b>8</b>. The method of <claim-ref idref="CLM-00001">claim 1</claim-ref>, wherein the step of selecting the incoming call screening treatment for the call to the called communication device based on the emotional state criterion input by the user of the called communication device comprises the step of: 
+<claim-text>employing the emotional state criterion in combination with one or more objective criteria to determine the incoming call screening treatment for the call. </claim-text>
+</claim-text>
+ </claim>
+<claim id="CLM-00009" num="00009">
+<claim-text><b>9</b>. The method of <claim-ref idref="CLM-00001">claim 1</claim-ref>, wherein the step of selecting the incoming call screening treatment for the call to the called communication device based on the emotional state criterion input by the user of the called communication device comprises the step of: 
+<claim-text>employing the emotional state criterion to override one or more objective criteria to determine the incoming call screening treatment for the call. </claim-text>
+</claim-text>
+ </claim>
+<claim id="CLM-00010" num="00010">
+<claim-text><b>10</b>. The method of <claim-ref idref="CLM-00001">claim 1</claim-ref>, wherein the call comprises a first call, the method further comprising the steps of: 
+<claim-text>receiving one or more objective criteria, input by the user of the called communication device, that indicate to use a default incoming call screening treatment, wherein the objective criteria comprise one or more of: time of day criteria, day of week criteria, day of year criteria, and/or calling party identity criteria; </claim-text>
+<claim-text>receiving the emotional state criterion, input by the user of the called communication device, that indicates to use the incoming call screening treatment; </claim-text>
+<claim-text>selecting the incoming call screening treatment based on the emotional state criterion for the first call, if the emotional state criterion is activated for the first call; and </claim-text>
+<claim-text>selecting the default incoming call screening treatment for a second call, if the emotional state criterion is not activated for the second call. </claim-text>
+</claim-text>
+ </claim>
+<claim id="CLM-00011" num="00011">
+<claim-text><b>11</b>. The method of <claim-ref idref="CLM-00001">claim 1</claim-ref>, further comprising the steps of: 
+<claim-text>receiving the emotional state criterion that is input by the user of the called communication device; </claim-text>
+<claim-text>adding the emotional state criterion to one or more entries in an incoming call screening network profile associated with the user; and </claim-text>
+<claim-text>accessing the incoming call screening network profile to employ the emotional state criterion to select the incoming call screening treatment for the call. </claim-text>
+</claim-text>
+ </claim>
+<claim id="CLM-00012" num="00012">
+<claim-text><b>12</b>. The method of <claim-ref idref="CLM-00001">claim 1</claim-ref>, further comprising the steps of: 
+<claim-text>receiving from the user an indication of relative priority levels for the emotional state criterion and one or more objective criteria; and </claim-text>
+<claim-text>employing the emotional state criterion and the one or more objective criteria in an order based on the relative priority levels to determine the incoming call screening treatment for the call. </claim-text>
+</claim-text>
+ </claim>
+<claim id="CLM-00013" num="00013">
+<claim-text><b>13</b>. The method of <claim-ref idref="CLM-00001">claim 1</claim-ref>, wherein the user employs a website interface, short message, feature code, interactive voice response, or wireless application protocol to provision the emotional state criterion to achieve the incoming call screening treatment for the call. </claim-text>
+ </claim>
+<claim id="CLM-00014" num="00014">
+<claim-text><b>14</b>. The method of <claim-ref idref="CLM-00001">claim 1</claim-ref>, further comprising the steps of: 
+<claim-text>receiving an Analyzed Information message, upon a switching center encountering an Advanced Termination trigger for the call, wherein the Analyzed Information message comprises calling party information, called party information, and call characteristic information for the call; </claim-text>
+<claim-text>checking an incoming call screening network profile associated with the user to determine which incoming call screening treatment is required for the call; and </claim-text>
+<claim-text>sending an Analyzed Information return result message to the switching center to indicate the incoming call screening treatment, based on the emotional state, to perform for the call. </claim-text>
+</claim-text>
+ </claim>
+<claim id="CLM-00015" num="00015">
+<claim-text><b>15</b>. A method, comprising the steps of: 
+<claim-text>receiving an indication of an emotional state and a corresponding incoming call screening treatment input by a user of a called communication device; </claim-text>
+<claim-text>receiving an indication that the user activated the emotional state as an incoming call screening treatment criterion for a call from a calling party to the called communication device; and </claim-text>
+<claim-text>selecting the incoming call screening treatment, that corresponds to the emotional state, for the call from the calling party to the called communication device. </claim-text>
+</claim-text>
+ </claim>
+<claim id="CLM-00016" num="00016">
+<claim-text><b>16</b>. The method of <claim-ref idref="CLM-00015">claim 15</claim-ref>, wherein if the emotional state is not activated as the incoming call screening treatment criterion, the call is subject to a default call screening treatment; 
+<claim-text>wherein the step of selecting the incoming call screening treatment, that corresponds to the emotional state, for the call from the calling party to the called communication device comprises the step of: </claim-text>
+<claim-text>overriding the default call screening treatment in favor of the incoming call screening treatment, that corresponds to the emotional state, if the emotional state is activated as the incoming call screening treatment criterion. </claim-text>
+</claim-text>
+ </claim>
+<claim id="CLM-00017" num="00017">
+<claim-text><b>17</b>. The method of <claim-ref idref="CLM-00015">claim 15</claim-ref>, wherein the emotional state comprises a happy emotional state, wherein the incoming call screening treatment comprises a first incoming call screening treatment, wherein the call comprises a first call, the method further comprising the steps of: 
+<claim-text>performing the first incoming call screening treatment, that corresponds to the happy emotional state, for the first call; and </claim-text>
+<claim-text>performing a second incoming call screening treatment, that corresponds to a sad emotional state, for a second call if the sad emotional state is active at a time of the second call, wherein the second incoming call screening treatment is different than the first incoming call screening treatment. </claim-text>
+</claim-text>
+ </claim>
+<claim id="CLM-00018" num="00018">
+<claim-text><b>18</b>. The method of <claim-ref idref="CLM-00015">claim 15</claim-ref>, wherein the call comprises a first call, wherein the step of selecting the incoming call screening treatment, that corresponds to the emotional state, for the first call from the calling party to the called communication device comprises the step of: 
+<claim-text>selecting the incoming call screening treatment, that corresponds to the emotional state, for the first call if the emotional state is active at a time of the first call; </claim-text>
+<claim-text>the method further comprising the steps of: </claim-text>
+<claim-text>receiving one or more objective criteria, input by the user of the called communication device, that indicate to use a default incoming call screening treatment, wherein the objective criteria comprise one or more of: time of day criteria, day of week criteria, day of year criteria, and/or calling party identity criteria; and </claim-text>
+<claim-text>selecting the default incoming call screening treatment for a second call, if the emotional state is not active at a time of the second call. </claim-text>
+</claim-text>
+ </claim>
+<claim id="CLM-00019" num="00019">
+<claim-text><b>19</b>. The method of <claim-ref idref="CLM-00015">claim 15</claim-ref>, further comprising the steps of: 
+<claim-text>adding the indication of the emotional state and the corresponding incoming call screening treatment to one or more entries in an incoming call screening network profile associated with the user; and </claim-text>
+<claim-text>accessing the incoming call screening network profile to identify the incoming call screening treatment, that corresponds to the emotional state, to use for the call. </claim-text>
+</claim-text>
+ </claim>
+<claim id="CLM-00020" num="00020">
+<claim-text><b>20</b>. An article, comprising: 
+<claim-text>one or more computer-readable signal-bearing media; and </claim-text>
+<claim-text>means in the one or more media for selecting an incoming call screening treatment for a call to a called communication device based on an emotional state criterion input by a user of the called communication device.</claim-text>
+</claim-text>
+ </claim>
+</claims>
+</us-patent-application>

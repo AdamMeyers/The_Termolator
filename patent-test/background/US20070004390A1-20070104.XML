@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE us-patent-application SYSTEM "us-patent-application-v42-2006-08-23.dtd" [ ]>
+<us-patent-application lang="EN" dtd-version="v4.2 2006-08-23" file="US20070004390A1-20070104.XML" status="PRODUCTION" id="us-patent-application" country="US" date-produced="20061221" date-publ="20070104">
+<us-bibliographic-data-application lang="EN" country="US">
+<publication-reference>
+<document-id>
+<country>US</country>
+<doc-number>20070004390</doc-number>
+<kind>A1</kind>
+<date>20070104</date>
+</document-id>
+</publication-reference>
+<application-reference appl-type="utility">
+<document-id>
+<country>US</country>
+<doc-number>11170730</doc-number>
+<date>20050629</date>
+</document-id>
+</application-reference>
+<us-application-series-code>11</us-application-series-code>
+<classifications-ipcr>
+<classification-ipcr>
+<ipc-version-indicator><date>20060101</date></ipc-version-indicator>
+<classification-level>A</classification-level>
+<section>H</section>
+<class>04</class>
+<subclass>M</subclass>
+<main-group>3</main-group>
+<subgroup>00</subgroup>
+<symbol-position>F</symbol-position>
+<classification-value>I</classification-value>
+<action-date><date>20070104</date></action-date>
+<generating-office><country>US</country></generating-office>
+<classification-status>B</classification-status>
+<classification-data-source>H</classification-data-source>
+</classification-ipcr>
+</classifications-ipcr>
+<classification-national>
+<country>US</country>
+<main-classification>455418000</main-classification>
+</classification-national>
+<invention-title id="d0e102">Mobile communication terminal, method, and computer program product</invention-title>
+<parties>
+<applicants>
+<applicant sequence="00" app-type="applicant-inventor" designation="us-only">
+<addressbook>
+<last-name>Kraft</last-name>
+<first-name>Christian</first-name>
+<address>
+<city>Frederiksberg</city>
+<country>DK</country>
+</address>
+</addressbook>
+<nationality>
+<country>DK</country>
+</nationality>
+<residence>
+<country>DK</country>
+</residence>
+</applicant>
+<applicant sequence="01" app-type="applicant-inventor" designation="us-only">
+<addressbook>
+<last-name>Nielsen</last-name>
+<first-name>Peter</first-name>
+<middle-name>Dam</middle-name>
+<address>
+<city>Lyngby</city>
+<country>DK</country>
+</address>
+</addressbook>
+<nationality>
+<country>DK</country>
+</nationality>
+<residence>
+<country>DK</country>
+</residence>
+</applicant>
+</applicants>
+<correspondence-address>
+<addressbook>
+<name>PERMAN &#x26; GREEN</name>
+<address>
+<address-1>425 POST ROAD</address-1>
+<city>FAIRFIELD</city>
+<state>CT</state>
+<postcode>06824</postcode>
+<country>US</country>
+</address>
+</addressbook>
+</correspondence-address>
+</parties>
+</us-bibliographic-data-application>
+<abstract id="abstract">
+<p id="p-0001" num="0000">A mobile communication apparatus, and a computer program product, comprising a memory arranged to hold contact information, wherein items of said contact information are arranged in a tree structure comprising a plurality of logical levels is disclosed. Methods for storing and accessing contact information arranged in this way are also disclosed. </p>
+</abstract>
+<drawings id="DRAWINGS">
+<figure id="figure-D00000" num="00000">
+<img id="EMI-D00000" he="99.44mm" wi="121.41mm" file="US20070004390A1-20070104-D00000.TIF" alt="embedded image" img-content="drawing" img-format="tif"/>
+</figure>
+<figure id="figure-D00001" num="00001">
+<img id="EMI-D00001" he="237.15mm" wi="167.64mm" file="US20070004390A1-20070104-D00001.TIF" alt="embedded image" img-content="drawing" img-format="tif"/>
+</figure>
+<figure id="figure-D00002" num="00002">
+<img id="EMI-D00002" he="196.85mm" wi="155.19mm" file="US20070004390A1-20070104-D00002.TIF" alt="embedded image" img-content="drawing" img-format="tif"/>
+</figure>
+<figure id="figure-D00003" num="00003">
+<img id="EMI-D00003" he="203.88mm" wi="165.78mm" file="US20070004390A1-20070104-D00003.TIF" alt="embedded image" img-content="drawing" img-format="tif"/>
+</figure>
+<figure id="figure-D00004" num="00004">
+<img id="EMI-D00004" he="242.57mm" wi="141.65mm" file="US20070004390A1-20070104-D00004.TIF" alt="embedded image" img-content="drawing" img-format="tif"/>
+</figure>
+<figure id="figure-D00005" num="00005">
+<img id="EMI-D00005" he="239.01mm" wi="106.17mm" file="US20070004390A1-20070104-D00005.TIF" alt="embedded image" img-content="drawing" img-format="tif"/>
+</figure>
+</drawings>
+<description id="description">
+<?summary-of-invention description="Summary of Invention" end="lead"?>
+<heading level="2" id="h-0001">TECHNICAL FIELD </heading>
+<p id="p-0002" num="0001"> The present invention relates to a mobile communication apparatus, methods therefore, and a computer program product. The invention particularly relates to a tree structure of contact information. </p>
+<heading level="2" id="h-0002">BACKGROUND OF THE INVENTION </heading>
+<p id="p-0003" num="0002"> Managing contact information in a mobile communication apparatus has, as other operations performed with small handheld devices, its constraints due to limitations in display size and input means. Normally, contact information is structured as a simple list comprising names, and to each name one or more telephone numbers can be stored, and in some cases also other information. A user of the mobile communication apparatus often experience both saving and accessing contact information as a limitation of the usefulness of the phone book of the mobile communication apparatus. Therefore there is a need for improvements of handling contact information from a mobile communication apparatus. </p>
+<heading level="2" id="h-0003">SUMMARY OF THE INVENTION </heading>
+<p id="p-0004" num="0003"> In view of the above, an objective of the invention is to solve or at least reduce the problems discussed above. In particular, an objective is to provide contact information storage and/or access in a way that is intuitive to a user. The present invention is based on the understanding that structuring contact information according to relations experienced by a user will provide an intuitive contact management, and thus improved storing of and access to contact information. </p>
+<p id="p-0005" num="0004"> According to a first aspect of the present invention, there is provided a mobile communication apparatus comprising a memory arranged to hold contact information, wherein items of said contact information are arranged in a tree structure comprising a plurality of logical levels. </p>
+<p id="p-0006" num="0005"> An advantage of this is more feasible access and storage of contact information in view of the user. </p>
+<p id="p-0007" num="0006"> The logical levels may be defined by links between at least a higher level item and at least a lower level item. The items may comprise contact information, or one or more links to other items, or a combination of these. </p>
+<p id="p-0008" num="0007"> An advantage of this is a versatile structure, which a user is able to use according to present needs. </p>
+<p id="p-0009" num="0008"> The contact information may be arranged to be presented according to said tree structure on a display of said mobile communication apparatus. A display view may comprise all items of said tree structure, wherein said display view may comprise a scrolling function to be able to view a user selected part of said items. The tree structure may be arranged to be presented with relations between items together with images, texts, or symbols, or any combination thereof, related to said items, respectively, and the presented tree structure may be browsable by a user. A group of lower level items linked to an item of a higher logical level may be presented together with said higher logical level item. </p>
+<p id="p-0010" num="0009"> An advantage of this is that a user will experience the contact information according to her view of relation between parts of the information, which implies an intuitive structure and an improvement for the user. </p>
+<p id="p-0011" num="0010"> The contact information may comprise home telephone number, work telephone number, mobile telephone number, private e-mail address, work e-mail address, home address, work address, image, text, symbol, sound, red-letter day, or web address, or any combination thereof. </p>
+<p id="p-0012" num="0011"> According to a second aspect of the present invention, there is provided a method for storing contact information in a mobile communication apparatus comprising: assigning a plurality of logical levels of a tree structure for said contact information; and storing contact information in a logical level of said tree structure being related to said contact information. </p>
+<p id="p-0013" num="0012"> An advantage of this is provision of an intuitive structure for the user to store her contact information according to her own experienced relations between contacts. </p>
+<p id="p-0014" num="0013"> The logical levels may be associated to groups, families, companies, departments, teams, clubs, or personal relations, or any combination thereof. </p>
+<p id="p-0015" num="0014"> According to a third aspect of the present invention, there is provided a method for accessing contact information in a mobile communication apparatus comprising: navigating to a logical level of a tree structure related to said contact information; and accessing said contact information. </p>
+<p id="p-0016" num="0015"> An advantage of this is provision of an intuitive structure for the user to access her contact information according to relations between contacts. </p>
+<p id="p-0017" num="0016"> The method according the second and third aspects may further comprise presenting said contact information according to said tree structure on a display of said mobile communication apparatus. A display view may comprise all items of said tree structure, wherein the method further may comprise scrolling said display view to view a user selected part of said items. </p>
+<p id="p-0018" num="0017"> According to a fourth aspect of the present invention, there is provided a computer program product directly loadable into a memory of a processor, where the computer program product comprises program code for performing the method according to the second aspect of the invention when executed by the processor. </p>
+<p id="p-0019" num="0018"> According to a fifth aspect of the present invention, there is provided a computer program product directly loadable into a memory of a processor, where the computer program product comprises program code for performing the method according to the third aspect of the invention when executed by the processor. </p>
+<p id="p-0020" num="0019"> According to a sixth aspect of the present invention, there is provided a communication system comprising a communication network being in wireless communication with a plurality of mobile communication apparatuses when in operation, and a memory arranged to hold contact information, wherein items of said contact information are arranged in a tree structure comprising a plurality of logical levels. </p>
+<p id="p-0021" num="0020"> The memory may be comprised in one of said mobile communication apparatuses, or in said communication network, or a combination thereof. </p>
+<p id="p-0022" num="0021"> Generally, all terms used in the claims are to be interpreted according to their ordinary meaning in the technical field, unless explicitly defined otherwise herein. All references to &#x201c;a/an/the [element, device, component, means, step, etc]&#x201d; are to be interpreted openly as referring to at least one instance of said element, device, component, means, step, etc., unless explicitly stated otherwise. The steps of any method disclosed herein do not have to be performed in the exact order disclosed, unless explicitly stated. </p>
+<p id="p-0023" num="0022"> Other objectives, features and advantages of the present invention will appear from the following detailed disclosure, from the attached dependent claims as well as from the drawings.</p>
+<?summary-of-invention description="Summary of Invention" end="tail"?>
+<?brief-description-of-drawings description="Brief Description of Drawings" end="lead"?>
+<heading level="2" id="h-0004">BRIEF DESCRIPTION OF THE DRAWINGS </heading>
+<p id="p-0024" num="0023"> The above, as well as additional objects, features and advantages of the present invention, will be better understood through the following illustrative and non-limiting detailed description of preferred embodiments of the present invention, with reference to the appended drawings, where the same reference numerals will be used for similar elements, wherein: </p>
+<p id="p-0025" num="0024"> <figref idref="DRAWINGS">FIG. 1</figref> schematically shows a mobile communication apparatus according to an embodiment of the present invention; </p>
+<p id="p-0026" num="0025"> <figref idref="DRAWINGS">FIG. 2</figref> shows an example of a group of contact information arranged in a tree structure with a plurality of logical levels according to an embodiment of the present invention; </p>
+<p id="p-0027" num="0026"> <figref idref="DRAWINGS">FIG. 3</figref> shows an example how a user can use the tree structure to feasibly arrange her contact information within a group of contact information; </p>
+<p id="p-0028" num="0027"> <figref idref="DRAWINGS">FIG. 4</figref> shows an example how a user can use the tree structure to feasibly arrange her contact information within a group of contact information; </p>
+<p id="p-0029" num="0028"> <figref idref="DRAWINGS">FIG. 5</figref> schematically shows a communication system according to an embodiment of the present invention; and </p>
+<p id="p-0030" num="0029"> <figref idref="DRAWINGS">FIG. 6</figref> shows an example according to the present invention, where a mobile communication apparatus views contact information on a display.</p>
+<?brief-description-of-drawings description="Brief Description of Drawings" end="tail"?>
+<?detailed-description description="Detailed Description" end="lead"?>
+<heading level="2" id="h-0005">DETAILED DESCRIPTION OF PREFERRED EMBODIMENTS </heading>
+<p id="p-0031" num="0030"> <figref idref="DRAWINGS">FIG. 1</figref> schematically shows a mobile communication apparatus <b>100</b> comprising a processor <b>102</b>, a transceiver <b>104</b> connected to and controlled by the processor <b>102</b> and being arranged to wirelessly communicate with a communication network, a user interface <b>106</b> connected to and controlled by the processor <b>102</b> and being arranged to interact with a user of the mobile communication apparatus <b>100</b>, and a memory <b>108</b> connected to and controlled by the processor <b>102</b> and being arranged to comprise contact information <b>110</b>. For example, the user interface <b>106</b> can comprise one or more displays, a keypad, a keyboard, a speaker, a microphone, a touch sensitive input device, a joystick, a rotating input device, or any other user interface means commonly used at mobile communication apparatuses. At least a part of the contact information <b>110</b> is arranged in a tree structure comprising a plurality of logical levels, as will be described below. The contact information <b>110</b> can comprise one or more groups arranged according to said tree structure. The groups can have different number of logical levels. The tree structure enables the processor <b>102</b> to present contact information by the user interface <b>106</b> in an improved manner. </p>
+<p id="p-0032" num="0031"> <figref idref="DRAWINGS">FIG. 2</figref> shows an example of a group <b>200</b> of contact information arranged in a tree structure with a plurality of logical levels <b>202</b>, <b>203</b>, <b>204</b>, <b>205</b>. The contact information is contained in items of the tree structure, where each item can comprise contact information and/or a link to items on a lower logical level. The logical link between the items are assigned by a user, and an item can be assigned logical link from one or more items in a higher logical level. The term higher and lower logical level only denotes which item is linked from another item, and the logical level of an item do not have to be fixed. </p>
+<p id="p-0033" num="0032"> <figref idref="DRAWINGS">FIG. 3</figref> shows an example how a user can use the tree structure to feasibly arrange her contact information within a group of contact information. The top logical level item <b>300</b> can be associated with a company, here called C. The top item <b>300</b> can comprise contact information common for the entire company, such as switchboard telephone number, address to head office, web address, etc. This contact information can be comprised in sub-items (not shown) of the top item <b>300</b>, or directly in the top item <b>300</b>. Further, the top item <b>300</b> comprises links to items <b>302</b>, <b>304</b> on a lower logical level, where the lower level items <b>302</b>, <b>304</b> can be different sites of the company, here item <b>302</b> being associated with site A and item <b>304</b> being associated with site B. In this example, site A may comprise a factory and an administrative office, which each have an associated contact information item <b>306</b>, <b>308</b> on a further lower logical level. Similarly, site B may comprise an R&#x26;D department associated with contact information in an item <b>310</b> and being logically linked to the item <b>304</b> of site B. Further, contact information about Ms. D, a contact person at site B, is associated with an item <b>312</b> which is linked to the item <b>304</b> of site B. Contact information about Mr. E, who belongs to the R&#x26;D department, but normally is situated at the office at site A, is associated with item <b>314</b>, which is linked from the site A office item <b>308</b> and from R&#x26;D department item <b>310</b>. Items <b>316</b>, <b>318</b>, <b>310</b>, which are linked to contact information item <b>314</b> about Mr. E can comprise e-mail address, home telephone number, mobile telephone number, etc. Further contact persons, e.g. Mr. J, can be associated with contact information items, e.g. item <b>322</b>, linked to higher logical level items, e.g. R&#x26;D department item <b>310</b>, and comprise contact information. </p>
+<p id="p-0034" num="0033"> <figref idref="DRAWINGS">FIG. 4</figref> shows an example how a user can use the tree structure to feasibly arrange her contact information within a group of contact information. The top logical level item <b>400</b> can be associated with a family, here called Johnson. The top item <b>400</b> can comprise contact information common for the entire family, such as home address, web address, etc. This contact information can be comprised in sub-items, which here is exemplified with home telephone number item <b>402</b> linked to the top item <b>400</b>, of the top item <b>400</b>, or directly in the top item <b>400</b>. Further, the top item <b>400</b> comprises links to items <b>404</b>, <b>406</b> on a lower logical level, where the lower level items <b>404</b>, <b>406</b> can be different members of the family, here item <b>404</b> being associated with John Johnson and item <b>406</b> being associated with Mary Johnson. In this example, John may have a work telephone and a mobile telephone, which each have an associated contact information item <b>408</b>, <b>410</b> on a further lower logical level. Similarly, Mary may also have a work telephone and a mobile telephone associated with contact information in items <b>412</b>, <b>414</b> and being logically linked to the item <b>406</b> of Mary. Further, contact information about Mary in item <b>406</b> can comprise a photo, red-letter days, etc. Mary may have a mobile telephone mounted in her car with a special telephone number, which is comprised in item <b>416</b>, which is linked to Mary's mobile phone item <b>412</b>. Mary and John may also have a mobile phone mounted in their boat, and the telephone number to that mobile phone is comprised in item <b>418</b>, which is linked to both John's and Mary's mobile phone items <b>410</b>, <b>412</b>. Mary's e-mail address at work, telephone number to Mary's assistant at work, Mary's mobile telephone number at work, etc can be comprised in items <b>420</b>, <b>422</b>, <b>424</b>, which are linked to Mary's work contact information item <b>414</b>. This way, it is more feasible for a user to choose the right contact information at any situation for keeping contact with either John or Mary. </p>
+<p id="p-0035" num="0034"> It should be noted that an item can be linked more than one group, e.g. as if Mr. J associated with item <b>322</b> above happens to be John Johnson associated with item <b>404</b> above, then John's contact information items are linked both to the group of company C and the group of the Johnson family. </p>
+<p id="p-0036" num="0035"> Any contact information, such as home telephone numbers, work telephone numbers, mobile telephone numbers, private e-mail addresses, work e-mail addresses, home addresses, and/or work addresses, can be structured in this way. Further, images, text, symbols, sounds, red-letter days, and/or web addresses can also be incorporated in this structure for enabling more personalized, informative, and accessible contact information. </p>
+<p id="p-0037" num="0036"> As an example the tree structure can be seen as a family album, where the items of each family comprises images, e.g. portraits, which are presented with relations, e.g. husband, wife, kids, brother in law, grandparents, etc, and a user can browse the tree structure on basis of the relations and see the images of the family members. The items can also be represented by symbols, texts, etc, whichever the user finds most convenient. Similarly, the tree structure can be seen as a company roll, where the items of each company comprises images, e.g. portraits, which are presented with relations/roles, e.g. CEO, COO, executive vice president, CTO, manager of department X, CFO, supervisor whithin Y, legal council, etc, and the user can browse the tree structure on basis of the relations and roles and see e.g. the portraits of the persons. The items can also be represented by symbols, texts, name of department, etc. When the user, during browsing, finds the right person, the item can be selected, and contact information according to what described above can be accessed, or, if the user so prefers, be linked to another tree structure of the selected person, e.g. showing his/her family tree, hunting party, sports association, etc, which can be further browsed in a similar way. Many other examples of tree structure bases, such as different organizations, friendship relations, etc, can be used for organizing contact information. </p>
+<p id="p-0038" num="0037"> During browsing, a group of contacts can be selected, e.g. for a group SMS, where the tree structure and its relations are utilized for easily making the group. </p>
+<p id="p-0039" num="0038"> A system architecture for managing a system <b>500</b> according to an embodiment of the present invention is shown in <figref idref="DRAWINGS">FIG. 5</figref>. A Home Location Register (HLR) <b>502</b> contains a database (not shown) including relevant subscriber information for provision of telecommunication service. A CCITT specified network <b>504</b> interconnects the individual parts of the system <b>500</b>. A contact information gateway <b>506</b> is a switching unit routing a message or a call to a mobile communication apparatus <b>508</b>-<b>512</b>. If contact information is to be stored at network side, a Contact Information Service Center <b>514</b> (CINC) and the contact information gateway <b>506</b> handles and routes the contact information between the CINC <b>514</b> and the network <b>504</b>. From the network <b>504</b>, the contact information is routed to the mobile communication apparatuses <b>508</b>-<b>512</b> via a Mobile Switching Center (MSC) <b>516</b> to a Base Station Controller (BSC) <b>517</b> and a Base Transceiver Station (BTS) <b>520</b>, <b>521</b>, or a Radio Network Controller (RNC) <b>518</b> and a Node B <b>522</b>. Alternatively, the contact information is routed to the mobile communication apparatuses <b>508</b>-<b>512</b> via a Serving GPRS Support Node (SGSN) <b>526</b>, <b>528</b> to the BSC <b>517</b> and the BTS <b>520</b>, <b>521</b>, or the RNC <b>518</b> and the Node B <b>522</b>, respectively. The BTS <b>520</b>, <b>521</b> or the Node B <b>522</b> establish the air connection to the mobile communication apparatuses <b>508</b>-<b>512</b>. </p>
+<p id="p-0040" num="0039"> According to an embodiment of the present invention, a network operator or other third party company handling a contact information server <b>524</b> could offer a contact information function between persons not knowing each other. For example a network operator may have a contact information server <b>524</b> supporting a feature where the user may send a contact information request from his mobile communication apparatus <b>508</b>-<b>512</b> to the contact information server <b>524</b> by using a special phone number. This contact information server <b>524</b> can then automatically provide contact information structured according to the present invention, e.g. for a company and contact persons at that company, together with web address, fax number, etc. </p>
+<p id="p-0041" num="0040"> <figref idref="DRAWINGS">FIG. 6</figref> shows an example according to the present invention, where a mobile communication apparatus <b>600</b> views contact information on a display <b>602</b>. The contact information can be presented on the display <b>602</b> according to a tree structure <b>604</b> on the display <b>602</b> of the mobile communication apparatus <b>600</b>. It can then be feasible to have a display view that comprises all items of the tree structure <b>604</b>. To be able to see the items in a reasonable size, a scrolling function of the display view can be provided to view a user selected part of the items, where a scroll bar <b>606</b> helps a user to navigate the display view. Scrolling can be enabled both horizontally and vertically, depending on the size of the tree structure <b>604</b>, the size of the display <b>602</b>, and the preferred sizes of the presented items. </p>
+<p id="p-0042" num="0041"> The invention has mainly been described above with reference to a few embodiments. However, as is readily appreciated by a person skilled in the art, other embodiments than the ones disclosed above are equally possible within the scope of the invention, as defined by the appended patent claims. </p>
+<?detailed-description description="Detailed Description" end="tail"?>
+</description>
+<claims id="claims">
+<claim id="CLM-00001" num="00001">
+<claim-text><b>1</b>. A mobile communication apparatus comprising a memory arranged to hold contact information, wherein items of said contact information are arranged in a tree structure comprising a plurality of logical levels. </claim-text>
+ </claim>
+<claim id="CLM-00002" num="00002">
+<claim-text><b>2</b>. The mobile communication apparatus according to <claim-ref idref="CLM-00001">claim 1</claim-ref>, wherein said logical levels are defined by links between at least a higher level item and at least a lower level item. </claim-text>
+ </claim>
+<claim id="CLM-00003" num="00003">
+<claim-text><b>3</b>. The mobile communication apparatus according to <claim-ref idref="CLM-00001">claim 1</claim-ref>, wherein said contact information is arranged to be presented according to said tree structure on a display of said mobile communication apparatus. </claim-text>
+ </claim>
+<claim id="CLM-00004" num="00004">
+<claim-text><b>4</b>. The mobile communication apparatus according to <claim-ref idref="CLM-00003">claim 3</claim-ref>, wherein a display view comprises all items of said tree structure. </claim-text>
+ </claim>
+<claim id="CLM-00005" num="00005">
+<claim-text><b>5</b>. The mobile communication apparatus according to <claim-ref idref="CLM-00004">claim 4</claim-ref>, wherein said display view comprises a scrolling function to be able to view a user selected part of said items. </claim-text>
+ </claim>
+<claim id="CLM-00006" num="00006">
+<claim-text><b>6</b>. The mobile communication apparatus according to <claim-ref idref="CLM-00003">claim 3</claim-ref>, wherein said tree structure is arranged to be presented with relations between items together with images, texts, or symbols, or any combination thereof, related to said items, respectively, and said presented tree structure is browsable by a user. </claim-text>
+ </claim>
+<claim id="CLM-00007" num="00007">
+<claim-text><b>7</b>. The mobile communication apparatus according to <claim-ref idref="CLM-00003">claim 3</claim-ref>, wherein a group of lower level items linked to an item of a higher logical level are presented together with said higher logical level item. </claim-text>
+ </claim>
+<claim id="CLM-00008" num="00008">
+<claim-text><b>8</b>. The mobile communication apparatus according to <claim-ref idref="CLM-00001">claim 1</claim-ref>, wherein said contact information comprises home telephone number, work telephone number, mobile telephone number, private e-mail address, work e-mail address, home address, work address, image, text, symbol, sound, red-letter day, or web address, or any combination thereof. </claim-text>
+ </claim>
+<claim id="CLM-00009" num="00009">
+<claim-text><b>9</b>. A method for storing contact information in a mobile communication apparatus comprising: 
+<claim-text>assigning a plurality of logical levels of a tree structure for said contact information; and </claim-text>
+<claim-text>storing contact information in a logical level of said tree structure being related to said contact information. </claim-text>
+</claim-text>
+ </claim>
+<claim id="CLM-00010" num="00010">
+<claim-text><b>10</b>. The method according to <claim-ref idref="CLM-00009">claim 9</claim-ref>, further comprising presenting said contact information according to said tree structure on a display of said mobile communication apparatus. </claim-text>
+ </claim>
+<claim id="CLM-00011" num="00011">
+<claim-text><b>11</b>. The method according to <claim-ref idref="CLM-00010">claim 10</claim-ref>, wherein a display view comprises all items of said tree structure. </claim-text>
+ </claim>
+<claim id="CLM-00012" num="00012">
+<claim-text><b>12</b>. The mobile communication apparatus according to <claim-ref idref="CLM-00011">claim 11</claim-ref>, further comprising scrolling said display view to view a user selected part of said items. </claim-text>
+ </claim>
+<claim id="CLM-00013" num="00013">
+<claim-text><b>13</b>. The method according to <claim-ref idref="CLM-00009">claim 9</claim-ref>, wherein said contact information comprises home telephone number, work telephone number, mobile telephone number, private e-mail address, work e-mail address, home address, work address, image, text, symbol, sound, red-letter day, or web address, or any combination thereof. </claim-text>
+ </claim>
+<claim id="CLM-00014" num="00014">
+<claim-text><b>14</b>. The method according to <claim-ref idref="CLM-00009">claim 9</claim-ref>, wherein said logical levels are associated to groups, families, companies, departments, teams, clubs, or personal relations, or any combination thereof. </claim-text>
+ </claim>
+<claim id="CLM-00015" num="00015">
+<claim-text><b>15</b>. A method for accessing contact information in a mobile communication apparatus comprising: 
+<claim-text>navigating to a logical level of a tree structure related to said contact information; and </claim-text>
+<claim-text>accessing said contact information. </claim-text>
+</claim-text>
+ </claim>
+<claim id="CLM-00016" num="00016">
+<claim-text><b>16</b>. The method according to <claim-ref idref="CLM-00015">claim 15</claim-ref>, further comprising presenting said contact information according to said tree structure on a display of said mobile communication apparatus. </claim-text>
+ </claim>
+<claim id="CLM-00017" num="00017">
+<claim-text><b>17</b>. The method according to <claim-ref idref="CLM-00016">claim 16</claim-ref>, wherein a display view comprises all items of said tree structure. </claim-text>
+ </claim>
+<claim id="CLM-00018" num="00018">
+<claim-text><b>18</b>. The mobile communication apparatus according to <claim-ref idref="CLM-00017">claim 17</claim-ref>, further comprising scrolling said display view to view a user selected part of said items. </claim-text>
+ </claim>
+<claim id="CLM-00019" num="00019">
+<claim-text><b>19</b>. The method according to <claim-ref idref="CLM-00015">claim 15</claim-ref>, wherein said contact information comprises home telephone number, work telephone number, mobile telephone number, private e-mail address, work e-mail address, home address, work address, image, text, symbol, sound, red-letter day, or web address, or any combination thereof. </claim-text>
+ </claim>
+<claim id="CLM-00020" num="00020">
+<claim-text><b>20</b>. The method according to <claim-ref idref="CLM-00015">claim 15</claim-ref>, wherein said logical levels are associated to groups, families, companies, departments, teams, clubs, or personal relations, or any combination thereof. </claim-text>
+ </claim>
+<claim id="CLM-00021" num="00021">
+<claim-text><b>21</b>. A computer program product directly loadable into a memory of a processor, where the computer program product comprises program code for performing the method as defined in <claim-ref idref="CLM-00009">claim 9</claim-ref> when executed by said processor. </claim-text>
+ </claim>
+<claim id="CLM-00022" num="00022">
+<claim-text><b>22</b>. A computer program product directly loadable into a memory of a processor, where the computer program product comprises program code for performing the method as defined in <claim-ref idref="CLM-00015">claim 15</claim-ref> when executed by said processor.</claim-text>
+ </claim>
+</claims>
+</us-patent-application>

@@ -1,0 +1,415 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE us-patent-application SYSTEM "us-patent-application-v42-2006-08-23.dtd" [ ]>
+<us-patent-application lang="EN" dtd-version="v4.2 2006-08-23" file="US20070005620A1-20070104.XML" status="PRODUCTION" id="us-patent-application" country="US" date-produced="20061221" date-publ="20070104">
+<us-bibliographic-data-application lang="EN" country="US">
+<publication-reference>
+<document-id>
+<country>US</country>
+<doc-number>20070005620</doc-number>
+<kind>A1</kind>
+<date>20070104</date>
+</document-id>
+</publication-reference>
+<application-reference appl-type="utility">
+<document-id>
+<country>US</country>
+<doc-number>11530839</doc-number>
+<date>20060911</date>
+</document-id>
+</application-reference>
+<us-application-series-code>11</us-application-series-code>
+<classifications-ipcr>
+<classification-ipcr>
+<ipc-version-indicator><date>20060101</date></ipc-version-indicator>
+<classification-level>A</classification-level>
+<section>G</section>
+<class>06</class>
+<subclass>F</subclass>
+<main-group>7</main-group>
+<subgroup>00</subgroup>
+<symbol-position>F</symbol-position>
+<classification-value>I</classification-value>
+<action-date><date>20070104</date></action-date>
+<generating-office><country>US</country></generating-office>
+<classification-status>B</classification-status>
+<classification-data-source>H</classification-data-source>
+</classification-ipcr>
+</classifications-ipcr>
+<classification-national>
+<country>US</country>
+<main-classification>707100000</main-classification>
+</classification-national>
+<invention-title id="d0e102">Method and system for processing structured documents stored in a database</invention-title>
+<us-related-documents>
+<continuation>
+<relation>
+<parent-doc>
+<document-id>
+<country>US</country>
+<doc-number>10652662</doc-number>
+<date>20030828</date>
+</document-id>
+<parent-status>PENDING</parent-status>
+</parent-doc>
+<child-doc>
+<document-id>
+<country>US</country>
+<doc-number>11530839</doc-number>
+<kind>A1</kind>
+<date>20060911</date>
+</document-id>
+</child-doc>
+</relation>
+</continuation>
+</us-related-documents>
+<parties>
+<applicants>
+<applicant sequence="00" app-type="applicant-inventor" designation="us-only">
+<addressbook>
+<last-name>Loeser</last-name>
+<first-name>Henrik</first-name>
+<address>
+<city>San Jose</city>
+<state>CA</state>
+<country>US</country>
+</address>
+</addressbook>
+<nationality>
+<country>US</country>
+</nationality>
+<residence>
+<country>US</country>
+</residence>
+</applicant>
+<applicant sequence="01" app-type="applicant-inventor" designation="us-only">
+<addressbook>
+<last-name>Van der Linden</last-name>
+<first-name>Robbert</first-name>
+<middle-name>C.</middle-name>
+<address>
+<city>Scotts Valley</city>
+<state>CA</state>
+<country>US</country>
+</address>
+</addressbook>
+<nationality>
+<country>US</country>
+</nationality>
+<residence>
+<country>US</country>
+</residence>
+</applicant>
+<applicant sequence="02" app-type="applicant-inventor" designation="us-only">
+<addressbook>
+<last-name>Vickery</last-name>
+<first-name>Brian</first-name>
+<middle-name>S.</middle-name>
+<address>
+<city>Los Gatos</city>
+<state>CA</state>
+<country>US</country>
+</address>
+</addressbook>
+<nationality>
+<country>US</country>
+</nationality>
+<residence>
+<country>US</country>
+</residence>
+</applicant>
+</applicants>
+<correspondence-address>
+<addressbook>
+<name>SAWYER LAW GROUP LLP</name>
+<address>
+<address-1>P.O. BOX 51418</address-1>
+<city>PALO ALTO</city>
+<state>CA</state>
+<postcode>94303</postcode>
+<country>US</country>
+</address>
+</addressbook>
+</correspondence-address>
+</parties>
+<assignees>
+<assignee>
+<addressbook>
+<orgname>International Business Machines Corporation</orgname>
+<role>02</role>
+<address>
+<city>Armonk</city>
+<state>NY</state>
+<country>US</country>
+</address>
+</addressbook>
+</assignee>
+</assignees>
+</us-bibliographic-data-application>
+<abstract id="abstract">
+<p id="p-0001" num="0000">A method, computer readable medium, and system for processing a structured document are disclosed. The method, computer readable medium, and system include identifying a plurality of strings processed by a database, assigning an identifier to each of the plurality of strings, storing each of the plurality of strings and its assigned identifier in a table in the database, and utilizing the table during document processing. </p>
+</abstract>
+<drawings id="DRAWINGS">
+<figure id="figure-D00000" num="00000">
+<img id="EMI-D00000" he="141.54mm" wi="84.96mm" file="US20070005620A1-20070104-D00000.TIF" alt="embedded image" img-content="drawing" img-format="tif"/>
+</figure>
+<figure id="figure-D00001" num="00001">
+<img id="EMI-D00001" he="218.10mm" wi="168.57mm" file="US20070005620A1-20070104-D00001.TIF" alt="embedded image" img-content="drawing" img-format="tif"/>
+</figure>
+<figure id="figure-D00002" num="00002">
+<img id="EMI-D00002" he="224.11mm" wi="118.28mm" file="US20070005620A1-20070104-D00002.TIF" alt="embedded image" img-content="drawing" img-format="tif"/>
+</figure>
+<figure id="figure-D00003" num="00003">
+<img id="EMI-D00003" he="106.17mm" wi="161.04mm" file="US20070005620A1-20070104-D00003.TIF" alt="embedded image" img-content="drawing" img-format="tif"/>
+</figure>
+<figure id="figure-D00004" num="00004">
+<img id="EMI-D00004" he="234.87mm" wi="184.66mm" file="US20070005620A1-20070104-D00004.TIF" alt="embedded image" img-content="drawing" img-format="tif"/>
+</figure>
+<figure id="figure-D00005" num="00005">
+<img id="EMI-D00005" he="229.36mm" wi="175.18mm" file="US20070005620A1-20070104-D00005.TIF" alt="embedded image" img-content="drawing" img-format="tif"/>
+</figure>
+<figure id="figure-D00006" num="00006">
+<img id="EMI-D00006" he="240.11mm" wi="181.69mm" file="US20070005620A1-20070104-D00006.TIF" alt="embedded image" img-content="drawing" img-format="tif"/>
+</figure>
+</drawings>
+<description id="description">
+<?cross-reference-to-related-applications description="Cross Reference To Related Applications" end="lead"?>
+<heading level="2" id="h-0001">CROSS-REFERENCE TO RELATED APPLICATIONS </heading>
+<p id="p-0002" num="0001"> This application is a continuation of U.S. patent application Ser. No. 10/652,662, filed Aug. 28, 2003, which is hereby incorporated by reference in its entirety for all purposes as if fully set forth herein.</p>
+<?cross-reference-to-related-applications description="Cross Reference To Related Applications" end="tail"?>
+<?summary-of-invention description="Summary of Invention" end="lead"?>
+<heading level="2" id="h-0002">FIELD OF THE INVENTION </heading>
+<p id="p-0003" num="0002"> The present invention relates generally to computer implemented database systems and, more particularly, to an improved method and system for processing structured documents stored in a database system. </p>
+<heading level="2" id="h-0003">BACKGROUND OF THE INVENTION </heading>
+<p id="p-0004" num="0003"> Structured documents are documents which have nested structures. Documents written in Extensible Markup Language (XML) are structured documents. XML is quickly becoming the standard format for delivering information over the Internet because it allows the user to design a customized markup language for many classes of structured documents. For example, a business can easily model complex structures such as purchase orders in XML format and send them for further processing to its business partners. XML supports user-defined tags for better description of nested document structures and associated semantics, and encourages the separation of document content from browser presentation. </p>
+<p id="p-0005" num="0004"> As more and more businesses present and exchange data in XML documents, database management systems (DBMSes) have been developed to store, query and retrieve these documents which are typically stored on direct access storage devices (DASD), such as magnetic or optical disk drives for semi-permanent storage. Some DBMSes, known as relational databases, store and query the documents utilizing relational techniques, while other DBMSes, known as native databases, store the documents in their native formats. </p>
+<p id="p-0006" num="0005"> As stated above, one attractive feature of XML is that it allows the user to design a customized markup language for many classes of structured documents. The user can select element and attribute names that are relevant to and descriptive of the particular class of document. While this provides the user with great flexibility, it also presents problems for database processing. Evaluating strings corresponding to element names is costly because the strings are of varying length and the database processor, at a minimum, must perform length checks. Such length checks add costs during runtime and also complicate program coding. In addition, processing variable length strings complicates memory management in the database. Moreover, in order to store XML documents in their native format in a database, the element and attribute names, along with other strings, must be stored on disk. For large documents, the amount of disk space required to store a collection of such documents can be quite large and expensive. </p>
+<p id="p-0007" num="0006"> To alleviate the storage problem, it is common to compress a document in order to reduce the amount of storage space required to store it. A typical compression method involves replacing certain strings with numbers and storing mapping information in a file specific or document specific table. The mapping table is stored in front of the file or document. While this method reduces the size of the document, it also presents several disadvantages in the storage and processing of such documents. First, storing the mapping information in each file/document requires additional disk space for each ifle/document. Second, because each compressed file/document is associated with its own mapping table, the numbers associated with the strings in one compressed file/document do not correspond to the same strings in a different compressed file/document. Accordingly, because the numbers are not consistent throughout the database, the numbers cannot be used for purposes beyond document compression. Instead, the compressed documents must be decompressed before they can be processed. Once the document is decompressed, i.e., the numbers are replaced with the associated strings, the query processor is still required to evaluate strings. </p>
+<p id="p-0008" num="0007"> Accordingly, a need exists for an improved method and system for processing structured documents stored in a database. The method and system should reduce the size of a structured document for storage, while supporting homogeneous document processing. The present invention addresses such a need. </p>
+<heading level="2" id="h-0004">SUMMARY OF THE INVENTION </heading>
+<p id="p-0009" num="0008"> A method, computer readable medium, and system for processing a structured document are disclosed. The method, computer readable medium, and system provide for identifying a plurality of strings processed by the database, assigning an identifier to each of the plurality of strings, storing each of the plurality of strings and its assigned identifier in a table in the database, wherein at least one of the plurality of strings is not derived from one or more structured documents stored in the database and at least another of the plurality of strings is derived from the one or more structured documents stored in the database, and utilizing the table during document processing. </p>
+<p id="p-0010" num="0009"> According to an embodiment, a global association table is provided to store strings and their respective identifiers. The strings correspond to element names, attribute names, and namespaces in one embodiment. Because a global association table is utilized, an identifier for a particular string can be used in place of the string throughout the database. By replacing strings with their respective identifiers, document processing and storage are significantly improved.</p>
+<?summary-of-invention description="Summary of Invention" end="tail"?>
+<?brief-description-of-drawings description="Brief Description of Drawings" end="lead"?>
+<heading level="2" id="h-0005">BRIEF DESCRIPTION OF THE DRAWINGS </heading>
+<p id="p-0011" num="0010"> <figref idref="DRAWINGS">FIG. 1</figref> is a block diagram of an exemplary computer environment for use with the present invention. </p>
+<p id="p-0012" num="0011"> <figref idref="DRAWINGS">FIG. 2A</figref> is a flowchart illustrating a method for processing a structured document stored in a database according to the embodiment of the present invention. </p>
+<p id="p-0013" num="0012"> <figref idref="DRAWINGS">FIG. 2B</figref> is an association table according to an embodiment of the present invention. </p>
+<p id="p-0014" num="0013"> <figref idref="DRAWINGS">FIG. 3</figref> is a flowchart illustrating a method for utilizing the association table during document storage according to an embodiment of the present invention. </p>
+<p id="p-0015" num="0014"> <figref idref="DRAWINGS">FIG. 4</figref> is a flowchart illustrating a method for utilizing the association table during query processing according to an embodiment of the present invention. </p>
+<p id="p-0016" num="0015"> <figref idref="DRAWINGS">FIG. 5</figref> is a flowchart illustrating how the cache is utilized when a request for a string identifier is processed according to the embodiment of the present invention. </p>
+<?brief-description-of-drawings description="Brief Description of Drawings" end="tail"?>
+<?detailed-description description="Detailed Description" end="lead"?>
+<heading level="2" id="h-0006">DETAILED DESCRIPTION </heading>
+<p id="p-0017" num="0016"> The present invention relates generally to computer implemented database systems and, more particularly, to an improved method and system for processing structured documents stored in their native format in a database. The following description is presented to enable one of ordinary skill in the art to make and use the invention and is provided in the context of a patent application and its requirements. Various modifications to the embodiment and the generic principles and features described herein will be readily apparent to those skilled in the art. For example, the following discussion is presented in the context of a DB2&#xae; database environment available from IBM&#xae; Corporation. It should be understood that the present invention is not limited to DB2&#xae; and may be implemented with other database management systems. Thus, the present invention is to be accorded the widest scope consistent with the principles and features described herein. </p>
+<p id="p-0018" num="0017"> According to an embodiment of the present invention, an identifier is assigned to each of a plurality of strings that is processed by the database, and the string and its assigned identifier are stored in a global database table. Because the global database table comprises strings used throughout the database, it is not limited to a single file or document. Thus, the table is associated with the database, and not with a particular file or document in the database. In one embodiment, strings associated with element names, attribute names and namespaces, and their respective identifiers are stored in the table. </p>
+<p id="p-0019" num="0018"> To describe further the present invention, please refer to <figref idref="DRAWINGS">FIG. 1</figref>, which is an exemplary computer environment for use with the present invention. In <figref idref="DRAWINGS">FIG. 1</figref>, a typical distributed computer system <b>100</b> utilizes a network <b>103</b> to connect client computers <b>102</b> executing client applications to a server computer <b>104</b> executing software and other computer programs, and to connect the server computer <b>104</b> to data stores <b>106</b>. These systems are coupled to one another by various networks, including LANs, WANs, and the Internet. Each client computer <b>102</b> and the server computer <b>104</b> additionally comprise an operating system and one or more computer programs (not shown). </p>
+<p id="p-0020" num="0019"> The server computer <b>104</b> uses a data store interface (not shown) for connecting to the data stores <b>106</b>. The data store interface may be connected to a database management system (DBMS) <b>105</b>, which supports access to the data stores <b>106</b>. The DBMS <b>105</b> can be a relational database management system (RDBMS) capable of storing structured documents in their native formats, such as the DB2&#xae; system developed by IBM&#xae; Corporation, or it also can be a native XML database system. The interface and DBMS <b>105</b> may be located at the server computer <b>104</b> or may be located on one or more separate machines. The data stores <b>106</b> may be geographically distributed. </p>
+<p id="p-0021" num="0020"> The DBMS <b>105</b> and the instructions derived therefrom are all comprised of instructions which, when read and executed by the server computer <b>104</b> cause the server computer <b>104</b> to perform the steps necessary to implement and/or use the present invention. The exemplary environment illustrated in <figref idref="DRAWINGS">FIG. 1</figref> is not intended to limit the present invention, and alternative environments may be used without departing from the scope of the present invention. For instance, while a single server computer system <b>104</b> is illustrated, it is well understood that multiple processing systems, known as nodes, could be linked to the network <b>103</b> in a Massively Parallel Processing (MPP) environment. </p>
+<p id="p-0022" num="0021"> <figref idref="DRAWINGS">FIG. 2A</figref> is a flowchart illustrating a method for processing a structured document stored in a database according to the embodiment of the present invention. In step <b>202</b>, a plurality of strings processed by the DBMS <b>105</b> are identified. An identifier is then assigned to each of the plurality of strings in step <b>204</b>. In step <b>206</b>, the strings and their respective identifiers are stored in a table, and in step <b>208</b>, the DBMS <b>105</b> utilizes the table to replace the plurality of strings with their assigned identifiers. Thereafter, the identifiers, as opposed to the strings, are used during document processing. </p>
+<p id="p-0023" num="0022"> Referring again to <figref idref="DRAWINGS">FIG. 1</figref>, an association table <b>200</b> is provided. The association table is stored on-disk in the database <b>106</b><i>a </i>in the embodiment. In an MPP environment, the association table <b>200</b> may be stored in a catalog node in order to avoid adding a new single point of failure. The association table <b>200</b> is a database-global table, i.e., the entire database system shares the association table <b>200</b>, and is a dictionary that maps strings to identifiers, hereinafter referred to as StringIDs. In an embodiment, the strings include all element names, attribute names, namespace Uniform Resource Identifiers (URIs), and namespace prefixes found in documents stored in the database. By replacing strings with their respective StringIDs, document processing and storage are significantly improved. </p>
+<p id="p-0024" num="0023"> Shown in <figref idref="DRAWINGS">FIG. 2B</figref> is an exemplary association table <b>200</b> according to an embodiment of the present invention, where the table <b>200</b> is a conventional relational, e.g., SQL, table. As is shown, the table <b>200</b> comprises a string column (<b>202</b>) and a StringID column (<b>204</b>). The string column (<b>202</b>) contains the strings corresponding to, for example, elements (e.g., <b>202</b><i>a </i>and <b>202</b><i>b</i>), attributes (e.g., <b>202</b><i>c</i>), and namespaces (not shown). The StringID column (<b>204</b>) contains the StringIDs (<b>204</b><i>a</i>-<b>204</b><i>e</i>) associated with the strings (<b>202</b><i>a</i>-<b>202</b><i>e</i>). </p>
+<p id="p-0025" num="0024"> In one embodiment, each StringID is a fixed size integer representing a variable length string. The StringID is used in place of the string throughout the database. For example, during storage, the DBMS <b>105</b> stores a StringID of an element's name and a StringID of the element's namespace instead of the corresponding variable length strings. In another example, during query processing, variable length strings in the query are converted to their respective StringIDs and therefore, the StringIDs in the query, and not the variable length strings, are compiled and executed. In summary, the StringIDs instead of the strings are utilized for storage and internal processing of the database. </p>
+<p id="p-0026" num="0025"> Several advantages flow from this utilization. First, because the StringID is generally smaller than its corresponding string, storing the StringID requires less storage space than storing the string. Thus, the StringID is used to compress the document and less disk space is required to store documents. Also, any other related database components, e.g., indices or a path table, require less storage space. Second, because the association table is global, a separate mapping table is not required to be stored with each document and the StringIDs can be utilized for homogeneous processing. Third, because the StringIDs are of a fixed size (e.g., four bytes) and consistent throughout the database, internal processing is simplified and performance improved. For instance, because StringIDs are fixed sized integers, comparing them, as opposed to variable length strings, is more efficient and less complicated. </p>
+<p id="p-0027" num="0026"> As stated above, some of the strings in the association table <b>200</b> are those found in documents stored in the database. In an embodiment, the association table <b>200</b> also includes strings found in sources other than stored documents. For example, a query can introduce new element and attribute names based on a new document created from the result of the query. Such elements and attributes are referred to as &#x201c;constructed&#x201d; elements and attributes to distinguish them from those found in documents stored in the database. The strings associated with constructed elements (e.g., <b>202</b><i>d </i>and <b>202</b><i>e</i>) and attribute names are stored in the association table <b>200</b> and assigned a StringID (e.g., <b>204</b><i>d </i>and <b>204</b><i>e</i>). By doing so, the strings in the query can also be converted to StringIDs, which ensures homogeneous processing throughout the database. </p>
+<p id="p-0028" num="0027"> According to the embodiment, the association table <b>200</b> further comprises a status column (<b>206</b>) that indicates whether a string is &#x201c;temporary&#x201d; or &#x201c;permanent.&#x201d; Strings derived from documents stored in the database (e.g., <b>202</b><i>a</i>, <b>202</b><i>b</i>, and <b>202</b><i>c</i>) are assigned &#x201c;permanent&#x201d; or &#x201c;P&#x201d; status because such strings are repeatedly used in document processing. Strings derived from sources other than documents stored in the database (e.g., <b>202</b><i>d </i>and <b>202</b><i>c</i>), for instance, from a query, are assigned &#x201c;temporary&#x201d; or &#x201c;T&#x201d; status because they are generally utilized once, e.g., during compile and execution of the query. Thus, a database administrator can utilize the DBMS <b>105</b> to automatically manage the size and content of the association table <b>200</b> by periodically checking the status column <b>206</b> of each string (<b>202</b><i>a</i>-<b>202</b><i>e</i>) and deleting those strings whose status is temporary (<b>206</b><i>d</i>, <b>206</b><i>e</i>). </p>
+<p id="p-0029" num="0028"> To describe how the association table <b>200</b> is utilized in step <b>208</b> of <figref idref="DRAWINGS">FIG. 2A</figref>, please refer now to <figref idref="DRAWINGS">FIG. 1</figref>, <figref idref="DRAWINGS">FIG. 2B</figref> and <figref idref="DRAWINGS">FIG. 3</figref>. <figref idref="DRAWINGS">FIG. 3</figref> is a flowchart illustrating a method for utilizing the association table <b>200</b> during document storage according to an embodiment of the present invention. As is shown in <figref idref="DRAWINGS">FIG. 1</figref>, the DBMS <b>105</b> includes a StringID generator <b>300</b>, which is utilized by processing mechanisms in the DBMS <b>105</b>, e.g., a storage mechanism <b>110</b> and a compiler <b>120</b>, to request and procure StringIDs (<b>204</b><i>a</i>-<b>204</b><i>e</i>) for strings (<b>202</b><i>a</i>-<b>202</b><i>e</i>). </p>
+<p id="p-0030" num="0029"> The process begins at step <b>302</b> when the storage mechanism <b>110</b> receives and parses a structured document that is to be stored in the database <b>106</b><i>a</i>. In one embodiment, the storage mechanism <b>110</b> stores the structured document as a plurality of nodes that form a node tree. Note that the nodes forming the node tree are not related to the nodes in an MPP environment. Each node in the tree includes its name, its namespace and its path. In order to minimize the size of the node, the strings associated with the name and namespace are converted to their respective StringIDs. Thus, in step <b>304</b>, the storage mechanism <b>110</b> considers a first string (e.g., <b>202</b><i>a</i>) in the document and in step <b>306</b>, requests a StringID for the string from the StringID generator <b>300</b>. </p>
+<p id="p-0031" num="0030"> In step <b>308</b>, the StringID generator <b>300</b> performs a lookup on the association table <b>200</b> for the string. If the string is found in the association table <b>200</b> (step <b>310</b>), the StringID generator <b>300</b> then determines whether the string's status is temporary (in step <b>311</b>) by checking the status column <b>206</b>. If the string's status is not temporary, i.e., its status is permanent, then the StringID generator <b>300</b> returns the StringID (e.g., <b>204</b><i>a</i>) corresponding to the string to the storage mechanism <b>110</b> in step <b>316</b>. If the string's status is temporary, the StringID generator <b>300</b> changes the status to permanent in step <b>313</b> and returns the StringID in step <b>316</b>. The StringID generator <b>300</b> changes the string's status from temporary to permanent because the string is derived from a document that is, or will be, stored in the database. </p>
+<p id="p-0032" num="0031"> If the string is not found in the association table <b>200</b> (step <b>310</b>), the StringID generator <b>300</b> creates a new StringID for the string and marks the new string's status as permanent in step <b>312</b>. In step <b>314</b>, the new string, its StringID and its status is inserted into and stored in the association table <b>200</b>. Next, the StringID generator <b>300</b> returns the new StringID to the storage mechanism <b>110</b> in step <b>316</b>. </p>
+<p id="p-0033" num="0032"> Once the StringID is returned, the storage mechanism <b>110</b> replaces the string (e.g., <b>202</b><i>a</i>) with its StringID (e.g., <b>204</b><i>a</i>) in step <b>318</b>, and considers a next string (e.g., <b>202</b><i>b</i>) in the document via step <b>320</b>. Steps <b>306</b> through <b>320</b> are repeated until the storage mechanism <b>10</b> has replaced all of the strings with their respective StringIDs. The storage mechanism <b>110</b> then proceeds with its normal processing steps to store the document in its native format in the database. </p>
+<p id="p-0034" num="0033"> Another example of how the association table <b>200</b> is utilized in step <b>208</b> of <figref idref="DRAWINGS">FIG. 2A</figref> is described in <figref idref="DRAWINGS">FIG. 4</figref> <figref idref="DRAWINGS">FIG. 4</figref> is a flowchart illustrating a method for utilizing the association table <b>200</b> during query processing according to an embodiment of the present invention. The process begins in step <b>402</b> when a query is received by the compiler <b>120</b>. Typically, the query comprises a request to access at least one node in a document in a collection of documents. In an embodiment, the query comprises a path to the requested node. The path is a &#x201c;road map&#x201d; to the node and comprises the names of the nodes in the node tree that lead to the requested node. According to the embodiment, the compiler <b>120</b> converts the query from a collection of strings to a collection of StringIDs. </p>
+<p id="p-0035" num="0034"> In step <b>404</b>, the compiler <b>120</b> considers a first string. The compiler <b>120</b> then requests a StringID for the string from the StringID generator <b>300</b> in step <b>406</b>. In step <b>408</b>, the StringID generator <b>300</b> performs a lookup on the association table <b>200</b> for the string. If the string is found in the association table <b>200</b> (step <b>410</b>), the StringID generator <b>300</b> returns the StringID corresponding to the string to the compiler <b>120</b> in step <b>416</b>. If the string is not found in the association table <b>200</b> (step <b>310</b>), the string is a constructed string. As such, the StringID generator <b>300</b> creates a new StringID for the constructed string and marks the constructed string's status as temporary in step <b>412</b>. In step <b>414</b>, the constructed string, its StringID, and its status are inserted into and stored in the association table <b>200</b>. Next, the StringID generator <b>300</b> returns the new StringID to the compiler <b>120</b> in step <b>416</b>. </p>
+<p id="p-0036" num="0035"> Once the StringID is returned, the compiler <b>120</b> replaces the string with its StringID in step <b>418</b>, and considers a next string in the document via step <b>420</b>. Steps <b>406</b> through <b>420</b> are repeated until the compiler <b>120</b> has replaced all of the strings in the query with their respective StringIDs. The compiler <b>120</b> then proceeds with its normal processing steps, such as optimizing the query, and generating an executable plan to access the data in the documents. </p>
+<p id="p-0037" num="0036"> In one embodiment, a cache <b>130</b> (<figref idref="DRAWINGS">FIG. 1</figref>) is provided in the server <b>104</b> to store portions of the association table <b>200</b> so that access to the association table <b>200</b> is minimized. <figref idref="DRAWINGS">FIG. 5</figref> is a flowchart illustrating how the cache <b>130</b> is utilized when a request for a StringID is processed according to an embodiment of the present invention. In step <b>502</b>, the StringID generator <b>300</b> receives a request from a requesting mechanism for a StringID and checks the cache <b>130</b> for the string in step <b>504</b>. If the string is located in the cache <b>130</b> (step <b>506</b>), the StringID generator <b>300</b> determines whether the string's status is temporary in step <b>507</b>. If the string's status is not temporary, i.e., the string status is permanent, the corresponding StringID is returned from the cache <b>130</b> to the requesting mechanism in step <b>512</b>. </p>
+<p id="p-0038" num="0037"> If the string's status is temporary (step <b>507</b>), the StringID) generator <b>300</b> determines whether the requesting mechanism is the storage mechanism <b>110</b> (step <b>509</b>). If the storage mechanism <b>110</b> is not the requesting mechanism, then the StringID from the cache <b>130</b> is returned to the requesting mechanism in step <b>512</b>. Otherwise, i.e., the storage mechanism <b>110</b> is the requesting mechanism, the string's status is changed to permanent in the cache <b>130</b> (step <b>510</b>). In order to preserve coherency between the cache <b>130</b> and the association table <b>300</b>, the StringID generator <b>300</b> then locates the string in the association table <b>200</b> and changes the string's status to permanent in step <b>511</b>. Thereafter, the StringID from the cache <b>130</b> is returned to the storage mechanism in step <b>512</b>. </p>
+<p id="p-0039" num="0038"> If the string is not in the cache <b>130</b> (step <b>506</b>), the StringID generator <b>300</b> performs a lookup on the association table <b>300</b> in step <b>508</b>. Here, the StringID generator <b>300</b> processes the request as before described in steps <b>310</b> through <b>314</b> in <figref idref="DRAWINGS">FIG. 3</figref>, or as described in steps <b>410</b> through <b>414</b> in <figref idref="DRAWINGS">FIG. 4</figref>. After the lookup, the StringID generator <b>300</b> returns the StringID to the requesting mechanism in step <b>512</b>. In one embodiment, the StringID generator <b>300</b> also stores the string, its StringID, and the status in the cache <b>130</b>. </p>
+<p id="p-0040" num="0039"> In an embodiment, the cache <b>130</b> can store strings that are particularly relevant to the server <b>104</b>. A database administrator can stock the cache <b>130</b> with default entries from the association table <b>200</b>, or with entries from a copy of the cache <b>130</b> that was created previously. Accordingly, the cache <b>130</b> is &#x201c;primed&#x201d; when the DBMS <b>105</b> is initiated. By utilizing the cache <b>130</b> according to the embodiment described above, access to the association table <b>200</b> is minimized. By minimizing such access, the conversion from strings to StringIDs is faster and less costly. </p>
+<p id="p-0041" num="0040"> An improved method and system for processing structured documents stored in a database is disclosed. According to an embodiment, a global association table <b>200</b> is provided to store strings and their respective StringIDs. In the embodiment, the strings correspond to element names, attribute names, and namespaces found in documents stored in the database. Because a global association table <b>200</b> is utilized, a StringID for a particular string can be used in place of the string throughout the database. By replacing strings with their respective StringIDs, document processing and storage are significantly improved. </p>
+<p id="p-0042" num="0041"> Although the present invention has been described in accordance with the embodiments shown, one of ordinary skill in the art will readily recognize that there could be variations to the embodiments and those variations would be within the spirit and scope of the present invention. Accordingly, many modifications may be made by one of ordinary skill in the art without departing from the spirit and scope of the appended claims. </p>
+<?detailed-description description="Detailed Description" end="tail"?>
+</description>
+<us-claim-statement>What is claimed is: </us-claim-statement>
+<claims id="claims">
+<claim id="CLM-00001" num="00001">
+<claim-text><b>1</b>. A method for processing a structured document, the method comprising: 
+<claim-text>identifying a plurality of strings processed by a database; </claim-text>
+<claim-text>assigning an identifier to each of the plurality of strings; </claim-text>
+<claim-text>storing each of the plurality of strings and its assigned identifier in a table in the database, wherein at least one of the plurality of strings is not derived from one or more structured documents stored in the database and at least another of the plurality of strings is derived from the one or more structured documents stored in the database; and </claim-text>
+<claim-text>utilizing the table during document processing. </claim-text>
+</claim-text>
+ </claim>
+<claim id="CLM-00002" num="00002">
+<claim-text><b>2</b>. The method of <claim-ref idref="CLM-00001">claim 1</claim-ref>, further comprising: 
+<claim-text>designating a status for each of the plurality of strings, wherein the status is one of a temporary status or a permanent status; </claim-text>
+<claim-text>storing the status in the table; and </claim-text>
+<claim-text>providing a cache in the database for storing a portion of the table. </claim-text>
+</claim-text>
+ </claim>
+<claim id="CLM-00003" num="00003">
+<claim-text><b>3</b>. The method of <claim-ref idref="CLM-00002">claim 2</claim-ref>, wherein utilizing the table during document processing comprises: 
+<claim-text>receiving a request to store a structured document in the database, wherein the structured document comprises a plurality of element, attribute, and namespace strings; </claim-text>
+<claim-text>transforming the structured document by replacing the plurality of element, attribute, and namespace strings with their respective identifiers; and </claim-text>
+<claim-text>storing the transformed structured document in the database. </claim-text>
+</claim-text>
+ </claim>
+<claim id="CLM-00004" num="00004">
+<claim-text><b>4</b>. The method of <claim-ref idref="CLM-00003">claim 3</claim-ref>, wherein transforming the structured document comprises: 
+<claim-text>requesting an identifier for one of the plurality of element, attribute, and namespace strings in the structured document; </claim-text>
+<claim-text>checking the cache for the one string; </claim-text>
+<claim-text>returning an identifier assigned to the one string when the one string is located in the cache; </claim-text>
+<claim-text>performing a lookup on the table for the one string when the one string is not located in the cache; </claim-text>
+<claim-text>returning the identifier assigned to the one string when the one string is located in the table; and </claim-text>
+<claim-text>assigning a new identifier to the one string, storing the one string and the new identifier in the table, designating a status of the one string as permanent, and returning the new identifier when the one string is not located in the table. </claim-text>
+</claim-text>
+ </claim>
+<claim id="CLM-00005" num="00005">
+<claim-text><b>5</b>. The method of <claim-ref idref="CLM-00004">claim 4</claim-ref>, wherein transforming the structured document further comprises: 
+<claim-text>checking a current status of the one string when it is located in the table; and </claim-text>
+<claim-text>changing the status of the one string to permanent when the current status is temporary. </claim-text>
+</claim-text>
+ </claim>
+<claim id="CLM-00006" num="00006">
+<claim-text><b>6</b>. The method of <claim-ref idref="CLM-00002">claim 2</claim-ref>, wherein utilizing the table during document processing comprises: 
+<claim-text>receiving a query, wherein the query comprises a plurality of element, attribute, and namespace strings; </claim-text>
+<claim-text>transforming the query by replacing the plurality of element, attribute, and namespace strings with their respective identifiers; and </claim-text>
+<claim-text>processing the transformed query. </claim-text>
+</claim-text>
+ </claim>
+<claim id="CLM-00007" num="00007">
+<claim-text><b>7</b>. The method of <claim-ref idref="CLM-00006">claim 6</claim-ref>, wherein transforming the query comprises: 
+<claim-text>requesting an identifier for one of the plurality of element, attribute, and namespace strings in the query; </claim-text>
+<claim-text>checking the cache for the one string; </claim-text>
+<claim-text>returning an identifier assigned to the one string when the one string is located in the cache; </claim-text>
+<claim-text>performing a lookup on the table for the one string when the one string is not located in the cache; </claim-text>
+<claim-text>returning the identifier assigned to the one string when the one string is located in the table; and </claim-text>
+<claim-text>assigning a new identifier to the one string, storing the one string and the new identifier in the table, designating a status of the one string as temporary, and returning the new identifier when the one string is not located in the table. </claim-text>
+</claim-text>
+ </claim>
+<claim id="CLM-00008" num="00008">
+<claim-text><b>8</b>. The method of <claim-ref idref="CLM-00001">claim 1</claim-ref>, wherein the identifier is a fixed-sized integer. </claim-text>
+ </claim>
+<claim id="CLM-00009" num="00009">
+<claim-text><b>9</b>. The method of <claim-ref idref="CLM-00001">claim 1</claim-ref>, wherein the at least one string is derived from a query to the database. </claim-text>
+ </claim>
+<claim id="CLM-00010" num="00010">
+<claim-text><b>10</b>. A computer readable medium containing a computer program for processing a structured document, the computer program comprising instructions for: 
+<claim-text>identifying a plurality of strings processed by a database; </claim-text>
+<claim-text>assigning an identifier to each of the plurality of strings; </claim-text>
+<claim-text>storing each of the plurality of strings and its assigned identifier in a table in the database, wherein at least one of the plurality of strings is not derived from one or more structured documents stored in the database and at least another of the plurality of strings is derived from the one or more structured documents stored in the database; and </claim-text>
+<claim-text>utilizing the table during document processing. </claim-text>
+</claim-text>
+ </claim>
+<claim id="CLM-00011" num="00011">
+<claim-text><b>11</b>. The computer readable medium of <claim-ref idref="CLM-00010">claim 10</claim-ref>, wherein the computer program further comprises instructions for: 
+<claim-text>designating a status for each of the plurality of strings, wherein the status is one of a temporary status or a permanent status; </claim-text>
+<claim-text>storing the status in the table; and </claim-text>
+<claim-text>providing a cache in the database for storing a portion of the table. </claim-text>
+</claim-text>
+ </claim>
+<claim id="CLM-00012" num="00012">
+<claim-text><b>12</b>. The computer readable medium of <claim-ref idref="CLM-00011">claim 11</claim-ref>, wherein utilizing the table during document processing comprises: 
+<claim-text>receiving a request to store a structured document in the database, wherein the structured document comprises a plurality of element, attribute, and namespace strings; </claim-text>
+<claim-text>transforming the structured document by replacing the plurality of element, attribute, and namespace strings with their respective identifiers; and </claim-text>
+<claim-text>storing the transformed structured document in the database. </claim-text>
+</claim-text>
+ </claim>
+<claim id="CLM-00013" num="00013">
+<claim-text><b>13</b>. The computer readable medium of <claim-ref idref="CLM-00012">claim 12</claim-ref>, wherein transforming the structured document comprises: 
+<claim-text>requesting an identifier for one of the plurality of element, attribute, and namespace strings in the structured document; </claim-text>
+<claim-text>checking the cache for the one string; </claim-text>
+<claim-text>returning an identifier assigned to the one string when the one string is located in the cache; </claim-text>
+<claim-text>performing a lookup on the table for the one string when the one string is not located in the cache; </claim-text>
+<claim-text>returning the identifier assigned to the one string when the one string is located in the table; and </claim-text>
+<claim-text>assigning a new identifier to the one string, storing the one string and the new identifier in the table, designating a status of the one string as permanent, and returning the new identifier when the one string is not located in the table. </claim-text>
+</claim-text>
+ </claim>
+<claim id="CLM-00014" num="00014">
+<claim-text><b>14</b>. The computer readable medium of <claim-ref idref="CLM-00013">claim 13</claim-ref>, wherein transforming the structured document further comprises: 
+<claim-text>checking a current status of the one string when it is located in the table; and </claim-text>
+<claim-text>changing the status of the one string to permanent when the current status is temporary. </claim-text>
+</claim-text>
+ </claim>
+<claim id="CLM-00015" num="00015">
+<claim-text><b>15</b>. The computer readable medium of <claim-ref idref="CLM-00011">claim 11</claim-ref>, wherein utilizing the table during document processing comprises: 
+<claim-text>receiving a query, wherein the query comprises a plurality of element, attribute, and namespace strings; </claim-text>
+<claim-text>transforming the query by replacing the plurality of element, attribute, and namespace strings with their respective identifiers; and </claim-text>
+<claim-text>processing the transformed query. </claim-text>
+</claim-text>
+ </claim>
+<claim id="CLM-00016" num="00016">
+<claim-text><b>16</b>. The computer readable medium of <claim-ref idref="CLM-00015">claim 15</claim-ref>, wherein transforming the query comprises: 
+<claim-text>requesting an identifier for one of the plurality of element, attribute, and namespace strings in the query; </claim-text>
+<claim-text>checking the cache for the one string; </claim-text>
+<claim-text>returning an identifier assigned to the one string when the one string is located in the cache; </claim-text>
+<claim-text>performing a lookup on the table for the one string when the one string is not located in the cache; </claim-text>
+<claim-text>returning the identifier assigned to the one string when the one string is located in the table; and </claim-text>
+<claim-text>assigning a new identifier to the one string, storing the one string and the new identifier in the table, designating a status of the one string as temporary, and returning the new identifier when the one string is not located in the table. </claim-text>
+</claim-text>
+ </claim>
+<claim id="CLM-00017" num="00017">
+<claim-text><b>17</b>. The computer readable medium of <claim-ref idref="CLM-00010">claim 10</claim-ref>, wherein the identifier is a fixed-sized integer. </claim-text>
+ </claim>
+<claim id="CLM-00018" num="00018">
+<claim-text><b>18</b>. The computer readable medium of <claim-ref idref="CLM-00010">claim 10</claim-ref>, wherein the at least one string is derived from a query to the database. </claim-text>
+ </claim>
+<claim id="CLM-00019" num="00019">
+<claim-text><b>19</b>. A system for processing a structured document, the system comprising: 
+<claim-text>a string identifier generator operable to 
+<claim-text>identify a plurality of strings processed by the database and </claim-text>
+<claim-text>assign an identifier to each of the plurality of strings; </claim-text>
+</claim-text>
+<claim-text>a database in communication with the string identifier generator, the database including a table operable to store each of the plurality of strings and its assigned identifier, wherein at least one of the plurality of strings is not derived from one or more structured documents stored in the database and at least another of the plurality of strings is derived from the one or more structured documents stored in the database; and </claim-text>
+<claim-text>a cache in communication with the string identifier generator and the database, the cache being operable to store a portion of the table, </claim-text>
+<claim-text>wherein the table and the cache are utilized during document processing. </claim-text>
+</claim-text>
+ </claim>
+<claim id="CLM-00020" num="00020">
+<claim-text><b>20</b>. The system of <claim-ref idref="CLM-00019">claim 19</claim-ref>, wherein the string identifier generator is further operable to 
+<claim-text>designate a status for each of the plurality of strings, wherein the status is one of a temporary status or a permanent status, and </claim-text>
+<claim-text>store the status in the table. </claim-text>
+</claim-text>
+ </claim>
+<claim id="CLM-00021" num="00021">
+<claim-text><b>21</b>. The system of <claim-ref idref="CLM-00020">claim 20</claim-ref>, further comprising: 
+<claim-text>a storage mechanism in communication with the string identifier generator, the database, and the cache, the storage mechanism being operable to receive and store a structured document in the database. </claim-text>
+</claim-text>
+ </claim>
+<claim id="CLM-00022" num="00022">
+<claim-text><b>22</b>. The system of <claim-ref idref="CLM-00021">claim 21</claim-ref>, wherein the string identifier generator is further operable to 
+<claim-text>receive a request for an identifier for a string from the storage mechanism, </claim-text>
+<claim-text>check the cache for the string, </claim-text>
+<claim-text>return an identifier assigned to the string when the string is located in the cache, </claim-text>
+<claim-text>perform a lookup on the table for the string when the string is not located in the cache, </claim-text>
+<claim-text>return the identifier assigned to the string when the string is located in the table, and </claim-text>
+<claim-text>assign a new identifier to the string, store the string and the new identifier in the table, designate a status of the string as permanent, and return the new identifier when the string is not located in the table. </claim-text>
+</claim-text>
+ </claim>
+<claim id="CLM-00023" num="00023">
+<claim-text><b>23</b>. The system of <claim-ref idref="CLM-00022">claim 22</claim-ref>, wherein the string identifier generator is further operable to 
+<claim-text>check a current status of the string when it is located in the table and </claim-text>
+<claim-text>change the status of the string to permanent when the current status is temporary. </claim-text>
+</claim-text>
+ </claim>
+<claim id="CLM-00024" num="00024">
+<claim-text><b>24</b>. The system of <claim-ref idref="CLM-00020">claim 20</claim-ref>, further comprising: 
+<claim-text>a compiler in communication with the string identifier generator, the database, and the cache, the compiler being operable to receive and process a query to the database. </claim-text>
+</claim-text>
+ </claim>
+<claim id="CLM-00025" num="00025">
+<claim-text><b>25</b>. The system of <claim-ref idref="CLM-00024">claim 24</claim-ref>, wherein the string identifier generator is further operable to 
+<claim-text>receive a request for an identifier for a string from the compiler, </claim-text>
+<claim-text>check the cache for the string, </claim-text>
+<claim-text>return an identifier assigned to the string when the string is located in the cache, </claim-text>
+<claim-text>perform a lookup on the table for the string when the string is not located in the cache, </claim-text>
+<claim-text>return the identifier assigned to the string when the string is located in the table, and </claim-text>
+<claim-text>assign a new identifier to the string, store the string and the new identifier in the table, designate a status of the string as temporary, and return the new identifier when the string is not located in the table. </claim-text>
+</claim-text>
+ </claim>
+<claim id="CLM-00026" num="00026">
+<claim-text><b>26</b>. The system of <claim-ref idref="CLM-00019">claim 19</claim-ref>, wherein the identifier is a fixed-sized integer. </claim-text>
+ </claim>
+<claim id="CLM-00027" num="00027">
+<claim-text><b>27</b>. The system of <claim-ref idref="CLM-00019">claim 19</claim-ref>, wherein the at least one string is derived from a query to the database.</claim-text>
+ </claim>
+</claims>
+</us-patent-application>

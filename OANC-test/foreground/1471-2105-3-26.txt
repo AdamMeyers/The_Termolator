@@ -1,0 +1,567 @@
+
+  
+    
+      
+        Background
+        Pathologic classification of tumors has been
+        traditionally based on microscopic appearance. Although
+        morphology often correlates with natural history of
+        disease, tumors of a given pattern may have a broad
+        prognostic range and different responses to treatment.
+        Molecular methods, such as the evaluation of hormone
+        receptors in breast carcinoma, have been effectively
+        employed to further characterize tumors [ 1 ] . Nucleic
+        acid array-based technologies extend molecular
+        characterization by providing a biochemical snapshot, or
+        profile, of cellular activity that encompasses thousands of
+        gene products [ 2 ] . Potential applications beyond
+        diagnosis and prognosis are diverse, and include treatment
+        response stratification of patients in clinical trials,
+        assessment of relevance to human safety of drug-associated
+        tumors in animal carcinogenicity studies, and the
+        development of more pertinent animal xenograft models of
+        cancer therapy. Successful application of array-based tools
+        depends on establishing robust laboratory and computational
+        methods that effectively and reliably discriminate between
+        tumor types. Recent reports have demonstrated the power of
+        such tools to distinguish between clinically meaningful
+        subsets of cancer [ 3 4 ] .
+        Renal cell carcinoma (RCCa) represents approximately 3%
+        of all human malignancies with an incidence of 7 per
+        100,000 individuals. Of these individuals about 40% present
+        with metastatic disease and a further third will develop
+        distant metastases during the postoperative course. The
+        most effective therapy for RCCa localized to the kidney is
+        surgery and a metastatic tumor is practically incurable.
+        There is a low response to biological modifiers and the
+        treatment is generally only palliative [ 5 ] .
+        We evaluated the RNA expression profiles of renal cell
+        carcinomas (RCCa) using the Affymetrix GeneChip platform,
+        comparing mRNA expression profiles from a total of 21 human
+        tissue samples and two pooled samples. The 21 samples
+        consisted of eight normal kidneys, nine clear cell
+        carcinomas (CC), two chromophobe carcinomas (Chr), one
+        urothelial carcinoma and one metanephric adenoma.
+        Expression profiles from a pilot data set of ten samples
+        were analyzed using multiple clustering algorithms. Genes
+        were then selected from the pilot data set using a
+        fold-change criteria or from all of the normal and CC
+        samples using a p-value. Genes that were identified from
+        both the pilot and the complete data set were categorized
+        according to a hierarchical classification scheme based on
+        functional attributes of encoded proteins.
+      
+      
+        Results
+        
+          Clustering of the pilot data set
+          The gene expression data from a pilot data set that
+          consisted of ten samples (patients 1 - 4, consisting of
+          two CC, two Chr, four normals, two pooled samples) were
+          analyzed using hierarchical clustering to identify
+          structure within the data set. Pooled samples were
+          included to determine whether a combined sample yielded
+          an expression profile representative of the individual
+          samples. To determine the relatedness of the samples,
+          clustering analysis was performed. Ten different
+          clustering algorithms using four methods of
+          pre-processing the data sets were applied to identify the
+          most consistent sample-clustering pattern. The rationale
+          behind this approach was to avoid the bias inherent in
+          any single clustering method and to determine the most
+          appropriate clustering method for this data type. Genes
+          that were considered "present" above background by the
+          Affymetrix software in at least one of the samples were
+          included in the analyses. This reduced the data set to
+          4571 genes per sample. The 40 sample clusters were
+          evaluated to see if their dendrograms fitted the expected
+          sample biology (Table 2). The most consistent cluster
+          dendrogram, present in 18 of 40 analyses, did indeed
+          match the sample biology (Figure 2A) and for 16 of these
+          analyses a logarithmic transformation was used. In the
+          consensus dendrogram, the two CC, two Chr and four normal
+          samples each clustered in separate groups. Interestingly,
+          the dendrogram suggested that the expression pattern of
+          the normal samples was more similar to the CC than to the
+          Chr samples. As expected, the pooled normal sample
+          clustered with the normal kidney samples. The pooled
+          tumor sample clustered more closely to the CC than to the
+          Chr, possibly due to the greater similarity between the
+          two CC, and consequent weighting of the pooled sample
+          toward the more uniform CC expression profile.
+        
+        
+          Clustering of the complete data set
+          To expand our data set we obtained a further 13 human
+          tissue samples (patients 12-20), including four normal
+          kidneys and nine kidney tumors. These were profiled in
+          the same manner as the first 10 samples. From this
+          combined data set (23 samples) we selected genes
+          classified as Present (see Methods) at least once (5372
+          genes) and then clustered the log-transformed data with
+          average linkage analysis. This method had previously
+          produced a dendrogram that matched the expected sample
+          biology in the pilot data set. The sample dendrogram
+          (Figure 2B) showed that the relatedness of the samples
+          was similar to that observed with the pilot data set. As
+          seen previously in the pilot data set the normal samples
+          clustered together off a single node. However the Chr
+          also clustered off this node and now appeared more
+          similar to normal samples than CC. The two CC included in
+          the pilot data set (patients 2 and 4) now clustered
+          within a larger CC group that include the additional CC
+          samples. From this node there also appeared to be two
+          outlier samples (patients 18 and 20). Pathology reports
+          on these samples revealed that these were not RCCa
+          samples but instead patient 20 was a papillary urothelial
+          carcinoma and the sample from patient 18 was not a
+          carcinoma but a benign metanephric adenoma.
+          There were distinct patterns visible in the gene
+          cluster that were conserved in the CC samples (Figure 2B,
+          zone C), or the Chr samples (Figure 2B, zone B), or the
+          normal kidney samples (Figure 2B, zone A). These patterns
+          indicated that each subtype of tumor expressed a common
+          set of genes that could be selected and further
+          characterized. The urothelial carcinoma and metanephric
+          adenoma appeared to share few of these genes commonly
+          regulated between the other tissue types.
+        
+        
+          Functional taxonomy: Genes differentially regulated
+          in CC and Chr
+          To select genes that were changed between CC and Chr
+          in our pilot data set we used an arbitrary cutoff of 2
+          fold-change units in combination with the Affymetrix
+          difference call (see Methods). Genes were selected
+          according to criteria described in Table 3, which lists
+          the number of selected genes in each of eight categories.
+          A total of 456 genes were selected by these criteria.
+          In order to understand the molecular differences
+          between Chr and CC RCCa on a broader scale, we developed
+          a gene categorization system ("Functional Taxonomy," see
+          Methods) in which genes were hierarchically grouped
+          according to the cellular function of their protein
+          products. The number of genes within each primary
+          category was tallied and plotted to generate a
+          first-level "signature" (Figure 3A). The functional
+          taxonomy signature provided a graphical method to rapidly
+          visualize broad gene expression characteristics of the
+          tumors. The cellular function categories that contained
+          the largest number of the 456 genes were Signal
+          Transduction (97 genes), Cellular and Matrix Organization
+          and Adhesion (56 genes), Metabolism (54 genes), and
+          Unclassified (65 genes). The CC and Chr samples
+          demonstrated differences in the numbers or patterns of
+          increased and decreased genes in these categories and
+          their subcategories. Almost twice as many genes in Signal
+          Transduction were increased in CC compared to Chr; a
+          similar number were decreased in both types. Within
+          Cellular and Matrix Organization and Adhesion, the
+          expression of nearly four times as many genes was
+          increased in CC compared to Chr, which decreased
+          expression of about three times as many genes as did CC.
+          Subcategorization (Figure 3C) revealed a predominance of
+          genes coding for extracellular matrix proteins (16 genes)
+          and cellular adhesion molecules (10 genes) that were
+          increased in expression in CC.
+        
+        
+          Functional taxonomy: Genes differentially regulated
+          in CC
+          To determine the difference between normal kidney
+          samples and CC samples we used a rigorous statistical
+          approach based upon a calculated p-value (see methods)
+          and the combined data set consisting of eight normal
+          kidney samples and nine CC samples. We identified 142
+          genes that were significantly upregulated in CC compared
+          to normal kidneys and 213 that were significantly down
+          regulated. To determine the biological
+          significance/function of these genes we used Functional
+          Taxonomy to classify them into 16 cellular groupings
+          (Figure 4A). The first level signature showed similar
+          trends to the CC and Chr comparison (Figure 3A). The four
+          categories that contained the most genes were Signal
+          Transduction (78 genes), Cellular and Matrix Organization
+          and Adhesion (47 genes), Metabolism (40 genes), and
+          Unclassified (51 genes). These were the same categories
+          that showed the most gene changes in the pilot data set.
+          Subcategorization of both categories showed trends within
+          CC samples that were similar to those observed in the
+          pilot data set. Within the Signal Transduction category
+          there were many genes associated with ligands, receptors
+          and cytosolic factors (Figure 4Band Table 4). Gene
+          expression changes within the Cellular Matrix
+          Organization and Adhesion category were focused on
+          extracellular matrix genes and cellular adhesion
+          molecules (Figure 4Cand Table 5).
+        
+        
+          Immunohistochemistry
+          The selected gene lists were reviewed for genes that
+          corresponded to proteins that could be evaluated with
+          immunohistochemistry. The data sets revealed that mRNA
+          transcripts for CD 31 (PECAM) and the T-cell receptor
+          beta chain were increased in CC but not Chr. Since
+          antibodies to CD 31 and CD 3 (which forms a complex with
+          the T cell receptor) are reactive in fixed tissues, we
+          used them to stain the tumors. CD 31 was present in CC in
+          a prominent dense branching network of fine vessels
+          surrounding the tumor cells (Figure 1E). In contrast, Chr
+          had few CD 31-positive vessels present (Figure 1F). CD 3
+          stained numerous T lymphocytes scattered throughout the
+          CC tumors (Figure 1G). These were not initially apparent
+          in the hematoxylin and eosin sections, probably due to
+          the similarity in size and appearance of the tumor cell
+          nuclei and the lymphocytes. In contrast, there were
+          almost no T cells in the Chr tumors (Figure 1H). These
+          results indicated concordance between the mRNA expression
+          profiles and the pathobiology of the RCCa tumor
+          sub-types.
+        
+      
+      
+        Discussion
+        Expression profiling of kidney tumors using the
+        Affymetrix GeneChip distinctly separated four different
+        tumors from each other, as well as from normal kidney
+        cortex. This finding is consistent with the morphologic,
+        karyotypic and clinical outcome differences between these
+        tumor types [ 6 7 ] . There are many sample-clustering
+        methods that may be applied to expression microarray data,
+        none of which can be conclusively called "correct", since
+        each algorithm makes different assumptions regarding the
+        nature of the data. We used ten clustering methods combined
+        with four ways of pre-processing the data sets to
+        eliminate, or at least reduce bias in a pilot data set. The
+        smaller pilot data set was used to simplify the
+        interpretation of the results. A common cluster dendrogram
+        was produced by 18 of 40 methods; 16 of these were from the
+        20 that employed logarithmic transformation of the data
+        sets. The pattern was consistent with the biology of the
+        sample with normal kidney, CC and Chr samples each grouping
+        together (Figure 2A). That a logarithmic transformation
+        gave the most meaningful cluster dendrograms is consistent
+        with the distribution of the untransformed expression data
+        being skewed to the left because the majority of genes have
+        low expression levels. Standardization of the data assigns
+        equal weight to each gene and, hence, increases the
+        contribution of unreliable low expression genes. The use of
+        logarithmic transformation, on the other hand, improves the
+        spread of the data so the distribution is close to normal.
+        It also re-adjusts the weight for each gene. For example,
+        genes with high expression levels, which might be
+        unreliable or biased due to saturation, will have lower
+        weights in distance calculation. Therefore, the logarithmic
+        transformation improves the calculation of distance for the
+        subsequential clustering algorithms and leads to uncovering
+        the biological meaningful pattern within the data.
+        A comparison of the dendrograms from the pilot data set
+        and complete data set reveals some surprising changes. In
+        general the major structure of the dendrogram remained the
+        same, CC, Chr and normal kidney all grouped separately.
+        However, in the pilot data set the CC were more similar to
+        normal kidney than Chr, while in the complete data set Chr
+        were more similar to normal kidney. It is unclear why this
+        larger data set changed the dendrogram and suggests that
+        the subtle structure in the dendrogram was not as robust as
+        it appeared. With fewer Chr compared to CC it is not
+        possible to draw any strong conclusions about relatedness
+        of the Chr samples.
+        In order to visualize the functional patterns associated
+        with a particular set of selected genes we used a simple,
+        semi-hierarchical system to categorize genes according to
+        the function of the proteins they encode, that we call
+        Functional Taxonomy. There are challenges associated with
+        the partly subjective nature of categorization of gene
+        function, such as where to place a single gene product that
+        is involved in several cellular tasks. Ideally, the
+        categorization should consider multiple attributes of a
+        protein. To this end, we propose three complementary
+        classification schemes: (1) biochemical function, which
+        categorizes according to molecular activity; (2) cellular
+        function, which categorizes according to biological role at
+        a cellular level; (3) tissue function, which categorizes
+        according to anatomic or organ system location. In this
+        paper we have visualized profiling results using the second
+        of these schemes (cellular function) at three levels:
+        primary categories, secondary categories, and individual
+        genes (see Figure 3and 4, Table 4and 5). We have found
+        Functional Taxonomy to be a useful visualization tool for
+        understanding the differences in gene expression patterns
+        between CC and Chr tumors. This system is similar in
+        concept to what is currently being developed by the Gene
+        Ontology Consortium [ 10 ] .
+        The cellular function signatures of nine CC and two Chr
+        revealed that the greatest number of gene expression
+        changes for both tumor types occurred in the categories of
+        Signal Transduction, Cellular and Matrix Organization and
+        Adhesion, and Metabolism. This is consistent with current
+        theories of neoplasia, which hypothesize that tumor cells
+        modify their signaling pathways, establish new contacts
+        with an altered extracellular matrix, and refashion their
+        metabolic machinery.
+        There exists considerable literature on the expressed
+        genes and gene products associated with RCCa. Using the
+        selected gene sets from Table 3and the p-values and
+        fold-change values calculated from the eight normal kidneys
+        and nine CC, we looked for concordance between our results
+        and published reports. The genes 
+        CA 9 ( 
+        carbonic anhydrase IX ), 
+        CCND1 ( 
+        cyclin D1 ), 
+        CDH2 ( 
+        N-Cadherin ), 
+        EGFR ( 
+        epidermal growth factor receptor )
+        and 
+        TGFA ( 
+        tranforming growth factor alpha ) all
+        showed increases in CC expression that matched the
+        literature and had p-values ≤ 0.0061 [ 11 12 13 14 15 ] .
+        The observed decrease in 
+        CDH1 ( 
+        E-cadherin ) in CC (p-value = 0.0045)
+        also matched previously published reports, as did the
+        decrease in 
+        VIM ( 
+        vimentin ) expression in Chr RCCa [
+        13 16 ] . 
+        VIM was also found to be increased in
+        CC with a p-value = 0.0045, which was consistent with the
+        literature. We detected a small increase in expression of 
+        ICAM1 ( 
+        intercellular adhesion molecule 1 )
+        in CC (Fold-change = 1.9, p-value = 0.0081), which was also
+        consistent with the literature [ 17 ] .
+        The expression results for the genes 
+        JUN ( 
+        c-jun ) and 
+        VHL ( 
+        von Hippel-Lindau ) did not match the
+        literature [ 18 19 ] . Nor did the result for 
+        KRT7 ( 
+        cytokeratin 7 ), which has been shown
+        to be overexpressed in Chr [ 20 ] . Instead we found 
+        KRT7 to be strongly repressed in CC
+        (fold-change = -5.1, p-value = 0.0009). Yet, expression
+        profiling using nucleic acid microarrays does not
+        necessarily correlate with other forms of analysis for all
+        genes [ 21 22 ] . This may be especially true when altered
+        expression of a gene is reported to be present in a subset
+        of a population of tumors, since a small sample number (as
+        are the Chr samples in this study) may not include the
+        alteration.
+        In the case of CD 31 and the T cell receptor beta chain,
+        expression profiling results were concordant with
+        immunohistochemical analysis of the tumors. The prevalence
+        of the scattered T cells within the CC tumors was somewhat
+        surprising, but entirely consistent with the biology of
+        response to a treatment for RCCa, interleukin 2 (IL-2),
+        since IL-2 activates lymphocytes against the tumor [ 23 ]
+        .
+        During preparation of this manuscript, an expression
+        profiling study of seven renal neoplasms (four CC, 2
+        oncocytomas, and one Chr) was reported [ 24 ] . This study
+        employed a different platform (Incyte glass slide cDNA
+        microarray) and hybridization method (competitive
+        tumor/normal binding), and used related but not identical
+        gene selection criteria (two fold-change in expression
+        versus normal kidney in at least two of the seven tumors).
+        The study identified 189 genes that were differentially
+        expressed in at least two tumors, and this gene set was
+        also able to distinguish between CC and Chr tumor types. We
+        suspect that a greater number of Chr-associated genes would
+        have been selected in their study had there been at least
+        two Chr samples, since a gene altered in expression only in
+        the single Chr, but not in any of the oncocytomas or the
+        CC, would not have been identified by the selection
+        criteria.
+      
+      
+        Conclusion
+        The results of the present study demonstrate the power
+        of Affymetrix GeneChip expression profiling to
+        differentiate between morphologically distinct tissues that
+        are descended from a common organ. In addition, they
+        demonstrate the value of functional cataloging selected
+        genes and visualizing the result in a graphical format.
+      
+      
+        Methods
+        
+          Sample isolation, histology and
+          immunohistochemistry
+          Renal cell carcinoma (RCCa) samples were collected
+          from patients undergoing radical nephrectomy at the
+          University of Michigan Medical Center. All samples and
+          associated clinical data were obtained with Institutional
+          Review Board approval. A total of 21 tissue samples
+          (eight normal kidneys and 13 tumors) were obtained from
+          13 patients. Patients ranged in age from 40 to 83 years
+          with four male patients and nine female patients. Nine
+          patients were diagnosed with clear cell carcinomas (CC),
+          two with chromophobe cell carcinomas (Chr), one with a
+          papillary urothelial carcinoma, and one with a
+          metanephric adenoma. For eight of the patients the
+          resection specimens included unaffected kidney (termed
+          "normal kidney") as well as tumor tissue. Tissue samples
+          were fixed in formalin, or were immediately frozen at
+          -80°C in optimal cutting temperature embedding medium
+          (OCT, Sakura). Cryostat sections were prepared to confirm
+          suitability for profiling (Figure 1Aand 1B); only
+          viable-appearing tissues were processed. Care was taken
+          to ensure that normal tissue was not contaminated with
+          tumor tissue and vice versa. Normal kidney samples were
+          uniformly taken from renal cortex. Paraffin-embedded
+          tissues were stained with hematoxylin and eosin for
+          diagnostic evaluation. Representative morphologies are
+          shown in Figure 1Cand 1D. Immunohistochemical stains were
+          performed on fixed tissues. Sections were deparaffinized,
+          rehydrated and treated with 3% hydrogen peroxide. Stains
+          were performed using an automated avidin-biotin complex
+          method according to the manufacturer's protocol (Nexes
+          IHC Staining System, Ventana Medical Systems), with
+          details as indicated in Table 1.
+        
+        
+          RNA isolation
+          Total RNA was prepared from each sample (eight normal
+          kidneys, 13 tumors). In addition, two pooled samples were
+          made by mixing equal quantities of RNA from the kidney
+          samples of patients 1 - 4 together, and by mixing equal
+          quantities of RNA from the four RCCa samples also from
+          patients 1 - 4. The frozen tissues were warmed briefly,
+          allowing the OCT compound to soften slightly so that it
+          could be rapidly dissected away without the tissues
+          thawing. The tissues were then pulverized using a frozen
+          steel block and hammer. RNA was extracted using Trizol
+          reagent (Life Technologies) according to the
+          manufacturer's protocol.
+        
+        
+          RNA labeling and GeneChip hybridization
+          Biotinylated target RNA was prepared from 15 μg of
+          total RNA using the Affymetrix protocol. Labeled cRNA was
+          hybridized on the HuGeneFL Affymetrix GeneChip
+          ®containing probes for approximately 5600 mRNAs
+          corresponding to genes of known sequence. Each
+          hybridization included control RNA transcripts. The
+          hybridization reactions were processed and scanned
+          according to standard Affymetrix protocols.
+        
+        
+          Data Analysis
+          The Affymetrix Microarray Suite and Data Mining Tool
+          were used to calculate average difference (gene
+          expression) values, fold-change values and difference
+          calls from the GeneChip fluorescent intensity data. All
+          GeneChips were normalized to avoid differences in
+          fluorescent intensity as described in the 
+          Affymetrix GeneChip Expression Analysis
+          Manual (version 3.1) . The average intensity of each
+          gene chip was scaled to 600, where average intensity was
+          calculated by averaging all the gene expression values of
+          every probe set on the array excluding the highest and
+          lowest 2% of the values. If the scaling factor did not
+          fall between 0.3 and 2, the GeneChip data was not used.
+          Fold-change values were calculated as the ratio of gene
+          expression values between each tumor-normal sample pair
+          from the same patient, with the normal sample values used
+          as the baseline. The difference call was calculated using
+          four variables: the number of probes pairs that have
+          changed in a certain direction, the ratio of increased
+          probe pairs over decreased probe pairs, the log average
+          ratio change, and the difference in the number of probe
+          pairs changed (either positive or negative). The default
+          values (explained in the 
+          Affymetrix Manual ) were used in
+          the difference call decision matrix. The resulting data
+          sets were manipulated and filtered in Microsoft Access
+          according to various criteria (see results) for selection
+          of genes that showed altered expression in the
+          tumors.
+          For the pilot data set, sample clusters were prepared
+          using the software program SAS (SAS Institute, Cary, NC)
+          on the gene expression values. The following clustering
+          algorithms were used: seven hierarchical clustering
+          methods (single linkage, average linkage, complete
+          linkage, Ward's minimum variance, density linkage,
+          centroid, and flexible-beta), a k-mean method, and an
+          oblique principle component method employing either (1)
+          Pearson correlation or (2) Spearman correlation based on
+          rank. Negative values were set equal to one. Data sets
+          were processed as follows for the clustering analysis:
+          unchanged (raw data), log 
+          10 transformation, standardization to
+          N(0,1), and a combination of both log 
+          10 transformation and standardization
+          to N(0,1). This yielded a total of 40 sample cluster
+          dendrograms. For the complete data set (21 samples plus
+          two pooled samples) gene and sample clusters were
+          prepared using Cluster and visualized with TreeView [ 25
+          ] , using log 
+          10 -transformed and median-centered
+          average difference values.
+          To select genes for further analysis from the pilot
+          data set, a two fold-change threshold was used in
+          combination with the Affymetrix difference call of either
+          increase (I), marginal increase (MI), decrease (D) and
+          marginal decrease (MD). For genes selected as either
+          increased or decreased in a particular RCCa subtype both
+          samples had to show concordance in their fold-change and
+          difference call, and both samples from the other subtype
+          had to have a difference call of no change (NC) or a call
+          that was opposite to that of the first subtype.
+          To select genes that were significantly changed in CC
+          (nine samples) verses normal kidney (eight samples) a
+          non-parametric Wilcoxon test was used to calculate a
+          p-value for each gene. Genes were then selected that
+          conformed to all of the following criteria: p-value ≤
+          0.001; a mean average difference value ≥ 200; fold-change
+          ≥ 1.1 for genes increased in CC relative to normal kidney
+          or fold-change ≤ -1.1 for genes decreased in CC relative
+          to normal kidney.
+          All selected genes were then annotated using online
+          resources, such as Medline, OMIM and GeneCards. The
+          information was used to build a database that included
+          HUGO (Human Genome Organization) designated names,
+          function and expression information, and any tumor
+          associations.
+          Given the absence of available tools for visualization
+          of tumor gene expression patterns on a broad scale, we
+          devised a classification system called "Functional
+          Taxonomy" that categorizes genes according to various
+          functional attributes of the proteins they encode. One
+          such functional attribute is a protein's biological role
+          at a cellular level. Using a mammalian modification of
+          the MIPS 
+          Saccharomyces cerevisiae functional
+          categories [ 26 ] , (Munich Information Center for
+          Protein Sequences, www.mips.biochem.mpg.de) the genes
+          were placed into a hierarchical classification scheme
+          containing 16 primary categories of cellular function.
+          The number of genes that fell within each primary
+          category was counted and plotted graphically to generate
+          a first-level "signature" (see Figure 3Aand 4A). Each of
+          the primary categories was further divided into
+          subcategories for a more detailed second-level
+          visualization of the data (see Figures 3B, 3C, 4Band
+          4C).
+        
+      
+      
+        Authors' Contributions
+        Author 1, MAG, carried out sample preparation, RNA
+        isolation, data analysis, functional taxonomy analysis and
+        drafted the manuscript. Author 2, TC, carried out the
+        immunohistochemistry. Author 3, MZM, performed the
+        clustering analysis. Author 4, SJM, directed the team who
+        carried out the Affymetrix GeneChip hybridizations and
+        initial data processing. Author 4 MAR provided the samples
+        and reviewed the manuscript. Author 6 EPK conceived the
+        study and participated it its design and assisted in
+        writing the manuscript.
+      
+    
+  

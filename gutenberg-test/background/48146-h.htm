@@ -1,0 +1,3020 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.1//EN' 'http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd'>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="Docutils 0.12: http://docutils.sourceforge.net/" />
+<style type="text/css">
+/*
+Project Gutenberg common docutils stylesheet.
+
+This stylesheet contains styles common to HTML and EPUB.  Put styles
+that are specific to HTML and EPUB into their relative stylesheets.
+
+:Author: Marcello Perathoner (webmaster@gutenberg.org)
+:Copyright: This stylesheet has been placed in the public domain.
+
+This stylesheet is based on:
+
+  :Author: David Goodger (goodger@python.org)
+  :Copyright: This stylesheet has been placed in the public domain.
+
+  Default cascading style sheet for the HTML output of Docutils.
+
+*/
+
+/* ADE 1.7.2 chokes on !important and throws all css out. */
+
+/* FONTS */
+
+.italics    { font-style: italic }
+.no-italics { font-style: normal }
+
+.bold       { font-weight: bold }
+.no-bold    { font-weight: normal }
+
+.small-caps { } /* Epub needs italics */
+.gesperrt   { } /* Epub needs italics */
+.antiqua    { font-style: italic } /* what else can we do ? */
+.monospaced { font-family: monospace }
+
+.smaller    { font-size: smaller }
+.larger     { font-size: larger }
+
+.xx-small   { font-size: xx-small }
+.x-small    { font-size: x-small }
+.small      { font-size: small }
+.medium     { font-size: medium }
+.large      { font-size: large }
+.x-large    { font-size: x-large }
+.xx-large   { font-size: xx-large }
+
+.text-transform-uppercase { text-transform: uppercase }
+.text-transform-lowercase { text-transform: lowercase }
+.text-transform-none      { text-transform: none }
+
+.red        { color: red }
+.green      { color: green }
+.blue       { color: blue }
+.yellow     { color: yellow }
+.white      { color: white }
+.gray       { color: gray }
+.black      { color: black }
+
+/* ALIGN */
+
+.left       { text-align: left }
+.justify    { text-align: justify }
+.center     { text-align: center; text-indent: 0 }
+.centerleft { text-align: center; text-indent: 0 }
+.right      { text-align: right;  text-indent: 0 }
+
+/* LINE HEIGHT */
+
+body        { line-height: 1.5 }
+p           { margin: 0;
+	      text-indent: 2em }
+
+/* PAGINATION */
+
+.title, .subtitle     { page-break-after:  avoid }
+
+.container, .title, .subtitle, #pg-header
+                      { page-break-inside: avoid }
+
+/* SECTIONS */
+
+body         { text-align: justify }
+
+p.pfirst, p.noindent {
+    text-indent: 0
+}
+
+.boxed         { border: 1px solid black; padding: 1em }
+.topic, .note  { margin: 5% 0; border: 1px solid black; padding: 1em }
+div.section    { clear: both }
+
+div.line-block       { margin: 1.5em 0 }  /* same leading as p */
+div.line-block.inner { margin: 0 0 0 10% }
+div.line             { margin-left: 20%; text-indent: -20%; }
+.line-block.noindent div.line { margin-left: 0; text-indent: 0; }
+
+hr.docutils          { margin: 1.5em 40%; border: none; border-bottom: 1px solid black; }
+div.transition       { margin: 1.5em 0 }
+
+.vfill, .vspace      { border: 0px solid white }
+
+.title               { margin: 1.5em 0 }
+.title.with-subtitle { margin-bottom: 0 }
+.subtitle            { margin: 1.5em 0 }
+
+/* header font style */
+/* http://dev.w3.org/csswg/css3-fonts/#propdef-font-size */
+
+h1.title                        { font-size: 200%; }  /* for book title only */
+h2.title, p.subtitle.level-1    { font-size: 150%; margin-top: 4.5em;  margin-bottom: 2em }
+h3.title, p.subtitle.level-2    { font-size: 120%; margin-top: 2.25em; margin-bottom: 1.25em }
+h4.title, p.subtitle.level-3    { font-size: 100%; margin-top: 1.5em;  margin-bottom: 1.5em;  font-weight: bold; }
+h5.title, p.subtitle.level-4    { font-size:  89%; margin-top: 1.87em; margin-bottom: 1.69em; font-style: italic; }
+h6.title, p.subtitle.level-5    { font-size:  60%; margin-top: 3.5em;  margin-bottom: 2.5em }
+
+/* title page */
+
+h1.title, p.subtitle.level-1,
+h2.title, p.subtitle.level-2    { text-align: center }
+
+#pg-header,
+h1.document-title               { margin: 10% 0 5% 0 }
+p.document-subtitle             { margin:  0  0 5% 0 }
+
+/* PG header and footer */
+#pg-machine-header { }
+#pg-produced-by { }
+
+li.toc-entry            { list-style-type: none }
+ul.open li, ol.open li  { margin-bottom: 1.5em }
+
+.attribution            { margin-top: 1.5em }
+
+.example-rendered {
+    margin: 1em 5%; border: 1px dotted red;  padding: 1em; background-color: #ffd }
+.literal-block.example-source   {
+    margin: 1em 5%; border: 1px dotted blue; padding: 1em; background-color: #eef }
+
+/* DROPCAPS */
+
+/* BLOCKQUOTES */
+
+blockquote { margin: 1.5em 10% }
+
+blockquote.epigraph { }
+
+blockquote.highlights { }
+
+div.local-contents { margin: 1.5em 10% }
+
+div.abstract { margin: 3em   10% }
+div.image    { margin: 1.5em  0  }
+div.caption  { margin: 1.5em  0 }
+div.legend   { margin: 1.5em  0 }
+
+.hidden { display: none }
+
+.invisible { visibility: hidden; color: white } /* white: mozilla print bug */
+
+a.toc-backref {
+  text-decoration: none ;
+  color: black }
+
+dl.docutils dd {
+  margin-bottom: 0.5em }
+
+div.figure { margin-top: 3em; margin-bottom: 3em }
+
+img { max-width: 100% }
+
+div.footer, div.header {
+  clear: both;
+  font-size: smaller }
+
+div.sidebar {
+  margin: 0 0 0.5em 1em ;
+  border: medium outset ;
+  padding: 1em ;
+  background-color: #ffffee ;
+  width: 40% ;
+  float: right ;
+  clear: right }
+
+div.sidebar p.rubric {
+  font-family: sans-serif ;
+  font-size: medium }
+
+ol.simple, ul.simple { margin: 1.5em 0 }
+
+ol.toc-list,    ul.toc-list    { padding-left:  0  }
+ol ol.toc-list, ul ul.toc-list { padding-left:  5% }
+
+ol.arabic {
+  list-style: decimal }
+
+ol.loweralpha {
+  list-style: lower-alpha }
+
+ol.upperalpha {
+  list-style: upper-alpha }
+
+ol.lowerroman {
+  list-style: lower-roman }
+
+ol.upperroman {
+  list-style: upper-roman }
+
+p.credits {
+  font-style: italic ;
+  font-size: smaller }
+
+p.label {
+  white-space: nowrap }
+
+p.rubric {
+  font-weight: bold ;
+  font-size: larger ;
+  color: maroon ;
+  text-align: center }
+
+p.sidebar-title {
+  font-family: sans-serif ;
+  font-weight: bold ;
+  font-size: larger }
+
+p.sidebar-subtitle {
+  font-family: sans-serif ;
+  font-weight: bold }
+
+p.topic-title, p.admonition-title {
+  font-weight: bold }
+
+pre.address {
+  margin-bottom: 0 ;
+  margin-top: 0 ;
+  font: inherit }
+
+.literal-block, .doctest-block {
+  margin-left: 2em ;
+  margin-right: 2em; }
+
+span.classifier {
+  font-family: sans-serif ;
+  font-style: oblique }
+
+span.classifier-delimiter {
+  font-family: sans-serif ;
+  font-weight: bold }
+
+span.interpreted {
+  font-family: sans-serif }
+
+span.option {
+  white-space: nowrap }
+
+span.pre {
+  white-space: pre }
+
+span.problematic {
+  color: red }
+
+span.section-subtitle {
+  /* font-size relative to parent (h1..h6 element) */
+  font-size: 100% }
+
+table { margin-top: 1.5em; margin-bottom: 1.5em; border-spacing: 0 }
+table.align-left, table.align-right { margin-top: 0 }
+
+table.table                { border-collapse: collapse; }
+
+table.table.hrules-table thead          { border: 1px solid black; border-width: 2px 0 0 }
+table.table.hrules-table tbody          { border: 1px solid black; border-width: 2px 0 }
+table.table.hrules-rows  tr             { border: 1px solid black; border-width: 0 0 1px }
+table.table.hrules-rows  tr.last        { border-width: 0 }
+table.table.hrules-rows  td,
+table.table.hrules-rows  th             { padding: 1ex 1em; vertical-align: middle }
+
+table.table tr             { border-width: 0 }
+table.table td,
+table.table th             { padding: 0.5ex 1em }
+table.table tr.first td    { padding-top: 1ex }
+table.table tr.last td     { padding-bottom: 1ex }
+table.table tr.first th    { padding-top: 1ex }
+table.table tr.last th     { padding-bottom: 1ex }
+
+
+table.citation {
+  border-left: solid 1px gray;
+  margin-left: 1px }
+
+table.docinfo {
+  margin: 3em 4em }
+
+table.docutils { }
+
+div.footnote-group          { margin: 1em 0 }
+table.footnote td.label     { width: 2em; text-align: right; padding-left: 0 }
+
+table.docutils td, table.docutils th,
+table.docinfo td, table.docinfo th {
+  padding: 0 0.5em;
+  vertical-align: top }
+
+table.docutils th.field-name, table.docinfo th.docinfo-name {
+  font-weight: bold ;
+  text-align: left ;
+  white-space: nowrap ;
+  padding-left: 0 }
+
+/* used to remove borders from tables and images */
+.borderless, table.borderless td, table.borderless th {
+  border: 0 }
+
+table.borderless td, table.borderless th {
+  /* Override padding for "table.docutils td" with "!important".
+     The right padding separates the table cells. */
+  padding: 0 0.5em 0 0 } /* FIXME: was !important */
+
+h1 tt.docutils, h2 tt.docutils, h3 tt.docutils,
+h4 tt.docutils, h5 tt.docutils, h6 tt.docutils {
+  font-size: 100% }
+
+ul.auto-toc {
+  list-style-type: none }
+</style>
+<style type="text/css">
+/*
+Project Gutenberg HTML docutils stylesheet.
+
+This stylesheet contains styles specific to HTML.
+*/
+
+/* FONTS */
+
+/* em                { font-style: normal }
+strong            { font-weight: normal } */
+
+.small-caps       { font-variant: small-caps }
+.gesperrt         { letter-spacing: 0.1em }
+
+/* ALIGN */
+
+.align-left       { clear: left;
+		    float: left;
+		    margin-right: 1em }
+
+.align-right      { clear: right;
+		    float: right;
+		    margin-left: 1em }
+
+.align-center     { margin-left: auto;
+		    margin-right: auto }
+
+div.shrinkwrap    { display: table; }
+
+/* SECTIONS */
+
+body              { margin: 5% 10% 5% 10% }
+
+/* compact list items containing just one p */
+li p.pfirst       { margin-top: 0; margin-bottom: 0 }
+
+.first            { margin-top: 0 !important;
+		    text-indent: 0 !important }
+.last             { margin-bottom: 0 !important }
+
+span.dropcap      { float: left; margin: 0 0.1em 0 0; line-height: 1 }
+img.dropcap       { float: left; margin: 0 0.5em 0 0; max-width: 25% }
+span.dropspan     { font-variant: small-caps }
+
+.no-page-break    { page-break-before: avoid !important }
+
+/* PAGINATION */
+
+.pageno           { position: absolute; right: 95%; font: medium sans-serif; text-indent: 0 }
+.pageno:after     { color: gray; content: '[' attr(title) ']' }
+.lineno           { position: absolute; left:  95%; font: medium sans-serif; text-indent: 0 }
+.lineno:after     { color: gray; content: '[' attr(title) ']' }
+.toc-pageref      { float: right }
+
+@media screen {
+   .coverpage, .frontispiece, .titlepage, .verso, .dedication, .plainpage
+                       { margin: 10% 0; }
+
+   div.clearpage, div.cleardoublepage
+                       { margin: 10% 0; border: none; border-top: 1px solid gray; }
+
+   .vfill              { margin:  5% 10% }
+}
+
+@media print {
+   div.clearpage       { page-break-before: always; padding-top: 10% }
+   div.cleardoublepage { page-break-before: right;  padding-top: 10%  }
+
+   .vfill              { margin-top: 20% }
+   h2.title            { margin-top: 20% }
+}
+
+/* DIV */
+pre               { font-family: monospace; font-size: 0.9em; white-space: pre-wrap }
+</style>
+<title>THE GIRL FLYERS ON ADVENTURE ISLAND</title>
+<meta name="PG.Rights" content="Public Domain" />
+<meta name="PG.Title" content="On Adventure Island" />
+<meta name="PG.Released" content="2015-02-03" />
+<meta name="DC.Created" content="1932" />
+<meta name="PG.Producer" content="Roger Frank" />
+<meta name="PG.Id" content="48146" />
+<meta name="DC.Title" content="On Adventure Island" />
+<meta name="DC.Language" content="en" />
+<link rel="coverpage" href="images/cover.jpg" />
+<meta name="DC.Creator" content="Bess Moyer" />
+
+<link rel="schema.DCTERMS" href="http://purl.org/dc/terms/" />
+<link rel="schema.MARCREL" href="http://id.loc.gov/vocabulary/relators/" />
+<meta content="On Adventure Island" name="DCTERMS.title" />
+<meta content="/home/ajhaines/island/island-rst.rst" name="DCTERMS.source" />
+<meta scheme="DCTERMS.RFC4646" content="en" name="DCTERMS.language" />
+<meta scheme="DCTERMS.W3CDTF" content="2015-02-03T19:05:35.080763+00:00" name="DCTERMS.modified" />
+<meta content="Project Gutenberg" name="DCTERMS.publisher" />
+<meta content="Public Domain in the USA." name="DCTERMS.rights" />
+<link rel="DCTERMS.isFormatOf" href="http://www.gutenberg.org/ebooks/48146" />
+<meta content="Bess Moyer" name="DCTERMS.creator" />
+<meta scheme="DCTERMS.W3CDTF" content="2015-02-03" name="DCTERMS.created" />
+<meta content="width=device-width" name="viewport" />
+<meta content="Ebookmaker 0.4.0a5 by Marcello Perathoner &lt;webmaster@gutenberg.org&gt;" name="generator" />
+</head>
+<body>
+<div class="document" id="the-girl-flyers-on-adventure-island">
+<h1 class="center document-title level-1 pfirst title"><span class="x-large">THE GIRL FLYERS ON ADVENTURE ISLAND</span></h1>
+
+<!-- this is the default PG-RST stylesheet -->
+<!-- figure and image styles for non-image formats -->
+<!-- default transition -->
+<!-- default attribution -->
+<!-- -*- encoding: utf-8 -*- -->
+<div class="clearpage">
+</div>
+<!-- -*- encoding: utf-8 -*- -->
+<div class="align-None container language-en pgheader" id="pg-header" xml:lang="en" lang="en">
+<p class="noindent pfirst"><span>This ebook is for the use of anyone anywhere in the United States
+and most other parts of the world at no cost and with almost no
+restrictions whatsoever. You may copy it, give it away or re-use it
+under the terms of the </span><a class="reference internal" href="#project-gutenberg-license">Project Gutenberg License</a><span> included with
+this ebook or online at </span><a class="reference external" href="http://www.gutenberg.org/license">http://www.gutenberg.org/license</a><span>. If you
+are not located in the United States, you'll have to check the laws
+of the country where you are located before using this ebook.</span></p>
+<p class="noindent pnext"></p>
+<div class="vspace" style="height: 2em">
+</div>
+<div class="align-None container" id="pg-machine-header">
+<p class="noindent pfirst"><span>Title: On Adventure Island
+<br />
+<br />Author: Bess Moyer
+<br />
+<br />Release Date: February 03, 2015 [EBook #48146]
+<br />
+<br />Language: English
+<br />
+<br />Character set encoding: UTF-8</span></p>
+</div>
+<div class="vspace" style="height: 2em">
+</div>
+<p class="noindent pfirst" id="pg-start-line"><span>*** START OF THIS PROJECT GUTENBERG EBOOK </span><span>ON ADVENTURE ISLAND</span><span> ***</span></p>
+<div class="vspace" style="height: 4em">
+</div>
+<p class="noindent pfirst" id="pg-produced-by"><span>Produced by Roger Frank.</span></p>
+<div class="vspace" style="height: 1em">
+</div>
+<p class="noindent pfirst"><span></span></p>
+</div>
+<div class="clearpage">
+</div>
+<div class="align-None container titlepage">
+<p class="center pfirst"><span class="xx-large">On Adventure Island</span></p>
+<p class="center pnext"><span class="medium">By</span></p>
+<p class="center pnext"><span class="large">Bess Moyer</span></p>
+<div class="vspace" style="height: 2em">
+</div>
+<p class="center pfirst"><span>The Girl Flyer Series</span></p>
+<p class="center pnext"><span>THE GOLDSMITH PUBLISHING COMPANY
+<br />CHICAGO</span></p>
+</div>
+<div class="clearpage">
+</div>
+<div class="align-None container verso">
+<p class="center pfirst"><span>Copyright, 1932
+<br />The Goldsmith Publishing Company</span></p>
+<p class="center pnext"><span>Made in U. S. A.</span></p>
+</div>
+<div class="clearpage">
+</div>
+<p class="center pfirst"><span class="bold large">TABLE OF CONTENTS</span></p>
+<ol class="upperroman simple">
+<li><p class="first noindent pfirst"><a class="reference internal" href="#hazardous-flight">Hazardous Flight</a></p>
+</li>
+<li><p class="first noindent pfirst"><a class="reference internal" href="#pursued-by-a-flying-foe">Pursued by a Flying Foe</a></p>
+</li>
+<li><p class="first noindent pfirst"><a class="reference internal" href="#tropic-storm">Tropic Storm</a></p>
+</li>
+<li><p class="first noindent pfirst"><a class="reference internal" href="#island-prisoners">Island Prisoners</a></p>
+</li>
+<li><p class="first noindent pfirst"><a class="reference internal" href="#the-cave-of-wonder">The Cave of Wonder</a></p>
+</li>
+<li><p class="first noindent pfirst"><a class="reference internal" href="#trapped">Trapped!</a></p>
+</li>
+<li><p class="first noindent pfirst"><a class="reference internal" href="#crashed">Crashed!</a></p>
+</li>
+<li><p class="first noindent pfirst"><a class="reference internal" href="#jump">Jump</a></p>
+</li>
+</ol>
+<div class="clearpage">
+</div>
+<p class="center pfirst" id="hazardous-flight"><span class="bold x-large">ON ADVENTURE ISLAND</span></p>
+<div class="vspace" style="height: 4em">
+</div>
+<p class="center pfirst"><span class="large">CHAPTER I</span></p>
+<p class="center pnext"><span class="large">Hazardous Flight</span></p>
+<div class="vspace" style="height: 2em">
+</div>
+<p class="pfirst"><span>Flying a mile high above the rolling hills of the countryside, Terry
+Mapes suddenly put </span><em class="italics">Skybird</em><span>, her little blue-and-gold
+monoplane, into a series of loops. She was feeling good, her brown
+eyes were keenly alive and her slight boyish figure sat erect as she
+handled the controls of her plane. And being a young and lively girl,
+she wanted to turn somersaults in the sky to express her joy.</span></p>
+<p class="pnext"><span>Her twin sister, strapped in the rear cockpit, spoke to her through
+the earphones, “Quit your circus stunts, Terry, and keep going! We’ve
+got a long trip ahead of us.”</span></p>
+<p class="pnext"><span>“You guessed it, Prim. That’s why I’m feeling so full of pep!”
+answered Terry and her voice died away as she put </span><em class="italics">Skybird</em><span>
+into another loop among the clouds.</span></p>
+<p class="pnext"><span>The next minute her plane was on an even keel and Prim repeated:
+“Terry, </span><em class="italics">will</em><span> you stop clowning? Save that pep! You’ll need it
+before we get to South America.”</span></p>
+<p class="pnext"><span>“Don’t I know it! I’ll be good and tired before I reach Peru, but
+right now I feel like a million dollars. I wouldn’t change places with
+the President of the United States or the Prince of Wales,” said Terry
+with a laugh. “I’m perfectly satisfied to be Terry Mapes, airplane
+pilot on a secret errand to the wilds of South America.”</span></p>
+<p class="pnext"><span>“And I,” interrupted Prim, settling back for a comfortable trip,
+“would rather be just Prim, the twin sister of the cleverest girl
+flyer who ever did a barrel roll.—But I wish she’d cut out the stunts
+for the present!”</span></p>
+<p class="pnext"><span>Dick Mapes, the father of the girls was an old airmail pilot. He had
+taught both girls to fly. The home-loving Prim had become a good pilot
+but she was not as fond of the sport as her sister. Prim was a pretty
+blonde type, inclined to plumpness, easy-going and gay, while Terry
+was serious, high strung and nervous, Terry loved to fly and now that
+her father was crippled from an accident and still unable to leave his
+wheel chair, she was trusted with many important air jobs.</span></p>
+<p class="pnext"><span>To Terry it was not half so venturesome to cut up antics in the air as
+it would have been to race in a motor boat or automobile. She always
+felt perfectly safe and perfectly happy when she could put a thousand
+feet of air between her plane and the earth.</span></p>
+<p class="pnext"><span>Prim, in spite of her protests, had perfect confidence in her twin
+sister’s ability to handle her plane and whether she was stunting or
+flying straight. Prim could feel sure of a happy landing and enjoy
+herself.</span></p>
+<p class="pnext"><span>At last Terry had worked off her excitement. She leveled out her plane
+and throttled the engine down to a steady cruising speed. Terry’s
+success as a flyer was due to the fact that the girl understood her
+plane thoroughly and treated it with respect. Apart from an occasional
+burst of speed to work off her excess energy and a few stunts to keep
+her in practice, Terry kept her plane on a level keel and never
+overtaxed it.</span></p>
+<p class="pnext"><span>Mile after mile sped by below them and Terry’s mind was racing ahead
+to the work she had to do, a mission which might be full of perils and
+thrilling hazards.</span></p>
+<p class="pnext"><span>Since the day when her father had started out with such high hopes of
+success in the venture of The Dick Mapes Flying Field, things had gone
+all wrong with him. He had obtained an option on a large tract of land
+at Elmwood from the owner, Peter Langley who lived at a small gold
+mine in the wilds of Peru, and it was this field that had aroused the
+envy of his business rival, Joe Arnold.</span></p>
+<p class="pnext"><span>Most of Dick’s misfortunes had come through the jealousy of this
+unscrupulous flyer. Joe Arnold was anxious to get control of Dick
+Mapes’ field, as it was situated near his own and was at a safe point
+for carrying on his illegal business. If he could once get this field
+he would be isolated and not run the risk of being seen when loading
+and unloading his planes.</span></p>
+<p class="pnext"><span>Joe Arnold was a dangerous rival. He would stop at nothing to carry
+out his schemes. And for the last two years he had kept Dick Mapes and
+his helpers in a state of anxiety. At first there had only been slight
+inconveniences, mishaps that were annoying, but through his agent, Bud
+Hyslop, who worked as mechanic for Mapes, Joe was able to learn all
+the plans of the field. He grew bolder and with Bud to carry out his
+orders, the field was the scene of frequent accidents.</span></p>
+<p class="pnext"><span>Suspicion pointed to Bud after the crash in which Dick Mapes was
+injured. Dick was a careful pilot and always checked up on his plane
+before starting out on a trip. Yet as soon as he was in the air that
+day, he found that someone had been tampering with his plane. It was
+too late to save himself. The plane crashed from a height of five
+hundred feet. It was a miracle that saved Dick from death.</span></p>
+<p class="pnext"><span>Allan Graham, his young partner, declared that he had seen Bud near
+the plane just before Dick took off. But no one could say for sure
+that Bud Hyslop was guilty, although most of the people on the field
+believed he was. Dick was too tender-hearted to discharge the boy
+without a reason and it was only after Bud had proven beyond doubt
+that he was working against the field that Dick let him go.</span></p>
+<p class="pnext"><span>One thing after another had happened to discredit Dick and for a time
+it looked as if he might have to give up the field entirely.</span></p>
+<p class="pnext"><span>And as a final blow word had come from Peter Langley saying that he
+did not care to extend the option, after he had let it be understood
+that he would do so. Dick felt as if the struggle was too much for
+him. Old Peter Langley had gone on to say that he had received reports
+that Dick was using the field for smuggling purposes, and he did not
+care to be mixed up with business of that sort.</span></p>
+<p class="pnext"><span>Dick knew, without being told, who had been the slanderer. His enemy,
+Joe Arnold was still trying to injure him.</span></p>
+<p class="pnext"><span>Bennett Graham, his backer, came to the rescue once more and gave Dick
+the money, but the time limit was almost up. There were only about ten
+days left. And with Peter Langley believing him to be a crook, there
+was little hope of taking up the option without a personal interview.</span></p>
+<p class="pnext"><span>Dick Mapes in his wheel chair, fretted and fumed at the problem facing
+him. Allan Graham, the son of his backer, and Syd Ames had been his
+first student-flyers and were now working at the field. They had been
+gone a week on a trip to Chicago. No one was left to take the long
+trip to Peru.</span></p>
+<p class="pnext"><span>Of course he had Terry and Prim! Dick could trust Terry anywhere with
+a plane, but it was a long flight to Peru and there might be storms
+and dangers. Dick grew restless and impatient under the misfortune
+that kept him tied to his wheel chair.</span></p>
+<p class="pnext"><span>“If I were only well enough to fly!” he fumed.</span></p>
+<p class="pnext"><span>“But what’s the idea, Dad! Don’t you think I can </span><em class="italics">fly</em><span> well
+enough?” Terry faced her father with flaming cheeks, her large brown
+eyes were flashing. “Why not send me?”</span></p>
+<p class="pnext"><span>“Send you? To South America? Alone?”</span></p>
+<p class="pnext"><span>“Not alone! Prim can go.”</span></p>
+<p class="pnext"><span>“But Terry, don’t you realize that Peru is a long way off? You may
+have to face grave dangers, storms, fevers, savages! And while Peter
+Langley and his wife may be all right, you never can tell ahead of
+time what rough characters you may meet there!”</span></p>
+<p class="pnext"><span>“What of it? I’m not afraid. You wouldn’t think twice about sending
+Allan and Syd,” said the girl with a frown.</span></p>
+<p class="pnext"><span>Dick Mapes shook his head. “That’s different,” he said. “They are
+boys!”</span></p>
+<p class="pnext"><span>“Which means that you don’t trust me. You think I’m not a good flyer!”</span></p>
+<p class="pnext"><span>Dick laughed. “Terry, don’t be silly! I’d trust you to fly anything
+you could get off the ground. That isn’t it. But I don't feel as if it
+would be right for me to let you risk your life.”</span></p>
+<p class="pnext"><span>Terry sat down beside her father’s wheel chair and took his hand.
+“Listen Dad, while I talk. Haven’t I proven over and over again that
+I'm a capable flyer. I’m pretty good at getting out of a jam in the
+air.”</span></p>
+<p class="pnext"><span>“I’ve said it often, Terry. I’ve never seen a better stunt flyer.
+You’re clever and you </span><em class="italics">think</em><span> when you’re in the air! And
+that’s what half the flyers don’t do. That’s why they crash.”</span></p>
+<p class="pnext"><span>“All right, so far, so good! We've been in lots of jams and got out of
+them by using our brains. Weren’t Prim and I </span><em class="italics">The Gypsies Of The
+Air</em><span>, and didn’t we go after the boys in Newfoundland and get them
+away from the kidnappers? Nothing terrible happened to us. Of course
+old Jim Heron kept us locked up and we had to think hard to find a way
+out of that old fortress, but we escaped without any harm.” Terry’s
+eyes were snapping as she recalled their imprisonment in the old fort.</span></p>
+<p class="pnext"><span>“Oh, I know, Terry. You and Prim can look out for yourselves. But I
+don’t like to send you into a jam deliberately.”</span></p>
+<p class="pnext"><span>“But Dad, you don’t know that there </span><em class="italics">will</em><span> be a jam, this time,
+and if there is, we can get out of it.”</span></p>
+<p class="pnext"><span>Dick did not answer as Terry hesitated and gave him a chance. The girl
+went on:</span></p>
+<p class="pnext"><span>“Now we’re in one of the biggest jams we’ve ever had yet. We’re almost
+sure to lose our flying field, though we have the money to take up the
+option, because our enemy Joe Arnold has written mean letters to old
+Peter Langley and set him against us. Now you can see for yourself, if
+I could get down there before the option expires he would think
+differently.”</span></p>
+<p class="pnext"><span>“I know he would, Terry. But it’s too dangerous. No.”</span></p>
+<p class="pnext"><span>“But it’s the only way out. Allan and Syd are not here and may not be
+for a week. And we are apt to lose our flying field because you still
+have this one old-fashioned idea. You’re up to date in every other
+way, Dad. What makes you think that girls can’t look out for
+themselves?”</span></p>
+<p class="pnext"><span>“Terry, you should have been a lawyer. You’re wasted in aviation,” her
+father said with a laugh. “You can make a fellow believe that black is
+white.—All right, if your mother consents, I will.”</span></p>
+<p class="pnext"><span>“That’s passing the buck! You’ve got to answer ‘yes’ or ‘no.’ You know
+it will be a deadlock for mother always says, ‘If you can get your
+father’s consent, I suppose I’ll have to agree!’ and if that argument
+keeps up, the day for taking up the option will be long past and we’ll
+have to give up the field.”</span></p>
+<p class="pnext"><span>Terry loved a struggle, her eyes were shining as she noted that she
+had almost reached success.</span></p>
+<p class="pnext"><span>Dick Mapes slapped her hand playfully. “All right. When do you start?”</span></p>
+<p class="pnext"><span>“At daybreak tomorrow,” answered Terry in a business-like manner. “The
+plane needs a few repairs, small ones, then we’re all set to go!” The
+girl wasted no time. The next minute she was running to the hangar,
+and drawing on an overall suit was getting ready to look over her plane.</span></p>
+<p class="pnext"><span>Her mother, Alice Mapes agreed without a struggle. “In fact I don’t
+feel half as frightened as I did when you went north to find the boys.
+You’ll have a wonderful trip to the south. Your father and I trust you
+perfectly, we know you’ll look over your plane at every stop and never
+take a chance with it.”</span></p>
+<p class="pnext"><span>“There you see, Dad!” said Terry with a happy laugh. “When mother
+agrees, it’s bound to be all right.”</span></p>
+<p class="pnext"><span>Prim was already busy at their flying togs. There were a few repairs
+to make and this was left to Prim, who liked to sew and cook and do
+other domestic jobs while Terry was a good mechanic and kept the plane
+running without a hitch.</span></p>
+<p class="pnext"><span>“A born flyer!” said Dick Mapes and he followed his daughter’s figure
+as she tested her plane, listening intently to the hum of the motor,
+going over every part, making adjustments here and there to bring her
+plane to the highest pitch of efficiency. And when Terry was satisfied
+that </span><em class="italics">Skybird</em><span> was in perfect running order, Dick Mapes could
+never find a flaw. Terry knew her job.</span></p>
+<p class="pnext"><span>Bennett Graham had all the necessary legal papers ready and a
+certified check to close the deal, so there would be no hitch at the
+last minute. These papers were carried in a small brown leather case
+and sewn into the lining of Terry’s flying coat.</span></p>
+<p class="pnext"><span>Prim loved stylish clothes and her white flying suit was smartly cut.
+Terry turned to admire her pretty blonde sister just before they were
+ready to hop off.</span></p>
+<p class="pnext"><span>“What’s the idea of that necklace?” said Terry with a laugh. “Girl
+flyers don’t wear necklaces with bright red jewels.”</span></p>
+<p class="pnext"><span>“Don’t they? Well, this one does! It just suits my fancy, Terry Mapes.
+I think it looks smart, it adds a bit of color to my white costume.”</span></p>
+<p class="pnext"><span>“All right, Prim, just as you say. Now, is everything set? How about
+your sweet tooth. Got plenty of cake chocolate?” teased Terry, for
+Prim was always nibbling at something sweet.</span></p>
+<p class="pnext"><span>“Sure, my pockets are full. Here put this little package of crackers
+in your coat. We may get hungry as we fly along. And I’ve put up a big
+lunch in case we need it.”</span></p>
+<p class="pnext"><span>At the last minute Prim adjusted the harness of the parachutes about
+Terry and herself not minding her sister’s impatient shrugs of
+disdain.</span></p>
+<p class="pnext"><span>For some reason Terry was always impatient of parachutes. She felt
+like an amateur even though she knew that many of the big flyers never
+went up without putting one on, as a safeguard in case of accident.</span></p>
+<p class="pnext"><span>Terry looked with satisfaction at Sally Wyn, the little waif they had
+brought with them from the far north. The girl was fluttering about
+the field like a butterfly. She seemed to be in half a dozen different
+places at the same time, running errands and making herself useful.
+With Sally there, her father and mother would not be so lonely. The
+little orphan had found a place in the hearts of Dick and Alice, and
+they would not hear of her leaving them to go to work. With her happy
+disposition she kept the household filled with laughter. Alice often
+wondered how she had ever been happy without this fun-loving girl. And
+she had a way of making Dick forget that he was a cripple. She amused
+him.</span></p>
+<p class="pnext"><span>As the girls said goodbye to her, Sally called out: “Next year Terry
+Mapes, I’ll race you to Peru!”</span></p>
+<p class="pnext"><span>It was a glorious morning, the sun was just rising as Terry sent her
+plane into the air and headed south. There were no last minute delays.</span></p>
+<p class="pnext"><span>Now it remained for Terry and Prim to reach Peru, find old Peter
+Langley and convince him that he was mistaken and make him want to
+sell Dick the property. And in Terry’s mind there was no doubt that
+she could accomplish it.</span></p>
+<p class="pnext"><span>Below them was a vast stretch of fertile country with streams, lakes
+and broad green valleys. And high in the air, Terry's hand at the
+controls felt the spring of her little plane and was certain that
+</span><em class="italics">Skybird</em><span> was thrilling at the adventure.</span></p>
+<p class="pnext"><span>Terry held the plane down to a steady speed, hour after hour, only
+changing the monotony by diving to a lower level or rising to greater
+heights. They were following along the general line of the airway.
+They could pick out the landing fields and see the position of the
+great beacons that would flash at night to guide the flyer to the
+hangars on the ground.</span></p>
+<p class="pnext"><span>Terry and Prim had decided to stay all night at the Waverly Field, far
+to the south. That meant steady flying all day, only coming down to
+refuel at long jumps.</span></p>
+<p class="pnext"><span>They saw the lights of the Waverly Field a full half hour before they
+expected to be there. “Shall we go on?” asked Terry through the
+earphones. “We can easily reach the next landing field before dark.”</span></p>
+<p class="pnext"><span>“No, let’s stay here. You look tired and besides I like the looks of
+this pleasure beach,” replied Prim.</span></p>
+<p class="pnext"><span>Terry put </span><em class="italics">Skybird</em><span> into a steep spiral, leveled and circled
+the field and then put the plane neatly down on the ground.</span></p>
+<p class="pnext"><span>Little did the girls think as they were greeted by the manager of the
+flying field that this was where their troubles would begin. That
+before they reached Peter Langley’s mine they were to face an enemy
+who was desperate with greed and hate. And that at times the girls
+would despair of escaping with their lives!</span></p>
+<div class="vspace" style="height: 4em">
+</div>
+<p class="center pfirst" id="pursued-by-a-flying-foe"><span class="large">CHAPTER II</span></p>
+<p class="center pnext"><span class="large">Pursued by a Flying Foe</span></p>
+<div class="vspace" style="height: 2em">
+</div>
+<p class="pfirst"><span>Waverly was a popular beach resort and Prim was delighted to see that
+there was a pleasure pier which was gaily lighted up.</span></p>
+<p class="pnext"><span>She cried, “Oh, Terry, it looks as if there might be dancing down
+there. Let’s hurry to the hotel and change to our party clothes.”</span></p>
+<p class="pnext"><span>“Prim Mapes, you promised me that you wouldn’t take any party dresses
+this time. You said we’d be just girl flyers with no excess baggage,”
+retorted her sister.</span></p>
+<p class="pnext"><span>Prim laughed. “I tried to Terry, but I couldn’t leave out our new
+frocks. I was certain we’d run into some sort of entertainment where
+we’d want some pretty dresses.”</span></p>
+<p class="pnext"><span>Terry looked her disgust. “But Prim, I don’t even want to dance. What
+am I going to do with these documents while I’m dancing?”</span></p>
+<p class="pnext"><span>“You could leave them at the hotel in the safe,” answered the
+easy-going Prim.</span></p>
+<p class="pnext"><span>“Just forget that, Prim. Wherever I go, these papers go with me. If
+you insist on dancing I’ll have to go along, but I'll have the papers
+on me.”</span></p>
+<p class="pnext"><span>As the girls talked over their plans they arranged for the care of
+their plane for the night and for refueling, as they intended to take
+an early start the next morning. Then they went to the hotel where
+many summer guests were staying.</span></p>
+<p class="pnext"><span>Prim made friends easily and by the time Terry had registered for them
+at the desk and made arrangements for getting away early the next
+morning, Prim had a group of girls around her and was laughing and
+joking with them as if she had always known them. Terry envied her
+sister this ability to get acquainted with people at a moment’s
+notice. It would have taken her a week, at least, without Prim to
+break the ice, to become friends with these strangers.</span></p>
+<p class="pnext"><span>When the two girls came down to the dining room half an hour later,
+their new acquaintances hardly recognized them. Prim was dressed in a
+fluffy gown which made her look like a lovely bit of Dresden china.
+Terry was very boyish and trim in her sports dress. She had an
+aristocratic manner, attracting notice by her very aloofness.</span></p>
+<p class="pnext"><span>The dancing pavilion was built out over the water and they could hear
+the surf breaking about the pier. Prim danced to her heart’s content,
+for partners flocked about her. But Terry was uneasy for pinned to her
+slip were the valuable papers she must deliver in Peru. She was
+relieved when Prim finally consented to go back to the hotel,
+exchanging addresses and promising life-long friendship with her new
+friends as she went along.</span></p>
+<p class="pnext"><span>At the first flush of dawn, Terry and Prim were at the hangars
+preparing to take off. Terry made a careful check-up on her plane to
+see that everything was in order and as they were about ready to climb
+into the cockpits, they heard a shout and their new friends came
+hurrying to the field to bid them goodbye.</span></p>
+<p class="pnext"><span>Prim was glad they had come. She wanted to show off her quiet sister
+who always got her plane into the air so gracefully, and her face
+glowed with pride as Terry taxied across the field, swung around and
+headed into the wind for a good take-off. </span><em class="italics">Skybird</em><span> took to the
+air like a great bird and under Terry’s guidance circled the field
+several times for the benefit of their friends, then headed out over
+the Atlantic, flying south.</span></p>
+<p class="pnext"><span>They did not know that a plane had been set down on the field half an
+hour before. The pilot had recognized </span><em class="italics">Skybird</em><span> and kept well
+out of sight. As he watched the girls from the shelter of the hangar,
+his face expressed the hatred and treachery that he felt.</span></p>
+<p class="pnext"><span>It was Joe Arnold, their father's business rival and dangerous enemy!</span></p>
+<p class="pnext"><span>“What are those girls doing here? Do they imagine they can fly to Peru
+and see Peter Langley?” thought Joe to himself. He made up his mind
+that the girls would never reach Peru. He would stop them, somehow. He
+</span><em class="italics">must</em><span> do it.</span></p>
+<p class="pnext"><span>Joe Arnold frowned. As his plane was more powerful than
+</span><em class="italics">Skybird</em><span>, he could easily out-fly them and reach the mine a
+day before they could do so. But, first, he had some mysterious
+business to attend to before he would have the money for the option.
+Meanwhile he must do something to prevent the Mapes girls from
+continuing their trip until he was ready.</span></p>
+<p class="pnext"><span>Before </span><em class="italics">Skybird</em><span> had disappeared in the clouds, Joe Arnold had
+left the field and was following after that tiny speck in the sky,
+trailing it relentlessly.</span></p>
+<p class="pnext"><span>The next stop was Miami, and here again the girls made a thorough
+inspection of their plane. From now on their way would be over the
+Caribbean, where storms might spring up without warning.
+</span><em class="italics">Skybird</em><span> must be in perfect form. And when Terry finished her
+inspection, the little plane was ready for the hop to Havana.</span></p>
+<p class="pnext"><span>The girls congratulated themselves that everything was going along
+well. They were even a few hours ahead of their schedule and Terry’s
+face was glowing with happiness and excitement. Ahead of them was the
+Caribbean. She had often dreamed of making this flight over tropical
+waters and now she was really here.</span></p>
+<p class="pnext"><span>Below her were the keys and reefs of the Florida coast spread out flat
+on the blue water. They were like a painting in delicate pastel
+shades. Crossing the line of the reefs, </span><em class="italics">Skybird</em><span> headed boldly
+out to sea. Prim watched the smooth water, fascinated by the patterns
+made by steamers as they cut through the water, leaving an ever
+widening wake behind them. She felt safe, knowing that their amphibian
+plane could land on the water and float.</span></p>
+<p class="pnext"><span>Terry sighted the coast of Cuba first, a delicate outline seen through
+a haze that dimmed the view and gave it a fairy-like appearance. Soon
+they sighted the grim old Morro Castle, the Spanish fort, and as they
+came nearer and flew above it, they could see the broad avenues of the
+lovely city of Havana. The marble capitol was dazzlingly white in the
+sunshine and the colored roofs of the houses, as seen from the air,
+arranged themselves in a fantastic design. It was a city of gay
+pleasure.</span></p>
+<p class="pnext"><span>Terry brought her plane down at the Havana airport with a sense of
+relief. The first lap of that journey was over now.</span></p>
+<p class="pnext"><span>A few minutes later she was handed a telegram which read: “Allan and
+Syd will join you at Havana. Wait. Dad.”</span></p>
+<p class="pnext"><span>Terry’s eyes blazed for a moment. “What do you think of that, Prim?
+Allan and Syd are coming here. We’re to </span><em class="italics">wait</em><span> for them! I’ll
+say that’s nerve! Dad thinks we can’t make the trip without the help
+of the boys.”</span></p>
+<p class="pnext"><span>“That’s nonsense, Terry! Dad knows we’re equal to it. The boys
+probably want a holiday and are coming just for the fun of it. I’m
+going to be real glad to see them. The more the merrier, I say,”
+replied Prim.</span></p>
+<p class="pnext"><span>“I’d be glad to see them if I thought that their trip was not just
+because they think that we have to be looked after,” declared Terry.
+“I want to make this flight without help from anybody.”</span></p>
+<p class="pnext"><span>“Don’t get too independent, Terry. It doesn’t pay,” her sister
+cautioned her. “But right now let’s go and get some breakfast. I’m
+starved.”</span></p>
+<p class="pnext"><span>After they had finished with the customs and entry regulations the
+girls started toward the restaurant. A plane was circling about their
+heads looking for a landing.</span></p>
+<p class="pnext"><span>Suddenly Terry grabbed her sister’s arm. “Oh Prim, look there! It’s
+Joe Arnold!”</span></p>
+<p class="pnext"><span>“Where did he come from? What’s he doing down here?” demanded Prim, as
+if her sister knew all about Joe Arnold’s affairs.</span></p>
+<p class="pnext"><span>Terry laughed nervously. “Ask me something easy! But of one thing we
+can be sure. Whatever it is that has brought Joe Arnold down here,
+it’s bound to be crooked, whether he is on business of his own or just
+trailing us. That man </span><em class="italics">couldn't</em><span> be decent!” Terry said with
+indignation.</span></p>
+<p class="pnext"><span>“What are we going to do, Terry?” asked Prim.</span></p>
+<p class="pnext"><span>“We are going to do nothing at all, except keep our eyes open,”
+answered Terry as she slipped back to the hangar and spoke to the
+mechanic who was looking over her plane. She gave him her sweetest
+smile as she spoke to him. “Keep your eye on my plane. Don’t let any
+stranger near it.” And she gave him a five dollar bill.</span></p>
+<p class="pnext"><span>The young man promised and as Terry turned away he smiled to himself.
+“Guess she’s new to the game,” he thought. “Afraid someone will want
+parts of her plane for souvenirs.”</span></p>
+<p class="pnext"><span>“Come on Terry, hurry. If you only knew how hungry I am!” cried Prim.
+But now another plane had approached and made a neat landing.</span></p>
+<p class="pnext"><span>Prim stopped short and grabbed her sister’s arm. “Oh Terry,” she
+cried, “I’m almost sure that’s Allan in his new plane.”</span></p>
+<p class="pnext"><span>“You’re right. That’s Allan! And Syd is with him!”</span></p>
+<p class="pnext"><span>A few minutes later Allan and Syd leaped from the cockpits and were
+waving to the girls with whoops of delight. Terry and Prim hastened
+back across the field to welcome them.</span></p>
+<p class="pnext"><span>“Hurry up!” cried Terry. “Prim is starving!”</span></p>
+<p class="pnext"><span>“She’s got nothing on us,” Sid answered. “We could eat our shoe
+strings,—almost!”</span></p>
+<p class="pnext"><span>When they were all seated at breakfast, Terry suddenly turned to ask
+Allan, “What’s the idea of trailing us down here? Are you taking a
+vacation?”</span></p>
+<p class="pnext"><span>“A sort of vacation,” answered Allan. “About an hour after you left
+the other day, Syd and I got home. We finished up our business in half
+the time we expected. Then we heard some reports. Joe Arnold had been
+back at the field and was bragging around that he was starting out to
+make the final deal with Peter Langley for your father’s flying field.
+He sent notice to your father to vacate the field.”</span></p>
+<p class="pnext"><span>“Why the nerve of that man!” cried Terry. “He’ll do no such thing! I
+won’t stand for it!”</span></p>
+<p class="pnext"><span>“Anyway,” went on Allan. “We found out that Joe had started south and
+your father wanted to warn you, so he sent us. And here we are.”</span></p>
+<p class="pnext"><span>“Yes,” Terry broke in. “And Joe Arnold set down his plane at the
+Havana airport just a little while ago. I’m sure he saw us. Even if he
+didn’t he’d recognize </span><em class="italics">Skybird</em><span>. That man is up to mischief.”</span></p>
+<p class="pnext"><span>“Do you think he’s going to try and make trouble for us?” asked Prim
+anxiously. “I’m afraid of that man, after what he did to you boys in
+Newfoundland.”</span></p>
+<p class="pnext"><span>“We are not going to worry about it,” Terry announced with decision.
+“We are going to keep right on at the job we set out to do, and trust
+to luck to get us through safely.”</span></p>
+<p class="pnext"><span>The four friends had an excellent breakfast with tropical fruits and
+delicious Cuban dishes. At times they forgot all about Joe Arnold and
+his threats to take away their father’s flying field. It was good to
+be together in this romantic city of Havana, and hard to realize that
+danger threatened them.</span></p>
+<p class="pnext"><span>All about them were smartly dressed care-free people, spending money
+lavishly on the pleasures of the gay city. People came here from all
+over the world just to enjoy themselves.</span></p>
+<p class="pnext"><span>But Terry would not allow them to forget that a difficult job lay
+ahead of them. It was necessary to push on. Consulting their maps,
+they laid out their route. The next hop would be across the open
+waters of the Caribbean to the landing field at Gracias a Dios in
+Honduras. That would be their next meeting place in case they became
+separated. Allan and Syd had planned to see them safely through the
+treacherous tropical weather of the Caribbean, before returning to
+Elmwood. Now that they were tipped off to the fact that Joe might make
+trouble, Terry could be depended on to keep her eyes open and avoid
+him. But the boys decided they would watch Joe and find out what he
+was up to.</span></p>
+<p class="pnext"><span>The weather reports were favorable. There was always the warning to
+watch out for sudden storms that were common over the Caribbean.</span></p>
+<p class="pnext"><span>Their take-off was delayed by Terry insisting that her engine was not
+working properly. Allan came alongside to listen as she warmed up the
+motor. “Why it sounds all right, Terry. I don’t hear anything wrong,”
+he said.</span></p>
+<p class="pnext"><span>“But listen!” shouted Terry. “Listen to that rough hum.”</span></p>
+<p class="pnext"><span>“You’re right, Terry,” said Allan as the girl shut off her engine and
+got out. Slipping into her overall suit, she started to work.</span></p>
+<p class="pnext"><span>“Has anyone been near my plane?” asked Terry of the young mechanic
+whom she had warned.</span></p>
+<p class="pnext"><span>“No. That is nobody touched it. There was another flyer who stood
+around admiring it and asking who you were. He even wanted to know
+where you were going. Then he said he’d like to take a look at your
+engine to see what kind you had. But I didn’t let him stick around,”
+replied the youth. “I told him to clear out!”</span></p>
+<p class="pnext"><span>Allan and Terry got to work without waiting for further explanation. A
+full hour went by before they had the engine humming smoothly enough
+to suit the trained and sensitive ear of Terry Mapes.</span></p>
+<p class="pnext"><span>Once more they were ready to take off. Terry taxied over the long
+field, making sure that the engine was working properly before she
+pulled back on the stick and sent </span><em class="italics">Skybird</em><span> nosing into the
+brilliant blue sky.</span></p>
+<p class="pnext"><span>Terry’s heart was beating with happy excitement. The take-off never
+became a commonplace occurrence to her. She thrilled as she felt the
+ship lifting from the ground and in the face of the wind, rising to
+dizzy heights above the earth.</span></p>
+<p class="pnext"><span>Allan and Syd followed and for half an hour they flew at about the
+same altitude. Then Allan lagged behind and rose above them to a
+height of five thousand feet. Both flyers were watching the sky behind
+them to make sure that their enemy was not in pursuit.</span></p>
+<p class="pnext"><span>Joe Arnold had put in a busy morning in Havana. Here was where he had
+some shady business that would give him the ready money for taking up
+the option on the Dick Mapes Flying Field. And when he started out
+half an hour after the other planes, he flew high and well out of
+sight.</span></p>
+<p class="pnext"><span>Terry and Prim were content to fly at about two thousand feet. They
+were enjoying the view of the southern sea dotted with islands and
+failed to see the pursuing plane, high above them in the distance.</span></p>
+<p class="pnext"><span>But Joe Arnold was watching intently every move of the two planes, and
+the cold, menacing light in his eyes was a threat against these young
+flyers who dared to upset his plans, and keep him from realizing his
+ambition.</span></p>
+<p class="pnext"><span>His mind was working fast. At the next flying field, he would have a
+show-down with them. His business deal in Havana had not been
+successful. It would be necessary to return to that city once more
+before he got the money. Joe Arnold did not know just what kind of a
+show-down he would have with these girl flyers. He would leave it to
+chance and his usual good luck unless he could think of some plan as
+he flew through the blue sky. Up in the clean air of the heavens this
+man was planning to destroy them.</span></p>
+<p class="pnext"><span>But Terry and Prim, unconscious of his plans, were watching the
+changing colors of the islands, then faced once more the open sea
+toward Honduras.</span></p>
+<div class="vspace" style="height: 4em">
+</div>
+<p class="center pfirst" id="tropic-storm"><span class="large">CHAPTER III</span></p>
+<p class="center pnext"><span class="large">Tropic Storm</span></p>
+<div class="vspace" style="height: 2em">
+</div>
+<p class="pfirst"><span>High above the sapphire mirror of the Caribbean, Terry kept her plane
+in a southwesterly course. The sun was a pitiless ball of flame that
+sent out long fingers of fire. It was tropic weather.</span></p>
+<p class="pnext"><span>Above them Allan’s plane was soaring ahead now. The sight of Joe
+Arnold at Havana had made them fear an attack, and the four flyers
+were watching to see whether a third plane was following them.</span></p>
+<p class="pnext"><span>Leaving the islands behind they flew out over the sea, a great expanse
+of deep blue and purple water.</span></p>
+<p class="pnext"><span>Suddenly Prim called to her sister. “Look Terry, there’s land over
+there, away to the left.”</span></p>
+<p class="pnext"><span>“Yes, I see,” answered Terry. But she was watching the horizon with
+anxious eyes. That dark purplish mass looked to her like a low-lying
+cloud. There was something unnatural about it. Its color was changing
+rapidly to a reddish hue.</span></p>
+<p class="pnext"><span>“I don’t like the looks of it, Prim,” called Terry. “See how the light
+is changing.”</span></p>
+<p class="pnext"><span>A reddish haze had spread over the whole sky, the sun appeared like a
+great disc of hot metal. The sight was weird and menacing.</span></p>
+<p class="pnext"><span>“What’s the matter, Terry? Is it a storm?” Prim asked.</span></p>
+<p class="pnext"><span>“Yes, a tropic storm. We’ve got to race it. Where are the boys?” Prim
+leaned over the cowling and strained her eyes to the sky, but that
+strange and terrifying haze had blotted out the other plane. Terry
+circled and banked in an effort to find their friends. Then, opening
+the throttle wide, the girl sent her plane straight before the storm.
+It was her only chance. If she could out-race that storm, she would be
+saved.</span></p>
+<p class="pnext"><span>Sending her plane ahead and in a gradual rise, the girl tried to get
+above the haze. These tropical storms often covered only a small area,
+but very soon she realized that the cloud was coming on and rising
+faster than her plane.</span></p>
+<p class="pnext"><span>Below them the sea was still visible, a dull lead color now with
+greenish tipped white-caps. The wind had not reached the plane yet and
+the girls hoped that they might be able to keep ahead of the tempest.</span></p>
+<p class="pnext"><span>Then it came, first with a gust that made the little ship bob and
+dance about. Terry knew this was only the beginning. The storm was
+upon them! The next deep breath of the hurricane would threaten their
+lives with its fury. Terry held her plane to the only course she dared
+to take. She was racing for dear life!</span></p>
+<p class="pnext"><span>The throb of the motor told that the engine was being strained to the
+limit of its power. There was no time to lose. If the girls were to
+escape destruction, they must take that chance.</span></p>
+<p class="pnext"><span>When the full force of the tempest struck the plane, it was tossed
+about like a straw in the wind. Under less experienced hands than
+Terry’s the plane would have crashed. Terry could feel the craft being
+shaken as if a mighty hand had taken it in its grip, as the gusts of
+wind struck vicious blows at the wings.</span></p>
+<p class="pnext"><span>Terry’s grim face was set with determination. But her hand on the
+stick showed no sign of her fear, it did not tremble or lose its power
+to control. She was glad now that her father had insisted on training
+her in all the stunts of the air, for there was no possible position
+that her plane would take that Terry had not put it into deliberately
+above her own flying field, and brought it out safely.</span></p>
+<p class="pnext"><span>But this was altogether different. There she had </span><em class="italics">put</em><span> the
+plane into those dangerous positions, now she was being
+</span><em class="italics">forced</em><span> into them and she never knew what was coming next.</span></p>
+<p class="pnext"><span>Terry knew the danger she was in but she felt no panic. Every nerve
+was tingling, every sense alert. She knew she was doing her best. Her
+head was clear, her hand was steady and she kept the little plane,
+climbing, ever climbing.</span></p>
+<p class="pnext"><span>The girl felt that </span><em class="italics">Skybird</em><span> was fighting for life, with what
+seemed like human intelligence. It shuddered and shook and it seemed
+to try to right itself after a gust of angry wind.</span></p>
+<p class="pnext"><span>Prim clung to the cowling, terrified yet fascinated as she watched her
+sister. At times it seemed as if the plane had turned clear over, as
+if it were going down in a tail spin, but the next moment Terry would
+bring it up for a second. It was a big fight.</span></p>
+<p class="pnext"><span>“She’ll win,” thought Prim. “She’s wonderful!”</span></p>
+<p class="pnext"><span>Only for a second did Terry lose hope of victory. There was a
+sputtering of the engine that her trained ear heard. It sent a chill
+to her heart. Her hand shook. She gave a frantic glance back to see if
+Prim had heard that menacing sound. And that one look showed her a
+clear space in the dark masses.</span></p>
+<p class="pnext"><span>The storm was passing. Terry held to the controls, praying that the
+engine would hold out until the wind ceased.</span></p>
+<p class="pnext"><span>Suddenly Terry was able to put her plane into a steep climb that
+brought her above the storm. Coming out of that black cloud Terry saw
+Allan’s plane ahead of her. She followed it, her heart singing for
+joy. A mist came to her eyes as she realized that it was only by a
+miracle that both planes had gone through the storm and survived.</span></p>
+<p class="pnext"><span>Terry signalled with the wings of her plane and was answered in the
+same manner. She followed Allan's lead, hoping that her engine would
+not go back on her. At intervals she heard a sputter that terrified
+her, but now the sky was clearing. She felt hopeful.</span></p>
+<p class="pnext"><span>Allan finally headed east. This was strange. Terry looked at her
+compass and a frown came to her face. What was Allan doing? He was
+going far out of his way. At last she understood. Away in the distance
+was an island. He was going to land. She wondered if he were having
+engine trouble.</span></p>
+<p class="pnext"><span>Terry did not dare to open her throttle wide. Any extra strain might
+be her undoing. But, as she neared the small island the plane ahead
+banked, circled and signalled, then went into a dive for landing on
+the far side of the island.</span></p>
+<p class="pnext"><span>Terry tried to follow but the engine was sputtering once more. She
+made a long dive which brought her amphibian into the water at the
+near side of the island. There was a broad strip of sand and Terry
+sent her plane cutting through the spray on to the beach.</span></p>
+<p class="pnext"><span>“We’re safe!” cried Prim as she nimbly stepped from the cockpit,
+followed by her sister. “Wasn’t that an awful storm?”</span></p>
+<p class="pnext"><span>“It’s just luck that we’re alive. Now let’s go over and see the boys.
+It looks as if they might be having engine trouble, too,” replied
+Terry.</span></p>
+<p class="pnext"><span>After making fast their plane by a rope to a palm tree at the water’s
+edge, the two girls scrambled up over the rocky ridge to the low
+summit. The island was narrow at this end and soon they were looking
+straight down upon a sheltered cove where the boys had landed and saw
+the amphibian floating on the water. A launch shot out from the shore
+and when it reached the plane, several bundles were dropped into the
+boat by the aviator, who then got out of the plane and was taken
+ashore.</span></p>
+<p class="pnext"><span>The girls looked at each other, distress on their faces.</span></p>
+<p class="pnext"><span>“We’ve followed a plane, but it’s the wrong one!” cried Terry. “What a
+stupid thing to do! Prim, how can you ever trust me again?”</span></p>
+<p class="pnext"><span>“But </span><em class="italics">I</em><span> thought it was Allan and Syd, too,” replied Prim.
+“Never mind, these men will help us fix our plane and we’ll be off in
+an hour or two.”</span></p>
+<p class="pnext"><span>With a wave of his hand the aviator started upward toward the summit
+where the girls stood.</span></p>
+<p class="pnext"><span>“He seems to be friendly,” commented Terry. “But let’s wait here to
+greet him. How he’ll laugh when I tell him that I thought I was
+following another plane.” The girls waited at the summit until the
+stranger came up the winding trail. As they heard his footsteps Terry
+moved forward to speak, then grabbed Prim’s arm with a nervous grip.
+The man had come out on the summit and was staring at them with a
+triumphant grin. His eyes were glittering with a fierce and cruel
+light that made the cast in his eye more pronounced. It added to the
+sinister look in his face. The man facing them was Joe Arnold!</span></p>
+<p class="pnext"><span>A moment later the girls gasped with dismay for their old enemy, Bud
+Hyslop, came shambling up the trail.</span></p>
+<p class="pnext"><span>“Well, look who’s here!” said Bud and added sarcastically, “this
+</span><em class="italics">is</em><span> a pleasant surprise!”</span></p>
+<p class="pnext"><span>But Joe silenced his rough-neck follower with a scowl and a low snarl.
+“Don’t get funny. Shut up!”</span></p>
+<p class="pnext"><span>Joe Arnold, with menace in his voice, addressed the girls, “Why did
+you come here?” he demanded. “What do you want?”</span></p>
+<p class="pnext"><span>Terry stammered for a second then answered: “I was having trouble with
+my engine after that storm and I knew I’d have to come down, so I
+followed you here.”</span></p>
+<p class="pnext"><span>Joe stared at the girl and shrugged his shoulders. “That sounds fishy
+to me. I think you’re trying to spy on me. What brought you away down
+here?”</span></p>
+<p class="pnext"><span>“We’re on a vacation,” answered Terry. “We are on our way to the Canal
+Zone.”</span></p>
+<p class="pnext"><span>Joe Arnold watched the girls contemptuously. “I don’t believe you!” he
+said. “I think you came here to watch me.” Suddenly he turned to Bud.
+“Go on down there and see what’s the matter with Terry’s plane.”</span></p>
+<p class="pnext"><span>“But I’d rather fix my own plane. I’m used to it and can fix it in a
+minute. I know exactly what’s the matter.”</span></p>
+<p class="pnext"><span>“No! Let Bud go as I told him! You stay here!” There was a note of
+command that frightened the girls. Prim touched Terry’s arm and said
+softly. “Careful Terry, don’t make him angry.”</span></p>
+<p class="pnext"><span>Terry gave her sister a grateful smile. She turned to Arnold and asked
+pleasantly. “Did you get into that storm?”</span></p>
+<p class="pnext"><span>“No, I knew too much to let that happen. I saw your plane go into it
+and thought you were done for,” he answered.</span></p>
+<p class="pnext"><span>“How did you avoid it?” asked Terry.</span></p>
+<p class="pnext"><span>“I was flying high, fifteen thousand feet. It never touched me. The
+storm was all below me. I’m used to these hurricanes and I can usually
+guess about how far the storm extends.”</span></p>
+<p class="pnext"><span>“I tried to get above it, but I didn’t go far enough.” Terry was
+watching Joe’s face while she was talking. Would he guess that she was
+carrying an important paper for Peter Langley? Would she be able to
+keep it hidden where he could not find it?</span></p>
+<p class="pnext"><span>Now it was safely sewn once more in the lining of her flying coat but
+that was not a good hiding place if he thought to search her.</span></p>
+<p class="pnext"><span>A sudden shout from the harbor sent Joe Arnold hurrying down the
+trail. Then he turned back. “Stay right where you are,” he ordered the
+girls. On second thought he said. “No, go on down the trail ahead of
+me.”</span></p>
+<p class="pnext"><span>“But I don’t want to go!” flared Terry.</span></p>
+<p class="pnext"><span>“If you’re wise you’ll do as I say!” Without another word he thrust
+the girls ahead of him toward the beach.</span></p>
+<p class="pnext"><span>Terry went without any further argument. For suddenly it had occurred
+to her that she might learn something of Joe Arnold’s schemes if she
+pretended, to be friendly with him and didn’t make him angry.</span></p>
+<p class="pnext"><span>At the harbor a gang of blacks were loading a boat, preparing to take
+it to the plane. Pedro, the chief was over six feet tall, wore only a
+loin cloth and looked half savage. This giant was watching his men,
+who were working for Joe Arnold. Pedro seemed to have a few words of
+English but he spoke to his men in a mixture of Spanish and his own
+language.</span></p>
+<p class="pnext"><span>“What terrible looking savages!” whispered Prim. “They look as if they
+might be cannibals.”</span></p>
+<p class="pnext"><span>Terry laughed to conceal her fear. “I could even stand having a
+cannibal around if I were sure that Allan and Syd had come through the
+storm. They were flying higher than we were but I’m afraid they
+weren’t high enough, even then.”</span></p>
+<p class="pnext"><span>Terry was looking about her taking stock of the camp, which was
+composed of mud huts, and several shacks that had evidently been built
+recently. On the trail loomed a tall, weathered rock. Terry was
+pointing out to her sister a great crevice in this stone and
+explaining the formation of that wide fissure when Joe Arnold turned
+and saw her. His face flushed angrily. He gave a final order to the
+black leader and then signalled the girls to precede him up the trail.</span></p>
+<p class="pnext"><span>“This is no place for you, after all. I shouldn’t have brought you
+down here where those savages could see you. They belong to a fierce
+tribe of natives living in the clearings in the jungle. Pedro, the
+chief, that big fellow, lives in one of my mud huts down there, so
+you’d better keep away.” Joe Arnold was nervous and stammered as he
+talked.</span></p>
+<p class="pnext"><span>As they reached the summit once more Terry took a good look at him,
+and saw that he was agitated.</span></p>
+<p class="pnext"><span>“Evidently there is something down there that he doesn’t want us to
+see,” whispered Terry to Prim as soon as she could do so without Joe
+hearing her. “When I was interested in that big fissure in the rock,
+he was scared stiff. I’d like to find out what he’s got down there
+that he doesn’t want me to see. I'm going to find out! Just watch me!”</span></p>
+<p class="pnext"><span>“Please don’t, Terry! What do you care about his affairs? We’ve got
+troubles enough as it is. How are we ever going to get away from here?
+How will we fly to Peru with Dad’s papers? My head is whirling with
+problems and all I want to do is to get out of this jam as quickly as
+possible.” Prim ceased whispering as Joe came closer.</span></p>
+<p class="pnext"><span>Terry was looking toward her plane. Bud Hyslop was busily testing the
+motor. The girl could not bear the idea that Bud should touch
+</span><em class="italics">Skybird</em><span>.</span></p>
+<p class="pnext"><span>“If you don’t mind, I think I’d like to do my own repair work, Mr.
+Arnold,” said Terry with as polite a smile as she could muster. “I’ve
+always done my own overhauling and somehow, I’d rather attend to it
+myself. It’s very kind of you to want to be so helpful, but please
+tell Bud to leave my plane alone.”</span></p>
+<p class="pnext"><span>As she started toward the beach where </span><em class="italics">Skybird</em><span> was standing,
+Joe Arnold stepped ahead of her. “Now don’t bother yelling and
+carrying on for there is no one around to hear you except some savages
+and they are my men. I’m boss here, and I tell you to keep quiet. I’m
+giving that plane to Bud Hyslop. It’s his from now on.”</span></p>
+<p class="pnext"><span>“You’re giving him </span><em class="italics">my</em><span> plane!” stormed Terry. “You have no
+right to do that!”</span></p>
+<p class="pnext"><span>“Is that </span><em class="italics">so</em><span>? Well, I’m taking the right!”</span></p>
+<p class="pnext"><span>“But what about us? How can we get away?” cried Prim, almost in tears.
+“If you take our plane, we’ve got to stay here.”</span></p>
+<p class="pnext"><span>“That’s it exactly!” Joe sneered. “Here you stay until I get ready to
+let you go.”</span></p>
+<p class="pnext"><span>He stared at them coldly then turned and walked away.</span></p>
+<div class="vspace" style="height: 4em">
+</div>
+<p class="center pfirst" id="island-prisoners"><span class="large">CHAPTER IV</span></p>
+<p class="center pnext"><span class="large">Island Prisoners</span></p>
+<div class="vspace" style="height: 2em">
+</div>
+<p class="pfirst"><span>Prisoners on a desert island!</span></p>
+<p class="pnext"><span>Dazed by Joe Arnold’s brutality, Terry and Prim looked about them for
+a way of escape, but there seemed no way out. Apart from the few huts
+in the cove where Joe Arnold had his camp, there was no sign of life.
+They were alone and at the mercy of these unscrupulous men who had
+every reason to destroy them.</span></p>
+<p class="pnext"><span>Prim clung to her sister with a grip that hurt. “Whatever will we do
+now, Terry?” she asked in a hoarse whisper. “We’re up against it for
+sure.”</span></p>
+<p class="pnext"><span>But Terry did not hear her. She was watching with flashing eyes as Bud
+Hyslop worked over the plane. The next instant she was running down
+the slope in frantic haste with Prim at her heels.</span></p>
+<p class="pnext"><span>“You let that plane alone, Bud Hyslop! Take your hands off!” Terry
+picked up a large stone, raised it above her head and with a wide
+sweep of the arm, she started to throw the missile, but at that moment
+her hand was seized from behind and a low, mocking voice said, “Not so
+fast, young lady!”</span></p>
+<p class="pnext"><span>Terry turned to face Joe Arnold.</span></p>
+<p class="pnext"><span>“Let me go!” she demanded.</span></p>
+<p class="pnext"><span>Joe Arnold released his grip with a vigorous shove that sent the girl
+spinning across the sands. Prim caught her as she staggered.</span></p>
+<p class="pnext"><span>“Terry, listen to me,” said Prim with decision in her voice. “I don’t
+know what we are going to do, but one thing sure is that you mustn't
+make that man angry. He’s capable of anything. He’d think nothing of
+leaving us here to starve. He’d even kill us if it suited his
+purpose.” Prim shook her sister’s arm. “Don't talk to him at all if
+you can’t do it without getting angry.”</span></p>
+<p class="pnext"><span>Terry was deathly white, not from fear but anger. “But look, Prim! You
+don’t seem to realize that Bud is going to take our plane away from
+us. Now we’ll be real castaways!”</span></p>
+<p class="pnext"><span>Prim searched the sky. “Oh, if Allan and Syd would only come! I’m
+afraid something terrible has happened to them. I didn’t see them
+after the storm struck our plane. Where did they go?”</span></p>
+<p class="pnext"><span>“Don’t talk about it, Prim. Let’s get busy and do something so we
+won’t have time to think. I don’t dare!” Terry said with trembling
+lips.</span></p>
+<p class="pnext"><span>The girls stood watching as Bud and Joe wheeled </span><em class="italics">Skybird</em><span>
+around to head away from the beach and over the water. They started
+the engine. It coughed, it wheezed, it sputtered but at the same time
+the amphibian taxied over the smooth blue waters and took to the air.
+</span><em class="italics">Skybird</em><span> was flying away without them.</span></p>
+<p class="pnext"><span>Joe Arnold waved his hand toward the departing plane, then turned and
+climbed the hill, looking back at the girls with a triumphant grin,
+far more menacing than an angry scowl would have been. Terry knew that
+he had never forgiven her for her part in the rescue of Allan and Syd
+when he had kidnapped them in the far north.</span></p>
+<p class="pnext"><span>Now was his great opportunity to settle matters once for all. This was
+his chance. He had them at his mercy.</span></p>
+<p class="pnext"><span>Everything had worked out to Joe’s advantage. Bud's plane had been
+wrecked some weeks before and on that account they had worked under a
+handicap, waiting to replace it. Now a fine little plane had
+miraculously dropped from the sky at their feet.</span></p>
+<p class="pnext"><span>Joe Arnold smiled. “Luck comes that way to me,” he said to himself. “I
+have a few bad breaks, but often they work out for my good. If I had
+succeeded in getting the Dick Mapes Flying Field six months ago as I
+planned. I’d never have started this island base. At least not so
+soon.—And this has turned out to be the best graft I've ever struck.”</span></p>
+<p class="pnext"><span>Bud Hyslop had flown </span><em class="italics">Skybird</em><span> around the tip of the island to
+the quiet waters of the little harbor. The engine was sputtering and
+protesting but Bud was able to bring the plane down safely on the
+shore. As he turned to Joe, he saluted and exclaimed, “That was some
+trick you played! How did you do it. Chief?”</span></p>
+<p class="pnext"><span>Joe Arnold laughed heartily as he answered: “They thought they were
+following Allan Graham’s plane. I’m almost sure that the girls were
+starting out to go to Peru to see old Peter Langley. When I was up
+there Allan and Syd were away. Probably when they got back they
+learned that I was heading south and decided to catch up with the
+girls and go with them as a protection against </span><em class="italics">me</em><span>.”</span></p>
+<p class="pnext"><span>“What happened to the boys?” asked Bud.</span></p>
+<p class="pnext"><span>“That’s the joke. Allan’s and Terry’s planes both got into a storm. I
+didn’t see Allan’s plane when it was over, so I hope he went to the
+bottom of the Caribbean. Terry didn’t see it either. But she saw mine
+and followed me, thinking it was Allan.”</span></p>
+<p class="pnext"><span>“That was a neat dodge. How did you ever happen to think about it?”
+Bud not only thought his boss was smart, but took pains to tell him
+so.</span></p>
+<p class="pnext"><span>Joe Arnold might have told Bud that he had not planned the ruse and
+that it had been entirely an accident. But instead of that he looked
+wise and said. “I think fast! That’s how I always win!”</span></p>
+<p class="pnext"><span>Meanwhile his two captives had taken shelter from the sun under a
+spreading tree.</span></p>
+<p class="pnext"><span>“How I’d like to down that man!” exclaimed Terry with blazing eyes as
+she watched Joe Arnold’s figure disappear. “This is certainly the
+worst jam we’ve ever been in.”</span></p>
+<p class="pnext"><span>“And Terry, this time there’s no way out that I can see,” said Prim,
+her body trembling with fear and nervousness.</span></p>
+<p class="pnext"><span>But Terry was in a fighting mood. “There </span><em class="italics">is</em><span> a way out, I’m
+sure of it, and what’s more I’m sure we can find it! I had to bite my
+tongue to keep from telling Joe what I thought of him. He looked so
+smug and self-satisfied because he put something over on us.”</span></p>
+<p class="pnext"><span>“You did well, Terry, not to talk to him. I was scared stiff you’d fly
+out at him.”</span></p>
+<p class="pnext"><span>“I probably would have if you hadn’t gripped my arm the way you did.
+Sometimes you spoil a good scrap that way. It might have done Joe
+Arnold good to know what people think about him.”</span></p>
+<p class="pnext"><span>Suddenly a loud shriek broke the silence of the island. Terry and Prim
+clung together but the next minute Terry pointed with a smile to two
+brightly colored macaws above her head.</span></p>
+<p class="pnext"><span>“Did you ever see anything as gay as those birds? Aren’t they
+beautiful!” exclaimed Terry.</span></p>
+<p class="pnext"><span>“I’d like them better if they wouldn’t squawk so loudly,” said Prim.
+“I do believe they have scared me out of a year’s growth.”</span></p>
+<p class="pnext"><span>The macaws shrieked again as if protesting at the intrusion of the
+girls. Other strange birds took up the challenge and answered until
+the air was filled with their noise.</span></p>
+<p class="pnext"><span>“Let’s go!” said Terry with the faintest glimmer of a smile. “They
+don’t seem to appreciate the honor of our company.”</span></p>
+<p class="pnext"><span>Hand in hand the girls climbed the ridge but kept out of sight of
+Joe’s camp. Below them and around a sharp point of rocky shore, they
+looked down over a forest of tropical trees, tall, slender stems and
+around the lower part of their trunks wound a thick tangle of vines.</span></p>
+<p class="pnext"><span>“I wonder if we will ever get out of here alive, Terry?” whispered
+Prim in a strained voice. “You’ve read stories of people who were
+stranded on desert islands and lived there until they were old and
+ready to die.”</span></p>
+<p class="pnext"><span>“Well, this wouldn’t be such a bad place to live,” answered Terry. “If
+we had the family here and a nice house and books and things.”</span></p>
+<p class="pnext"><span>“But I don’t like the idea of starving to death and that’s what we
+would do here.”</span></p>
+<p class="pnext"><span>“We couldn’t starve to death! Look down there, I’ve been waiting for
+you to say something. Those trees to the right are bananas, your
+favorite fruit!”</span></p>
+<p class="pnext"><span>“I’ll say so! Let’s go get them. I’m starved!” Suddenly Prim stopped
+short. “Terry,” she said hopefully, “could two girls live on bananas
+all their lives?”</span></p>
+<p class="pnext"><span>“Possibly, but we wouldn’t need to go on a full banana diet. There are
+cocoanut palms!” replied Terry.</span></p>
+<p class="pnext"><span>Prim brightened up. “And if it comes to the worst, we will try to
+catch some fish.”</span></p>
+<p class="pnext"><span>“Fish!” cried Terry. “You know I </span><em class="italics">hate</em><span> fish!”</span></p>
+<p class="pnext"><span>“Well, clams, oysters! We might find them here!”</span></p>
+<p class="pnext"><span>“They’re even worse,” Terry declared. “</span><em class="italics">You</em><span> can have my share.
+I’ll stick to bananas.”</span></p>
+<p class="pnext"><span>The girls were clambering down the rocky ridge to the clearing. As
+they found their way around a thick mat of low-growing bushes, they
+came suddenly upon a collection of mud huts. They were among them
+before they knew it.</span></p>
+<p class="pnext"><span>The girls drew back to the shelter of the vines, half expecting to be
+surrounded by a howling mob of savages. But not a sound came from the
+huts. Everything was quiet. No sign of life!</span></p>
+<p class="pnext"><span>“Here’s where we’ve got to watch our step, Prim! Savages have a way of
+hiding in ambush and shooting poison arrows at their enemies,”
+whispered Terry.</span></p>
+<p class="pnext"><span>“But we’re not their enemies. We’d—why Terry, we’d try to
+</span><em class="italics">like</em><span> them if they’d give us a chance,” Prim was looking
+anxiously around the shrub as she spoke.</span></p>
+<p class="pnext"><span>Terry started to tiptoe toward the mud huts, although it was not
+necessary to guard her footfalls, for the soft green floor of the
+jungle gave back no sound. Prim tried to pull her sister back but
+Terry jerked away.</span></p>
+<p class="pnext"><span>“Come on. We haven't any need to worry yet. This place is deserted.
+Look at those old mud huts, they are half destroyed by the rains.”
+Terry drew her sister with her as she peered into every hut as she
+passed.</span></p>
+<p class="pnext"><span>“Look at those huts ahead. They’re altogether different. See how
+they’ve twined roots and vines and twigs together. They’re like great
+birds' nests. I think that is a </span><em class="italics">clever</em><span> idea! I wonder if
+these houses belonged to the chief and his family?”</span></p>
+<p class="pnext"><span>“Come on in and make an afternoon call.” Terry laughed as she ran
+toward the doorway, then sprang back in terror.</span></p>
+<p class="pnext"><span>“What’s the matter, Terry? What did you see?” cried Prim, clinging to
+her sister’s arm.</span></p>
+<p class="pnext"><span>“Somebody was in that hut. I saw a child! It was a little one!” said
+Terry, then suddenly she broke loose from her sister and went once
+more toward the hut.</span></p>
+<p class="pnext"><span>“Watch out, Terry,” cried Prim. “Children are apt to scream and that
+will bring the whole tribe down upon us.”</span></p>
+<p class="pnext"><span>At that moment Terry burst into a happy laugh, a little face was
+peering around the side of the opening. A curious, wise little face
+that was wrinkled and hairy.</span></p>
+<p class="pnext"><span>“It’s a monkey!” exclaimed Terry with relief. “Only a cute little
+monkey!”</span></p>
+<p class="pnext"><span>“Isn’t he funny?” Prim was choking with laughter which she tried to
+hide, for the little creature looking up at them seemed so human that
+the girl felt she was being rude to laugh in its face.</span></p>
+<p class="pnext"><span>Terry had a happy thought. She felt in her pockets and brought forth a
+little package. There were half a dozen crackers left from the supply
+Prim had provided.</span></p>
+<p class="pnext"><span>“Say Terry, what’s the idea! Don’t feed him crackers. Are you crazy?”
+pleaded Prim.</span></p>
+<p class="pnext"><span>But Terry was approaching the little animal and offering a bit of the
+cracker. The monkey shrank back, but only for a second. His curiosity
+was too great. As Terry dropped the morsel beside him, he grabbed it
+quickly and with a sudden leap slipped by them to the refuge of a tall
+tree. Then he devoured it greedily.</span></p>
+<p class="pnext"><span>“Don’t be too generous, Terry. We may need every bite we can get
+before this jam is over.”</span></p>
+<p class="pnext"><span>“All right, but I thought I’d better start by making friends with
+everything on the island. He’s a nice little fellow. I wouldn’t be
+surprised if he’d get quite friendly.”</span></p>
+<p class="pnext"><span>The monkey stared down at them with interest and when they moved away
+he scrambled to another tree nearer to them.</span></p>
+<p class="pnext"><span>“Just watch him,” laughed Prim. “Terry, you’ve made a big hit with
+that fellow.”</span></p>
+<p class="pnext"><span>“It’s pleasant to find one friendly creature on the island. Come on
+and let’s see what the inside of these woven houses are like. I’m not
+anxious to sleep out in the open. I think I’ve heard something about
+the moon in the tropics making people crazy.” Terry led the way into
+the hut as she spoke, “Why, it’s not so bad, we might manage to sleep
+in here.”</span></p>
+<p class="pnext"><span>“There’s nothing else to do. I wouldn’t want to take any chances with
+the moon,” said Prim. “We have troubles enough now without losing our
+minds.”</span></p>
+<p class="pnext"><span>Terry laughed. “I guess you’re right. We’ll need all our wits to get
+ourselves out of this jam, and we’d better not get them addled.”</span></p>
+<p class="pnext"><span>Terry’s laugh had relieved their taut nerves.</span></p>
+<p class="pnext"><span>“If I could only be sure that Allan and Syd were safe, I could even
+take this disappointment and get some fun out of the situation. I’m
+really not frightened of Joe Arnold,—very much!” she exclaimed.</span></p>
+<p class="pnext"><span>If Terry could have heard the conversation between Joe Arnold and Bud
+Hyslop at that moment she might have feared them, for Bud had just
+asked, “What are you going to do with those girls? One thing sure
+they’ll never leave this island alive, if I have my way.”</span></p>
+<p class="pnext"><span>Joe Arnold turned on him with an angry snarl. “You haven’t a word to
+say here! What’s more you never will have. Just wait until you get
+your orders from me. I’ll see that they don’t get back to civilization
+for a long time, perhaps never, but I’ll settle with them in my own
+way and when I get ready. I want no suggestions from you or anybody.
+You understand? I’m boss here on this island!”</span></p>
+<p class="pnext"><span>“Yes, that’s what I meant,” replied Bud Hyslop.</span></p>
+<p class="pnext"><span>“And if they come into this camp just keep your eye on them.
+Especially Terry! She was here about two minutes and was nosing about
+the big rock as if she knew I had things hidden there,” snarled Joe
+Arnold.</span></p>
+<p class="pnext"><span>“Did she see anything?” asked Bud.</span></p>
+<p class="pnext"><span>“No, I got her away in time, but if she comes back she is apt to go
+right there. And if she’d ever get hold of those papers, we wouldn’t
+be safe anywhere.”</span></p>
+<p class="pnext"><span>“Do you think Terry suspects and will try to get hold of them before
+they get away from the island?” inquired Bud once more.</span></p>
+<p class="pnext"><span>“They’re not going to get away. At least not until I’m safe.”</span></p>
+<p class="pnext"><span>But Terry and Prim knew nothing of this threat against their lives.
+They went about the preparation for the night and their greatest fear
+was from animals and insects that were strange and terrifying to them.</span></p>
+<p class="pnext"><span>“I’m awful hungry, Terry. Come with me to get some bananas,” said Prim
+as she started toward the clearing.</span></p>
+<p class="pnext"><span>“They look green to me, you’re apt to get good and sick if you eat
+them. Prim. I don’t think I would,” cautioned Terry.</span></p>
+<p class="pnext"><span>“I’m sick now, I’m so hungry, so it won’t hurt to be a little sicker,”
+answered Prim as she reached up for one of the green bananas. “Anyway
+I think they’re ripe.” She passed one to Terry, who stripped back the
+skin and bit into it.</span></p>
+<p class="pnext"><span>Terry rolled her eyes ecstatically. “Prim, we’re in luck! I’ve never
+tasted anything so good in all my life. I’m sure I could live on
+bananas like these. Now, I </span><em class="italics">know</em><span> we won’t starve to death.”</span></p>
+<p class="pnext"><span>Suddenly Prim caught her sister by the arm. From the clearing they
+could see a strip of the sea and across their line of vision came a
+small tramp steamer. It was headed from the south and was making
+straight toward the island.</span></p>
+<p class="pnext"><span>“Now’s our chance! We’ll signal them and they will come to the
+rescue.” Prim was trembling with excitement. Together they ran to the
+top of the ridge. The heat was intense but the girls carried their
+flying coats with them, hoping that they would have a chance to
+escape.</span></p>
+<p class="pnext"><span>The girls waved their hands toward the steamer, but their hearts sank
+as it steamed past the headland and turned toward the harbor. On the
+shore of the cove great preparations had begun. A launch was put out
+from the beach and made toward the ship. Bales were dropped into the
+boat and taken ashore. A dozen trips were made with loads of food in
+cases, gasoline in metal drums and bale after bale of goods.</span></p>
+<p class="pnext"><span>“Whatever does it all mean?” asked Prim in her sister’s ear.</span></p>
+<p class="pnext"><span>“It’s my opinion,” declared Terry, “that every word we’ve heard
+against that man is true. Someone said he was a smuggler. Now I
+believe it.”</span></p>
+<p class="pnext"><span>Joe Arnold was busy directing the blacks as they stowed away the bales
+in the old mud huts in the camp.</span></p>
+<p class="pnext"><span>“What kind of smuggled goods would come in bales?” asked Prim. “I
+can’t imagine what it can be.”</span></p>
+<p class="pnext"><span>“It might be lots of things, but probably it’s silk. There’s big money
+in that,” explained Terry.</span></p>
+<p class="pnext"><span>Terry did not voice all her thoughts. She was thinking that they had
+very little chance of getting back to their homes with the secret of
+Joe’s smuggling base known to them. She realized that the situation
+was far more serious than she imagined. He was not merely attempting
+to get the flying field away from her father. Joe Arnold was mixed up
+in a crooked business. He would take desperate means to keep them from
+getting back to tell where his smuggling hang-out was situated.</span></p>
+<p class="pnext"><span>Terry started back down the slope, dragging Prim with her. “Come away,
+I hate that man! I don’t want to know what he’s doing.”</span></p>
+<p class="pnext"><span>Night was fast approaching and the girls watched with dread the
+shadows creeping down over the jungle. They put their heavy flying
+coats on the ground, gathered large banana leaves for pillows and
+decided to sleep out in the open.</span></p>
+<p class="pnext"><span>But no sooner had darkness come than weird sounds filled the jungle
+behind them. Crickets shrilled in the trees. Wild animals howled and
+slinking forms scurried by at the edge of the forest. Frogs kept up a
+continual, deafening chorus, and there were shrill cries of night
+birds. Terry and Prim held each other closely and stared into the
+darkness toward the jungle, trembling with fear.</span></p>
+<p class="pnext"><span>“Look at the sky, Prim,” said Terry trying to keep her mind from the
+strange and terrifying sounds of the tropical night. “You can see
+millions more stars down here than we can at home.”</span></p>
+<p class="pnext"><span>But even the brilliance of the moon could not hold their attention for
+long at a time. The rustling sounds all around them made their hearts
+thump.</span></p>
+<p class="pnext"><span>“I can’t stand it out here, Terry! Let’s go into the hut,” Prim
+pleaded in an anxious voice.</span></p>
+<p class="pnext"><span>Although the noises continued, the girls felt a certain protection
+when inside the four walls, even though the opening in the front was
+no protection at all.</span></p>
+<p class="pnext"><span>“Now Prim, I want you to go to sleep and get some rest, and I’ll
+watch. In an hour and a half I’ll waken you and you can take your
+turn.” Terry took Prim in her arms as if she were a small child.</span></p>
+<p class="pnext"><span>Prim burst into tears and threw herself on the floor of the hut,
+burying her head in her sister’s lap. Terry stroked her head
+soothingly. And Prim was soon fast asleep.</span></p>
+<p class="pnext"><span>When the hour and half was up, Terry did not have the heart to waken
+Prim. She looked pale and tired. Moving her head to the pillow of
+banana leaves, Terry lay down beside her. She had no desire to sleep.</span></p>
+<p class="pnext"><span>Once she thought that some small animal had come into the hut. She sat
+up and strained her eyes into the dark corners, but could see nothing.
+The moon had set and the black night seemed a protection after the
+bright moonlight. Terry grew very drowsy. She had no energy with which
+to waken Prim.</span></p>
+<p class="pnext"><span>The next thing Terry knew it was broad daylight. The sun was already
+sending its fiery blasts toward the earth. Prim was still sleeping;
+she had never stirred.</span></p>
+<p class="pnext"><span>Terry sat up suddenly. In the doorway was a woman, a black savage. The
+girl’s heart stopped beating for a moment. The strange creature stared
+at her and then giving forth a loud, weird, throaty call, she clapped
+her hands to beckon to her followers, who answered with yells and
+howls.</span></p>
+<p class="pnext"><span>Prim awoke with a cry of terror. The two girls, pale and terrified,
+stood waiting their doom. They were trapped in a hut and outside was a
+band of savage blacks. What terrible fate was in store for the
+trembling victims?</span></p>
+<div class="vspace" style="height: 4em">
+</div>
+<p class="center pfirst" id="the-cave-of-wonder"><span class="large">CHAPTER V</span></p>
+<p class="center pnext"><span class="large">The Cave of Wonder</span></p>
+<div class="vspace" style="height: 2em">
+</div>
+<p class="pfirst"><span>The jungle woman stepped back and was talking excitedly with the other
+savages. Terry grabbed Prim by the arm. “Let’s get outside,” she said.
+“There may be some way of escape even yet. Don’t give up!”</span></p>
+<p class="pnext"><span>The two girls stepped out of the hut to be met by the grinning faces
+of a dozen or more native women, who rolled their eyes and jabbered
+shrilly. Prim clutched at Terry.</span></p>
+<p class="pnext"><span>“They’re cannibals! They'll eat us! Look at their sharp teeth. Let’s
+run!”</span></p>
+<p class="pnext"><span>But the woman who had fiercely stared at them in the hut now stepped
+forward and offered a gift. It was a big package, something wrapped in
+leaves.</span></p>
+<p class="pnext"><span>Terry accepted it, trying to force a smile and while she opened the
+leaves she said in an undertone to Prim, “We’ll have to make them a
+gift in return. What have we got? Think fast, Prim.”</span></p>
+<p class="pnext"><span>For answer Prim unfastened the silver necklace with its bright pendant
+and Terry passed it to the woman. There were grunts of approval,
+smiles and nods as the other savages pressed close to examine the
+royal gift. They all seemed satisfied.</span></p>
+<p class="pnext"><span>Terry had opened the package now and disclosed a big fish baked to a
+turn and garnished with leaves. “Horrid stuff!” she thought. “How I
+</span><em class="italics">hate</em><span> fish! But I’d better pretend to like it!”</span></p>
+<p class="pnext"><span>Terry broke a bit from the fish, tasted it and tried to look pleased.
+Then she passed some to Prim and offered to share her gift with the
+women.</span></p>
+<p class="pnext"><span>“Me Pedro’s wife. Me Rosa. Come!” said the leader.</span></p>
+<p class="pnext"><span>The savage repeated the words as if they meant nothing to her. Perhaps
+Pedro had spent hours teaching her those few phrases.</span></p>
+<p class="pnext"><span>“Don’t go, Terry,” begged Prim. “They’ll get us to their village, then
+eat us!”</span></p>
+<p class="pnext"><span>But Terry laughed. “Why no, Prim, we’ve exchanged gifts. We’re
+friends, like sisters.”</span></p>
+<p class="pnext"><span>Prim grumbled as Terry nodded her willingness to go and followed after
+the chief’s wife who led the way straight toward the jungle. At first
+the girls could not see an opening in that wall of tangled leaves, but
+when they reached the trees, Rosa led them into a dark green tunnel
+and Terry and Prim followed, wondering what was coming next.</span></p>
+<p class="pnext"><span>They must have walked for half a mile through that passageway cut from
+the creepers, when the girls saw light ahead and soon emerged on a
+clearing, among mud huts, a swarm of natives and naked children.</span></p>
+<p class="pnext"><span>When the girls appeared, a cry went up from the blacks that sent a
+chill to the heart. It was a sharp, penetrating cry that made shivers
+run up and down the spine.</span></p>
+<p class="pnext"><span>But only for a moment were the girls afraid. The natives were
+friendly, there was no doubt about that. The children stared at them
+with wonder in their big eyes. The girls lost no time in giving the
+little ones the few pieces of chocolate they had in the deep pockets
+of their flying coats.</span></p>
+<p class="pnext"><span>“I’ll take back everything I ever said, Prim, about you wearing a
+necklace with flying togs and making me, as well as yourself, carry a
+supply of chocolate. They have served us in good stead today,” said
+Terry, her eyes glowing as she watched the children devour the sweets.</span></p>
+<p class="pnext"><span>Prim was smiling triumphantly at Terry. “Your apology is accepted, my
+dear! Only don’t let it happen again! And if they are going to spread
+a feast for us, I wish they’d hurry up, for my stomach is crying for
+food. Those bananas I ate last night weren’t so very filling after
+all. And I don’t care whether I ever see another one.”</span></p>
+<p class="pnext"><span>“No wonder, Prim! I was counting how many you ate and after the
+twelfth I stopped,” answered her sister with a laugh.</span></p>
+<p class="pnext"><span>The girls tried by gestures and smiles to indicate their pleasure at
+everything around them. They complimented Rosa, the chief’s wife, for
+her fine hut. They admired the babies and by different signs expressed
+their delight. That they were understood was shown in the shining face
+of their hostess.</span></p>
+<p class="pnext"><span>Prim gave a sigh of relief as a young native girl, walking like a
+princess, was seen approaching with a huge bowl of steaming food.
+Plaited mats were spread for the guests and food was offered them
+while the whole village made a circle around them to watch them eat.</span></p>
+<p class="pnext"><span>Terry, never a big eater, was inclined to be a bit fussy about her
+food, but today she ate a portion of everything offered, whether it
+tasted good or not. Prim watched her in surprise and chuckled at the
+joke on her sister as she pretended to enjoy the fish.</span></p>
+<p class="pnext"><span>“I don’t care, Prim, go on and make fun of me! I’d rather eat than be
+eaten!” she retorted. “It’s not too late for them to change their
+minds, even yet!”</span></p>
+<p class="pnext"><span>Half an hour went by and Terry and Prim had succeeded in making
+friends with the shy little children. Suddenly Pedro walked into the
+clearing. He was scowling angrily. Once more the girls started in
+fear.</span></p>
+<p class="pnext"><span>Pedro explained in the few words of English that he knew, how Joe
+Arnold was very angry and had hit him.</span></p>
+<p class="pnext"><span>“Joe Arnold much bad man! Bud, much, much bad, too! He kill you,
+maybe!”</span></p>
+<p class="pnext"><span>“That’s what I expected!” whispered Terry to her sister.</span></p>
+<p class="pnext"><span>“No can do!” the black dramatically cried, waving an arm around his
+little settlement. “No! My people, they watch, they hide you far away!
+Joe no find!”</span></p>
+<p class="pnext"><span>Terry explained to the chief what she wanted to do. They must put up
+some sort of signal so that Allan and Syd, their friends, would see it
+if they flew over the island.</span></p>
+<p class="pnext"><span>“If only we had some white cloth,” said Prim. “We could put out one of
+those signals we talked about once, a big letter T, on the top of a
+ridge. I’m sure the boys would understand that.”</span></p>
+<p class="pnext"><span>“They might if we had cloth to do it with, but we haven’t. So that’s
+out!” answered Terry.</span></p>
+<p class="pnext"><span>Pedro had risen suddenly. He understood. He called to his wife and
+spoke to her in their own language. Rosa bobbed into her hut as fast
+as she could and in a few minutes returned bringing a roll of white
+goods which she presented to the girls.</span></p>
+<p class="pnext"><span>At that moment a sharp whistle broke the quiet of the jungle village
+with a discordant note. Pedro jumped to his feet and the next moment
+Rosa was shoving the girls before her into the hut. Someone was
+coming! The whistle was a warning from one of the boys who was
+guarding the village.</span></p>
+<p class="pnext"><span>When Joe Arnold strode into the settlement a few minutes later, Rosa
+was busily plaiting a mat. All the women were at work and scarcely
+looked up as the man faced Pedro.</span></p>
+<p class="pnext"><span>“You lazy good-for-nothing! Get back to work! This is my busiest day
+and you lay off! The men won’t work unless you’re there!”</span></p>
+<p class="pnext"><span>Pedro knew that this was no time to show fight. “Yes sir! I come
+by-em-by,” he answered.</span></p>
+<p class="pnext"><span>“Now!” shouted Joe. Then he turned with a menacing glare at Rosa. “Did
+those girls sleep here last night?” He shook his fist at the woman.</span></p>
+<p class="pnext"><span>Rosa jabbered in reply and looked bewildered, so Joe turned to Pedro
+and repeated the question.</span></p>
+<p class="pnext"><span>Pedro shook his head.</span></p>
+<p class="pnext"><span>“Then what’s happened to them? Not that I care much!” stormed Joe as
+he stared about him.</span></p>
+<p class="pnext"><span>“We no see ’em!” repeated Pedro.</span></p>
+<p class="pnext"><span>Joe Arnold went from one hut to another, peering inside. As he neared
+the chief’s large house, he was met by Rosa’s broad grin. She was
+sitting in the doorway and her large body completely filled the
+opening. She refused to get up, pretending not to understand what he
+wanted.</span></p>
+<p class="pnext"><span>Suddenly Joe turned and faced Pedro. “Now let me tell you one thing,
+Pedro. Listen to what I’ve got to say! If you or your people shelter
+those girls, you’ll be sorry. I’ll clean you out!” And with that
+threat Joe Arnold strode back through the jungle track.</span></p>
+<p class="pnext"><span>When he got far enough away, Rosa began to laugh in a low rumble which
+gradually increased in volume, until it reached a high, full roar. The
+other women joined in and the clearing was filled with their raucous
+shouts.</span></p>
+<p class="pnext"><span>That was their answer to Joe Arnold’s threat.</span></p>
+<p class="pnext"><span>It was very evident that the girls were being treated as honored
+guests. Terry found it hard to sample all the food that was brought
+her, but Prim was in her glory. She liked to eat. She liked strange
+dishes, and she ate enough for two. Terry had to pretend to be ill in
+order not to offend her hostess. And then as suddenly she had to
+pretend to get well again, for the kind-hearted woman insisted that
+she must give her medicine.—And it was made of fish oil!</span></p>
+<p class="pnext"><span>That night when Pedro returned from the shore, the news he brought was
+not good. Joe was planning on taking the girls in the launch over to a
+small island to the eastward where they would be absolutely alone.
+There were still wild beasts on that island. It meant certain death.</span></p>
+<p class="pnext"><span>That night the girls slept in the hut belonging to Pedro. They
+stretched out on mats and the native women stood guard. Not a breath
+of air was stirring in that close interior. Terry and Prim felt as if
+someone were clutching at their throats it was so hard to get a
+breath. They were not troubled with fears of capture, for Pedro had
+stationed sentinels beyond the clearing to give warning if anyone
+approached. But in spite of this the girls slept fitfully. The air was
+stifling.</span></p>
+<p class="pnext"><span>At the first glow of dawn Rosa appeared at the door of the hut. She
+said, “Come!” And there was an excited light in her eyes as she rolled
+them.</span></p>
+<p class="pnext"><span>The girls lost no time in obeying her command. A guard of young men
+went ahead, then came Pedro and his wife, followed by Terry and Prim
+with two tall and powerful guards. The young women of the tribe came
+next, and the procession ended with more guards.</span></p>
+<p class="pnext"><span>“We don’t know where we’re going,” said Prim in a whisper to her
+sister as they walked along. “But we’re going in style!”</span></p>
+<p class="pnext"><span>It was a long walk through the jungle passage, a mile perhaps, but it
+was hard for the girls to tell how far they had come. The damp heat of
+the tunnel was oppressive. Perspiration streamed from their bodies.
+Their thick clothes were unbearably hot, although one of the guards
+carried their heavy coats.</span></p>
+<p class="pnext"><span>Terry and Prim arrived at the next clearing, pale, hollow-eyed and
+ready to drop. But the end of their journey was not yet. They had
+reached the edge of the jungle and now had to climb up a steep ridge
+to a broad plateau. But the hot air was a relief after the humid
+atmosphere of the passage through the vines and creepers of the
+jungle. Suddenly they stopped, looking toward the sky, Joe Arnold
+might be watching from the air.</span></p>
+<p class="pnext"><span>Terry and Prim scanned the horizon for signs of an approaching plane.
+It was hopeless. They both knew that it would never occur to the boys,
+if they were saved from the storm, to hunt for them to the eastward.</span></p>
+<p class="pnext"><span>Finally as they reached the ridge, the blacks stopped and prepared to
+camp.</span></p>
+<p class="pnext"><span>“What’s the matter with these people?” whispered Prim. “Do they
+imagine they can hide us on the very top of the ridge? What are they
+going to do?”</span></p>
+<p class="pnext"><span>“I haven’t the least idea, Prim, but I’m going to trust Pedro. I
+believe he is honest and really wants to help us,” answered Terry as
+she watched the blacks.</span></p>
+<p class="pnext"><span>Suddenly Pedro dropped to the ground. Terry looked just in time to see
+the earth swallow him up. She rubbed her eyes and looked again. Pedro
+had disappeared. Then Terry saw what was going on. Evidently these
+people had a subterranean hiding place, the opening of which was at
+the summit of the ridge. The entrance was narrow and Rosa had some
+difficulty in getting her large body through. She squeezed and
+struggled, and Pedro pulled from below until she finally slid through.
+Terry was invited to follow.</span></p>
+<p class="pnext"><span>What were they up to? How could she explain to them that she must be
+above ground to watch for her friends?</span></p>
+<p class="pnext"><span>“Come!” The girls heard Rosa’s voice coming from the cavern. Terry sat
+down and putting her feet through the opening, found that they rested
+on a slippery rock. Getting a foothold she put up a hand for Prim.
+Slipping and sliding down the slope the two girls found themselves in
+a strange purple glow. When they reached the first level place, Pedro
+and Rosa were waiting for them.</span></p>
+<p class="pnext"><span>Terry stood gazing about her. They were in an enormous cave, lined
+with crystals, and the sunlight which shone through the opening,
+caught the facets of the crystals and shot out in flashes of color:
+red, orange, yellow, blue, indigo, violet, and all the thousands of
+shades between. It was a gorgeous spectacle. The girls were
+breathless. They had often read of the crystal caves and wished that
+they could see one.</span></p>
+<p class="pnext"><span>Finally Terry turned to her sister. “Would you believe it, Prim? For a
+few seconds I thought something had happened to us, that we had fallen
+down and been killed.”</span></p>
+<p class="pnext"><span>“Killed! What are you talking about, Terry? Have you gone crazy from
+all this excitement?” cried Prim anxiously.</span></p>
+<p class="pnext"><span>“I thought—well you see I wondered if this was heaven. It’s so
+beautiful, it might easily be. Even yet I can hardly believe it’s
+real,” said Terry with a little catch in her voice. “I want to cry!”</span></p>
+<p class="pnext"><span>“You cry! That’s a joke! Let me see you do it once!” teased Prim.
+“It’s not often you feel that way, so go ahead. Don’t let me stop
+you.”</span></p>
+<p class="pnext"><span>But Terry did not cry. She turned to Pedro and Rosa and thanked them
+for bringing her to this wonderful cave.</span></p>
+<p class="pnext"><span>Sea water rose in the cave and made a lake. Finally as their eyes got
+used to the darkness below they could see a boat. It was built of
+woven twigs and covered with skin. A small boy who had followed them
+into the cave, dived into the dark water and swam to the boat. Others
+followed and the small craft was soon full of little dark figures.
+With whoops of delight they paddled the boat wildly about the lake.</span></p>
+<p class="pnext"><span>“Even savage boys have to show off,” said Prim with a laugh.</span></p>
+<p class="pnext"><span>“Don’t laugh, Prim. They are doing their best to entertain us,” Terry
+answered as she clapped her hands, which sent the boys into still
+wilder stunts.</span></p>
+<p class="pnext"><span>The girls were now in a worse jam than ever. Here they were perfectly
+safe, they felt sure. But how could they watch for Allan and Syd? How
+could they signal for help? When Terry explained this to Pedro, he
+produced the white cloth that Rosa had given them. Terry tore it to
+the proper size and shape to make an enormous letter T. Much against
+his wishes Pedro allowed the girls to climb out of the cave and direct
+the spreading of the cloth on the ground, where it could be seen from
+the sky.</span></p>
+<p class="pnext"><span>“It’s only a long chance, Prim, but it’s the only thing I can think
+of. If we made a smoke signal or anything like that, Joe Arnold would
+suspect at once,” explained Terry.</span></p>
+<p class="pnext"><span>“I know, but don’t you think he’ll suspect if he sees this white cloth
+spread out on the ground?” asked Prim.</span></p>
+<p class="pnext"><span>Terry expressed her fears to Pedro, who was arranging the work of some
+men near-by. The big chief assured her that he would attend to that.
+His people would camp on the hill, then Joe Arnold would think that
+the cloth had something to do with the work of the tribe.</span></p>
+<p class="pnext"><span>In less than an hour one or two huts were ready, a crude cooking place
+had been built and the women were preparing breakfast.</span></p>
+<p class="pnext"><span>Terry and Prim wanted to stay above ground, but Pedro shook his head
+vigorously and explained that Joe Arnold was “very much bad,” and was
+planning to take them away where they would surely be killed.</span></p>
+<p class="pnext"><span>Terry and Prim slid down the opening and reached the level in safety.</span></p>
+<p class="pnext"><span>“After all, Prim, we have nothing to complain of. It’s a gorgeous
+place to be imprisoned. Let’s make the best of it and enjoy it, for
+we’re not apt to see anything like it again,” comforted Terry as she
+saw Prim’s frowning face.</span></p>
+<p class="pnext"><span>“It’s all right here, but I’d rather stay in the open. Besides I’m
+beginning to like that savage tribe. I’ll say that Pedro is a prince.”</span></p>
+<p class="pnext"><span>“Oh no, he isn’t,” laughed Terry. “He’s the whole show! He’s the Big
+Chief. He’s king! And Rosa is a queen, a very big queen!”</span></p>
+<p class="pnext"><span>The queen herself brought them their breakfast, more strange food,
+more fish, more bananas. Pedro had already eaten and was on his way
+with his men to the beach to help Joe and Bud.</span></p>
+<p class="pnext"><span>The morning seemed long. There was nothing to do but watch the flashes
+of color in the dome. And even Terry lost some of her enthusiasm at
+the monotony of the playing light. Finally it got on her nerves.</span></p>
+<p class="pnext"><span>Suddenly a black face appeared at the opening. A hissing sound came
+from the thick lips, then the face disappeared.</span></p>
+<p class="pnext"><span>“What do you make of that?” asked Prim. “Do you suppose that hiss can
+be translated to mean the same as in our language? Are they hissing
+us, and why?”</span></p>
+<p class="pnext"><span>Terry was already making her way up the steep wall of the cave. “I
+don’t know what it’s all about, but I’m going to find out,” she called
+back.</span></p>
+<p class="pnext"><span>As Terry reached the opening, she heard the hum of a motor overhead.
+Then she ducked back quickly, for there was only one man in the plane.
+He had banked and circled low, and Terry had seen that mocking face.</span></p>
+<p class="pnext"><span>It was Joe Arnold!</span></p>
+<div class="vspace" style="height: 4em">
+</div>
+<p class="center pfirst" id="trapped"><span class="large">CHAPTER VI</span></p>
+<p class="center pnext"><span class="large">Trapped!</span></p>
+<div class="vspace" style="height: 2em">
+</div>
+<p class="pfirst"><span>For a moment Terry withdrew her face from the opening, then like a
+flash she had scrambled through the hole at the surface and was
+standing in plain view of the flyer. What’s more, she was sobbing and
+shaking her fist toward Joe Arnold.</span></p>
+<p class="pnext"><span>“It’s </span><em class="italics">Skybird</em><span>! He’s taking our plane!” she cried.</span></p>
+<p class="pnext"><span>As if mocking her, </span><em class="italics">Skybird</em><span> flipped its tail gracefully and
+zoomed into the blue.</span></p>
+<p class="pnext"><span>As Terry stepped on to the plateau, the women surrounded her, trying
+to hide her from the man watching them from above. Terry could not be
+sure that he had seen her, but Prim had no doubt in the matter.</span></p>
+<p class="pnext"><span>“Now you’ve done it, Terry Mapes!” she cried. “Why don’t you think
+before you do such a thing? You’re apt to get these people into
+trouble! Joe said he’d clean them out!”</span></p>
+<p class="pnext"><span>“Oh, I know, Prim. I’m sorry I did it, but just then I couldn’t help
+it. I was crazy! I can’t bear to have </span><em class="italics">Skybird</em><span> used by a
+smuggler. I’ll feel as if my little plane were dirty after he’s had
+his hands on her. Prim, what are we going to do?”</span></p>
+<p class="pnext"><span>But Prim had no suggestions to offer. They were prisoners without
+question. How long they would have to remain here, she had no idea.
+They knew only too well what their father and mother were thinking. If
+Allan and Syd had escaped destruction in the storm, their report would
+leave no doubt in Dick’s mind, at least, that the girls had been lost
+in the hurricane. Terry knew that the suspense would mean torture for
+her parents. How thankful she was that Sally Wyn was with them to
+comfort them and, with her cheerful ways, keep them hoping that all
+was well.</span></p>
+<p class="pnext"><span>If Dick and Alice could only have seen them surrounded by a horde of
+blacks, they would not have been any more hopeful of their final
+escape.</span></p>
+<p class="pnext"><span>Joe Arnold had flown off into the blue with </span><em class="italics">Skybird</em><span>, and
+Terry’s heart was sore and bitter with anxiety and anger against her
+father’s enemy.</span></p>
+<p class="pnext"><span>If she could have known Joe’s thoughts at that moment, she would have
+realized that she was in grave danger. Joe Arnold had planned to
+search for the girls as soon as the important matter of the smuggled
+silk had been attended to. He guessed that Terry was on her way to
+Peter Langley’s mine to plead with him to renew the contract and
+extend the option on the flying field. He had an idea that she was
+carrying some money.</span></p>
+<p class="pnext"><span>Joe Arnold was not in a hurry. He had the girls safely on the island.
+They were his prisoners. He could take his time in getting the papers
+from them and not run any risk by rushing it. So when the captain of
+the tramp steamer decided not to leave the harbor that night, Joe and
+Bud were only too glad to go on board for a good meal, and it was well
+on toward morning when they reached their huts and prepared to sleep.</span></p>
+<p class="pnext"><span>In the morning when Joe Arnold went to find the girls, they had
+disappeared. Pedro seemed truthful when he declared that his people
+knew nothing about them.</span></p>
+<p class="pnext"><span>“If we see ’em, we catch ’em for you!” he said.</span></p>
+<p class="pnext"><span>Pedro’s savage grin assured Joe that he would be only too glad to do
+it and was eager to earn the reward which Joe offered to any of the
+tribe who would bring the girls to him.</span></p>
+<p class="pnext"><span>But it did not take Joe long to suspect that the blacks were
+protecting the girls. He threatened Pedro with destruction of his
+village, he swore that no one would be left alive on the island, but
+the chief merely nodded and promised that he would find the girls and
+bring them to the camp.</span></p>
+<p class="pnext"><span>Joe knew that he did not dare to molest the blacks. He could rage and
+threaten, but he dared not carry out his threats. Once angered, they
+were ugly and he and Bud might be caught and tortured.</span></p>
+<p class="pnext"><span>So Joe and Bud decided to wait their chance. Whenever the work at the
+beach let up for a moment, Bud set out in search of Terry and Prim. He
+was anxious to curry favor with Joe by finding the girls himself and
+bringing them into camp.</span></p>
+<p class="pnext"><span>So as soon as Joe Arnold flew off in </span><em class="italics">Skybird</em><span> with a load of
+smuggled silk to be turned into the much needed cash, Bud took this
+chance to look about the island.</span></p>
+<p class="pnext"><span>He left Pedro in charge at the beach and began wandering around the
+jungle, skirting the island. With the Big Chief out of the way he
+thought he could terrify the other members of the tribe and learn
+where the girls were hidden.</span></p>
+<p class="pnext"><span>But Pedro had suspected his plan and, taking a short cut through the
+jungle, he hurried to the cave and talked to the girls.</span></p>
+<p class="pnext"><span>“Let him come!” cried Terry. “I’m not afraid of Bud Hyslop. He’s a big
+braggart, but it’s all a bluff. He’s just a coward!”</span></p>
+<p class="pnext"><span>“I’d like to get Bud down in this cave and keep him here,” said Prim
+angrily. “I’d like to keep him here forever.”</span></p>
+<p class="pnext"><span>“I can’t see how that would help any,” answered Terry. “What we want
+to do is to get away from the island and down to Peru with this paper.
+And we’ll not get away by making a prisoner of Bud. That won’t help in
+the least.”</span></p>
+<p class="pnext"><span>Pedro was shaking his head. He frowned and his face looked fierce and
+cruel. The girls felt shudders go through their bodies and realized
+that the tribe might be really savage if roused to anger.</span></p>
+<p class="pnext"><span>Suddenly Pedro spoke, and in his halting, broken sentences he
+expressed his ideas. Bud was on the way to the new village, and when
+he came, if he made trouble, it would be good to put him down in the
+cave. Besides they might make him talk so that they would know what
+Joe Arnold was planning to do.</span></p>
+<p class="pnext"><span>“And where will </span><em class="italics">we</em><span> stay?” asked Terry.</span></p>
+<p class="pnext"><span>“My house!” replied the chief with a wave of his hand toward the hut.
+“Pedro’s house, your house!” And Rosa led the girls inside the hut.</span></p>
+<p class="pnext"><span>Pedro covered the opening to the cave with straw mats and giving
+orders for his followers to guard the girls well, he left to go back
+to the beach.</span></p>
+<p class="pnext"><span>But Terry and Prim were far less comfortable here than they had been
+in the cave. Here there was not a breath of wind, for Pedro’s wife
+seated herself in the opening and kept out what little air there was.</span></p>
+<p class="pnext"><span>Finally Terry could stand it no longer. She jumped up and shoved Rosa
+aside. The big black woman laughed as she watched Terry and Prim
+mopping the perspiration from their faces.</span></p>
+<p class="pnext"><span>At that moment one of the half grown native girls ran with a cry of
+fear to Rosa. She pointed back toward the far side of the ridge, where
+a man was scrambling up to the settlement.</span></p>
+<p class="pnext"><span>There was no time to hide away. Terry and Prim stood face to face with
+Bud Hyslop.</span></p>
+<p class="pnext"><span>Bud laughed as he had seen Joe Arnold do, a sarcastic, triumphant
+laugh. He moved toward the girls aggressively, but Rosa was by their
+side and was shoving them gently but firmly backward.</span></p>
+<p class="pnext"><span>“You’re to come with me, girls!” exclaimed Bud. “Hurry up and get
+going! I’ve got you now!”</span></p>
+<p class="pnext"><span>Rosa pulled them back with a vigorous hand as Bud rushed at them. But
+his foot slipped, he stumbled and sprawled headlong for a second then
+went sliding down through the earth. For Rosa had cleverly moved
+around the straw mats in a straight line from Bud, and when he charged
+at them, the force of his stride sent him slipping and sliding down
+the slippery walls of the cave. He did not stop until he had bumped
+all the way down and splashed into the dark waters below.</span></p>
+<p class="pnext"><span>“Help, help!” he cried. “You black rascals, get me out of here!”</span></p>
+<p class="pnext"><span>A young native hauled him out to safety. Bud was half stunned and glad
+enough to stay in the cave for a little while until he could think
+what to do. He finally called Terry, but the girl refused to go down
+into the cave to talk to him.</span></p>
+<p class="pnext"><span>Hour after hour slipped by. Bud saw none of the brilliant colors of
+the crystals. He was sore and disgusted, his plans had all gone wrong,
+and instead of being praised by Joe, he would be despised and blamed
+and ridiculed.</span></p>
+<p class="pnext"><span>A strong guard was placed at the opening of the cave and Terry and
+Prim could enjoy the air. Muggy and oppressive though it was, it was
+better than the stifling closeness of the hut.</span></p>
+<p class="pnext"><span>Rosa glowed with triumph, taking all the credit to herself for
+trapping Bud, and for the rest of the day she was in high spirits,
+commanding the young blacks as if they were her slaves.</span></p>
+<p class="pnext"><span>It seemed to Terry and Prim that these people were eating half their
+time. Huge amounts of fish and fruit were consumed. They started at
+sunrise and only ended at bedtime.</span></p>
+<p class="pnext"><span>Terry and Prim slept that night in the chief’s hut, with the faithful
+Rosa sleeping on a mat before the door. They rose at dawn when the
+blacks began to stir.</span></p>
+<p class="pnext"><span>It was still early in the morning when they heard the drone of a motor
+in the sky and hurried into the hut. For now the real trouble was
+beginning. Joe Arnold had returned. </span><em class="italics">Skybird</em><span> soared, banked
+and circled about the island. Joe headed her low over the plateau, so
+low that Terry, peering through the matted vines, saw Joe’s face
+distinctly. His grin of triumph was always unpleasant, now it was
+threatening as well.</span></p>
+<p class="pnext"><span>Terry’s face went white with anger as she saw </span><em class="italics">Skybird</em><span>.</span></p>
+<p class="pnext"><span>“How dare he use our little plane for his shady business! The crook!”
+she exclaimed.</span></p>
+<p class="pnext"><span>If Terry and Prim could have heard the Big Chief when Joe Arnold
+returned to the beach, they would not have been so trusting. For Pedro
+told Joe that his men had captured the girls and had them safely in
+the cave. Bud Hyslop was there now to guard them.</span></p>
+<p class="pnext"><span>Joe nodded approvingly. Things seemed to be working out just as he
+planned. His trip to the mainland had been successful and now he was
+free to fly to South America where he would attend to that little
+matter of taking up the option on the Dick Mapes Flying Field. But in
+the meantime he would search the girls and see if they were carrying
+the money.</span></p>
+<p class="pnext"><span>“Guess I’ll go on up and take a look at them,” said Joe carelessly.
+“You might fill up the plane with gasoline. I may need to go out on
+another trip soon.”</span></p>
+<p class="pnext"><span>As Joe followed the path through the jungle he thought to himself.
+“You have to handle these savages rough! If I hadn’t threatened to
+kill them all, they’d have turned against me. Some day I’ll have a big
+base here and they’ll all be working for me like slaves.”</span></p>
+<p class="pnext"><span>But Joe had come by the jungle path and the girls were fully warned of
+his approach. Rosa went to meet Joe Arnold with a broad grin on her
+face.</span></p>
+<p class="pnext"><span>Terry’s heart sank as she watched from the shelter of the hut. She
+gripped Prim nervously. They clung together in terror. Why had they
+been so easily fooled? There was Rosa telling Joe that she had the
+girls safely trapped, waiting for him. The girls shrank back in the
+hut afraid to come out and face the man who had them in his power.
+With the whole tribe on Joe’s side, there was little chance of escape.
+This was the end.</span></p>
+<p class="pnext"><span>“I’d have sworn they were real friends,” whispered Prim in a
+frightened voice. “It would be lots better to be on that island with
+wild beasts than here with these treacherous savages.”</span></p>
+<p class="pnext"><span>But just then they heard Rosa directing Joe Arnold to the cave. With
+the few words of English she knew she was telling him that the girls
+were prisoners in the big cave. “You go down!” she said.</span></p>
+<p class="pnext"><span>“Sure!” replied Joe with a broad smile. “I’ll kill two birds with one
+stone. I’ve always wanted to see the inside of one of those big caves.
+And when I find those girls, I have a few things to say to them.” Joe
+put his leg down the opening and felt for the rock. Then his other leg
+found a foothold. As his head disappeared. Bud’s voice called to him.</span></p>
+<p class="pnext"><span>“Watch out, Joe, they’re tricky! The girls are not here!”</span></p>
+<p class="pnext"><span>But it was too late. When Joe started to scramble out of the cave,
+shouting his threats, he was thrust back by a huge black, who held a
+long knife in his hand. Down he tumbled, bruised and shaken.</span></p>
+<p class="pnext"><span>At that moment Terry and Prim rushed out of the hut and saw Joe
+disappear. “Now is our chance to get away, Prim!” cried Terry. “Let’s
+get to the beach!” Terry grabbed up her flying coat and helmet.</span></p>
+<p class="pnext"><span>“Hurry, hurry, Terry, he may get out!” cried Prim. Her face was white
+with the strain.</span></p>
+<p class="pnext"><span>Terry was saying goodbye to Rosa and the other women of the village.
+She was trying to express her thanks. It seemed ungrateful to hurry
+away without a farewell. But Rosa shook her head and shoved Terry
+ahead of her toward the jungle path, calling back in a shrill voice to
+the women.</span></p>
+<p class="pnext"><span>Suddenly Terry started and looked upward. “Listen Prim. It’s a plane!”
+She had heard the distant hum of an airplane motor and was searching
+the sky anxiously. Then through the trees she saw the plane driving
+toward them.</span></p>
+<p class="pnext"><span>“Who is it, Terry?” asked Prim.</span></p>
+<p class="pnext"><span>“I wish I knew. Maybe it is a friend of Joe Arnold’s,” replied Terry
+as she gazed with dread toward the plane that was coming nearer and
+nearer to the island.</span></p>
+<p class="pnext"><span>Now the plane was circling above them. The girls watched with anxiety
+as the pilot put it into a long, fast dive toward the near-by
+clearing.</span></p>
+<div class="vspace" style="height: 4em">
+</div>
+<p class="center pfirst" id="crashed"><span class="large">CHAPTER VII</span></p>
+<p class="center pnext"><span class="large">Crashed!</span></p>
+<div class="vspace" style="height: 2em">
+</div>
+<p class="pfirst"><span>The girl flyers watched with thumping hearts as the plane, diving with
+wide open throttle, headed straight toward the plateau.</span></p>
+<p class="pnext"><span>Prim gripped her sister’s arm. She felt giddy and faint. A cry escaped
+her.</span></p>
+<p class="pnext"><span>Terry turned to her with a frown. “Snap out of it, Prim! This is no
+time to get hysterical. That plane may be piloted by a friend of Joe
+Arnold. If it is, we’ll need to do some quick thinking. Don’t lose
+courage now!”</span></p>
+<p class="pnext"><span>Prim was gazing toward the plane. “It looks to me as if there were two
+men. And someone is waving! Do you think it’s a rescue plane?” cried
+Prim.</span></p>
+<p class="pnext"><span>Terry did not answer. Every nerve was tense as she watched the plane
+banking and circling for a landing. She dared not tell Prim that she
+believed it was Allan and Syd. It would be too great a disappointment,
+if she were mistaken.</span></p>
+<p class="pnext"><span>Then suddenly Prim screamed with delight. “Look Terry, look! It’s Syd
+and Allan! We’re saved! We’re saved!”</span></p>
+<p class="pnext"><span>Rosa stood beside the girls until she realized that they did not need
+further help, then as the plane circled low for a landing, she
+scurried into the hut, calling on the women and children to follow. In
+a moment the place was deserted. Terry smiled at the idea of Rosa
+finding protection in those flimsy huts of twigs and leaves.</span></p>
+<p class="pnext"><span>A few minutes later Allan set down his plane before the native huts.
+Before the boys could step from the plane, the girls were beside them,
+shaking their hands and almost crying with relief.</span></p>
+<p class="pnext"><span>“We thought you were lost in the storm, Allan!” cried Terry.</span></p>
+<p class="pnext"><span>“And we had almost given you up for lost!” answered Allan, his voice
+husky.</span></p>
+<p class="pnext"><span>“How did you find us?” Prim asked excitedly. Her cheeks were flushed,
+all her fear was gone.</span></p>
+<p class="pnext"><span>“We recognized </span><em class="italics">Skybird</em><span> and followed her,” replied Allan,
+looking around anxiously. “Joe flew her to Honduras and then back
+here.”</span></p>
+<p class="pnext"><span>“Don’t I know it!” exclaimed Terry. “What a good thing it was that I
+didn’t have a chance to stop him. I was angry enough to smash the
+plane rather than have him use it for smuggling.”</span></p>
+<p class="pnext"><span>“Let’s be going!” said Syd. “We can tell you how we found you when
+we’re out of danger. Are you sure these blacks are friendly?”</span></p>
+<p class="pnext"><span>“I’ll say they are. They’re wonderful people!”</span></p>
+<p class="pnext"><span>Terry burst out. “They’ve kept us out of Joe’s clutches. He and Bud
+were trying to put us on an uninhabited island. And Pedro, the Big
+Chief, hid us away and fooled him. The natives saved our lives!”</span></p>
+<p class="pnext"><span>“Some day,” said Prim with a laugh, “I’m going to send a whole barrel
+of presents down for them, beads and candy and brightly colored
+calico. They’d love it!”</span></p>
+<p class="pnext"><span>“But when do we go and how?” asked Syd. “I won’t feel safe until we
+get away from this island. Do you think there is any chance of getting
+</span><em class="italics">Skybird</em><span>? Joe won’t give that plane up without a fight.”</span></p>
+<p class="pnext"><span>“He isn’t going to put up a fight for that plane,” answered Terry.
+“When we heard you coming, we were just on our way to get her.”</span></p>
+<p class="pnext"><span>“Joe is down there!” cried Prim triumphantly, pointing at the opening
+to the cave, near which a huge black was sitting, fingering a knife
+menacingly. “And as you see, he’s under a strong guard! He and Bud are
+both prisoners down there.”</span></p>
+<p class="pnext"><span>“Prisoners! Where?” asked Syd.</span></p>
+<p class="pnext"><span>“It’s the most wonderful prison in the world! It’s a crystal cave! The
+roof is of sparkling emeralds, rubies and sapphires. It’s beautiful!”
+Terry explained with sparkling eyes.</span></p>
+<p class="pnext"><span>“Yes, you ought to see it, boys!” interrupted Prim.</span></p>
+<p class="pnext"><span>“We’ll save that for the next trip. Much as I’d like to see a crystal
+cave, I think my pleasure would be all spoiled if I had to share the
+view with Joe Arnold,” answered Allan.</span></p>
+<p class="pnext"><span>At that moment Pedro came running up the trail. He had seen another
+plane arriving and feared that Joe and Bud might be rescued by some
+friends. His white teeth showed in a broad smile when he saw the girls
+happy.</span></p>
+<p class="pnext"><span>“My plane? Is it ready?” asked Terry.</span></p>
+<p class="pnext"><span>“All ready!” replied the black.</span></p>
+<p class="pnext"><span>Pedro started to lead them back to the harbor, but Rosa stood in his
+way, frowning and talking in a high pitched voice. The chief explained
+to the young people that the tribe wished to give the flyers a
+farewell feast.</span></p>
+<p class="pnext"><span>“Guess we’ll have to wait long enough to eat something,” said Terry
+under her breath to Allan.</span></p>
+<p class="pnext"><span>“But we really ought to be going when luck is with us. You can’t tell
+what may happen!”</span></p>
+<p class="pnext"><span>“It’s impossible, boys. It’s the only way we have to repay these
+people for their kindness to us,” Terry begged.</span></p>
+<p class="pnext"><span>“That’s a brand new idea, repaying people by eating some more of their
+food. I don’t know as I’d want that kind of pay for a debt.”</span></p>
+<p class="pnext"><span>“You would if you were in the place of these people. It’s the greatest
+honor we can show them.”</span></p>
+<p class="pnext"><span>After assuring Allan and Syd that Joe Arnold and Bud Hyslop were well
+guarded in the cave, Terry led the way to the fibre mats before the
+huts where the meal was about to be served.</span></p>
+<p class="pnext"><span>“How did they guess that we hadn’t had a thing to eat today?” asked
+Syd. “We were too busy watching </span><em class="italics">Skybird</em><span>. We didn’t dare leave
+the field for fear Joe Arnold would take off and we’d lose him.”</span></p>
+<p class="pnext"><span>“I’m glad you’re hungry,” said Terry in a whisper to the boys. “I wish
+</span><em class="italics">I</em><span> were, then I might be able to eat their fish. And unless
+you eat a lot, Rosa is offended.” As the bowl was brought in, strange
+spicy odors filled the air. They had several courses. The feast began
+with fish, continued with fish and ended with fish.</span></p>
+<p class="pnext"><span>Terry bravely faced the ordeal, trying to smile and enthuse over each
+dish as it was brought. But it was hard work. However, the boys made
+up for her lack of appetite. They declared that they had never tasted
+anything so good and when they accepted a second helping, Rosa’s face
+was beaming with happiness.</span></p>
+<p class="pnext"><span>Allan was thoughtful for a time, then his face brightened. He had been
+racking his brains to think of some gift to present to Pedro. At last
+he had it. From his pocket he took a wrist watch. Allan usually
+carried an extra watch.</span></p>
+<p class="pnext"><span>Terry saw the idea and smiled. “He’ll love it, Allan! But make a lot
+of fuss when you present it,” she whispered. “They like that even
+better than the gift.”</span></p>
+<p class="pnext"><span>The four friends rose and bowed low before Pedro. Then Allan stepped
+forward and fastened the watch on the wrist of the black.</span></p>
+<p class="pnext"><span>Pedro did not know what to say. He tried to speak but his few words of
+English were forgotten in his excitement. Like a king, he strode among
+his people with extended hand to show them the honor that had been
+given him. Rosa beamed her pleasure. It was a great day on the island.</span></p>
+<p class="pnext"><span>Allan and Syd were restless. “I think we’d better go!” said Allan
+suddenly. “I won’t be happy until I get you girls a thousand miles
+away from Joe Arnold and Bud Hyslop.”</span></p>
+<p class="pnext"><span>“O.K.,” replied Terry. “Come Prim,” she said, and her sister followed
+as Terry went among the natives and bade them goodbye.</span></p>
+<p class="pnext"><span>Allan and Syd started their plane and flew above the forest toward the
+beach, while the girls hurried through the jungle by a short cut that
+Pedro took and Rosa followed as fast as she could.</span></p>
+<p class="pnext"><span>The boys were putting their plane down on the smooth water beside
+</span><em class="italics">Skybird</em><span> when the girls arrived. Pedro leaped into the launch
+and beckoned the girls to follow.</span></p>
+<p class="pnext"><span>Suddenly they heard wild, piercing cries coming from the direction of
+the jungle, savage cries that sounded more like the night call of some
+jungle beast.</span></p>
+<p class="pnext"><span>“Hurry!” exclaimed Pedro, looking back. “It’s Joe. He escape!”</span></p>
+<p class="pnext"><span>Joe and Bud were racing madly toward the beach. In a moment the reason
+for their panic was seen. Behind the two men came a stream of howling
+blacks.</span></p>
+<p class="pnext"><span>“Will Joe hurt you, after we are gone?” asked Terry anxiously.</span></p>
+<p class="pnext"><span>“Me no afraid!” Pedro answered. “My people, they fight him!”</span></p>
+<p class="pnext"><span>Bud made for a boat, but one of the natives came up and shoved him
+aside violently. Joe was struggling with a horde of blacks, and all he
+could do was to shout furiously to Terry. But </span><em class="italics">Skybird</em><span> was
+free from her moorings and the girl started the engine ready for the
+take-off. She could not hear what Joe was saying, but it was abusive
+and threatening.</span></p>
+<p class="pnext"><span>Sending a spurt of water before her, </span><em class="italics">Skybird</em><span> taxied in a wide
+sweep to head into the wind. Pedro stood up in his boat and waved a
+big black hand. There were shouts of farewell from the shore, mingled
+with threats from Bud and Joe.</span></p>
+<p class="pnext"><span>As the plane soared over the island, Prim said through the earphones,
+“You may call those people savages if you want to, but I’ll count them
+among my very best friends. What’s more, I’m coming back some day to
+see them.”</span></p>
+<p class="pnext"><span>Allan took the lead, straight westward. The deep blue water spread
+beneath them to the horizon. There was hardly a ripple on the
+mirror-like surface of the sea. The sky was clear and like birds the
+two planes soared alone in the great blue dome.</span></p>
+<p class="pnext"><span>Only occasionally Terry looked back in the direction of the island to
+be sure that Joe Arnold was not in pursuit. She had confidence in
+Pedro.</span></p>
+<p class="pnext"><span>It was still early in the day. Terry and Allan had consulted their
+maps and decided to head for Tela on the Gulf of Honduras. If possible
+they wanted to get over to the Pacific side by night. There they would
+feel safe.</span></p>
+<p class="pnext"><span>Flying in a northwesterly course, they left the high rocky coast of
+Honduras that lay exposed to the Caribbean storms, and made a landing
+at Tela. But they did not stay long, a heavy mist had come in from the
+sea. Within an hour they had made a check-up on their aircraft,
+refueled and were taking off for Salvador on the Pacific where fair
+weather was reported.</span></p>
+<p class="pnext"><span>A low-lying cloud made Terry nose her plane up to a height of ten
+thousand feet. There was a brilliant sky and sunlight overhead. Below
+it looked as if they were still flying over the ocean. The broad sheet
+of fog spread beneath them like a blanket. But when they neared the
+Pacific late that afternoon, the mist began to thin and they could see
+the ranch houses with their cultivated fields. Leaving the cloud
+behind, they flew over Salvador. From that height they could see far
+north to the towering Guatemalan plateau, with here and there a
+cone-shaped volcanic peak. Plumes of blue smoke shot from the craters.</span></p>
+<p class="pnext"><span>Prim gave an exclamation of astonishment, then was still. Both girls
+felt the overpowering majesty of the outlook over that vast panorama.
+Soon they saw the red and green roofs of Salvador City and a lofty
+Gothic spire. Terry circled over the town and came down on the flying
+field.</span></p>
+<p class="pnext"><span>Here they intended to spend the night and have their planes thoroughly
+overhauled for the trip down the Pacific. The air was clear and dry,
+perfect flying weather.</span></p>
+<p class="pnext"><span>But Terry was restless. While she enjoyed seeing the foreign city, she
+was fearful that Joe Arnold might still be pursuing them. Now he had a
+still greater reason for finding them. In the plane Terry had
+discovered a large legal envelope with several important looking
+papers marked “Confidential.” Looking at them hurriedly, Terry gasped.
+Among them was the will of Colonel Roger Fairfax, a document that disposed
+of millions of dollars worth of property.</span></p>
+<p class="pnext"><span>At the hotel when she showed them to the boys they agreed that they
+were extremely valuable. Yet they saw that the possession of these
+papers would add to the peril of the girls. Joe Arnold would not rest
+easy until he had caught up with </span><em class="italics">Skybird</em><span> and recovered the
+documents which he had stolen, no doubt, and expected to sell for a
+huge sum.</span></p>
+<p class="pnext"><span>Terry did not sleep well. She wanted morning to come so that she could
+be on her way, and long before daybreak she was up and ready to go.
+After a hasty breakfast, the four flyers took off and were under way
+by the time the sun was rising.</span></p>
+<p class="pnext"><span>It was a long day. The flight down the Nicaraguan coast was jumpy, for
+the cool air from the high mountains poured down to meet the warm air
+from the plains. They passed near to some of the volcanoes and once
+they could see into the crater with its boiling lava and clouds of
+steam and smoke.</span></p>
+<p class="pnext"><span>“We’ve been lucky!” said Prim through the earphones. “From now on it’s
+clear sailing!”</span></p>
+<p class="pnext"><span>“Touch wood, Prim! We’re not there yet,” answered Terry.</span></p>
+<p class="pnext"><span>But Prim had not touched wood quick enough. A few hours later when
+they stepped from their plane on the field in Panama, they noticed at
+once that there was trouble. Men were running about excitedly, looking
+into the sky and the ambulance was being started ready for an
+emergency. In the sky a plane was out of control and diving wildly.</span></p>
+<p class="pnext"><span>“Oh Prim!” cried Terry. “It’s Allan! He’s falling!”</span></p>
+<p class="pnext"><span>The plane above had gone into a tailspin and the girls knew that Allan
+was not the kind to show off his skill or attempt a stunt over a
+strange flying field.</span></p>
+<p class="pnext"><span>Prim clung to her sister with cries of fright but Terry’s face was
+grim. Her lips moved with a prayer, but no words came.</span></p>
+<p class="pnext"><span>Allan’s plane was falling! Nothing could save it now. It was too near
+the ground to be righted and landed safely.</span></p>
+<p class="pnext"><span>But the next minute the plane straightened out. By some miracle of
+luck Allan had it under control again, but it was too late. The plane
+landed on one wheel and with a bound it turned clear over. Even before
+it touched the ground, the ambulance was speeding across the field.</span></p>
+<p class="pnext"><span>Prim ran screaming toward the plane but Terry stood as if turned to
+stone.</span></p>
+<p class="pnext"><span>Allan and Syd had crashed! Their bodies must be crushed and bleeding
+under that crumpled wreck. Allan and Syd were dead! Terry saw no hope.</span></p>
+<p class="pnext"><span>But strong hands had dragged Syd from the rear cockpit. He was dazed
+from the shock of landing but Terry saw that he was alive.</span></p>
+<p class="pnext"><span>Frantically she ran toward the plane. Where was Allan?</span></p>
+<p class="pnext"><span>Allan, strangely white, was taken from the wreck and placed in the
+ambulance. His limp form was covered with blood. Next minute the
+clanging ambulance was racing the injured boy to the hospital. Syd was
+given first aid on the field and was able to ride with the girls to
+the hospital in the automobile of the field manager. The boy was
+shaken up, bruised and sick from the shock, but he had no serious
+injuries. The girls watched him anxiously as he trembled and twitched,
+but the doctor at the hospital assured them that it was entirely
+nerves and after a night’s rest he would be himself again.</span></p>
+<p class="pnext"><span>But with Allan it was far more dangerous. Behind the closed doors of
+the operating room, strange white-clad figures were working over
+Allan. Terry caught glimpses of hurrying nurses, but dared not speak
+to any of them. A moment’s delay in carrying out an order might be a
+risk to Allan’s life.</span></p>
+<p class="pnext"><span>Suddenly Syd seemed to come out of his stupor. He tried to get up,
+looked wildly around and cried: “Where’s Allan? Tell me, is Allan
+dead?”</span></p>
+<p class="pnext"><span>“No, Syd, lie down and keep quiet. Allan is alive! He has a fighting
+chance. That’s all we know now.”</span></p>
+<p class="pnext"><span>An hour went by and dragged slowly into two hours before they brought
+Allan from that operating room. His long body was motionless under the
+sheet. Terry had slipped into the corridor and was watching. She held
+her breath with dread. Would they bring that still form toward a room,
+or was it all over? Was Allan dead? Would they take him away?</span></p>
+<p class="pnext"><span>No one had time to answer her questions if she could have spoken. But
+her heart leaped with hope as she saw them turning into the room next
+to Syd. Allan was alive!</span></p>
+<p class="pnext"><span>Then came the thought, as it had come when her father was injured:
+“Would this happy, care-free boy be left a cripple?” She thought of
+her father, spending his best years in a wheel chair and her eyes
+filled with tears. It was agony to think of that alert and active
+Allan doomed to the same fate. If only someone could relieve this
+terrible suspense!</span></p>
+<div class="vspace" style="height: 4em">
+</div>
+<p class="center pfirst" id="jump"><span class="large">CHAPTER VIII</span></p>
+<p class="center pnext"><span class="large">Jump</span></p>
+<div class="vspace" style="height: 2em">
+</div>
+<p class="pfirst"><span>Terry turned to the doctor who had just come in. She tried to speak,
+but words would not come.</span></p>
+<p class="pnext"><span>The doctor approached with a smile of sympathy. “I guess this fellow
+was born under a lucky star,” he said. “He’s pretty well shaken up,
+but there is nothing serious that we can find. A few broken bones! The
+shock of a fall like that is always bad. He’ll be flying again in a
+few months!”</span></p>
+<p class="pnext"><span>Terry did not wait to ask questions. She flew to Syd and Prim to tell
+them the good news.</span></p>
+<p class="pnext"><span>Allan was alive! He would fly again!</span></p>
+<p class="pnext"><span>Terry set out for South America two days later with a heart full of
+gratitude that Allan was not seriously hurt. The morning after the
+accident he was able to talk to her and while he looked worried to
+think of the girls flying alone into the dangers of a strange country,
+he did not try to keep them from going on.</span></p>
+<p class="pnext"><span>Terry was getting nervous. The day set for taking up the option was
+almost there. The work she set out to do must be done quickly.</span></p>
+<p class="pnext"><span>From his bed in the hospital Allan watched the plane soaring away from
+the field. It remained a tiny speck in the sky for a long time in that
+clear air.</span></p>
+<p class="pnext"><span>“I feel as if we should have stayed to look after Allan,” said Prim
+through the earphones. “Do you think Syd can do everything that’s
+needed?”</span></p>
+<p class="pnext"><span>“Allan is in a good hospital,” replied Terry. “He’s well cared for and
+there’s nothing we can do right now. We’ll get this job through as
+quickly as we can and get back.”</span></p>
+<p class="pnext"><span>Following the airway down the coast, Terry had no difficulty in
+reaching the town of Trujillo in the northern part of Peru, at which
+point she was to turn inland to Majora, a settlement of adobe houses
+and stores, the center of supply for a number of mines in the
+mountains.</span></p>
+<p class="pnext"><span>Over an early breakfast at Trujillo, their spirits rose once more. The
+trip inland was not far and they should reach the foothills in an
+hour.</span></p>
+<p class="pnext"><span>“South America is different from what I expected,” remarked Terry, as
+she drank her breakfast coffee. “I thought that most of this country
+was jungles and tropical vegetation. Did you see that strip of brown
+sand, along the coast? It’s like a desert.”</span></p>
+<p class="pnext"><span>“Which shows you didn’t study your geography very well or you’d have
+remembered that all along the coast, especially from here down,
+there’s a strip of desert, and in places it never has been known to
+rain,” replied Prim. “I always remember that, for it was one place I
+never had any desire to go. But here I am!”</span></p>
+<p class="pnext"><span>“We’ll just give it a good look and fly high! I don’t like desert
+country either. But we’ll soon get to the foothills.”</span></p>
+<p class="pnext"><span>“Let’s hurry, Terry! I’m anxious to get to the mine. I wonder what
+Peter Langley and his wife will be like? I hope they won’t turn out to
+be friends of Joe Arnold.” Prim picked up her belongings and hastened
+toward the door of the restaurant.</span></p>
+<p class="pnext"><span>A few moments brought them to the flying field, where their plane had
+been refueled and stood ready for the take-off. There was no wind and
+Terry taxied across the field to get plenty of speed for the rise. As
+usual Prim had insisted on the parachutes. The harness always annoyed
+Terry, but she did not make any objection. Anything that would make
+Prim feel satisfied was worth doing.</span></p>
+<p class="pnext"><span>The rising ground beneath them told that they were getting into the
+foothills. They saw the jagged peaks far ahead. Terry was glad that
+she would not have to cross the Andes on this trip. She had had enough
+excitement for a while; that could wait for another flight.</span></p>
+<p class="pnext"><span>Seeing a small settlement ahead, Terry recognized it by the
+description given her of Majora. She flew straight toward the town,
+circled and came down on a wide, smooth field. Although it was not
+intended as a flying field, Terry had seen worse places to alight, and
+brought </span><em class="italics">Skybird</em><span> to a neat three-point landing.</span></p>
+<p class="pnext"><span>But here the girls met disappointment. Ed Jenkins, an American
+storekeeper in the settlement, told them that it would be impossible
+to land a plane in the mountains near Peter Langley’s mine.</span></p>
+<p class="pnext"><span>“There isn’t a square foot of level space anywhere in these hills.
+That pair of fools who went up there in a plane this morning will meet
+sudden death. They’re bound to!” exclaimed Jenkins.</span></p>
+<p class="pnext"><span>“Two men went up there in a plane this morning!” cried Terry
+excitedly. “Who were they?”</span></p>
+<p class="pnext"><span>“I can’t say, Miss,” replied Jenkins. “One had red hair and the
+other's eyes were funny! A queer looking pair of crooks!” Ed Jenkins
+was fumbling in his pocket. “Here’s a message. I guess it must be for
+you. The man with the squint said to give it to two girls in a plane.
+I reckon that’s you!”</span></p>
+<p class="pnext"><span>Terry ripped open the envelope and read these words scrawled on a
+scrap of paper: “He laughs best who laughs last!”</span></p>
+<p class="pnext"><span>“Come on. Prim, let’s go!” Terry’s face flushed, then set in
+determination. “That’s a challenge! If Joe Arnold thinks I’m through,
+he’s mistaken!”</span></p>
+<p class="pnext"><span>But Ed Jenkins was pointing to the mountain, where a few stone huts
+were visible. “That’s Peter Langley’s mine up there! You can see for
+yourself there’s no place to land among those peaks!”</span></p>
+<p class="pnext"><span>But Terry had already started the engine. The propeller was spinning.
+And with a wave of her hand to the storekeeper, she sent her plane
+across the field and into the air. Circling for altitude, she pointed
+straight toward Peter Langley’s mine.</span></p>
+<p class="pnext"><span>“I believe that man is right,” said Prim a few minutes later, as the
+hills became more rugged and menacing with their sharp peaks.</span></p>
+<p class="pnext"><span>Terry flew slowly over the hills, watching for a spot to put her plane
+down. If Joe Arnold and Bud Hyslop could find a place, surely she
+could. She brought her plane as low as she dared above the mountains
+but there was no sign of level ground, and soon she saw little figures
+running about and waving at her excitedly.</span></p>
+<p class="pnext"><span>“They’re warning us not to try a landing,” Prim called to her sister.
+“i’m afraid it’s no use.”</span></p>
+<p class="pnext"><span>“Then I’ll have to use the parachute! Come over here and take the
+controls. I’ll have to jump,” cried Terry.</span></p>
+<p class="pnext"><span>“Don’t, Terry. It’s a terrible chance to take!” pleaded Prim.</span></p>
+<p class="pnext"><span>“Nonsense! I’ve made lots of parachute jumps!” Terry snapped
+impatiently. “Don’t waste time! We have less than ten minutes to get
+there. Peter Langley can’t close a deal with Joe Arnold until twelve
+o’clock. Our contract holds until then.”</span></p>
+<p class="pnext"><span>Prim’s face was white as she climbed into the pilot’s seat, protesting
+nervously. “Don’t jump, Terry! Don't take such a big chance!”</span></p>
+<p class="pnext"><span>But Terry was studying the ground below her and she answered, “I’ll
+jump when we are directly over the mine. You take the plane down to
+Jenkins' store and wait for me there. I’ll be down after a while.
+Bye!”</span></p>
+<p class="pnext"><span>Then at sight of Prim’s tragic face, she laughed and began crawling
+out on the wing. Terry watched the ground beneath her, then with a
+catch in her breath, stepped out into space.</span></p>
+<p class="pnext"><span>No matter how many times Terry jumped, she never could get used to
+that long drop. Her mind was clear, every sense alert to what she had
+to do.</span></p>
+<p class="pnext"><span>In a few seconds she pulled the rip cord but there was no response
+from the parachute.</span></p>
+<p class="pnext"><span>Had something gone wrong? Terry was falling with terrific speed toward
+those jagged rocks. “This is the end,” she thought. But suddenly she
+came up with a tremendous jerk as the parachute opened above her head
+and she began sailing gently downward. Working with the shrouds, the
+girl steered the parachute toward a safe landing.</span></p>
+<p class="pnext"><span>At the sight of a figure hurtling through the air, Mary Langley had
+screamed, “Oh Peter, Peter! A man has fallen from the plane! Help!
+Help!”</span></p>
+<p class="pnext"><span>Horror-struck, Peter Langley watched the falling figure, then gave a
+lusty cheer as the white parachute opened, the little figure in the
+sky was righted and came sailing down gracefully.</span></p>
+<p class="pnext"><span>“I was hoping she’d break her neck!” muttered Joe to Bud Hyslop. “Just
+as I was getting the did man interested, she had to spoil everything!
+But I’m not through! He’s got to take my word against hers!”</span></p>
+<p class="pnext"><span>“Sure!” answered Bud. “Terry Mapes is no good at a business deal.
+She’ll not convince Peter Langley!”</span></p>
+<p class="pnext"><span>While Bud and Joe looked on sullenly, Terry landed on the mountain at
+some distance from the astonished old couple, who hurried along the
+trail to reach her.</span></p>
+<p class="pnext"><span>“He’s a brave man whoever he is,” said Mary Langley. “Jumping from the
+sky like that! It scares me to think of it!”</span></p>
+<p class="pnext"><span>“I wonder why he’s coming here?” asked Peter Langley.</span></p>
+<p class="pnext"><span>Terry was just picking herself up and rubbing a bruise on her arm, as
+the old couple scrambled up the rocky ledge.</span></p>
+<p class="pnext"><span>“Bless me, if it isn’t a girl, and a pretty one! Did you </span><em class="italics">have</em><span>
+to jump out of that plane?”</span></p>
+<p class="pnext"><span>“Yes,” replied Terry with a laugh. “I </span><em class="italics">had</em><span> to jump! I had to
+get here before twelve o’clock and that was the only way I could do
+it. I’m Terry Mapes and I’ve come to take up the option on the flying
+field.”</span></p>
+<p class="pnext"><span>Peter Langley stared at the girl in astonishment. “You did that? You
+brave, brave girl!”</span></p>
+<p class="pnext"><span>Mary Langley was brushing Terry off and helping her to get out of her
+parachute harness. “Come along to the house,” she said. “I’ll make you
+a cup of good strong coffee to brace you up, though goodness knows it
+would take more than that to bring me to, if I’d jumped from a plane!
+What are girls coming to! When I was young I’d never have dreamed that
+girls could do a thing like that!”</span></p>
+<p class="pnext"><span>“Times are different!” agreed Peter with a shake of his tousled white
+head. “And you made it without an accident, which is more than my
+other two visitors did.”</span></p>
+<p class="pnext"><span>“Were they hurt?” asked Terry.</span></p>
+<p class="pnext"><span>“Not much! They landed their plane somewhere down the slope and broke
+the propeller. Joe Arnold has a sprained ankle and a bruised
+shoulder,” replied Peter. “He isn’t feeling very good.”</span></p>
+<p class="pnext"><span>Terry looked at the old man anxiously. “You haven’t signed any papers,
+have you, Mr. Langley?” She looked at her watch. “It’s just one minute
+before twelve. I still have time to take up that option. Here’s your
+check!”</span></p>
+<p class="pnext"><span>Peter shouted with laughter. “What a girl!” he exclaimed. “No, I
+haven’t signed any of his papers!”</span></p>
+<p class="pnext"><span>“And what’s more you </span><em class="italics">won't</em><span> sign any of them!” Mary Langley
+cried. “I don’t like the looks of those two men!”</span></p>
+<p class="pnext"><span>“No more do I!” agreed Peter.</span></p>
+<p class="pnext"><span>As they reached the ledge of rock where their cabin stood, Peter was
+confronted by Bud Hyslop. “Don’t have anything to do with that girl!”
+he stormed. “She’s been in more crooked deals than you can count.
+You’ll be making a great mistake.”</span></p>
+<p class="pnext"><span>Peter gave a quiet laugh that was more provoking than if he had
+stormed at the men and accused them of fraud. He turned to Terry.
+“Come right in, Miss Terry,” he said with a deep old-fashioned bow,
+“I’ll just sign that paper and close the deal!”</span></p>
+<p class="pnext"><span>Joe Arnold bit his lips in rage. His face was deathly white. Terry had
+never seen the man so angry before. Joe had staked everything on this
+trip to get the flying field, and he had lost. Even his plane was a
+wreck and he was miles from a railroad.</span></p>
+<p class="pnext"><span>Joe Arnold’s brain was working hard on a new plot. How could he get
+</span><em class="italics">Skybird</em><span>? And how could he get those stolen papers back?
+Perhaps they were still in the plane, maybe the girls had overlooked
+them! But that was not likely. Terry and Prim were too clever to miss
+a chance like that!</span></p>
+<p class="pnext"><span>Joe studied the sky. Far down in the valley he could see the plane,
+with Prim at the controls, just making the landing by the store. Terry
+noted the look of hatred and villainous hope and her eyes followed
+his.</span></p>
+<p class="pnext"><span>Suddenly she understood. Already Joe was talking to Bud. They were
+preparing to leave.</span></p>
+<p class="pnext"><span>“Stop them, somehow!” said Terry to Peter Langley. “He’s going to try
+to reach Majora and get our plane. My sister Prim is down there! Don’t
+let them go!”</span></p>
+<p class="pnext"><span>Peter stood in the path in front of Joe Arnold. “You have a few things
+to clear up before you leave, Mr. Arnold,” said the old man. “I’ll not
+let you go until you explain some of the stories you’ve told me about
+Dick Mapes and his family.”</span></p>
+<p class="pnext"><span>“Get back!” shouted Joe Arnold furiously. “Out of my way!” His voice
+cracked in rage. Suddenly his fist shot out. Bud landed a second blow
+and Peter Langley reeled and staggered back, shouting for help.</span></p>
+<p class="pnext"><span>There was a sound of running feet and the next moment a gang of miners
+rushed at the two men and tied their hands. After their struggles had
+quieted the pair were thrown into a corner and ordered to behave or
+take the consequences.</span></p>
+<p class="pnext"><span>Terry looked anxiously toward the valley where she could see a small
+figure on horseback. It looked like Prim coming to her rescue.</span></p>
+<p class="pnext"><span>“What shall we do with these crooks?” asked Peter Langley.</span></p>
+<p class="pnext"><span>“Lock them up until Prim and I have time to get away,” Terry begged.</span></p>
+<p class="pnext"><span>At Langley’s command, the miners dragged the two rascals to a stone
+shed. The heavy door had a strong lock.</span></p>
+<p class="pnext"><span>“There they’ll stay until I’m sure you girls are safely home,” said
+Langley. “I’ve a notion to have them jailed!”</span></p>
+<p class="pnext"><span>When Prim arrived in camp she was greeted as if she belonged to the
+family. She and Mary Langley were soon like old friends. They had many
+interests in common. And while Prim was being shown over the house,
+Terry and Peter Langley were exchanging stories of their adventures.</span></p>
+<p class="pnext"><span>“Wait till I show you this!” said Peter going to a shelf in the
+corner. “Here’s a map I made on one of my trips. I went through the
+Land of the Incas with a native guide. We were looking for a lost
+temple. It is said that there’s a sacred emerald in the altar. Now the
+temple is lost, no one knows where it is. If I were young and had an
+airplane, I’d go and find that temple. Besides there’s treasure
+there.”</span></p>
+<p class="pnext"><span>“I’d like to find it myself,” said Terry eagerly.</span></p>
+<p class="pnext"><span>“Why don’t you? It’s a wonderful country down there. You’d see new
+sights and have new adventures and maybe you’d find the treasure.”</span></p>
+<p class="pnext"><span>Terry’s eyes were dreamy as she studied the map. “Would you be game to
+go with me?” asked the girl. “This map is like a challenge. I'm going
+to do it!”</span></p>
+<p class="pnext"><span>“Going to do what?” asked Prim.</span></p>
+<p class="pnext"><span>“First I’m going to Panama and after that we’ll go on a treasure hunt
+in the Land of the Incas.”</span></p>
+<p class="pnext"><span>Mrs. Langley laughed. “Peter has been showing her his map! I do
+believe he’d start out himself to find that treasure, if I’d let him.”</span></p>
+<p class="pnext"><span>“Maybe I will,” replied Peter. “Terry says she’ll take me along. And
+I’ll trust myself to her any time. After seeing her jump from a plane
+I know she’ll get what she goes for, so I’ve given her my map.”</span></p>
+<p class="pnext"><span>Terry rose to go. “We’ve got to get started! I wish I had more time to
+look around, but some day I’m coming back.”</span></p>
+<p class="pnext"><span>Mrs. Langley threw both arms around the girl. “Promise me that you
+will. And next time don’t be in such a hurry to arrive. Come up the
+mountain on horseback. I was scared to death, almost, when I saw you
+falling.”</span></p>
+<p class="pnext"><span>Peter saddled his own horse for Terry with instructions to leave it
+with Ed Jenkins, who would see that it got back. The girls waved at
+the old couple as long as they could see them and when they reached
+the store in Majora, Prim ran to the plane and got the binoculars.
+Looking back to the mine she saw the two old figures still standing on
+the rocky ledge and waving their hands.</span></p>
+<p class="pnext"><span>As they took off. Prim suggested that Terry fly once more over the
+mountain, but Terry shook her head.</span></p>
+<p class="pnext"><span>“Not this time, Prim. We must get back to Panama. But if Allan is all
+right and doesn’t need us, I would like to take that trip to Peru on a
+treasure hunt,” replied Terry.</span></p>
+<p class="pnext"><span>From Trujillo, where they stopped for fuel, she sent a cable to her
+father and also one to Allan and Syd, who would be anxiously awaiting
+word.</span></p>
+<p class="pnext"><span>Then as they headed up the Pacific it seemed to Terry that
+</span><em class="italics">Skybird</em><span> knew that she was facing homeward, the engine hummed
+and the country unrolled beneath them, like a great moving picture.</span></p>
+<p class="pnext"><span>They found Allan recovering rapidly, although it would be many weeks
+before he could be moved. Terry and Prim were making their plans for
+the trip to Peru.</span></p>
+<p class="pnext"><span>But Allan seemed troubled, and after much questioning Terry learned
+the cause of his worry. Some one was needed to follow up on that
+business deal. Dick could not attend to it all from his wheelchair and
+the other men about the field were not dependable.</span></p>
+<p class="pnext"><span>“So you want me to go back?” asked Terry. “Is that it?”</span></p>
+<p class="pnext"><span>“No, I don’t </span><em class="italics">want</em><span> you to go back! I </span><em class="italics">want</em><span> you here!”
+replied the boy.</span></p>
+<p class="pnext"><span>Terry was quiet for a long time, she was thinking hard. Again she
+stood where duty called. She had to choose between her own pleasure
+and her duty to those she loved. There was a fierce struggle in the
+girl’s soul. Why did she always have to give up her own desires?</span></p>
+<p class="pnext"><span>Suddenly she rose and held out her hand to Allan. “I’m starting home
+in the morning,” she said simply.</span></p>
+<p class="pnext"><span>Allan looked troubled. “But Terry, your trip to the Land of the Incas!
+Your hunt for treasure!”</span></p>
+<p class="pnext"><span>“Oh, that's nothing. That can wait!” she said with a laugh.</span></p>
+<p class="pnext"><span>Even Allan did not realize how great had been that inward fight. Terry
+wanted to get away from all the problems of the flying field, the
+conflict and jealousy of Joe Arnold and Bud Hyslop. She wanted a month
+of freedom, just flying around and enjoying herself without any
+thought of duty or business details. She wanted to fly for her own
+pleasure.</span></p>
+<p class="pnext"><span>The next morning she was on her way north. She circled her plane high
+up into the clear air. Ten thousand feet above the earth she could
+forget the problems of life. She could dream undisturbed for Prim
+always knew when to keep quiet.</span></p>
+<p class="pnext"><span>But little did Terry dream that in the Land of the Incas, the Girl
+Flyers would endure many hardships, face grave dangers and many times
+would escape with their lives only by a hair’s breadth.</span></p>
+<div class="vspace" style="height: 2em">
+</div>
+<p class="center pfirst"><span>THE END</span></p>
+<div class="vspace" style="height: 6em">
+</div>
+<!-- -*- encoding: utf-8 -*- -->
+<div class="backmatter">
+</div>
+<p class="pfirst" id="pg-end-line"><span>*** END OF THIS PROJECT GUTENBERG EBOOK </span><span>ON ADVENTURE ISLAND</span><span> ***</span></p>
+<div class="cleardoublepage">
+</div>
+<div class="language-en level-2 pgfooter section" id="a-word-from-project-gutenberg" xml:lang="en" lang="en">
+<span id="pg-footer"></span><h2 class="level-2 pfirst section-title title"><span>A Word from Project Gutenberg</span></h2>
+<p class="pfirst"><span>We will update this book if we find any errors.</span></p>
+<p class="pnext"><span>This book can be found under: </span><a class="reference external" href="http://www.gutenberg.org/ebooks/48146"><span>http://www.gutenberg.org/ebooks/48146</span></a></p>
+<p class="pnext"><span>Creating the works from print editions not protected by U.S. copyright
+law means that no one owns a United States copyright in these works,
+so the Foundation (and you!) can copy and distribute it in the United
+States without permission and without paying copyright royalties.
+Special rules, set forth in the General Terms of Use part of this
+license, apply to copying and distributing Project Gutenberg™
+electronic works to protect the Project Gutenberg™ concept and
+trademark. Project Gutenberg is a registered trademark, and may not be
+used if you charge for the eBooks, unless you receive specific
+permission. If you do not charge anything for copies of this eBook,
+complying with the rules is very easy. You may use this eBook for
+nearly any purpose such as creation of derivative works, reports,
+performances and research.  They may be modified and printed and given
+away – you may do practically </span><em class="italics">anything</em><span> in the United States with
+eBooks not protected by U.S. copyright law. Redistribution is subject
+to the trademark license, especially commercial redistribution.</span></p>
+<div class="level-3 section" id="the-full-project-gutenberg-license">
+<span id="project-gutenberg-license"></span><h3 class="level-3 pfirst section-title title"><span>The Full Project Gutenberg License</span></h3>
+<p class="pfirst"><em class="italics">Please read this before you distribute or use this work.</em></p>
+<p class="pnext"><span>To protect the Project Gutenberg™ mission of promoting the free
+distribution of electronic works, by using or distributing this work
+(or any other work associated in any way with the phrase “Project
+Gutenberg”), you agree to comply with all the terms of the Full
+Project Gutenberg™ License available with this file or online at
+</span><a class="reference external" href="http://www.gutenberg.org/license">http://www.gutenberg.org/license</a><span>.</span></p>
+<div class="level-4 section" id="section-1-general-terms-of-use-redistributing-project-gutenberg-electronic-works">
+<h4 class="level-4 pfirst section-title title"><span>Section 1. General Terms of Use &amp; Redistributing Project Gutenberg™ electronic works</span></h4>
+<p class="pfirst"><strong class="bold">1.A.</strong><span> By reading or using any part of this Project Gutenberg™
+electronic work, you indicate that you have read, understand, agree to
+and accept all the terms of this license and intellectual property
+(trademark/copyright) agreement. If you do not agree to abide by all
+the terms of this agreement, you must cease using and return or
+destroy all copies of Project Gutenberg™ electronic works in your
+possession. If you paid a fee for obtaining a copy of or access to a
+Project Gutenberg™ electronic work and you do not agree to be bound by
+the terms of this agreement, you may obtain a refund from the person
+or entity to whom you paid the fee as set forth in paragraph 1.E.8.</span></p>
+<p class="pnext"><strong class="bold">1.B.</strong><span> “Project Gutenberg” is a registered trademark. It may only be
+used on or associated in any way with an electronic work by people who
+agree to be bound by the terms of this agreement. There are a few
+things that you can do with most Project Gutenberg™ electronic works
+even without complying with the full terms of this agreement. See
+paragraph 1.C below. There are a lot of things you can do with Project
+Gutenberg™ electronic works if you follow the terms of this agreement
+and help preserve free future access to Project Gutenberg™ electronic
+works. See paragraph 1.E below.</span></p>
+<p class="pnext"><strong class="bold">1.C.</strong><span> The Project Gutenberg Literary Archive Foundation (“the
+Foundation” or PGLAF), owns a compilation copyright in the collection
+of Project Gutenberg™ electronic works. Nearly all the individual
+works in the collection are in the public domain in the United
+States. If an individual work is unprotected by copyright law in the
+United States and you are located in the United States, we do not
+claim a right to prevent you from copying, distributing, performing,
+displaying or creating derivative works based on the work as long as
+all references to Project Gutenberg are removed. Of course, we hope
+that you will support the Project Gutenberg™ mission of promoting free
+access to electronic works by freely sharing Project Gutenberg™ works
+in compliance with the terms of this agreement for keeping the Project
+Gutenberg™ name associated with the work. You can easily comply with
+the terms of this agreement by keeping this work in the same format
+with its attached full Project Gutenberg™ License when you share it
+without charge with others.</span></p>
+<p class="pnext"></p>
+<p class="pnext"><strong class="bold">1.D.</strong><span> The copyright laws of the place where you are located also
+govern what you can do with this work. Copyright laws in most
+countries are in a constant state of change. If you are outside the
+United States, check the laws of your country in addition to the terms
+of this agreement before downloading, copying, displaying, performing,
+distributing or creating derivative works based on this work or any
+other Project Gutenberg™ work.  The Foundation makes no
+representations concerning the copyright status of any work in any
+country outside the United States.</span></p>
+<p class="pnext"><strong class="bold">1.E.</strong><span> Unless you have removed all references to Project Gutenberg:</span></p>
+<p class="pnext"><strong class="bold">1.E.1.</strong><span> The following sentence, with active links to, or other
+immediate access to, the full Project Gutenberg™ License must appear
+prominently whenever any copy of a Project Gutenberg™ work (any work
+on which the phrase “Project Gutenberg” appears, or with which the
+phrase “Project Gutenberg” is associated) is accessed, displayed,
+performed, viewed, copied or distributed:</span></p>
+<blockquote>
+<div>
+<p class="pfirst"><span>This eBook is for the use of anyone anywhere in the United States
+and most other parts of the world at no cost and with almost no
+restrictions whatsoever. You may copy it, give it away or re-use it
+under the terms of the Project Gutenberg License included with this
+eBook or online at </span><a class="reference external" href="http://www.gutenberg.org">http://www.gutenberg.org</a><span> .  If you are not
+located in the United States, you'll have to check the laws of the
+country where you are located before using this ebook.</span></p>
+</div>
+</blockquote>
+<p class="pfirst"><strong class="bold">1.E.2.</strong><span> If an individual Project Gutenberg™ electronic work is
+derived from texts not protected by U.S. copyright law (does not
+contain a notice indicating that it is posted with permission of the
+copyright holder), the work can be copied and distributed to anyone in
+the United States without paying any fees or charges. If you are
+redistributing or providing access to a work with the phrase “Project
+Gutenberg” associated with or appearing on the work, you must comply
+either with the requirements of paragraphs 1.E.1 through 1.E.7 or
+obtain permission for the use of the work and the Project Gutenberg™
+trademark as set forth in paragraphs 1.E.8 or 1.E.9.</span></p>
+<p class="pnext"><strong class="bold">1.E.3.</strong><span> If an individual Project Gutenberg™ electronic work is
+posted with the permission of the copyright holder, your use and
+distribution must comply with both paragraphs 1.E.1 through 1.E.7 and
+any additional terms imposed by the copyright holder. Additional terms
+will be linked to the Project Gutenberg™ License for all works posted
+with the permission of the copyright holder found at the beginning of
+this work.</span></p>
+<p class="pnext"><strong class="bold">1.E.4.</strong><span> Do not unlink or detach or remove the full Project
+Gutenberg™ License terms from this work, or any files containing a
+part of this work or any other work associated with Project
+Gutenberg™.</span></p>
+<p class="pnext"><strong class="bold">1.E.5.</strong><span> Do not copy, display, perform, distribute or redistribute
+this electronic work, or any part of this electronic work, without
+prominently displaying the sentence set forth in paragraph 1.E.1 with
+active links or immediate access to the full terms of the Project
+Gutenberg™ License.</span></p>
+<p class="pnext"><strong class="bold">1.E.6.</strong><span> You may convert to and distribute this work in any binary,
+compressed, marked up, nonproprietary or proprietary form, including
+any word processing or hypertext form. However, if you provide access
+to or distribute copies of a Project Gutenberg™ work in a format other
+than “Plain Vanilla ASCII” or other format used in the official
+version posted on the official Project Gutenberg™ web site
+(</span><a class="reference external" href="http://www.gutenberg.org">http://www.gutenberg.org</a><span>), you must, at no additional cost, fee or
+expense to the user, provide a copy, a means of exporting a copy, or a
+means of obtaining a copy upon request, of the work in its original
+“Plain Vanilla ASCII” or other form. Any alternate format must include
+the full Project Gutenberg™ License as specified in paragraph 1.E.1.</span></p>
+<p class="pnext"><strong class="bold">1.E.7.</strong><span> Do not charge a fee for access to, viewing, displaying,
+performing, copying or distributing any Project Gutenberg™ works
+unless you comply with paragraph 1.E.8 or 1.E.9.</span></p>
+<p class="pnext"><strong class="bold">1.E.8.</strong><span> You may charge a reasonable fee for copies of or providing
+access to or distributing Project Gutenberg™ electronic works provided
+that</span></p>
+<ul class="open">
+<li><p class="first pfirst"><span>You pay a royalty fee of 20% of the gross profits you derive from
+the use of Project Gutenberg™ works calculated using the method you
+already use to calculate your applicable taxes. The fee is owed to
+the owner of the Project Gutenberg™ trademark, but he has agreed to
+donate royalties under this paragraph to the Project Gutenberg
+Literary Archive Foundation. Royalty payments must be paid within 60
+days following each date on which you prepare (or are legally
+required to prepare) your periodic tax returns. Royalty payments
+should be clearly marked as such and sent to the Project Gutenberg
+Literary Archive Foundation at the address specified in Section 4,
+“Information about donations to the Project Gutenberg Literary
+Archive Foundation.”</span></p>
+</li>
+<li><p class="first pfirst"><span>You provide a full refund of any money paid by a user who notifies
+you in writing (or by e-mail) within 30 days of receipt that s/he
+does not agree to the terms of the full Project Gutenberg™
+License. You must require such a user to return or destroy all
+copies of the works possessed in a physical medium and discontinue
+all use of and all access to other copies of Project Gutenberg™
+works.</span></p>
+</li>
+<li><p class="first pfirst"><span>You provide, in accordance with paragraph 1.F.3, a full refund of
+any money paid for a work or a replacement copy, if a defect in the
+electronic work is discovered and reported to you within 90 days of
+receipt of the work.</span></p>
+</li>
+<li><p class="first pfirst"><span>You comply with all other terms of this agreement for free
+distribution of Project Gutenberg™ works.</span></p>
+</li>
+</ul>
+<p class="pfirst"><strong class="bold">1.E.9.</strong><span> If you wish to charge a fee or distribute a Project
+Gutenberg™ electronic work or group of works on different terms than
+are set forth in this agreement, you must obtain permission in writing
+from both the Project Gutenberg Literary Archive Foundation and The
+Project Gutenberg Trademark LLC, the owner of the Project Gutenberg™
+trademark. Contact the Foundation as set forth in Section 3. below.</span></p>
+<p class="pnext"><strong class="bold">1.F.</strong></p>
+<p class="pnext"><strong class="bold">1.F.1.</strong><span> Project Gutenberg volunteers and employees expend
+considerable effort to identify, do copyright research on, transcribe
+and proofread works not protected by U.S. copyright law in creating
+the Project Gutenberg™ collection. Despite these efforts, Project
+Gutenberg™ electronic works, and the medium on which they may be
+stored, may contain “Defects,” such as, but not limited to,
+incomplete, inaccurate or corrupt data, transcription errors, a
+copyright or other intellectual property infringement, a defective or
+damaged disk or other medium, a computer virus, or computer codes that
+damage or cannot be read by your equipment.</span></p>
+<p class="pnext"><strong class="bold">1.F.2.</strong><span> LIMITED WARRANTY, DISCLAIMER OF DAMAGES – Except for the
+“Right of Replacement or Refund” described in paragraph 1.F.3, the
+Project Gutenberg Literary Archive Foundation, the owner of the
+Project Gutenberg™ trademark, and any other party distributing a
+Project Gutenberg™ electronic work under this agreement, disclaim all
+liability to you for damages, costs and expenses, including legal
+fees. YOU AGREE THAT YOU HAVE NO REMEDIES FOR NEGLIGENCE, STRICT
+LIABILITY, BREACH OF WARRANTY OR BREACH OF CONTRACT EXCEPT THOSE
+PROVIDED IN PARAGRAPH 1.F.3. YOU AGREE THAT THE FOUNDATION, THE
+TRADEMARK OWNER, AND ANY DISTRIBUTOR UNDER THIS AGREEMENT WILL NOT BE
+LIABLE TO YOU FOR ACTUAL, DIRECT, INDIRECT, CONSEQUENTIAL, PUNITIVE OR
+INCIDENTAL DAMAGES EVEN IF YOU GIVE NOTICE OF THE POSSIBILITY OF SUCH
+DAMAGE.</span></p>
+<p class="pnext"><strong class="bold">1.F.3.</strong><span> LIMITED RIGHT OF REPLACEMENT OR REFUND – If you discover a
+defect in this electronic work within 90 days of receiving it, you can
+receive a refund of the money (if any) you paid for it by sending a
+written explanation to the person you received the work from. If you
+received the work on a physical medium, you must return the medium
+with your written explanation. The person or entity that provided you
+with the defective work may elect to provide a replacement copy in
+lieu of a refund. If you received the work electronically, the person
+or entity providing it to you may choose to give you a second
+opportunity to receive the work electronically in lieu of a refund. If
+the second copy is also defective, you may demand a refund in writing
+without further opportunities to fix the problem.</span></p>
+<p class="pnext"><strong class="bold">1.F.4.</strong><span> Except for the limited right of replacement or refund set
+forth in paragraph 1.F.3, this work is provided to you ‘AS-IS,’ WITH
+NO OTHER WARRANTIES OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT
+LIMITED TO WARRANTIES OF MERCHANTABILITY OR FITNESS FOR ANY PURPOSE.</span></p>
+<p class="pnext"><strong class="bold">1.F.5.</strong><span> Some states do not allow disclaimers of certain implied
+warranties or the exclusion or limitation of certain types of
+damages. If any disclaimer or limitation set forth in this agreement
+violates the law of the state applicable to this agreement, the
+agreement shall be interpreted to make the maximum disclaimer or
+limitation permitted by the applicable state law. The invalidity or
+unenforceability of any provision of this agreement shall not void the
+remaining provisions.</span></p>
+<p class="pnext"><strong class="bold">1.F.6.</strong><span> INDEMNITY – You agree to indemnify and hold the Foundation,
+the trademark owner, any agent or employee of the Foundation, anyone
+providing copies of Project Gutenberg™ electronic works in accordance
+with this agreement, and any volunteers associated with the
+production, promotion and distribution of Project Gutenberg™
+electronic works, harmless from all liability, costs and expenses,
+including legal fees, that arise directly or indirectly from any of
+the following which you do or cause to occur: (a) distribution of this
+or any Project Gutenberg™ work, (b) alteration, modification, or
+additions or deletions to any Project Gutenberg™ work, and (c) any
+Defect you cause.</span></p>
+</div>
+<div class="level-4 section" id="section-2-information-about-the-mission-of-project-gutenberg">
+<h4 class="level-4 pfirst section-title title"><span>Section 2. Information about the Mission of Project Gutenberg™</span></h4>
+<p class="pfirst"><span>Project Gutenberg™ is synonymous with the free distribution of
+electronic works in formats readable by the widest variety of
+computers including obsolete, old, middle-aged and new computers. It
+exists because of the efforts of hundreds of volunteers and donations
+from people in all walks of life.</span></p>
+<p class="pnext"><span>Volunteers and financial support to provide volunteers with the
+assistance they need, is critical to reaching Project Gutenberg™'s
+goals and ensuring that the Project Gutenberg™ collection will remain
+freely available for generations to come. In 2001, the Project
+Gutenberg Literary Archive Foundation was created to provide a secure
+and permanent future for Project Gutenberg™ and future generations. To
+learn more about the Project Gutenberg Literary Archive Foundation and
+how your efforts and donations can help, see Sections 3 and 4 and the
+Foundation web page at </span><a class="reference external" href="http://www.pglaf.org">http://www.pglaf.org</a><span> .</span></p>
+</div>
+<div class="level-4 section" id="section-3-information-about-the-project-gutenberg-literary-archive-foundation">
+<h4 class="level-4 pfirst section-title title"><span>Section 3. Information about the Project Gutenberg Literary Archive Foundation</span></h4>
+<p class="pfirst"><span>The Project Gutenberg Literary Archive Foundation is a non profit
+501(c)(3) educational corporation organized under the laws of the
+state of Mississippi and granted tax exempt status by the Internal
+Revenue Service. The Foundation's EIN or federal tax identification
+number is 64-6221541. Its 501(c)(3) letter is posted at
+</span><a class="reference external" href="http://www.gutenberg.org/fundraising/pglaf">http://www.gutenberg.org/fundraising/pglaf</a><span> . Contributions to the
+Project Gutenberg Literary Archive Foundation are tax deductible to
+the full extent permitted by U.S.  federal laws and your state's laws.</span></p>
+<p class="pnext"><span>The Foundation's principal office is in Fairbanks, Alaska, with the
+mailing address: PO Box 750175, Fairbanks, AK 99775, but its
+volunteers and employees are scattered throughout numerous
+locations. Its business office is located at 809 North 1500 West, Salt
+Lake City, UT 84116, (801) 596-1887, email </span><a class="reference external" href="mailto:business@pglaf.org">business@pglaf.org</a><span>. Email
+contact links and up to date contact information can be found at the
+Foundation's web site and official page at </span><a class="reference external" href="http://www.pglaf.org">http://www.pglaf.org</a></p>
+<p class="pnext"><span>For additional contact information:</span></p>
+<blockquote>
+<div>
+<div class="line-block outermost">
+<div class="line"><span>Dr. Gregory B. Newby</span></div>
+<div class="line"><span>Chief Executive and Director</span></div>
+<div class="line"><a class="reference external" href="mailto:gbnewby@pglaf.org">gbnewby@pglaf.org</a></div>
+</div>
+</div>
+</blockquote>
+</div>
+<div class="level-4 section" id="section-4-information-about-donations-to-the-project-gutenberg-literary-archive-foundation">
+<h4 class="level-4 pfirst section-title title"><span>Section 4. Information about Donations to the Project Gutenberg Literary Archive Foundation</span></h4>
+<p class="pfirst"><span>Project Gutenberg™ depends upon and cannot survive without wide spread
+public support and donations to carry out its mission of increasing
+the number of public domain and licensed works that can be freely
+distributed in machine readable form accessible by the widest array of
+equipment including outdated equipment. Many small donations ($1 to
+$5,000) are particularly important to maintaining tax exempt status
+with the IRS.</span></p>
+<p class="pnext"><span>The Foundation is committed to complying with the laws regulating
+charities and charitable donations in all 50 states of the United
+States. Compliance requirements are not uniform and it takes a
+considerable effort, much paperwork and many fees to meet and keep up
+with these requirements. We do not solicit donations in locations
+where we have not received written confirmation of compliance. To SEND
+DONATIONS or determine the status of compliance for any particular
+state visit </span><a class="reference external" href="http://www.gutenberg.org/fundraising/donate">http://www.gutenberg.org/fundraising/donate</a></p>
+<p class="pnext"><span>While we cannot and do not solicit contributions from states where we
+have not met the solicitation requirements, we know of no prohibition
+against accepting unsolicited donations from donors in such states who
+approach us with offers to donate.</span></p>
+<p class="pnext"><span>International donations are gratefully accepted, but we cannot make
+any statements concerning tax treatment of donations received from
+outside the United States. U.S. laws alone swamp our small staff.</span></p>
+<p class="pnext"><span>Please check the Project Gutenberg Web pages for current donation
+methods and addresses. Donations are accepted in a number of other
+ways including checks, online payments and credit card donations. To
+donate, please visit: </span><a class="reference external" href="http://www.gutenberg.org/fundraising/donate">http://www.gutenberg.org/fundraising/donate</a></p>
+</div>
+<div class="level-4 section" id="section-5-general-information-about-project-gutenberg-electronic-works">
+<h4 class="level-4 pfirst section-title title"><span>Section 5. General Information About Project Gutenberg™ electronic works.</span></h4>
+<p class="pfirst"><span>Professor Michael S. Hart is the originator of the Project Gutenberg™
+concept of a library of electronic works that could be freely shared
+with anyone. For thirty years, he produced and distributed Project
+Gutenberg™ eBooks with only a loose network of volunteer support.</span></p>
+<p class="pnext"><span>Project Gutenberg™ eBooks are often created from several printed
+editions, all of which are confirmed as not protected by copyright in
+the U.S. unless a copyright notice is included. Thus, we do not
+necessarily keep eBooks in compliance with any particular paper
+edition.</span></p>
+<p class="pnext"><span>Each eBook is in a subdirectory of the same number as the eBook's
+eBook number, often in several formats including plain vanilla ASCII,
+compressed (zipped), HTML and others.</span></p>
+<p class="pnext"><span>Corrected </span><em class="italics">editions</em><span> of our eBooks replace the old file and take over
+the old filename and etext number. The replaced older file is
+renamed. </span><em class="italics">Versions</em><span> based on separate sources are treated as new
+eBooks receiving new filenames and etext numbers.</span></p>
+<p class="pnext"><span>Most people start at our Web site which has the main PG search
+facility:</span></p>
+<blockquote>
+<div>
+<p class="pfirst"><a class="reference external" href="http://www.gutenberg.org">http://www.gutenberg.org</a></p>
+</div>
+</blockquote>
+<p class="pfirst"><span>This Web site includes information about Project Gutenberg™, including
+how to make donations to the Project Gutenberg Literary Archive
+Foundation, how to help produce our new eBooks, and how to subscribe
+to our email newsletter to hear about new eBooks.</span></p>
+</div>
+</div>
+</div>
+</div>
+</body>
+</html>

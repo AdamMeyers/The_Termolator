@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE us-patent-application SYSTEM "us-patent-application-v42-2006-08-23.dtd" [ ]>
+<us-patent-application lang="EN" dtd-version="v4.2 2006-08-23" file="US20070002886A1-20070104.XML" status="PRODUCTION" id="us-patent-application" country="US" date-produced="20061221" date-publ="20070104">
+<us-bibliographic-data-application lang="EN" country="US">
+<publication-reference>
+<document-id>
+<country>US</country>
+<doc-number>20070002886</doc-number>
+<kind>A1</kind>
+<date>20070104</date>
+</document-id>
+</publication-reference>
+<application-reference appl-type="utility">
+<document-id>
+<country>US</country>
+<doc-number>11471221</doc-number>
+<date>20060620</date>
+</document-id>
+</application-reference>
+<us-application-series-code>11</us-application-series-code>
+<priority-claims>
+<priority-claim sequence="01" kind="national">
+<country>GB</country>
+<doc-number>0000874.8</doc-number>
+<date>20000114</date>
+</priority-claim>
+</priority-claims>
+<classifications-ipcr>
+<classification-ipcr>
+<ipc-version-indicator><date>20060101</date></ipc-version-indicator>
+<classification-level>A</classification-level>
+<section>H</section>
+<class>04</class>
+<subclass>J</subclass>
+<main-group>3</main-group>
+<subgroup>26</subgroup>
+<symbol-position>F</symbol-position>
+<classification-value>I</classification-value>
+<action-date><date>20070104</date></action-date>
+<generating-office><country>US</country></generating-office>
+<classification-status>B</classification-status>
+<classification-data-source>H</classification-data-source>
+</classification-ipcr>
+</classifications-ipcr>
+<classification-national>
+<country>US</country>
+<main-classification>370432000</main-classification>
+</classification-national>
+<invention-title id="d0e117">Latency handling for interconnected devices</invention-title>
+<us-related-documents>
+<continuation>
+<relation>
+<parent-doc>
+<document-id>
+<country>US</country>
+<doc-number>09759184</doc-number>
+<date>20010112</date>
+</document-id>
+<parent-status>GRANTED</parent-status>
+<parent-grant-document>
+<document-id>
+<country>US</country>
+<doc-number>7136399</doc-number>
+</document-id>
+</parent-grant-document>
+</parent-doc>
+<child-doc>
+<document-id>
+<country>US</country>
+<doc-number>11471221</doc-number>
+<kind>A1</kind>
+<date>20060620</date>
+</document-id>
+</child-doc>
+</relation>
+</continuation>
+</us-related-documents>
+<parties>
+<applicants>
+<applicant sequence="00" app-type="applicant-inventor" designation="us-only">
+<addressbook>
+<last-name>Lanigan</last-name>
+<first-name>Peter</first-name>
+<middle-name>J.</middle-name>
+<address>
+<city>Croydon</city>
+<country>GB</country>
+</address>
+</addressbook>
+<nationality>
+<country>GB</country>
+</nationality>
+<residence>
+<country>GB</country>
+</residence>
+</applicant>
+<applicant sequence="01" app-type="applicant-inventor" designation="us-only">
+<addressbook>
+<last-name>Shepherd</last-name>
+<first-name>Nicoll</first-name>
+<middle-name>B.</middle-name>
+<address>
+<city>Coulsdon</city>
+<country>GB</country>
+</address>
+</addressbook>
+<nationality>
+<country>GB</country>
+</nationality>
+<residence>
+<country>GB</country>
+</residence>
+</applicant>
+</applicants>
+<correspondence-address>
+<addressbook>
+<name>PHILIPS INTELLECTUAL PROPERTY &#x26; STANDARDS</name>
+<address>
+<address-1>P.O. BOX 3001</address-1>
+<city>BRIARCLIFF MANOR</city>
+<state>NY</state>
+<postcode>10510</postcode>
+<country>US</country>
+</address>
+</addressbook>
+</correspondence-address>
+</parties>
+<assignees>
+<assignee>
+<orgname>U.S. PHILIPS CORPORATION</orgname>
+<role>03</role>
+</assignee>
+</assignees>
+</us-bibliographic-data-application>
+<abstract id="abstract">
+<p id="p-0001" num="0000">A data processing system comprises a cluster of devices (<b>16</b>) interconnected for the communication of data in streams, particularly digital audio and/or video data. One of the devices (<b>10</b>) is a source device for at feast two data streams to be sent to one or more other devices (<b>12, 14</b>) as destination devices of the cluster. To enable synchronisation of the stream presentations by the destination devices, some or all of the devices (<b>10, 12, 14</b>) carry respective tables (<b>11, 13, 15</b>) identifying, for that device, an identifier for each type of data stream that the device can process together with the processing delay for that stream. The or each such table is accessible via the cluster connection (<b>18</b>) to whichever of the devices, at source, destination or in between for the signal, is handling application of the necessary offsets. </p>
+</abstract>
+<drawings id="DRAWINGS">
+<figure id="figure-D00000" num="00000">
+<img id="EMI-D00000" he="42.10mm" wi="95.25mm" file="US20070002886A1-20070104-D00000.TIF" alt="embedded image" img-content="drawing" img-format="tif"/>
+</figure>
+<figure id="figure-D00001" num="00001">
+<img id="EMI-D00001" he="205.40mm" wi="157.90mm" file="US20070002886A1-20070104-D00001.TIF" alt="embedded image" img-content="drawing" img-format="tif"/>
+</figure>
+<figure id="figure-D00002" num="00002">
+<img id="EMI-D00002" he="206.33mm" wi="147.32mm" orientation="landscape" file="US20070002886A1-20070104-D00002.TIF" alt="embedded image" img-content="drawing" img-format="tif"/>
+</figure>
+</drawings>
+<description id="description">
+<?summary-of-invention description="Summary of Invention" end="lead"?>
+<p id="p-0002" num="0001"> The present invention relates to systems composed of a plurality of devices clustered for the exchange of audio and/or video data and control messages via wired or wireless link and, in particular although not essentially, to such systems where different data components from a source device are to be routed to respective and separate other devices of the system. The invention further relates to devices for use in such systems. </p>
+<p id="p-0003" num="0002"> Networking or interconnection of devices has long been known and used, starting from basic systems where different system functions have been provided by separate units, for example hi-fi or so-called home cinema systems. A development has been the so-called home bus systems where a greater variety of products have been linked with a view to providing enhanced overall functionality in for example domestic audio/video apparatus coupled with a home security system and the use of telephone. An example of such a home bus system is the domestic digital bus (D2B), the communications protocols for which have been issued as standard IEC 1030 by the International Electrotechnical Commission in Geneva, Switzerland. The D2B system provides a single wire control bus to which all devices are interfaced with messages carried between the various devices of the system in a standardised form of data packet. </p>
+<p id="p-0004" num="0003"> A particular problem that can occur with distributed systems such as hi-fi and home cinema is loss of synchronisation between different components required to be presented to a user simultaneously, in particular for video images and an accompanying soundtrack, or between different components of the soundtrack, where the different components are to be handled by different devices&#x2014;for example in a home cinema set-up. This loss of synchronisation may occur due differences in the effective lengths of the transmission paths for the differing components resulting in, or due to, different latencies in decoders or intermediate processing stages for the different components. </p>
+<p id="p-0005" num="0004"> One way to approach the synchronisation problem, where all the components are decoded within a single device, is described in U.S. Pat. No. 5,430,485 (Lankford et al) which describes a receiver for decoding associated compressed video and audio information components transmitted in mutually exclusive frames of data, each with a respective presentation time stamp. A coarse synchronisation is applied by selectively dropping frames of one or other of the components and then fine tuning by adjusting the audio stream clock frequency. </p>
+<p id="p-0006" num="0005"> Another approach, this time closer to the source for different components being sent out, is described in U.S. Pat. No. 5,594,660 (Sung et al) which provides an audio/video decoder/decompressor for receiving and separating the components of an encoded and compressed data stream. Within the decoder/decompressor, Sung has means for breaking up a compound AV stream and then applying an appropriate temporal offset to each stream to achieve synchronisation of the outputs during playback. The differential buffering by FIFO units follows the system decoder but precedes the decoding of the audio or of the video. </p>
+<p id="p-0007" num="0006"> Although handling the component delays with the components still encoded generally involves less processing, handling of synchronisation (particularly if done at source) can create its own problems when it comes to determining just how much delay is to be applied to each component stream. </p>
+<p id="p-0008" num="0007"> It is accordingly an object of the present invention to provide a networked system of devices including enabling means for synchronising components intended to be presented synchronously to a user of the system. </p>
+<p id="p-0009" num="0008"> In accordance with the present invention there is provided a data processing system comprising a cluster of devices interconnected for the communication of data in streams wherein, for at least two data streams to be sent to one or more devices as destination devices of said cluster, at least one device of the cluster comprises buffering means arranged to apply a respective delay to at least one of said at least two data streams in an amount determined by differing signal path latencies for said at least two streams; wherein at least some devices of the cluster maintain a respective table, readable via said interconnection by other devices of said cluster, each such table identifying one or more latencies for the respective device, and the means arranged to apply delays applying delays on the basis of table contents. By the use of respective tables, which are suitably (but not essentially) carried by all destination devices, the determination of what delay to apply to each data stream made be made more simply and greater flexibility is introduced to the system in that changes to processing arrangements may just require a table entry to be altered, rather than a large-scale revision of the recorded operational parameters typically held by networked devices. </p>
+<p id="p-0010" num="0009"> Each table may identify, for its respective device, signal processing capabilities for that device, together with the latency associated with each such capability. Where one of the devices is a source device for said at least two data streams to be sent to said destination devices of said cluster, said source device may include the means arranged to apply a delay together with means arranged to read data from said respective tables of the destination devices and determine the respective delay to apply to at least one of said at least two data streams. In such an arrangement, the source device may further comprise multiplexing means coupled with the means arranged to apply a delay and arranged to combine said at least two streams into a single data stream for transmission to said destination devices. </p>
+<p id="p-0011" num="0010"> Whilst simple figures for the respective delays may be held in each table, one or more table entries may be in the form of an algorithm requiring data from the device reading the table to enable determination of the latency of the device holding said table. For this, the determination on the basis of the algorithm may be implemented by the device reading the table, said device having downloaded the algorithm from the device holding the table: alternatively, the determination may be implemented by the device holding the table, with the results of the implementation being transmitted via said interconnection to the device reading the table. </p>
+<p id="p-0012" num="0011"> The means arranged to apply a delay may suitably comprise buffering means (i.e. a memory device with controls over the rates of writing to, and reading from, such a device). Alternatively, the means arranged to apply a delay may comprise means arranged to selectively apply a delay to reading of one or each of said data streams from a source thereof. In this latter option, the delay means may be implemented by selective control over the reading of the data streams from (for example) disc. </p>
+<p id="p-0013" num="0012"> The present invention also provides a data processing apparatus comprising the technical features of a source device in a system as recited hereinabove and as claimed in the claims attached hereto, to which the readers attention is now directed.</p>
+<?summary-of-invention description="Summary of Invention" end="tail"?>
+<?brief-description-of-drawings description="Brief Description of Drawings" end="lead"?>
+<p id="p-0014" num="0013"> Further features and advantages of the present invention will become apparent from reading of the description of preferred embodiments of the invention, given by way of example only and with reference to the accompanying drawings, in which: </p>
+<p id="p-0015" num="0014"> <figref idref="DRAWINGS">FIG. 1</figref> represents an arrangement of three interconnected devices forming an audio/video cluster; </p>
+<p id="p-0016" num="0015"> <figref idref="DRAWINGS">FIG. 2</figref> represents a table of latency information as carried by one of the devices in the cluster of <figref idref="DRAWINGS">FIG. 1</figref>; </p>
+<p id="p-0017" num="0016"> <figref idref="DRAWINGS">FIG. 3</figref> represents a configuration of source device suitable to embody the present invention; and </p>
+<p id="p-0018" num="0017"> <figref idref="DRAWINGS">FIG. 4</figref> represents an alternative (wireless) interconnected cluster suitable to embody the present invention.</p>
+<?brief-description-of-drawings description="Brief Description of Drawings" end="tail"?>
+<?detailed-description description="Detailed Description" end="lead"?>
+<p id="p-0019" num="0018"> A first arrangement of interconnected devices is shown in <figref idref="DRAWINGS">FIG. 1</figref>, with three devices <b>10</b>, <b>12</b>, <b>14</b> forming a cluster <b>16</b> based around a respective bus <b>18</b> supporting communication in accordance with IEEE Standard 1394 connect and communications protocols. In the following example, reference is made to IEEE 1394, and the disclosure of the specification of this protocol is incorporated herein by reference. As will be recognised by the skilled reader, however, conformance with such protocol is not essential to the operation of the present invention. </p>
+<p id="p-0020" num="0019"> The devices in the cluster <b>16</b> comprise a source device <b>10</b> coupled via bus <b>18</b> to a pair of presentation devices, in this example a television <b>12</b> for showing the image component of a combined AV stream from the source, and an audio processor and playback system <b>14</b> for reproducing the audio component of the AV stream. </p>
+<p id="p-0021" num="0020"> In order to synchronise the presentation to a user of the audio and video components, a device on the network must arrange for some stream components (in this example the audio component) to be delayed relative to the others (in this case video). In the <figref idref="DRAWINGS">FIG. 1</figref> example, if a data stream from the source <b>10</b> to the two destination devices <b>12</b>, <b>14</b> consists of MPEG2 video and AC3 audio, where the processing delay for MPEG2 in the television <b>12</b> is 1.0 second, and the processing delay for AC3 audio in the audio presentation device <b>14</b> is 0.1 seconds, the audio signal must be delayed by (1.0&#x2212;0.1)=0.9 seconds at some point along its signal path to achieve synchronisation. One technique for applying this delay is described in our co-pending commonly-assigned application entitled &#x201c;Interconnection of Audio/Video Devices&#x201d; and will be briefly described hereinafter with respect to <figref idref="DRAWINGS">FIG. 3</figref>. In order to be able to arrange for these delays, the system must have some means for determining the processing delays for the various types of data stream. </p>
+<p id="p-0022" num="0021"> In order to enable application of the appropriate delay to counter latency in a matching stream, particularly for those devices supporting more than one processing capability (e.g. MPEG2 and DV; AC3 and MP3), each device in the cluster <b>10</b>, <b>12</b>, <b>14</b> is provided with a respective internal or remotely stored look-up table <b>11</b>, <b>13</b>, <b>15</b>. In this table (an example of which is given in <figref idref="DRAWINGS">FIG. 2</figref> for the television <b>12</b> from <figref idref="DRAWINGS">FIG. 1</figref>) there will be one entry for each type of stream that a device can process. The entry will consist of, at least, an identifier for the type of stream, and a processing delay for that stream. Other information about the stream may be contained in the table, as required. </p>
+<p id="p-0023" num="0022"> In certain circumstances the system may support changes to the specified delays in response to user input varying one or other of the preset audio parameters. The notification for such changes will generally be in the form of a protocol-supported notification and the extent to which some or all devices of the cluster detect and record the effects of the change against their particular parameters as stored in their respective table will depend on the extent to which they follow the protocol. This also applies to their ability to read updated tables from other devices of the cluster. </p>
+<p id="p-0024" num="0023"> A single type of stream may have different processing delays if, for example, the device has different processing delays for various ranges of bit rates for that type of stream. Also, as shown by the entry for MPEG7 stream types, an entry may consist of an algorithm to determine the delay. For example, if the delay was 0.1 seconds for every megabit per second of incoming data, the formula of (0.1*&#x3c7;) seconds, where &#x3c7; is the number of megabits per second, could be stored. With an algorithm in the table, it is either packaged such as to be available for downloading by a device seeking to determine delays, or the enquiring device may be required to submit parameter values (e.g. &#x3c7;) to the device holding the algorithm in its table, which device would then calculate the delay and return the value to the enquiring device. The table may be accessed by some form of read transaction (e.g. &#x201c;read&#x201d; operations conforming to IEEE 1394 protocols), a command protocol (e.g. AV/C), a remote method invocation protocol (e.g. request messages according to the Home Audio/Video interoperability standard&#x2014;HAVi&#x2014;based around IEEE1394), various Java&#x2122; RMI procedures or some other method. </p>
+<p id="p-0025" num="0024"> As mentioned above, and described in greater detail in our co-pending application, one possible configuration for the source device <b>10</b> comprises an audio stream buffer <b>20</b> and a video stream buffer <b>22</b> for receiving separate input components from a remote signal source <b>24</b>. Under the direction of a controlling processor <b>30</b>, which reads the processing latencies from the tables (not shown) for destination devices <b>12</b>, <b>14</b>, the buffers are used to apply a respective delay to at least one of the two data streams to combat the differing processing latencies in the video <b>12</b> and audio <b>14</b> destination devices. Also under the direction of the processor <b>30</b>, a multiplexer stage <b>32</b> combines the temporally offset audio and video from the respective buffers into a single data stream for transmission via the 1394 bus <b>18</b>. </p>
+<p id="p-0026" num="0025"> Whilst the signals in the respective buffers <b>20</b>, <b>22</b> may simply be read out and recombined, the source device optionally further comprises data processing means interposed in the signal path between the buffers <b>20</b>, <b>22</b> and the multiplexer <b>32</b>. As shown, this further data processing means may take the form of an audio signal processor ASP <b>34</b> on the output to the audio signal buffer and a video signal processor VSP <b>36</b> on the output to the video signal buffer. </p>
+<p id="p-0027" num="0026"> The first and second data streams (audio and video) may be encoded according to a first communications protocol such as MPEG1 or 2, and the destination devices <b>12</b>, <b>14</b> are each provided with a respective decoder <b>40</b>, <b>42</b> operating according to the said protocol. </p>
+<p id="p-0028" num="0027"> From reading the present disclosure, other modifications and variations will be apparent to persons skilled in the art, including equivalents and features which are already known in the field of bus-connected and cordless communication systems and components and which may be used instead of or in addition to features already disclosed herein. For example, as shown by <figref idref="DRAWINGS">FIG. 4</figref>, the source <b>58</b> may comprise an optical or magnetic disk reader and, instead of a digital data bus, the data channel from source <b>60</b> to destination devices <b>62</b>, <b>64</b>, <b>66</b> may be a wireless communications link <b>68</b> for which each of the destination devices is provided with at least a receiver and the source device is provided with at least a transmitter. The system may comprise many more devices than illustrated herein including, for example, two or more source devices, and some devices of the system may have the technical features of both source and destination (for example a video cassette record and playback deck) with the appropriate source/destination behaviour being selected in dependence on the context. </p>
+<p id="p-0029" num="0028"> In the foregoing we have described a data processing system that comprises a cluster of devices interconnected for the communication of data in streams, particularly digital audio and/or video data. One of the devices is a source device for at least two data streams to be sent to one or more other devices as destination devices of the cluster. To enable synchronisation of the stream presentations by the destination devices, some or all of the devices carry respective tables identifying, for that device, an identifier for each type of data stream that the device can process together with the processing delay for that stream. The or each such table is accessible via the cluster connection to whichever of the devices, at source, destination or in between for the signal, is handling application of the necessary offsets. </p>
+<?detailed-description description="Detailed Description" end="tail"?>
+</description>
+<claims id="claims">
+<claim id="CLM-00001" num="00001">
+<claim-text><b>1</b>. A data processing system comprising a cluster of devices interconnected for the communication of data in streams wherein, for at least two data streams to be sent to one or more devices as destination devices of said cluster, at least one device of the cluster comprises means arranged to apply a respective delay to at least one of said at least two data streams in an amount determined by differing signal path latencies for said at least two streams; wherein at least some devices of the cluster maintain a respective table, readable via said interconnection by other devices of said cluster, each such table identifying one or more latencies for the respective device, and the means arranged to apply a delay operating to apply delays on the basis of table contents. </claim-text>
+ </claim>
+<claim id="CLM-00002" num="00002">
+<claim-text><b>2</b>. A system as claimed in <claim-ref idref="CLM-00001">claim 1</claim-ref>, wherein each table identifies, for its respective device, signal processing capabilities for that device, together with the latency associated with each such capability. </claim-text>
+ </claim>
+<claim id="CLM-00003" num="00003">
+<claim-text><b>3</b>. A system as claimed in <claim-ref idref="CLM-00001">claim 1</claim-ref>, wherein one of said devices is a source device for said at least two data streams to be sent to said destination devices of said cluster, said source device including said means arranged to apply a delay together with means arranged to read data from said respective tables of the destination devices and determine the respective delay to apply to at least one of said at least two data streams. </claim-text>
+ </claim>
+<claim id="CLM-00004" num="00004">
+<claim-text><b>4</b>. A system as claimed in <claim-ref idref="CLM-00003">claim 3</claim-ref>, wherein said source device further comprises multiplexing means coupled with said means arranged to apply a delay and arranged to combine said at least two streams into a single data stream for transmission to said destination devices. </claim-text>
+ </claim>
+<claim id="CLM-00005" num="00005">
+<claim-text><b>5</b>. A system as claimed in <claim-ref idref="CLM-00002">claim 2</claim-ref>, wherein one or more table entries is in the form of an algorithm requiring data from the device reading the table to enable determination of the latency of the device holding said table. </claim-text>
+ </claim>
+<claim id="CLM-00006" num="00006">
+<claim-text><b>6</b>. A system as claimed in <claim-ref idref="CLM-00005">claim 5</claim-ref>, wherein the determination on the basis of the algorithm is implemented by the device reading the table, said device having downloaded the algorithm from the device holding the table. </claim-text>
+ </claim>
+<claim id="CLM-00007" num="00007">
+<claim-text><b>7</b>. A system as claimed in <claim-ref idref="CLM-00005">claim 5</claim-ref>, wherein the determination on the basis of the algorithm is implemented by the device holding the table, the results of the implementation being transmitted via said interconnection to the device reading the table. </claim-text>
+ </claim>
+<claim id="CLM-00008" num="00008">
+<claim-text><b>8</b>. A system as claimed in <claim-ref idref="CLM-00001">claim 1</claim-ref>, wherein all destination devices maintain a respective table. </claim-text>
+ </claim>
+<claim id="CLM-00009" num="00009">
+<claim-text><b>9</b>. A system as claimed in <claim-ref idref="CLM-00001">claim 1</claim-ref>, wherein said means arranged to apply a delay comprises buffering means. </claim-text>
+ </claim>
+<claim id="CLM-00010" num="00010">
+<claim-text><b>10</b>. A system as claimed in <claim-ref idref="CLM-00001">claim 1</claim-ref>, wherein said means arranged to apply a delay comprises means arranged to selectively apply a delay to reading of one or each of said data streams from a source thereof. </claim-text>
+ </claim>
+<claim id="CLM-00011" num="00011">
+<claim-text><b>11</b>. (canceled) </claim-text>
+ </claim>
+<claim id="CLM-00012" num="00012">
+<claim-text><b>12</b>. (canceled)</claim-text>
+ </claim>
+</claims>
+</us-patent-application>

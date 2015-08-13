@@ -1,0 +1,42 @@
+today = +0d:yyyy-MM-dd
+yesterday = -1d:yyyy-MM-dd
+tomorrow = +1d:yyyy-MM-dd
+next month = +1m:yyyy-MM
+a month later = +1m:yyyy-MM
+last month = -1m:yyyy-MM
+a month ago = -1m:yyyy-MM
+next year = +1y:yyyy
+last year = -1y:yyyy
+past year = -1y:yyyy
+a year ago = -1y:yyyy-MM-dd
+a year earlier = -1y:yyyy-MM-dd
+one year ago = -1y:yyyy-MM-dd
+one year earlier = -1y:yyyy-MM-dd
+year earlier = -1y:yyyy-MM-dd
+{number} years ago = -{1}y:yyyy
+{number} years later = -{1}y:yyyy
+{number} months ago = -{1}y:yyyy
+{number} months later = -{1}y:yyyy
+{month} {year} = {2}-{1}-1:yyyy-MM
+{month} {day} , {year} = {4}-{1}-{2}:yyyy-MM-dd
+{year} = {1}-01-01:yyyy
+{number} / {number} / {year} = {5}-{1}-{3}:yyyy-MM-dd
+this month = +0m:yyyy-MM
+this year = +0y:yyyy
+{regex:(?:earlier|later)} this month = +0m:yyyy-MM
+
+Jet.Time.rules.MonthAndDayRule
+Jet.Time.rules.DayOfWeekRule
+Jet.Time.rules.LastDayOfWeekRule
+Jet.Time.rules.LastMonthRule
+Jet.Time.rules.MonthRule
+Jet.Time.rules.ThisMonthRule
+Jet.Time.rules.SimpleDigitsRule
+Jet.Time.rules.FourDigitsRule
+Jet.Time.rules.CenturyRule
+Jet.Time.rules.TimeWithTimeZoneRule
+Jet.Time.rules.TimeWithAMPMRule
+Jet.Time.rules.MonthAndNextOrLastYearRule
+Jet.Time.rules.ThisWeekRule
+Jet.Time.rules.LastWeekRule
+Jet.Time.rules.NextWeekRule

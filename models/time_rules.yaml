@@ -1,0 +1,573 @@
+config:
+  early_month: 4
+  late_month: 9
+  min_year: 1900
+  max_year: 9999
+  sortByPatternLength: true
+
+rules:
+  - type: simple
+    patterns:
+      - today
+      - Today
+      - now
+      - Now
+      - tonight
+      - Tonight
+    params:
+      format: yyyy-MM-dd
+      
+  - type: simple
+    patterns:
+      - yesterday
+      - last night
+      - Last night
+    params:
+      diff: P1D
+      dir: minus
+      format: yyyy-MM-dd
+
+  - type: simple
+    pattern: tomorrow
+    params:
+      diff: P1D
+      dir: plus
+      format: yyyy-MM-dd
+  
+  - type: simple
+    patterns: 
+      - next month
+      - a month later
+    params:
+      diff: P1M
+      dir: plus
+      format: yyyy-MM
+
+  - type: simple
+    patterns:
+      - last month
+      - a month ago
+    params:
+      diff: P1M
+      dir: minus
+      format: yyyy-MM
+      
+  - type: simple
+    patterns:
+      - next year
+      - one year later
+    params:
+      diff: P1Y
+      dir: plus
+      format: yyyy
+      
+  - type: simple
+    patterns:
+      - last year
+      - past year
+    params:
+      diff: P1Y
+      dir: minus
+      format: yyyy
+      
+  - type: simple
+    patterns:
+      - a year earlier
+      - a year ago
+      - one year earlier
+      - one year ago
+      - year earlier
+    params:
+      diff: P1Y
+      dir: minus
+      format: yyyy-MM-dd  
+   
+  - type: simple
+    pattern: a year later
+    params:
+      diff: P1Y
+      dir: plus
+      format: yyyy-MM-dd
+
+  - type: simple
+    pattern: (number) years ago
+    params:
+      diff: P(1)Y
+      dir: minus
+      format: yyyy
+  
+  - type: simple
+    pattern: (number) years later
+    params:
+      diff: P(1)Y
+      dir: plus
+      format: yyyy
+      
+  - type: simple
+    pattern: (number) months ago
+    params:
+      diff: P(1)M
+      dir: minus
+      format: yyyy-MM
+  
+  - type: simple
+    pattern: (number) months later
+    params:
+      diff: P(1)M
+      dir: plus
+      format: yyyy-MM
+  
+  - type: simple
+    pattern: a month ago
+    params:
+      diff: P1M
+      dir: minus
+      format: yyyy-MM
+
+  - type: simple
+    pattern: a month later
+    params:
+      diff: P1M
+      dir: plus
+      format: yyyy-MM
+  
+  - type: simple
+    pattern: (number) weeks ago
+    params:
+      diff: P(1)W
+      dir: minus
+      format: yyyy-MM-dd
+    
+  - type: simple
+    patterns:
+      - a week ago
+      - A week ago
+    params:
+      diff: P1W
+      dir: minus
+      format: yyyy-MM-dd
+  
+  - type: simple
+    pattern: (number) days ago
+    params:
+      diff: P(1)D
+      dir: minus
+      format: yyyy-MM-dd
+ 
+  - type: simple
+    pattern: this month
+    params:
+      format: yyyy-MM
+  
+  - type: simple
+    pattern: this year
+    params:
+      format: yyyy
+   
+  - type: simple
+    pattern: (year)
+    params:
+      value: (1)
+      format: yyyy
+  
+  - type: simple
+    pattern: (month) (year)
+    params:
+      value:  (2)-(1)
+      format: yyyy-MM
+  
+  - type: simple
+    pattern: '(month) (day) , (year)'
+    params:
+      value: (4)-(1)-(2)
+      format: yyyy-MM-dd
+      
+  - type: simple
+    pattern: (number) / (number) / (year)
+    params:
+      value: (5)-(1)-(3)
+      format: yyyy-MM-dd
+      
+  - type: simple
+    pattern: this week
+    params:
+      format: xxxx-'W'ww
+  
+  - type: simple
+    pattern: next week
+    params:
+      diff: P1W
+      dir: plus
+      format: xxxx-'W'ww
+  
+  - type: simple
+    pattern: last week
+    params:
+      diff: P1W
+      dir: minus
+      format: xxxx-'W'ww
+  
+  - type: script
+    patterns:
+      - the (ordinal) of (month)
+      - The (ordinal) of (month)
+    params:
+      format: yyyy-MM-dd
+      script: |
+        month = values[3]
+        day = values[1]
+        if (ref.monthOfYear < config.early_month && month > config.late_month) {
+          year = ref.year - 1
+        } else if (ref.monthOfYear > config.late_month && month < config.early_month) {
+          year = ref.year + 1
+        } else {
+          year = ref.year
+        }
+        return ref.withDate(year, month, day)
+
+  - type: script
+    patterns:
+      - the (ordinal) of (month) (year)
+      - The (ordinal) of (month) (year)
+    params:
+      format: yyyy-MM-dd
+      script: |
+        day = values[1]
+        month = values[3]
+        year = values[4]
+        return ref.withDate(year, month, day)
+
+  - type: script
+    pattern: (month) (day)
+    params:
+      format: yyyy-MM-dd
+      script: |
+        month = values[0]
+        day = values[1]
+        if (ref.monthOfYear < config.early_month && month > config.late_month) {
+          year = ref.year - 1
+        } else if (ref.monthOfYear > config.late_month && month < config.early_month) {
+          year = ref.year + 1
+        } else {
+          year = ref.year
+        }
+        return ref.withDate(year, month, day)
+  
+  - type: script
+    pattern: (month)
+    params:
+      format: yyyy-MM
+      script: |
+        month = values[0]
+        if (ref.monthOfYear < config.early_month && month > config.late_month) 
+          ref.withDate(ref.year - 1, month, 1)
+        else if (ref.monthOfYear > config.late_month && month < config.early_month)
+          ref.withDate(ref.year + 1, month, 1)
+        else
+          ref.withDate(ref.year, month, 1)
+  
+  - type: script
+    pattern: (dow)
+    params:
+      format: yyyy-MM-dd
+      script: |
+        dow = values[0]
+        diff = ref.dayOfWeek - dow
+        if (diff < 0) diff += 7
+        return ref.minusDays(diff)
+        
+  - type: script
+    patterns:
+      - last (dow)
+      - Last (dow)
+    params:
+      format: yyyy-MM-dd
+      script: |
+        dow = values[1]
+        diff = ref.dayOfWeek - dow
+        if (diff <= 0) diff += 7
+        return ref.minusDays(diff)
+  
+  - type: script
+    patterns:
+      - last (month)
+      - Last (month)
+    params:
+      format: yyyy-MM
+      script: |
+        if (ref.monthOfYear <= values[1]) ref.withDate(ref.year - 1, values[1], 1)
+        else ref.withDate(ref.year, values[1], 1)
+
+  - type: script
+    patterns:
+      - '(regex:\d{4}) / (regex:\d{2}) / (regex:\d{2})'
+      - '(regex:\d{4}) - (regex:\d{2}) - (regex:\d{2})'
+    params:
+      format: yyyy-MM-dd
+      script: |
+         ref.withDate(
+           Integer.parseInt(values[0].group()),
+           Integer.parseInt(values[2].group()),
+           Integer.parseInt(values[4].group()))
+  
+  - type: script
+    pattern: '(regex:\d{8})'
+    params:
+      format: yyyy-MM-dd
+      script: |
+        ref.withDate(
+          Integer.parseInt(values[0].group().substring(0, 4)),
+          Integer.parseInt(values[0].group().substring(4, 6)),
+          Integer.parseInt(values[0].group().substring(6, 8)))
+                     
+  
+  - type: script
+    patterns:
+      - (number) century
+      - the (number) century
+      - The (number) century
+    params:
+      format: C
+      script: |
+        ref.withDate(values[values.size() - 2] * 100, 1, 1)
+  
+  - type: script
+    pattern: '(regex:\d{4}) GMT'
+    params:
+      format: yyyy-MM-dd'T'HH:mm'Z'
+      script: |
+        ref.withTime(
+          Integer.parseInt(values[0].group(0).substring(0, 2)),
+          Integer.parseInt(values[0].group(0).substring(2, 4)),
+          0, 0)
+   
+  - type: script
+    pattern: '(regex:(\d+)\.(\d+)) (regex:(?i)AM)'
+    params:
+      format: yyyy-MM-dd'T'HH:mm
+      script: |
+        ref.withTime(
+          Integer.parseInt(values[0].group(1)),
+          Integer.parseInt(values[0].group(2)),
+          0, 0)
+
+  - type: script
+    pattern: '(regex:(\d+)\.(\d+)) (regex:(?i)PM)'
+    params:
+      format: yyyy-MM-dd'T'HH:mm
+      script: |
+        ref.withTime(
+          Integer.parseInt(values[0].group(1)) + 12,
+          Integer.parseInt(values[0].group(2)),
+          0, 0)
+  
+  - type: script
+    pattern: (month) next year
+    params:
+      format: yyyy-MM
+      script: |
+        ref.withDate(ref.year + 1, values[0], 1)
+  
+  - type: script
+    pattern: (month) last year
+    params:
+      format: yyyy-MM
+      script: |
+        ref.withDate(ref.year - 1, values[0], 1)
+ 
+  - type: script
+    patterns:
+     - 'several (regex:years|months|weeks|days) ago'
+     - 'a few (regex:years|months|weeks|days) ago'
+     - 'a couple of (regex:years|months|weeks|days) ago'
+    params:
+      format: yyyy-MM-dd
+      script: |
+        import org.joda.time.format.DateTimeFormat
+        switch (values[values.size() - 2].group()) {
+        case "years":
+          pattern = DateTimeFormat.forPattern("yyyy")
+          break
+        case "months":
+          pattern = DateTimeFormat.forPattern("yyyy-MM")
+          break
+        case "weeks":
+        case "days":
+          pattern = DateTimeFormat.forPattern("yyyy-MM-dd")
+          break
+        }
+        annotate(span, { "VAL" => "PAST_REF", "ANCHOR_DIR" => "BEFORE", "ANCHOR_VAL" => pattern.print(ref) })
+
+  - type: script
+    patterns:
+     - 'last (regex:years|months|weeks|days)'
+     - 'last few (regex:years|months|weeks|days)'
+     - 'last several (regex:years|months|weeks|days)'
+     - 'recent (regex:years|months|weeks|days)'
+     - 'for (regex:years|months|weeks|days)'
+     - 'Last (regex:years|months|weeks|days)'
+     - 'Last few (regex:years|months|weeks|days)'
+     - 'Last several (regex:years|months|weeks|days)'
+     - 'Recent (regex:years|months|weeks|days)'
+     - 'For (regex:years|months|weeks|days)'
+    params:
+      script: |
+        import org.joda.time.format.DateTimeFormat
+        switch (values[values.size() - 1].group()) {
+        case "years":
+          pattern = DateTimeFormat.forPattern("yyyy")
+          unit = 'Y'
+          break
+        case "months":
+          pattern = DateTimeFormat.forPattern("yyyy-MM")
+          unit = 'M'
+          break
+        case "weeks":
+          pattern = DateTimeFormat.forPattern("yyyy-MM-dd")
+          unit = 'W'
+          break
+        case "days":
+          pattern = DateTimeFormat.forPattern("yyyy-MM-dd")
+          unit = 'D'
+          break
+        }
+        annotate(span, {"VAL" => "PX" + unit, "ANCHOR_DIR" => "BEFORE", "ANCHOR_VAL" => pattern.print(ref) })
+
+  - type: script
+    patterns:
+      - 'coming (regex:years|months|weeks|days)'
+      - 'next few (regex:years|months|weeks|days)'
+      - 'Coming (regex:years|months|weeks|days)'
+      - 'Next few (regex:years|months|weeks|days)'
+    params:
+      script: |
+        import org.joda.time.format.DateTimeFormat
+        switch (values[values.size() - 1].group()) {
+        case "years":
+          pattern = DateTimeFormat.forPattern("yyyy")
+          unit = 'Y'
+          break
+        case "months":
+          pattern = DateTimeFormat.forPattern("yyyy-MM")
+          unit = 'M'
+          break
+        case "weeks":
+          pattern = DateTimeFormat.forPattern("yyyy-MM-dd")
+          unit = 'W'
+          break
+        case "days":
+          pattern = DateTimeFormat.forPattern("yyyy-MM-dd")
+          unit = 'D'
+          break
+        }
+        annotate(span, {"VAL" => "PX" + unit, "ANCHOR_DIR" => "AFTER", "ANCHOR_VAL" => pattern.print(ref) })
+
+##### ISO8601
+
+  - type: script
+    pattern: '(regex:\d{4}) - (regex:\d{2}) - (regex:\d{2}T\d{2}) : (regex:\d{2}) : (regex:\d{2})'
+    params:
+      format: yyyy-MM-dd'T'HH:mm:ss
+      script: |
+        return formatter.parseDateTime(doc.text(span).toString().trim())
+
+##### Complex
+
+  - type: script
+    pattern: '(dow) , (number) (month) (year) (number) : (number) : (number)'
+    params:
+      format: yyyy-MM-dd'T'HH:mm:ss'Z'
+      script: |
+        import org.joda.time.DateTime
+        year = values[4]
+        month = values[3]
+        day = values[2]
+        hour = values[5]
+        min = values[7]
+        sec = values[9]
+        return new DateTime(year, month, day, hour, min, sec, 0)
+
+  - type: script
+    pattern: '(dow) , (number) (month) (year) (number) : (number) : (number) GMT'
+    params:
+      format: yyyy-MM-dd'T'HH:mm:ss'Z'
+      script: |
+        import org.joda.time.DateTime
+        year = values[4]
+        month = values[3]
+        day = values[2]
+        hour = values[5]
+        min = values[7]
+        sec = values[9]
+        return new DateTime(year, month, day, hour, min, sec, 0)
+
+  - type: script
+    pattern: '(dow) , (number) (month) (year) (number) : (number) : (number) (regex:[+-]) (regex:\d{2}\d{2}?)' 
+    params:
+      format: yyyy-MM-dd'T'HH:mm:ss
+      script: |
+        import org.joda.time.DateTime
+        year = values[4]
+        month = values[3]
+        day = values[2]
+        hour = values[5]
+        min = values[7]
+        sec = values[9]
+        tz = values[10].group() + values[11].group()
+        date = DateTime(year, month, day, hour, min, sec, 0)
+        val = formatter.print(date) + tz
+        annotate(span, {"VAL" => val})
+
+##### Durations
+  
+  - type: script
+    patterns:
+      - '(number) (regex:years|months|days)'
+      - 'the (number) (regex:years|months|days)'
+    params:
+      script: |
+        unit = values[values.size() - 1].group().substring(0, 1).toUpperCase()
+        n = values[values.size() - 2]
+        annotate(span, { "VAL" => "P" + n + unit })
+  
+  - type: script
+    patterns:
+      - '(number) (regex:hours|minutes|seconds)'
+    params:
+      script: |
+        unit = values[values.size() - 1].group().substring(0, 1).toUpperCase()
+        n = values[values.size() - 2]
+        annotate(span, { "VAL" => "PT" + n + unit })
+  
+transformRules:
+  - type: script
+    pattern: (duration) ended (time)
+    params:
+      script: |
+        annotate(span, 
+                 { "VAL" => values[0].get("VAL"),
+                   "ANCHOR_DIR" => "ENDING",
+                   "ANCHOR_VAL" => values[2].get("VAL") })
+        removeAnnotation(values[0])
+  
+  - type: script
+    patterns:
+      - past (duration)
+      - the past (duration)
+    params:
+      format: yyyy-MM-dd
+      script: |
+        duration = values[values.size() - 1]
+        annotate(span,
+                 { "VAL" => duration.get("VAL"),
+                   "ANCHOR_DIR" => "ENDING",
+                   "ANCHOR_VAL" => formatter.print(ref)})
+        removeAnnotation(duration)
+
+  - type: script
+    pattern: 'exactly (duration)'
+    params:
+      script: |
+        annotate(span, values[1].attributes())
+        removeAnnotation(values[1])
+

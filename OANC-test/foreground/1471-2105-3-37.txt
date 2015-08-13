@@ -1,0 +1,543 @@
+
+  
+    
+      
+        Background
+        Genomic cloning has revealed that most of the enzyme
+        families essential for maintaining cell growth have been
+        conserved throughout evolution [ 1 ] . However, mammalian
+        enzymes with different functional activity may have evolved
+        by combining elements from several bacterial ancestral
+        genes. Even small proteins may contain several individual
+        domains that link them to different superfamilies [ 2 ] .
+        While many endonucleases share a common active site that is
+        highly conserved across many subfamilies, identifying
+        residues that control substrate specificity requires
+        sophisticated analysis that combines both sequence
+        conservation and structural data [ 3 4 5 ] .
+        In this paper we distinguish, using a word-based
+        "molego" approach, structural elements that control
+        substrate specificity. We postulate here that elements
+        conserved in all the members of related protein families
+        dictate common structures and also common "functions",
+        i.e., individual steps in a complex reaction. Areas that
+        affect substrate specificity will be less conserved in the
+        superfamily than they are in subfamilies of enzymes that
+        catalyze specific activities. We have chosen to illustrate
+        this approach using the multifunctional family of DNA
+        repair proteins, the apurinic/apyrimidinic endonucleases
+        (APEs), which have a clearly defined bacterial ancestor, 
+        E. coli exonuclease III (ExoIII), and
+        are distantly related to several enzymes with varying
+        substrate specificity.
+        APEs are essential for mammalian cell growth and
+        bacterial survival in the presence of ionizing radiation
+        and DNA mutagens [ 6 ] . They initiate repair of an abasic
+        DNA site by cleaving the phosphodiester backbone 5' of the
+        phosphodeoxyribose. This generates the necessary 3'
+        hydroxyl group for DNA polymerases (pol β, δ or ε, in
+        eukaryotes) to insert the correct nucleotide in later steps
+        in the base excision repair pathway (BER-pathway) [ 7 8 ] .
+        Recent crystal structures of huAPE1 complexed with DNA
+        containing an abasic site [ 9 10 11 ] , combined with
+        sequence analysis and site-directed mutagenesis, have
+        defined the residues that participate in metal ion based
+        cleavage of the phosphate backbone of the DNA [ 12 13 14 15
+        16 17 ] .
+        Mutations that greatly diminish the enzymatic activity
+        of huAPE1 do not affect, and may even increase binding to
+        damaged DNA, while non-specific DNA binding remains low [
+        16 18 ] . Further, mutations that have little effect on APE
+        activity in vitro prevent complementation of DNA repair
+        deficient 
+        E. coli . As seen with other DNA
+        repair enzymes [ 19 ] , specificity determining residues,
+        as yet unidentified for APEs, must be distinct from those
+        involved in phosphorolysis.
+        To better assess which residues determine specificity,
+        we assume that functions unique to APEs will be determined
+        by motifs that are not conserved in a similar fashion in
+        families with a different activity spectrum of functions.
+        Besides cleaving the phosphate backbone, to achieve
+        specificity APEs must coordinate a series of functions,
+        including: interaction with target DNA in a series of
+        small, possibly repetitive steps (scanning), locating
+        damage sites, establishing the transition state complex,
+        completing the cleavage, re-adjusting the charge status
+        within the active site, and regulating release of product
+        after interaction with the next enzyme in the BER pathway [
+        20 21 22 23 24 25 ] . A finer breakdown of these functions
+        can be achieved at the molecular level once all the
+        residues in the reaction mechanism are known. APEs also
+        have RNase H, 3'-exonuclease, and 3'-phosphodiester
+        activities that are particularly high in the bacterial
+        members of the family [ 26 13 ] .
+        Our web-based MASIA program [ 27 ] was used to rapidly
+        decompose the sequences of APEs and related protein
+        families into motifs, areas of significant conservation in
+        members of identical function, which could then be
+        correlated structurally using data from crystal structures.
+        Having determined that 12 motifs were common to all APE1's,
+        we compared the structure of the subset of these that
+        occurred in both DNase 1 and synaptojanin, a member of the
+        IPP family. These shared motifs had a similar 3D structure
+        in representatives of these functionally diverse families,
+        and we therefore called these motifs "molegos" (molecular
+        legos). We then demonstrated that the shared molegos served
+        a similar role in substrate binding by comparing the DNA
+        binding profile of huAPE1 with that for the less specific
+        enzyme DNase 1. The molegos present in both enzymes
+        interact with target DNA in a similar fashion, while
+        residues in molegos distinctive for APE1 control
+        specificity by binding primarily to the bases around the
+        apurinic site. Matching of molegos, guided by the degree of
+        conservation of individual residues across the three
+        families, allowed a better alignment of the individual
+        secondary structure elements among the proteins than DALI
+        achieved. This word based, sequence (motif) to structure
+        (molego) to function method has clear implications for
+        genomic analysis and template based homology modeling, as
+        well as immediate application in recognizing specificity
+        determinants in proteins that share active sites common to
+        many enzymes [ 28 ] .
+      
+      
+        Results
+        
+          Total sequence decomposition of human Ape1 with
+          MASIA
+          MASIA identified 12 motifs as conserved in all members
+          of the APE family (Figure 1and Table 1). As table 1, last
+          column, illustrates, these motifs include all the
+          residues known to be essential for DNA cleavage. Most of
+          the highly conserved (greater than 90%) residues have
+          been shown by previous mutagenesis studies to affect
+          activity. The 12 motifs are also structurally conserved,
+          as demonstrated by the low RMSD values between segments
+          in the crystal structures of bacterial ExoIII and of
+          huAPE1. These two proteins are only 26% identical (based
+          on a DALI, structure based alignment) and most of the
+          similar segments are contained in the molegos. As the
+          third column of the table demonstrates, the backbone
+          deviation of the segments is overall <1 Å and for 5 of
+          the motifs, <0.5 Å. We have chosen the name "molegos"
+          for the structural units associated with motifs, which
+          are presented pictorially in Figures 2and 3. Most of the
+          DNA and metal ion binding molegos form individual
+          β-strands at the core of the protein that orient the
+          absolutely conserved residues toward the substrate, but
+          several have a helical or hydrogen bonded coil
+          structure.
+          The 12 motifs, which account for about half of the
+          protein, are bridged by areas that vary in the different
+          members of the APE family. These connecting regions may
+          account for the differing activities of the bacterial and
+          mammalian proteins. The longest molego, 7, was broken
+          down into two areas, with the contiguous region labeled
+          7a. The first 7 residues of the 7a area molego are quite
+          similar in the bacterial and mammalian APE. However, the
+          end is differently conserved in eukaryotes. The
+          endonuclease activity of DNase 1 is reduced many fold by
+          integrating this loop from 
+          E. coli exonuclease III, but the
+          mutant cleaves at abasic sites in DNA with low efficiency
+          [ 29 ] . Thus additional residues in the APEs control
+          specificity while still allowing a reasonable rate of
+          phosphorolytic cleavage.
+        
+        
+          Finding APE molegos in the DNase 1
+          superfamily
+          In an effort to functionally annotate the molegos of
+          APE1, we next sought to find them in other proteins that
+          shared some structural similarity to APE. The APEs,
+          DNase-1 and inositol 5'-polyphosphate phosphatases (IPP)
+          have been grouped according to the SCOP database [ 30 ]
+          as the DNase-1 like superfamily. Although DNase 1 has
+          only 18% overall sequence identity and the IPP domain of
+          synaptojanin, 14%, to APE1, we could show that most of
+          the areas of identity were in molegos common to all three
+          proteins. Motifs in other protein families were
+          identified by genomic cross-networking with PSIBLAST (see
+          methods for details). Our analysis identified 5 molegos
+          that are common to the DNase 1, IPP and APE families,
+          which roughly correspond to areas of sequence similarity
+          identified previously [ 31 32 ] . The structural
+          similarities of molegos 1,2, 7, 11 and 12 (i.e., the
+          segmental RMSD's) between APE1 and representatives of the
+          distantly related DNase 1 and IPP families are comparable
+          to those found between members of the APE family (Figure
+          4and Table 1& 2).
+        
+        
+          Common molegos form a similar active site in two
+          distant relatives
+          The 12 conserved molegos form the β-barrel core of
+          huAPE1. The completely conserved residues of huAPE1
+          concentrate, for the most part, at one end of this
+          framework to form the metal ion binding active site
+          (Figure 4). This core is also common to DNase 1 and
+          synaptojanin(an IPP family member), which share the
+          functions of metal ion based cleavage of a phosphate
+          backbone. The shared molegos define an active site
+          architecture conserved in all three proteins, including
+          the orientation of the substrate toward the metal binding
+          site.
+        
+        
+          Molegos define functional areas common to DNase 1
+          and APE1
+          A contact plot of huAPE1 with the DNA in the 1DE8
+          crystal structure (Figure 5) shows that motifs 1-3,5-8,
+          and 10-12 all have residues close to the substrate, an
+          oligonucleotide containing an abasic site (AP-DNA). The
+          N-terminal motifs 1-3 and 5 bind primarily 5' to the
+          apurinic site and to the 3' end of the undamaged strand.
+          The other motifs bind more to the area 3' of the damage
+          site. Motifs 10 and 12 span both strands of the DNA.
+          Although motif 12 contains several highly conserved
+          residues that, according to mutagenesis results (Table 1)
+          contribute to APE1 activity, only His309 is very close to
+          the abasic site in the DNA. Molegos 4 and 9 contain no
+          residues in contact with the DNA or metal ion. Comparing
+          the binding of APE in a substrate complex (Figure 6,
+          left) suggests that APE's binding to the 5' end of the
+          DNA after cleavage (Fig. 5), especially that mediated by
+          molego 3, is stronger, while the distance from the
+          protein to the DNA 3' of the cleavage site increases.
+          The contact plots of APE1 and DNase1 with their
+          respective substrates (Figure 6) documents that the
+          similar molegos in the proteins serve similar functions.
+          The N-terminal 100 residues of both proteins, including
+          molegos 1 and 2, bind 5' of the cleavage site and to the
+          3' end of the opposite DNA strand. Molegos 7, 11 and 12
+          bind to one base 5' and the next base 3' of the cleavage
+          site in both proteins. Overall, the pattern of protein
+          contacts to the cleavage site, the area 5' of the
+          cleavage site, and the 3' end of the opposite strand are
+          common to both proteins, suggesting that the functions of
+          forming the substrate complex and the actual
+          phosphorolysis are similar in both proteins.
+          While the length of the DNA in both cases is similar,
+          DNase 1 clearly has less binding to bases opposite and 3'
+          of the cleavage site. The extensive contacts that APE1
+          makes to these positions are mediated by molegos it does
+          not share with DNase 1. Molegos 6, 7a and 10 all have
+          residues within hydrogen bonding distance of the three
+          basepairs 3' of the AP-site. This redundancy of binding
+          to the 3' side is unique to APE, as is its strong binding
+          to the DNA opposite the abasic site.
+          The importance of such bonds for activity was shown in
+          other work, where huAPE1's binding to the DNA backbone is
+          only inhibited by ethylation of the phosphates two and
+          three positions 3' to an abasic site [ 18 ] . Mutation of
+          R177A, at the end of Molego 6, that binds to this region
+          and to the bases opposite the AP-site had enhanced
+          activity [ 11 ] , while mutations at W280 (Molego 11) and
+          F266 (Molego 10) [ 33 ] reduce activity and, in the
+          latter case, substrate selectivity.
+          In work from this group that will be described
+          separately, we used this analysis to generate mutants of
+          APE1 with altered activity. An alanine substitution
+          mutant, N226A, of a conserved residue at the end of
+          molego 7a that forms a hydrogen bond with the second
+          phosphate group downstream of the abasic site, had
+          enhanced APE activity but increased Km and Kd values,
+          similar to an alanine mutant of R177, which binds to the
+          same site, reported previously [ 34 ] . A combination of
+          the two mutants, N226A and R177A, substantially reduced
+          the ability of APE1 to bind to DNA containing an abasic
+          site (Izumi et al., in preparation). Thus, molegos can
+          effectively guide the redesign of enzymes to alter
+          specificity.
+        
+        
+          Molegos to improve structural alignment
+          Using molegos may also help in aligning proteins for
+          template based modeling, by determining the end points of
+          secondary structure elements in alignments with many gaps
+          and insertions. According to MASIA analysis, the residues
+          K/R and DI at the N-termini of motifs 1 and 2 are
+          absolutely conserved in the three families, APEs, DNase1s
+          and IPPs. However, matching these conserved residues
+          between synaptojanin and DNase1 or APE requires a gapping
+          that would not be consistent with CLUSTALW or a
+          structural (DALI [ 35 ] ) alignment of these proteins
+          (Table 2). If the local alignment with synaptojanin is
+          gapped to align these residues in the three proteins
+          (Table 2, gapped), the RMSD for the two sections
+          separated by the gap is much lower than that if one tries
+          to align the whole ungapped segment. As Fig.
+          7illustrates, the local environments of both conserved
+          residue pairs DI and QE are structurally equivalent in
+          all three proteins, indicating that a motif based
+          alignment with a two residue gap is correct. The first
+          two β-strand molegos in synaptojanin are 2 residues
+          longer than in APE or DNase 1. By regarding these
+          elements as simple lego style blocks, and recognizing the
+          connectivity, molego based alignment correctly defined
+          the changing length of the secondary structure
+          elements.
+        
+      
+      
+        Discussion
+        
+          Is the specificity of APE determined by binding 3'
+          to an abasic site?
+          Crystal structure data, coupled with molego analysis,
+          outlined the areas of APE1 that distinguish its mode of
+          DNA binding from the less specific DNase 1. Contact maps
+          (Figure 6) illustrate how the conserved motifs direct DNA
+          binding in the distributive (i.e., rapidly releasing
+          substrate/product), relatively non-specific DNase1 as
+          opposed to the processive, highly specific huAPE1. Both
+          enzymes cleave only one DNA strand in a duplex and
+          bacterial Xth cleaves ssDNA containing an abasic site [
+          42 ] . The additional contacts huAPE1, compared to DNase
+          1 (Figure 6), makes 3' to the damage site and to the
+          opposite strand lower its turnover rate and its potential
+          to cleave normal DNA. The residues contacting the region
+          3' to the abasic site come from three different uniquely
+          conserved areas of APEs (molegos 6,7a, 10) as well as 11,
+          a molego that is similar to that in DNase-1. These
+          observations, coupled with DNA ethylation data [ 18 ] ,
+          indicates that 3' binding is a key element in specific
+          recognition by APEs.
+          This is confirmed by site directed mutagenesis
+          studies. Of the four protein areas that bind to the DNA
+          3' of the abasic site, mutating F266 (molego 10) or W280
+          (middle of molego 11) decreases APE activity [ 33 ] . The
+          F266 mutation is particularly interesting, as the mutants
+          at this position had reduced substrate specificity and
+          enhanced 3'-exonuclease activity. However, an R177A
+          mutant had 
+          enhanced APE activity [ 11 ] ,
+          as do mutations at N226 (Izumi et al., in preparation).
+          Combining these mutations however greatly decreases
+          substrate binding (Izumi et al., in preparation). The 3'
+          approach to the DNA [ 34 ] and the wide area covered by
+          the protein on both sides of the abasic site [ 14 ] are
+          both consistent with the need to hold the product until
+          the correct polymerase moves in 5' to 3' to complete the
+          repair [ 25 ] . This implies that the mammalian enzyme
+          has evolved to be processive, to facilitate more
+          efficient functioning of the overall BER pathway, and may
+          not be optimized for simple catalysis. Processivity is an
+          important facit of the activity of enzymes that function
+          in complex pathways [ 43 ] . Reduced processivity may
+          explain, for example, the repair deficits in Xeroderma
+          pigmentosum (XPA) cells [ 44 ] . Our molego approach
+          provides a basis for exploring the role of segments of
+          the protein in its functions, rather than relying only on
+          data from missense mutations.
+        
+        
+          Using molegos to detect structural and functional
+          homologues
+          We have demonstrated here the derivation and uses of
+          molegos for analyzing the specificity of enzymes, based
+          on those derived from the APE family. The methodology can
+          be used to complement searches with programs such as
+          PSIBLAST and PROSITE [ 41 ] to detect distantly related
+          functional or structural homologues in sequences revealed
+          by genome sequencing. PSIBLAST searches often reveal
+          areas of local similarity in proteins that have no
+          significant overall sequence identity. Molego analysis
+          could be useful to analyze the significance of such
+          findings. The combined sequence and structure definition
+          makes molegos more flexible for defining shared protein
+          elements than methods such as PROSITE that require a
+          strict one-dimensional definition. An improved motif
+          definition method, based on physical property similarity
+          [ 42 ] , which has been incorporated into our MASIA tool]
+          also promises to enhance the usefulness of the method.
+          This may eventually lead to a method to find functional
+          relationships between proteins with even lower overall
+          sequence similarity.
+          Another potential area for applying the molego
+          approach is in homology modeling. Molegos may prove
+          useful in to check alignments for template based modeling
+          of homologues with low identity (Table 2and Figure 7), if
+          the "anchoring" residues are conserved in sequence or
+          property across the members of both subfamilies. Our
+          molego approach is closest in principle to that of the
+          ROSETTA program [ 45 ] whereby the latter seeks only to
+          connect structure, not function, to a sequence element.
+          We are currently testing the usefulness of the molego
+          approach in modeling in the CASP5 competition.
+        
+      
+      
+        Conclusions
+        The MASIA program can parse sequences into discrete
+        blocks of significant conservation. The motifs identified
+        in the APE family could be structurally annotated using
+        crystal data to derive molegos, words in the protein
+        sequence that correlate with structural elements. These
+        molegos could in turn be functionally annotated by
+        comparing the DNA binding profile of APE1 with that of the
+        less specific nuclease DNase 1. This analysis indicated
+        that residues binding 3' to the site of phosphorolytic
+        cleavage control the substrate specificity of APE1. These
+        results indicate that molegos can provide a useful basis
+        for identifying specificity determining regions in enzymes
+        with similar active sites but different activity spectra [
+        46 28 3 ] . Site directed mutagenesis based on these
+        results can define the function of the unique elements of
+        the APEs, and aid in the design of enzymes with altered
+        specificity.
+      
+      
+        Materials and Methods
+        
+          Sequence alignment
+          A BLAST [ 47 ]
+          http://www.ncbi.nlm.nih.gov/BLAST/search of the
+          "non-redundant" protein database using the whole sequence
+          of human APE1 yielded over 100 related sequences. Some
+          sequence entries represented the same protein, called by
+          different names or isolated in different screens,
+          including many entries for huAPE1, 
+          Drosophila Rrp 1 protein (~40%
+          identical to the mammalian APE1 in the C-terminal third
+          of the protein), Xth from 
+          E. coli , and counterparts of this
+          and exodeoxyribonuclease (exo A) sequences from many
+          bacteria, which are about 25% identical to mammalian
+          APE1. The mammalian sequences are highly conserved, with
+          only 6 non-conservative residue variations between the
+          human and murine sequences, 5 of which occur in the
+          apparently unstructured N-terminus. Several proteins with
+          more distant relationship to APE1, such as mammalian and
+          yeast APEIIs, and the CRC protein from 
+          Pseudomonas , which has no APE
+          activity [ 48 ] were in the BLAST list, but were not used
+          for this analysis. To derive functional motifs, the BLAST
+          list was culled to 37 unique sequences with identity
+          ranging from 25% to 98%. These were aligned using the
+          default parameters of CLUSTALW [ 49 50 ]
+          http://www2.ebi.ac.uk/clustalw/. Sequences were the APE1
+          protein from human, bovine, monkey, rat murine, 
+          Arabidopsis thaliana (Mouse-ear
+          cress) 
+          Dictyostelium discoideum (Slime
+          mold), 
+          Schizosaccharomyces pombe (Fission
+          yeast), 
+          Caenorhabditis elegans , 
+          Saccharomyces cerevisiae (Baker's
+          yeast), 
+          Thermoplasma acidophilum , 
+          Neisseria meningitidis . 
+          Methanobacterium
+          thermoautotrophicum , 
+          Leishmania major , 
+          Trypanosoma cruzi , 
+          Coxiella burnetii ; the Rrp1
+          protein of 
+          Drosophilia ; exonuclease III from 
+          E. coli , 
+          Bacillus subtilis , 
+          Mycobacterium tuberculosis , 
+          Haemophilus influenzae , 
+          Salmonella typhimurium , 
+          Helicobacter pylori , 
+          Rickettsia prowazekii , 
+          Archaeoglobus fulgidus , 
+          Actinobacillus
+          actinomycetemcomitans , 
+          Streptomyces coelicolor , 
+          Synechocystis sp. PCC 6803, 
+          Haemophilus influenzae ;
+          Exonuclease A from 
+          Steptococcus pneumonia , 
+          Treponema pallidum , 
+          Borrelia burgdorferi . 
+          Plasmodium falciparum . Different
+          set conditions and sequence lists were tested in CLUSTALW
+          for their effect on alignment and subsequent motif
+          definition with MASIA. Areas peripheral to the
+          endonuclease domain, such as the 50 amino acid mammalian
+          and the 428 residue 
+          Drosophila Rrp-1 N-terminal regions
+          were eliminated to improve the consensus.
+        
+        
+          Identification of motifs using MASIA
+          Motifs were identified in the aligned sequences using
+          the MASIA consensus macro
+          http://www.scsb.utmb.edu/masia/masia.html. Motifs start
+          when at least 3 of 4 consecutive positions are more than
+          40% conserved according to the dominant criterion [ 51 ]
+          , and extend until at least 2 positions in a row are less
+          than 40% conserved. To allow for mistakes in the
+          alignment of all the sequences, essential residues are
+          those >90% conserved by MASIA criteria over all
+          sequences in the alignment.
+        
+        
+          Genomic cross-networking with PSIBLAST
+          A PSIBLAST search, using huAPE1 as the founder
+          sequence, with an e-value of 0.1 per iteration, did not
+          converge after 6 iterations, but few new sequences were
+          added in the last 2 cycles. Searches with an e-value of
+          0.01/iteration had similar results, but members of
+          several families were not included until later cycles.
+          Members of the DNase 1, LINE-1 repeats, inositol
+          5'-polyphosphate phosphatase, Nocturnin, CCR4, cytolethal
+          distending toxin, neutral sphingomyelin
+          phosphodiesterase, and amino acid methyltransferase
+          families were found with expectation values of 10 -4or
+          less to be significantly similar to APE1. To determine
+          the presence of motifs in these relatives, a CLUSTALW
+          alignment of at least 5 representatives of a protein
+          family was prepared and analyzed with MASIA for
+          significant areas of conservation. In some cases,
+          alignments taken from literature references (e.g., for
+          IPPs [ 32 ] ) were used to confirm MASIA results. The
+          motifs common to these families were compared with the
+          APE motifs of Table 1. Criteria for inclusion (presence
+          of motif) included conservation of residues >90%
+          conserved (side chains shown in blue in the tables) and
+          patterns of polarity (as determined with a macro included
+          in the MASIA packet as a user specified feature).
+        
+        
+          Molego building and comparison
+          The drawings of "molego blocks" and structures
+          (Figures 2, 3, 4and 7), contact plots of protein/DNA
+          (Figures 5, 6), and calculation of the RMSD between
+          similar segments (Table 2) were done with MOLMOL
+          http://www.mol.biol.ethz.ch/wuthrich/software/molmol/ [
+          52 ] . The RMSD values in Table 1were calculated using
+          SwissPDB viewer and the "fit selected residues"
+          option.
+        
+      
+      
+        Authors' contributions
+        CHS developed the molego concept, performed the sequence
+        analysis and prepared the manuscript. NO analyzed the
+        structural properties of the molegos, and prepared figures
+        2, 3, 4, 5, 6, 7. TI prepared mutants of human APE1 protein
+        to test the conclusions of this paper, and he provided
+        background and list of mutations affecting APE function. WB
+        designed and developed the MASIA program and the modular
+        analysis approach to enzyme functions.
+        Additional File 1
+        
+        Sequence alignment and MASIA printout for
+        the APE family The original alignment used for the APE
+        family and the MASIA consensus macro output. Note that the 
+        A. thaliana sequence is consistently
+        an outlier in the file, due to the CLUSTAL-W misalignment
+        of the nuclease area of the protein when the N-terminal
+        sequence is not removed. The real position of the motifs in
+        the 
+        A. thaliana sequence are
+        underlined.
+        Click here for file
+      
+    
+  

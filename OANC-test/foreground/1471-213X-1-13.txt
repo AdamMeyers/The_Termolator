@@ -1,0 +1,702 @@
+
+  
+    
+      
+        Background
+        Specification of cells at different times and places is
+        critical for generation of cellular diversity in the
+        vertebrate nervous system. Distinct types of neurons and
+        glia develop at characteristic times and places [ 1] and
+        molecular signals that promote formation of different cell
+        types are regulated spatially and temporally [ 2]. Thus,
+        neural pattern formation requires coordination of signals
+        that provide spatial and temporal information.
+        Lateral inhibition, or lateral specification, is one
+        process by which fine patterns of distinct cell types are
+        generated [ 3, 4]. Among cells that have the potential to
+        adopt the same fate, lateral inhibition specifies some
+        cells for a primary or preferred fate and others for a
+        secondary or alternative fate. Cell ablation experiments
+        are used to identify lateral inhibition: when cells that
+        would normally adopt a primary fate are removed, cells that
+        would otherwise acquire a secondary fate replace them. For
+        example, when neuroblasts of the grasshopper central
+        nervous system were ablated, they were replaced by cells
+        normally fated to give rise to epidermis [ 5]. Similar
+        demonstrations performed in other insects [ 6], leeches [
+        7], nematodes [ 8], ascidians [ 9], and zebrafish neural
+        crest [ 10] indicate that lateral inhibition operates in
+        diverse developmental contexts throughout metazoan
+        development.
+        The molecular mechanism of lateral inhibition is rooted
+        in interaction of the ligand, Delta, and its receptor,
+        Notch [ 11]. Various lines of evidence indicate that Delta,
+        expressed by specified cells, activates Notch in
+        neighboring cells directing them into alternative
+        developmental pathways. The genetic demonstration that
+        Delta-Notch signaling regulates insect neuroblast formation
+        has been performed using 
+        Drosophila melanogaster : embryos
+        lacking Delta or Notch function develop excess neural cells
+        at the expense of epidermis [ 12].
+        In the nervous system of vertebrate embryos, 
+        Notch gene expression generally is
+        associated with proliferative zones of undifferentiated
+        cells [ 13, 14, 15, 16, 17, 18, 19, 20, 21]. Scattered
+        cells within proliferative zones express 
+        Delta [ 18, 20, 22, 23, 24],
+        although, in chick, cells in S-phase of the cell cycle do
+        not express 
+        Delta1 suggesting that expression is
+        limited to newly post-mitotic cells [ 18, 20, 23]. In frog
+        and zebrafish neural plate, 
+        Delta gene expression appears to
+        precede expression of early neuronal markers [ 25, 26, 27,
+        28]. However, whether this indicates that proliferative
+        cells of anamniote nervous systems express 
+        Delta genes is still an open
+        question.
+        Newly-specified neurons may use Delta to signal to
+        unspecified neighboring precursor cells via Notch. Such
+        signaling could diversify neural cell fate by maintaining a
+        pool of precursor cells that respond to other instructive
+        signals or by promoting alternative developmental pathways.
+        Gain-of-function experiments provide evidence for both
+        ideas. For example, overexpression of a constitutively
+        active form of Notch (Nac) in frog embryos led to an
+        increase in the amount of neural tissue, even when cell
+        division was blocked [ 29]. It was suggested that this
+        excess neural tissue arose from specification of excess
+        uncommitted precursor cells to a neural fate once levels of
+        the overexpressed Notch protein fell. Frog retinal cells
+        forced to express Nac maintained a neuroepithelial
+        morphology rather than undergoing differentiation, which
+        also suggests that Notch activation maintains cells in an
+        undifferentiated state [ 16]. Similarly, overexpression of
+        Delta proteins, which presumably activate endogenous Notch
+        signaling, prevented retinal cell differentiation in frog
+        and chick [ 20, 24] and formation of the earliest-born
+        neurons in frog and zebrafish [ 25, 26, 27, 28]. Each of
+        these observations is consistent with the notion that Notch
+        activity maintains cells in a proliferative, unspecified
+        state.
+        More recently, several reports have raised the
+        possibility that Notch activity promotes specification of
+        certain cell types, particularly glial cells. Forced
+        expression of Nac promoted formation of cells expressing
+        markers of Müller glia in rat and zebrafish retinae [ 30,
+        31]. As Müller glia are among the last retinal cell types
+        born, these results are consistent with the idea that Notch
+        activity delays differentiation. However, Notch activity
+        did not promote expression of markers of other late-born
+        cell types in rat [ 30] and appeared to inhibit, rather
+        than promote, cell proliferation in zebrafish [ 31].
+        Additionally, Nac expression in the mouse forebrain
+        promoted formation of radial glia, the earliest specificied
+        cell type in forebrain [ 32] and either permitted [ 33] or
+        promoted gliogenesis in the peripheral nervous system [
+        34].
+        By contrast, disruption of Notch signaling results in
+        formation of excess early-born neurons. Antisense Notch RNA
+        treatment or expression of a dominant negative form of
+        Notch in chick resulted in excess ganglion cells, one of
+        the first retinal cell types to differentiate [ 15].
+        Similarly, expression of dominant negative Delta proteins
+        caused formation of excess early-born neurons in the retina
+        of frog [ 24] and chick [ 20] and in the neural plate of
+        frog [ 25] and zebrafish [ 26, 27, 28], concomitant with
+        decreased cell proliferation [ 20] and reduced numbers of
+        late-born neurons [ 28]. Mouse embryos homozygous for a
+        targeted mutation of 
+        Notch1 or 
+        RBP-Jκ, which encodes a downstream
+        component of the Notch signaling pathway, had elevated
+        levels of expression of neuronal markers, indicating
+        formation of excess neurons [ 35]. Excess neurons also
+        developed in mouse embryos homozygous for targeted mutation
+        of 
+        HES1 , a presumptive downstream
+        effector of Notch signaling [ 36]. Recently, a mutant
+        allele of the zebrafish 
+        deltaA ( 
+        dlA ) gene was identified and shown
+        to cause formation of excess Rohon-Beard sensory neurons
+        and decreased trunk neural crest progenitor cells [ 37, 38]
+        and excess hair cells and decreased support cells in the
+        ear [ 39].
+        To investigate further the role of Notch-mediated
+        cell-cell signaling in vertebrate neural development we
+        have tested neural pattern formation in zebrafish embryos.
+        We show by ablating single, identified primary motor
+        neurons that these cells normally inhibit nearby cells from
+        adopting the primary motor neuron fate. Our experiments
+        lead us to conclude that in the absence of lateral
+        inhibition the time during which neighboring cells can
+        replace a missing cell is transient. This suggests that the
+        temporal and spatial cues that specify neural cell fate are
+        tightly regulated. We also show that in 
+        dlA mutant embryos neural precursor
+        cells prematurely cease dividing and differentiate as
+        early-born neurons with identities appropriate for their
+        positions within the spinal cord and that mutant embryos
+        have reduced numbers of late-born neurons and glia. These
+        observations support the idea that Delta-Notch mediated
+        lateral inhibition coordinates transition of proliferative
+        neural precursors into specified neurons and glia of the
+        spinal cord.
+      
+      
+        Results
+        
+          Delta-Notch pathway genes are expressed in neural
+          precursor cells
+          As a step toward a fuller understanding of the role
+          that Delta-Notch signaling plays in patterning the
+          zebrafish neural tube, we compared expression of several 
+          delta and 
+          notch genes to the distribution of
+          neural precursor cells and differentiating neurons. We
+          use the term, neural precursor cell, to indicate
+          proliferative neuroepithelial cells that did not express
+          Hu proteins [ 40]; we identified proliferative cells by
+          their incorporation of BrdU. Conversely, we categorized
+          those cells that expressed Hu proteins as post-mitotic,
+          differentiating neurons. We examined the RNA expression
+          patterns of 
+          delta and 
+          notch genes using a sensitive
+          fluorescent detection method, choosing as our timepoint
+          24 h (hours of development at 28.5°C; [ 41]). At this
+          stage, primary neurons have differentiated and some
+          secondary neurons are postmitotic and have differentiated
+          while others remain in the cell cycle [ 42]. The assays
+          described here do not discriminate between primary and
+          secondary neurons.
+          We show here expression of three 
+          notch genes: 
+          notch1a ( 
+          n1a ), 
+          notch1b ( 
+          n1b ) and 
+          notch5 ( 
+          n5 ) [ 43, 44]. Cells throughout
+          the dorsoventral extent of the trunk neural tube
+          expressed each of these genes. Both Hu-negative and
+          Hu-positive cells expressed 
+          n1a (Figure 1A,B,C) whereas 
+          n1b and 
+          n5 expression appeared to be
+          complementary to Hu localization (Figure 1D,E,F,G,H,I),
+          indicating that neural precursors expressed 
+          n1a and 
+          n1b but differentiating neurons did
+          not. Particularly intense staining for each gene was
+          evident apically, suggesting that transcripts were
+          concentrated where the neural tube lumen will form.
+          We showed previously that post-mitotic primary neurons
+          express 
+          dlA transiently at the 4 somite
+          stage [ 28]. Many neural plate cells in excess of known
+          post-mitotic neurons expressed 
+          dlA and 
+          dlD , suggesting that these cells
+          include neural precursors [ 26, 27, 28]. By contrast, 
+          dlB expression appeared to be
+          limited mostly to post-mitotic neurons [ 27]. At 24 h,
+          cells throughout the trunk neural tube, including
+          Hu-positive cells, expressed 
+          dlA (Figure 1J,K,L). Both
+          Hu-positive and Hu-negative cells also expressed 
+          dlB (Figure 1M,N,O), however,
+          apparently fewer of each class expressed 
+          dlB at high level than 
+          dlA . Some Hu-positive and many
+          Hu-negative cells expressed 
+          dlD (Figure 1P,Q,R). Together,
+          these observations suggest that a subset of neural
+          precursors and cells specified for neuronal development
+          express 
+          dlA , 
+          dlB and 
+          dlD .
+          To examine directly whether proliferative cells of the
+          trunk neural tube express 
+          delta and 
+          notch genes, we exposed embryos to
+          a brief pulse of BrdU at 24 h. BrdU-positive cells
+          expressed each of the 
+          notch (data not shown) and 
+          delta genes we tested (Figure
+          2A,B,C). However, only a fraction of BrdU-positive cells
+          expressed 
+          delta genes:11.2% expressed 
+          dlB (169 cells counted), 19.2%
+          expressed 
+          dlA (228 cells counted) and 20.1%
+          expressed 
+          dlD (186 cells counted). Together
+          with the above data, we conclude that at least a portion
+          of proliferative, neural precursor cells express each of
+          these genes and that post-mitotic neurons express 
+          n1a , 
+          dlA , 
+          dlB and 
+          dlD . We speculate that the subset
+          of BrdU-positive cells that express 
+          delta genes are those fated to exit
+          the cell cycle following the next mitosis and we
+          interpret our failure to detect 
+          n1b , 
+          n5, dlB and 
+          dlD RNA in all or some presumptive
+          neurons as evidence that transcription of these genes is
+          not maintained after cell cycle exit.
+        
+        
+          Lateral inhibition regulates primary motor neuron
+          number
+          Widespread neural expression of 
+          delta and 
+          notch genes is consistent with the
+          possiblity that cell-cell signaling contributes to
+          pattern formation within the zebrafish nervous system. To
+          examine this directly, we performed experiments designed
+          to test whether lateral inhibition patterns primary motor
+          neurons. Zebrafish primary motor neurons are distributed
+          with a striking periodicity [ 45, 46]. In previous
+          studies we found that 
+          islet1 ( 
+          isl1 ) expression, which marks
+          primary motor neurons, was modified over time. Initially,
+          contiguous cells in a row close to floorplate expressed 
+          isl1 , whereas later, 
+          isl1 -expressing cells were
+          interspersed with cells that did not express 
+          isl1 [ 46]. Currently, we cannot
+          distinguish between the possibilities that alternating
+          cells downregulate 
+          isl1 expression or that cells that
+          do not express 
+          isl1 move between those that do.
+          Nevertheless, to maintain this periodicity, 
+          isl1 -negative cells must not
+          transcribe 
+          isl1 , despite being equidistant
+          with 
+
+          isl1 -positive cells from notochord
+          and floorplate, presumed sources of signals that induce
+          motor neuron development [ 47]. To test whether newly
+          born primary motor neurons inhibit neighboring cells from
+          adopting similar fates, we ablated identified CaP and VaP
+          motor neurons [ 48] and asked whether these cells were
+          replaced. Normally, CaP develops in every hemisegment,
+          midway between adjacent somite boundaries. VaP develops
+          in about one half the hemisegments; when present it is
+          next to CaP. Both cells express 
+          isl2 whereas other primary motor
+          neurons do not [ 46]. Previous experiments showed that
+          when CaP was removed from 13 somite stage embryos, it was
+          never replaced [ 49]. For this experiment, we extirpated
+          CaP and, when present, VaP from the right side of spinal
+          hemisegment 7 (R7) in 11 somite stage embryos, 1 hour
+          earlier in developmental time than in previous
+          experiments [ 49]. We let these embryos develop until the
+          19 somite stage and probed for expression of 
+          isl2 . Of a total of 13 embryos in
+          which these ablations were performed, 11 developed a CaP
+          or CaP and VaP in the ablated position, indicating that
+          the ablated cells were replaced. The remaining two
+          embryos showed no replacement. Although we do not know
+          the normal fates of the cells that replaced ablated
+          primary motor neurons, these observations are consistent
+          with the possibility that, during normal development,
+          primary motor neurons inhibit neighboring cells from
+          adopting a primary motor neuron fate.
+        
+        
+          deltaAmutant embryos have fewer neural precursor
+          cells and excess neurons
+          To further test the role of Delta-Notch mediated
+          lateral inhibition in zebrafish neurogenesis, we examined
+          embryos homozygous for a missense mutation of 
+          dlA ( 
+          dlA dx2 ). We previously described
+          the effect of this mutation on development of floorplate,
+          notochord and hypochord [ 37] and dorsal spinal sensory
+          neurons and neural crest [ 38]. To gauge the extent to
+          which Notch signaling is disrupted in 
+          dlA dx2 mutant embryos we examined
+          expression of 
+          ngn1 , a proneural gene negatively
+          regulated by Notch activity [ 50]. Zebrafish neural plate
+          stage embryos express 
+          ngn1 in three longitudinal domains
+          of the prospective trunk neural tube ([ 50]; Figure 3A),
+          which correspond to regions that express elevated levels
+          of 
+          dlA and in which the earliest
+          neurons are born [ 28]. Cells within the longitudinal
+          domains of wild-type embryos do not express 
+          ngn1 uniformly; rather, in situ RNA
+          hybridization revealed higher levels of 
+          ngn1 transcripts in some cells than
+          in others ([ 50]; Figure 3A). By contrast, cells within
+          the longitudinal domains of 
+          dlA dx2 mutant embryos expressed 
+          ngn1 at uniformly high levels
+          (Figure 3B). Notably, the mediolateral extent of each
+          domain appeared unchanged. We conclude that the 
+          dlA dx2 allele disrupts Notch
+          signaling within neurogenic regions of zebrafish embryos
+          but does not influence the formation of neurogenic
+          domains.
+          In addition to elevated levels of 
+          ngn1 expression, 
+          dlA dx2 mutant embryos have excess
+          Rohon-Beard spinal sensory neurons and reduced numbers of
+          trunk neural crest precursors [ 37, 38]. To investigate
+          the basis for these and other neural phenotypes in 
+          dlA dx2 mutant embryos we compared
+          the balance of proliferative neural precursor cells and
+          post-mitotic neurons in wild-type and 
+          dlA dx2 mutant embryos. When
+          treated with a pulse of BrdU at 24 h, wild-type embryos
+          revealed BrdU-positive cells and a distinct,
+          non-overlapping set of basally located 
+          huC -positive neurons (Figure 4A).
+          By contrast, 24 h 
+          dlA dx2 mutant embryos had few
+          BrdU-positive cells and a large excess of 
+          huC -positive cells (Figure 4B). We
+          conclude that, in 
+          dlA dx2 mutant embryos, most neural
+          precursor cells cease dividing and develop as neurons.
+          Consequently, the neural precursor pool is depleted in
+          mutant embryos and replaced by post-mitotic neurons.
+        
+        
+          deltaAmutant embryos have excess early-specified
+          neurons and fewer late-specified neurons and glia
+          The above observations indicate that neural precursor
+          cells prematurely differentiate in 
+          dlA dx2 mutant embryos. We imagined
+          two possible consequences for neural cell fate
+          specification. First, all normally developing neural cell
+          types might be specified but some might arise ahead of
+          schedule. Second, the progenitors for cell types that
+          normally arise late might instead develop identities
+          appropriate for early-born cell types, resulting in an
+          excess of some cell types and reduction of others. We
+          previously showed that disruption of Delta-Notch
+          signaling, by injection of RNA encoding a dominant
+          negative form of frog Delta-1 protein into early cleavage
+          stage zebrafish embryos, caused formation of excess
+          early-specified primary motor neurons and reduced numbers
+          of later-specified secondary motor neurons [ 28]. Our
+          observations of 
+          dlA dx2 mutant embryos confirm and
+          extend those results. 
+          dlA dx2 mutant embryos had excess
+          presumptive primary motor neurons and Rohon-Beard neurons
+          (Figure 5A,B; [ 37, 38]). By contrast, the number of
+          secondary motor neurons in mutant embryos was greatly
+          reduced (Figure 5C,D). Primary motor neurons can be
+          distinguished by cell body position, axon projection, and
+          gene expression [ 46, 51]. To learn how the 
+          dlA dx2 mutation affected
+          specification of primary motor neuron identity, we probed
+          embryos for expression of 
+          isl2 , which serves as a marker for
+          CaP and VaP, two of four identified primary motor neurons
+          [ 46].18 h mutant embryos had excess 
+          isl2 -positive cells in the ventral
+          trunk neural tube (Figure 5E,F). These cells appeared as
+          clusters of about 3-5 cells, located midway between
+          adjacent somite borders, consistent with the normal
+          position of CaP and VaP motor neurons. This indicates
+          that disruption of Delta-Notch signaling causes
+          development of excess primary motor neurons, which have
+          identities appropriate for their positions in the neural
+          tube. Previously, we showed that primary motor neuron
+          identity is dependent upon cell body position within the
+          ventral spinal cord [ 46, 52]. We conclude that
+          Delta-Notch signaling regulates specification of
+          appropriate numbers of primary motor neurons but does not
+          regulate specification of motor neuronal identity.
+          We also investigated whether other cell types were
+          affected in mutant embryos by examining expression of
+          markers of various interneurons, including 
+          lim1, lim5 and Pax2. Spinal cord
+          cells begin to express 
+          lim1 and 
+          pax2 by about 14-15 h [ 53, 54] and
+          
+          lim5 by 24 h [ 55] indicating that
+          these cells are born relatively early in neurogenesis.
+          Excess numbers of cells expressed each of these markers
+          in 
+          dlA dx2 mutant embryos (Figure
+          5G,H,I,J,K,L). Notably, the dorsoventral position of
+          cells expressing each of these markers was similar in
+          mutant and wild-type embryos. Finally, 
+          dlA dx2 mutant embryos had greatly
+          reduced numbers of presumptive radial glia cells, labeled
+          by antibody zrf-1 (Figure 5M,N). Although we do not know
+          the time or place that these cells originate in the
+          neural tube, we do not detect expression with this marker
+          until 30-36 h, well after the onset of primary neuron
+          birth at about 11 h and secondary motor neuron birth at
+          about 16 h. Together with the above BrdU results, these
+          observations indicate that disruption of Delta-Notch
+          signaling causes excess neural precursors to be specified
+          for early-born neuronal fates at the expense of
+          later-born neuronal and glial fates, without interfering
+          with mechanisms that specify early-born neuronal identity
+          along the dorsoventral axis.
+        
+      
+      
+        Discussion
+        
+          In zebrafish, both neural precursors and neurons
+          express notchand deltagenes
+          Expression of activated Notch proteins can prevent
+          neural cell differentiation [ 15, 16, 20, 24, 25, 29]. In
+          vertebrate embryonic nervous systems, proliferative
+          undifferentiated cells express 
+          Notch genes [ 13, 14, 15, 16, 17,
+          18, 19, 21, 24]; thus, Notch activity may maintain the
+          neural precursor state. Notably, some differentiated
+          neural cells, such as Müller glia and radial glia,
+          express 
+          Notch genes [ 30, 32] raising the
+          possibility that Notch signaling does more than simply
+          block differentiation. By contrast, only post-mitotic
+          neural cells have been shown to express 
+          Delta genes [ 18, 20, 23]. This
+          pattern of expression is consistent with the idea that
+          specified, post-mitotic cells use Delta signaling to
+          prevent neighboring cells from differentiating. However,
+          it differs from the fly embryonic central nervous system
+          wherein all cells of the prospective neuroectoderm
+          express Delta with the exception of delaminated
+          neuroblasts [ 56]. This indicates that, in flies,
+          precursors express Delta and that those specified for
+          neuroblast development downregulate its expression.
+          Here, we show that some zebrafish neural cells in S
+          phase of the cell cycle and post-mitotic differentiating
+          neurons express 
+          delta genes. We interpret these
+          data to mean that a subset of proliferative neural
+          precursors upregulate 
+          delta gene expression. Upregulation
+          might engage a feedback loop mechanism, in which Notch
+          activation in neighboring cells maintains them in a
+          proliferative, unspecified state whereas those cells that
+          upregulate Delta expression, and have decreased Notch
+          activity, are driven to exit the cell cycle and to
+          differentiate.
+        
+        
+          Zebrafish primary motor neurons may inhibit primary
+          motor neuron fate in neighboring cells
+          Lateral inhibition was originally defined by
+          functional tests in which ablation of a cell of primary
+          fate allowed an adjacent cell to take that fate, but
+          ablation of a cell of secondary fate had no effect [ 8].
+          Ablation experiments performed on grasshoppers showed
+          that neuroblasts laterally inhibit neighboring cells from
+          also developing as neuroblasts [ 5]. Genetic analyses of
+          fly development then led to the view that lateral
+          inhibition is mediated by interaction of Delta and Notch
+          proteins expressed on neighboring cells [ 12]. Our
+          ablation studies, coupled with our studies of Delta and
+          Notch expression and with analysis of a 
+          dlA mutation, provide evidence
+          consistent with the possibility that similar mechanisms
+          operate during specification of individual neural fates
+          in a vertebrate nervous system.
+          Mutant and gene overexpression phenotypes in various
+          vertebrate model systems support the notion that
+          Delta-Notch signaling mediates lateral inhibition in the
+          central nervous system [ 16, 20, 24, 25, 26, 27, 28, 29,
+          35]. However, to our knowledge, until now direct evidence
+          for lateral inhibition in the vertebrate central nervous
+          system has not been reported. Previously, when primary
+          motor neurons were ablated in 13 somite stage embryos,
+          approximately 6 hours after birth, they were not replaced
+          [ 49]. Here, we ablated primary motor neurons 1 hour
+          earlier in developmental time and found that, in nearly
+          every case, they were replaced. Together, our ablation
+          results reveal an important feature of vertebrate
+          neuronal specification: that the mechanisms that specify
+          fate must be exquisitely timed. We view the failure to
+          replace primary motor neurons ablated at 13 somite stage
+          as indicating that the time at which a cell can be
+          specified for that fate has passed, either because
+          neighboring precursors have been specified for other
+          fates or because the signals that specify primary motor
+          neurons are no longer present. Future experiments, aimed
+          at learning the fates of cells neighboring primary motor
+          neurons may distinguish between these possibilities.
+        
+        
+          Delta-Notch signaling regulates cell proliferation
+          and diversifies neural cell fate
+          Here we took advantage of the fact that 
+          dlA dx2 mutant zebrafish embryos
+          survive several days after onset of neuronal
+          differentiation to investigate how Delta-Notch signaling
+          influences neural cell fate. We show that mutant embryos
+          have a significant reduction in proliferative neural
+          cells and a concomitant increase in neurons. These
+          neurons have fates characteristic of the earliest-born
+          neurons in zebrafish. Strikingly, the molecular
+          identities of the excess, early-born neurons in 
+          dlA dx2 mutant embryos are
+          appropriate for their positions in the trunk neural tube.
+          This is evident across the dorsoventral axis of the
+          neural tube as well as within localized areas of the
+          ventral neural tube occupied by distinct motor neurons.
+          In other words, early-born neurons are specified
+          appropriately in 
+          dlA dx2 mutant embryos; what these
+          embryos lack is the ability to regulate the number of
+          cells specified for any particular fate.
+          We also showed that 
+          dlA dx2 mutant embryos have reduced
+          numbers of later-born cell types including secondary
+          motor neurons and radial glia. One possible explanation
+          for this effect is that the premature exit of neural
+          precursor cells from the cell cycle depletes the
+          precursor pool. In this view, Delta-Notch signaling
+          diversifies neural cell fate by guiding the orderly, and
+          prolonged, transition from neural precursor cells to
+          specified cells. Specification of a particular cellular
+          identity might depend entirely upon the influence of
+          instructive signals that change with time. For example,
+          zebrafish ventral neural precursors might be specified
+          differently by different lengths of exposure to Hedgehog
+          (Hh) signaling. Those competent to respond to brief
+          exposure to Hh might be specified as primary motor
+          neurons whereas those subject to prolonged exposure prior
+          to differentiation might develop as secondary motor
+          neurons [ 57]. Notch activity might be important for
+          specification of secondary motor neurons by holding them
+          in an unspecified state for long enough to receive
+          sufficient exposure to Hedgehog signaling. Disruption of
+          Notch signaling would then allow an excess of precursor
+          cells to respond promptly to Hedgehog signaling,
+          producing an excess of primary motor neurons and a
+          concomitant deficit of secondary motor neurons, precisely
+          the phenotype of 
+          dlA dx2 mutant embryos we show
+          here.
+          A second possibility, supported by recent
+          publications, is that Notch activity specifies certain
+          cell fates, in particular, glial fates. Notch activity
+          promotes gliogenesis in forebrain, retina, and cultured
+          neural crest [ 30, 31, 32, 34]. Our observation that 
+          dlA dx2 mutant embryos lack radial
+          glia of the trunk neural tube also is consistent with
+          this possibility. In fact, Notch activity might both hold
+          neural precursor cells in an unspecified state and
+          subsequently promote a subset of them to develop as glia.
+          Conditional misexpression of activated Notch in
+          individual precursor cells of the trunk neural tube might
+          provide a way to distinguish between these
+          possibilities.
+        
+      
+      
+        Conclusions
+        In zebrafish, at least three 
+        notch genes are expressed by
+        proliferative neural precursors and at least three 
+        delta genes are expressed by subsets
+        of proliferative precursors and post-mitotic neurons. Thus,
+        precursors fated to exit the cell cycle and differentiate
+        may express elevated levels of 
+        delta genes, causing them to signal
+        to neighboring 
+        notch -expressing precursors.
+        Signaling between neighboring cells appears to regulate
+        primary motor neuron specification: when we removed primary
+        motor neurons soon after birth they were replaced,
+        presumably by neighboring precursors. Genetic disruption of
+        Delta-Notch signaling causes precursors to prematurely
+        terminate cell division and differentiate as early-born
+        neurons, with identities appropriate to their cell body
+        positions, at the expense of later born neurons and glia.
+        We propose that in the zebrafish central nervous system
+        cell-cell interactions, mediated by Delta-Notch signaling,
+        help coordinate transition of proliferative precursors to
+        specified neurons and glia.
+      
+      
+        Materials and methods
+        
+          Embryos
+          Embryos from the University of Oregon and Vanderbilt
+          University laboratory colonies were raised at 28.5°C.
+          Staging was according to Kimmel et al. (1995). The 
+          dlA dx2 allele is incompletely
+          penetrant and variably expressive [ 37, 38, 39]. Mutant
+          embryos shown here are those exhibiting the most severe
+          mutant phenotypes.
+        
+        
+          Cell Ablations
+          Individual CaP or CaP and VaP motor neurons were
+          removed from the right side of segment 7 (R7) of 11
+          somite stage embryos by aspiration with a micropipette
+          broken manually to a tip diameter of 8-12 μm, using
+          methods described previously [ 52].
+        
+        
+          BrdU Labeling, in situ RNA Hybridization and
+          Immunohistochemistry
+          Manually dechorionated embryos were labeled with BrdU
+          by incubating them for 20 minutes on ice in a solution of
+          10 mM BrdU and 15% DMSO in Embryo Medium [ 58]. The BrdU
+          solution was replaced with Embryo Medium and the embryos
+          were incubated for 20 minutes at 28.5°C. The embryos were
+          then anesthetized using 3-aminobenzoic acid ethyl ester
+          and fixed in 4% paraformaldehyde. in situ RNA
+          hybridization on BrDU-labeled embryos was carried out as
+          described previously [ 59] except that the probes were
+          not hydrolyzed. Following color development, the embryos
+          were treated with 2 N NaOH for 1 hr, washed with PBSTx
+          (phosphate buffered saline with 0.01% TritonX-100),
+          blocked 1 hr in PBDTx (PBS, 1% DMSO, 0.01% TritonX-100
+          plus 2% sheep serum and 2 mg/ml BSA, then incubated 2 hr
+          with anti-BrdU (monoclonal G3G4, Developmental Studies
+          Hybridoma Bank). Detection was carried out using a
+          biotinylated goat anti-mouse secondary antibody followed
+          by streptavidin conjugated to peroxidase (Jackson
+          ImmunoResearch Laboratories, Inc.). A brown precipitate
+          was formed using Fast Dab (Sigma).
+          For fluorescent detection of RNA hybridization and
+          antibody labeling, embryos were first treated for RNA
+          hybridization and then sectioned using a cryostat
+          microtome. The sections were incubated with monoclonal
+          16A11 anti-Hu antibody (University of Oregon Monoclonal
+          Antibody Facility) and anti-digoxygenin-AP antibody
+          (Roche). Anti-Hu labeling was detected using goat
+          anti-mouse Alexa 488 antibody (Molecular Probes) and
+          anti-digoxygenin-AP labeling was detected using HNPP
+          Fluorescent Detection (Roche). Images were collected
+          using a Spot camera (Diagnostic Instruments, Inc.)
+          mounted on an Olympus AX70 microscope. Double-label
+          images were created using Photoshop to merge individual
+          red and green images.
+          Additional in situ RNA hybridizations were performed
+          as described previously [ 59]. Additional primary
+          antibodies used were zn-8 to detect Dmgrasp and zrf-1
+          (Developmental Studies Hybridoma Bank) and polyclonal
+          rabbit anti Pax-2 (Berkeley Antibody Co.).
+        
+      
+    
+  

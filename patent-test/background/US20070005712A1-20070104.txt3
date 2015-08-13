@@ -1,0 +1,358 @@
+
+
+
+
+
+
+US
+20070005712
+A1
+20070104
+
+
+
+
+US
+11229606
+20050920
+
+
+11
+
+
+EP
+05 014 194.4
+20050629
+
+
+
+
+20060101
+A
+G
+06
+F
+15
+16
+F
+I
+20070104
+US
+B
+H
+
+
+
+US
+709206000
+714032000
+717102000
+717115000
+
+Service error handling in a communications network
+
+
+
+
+Tiainen
+Vesa
+
+Vantaa
+FI
+
+
+
+FI
+
+
+FI
+
+
+
+
+
+SQUIRE, SANDERS &#x26; DEMPSEY L.L.P.
+
+14TH FLOOR
+8000 TOWERS CRESCENT
+TYSONS CORNER
+VA
+22182
+US
+
+
+
+
+
+
+
+Nokia Corporation
+03
+
+Espoo
+FI
+
+
+
+
+
+
+Control device behavior in error situations where an error response is received from an application is improved. In case a response message received from an application for a communication request is evaluated as an error message by the control device, control of the communication request can be continued on the basis of service-specific data. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+FIELD OF THE INVENTION 
+ The present invention relates to service error handling in a communications network. In particular, the invention relates to processing error responses received by a control entity. 
+BACKGROUND OF THE INVENTION 
+ FIG. 1 shows a basic architecture of an Internet Protocol (IP) Multimedia Subsystem (IMS). 
+ Devices allowing end users to access network services are called User Equipments (UE). UEs access the IMS network to be able to use services provided by the IMS network. UEs communicate with the IMS network by attaching to a packet switched (PS) network, such as General Packet Radio Service (GPRS) network. The UE may access the IMS network over a radio access network (RAN) or over a fixed line access network, such as Digital Subscriber Line (DSL) access. 
+ The IMS network comprises Session Initiation Protocol (SIP) proxies which process SIP signaling. SIP is an application-layer control protocol for creating, modifying, and terminating sessions with one or more participants. SIP proxies in the IMS network are called Call State Control Functions (CSCF) and the main features of the CSCF are to perform session control functions, service control functions and address translation functions. Depending on the functionality the CSCF provides, it is called Proxy-CSCF (P-CSCF), Interrogating-CSCF (I-CSCF) or Serving-CSCF (S-CSCF). 
+ For a UE the P-CSCF (not shown) is the first contact point in the IMS network. When the UE registers to the IMS network, a P-CSCF is allocated to the UE. The same P-CSCF remains allocated to the UE during the lifetime of the registration, and all signaling between the UE and the IMS network traverses the P-CSCF. The I-CSCF (not shown) is located at the edge of the administrative (operator) domain, in signaling path between the P-CSCF and the S-CSCF. The I-CSCF routes received requests to a correct destination, typically to an S-CSCF. The S-CSCF implements the session control in the IMS network and acts as SIP registrar. All SIP signaling initiated by or destined to a certain UE traverses the S-CSCF assigned to serve the UE. 
+ A Home Subscriber Server (HSS) or User Mobility Server (UMS) stores all the user related subscription data, such as location information, security information and user profile information defining the services that the user is subscribed to. Subscription data is created into the HSS when an end user obtains an IMS subscription from an IMS service provider. The subscription data is associated with an IMS private user identity (IMPI) of the user. The HSS also maintains information about the S-CSCF allocated to the user. During an IMS registration procedure, the I-CSCF may contact the HSS in order to find out the address of the allocated S-CSCF based on the IMS public user identity (IMPU) and IMS private user identity (IMPI) of the user sending the registration request. Once the correct S-CSCF has been reached, the S-CSCF contacts the HSS over Cx interface to download user profile information that includes a service profile for the user. 
+ Application Servers (AS) may be part of the IMS network or alternatively are so-called third party ASs located outside the IMS network. ASs host and execute services using SIP and may have an interface, called Sh interface, to the HSS to retrieve user specific data needed in service execution. The S-CSCF may forward a SIP request to an AS over an IMS Service Control (ISC) interface. The S-CSCF obtains information about ASs from the above mentioned service profile included in the user profile downloaded from the HSS. 
+ For establishing a session between an inviting UE and an invited UE, an S-CSCF forwards SIP requests towards the invited UE, possible after first giving the session control to an AS for executing a service and after the AS has given the session control back to the S-CSCF. Instead of the invited UE, the request could be terminated to an AS, for example to a voice mail server. 
+ FIG. 2 shows a structure of Filter Criteria that is basically a data structure including user specific service information from which an S-CSCF is able determine when an AS is to be contacted for providing a service to the user. User profiles are stored, in the HSS, per Private User Identity (IMPI) and each user profile may comprise several service profiles associated with a Public User Identity (IMPU). Filter Criteria are included in the service profile of the user profile downloaded from the HSS to the S-CSCF during the IMS registration procedure. 
+ Filter Criteria include a priority field. If the service profile comprises more than one Filter Criteria, the S-CSCF assesses Filter Criteria according to the priority of each Filter Criteria (highest priority is taken first). A Trigger Point comprises one or more service trigger points which define the exact conditions of which have to be fulfilled in order to start a service and a certain AS is to be contacted. Examples of service trigger points are the presence of a specific SIP method (INVITE, OPTIONS, SUBSCRIBE, . . . ), partial or full match on the content of any SIP header or SDP line, presence or absence of any SIP header, and content of Request-URI. 
+ Filter criteria further include the address of an AS (SIP URI) to be contacted if a service is to be started based on fulfilled conditions of one of the service point triggers. A Default Handling parameter of Filter Criteria defines the action to be taken if the AS to be contacted is not available, i.e. cannot be reached. The possible actions in this case are abort or continue the processing of the SIP request. Finally, Filter Criteria could include service information, which is transparent service related information that an S-CSCF may forward to an AS when contacting the AS. 
+ As described above, it may happen that an S-CSCF is not able to contact an AS which is defined in the Filter Criteria to provide the service in question. Possible reasons for unavailability of the AS are, for example, some very fatal problem in the AS or an error in ISC interface configuration. The S-CSCF must then proceed according to Default Handling instructions in the Filter Criteria. However, even if the S-CSCF is able to contact the AS, further problems may occur relating to service execution in the AS. For example, the AS is not necessarily able to provide the service based on the information received from S-CSCF or an AS internal error may occur during the service execution. In these cases, the AS responds to the S-CSCF with a SIP response code indicating that an error has occurred and possible more detailed information about the nature or type of the error. The above mentioned Default Handling parameter neither is examined nor used in these cases, since the AS was actually contacted successfully and the problem occurred only later, during the service execution in the AS. 
+SUMMARY OF THE INVENTION 
+ It is an object of the present invention to improve error handling toward failure responses on a service control interface, e.g. the IMS service control interface (ISC). 
+ This object is achieved by 
+
+     a control device for providing communication control for users in a communications network, the control device comprising: 
+    
+         controlling means for controlling communication requests of the users; and 
+         evaluating means for evaluating response messages received from applications, 
+         wherein if a response message received from an application for a communication request is evaluated as an error message by the evaluating means, the controlling means is configured to continue control of the communication request based on service-specific data. 
+    
+    
+
+
+ Furthermore, the above object is achieved by a method of providing communication control for users in a communications network, the method comprising the steps of: 
+
+    
+    
+         retrieving service-specific data associated with a user, the service-specific data including communication request handling instructions for response messages received from applications providing services; 
+         initiating a service for the user based on a request received from the user; 
+         receiving, in response to the initiating step, an error response from the service; and 
+
+ determining whether to continue processing the request received from the user based on the instructions given for the error response in the service-specific data. 
+
+    
+    
+
+
+ Moreover, the above object is achieved by a serving device for executing services for users of a communications network, the serving device comprising: 
+
+    
+    
+         determining means for determining whether a request received from a control device providing communication control for the users in the communications network can be handled by the serving device; 
+         transmitting means for transmitting a response message for the request to the control device, the response message indicating to the control device a determination result by the determining means; and 
+         adding means for adding information to the response message transmitted by the transmitting means if the determining means determines that the request cannot be handled by the serving device, wherein the information is to be used by the control device in deciding on communication request control. 
+    
+    
+
+
+ Still further the above object is achieved by a data providing device comprising: 
+
+    
+    
+         at least one database storing user-specific data, the user-specific data comprising service-specific data; 
+         receiving means for receiving a request for retrieving service-specific data associated with a user, from a control device providing communication control for the user in a communications network; and 
+
+ transmitting means for transmitting the service-specific data to the control device upon the request, the service-specific data comprising, for at least one application, instructions for performing communication request control in correspondence with response messages transmitted from the at least one application to the control device. 
+
+    
+    
+
+
+ The above object is also achieved by a control system comprising: 
+
+    
+    
+         a control device for providing communication control for users in a communications network; and 
+         a data providing device, 
+         wherein the control device comprises controlling means for controlling communication requests of the users, evaluating means for evaluating response messages received from applications, and retrieving means for issuing a request for retrieving service-specific data associated with a user from the data providing device, 
+         and wherein the data providing device comprises 
+         at least one database storing user-specific data, the user-specific data comprising service-specific data, receiving means for receiving the request for retrieving the service-specific data associated with the user from the control device, and transmitting means for transmitting the service-specific data to the control device upon the request, 
+         wherein if a response message received from an application for a communication request is evaluated as an error message by the evaluating means, the controlling means is configured to continue control of the communication request based on the service-specific data received from the data providing device. 
+    
+    
+
+
+ In addition, the above object is achieved by a serving system comprising: 
+
+    
+    
+         a control device for providing communication control for users in a communications network; and 
+         a serving device for executing services for the users, wherein the serving device comprises determining means for determining whether a request received from the control device can be handled by the serving device, and transmitting means for transmitting a response message for the request to the control device, the response message indicating to the control device a determination result by the determining means, and wherein 
+         the control device comprises controlling means for controlling communication requests of the users, and evaluating means for evaluating response messages received from the serving device, 
+         wherein if the response message received from the serving device for a communication request is evaluated as an error message by the evaluating means, the controlling means is configured to continue control of the communication request on the basis of service-specific data. 
+    
+    
+
+
+ The present invention can also be implemented as computer program product. 
+ According to the invention, an S-CSCF behavior in error situations where an error response is received from an AS can be improved. 
+ Moreover, unnecessary AS usage can be avoided, since an AS may be dropped from the connection and session handling may continue without the AS. 
+
+
+BRIEF DESCRIPTION OF THE DRAWINGS 
+ FIG. 1 shows a basic architecture of an Internet Protocol (IP) Multimedia Subsystem (IMS) to which the present invention is applicable. 
+ FIG. 2 shows a structure of Filter Criteria according to the prior art. 
+ FIG. 3 shows a schematic block diagram illustrating an embodiment of a structure of a control device, a serving device and a data providing device according to the invention. 
+ FIG. 4 shows a flow chart illustrating a method of providing communication control for users in a communications network according to an embodiment of the invention. 
+ FIG. 5 shows a schematic block diagram illustrating signaling in an IMS network according to an embodiment of the invention. 
+ FIG. 6 shows a structure of Filter Criteria according to a first implementation example of the invention. 
+ FIG. 7 shows a structure of Filter Criteria according to a second implementation example of the invention.
+
+
+DESCRIPTION OF THE INVENTION 
+ FIG. 3 shows a schematic block diagram illustrating an embodiment of a structure of a control device 100, a data providing device 200 and a serving device 300 according to the invention. 
+ The control device 100 provides communication control for users in a communications network. The control device 100 may comprise an S-CSCF (Serving Call State Control Function) in an IMS (Internet protocol Multimedia Subsystem) network. The control device comprises a controlling block 11 for controlling/handling communication requests of users and an evaluating block 12 for evaluating response messages received from applications which may run services for users of the communications network. The control device 100 may further comprise a retrieving block 13 for issuing a request for retrieving service-specific data associated with a user from the data providing device 200. A communication request may be a request for establishing a session or a request for sending a message. 
+ The data providing device 200 may comprise a Home Subscriber Server (HSS) or User Mobility Server (UMS) and comprises at least one database 21 storing user-specific data, such as a user profile, comprising service-specific data. The data providing device 200 further comprises a receiving block 22 for receiving the request for retrieving the service-specific data associated with the user from the control device 100, and a transmitting block 23 for transmitting the service-specific data to the control device 100 upon the request. 
+ The serving device 300 executes services for the users of the communications network and may comprise an Application Server (AS) running an application. The serving device comprises a determining block 31 for determining whether a request received from the control device 100 can be handled by the serving device 300, and a transmitting block 32 for transmitting a response message for the request to the control device 100, the response message indicating to the control device 100 a determination result by the determining block 31. 
+ The serving device 300 may further comprise an adding block 33 for adding information to the response message transmitted by the transmitting block 32 in case the determining block 31 determines that the request cannot be handled by the serving device 300, wherein the information is to be used by the control device in deciding on communication request control. 
+ In case the response message received from the serving device 300 for a communication request is evaluated as an error message by the evaluating block 12 of the control device 100, the controlling block 11 continues control of the communication request on the basis of service-specific data. This data may have been retrieved from the data providing device 200 by the retrieving block 13 of the control device 100 or may have been provided to the control device 100 directly from an operator of the control device 100. 
+ The evaluating block 12 of the control device 11 may further evaluate any information added to the response message received from the application or serving device 300, the controlling block 11 deciding on continuing control of the communication request using the information added to the response message. 
+ It is to be noted that the structures of the devices are not limited to those shown in FIG. 3. Blocks of a device may be combined to implement the functionality of the combined blocks in one &#x2018;super-block&#x2019;, or the functionality of a block may be further separated into sub-blocks. The blocks of each device may be implemented as application specific integrated circuits or by digital signal processor(s). In addition, the devices shown in FIG. 3 are described to an extent necessary for understanding the present invention, and may additionally comprise conventional blocks and functions necessary for acting e.g. as S-CSCF, HSS and AS. 
+ FIG. 4 shows a flow chart illustrating a method of providing communication control for users in a communications network according to an embodiment of the invention. 
+ In a first step S41 of the method service-specific data associated with a user are retrieved, the service-specific data including communication request handling instructions for response messages received from applications providing services. Upon a request received from the user, in step S42 a service for the user is initiated. Then, when receiving in step S43, in response to the initiating step S42, an error response from the service, in step S44 it is decided on continuing (i.e. it is determined whether to continue) processing the request received from the user based on the instructions given for the error response in the service-specific data. 
+ In the following, signaling in an IMS network to which the embodiment shown in FIG. 4 is applied will be described with reference to FIG. 5. In this application example the functions of the control device 100 are implemented in an S-CSCF (Serving Call State Control Function) 51, the functions of the data providing device 200 are implemented in an HSS (Home Subscriber Server)/UMS (User Mobility Server) 52, and the functions of the serving device 300 are implemented in an AS (Application Server) 53. 
+ Upon registration of a user the S-CSCF 51 fetches initial Filter Criteria (iFC) via Cx interface from the HSS/UMS storing all the user related subscription data, such as location information, security information and user profile information defining the services that the user is subscribed to. The iFC are service-specific data associated with the user. According to this application example, the iFC further include communication request handling instructions for response messages received from applications providing services. The communication request handling instructions comprise response code specific default handling parameters. 
+ Upon receiving a request from the registered user, after having evaluated the iFC, the S-CSCF 51 initiates a service request to the AS 53 via ISC interface. In case the AS 53 is reachable but the application fails, the AS 53 responds with an error message, e.g. with a 4xx, 5xx or 6xx class response. 
+ For example, SIP Responses include a 3-digit Status-Code and a Reason-Phrase. The Status-Code is intended for use by automata, whereas the Reason-Phrase is intended for the end user giving a short textual description of the Status-Code. SIP Responses are categorized into six classes based on the first digit of the Status-Code: 
+
+    
+    
+         1xx: Provisional response: request received, continuing to process the request; 
+         2xx: Success: the action was successfully received, understood, and accepted; 
+         3xx: Redirection: further action needs to be taken in order to complete the request; 
+         4xx: Client Error: the request contains bad syntax or cannot be fulfilled at this server; 
+         5xx: Server Error: the server failed to fulfill an apparently valid request; 
+         6xx: Global Failure: the request cannot be fulfilled at any server. 
+    
+    
+
+
+ The last two digits, referred above as &#x201c;xx&#x201d;, indicate the more specific reason inside the class. When an AS fails in the service execution it sends one of the 4xx, 5xx or 6xx class responses to the S-CSCF. 
+ When the S-CSCF 51 receives the error message from the AS 53, it decides on how to continue processing the request based on the instructions given for the error message in the iFC. For example, the S-CSCF 51 may further handle the request based on the response code specific default handling parameters, where some response codes can be configured as &#x2018;continue&#x2019;, meaning that the S-CSCF 51 should try to further process the request received from the user, and some other response codes can be configured as &#x2018;abandon&#x2019;, meaning that the S-CSCF 51 should continue the response handling. 
+ Thus, according to this application example the functionality of the iFC Default Handling parameter usage is expanded, thereby enhancing the ISC interface. 
+ Moreover, the S-CSCF 51 may check and process also additional information added to the error message, e.g. the content of the Reason-Phrase of a SIP response. The S-CSCF 51 may then base the decision on continuing processing the request also on this additional information. Also instructions may be given for the additional information in the iFC. 
+ Thus, with this arrangement, more information about possible errors may be carried from the AS 53 to the S-CSCF 51. 
+ FIG. 6 shows a structure of Filter Criteria according to a first implementation example of the invention. In the iFC a further field &#x2018;Reason code handling&#x2019; is provided for the default handling of specific responses from an application server running an application providing service(s). For example, the response code specific default handling parameters include an instruction &#x2018;continue&#x2019; for the response code &#x2018;413&#x2019;, while for other response codes the S-CSCF is instructed to not continue handling the user request, i.e. to abandon processing of the user request, or proceed according to indicated response code. 
+ FIG. 7 shows a structure of Filter Criteria according to a second implementation example of the invention. In this example the reason code handling is added to the &#x2018;Default handling&#x2019; field. As shown in the example depicted in FIG. 7 a general default handling parameter is set to &#x2018;abandon&#x2019;, while only when the response code is &#x2018;413&#x2019; processing of the user request is to be continued, i.e. the S-CSCF should try to process the request further despite/regardless of the error indicated by the AS 53. 
+ In the following an example is considered in which the S-CSCF 51 receives a request from a registered user causing the S-CSCF 51, based on an evaluation of the iFC retrieved from the HSS/UMS 52, to contact an application server, e.g. the AS 53, for the service of an Instant Message (IM) to GSM Short Message conversion. In case the AS 53 is not able to carry out this conversion e.g. because the instant message is too long, it responds with an error message &#x2018;413 &#x201c;Entity too long&#x201d;&#x2019;. Upon receiving this error message, the S-CSCF 51 looks up the response code specific default handling parameters in the iFC and, according to FIG. 6, retrieves from the iFC that for a response message &#x2018;413&#x2019; processing of the user request is to be continued. Thus, the S-CSCF 51 continues handling the request as verifying the lower priority triggers in the iFC. Thus, the Instant Message handling can be continued without conversion possibility, and the S-CSCF 51 may try to deliver the instant message to the recipient by other means. 
+ As another example, for crucial applications, such as online charging related functions, the response code specific default handling parameters for relevant response codes are preferably set to &#x2018;abandon&#x2019; (i.e. are preferably set to continue response handling) since otherwise the request would be processed further free-of-charge. 
+ According to the invention, control device behavior in error situations where an error response is received from an application is improved. In case a response message received from an application for a communication request is evaluated as an error message by the control device, control of the communication request can be continued on the basis of service-specific data. 
+ It is to be understood that the above description is illustrative of the invention and is not to be construed as limiting the invention. Various modifications and applications may occur to those skilled in the art without departing from the true spirit and scope of the invention as defined by the appended claims. 
+
+
+
+
+1. A control device for providing communication control for users in a communications network, the control device comprising: 
+controlling means for controlling communication requests of the users; and 
+evaluating means for evaluating response messages received from applications, 
+wherein if a response message received from an application for a communication request is evaluated as an error message by the evaluating means, the controlling means is configured to continue control of the communication request based on service-specific data. 
+
+ 
+
+2. The control device according to claim 1, further comprising: 
+retrieving means for retrieving the service-specific data, the service-specific data being part of user-specific data, from a data providing device comprising a database storing the user-specific data, the service-specific data comprising instructions for continuing control of the communication request in correspondence with response messages from the application. 
+
+ 
+
+3. The control device according to claim 1, wherein the evaluating means is configured to evaluate information added to the response message received from the application and the controlling means is configured to determine whether to continue control of the communication request using the information added to the response message. 
+ 
+
+4. The control device of claim 2, wherein the evaluating means is configured to evaluate information added to the response message received from the application and the controlling means is configured to determine whether to continue control of the communication request using the information added to the response message. 
+ 
+
+5. A serving device for executing services for users of a communications network, the serving device comprising: 
+determining means for determining whether a request received from a control device providing communication control for the users in the communications network can be handled by the serving device; 
+transmitting means for transmitting a response message for the request to the control device, the response message indicating to the control device a determination result by the determining means; and 
+adding means for adding information to the response message transmitted by the transmitting means if the determining means determines that the request cannot be handled by the serving device, wherein the information is to be used by the control device in deciding on communication request control. 
+
+ 
+
+6. A data providing device comprising: 
+at least one database storing user-specific data, the user-specific data comprising service-specific data; 
+receiving means for receiving a request for retrieving service-specific data associated with a user, from a control device providing communication control for the user in a communications network; and 
+transmitting means for transmitting the service-specific data to the control device upon the request, the service-specific data comprising, for at least one application, instructions for performing communication request control in correspondence with response messages transmitted from the at least one application to the control device. 
+
+ 
+
+7. A control system comprising: 
+a control device for providing communication control for users in a communications network; and 
+a data providing device, 
+wherein the control device comprises controlling means for controlling communication requests of the users, evaluating means for evaluating response messages received from applications, and retrieving means for issuing a request for retrieving service-specific data associated with a user from the data providing device, 
+and wherein the data providing device comprises 
+at least one database storing user-specific data, the user-specific data comprising service-specific data, receiving means for receiving the request for retrieving the service-specific data associated with the user from the control device, and transmitting means for transmitting the service-specific data to the control device upon the request, 
+wherein if a response message received from an application for a communication request is evaluated as an error message by the evaluating means, the controlling means is configured to continue control of the communication request based on the service-specific data received from the data providing device. 
+
+ 
+
+8. A serving system comprising: 
+a control device for providing communication control for users in a communications network; and 
+a serving device for executing services for the users, wherein the serving device comprises determining means for determining whether a request received from the control device can be handled by the serving device, and transmitting means for transmitting a response message for the request to the control device, the response message indicating to the control device a determination result by the determining means, and wherein 
+the control device comprises controlling means for controlling communication requests of the users, and evaluating means for evaluating response messages received from the serving device, 
+wherein if the response message received from the serving device for a communication request is evaluated as an error message by the evaluating means, the controlling means is configured to continue control of the communication request on the basis of service-specific data. 
+
+ 
+
+9. A method of providing communication control for users in a communications network, the method comprising the steps of: 
+retrieving service-specific data associated with a user, the service-specific data including communication request handling instructions for response messages received from applications providing services; 
+initiating a service for the user based on a request received from the user; 
+receiving, in response to the initiating step, an error response from the service; and 
+determining whether to continue processing the request received from the user based on the instructions given for the error response in the service-specific data. 
+
+ 
+
+10. A method according to claim 9, wherein the determining whether to continue processing the request received from the user comprises processing the request further or processing the error response further based on the communication request handling instructions given for the error response in the service-specific data. 
+ 
+
+11. A method according to claim 10, wherein the request received from the user is a request for establishing a session or a request for sending a message. 
+ 
+
+12. A method according to claim 9, wherein the request received from the user is a request for establishing a session or a request for sending a message. 
+ 
+
+13. A computer program embedded on a computer-readable medium, the program comprising software code portions for performing, when the program is run on the processing device, the steps of the method according to claim 9. 
+ 
+
+14. The computer program product according to claim 13, wherein the program is directly loadable into an internal memory of the device. 
+ 
+
+15. The computer program according to claim 13, wherein the determining whether to continue processing the request received from the user comprises processing the request further or processing the error response further based on the communication request handling instructions given for the error response in the service-specific data. 
+ 
+
+16. The computer program according to claim 13, wherein the request received from the user is a request for establishing a session or a request for sending a message. 
+ 
+
+17. The computer program according to claim 15, wherein the request received from the user is a request for establishing a session or a request for sending a message.
+ 
+
+

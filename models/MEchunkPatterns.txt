@@ -1,0 +1,229 @@
+// 3 Aug 05 ... added preName feature for titles (not for n's)
+
+pattern set names;
+
+enamex		:= [ENAMEX TYPE=NameType];
+
+when enamex	add [constit cat=name pa=[head=NameType number=singular]];
+
+timex		:= relative-day | day-of-week | rel-day-of-week | part-of-day;
+
+relative-day	:= "yesterday" | "today" | "tomorrow";
+
+part-of-day	:= ("early" | "late") (relative-day | day-of-week | rel-day-of-week);
+
+rel-day-of-week	:= ("last" | "this" | "next") day-of-week;
+
+day-of-week	:= "Monday" | "Tuesday" | "Wednesday" | "Thursday" | "Friday" |
+		   "Saturday" | "Sunday";
+
+when timex	add [constit cat=timex pa=[head=timex]];
+
+pattern set othernames;
+
+other-name	:= [undefinedCap] proper-noun* | [constit cat=initial] proper-noun+;
+
+proper-noun 	:= [undefinedCap] | [constit cat=initial];
+
+when other-name	add [constit cat=name pa=[head=otherName number=singular]];
+
+//  pattern set for noun and verb groups
+
+pattern set ng-chunks;
+
+//  pattern for noun groups --------------------------------------------------
+
+//  ---- noun/pronoun head
+
+ng := 		quote? det-pos ln 
+		([token] "-")?	// to allow for hyphenated heads
+		[constit cat=n pa=[head=Head number=Number] nhuman=Human]:HdAnn quote? |
+		quote? det ln 
+		    ([constit cat=adj pa=[head=Head]]:HdAnn | [constit cat=ven pa=[head=Head]]:HdAnn) quote? |
+		// quote? currency quote? |
+		// quote? date quote? |
+		quote? [constit cat=pro pa=[head=Head number=Number]]:HdAnn quote?;
+
+quote	    :=  "\"" | "''";
+
+det-pos	    :=  det | PossPrefix = false ;
+
+det	    :=	("all" | "both")? [constit cat=det tposs=f pa=Det] PossPrefix=false |
+		("all" | "both")? [constit cat=det tposs=t]:Poss Det=poss PossPrefix = false |
+		"'s" Det=poss PossPrefix = true ;		
+
+ln	    :=  q-pos?
+                [constit cat=ordinal]?
+		mod-pos*;
+
+q-pos	    :=  ([constit cat=adv] | 
+		 [constit cat=adj] |  // for APREQs and superlative adjectives
+		 "less" "than" | "more" "than" | "at" "least" | "as" "much" "as" |
+		 "as" "many" "as" | "as" "few" "as" | "as" "little" "as" | "about")? 
+		 [constit cat=q]:Q [constit cat=q]*; 
+
+mod-pos     :=  [constit cat=adv]? modvar (("and" | "or" | ",") modvar)? |
+		date |
+		percentage |
+		currency |
+		[constit cat=adv]? hyphenated;
+
+modvar	    :=	[constit cat=adj] | [constit cat=ving] | [constit cat=ven] | 
+		[constit cat=n] | [constit cat=name]:NameMod;
+
+date	    :=  month [constit cat=q];
+
+month	    :=  "January" | "Jan." | "February" | "Feb." |
+		"March" | "Mar." | "April" | "Apr." | "May" |
+		"June" | "July" | "August" | "Aug." |
+		"September" | "Sept." | "October" | "Oct." |
+		"November" | "Nov." | "December" | "Dec.";
+
+percentage  :=  [constit cat=q] "%"; 
+
+currency    :=  "$" [constit cat=q]+;
+
+//              double hyphenated tokens are rare but do exist:  27-year-old)
+
+hyphenated  :=	([token] | [constit cat=name]:NameMod) "-" ([token] | [constit cat=name])
+                                                      ("-" ([token] | [constit cat=name]))?;
+
+when ng		add [constit cat=np 
+                             pa=[head=Head number=Number det=Det human=Human]
+			     isName=false
+                             headC=HdAnn
+		             poss=Poss
+			     possPrefix=PossPrefix
+		             quant=Q
+		             nameMod=NameMod];
+
+//  ---- name head
+
+name-ng :=	quote? det-pos
+		[constit cat=adj]* 
+		hyphenated?
+		( [constit cat=n number=singular] | [constit cat=name] )*
+		( [constit cat=n number=singular]:PreName | [constit cat=title]:PreName)
+		[constit cat=name pa=PA-noun]:HdAnn quote? | 
+          	quote? det-pos
+		[constit cat=adj]* 
+		hyphenated?
+		( [constit cat=n number=singular] | [constit cat=name] )*
+		[constit cat=name pa=PA-noun]:HdAnn quote?;
+
+when name-ng	add [constit cat=np isName=true 
+		                    pa=PA-noun 
+				    possPrefix=PossPrefix
+                                    preName=PreName
+		                    headC=HdAnn];
+
+//  ---- headless np
+
+headless-ng :=	"some" Head=some | "either" Head=either | "neither" Head=neither | 
+                "any" Head=any | "each" Head=each | "all" Head=all | "both" Head=both |
+                "none" Head=none | "many" Head=many | "a" "few" Head=afew |
+		"most" Head=most |
+                "Some" Head=some | "Either" Head=either | "Neither" Head=neither | 
+                "Any" Head=any | "Each" Head=each | "All" Head=all | "Both" Head=both |
+                "None" Head=none | "Many" Head=many | "A" "few" Head=afew |
+		"Most" Head=most;
+
+when headless-ng  add [constit cat=np isName=false pa=[head=Head] possPrefix=false];
+
+headless-q :=	q-pos;
+
+when headless-q   add [constit cat=np isName=false pa=[head=q] possPrefix=false];
+
+ng-pro	 :=	"this" | "that" | "these" | "those" | "who" | "what" | "there" | "which";
+
+when ng-pro	add [constit cat=np-pro];
+
+// other-ng :=	[token]+;
+
+// when other-ng	add [ng-leftover];
+
+pattern set fusePossessive;
+
+ng-poss-ng  :=	[constit cat=np possPrefix=false]:Poss 
+		[constit cat=np pa=PA isName=Name quant=Q nameMod=NameMod possPrefix=true]:HdAnn;
+
+when ng-poss-ng	add [constit cat=np
+			     pa=PA
+			     isName=Name
+                             headC=HdAnn
+		             poss=Poss
+			     possPrefix=false
+		             quant=Q
+		             nameMod=NameMod];
+
+// ---------- verb groups -----------------------------------------------
+//
+// added headC for verb groups, 12 Aug 05
+
+pattern set vgroups;
+
+vg :=		[constit cat=tv pa=[head=Head tense=Tense]]:HdAnn |
+		[constit cat=w] "not"? vmod? vg-inf |
+		tv-vbe "not"? vmod? vg-ving Aspect=progressive |
+		tv-vhave "not"? vmod? vg-ven Aspect=perfect;
+
+vg-inf :=	"to"? [constit cat=v pa=[head=Head]]:HdAnn |
+		"to"? "have" vmod? vg-ven |
+		"to"? "be" vmod? vg-ving;
+
+vg-ven :=	[constit cat=ven pa=[head=Head]]:HdAnn |
+		"been" vmod? vg-ving;
+
+vg-ving :=	[constit cat=ving pa=[head=Head]]:HdAnn;
+
+tv-vbe :=	"is" Tense=present | "are" Tense=present | "was" Tense=past | "were" Tense=past;
+
+tv-vhave :=	"has" Tense=present | "have" Tense=present | "had" Tense=past;
+
+vmod :=		[constit cat=adv];
+
+when vg		add [constit cat=vgroup pa=[head=Head tense=Tense aspect=Aspect] headC=HdAnn];
+
+vg-inf2 :=	[constit cat=v pa=PA-verb] |
+		"have" vmod? vg-ven |
+		"be" vmod? vg-ving;
+
+when vg-inf2	add [constit cat=vgroup-inf pa=PA-verb];
+
+vg-pass :=	tv-vbe "not"? vmod? [constit cat=ven pa=[head=Head]]:HdAnn |
+		tv-vhave "not"? "been" vmod? [constit cat=ven pa=[head=Head]]:HdAnn Aspect=perfect |
+		[constit cat=w] "not"? vmod? "be" vmod? [constit cat=ven pa=[head=Head]]:HdAnn |
+		[constit cat=w] "not"? vmod? "have" vmod? "been" vmod? [constit cat=ven pa=[head=Head]]:HdAnn;
+
+when vg-pass	add [constit cat=vgroup-pass pa=[head=Head tense=Tense aspect=Aspect] headC=HdAnn];
+
+vg-ving2 :=	[constit cat=ving pa=PA-verb];
+
+when vg-ving2	add [constit cat=vgroup-ving pa=PA-verb];
+
+vg-ven2 :=	[constit cat=ven pa=PA-verb];
+
+when vg-ven2	add [constit cat=vgroup-ven pa=PA-verb];
+
+pattern set particles;  //----------------------------------------------------
+
+vg-part :=	[constit cat=vgroup pa=[head=Head]] [constit cat=dp pa=Part];
+
+when vg-part		add [constit cat=vgroup pa=[head=Head part=Part]];
+
+vg-inf-part :=	[constit cat=vgroup-inf pa=[head=Head]] [constit cat=dp pa=Part];
+
+when vg-inf-part	add [constit cat=vgroup-inf pa=[head=Head part=Part]];
+
+vg-ving-part :=	[constit cat=vgroup-ving pa=[head=Head]] [constit cat=dp pa=Part];
+
+when vg-ving-part	add [constit cat=vgroup-ving pa=[head=Head part=Part]];
+
+vg-ven-part :=	[constit cat=vgroup-ven pa=[head=Head]] [constit cat=dp pa=Part];
+
+when vg-ven-part	add [constit cat=vgroup-ven pa=[head=Head part=Part]];
+
+vg-pass-part :=	[constit cat=vgroup-pass pa=[head=Head]] [constit cat=dp pa=Part];
+
+when vg-pass-part	add [constit cat=vgroup-pass pa=[head=Head part=Part]];
+

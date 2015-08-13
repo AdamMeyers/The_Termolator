@@ -1,0 +1,547 @@
+
+  
+    
+      
+        Introduction
+        With the exception of counting deaths from all causes, a
+        common problem in clinical trials is the missing data
+        caused by patients who do not complete the study in full
+        schedule and drop out of the study without further
+        measurements. Possible reasons for patients dropping out of
+        the study (the so-called 'withdrawals') include death,
+        adverse reactions, unpleasant study procedures, lack of
+        improvement, early recovery, and other factors related or
+        unrelated to trial procedure and treatments. Missing data
+        in a study because of dropouts may cause the usual
+        statistical analysis for complete or available data to be
+        subject to a potential bias. This review attempts to raise
+        the awareness of the problem and to provide some general
+        guidance to clinical trial practitioners.
+      
+      
+        Examples
+        
+          Example 1
+          A multicenter, randomized, double-blind, three
+          parallel groups trial to compare placebo, candesartan
+          ciltexetil and enalapril in patients with mild to
+          moderate essential hypertension [ 1 ] . The study
+          randomized 205 to treatment, however, only 178 patients
+          were evaluable by protocol at the end of an 8-week
+          treatment period. 'The remaining patients were excluded
+          from the analysis of blood pressure (BP) data because of
+          major protocol violations, poor compliance with medical
+          visits, or withdrawal because of adverse events.'
+        
+        
+          Example 2
+          A multicenter, randomized, open-label, parallel-design
+          study to compare the treatment effect of niacin and
+          atorvastatin (for 12 weeks) on lipoprotein subfractions
+          in patients with atherogenic dyslipidemia [ 2 ] . 'Of the
+          total 108 patients randomized to treatment, 12 withdrew
+          from the study. Of those who withdrew, nine were due to
+          adverse events, two were lost to follow-up, and one did
+          not return for the final visit.'
+        
+        
+          Example 3
+          A multicenter, randomized, double-blind,
+          placebo-controlled trial to assess treatment effect of
+          pimobendan on exercise capacity in patients with chronic
+          heart failure [ 3 ] . 'The primary pre-specified analysis
+          of exercise time was limited to those patients who had at
+          least the first follow up (four-week) exercise test
+          carried out and had shown good compliance up to the day
+          of the test. If subsequent tests were not performed,
+          whatever the reason, or performed although compliance
+          between tests had been poor, the last exercise time value
+          obtained while compliance was good was carried forward.'
+          Two hundred and forty of the 317 randomized patients had
+          exercise test done with good compliance at four, 12, and
+          24 weeks. Listed reasons (and number of patients) for
+          missing exercise time data at 24 weeks were: 'exercise
+          test not done due to death' (n = 30), 'exercise testing
+          contraindicated' (n = 9), and 'exercise test not done for
+          other reasons' (n = 10).
+        
+        
+          Example 4
+          A randomized, double-blind study to compare
+          nifedipine-GITS and verapamil-SR on hemodynamics, left
+          ventricular mass, and coronary vasodilatory in patients
+          with advanced hypertension [ 4 ] . Fifty-four patients
+          were randomized after the placebo run-in phase.
+          'Twenty-four failed to complete the (six-month) trial,
+          and thus were not included for analysis because of 1)
+          withdrawal for symptomatic adverse effects, 2) lack of
+          response, and 3) poor compliance.' 'Consequently, there
+          were 30 subjects with sufficient data sets for inclusion
+          in analyses.'
+        
+        
+          Example 5
+          A randomized, double-blind, titration study of
+          omapatrilat with hydrochlorothiazide in comparison with
+          hydrochlorothiazide (HCTZ) plus placebo for the treatment
+          of hypertension [ 5 ] . After 2 weeks of placebo lead in
+          and four weeks of HCTZ period, 274 subjects were
+          randomized into three treatment groups. 'A total of 235
+          subjects completed the (eight-week double-blind period)
+          study.'
+        
+      
+      
+        Effect of withdrawals on the data analysis
+        To demonstrate with simple algebra the effects and key
+        statistical concepts surrounding missing data, I use the
+        data from Example 4 above. In that study, 54 patients were
+        randomized. However, only the 30 patients who completed the
+        trial were included in the paper's analysis. The authors
+        excluded from the analysis the other 24 patients who
+        withdrew early because of adverse effects, lack of response
+        or poor compliance. Defining effective control of BP by the
+        criteria of either maintaining diastolic blood pressure
+        (DBP) ≤ 95 mmHg or achieving a least ≥ 15 mmHg decrease in
+        DBP, the authors summarized the following results: 'Eighty
+        per cent of randomized patients completed the protocol with
+        effective control of BP and no side effects.' Obviously,
+        the authors only counted 24 patients out of the 30
+        completers and obtained 80% and ignored the 24 patients who
+        dropped out prior to the scheduled end of the study at six
+        months. To distinguish the different 24 patients in this
+        example, we denote 24 (cr)for the former and 24 (d)for the
+        latter, that is, dropouts. It is easily seen that the
+        correct summary should be 24 (cr)/54 = 44.4% completed the
+        protocol with effective control of BP and no side effects,
+        rather than the reported 24 (cr)/30 = 80%. (See Table
+        1.)
+        If the authors really intended to estimate the chance
+        for patients to have effective control of BP with no side
+        effects with the study therapies at Month 6 ('responders'
+        in brief), then we need to do more work. First, the
+        calculation should always use 54 as the denominator because
+        that was the number of patients randomized to the study;
+        however, only 30 patients had BP measurement at Month 6; of
+        them, 24 (cr)were responders. This means that the true
+        answer should be (24 (cr)+?)/(30+24 (d)) = (24+?)/54, where
+        the question mark represents the unknown number of
+        responders among the 24 (d)withdrawals counted in the
+        denominator. Next, we calculate the extreme possibilities
+        as (a) (24 (cr)+0)/54 = 44.4% and (b) (24 (cr)+24)/54 =
+        48/54 = 88.9%.
+        In (a) we assumed that none of 24 (d)withdrawals (0%)
+        responded, while in (b) we assume all 24 (d)withdrawals
+        (100%) responded. Of course, we know that (b) is
+        unrealistic since some people withdrew because of lack of
+        response and some because of side effects, but the paper
+        did not provide the exact numbers. In general, we usually
+        do not feel comfortable with either extreme, but we
+        understand that they provide an idea of the uncertainty in
+        the data because of withdrawals.
+        An estimate between the extremes is (c): to substitute
+        the unknown number by 24 (d)× (24 (cr)/30) = 24 (d)× 0.80 =
+        19.2, where 24 (cr)/30 = 80% is the proportion of
+        responders among those who completed the trial. That is,
+        when no particular information was available, we may assume
+        that the same proportion of patients (80%) among the 24
+        (d)dropouts would have also responded, had they completed
+        six months. Unsurprisingly, when we do the calculation, the
+        estimate becomes (24 (cr)+19.2)/54 = 43.2/54 = 80%, the
+        same answer as that using only the completers. In fact, a
+        simple algebra can show that this is always so. We can see
+        that (c) is in-between (a) and (b), and in this case, leans
+        toward (b). See Table 2.
+        Notice that the paper reported that a proportion of 80%
+        of 'randomized patients completed the protocol with
+        effective control of BP and no side effects' (as explained
+        earlier, the figure should instead be 44.4%), while the 80%
+        in (c) is an estimate of the chance of effective control of
+        BP without side effects with the study therapies at Month
+        6, under an assumption of 'no information available for the
+        missing data'. We should not be confused with these two
+        '80%'. The former 80% is a wrong summary number; the latter
+        is an estimate of the quantity of interest with a
+        particular assumption about the missing data. This
+        assumption is not likely to be appropriate for all the
+        dropouts, especially for those patients who dropped out
+        because of ineffective therapy; more discussion is given
+        later. We do not know whether the authors might have
+        intended to make the latter estimate but gave a wrong
+        summary instead.
+        Even more interesting and useful would be the same
+        calculations within each treatment group along with a
+        comparison of the estimates. Unfortunately, the paper did
+        not give the number of dropouts according to their
+        treatment groups.
+        Using proportions simplifies the illustration, but the
+        idea can easily be conveyed to the estimation of continuous
+        data as well, such as BP, exercise time, hemodynamic
+        measures, and lipoprotein levels.
+      
+      
+        Lessons learned
+        Several points can be generalized from the simple
+        illustration given above and closer examinations of the
+        other examples.
+        • It does not take very much missing data to mislead an
+        investigator. A good principle to avoid being misled is to
+        always account for every subject randomized to the study in
+        the analysis. Using the total number of randomized subjects
+        in the denominator is a step towards accomplishing this
+        principle, whether it is to calculate an average or a
+        proportion. This principle is known as intent to treat
+        (ITT). However, the much harder job for ITT is to account
+        for the dropouts in the numerator. This requires further
+        consideration, which follows below.
+        • It is important to record and report the reasons for
+        withdrawal and the number of subjects in each category of
+        withdrawal according to their treatment group. The reasons
+        for patients dropping out can be used to help properly
+        assess the nature of the missing data. For example, if all
+        the dropouts were because of a lack of response or side
+        effects, then the calculation in (a) would be appropriate.
+        In statistical terms, they would be called informative
+        missing data. This is because useful information can be
+        found in the reason for the dropout and this can be used to
+        estimate the true response. Outcome-related dropouts are
+        informative and should not be disregarded in analytical
+        study without careful thought. In particular, when a
+        patient dies, whatever the cause of the death might be,
+        such as in Example 3, all of the subsequent physiological
+        and quality of life data should not even be regarded as
+        missing, but as having values equal to zero or the worst
+        category. When a patient's clinical status has reached a
+        terminal disease progression stage (such as New York Heart
+        Association class IV) and they are unable to perform
+        exercise testing, as in Example 3, the exercise time should
+        also be equal to zero seconds, and not simply regarded as
+        missing data. For the same reason, the remaining survival
+        time after death (of any cause) would be zero days as well,
+        not a censored observation when doing, say Kaplan-Meier,
+        survival analysis for an endpoint such as cardiovascular
+        death. Treating non-cardiovascular death as equivalent to
+        censoring because of loss-to-follow-up or
+        end-of-observation for an endpoint of cardiovascular death
+        has unfortunately become a popular practice in many medical
+        journal articles. This needs to be corrected.
+        • The extreme calculations in (a) and (b) enable us to
+        assess the uncertainty of the data which contains missing
+        values, especially if we do the calculation for each
+        treatment group separately. The bias seen in the medical
+        publishing industry in the decisions over which articles
+        are chosen for publication is a mirror image of the dropout
+        problem in patient studies. In the former, positive studies
+        have better chance of getting published, while negative
+        studies have a higher chance of being rejected. The same is
+        true for the latter: patients responding to treatment tend
+        to continue in the study, while patients failing to respond
+        tend to drop out prematurely. Using only the available data
+        or only the subgroup of those who complete the study leads
+        to a biased result. The approaches in (a) and (b) take this
+        consideration into account, although they may also be
+        biased by over-correction.
+        • The assumption underlying the approach in (c) is
+        interesting. When no particular information is known about
+        the missing data, we are essentially assuming that the
+        dropouts are not much different from the completers. This
+        is generally described statistically as missing completely
+        at random (MCAR), meaning that the process which caused the
+        missing data is not informative about the parameter that we
+        are trying to estimate. A good way to think of MCAR is that
+        the dropouts are a simple, random sample of the study
+        sample. Examples of MCAR include patients who have moved
+        away, or study that has closed and the late entry of
+        patients being administratively 'censored'. We have seen
+        the convenience of MCAR in the above illustration: simply
+        use the completers and we get the same result. However,
+        whether this assumption is valid or not should be examined
+        carefully in each individual case. In many situations,
+        dropouts are not the same patient population as those who
+        stayed within the trial. MCAR certainly is less restrictive
+        than the assumptions in (a) or (b). Still, other less
+        restrictive assumptions than MCAR exist, and these are
+        discussed later.
+        • All three estimates given by (a), (b), and (c) are
+        biased to a certain extent. Had the authors given the
+        detail about the numbers of dropout categories of 'lack of
+        response' and 'side effects', a better estimate could be
+        derived.
+        • We would certainly feel more comfortable with a study
+        conclusion when it is not altered by different approaches.
+        Sensitivity analysis is actually the best way to analyze
+        data in the presence of dropouts. Medical investigators
+        should consult with statisticians when dealing with missing
+        data because there are many possible methods available.
+        Some popular approaches are reviewed below.
+      
+      
+        More about methods handling missing data
+        
+          Objectives
+          As in any data analysis, the first consideration is
+          the objective of the analysis. In the presence of
+          dropouts, there can be two types of questions: (i) What
+          would be the treatment effect without dropouts? and (ii)
+          What would be the treatment effect in the presence of
+          dropouts? Question (i) is concerned with an ideal
+          situation. It is also known as a 'question for
+          explanatory trials' [ 6 ] . It is often concerned with
+          the human pharmacological properties of new drugs under
+          investigation rather than practical usage. Regarding
+          question (ii), we need to further differentiate two
+          situations: patients drop out either (a) totally from the
+          study and no data are collected after withdrawal, or (b)
+          merely from the study assigned treatment with data still
+          being collected. For (b) there will be no missing data.
+          If we can design trials that will allow patients to be
+          followed until the end of the study despite the patient's
+          lack of compliance, then (ii) is a very practical
+          question, also known as the 'question for pragmatic
+          trials' [ 7 ] . Prevention studies with all-cause
+          mortality as the primary endpoint usually follow this
+          design. However, other endpoints may also be followed-up
+          (until death) in such a design. A recent example is [ 8 ]
+          , in which all participants, even those who discontinued
+          treatment (lovastatin or placebo), were contacted
+          annually for vital status, cardiovascular events, and
+          cancer history. Since no missing data would occur, the
+          design of (b) is highly recommended for all trials if at
+          all possible. In fact, the ITT principle originally aims
+          to answer question (ii) with (b) type of dropouts, where
+          no missing data would occur. However, more often than not
+          we face studies in which patients have withdrawn from the
+          study entirely and caused the missing data problem, ie,
+          type (a), as the Examples 1-5 (with the exception of
+          Example 3) above have demonstrated. Unless the patient's
+          clinical status does not permit further testing after
+          discontinuing the study treatment, type (a) dropout
+          problem is a common design flaw and should be corrected.
+          Nevertheless, the problem of no follow-up data prevails
+          in clinical trials. For clinical trials conducted for
+          drug registrations it is possible that, in light of the
+          International Conference on Harmonization (ICH)-E9
+          guideline [ 9 ] , the data analyses have to address both
+          questions (i) and (ii).
+        
+        
+          Imputation methods
+          The analyses illustrated in Table 2were methods in the
+          general category of imputation. In general, the basic
+          idea of imputation is to fill in the missing data by
+          using values based on a certain model with assumptions.
+          There are methods based on a single imputation and
+          methods based on multiple imputation, which, instead of
+          filling in a single value for each missing value, replace
+          each missing value with a set of plausible values that
+          represent the uncertainty about the right value to
+          impute. The attraction of imputation is that once the
+          missing data are filled-in (imputed), all the statistical
+          tools available for the complete data may be applied.
+          Each method of (a), (b) and (c) in Table 2is a single
+          simple imputation method, but together they may be viewed
+          as a 'multiple simple imputation' method (as opposed to
+          the 'proper multiple imputation' method discussed below).
+          The data in Table 2only had one time-point (Month 6) for
+          analysis.
+          For longitudinal data with multiple time-points, the
+          conventional last-observation-carried-forward (LOCF)
+          approach is a common practice of another simple
+          imputation. This approach was used by the authors in
+          Examples 3 and 5. Attempting to follow the principle of
+          ITT to account for all randomized, LOCF method includes
+          every randomized subject who has at least one
+          post-therapy observation. LOCF is popular among
+          practitioners because it is simple to put into effect and
+          because of a misconception that it is conservative
+          (meaning working against an effective treatment group).
+          However, every imputation method implicitly or explicitly
+          assumes a model for the missing data. The LOCF assumes
+          (unrealistically) that the missing data after patient's
+          withdrawal are the same as the last value observed for
+          that patient. The consequence of this assumption is that
+          it imputes data without giving them within-subject
+          variability and that it alters the sample size.
+          Proper multiple imputation (PMI) methods are described
+          in [ 10 ] and [ 11 ] , which use regression models to
+          create more than one imputed data sets and thus provide
+          variability within and between imputations. PMI method
+          has long been a preferred approach in survey research.
+          Its popularity has recently gainied in clinical trials
+          since the method became automated by commercial computer
+          software [ 12 13 ] . However, the complexity of
+          regression models used in PMI should be carefully thought
+          through by clinical trial practitioners, because the
+          method assumes that the missing data process can be fully
+          captured by the regression model employed on observed
+          values. This assumption is called missing at random
+          (MAR). MAR essentially says that the cause of the missing
+          data may be dependent on observed data (such as data of
+          previous visits) but must be independent of the missing
+          value that would have been observed. It is a less
+          restrictive model than MCAR, which says that the missing
+          data cannot be dependent on either the observed or the
+          missing data. The design suggested by Murray and Findlay
+          [ 14 ] , which forced dropouts upon observing
+          uncontrolled BP, uses the MAR principle. When MAR or MCAR
+          conditions are met, model-based analyses can be
+          appropriately performed based on the observed data alone
+          without further modeling the missing data process.
+          Another imputation method, which is in-between the
+          LOCF and PMI, is the partial imputation (PI) or improved
+          LOCF method [ 15 ] . The idea of this method is quite
+          simple. In LOCF, one imputes every missing visit
+          time-point by carrying the last observation forward until
+          the end of the study. Since LOCF requires the strong
+          assumption of stability, the more it imputes the more
+          bias it introduces if the assumption of stability does
+          not hold. The method of PI does not always carry the
+          observations to the end time-point of the study, but just
+          far enough to balance the dropout patterns between the
+          treatment groups. The underlying principle is that when
+          the dropout patterns are made almost identical between
+          the treatment groups, the relative comparison of the
+          treatment effects will be less biased. Since PI does less
+          imputation, it is less biased than LOCF because the
+          assumption of stability usually does not hold. Some
+          simulation results under various missing data processes
+          demonstrated the potential usefulness of PI over the
+          methods of using all available data and LOCF [ 15 ] .
+          However, more experience is still needed to test this new
+          method in practice.
+        
+      
+      
+        Methods based on special missing data models
+        Other, more sophisticated methods based on statistical
+        models are available [ 16 17 18 ] ; a technical review can
+        be found, for example, in [ 19 ] and [ 20 ] . No general
+        computer programs are available to put them into effect
+        though, because every so-called informative missing data
+        set requires a unique model to describe it.
+      
+      
+        Methods based on ranking observations
+        A large class of non-parametric methods is based on the
+        ranks or 'scores' of the observations instead of the actual
+        values. Commonly used non-parametric methods in clinical
+        trials include the Wilcoxon signed-rank test, Mann-Whitney
+        test, and so on. Example 3 also used a ranking method after
+        LOCF for a secondary analysis. Incorporating missing data
+        into these methods can be easily done, by ranking the
+        missing data, according to the reasons for withdrawals [ 21
+        ] , and, in longitudinal study cases, the time of
+        withdrawal [ 22 ] . For example, death would be given the
+        worst rank, followed by 'lack of efficacy', then 'adverse
+        reaction', 'patient refusal', and so on. Within the same
+        category of withdrawal, early dropouts would be given worse
+        ranks than later dropouts. Ground rules for the ranking
+        should be set prior to unmasking the treatment codes for
+        data analyses to avoid being post-hoc. After missing data
+        are replaced by their ranks, the usual testing procedure
+        can be carried out. One major drawback in these methods is
+        that they do not provide any estimation of the treatment
+        effect in the original measurement unit, because the data
+        are replaced by the ranks.
+        All these methods, parametric or non-parametric, require
+        much closer collaboration between medical investigators and
+        statisticians. In the parametric case, the observed outcome
+        cannot provide statistical tests to select the missing data
+        models. In both cases, the validity of the various models
+        or ranking rules requires an examination of the missing
+        data information and strong faith in the reasons given for
+        the patients' withdrawal. Still, the main issue is the
+        question that these methods are addressing. They attempt to
+        follow the ITT principle (but with missing data) to answer
+        question (i) above, hoping that the dropouts can
+        hypothetically be removed by, say, a truly ITT design, or
+        by successfully using concurrent treatments for intolerable
+        side effects without affecting the efficacy of the study
+        medication.
+      
+      
+        Composite comparisons
+        Many believe that removing the patient's dropout process
+        is not plausible in clinical practice. In this case, the
+        dropout process itself may be an outcome of interest and
+        not a nuisance effect. For example, the US Federal Drug
+        Association's draft guidance on diabetes trials
+        specifically requested the consideration of dropouts as an
+        endpoint [ 23 ] . Therefore, the problem becomes a
+        'composite endpoints' issue. This is the approach taken in
+        [ 24 25 ] , and it has lately been extended to modeling the
+        joint distribution of the longitudinal and time-to-event
+        data (ie, time to withdrawal) [ 26 27 ] . In this setting,
+        we would compare the treatment groups with two aspects
+        simultaneously: (a) the chance (or duration) of complying
+        with the prescribed protocol and, (b) the outcome measure
+        (eg, mean change in systolic blood pressure) given the
+        pattern of compliance. The comparison (a) is
+        straightforward by either the standard binomial or survival
+        techniques. The comparison (b) requires the same care as
+        has been discussed here previously, because, given the
+        pattern of compliance, the subgroup of patients has already
+        been self-selected. The randomization mechanism used for
+        achieving comparability between treatment groups is broken
+        by the post-randomization stratification of compliance. It
+        is then important to check the key outcome-correlated
+        baseline characteristics between the treatment groups for
+        any incomparability among these subgroup patients. This was
+        done in Example 4 but not others. Recognizing that the
+        subgroups are no longer randomized, we should treat this
+        portion as a semi-observational study imbedded in the
+        randomized trial. Techniques used for analyzing
+        observational studies should be applied to this part of
+        comparison [ 28 ] . Generally speaking, in an observational
+        study, bias can only be reduced but not entirely eliminated
+        by methods of adjustment or matching. Sensitivity analysis
+        in this approach is to consider different baseline
+        covariates for matching or adjustment.
+      
+      
+        Conclusion
+        The issue of what to do about missing data caused by
+        dropouts in clinical trials is a research topic that is
+        still under development in statistical literature. As has
+        been noted in the ICH-E9 guideline [ 9 ] , 'no universally
+        applicable methods of handling missing values can be
+        recommended.' The issue of handling missing data is
+        intrinsically difficult because it requires a large
+        proportion of missing data to investigate a method. On the
+        other hand, a large proportion of missing data would make a
+        clinical study less credible. The best available advice is
+        to minimize the chance of dropouts at the design stage and
+        during trial monitoring. A truly ITT design is absolutely
+        encouraged. This requires follow-up data to be collected
+        even after patients discontinue the treatment, whenever the
+        clinical status of the patient permits. If it is
+        anticipated that there will be many dropouts, then perhaps
+        the study's duration should be shortened. Alternatively,
+        the medical procedure that is deemed to be the most likely
+        cause of patients' withdrawal should be altered. All data
+        after death of any cause should be given a value of zero
+        instead of a blank. Consideration may also be given to
+        define an endpoint (event), instead of a measurement value,
+        as the primary response variable, which can be determined
+        even if the patient withdraws from the study. In an
+        analysis, one should be clear about the question or
+        objective of the analysis with missing data, and conduct
+        sensitivity analysis with a set of plausible, pre-specified
+        models of the missing data.
+      
+      
+        Competing interests
+        None declared.
+      
+      
+        Abbreviations
+        BP = blood pressure; HCTZ = hydrochlorothiazide; DBP =
+        diastolic blood pressure; ITT = intent to treat; MCAR =
+        missing completely at random; ICH = International
+        Conference on Harmonization; LOCF
+        last-observation-carried-forward; PMI = proper multiple
+        imputation; MAR = missing at random; PI = partial
+        imputation.
+      
+    
+  

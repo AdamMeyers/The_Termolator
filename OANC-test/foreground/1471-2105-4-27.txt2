@@ -1,0 +1,400 @@
+
+  
+    
+      
+        Background
+        Expression microarrays provide a vehicle for exploring
+        the gene expression in a manner that is rapid, sensitive,
+        systematic and comprehensive [ 1 2 3 4 5 6 ] . Thousands of
+        genes can now be studied simultaneously without the need of
+        an 
+        a priori candidate gene list. In
+        order to keep up with advances in genome sequencing, the
+        number and composition of representative gene sequences are
+        frequently updated and probe sets representing newly
+        discovered expressed sequences are added on commercial
+        microarrays. Furthermore, existing probe sets are revised
+        because probe sequences once thought to be unique for a
+        single gene are occasionally found to be less specific.
+        This leads to the question of whether results from newer
+        microarray generations are comparable to those of previous
+        generations. The cost, time and irreplaceable nature of
+        some of the samples used for microarray analysis require
+        that a method to compare data from different generations be
+        developed.
+        Although Affymetrix Chips can each measure the
+        expression of over 12,000 genes and ESTs, the true
+        transcript level is confounded by a substantial amount of
+        noise and variability induced by both the large number of
+        observations and the wide range of gene expression values [
+        7 ] . Microarrays are sensitive to noise from many sources
+        including the manufacturing process and the experimental
+        (RNA isolation, labeling, hybridization, staining, washing
+        and scanning) processes. Even within the same generation of
+        chips and for replicates of single tissue samples, there
+        may be substantial variability in the measurement levels
+        for the same gene [ 8 ] . It is critical to distinguish
+        this noise from the changes that are real. Many empirical
+        approaches have been adopted to decrease noise from
+        microarray based experiments. Different methodologies and
+        strategies for reducing noise include establishing an
+        arbitrary global threshold for fold-changes [ 9 ] ,
+        noise-filtering look up tables [ 8 ] , normalization
+        techniques to make microarrays comparable, such as using
+        ANOVA methods to provide estimates of changes in gene
+        expression that are corrected for potential confounding
+        effects [ 10 11 ] , and using replicate experiments to
+        estimate the variability in reported gene expression [ 12 ]
+        . Applying fold change thresholds has been the most common
+        method of reducing noise by filtering out the false
+        positives [ 8 9 13 ] . However, much of the work done to
+        date has focused on decreasing noise within the same
+        generation and has not addressed the issue of comparability
+        across generations.
+        In this analysis, we have estimated the level of
+        congruency between corresponding probe sets on two
+        generations of Affymetrix Chips, HuGeneFL (old) and HG-U95A
+        (new). We aim to understand the characteristics that
+        contribute to the systematic variability of the expression
+        values for experiments performed on different generations
+        of microarrays and extract features that would make them
+        more comparable. Furthermore, we address the issue of
+        variable scanner settings, since a ten-fold decrease in the
+        photo-multiplier tube (PMT) settings of the scanner was
+        another parameter introduced by Affymetrix in parallel to
+        the new chip generation, and interfered with data
+        comparability. More specifically, to expand the dynamic
+        range of the expression assay, a reduction of the system
+        amplification was recommended when using HG-U95A chips.
+      
+      
+        Results
+        In order to assess the accuracy and reproducibility of
+        the experiments, as well as the effect of different scanner
+        settings and different chip generations we performed the
+        following types of comparisons. The labeled cRNA from a
+        single sample was split in two, hybridized to two HG-U95A
+        chips and both were scanned at "low gain" photo-multiplier
+        tube (PMT) settings (Exp 1). The labeled cRNA from a sample
+        was split, hybridized to two HG-U95A chips, one was scanned
+        at "low gain" PMT settings, the other at "high gain"
+        settings (Exp 2). The labeled cRNA from a sample was split,
+        hybridized to two HuGeneFL chips, one was scanned at "low
+        gain", the other at "high gain" (Exp 3). The labeled cRNA
+        from one sample was split, hybridized to a HuGeneFL chip
+        and a HG-U95A chip, the HuGeneFL scanned at "high gain" and
+        the HG-U95A at "low gain" (Exp 4) according to
+        manufacturer's recommendations.
+        For the two HG-U95A chip-pairs, where each chip-pair was
+        hybridized with a single tissue sample and scanned at the
+        same "low gain" scanner setting, the correlations across
+        all probe sets were greater than 0.99 (Exp1 in Table 1).
+        Looking at the four HG-U95A chip-pairs in Exp 2, with one
+        chip of each pair scanned at "high gain" and the other at
+        "low gain" PMT settings, the correlation coefficients
+        across all probe sets ranged from 0.756 to 0.872 (Table 1).
+        The same analysis on the three HuGeneFL chip-pairs (with
+        one of each pair scanned at "high gain" and the other at
+        "low gain") resulted in the correlation coefficients across
+        the 7,129 probe sets ranging between 0.904 and 0.947 (Exp
+        3, Table 1). Finally, in the analysis of the 8,044 common
+        probe sets between HuGeneFL chips (measured at "high gain")
+        and HG-U95A chips (measured at "low gain"), the correlation
+        coefficients ranged between 0.730 and 0.810 (Exp 4, Table
+        1).
+        The rest of the analyses focused solely on the
+        measurements made on the seven samples split across the
+        HuGeneFL at "high gain" and the HG-U95A chips at "low
+        gain", as this is the most common comparison that will need
+        to be made (Exp 4). The correlation between the gene
+        expression values was computed for different subsets of
+        probe sets based on i) the number of common probe pairs;
+        ii) the number of 'P' calls assigned to every probe set;
+        iii) the expression level of the genes on HuGeneFL
+        chips.
+        For the first analysis each subset consisted of probe
+        sets with the same number of common probe pairs. The
+        correlation coefficient (r) was calculated by plotting all
+        the measurements on the HuGeneFL versus all the
+        measurements on the HG-U95A for every subset. The number of
+        common probe pairs within probe sets ranged from zero to 16
+        (see Methods). The correlation improved as the number of
+        common probe pairs increased (Figure 1). When probe sets
+        had 1 or more probe pairs in common, r was greater than
+        0.8, and for 14 or more probe pairs in common, r was more
+        than 0.9.
+        A second analysis was performed in a similar manner, by
+        creating subsets based on the number of 'P' calls per probe
+        set, across the 14 chips (7 HuGeneFL and 7 HG-U95A chips).
+        The correlation coefficient increased for the genes as the
+        number of 'P' calls increased (Figure 2).
+        Based on the level of gene expression on the HuGeneFL
+        chips, different groups were made for gene expression level
+        ranging from, for example, -100,000 to -10,000, -10,000 to
+        -1,000 and so on. The correlation across the two chips was
+        computed for each of these groups (Figure 3). It was
+        observed that the higher the reported gene expression level
+        on the HuGeneFL chips, the higher the correlation of the
+        gene expression values between HuGeneFL and HG-U95A
+        chips.
+        A chi-square analysis was done for all the probe sets on
+        both generations to determine if the absolute calls made
+        for the HuGeneFL chips were statistically independent from
+        the absolute calls made for the HG-U95A chips. A
+        three-by-three contingency table was constructed based on
+        the absolute calls. The 113,050 pairs of calls (7 samples ×
+        2 chip generations × 8,044 common probe sets) were placed
+        into this contingency table and the chi-square value
+        computed. The computed chi-square value was greater than
+        the chi-square value at 0.01 significance level, giving
+        sufficient confidence to reject the null hypothesis that
+        the calls made for the HuGeneFL chips were independent from
+        the calls made for the HG-U95A generation of Chips.
+        The correlation coefficient was computed for each probe
+        set across the two chip generations. There were seven pairs
+        of expression values for each probe set and 8,044
+        correlations corresponding to the 8,044 probe sets common
+        to HuGeneFL and HG-U95A chips (Figure 4). 2,200 of the
+        8,044 genes (27 %) had a negative correlation (i.e. r <
+        0), indicating that the gene expression levels changed in
+        opposite direction across generations (i.e. the more of a
+        transcript reported by one generation, the less reported by
+        the other generation) (see Table 3 [ Additional File 1] at
+        http://www.chip.org/~ashish/Reproducibility/for the
+        correlation coefficients between the probe sets of the two
+        chip generations).
+        In order to determine if high intensity can compensate
+        for low number of matched probe pairs, correlation was
+        computed for different intensity levels of HuGeneFL for
+        probe sets with specific number of common probe pairs. For
+        example, we looked at all the probe sets with 0 common
+        probe pairs and computed correlations for different ranges
+        of HuGeneFL intensity levels. It was observed that even for
+        probe sets with low number of common probe pairs, the
+        correlation between HuGeneFL and HG-U95A gene expression
+        levels increased as the reported gene expression on
+        HuGeneFL increased (Figure 5and 6).
+        All the above described analysis was repeated using the
+        Affymetrix MAS 5.0 algorithm. The obtained results were
+        highly similar (see Additional Figures 7-10 at
+        http://www.chip.org/~ashish/Reproducibility/). However,
+        when using the MAS 5.0 algorithm, 2,637 of the 8,044 genes
+        (32%) were negatively correlated.
+      
+      
+        Discussion
+        This work is focused on the comparison of HuGeneFL at
+        "high gain" settings and HG-U95A settings at "low gain"
+        settings. Although this comparison represents probe sets
+        with the worst correlation coefficients, it was
+        specifically chosen because most research labs tend to use
+        HuGeneFL chips with the old scanner ("high gain") settings
+        and HG-U95A chips with the new scanner ("low gain")
+        settings, due to a change in Affymetrix recommendations.
+        This represents the most common problem of comparability
+        across the two generations.
+        Many of the probe sets in the new generation of
+        Affymetrix chips (HG-U95A) have been significantly modified
+        from the corresponding probe sets in the older generation.
+        These differences in the design of the probe sets are due
+        to several factors, including corrections and additions
+        made to the public databases and new techniques used in
+        probe selection. Our aim was to determine the
+        characteristics of the two chip generations that would
+        account for the systematic variability in the gene
+        expression values across them.
+        The gene expression values for replicates of a
+        particular tissue sample measured at the same scanner
+        setting and on the same chip generation (HG-U95A) gave a
+        very high correlation of 0.99 (Exp 1, Table 1). This
+        indicates that expression measurements within one
+        generation are highly reproducible. Therefore, any
+        variation in gene expression levels across the two
+        generations should be due to the chip technology itself and
+        the specificity of the probe set sequences.
+        The reproducibility of HG-U95A chips scanned at "high
+        gain" and "low gain" scanner settings is poorer than the
+        reproducibility of HuGeneFL chips at the two scanner
+        settings. This lower correlation of HG-U95A chips at the
+        two scanner settings could be attributed to the fact that
+        HG-U95A chips have higher density of probe pairs than
+        HuGeneFL chips, making them more sensitive to background
+        noise. Furthermore, since the HG-U95A chips are more
+        specific with respect to their sequence selection criteria,
+        they would hybridize more efficiently than HuGeneFL chips
+        and so would be more saturated at high scanner settings
+        giving a lower correlation between "high gain" and "low
+        gain" scanner settings. The experiment involving HG-U95A
+        chips at "high gain" versus the HG-U95A at "low gain" had a
+        higher correlation compared to the HuGeneFL at "high gain"
+        versus the HG-U95A at "low gain" experiments (Table 1).
+        This could be attributed to several factors. The different
+        composition of probe pairs used for some probe set across
+        generations could result in altered hybridization
+        efficiency, and consequently different expression values
+        for the corresponding genes. The different number of probe
+        pairs per probe set in each generation could also introduce
+        some variance since it alters the "sample size" on which
+        all calculations are based. The higher density of probe
+        cells in the HG-U95A chips means that probe pairs are
+        closely packed, and perhaps affected in a different way
+        than standard density chips by noise and background levels.
+        Moreover, the probe pairs for each probe set are scattered
+        over HG-U95A chips as opposed to being physically grouped
+        together as on the HuGeneFL chips. This could result in a
+        variable impact of background and noise on the expression
+        value obtained for each probe set.
+        Every probe set on HuGeneFL has a corresponding probe
+        set on HG-U95A. However, not all the probe pairs within a
+        probe set are common for the corresponding probe sets on
+        both chip types. In this analysis, the correlation between
+        probe sets increases as the number of common probe pairs
+        increases (from zero to 16 probe pairs), with a correlation
+        coefficient of 0.4 if there are no probe pairs in common
+        and over 0.8 if even one probe pair is in common. The sharp
+        increase of the correlation coefficient between probe sets
+        with none and one common probe pairs, could be explained by
+        the use of poor sequence selection criteria for the
+        specific HuGeneFL probe sets, which later required the
+        complete replacement of the probe set. The chi square value
+        computed using the absolute calls given to each of the
+        probe sets demonstrates that most probe sets (77%) were
+        assigned the same absolute calls on both generations. Using
+        the reproducibility of absolute calls as a measure of
+        consistency across the two generations indicates that the
+        two generations are consistent overall.
+        The reproducibility of gene expression measurements
+        across generations was higher for probe sets with higher
+        gene expression measurements. To some extent, high
+        expression levels appear to compensate for low numbers of
+        common probe pairs between chip generations, with highest
+        correlations reached when increased gene expression was
+        combined with a large number of common probe pairs (Figure
+        5and 6). This pattern was also evident when analyzing the
+        number of 'P' calls for every probe set. More specifically,
+        the correlation of absolute calls for every probe set,
+        increased with increasing gene expression levels. Although
+        the absolute calls are qualitative indicators of the
+        presence of a transcript in a sample, they are derived from
+        the intensities of individual probe pairs within the probe
+        set. We propose that the increased reproducibility at
+        higher expression levels is due to the decreased
+        significance of the fixed measurement noise effect.
+      
+      
+        Conclusions
+        This paper gives a basic summary statistic of the
+        comparison between different chip generations, as well as
+        information on the extent to which this is possible. Being
+        able to perform such comparisons is critical especially
+        when tissue availability and financial limitations are an
+        issue. Skeletal muscle was used for the purposes of this
+        study, but any tissue can be used for the establishment of
+        benchmarks depending on the specific interests of
+        individual labs. Further study of more samples and tissue
+        types could establish a widely applicable analytical model
+        to make the most of current datasets and accelerate work
+        with future microarray generations and platforms.
+      
+      
+        Methods
+        
+          RNA extraction and hybridization
+          Total RNA was extracted from normal human skeletal
+          muscle tissue samples and used for cDNA and labeled cRNA
+          synthesis as previously described [ 14 15 ] . The
+          fragmented cRNA together with control targets recommended
+          by Affymetrix were hybridized to the GeneChip of choice
+          (HuGeneFL or HG-U95A). HuGeneFL chips contain
+          oligonucleotide sequences representative of 5,600 genes.
+          Each gene is represented by at least one probe set, which
+          in turn consists of approximately 20 probe pairs. Each
+          probe pair consists of two probe cells, the perfect match
+          (PM) and the mismatch (MM). The former is complementary
+          to, and interrogates the expression of a 25 base pair
+          region of the gene sequence, while the latter contains a
+          one-base change and is used to control for non-specific
+          hybridization. HG-U95A chips contain probe sets, each
+          consisting of approximately 16 probe pairs,
+          representative of ~12,600 genes. All 5,600 measured by
+          the HuGeneFL chips are also measured by the HG-U95A
+          chips; however, in order to improve their sensitivity and
+          specificity, the composition of some of the probe pairs
+          has been changed.
+        
+        
+          Signal detection and analysis
+          The chips were incubated (16-17 hours, 45°C and 60
+          rpm) in a rotating oven, washed by the Affymetrix
+          Fluidics Station, using the recommended signal
+          amplification step, and scanned by the Affymetrix
+          Scanner. Two different scanner settings were used. "High
+          gain" PMT) settings were recommended for HuGeneFL chips,
+          and "low gain" PMT settings were introduced for the
+          HG-U95A chips. Therefore most HuGeneFL chips were scanned
+          using Affymetrix "high gain" settings and most HG-U95A
+          chips were scanned using the "low gain" settings. In
+          order to assess the influence of the "scanner settings"
+          parameter in our data, some HuGeneFL chips were rescanned
+          under "low gain" and some HG-U95A chips were rescanned
+          under "high gain". A list of experiments and settings is
+          presented in Table 2(the raw .CEL files for all these
+          experiments can be accessed at
+          http://www.chip.org/~ashish/Reproducibility/). Using the
+          Affymetrix software (Microarray Suite 4.0), each probe
+          set was assigned an "average difference" value
+          corresponding to the expression level of the particular
+          gene it represents. The calculated average difference was
+          used as the measure of expression levels throughout this
+          analysis. The analysis was repeated using the Affymetrix
+          Microarray Suite 5.0 (MAS 5.0).
+          Affymetrix software also assigns every probe set an
+          "absolute call" (Present [P], Absent [A], Marginal [M]),
+          which represents a qualitative indication of whether or
+          not a transcript is detected within a sample. In the MAS
+          4.0 algorithm these calls are determined using the
+          following metrics: 1) the ratio of the number of positive
+          probe pairs to the number of negative probe pairs (known
+          as the Positive/Negative Ratio), 2) the fraction of
+          positive probe pairs (Positive Fraction), and 3) the
+          average across the probe set of each probe pair's log
+          ratio of positive intensity over negative intensity (Log
+          Average Ratio) (1).
+          Affymetrix tables
+          http://www.affymetrix.com/Auth/support/downloads/comparisons/PN600444HumanFLComp.zipindicate
+          that 6,623 probe sets from HuGeneFL chip have been mapped
+          to 7,094 probe sets from the HG-U95A chip giving a total
+          of 8,044 comparisons between the two generations.
+          Affymetrix also provides a list of the numbers of probe
+          pairs common for the two generations.
+          The correlation coefficient was used as a measure of
+          congruency between the probe sets across the two
+          generations of Affymetrix Chips (see Table 3 [ Additional
+          File 1]). The correlation for different subsets of probe
+          sets was computed based on certain probe set
+          characteristics, as discussed above. Finally, a
+          chi-square analysis was done to determine whether the
+          absolute calls made for the HuGeneFL chip were different
+          from the absolute calls made for the HG-U95A chip.
+        
+      
+      
+        Authors' contributions
+        AN conceived the study, performed the bioinformatical
+        analysis and drafted the manuscript. DS designed the
+        experimental part of the study, performed the microarray
+        experiments and drafted the manuscript. AJB guided the
+        study and helped with the analyses. JNH performed the
+        microarray experiments and helped with the manuscript. LMK
+        guided the study. AHB guided the study. ISK guided the
+        study and coordinated the project. All authors read and
+        approved the final manuscript.
+        Additional File 1
+        Correlation between HuGeneFL and HG-U95A. Correlation
+        Coefficients between HuGeneFL and HG-U95A probe sets with
+        the confidence intervals of their correlations and number
+        of common probe pairs.
+        Click here for file
+      
+    
+  

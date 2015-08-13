@@ -1,0 +1,586 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE us-patent-application SYSTEM "us-patent-application-v42-2006-08-23.dtd" [ ]>
+<us-patent-application lang="EN" dtd-version="v4.2 2006-08-23" file="US20070000321A1-20070104.XML" status="PRODUCTION" id="us-patent-application" country="US" date-produced="20061221" date-publ="20070104">
+<us-bibliographic-data-application lang="EN" country="US">
+<publication-reference>
+<document-id>
+<country>US</country>
+<doc-number>20070000321</doc-number>
+<kind>A1</kind>
+<date>20070104</date>
+</document-id>
+</publication-reference>
+<application-reference appl-type="utility">
+<document-id>
+<country>US</country>
+<doc-number>11431912</doc-number>
+<date>20060510</date>
+</document-id>
+</application-reference>
+<us-application-series-code>11</us-application-series-code>
+<classifications-ipcr>
+<classification-ipcr>
+<ipc-version-indicator><date>20060101</date></ipc-version-indicator>
+<classification-level>A</classification-level>
+<section>G</section>
+<class>01</class>
+<subclass>F</subclass>
+<main-group>23</main-group>
+<subgroup>24</subgroup>
+<symbol-position>F</symbol-position>
+<classification-value>I</classification-value>
+<action-date><date>20070104</date></action-date>
+<generating-office><country>US</country></generating-office>
+<classification-status>B</classification-status>
+<classification-data-source>H</classification-data-source>
+</classification-ipcr>
+</classifications-ipcr>
+<classification-national>
+<country>US</country>
+<main-classification>07330400R</main-classification>
+</classification-national>
+<invention-title id="d0e102">System and method for sensing the level and composition of liquid in a fuel tank</invention-title>
+<us-related-documents>
+<us-provisional-application>
+<document-id>
+<country>US</country>
+<doc-number>60679562</doc-number>
+<date>20050510</date>
+</document-id>
+</us-provisional-application>
+</us-related-documents>
+<parties>
+<applicants>
+<applicant sequence="00" app-type="applicant-inventor" designation="us-only">
+<addressbook>
+<last-name>Boudaoud</last-name>
+<first-name>Idir</first-name>
+<address>
+<city>Besancon</city>
+<country>FR</country>
+</address>
+</addressbook>
+<nationality>
+<country>FR</country>
+</nationality>
+<residence>
+<country>FR</country>
+</residence>
+</applicant>
+<applicant sequence="01" app-type="applicant-inventor" designation="us-only">
+<addressbook>
+<last-name>Stewart</last-name>
+<first-name>William</first-name>
+<address>
+<country>US</country>
+</address>
+</addressbook>
+<nationality>
+<country>US</country>
+</nationality>
+<residence>
+<country>US</country>
+</residence>
+</applicant>
+<applicant sequence="02" app-type="applicant-inventor" designation="us-only">
+<addressbook>
+<last-name>McCall</last-name>
+<first-name>Alan</first-name>
+<address>
+<country>US</country>
+</address>
+</addressbook>
+<nationality>
+<country>US</country>
+</nationality>
+<residence>
+<country>US</country>
+</residence>
+</applicant>
+</applicants>
+<correspondence-address>
+<addressbook>
+<name>WADDEY &#x26; PATTERSON, P.C.</name>
+<address>
+<address-1>1600 DIVISION STREET, SUITE 500</address-1>
+<city>NASHVILLE</city>
+<state>TN</state>
+<postcode>37203</postcode>
+<country>US</country>
+</address>
+</addressbook>
+</correspondence-address>
+</parties>
+</us-bibliographic-data-application>
+<abstract id="abstract">
+<p id="p-0001" num="0000">In a liquid sensing system, an RF signal is applied to a series-resonant circuit. The coil of the resonant circuit is placed proximate to a fuel tank, causing electromagnetic radiation to propagate into the fuel space. The fuel acts as an electrical load to the resonant circuit in a manner proportionate to the volume of fuel in the tank and/or to variations in electrical properties of the fuel itself. The loading effect of the fuel can change the resonant frequency and/or the Q of the resonant circuit. The loading effect of the fuel is determined by monitoring a change in one or more electrical parameters associated with the excited resonant circuit, such as a voltage across the resistor in the resonant circuit. Changes in this voltage are analyzed by a controller, the result of which is used to output a value indicative of level and/or composition of the fuel. </p>
+</abstract>
+<drawings id="DRAWINGS">
+<figure id="figure-D00000" num="00000">
+<img id="EMI-D00000" he="86.74mm" wi="127.00mm" file="US20070000321A1-20070104-D00000.TIF" alt="embedded image" img-content="drawing" img-format="tif"/>
+</figure>
+<figure id="figure-D00001" num="00001">
+<img id="EMI-D00001" he="228.60mm" wi="175.01mm" file="US20070000321A1-20070104-D00001.TIF" alt="embedded image" img-content="drawing" img-format="tif"/>
+</figure>
+<figure id="figure-D00002" num="00002">
+<img id="EMI-D00002" he="224.03mm" wi="176.02mm" orientation="landscape" file="US20070000321A1-20070104-D00002.TIF" alt="embedded image" img-content="drawing" img-format="tif"/>
+</figure>
+<figure id="figure-D00003" num="00003">
+<img id="EMI-D00003" he="220.22mm" wi="168.32mm" orientation="landscape" file="US20070000321A1-20070104-D00003.TIF" alt="embedded image" img-content="drawing" img-format="tif"/>
+</figure>
+<figure id="figure-D00004" num="00004">
+<img id="EMI-D00004" he="213.02mm" wi="165.02mm" orientation="landscape" file="US20070000321A1-20070104-D00004.TIF" alt="embedded image" img-content="drawing" img-format="tif"/>
+</figure>
+<figure id="figure-D00005" num="00005">
+<img id="EMI-D00005" he="210.06mm" wi="166.54mm" orientation="landscape" file="US20070000321A1-20070104-D00005.TIF" alt="embedded image" img-content="drawing" img-format="tif"/>
+</figure>
+<figure id="figure-D00006" num="00006">
+<img id="EMI-D00006" he="210.40mm" wi="170.18mm" orientation="landscape" file="US20070000321A1-20070104-D00006.TIF" alt="embedded image" img-content="drawing" img-format="tif"/>
+</figure>
+<figure id="figure-D00007" num="00007">
+<img id="EMI-D00007" he="219.96mm" wi="113.79mm" orientation="landscape" file="US20070000321A1-20070104-D00007.TIF" alt="embedded image" img-content="drawing" img-format="tif"/>
+</figure>
+<figure id="figure-D00008" num="00008">
+<img id="EMI-D00008" he="239.35mm" wi="144.61mm" orientation="landscape" file="US20070000321A1-20070104-D00008.TIF" alt="embedded image" img-content="drawing" img-format="tif"/>
+</figure>
+<figure id="figure-D00009" num="00009">
+<img id="EMI-D00009" he="236.30mm" wi="135.55mm" orientation="landscape" file="US20070000321A1-20070104-D00009.TIF" alt="embedded image" img-content="drawing" img-format="tif"/>
+</figure>
+<figure id="figure-D00010" num="00010">
+<img id="EMI-D00010" he="209.30mm" wi="166.20mm" file="US20070000321A1-20070104-D00010.TIF" alt="embedded image" img-content="drawing" img-format="tif"/>
+</figure>
+<figure id="figure-D00011" num="00011">
+<img id="EMI-D00011" he="166.88mm" wi="83.14mm" file="US20070000321A1-20070104-D00011.TIF" alt="embedded image" img-content="drawing" img-format="tif"/>
+</figure>
+<figure id="figure-D00012" num="00012">
+<img id="EMI-D00012" he="198.04mm" wi="113.45mm" file="US20070000321A1-20070104-D00012.TIF" alt="embedded image" img-content="drawing" img-format="tif"/>
+</figure>
+<figure id="figure-D00013" num="00013">
+<img id="EMI-D00013" he="198.71mm" wi="163.66mm" file="US20070000321A1-20070104-D00013.TIF" alt="embedded image" img-content="drawing" img-format="tif"/>
+</figure>
+<figure id="figure-D00014" num="00014">
+<img id="EMI-D00014" he="225.81mm" wi="173.82mm" file="US20070000321A1-20070104-D00014.TIF" alt="embedded image" img-content="drawing" img-format="tif"/>
+</figure>
+<figure id="figure-D00015" num="00015">
+<img id="EMI-D00015" he="147.57mm" wi="176.78mm" file="US20070000321A1-20070104-D00015.TIF" alt="embedded image" img-content="drawing" img-format="tif"/>
+</figure>
+<figure id="figure-D00016" num="00016">
+<img id="EMI-D00016" he="174.24mm" wi="167.30mm" file="US20070000321A1-20070104-D00016.TIF" alt="embedded image" img-content="drawing" img-format="tif"/>
+</figure>
+<figure id="figure-D00017" num="00017">
+<img id="EMI-D00017" he="161.46mm" wi="181.44mm" file="US20070000321A1-20070104-D00017.TIF" alt="embedded image" img-content="drawing" img-format="tif"/>
+</figure>
+<figure id="figure-D00018" num="00018">
+<img id="EMI-D00018" he="173.82mm" wi="181.86mm" file="US20070000321A1-20070104-D00018.TIF" alt="embedded image" img-content="drawing" img-format="tif"/>
+</figure>
+<figure id="figure-D00019" num="00019">
+<img id="EMI-D00019" he="117.18mm" wi="172.47mm" file="US20070000321A1-20070104-D00019.TIF" alt="embedded image" img-content="drawing" img-format="tif"/>
+</figure>
+<figure id="figure-D00020" num="00020">
+<img id="EMI-D00020" he="223.60mm" wi="130.30mm" file="US20070000321A1-20070104-D00020.TIF" alt="embedded image" img-content="drawing" img-format="tif"/>
+</figure>
+<figure id="figure-D00021" num="00021">
+<img id="EMI-D00021" he="163.91mm" wi="119.80mm" file="US20070000321A1-20070104-D00021.TIF" alt="embedded image" img-content="drawing" img-format="tif"/>
+</figure>
+<figure id="figure-D00022" num="00022">
+<img id="EMI-D00022" he="217.76mm" wi="169.42mm" file="US20070000321A1-20070104-D00022.TIF" alt="embedded image" img-content="drawing" img-format="tif"/>
+</figure>
+</drawings>
+<description id="description">
+<?cross-reference-to-related-applications description="Cross Reference To Related Applications" end="lead"?>
+<heading level="2" id="h-0001">CROSS-REFERENCES TO RELATED APPLICATIONS </heading>
+<p id="p-0002" num="0001"> This application is a Non-Provisional Utility application which claims benefit of co-pending U.S. Patent Application Ser. No. 60/679,562 filed May 10, 2005, entitled &#x201c;SYSTEM AND METHOD OF FUEL LEVEL SENSING USING EMF SENSING&#x201d; which is hereby incorporated by reference.</p>
+<?cross-reference-to-related-applications description="Cross Reference To Related Applications" end="tail"?>
+<?summary-of-invention description="Summary of Invention" end="lead"?>
+<heading level="2" id="h-0002">STATEMENT REGARDING FEDERALLY SPONSORED RESEARCH OR DEVELOPMENT </heading>
+<p id="p-0003" num="0002"> Not Applicable </p>
+<heading level="2" id="h-0003">REFERENCE TO SEQUENCE LISTING OR COMPUTER PROGRAM LISTING APPENDIX </heading>
+<p id="p-0004" num="0003"> Not Applicable </p>
+<heading level="2" id="h-0004">BACKGROUND OF THE INVENTION </heading>
+<p id="p-0005" num="0004"> The present invention relates to systems and methods for sensing levels and electrical properties of liquids stored in fuel tanks and other containers. More particularly, this invention pertains to sensing liquid levels and properties by propagating electromagnetic waves into a liquid container. </p>
+<p id="p-0006" num="0005"> Motor vehicle operators rely on fuel gauges to provide accurate information on the amount of fuel remaining in the fuel tank. The most common method of measuring the amount of fuel remaining in a motor vehicle fuel tank is to place a mechanical float and lever inside the tank. When the fuel level changes in the tank, the float causes the lever to pivot. When the lever pivots in response to changing fuel levels, an electrical signal is proportionately generated and/or varied. This variation in electrical signal is transmitted to a fuel gauge or vehicle data bus external to the tank. Such electromechanical fuel measurement systems are not particularly accurate and, of course, require installation of a mechanism inside the tank. Repair, replacement, or adjustment of an internal fuel level measurement mechanism is problematic. </p>
+<p id="p-0007" num="0006"> Engine control systems in many motor vehicles, and particularly in flexible fuel vehicles, also have a need to know the type and/or composition of fuel that is inside the fuel tank. Conventional fuel composition sensors are complex, expensive, and are not capable of also measuring fuel levels. </p>
+<heading level="2" id="h-0005">BRIEF SUMMARY OF THE INVENTION </heading>
+<p id="p-0008" num="0007"> The present invention provides reliable, inexpensive, and accurate systems and methods for measuring liquid levels and properties in a tank using a mechanism that can be installed external or internal to the tank. </p>
+<p id="p-0009" num="0008"> In one embodiment of the liquid level sensing systems and methods of the present invention, a substantially sinusoidal radio frequency (RF) signal of constant frequency is generated and coupled to a series-resonant Inductance, Capacitance, Resistance (LCR) circuit. The coil (inductor) of the resonant circuit is placed in close proximity to, or inside, a plastic fuel tank causing electromagnetic radiation to propagate into the fuel space. Consequently, the liquid fuel inside the tank acts as an electrical load to the series resonant circuit in a manner proportionate to the volume of fuel remaining in the tank. The loading effect of the fuel can cause a shift in the resonant frequency of the circuit and/or a change in the inductance Q of the resonant circuit. The loading effect of the fuel is determined by monitoring a change in one or more electrical parameters associated with the excited resonant circuit. For example, the voltage across the resistor in the series resonant circuit can be monitored. Changes in this voltage are detected and analyzed by a system controller, the result of which is used to output a signal indicative of fuel level. This output can be in the form of a digital or analog electrical signal. </p>
+<p id="p-0010" num="0009"> In one embodiment of the invention, the resistive component of the series-resonant LCR circuit is provided by the internal resistance of the inductor rather than by a discrete resistor. In this embodiment, the measurement of changes in voltage in the resonant circuit may be taken across the inductor or a portion thereof. </p>
+<p id="p-0011" num="0010"> Depending on the position and orientation of the system coil, and/or the use of ground planes and other RF directional devices, the measured electrical parameter can represent the volume of liquid in the entire container or the volume of liquid in only a portion of the container. </p>
+<p id="p-0012" num="0011"> The system and method can sense and measure liquid levels in other containers including oil tanks and water tanks and is not limited to the examples used in this description. The system can be used in a wide variety of scientific, consumer, industrial, and medical environments. </p>
+<p id="p-0013" num="0012"> Preferably, the system includes auto-calibration hardware and software that enables the system to automatically determine an optimum system operating frequency. In one embodiment of the system, the optimum system operating frequency is selected to be a frequency above or below the resonant frequency of the series LCR circuit. The choice of this operating frequency over the resonant frequency allows for larger changes in voltage drop relative to changes in liquid volume. Preferably, the system is tuned to operate at a frequency between a lower and upper value. </p>
+<p id="p-0014" num="0013"> In one embodiment, auto-compensation is provided so that the measured electrical parameter provides an accurate indication of the liquid level in the tank, independent of variations in operating conditions, such as ambient temperature. In another embodiment, the system can measure&#x2014;and be calibrated for&#x2014;variations in the electrical properties of the liquid itself. </p>
+<p id="p-0015" num="0014"> The system can include a physical or wireless data interface to facilitate external transmission of the compensated measurement from the system to a fuel gauge or to a central controller in the vehicle. In some embodiments, the system may transmit raw data to a receiver connected to a central controller, with compensation of the raw data being performed in the central controller. The data can be transmitted periodically, in response to a change, by request from the central controller, or by request from an external device such as a diagnostic device.</p>
+<?summary-of-invention description="Summary of Invention" end="tail"?>
+<?brief-description-of-drawings description="Brief Description of Drawings" end="lead"?>
+<heading level="2" id="h-0006">BRIEF DESCRIPTION OF THE SEVERAL VIEWS OF THE DRAWINGS </heading>
+<p id="p-0016" num="0015"> <figref idref="DRAWINGS">FIG. 1</figref> is a perspective view of a motor vehicle with fuel system components shown in phantom. </p>
+<p id="p-0017" num="0016"> <figref idref="DRAWINGS">FIG. 2</figref> is block diagram of one embodiment of the liquid sensing system of the present invention. </p>
+<p id="p-0018" num="0017"> <figref idref="DRAWINGS">FIG. 3</figref> is an electrical schematic drawing of one embodiment of the liquid sensing system of the present invention. </p>
+<p id="p-0019" num="0018"> <figref idref="DRAWINGS">FIG. 4</figref> is an electrical schematic drawing of a second embodiment of the liquid sensing system of the present invention. </p>
+<p id="p-0020" num="0019"> <figref idref="DRAWINGS">FIG. 5</figref> is an enlarged side view of an antenna coil as used in the present invention further showing its position in relation to a ground plane element. </p>
+<p id="p-0021" num="0020"> <figref idref="DRAWINGS">FIG. 6</figref> is a top view of a vehicle fuel tank in which fuel levels are measured using the system of the present invention. </p>
+<p id="p-0022" num="0021"> <figref idref="DRAWINGS">FIG. 7</figref> is a plan view of one embodiment of a printed circuit board (system board) to which the electronic components of the system are mounted and interconnected. </p>
+<p id="p-0023" num="0022"> <figref idref="DRAWINGS">FIG. 8</figref>(<i>a</i>) is a side view schematically illustrating the physical relationship between a liquid tank, externally positioned antenna coil, and ground plane as used in one illustrated embodiment the present invention. </p>
+<p id="p-0024" num="0023"> <figref idref="DRAWINGS">FIG. 8</figref>(<i>b</i>) is a side view schematically illustrating the physical relationship between a liquid tank, internally positioned antenna coil, and ground plane as used in one illustrated embodiment of the present invention. </p>
+<p id="p-0025" num="0024"> FIGS. <b>9</b>(<i>a</i>) and <b>9</b>(<i>c</i>) together show the mounting of the system board in a first position with respect to the fuel tank of <figref idref="DRAWINGS">FIG. 6</figref>. </p>
+<p id="p-0026" num="0025"> FIGS. <b>9</b>(<i>b</i>) and <b>9</b>(<i>c</i>) together show the mounting of the system board in a second position with respect to the fuel tank of <figref idref="DRAWINGS">FIG. 6</figref>. </p>
+<p id="p-0027" num="0026"> <figref idref="DRAWINGS">FIG. 10</figref>(<i>a</i>) is a perspective view of another embodiment of the system board of the present invention. </p>
+<p id="p-0028" num="0027"> <figref idref="DRAWINGS">FIG. 10</figref>(<i>b</i>) is a perspective view of the system board of <figref idref="DRAWINGS">FIG. 10</figref>(<i>a</i>) mounted to a fuel tank. </p>
+<p id="p-0029" num="0028"> <figref idref="DRAWINGS">FIG. 11</figref> is graphical representation of the frequency response of the series resonant output circuit of the system after initial frequency calibration. </p>
+<p id="p-0030" num="0029"> <figref idref="DRAWINGS">FIG. 12</figref>(<i>a</i>) is graphical plot showing the effects of temperature on system fuel level readings before temperature compensation. </p>
+<p id="p-0031" num="0030"> <figref idref="DRAWINGS">FIG. 12</figref>(<i>b</i>) is graphical plot showing a linearization of the effects of temperature on system fuel level readings. </p>
+<p id="p-0032" num="0031"> <figref idref="DRAWINGS">FIG. 13</figref> is graphical plot showing the effects of temperature on system fuel level readings, with and without temperature compensation, using a linearized temperature compensation algorithm in accordance with <figref idref="DRAWINGS">FIG. 12</figref>(<i>b</i>). </p>
+<p id="p-0033" num="0032"> <figref idref="DRAWINGS">FIG. 14</figref>(<i>a</i>) is a graphical plot showing the effects of temperature on system fuel level readings during a driving test from a full tank to &#xbc; tank of fuel, with and without temperature compensation, using a linearized temperature compensation algorithm in accordance with <figref idref="DRAWINGS">FIG. 12</figref>(<i>b</i>). </p>
+<p id="p-0034" num="0033"> <figref idref="DRAWINGS">FIG. 14</figref>(<i>b</i>) is a graphical plot showing the effects of temperature on system fuel level readings during a driving test from a full tank to &#x215c; tank using a linearized temperature compensation algorithm in accordance with <figref idref="DRAWINGS">FIG. 12</figref>(<i>b</i>). </p>
+<p id="p-0035" num="0034"> <figref idref="DRAWINGS">FIG. 14</figref>(<i>c</i>) is a graphical plot showing the effects of temperature on system fuel level readings during a driving test from a &#x215c; full tank to an empty tank using a linearized temperature compensation algorithm in accordance with <figref idref="DRAWINGS">FIG. 12</figref>(<i>b</i>). </p>
+<p id="p-0036" num="0035"> <figref idref="DRAWINGS">FIG. 15</figref> is a graphical plot of system response as ambient temperature is varying through the entire operating temperature range. </p>
+<p id="p-0037" num="0036"> <figref idref="DRAWINGS">FIG. 16</figref> is a flow chart illustrating the steps associated with the temperature compensation algorithm used in one embodiment of the system. </p>
+<p id="p-0038" num="0037"> <figref idref="DRAWINGS">FIG. 17</figref> is a flow chart illustrating the steps associated with auto-calibration of the RF signal generator at system initialization. </p>
+<p id="p-0039" num="0038"> <figref idref="DRAWINGS">FIG. 18</figref> is a block diagram of a test set-up used to determine the effects on system fuel level output caused by use of different fuel types in the vehicle fuel tank. </p>
+<p id="p-0040" num="0039"> <figref idref="DRAWINGS">FIG. 19</figref> is a graphical plot showing the effects on system fuel level output caused by use of different fuel types in the vehicle fuel tank.</p>
+<?brief-description-of-drawings description="Brief Description of Drawings" end="tail"?>
+<?detailed-description description="Detailed Description" end="lead"?>
+<heading level="2" id="h-0007">DETAILED DESCRIPTION OF THE INVENTION </heading>
+<p id="p-0041" num="0040"> A block diagram of the liquid measurement system <b>10</b> of this invention is shown in <figref idref="DRAWINGS">FIG. 2</figref>. A controller <b>30</b>, which can be a microcontroller, an application specific integrated circuit (ASIC), or another logical device, includes an RF generator <b>35</b>, an analog-to-digital converter (ADC) <b>40</b> and a pulse width modulator (PWM) or digital-to-analog converter (DAC) <b>45</b>. The controller <b>30</b> further includes embedded firmware/software functional to control the RF generator <b>35</b>, to receive and process data from ADC <b>40</b>, and to cause PWM/DAC <b>45</b> to transmit data external to the system <b>10</b>. The firmware/software in controller <b>30</b> also includes modules that implement the auto-calibration and compensation algorithms as described below. </p>
+<p id="p-0042" num="0041"> Still looking at <figref idref="DRAWINGS">FIG. 2</figref>, the output of RF generator <b>35</b> is transmitted to antenna driver <b>55</b> which can include an RF amplifier and/or matching circuitry to effectively couple the RF signal to a series-resonant circuit that includes a resonant capacitor <b>60</b>, resonant inductor or coil <b>65</b>, and resistor <b>70</b>. One terminal of resistor <b>70</b> is electrically connected to system ground. The other terminal of resistor <b>70</b> is electrically connected to an analog input on ADC <b>40</b>. Thus, in accordance with one aspect of the invention, changes in voltage across resistor <b>70</b> are converted to digital signals by ADC <b>40</b> so that such digital signals can be further processed by controller <b>30</b>. Thus, the controller <b>30</b> converts the signal representing a change in the electrical parameter of the resonant circuit into a liquid level signal that is provided to the vehicle fuel gauge directly or through a vehicle data bus. </p>
+<p id="p-0043" num="0042"> In the embodiment shown in <figref idref="DRAWINGS">FIG. 2</figref>, the series resonant circuit can be characterized as an antenna circuit in which resonant inductor <b>65</b> functions as a radiating component that directs RF energy into the fuel tank <b>15</b>. In other embodiments, a separate radiating component (not shown) may be coupled to the resonant circuit. Also, in the embodiment of <figref idref="DRAWINGS">FIG. 2</figref>, the resistive component R of the series-resonant LCR circuit is illustrated as a discrete resistor <b>70</b>. However, the resistive component R can also be provided as an internal resistance of the resonant inductor or coil <b>65</b> rather than as a separate discrete component. In such an embodiment, changes in voltage are measured across the resonant inductor <b>65</b> or a portion thereof. </p>
+<p id="p-0044" num="0043"> Although the scope of the present invention is not limited to any particular circuit topology, <figref idref="DRAWINGS">FIG. 3</figref> is a schematic diagram of one embodiment of the system <b>10</b> shown in block diagram form in <figref idref="DRAWINGS">FIG. 2</figref>. <figref idref="DRAWINGS">FIG. 4</figref> is a schematic diagram of another embodiment of the system, as used in testing described below. </p>
+<p id="p-0045" num="0044"> Preferably, the electronic components of the system <b>10</b> are mounted to a system board, such as a unitary printed circuit board (PCB) <b>85</b>, as shown in <figref idref="DRAWINGS">FIG. 7</figref>, with the coil <b>65</b> having a geometry, orientation, and position on the PCB <b>85</b> to provide optimum RF energy coupling external to the PCB <b>85</b>. The printed circuit board <b>85</b> can be rigid or flexible, with or without an adhesive back. <figref idref="DRAWINGS">FIG. 6</figref> shows one embodiment of a plastic vehicle fuel tank <b>15</b> which is conventionally mounted in the rear of a vehicle <b>20</b>, as shown in <figref idref="DRAWINGS">FIG. 1</figref>. The fuel tank <b>15</b> is fluidly coupled to the vehicle engine and emission systems via one or more fluid lines <b>25</b>. </p>
+<p id="p-0046" num="0045"> As best seen in FIGS. <b>9</b>(<i>a</i>)-(<i>c</i>), the PCB <b>85</b> is attached to an external wall of fuel tank <b>15</b> in a position that will provide sensing of changes in the desired liquid level, either in the entire tank <b>15</b> or in only a portion of the tank <b>15</b>. </p>
+<p id="p-0047" num="0046"> In some embodiments of the system <b>10</b>, a ground plane structure <b>75</b> is positioned proximate to and behind the coil <b>65</b> so as to focus and direct RF energy from the coil <b>65</b> into the tank <b>15</b>, as shown in <figref idref="DRAWINGS">FIGS. 5 and 8</figref>. In the embodiment of <figref idref="DRAWINGS">FIG. 8</figref>(<i>a</i>), the ground plane <b>75</b> is spaced approximately 2 mm from the coil <b>65</b>, although other embodiments may use different spacings, as shown in <figref idref="DRAWINGS">FIG. 5</figref>, for example. Where a heat shield <b>14</b> is used with the fuel tank <b>15</b> (as shown on <figref idref="DRAWINGS">FIG. 6</figref>), the heat shield can optionally be used as the ground plane structure <b>75</b> as a further cost saving measure. </p>
+<p id="p-0048" num="0047"> The coil <b>65</b> can be attached or incorporated into strap (not shown) that secures the fuel tank <b>15</b> to the vehicle. This would avoid the expense of modifying a conventional fuel tank to accept a direct-mounted coil <b>65</b> or PCB <b>85</b>. In addition, if the tank mounting strap is grounded to the vehicle, the strap itself can function as ground plane structure <b>75</b>, further reducing cost. </p>
+<p id="p-0049" num="0048"> In yet another embodiment of the system <b>10</b> as shown in <figref idref="DRAWINGS">FIG. 8</figref>(<i>b</i>), the series-resonant LCR circuit, or at least the coil <b>65</b>, can be mounted inside the fuel tank <b>15</b>. If a ground plane <b>75</b> is used, it can also be positioned inside the tank <b>15</b>, between the coil <b>65</b> and the tank wall. </p>
+<p id="p-0050" num="0049"> Another embodiment of the PCB <b>85</b> and fuel tank mounting is shown in <figref idref="DRAWINGS">FIG. 10</figref>. In this embodiment, the PCB <b>85</b> is attached to a mounting plate <b>17</b> which can also act as a heat sink. The mounting plate <b>17</b> is then attached a wall of the fuel tank <b>15</b>. The PCB <b>85</b> further includes a connector <b>16</b> that electrically connects the system <b>10</b> to the vehicle electrical system and to the vehicle data bus for purposes of transmitting a fuel level signal. The fuel level signal can be transmitted using a physical (hard-wired) connection or using a wireless connection. </p>
+<p id="p-0051" num="0050"> When the PCB <b>85</b> and coil <b>65</b> are positioned proximate to or inside the tank <b>15</b> as shown, liquid in the tank <b>15</b> will electrically load the series-resonant circuit formed by capacitor <b>60</b>, coil <b>65</b>, and resistor <b>70</b>. Accordingly, when the controller <b>30</b> activates the RF generator <b>35</b>, the coil <b>65</b> is excited by a substantially sinusoidal RF signal at a constant frequency. The loading caused by fuel proximate the coil <b>65</b> will either reduce the Q of the resonant circuit and/or change its resonant frequency. In either case, the voltage measured across the resistor <b>70</b> (or across the internal resistance of the coil <b>65</b>) will vary by an amount that is proportional to a change in fuel level, due to a corresponding change in impedance of the coil <b>65</b>. This change in voltage is converted to a digital signal in the ADC <b>40</b> and processed by the controller <b>30</b> so that a corresponding data output from the PWM/DAC <b>45</b> can be transmitted to a fuel gauge or vehicle central controller (not shown.) </p>
+<p id="p-0052" num="0051"> Other embodiments of the system <b>10</b> can use a parallel resonant circuit with other means of measuring a parameter that represents a change in loading of the resonant circuit caused by changes in fuel level in the tank. </p>
+<p id="p-0053" num="0052"> Preferably, the operating frequency of the RF generator <b>35</b> is adjusted so that it is slightly above the resonant frequency of the series-resonant LCR circuit. As shown on <figref idref="DRAWINGS">FIG. 11</figref>, the system operating frequency is selected to define a liquid level sensing window on a relatively steep portion of the frequency response curve, thereby providing maximum sensitivity to changes in liquid level. When the printed circuit board <b>85</b> and coil <b>65</b> are placed on a fuel tank <b>15</b>, the series resonant circuit will have a different resonant frequency that varies from tank to tank due to component tolerances, tolerance on tank dimensions, coil dimensions, track width, etc. In order to compensate for these variations, an auto-calibration method is preferably used. In one embodiment of such a method, the controller <b>30</b> includes a calibration module that finds the resonant frequency (fc) of the series-resonant circuit after first power up (or on request), then adjusts the operating frequency of the RF generator <b>35</b> to a frequency (f<b>1</b>) so that the system is operating on the linear slope throughout the entire operating temperature range (&#x2212;40 to +80 C). </p>
+<p id="p-0054" num="0053"> Referring to the flow chart in <figref idref="DRAWINGS">FIG. 17</figref>, the controller <b>30</b> varies the frequency f of the RF generator <b>35</b> in steps from 0 to 255, where 0 corresponds to the lowest frequency (6.34 MHz) and 255 corresponds to the highest frequency (9.66 MHz). However, use of the system is not restricted to these frequencies. In one embodiment, the lowest frequency is 7.4 MHZ and the highest frequency is 8.3 MHz. For each frequency, the controller <b>30</b> samples the data from ADC <b>40</b> and reads V, the voltage across resistor <b>70</b>. The controller <b>30</b> varies the operating frequency f (sweeping the frequency from low to high or from high to low) in order to find the resonant frequency of the series-resonant circuit. The controller <b>30</b> then adjusts and fixes the frequency f<b>1</b> to a point in a substantially linear section of the frequency response curve. The variation from full to empty tank should be in the substantially linear zone (f<b>1</b> to f<b>2</b>) as shown on <figref idref="DRAWINGS">FIG. 11</figref>. Once the nominal operating frequency of the system <b>10</b> is selected, it can remain fixed for as long as the system <b>10</b> remains in the vehicle. </p>
+<p id="p-0055" num="0054"> Electronic components and systems in motor vehicles will preferably operate properly over a wide range of ambient temperatures. Changes in temperature can induce system output errors. This is shown with raw system data from the ADC <b>40</b> graphed in <figref idref="DRAWINGS">FIG. 12</figref>(<i>a</i>) and linearized in <figref idref="DRAWINGS">FIG. 12</figref>(<i>b</i>). In order to compensate for the effects of temperature, the system output is characterized over the entire range of operating temperatures (&#x2212;40 to +80 C) at Empty and Full tank. <figref idref="DRAWINGS">FIG. 15</figref> shows system voltage output as a function of temperature through a full temperature range. As an approximation, the graph is divided into sections, where each section is linear following the equations below: 
+<br/>
+<?in-line-formulae description="In-line Formulae" end="lead"?>If t&#x3c;t1<i>: V=a</i>0<i>T+b</i>0 <?in-line-formulae description="In-line Formulae" end="tail"?>
+<br/>
+<?in-line-formulae description="In-line Formulae" end="lead"?>If t1&#x3c;t&#x3c;tref: <i>V=a</i>1<i>T+b</i>1 <?in-line-formulae description="In-line Formulae" end="tail"?>
+<br/>
+<?in-line-formulae description="In-line Formulae" end="lead"?>If tref&#x3c;t&#x3c;t2: V=cst <?in-line-formulae description="In-line Formulae" end="tail"?>
+<br/>
+<?in-line-formulae description="In-line Formulae" end="lead"?>If t2&#x3c;t&#x3c;t3<i>: V=a</i>2<i>T+b</i>2 <?in-line-formulae description="In-line Formulae" end="tail"?>
+<br/>
+<?in-line-formulae description="In-line Formulae" end="lead"?>If t&#x3e;t3: <i>V=a</i>3<i>T+b</i>3 <?in-line-formulae description="In-line Formulae" end="tail"?>
+</p>
+<p id="p-0056" num="0055"> One embodiment of the system <b>10</b>, as shown in <figref idref="DRAWINGS">FIG. 4</figref>, was installed in a test vehicle similar to that shown in <figref idref="DRAWINGS">FIG. 1</figref>. The system coil <b>65</b> was wound and configured as follows: </p>
+<p id="p-0057" num="0056"> Number of turns=35 </p>
+<p id="p-0058" num="0057"> Physical Size=50&#xd7;50 mm, Spiral </p>
+<p id="p-0059" num="0058"> Track width=0.15 mm </p>
+<p id="p-0060" num="0059"> Distance between tracks=0.4 mm (center to center) </p>
+<p id="p-0061" num="0060"> The series-resonant circuit included the following component values: </p>
+<p id="p-0062" num="0061"> L=68 uH </p>
+<p id="p-0063" num="0062"> R=33 ohms </p>
+<p id="p-0064" num="0063"> C=10 pF </p>
+<p id="p-0065" num="0064"> The ground plane was configured to be 50&#xd7;50 mm and positioned a few centimeters away from coil <b>65</b>, as shown in <figref idref="DRAWINGS">FIG. 8</figref>. The fuel tank <b>15</b> had the following dimensions: w=950 mm, l=670 mm, h=210 mm, with a fuel capacity of approximately 80 liters. Note that if the resistance in the series-resonant LCR circuit is provided by the internal resistance of the coil rather than by a discrete resistor, the actual resistance will likely be lower, on the order of 20 ohms or less. </p>
+<p id="p-0066" num="0065"> In a first test, the effects of temperature on system output were measured as follows: The vehicle was driven for 10 minutes then stopped for 20 minutes in order to obtain a fuel level signal (at ADC <b>40</b>) at different temperatures. This test was repeated at three different fuel levels (full, &#xbe; and empty). The test results are shown on the graph in <figref idref="DRAWINGS">FIG. 12</figref>(<i>a</i>). As can be seen, the ADC <b>40</b> output vs. temperature varies according to a pattern (oscillating around a line) at all liquid levels. Therefore, to compensate for the temperature, as a first approximation, a simple linearization algorithm was implemented as shown in <figref idref="DRAWINGS">FIG. 12</figref>(<i>b</i>). </p>
+<p id="p-0067" num="0066"> After the temperature compensation algorithm was programmed into the system controller <b>30</b>, the vehicle was driven for 20 minutes starting from cold (outside temperature=&#x2212;7 C) with an empty tank. The temperature, fuel level, and temperature compensated fuel level signals were recorded as displayed in the graph shown in <figref idref="DRAWINGS">FIG. 13</figref>. The compensated fuel level ADC <b>40</b> output remains stable around 65 counts (corresponding to an empty tank) when the temperature and the measured fuel level varies. Thus, the temperature compensation algorithm compensates for the changes due to temperature so that the fuel gauge always shows the actual empty level. </p>
+<p id="p-0068" num="0067"> In a further test, the vehicle was driven for 230 miles starting with a full tank, stopping at regular intervals (approx. every 30 miles). The temperature, fuel level, and temperature compensated fuel level signals were recorded. The results are shown in FIGS. <b>14</b>(<i>a</i>)-(<i>c</i>). The compensated fuel level signal from ADC <b>40</b> reading varies linearly from 115 to 90 when the temperature and the measured fuel level vary up and down. This demonstrates that the temperature compensation module compensates for the changes due to temperature, so that the fuel gauge always shows the real level. </p>
+<p id="p-0069" num="0068"> The system <b>10</b> of the present invention can also be used to detect variations in the electrical properties associated with different liquids placed into the tank <b>15</b>. For example, if diesel fuel is placed into a fuel tank of a vehicle that runs on gasoline (or vice-versa), this mistake can be detected upon activation of the system. Using a voltage measurement taken across a portion of the series-resonant LCR circuit, it is possible to determine the type or composition of liquid fuel in the tank due to the variation in the electrical properties of the liquid. Using the test set-up of <figref idref="DRAWINGS">FIG. 18</figref>, <figref idref="DRAWINGS">FIG. 19</figref> shows system output profiles corresponding to the different fuel types described in the table below when placed in a fuel tank.  
+<tables id="TABLE-US-00001" num="1">
+<table frame="none" colsep="0" rowsep="0">
+<tgroup align="left" colsep="0" rowsep="0" cols="3">
+<colspec colname="1" colwidth="21PT" align="center"/>
+<colspec colname="2" colwidth="49PT" align="left"/>
+<colspec colname="3" colwidth="147PT" align="left"/>
+<thead>
+<row>
+<entry/>
+</row>
+<row>
+<entry namest="1" nameend="3" align="center" rowsep="1"/>
+</row>
+<row>
+<entry>NO</entry>
+<entry>TITLE</entry>
+<entry>FUEL RECIPE</entry>
+</row>
+<row>
+<entry namest="1" nameend="3" align="center" rowsep="1"/>
+</row>
+</thead>
+<tbody valign="top">
+<row>
+<entry>1</entry>
+<entry>MS-9368</entry>
+<entry>Unleaded gasoline</entry>
+</row>
+<row>
+<entry/>
+<entry>Reformulated</entry>
+</row>
+<row>
+<entry>2</entry>
+<entry>MS-9368</entry>
+<entry>Unleaded gasoline with 0.05%</entry>
+</row>
+<row>
+<entry/>
+<entry>Reformulated</entry>
+<entry>thiophene added</entry>
+</row>
+<row>
+<entry>3</entry>
+<entry>MS-9368</entry>
+<entry>Unleaded gasoline with 10% by volume,</entry>
+</row>
+<row>
+<entry/>
+<entry>Reformulated</entry>
+<entry>ethanol, with .5% aggressive water.</entry>
+</row>
+<row>
+<entry>4</entry>
+<entry>MS-9368</entry>
+<entry>Unleaded gasoline with 25%</entry>
+</row>
+<row>
+<entry/>
+<entry>Reformulated</entry>
+<entry>by volume, ethanol</entry>
+</row>
+<row>
+<entry>5</entry>
+<entry>Leaded</entry>
+<entry>Indolene 30 (3 g/gal lead)</entry>
+</row>
+<row>
+<entry/>
+<entry>gasoline</entry>
+</row>
+<row>
+<entry>6</entry>
+<entry>M25</entry>
+<entry>M25 &#x2212; [75% MS8004] + [25% methanol</entry>
+</row>
+<row>
+<entry/>
+<entry/>
+<entry>solution consisting of: methanol (MS2585), 0.5%</entry>
+</row>
+<row>
+<entry/>
+<entry/>
+<entry>Aggressive water, and 0.028 ml/L Formic acid]</entry>
+</row>
+<row>
+<entry>7</entry>
+<entry>MS-9368</entry>
+<entry>Unleaded gasoline with 20 mm</entry>
+</row>
+<row>
+<entry/>
+<entry>Reformulated</entry>
+<entry>water added (0.5 gal in 10 gal tank)</entry>
+</row>
+<row>
+<entry namest="1" nameend="3" align="center" rowsep="1"/>
+</row>
+</tbody>
+</tgroup>
+</table>
+</tables>
+</p>
+<p id="p-0070" num="0069"> Accordingly, the system <b>10</b> of the present invention can be used as a fuel composition sensor, including detecting fuel type, prior to or in addition to measuring actual fuel level. In flexible fuel vehicles which can operate with different fuel compositions (for example, E85, E10, E20), the engine control systems are preferably informed electronically of the composition of the fuel in the tank so that the necessary engine control adjustments can be made. For example, by comparing actual system output with stored output profiles associated with electrical properties of certain fuel compositions, the system of this invention can provide that functionality (along with fuel level measurement) without the added cost of conventional fuel composition sensors, such as that described in U.S. Pat. No. 6,927,583, which is incorporated herein by reference. </p>
+<p id="p-0071" num="0070"> The system output profiles determined as illustrated in the examples of <figref idref="DRAWINGS">FIGS. 18 and 19</figref> can also be used to compensate the liquid level reading according to the type of liquid in the container. </p>
+<p id="p-0072" num="0071"> Preferably, the RF generator <b>35</b> will provide RF power levels within the constraints and requirements of the FCC/ETSI regulations as appropriate. </p>
+<p id="p-0073" num="0072"> Thus, although there have been described particular embodiments of the present invention of a new and useful System and Method for Sensing the Level and Composition of Fuel in a Fuel Tank, it is not intended that such references be construed as limitations upon the scope of this invention except as set forth in the following claims. </p>
+<?detailed-description description="Detailed Description" end="tail"?>
+</description>
+<us-claim-statement>What is claimed is: </us-claim-statement>
+<claims id="claims">
+<claim id="CLM-00001" num="00001">
+<claim-text><b>1</b>. A method of sensing a property of a liquid in a container comprising 
+<claim-text>(a) generating an RF signal at an operating frequency; </claim-text>
+<claim-text>(b) coupling the RF signal to a resonant circuit, the resonant circuit having a resonant frequency and including an inductor positioned proximate to the liquid in the container; and </claim-text>
+<claim-text>(c) measuring a change in an electrical parameter associated with the resonant circuit caused by a variation in at least one property of the liquid proximate to the inductor. </claim-text>
+</claim-text>
+ </claim>
+<claim id="CLM-00002" num="00002">
+<claim-text><b>2</b>. The method of <claim-ref idref="CLM-00001">claim 1</claim-ref> wherein the at least one property of the liquid in the container is volume and the measured change in the electrical parameter is a function of a variation in the volume of the liquid in the container. </claim-text>
+ </claim>
+<claim id="CLM-00003" num="00003">
+<claim-text><b>3</b>. The method of <claim-ref idref="CLM-00002">claim 2</claim-ref>, wherein the volume of the liquid in the entire container is measured. </claim-text>
+ </claim>
+<claim id="CLM-00004" num="00004">
+<claim-text><b>4</b>. The method of <claim-ref idref="CLM-00002">claim 2</claim-ref>, wherein the volume of the liquid in a portion of the container is measured. </claim-text>
+ </claim>
+<claim id="CLM-00005" num="00005">
+<claim-text><b>5</b>. The method of <claim-ref idref="CLM-00002">claim 2</claim-ref>, further comprising: 
+<claim-text>after step (c), converting the measured change to a value representing the volume of the liquid in the container </claim-text>
+</claim-text>
+ </claim>
+<claim id="CLM-00006" num="00006">
+<claim-text><b>6</b>. The method of <claim-ref idref="CLM-00001">claim 1</claim-ref> wherein the at least one property of the liquid is an electrical property and the measured change in the electrical parameter is a function of a variation in the electrical property of the liquid in the container. </claim-text>
+ </claim>
+<claim id="CLM-00007" num="00007">
+<claim-text><b>7</b>. The method of <claim-ref idref="CLM-00006">claim 6</claim-ref> wherein the liquid is a fuel, the container is a fuel tank, and the variation in electrical property is a function of fuel composition. </claim-text>
+ </claim>
+<claim id="CLM-00008" num="00008">
+<claim-text><b>8</b>. The method of <claim-ref idref="CLM-00001">claim 1</claim-ref>, wherein step (c) comprises measuring a change in voltage at the resonant circuit. </claim-text>
+ </claim>
+<claim id="CLM-00009" num="00009">
+<claim-text><b>9</b>. The method of <claim-ref idref="CLM-00001">claim 1</claim-ref>, wherein step (c) comprises measuring a change in the resonant frequency of the resonant circuit. </claim-text>
+ </claim>
+<claim id="CLM-00010" num="00010">
+<claim-text><b>10</b>. The method of <claim-ref idref="CLM-00001">claim 1</claim-ref>, further comprising: 
+<claim-text>prior to step (a), calibrating the operating frequency of the RF signal to compensate for physical and/or electrical properties of the container. </claim-text>
+</claim-text>
+ </claim>
+<claim id="CLM-00011" num="00011">
+<claim-text><b>11</b>. The method of <claim-ref idref="CLM-00010">claim 10</claim-ref>, wherein the operating frequency is calibrated automatically. </claim-text>
+ </claim>
+<claim id="CLM-00012" num="00012">
+<claim-text><b>12</b>. The method of <claim-ref idref="CLM-00010">claim 10</claim-ref>, wherein the step of calibrating the operating frequency comprises: 
+<claim-text>adjusting the operating frequency of the RF signal so that a liquid volume sensing window is defined on a substantially linear part of a frequency response curve proximate the resonant frequency of the resonant circuit. </claim-text>
+</claim-text>
+ </claim>
+<claim id="CLM-00013" num="00013">
+<claim-text><b>13</b>. The method of <claim-ref idref="CLM-00010">claim 10</claim-ref>, wherein the step of calibrating the operating frequency comprises: 
+<claim-text>sweeping the operating frequency of the RF signal in a range between a first frequency and a second frequency; and </claim-text>
+<claim-text>measuring a parameter of the resonant circuit as the frequency of the RF signal is swept. </claim-text>
+</claim-text>
+ </claim>
+<claim id="CLM-00014" num="00014">
+<claim-text><b>14</b>. The method of <claim-ref idref="CLM-00013">claim 13</claim-ref> wherein the first frequency is approximately 7.4 MHz and the second frequency is approximately 8.3 MHz. </claim-text>
+ </claim>
+<claim id="CLM-00015" num="00015">
+<claim-text><b>15</b>. The method of <claim-ref idref="CLM-00001">claim 1</claim-ref>, further comprising: 
+<claim-text>prior to step (b), amplifying the RF signal. </claim-text>
+</claim-text>
+ </claim>
+<claim id="CLM-00016" num="00016">
+<claim-text><b>16</b>. The method of <claim-ref idref="CLM-00001">claim 1</claim-ref>, further comprising: 
+<claim-text>after step (c), transmitting the measured change to an external device. </claim-text>
+</claim-text>
+ </claim>
+<claim id="CLM-00017" num="00017">
+<claim-text><b>17</b>. A method for measuring the volume of fuel in a fuel tank comprising: 
+<claim-text>(a) generating an RF signal at an operating frequency; </claim-text>
+<claim-text>(b) coupling the RF signal to a resonant circuit having an inductor, where the inductor is proximate the fuel in the tank; </claim-text>
+<claim-text>(c) measuring a change in value of a variable electrical parameter of the resonant circuit; and </claim-text>
+<claim-text>(d) converting the measured change to a fuel volume. </claim-text>
+</claim-text>
+ </claim>
+<claim id="CLM-00018" num="00018">
+<claim-text><b>18</b>. The method of <claim-ref idref="CLM-00017">claim 17</claim-ref>, further comprising: 
+<claim-text>prior to step (a), calibrating the operating frequency of the RF signal to account for variations between fuel tanks. </claim-text>
+</claim-text>
+ </claim>
+<claim id="CLM-00019" num="00019">
+<claim-text><b>19</b>. The method of <claim-ref idref="CLM-00017">claim 17</claim-ref>, wherein step (d) comprises: 
+<claim-text>compensating the measured change for ambient temperature; and </claim-text>
+<claim-text>calculating the volume of fuel in the tank using the compensated value. </claim-text>
+</claim-text>
+ </claim>
+<claim id="CLM-00020" num="00020">
+<claim-text><b>20</b>. The method of <claim-ref idref="CLM-00017">claim 17</claim-ref>, further comprising: 
+<claim-text>after step (d), transmitting the converted value. </claim-text>
+</claim-text>
+ </claim>
+<claim id="CLM-00021" num="00021">
+<claim-text><b>21</b>. The method of <claim-ref idref="CLM-00020">claim 20</claim-ref>, wherein the converted value is transmitted via a physical interface. </claim-text>
+ </claim>
+<claim id="CLM-00022" num="00022">
+<claim-text><b>22</b>. The method of <claim-ref idref="CLM-00020">claim 20</claim-ref>, wherein the converted value is transmitted via a wireless interface. </claim-text>
+ </claim>
+<claim id="CLM-00023" num="00023">
+<claim-text><b>23</b>. The method of <claim-ref idref="CLM-00017">claim 17</claim-ref> further comprising: 
+<claim-text>prior to step (d), transmitting the measure change in value. </claim-text>
+</claim-text>
+ </claim>
+<claim id="CLM-00024" num="00024">
+<claim-text><b>24</b>. An apparatus for measuring the volume of liquid in a container comprising: 
+<claim-text>a controller, the controller including an RF generator and an analog-to-digital converter (ADC); </claim-text>
+<claim-text>an antenna driver having output terminals, and input terminals, coupled to the RF generator; and </claim-text>
+<claim-text>a resonant circuit coupled to the antenna driver and having an inductor positioned proximate the liquid in the container. </claim-text>
+</claim-text>
+ </claim>
+<claim id="CLM-00025" num="00025">
+<claim-text><b>25</b>. The apparatus of <claim-ref idref="CLM-00024">claim 24</claim-ref>, wherein the controller, antenna driver, and resonant circuit are mounted on a printed circuit board. </claim-text>
+ </claim>
+<claim id="CLM-00026" num="00026">
+<claim-text><b>26</b>. The apparatus of <claim-ref idref="CLM-00024">claim 24</claim-ref>, wherein the apparatus is installed external to the container. </claim-text>
+ </claim>
+<claim id="CLM-00027" num="00027">
+<claim-text><b>27</b>. The apparatus of <claim-ref idref="CLM-00024">claim 24</claim-ref> wherein at least the inductor of the resonant circuit is installed internal to the container. </claim-text>
+ </claim>
+<claim id="CLM-00028" num="00028">
+<claim-text><b>28</b>. The apparatus of <claim-ref idref="CLM-00024">claim 24</claim-ref>, further comprising a ground plane positioned proximate the inductor such that the inductor is positioned between the ground plane and the container and RF energy from the inductor is directed towards a particular part of the container. </claim-text>
+ </claim>
+<claim id="CLM-00029" num="00029">
+<claim-text><b>29</b>. The apparatus of <claim-ref idref="CLM-00024">claim 24</claim-ref> wherein the inductor of the resonant circuit is positioned inside the container and further comprising a ground plane positioned between the inductor and the container. </claim-text>
+ </claim>
+<claim id="CLM-00030" num="00030">
+<claim-text><b>30</b>. A system for measuring a level of fuel in a non-metal fuel tank mounted in a motor vehicle, the system comprising: 
+<claim-text>a vehicle data bus; </claim-text>
+<claim-text>an RF generator functional to generate an RF signal at an operating frequency; </claim-text>
+<claim-text>an antenna circuit electrically coupled to the RF generator, the antenna circuit comprising a resonant circuit and a radiating component mounted proximate to the fuel tank, the resonant circuit having a frequency response curve centered around a resonant frequency; </claim-text>
+<claim-text>a controller operatively connected to the RF generator and to the antenna circuit, the controller being functional 
+<claim-text>to cause the operating frequency of the RF generator to be proximate to the resonant frequency of the resonant circuit, and </claim-text>
+<claim-text>to measure a change in an electrical parameter associated with the resonant circuit caused by changes in the level of fuel in the fuel tank. </claim-text>
+</claim-text>
+</claim-text>
+ </claim>
+<claim id="CLM-00031" num="00031">
+<claim-text><b>31</b>. The system of <claim-ref idref="CLM-00030">claim 30</claim-ref> wherein the controller is further functional to transmit the measured change in the electrical parameter. </claim-text>
+ </claim>
+<claim id="CLM-00032" num="00032">
+<claim-text><b>32</b>. The system of <claim-ref idref="CLM-00030">claim 30</claim-ref> wherein the controller is further functional to convert the measured change in the electrical parameter to a fuel level signal and to transmit the fuel level signal to said vehicle data bus. </claim-text>
+ </claim>
+<claim id="CLM-00033" num="00033">
+<claim-text><b>33</b>. The system of <claim-ref idref="CLM-00030">claim 30</claim-ref>, wherein: 
+<claim-text>the resonant circuit is a series resonant circuit; and </claim-text>
+<claim-text>the controller further comprises a calibration module operative to cause the operating frequency of the RF generator to be on a substantially linear portion of the frequency response curve above the resonant frequency. </claim-text>
+</claim-text>
+ </claim>
+<claim id="CLM-00034" num="00034">
+<claim-text><b>34</b>. The system of <claim-ref idref="CLM-00030">claim 30</claim-ref>, wherein the controller further comprises a compensation module functional to adjust the fuel level signal for changes in ambient temperature. </claim-text>
+ </claim>
+<claim id="CLM-00035" num="00035">
+<claim-text><b>35</b>. The system of <claim-ref idref="CLM-00030">claim 30</claim-ref>, wherein the controller further comprises a compensation module functional to adjust the fuel level signal for changes in electrical properties of the fuel in the tank. </claim-text>
+ </claim>
+<claim id="CLM-00036" num="00036">
+<claim-text><b>36</b>. The system of <claim-ref idref="CLM-00030">claim 30</claim-ref> further comprising a ground plane mounted in the vehicle proximate the radiating component such that the radiating component is positioned between the ground plane and the fuel tank, the ground plane and radiating component electrically cooperating to direct RF energy from the radiating component to a selected region of the fuel tank. </claim-text>
+ </claim>
+<claim id="CLM-00037" num="00037">
+<claim-text><b>37</b>. The system of <claim-ref idref="CLM-00030">claim 30</claim-ref> wherein the radiating component is positioned inside the fuel tank and further comprising a ground plane positioned between the inductor and the tank. </claim-text>
+ </claim>
+<claim id="CLM-00038" num="00038">
+<claim-text><b>38</b>. A method of sensing a property of fuel in a fuel tank comprising: 
+<claim-text>(a) generating an RF signal at an operating frequency; </claim-text>
+<claim-text>(b) coupling the RF signal to a resonant circuit, the resonant circuit having a resonant frequency and including an inductor positioned proximate to the fuel in the tank; and </claim-text>
+<claim-text>(c) measuring a change in an electrical parameter associated with the resonant circuit; wherein the change in the electrical parameter is a caused by variations in a property of the fuel in the container. </claim-text>
+</claim-text>
+ </claim>
+<claim id="CLM-00039" num="00039">
+<claim-text><b>39</b>. The method of <claim-ref idref="CLM-00038">claim 38</claim-ref> wherein the property of the fuel in the container comprises fuel composition and wherein the method further comprises comparing the measured change in electrical parameter with stored profiles associated with known fuel compositions. </claim-text>
+ </claim>
+<claim id="CLM-00040" num="00040">
+<claim-text><b>40</b>. A system for use in measuring a property of fuel in a vehicle fuel tank comprising: 
+<claim-text>an RF generator functional to generate an RF signal at an operating frequency; </claim-text>
+<claim-text>an antenna circuit electrically coupled to the RF generator, the antenna circuit comprising a resonant circuit and a radiating component mounted proximate to the fuel in the tank, the resonant circuit having a frequency response curve centered around a resonant frequency; </claim-text>
+<claim-text>a controller operatively connected to the RF generator and to the antenna circuit, the controller being functional 
+<claim-text>to cause the operating frequency of the RF generator to be proximate to the resonant frequency of the resonant circuit, </claim-text>
+<claim-text>to measure a change in an electrical parameter associated with the resonant circuit caused by variations in electrical properties associated with different compositions of the fuel in the tank, and </claim-text>
+<claim-text>to measure a change in an electrical parameter associated with the resonant circuit caused by variations in the property of the fuel in the fuel tank. </claim-text>
+</claim-text>
+</claim-text>
+ </claim>
+<claim id="CLM-00041" num="00041">
+<claim-text><b>41</b>. The system of <claim-ref idref="CLM-00040">claim 40</claim-ref>, wherein: 
+<claim-text>the resonant circuit is a series resonant circuit; and </claim-text>
+<claim-text>the controller further comprises a calibration module operative to cause the operating frequency of the RF generator to be on a substantially linear portion of the frequency response curve above the resonant frequency. </claim-text>
+</claim-text>
+ </claim>
+<claim id="CLM-00042" num="00042">
+<claim-text><b>42</b>. The system of <claim-ref idref="CLM-00040">claim 40</claim-ref> wherein the property of the fuel includes fuel volume. </claim-text>
+ </claim>
+<claim id="CLM-00043" num="00043">
+<claim-text><b>43</b>. The system of <claim-ref idref="CLM-00040">claim 40</claim-ref> wherein the property of the fuel includes fuel composition.</claim-text>
+ </claim>
+</claims>
+</us-patent-application>

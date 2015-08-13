@@ -1,0 +1,2366 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+  "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>A Desperate Game, by John Maddison Morton</title>
+  <style type="text/css">
+body, table {
+   font-family: serif;
+   }
+
+div.text {
+   margin-left: 15%;
+   margin-right: 15%;
+   }
+
+a.toc {
+   text-decoration:none;
+   }
+a.footnote {
+   text-decoration:none;
+   }
+
+h1,h2,h3,h4,h5,h6 {
+   text-align: center;
+   clear: both;
+   }
+h3 {
+   padding-top:2.75em;
+   font-size: 1.2em;
+   font-weight: normal;
+   margin-bottom: 0em;
+   padding-bottom: 0.25em;
+   }
+h3.verso {
+   padding-top:0;
+   font-size: 1em;
+   font-weight:bold;
+   margin-bottom: 0.75em;
+   }
+/*For headings for t. p. verso*/
+h3.no_show {
+    display: none;
+    }
+/*For title page heading*/
+
+hr {
+   margin-top:2em;
+   margin-bottom:2em;
+   height: 1.5px;
+   color: black;
+   background-color: black;
+   width:50%;
+   text-align:center;
+   margin-left: 25%;
+   margin-right: 25%;
+   }
+hr.small {
+   margin-top:1.25em;
+   margin-bottom:1.25em;
+   height: 1.5px;
+   color: black;
+   background-color: black;
+   width:16%;
+   text-align:center;
+   margin-left: 42%;
+   margin-right: 42%;
+   }
+hr.med {
+   margin-top:1.25em;
+   margin-bottom:1.25em;
+   height: 1.5px;
+   color: black;
+   background-color: black;
+   width:30%;
+   text-align:center;
+   margin-left: 35%;
+   margin-right: 35%;
+   }
+
+table {
+    padding-top:0em;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left:0%;
+    padding-right:0%;
+    margin-bottom:1em;
+    border: none;
+    }
+.tdl {
+    text-align: left;
+    vertical-align: top;
+    padding-bottom: 0.5em;
+    font-size:100%;
+    padding-left:1em;
+    text-indent: -1em;
+    margin-left: 1em;
+    }
+
+.pagenum {
+    position: absolute;
+    left: 90%;
+    font-size:0.75em;
+    text-align: right;
+    font-style: normal;
+    display: inline;
+    }
+/*For consistent placement in html file, only place in dialogue, regular paras, etc. [NOT
+stage direction, "no indent" paras, etc.] */
+
+p {
+   text-align: justify;
+   line-height:125%;
+   text-indent: 1.5em;
+   margin-top: 0.75em;
+   margin-bottom: 0.75em;
+   }
+p.tp {
+   margin-top:2em;
+   }
+p.scene {
+   padding-top: 0.5em;
+   margin-left:1.5em;
+   text-indent:-1.5em;
+   margin-bottom: 1.25em;
+   }
+/*For scene description at beginning of acts*/
+.no_bottom {
+   margin-bottom: 0em;
+   }
+.no_top {
+   margin-top: 0em;
+   }
+
+span.name {
+   font-style: italic;
+   }
+/*For character names in stage directions, before dialogue, etc.*/
+span.stage {
+   font-size:80%;
+   font-style: normal;
+   }
+/*For decreasing font size of abbreviations for left, etc. in stage directions*/
+p.direction {
+   margin-left: 3.0em;
+   text-indent: -1.5em;
+   margin-top: 1.25em;
+   margin-bottom: 1.25em;
+   }
+p.direction_2 {
+   text-align: right;
+   margin-right: 5%;
+   margin-top: 1.25em;
+   margin-bottom: 1.25em;
+   }
+p.direction_3 {
+   margin-left: 4.5em;
+   text-indent: -1.5em;
+   margin-top: 1.25em;
+   margin-bottom: 1.25em;
+   }
+p.entrance {
+   text-indent: 0;
+   margin-left: 1em;
+   margin-right: 1em;
+   text-align: center;
+   margin-top: 1.25em;
+   margin-bottom: 1.25em;
+   }
+p.end_of_play {
+   text-indent: 0;
+   text-align: center;
+   margin-top: 2.0em;
+   margin-bottom:0.25em;
+   font-size:0.85em;
+   }
+
+.center {
+    text-align: center;
+    text-indent:0;
+    }
+.bold {
+    font-weight: bold;
+    }
+.no_indent {
+    text-indent:0;
+    }
+.slightlybigfont {
+    font-size: 115%;
+    }
+.bigfont {
+    font-size: 140%;
+    }
+.biggerfont {
+    font-size: 175%;
+    }
+.biggestfont {
+    font-size: 200%;
+    }
+.smallfont {
+    font-size: 90%;
+    }
+.smallerfont {
+    font-size: 80%;
+    }
+.tinyfont {
+    font-size:70%;
+    }
+.italics {
+    font-style:italic;
+    }
+.normal {
+    font-style:normal;
+    font-variant: normal;
+    }
+.smcap {
+    font-variant: small-caps;
+    font-style:normal;
+    }
+.u {
+    text-decoration: underline;
+    }
+.pagebreak {
+    page-break-before:always;
+    }
+
+div.tnote {
+    padding-bottom:0.5em;
+    padding-top:0.5em;
+    padding-left:0.5em;
+    padding-right:0.5em;
+    margin-left: 1em;
+    margin-top: 0.5em;
+    font-size: 90%;
+    background: #eeeeee;
+    border: solid 1px;
+    }
+h3.tnote {
+    font-style:italic;
+    font-size: 110%;
+    font-weight: bold;
+    padding-top:0.5em;
+    }
+li {
+    margin-bottom: 0.5em;
+    }
+  </style>
+</head>
+<body>
+
+
+<pre>
+
+The Project Gutenberg EBook of A Desperate Game, by John Maddison Morton
+
+This eBook is for the use of anyone anywhere at no cost and with
+almost no restrictions whatsoever.  You may copy it, give it away or
+re-use it under the terms of the Project Gutenberg License included
+with this eBook or online at www.gutenberg.org
+
+
+Title: A Desperate Game
+       A Comic Drama in One Act
+
+Author: John Maddison Morton
+
+Release Date: May 11, 2014 [EBook #45628]
+
+Language: English
+
+Character set encoding: UTF-8
+
+*** START OF THIS PROJECT GUTENBERG EBOOK A DESPERATE GAME ***
+
+
+
+
+Produced by Paul Haxo from page images generously made
+available by the University of California, the HathiTrust
+Digital Library, and Google.
+
+
+
+
+
+
+</pre>
+
+
+<div class="center"><img alt="Cover" src="images/cover.jpg" title="Cover" height="100%"
+/></div>
+
+<div class="text">
+
+<div class="chapter" id="Front_matter">
+
+<p><span class="pagenum"><a class="newpage" id="page-1">[Pg 1]</a></span></p>
+
+<h3 id="title_page" class="no_show">Title Page</h3>
+
+<p class="center biggerfont tp">A DESPERATE GAME.</p>
+
+<p class="center bigfont tp">A Comic Drama.</p>
+
+<p class="center">IN ONE ACT.</p>
+
+<p class="center tp"><span class="tinyfont">BY</span></p>
+
+<p class="center bigfont no_bottom">JOHN MADDISON MORTON,</p>
+
+<p class="center italics tinyfont no_top">(Member of the Dramatic Authors’ Society),</p>
+
+<p class="center tinyfont">AUTHOR OF</p>
+
+<p class="center italics smallerfont">Box and Cox, John Dobbs, The Woman I Adore, A
+Capital Match,<br />
+Your Life’s in Danger, Who Stole the Pocket Book? Poor<br />
+Pillicoddy, Friend Waggles, Where there’s a Will<br />
+there’s a Way, The Writing on the Wall, Betsy Baker,<br />
+Going to the Derby, My precious Betsy, Slasher<br />
+and Crasher, The Two Bonnycastles, &amp;c., &amp;c.</p>
+
+<p class="center tp">THOMAS HAILES LACY,</p>
+
+<p class="center">WELLINGTON STREET, STRAND,</p>
+
+<p class="center">LONDON.</p>
+
+<div class="pagebreak"></div>
+
+<p><span class="pagenum"><a class="newpage" id="page-2">[Pg 2]</a></span></p>
+
+<p class="center tp"><i>First performed at the Theatre Royal Adelphi,<br />
+on Saturday, April </i>9<i>th,</i> 1853.</p>
+
+<hr class="small" />
+
+<h3 id="Cast" class="verso"><span class="slightlybigfont">Characters.</span></h3>
+
+<div class="center">
+<table border="0" cellpadding="2" cellspacing="2" summary="Cast">
+<tbody>
+<tr>
+<td class="tdl">CAPTAIN RATCLIFFE</td>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+<td class="tdl">M<span class="smallerfont">R</span>. L<span
+class="smallerfont">EIGH</span> M<span class="smallerfont">URRAY</span>.</td>
+</tr>
+
+<tr>
+<td class="tdl">M<span class="smallerfont">R</span>. PERCY POSTLETHWAITE</td>
+<td>&nbsp;&nbsp;&nbsp;</td>
+<td class="tdl">M<span class="smallerfont">R</span>. K<span
+class="smallerfont">EELEY</span>.</td>
+</tr>
+
+<tr>
+<td class="tdl">DAVID</td>
+<td>&nbsp;&nbsp;&nbsp;</td>
+<td class="tdl">M<span class="smallerfont">R</span>. R<span
+class="smallerfont">OGERS</span>.</td>
+</tr>
+
+<tr>
+<td class="tdl">M<span class="smallerfont">RS</span>. SOMERTON</td>
+<td>&nbsp;&nbsp;&nbsp;</td>
+<td class="tdl">M<span class="smallerfont">ISS</span> W<span
+class="smallerfont">OOLGAR</span>.</td>
+</tr>
+
+<tr>
+<td class="tdl">PEGGY</td>
+<td>&nbsp;&nbsp;&nbsp;</td>
+<td class="tdl">M<span class="smallerfont">RS</span>. L<span
+class="smallerfont">AWS</span>.</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+<hr class="med" />
+
+<h3 id="Costumes" class="verso"><span class="slightlybigfont">Costumes.</span></h3>
+
+<p>C<span class="smallerfont">APTAIN</span> R<span
+class="smallerfont">ATCLIFFE</span>.—Green coat, gilt buttons, light waistcoat, black
+trowsers, with over coat, whiskers, and moustache to take off.</p>
+
+<p>P<span class="smallerfont">OSTLETHWAITE</span>.—Light drab trowsers, fancy waistcoat,
+blue shooting coat, green wide-awake. <i>Second dress:</i> Same, muddy.</p>
+
+<p>D<span class="smallerfont">AVID</span>.—Old fashioned livery.</p>
+
+<p>M<span class="smallerfont">RS</span>. S<span class="smallerfont">OMERTON</span>.—Green
+tarletan ball dress, trimmed with ribbon and flowers.</p>
+
+<p>P<span class="smallerfont">EGGY</span>.—Old fashioned housekeeper’s dress.</p>
+
+<p class="center">S<span class="smallerfont">CENE</span>—<i>Tunbridge Wells.</i></p>
+
+<hr class="small" />
+
+<p class="center"><i>Time in Representation</i>—55 <i>minutes.</i></p>
+
+</div>
+
+<div class="pagebreak"></div>
+
+<div class="chapter" id="text" title="A Desperate Game">
+
+<p><span class="pagenum"><a class="newpage" id="page-3">[Pg 3]</a></span></p>
+
+<h3 id="A_Desperate_Game" class="biggerfont">A DESPERATE GAME.</h3>
+
+<hr class="small" />
+
+<p class="scene">S<span class="smallerfont">CENE</span> I.—<i>A Drawing Room at Mrs.
+Somerton’s; a fire-place at <span class="stage">C.</span> with a bell rope on each side of
+it; doors <span class="stage">R.&nbsp;C.</span> and <span class="stage">L.&nbsp;C.</span>;
+above the door <span class="stage">R.&nbsp;C.</span> a small window; window <span
+class="stage">R.</span>&nbsp;<span class="normal">2</span>&nbsp;<span
+class="stage">E.</span>; a clock on the mantel-piece; a work table <span
+class="stage">L.</span>, on which is a writing desk; another table in <span
+class="stage">C.</span> of the stage, with papers, books, &amp;c. strewed on it; chairs,
+&amp;c., &amp;c.; another door at <span class="stage">R.</span>&nbsp;<span
+class="normal">2</span>&nbsp;<span class="stage">E.</span> Stage dark. A loud ringing at
+door bell heard.</i></p>
+
+<p>R<span class="smallerfont">AT</span>. (<i>outside</i>) Now then, my good friend, a
+little quicker, if you please. (<i>enters at door, <span class="stage">L.&nbsp;C.</span>,
+in over coat, whiskers, and moustache; he is closely followed by </i>D<span
+class="smallerfont">AVID</span><i>, who carries a lantern</i>)</p>
+
+<p>D<span class="smallerfont">AVID</span>. But, zur, zur, don’t ye be in such a hurry.</p>
+
+<p>R<span class="smallerfont">AT</span>. (<i>throwing a hasty look round the room,
+then—aside</i>) Come, I’ve effected an entrance, at all events! so far, so well, provided
+I’m not compelled to beat a retreat before I’ve accomplished my object. (<i>walks to
+various parts of room, examining, &amp;c., &amp;c.</i>)</p>
+
+<p>D<span class="smallerfont">AVID</span>. (<i>all this time examining </i>R<span
+class="smallerfont">ATCLIFFE</span><i> from head to foot with his lantern—aside</i>) Well,
+this be about the free and easiest chap I ever cut in with; he almost pulls the gate bell
+down to begin with, and when I opens the door—thinking in course it’s missus come home—in
+he walks, and without so much as rubbing his boots on the door mat, tells me to light him
+up stairs, at four o’clock in the morning, too. (<i>aloud</i>) Who be ye, zur? I know it
+don’t become a servant to be inquisitive—so if you’ll only tell me who ye be, what ye be,
+why you come here, what you want here, where you come from, and a few other
+<i>particklers</i>, I’ll be satisfied and ask no questions.</p>
+
+<p>R<span class="smallerfont">AT</span>. (<i>aside</i>) I must get rid of this fellow.</p>
+
+<p>D<span class="smallerfont">AVID</span>. If you want missus, she be gone from home. She
+be at a grand ball, and if she finds you here when she comes home, she’ll blow me up in
+fine style, as sure as my name’s——</p>
+
+<p>R<span class="smallerfont">AT</span>. David!</p>
+
+<p>D<span class="smallerfont">AVID</span>. (<i>astonished</i>) He knows my name!</p>
+
+<p>R<span class="smallerfont">AT</span>. (<i>turning towards </i>D<span
+class="smallerfont">AVID</span>) Now hark ye, David. There’s nothing more offensive to me,
+David, than familiarity in a servant, David; but in consideration, David, of your having
+only recently entered Mrs. Somerton’s service——</p>
+
+<p>D<span class="smallerfont">AVID</span>. He knows that, too.</p>
+
+<p>R<span class="smallerfont">AT</span>. And you’re being naturally a stupid thick-headed
+fellow.</p>
+
+<p><span class="pagenum"><a class="newpage" id="page-4">[Pg 4]</a></span></p>
+
+<p>D<span class="smallerfont">AVID</span>. Dang it, he knows all about me.</p>
+
+<p>R<span class="smallerfont">AT</span>. I have no objection to look over it this once,
+but the next time it occurs, David, I shall discharge you, David!</p>
+
+<p>D<span class="smallerfont">AVID</span>. Discharge me! You? (<i>suddenly</i>) Lud a
+mercy—in course, I know who ’ee be now!</p>
+
+<p>R<span class="smallerfont">AT</span>. (<i>alarmed</i>) The devil you do.</p>
+
+<p>D<span class="smallerfont">AVID</span>. Ees, you be he.</p>
+
+<p>R<span class="smallerfont">AT</span>. Oh! I’m he, am I?</p>
+
+<p>D<span class="smallerfont">AVID</span>. Ees. I should have known ’ee again directly,
+only I never seed ’ee before.</p>
+
+<p>R<span class="smallerfont">AT</span>. (<i>aside</i>) That’s lucky!</p>
+
+<p>D<span class="smallerfont">AVID</span>. Why missus has been expecting of you the last
+three days. It was only just afore she went out she said to me, “David,” said she, “if my
+cousin should happen to arrive from London before I get home, show him every attention,”
+says she!</p>
+
+<p>R<span class="smallerfont">AT</span>. (<i>aside</i>) Her cousin, egad! he takes me for
+that simpleton Percy Postlethwaite; not very complimentary, perhaps, but decidedly lucky!
+(<i>aloud</i>) Yes, David, here I am, at last; and how is Mrs. Somerton?</p>
+
+<p>D<span class="smallerfont">AVID</span>. Mrs. Somerton! is that the way you speak of
+your cousin? go along, do. (<i>poking </i>R<span class="smallerfont">ATCLIFFE</span><i> in
+the side</i>) Ah! Mr. Percy Postlethwaite, you be a lucky young chap to get such a wife, I
+can tell ’ee.</p>
+
+<p>R<span class="smallerfont">AT</span>. (<i>aside</i>) Wife! so, so, Mr. Percy
+Postlethwaite, matters are in a more forward state than you led me to believe.</p>
+
+<p>D<span class="smallerfont">AVID</span>. You’ll find supper all ready for ’ee in the
+library, (<i>pointing</i>) so I’ll just light the candles.</p>
+
+<p>R<span class="smallerfont">AT</span>. By all means, David. (<i>aside</i>) He does’nt
+know me.</p>
+
+<p>D<span class="smallerfont">AVID</span>. (<i>while lighting the candles</i>) Missus ’ll
+be mortal glad to see ’ee, and as for Peggy, she won’t know whether she be standing on her
+head or her heels.</p>
+
+<p>R<span class="smallerfont">AT</span>. I’m sure I’m very much obliged to Peggy.
+(<i>aside</i>) Who’s Peggy?</p>
+
+<p>D<span class="smallerfont">AVID</span>. And no wonder; she tells me many’s the time
+she’s dangled ’ee on her knee, afore ye were breeched; (<i>imitating</i>) but ye know all
+about that.</p>
+
+<p>R<span class="smallerfont">AT</span>. Of course. I’ve the most distinct recollection of
+everything that happened to me before I was breeched.</p>
+
+<p>D<span class="smallerfont">AVID</span>. (<i>having lighted candles</i>) There, and now
+I’ll go down stairs and wait for missus; and as soon as she comes in, I’ll say to
+her——</p>
+
+<p>R<span class="smallerfont">AT</span>. Not one word, either to her or to Peggy! I wish
+to give them both an agreeable surprise, David; you understand, eh?</p>
+
+<p>D<span class="smallerfont">AVID</span>. (<i>hesitating</i>) I think I do!</p>
+
+<p>R<span class="smallerfont">AT</span>. (<i>giving him money</i>) There’s a crown for
+you—think again.</p>
+
+<p>D<span class="smallerfont">AVID</span>. (<i>pocketing money</i>) I’m sure I do! I’ll be
+as dumb as an oyster. (<i>going—stops</i>) As I said before, supper be all ready in
+t’other room, (<i>going—stops</i>) and if ’ee want anything you needn’t ring for me,
+’cause I be going to take a bit of a snooze before the kitchen fire. (<i>yawning</i>) How
+sleepy I be to be sure.</p>
+
+<p class="direction_2"><i>Exit at door, </i><span class="stage">L.&nbsp;C.</span></p>
+
+<p><span class="pagenum"><a class="newpage" id="page-5">[Pg 5]</a></span></p>
+
+<p>R<span class="smallerfont">AT</span>. (<i>watching </i>D<span
+class="smallerfont">AVID</span> <i>out, then goes quickly up and closes the door</i>)
+Alone at last—now then to work. (<i>takes a pair of pistols from his coat pocket, which he
+places on table</i>) But first, as ladies invariably fly to the bell ropes to raise an
+alarm, I must take the liberty of cutting these. (<i>taking knife out of his pocket, and
+cutting the bell ropes</i>) Now to examine the means of escape, in case of
+interruption—(<i>opening window and looking out</i>)—the garden—a small conservatory
+underneath—that’s awkward; but, luckily, there’s an apple tree so conveniently close as to
+make a very tolerable ladder on an emergency, so far perfectly satisfactory—and if my
+information is only tolerably correct, and it ought to be considering the trouble I’ve had
+in obtaining it, (<i>taking small pocket book from his waistcoat and opening it</i>) this
+door should lead to Mrs. Somerton’s chamber—(<i>opening door at <span
+class="stage">L.</span>, and looking in</i>)—exactly, and very elegantly appointed indeed.
+(<i>closes door, and again looking at his pocket book</i>)—“near the door a
+table”—precisely—(<i>laying his hand on the table</i>)—“on the table a small writing
+desk”—here it is—(<i>laying his hand on the writing desk</i>)—locked, and the key taken
+out, that of course I expected; but as I have ascertained that between the hours of 12 and
+1 yesterday it became the temporary receptacle of a pocket book containing bank notes to
+the amount of fifteen thousand pounds, it is not likely I should come unprovided with the
+means of securing such a treasure. (<i>takes out a bunch of small keys, some of which he
+tries—produces a chisel from his coat pocket, and is about to insert it under the lid of
+the box, a loud ring at gate bell heard</i>) Mrs. Somerton returned. (<i>runs to door,
+<span class="stage">L.&nbsp;U.&nbsp;E.</span>—ring repeated</i>) Again!
+Stay—(<i>listening</i>) The window—quick! (<i>runs to window</i>) A man in the garden, and
+cautiously making towards this window. Who can he be? and what can be his object? Not the
+same as mine surely—egad, that would be comical enough. If I could only observe—— Ah—that
+door. (<i>blows out the candle, and gropes his way to door, <span class="stage">R.</span>;
+at the moment that he enters the room, <span class="stage">R.</span>, </i>P<span
+class="smallerfont">OSTLETHWAITE</span>’<span class="smallerfont">S</span> <i>head is seen
+at the window,</i> <span class="stage">R.&nbsp;U.&nbsp;E.</span>)</p>
+
+<p>P<span class="smallerfont">OS</span>. I’ve done it! I’ve been ringing at the bell long
+enough, so I’ve been obliged to effect an entrance by the window; (<i>putting one leg over
+the window sill</i>) and let me observe to the inexperienced in these matters, that the
+fact of threading one’s way up a densely wooded apple tree on a pitch dark night is a
+gymnastic feat more easily imagined than accomplished. (<i>gets in at window—he has a
+carpet bag</i>) However, as I said before, I’ve done it, and what’s more I live to tell
+it, though I may be allowed to remark that, considering my cousin, Mrs. Somerton, has been
+expecting me—<i>me, her affianced husband—</i>for the last three nights, I think she might
+have allowed one of her domestics to sit up for me: however, I’m not going to quarrel with
+her, no—no—I cannot forget that she’s my cousin, and the only child of my honoured and
+lamented uncle—I mean aunt—no, uncle—and now that the law suit has been decided in her
+favour, and that she steps into possession of fifteen thousand pounds, her late husband’s
+fortune, I feel that to upbraid her at such a moment would be unmanly.<span
+class="pagenum"><a class="newpage" id="page-6">[Pg 6]</a></span> There’s a spark of fire
+left in the grate I declare—that’s lucky! I’ll light a candle if I can find one.
+(<i>feeling about</i>) Here’s one—no, it’s a scent bottle—now I’ve got it—(<i>takes
+candle, and goes towards fireplace</i>)—and now for a piece of paper. (<i>takes a paper
+out of his pocket, and about to tear it</i>) Stop—it won’t do to tear this, this is
+yesterday’s Times, in which I find that my friend Captain Ratcliffe has been appointed to
+the situation of Chief Superintendent of the Rural Police, of the Western Division of the
+County of Kent, and as I know he’s been here at Tunbridge Wells for the last week, I’ve
+determined to find him out, and be the first to congratulate him—this’ll do! (<i>taking
+another piece of paper, and lighting the candle with it</i>) There—and now—— (<i>seeing a
+letter on the table, and taking it up</i>) What’s this? “Colonel Boldwig requests the
+honour—Mrs. Somerton’s company—Thursday evening—quadrilles, &amp;c. &amp;c.” Then she’s
+not at home; then, egad, I’ll wait for her here—but not in this costume—no, I’ll just
+change my coat, et cetera: and, probably, my et cetera requires changing more than my
+coat, because naturally in ascending a tree one occasionally requires to sit down,
+consequently, it naturally follows that one’s et cetera, upon which one does sit down—of
+course, it stands to reason—so here goes. (<i>taking up the candle, carpet bag, and
+umbrella, and going towards door, <span class="stage">R.&nbsp;C.</span>, and enters. Scene
+again dark. At this moment </i>R<span class="smallerfont">ATCLIFFE</span><i> opens door at
+<span class="stage">R.</span>, enters, moves across on tiptoe, and locks the door at <span
+class="stage">R.&nbsp;C.</span></i>)</p>
+
+<p>R<span class="smallerfont">AT</span>. Come, I’ve got you safe under lock and key, my
+worthy friend, whoever you are, and now not another moment must be lost. (<i>advances
+towards the writing desk quickly, <span class="stage">L.</span> table</i>)</p>
+
+<p>M<span class="smallerfont">RS</span>. S. (<i>without</i>) Don’t be alarmed, David, I
+forgot to say I had taken the latch key with me.</p>
+
+<p>R<span class="smallerfont">AT</span>. Mrs. Somerton’s voice, and no means of escape!
+Then impudence befriend me! (<i>hurries into room, <span class="stage">R.</span></i>)</p>
+
+<p class="entrance"><i>Enter </i>M<span class="smallerfont">RS</span>. S<span
+class="smallerfont">OMERTON</span><i> and </i>P<span class="smallerfont">EGGY</span><i> at
+door, <span class="stage">L.&nbsp;U.&nbsp;E.</span></i></p>
+
+<p>P<span class="smallerfont">EGGY</span>. (<i>who carries a small lantern in her hand,
+which she places on table</i>) Dear, dear, how my poor old bones do ache.</p>
+
+<p>M<span class="smallerfont">RS</span>. S. (<i>throws off her cloak and hood, and appears
+in a handsome ball costume</i>) Now go to bed at once, my good Peggy, I don’t require you
+any more.</p>
+
+<p>P<span class="smallerfont">EGGY</span>. Yes you do, so sit down there—(<i>making
+</i>M<span class="smallerfont">RS</span>. S<span class="smallerfont">OMERTON</span><i> sit
+down on a chair</i>)—and now, while I’m taking all these gimcracks and finery out of your
+hair, you shall tell me all about the grand doings at the ball. I warrant me, what the
+colonel’s footmen said of you was quite true.</p>
+
+<p>M<span class="smallerfont">RS</span>. S. And pray what did the colonel’s footmen
+say?</p>
+
+<p>P<span class="smallerfont">EGGY</span>. They said—— Drat the pin! They said you were
+the most beautiful lady in the room—that you had handsomer partners than any lady in the
+room.</p>
+
+<p>M<span class="smallerfont">RS</span>. S. Yes—to do them, justice, they fairly danced me
+off my feet, and yet I am neither grown better tempered, nor better looking, than I was
+three months ago, when at a previous party<span class="pagenum"><a class="newpage"
+id="page-7">[Pg 7]</a></span> not one of them condescended to select me for a partner; but
+then, on the other hand, I am fifteen thousand pounds richer.</p>
+
+<p>P<span class="smallerfont">EGGY</span>. (<i>suddenly, and giving </i>M<span
+class="smallerfont">RS</span>. S<span class="smallerfont">OMERTON</span>’<span
+class="smallerfont">S</span><i> hair another jerk</i>) That’s it! Ah, ma’am, these lords
+of the creation, as they call themselves, are but a poor mean selfish set after all.</p>
+
+<p>M<span class="smallerfont">RS</span>. S. Selfish! No, not all—(<i>sighing</i>)—there is
+one at least.</p>
+
+<p>P<span class="smallerfont">EGGY</span>. No! Is there?—he must be quite a curiosity! Oh,
+ma’am, who is he?</p>
+
+<p>M<span class="smallerfont">RS</span>. S. It’s a long story, Peggy, and it’s getting
+late.</p>
+
+<p>P<span class="smallerfont">EGGY</span>. It’s never too late to hear good news.</p>
+
+<p>M<span class="smallerfont">RS</span>. S. Then listen, Peggy. You remember that about
+ten months ago I was earnestly advised by my physicians to pay a short visit to the
+continent.</p>
+
+<p>P<span class="smallerfont">EGGY</span>. Yes; and I remember too that you came home
+quite an altered woman—<i>I</i> never saw hair dressed in such an extraordinary
+style—never!</p>
+
+<p>M<span class="smallerfont">RS</span>. S. Don’t interrupt me. I had been in Paris about
+three weeks, when one evening on my return from the opera, I found a note on my dressing
+table, containing these words—“I have seen you, and to see you is to love you. I am young,
+tolerably handsome, and sufficiently rich, yet as I cannot presume to present myself to
+you until you permit me to do so, I shall venture to remind you from time to time that I
+am near you.”</p>
+
+<p>P<span class="smallerfont">EGGY</span>. Well I’m sure, Mr. Impudence; and what was the
+fellow’s name?</p>
+
+<p>M<span class="smallerfont">RS</span>. S. There was no name, but merely the initials C.
+R.</p>
+
+<p>P<span class="smallerfont">EGGY</span>. C. R. Samuel something or other I dare say—but
+he gave his address?</p>
+
+<p>M<span class="smallerfont">RS</span>. S. No; simply the words “Post Office, to be left
+till called for.” Of course, I took no notice of it whatever, and had forgotten the
+circumstance altogether, when a month afterwards to the very day—the very hour—I was then
+at Florence, I received a second communication, couched in precisely the same words, and
+again subsequently at Venice, Naples, and Milan.</p>
+
+<p>P<span class="smallerfont">EGGY</span>. Dear, dear, it’s as good as a play! Then you
+never took any notice of the fellow at all?</p>
+
+<p>M<span class="smallerfont">RS</span>. S. Yes; a circumstance, the bare recollection of
+which makes me shudder even at this lapse of time, compelled me to break through the
+silence I had hitherto imposed upon myself: in travelling through Switzerland, on my
+return to England, the carriage which I occupied was one night placed in imminent peril by
+the restiveness of one of the horses; fortunately, I was asleep, and was not aware of my
+danger till I was assured of my safety—within a few feet of a fearful precipice, the
+traces had been cut, by a man who had evidently followed me, judge then of my astonishment
+when a voice uttered these words in my ear, “You see, madam, I have kept my promise, I am
+<i>still near you.</i>”</p>
+
+<p>P<span class="smallerfont">EGGY</span>. Well, he was a fine brave gentleman, whoever he
+was; and what was he like—eh?</p>
+
+<p>M<span class="smallerfont">RS</span>. S. He had disappeared before I could even thank
+him for his timely and generous assistance.</p>
+
+<p><span class="pagenum"><a class="newpage" id="page-8">[Pg 8]</a></span></p>
+
+<p>P<span class="smallerfont">EGGY</span>. Well?</p>
+
+<p>M<span class="smallerfont">RS</span>. S. Well? (<i>hesitatingly</i>) his next letter,
+which reached me shortly after my return to England, did <i>not</i> remain unanswered.</p>
+
+<p>P<span class="smallerfont">EGGY</span>. I should think not, indeed! and what did you
+say to Mr. C. R.?</p>
+
+<p>M<span class="smallerfont">RS</span>. S. The truth! that my hand was promised to my
+cousin, Percy Postlethwaite; that his father had once saved <i>mine</i> from ruin, who
+made me promise, as the only means of testifying <i>his</i> gratitude to the father, to
+marry the son.</p>
+
+<p>P<span class="smallerfont">EGGY</span>. Ah! and that, of course, was a settler for Mr.
+C. R.</p>
+
+<p>M<span class="smallerfont">RS</span>. S. On the contrary, his answer to my letter ran
+thus:—“Love like mine never despairs. I will still be near you, for I still hope”—and yet
+for the last <i>two months</i> he has ceased to write.</p>
+
+<p>P<span class="smallerfont">EGGY</span>. Of course he has! and high time, too,
+considering you told him you were Mrs. Postlethwaite, as was to be.</p>
+
+<p>M<span class="smallerfont">RS</span>. S. Very true; and yet (<i>after a slight
+hesitation</i>) no matter, go to bed, Peggy. Good night.</p>
+
+<p>P<span class="smallerfont">EGGY</span>. Good night, ma’am. (<i>taking the
+lantern</i>—<i>aside</i>) Luckily when Master Percy arrives he’ll put all this romantic
+lackadaisical nonsense out of missus’s head.</p>
+
+<p class="direction_2"><i>Exit at door, </i><span class="stage">L.&nbsp;C.</span></p>
+
+<p>M<span class="smallerfont">RS</span>. S. Yes, while the news of my recent accession to
+fortune has brought so many admirers to my feet, he, on the contrary, has ceased to think
+of me.</p>
+
+<p class="direction_3">(M<span class="smallerfont">RS</span>. S. <i>seats herself in chair
+near the work table, <span class="stage">L.</span></i>; R<span
+class="smallerfont">ATCLIFFE</span><i> at the same moment enters and cautiously goes to
+door, <span class="stage">L.&nbsp;C.</span>, which he closes. The stage is only dimly
+lighted</i>)</p>
+
+<p>M<span class="smallerfont">RS</span>. S. (<i>hearing the noise of the door closing, and
+without turning round, as she unclasps her bracelets</i>) Is that you again, Peggy?
+(<i>not receiving an answer, she turns and sees </i>R<span
+class="smallerfont">ATCLIFFE</span>; <i>starts violently, and checking a scream</i>) A
+man!</p>
+
+<p>R<span class="smallerfont">AT</span>. (<span class="stage">L.</span>) Do not be
+alarmed, madam, I beg. (<i>advancing slowly</i>)</p>
+
+<p>M<span class="smallerfont">RS</span>. S. (<i>retreating, and in a tone of alarm which
+she endeavours to repress</i>) Who are you, sir? and why this unseasonable intrusion? I
+insist on knowing.</p>
+
+<p>R<span class="smallerfont">AT</span>. A little patience, my dear madam, and you shall.
+(<i>observing </i>M<span class="smallerfont">RS</span>. S<span
+class="smallerfont">OMERTON</span><i>, who endeavours to reach the door, <span
+class="stage">L.&nbsp;C.</span></i>) One moment, madam. Before you summon your servants,
+allow me to observe that I shall be under the painful necessity of punishing any one who
+presumes to interrupt so delightful a <i>tete à tete.</i> (<i>slowly taking his pistols
+from his pocket, and depositing them on the table</i>)</p>
+
+<p>M<span class="smallerfont">RS</span>. S. (<i>terrified and aside</i>) He’s armed.
+(<i>suddenly</i>) Ah! that writing desk—that large sum of money—(<i>placing herself before
+the table on which the writing desk is, and supporting herself with difficulty</i>)</p>
+
+<p>R<span class="smallerfont">AT</span>. Now, madam, (<i>crosses to <span
+class="stage">R.</span> with chair</i>) the sooner I explain the object of this somewhat
+unceremonious visit, the better. Will you allow me to lead you to a chair? (<i>politely
+offering his hand to </i>M<span class="smallerfont">RS</span>. S<span
+class="smallerfont">OMERTON</span><i>, who draws back in alarm</i>) Pray, my dear madam
+let me once more entreat you not to be alarmed. (M<span class="smallerfont">RS</span>.
+S<span class="smallerfont">OMERTON</span><span class="pagenum"><a class="newpage"
+id="page-9">[Pg 9]</a></span> <i>after a slight hesitation, gives him her hand, and he
+leads her to the chair near table, at <span class="stage">C.</span></i>) Be seated, I beg.
+(M<span class="smallerfont">RS</span>. S<span class="smallerfont">OMERTON</span> <i>seats
+herself. </i>R<span class="smallerfont">ATCLIFFE</span><i> about to remove up for another
+chair, </i>M<span class="smallerfont">RS</span>. S<span
+class="smallerfont">OMERTON</span><i> advancing her hand towards the pistol—stops</i>)
+Pray be cautious with those pistols, madam; they are hair triggers, and I perceive the
+muzzles are directly pointed towards you. (<i>goes up to the back for a chair</i>)</p>
+
+<p>M<span class="smallerfont">RS</span>. S. (<i>aside and suddenly</i>) If I could but
+distinguish his features, so as to be able to recognise him. (<i>hastily runs and brings
+candle from the small table at <span class="stage">L.</span>, and places it on table
+before her</i>)</p>
+
+<p>R<span class="smallerfont">AT</span>. (<i>coming down with the chair, <span
+class="stage">R.</span>—stops</i>) You’ll pardon me, madam, but having suffered lately
+from a severe cold in my eyes, this excess of light would be positively distressing to me.
+(<i>removes the candle to the mantel-piece, <span class="stage">L.</span>; then about to
+seat himself opposite to </i>M<span class="smallerfont">RS</span>. S<span
+class="smallerfont">OMERTON</span>) Have I your permission, madam? I thank you! (<i>seats
+himself</i>)</p>
+
+<p>M<span class="smallerfont">RS</span>. S. (<i>aside</i>) Was there ever such unblushing
+effrontery?</p>
+
+<p>R<span class="smallerfont">AT</span>. Now, madam, I will come to the point at once. I
+am in the immediate want of <i>fifteen thousand pounds.</i> (<i>with marked
+intention</i>)</p>
+
+<p>M<span class="smallerfont">RS</span>. S. (<i>aside</i>) He knows all.</p>
+
+<p>R<span class="smallerfont">AT</span>. Which sum, madam, I intend to invest in a
+speculation, which promises the most advantageous results.</p>
+
+<p>M<span class="smallerfont">RS</span>. S. (<i>with affected unconcern</i>) I cannot
+understand, sir, how the subject you allude to can possibly interest me.</p>
+
+<p>R<span class="smallerfont">AT</span>. More than you imagine, my dear madam, for I
+propose that you shall become my partner in this speculation; in other words, I will find
+the industry and energy requisite in carrying it into effect, while you <i>simply have to
+provide the money. </i>(<i>with marked emphasis</i>)</p>
+
+<p>M<span class="smallerfont">RS</span>. S. (<i>indignantly</i>) Sir!</p>
+
+<p>R<span class="smallerfont">AT</span>. That’s all! I’ll therefore make out a receipt for
+the amount at once. (<i>taking a piece of paper, and beginning to write</i>)</p>
+
+<p>M<span class="smallerfont">RS</span>. S. (<i>aside, and looking towards the back of the
+stage</i>) That bell communicates with David’s room; it is my only hope. (<i>cautiously
+rises from her chair, and goes on tiptoe towards the chimney-piece</i>)</p>
+
+<p>P<span class="smallerfont">OS</span>. (<i>appearing at little window above door at
+<span class="stage">R.&nbsp;C.</span></i>) I should very much like to know who has taken
+the liberty of locking me in! I repeat, who has taken the liberty of locking me in? I
+pause for a reply.</p>
+
+<p>M<span class="smallerfont">RS</span>. S. (<i>looking at </i>R<span
+class="smallerfont">ATCLIFFE</span><i>, who pretends to be writing, but is watching her
+movements—then making a sudden grasp at the bell rope</i>) Ah! the bell rope cut!</p>
+
+<p>R<span class="smallerfont">AT</span>. (<i>quietly looking up</i>) Yes, true! I quite
+forgot to mention that I had taken that <i>little precaution</i> against interruption.
+(<i>resumes his writing</i>)</p>
+
+<p>P<span class="smallerfont">OS</span>. (<i>listening</i>) Holloa! Either cousin Somerton
+has got a very bad cold, or she’s not alone!</p>
+
+<p>R<span class="smallerfont">AT</span>. Here, madam, is the receipt. (<i>rising</i>)</p>
+
+<p>P<span class="smallerfont">OS</span>. That’s a man’s voice!</p>
+
+<p>R<span class="smallerfont">AT</span>. And now, madam, the necessary forms being
+completed<span class="pagenum"><a class="newpage" id="page-10">[Pg 10]</a></span> on my
+part, all that remains is for you to find the funds; amounting, as I believe I mentioned
+before, to the sum of fifteen thousand pounds.</p>
+
+<p>M<span class="smallerfont">RS</span>. S. (<i>forcing a laugh</i>) And do you imagine I
+could be imprudent enough to keep so large a sum of money——?</p>
+
+<p>R<span class="smallerfont">AT</span>. On your person? Oh, dear no; that would be an
+indiscretion for which, as your partner, I should certainly take the liberty of scolding
+you.</p>
+
+<p>P<span class="smallerfont">OS</span>. What’s that? he says he’s my wife’s partner! I
+never even knew she was in business.</p>
+
+<p>R<span class="smallerfont">AT</span>. Until you could deposit it with your banker’s,
+you have, doubtless, placed it somewhere under lock and key; but as you seem to have
+forgotten the exact locality, I shall be most happy to assist you in your search. Suppose
+we begin with the writing desk. (<i>placing his hand on the desk</i>) Will you oblige me
+with the key?</p>
+
+<p>P<span class="smallerfont">OS</span>. The fellow’s a housebreaker!</p>
+
+<p>M<span class="smallerfont">RS</span>. S. I—I have mislaid or lost it, sir: at least, I
+think I have.</p>
+
+<p>R<span class="smallerfont">AT</span>. Pray <i>think</i> again, my dear madam, as it
+would be really a pity to damage so elegant a piece of furniture.</p>
+
+<p>P<span class="smallerfont">OS</span>. No—he’s a smasher! It’s lucky for him I can’t get
+at him.</p>
+
+<p>M<span class="smallerfont">RS</span>. S. (<i>suddenly, and with resolution</i>) Sir,
+although alone, and in the power of a desperate man like you, I will not be plundered
+except by violence.</p>
+
+<p>P<span class="smallerfont">OS</span>. That’s right, cousin—stick to that! She’s a
+trump!</p>
+
+<p>R<span class="smallerfont">AT</span>. (<i>approaching her as she leans against table in
+<span class="stage">C.</span>, and in a tone of reproach</i>) Violence to a woman, and
+<i>such a woman! </i>(<i>bowing</i>)</p>
+
+<p>P<span class="smallerfont">OS</span>. Humbug!</p>
+
+<p>R<span class="smallerfont">AT</span>. I see you mistake me, madam, I came here to serve
+you—to propose to you a safe and profitable investment for your money, but the moment you
+object to that proposal—— (<i>taking one of the pistols off the table and playing with
+it</i>)</p>
+
+<p>P<span class="smallerfont">OS</span>. What’s that he’s got in his hand? (R<span
+class="smallerfont">ATCLIFFE</span><i> cocks the pistol, the noise of which is distinctly
+heard</i>) It’s a blunderbuss! (<i>disappears like lightning, then cautiously appears
+again</i>)</p>
+
+<p>M<span class="smallerfont">RS</span>. S. (<i>shuddering and sinking into a chair</i>)
+You will find the key—in that vase—on the mantel-piece.</p>
+
+<p>R<span class="smallerfont">AT</span>. That vase, madam? (<i>pointing with his pistol
+towards mantel-piece in the direction of </i>P<span
+class="smallerfont">OSTLETHWAITE</span><i>, who again disappears like a shot; </i>R<span
+class="smallerfont">ATCLIFFE</span><i> goes to the mantel-piece, upon which he deposits
+his pistols—then takes key out of the vase, and goes to the writing desk: during this
+</i>P<span class="smallerfont">OSTLETHWAITE</span><i> re-appears cautiously, sees the
+pistols, and by leaning very much out of little window, tries to reach them—almost falling
+out—disappears; re-appears with the tongs, and again tries to reach the pistols</i>) Ah!
+here is a drawer that requires some force to open, doubtless it contains the—— (<i>opening
+drawer</i>) No, your diamonds. Ah, madam, I can trace the amiability of your disposition
+even in your treatment of these poor jewels—you cease to wear them because their beauty
+would be eclipsed by yours. (<i>replacing diamonds in desk</i>)</p>
+
+<p>M<span class="smallerfont">RS</span>. S. (<i>aside, and smiling</i>) To do the wretch
+justice he has a certain mode of expressing himself——</p>
+
+<span class="pagenum"><a class="newpage" id="page-11">[Pg 11]</a></span>
+
+<p>P<span class="smallerfont">OS</span>. I hope he don’t mean to keep on fumbling that
+writing desk about much longer, because the bottom of the cane chair has just given way.
+Surely, Cousin Somerton never could have been such a simpleton as to lock all her money up
+there.</p>
+
+<p>R<span class="smallerfont">AT</span>. Ah, at last—(<i>taking the pocket book out of the
+desk, and advancing to </i>M<span class="smallerfont">RS</span>. S<span
+class="smallerfont">OMERTON</span>)—the pocket book.</p>
+
+<p>P<span class="smallerfont">OS</span>. She’s a ruined woman and so am I! (<i>dropping
+his head against the side of the window</i>)</p>
+
+<p>M<span class="smallerfont">RS</span>. S. (<i>suddenly, and with an expression of
+hope</i>) Surely I heard a voice!</p>
+
+<p>R<span class="smallerfont">AT</span>. One of your servants probably. (<i>going up
+towards mantel-piece, and taking his pistols</i>) I hope he will not take it into his head
+to interrupt us, for I should certainly send a bullet through it. (P<span
+class="smallerfont">OSTLETHWAITE</span><i> drops, and a noise of falling heard within
+door, <span class="stage">R.&nbsp;C.</span>; </i>R<span
+class="smallerfont">ATCLIFFE</span><i> places the pistols on chimney piece</i>) And now,
+madam, (<i>returning towards table at <span class="stage">C.</span></i>) with many
+apologies for detaining you so long from your slumbers, I humbly take my leave. (<i>seeing
+the receipt, which he has left on the table</i>) Stay! (<i>taking up the receipt, which he
+presents to </i>M<span class="smallerfont">RS</span>. S<span
+class="smallerfont">OMERTON</span>) I promised you a receipt, madam, and here it is.</p>
+
+<p>M<span class="smallerfont">RS</span>. S. (<i>derisively</i>) A very valuable document
+to me no doubt, sir.</p>
+
+<p>R<span class="smallerfont">AT</span>. A very necessary one, madam, in all commercial
+transactions. (M<span class="smallerfont">RS</span>. S<span
+class="smallerfont">OMERTON</span><i> takes the receipt, and indignantly crumples it up in
+her hand</i>) Once more, madam, farewell. (<i>taking his cloak and hat</i>) And in taking
+my leave, be assured that I carry away with me——</p>
+
+<p>M<span class="smallerfont">RS</span>. S. (<i>sneeringly</i>) I am perfectly aware, sir,
+what you carry away with you.</p>
+
+<p>R<span class="smallerfont">AT</span>. The hope, madam, which I trust you in some degree
+share with me, that our first interview will not be our last. (<i>turns at door, <span
+class="stage">L.&nbsp;C.</span>, makes a profound bow, and exits, <span
+class="stage">L.&nbsp;U.&nbsp;E.</span></i>)</p>
+
+<p>M<span class="smallerfont">RS</span>. S. He’s gone, and I have no longer strength even
+to call for help.</p>
+
+<p>P<span class="smallerfont">OS</span>. (<i>knocking violently at door</i>) But I have!
+I’ll cry for help against any man in England! Help!</p>
+
+<p>M<span class="smallerfont">RS</span>. S. (<i>rising</i>) Ah, is that you, David?</p>
+
+<p>P<span class="smallerfont">OS</span>. No—it’s me—Postlethwaite. Cousin Percy, open the
+door. (M<span class="smallerfont">RS</span>. S<span class="smallerfont">OMERTON</span><i>
+hastily runs and unlocks door, <span class="stage">R.&nbsp;C.</span>, </i>P<span
+class="smallerfont">OSTLETHWAITE</span><i> puts his head out</i>) Is the ruffian gone?</p>
+
+<p>M<span class="smallerfont">RS</span>. S. Yes—yes.</p>
+
+<p>P<span class="smallerfont">OS</span>. You’re sure of it?</p>
+
+<p>M<span class="smallerfont">RS</span>. S. (<span class="stage">L.</span>) Quite
+sure.</p>
+
+<p>P<span class="smallerfont">OS</span>. (<i><span class="stage">R.</span>, rushing
+on</i>) Then let me get at him! Come out wherever you are, and face me like a man—come on,
+I say. (<i>squaring violently</i>) Coward! (<i>in a tone of supreme contempt</i>)</p>
+
+<p>M<span class="smallerfont">RS</span>. S. Then you have heard——</p>
+
+<p>P<span class="smallerfont">OS</span>. Everything from that window, above that closet
+there, or whatever it is where I’ve been locked up for the last hour among the
+pickles.</p>
+
+<p>M<span class="smallerfont">RS</span>. S. And yet you allowed me to be robbed.</p>
+
+<p>P<span class="smallerfont">OS</span>. Come I like that—you allowed yourself to be
+robbed.</p>
+
+<p><span class="pagenum"><a class="newpage" id="page-12">[Pg 12]</a></span></p>
+
+<p>M<span class="smallerfont">RS</span>. S. (<i>contemptuously</i>) And you did
+<i>nothing.</i></p>
+
+<p>P<span class="smallerfont">OS</span>. I beg your pardon, I looked on in silent
+astonishment.</p>
+
+<p>M<span class="smallerfont">RS</span>. S. But you ought to have made a noise.</p>
+
+<p>P<span class="smallerfont">OS</span>. So I did—I tumbled down backwards into a lot of
+grocery.</p>
+
+<p class="direction_3">(<i>from the beginning of this Scene between </i>M<span
+class="smallerfont">RS</span>. S<span class="smallerfont">OMERTON</span><i> and </i>P<span
+class="smallerfont">OSTLETHWAITE</span><i> it has gradually become daylight</i>)</p>
+
+<p>M<span class="smallerfont">RS</span>. S. And to think that he should be allowed to
+effect his escape! What shall I do?</p>
+
+<p>P<span class="smallerfont">OS</span>. Do? Take example by me, show a proper spirit like
+me, and send for the police.</p>
+
+<p>M<span class="smallerfont">RS</span>. S. We have none.</p>
+
+<p>P<span class="smallerfont">OS</span>. No police! (<i>suddenly recollecting</i>) but
+<i>I</i> have, of course, and a superintendent into the bargain—here—in my pocket.</p>
+
+<p>M<span class="smallerfont">RS</span>. S. You’ve got a superintendent of police in your
+pocket?</p>
+
+<p>P<span class="smallerfont">OS</span>. Yes—no; but I’ve got his appointment—that’s the
+same thing, besides he’s a friend of mine; I’ll run for him this moment, and in less than
+ten minutes we’ll have him here dead or alive; I mean my friend—no—the robber—no, my
+friend. (<i>running to door, <span class="stage">L.&nbsp;C.</span></i>) Holloa, this
+door’s locked (<i>running to mantel-piece and about to ring the bell</i>) and the bell
+rope’s cut (<i>suddenly</i>) ah! the ruffian has left his pistols behind him. (<i>seizing
+pistols off the mantel-piece</i>) Stand out of the way, cousin. (<i>rushing to
+window</i>)</p>
+
+<p>M<span class="smallerfont">RS</span>. S. What are you about to do?</p>
+
+<p>P<span class="smallerfont">OS</span>. Do? send a bullet through his body.</p>
+
+<p>M<span class="smallerfont">RS</span>. S. Pshaw! Why you can’t even see him.</p>
+
+<p>P<span class="smallerfont">OS</span>. Then I’m the more likely to hit him; besides, it
+will raise an alarm at all events. (<i>pulling both triggers as he points the pistols out
+at window</i>) Holloa they’re not loaded! (<i>suddenly</i>) Oh, if I had only known that.
+(<i>about to get out at the window</i>)</p>
+
+<p>M<span class="smallerfont">RS</span>. S. Cousin, what are you about?</p>
+
+<p>P<span class="smallerfont">OS</span>. Why, as I can’t get out by the door, I must have
+recourse to the window. (<i>getting out</i>)</p>
+
+<p>M<span class="smallerfont">RS</span>. S. And this for me! Oh, how kind of you, Cousin;
+but pray mind how you get down!</p>
+
+<p>P<span class="smallerfont">OS</span>. Don’t be alarmed; it’s a precious deal easier
+than getting up! besides I know every inch of the road; so good bye, cousin, and in my way
+to my friend the superintendent, I’ll knock up all the neighbours and tell them to scour
+the country; we’ll find your fifteen thousand pounds again for you. (<i>gets quite out and
+gradually disappears</i>) So don’t give way—keep up as I do. Oh, lud. (<i>suddenly
+disappears altogether—loud noise of broken glass heard</i>)</p>
+
+<p>M<span class="smallerfont">RS</span>. S. He’s fallen! (<i>calling out of window</i>)
+Cousin! cousin!</p>
+
+<p>P<span class="smallerfont">OS</span>. (<i>from without</i>) It’s all right. I’ve only
+tumbled into a cucumber frame or something of the sort. I can have the bits of glass taken
+out of me when I get back.</p>
+
+<p>M<span class="smallerfont">RS</span>. S. (<i>looking out</i>) There he runs, but he’s
+without his hat! (<i>calling aloud</i>) Cousin! cousin! you’ve dropped your hat! he
+doesn’t hear me.</p>
+
+<p>P<span class="smallerfont">EGGY</span>. (<i>without at door, <span
+class="stage">L.&nbsp;C.</span></i>) Missus—missus, the door’s locked. (<i>unlocks door
+and runs in followed by </i>D<span class="smallerfont">AVID</span><i>, both have their
+night-caps</i><span class="pagenum"><a class="newpage" id="page-13">[Pg 13]</a></span>
+<i>on, and </i>D<span class="smallerfont">AVID</span><i> carries an old fashioned
+blunderbuss</i>) Oh, ma’am, what’s all this noise about—what does it all mean?</p>
+
+<p>D<span class="smallerfont">AVID</span>. Ees, what do it all mean?</p>
+
+<p>M<span class="smallerfont">RS</span>. S. It means, my poor Peggy, that I have been
+robbed.</p>
+
+<p>P<span class="smallerfont">EGGY</span>. Robbed, but not murdered, I hope.</p>
+
+<p>M<span class="smallerfont">RS</span>. S. (<i>smiling</i>) No, not quite, though I am
+almost dead with alarm! David, have you seen no one?</p>
+
+<p>D<span class="smallerfont">AVID</span>. No, ma’am—no one but your cousin, master Percy,
+who arrived about half an hour before you came home.</p>
+
+<p>M<span class="smallerfont">RS</span>. S. Yes, yes, I know; but there was another.</p>
+
+<p>D<span class="smallerfont">AVID</span>. Then I didn’t let <i>him</i> in, and I know he
+can’t have gone out again without my seeing him. (<i>aside</i>) To be sure I’ve been fast
+asleep all the time.</p>
+
+<p>M<span class="smallerfont">RS</span>. S. Then perhaps he’s still in the house?</p>
+
+<p>P<span class="smallerfont">EGGY</span>. Lud a mercy! (<i>getting behind </i>D<span
+class="smallerfont">AVID</span><i>, who in his turn tries to get behind </i>P<span
+class="smallerfont">EGGY</span>)</p>
+
+<p>D<span class="smallerfont">AVID</span>. (<i>suddenly as he looks towards window, <span
+class="stage">R.</span> in flat</i>) Look, ma’am, if there ben’t Sergeant Jones of the
+rural police riding along the lane at the bottom of the garden. (<i>running to window and
+shouting</i>) Here, Sergeant Jones, stop—he hears me, ma’am.</p>
+
+<p>M<span class="smallerfont">RS</span>. S. This is fortunate indeed; so run, David, and
+give him information of the robbery; tell him that he may rely on the most liberal reward.
+(D<span class="smallerfont">AVID</span><i> about to run off</i>) and, David, tell him
+also, should he discover any clue, that he must communicate with his superintendent
+here—that I expect him every moment; run, David. (D<span
+class="smallerfont">AVID</span><i> runs off at <span class="stage">L.&nbsp;C.</span></i>)
+and you, Peggy, go down stairs and be ready to open the door; I will go to my room for a
+few minutes.</p>
+
+<p>P<span class="smallerfont">EGGY</span>. Do, ma’am; it’ll do you good to lie down a bit;
+it’s broad day-light—just till Mr. Superintendent comes. (M<span
+class="smallerfont">RS</span>. S<span class="smallerfont">OMERTON</span><i> enters her
+room, <span class="stage">L.</span></i>)</p>
+
+<p>P<span class="smallerfont">EGGY</span>. (<i>looking after her</i>) Poor missus—she’s
+lost all her treasures except me.</p>
+
+<p class="direction_2"><i>Exit at door, </i><span class="stage">L.&nbsp;C.</span></p>
+
+<p>P<span class="smallerfont">OS</span>. (<i>without</i>) I tell you it’s all right, so
+come along.</p>
+
+<p>R<span class="smallerfont">AT</span>. (<i>without</i>) But, my dear fellow—</p>
+
+<p class="direction">P<span class="smallerfont">OSTLETHWAITE</span><i> enters at <span
+class="stage">L.&nbsp;C.</span> pulling in </i>R<span class="smallerfont">ATCLIFFE</span>,
+<i>without his beard, moustache, and over coat, and in a modern walking suit.</i></p>
+
+<p class="no_indent">I never applied for the appointment; there’s some mistake.</p>
+
+<p>P<span class="smallerfont">OS</span>. Mistake, nonsense! here it is in the newspaper,
+and you know as well as I do that newspapers never make mistakes. Captain Charles
+Ratcliffe appointed superintendent of the rural police.</p>
+
+<p>R<span class="smallerfont">AT</span>. (<i>aside</i>) What the devil’s to be
+done?—luckily I’ve got rid of my disguise!</p>
+
+<p>P<span class="smallerfont">OS</span>. How very odd I should happen to run up against
+you. Eh! at five o’clock in the morning too.</p>
+
+<p>R<span class="smallerfont">AT</span>. Yes, I was going home from a bachelor’s party.
+(<i>confused</i>)</p>
+
+<p>P<span class="smallerfont">OS</span>. Little dreaming that at that moment you held the
+distinguished position of commander-in-chief of the rural police force of this important
+district.</p>
+
+<p>R<span class="smallerfont">AT</span>. Pshaw! I shall resign at once. (<i>going</i>)</p>
+
+<p><span class="pagenum"><a class="newpage" id="page-14">[Pg 14]</a></span></p>
+
+<p>P<span class="smallerfont">OS</span>. (<i>pulling him back</i>) You can’t till your
+successor is appointed.</p>
+
+<p>R<span class="smallerfont">AT</span>. (<i>aside</i>) There’s no escape, I must brazen
+it out: lucky I have got rid of my disguise, at any rate I shall see her once more!
+(<i>aloud, and in an assumed tone of authority</i>) ahem! (<i>seats himself</i>) now I am
+ready to listen to you.</p>
+
+<p>P<span class="smallerfont">OS</span>. (<span class="stage">L.</span>) That’s right—you
+must know then. (<i>seats himself</i>)</p>
+
+<p>R<span class="smallerfont">AT</span>. (<span class="stage">R.</span>) One moment, are
+you about to address me in my official capacity?</p>
+
+<p>P<span class="smallerfont">OS</span>. Of course, I am.</p>
+
+<p>R<span class="smallerfont">AT</span>. Then don’t sit down.</p>
+
+<p>P<span class="smallerfont">OS</span>. But really my back aches to that degree—</p>
+
+<p>R<span class="smallerfont">AT</span>. Then I’ll receive your deposition to-morrow.
+(<i>gets up and going</i>)</p>
+
+<p>P<span class="smallerfont">OS</span>. No, no! (<i>pushing </i>R<span
+class="smallerfont">ATCLIFFE</span><i> in his chair again</i>) I’ll stand up there! and
+now, my dear fellow—</p>
+
+<p>R<span class="smallerfont">AT</span>. A little less familiarity, if you please, young
+man.</p>
+
+<p>P<span class="smallerfont">OS</span>. Very well—you must know then, old chap—</p>
+
+<p>R<span class="smallerfont">AT</span>. Again—</p>
+
+<p>P<span class="smallerfont">OS</span>. Well, then, your worship! there, will that do?
+you must know then, your worship, that I’ve just been robbed of a very considerable sum of
+money.</p>
+
+<p>R<span class="smallerfont">AT</span>. You?</p>
+
+<p>P<span class="smallerfont">OS</span>. Well, my cousin, Mrs. Somerton has—and as I’m
+going to marry her, what’s her’s is mine, and what’s mine’s my own; but you know all about
+that, governor—I mean your worship.</p>
+
+<p>R<span class="smallerfont">AT</span>. Which property I suppose, you wish to
+recover?</p>
+
+<p>P<span class="smallerfont">OS</span>. Of course, I do; you’ll excuse me, my dear boy,
+Charley, I mean your worship, but that’s a remarkable stupid observation of your’s.</p>
+
+<p>R<span class="smallerfont">AT</span>. Silence—was the robbery you speak of accompanied
+by violence?</p>
+
+<p>P<span class="smallerfont">OS</span>. Of course, it was! would you allow a fellow to
+walk off with your property without making a fight of it, not you, my trojan—I mean your
+worship! but I’ll tell you all about it. I had just arrived from London, and finding that
+cousin Somerton had that instant returned home from a ball, I determined to give her an
+agreeable surprise, and for that purpose I was walking on tiptoe along that passage, when
+I was almost knocked off my legs by a piercing shriek. “My cousin in danger,” said I,
+“then Postlethwaite to the rescue,” said I, and with an unfaltering grasp I seized the
+handle of the door—it was locked, upon which with one blow of this fist—you know my
+muscular power—I knocked the door clean off its hinges.</p>
+
+<p>R<span class="smallerfont">AT</span>. (<i>smiling</i>) You don’t say so?</p>
+
+<p>P<span class="smallerfont">OS</span>. Well, in I rushed, and the first thing I saw
+was——</p>
+
+<p>R<span class="smallerfont">AT</span>. What?</p>
+
+<p>P<span class="smallerfont">OS</span>. Nothing; the room was in total darkness, and the
+next instant I found myself face to face with a gigantic housebreaker about seven foot
+high, with two pair of pistols in each hand, and there, extended upon the hearth rug, with
+her head on the fender lay my poor cousin in a dead faint, and as pale as a sheet.</p>
+
+<p><span class="pagenum"><a class="newpage" id="page-15">[Pg 15]</a></span></p>
+
+<p>R<span class="smallerfont">AT</span>. (<i>smiling</i>) But how the deuce did you manage
+to see all this when the room was in total darkness?</p>
+
+<p>P<span class="smallerfont">OS</span>. What of that? everybody knows that housebreakers
+are always as pale as a sheet when they faint away; I mean women are always seven feet
+high—no, housebreakers—really you interrupt me so I don’t know what I’m talking about.</p>
+
+<p>R<span class="smallerfont">AT</span>. (<i>smiling</i>) Well?</p>
+
+<p>P<span class="smallerfont">OS</span>. Well, though I was unarmed, I instantly rushed
+upon the two ruffians.</p>
+
+<p>R<span class="smallerfont">AT</span>. Two ruffians?</p>
+
+<p>P<span class="smallerfont">OS</span>. Yes. I said there were two, who instantly made
+for the door, which luckily I had taken the precaution of locking.</p>
+
+<p>R<span class="smallerfont">AT</span>. Locking! What the door you had just knocked clean
+off its hinges?</p>
+
+<p>P<span class="smallerfont">OS</span>. Yes. I forgot to mention that in the meantime I
+had picked the door up and hung it on again. Well, finding they couldn’t escape, they both
+sprang upon me at the same time! The fearful struggle then began afresh, till exhausted
+nature could do no more, and the whole three of us rolled out of the window together. But
+here comes my cousin! (<i>running to door, <span class="stage">L.</span></i>)</p>
+
+<p>R<span class="smallerfont">AT</span>. Then, as I said before, impudence befriend
+me.</p>
+
+<p>P<span class="smallerfont">OS</span>. (<i>handing in </i>M<span
+class="smallerfont">RS</span>. S<span class="smallerfont">OMERTON</span>) Come along,
+cousin, I told you I’d soon have my friend the superintendent here. Captain Ratcliffe, my
+cousin. My cousin, Captain Ratcliffe. (<i>introducing them. </i>M<span
+class="smallerfont">RS</span>. S<span class="smallerfont">OMERTON</span><i> curtseys to
+</i>R<span class="smallerfont">ATCLIFFE</span>, <i>and on looking at him gives a very
+slight start, while </i>R<span class="smallerfont">ATCLIFFE</span><i> continues to show
+the utmost sang froid</i>) And now, cousin, the sooner you give him all the particulars.
+Why, what’s the matter with you? (<i>observing how </i>M<span
+class="smallerfont">RS</span>. S<span class="smallerfont">OMERTON</span><i> is
+examining</i> R<span class="smallerfont">ATCLIFFE</span>)</p>
+
+<p>M<span class="smallerfont">RS</span>. S. Nothing. Doubtless I am mistaken. Yet, I am
+under the impression that this is not the first time——</p>
+
+<p>R<span class="smallerfont">AT</span>. That we have met? madam, if so, I am ashamed to
+say that I have forgotten the circumstance. (<i>crosses to <span
+class="stage">C.</span></i>)</p>
+
+<p>M<span class="smallerfont">RS</span>. S. (<i>aside</i>) The voice
+too—pshaw—impossible!</p>
+
+<p>R<span class="smallerfont">AT</span>. Now, madam, as every moment is of the utmost
+importance you must be good enough to answer a few questions. In the first place how the
+entrance to the house was effected by the robbers. (<i>taking out his pocket book and
+pencil.</i>)</p>
+
+<p>M<span class="smallerfont">RS</span>. S. Robbers!—there was only one.</p>
+
+<p>R<span class="smallerfont">AT</span>. Only one! (<i>to </i>P<span
+class="smallerfont">OSTLETHWAITE</span>) I understood you to say there were—</p>
+
+<p>P<span class="smallerfont">OS</span>. (<i>interrupting him</i>) Yes, yes. (<i>aside to
+him</i>) Of course, she doesn’t know how many there were, because as soon as she saw
+<i>one</i> she fainted.</p>
+
+<p>R<span class="smallerfont">AT</span>. True! (<i>smiling</i>)</p>
+
+<p>M<span class="smallerfont">RS</span>. S. (<i>aside</i>) That voice again—I must be
+mistaken—yet, every word he utters—(<i>looking again fixedly at </i>R<span
+class="smallerfont">ATCLIFFE</span>)</p>
+
+<p>R<span class="smallerfont">AT</span>. (<i><span class="stage">C.</span>, to </i>M<span
+class="smallerfont">RS</span>. S.) You have not answered my question, madam.</p>
+
+<p>M<span class="smallerfont">RS</span>. S. I can only say, sir, that on being left alone,
+I was disturbed by a slight noise, and on turning round, he stood before me—as you do.</p>
+
+<p><span class="pagenum"><a class="newpage" id="page-16">[Pg 16]</a></span></p>
+
+<p>R<span class="smallerfont">AT</span>. A bold and impudent villain, evidently. I can
+easily conceive your alarm, madam, but luckily your cousin here on hearing your piercing
+shrieks, (P<span class="smallerfont">OSTLETHWAITE</span><i> pulls his coat tail</i>)
+rushes to your assistance, and with one blow of his masculine fist—</p>
+
+<p>P<span class="smallerfont">OS</span>. (<i>stopping him, and aside</i>) That’ll do—don’t
+remind her of that terrific scene, it distresses her.</p>
+
+<p>R<span class="smallerfont">AT</span>. (<i>smiling again</i>) True. (<i>to </i>M<span
+class="smallerfont">RS</span>. S.) Then, madam, you would probably be able to identify
+this audacious criminal?</p>
+
+<p>M<span class="smallerfont">RS</span>. S. (<i>with intention</i>) Not with absolute
+certainty, sir.</p>
+
+<p>P<span class="smallerfont">OS</span>. No, more should I.</p>
+
+<p>R<span class="smallerfont">AT</span>. That’s strange too, considering the length of
+time you were struggling with him.</p>
+
+<p>P<span class="smallerfont">OS</span>. Yes, yes. (<i>aside to him</i>) That’ll do—she
+can’t bear it.</p>
+
+<p>M<span class="smallerfont">RS</span>. S. (<i>still with intention</i>) And were I to
+act upon my present <i>suspicions,</i> however well grounded they may appear, I might be
+the means of compromising—</p>
+
+<p>R<span class="smallerfont">AT</span>. Who, madam?</p>
+
+<p>M<span class="smallerfont">RS</span>. S. (<i>looking at him</i>) One perhaps, whose
+position in society——</p>
+
+<p>R<span class="smallerfont">AT</span>. Nay, madam—as the representative of the law, I
+tell you that it matters not what his social position may be, we must not mince
+matters.</p>
+
+<p>P<span class="smallerfont">OS</span>. Certainly not. I’d rather mince him. Fifteen
+thousand pounds is a lump of money.</p>
+
+<p>R<span class="smallerfont">AT</span>. (<i>with pretended astonishment</i>) Fifteen
+thousand pounds—the unconscionable scoundrel!—one moment (<i>writing in the pocket
+book</i>)—amount stolen—fifteen thousand pounds; number of robbers——</p>
+
+<p>P<span class="smallerfont">OS</span>. (<i>aside to him</i>) Uncertain! as there seems
+to be a little difference of opinion between cousin and me upon that point. You’d better
+say “uncertain.”</p>
+
+<p>R<span class="smallerfont">AT</span>. (<i>to </i>M<span class="smallerfont">RS</span>.
+S.) Bank notes, I presume?</p>
+
+<p>M<span class="smallerfont">RS</span>. S. Yes, sir—bank notes.</p>
+
+<p>R<span class="smallerfont">AT</span>. And contained in that writing desk.</p>
+
+<p>M<span class="smallerfont">RS</span>. S. (<i>aside</i>) ’Tis he, I’m sure of it
+(<i>hastily and aside to </i>P<span class="smallerfont">OSTLETHWAITE</span><i>, while
+</i>R<span class="smallerfont">ATCLIFFE</span><i> is examining the writing desk</i>)—tell
+me, do you say you know him?</p>
+
+<p>P<span class="smallerfont">OS</span>. Who, the housebreaker?</p>
+
+<p>M<span class="smallerfont">RS</span>. S. No, that person. (<i>pointing to </i>R<span
+class="smallerfont">ATCLIFFE</span>)</p>
+
+<p>P<span class="smallerfont">OS</span>. Know my friend Ratcliffe, of course I do.</p>
+
+<p>R<span class="smallerfont">AT</span>. (<i>observing them and coming down, between
+them.</i>) I regret I cannot hold out to you any reasonable hope of recovering your
+property.</p>
+
+<p>P<span class="smallerfont">OS</span>. You don’t mean that?</p>
+
+<p>R<span class="smallerfont">AT</span>. Why, unfortunately Mrs. Somerton is unable to
+give me the slightest clue.</p>
+
+<p>M<span class="smallerfont">RS</span>. S. But I do possess a clue—a certain infallible
+one.</p>
+
+<p>P<span class="smallerfont">OS</span>. Ah!—then where is your clue—produce your
+clue—what is your clue?</p>
+
+<p>M<span class="smallerfont">RS</span>. S. (<i>looking intently at</i> R<span
+class="smallerfont">ATCLIFFE</span>) A paper in the handwriting of this bold and impudent
+villain, (R<span class="smallerfont">ATCLIFFE</span> <i>slightly</i> <span
+class="pagenum"><a class="newpage" id="page-17">[Pg 17]</a></span><i>starts</i>) treating
+the matter as a commercial transaction, and affecting to acknowledge as a voluntary loan
+from me the amount of which he plundered me.</p>
+
+<p>R<span class="smallerfont">AT</span>. (<i>quickly</i>) A most important document
+indeed, and of the utmost consequence that I should obtain immediate possession of it.</p>
+
+<p>M<span class="smallerfont">RS</span>. S. (<i>sarcastically</i>) I believe you, sir;
+shall I fetch it?</p>
+
+<p>R<span class="smallerfont">AT</span>. Certainly.</p>
+
+<p>M<span class="smallerfont">RS</span>. S. And you <i>will remain here till I return?
+</i>(<i>significantly</i>)</p>
+
+<p>R<span class="smallerfont">AT</span>. Assuredly.</p>
+
+<p>M<span class="smallerfont">RS</span>. S. (<i>hastily—aside to </i>P<span
+class="smallerfont">OSTLETHWAITE</span>) See that he does.</p>
+
+<p class="direction_2"><i>Exit hastily, </i><span class="stage">L.&nbsp;D.</span></p>
+
+<p>R<span class="smallerfont">AT</span>. (<i>aside and agitated</i>) That cursed paper may
+betray me, and this mad desperate game will have been played in vain.</p>
+
+<p>P<span class="smallerfont">OS</span>. (<i>taking his arm and in a confidential
+manner</i>) Now between you and me and the post, if Cousin Somerton was to say to you,
+what will you give me for the chance of recovering my fifteen thousand pounds? what would
+you feel disposed to offer?</p>
+
+<p>R<span class="smallerfont">AT</span>. Not fifteen thousand farthings.</p>
+
+<p>P<span class="smallerfont">OS</span>. (<i>aside</i>) The devil.</p>
+
+<p>R<span class="smallerfont">AT</span>. But what of that; the loss of a few paltry
+thousand can never lessen the intense affection you feel for your charming cousin.</p>
+
+<p>P<span class="smallerfont">OS</span>. What do you mean by “intense affection?” I
+respect her—I like her—so I did my grandmother, but it never would occur to me to fall
+down and worship the ground she treads upon! besides to be candid with you, I don’t think
+she is the sort of woman to fret herself into fiddlestrings about <i>me.</i></p>
+
+<p>R<span class="smallerfont">AT</span>. Indeed!</p>
+
+<p>P<span class="smallerfont">OS</span>. No; besides, I put it to you, would it not be
+most selfish, most unkind in me to take a mean advantage of her promise to marry me, and
+compel my young and lovely relative to spend the remainder of her existence with me in my
+second floor in Arabella Row, Pimlico.</p>
+
+<p>R<span class="smallerfont">AT</span>. (<i>grasping </i>P<span
+class="smallerfont">OSTLETHWAITE</span>’<span class="smallerfont">S</span><i> hand</i>)
+That sentiment does you honour! Then she’s at liberty to cancel her engagement to you?
+(<i>eagerly</i>)</p>
+
+<p>P<span class="smallerfont">OS</span>. Yes, from this moment she’s at liberty.</p>
+
+<p class="entrance"><i>Enter </i>P<span class="smallerfont">EGGY</span><i> running, <span
+class="stage">L.&nbsp;U.&nbsp;E.</span></i></p>
+
+<p>P<span class="smallerfont">EGGY</span>. Where is he? (<i>comes down <span
+class="stage">C.</span></i>) Where’s Mr. Superintendent? (<i>to </i>R<span
+class="smallerfont">ATCLIFFE</span>) Oh, sir, (<i>seeing </i>P<span
+class="smallerfont">OSTLETHWAITE</span>) Lor, Master Percy, is that you? (<i>throwing her
+arms round </i>P<span class="smallerfont">OSTLETHWAITE</span><i>, then turning again to
+</i>R<span class="smallerfont">ATCLIFFE</span>) Oh, sir, I’ve got such news. (<i>to
+</i>P<span class="smallerfont">OSTLETHWAITE</span>) Lor bless’ee, I must have another
+buss. (<i>flinging her arms round </i>P<span class="smallerfont">OSTLETHWAITE</span>)</p>
+
+<p>P<span class="smallerfont">OS</span>. That’ll do, Peggy; I appreciate your affection,
+but it rumples one’s front. (<i>arranging his shirt</i>)</p>
+
+<p>P<span class="smallerfont">EGGY</span>. (<i>to </i>R<span
+class="smallerfont">ATCLIFFE</span>) Then, sir—well, and so you must know that.
+(<i>turning to </i>P<span class="smallerfont">OSTLETHWAITE</span><i> again</i>) Lor
+love’ee. (<i>about to embrace him again. </i>P<span
+class="smallerfont">OSTLETHWAITE</span><i> turns away</i>)</p>
+
+<p>P<span class="smallerfont">EGGY</span>. (<i>to </i>R<span
+class="smallerfont">ATCLIFFE</span>) Well, sir, Sergeant Jones has just been<span
+class="pagenum"><a class="newpage" id="page-18">[Pg 18]</a></span> here, and says he to
+me—says he—tell my Superintendent, Captain Ratcliffe, says he, that we’ve found the
+robber, says he.</p>
+
+<p>P<span class="smallerfont">OS</span>. (<i>triumphantly</i>) And the money too, of
+course; not that my intense affection for my charming cousin could ever be influenced by a
+few paltry thousands more or less—no; I love her for herself alone.</p>
+
+<p>P<span class="smallerfont">EGGY</span>. It does my old heart good to hear you say that,
+because they’ve neither found the robber nor the money yet.</p>
+
+<p>P<span class="smallerfont">OS</span>. Pooh, what a stupid old fool you are. What have
+they found then?</p>
+
+<p>P<span class="smallerfont">EGGY</span>. A hat!</p>
+
+<p>P<span class="smallerfont">OS</span>. A hat! I never heard of anything so absurd in all
+my life.</p>
+
+<p>P<span class="smallerfont">EGGY</span>. But it’s a very peculiar hat—what they call a
+wide-awake—a green one. (P<span class="smallerfont">OSTLETHWAITE</span><i> here slowly
+raises his hand and feels his head, then looks about him. </i>R<span
+class="smallerfont">ATCLIFFE</span><i> notices his movements</i>)</p>
+
+<p>P<span class="smallerfont">EGGY</span>. Sergeant Jones found it under the window; but
+that’s not all—he says that the robber in making his escape must have fallen into the
+green house, and that probably his clothes may have been cut, or that pieces of glass may
+be sticking in him. (P<span class="smallerfont">OS</span>.<i> falls behind—gives a sudden
+start of pain—then examines his coat tails and finds one of them torn, fixes his hand on
+it. </i>R<span class="smallerfont">ATCLIFFE</span><i> still observing him</i>) But that’s
+not all, there are footmarks on the gravel walk, and as the gravel was only laid down
+yesterday, Sergeant Jones says that some of it must be sticking to his boots. (<i>here
+</i>P<span class="smallerfont">OSTLETHWAITE</span><i> begins shuffling with his feet
+about, which he keeps up incessantly</i>) But that’s not all! as Joe Podger, the
+blacksmith was going to his work this morning, he saw a man, a little short man, he says,
+(P<span class="smallerfont">OSTLETHWAITE</span><i> draws himself up and crosses to <span
+class="stage">C.</span></i>) drop from that window, and he says he should know him again
+among a thousand.</p>
+
+<p>P<span class="smallerfont">OS</span>. Oh lud! (<i>slightly staggering</i>)</p>
+
+<p>R<span class="smallerfont">AT</span>. (<i>trying to check a laugh</i>) What’s the
+matter, my dear fellow? here sit down. (<i>making </i>P<span
+class="smallerfont">OS</span>.<i> sit down, who utters a cry of pain and jumps up again,
+then seeing </i>R<span class="smallerfont">AT</span>.<i> and </i>P<span
+class="smallerfont">EG</span>.<i> looking at him, begins shuffling his feet about again,
+and keeping his hand on his coat tail</i>)</p>
+
+<p>R<span class="smallerfont">AT</span>. (<i>to </i>P<span class="smallerfont">EG</span>.)
+Tell Sergeant Jones from me to act upon the information he has got without one moment’s
+loss of time; run, fly! (P<span class="smallerfont">EGGY</span><i> trots out at door,
+<span class="stage">L.&nbsp;U.&nbsp;E.</span></i>)</p>
+
+<p>R<span class="smallerfont">AT</span>. (<i>to </i>P<span
+class="smallerfont">OS.</span><i> and slapping him on the shoulder</i>) This is famous
+news indeed, eh?</p>
+
+<p>P<span class="smallerfont">OS</span>. Yes, glorious news, though for my part I can’t
+see that there’s anything at all in finding a wide-a-wake—any man might lose his
+wide-a-wake—I might lose mine, and it might be a green wide-a-wake.</p>
+
+<p>R<span class="smallerfont">AT</span>. Heaven forbid, for I should immediately arrest
+you, my dear friend, but what of that? your charming cousin is too well aware of your
+intense affection.</p>
+
+<p>P<span class="smallerfont">OS</span>. What d’ye mean by <i>intense affection?</i> As I
+said before, I respect her—I like her, but—</p>
+
+<p>R<span class="smallerfont">AT</span>. But what?</p>
+
+<p>P<span class="smallerfont">OS</span>. (<i>grasping </i>R<span
+class="smallerfont">ATCLIFFE</span>’<span class="smallerfont">S</span><i> hand and
+assuming a desperate tone and manner</i>) The dreadful truth must be spoken! I’m a
+rascal—I<span class="pagenum"><a class="newpage" id="page-19">[Pg 19]</a></span> love
+another—the interesting widow of a large straw bonnet maker. When I say large, I don’t
+allude to the bonnet maker, but the business—and shall I basely forsake the confiding
+woman who has placed all her straw bonnets—I mean all her happiness in my hands?—No!
+though my cousin <i>will</i> soon have her £15,000 again.</p>
+
+<p>R<span class="smallerfont">AT</span>. That’s very doubtful.</p>
+
+<p>P<span class="smallerfont">OS</span>. No such thing. I’m certain of it, and so are you;
+still, never, never shall it be said of Postlethwaite, that he was actuated by the love of
+filthy lucre—so you’ll wish her good bye for me, won’t you?</p>
+
+<p>R<span class="smallerfont">AT</span>. Stay. Suppose you write a few lines to her,
+stating your reasons for renouncing her hand, and I’ll deliver the letter to her.</p>
+
+<p>P<span class="smallerfont">OS</span>. I’ll do it at once, (<i>aside</i>) and
+considering that there’s very little chance of Cousin Somerton’s seeing a shilling of her
+money again, and a very considerable chance of my getting into trouble; the sooner I make
+my way back to Arabella Row, Pimlico, the better. (<i>goes into room, <span
+class="stage">R.</span>&nbsp;<span class="normal">2</span>&nbsp;<span
+class="stage">E.</span></i>)</p>
+
+<p>R<span class="smallerfont">AT</span>. (<i>anxiously</i>) <i>Will</i> he write to her?
+will he, indeed, renounce her hand?</p>
+
+<p class="entrance"><i>Enter</i> M<span class="smallerfont">RS</span>. S<span
+class="smallerfont">OMERTON</span>, <span class="stage">L.</span></p>
+
+<p>M<span class="smallerfont">RS</span>. S. (<i>aside</i>) Still here, ’tis well; and now,
+Captain Ratcliffe, it is my turn to frighten you.</p>
+
+<p>R<span class="smallerfont">AT</span>. (<i>resuming his official manner</i>) Well,
+madam, have you found this important paper?</p>
+
+<p>M<span class="smallerfont">RS</span>. S. Yes, sir, but conceive my annoyance, when
+instead of a receipt, as I anticipated, I found the paper consisted of a few wretched
+insipid verses; intended to be very complimentary, no doubt, but commonplace in the
+extreme.</p>
+
+<p>R<span class="smallerfont">AT</span>. (<i>aside</i>) This is pleasant. I thought they
+were remarkably pretty verses. (<i>aloud</i>) Might I be favoured with a perusal of
+them?</p>
+
+<p>M<span class="smallerfont">RS</span>. S. Unfortunately, a near neighbour of mine, a
+<i>magistrate</i> happened to look in, and thinking it would forward the ends of justice,
+I placed the paper in his hands.</p>
+
+<p>R<span class="smallerfont">AT</span>. A magistrate?</p>
+
+<p>M<span class="smallerfont">RS</span>. S. Yes, who on looking at it, suddenly exclaimed,
+“I cannot be mistaken—no, I’ll swear to the handwriting.”</p>
+
+<p>R<span class="smallerfont">AT</span>. Indeed! (<i>aside</i>) The devil! (<i>aloud</i>)
+and his name is——</p>
+
+<p>M<span class="smallerfont">RS</span>. S. Boldwig.</p>
+
+<p>R<span class="smallerfont">AT</span>. Boldwig! (<i>aside</i>) My old colonel, damn it,
+I’ve written a hundred letters to him.</p>
+
+<p>M<span class="smallerfont">RS</span>. S. The colonel fancies the robber may be still
+concealed on the premises.</p>
+
+<p>R<span class="smallerfont">AT</span>. (<i>forcing a laugh</i>) Ha, ha! Still on the
+premises, a very likely matter.</p>
+
+<p>M<span class="smallerfont">RS</span>. S. Why not? So bold and impudent a villain, as
+you very properly designate him. How fortunate it was that I remembered the existence of
+that “important paper.”</p>
+
+<p>R<span class="smallerfont">AT</span>. Yes, it was a very brilliant idea of yours,
+indeed.</p>
+
+<p>M<span class="smallerfont">RS</span>. S. And how still more fortunate that Colonel
+Boldwig at<span class="pagenum"><a class="newpage" id="page-20">[Pg 20]</a></span> once
+recognised the handwriting, for of course it will infallibly lead to the capture of the
+unconscionable scoundrel, as you very properly called him.</p>
+
+<p>R<span class="smallerfont">AT</span>. (<i>rather nettled</i>) You seem remarkably
+anxious to punish this unhappy misguided being, ma’am.</p>
+
+<p>M<span class="smallerfont">RS</span>. S. Heyday! did you not say to me, just now,
+“Madam, as the representative of the law, I tell you that it matters not what his social
+position may be; we must not mince matters.” (<i>imitating </i>R<span
+class="smallerfont">ATCLIFFE</span>’<span class="smallerfont">S</span><i> manner.</i>)</p>
+
+<p>R<span class="smallerfont">AT</span>. (<i>aside</i>) She’s laughing at me, that’s quite
+clear. (<i>aloud</i>) Of course not; but—but—(<i>drawing his chair closer to </i>M<span
+class="smallerfont">RS</span>. S<span
+class="smallerfont">OMERTON</span>)—but—(<i>aside</i>) Pon my life it requires more
+courage than I imagined. (<i>aloud</i>) I was about to observe that the circumstances
+attending this robbery are so—so whimsical.</p>
+
+<p>M<span class="smallerfont">RS</span>. S. Whimsical?</p>
+
+<p>R<span class="smallerfont">AT</span>. No, not whimsical, eccentric! that one is almost
+inclined to ascribe it to some other motive.</p>
+
+<p>M<span class="smallerfont">RS</span>. S. (<i>aside</i>) We are coming to it by degrees;
+(<i>aloud</i>) and pray, sir, what other motive can your lively imagination suggest?</p>
+
+<p>R<span class="smallerfont">AT</span>. (<i>drawing still nearer, and after a short
+hesitation, then in a low and impassioned tone</i>) Love!</p>
+
+<p>M<span class="smallerfont">RS</span>. S. (<i>aside and smiling</i>) At last.
+(<i>aloud</i>) Love! ha, ha, ha! Love of bank notes!</p>
+
+<p>R<span class="smallerfont">AT</span>. (<i>earnestly</i>) No. Love for you. Yes, madam,
+cannot you imagine an admiration so boundless—a passion so irresistible, that it might
+prompt a man?</p>
+
+<p>M<span class="smallerfont">RS</span>. S. To rob me of £15,000, and frighten me out of
+senses into the bargain.</p>
+
+<p>R<span class="smallerfont">AT</span>. (<i>still more earnestly</i>) Yes, madam, if by
+so doing, if by apparently reducing the woman to poverty, he hoped to obtain a voluntary
+resignation of her hand from a rival, who loves her for her fortune only.</p>
+
+<p>M<span class="smallerfont">RS</span>. S. Really, Captain Ratcliffe, I must confess you
+have imagined a marvellous pleasant love story.</p>
+
+<p>R<span class="smallerfont">AT</span>. Not more marvellous than true. Here are the
+proofs, (<i>gives pocket book to </i>M<span class="smallerfont">RS</span>. S<span
+class="smallerfont">OMERTON</span>) and now think, madam, what a love must that man’s be
+who could thus risk his name, character, and reputation, with the sole hope of preserving
+you your liberty.</p>
+
+<p>M<span class="smallerfont">RS</span>. S. But unfortunately the denouement of this
+romance of real life is wanting; the rival does not resign the lady’s hand.</p>
+
+<p>R<span class="smallerfont">AT</span>. (<i>aside, and looking towards room, <span
+class="stage">R.</span>&nbsp;<span class="normal">2</span>&nbsp;<span
+class="stage">E.</span></i>) Why the devil doesn’t he make haste with the letters? (P<span
+class="smallerfont">OSTLETHWAITE</span><i> looks in at the door</i>)</p>
+
+<p>M<span class="smallerfont">RS</span>. S. (<i>catching a glimpse of him</i>) No, sir, I
+know my cousin too well—he loves me too dearly to care about my loss of fortune; <i>he</i>
+will be only too happy to work for me, toil for me, slave for me.</p>
+
+<p>P<span class="smallerfont">OS</span>. (<i>at door</i>) Will he! (<i>disappears</i>)</p>
+
+<p>M<span class="smallerfont">RS</span>. S. He will never resign the hand of her he loves,
+beggared though she be. (<i>here </i>P<span class="smallerfont">OSTLETHWAITE</span><i>
+comes out of room cautiously, slips the letter into </i>R<span
+class="smallerfont">ATCLIFFE</span>’<span class="smallerfont">S</span><i> hand, and runs
+out at door, <span class="stage">L.&nbsp;C.</span></i>)</p>
+
+<p>R<span class="smallerfont">AT</span>. (<i>presenting letter to </i>M<span
+class="smallerfont">RS</span>. S<span class="smallerfont">OMERTON</span>) From Mr.
+Percy<span class="pagenum"><a class="newpage" id="page-21">[Pg 21]</a></span>
+Postlethwaite, madam. (<i>aside</i>) If he has deceived me I’ll make Arabella Row,
+Pimlico, the scene of a terrific drama.</p>
+
+<p>M<span class="smallerfont">RS</span>. S. (<i>reading letter</i>) “Ever beloved cousin,
+I need not say that the loss of your fortune is nothing to me——” (<i>to </i>R<span
+class="smallerfont">ATCLIFFE</span>) You hear?</p>
+
+<p>R<span class="smallerfont">AT</span>. (<i>aside</i>) The devil take him!</p>
+
+<p>M<span class="smallerfont">RS</span>. S. (<i>reading</i>) “——But as the presence of a
+handsome, dashing young man like Captain Ratcliffe, under your roof in the middle of the
+night will necessarily afford materials for all the scandal mongers in the neighbourhood,
+I reluctantly tear your image from my heart, and bid you farewell for ever."</p>
+
+<p>R<span class="smallerfont">AT</span>. Then you are free—free to bestow your heart, your
+hand!</p>
+
+<p>M<span class="smallerfont">RS</span>. S. Nay, sir, what if my heart were no longer at
+my disposal? (R<span class="smallerfont">ATCLIFFE</span><i> starts</i>) What if it had
+long since been given to one who once preserved my life at the peril of his own, and whose
+letters faithfully preserved (<i>slowly and with emotion drawing forth a packet of letters
+from her bosom, and looking down</i>) enabled me to recognise his handwriting.</p>
+
+<p>R<span class="smallerfont">AT</span>. Can it be possible? (<i>with rapture</i>)</p>
+
+<p>M<span class="smallerfont">RS</span>. S. That I have been taking my revenge on you for
+the last half hour without your perceiving it! (<i>holding out her hand</i>)</p>
+
+<p>R<span class="smallerfont">AT</span>. Oh, madam! (<i>kissing her hand</i>)</p>
+
+<p>M<span class="smallerfont">RS</span>. S. Hark! (<i>noise without</i>)</p>
+
+<p>D<span class="smallerfont">AVID</span>. (<i>without</i>) Bring him along—if he won’t
+come agreeable, drag him in by the hair of his head.</p>
+
+<p class="direction"><i>Enter </i>D<span class="smallerfont">AVID</span><i>, running,
+<span class="stage">L.&nbsp;C.</span>, and dragging in </i>P<span
+class="smallerfont">OSTLETHWAITE</span><i>, his dress disordered, </i>D<span
+class="smallerfont">AVID</span><i> carries a green wide-awake in his hand—</i>P<span
+class="smallerfont">EGGY</span><i> following.</i></p>
+
+<p>D<span class="smallerfont">AV</span>. Here, missus, we’ve got the robber.</p>
+
+<p>M<span class="smallerfont">RS</span>. S. (<i>holding </i>R<span
+class="smallerfont">ATCLIFFE</span>’<span class="smallerfont">S</span> <i>hand</i>) So
+have I!</p>
+
+<p>D<span class="smallerfont">AVID</span>. Here be the desperate villain, ma’am, and here
+be his desperate green wide-awake; (<i>shewing hat</i>) and what’s more, we won’t let him
+go.</p>
+
+<p>M<span class="smallerfont">RS</span>. S. No more will I! (<i>seeing </i>P<span
+class="smallerfont">OSTLE</span>.) Cousin Postlethwaite!</p>
+
+<p>P<span class="smallerfont">EGGY</span>. (<i>running forward</i>) Lawks! yes—so it be.
+Oh, Master Percy! (<i>throwing her arms round </i>P<span
+class="smallerfont">OSTLETHWAITE</span>)</p>
+
+<p>P<span class="smallerfont">OS</span>. (<i>throwing her off</i>) Don’t be a fool, Peggy.
+As I said before, it rumples one’s front.</p>
+
+<p>M<span class="smallerfont">RS</span>. S. (<i>making a sign, all come forward and
+surround her</i>) My good friends, you need give yourselves no further trouble, I have
+recovered my property. My fifteen thousand pounds are here.</p>
+
+<p class="direction_2">(<i>shows pocket book</i>)</p>
+
+<p>P<span class="smallerfont">OS</span>. You don’t mean that! (<i>very tenderly</i>) Oh,
+my ever beloved cousin! (<i>aside to </i>R<span class="smallerfont">ATCLIFFE</span>)
+Where’s my letter? (<i>again to </i>M<span class="smallerfont">RS</span>. S<span
+class="smallerfont">OMERTON</span><i>, and still more tenderly</i>) I repeat—oh, my ever
+beloved cousin! (<i>again aside to </i>R<span class="smallerfont">ATCLIFFE</span>) Where’s
+my letter?</p>
+
+<p>R<span class="smallerfont">AT</span>. (<i>aside to him</i>) I gave it to Mrs.
+Somerton—it’s all right.</p>
+
+<p>P<span class="smallerfont">OS</span>. All right! I’m horribly afraid it’s all
+wrong!</p>
+
+<p>M<span class="smallerfont">RS</span>. S. Yes, cousin, I’ve read your cruel words, and
+as it seems you won’t have me—— (<i>with affected grief</i>)</p>
+
+<p><span class="pagenum"><a class="newpage" id="page-22">[Pg 22]</a></span></p>
+
+<p>P<span class="smallerfont">OS</span>. But I will. (<i>very tenderly</i>) Dry your tears
+ever-beloved one—I <i>will</i> have you.</p>
+
+<p>M<span class="smallerfont">RS</span>. S. What, in spite of the presence of a fine
+dashing young man under my roof in the middle of the night—eh, cousin?</p>
+
+<p>P<span class="smallerfont">OS</span>. (<i>still very tenderly</i>) What of that? I’m
+not so very particular.</p>
+
+<p>M<span class="smallerfont">RS</span>. S. But think of the scandal mongers of the
+neighbourhood—eh, cousin?</p>
+
+<p>P<span class="smallerfont">OS</span>. Never mind—I’m desperate!</p>
+
+<p>M<span class="smallerfont">RS</span>. S. So am I—and, therefore, as the only means of
+preserving my reputation, I gave my hand to him who has compromised it.</p>
+
+<p class="direction_2">(<i>giving her hand to </i>R<span
+class="smallerfont">ATCLIFFE</span>.)</p>
+
+<p>P<span class="smallerfont">OS</span>. What, Charley Ratcliffe?</p>
+
+<p>P<span class="smallerfont">EGGY</span>. (<i>aside</i>) Then that’s Mr. C. R. after
+all.</p>
+
+<p>R<span class="smallerfont">AT</span>. (<i>to </i>P<span
+class="smallerfont">OSTLETHWAITE</span>) Yes, my dear friend, the gigantic housebreaker,
+seven feet high, with two pair of pistols in each of his brawny hands, stands before
+you.</p>
+
+<p>P<span class="smallerfont">OS</span>. You? Poo—poo! Where are your whiskers?—where’s
+your imperial?</p>
+
+<p>R<span class="smallerfont">AT</span>. In my pocket—ha, ha!</p>
+
+<p>P<span class="smallerfont">OS</span>. (<i>after a short pause</i>) I say, Master
+Charley, what sort of a game have you been playing here?</p>
+
+<p>M<span class="smallerfont">RS</span>. S. (<i>smiling</i>) A game of fright.</p>
+
+<p>P<span class="smallerfont">OS</span>. Ecod, it’s more like “Beat my neighbour out of
+doors!”</p>
+
+<p>R<span class="smallerfont">AT</span>. At any rate, I have secured this lady for my
+<i>partner,</i> and for such a prize who would not play “A D<span
+class="smallerfont">ESPERATE</span> G<span class="smallerfont">AME</span>.”</p>
+
+<p class="end_of_play">CURTAIN.</p>
+
+<p><br />
+<br />
+<br />
+<br /></p>
+
+<p class="center tinyfont">PRINTED BY THOMAS SCOTT, WARWICK COURT, HOLBORN.</p>
+
+</div>
+
+<div class="pagebreak"></div>
+
+<div class="chapter" id="Transcribers_Note" title="Transcriber’s Note">
+
+<div class="tnote">
+<h3 class="tnote" id="tnote">Transcriber’s Note</h3>
+
+<p>This transcription is based on images digitized by Google from a copy held by Shields
+Special Collections of the University of California, Davis Library. The images are
+available through the HathiTrust Digital Library at:</p>
+
+<p class="center"><a
+href="http://catalog.hathitrust.org/Record/007431700">catalog.hathitrust.org/Record/
+007431700</a></p>
+
+<p>In general, I have retained variant spellings (e.g., “tarletan”, “trowsers”, “does’nt”,
+“her’s”, and “your’s”) and the idiosyncrasies of the original punctuation. However, for
+the sake of consistency and to correct obvious errors, the following changes were
+made:</p>
+
+<ul>
+<li>The spacing of the abbreviations for the entrances and exits has been made
+consistent.</li>
+
+<li>p. 2: M<span class="smallerfont">RS</span>. S<span
+class="smallerfont">OMERTON</span>,—Green tarletan ball dress—Changed comma to a period
+for consistency.</li>
+
+<li>p. 4: R<span class="smallerfont">AT</span>. By all means, David. (<i>aside</i>) he
+does’nt know me.—Capitalized “he”.</li>
+
+<li>p. 9: for the amount at once (<i>taking a piece</i>—Inserted a period after
+“once”.</li>
+
+<li>p. 9: I had taken that <i>little precaution</i> against interruption (<i>resumes his
+writing</i>)—Inserted a period after “interruption”.</li>
+
+<li>p. 11: <i>makes a profound bow, and exits, <span
+class="stage">L.&nbsp;U.&nbsp;E</span></i>)—Inserted a period after “<span
+class="stage">E</span>”.</li>
+
+<li>p. 12: I’ll run for him this monent,—Changed “monent” to “moment”.</li>
+
+<li>p. 12: no, my friend (<i>running to door, <span class="stage">L.&nbsp;C.</span></i>)
+Holloa,—Inserted a period after “friend”.</li>
+
+<li>p. 12: <i>to ring the bell</i>, and the bell rope’s cut—Changed the comma to a closing
+parenthesis.</li>
+
+<li>p. 12: raise an alarm at all events (<i>pulling both triggers</i>—Inserted a period
+after “events”.</li>
+
+<li>p. 12: Oh, if I had only known that (<i>about to get out at the window</i>)—Inserted a
+period after “that”.</li>
+
+<li>p. 14: P<span class="smallerfont">OS</span>. (<i>pulling him back</i>) you can’t till
+your successor is appointed.—Capitalized “you”.</li>
+
+<li>p. 14: That’s right—you must know then (<i>seats himself</i>)—Inserted a period after
+“then”.</li>
+
+<li>p. 15: My cousin, Captain Ratcliffe (<i>introducing them.</i>—Inserted a period after
+“Ratcliffe”.</li>
+
+<li>p. 15: R<span class="smallerfont">AT</span>. True! smiling.—“smiling” is a stage
+direction, so this line has been changed to: “R<span class="smallerfont">AT</span>. True!
+(<i>smiling</i>)”</li>
+
+<li>p. 16: R<span class="smallerfont">AT</span>. (<i>smiling again</i>) True,—Comma
+changed to a period.</li>
+
+<li>p. 16: P<span class="smallerfont">OS</span>. Yes, yes, (<i>aside to him</i>) That’ll
+do—she can’t bear it.—Changed comma after second “yes” to a period.</li>
+
+<li>p. 16: R<span class="smallerfont">AT</span>. (<i>to <span class="normal">Mrs.
+S.</span></i>) Bank notes, I presume?—“Mrs.” changed to small caps in the html version and
+all caps in the text version for consistency.</li>
+
+<li>p. 16: this bold and impudent villain. (R<span class="smallerfont">ATCLIFFE</span>
+<i>slightly starts</i>) treating the matter as—Changed period after “villain” to a
+comma.</li>
+
+<li>p. 17: Lor, Master Percy, is that you? <i>throwing her arms</i>—Inserted a beginning
+parenthesis before “throwing”.</li>
+
+<li>p. 17: Lor love’ee, (<i>about to embrace him again.</i>—Changed comma after “love’ee”
+to a period.</li>
+
+<li>p. 18: here sit down, (<i>making <span class="normal">P<span
+class="smallerfont">OS</span>.</span> sit down</i>—Changed comma to a period.</li>
+
+<li>p. 18: run, fly! P<span class="smallerfont">EGGY</span> <i>trots out at
+door</i>—Inserted a beginning parenthesis before “P<span
+class="smallerfont">EGGY</span>”.</li>
+
+<li>p. 18: R<span class="smallerfont">AT</span> (<i>to <span class="normal">P<span
+class="smallerfont">OS</span>.</span> and slapping him on the shoulder</i>)—Inserted a
+period after “R<span class="smallerfont">AT</span>”.</li>
+
+<li>p. 19: P<span class="smallerfont">OS</span>. I’ll do it at once, (<i>aside</i>) amd
+considering—Changed “amd” to “and”.</li>
+
+<li>p. 19: The devil! (<i>aloud</i>) and is name is——Changed first “is” to
+“his”.&nbsp;</li>
+
+<li>p. 20: we must not mince matters. (<i>imitating </i>R<span
+class="smallerfont">ATCLIFFE</span>’<span class="smallerfont">S</span><i>
+manner.</i>)—Inserted closing quotation mark after “matters.”</li>
+
+<li>p. 20: more courage than I imagined. I was about to observe—Inserted “(<i>aloud</i>)”
+after “than I imagined.”</li>
+</ul>
+</div>
+</div>
+</div>
+
+
+
+
+
+
+
+<pre>
+
+
+
+
+
+End of Project Gutenberg's A Desperate Game, by John Maddison Morton
+
+*** END OF THIS PROJECT GUTENBERG EBOOK A DESPERATE GAME ***
+
+***** This file should be named 45628-h.htm or 45628-h.zip *****
+This and all associated files of various formats will be found in:
+        http://www.gutenberg.org/4/5/6/2/45628/
+
+Produced by Paul Haxo from page images generously made
+available by the University of California, the HathiTrust
+Digital Library, and Google.
+
+
+Updated editions will replace the previous one--the old editions
+will be renamed.
+
+Creating the works from public domain print editions means that no
+one owns a United States copyright in these works, so the Foundation
+(and you!) can copy and distribute it in the United States without
+permission and without paying copyright royalties.  Special rules,
+set forth in the General Terms of Use part of this license, apply to
+copying and distributing Project Gutenberg-tm electronic works to
+protect the PROJECT GUTENBERG-tm concept and trademark.  Project
+Gutenberg is a registered trademark, and may not be used if you
+charge for the eBooks, unless you receive specific permission.  If you
+do not charge anything for copies of this eBook, complying with the
+rules is very easy.  You may use this eBook for nearly any purpose
+such as creation of derivative works, reports, performances and
+research.  They may be modified and printed and given away--you may do
+practically ANYTHING with public domain eBooks.  Redistribution is
+subject to the trademark license, especially commercial
+redistribution.
+
+
+
+*** START: FULL LICENSE ***
+
+THE FULL PROJECT GUTENBERG LICENSE
+PLEASE READ THIS BEFORE YOU DISTRIBUTE OR USE THIS WORK
+
+To protect the Project Gutenberg-tm mission of promoting the free
+distribution of electronic works, by using or distributing this work
+(or any other work associated in any way with the phrase "Project
+Gutenberg"), you agree to comply with all the terms of the Full Project
+Gutenberg-tm License available with this file or online at
+  www.gutenberg.org/license.
+
+
+Section 1.  General Terms of Use and Redistributing Project Gutenberg-tm
+electronic works
+
+1.A.  By reading or using any part of this Project Gutenberg-tm
+electronic work, you indicate that you have read, understand, agree to
+and accept all the terms of this license and intellectual property
+(trademark/copyright) agreement.  If you do not agree to abide by all
+the terms of this agreement, you must cease using and return or destroy
+all copies of Project Gutenberg-tm electronic works in your possession.
+If you paid a fee for obtaining a copy of or access to a Project
+Gutenberg-tm electronic work and you do not agree to be bound by the
+terms of this agreement, you may obtain a refund from the person or
+entity to whom you paid the fee as set forth in paragraph 1.E.8.
+
+1.B.  "Project Gutenberg" is a registered trademark.  It may only be
+used on or associated in any way with an electronic work by people who
+agree to be bound by the terms of this agreement.  There are a few
+things that you can do with most Project Gutenberg-tm electronic works
+even without complying with the full terms of this agreement.  See
+paragraph 1.C below.  There are a lot of things you can do with Project
+Gutenberg-tm electronic works if you follow the terms of this agreement
+and help preserve free future access to Project Gutenberg-tm electronic
+works.  See paragraph 1.E below.
+
+1.C.  The Project Gutenberg Literary Archive Foundation ("the Foundation"
+or PGLAF), owns a compilation copyright in the collection of Project
+Gutenberg-tm electronic works.  Nearly all the individual works in the
+collection are in the public domain in the United States.  If an
+individual work is in the public domain in the United States and you are
+located in the United States, we do not claim a right to prevent you from
+copying, distributing, performing, displaying or creating derivative
+works based on the work as long as all references to Project Gutenberg
+are removed.  Of course, we hope that you will support the Project
+Gutenberg-tm mission of promoting free access to electronic works by
+freely sharing Project Gutenberg-tm works in compliance with the terms of
+this agreement for keeping the Project Gutenberg-tm name associated with
+the work.  You can easily comply with the terms of this agreement by
+keeping this work in the same format with its attached full Project
+Gutenberg-tm License when you share it without charge with others.
+
+1.D.  The copyright laws of the place where you are located also govern
+what you can do with this work.  Copyright laws in most countries are in
+a constant state of change.  If you are outside the United States, check
+the laws of your country in addition to the terms of this agreement
+before downloading, copying, displaying, performing, distributing or
+creating derivative works based on this work or any other Project
+Gutenberg-tm work.  The Foundation makes no representations concerning
+the copyright status of any work in any country outside the United
+States.
+
+1.E.  Unless you have removed all references to Project Gutenberg:
+
+1.E.1.  The following sentence, with active links to, or other immediate
+access to, the full Project Gutenberg-tm License must appear prominently
+whenever any copy of a Project Gutenberg-tm work (any work on which the
+phrase "Project Gutenberg" appears, or with which the phrase "Project
+Gutenberg" is associated) is accessed, displayed, performed, viewed,
+copied or distributed:
+
+This eBook is for the use of anyone anywhere at no cost and with
+almost no restrictions whatsoever.  You may copy it, give it away or
+re-use it under the terms of the Project Gutenberg License included
+with this eBook or online at www.gutenberg.org
+
+1.E.2.  If an individual Project Gutenberg-tm electronic work is derived
+from the public domain (does not contain a notice indicating that it is
+posted with permission of the copyright holder), the work can be copied
+and distributed to anyone in the United States without paying any fees
+or charges.  If you are redistributing or providing access to a work
+with the phrase "Project Gutenberg" associated with or appearing on the
+work, you must comply either with the requirements of paragraphs 1.E.1
+through 1.E.7 or obtain permission for the use of the work and the
+Project Gutenberg-tm trademark as set forth in paragraphs 1.E.8 or
+1.E.9.
+
+1.E.3.  If an individual Project Gutenberg-tm electronic work is posted
+with the permission of the copyright holder, your use and distribution
+must comply with both paragraphs 1.E.1 through 1.E.7 and any additional
+terms imposed by the copyright holder.  Additional terms will be linked
+to the Project Gutenberg-tm License for all works posted with the
+permission of the copyright holder found at the beginning of this work.
+
+1.E.4.  Do not unlink or detach or remove the full Project Gutenberg-tm
+License terms from this work, or any files containing a part of this
+work or any other work associated with Project Gutenberg-tm.
+
+1.E.5.  Do not copy, display, perform, distribute or redistribute this
+electronic work, or any part of this electronic work, without
+prominently displaying the sentence set forth in paragraph 1.E.1 with
+active links or immediate access to the full terms of the Project
+Gutenberg-tm License.
+
+1.E.6.  You may convert to and distribute this work in any binary,
+compressed, marked up, nonproprietary or proprietary form, including any
+word processing or hypertext form.  However, if you provide access to or
+distribute copies of a Project Gutenberg-tm work in a format other than
+"Plain Vanilla ASCII" or other format used in the official version
+posted on the official Project Gutenberg-tm web site (www.gutenberg.org),
+you must, at no additional cost, fee or expense to the user, provide a
+copy, a means of exporting a copy, or a means of obtaining a copy upon
+request, of the work in its original "Plain Vanilla ASCII" or other
+form.  Any alternate format must include the full Project Gutenberg-tm
+License as specified in paragraph 1.E.1.
+
+1.E.7.  Do not charge a fee for access to, viewing, displaying,
+performing, copying or distributing any Project Gutenberg-tm works
+unless you comply with paragraph 1.E.8 or 1.E.9.
+
+1.E.8.  You may charge a reasonable fee for copies of or providing
+access to or distributing Project Gutenberg-tm electronic works provided
+that
+
+- You pay a royalty fee of 20% of the gross profits you derive from
+     the use of Project Gutenberg-tm works calculated using the method
+     you already use to calculate your applicable taxes.  The fee is
+     owed to the owner of the Project Gutenberg-tm trademark, but he
+     has agreed to donate royalties under this paragraph to the
+     Project Gutenberg Literary Archive Foundation.  Royalty payments
+     must be paid within 60 days following each date on which you
+     prepare (or are legally required to prepare) your periodic tax
+     returns.  Royalty payments should be clearly marked as such and
+     sent to the Project Gutenberg Literary Archive Foundation at the
+     address specified in Section 4, "Information about donations to
+     the Project Gutenberg Literary Archive Foundation."
+
+- You provide a full refund of any money paid by a user who notifies
+     you in writing (or by e-mail) within 30 days of receipt that s/he
+     does not agree to the terms of the full Project Gutenberg-tm
+     License.  You must require such a user to return or
+     destroy all copies of the works possessed in a physical medium
+     and discontinue all use of and all access to other copies of
+     Project Gutenberg-tm works.
+
+- You provide, in accordance with paragraph 1.F.3, a full refund of any
+     money paid for a work or a replacement copy, if a defect in the
+     electronic work is discovered and reported to you within 90 days
+     of receipt of the work.
+
+- You comply with all other terms of this agreement for free
+     distribution of Project Gutenberg-tm works.
+
+1.E.9.  If you wish to charge a fee or distribute a Project Gutenberg-tm
+electronic work or group of works on different terms than are set
+forth in this agreement, you must obtain permission in writing from
+both the Project Gutenberg Literary Archive Foundation and Michael
+Hart, the owner of the Project Gutenberg-tm trademark.  Contact the
+Foundation as set forth in Section 3 below.
+
+1.F.
+
+1.F.1.  Project Gutenberg volunteers and employees expend considerable
+effort to identify, do copyright research on, transcribe and proofread
+public domain works in creating the Project Gutenberg-tm
+collection.  Despite these efforts, Project Gutenberg-tm electronic
+works, and the medium on which they may be stored, may contain
+"Defects," such as, but not limited to, incomplete, inaccurate or
+corrupt data, transcription errors, a copyright or other intellectual
+property infringement, a defective or damaged disk or other medium, a
+computer virus, or computer codes that damage or cannot be read by
+your equipment.
+
+1.F.2.  LIMITED WARRANTY, DISCLAIMER OF DAMAGES - Except for the "Right
+of Replacement or Refund" described in paragraph 1.F.3, the Project
+Gutenberg Literary Archive Foundation, the owner of the Project
+Gutenberg-tm trademark, and any other party distributing a Project
+Gutenberg-tm electronic work under this agreement, disclaim all
+liability to you for damages, costs and expenses, including legal
+fees.  YOU AGREE THAT YOU HAVE NO REMEDIES FOR NEGLIGENCE, STRICT
+LIABILITY, BREACH OF WARRANTY OR BREACH OF CONTRACT EXCEPT THOSE
+PROVIDED IN PARAGRAPH 1.F.3.  YOU AGREE THAT THE FOUNDATION, THE
+TRADEMARK OWNER, AND ANY DISTRIBUTOR UNDER THIS AGREEMENT WILL NOT BE
+LIABLE TO YOU FOR ACTUAL, DIRECT, INDIRECT, CONSEQUENTIAL, PUNITIVE OR
+INCIDENTAL DAMAGES EVEN IF YOU GIVE NOTICE OF THE POSSIBILITY OF SUCH
+DAMAGE.
+
+1.F.3.  LIMITED RIGHT OF REPLACEMENT OR REFUND - If you discover a
+defect in this electronic work within 90 days of receiving it, you can
+receive a refund of the money (if any) you paid for it by sending a
+written explanation to the person you received the work from.  If you
+received the work on a physical medium, you must return the medium with
+your written explanation.  The person or entity that provided you with
+the defective work may elect to provide a replacement copy in lieu of a
+refund.  If you received the work electronically, the person or entity
+providing it to you may choose to give you a second opportunity to
+receive the work electronically in lieu of a refund.  If the second copy
+is also defective, you may demand a refund in writing without further
+opportunities to fix the problem.
+
+1.F.4.  Except for the limited right of replacement or refund set forth
+in paragraph 1.F.3, this work is provided to you 'AS-IS', WITH NO OTHER
+WARRANTIES OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO
+WARRANTIES OF MERCHANTABILITY OR FITNESS FOR ANY PURPOSE.
+
+1.F.5.  Some states do not allow disclaimers of certain implied
+warranties or the exclusion or limitation of certain types of damages.
+If any disclaimer or limitation set forth in this agreement violates the
+law of the state applicable to this agreement, the agreement shall be
+interpreted to make the maximum disclaimer or limitation permitted by
+the applicable state law.  The invalidity or unenforceability of any
+provision of this agreement shall not void the remaining provisions.
+
+1.F.6.  INDEMNITY - You agree to indemnify and hold the Foundation, the
+trademark owner, any agent or employee of the Foundation, anyone
+providing copies of Project Gutenberg-tm electronic works in accordance
+with this agreement, and any volunteers associated with the production,
+promotion and distribution of Project Gutenberg-tm electronic works,
+harmless from all liability, costs and expenses, including legal fees,
+that arise directly or indirectly from any of the following which you do
+or cause to occur: (a) distribution of this or any Project Gutenberg-tm
+work, (b) alteration, modification, or additions or deletions to any
+Project Gutenberg-tm work, and (c) any Defect you cause.
+
+
+Section  2.  Information about the Mission of Project Gutenberg-tm
+
+Project Gutenberg-tm is synonymous with the free distribution of
+electronic works in formats readable by the widest variety of computers
+including obsolete, old, middle-aged and new computers.  It exists
+because of the efforts of hundreds of volunteers and donations from
+people in all walks of life.
+
+Volunteers and financial support to provide volunteers with the
+assistance they need are critical to reaching Project Gutenberg-tm's
+goals and ensuring that the Project Gutenberg-tm collection will
+remain freely available for generations to come.  In 2001, the Project
+Gutenberg Literary Archive Foundation was created to provide a secure
+and permanent future for Project Gutenberg-tm and future generations.
+To learn more about the Project Gutenberg Literary Archive Foundation
+and how your efforts and donations can help, see Sections 3 and 4
+and the Foundation information page at www.gutenberg.org
+
+
+Section 3.  Information about the Project Gutenberg Literary Archive
+Foundation
+
+The Project Gutenberg Literary Archive Foundation is a non profit
+501(c)(3) educational corporation organized under the laws of the
+state of Mississippi and granted tax exempt status by the Internal
+Revenue Service.  The Foundation's EIN or federal tax identification
+number is 64-6221541.  Contributions to the Project Gutenberg
+Literary Archive Foundation are tax deductible to the full extent
+permitted by U.S. federal laws and your state's laws.
+
+The Foundation's principal office is located at 4557 Melan Dr. S.
+Fairbanks, AK, 99712., but its volunteers and employees are scattered
+throughout numerous locations.  Its business office is located at 809
+North 1500 West, Salt Lake City, UT 84116, (801) 596-1887.  Email
+contact links and up to date contact information can be found at the
+Foundation's web site and official page at www.gutenberg.org/contact
+
+For additional contact information:
+     Dr. Gregory B. Newby
+     Chief Executive and Director
+     gbnewby@pglaf.org
+
+Section 4.  Information about Donations to the Project Gutenberg
+Literary Archive Foundation
+
+Project Gutenberg-tm depends upon and cannot survive without wide
+spread public support and donations to carry out its mission of
+increasing the number of public domain and licensed works that can be
+freely distributed in machine readable form accessible by the widest
+array of equipment including outdated equipment.  Many small donations
+($1 to $5,000) are particularly important to maintaining tax exempt
+status with the IRS.
+
+The Foundation is committed to complying with the laws regulating
+charities and charitable donations in all 50 states of the United
+States.  Compliance requirements are not uniform and it takes a
+considerable effort, much paperwork and many fees to meet and keep up
+with these requirements.  We do not solicit donations in locations
+where we have not received written confirmation of compliance.  To
+SEND DONATIONS or determine the status of compliance for any
+particular state visit www.gutenberg.org/donate
+
+While we cannot and do not solicit contributions from states where we
+have not met the solicitation requirements, we know of no prohibition
+against accepting unsolicited donations from donors in such states who
+approach us with offers to donate.
+
+International donations are gratefully accepted, but we cannot make
+any statements concerning tax treatment of donations received from
+outside the United States.  U.S. laws alone swamp our small staff.
+
+Please check the Project Gutenberg Web pages for current donation
+methods and addresses.  Donations are accepted in a number of other
+ways including checks, online payments and credit card donations.
+To donate, please visit:  www.gutenberg.org/donate
+
+
+Section 5.  General Information About Project Gutenberg-tm electronic
+works.
+
+Professor Michael S. Hart was the originator of the Project Gutenberg-tm
+concept of a library of electronic works that could be freely shared
+with anyone.  For forty years, he produced and distributed Project
+Gutenberg-tm eBooks with only a loose network of volunteer support.
+
+Project Gutenberg-tm eBooks are often created from several printed
+editions, all of which are confirmed as Public Domain in the U.S.
+unless a copyright notice is included.  Thus, we do not necessarily
+keep eBooks in compliance with any particular paper edition.
+
+Most people start at our Web site which has the main PG search facility:
+
+     www.gutenberg.org
+
+This Web site includes information about Project Gutenberg-tm,
+including how to make donations to the Project Gutenberg Literary
+Archive Foundation, how to help produce our new eBooks, and how to
+subscribe to our email newsletter to hear about new eBooks.
+
+
+</pre>
+
+</body>
+</html>

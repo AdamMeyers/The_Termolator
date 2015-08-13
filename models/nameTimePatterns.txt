@@ -1,0 +1,26 @@
+pattern set names;
+
+enamex		:= [ENAMEX TYPE=NameType];
+
+when enamex	add [constit cat=name pa=[head=NameType number=singular]];
+
+timex		:= relative-day | day-of-week | rel-day-of-week | part-of-day;
+
+relative-day	:= "yesterday" | "today" | "tomorrow";
+
+part-of-day	:= ("early" | "late") (relative-day | day-of-week | rel-day-of-week);
+
+rel-day-of-week	:=  ("last" | "this" | "next") day-of-week;
+
+day-of-week	:= "Monday" | "Tuesday" | "Wednesday" | "Thursday" | "Friday" |
+		   "Saturday" | "Sunday";
+
+when timex	add [constit cat=timex pa=[head=timex]];
+
+pattern set othernames;
+
+other-name	:= [undefinedCap] proper-noun* | [constit cat=initial] proper-noun+;
+
+proper-noun 	:= [undefinedCap] | [constit cat=initial];
+
+when other-name		add [constit cat=name pa=[head=otherName number=singular]];

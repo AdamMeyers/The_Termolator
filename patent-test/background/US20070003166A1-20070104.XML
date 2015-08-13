@@ -1,0 +1,993 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE us-patent-application SYSTEM "us-patent-application-v42-2006-08-23.dtd" [ ]>
+<us-patent-application lang="EN" dtd-version="v4.2 2006-08-23" file="US20070003166A1-20070104.XML" status="PRODUCTION" id="us-patent-application" country="US" date-produced="20061221" date-publ="20070104">
+<us-bibliographic-data-application lang="EN" country="US">
+<publication-reference>
+<document-id>
+<country>US</country>
+<doc-number>20070003166</doc-number>
+<kind>A1</kind>
+<date>20070104</date>
+</document-id>
+</publication-reference>
+<application-reference appl-type="utility">
+<document-id>
+<country>US</country>
+<doc-number>11173766</doc-number>
+<date>20050630</date>
+</document-id>
+</application-reference>
+<us-application-series-code>11</us-application-series-code>
+<classifications-ipcr>
+<classification-ipcr>
+<ipc-version-indicator><date>20060101</date></ipc-version-indicator>
+<classification-level>A</classification-level>
+<section>G</section>
+<class>06</class>
+<subclass>K</subclass>
+<main-group>9</main-group>
+<subgroup>32</subgroup>
+<symbol-position>F</symbol-position>
+<classification-value>I</classification-value>
+<action-date><date>20070104</date></action-date>
+<generating-office><country>US</country></generating-office>
+<classification-status>B</classification-status>
+<classification-data-source>H</classification-data-source>
+</classification-ipcr>
+<classification-ipcr>
+<ipc-version-indicator><date>20060101</date></ipc-version-indicator>
+<classification-level>A</classification-level>
+<section>G</section>
+<class>06</class>
+<subclass>K</subclass>
+<main-group>9</main-group>
+<subgroup>34</subgroup>
+<symbol-position>L</symbol-position>
+<classification-value>I</classification-value>
+<action-date><date>20070104</date></action-date>
+<generating-office><country>US</country></generating-office>
+<classification-status>B</classification-status>
+<classification-data-source>H</classification-data-source>
+</classification-ipcr>
+</classifications-ipcr>
+<classification-national>
+<country>US</country>
+<main-classification>382298000</main-classification>
+<further-classification>382175000</further-classification>
+</classification-national>
+<invention-title id="d0e161">White space graphs and trees for content-adaptive scaling of document images</invention-title>
+<parties>
+<applicants>
+<applicant sequence="00" app-type="applicant-inventor" designation="us-only">
+<addressbook>
+<last-name>Berkner</last-name>
+<first-name>Kathrin</first-name>
+<address>
+<city>Menlo Park</city>
+<state>CA</state>
+<country>US</country>
+</address>
+</addressbook>
+<nationality>
+<country>US</country>
+</nationality>
+<residence>
+<country>US</country>
+</residence>
+</applicant>
+</applicants>
+<correspondence-address>
+<addressbook>
+<name>BLAKELY SOKOLOFF TAYLOR &#x26; ZAFMAN</name>
+<address>
+<address-1>12400 WILSHIRE BOULEVARD</address-1>
+<address-2>SEVENTH FLOOR</address-2>
+<city>LOS ANGELES</city>
+<state>CA</state>
+<postcode>90025-1030</postcode>
+<country>US</country>
+</address>
+</addressbook>
+</correspondence-address>
+</parties>
+</us-bibliographic-data-application>
+<abstract id="abstract">
+<p id="p-0001" num="0000">A method, article of manufacture, and apparatus for content-adaptive scaling of document images is described. In one embodiment, the method comprises identifying spatial relationships between document objects of a document image, determining space separating pairs of neighboring document objects, and determining at least one scaling factor based on the space separating the document objects in the document image and based on display device characteristics. </p>
+</abstract>
+<drawings id="DRAWINGS">
+<figure id="figure-D00000" num="00000">
+<img id="EMI-D00000" he="161.48mm" wi="80.20mm" file="US20070003166A1-20070104-D00000.TIF" alt="embedded image" img-content="drawing" img-format="tif"/>
+</figure>
+<figure id="figure-D00001" num="00001">
+<img id="EMI-D00001" he="223.94mm" wi="106.26mm" file="US20070003166A1-20070104-D00001.TIF" alt="embedded image" img-content="drawing" img-format="tif"/>
+</figure>
+<figure id="figure-D00002" num="00002">
+<img id="EMI-D00002" he="81.03mm" wi="72.81mm" file="US20070003166A1-20070104-D00002.TIF" alt="embedded image" img-content="drawing" img-format="tif"/>
+</figure>
+<figure id="figure-D00003" num="00003">
+<img id="EMI-D00003" he="212.09mm" wi="82.55mm" file="US20070003166A1-20070104-D00003.TIF" alt="embedded image" img-content="drawing" img-format="tif"/>
+</figure>
+<figure id="figure-D00004" num="00004">
+<img id="EMI-D00004" he="144.27mm" wi="86.36mm" file="US20070003166A1-20070104-D00004.TIF" alt="embedded image" img-content="drawing" img-format="tif"/>
+</figure>
+<figure id="figure-D00005" num="00005">
+<img id="EMI-D00005" he="157.99mm" wi="158.50mm" file="US20070003166A1-20070104-D00005.TIF" alt="embedded image" img-content="drawing" img-format="tif"/>
+</figure>
+<figure id="figure-D00006" num="00006">
+<img id="EMI-D00006" he="109.47mm" wi="134.11mm" file="US20070003166A1-20070104-D00006.TIF" alt="embedded image" img-content="drawing" img-format="tif"/>
+</figure>
+<figure id="figure-D00007" num="00007">
+<img id="EMI-D00007" he="150.62mm" wi="135.97mm" file="US20070003166A1-20070104-D00007.TIF" alt="embedded image" img-content="drawing" img-format="tif"/>
+</figure>
+<figure id="figure-D00008" num="00008">
+<img id="EMI-D00008" he="128.78mm" wi="130.89mm" file="US20070003166A1-20070104-D00008.TIF" alt="embedded image" img-content="drawing" img-format="tif"/>
+</figure>
+<figure id="figure-D00009" num="00009">
+<img id="EMI-D00009" he="218.19mm" wi="102.28mm" file="US20070003166A1-20070104-D00009.TIF" alt="embedded image" img-content="drawing" img-format="tif"/>
+</figure>
+<figure id="figure-D00010" num="00010">
+<img id="EMI-D00010" he="173.82mm" wi="156.46mm" file="US20070003166A1-20070104-D00010.TIF" alt="embedded image" img-content="drawing" img-format="tif"/>
+</figure>
+<figure id="figure-D00011" num="00011">
+<img id="EMI-D00011" he="37.00mm" wi="158.83mm" file="US20070003166A1-20070104-D00011.TIF" alt="embedded image" img-content="drawing" img-format="tif"/>
+</figure>
+<figure id="figure-D00012" num="00012">
+<img id="EMI-D00012" he="87.21mm" wi="127.17mm" file="US20070003166A1-20070104-D00012.TIF" alt="embedded image" img-content="drawing" img-format="tif"/>
+</figure>
+<figure id="figure-D00013" num="00013">
+<img id="EMI-D00013" he="160.10mm" wi="121.41mm" file="US20070003166A1-20070104-D00013.TIF" alt="embedded image" img-content="drawing" img-format="tif"/>
+</figure>
+<figure id="figure-D00014" num="00014">
+<img id="EMI-D00014" he="183.47mm" wi="164.00mm" file="US20070003166A1-20070104-D00014.TIF" alt="embedded image" img-content="drawing" img-format="tif"/>
+</figure>
+<figure id="figure-D00015" num="00015">
+<img id="EMI-D00015" he="204.55mm" wi="173.14mm" file="US20070003166A1-20070104-D00015.TIF" alt="embedded image" img-content="drawing" img-format="tif"/>
+</figure>
+</drawings>
+<description id="description">
+<?summary-of-invention description="Summary of Invention" end="lead"?>
+<heading level="2" id="h-0001">FIELD OF THE INVENTION </heading>
+<p id="p-0002" num="0001"> The present invention relates to scaling of images of documents; more particularly, the present invention is related to content-adaptive scaling of document images. </p>
+<heading level="2" id="h-0002">BACKGROUND OF THE INVENTION </heading>
+<p id="p-0003" num="0002"> Thumbnails are commonly used as visual aids in document browsing and retrieval applications. The thumbnails are typically generated by scaling the document image. The scaling that is performed may be solely a geometric scaling operation such as traditional downsampling. There are a number of others ways to scale document images. One such way is to perform scaling that allows for layout distortion. For example, SmartNail technology focuses on showing selected readable text in a display window of fixed size. With SmartNail technology, preservation of layout is surrendered in favor of readable text see U.S. patent application Ser. No. 11/023,142, entitled &#x201c;Semantic Document Smartnails&#x201d;, filed Dec. 22, 2004. Other techniques include combinations of geometric and layout scaling. For example, a technology, referred to herein as Dynamic Document Icons, focuses on capturing distinct layout characteristics while neglecting readability of text regions. In contrast to SmartNail technology, in Dynamic Document Icons, the size of the icon is not fixed, but depends on the content shown in iconic form. For more information on Dynamic Document Icons, see K. Berkner, K., U.S. patent application Ser. No. 11/019,802, entitled &#x201c;Dynamic Document Icons&#x201d;, filed Dec. 21, 2004. </p>
+<p id="p-0004" num="0003"> Graph models are popular in the document analysis field to capture information about document layout. Graph models may be derived in a number of ways. One example of a way to derive a graph model is described in Aiello M., Monz, C., Todoran, L., Worring, M., &#x201c;Document Understanding for a Broad Class of Documents,&#x201d; International Journal on Document Analysis and Recognition (IJDAR), vol. 5(1), pp. 1-16, 2002. In this reference, centers of text zones are modeled as vertices, and edges between vertices signal neighborhood relationships between associated zones. This information is required for further logical analysis including extraction of reading order and classification of text zones. </p>
+<p id="p-0005" num="0004"> Graph models in general are frequently used in document analysis for analysis of web pages or table structures. Operations on graphs include graph matching techniques that may be used to compare different graphs. An overview of this field is given in Lopresti, D., Wilfong, G., &#x201c;A Fast Technique for Comparing Graph Representations with Applications to Performance Evaluation,&#x201d; IJDAR, vol. 6, pp. 219-229, 2004. </p>
+<p id="p-0006" num="0005"> White space in documents is often used to identify the space between items, such as columns of text in a document. There are several methods of computing white space in document images. One way is presented in Breuel, T., &#x201c;An Algorithm for Finding Maximal Whitespace Rectangles at Arbitrary Orientations for Document Layout Analysis,&#x201d; Proceedings of ICDAR, Aug. 3-6, 2003; Edinburgh, Scotland, pp. 66-70. 2003. Proprietary OCR systems may have their own way to detect white space in order to support extraction of text components. </p>
+<p id="p-0007" num="0006"> Another technology for white space expansion is discussed in U.S. Pat. No. 5,592,574, entitled &#x201c;Method and Apparatus for Expansion of White Space in Document Images on a Digital Scanning Device,&#x201d; to Chilton, J. K., Cullen, J., Ejiri, K., issued Jan. 7, 1997. As discussed in U.S. Pat. No. 5,592,574, in order to obtain better visibility white space between document objects is increased. </p>
+<heading level="2" id="h-0003">SUMMARY OF THE INVENTION </heading>
+<p id="p-0008" num="0007"> A method, article of manufacture, and apparatus for content-adaptive scaling of document images is described. In one embodiment, the method comprises identifying spatial relationships between document objects of a document image, determining space separating pairs of neighboring document objects, and determining a scaling factor based on the space separating the document objects in the document image and based on display device characteristics. </p>
+<?summary-of-invention description="Summary of Invention" end="tail"?>
+<?brief-description-of-drawings description="Brief Description of Drawings" end="lead"?>
+<heading level="2" id="h-0004">BRIEF DESCRIPTION OF THE DRAWINGS </heading>
+<p id="p-0009" num="0008"> The present invention will be understood more fully from the detailed description given below and from the accompanying drawings of various embodiments of the invention, which, however, should not be taken to limit the invention to the specific embodiments, but are for explanation and understanding only. </p>
+<p id="p-0010" num="0009"> <figref idref="DRAWINGS">FIG. 1</figref> is a flow diagram of one embodiment of a process for performing content-adaptive scaling of a document image. </p>
+<p id="p-0011" num="0010"> <figref idref="DRAWINGS">FIG. 2</figref> shows an example document and its Voronoi diagram of the documents objects. </p>
+<p id="p-0012" num="0011"> <figref idref="DRAWINGS">FIG. 3</figref> illustrates a calculation of an intersection of a center-connecting line with a bounding box segment of a document object. </p>
+<p id="p-0013" num="0012"> <figref idref="DRAWINGS">FIG. 4</figref> illustrates an alternative calculation of an intersection of a center-connecting line with a bounding box segment of a document object. </p>
+<p id="p-0014" num="0013"> <figref idref="DRAWINGS">FIG. 5</figref> illustrates an alternative measurement to measure separating white space by calculating the distance described by the dashed line. </p>
+<p id="p-0015" num="0014"> <figref idref="DRAWINGS">FIG. 6</figref> is an adjacency matrix for a graph associated with the example document in <figref idref="DRAWINGS">FIG. 2</figref>. </p>
+<p id="p-0016" num="0015"> <figref idref="DRAWINGS">FIG. 7</figref> illustrates a graphical tree representation. </p>
+<p id="p-0017" num="0016"> <figref idref="DRAWINGS">FIG. 8</figref> is a flow diagram of one embodiment of a process for embedding hierarchical document structure into white space trees. </p>
+<p id="p-0018" num="0017"> <figref idref="DRAWINGS">FIG. 9</figref> is an example of a layout tree. </p>
+<p id="p-0019" num="0018"> <figref idref="DRAWINGS">FIG. 10</figref> is a flow diagram of one embodiment of a process for retrieving information. </p>
+<p id="p-0020" num="0019"> <figref idref="DRAWINGS">FIG. 11</figref> illustrates a set of thumbnails for a collection of documents where each document is scaled by a minimal scaling factor. </p>
+<p id="p-0021" num="0020"> <figref idref="DRAWINGS">FIG. 12</figref> illustrates a set a set of thumbnails for a collection of documents where each document is scaled by a minimal scaling factor. </p>
+<p id="p-0022" num="0021"> <figref idref="DRAWINGS">FIG. 13</figref> depicts thumbnails for a collection of documents including text results for a search and retrieval task where each document is scaled by an individual minimal scaling factor. </p>
+<p id="p-0023" num="0022"> <figref idref="DRAWINGS">FIG. 14</figref> depicts thumbnails for a collection of documents including text results for a search and retrieval task where each document is scaled by a minimal scaling factor. </p>
+<p id="p-0024" num="0023"> <figref idref="DRAWINGS">FIG. 15</figref> illustrates a system for creating a JPM compressed document image containing a WST as meta data in an XML box. </p>
+<p id="p-0025" num="0024"> <figref idref="DRAWINGS">FIG. 16</figref> is a flow diagram of one embodiment of a process for extracting and decoding appropriate data for thumbnail image creation in response to a search query. </p>
+<p id="p-0026" num="0025"> <figref idref="DRAWINGS">FIG. 17</figref> is an example of a document layout structure. </p>
+<p id="p-0027" num="0026"> <figref idref="DRAWINGS">FIG. 18</figref> is an example of a layout tree for the document of <figref idref="DRAWINGS">FIG. 17</figref>. </p>
+<p id="p-0028" num="0027"> <figref idref="DRAWINGS">FIG. 19</figref> is a WST for the document of <figref idref="DRAWINGS">FIG. 17</figref>. </p>
+<p id="p-0029" num="0028"> <figref idref="DRAWINGS">FIG. 20</figref> illustrates a two column icon with iconified thumbnails of three documents returned as part of a text search, showing the zones with assured visible separations. </p>
+<p id="p-0030" num="0029"> <figref idref="DRAWINGS">FIG. 21</figref> is a layout tree with nodes for a document. </p>
+<p id="p-0031" num="0030"> <figref idref="DRAWINGS">FIG. 22</figref> is a WST for a document with an identified node. </p>
+<p id="p-0032" num="0031"> <figref idref="DRAWINGS">FIG. 23</figref> is a layout tree with nodes for a document. </p>
+<p id="p-0033" num="0032"> <figref idref="DRAWINGS">FIG. 24</figref> is a WST for a document with an identified node. </p>
+<p id="p-0034" num="0033"> <figref idref="DRAWINGS">FIG. 25</figref> is a layout tree with nodes for a document. </p>
+<p id="p-0035" num="0034"> <figref idref="DRAWINGS">FIG. 26</figref> is a WST for a document with an identified node. </p>
+<p id="p-0036" num="0035"> <figref idref="DRAWINGS">FIG. 27</figref> is a block diagram of an exemplary computer system that may perform one or more of the operations described herein. </p>
+<?brief-description-of-drawings description="Brief Description of Drawings" end="tail"?>
+<?detailed-description description="Detailed Description" end="lead"?>
+<heading level="2" id="h-0005">DETAILED DESCRIPTION OF THE PRESENT INVENTION </heading>
+<p id="p-0037" num="0036"> Determining an appropriate downsampling factor for document images is disclosed. In one embodiment, the downsampling factor is selected such that selected layout features are still recognizable in the scaled small images. In one embodiment, the scaling factor is derived using a white space analysis. The resulting minimal appropriate scaling factor that is derived from a white space analysis depends on the content of the document image. Note that this implies that the size appropriate to convey layout information in a scaled document image may be device dependent. In one embodiment, no iconification of elements is performed. </p>
+<p id="p-0038" num="0037"> In the following disclosure, white space separating document zones is used to determine minimal appropriate scaling factors. These document zones may include text zones (e.g., blocks of text), title zones, columns, figures, footnotes, headings, figure and caption tables. Scaling is allowed as long as white space is visible. If white space is not recognizable anymore, too much scaling has been applied. Separating white space between text zones is captured in a graph or tree model. </p>
+<p id="p-0039" num="0038"> The term &#x201c;white space&#x201d; is based on the type of document, but is particularly suited as a term when used in the context of a document having black text on a white background. For purposes herein, the term &#x201c;white space&#x201d; is generalized to include background that is created by subtraction of text zones. The background could be white, gray, a solid color, or even a continous tone image. </p>
+<p id="p-0040" num="0039"> For purposes herein, a tree is a specific graph, namely a graph where there is exactly one path between any pair of nodes. The white space trees are rooted directed trees, i.e., trees that have exactly one node&#x2014;the root node&#x2014;that has no edge entering it. Graphs, and therefore trees, are data structures. The interconnected type is the characterization of a white space graph. A hierarchical order is responsible for turning the more general graph into a tree. </p>
+<p id="p-0041" num="0040"> In the following description, numerous details are set forth. It will be apparent, however, to one skilled in the art, that the present invention may be practiced without these specific details. In other instances, well-known structures and devices are shown in block diagram form, rather than in detail, in order to avoid obscuring the present invention. </p>
+<p id="p-0042" num="0041"> Some portions of the detailed descriptions that follow are presented in terms of algorithms and symbolic representations of operations on data bits within a computer memory. These algorithmic descriptions and representations are the means used by those skilled in the data processing arts to most effectively convey the substance of their work to others skilled in the art. An algorithm is here, and generally, conceived to be a self-consistent sequence of steps leading to a desired result. The steps are those requiring physical manipulations of physical quantities. Usually, though not necessarily, these quantities take the form of electrical or magnetic signals capable of being stored, transferred, combined, compared, and otherwise manipulated. It has proven convenient at times, principally for reasons of common usage, to refer to these signals as bits, values, elements, symbols, characters, terms, numbers, or the like. </p>
+<p id="p-0043" num="0042"> It should be borne in mind, however, that all of these and similar terms are to be associated with the appropriate physical quantities and are merely convenient labels applied to these quantities. Unless specifically stated otherwise as apparent from the following discussion, it is appreciated that throughout the description, discussions utilizing terms such as &#x201c;processing&#x201d; or &#x201c;computing&#x201d; or &#x201c;calculating&#x201d; or &#x201c;determining&#x201d; or &#x201c;displaying&#x201d; or the like, refer to the action and processes of a computer system, or similar electronic computing device, that manipulates and transforms data represented as physical (electronic) quantities within the computer system's registers and memories into other data similarly represented as physical quantities within the computer system memories or registers or other such information storage, transmission or display devices. </p>
+<p id="p-0044" num="0043"> The present invention also relates to apparatus for performing the operations herein. This apparatus may be specially constructed for the required purposes, or it may comprise a general-purpose computer selectively activated or reconfigured by a computer program stored in the computer. Such a computer program may be stored in a computer readable storage medium, such as, but is not limited to, any type of disk including floppy disks, optical disks, CD-ROMs, and magnetic-optical disks, read-only memories (ROMs), random access memories (RAMs), EPROMs, EEPROMs, magnetic or optical cards, or any type of media suitable for storing electronic instructions, and each coupled to a computer system bus. </p>
+<p id="p-0045" num="0044"> The algorithms and displays presented herein are not inherently related to any particular computer or other apparatus. Various general-purpose systems may be used with programs in accordance with the teachings herein, or it may prove convenient to construct more specialized apparatus to perform the required method steps. The required structure for a variety of these systems will appear from the description below. In addition, the present invention is not described with reference to any particular programming language. It will be appreciated that a variety of programming languages may be used to implement the teachings of the invention as described herein. </p>
+<p id="p-0046" num="0045"> A machine-readable medium includes any mechanism for storing or transmitting information in a form readable by a machine (e.g., a computer). For example, a machine-readable medium includes read only memory (&#x201c;ROM&#x201d;); random access memory (&#x201c;RAM&#x201d;); magnetic disk storage media; optical storage media; flash memory devices; electrical, optical, acoustical or other form of propagated signals (e.g., carrier waves, infrared signals, digital signals, etc.); etc. </p>
+<p id="h-0006" num="0000"> Overview </p>
+<p id="p-0047" num="0046"> The determination of downsampling factors given the constraints that specific document objects be distinguishable through separating white space after downsampling is described. In one embodiment, three operations are used for such a technique. First, neighboring units or objects are determined. Secondly, the white space between neighboring objects is calculated. Lastly, given the various white space measurements between neighboring objects and their background colors as well as the display characteristics, a minimal scaling factor is derived. </p>
+<p id="p-0048" num="0047"> <figref idref="DRAWINGS">FIG. 1</figref> is a flow diagram of one embodiment of a process for performing content-adaptive scaling of a document image. The process is performed by processing logic that may comprise hardware (e.g., circuitry, dedicated logic, etc.), software (such as is run on a general purpose computer system or a dedicated machine), or a combination of both, including firmware. </p>
+<p id="p-0049" num="0048"> Referring to <figref idref="DRAWINGS">FIG. 1</figref>, the process begins by processing logic identifying spatial relationships between document objects of a document image (processing block <b>101</b>). In one embodiment, the document objects comprise text zones. In one embodiment, processing logic identifies spatial relationships between the document objects of the document image by determining a geometric relationship between two objects sharing an edge in a Voronoi diagram. </p>
+<p id="p-0050" num="0049"> After identifying spatial relationships, processing logic determines the space separating pairs of neighboring document objects (processing block <b>102</b>). The geometric space may comprise an area filled with white space or background color around lines of text in a document image. In one embodiment, white space is computed as the average color found in a band around text lines. In one embodiment, processing logic determines the space separating pairs of neighboring document objects by determining a length of the intersection of a line through center points of a pair of neighboring document objects. In such a case, the length of the intersection with object separating white space represents the measured separating space. Processing logic may add weights into a graph model representing the spatial relationships between the document objects, where the weights correspond to the measured separating space. The weights may be normalized. For example, in another embodiment, processing logic determines the space separating pairs of neighboring document objects by determining a length of a parameterized line segment between each pair of neighboring document objects directed between center points of each pair of neighboring document objects. In such a case, the length represents the measured separating space. Note that center points can be geometric centers or centers of gravity. </p>
+<p id="p-0051" num="0050"> Processing logic represents the space that separate pairs of neighboring document objects in the document image using a graph model (processing block <b>103</b>). In one embodiment, graph relationships in the graph model are represented as list pairs of connected vertices with included weights representing separated space between document objects. The graph model may be represented within a computer system as an association matrix. </p>
+<p id="p-0052" num="0051"> In one embodiment, processing logic represents the spatial relationships using Delaunay triangulation and transforms triplets for the Delaunay triangulation into the graph model. In one embodiment, the graph model includes a plurality of vertices, and each of the vertices is a center point of one of the document objects. </p>
+<p id="p-0053" num="0052"> In one embodiment, processing logic stores the graph as metadata in a file (e.g., a JPM file) that contains the image data for the document objects. </p>
+<p id="p-0054" num="0053"> Once the space that separates pairs of neighboring document objects has been identified, processing logic determines at least one scaling factor based on the space separating the document objects in the document image and based on display device characteristics (processing block <b>104</b>). In one embodiment, processing logic determines at least one scaling factor by determining a scaling factor that causes scaling to the document image when applied while allowing a minimal amount of space to remain visible when displayed on a display device having the display device characteristics. </p>
+<p id="p-0055" num="0054"> In one embodiment, processing logic determines a scaling factor based on the space separating a set of document objects in the document image and based on display device characteristics by determining the scaling factor using a constant reflecting a minimal visually recognizable space separation measured in pixel units. In one embodiment, the constant is set for a class of documents. In one embodiment, the constant is set for a class of devices. In one embodiment, the constant is computed from the document image and a display device characterization. The constant may depend on a display device having the display device characteristics. </p>
+<p id="p-0056" num="0055"> Once one or more scaling factors have been determined, processing logic stores the scaling factors (processing logic <b>105</b>). This is optional. The scaling factor may be stored in metadata for the file of the document image. For example, the scaling factor may be stored in the metadata for a JPM file format along with the display device characteristics associated with the scaling factor. In one embodiment, processing logic scales the document using the scaling factor (processing block <b>106</b>). This is also optional. </p>
+<p id="h-0007" num="0000"> Establishment of Neighborhood Relationships Between Document Objects via Voronoi Diagrams and Delaunay Triangulation </p>
+<p id="p-0057" num="0056"> In one embodiment, a geometric neighborhood relationship between two objects O<sub>1 </sub>and O<sub>2 </sub>is established if they share an edge in a Voronoi diagram. The Voronoi diagram is computed for the geometric center points z<sub>i </sub>of the document objects O<sub>i</sub>, i.e. 
+<br/>
+<?in-line-formulae description="In-line Formulae" end="lead"?><i>z</i><sub>i</sub>=&#xbd;[upper left corner of O<sub>i</sub>+(width of O<sub>i</sub>, height of O<sub>i</sub>)]. <?in-line-formulae description="In-line Formulae" end="tail"?>
+</p>
+<p id="p-0058" num="0057"> The dual of the Voronoi diagram, the Delaunay triangulation, is used as a representation of the neighborhood relationships. A Voronoi diagram represents a division of the plane into regions according to the nearest neighbor rule. The nearest neighbor rule states that each point is associated with the region of the plane closest to it. The output of this division into regions is represented by line segments and vertices. A Delaunay triangulation contans an edge connecting two sites in the plane if and only if their Voronoi regions share a commom edge. The Voronoi diagram and the Delaunay triangulation are duals in the sense that Voronoi vertices correspond to Delaunay triangles, Voronoi regions correspond to sites, and edges of both types correspond by definition. For more information, Franz Aurenhammer, Voronoi Diagrams&#x2014;A Survey of a Fundamental Geometric Data Structure, ACM Computing Surveys, Vol. 23, No. 3, September 1991. </p>
+<p id="p-0059" num="0058"> The Delaunay triangulation is given by a sequence of center point triplets. Each triplet reflects a neighborhood relationship between the three center points. <figref idref="DRAWINGS">FIG. 2</figref> shows an example document and its Voronoi diagram of the documents objects. Referring to <figref idref="DRAWINGS">FIG. 2</figref>, document objects <b>201</b>-<b>214</b> are shown. These document objects may be text regions (e.g., titles, paragraphs of text, etc.) in a document. The lines in the diagram, such as line <b>220</b>, run perpendicular to line segments (not shown) that go between the centerpoints of two document objects, such as document objects <b>213</b> and <b>214</b> in the case of line <b>220</b>. Voronoi diagrams and Delaunay triangulation are a well known in the computational geometry art. </p>
+<p id="p-0060" num="0059"> The triplets for the Delaunay triangulation of the example document of <figref idref="DRAWINGS">FIG. 2</figref> are shown in Table 1. In one embodiment, these neighborhood relationships are transformed into a graph model in which each center point of an object is a vertex in the graph and an edge between two vertices represents the existence of a neighborhood relation between them.  
+<tables id="TABLE-US-00001" num="1">
+<table frame="none" colsep="0" rowsep="0">
+<tgroup align="left" colsep="0" rowsep="0" cols="1">
+<colspec colname="1" colwidth="217PT" align="center"/>
+<thead>
+<row>
+<entry namest="1" nameend="1" align="center">TABLE 1</entry>
+</row>
+<row>
+<entry/>
+</row>
+<row>
+<entry namest="1" nameend="1" align="center" rowsep="1"/>
+</row>
+<row>
+<entry>Triplets representing the Delaunay triangulation</entry>
+</row>
+<row>
+<entry>corresponding to the Voronoi diagram in <figref idref="DRAWINGS">FIG. 2</figref>.</entry>
+</row>
+<row>
+<entry namest="1" nameend="1" align="center" rowsep="1"/>
+</row>
+</thead>
+<tbody valign="top">
+<row>
+<entry/>
+</row>
+</tbody>
+</tgroup>
+<tgroup align="left" colsep="0" rowsep="0" cols="3">
+<colspec colname="1" colwidth="105PT" align="char" char="."/>
+<colspec colname="2" colwidth="14PT" align="char" char="."/>
+<colspec colname="3" colwidth="98PT" align="char" char="."/>
+<tbody valign="top">
+<row>
+<entry>4</entry>
+<entry>2</entry>
+<entry>1</entry>
+</row>
+<row>
+<entry>4</entry>
+<entry>3</entry>
+<entry>2</entry>
+</row>
+<row>
+<entry>3</entry>
+<entry>10</entry>
+<entry>2</entry>
+</row>
+<row>
+<entry>10</entry>
+<entry>1</entry>
+<entry>2</entry>
+</row>
+<row>
+<entry>5</entry>
+<entry>3</entry>
+<entry>4</entry>
+</row>
+<row>
+<entry>4</entry>
+<entry>11</entry>
+<entry>10</entry>
+</row>
+<row>
+<entry>7</entry>
+<entry>5</entry>
+<entry>6</entry>
+</row>
+<row>
+<entry>7</entry>
+<entry>11</entry>
+<entry>5</entry>
+</row>
+<row>
+<entry>6</entry>
+<entry>8</entry>
+<entry>7</entry>
+</row>
+<row>
+<entry>7</entry>
+<entry>12</entry>
+<entry>11</entry>
+</row>
+<row>
+<entry>7</entry>
+<entry>13</entry>
+<entry>12</entry>
+</row>
+<row>
+<entry>9</entry>
+<entry>7</entry>
+<entry>8</entry>
+</row>
+<row>
+<entry>14</entry>
+<entry>12</entry>
+<entry>13</entry>
+</row>
+<row>
+<entry>9</entry>
+<entry>13</entry>
+<entry>7</entry>
+</row>
+<row>
+<entry>9</entry>
+<entry>14</entry>
+<entry>13</entry>
+</row>
+<row>
+<entry>14</entry>
+<entry>11</entry>
+<entry>12</entry>
+</row>
+<row>
+<entry>14</entry>
+<entry>10</entry>
+<entry>11</entry>
+</row>
+<row>
+<entry namest="1" nameend="3" align="center" rowsep="1"/>
+</row>
+</tbody>
+</tgroup>
+</table>
+</tables>
+<br/>
+ Computation of Separating White Space Between Neighboring Zones 
+</p>
+<p id="p-0061" num="0060"> In one embodiment, white space between two neighboring objects O<sub>i </sub>and O<sub>j </sub>is computed by connecting the center points z<sub>i </sub>and z<sub>j </sub>by a straight line and measuring the length of the line segment intersecting the white space between O<sub>i </sub>and O<sub>j</sub>. To avoid actually rendering the straight line, separating white space W<sub>ij </sub>between objects O<sub>i </sub>and O<sub>j </sub>is computed in the following way. </p>
+<p id="p-0062" num="0061"> The straight line through the center points is parameterized by the following equation: 
+<br/>
+<?in-line-formulae description="In-line Formulae" end="lead"?>g: z<sub>i</sub>+&#x3bb;(z<sub>j</sub>&#x2212;z<sub>i</sub>). &#x2003;&#x2003;(1) <?in-line-formulae description="In-line Formulae" end="tail"?>
+</p>
+<p id="p-0063" num="0062"> An example follows to illustrate the parameterization. The four corners of document object O<sub>i </sub>may be denoted by A,B,C,D. The bounding box of document object O<sub>i </sub>is given by the line segments AB, BC, CD, DA. To reiterate, the bounding box information comes from logical analysis. The four corners of document object O<sub>j </sub>are denoted by E,F,G,H. The intersection of the straight line through the center points z<sub>i </sub>and z<sub>j </sub>with each bounding box line of O<sub>i </sub>and O<sub>j </sub>is derived as follows. </p>
+<p id="p-0064" num="0063"> For the example of the intersection of the center connecting line with the bounding box segment AB, the condition to satisfy is: 
+<br/>
+<?in-line-formulae description="In-line Formulae" end="lead"?><i>z</i><sub>i</sub>+&#x3bb;(<i>z</i><sub>j</sub><i>&#x2212;z</i><sub>i</sub>)=<i>A</i>+&#x3bc;(<i>B&#x2212;A</i>) &#x2003;&#x2003;(2) <?in-line-formulae description="In-line Formulae" end="tail"?>
+</p>
+<p id="p-0065" num="0064"> In one embodiment, the following may be used to provide pairs of &#x3bb; and &#x3bc; values of various sign combinations: 
+<ul id="ul0001" list-style="none">
+    <li id="ul0001-0001" num="0000">
+    <ul id="ul0002" list-style="none">
+        <li id="ul0002-0001" num="0065"> 1. 0&#x3c;&#x3bb;<sub>i</sub>[1]&#x2266;1, 0&#x3c;&#x3bc;<sub>i</sub>[1]&#x2266;1; O<sub>j </sub>above O<sub>i </sub>(an example of which is shown in <figref idref="DRAWINGS">FIG. 3</figref>), </li>
+        <li id="ul0002-0002" num="0066"> 2. &#x3bb;<sub>i</sub>[1]&#x3c;0, 0&#x3c;&#x3bc;<sub>i</sub>[1]&#x2266;1; O<sub>j </sub>below O<sub>i</sub>, </li>
+        <li id="ul0002-0003" num="0067"> 3. 1&#x3c;&#x3bc;<sub>i</sub>[1]&#x3c;&#x221e;: O<sub>j </sub>right of O<sub>i</sub>, but line g not parallel to the bounding box segment, </li>
+        <li id="ul0002-0004" num="0068"> 4. &#x2212;&#x221e;&#x3c;&#x3bc;<sub>i</sub>[1]&#x3c;0: O<sub>j </sub>left of O<sub>i</sub>, but line g not parallel to the bounding box segment, and </li>
+        <li id="ul0002-0005" num="0069"> 5. No solution means the center connecting line is parallel to the bounding box segment. </li>
+    </ul>
+    </li>
+</ul>
+</p>
+<p id="p-0066" num="0070"> The same is performed for the intersections of the center connecting line with the remaining bounding box segments of O<sub>i </sub>(resulting in parameters &#x3bb;<sub>i</sub>[2],&#x3bb;<sub>i</sub>[3],&#x3bb;<sub>i</sub>[4]) and the bounding box elements of object O<sub>j </sub>resulting in parameters &#x3bb;<sub>j</sub>[k] for each bounding box segment k. An example of these is shown in <figref idref="DRAWINGS">FIG. 4</figref>. For each object pair, only one combination of values (&#x3bb;<sub>i</sub>[m],&#x3bb;<sub>j</sub>[k]) exists that describes the segment of separating white space, namely the combination (&#x3bb;<sub>i</sub>[m],&#x3bb;<sub>j</sub>[k*[m]]) with &#x3bb;<sub>i</sub>[m]&#x3c;&#x221e;, &#x3bb;<sub>j</sub>[k*[m]]&#x3c;&#x221e;, and 
+<br/>
+<?in-line-formulae description="In-line Formulae" end="lead"?><i>k*[m</i>]=arg min<sub>k</sub>{|&#x3bb;<sub>j</sub><i>[k |&#x3bb;</i><sub>j</sub><i>[k &#x3c;&#x221e;, &#x3bb;</i><sub>i</sub><i>[m]&#xb7;&#x3bb;</i><sub>j</sub><i>[k]&#x3e;</i>0} (see FIG. <b>5</b>). &#x2003;&#x2003;(3) <?in-line-formulae description="In-line Formulae" end="tail"?>
+</p>
+<p id="p-0067" num="0071"> In one embodiment, the separating white space is then measured by 
+<br/>
+<?in-line-formulae description="In-line Formulae" end="lead"?><i>W</i><sub>ij</sub>=|(&#x3bb;<sub>i</sub><i>[m]&#x2212;&#x3bb;</i><sub>j</sub><i>[k*[m</i>])|&#xb7;&#x2225;<i>z</i><sub>j</sub><i>&#x2212;z</i><sub>i</sub>&#x2225;<sub>2</sub>. &#x2003;&#x2003;(4) <?in-line-formulae description="In-line Formulae" end="tail"?>
+</p>
+<p id="p-0068" num="0072"> An alternative to measuring separating white space is to calculate the distance described by the dashed line in <figref idref="DRAWINGS">FIG. 5</figref>. Referring to <figref idref="DRAWINGS">FIG. 5</figref>, instead of calculating the distance described by solid arrow <b>501</b>, the distance described by dashed line <b>502</b> is calculated. Such a calculation would be well within the skill in the art. </p>
+<p id="h-0008" num="0000"> White Space Graph Model </p>
+<p id="p-0069" num="0073"> In one embodiment, the measured separating white space W<sub>ij </sub>between objects O<sub>i </sub>and O<sub>j </sub>are added as weights to the graph model. This causes each of the neighborhood relationship graphs to be a weighted graph. More specifically, in one embodiment, given an edge e<sub>ij </sub>between two vertices v<sub>i </sub>and v<sub>j</sub>, the weight p<sub>ij </sub>associated with that edge is given by the following equation: 
+<br/>
+<?in-line-formulae description="In-line Formulae" end="lead"?><i>p</i><sub>ij</sub>=1<i>/W</i><sub>ij </sub>&#x2003;&#x2003;(5) <?in-line-formulae description="In-line Formulae" end="tail"?>
+</p>
+<p id="p-0070" num="0074"> Use of equation (5) means that an edge between objects with a large separating white space have small weights, while an edge between objects with a small separating white space have large weights. If the information about non-neighbors is not stored, then no normalization is needed. In the case that objects O<sub>i </sub>and O<sub>j </sub>are not neighbors, a weight p<sub>ij</sub>=0 is defined. </p>
+<p id="p-0071" num="0075"> The set of all pairs (i,j) that are connected by an edge is referred to herein as the neighborhood relationship index set. The final weighted graph is referred to herein as a White Space Graph (WSG). An example for the graph associated with the example document in <figref idref="DRAWINGS">FIG. 2</figref> is given by the adjacency matrix shown in <figref idref="DRAWINGS">FIG. 6</figref>. </p>
+<p id="p-0072" num="0076"> Referring to <figref idref="DRAWINGS">FIG. 6</figref>, rows and columns represent the vertices, a zero entry at position (i,j) means that there is no edge between the associated vertices v<sub>i </sub>and v<sub>j</sub>, and non-zero entries reflect the weights p<sub>ij</sub>. In an alternative embodiment, the graph relationships are represented using list pairs of connected vertices including the weight (which is referred to herein as a list view). </p>
+<p id="p-0073" num="0077"> The following is pseudocode to create a WSG from a document image: 
+<ul id="ul0003" list-style="none">
+    <li id="ul0003-0001" num="0000">
+    <ul id="ul0004" list-style="none">
+        <li id="ul0004-0001" num="0078"> define anchor point (geometric centers or centers of gravity) for each zone; </li>
+        <li id="ul0004-0002" num="0079"> compute voronoi tesselation from the anchor points; </li>
+        <li id="ul0004-0003" num="0080"> for each site that share an edge in the voronoi diagram, compute the separating white space between the zones with anchor points equal to data points associated with each site; </li>
+        <li id="ul0004-0004" num="0081"> create a graph having each anchor point as a vertex; </li>
+        <li id="ul0004-0005" num="0082"> connect vertices that share an edge in the voronoi diagram by an edge; </li>
+        <li id="ul0004-0006" num="0083"> add length of separating white space line segment as weight to the corresponding edge. 
+<br/>
+ Scaling to Minimal White Space 
+</li>
+    </ul>
+    </li>
+</ul>
+</p>
+<p id="p-0074" num="0084"> In one embodiment, given a White Space Graph, a scaling factor s* is computed as the solution s to 
+<br/>
+<?in-line-formulae description="In-line Formulae" end="lead"?><i>s/W</i><sub>ij</sub>&#x2267;&#x3b5;&#x3e;0 &#x2003;&#x2003;(6) <?in-line-formulae description="In-line Formulae" end="tail"?>
+<br/>
+ for all i,j in the neighborhood relationship index set, i.e. 
+<br/>
+<?in-line-formulae description="In-line Formulae" end="lead"?><i>s</i>*=&#x3b5;&#xb7;max(<i>W</i><sub>ij</sub>). &#x2003;&#x2003;(7) <?in-line-formulae description="In-line Formulae" end="tail"?>
+</p>
+<p id="p-0075" num="0085"> In one embodiment, the constant &#x3b5; reflects a minimal visually recognizable white space separation measured in pixel units. The constant may depend on the display device. For example, high contrast displays may allow for a smaller &#x3b5; than low contrast displays. </p>
+<p id="p-0076" num="0086"> In one embodiment, the threshold &#x3b5; is set manually for a class of documents. As an example, for documents containing mostly black text on a white background and are displayed on an Apple Cinema display, the constant &#x3b5; is set to two pixels for black text on white background. </p>
+<p id="p-0077" num="0087"> In another embodiment, the constant &#x3b5; is set automatically from the document image and a display device characterization. In this case, first, color appearance can be modeled using, for example, CIECAM02 or iCAM, which are well-known in the art. Next, contrast sensitivity functions, for example, the one in S-CIELAB can be applied to model contrast in low resolution images. In one embodiment, contrast is measured by calculating &#x394;E units along the white space portion of the center connecting lines when computing the separating white space between neighboring zones. </p>
+<p id="h-0009" num="0000"> Embedding of Hierarchical Document Structure into White Space Trees </p>
+<p id="p-0078" num="0088"> The document layout may not be given solely by a collection of document objects, but may also contain a hierarchical structure, imposing groupings of objects to form coarse units, such as columns or title sections. In one embodiment, such a hierarchy is imposed based on a combination of logical and geometric information, referred to herein as layout information in the following. Using white space information, an alternative hierarchy can be imposed based on purely geometrical information. Adding hierarchical structure to a White Space Graph leads to the creation of a White Space Tree (WST). </p>
+<p id="p-0079" num="0089"> In a bottom-up fashion, in one embodiment, a tree is formed by starting with all vertices v; of the WSG as leaf nodes of the WST. In a merging process, leaf nodes are merged. In one embodiment, the leaf nodes are merged by iteratively merging the nodes with largest edge weight into a new parent node. The weight for the edge between a child and a new parent node is that of the edge(s) between the children. This may be performed by the following code.  
+<tables id="TABLE-US-00002" num="2">
+<table frame="none" colsep="0" rowsep="0">
+<tgroup align="left" colsep="0" rowsep="0" cols="2">
+<colspec colname="OFFSET" colwidth="21PT" align="left"/>
+<colspec colname="1" colwidth="196PT" align="left"/>
+<thead>
+<row>
+<entry/>
+<entry/>
+</row>
+<row>
+<entry/>
+<entry namest="OFFSET" nameend="1" align="center" rowsep="1"/>
+</row>
+</thead>
+<tbody valign="top">
+<row>
+<entry/>
+<entry>Initialize the list of open nodes as V_open = V</entry>
+</row>
+<row>
+<entry/>
+<entry>while V_open &#x2260; &#x2208;</entry>
+</row>
+<row>
+<entry/>
+<entry>&#x2003;&#x2003;&#x2003;{v<sub>i</sub><sub><sub2>&#x2014;</sub2></sub><sub>1</sub>,... v<sub>i</sub><sub><sub2>&#x2014;</sub2></sub><sub>k</sub>} = arg max<sub>v </sub>&#xd8; V_open(p(v))</entry>
+</row>
+<row>
+<entry/>
+<entry>&#x2003;&#x2003;&#x2003;create new node v*, add v<sub><sub2>i&#x2014;1</sub2></sub>,... v<sub>i</sub><sub><sub2>&#x2014;</sub2></sub><sub>k </sub>as children to v*</entry>
+</row>
+<row>
+<entry/>
+<entry>&#x2003;&#x2003;&#x2003;remove v<sub>i</sub><sub><sub2>&#x2014;</sub2></sub><sub>1</sub>,... v<sub>i</sub><sub><sub2>&#x2014;</sub2></sub><sub>k </sub>from V_open</entry>
+</row>
+<row>
+<entry/>
+<entry>&#x2003;&#x2003;&#x2003;add v* to V_open</entry>
+</row>
+<row>
+<entry/>
+<entry namest="OFFSET" nameend="1" align="center" rowsep="1"/>
+</row>
+</tbody>
+</tgroup>
+</table>
+</tables>
+</p>
+<p id="p-0080" num="0090"> The results of merging the White Space Graph vertices into a tree is given in list view form in Table 2. The graphics tree representation is shown in <figref idref="DRAWINGS">FIG. 7</figref>. </p>
+<p id="p-0081" num="0091"> The weights corresponding to tree nodes provide information on separating white space of the group of all descendents of a parent node to other nodes outside the group of descendents. </p>
+<p id="p-0082" num="0092"> <figref idref="DRAWINGS">FIG. 8</figref> is a flow diagram of one embodiment of a process for embedding hierarchical document structure into white space trees. The process is performed by processing logic that may comprise hardware (e.g., circuitry, dedicated logic, etc.), software (such as is run on a general purpose computer system or a dedicated machine), or a combination of both, including firmware. </p>
+<p id="p-0083" num="0093"> Referring to <figref idref="DRAWINGS">FIG. 8</figref>, the process begins by processing logic receiving a collection of layout objects (processing block <b>801</b>). Using the collection of layout objects, processing logic creates a white space tree (processing block <b>802</b>). In response to the white space tree and application or user-dependent selection of nodes of a layout tree, processing logic selects a node in the white space tree that contains all descendents of selected logical tree nodes as descendents (processing block <b>803</b>). Thereafter, processing logic identifies the appropriate downsampling factor for the collection of objects contained in logical tree nodes (processing block <b>804</b>).  
+<tables id="TABLE-US-00003" num="3">
+<table frame="none" colsep="0" rowsep="0">
+<tgroup align="left" colsep="0" rowsep="0" cols="1">
+<colspec colname="1" colwidth="217PT" align="center"/>
+<thead>
+<row>
+<entry namest="1" nameend="1" align="center">TABLE 2</entry>
+</row>
+</thead>
+<tbody valign="top">
+<row>
+<entry/>
+</row>
+<row>
+<entry namest="1" nameend="1" align="center" rowsep="1"/>
+</row>
+<row>
+<entry>White Space Tree for the example document.</entry>
+</row>
+</tbody>
+</tgroup>
+<tgroup align="left" colsep="0" rowsep="0" cols="3">
+<colspec colname="1" colwidth="84PT" align="center"/>
+<colspec colname="2" colwidth="42PT" align="center"/>
+<colspec colname="3" colwidth="91PT" align="center"/>
+<tbody valign="top">
+<row>
+<entry>child node</entry>
+<entry>parent node</entry>
+<entry>weight</entry>
+</row>
+<row>
+<entry namest="1" nameend="3" align="center" rowsep="1"/>
+</row>
+</tbody>
+</tgroup>
+<tgroup align="left" colsep="0" rowsep="0" cols="3">
+<colspec colname="1" colwidth="84PT" align="char" char="."/>
+<colspec colname="2" colwidth="42PT" align="char" char="."/>
+<colspec colname="3" colwidth="91PT" align="char" char="."/>
+<tbody valign="top">
+<row>
+<entry>1</entry>
+<entry>15</entry>
+<entry>0.032242</entry>
+</row>
+<row>
+<entry>2</entry>
+<entry>15</entry>
+<entry>0.0232242</entry>
+</row>
+<row>
+<entry>3</entry>
+<entry>16</entry>
+<entry>0.022194</entry>
+</row>
+<row>
+<entry>4</entry>
+<entry>18</entry>
+<entry>0.015867</entry>
+</row>
+<row>
+<entry>5</entry>
+<entry>18</entry>
+<entry>0.015867</entry>
+</row>
+<row>
+<entry>6</entry>
+<entry>22</entry>
+<entry>0.011605</entry>
+</row>
+<row>
+<entry>7</entry>
+<entry>20</entry>
+<entry>0.015358</entry>
+</row>
+<row>
+<entry>8</entry>
+<entry>20</entry>
+<entry>0.015358</entry>
+</row>
+<row>
+<entry>9</entry>
+<entry>23</entry>
+<entry>0.011282</entry>
+</row>
+<row>
+<entry>10</entry>
+<entry>19</entry>
+<entry>0.015625</entry>
+</row>
+<row>
+<entry>11</entry>
+<entry>17</entry>
+<entry>0.018519</entry>
+</row>
+<row>
+<entry>12</entry>
+<entry>17</entry>
+<entry>0.018519</entry>
+</row>
+<row>
+<entry>13</entry>
+<entry>21</entry>
+<entry>0.015225</entry>
+</row>
+<row>
+<entry>14</entry>
+<entry>24</entry>
+<entry>0.010763</entry>
+</row>
+<row>
+<entry>15</entry>
+<entry>16</entry>
+<entry>0.022194</entry>
+</row>
+<row>
+<entry>16</entry>
+<entry>27</entry>
+<entry>0.004435</entry>
+</row>
+<row>
+<entry>17</entry>
+<entry>19</entry>
+<entry>0.015625</entry>
+</row>
+<row>
+<entry>18</entry>
+<entry>25</entry>
+<entry>0.010219</entry>
+</row>
+<row>
+<entry>19</entry>
+<entry>21</entry>
+<entry>0.015225</entry>
+</row>
+<row>
+<entry>20</entry>
+<entry>22</entry>
+<entry>0.011605</entry>
+</row>
+<row>
+<entry>21</entry>
+<entry>24</entry>
+<entry>0.010763</entry>
+</row>
+<row>
+<entry>22</entry>
+<entry>23</entry>
+<entry>0.011282</entry>
+</row>
+<row>
+<entry>23</entry>
+<entry>25</entry>
+<entry>0.010219</entry>
+</row>
+<row>
+<entry>24</entry>
+<entry>26</entry>
+<entry>0.004759</entry>
+</row>
+<row>
+<entry>25</entry>
+<entry>26</entry>
+<entry>0.004756</entry>
+</row>
+<row>
+<entry>26</entry>
+<entry>27</entry>
+<entry>0.004435</entry>
+</row>
+<row>
+<entry>27</entry>
+<entry>0</entry>
+<entry>0</entry>
+</row>
+<row>
+<entry namest="1" nameend="3" align="center" rowsep="1"/>
+</row>
+</tbody>
+</tgroup>
+</table>
+</tables>
+</p>
+<p id="p-0084" num="0094"> It may be important for an application to make sure that separations between selected layout units, e.g. columns of a document, are visible after scaling. The individual elements of a layout unit (document zones) are leaf nodes of the WST. The hierarchical nature of the layout structure can be captured in a layout tree, where each leaf node represents a document zone, parent nodes represent groupings of zones, such as title units, abstracts, columns, images plus figure captions etc. An example of a layout tree is shown in <figref idref="DRAWINGS">FIG. 9</figref>. </p>
+<p id="h-0010" num="0000"> White Space Graphs and Trees as Metadata in JPM </p>
+<p id="p-0085" num="0095"> The WSG and WST representations can be stored as metadata in a file that contains the document objects. In one embodiment, the file is a JPM file that contains the document objects, represented by the vertices of the WSG, as JPM layout objects. Given a specific application, e.g. thumbnail generation, the size of a thumbnail could be automatically computed from the metadata. In one embodiment, one graph is independent of the display device and is stored for various display devices. Thus, in one embodiment, either or both of the WSG and WST are stored as metadata in JPM in order to control scaling during specific decoding tasks. </p>
+<p id="p-0086" num="0096"> <figref idref="DRAWINGS">FIG. 15</figref> illustrates a system for creating a JPM compressed document image containing a WST as meta data in an XML box. This enables accessing the WST representation as meta data attached to compressed image data, thereby allowing efficient decoding. Referring to <figref idref="DRAWINGS">FIG. 15</figref>, a JPM compressor <b>1501</b> receives document image <b>1500</b> and performs JPM compression. WST generation unit <b>1502</b> receives the JPM file output of JPM compressor <b>1501</b> and calculates the WST for the image objects in the JPM file. File attachment unit <b>1503</b> attaches the WST as metadata in an XML box of the image file, thereby producing a JPM compressed document image with WST information (<b>1504</b>). </p>
+<p id="p-0087" num="0097"> <figref idref="DRAWINGS">FIG. 16</figref> is a flow diagram of one embodiment of a process for extracting and decoding appropriate data for thumbnail image creation in response to a search query. The process is performed by processing logic that may comprise hardware (e.g., circuitry, dedicated logic, etc.), software (such as is run on a general purpose computer system or a dedicated machine), or a combination of both, including firmware. </p>
+<p id="p-0088" num="0098"> Referring to <figref idref="DRAWINGS">FIG. 16</figref>, JPM compressed document image with WST information (<b>1504</b>) is stored in database <b>1602</b>. A search query <b>1601</b> is received by database <b>1602</b>. In response thereto, processing logic calculates the appropriate thumbnail size for the target device of the query generator (processing block <b>1603</b>). Then, processing logic extracts the appropriate image data for decoding the thumbnail images (processing block <b>1604</b>), thereby resulting in a collection of thumbnail images (<b>1605</b>). </p>
+<p id="p-0089" num="0099"> In an alternative embodiment, the compressor described above is not included and any object based representation of a document image may be used, such as PDF. In such a case, the WST may be added to the file. </p>
+<p id="h-0011" num="0000"> Use of WSG and WST in Retrieval Methods </p>
+<p id="p-0090" num="0100"> WSG and WST capture selected document layout information. Document layout information in general is used in the prior art to perform retrieval tasks, such as clustering of documents based on layout features, or document matching. Those methods can be applied to WSG and WST to support their use in retrieval applications. </p>
+<p id="p-0091" num="0101"> <figref idref="DRAWINGS">FIG. 10</figref> is a flow diagram of one embodiment of a process for retrieving information. The process is performed by processing logic that may comprise hardware (e.g., circuitry, dedicated logic, etc.), software (such as is run on a general purpose computer system or a dedicated machine), or a combination of both, including firmware. </p>
+<p id="p-0092" num="0102"> Referring to <figref idref="DRAWINGS">FIG. 10</figref>, the process begins by processing logic receiving a request to identify one or more documents that match a document having document objects (processing block <b>1001</b>). Next, processing logic creates a graph model to represent the spatial relationships between the document objects (processing block <b>1002</b>). In one embodiment, the graph model includes weights corresponding to the measured separating space. Once the graph model has been created, processing logic compares the graph model to graph models of documents in a document storage device (processing block <b>1003</b>) and returns an indication of the one or more matching documents based on a similarity threshold (processing block <b>1004</b>). In one embodiment, the one or more matching documents are returned. </p>
+<p id="p-0093" num="0103"> Similarly, the white space graphs and trees may be used to cluster documents. For example, when a document image is being input into a document archive, its corresponding white space tree or graph may be compared against those of others already stored in the document archive to classify the group of document images to which the new document image belongs. </p>
+<p id="p-0094" num="0104"> Given the result to a document search query, a collection of documents has been returned. If thumbnails of these documents are desired, the question of what size those thumbnails should be is answered through a white space graph. Given a set of documents, compute a WSG for each document and determine the minimal scaling factor s*(D<sub>i</sub>) for each document D<sub>i</sub>. Either each document is scaled by its minimal scaling factor s*(D<sub>i</sub>) (<figref idref="DRAWINGS">FIGS. 11-14</figref>), or each document is scaled by the largest of all individual minimal scaling factors, i.e. by s*=max<sub>i</sub>(s*(D<sub>i</sub>)), to assure uniformity across the displayed thumbnails. </p>
+<p id="p-0095" num="0105"> This may be illustrated in <figref idref="DRAWINGS">FIGS. 11-14</figref>. <figref idref="DRAWINGS">FIG. 11</figref> illustrates a set of thumbnails for a collection of documents where each document D<sub>i </sub>is scaled by an individual minimal scaling factor s*(D<sub>i</sub>). <figref idref="DRAWINGS">FIG. 12</figref> illustrates a set of thumbnails for a collection of documents where each document D<sub>i </sub>is scaled by a minimal scaling factor s*(D<sub>i</sub>). <figref idref="DRAWINGS">FIG. 13</figref> depicts thumbnails for a collection of documents including text results for a search and retrieval task where each document D<sub>i </sub>is scaled by an individual minimal scaling factor s*(D<sub>i</sub>). <figref idref="DRAWINGS">FIG. 14</figref> depicts thumbnails for a collection of documents including text results for a search and retrieval task where each document D<sub>i </sub>is scaled by a minimal scaling factor s*(D<sub>i</sub>). </p>
+<p id="h-0012" num="0000"> Finding an Appropriate Node in a WST Given a Set of Nodes in a Logical Tree </p>
+<p id="p-0096" num="0106"> <figref idref="DRAWINGS">FIG. 17</figref> is an example of a document layout structure. Referring to <figref idref="DRAWINGS">FIG. 17</figref>, the document has six document objects that are numbers (<b>1</b>)-(<b>6</b>). <figref idref="DRAWINGS">FIG. 18</figref> is an example of a layout tree for the document of <figref idref="DRAWINGS">FIG. 17</figref>, while <figref idref="DRAWINGS">FIG. 19</figref> is a WST for the document of <figref idref="DRAWINGS">FIG. 17</figref>. </p>
+<p id="p-0097" num="0107"> Given a request that selected layout units are to be clearly visually separable in the thumbnail, the nodes corresponding to the selected layout units have to be identified. If the selected layout units are column <b>1</b> and column <b>2</b> in the example, then the nodes n<sub>1</sub>=8 and n<sub>2</sub>=9 have to be identified. Next, for each identified layout unit node n<sub>i</sub>, the set of leaf nodes of the subtree with root in n<sub>i</sub>, denoted by T<sub>L</sub>(n<sub>i</sub>), are identified. For the example in <figref idref="DRAWINGS">FIGS. 17-19</figref>, the set of leaf nodes of the subtree with root n<sub>1</sub>=8 is L(T<sub>L</sub>(n<sub>1</sub>))={3,4}, for the subtree with root in n<sub>2</sub>=9 the leaf node set is L(T<sub>L</sub>(n<sub>2</sub>))={5,6}. In order to assure that the columns <b>1</b> and <b>2</b> are visible distinct layout units in the thumbnail it has be assured that the white space between the set of zones represented by the leaf nodes in L(T<sub>L</sub>(n<sub>1</sub>)) and the set of zones represented by the leaf nodes in L(T<sub>L</sub>(n<sub>1</sub>)) is visible after scaling. In order to find the appropriate scaling factors, the WST (T<sub>w</sub>) is searched in a bottom-up fashion. </p>
+<p id="p-0098" num="0108"> In one embodiment, starting from the leaf nodes of the WST, the node m* in the WST has to satisfy the following two conditions: 
+<ul id="ul0005" list-style="none">
+    <li id="ul0005-0001" num="0000">
+    <ul id="ul0006" list-style="none">
+        <li id="ul0006-0001" num="0109"> (1) given all the subtress with roots in the children m<sub>j </sub>of m*, denoted by T<sub>w</sub>(m<sub>j</sub>), the leaf node sets L(T<sub>L</sub>(n<sub>i</sub>)) are contained in the leaf nodes sets of distinct trees T<sub>w</sub>(m<sub>j</sub>), i.e. 
+<br/>
+<?in-line-formulae description="In-line Formulae" end="lead"?>(1)<i>L</i>(<i>T</i><sub>L</sub>(<i>n</i><sub>i</sub>))&#x2282;<i>L</i>(<i>T</i><sub>w</sub>(<i>m</i><sub>j</sub><sub><sub2>&#x2014;</sub2></sub><sub>i</sub>)) and <i>L</i>(<i>T</i><sub>L</sub>(<i>n</i><sub>i</sub>))&#x2229;<i>L</i>(<i>T</i><sub>w</sub>(<i>m</i><sub>j</sub>))=&#xd8;for <i>j&#x2260;j</i><sub>&#x2014;</sub><i>i, </i>and <?in-line-formulae description="In-line Formulae" end="tail"?>
+</li>
+        <li id="ul0006-0002" num="0110"> (2) finding the node m* that is has the smallest weight under all possible choices, i.e. 
+<br/>
+<?in-line-formulae description="In-line Formulae" end="lead"?><i>m</i>*=arg min<sub>{m &#x3b5; V(T</sub><sub><sub2>&#x2014;</sub2></sub><sub>W) satisfying condition (1)}</sub><i> {p</i>(<i>m</i>)}. <?in-line-formulae description="In-line Formulae" end="tail"?>
+</li>
+    </ul>
+    </li>
+</ul>
+</p>
+<p id="p-0099" num="0111"> In the example in <figref idref="DRAWINGS">FIGS. 17-19</figref>, the solution to Equation (2) is m*=11. Once the node m* is identified, a scaling factor larger than the weight p(m*) of m* needs to be chosen for appropriate scaling of the column layout units. That means an appropriate scaling factor s* for the units represented by nodes n<sub>i </sub>in T<sub>L </sub>is (s*)<sup>&#x2212;1</sup>&#x3e;p(m*), where m* is defined in Eq.(2). </p>
+<p id="p-0100" num="0112"> For the example in <figref idref="DRAWINGS">FIG. 6</figref>, m*=11 and (s*)<sup>&#x2212;1l &#x3e;p(m*)=p(</sup>11)=0.1. </p>
+<p id="p-0101" num="0113"> Thus, given the layout units column <b>1</b> (node <b>8</b>) and column <b>2</b> (node <b>9</b>), the set of leaf nodes of the subtrees of those nodes are grouped by black solid lines. In the WST, the mode m* as designed in equation 2 below is node <b>11</b> (filled black circle). The set of leaf nodes of the children of m* are grouped by dashed lines. The sets of leaf nodes from the layout tree of <figref idref="DRAWINGS">FIG. 18</figref> are contained in distinct leaf node sets of the WST of <figref idref="DRAWINGS">FIG. 19</figref>. </p>
+<p id="p-0102" num="0114"> An example of pseudo code for finding an appropriate node in the WST given a node in a logical tree is as follows: 
+<ul id="ul0007" list-style="none">
+    <li id="ul0007-0001" num="0000">
+    <ul id="ul0008" list-style="none">
+        <li id="ul0008-0001" num="0115"> let T<sub>L </sub>be the layout tree T<sub>W </sub>be the WST of a document, V(T<sub>W</sub>) the set of nodes of T<sub>W</sub>, p(v) the weight of node v. </li>
+        <li id="ul0008-0002" num="0116"> request a set of nodes {n<sub>i</sub>} from V(T<sub>L</sub>) </li>
+        <li id="ul0008-0003" num="0117"> find subtrees T<sub>W</sub>(m<sub>1</sub>) . . . T<sub>W</sub>(m<sub>N</sub>) of T<sub>W </sub>such that: 
+<br/>
+<?in-line-formulae description="In-line Formulae" end="lead"?><i>m</i>*=arg min<sub>{m &#x3b5; V(T</sub><sub><sub2>&#x2014;</sub2></sub><sub>W) satisfying condition(*)}</sub><i> {p</i>(<i>m</i>)} with <?in-line-formulae description="In-line Formulae" end="tail"?>
+<br/>
+<?in-line-formulae description="In-line Formulae" end="lead"?>(*)<i>L</i>(<i>T</i><sub>L</sub>(<i>n</i><sub>i</sub>))&#x2282;<i>L</i>(<i>T</i><sub>w</sub>(<i>m</i><sub>j</sub>*)) and <i>L</i>(<i>T</i><sub>L</sub>(<i>n</i><sub>i</sub>))&#x2229;<i>L</i>(<i>T</i><sub>w</sub>(<i>m</i><sub>j</sub>))=&#xd8; for <i>j*&#x3b5;{</i>1<i>, . . . N</i>} and <?in-line-formulae description="In-line Formulae" end="tail"?>
+<br/>
+<?in-line-formulae description="In-line Formulae" end="lead"?><i>j&#x3b5;{</i>1<i>, . . . N}\{j</i>*}, where m<sub>j</sub>, j=1<i>, . . . N, are the children nodes of node m &#x3b5; V(T</i><sub>W</sub>). <?in-line-formulae description="In-line Formulae" end="tail"?>
+<br/>
+ Combination with Dynamic Document Icons 
+</li>
+    </ul>
+    </li>
+</ul>
+</p>
+<p id="p-0103" num="0118"> In one embodiment, the techniques described herein may be used in combination with Dynamic Document Icons as set forth in K. Berkner, K., U.S. patent application Ser. No. 11/019,802, entitled &#x201c;Dynamic Document Icons&#x201d;, filed Dec. 21, 2004, incorporated herein by reference. Given a collection of documents D<sub>1</sub>, . . . D<sub>M </sub>as a return to a search query, an algorithm may be used to determine common layout features of all documents, e.g. all documents have two columns. In order to distinguish document thumbnails for those documents, image objects that are lower in the layout hierarchy than the column object should be distinguishable. To assure this first, the node m* and its weight p(m*) as the limiting scaling factor for white space separating the two columns layout units are determined as explained above for each document. The result is a set of nodes m*(D<sub>i</sub>). Then for each document, a scaling factor s(D<sub>i</sub>) is determined such that the units represented by the children nodes m<sub>j</sub>(D<sub>i</sub>) of m*(D<sub>i</sub>) in the WST are assured of being visually separable, i.e. s(D<sub>i</sub>) needs to satisfy the condition 
+<br/>
+<?in-line-formulae description="In-line Formulae" end="lead"?>(<i>s</i>(<i>D</i><sub>i</sub>))<sup>&#x2212;1</sup><i>&#x3e;p</i>(<i>m</i><sub>j</sub>(<i>D</i><sub>i</sub>)) for all <i>j=</i>1, . . . ,N <?in-line-formulae description="In-line Formulae" end="tail"?>
+</p>
+<p id="p-0104" num="0119"> In one embodiment, if max<sub>j</sub>(p(m<sub>j</sub>(D<sub>i</sub>))&#x3e;min<sub>j</sub>(p(mj(D<sub>i</sub>)), s(D<sub>i</sub>) can be set to 
+<br/>
+<?in-line-formulae description="In-line Formulae" end="lead"?><i>s</i>(<i>D</i><sub>i</sub>)=(max<sub>j</sub><i>{p</i>(<i>m</i><sub>j</sub>(<i>D</i><sub>i</sub>)}), or in another embodiment <?in-line-formulae description="In-line Formulae" end="tail"?>
+<br/>
+<?in-line-formulae description="In-line Formulae" end="lead"?><i>s</i>(<i>D</i><sub>i</sub>)=(min<sub>j&#x2260;j</sub><i>*{p</i>(<i>m</i><sub>j</sub>(<i>D</i><sub>i</sub>)}) with <i>j</i>*=arg min<sub>j</sub><i>{p</i>(<i>m</i><sub>j</sub>(<i>D</i><sub>i</sub>)}. <?in-line-formulae description="In-line Formulae" end="tail"?>
+</p>
+<p id="p-0105" num="0120"> In an application scenario, the common layout feature for the returned document collection may be visualized by a Dynamic Document Icon in the display window. In addition to the icon the individual thumbnails scaled by the factors s(D<sub>i</sub>) are displayed. An example for this scenario is shown in <figref idref="DRAWINGS">FIG. 20-26</figref>. </p>
+<p id="p-0106" num="0121"> <figref idref="DRAWINGS">FIG. 20</figref> illustrates a two column icon with iconified thumbnails of three documents, D<sub>1-3</sub>, returned as part of a text search, showing the zones with assured visible separations. Figure <b>21</b> is a layout tree with nodes n<b>1</b> and n<b>2</b> for document D<sub>1</sub>. <figref idref="DRAWINGS">FIG. 22</figref> is a WST for document D<sub>1 </sub>with an identified node m* computed from the equation for m* above. <figref idref="DRAWINGS">FIG. 23</figref> is a layout tree with nodes n<b>1</b> and n<b>2</b> for document D<sub>2</sub>. <figref idref="DRAWINGS">FIG. 24</figref> is a WST for document D<sub>2 </sub>with an identified node m* computed from the equation for m* above. <figref idref="DRAWINGS">FIG. 25</figref> is a layout tree with nodes n<b>1</b> and n<b>2</b> for document D<sub>3</sub>. <figref idref="DRAWINGS">FIG. 26</figref> is a WST for document D<sub>3 </sub>with an identified node m* computed from the equation for m* above. </p>
+<p id="p-0107" num="0122"> Starting with a set of common layout units, such as two column layout (nodes n<b>1</b> and n<b>2</b>) in a layout tree, thumbnails scaled with factor factors s(Di)&#x3e;s* are computed that show the next level of division between zones given the scaling factor sufficient to eliminate separating white space between the two columns. </p>
+<p id="h-0013" num="0000"> An Exemplary Computer System </p>
+<p id="p-0108" num="0123"> <figref idref="DRAWINGS">FIG. 27</figref> is a block diagram of an exemplary computer system that may perform one or more of the operations described herein. Referring to <figref idref="DRAWINGS">FIG. 11</figref>, computer system <b>2700</b> may comprise an exemplary client or server computer system. Computer system <b>2700</b> comprises a communication mechanism or bus <b>2711</b> for communicating information, and a processor <b>2712</b> coupled with bus <b>2711</b> for processing information. Processor <b>2712</b> includes a microprocessor, but is not limited to a microprocessor, such as, for example, Pentium Processor, etc. </p>
+<p id="p-0109" num="0124"> System <b>2700</b> further comprises a random access memory (RAM), or other dynamic storage device <b>2704</b> (referred to as main memory) coupled to bus <b>2711</b> for storing information and instructions to be executed by processor <b>2712</b>. Main memory <b>2704</b> also may be used for storing temporary variables or other intermediate information during execution of instructions by processor <b>2712</b>. </p>
+<p id="p-0110" num="0125"> Computer system <b>2700</b> also comprises a read only memory (ROM) and/or other static storage device <b>2706</b> coupled to bus <b>2711</b> for storing static information and instructions for processor <b>2712</b>, and a data storage device <b>2707</b>, such as a magnetic disk or optical disk and its corresponding disk drive. Data storage device <b>2707</b> is coupled to bus <b>2711</b> for storing information and instructions. </p>
+<p id="p-0111" num="0126"> Computer system <b>2700</b> may further be coupled to a display device <b>2721</b>, such as a cathode ray tube (CRT) or liquid crystal display (LCD), coupled to bus <b>2711</b> for displaying information to a computer user. An alphanumeric input device <b>2722</b>, including alphanumeric and other keys, may also be coupled to bus <b>2711</b> for communicating information and command selections to processor <b>2712</b>. An additional user input device is cursor control <b>2723</b>, such as a mouse, trackball, trackpad, stylus, or cursor direction keys, coupled to bus <b>2711</b> for communicating direction information and command selections to processor <b>2712</b>, and for controlling cursor movement on display <b>2721</b>. </p>
+<p id="p-0112" num="0127"> Another device that may be coupled to bus <b>2711</b> is hard copy device <b>2724</b>, which may be used for printing instructions, data, or other information on a medium such as paper, film, or similar types of media. Furthermore, a sound recording and playback device, such as a speaker and/or microphone may optionally be coupled to bus <b>2711</b> for audio interfacing with computer system <b>2700</b>. Another device that may be coupled to bus <b>2711</b> is a wired/wireless communication capability <b>2725</b> to communication to a phone or handheld palm device. </p>
+<p id="p-0113" num="0128"> Note that any or all of the components of system <b>2700</b> and associated hardware may be used in the present invention. However, it can be appreciated that other configurations of the computer system may include some or all of the devices. </p>
+<p id="p-0114" num="0129"> Whereas many alterations and modifications of the present invention will no doubt become apparent to a person of ordinary skill in the art after having read the foregoing description, it is to be understood that any particular embodiment shown and described by way of illustration is in no way intended to be considered limiting. Therefore, references to details of various embodiments are not intended to limit the scope of the claims that in them recite only those features regarded as essential to the invention. </p>
+<?detailed-description description="Detailed Description" end="tail"?>
+</description>
+<claims id="claims">
+<claim id="CLM-00001" num="00001">
+<claim-text><b>1</b>. A method comprising: 
+<claim-text>identifying spatial relationships between document objects of a document image; </claim-text>
+<claim-text>determining space separating pairs of neighboring document objects; and </claim-text>
+<claim-text>determining a scaling factor based on the space separating the document objects in the document image and based on display device characteristics. </claim-text>
+</claim-text>
+ </claim>
+<claim id="CLM-00002" num="00002">
+<claim-text><b>2</b>. The method defined in <claim-ref idref="CLM-00001">claim 1</claim-ref> wherein determining the scaling factor comprises determining the scaling factor that causes scaling to the document image when applied while allowing a minimal amount of space separating the objects to remain visible when displayed on a display device having the display device characteristics. </claim-text>
+ </claim>
+<claim id="CLM-00003" num="00003">
+<claim-text><b>3</b>. The method defined in <claim-ref idref="CLM-00001">claim 1</claim-ref> further comprising representing the space between document objects with a graph model. </claim-text>
+ </claim>
+<claim id="CLM-00004" num="00004">
+<claim-text><b>4</b>. The method defined in <claim-ref idref="CLM-00003">claim 3</claim-ref> wherein the graph model is represented as a matrix. </claim-text>
+ </claim>
+<claim id="CLM-00005" num="00005">
+<claim-text><b>5</b>. The method defined in <claim-ref idref="CLM-00003">claim 3</claim-ref> wherein graph relationships in the graph model are represented as list pairs of connected vertices with included weights representing separating space between document objects. </claim-text>
+ </claim>
+<claim id="CLM-00006" num="00006">
+<claim-text><b>6</b>. The method defined in <claim-ref idref="CLM-00001">claim 1</claim-ref> wherein identifying spatial relationships between the document objects of the document image comprises determining a geometric relationship between two objects sharing an edge in a Voronoi triangulation diagram. </claim-text>
+ </claim>
+<claim id="CLM-00007" num="00007">
+<claim-text><b>7</b>. The method defined in <claim-ref idref="CLM-00001">claim 1</claim-ref> further comprising: 
+<claim-text>representing the spatial relationships using Delaunay triangulation; and </claim-text>
+<claim-text>transforming triplets for the Delaunay triangulation into a graph model. </claim-text>
+</claim-text>
+ </claim>
+<claim id="CLM-00008" num="00008">
+<claim-text><b>8</b>. The method defined in <claim-ref idref="CLM-00007">claim 7</claim-ref> wherein the graph model includes a plurality of vertices, wherein each of the vertices is a representative point of one of the document objects. </claim-text>
+ </claim>
+<claim id="CLM-00009" num="00009">
+<claim-text><b>9</b>. The method defined in <claim-ref idref="CLM-00008">claim 8</claim-ref> wherein the representative point is a geometric center point. </claim-text>
+ </claim>
+<claim id="CLM-00010" num="00010">
+<claim-text><b>10</b>. The method defined in <claim-ref idref="CLM-00008">claim 8</claim-ref> wherein the representative point is a center of gravity. </claim-text>
+ </claim>
+<claim id="CLM-00011" num="00011">
+<claim-text><b>11</b>. The method defined in <claim-ref idref="CLM-00001">claim 1</claim-ref> wherein determining the space separating pairs of neighboring document objects comprises determining a length of a parameterized line segment through center points of each pair of neighboring document objects that intersects the separating space between objects, the length representing measured separating space. </claim-text>
+ </claim>
+<claim id="CLM-00012" num="00012">
+<claim-text><b>12</b>. The method defined in <claim-ref idref="CLM-00011">claim 11</claim-ref> further comprising adding weights into a graph model representing the spatial relationships between the document objects, the weights corresponding to the measured separating space. </claim-text>
+ </claim>
+<claim id="CLM-00013" num="00013">
+<claim-text><b>13</b>. The method defined in <claim-ref idref="CLM-00012">claim 12</claim-ref> further comprising normalizing the weights. </claim-text>
+ </claim>
+<claim id="CLM-00014" num="00014">
+<claim-text><b>14</b>. The method defined in <claim-ref idref="CLM-00001">claim 1</claim-ref> wherein determining the space separating pairs of neighboring document objects comprises determining a length of a parameterized line segment between each pair of neighboring document objects directed between center points of said each pair of neighboring document object that intersects the separating space between objects, the length representing measured separating space. </claim-text>
+ </claim>
+<claim id="CLM-00015" num="00015">
+<claim-text><b>15</b>. The method defined in <claim-ref idref="CLM-00001">claim 1</claim-ref> wherein determining at least one scaling factor based on the space separating the document objects in the document image and based on display device characteristics comprises determining the scaling factor using a constant reflecting a minimal visually recognizable space separation measured in pixels. </claim-text>
+ </claim>
+<claim id="CLM-00016" num="00016">
+<claim-text><b>16</b>. The method defined in <claim-ref idref="CLM-00015">claim 15</claim-ref> wherein the constant is set for a class of devices. </claim-text>
+ </claim>
+<claim id="CLM-00017" num="00017">
+<claim-text><b>17</b>. The method defined in <claim-ref idref="CLM-00015">claim 15</claim-ref> wherein the constant is set for a class of documents. </claim-text>
+ </claim>
+<claim id="CLM-00018" num="00018">
+<claim-text><b>18</b>. The method defined in <claim-ref idref="CLM-00015">claim 15</claim-ref> wherein the constant is computed from the document image and a display device characterization. </claim-text>
+ </claim>
+<claim id="CLM-00019" num="00019">
+<claim-text><b>19</b>. The method defined in <claim-ref idref="CLM-00015">claim 15</claim-ref> wherein the constant depends on a display device having the display device characteristics. </claim-text>
+ </claim>
+<claim id="CLM-00020" num="00020">
+<claim-text><b>20</b>. The method defined in <claim-ref idref="CLM-00001">claim 1</claim-ref> further comprising scaling the document using the scaling factor. </claim-text>
+ </claim>
+<claim id="CLM-00021" num="00021">
+<claim-text><b>21</b>. The method defined in <claim-ref idref="CLM-00001">claim 1</claim-ref> wherein the space comprises white space. </claim-text>
+ </claim>
+<claim id="CLM-00022" num="00022">
+<claim-text><b>22</b>. The method defined in <claim-ref idref="CLM-00001">claim 1</claim-ref> wherein the space comprises the background between foreground objects. </claim-text>
+ </claim>
+<claim id="CLM-00023" num="00023">
+<claim-text><b>23</b>. The method defined in <claim-ref idref="CLM-00001">claim 1</claim-ref> further comprising storing the graph as metadata in a file having an object-based file format that contains the document objects. </claim-text>
+ </claim>
+<claim id="CLM-00024" num="00024">
+<claim-text><b>24</b>. The method defined in <claim-ref idref="CLM-00023">claim 23</claim-ref> wherein the file is a JPM file. </claim-text>
+ </claim>
+<claim id="CLM-00025" num="00025">
+<claim-text><b>25</b>. The method defined in <claim-ref idref="CLM-00023">claim 23</claim-ref> wherein the file is a PDF file. </claim-text>
+ </claim>
+<claim id="CLM-00026" num="00026">
+<claim-text><b>26</b>. The method defined in <claim-ref idref="CLM-00001">claim 1</claim-ref> further comprising: 
+<claim-text>creating a graph model to represent the spatial relationships between the document objects, the graph model including weights corresponding to the measured separating space; and </claim-text>
+<claim-text>merging vertices of the graph into a tree. </claim-text>
+</claim-text>
+ </claim>
+<claim id="CLM-00027" num="00027">
+<claim-text><b>27</b>. An article of manufacture having one or more recordable media storing instructions which, when executed by a system, cause the system to perform a method comprising: 
+<claim-text>identifying spatial relationships between document objects of a document image; </claim-text>
+<claim-text>determining space separating pairs of neighboring document objects; and </claim-text>
+<claim-text>determining a scaling factor based on the space separating the document objects in the document image and based on display device characteristics. </claim-text>
+</claim-text>
+ </claim>
+<claim id="CLM-00028" num="00028">
+<claim-text><b>28</b>. The article of manufacture defined in <claim-ref idref="CLM-00027">claim 27</claim-ref> wherein determining the scaling factor comprises determining the scaling factor that causes scaling to the document image when applied while allowing a minimal amount of space separating the objects to remain visible when displayed on a display device having the display device characteristics. </claim-text>
+ </claim>
+<claim id="CLM-00029" num="00029">
+<claim-text><b>29</b>. The article of manufacture defined in <claim-ref idref="CLM-00027">claim 27</claim-ref> wherein the method further comprises representing the space between document objects with a graph model. </claim-text>
+ </claim>
+<claim id="CLM-00030" num="00030">
+<claim-text><b>30</b>. The article of manufacture defined in <claim-ref idref="CLM-00029">claim 29</claim-ref> wherein the graph model is represented as a matrix. </claim-text>
+ </claim>
+<claim id="CLM-00031" num="00031">
+<claim-text><b>31</b>. The article of manufacture defined in <claim-ref idref="CLM-00029">claim 29</claim-ref> wherein graph relationships in the graph model are represented as list pairs of connected vertices with included weights representing separated space between document objects. </claim-text>
+ </claim>
+<claim id="CLM-00032" num="00032">
+<claim-text><b>32</b>. The article of manufacture defined in <claim-ref idref="CLM-00027">claim 27</claim-ref> wherein identifying spatial relationships between the document objects of the document image comprises determining a geometric relationship between two objects sharing an edge in a Voronoi triangulation diagram. </claim-text>
+ </claim>
+<claim id="CLM-00033" num="00033">
+<claim-text><b>33</b>. The article of manufacture defined in <claim-ref idref="CLM-00027">claim 27</claim-ref> wherein the method further comprises: 
+<claim-text>representing the spatial relationships using Delaunay triangulation; and </claim-text>
+<claim-text>transforming triplets for the Delaunay triangulation into a graph model. </claim-text>
+</claim-text>
+ </claim>
+<claim id="CLM-00034" num="00034">
+<claim-text><b>34</b>. The article of manufacture defined in <claim-ref idref="CLM-00033">claim 33</claim-ref> wherein the graph model includes a plurality of vertices, wherein each of the vertices is a representative point of one of the document objects. </claim-text>
+ </claim>
+<claim id="CLM-00035" num="00035">
+<claim-text><b>35</b>. The article of manufacture defined in <claim-ref idref="CLM-00033">claim 33</claim-ref> wherein the representative point is a geometric center point. </claim-text>
+ </claim>
+<claim id="CLM-00036" num="00036">
+<claim-text><b>36</b>. The article of manufacture defined in <claim-ref idref="CLM-00033">claim 33</claim-ref> wherein the representative point is a center of gravity. </claim-text>
+ </claim>
+<claim id="CLM-00037" num="00037">
+<claim-text><b>37</b>. The article of manufacture defined in <claim-ref idref="CLM-00027">claim 27</claim-ref> wherein determining the space separating pairs of neighboring document objects comprises determining a length of a parameterized line segment through center points of each pair of neighboring document objects that intersects the separatig space between objects, the length representing measured separating space. </claim-text>
+ </claim>
+<claim id="CLM-00038" num="00038">
+<claim-text><b>38</b>. The article of manufacture defined in <claim-ref idref="CLM-00037">claim 37</claim-ref> wherein the method further comprises adding weights into a graph model representing the spatial relationships between the document objects, the weights corresponding to the measured separating space. </claim-text>
+ </claim>
+<claim id="CLM-00039" num="00039">
+<claim-text><b>39</b>. The article of manufacture defined in <claim-ref idref="CLM-00038">claim 38</claim-ref> wherein the method further comprises normalizing the weights. </claim-text>
+ </claim>
+<claim id="CLM-00040" num="00040">
+<claim-text><b>40</b>. The article of manufacture defined in <claim-ref idref="CLM-00027">claim 27</claim-ref> wherein determining the space separating pairs of neighboring document objects comprises determining a length of a parameterized line segment between each pair of neighboring document objects directed between center points of said each pair of neighboring document objects that intersects the separating space between objects, the length representing measured separating space. </claim-text>
+ </claim>
+<claim id="CLM-00041" num="00041">
+<claim-text><b>41</b>. The article of manufacture defined in <claim-ref idref="CLM-00027">claim 27</claim-ref> wherein determining at least one scaling factor based on the space separating the document objects in the document image and based on display device characteristics comprises determining the scaling factor using a constant reflecting a minimal visually recognizable space separation measured in pixels. </claim-text>
+ </claim>
+<claim id="CLM-00042" num="00042">
+<claim-text><b>42</b>. The article of manufacture defined in <claim-ref idref="CLM-00041">claim 41</claim-ref> wherein the constant is set for a class of documents. </claim-text>
+ </claim>
+<claim id="CLM-00043" num="00043">
+<claim-text><b>43</b>. The article of manufacture defined in <claim-ref idref="CLM-00041">claim 41</claim-ref> wherein the constant is set for a class of devices. </claim-text>
+ </claim>
+<claim id="CLM-00044" num="00044">
+<claim-text><b>44</b>. The article of manufacture defined in <claim-ref idref="CLM-00041">claim 41</claim-ref> wherein the constant is computed from the document image and a display device characterization. </claim-text>
+ </claim>
+<claim id="CLM-00045" num="00045">
+<claim-text><b>45</b>. The article of manufacture defined in <claim-ref idref="CLM-00041">claim 41</claim-ref> wherein the constant depends on a display device having the display device characteristics. </claim-text>
+ </claim>
+<claim id="CLM-00046" num="00046">
+<claim-text><b>46</b>. The article of manufacture defined in <claim-ref idref="CLM-00027">claim 27</claim-ref> wherein the method further comprises scaling the document using the scaling factor. </claim-text>
+ </claim>
+<claim id="CLM-00047" num="00047">
+<claim-text><b>47</b>. The article of manufacture defined in <claim-ref idref="CLM-00027">claim 27</claim-ref> wherein the space comprises white space. </claim-text>
+ </claim>
+<claim id="CLM-00048" num="00048">
+<claim-text><b>48</b>. The article of manufacture defined in <claim-ref idref="CLM-00027">claim 27</claim-ref> wherein the space comprises the background between foreground objects. </claim-text>
+ </claim>
+<claim id="CLM-00049" num="00049">
+<claim-text><b>49</b>. The article of manufacture defined in <claim-ref idref="CLM-00027">claim 27</claim-ref> wherein the method further comprises storing the graph as metadata in a JPM file that contains the document objects. </claim-text>
+ </claim>
+<claim id="CLM-00050" num="00050">
+<claim-text><b>50</b>. The article of manufacture defined in <claim-ref idref="CLM-00027">claim 27</claim-ref> wherein the method further comprises: 
+<claim-text>creating a graph model to represent the spatial relationships between the document objects, the graph model including weights corresponding to the measured separating space; and </claim-text>
+<claim-text>merging vertices of the graph into a tree. </claim-text>
+</claim-text>
+ </claim>
+<claim id="CLM-00051" num="00051">
+<claim-text><b>51</b>. A system comprising: 
+<claim-text>a white space identifier to identify spatial relationships between document objects of a document image and determine space separating pairs of neighboring document objects; and </claim-text>
+<claim-text>a scaling factor generator to determine a scaling factor in response to information on the space separating the document objects in the document image and display device characteristics. </claim-text>
+</claim-text>
+ </claim>
+<claim id="CLM-00052" num="00052">
+<claim-text><b>52</b>. A method comprising: 
+<claim-text>receiving a request to identify one or more documents that match a document having document objects; </claim-text>
+<claim-text>comparing a graph model that represents the spatial relationships between the document objects with a first graph model of each of one or more documents in a document storage, the first graph model including weights corresponding to the measured separating space; and </claim-text>
+<claim-text>returning an indication of the one or more matching documents based on a similarity threshold. </claim-text>
+</claim-text>
+ </claim>
+<claim id="CLM-00053" num="00053">
+<claim-text><b>53</b>. A method comprising: 
+<claim-text>receiving a plurality of structural elements of a document image; and </claim-text>
+<claim-text>scaling the plurality of structure elements with a white space tree. </claim-text>
+</claim-text>
+ </claim>
+<claim id="CLM-00054" num="00054">
+<claim-text><b>54</b>. The method defined in <claim-ref idref="CLM-00053">claim 53</claim-ref> wherein the white space tree comprises a geometric hierarchical layout structure. </claim-text>
+ </claim>
+<claim id="CLM-00055" num="00055">
+<claim-text><b>55</b>. The method defined in <claim-ref idref="CLM-00054">claim 54</claim-ref> wherein the geometric hierarchical layout structure comprises a weighted tree wherein the weights reflect minimal scaling. </claim-text>
+ </claim>
+<claim id="CLM-00056" num="00056">
+<claim-text><b>56</b>. A method comprising: 
+<claim-text>determining geometric neighborhood relationships between document objects in a document image using Voronoi diagrams; </claim-text>
+<claim-text>generating a measure of separating white space as the length of a line segment intersecting white space between pairs of neighboring zones; </claim-text>
+<claim-text>generating a representation of geometric scaling properties between document objects with a white space graph; and </claim-text>
+<claim-text>generating a scaling factor based on the white space graph and based on display device characteristics. </claim-text>
+</claim-text>
+ </claim>
+<claim id="CLM-00057" num="00057">
+<claim-text><b>57</b>. The method defined in <claim-ref idref="CLM-00056">claim 56</claim-ref> further comprising identifying neighboring zones as edges between vertices in a white space graph. </claim-text>
+ </claim>
+<claim id="CLM-00058" num="00058">
+<claim-text><b>58</b>. A method comprising: 
+<claim-text>receiving a plurality of structural elements of a document image; and </claim-text>
+<claim-text>representing geometric scalability of the plurality of structural elements through a white space data structure. </claim-text>
+</claim-text>
+ </claim>
+<claim id="CLM-00059" num="00059">
+<claim-text><b>59</b>. The method defined in <claim-ref idref="CLM-00058">claim 58</claim-ref> wherein the white space data structure comprises a white space graph. </claim-text>
+ </claim>
+<claim id="CLM-00060" num="00060">
+<claim-text><b>60</b>. The method defined in <claim-ref idref="CLM-00058">claim 58</claim-ref> wherein the white space data structure comprises a white space tree. </claim-text>
+ </claim>
+<claim id="CLM-00061" num="00061">
+<claim-text><b>61</b>. A method comprising: 
+<claim-text>retrieving a white space data structure from a metadata portion of a file; and </claim-text>
+<claim-text>controlling scaling during specific decoding tasks based on the retrieved white space data structure. </claim-text>
+</claim-text>
+ </claim>
+<claim id="CLM-00062" num="00062">
+<claim-text><b>62</b>. The method defined in <claim-ref idref="CLM-00061">claim 61</claim-ref> wherein the white space data structure comprises a white space graph. </claim-text>
+ </claim>
+<claim id="CLM-00063" num="00063">
+<claim-text><b>63</b>. The method defined in <claim-ref idref="CLM-00061">claim 61</claim-ref> wherein the white space data structure comprises a white space tree. </claim-text>
+ </claim>
+<claim id="CLM-00064" num="00064">
+<claim-text><b>64</b>. A method comprising: 
+<claim-text>receiving a collection of one or more documents; and </claim-text>
+<claim-text>determining a size at which to display documents in the collection on a display using a white space graph. </claim-text>
+</claim-text>
+ </claim>
+<claim id="CLM-00065" num="00065">
+<claim-text><b>65</b>. The method defined in <claim-ref idref="CLM-00064">claim 64</claim-ref> further comprising: 
+<claim-text>computing a white space graph for each document; and </claim-text>
+<claim-text>determining a minimal scaling factor for each document. </claim-text>
+</claim-text>
+ </claim>
+<claim id="CLM-00066" num="00066">
+<claim-text><b>66</b>. The method defined in <claim-ref idref="CLM-00065">claim 65</claim-ref> further comprising: 
+<claim-text>scaling each document in the collection by its minimal scaling factor. </claim-text>
+</claim-text>
+ </claim>
+<claim id="CLM-00067" num="00067">
+<claim-text><b>67</b>. The method defined in <claim-ref idref="CLM-00065">claim 65</claim-ref> further comprising: 
+<claim-text>scaling each document in the collection by the largest of minimal scaling factors among documents in the collection.</claim-text>
+</claim-text>
+ </claim>
+</claims>
+</us-patent-application>

@@ -1,0 +1,872 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE us-patent-application SYSTEM "us-patent-application-v42-2006-08-23.dtd" [ ]>
+<us-patent-application lang="EN" dtd-version="v4.2 2006-08-23" file="US20070006112A1-20070104.XML" status="PRODUCTION" id="us-patent-application" country="US" date-produced="20061221" date-publ="20070104">
+<us-bibliographic-data-application lang="EN" country="US">
+<publication-reference>
+<document-id>
+<country>US</country>
+<doc-number>20070006112</doc-number>
+<kind>A1</kind>
+<date>20070104</date>
+</document-id>
+</publication-reference>
+<application-reference appl-type="utility">
+<document-id>
+<country>US</country>
+<doc-number>11517638</doc-number>
+<date>20060908</date>
+</document-id>
+</application-reference>
+<us-application-series-code>11</us-application-series-code>
+<classifications-ipcr>
+<classification-ipcr>
+<ipc-version-indicator><date>20060101</date></ipc-version-indicator>
+<classification-level>A</classification-level>
+<section>G</section>
+<class>06</class>
+<subclass>F</subclass>
+<main-group>17</main-group>
+<subgroup>50</subgroup>
+<symbol-position>F</symbol-position>
+<classification-value>I</classification-value>
+<action-date><date>20070104</date></action-date>
+<generating-office><country>US</country></generating-office>
+<classification-status>B</classification-status>
+<classification-data-source>H</classification-data-source>
+</classification-ipcr>
+</classifications-ipcr>
+<classification-national>
+<country>US</country>
+<main-classification>716018000</main-classification>
+</classification-national>
+<invention-title id="d0e102">Hierarchical presentation techniques for a design tool</invention-title>
+<us-related-documents>
+<continuation>
+<relation>
+<parent-doc>
+<document-id>
+<country>US</country>
+<doc-number>09919650</doc-number>
+<date>20010731</date>
+</document-id>
+<parent-status>GRANTED</parent-status>
+<parent-grant-document>
+<document-id>
+<country>US</country>
+<doc-number>7120879</doc-number>
+</document-id>
+</parent-grant-document>
+</parent-doc>
+<child-doc>
+<document-id>
+<country>US</country>
+<doc-number>11517638</doc-number>
+<kind>A1</kind>
+<date>20060908</date>
+</document-id>
+</child-doc>
+</relation>
+</continuation>
+<us-provisional-application>
+<document-id>
+<country>US</country>
+<doc-number>60285656</doc-number>
+<date>20010420</date>
+</document-id>
+</us-provisional-application>
+</us-related-documents>
+<parties>
+<applicants>
+<applicant sequence="00" app-type="applicant-inventor" designation="us-only">
+<addressbook>
+<last-name>Gutberlet</last-name>
+<first-name>Peter</first-name>
+<middle-name>Pius</middle-name>
+<address>
+<city>Wilsonville</city>
+<state>OR</state>
+<country>US</country>
+</address>
+</addressbook>
+<nationality>
+<country>US</country>
+</nationality>
+<residence>
+<country>US</country>
+</residence>
+</applicant>
+<applicant sequence="01" app-type="applicant-inventor" designation="us-only">
+<addressbook>
+<last-name>Waters</last-name>
+<first-name>Simon</first-name>
+<middle-name>Joshua</middle-name>
+<address>
+<city>Newberg</city>
+<state>OR</state>
+<country>US</country>
+</address>
+</addressbook>
+<nationality>
+<country>US</country>
+</nationality>
+<residence>
+<country>US</country>
+</residence>
+</applicant>
+<applicant sequence="02" app-type="applicant-inventor" designation="us-only">
+<addressbook>
+<last-name>Bowyer</last-name>
+<first-name>Bryan</first-name>
+<middle-name>Darrell</middle-name>
+<address>
+<city>Newberg</city>
+<state>OR</state>
+<country>US</country>
+</address>
+</addressbook>
+<nationality>
+<country>US</country>
+</nationality>
+<residence>
+<country>US</country>
+</residence>
+</applicant>
+</applicants>
+<correspondence-address>
+<addressbook>
+<name>KLARQUIST SPARKMAN, LLP</name>
+<address>
+<address-1>121 SW SALMON STREET</address-1>
+<address-2>SUITE 1600</address-2>
+<city>PORTLAND</city>
+<state>OR</state>
+<postcode>97204</postcode>
+<country>US</country>
+</address>
+</addressbook>
+</correspondence-address>
+</parties>
+</us-bibliographic-data-application>
+<abstract id="abstract">
+<p id="p-0001" num="0000">A design tool hierarchically presents information about a design with nested blocks. For example, the design tool presents scheduling information for the design in a hierarchical Gantt chart. The scheduling information includes hierarchical design schedule blocks which accurately depict the timing and scheduling of the nested blocks of the design. Each of the hierarchical design schedule blocks includes control steps numbered relative to the block. The scheduling information also includes a hierarchical list of scheduled operations for the design. The hierarchical list emphasizes which operations are associated with which nested blocks. The scheduling information further includes pseudo-operation icons that are easily differentiated from real operation icons in the hierarchical Gantt chart. </p>
+</abstract>
+<drawings id="DRAWINGS">
+<figure id="figure-D00000" num="00000">
+<img id="EMI-D00000" he="94.17mm" wi="110.68mm" file="US20070006112A1-20070104-D00000.TIF" alt="embedded image" img-content="drawing" img-format="tif"/>
+</figure>
+<figure id="figure-D00001" num="00001">
+<img id="EMI-D00001" he="215.65mm" wi="149.35mm" file="US20070006112A1-20070104-D00001.TIF" alt="embedded image" img-content="drawing" img-format="tif"/>
+</figure>
+<figure id="figure-D00002" num="00002">
+<img id="EMI-D00002" he="225.64mm" wi="188.47mm" orientation="landscape" file="US20070006112A1-20070104-D00002.TIF" alt="embedded image" img-content="drawing" img-format="tif"/>
+</figure>
+<figure id="figure-D00003" num="00003">
+<img id="EMI-D00003" he="226.23mm" wi="186.61mm" orientation="landscape" file="US20070006112A1-20070104-D00003.TIF" alt="embedded image" img-content="drawing" img-format="tif"/>
+</figure>
+<figure id="figure-D00004" num="00004">
+<img id="EMI-D00004" he="227.50mm" wi="187.20mm" orientation="landscape" file="US20070006112A1-20070104-D00004.TIF" alt="embedded image" img-content="drawing" img-format="tif"/>
+</figure>
+<figure id="figure-D00005" num="00005">
+<img id="EMI-D00005" he="233.93mm" wi="161.88mm" file="US20070006112A1-20070104-D00005.TIF" alt="embedded image" img-content="drawing" img-format="tif"/>
+</figure>
+<figure id="figure-D00006" num="00006">
+<img id="EMI-D00006" he="205.23mm" wi="172.55mm" file="US20070006112A1-20070104-D00006.TIF" alt="embedded image" img-content="drawing" img-format="tif"/>
+</figure>
+<figure id="figure-D00007" num="00007">
+<img id="EMI-D00007" he="200.32mm" wi="168.57mm" orientation="landscape" file="US20070006112A1-20070104-D00007.TIF" alt="embedded image" img-content="drawing" img-format="tif"/>
+</figure>
+<figure id="figure-D00008" num="00008">
+<img id="EMI-D00008" he="231.99mm" wi="181.44mm" orientation="landscape" file="US20070006112A1-20070104-D00008.TIF" alt="embedded image" img-content="drawing" img-format="tif"/>
+</figure>
+<figure id="figure-D00009" num="00009">
+<img id="EMI-D00009" he="229.62mm" wi="139.62mm" orientation="landscape" file="US20070006112A1-20070104-D00009.TIF" alt="embedded image" img-content="drawing" img-format="tif"/>
+</figure>
+<figure id="figure-D00010" num="00010">
+<img id="EMI-D00010" he="164.00mm" wi="182.96mm" orientation="landscape" file="US20070006112A1-20070104-D00010.TIF" alt="embedded image" img-content="drawing" img-format="tif"/>
+</figure>
+<figure id="figure-D00011" num="00011">
+<img id="EMI-D00011" he="227.67mm" wi="189.31mm" orientation="landscape" file="US20070006112A1-20070104-D00011.TIF" alt="embedded image" img-content="drawing" img-format="tif"/>
+</figure>
+<figure id="figure-D00012" num="00012">
+<img id="EMI-D00012" he="167.39mm" wi="182.03mm" orientation="landscape" file="US20070006112A1-20070104-D00012.TIF" alt="embedded image" img-content="drawing" img-format="tif"/>
+</figure>
+<figure id="figure-D00013" num="00013">
+<img id="EMI-D00013" he="227.41mm" wi="185.08mm" orientation="landscape" file="US20070006112A1-20070104-D00013.TIF" alt="embedded image" img-content="drawing" img-format="tif"/>
+</figure>
+</drawings>
+<description id="description">
+<?summary-of-invention description="Summary of Invention" end="lead"?>
+<heading level="2" id="h-0001">TECHNICAL FIELD </heading>
+<p id="p-0002" num="0001"> The present invention pertains to presentation of information by a design tool. For example, the design tool displays scheduling information for a design in a hierarchical Gantt chart. </p>
+<heading level="2" id="h-0002">BACKGROUND </heading>
+<p id="p-0003" num="0002"> A design tool simplifies the process of specifying the design of an electronic circuit or system. With a design tool, a designer specifies the design in a way that abstracts away certain timing and structural details. The design tool then transforms the higher-level specification into a lower-level specification that is closer to an actual hardware implementation. The design tool shields the designer from many of the complexities of the design, making the design process faster and more cost effective. </p>
+<p id="p-0004" num="0003"> Different design tools provide different ways for a designer to specify a design. Some design tools accept textual specifications from the designer; other design tools accept graphical specifications. While some design tools accept high-level, abstract specifications of design behavior, other design tools require low-level specifications with hardware details. </p>
+<p id="p-0005" num="0004"> A behavioral synthesis tool is one kind of design tool. With a behavioral synthesis tool, the designer specifies a design by describing the behavior of the design. Many behavioral synthesis tools work with a hardware description language [&#x201c;HDL&#x201d;] such as VHDL or VERILOG&#xae;. For additional information about electronic design automation, behavioral synthesis tools, and HDLs, see John P. Elliott, Understanding Behavioral Synthesis, Kluwer Academic Publishers (1999). </p>
+<p id="p-0006" num="0005"> <figref idref="DRAWINGS">FIG. 1</figref> shows a VHDL listing (<b>100</b>) for a simple design with nested loops. After standard code that defines support libraries, an interface, and local variables, the VHDL listing (<b>100</b>) includes a main body with several nested loops. The main body includes a main loop (<b>110</b>) enclosing a WHILE loop (<b>120</b>). The WHILE loop (<b>120</b>) in turn encloses first and second FOR loops (<b>130</b>, <b>140</b>). Although the VHDL listing (<b>100</b>) is fairly simple, a VHDL listing for a real-world application can contain hundreds or thousands of lines of code. </p>
+<p id="p-0007" num="0006"> A good design tool provides the designer with accurate and helpful information about the design. For different stages in the design process, design tools use different techniques to present information about the design. For example, many design tools use a Gantt chart to present the results of scheduling the design process. In scheduling, a design tool assigns the operations of the design to steps timed by a clock. </p>
+<p id="p-0008" num="0007"> <figref idref="DRAWINGS">FIGS. 2</figref><i>a</i>-<b>2</b><i>c </i>show a Gantt chart (<b>200</b>) presenting a design schedule for the design of <figref idref="DRAWINGS">FIG. 1</figref>. The top row (<b>205</b>) of the Gantt chart (<b>200</b>) includes labels for control steps [&#x201c;c-steps&#x201d;] <b>1</b>-<b>5</b> of the design schedule. The c-steps partition the operations of the design schedule into clock cycles, where each c-step includes scheduled operations that are performed in a clock cycle. The design schedule begins at c-step <b>1</b> and proceeds to the right. The leftmost column (<b>210</b>) of the Gantt chart (<b>200</b>) lists labels for the scheduled operations of the design. The numbers in the labels relate to line numbers in the design specification. </p>
+<p id="p-0009" num="0008"> To show the design schedule at different levels, the Gantt chart (<b>200</b>) expands or collapses presentation of scheduling information for loops. In <figref idref="DRAWINGS">FIG. 2</figref><i>a, </i>for example, the Gantt chart (<b>200</b>) presents the design schedule and list of scheduled operations for the main loop (<b>110</b>), but hides that information for the nested loops (<b>120</b>, <b>130</b>, <b>140</b>). In <figref idref="DRAWINGS">FIGS. 2</figref><i>b </i>and <b>2</b><i>c, </i>the Gantt chart (<b>200</b>) adds design schedule details and lists scheduled operations for the WHILE loop (<b>120</b>) and the FOR loops (<b>130</b>, <b>140</b>) respectively. </p>
+<p id="p-0010" num="0009"> When the Gantt chart (<b>200</b>) hides scheduling information for a loop, the leftmost column (<b>210</b>) summarizes operations within the loop using a LOOP operation label. The loop is graphically presented as a rectangular outline in the design schedule of the enclosing loop. The outline extends for the number of clock cycles taken by one iteration of the nested loop. Thus, <figref idref="DRAWINGS">FIG. 2</figref><i>a </i>includes a rectangular outline (<b>220</b>) representing the WHILE loop (<b>120</b>), and <figref idref="DRAWINGS">FIGS. 2</figref><i>b </i>and <b>2</b><i>c </i>include rectangular outlines (<b>230</b>, <b>240</b>) representing the FOR loops (<b>130</b>, <b>140</b>). </p>
+<p id="p-0011" num="0010"> Within the Gantt chart (<b>200</b>), each of the listed scheduled operations is represented with a rectangular icon. The width of the rectangular icon roughly indicates the actual delay of the operation. For example, a multiplication operation takes longer than a comparison operation, so the icon for a MUL operation is wider than the icon for a LESSTHAN operation. </p>
+<p id="p-0012" num="0011"> Although the Gantt chart (<b>200</b>) helps a designer understand a design schedule, the Gantt chart (<b>200</b>) has several shortcomings with respect to the presentation of nested loops. </p>
+<p id="p-0013" num="0012"> With reference to <figref idref="DRAWINGS">FIGS. 1 and 2</figref><i>a</i>-<b>2</b><i>c, </i>the c-step numbering in the Gantt chart (<b>200</b>) does not accurately illustrate the actual timing of execution of the nested loops. For example, in <figref idref="DRAWINGS">FIGS. 2</figref><i>a</i>-<b>2</b><i>c, </i>c-step <b>5</b> of the main loop does not execute four clock cycles after c-step <b>1</b>, but rather executes an indeterminate number of clock cycles after c-step <b>1</b> due to the nested loops (<b>120</b>, <b>130</b>, <b>140</b>). As another example, suppose min1 is greater than min2 at the start. The WHILE loop (<b>120</b>) and FOR loops (<b>130</b>, <b>140</b>) never execute, and c-step <b>5</b> does not execute four clock cycles after c-step <b>1</b>. Using the c-step numbers of the main loop for nested loops is misleading in several respects. </p>
+<p id="p-0014" num="0013"> Aside from c-step numbering, the presentation of nested loops in the Gantt chart (<b>200</b>) may not correctly illustrate actual scheduling. With some design tools, a nested loop is scheduled separately from its enclosing loop, potentially under different constraints. Thus, presenting a nested loop in the same timing and scheduling context as its enclosing loop can be misleading. </p>
+<p id="p-0015" num="0014"> Further, the list of scheduled operations in the Gantt chart (<b>200</b>) obscures the nesting relationships between loops. The list does not clearly indicate which operations are for which loops, or whether a loop is expanded or collapsed. </p>
+<p id="p-0016" num="0015"> Finally, the rectangular icons for scheduled operations do not accurately represent actual delay for many types of scheduled operations. For a scheduled operation with a short delay or no real delay, the icon has a minimum, visible width which does not accurately represent actual delay. Moreover, none of the icons is marked or otherwise distinguished from other icons, making it harder for the designer to associate icons with scheduled operations. </p>
+<heading level="2" id="h-0003">SUMMARY </heading>
+<p id="p-0017" num="0016"> The present invention relates to presentation of information by a design tool. The design tool presents information about a design in ways that illustrate how the design will actually execute and that a designer easily understands. </p>
+<p id="p-0018" num="0017"> The present invention includes various presentation techniques and tools, which can be used in combination or independently. </p>
+<p id="p-0019" num="0018"> According to a first aspect of the present invention, a design tool hierarchically presents information about a design in a way that accurately shows the timing and scheduling of the design. For example, for a design with nested blocks, the design tool presents a design schedule in a hierarchical Gantt chart. The design schedule includes a block for each loop of the design, which reflects separate scheduling of loops of the design. Each block includes c-steps numbered relative to the block, which accurately illustrates the timing of execution of blocks in the design. The designer interactively evaluates the design schedule by expanding and collapsing blocks. As the designer expands and collapses nested blocks, design schedule information for specific blocks can be displayed in a nested manner or displayed in separate windows. Hierarchical presentation of nested blocks emphasizes the independent, iterative nature of the nested blocks and explicitly shows the hierarchical relationships between nested blocks. </p>
+<p id="p-0020" num="0019"> According to a second aspect of the present invention, a design tool hierarchically presents a list of operations for a design with nested blocks. The list emphasizes which operations are associated with which blocks. For example, the design tool presents a hierarchical textual list of operation labels in a hierarchical Gantt chart. The labels for operations of a nested block are indented relative to the labels for operations of its enclosing block. An icon next to a label for the nested block indicates whether the nested block is expanded or collapsed. </p>
+<p id="p-0021" num="0020"> According to a third aspect of the present invention, a design tool presents pseudo-operation icons easily differentiated from real operation icons in a design schedule. For example, the design tool presents rectangular icons for operations with real delay, with icon width indicating delay. The design tool presents circular icons for other operations. The design tool also presents each operation icon with one or more characters to identify its operation. </p>
+<p id="p-0022" num="0021"> Additional features and advantages of the invention will be made apparent from the following detailed description of an illustrative embodiment that proceeds with reference to the accompanying drawings.</p>
+<?summary-of-invention description="Summary of Invention" end="tail"?>
+<?brief-description-of-drawings description="Brief Description of Drawings" end="lead"?>
+<heading level="2" id="h-0004">BRIEF DESCRIPTION OF THE DRAWINGS </heading>
+<p id="p-0023" num="0022"> <figref idref="DRAWINGS">FIG. 1</figref> is a prior art VHDL listing for a design with nested loops. </p>
+<p id="p-0024" num="0023"> <figref idref="DRAWINGS">FIGS. 2</figref><i>a</i>-<b>2</b><i>c </i>are screen shots of a prior art Gantt chart showing a design schedule for the design of <figref idref="DRAWINGS">FIG. 1</figref>. </p>
+<p id="p-0025" num="0024"> <figref idref="DRAWINGS">FIG. 3</figref> is a block diagram of a suitable computing environment for implementing the illustrative embodiment. </p>
+<p id="p-0026" num="0025"> <figref idref="DRAWINGS">FIG. 4</figref> is a block diagram of a design tool that presents scheduling information according to the illustrative embodiment. </p>
+<p id="p-0027" num="0026"> <figref idref="DRAWINGS">FIG. 5</figref> is a flow chart for presenting design schedule information in a hierarchical Gantt chart according to the illustrative embodiment. </p>
+<p id="p-0028" num="0027"> <figref idref="DRAWINGS">FIG. 6</figref><i>a</i>-<b>6</b><i>d </i>are diagrams of hierarchical design schedule blocks according to the illustrative embodiment. </p>
+<p id="p-0029" num="0028"> <figref idref="DRAWINGS">FIGS. 7</figref><i>a</i>-<b>7</b><i>e </i>are screen shots of a hierarchical Gantt chart with hierarchical design schedule blocks, a hierarchical list of scheduled operations, and pseudo-operation icons according to the illustrative embodiment.</p>
+<?brief-description-of-drawings description="Brief Description of Drawings" end="tail"?>
+<?detailed-description description="Detailed Description" end="lead"?>
+<heading level="2" id="h-0005">DETAILED DESCRIPTION </heading>
+<p id="p-0030" num="0029"> The illustrative embodiment of the present invention is directed to hierarchical presentation of scheduling information with a design tool. For a design with nested blocks, the design tool presents a hierarchical list of scheduled operations and hierarchical design schedule blocks in a hierarchical Gantt chart. A designer interactively explores the design schedule by expanding or collapsing presentation of scheduling information for blocks. Hierarchical presentation of scheduling information for nested blocks emphasizes the independent, iterative nature of the nested blocks and explicitly shows the hierarchical relationships between nested blocks. </p>
+<p id="p-0031" num="0030"> In the illustrative embodiment, the design tool presents design schedule blocks in a way that accurately illustrates the timing of actual execution of the design schedule. For a design with nested loops, each loop of the design has a corresponding design schedule block. In addition, one or more branches of execution within a loop can each have a corresponding design schedule block. </p>
+<p id="p-0032" num="0031"> A design schedule block has its own set of control steps [&#x201c;c-steps&#x201d;]. The numbering of an enclosing block's c-steps is independent of actual delay of a nested block. Thus, whether the nested block executes for one clock cycle or 1,000 clock cycles, the numbering of c-steps in the enclosing block is consistent, even when the nested block executes conditionally or itself includes alternative branches of execution (e.g., branches of an if/then statement) with different lengths. </p>
+<p id="p-0033" num="0032"> In some design schedules, certain operations of a nested block can execute in the clock cycle of a preceding c-step of the enclosing block. For example, the assignment and terminate operations of the nested WHILE loop (<b>120</b>) of <figref idref="DRAWINGS">FIG. 1</figref> can execute in the clock cycle for c-step <b>1</b> of the main loop; these operations need not execute in a subsequent clock cycle. In the illustrative embodiment, the design tool shows the WHILE loop collapsed as a single icon in the clock overhead space of a c-step of the main loop. In expanded form, the design tool can present assignments, control flow logic, and other WHILE loop operations with negligible or no delay as associated with a c-step of the WHILE loop, but scheduled for execution in the clock cycle of a preceding c-step of the main loop. Thus, scheduled operations of the WHILE loop are associated with the WHILE loop, but the actual execution of the operations is also illustrated. </p>
+<p id="p-0034" num="0033"> In the illustrative embodiment, the design tool presents design schedule blocks in a way that reflects the actual scheduling of the design schedule. The design tool separately schedules blocks of operations, potentially scheduling different blocks according to different constraints. The design tool presents design schedule blocks in a way that facilitates interactive setting of scheduling constraints for one block at a time. For example, a design schedule block for a nested loop is numbered with an independent set of c-steps and set apart from the design schedule block for the enclosing loop. </p>
+<p id="p-0035" num="0034"> In the illustrative embodiment, the design tool presents design schedule blocks in a nested manner or in separate windows as a designer navigates a design schedule. These presentation techniques help the designer focus on particular design schedule blocks by hiding or deemphasizing other design schedule blocks. These techniques also facilitate the presentation of a large design schedule in an understandable manner by selectively hiding or deemphasizing blocks of the design schedule. </p>
+<p id="p-0036" num="0035"> In the illustrative embodiment, the design tool presents a hierarchical list of scheduled operation labels in the hierarchical Gantt chart. The design tool indents labels for operations of a nested block relative to the labels for operations of its enclosing block. The design tool presents an icon adjacent a label for the nested block that indicates whether the nested block is expanded or collapsed. Hierarchical presentation of operation labels makes it easier for the designer to associate operation labels with scheduled operations in the hierarchical Gantt chart. </p>
+<p id="p-0037" num="0036"> In the illustrative embodiment, the design tool presents pseudo-operation icons along with real operation icons in the hierarchical Gantt chart. The real operation icons are rectangular, with width indicating delay for real operations; the pseudo-operation icons are circular, representing notional scheduled operations or operations with negligible delay. The design tool presents each operation icon with one or more characters to identify the operation. These techniques more accurately portray actual delay for operations with negligible or no delay and help the designer understand the design schedule. </p>
+<p id="p-0038" num="0037"> In alternative embodiments, a design tool performs a subset of the functions described above. For example, the design tool hierarchically presents only design schedule blocks, only hierarchical operation lists, or only pseudo-operation icons. The design tool can perform any of the functions described above in combination with other design tool functions. </p>
+<p id="p-0039" num="0038"> In other alternative embodiments, a design tool performs the presentation techniques described above for information other than scheduling information and/or at a different stage in the design process. </p>
+<p id="h-0006" num="0000"> I. Computing Environment </p>
+<p id="p-0040" num="0039"> <figref idref="DRAWINGS">FIG. 3</figref> illustrates a generalized example of a suitable computing environment (<b>300</b>) in which the illustrative embodiment may be implemented. The computing environment (<b>300</b>) is not intended to suggest any limitation as to scope of use or functionality of the invention, as the present invention may be implemented in diverse general-purpose or special-purpose computing environments, including computing environments that lack one or more components shown in <figref idref="DRAWINGS">FIG. 3</figref>. </p>
+<p id="p-0041" num="0040"> With reference to <figref idref="DRAWINGS">FIG. 3</figref>, the computing environment (<b>300</b>) includes at least one processing unit (<b>310</b>) and memory (<b>320</b>). In <figref idref="DRAWINGS">FIG. 3</figref>, this most basic configuration is included within dashed line (<b>330</b>). The processing unit (<b>310</b>) executes computer-executable instructions and may be a real or a virtual processor. In a multi-processing system, multiple processing units execute computer-executable instructions to increase processing power. The memory (<b>320</b>) may be volatile memory (e.g., registers, cache, RAM), non-volatile memory (e.g., ROM, EEPROM, flash memory, etc.), or some combination of the two. The memory (<b>320</b>) stores design tool software (<b>380</b>). The design tool software (<b>380</b>) includes software for hierarchically presenting scheduling information. </p>
+<p id="p-0042" num="0041"> The computing environment (<b>300</b>) includes storage (<b>340</b>), one or more input devices (<b>350</b>), one or more output devices (<b>360</b>), and one or more communication connections (<b>370</b>). An interconnection mechanism (not shown) such as a bus, controller, or network interconnects the components of the computing environment (<b>300</b>). Typically, one or more layers of operating system software (not shown) provide an operating environment for other software executing in the computing environment (<b>300</b>), and coordinate activities of the components of the computing environment (<b>300</b>). The operating system software exposes standard services (e.g., graphics services, input/output services) through programming interfaces that can be used by the design tool software (<b>380</b>). The design tool software (<b>380</b>) itself can provide other functions for hierarchical presentation of scheduling information. </p>
+<p id="p-0043" num="0042"> The storage (<b>340</b>) may be removable or non-removable, and may be magnetic disk, magnetic tape or cassette, CD-ROM, DVD, or any other medium which can be used to store information and which can be accessed within the computing environment (<b>300</b>). The storage (<b>440</b>) stores instructions for the design tool software (<b>380</b>). </p>
+<p id="p-0044" num="0043"> The input device(s) (<b>350</b>) may be a touch input device such as a keyboard, mouse, pen, or trackball, a voice input device, a scanning device, or another device that provides input to the computing environment (<b>300</b>). The output device(s) (<b>360</b>) may be a display, printer, speaker, or another device that provides output from the computing environment (<b>300</b>). </p>
+<p id="p-0045" num="0044"> The communication connection(s) (<b>370</b>) enable communication over a communication medium to another computing entity. The communication medium conveys information such as computer-executable instructions or other data in a modulated data signal. A modulated data signal is a signal that has one or more of its characteristics set or changed in such a manner as to encode information in the signal. By way of example, and not limitation, communication media include wired or wireless techniques implemented with an electrical, optical, RF, infrared, acoustic, or other carrier. </p>
+<p id="p-0046" num="0045"> The invention can be described in the general context of computer-readable media. Computer-readable media are any available media that store or carry a modulated data signal and can be accessed within a computing environment. By way of example, and not limitation, with the computing environment (<b>300</b>), computer-readable media include memory (<b>320</b>), storage (<b>340</b>), communication connection(s) (<b>370</b>), and combinations of any of the above. </p>
+<p id="p-0047" num="0046"> The invention can be described in the general context of computer-executable instructions, such as those included in program modules, being executed in a computing environment on a target real or virtual processor. Generally, program modules include routines, programs, libraries, objects, classes, components, data structures, etc. that perform particular tasks or implement particular abstract data types. The functionality of the program modules may be combined or split between program modules as desired in various embodiments. Computer-executable instructions for program modules may be executed within a local or distributed computing environment. </p>
+<p id="p-0048" num="0047"> For the sake of presentation, the detailed description uses terms like &#x201c;determine,&#x201d; &#x201c;receive,&#x201d; &#x201c;present,&#x201d; and &#x201c;hide&#x201d; to describe computer-implemented operations in a computing environment. These terms are high-level abstractions for operations performed by a computer, and should not be confused with acts performed by a human being. </p>
+<p id="h-0007" num="0000"> II. Design Tool </p>
+<p id="p-0049" num="0048"> In the illustrative embodiment, a design tool presents cycle-accurate scheduling information for a design in a hierarchical Gantt chart. For a design with one or more nested blocks, the hierarchical Gantt chart presents design schedule blocks, lists of scheduled operations, and pseudo-operation icons. </p>
+<p id="p-0050" num="0049"> <figref idref="DRAWINGS">FIG. 4</figref> shows a design tool (<b>400</b>) that presents scheduling information in a hierarchical Gantt chart. The design tool (<b>400</b>) lets the designer evaluate alternative architectures for the design before selecting an implementation that satisfies performance and cost goals desired or required by the designer. For a target architecture, the design tool (<b>400</b>) schedules the design. Based upon various timing and resource constraints, the design tool (<b>400</b>) assigns the operations of the design to c-steps. The design tool (<b>400</b>) presents the results of scheduling in a hierarchical Gantt chart (<b>450</b>). </p>
+<p id="p-0051" num="0050"> For the sake of presentation, <figref idref="DRAWINGS">FIG. 4</figref> shows the components of the design tool (<b>400</b>) that are most closely connected with the presentation of scheduling information. <figref idref="DRAWINGS">FIG. 4</figref> does not show components for earlier and later stages of the design process, or simulation and verification. In one embodiment, the components of the design tool (<b>400</b>) are provided through a behavioral synthesis tool such as MONET&#xae; from Mentor Graphics Corporation. </p>
+<p id="p-0052" num="0051"> Depending on implementation, components of the design tool (<b>400</b>) can be added, omitted, split into multiple components, combined with other components, or replaced with like components. In alternative embodiments, the hierarchical Gantt chart is presented using a design tool having different components, another configuration of components, and/or at other stages of a design process. In such alternative embodiments, the hierarchical Gantt chart presents information based upon design representations in the intermediate formats or data structures (e.g., flow graphs, syntax trees) used in the design tools. </p>
+<p id="p-0053" num="0052"> A. HDL Code </p>
+<p id="p-0054" num="0053"> The design tool (<b>400</b>) accepts HDL code (<b>410</b>) for a design from the designer, an upstream design tool component, or another mechanism. For example, the design tool (<b>400</b>) accepts the VHDL listing (<b>100</b>) of <figref idref="DRAWINGS">FIG. 1</figref>. </p>
+<p id="p-0055" num="0054"> Alternatively, the design tool (<b>400</b>) accepts a specification for a design in another language (e.g., a higher-level language such as C++ or a lower-level language such as an RTL language), and the specification is input textually or graphically. In such alternative embodiments, the design tool (<b>400</b>) can transform the accepted specification into a form suitable for behavioral synthesis. </p>
+<p id="p-0056" num="0055"> B. Designer-Provided Constraints </p>
+<p id="p-0057" num="0056"> A set of designer-provided constraints (<b>420</b>) guides architectural exploration for a target technology parameterized by the designer-provided constraints (<b>420</b>). Table 1 introduces various designer-provided constraints.  
+<tables id="TABLE-US-00001" num="1">
+<table frame="none" colsep="0" rowsep="0">
+<tgroup align="left" colsep="0" rowsep="0" cols="1">
+<colspec colname="1" colwidth="217PT" align="center"/>
+<thead>
+<row>
+<entry namest="1" nameend="1" align="center">TABLE 1</entry>
+</row>
+</thead>
+<tbody valign="top">
+<row>
+<entry/>
+</row>
+<row>
+<entry namest="1" nameend="1" align="center" rowsep="1"/>
+</row>
+<row>
+<entry>Designer-Provided Constraints</entry>
+</row>
+</tbody>
+</tgroup>
+<tgroup align="left" colsep="0" rowsep="0" cols="2">
+<colspec colname="1" colwidth="35PT" align="left"/>
+<colspec colname="2" colwidth="182PT" align="left"/>
+<tbody valign="top">
+<row>
+<entry>Constraint</entry>
+<entry>Description</entry>
+</row>
+<row>
+<entry namest="1" nameend="2" align="center" rowsep="1"/>
+</row>
+<row>
+<entry>Clock</entry>
+<entry>The clock frequency/period for the design schedule.</entry>
+</row>
+<row>
+<entry>cycle</entry>
+</row>
+<row>
+<entry>Resource</entry>
+<entry>One or more types of components (e.g., adder, multiplier)</entry>
+</row>
+<row>
+<entry>types</entry>
+<entry>onto which operations (e.g., addition, multiplication)</entry>
+</row>
+<row>
+<entry/>
+<entry>can be mapped. The component type determines the delay</entry>
+</row>
+<row>
+<entry/>
+<entry>for an operation.</entry>
+</row>
+<row>
+<entry>Resource</entry>
+<entry>A constraint on the number of available components, which</entry>
+</row>
+<row>
+<entry>numbers</entry>
+<entry>influences whether identical operations will each need a</entry>
+</row>
+<row>
+<entry/>
+<entry>component or will share a single component.</entry>
+</row>
+<row>
+<entry>Relative</entry>
+<entry>A constraint on the relative positions of two operations in a</entry>
+</row>
+<row>
+<entry>timing</entry>
+<entry>design schedule block.</entry>
+</row>
+<row>
+<entry>Absolute</entry>
+<entry>A constraint specifying a particular location for an operation</entry>
+</row>
+<row>
+<entry>timing</entry>
+<entry>in a design schedule block.</entry>
+</row>
+<row>
+<entry>Latency</entry>
+<entry>A constraint that specifies a latency in a design schedule</entry>
+</row>
+<row>
+<entry/>
+<entry>block.</entry>
+</row>
+<row>
+<entry namest="1" nameend="2" align="center" rowsep="1"/>
+</row>
+</tbody>
+</tgroup>
+</table>
+</tables>
+</p>
+<p id="p-0058" num="0057"> The designer specifies the designer-provided constraints (<b>420</b>) through a graphical user interface or other mechanism. This allows the designer to set a tradeoff between cost and quality of resources, or a tradeoff between number of resources and speed of the implementation. </p>
+<p id="p-0059" num="0058"> In addition to the designer-provided constraints (<b>420</b>), the HDL code (<b>410</b>) typically implies certain constraints such as data dependencies and input/output timing requirements. Upstream design tool components typically provide other constraints (e.g., actual resource assignments, resource sharing, initiation interval) to downstream design tool components. </p>
+<p id="p-0060" num="0059"> Alternative embodiments use fewer constraints, additional constraints, or different formulations of constraints to guide scheduling and architectural exploration. Additional types of constraints include constraints for interactive memory allocation (to explore different memory/register/array possibilities), interactive loop handling (to explore rolling/unrolling of loops), pipelining, and area. </p>
+<p id="p-0061" num="0060"> C. Architectural Exploration </p>
+<p id="p-0062" num="0061"> An architectural exploration component (<b>430</b>) accepts the HDL code (<b>410</b>) and the designer-provided constraints (<b>420</b>). The architectural exploration component (<b>430</b>) converts the HDL code (<b>410</b>) to an architecture-specific implementation for a target FPGA or ASIC technology, presenting scheduling results to the designer in the hierarchical Gantt chart (<b>440</b>). For an implementation selected by the designer, the architectural exploration component (<b>430</b>) outputs scheduled synthesis intermediate format [&#x201c;SIF&#x201d;] code (<b>450</b>). In alternative embodiments, the architectural exploration component outputs code in another intermediate format or structured representation. </p>
+<p id="p-0063" num="0062"> In general, architectural exploration involves transformations and architectural choices including: loop pipelining, mapping of arrays into memories and vice versa, loop transformations such as loop unrolling (which expose parallelism leading to architectures that have higher performance), selection of clock period, selection of the type and number of components that are allocated, and selection of how I/O and operations are scheduled. Internally, the architectural exploration component (<b>430</b>) does automated exploration as well as optimizations such as common-sub-expression elimination, dead-code elimination, constant propagation. </p>
+<p id="p-0064" num="0063"> The architectural exploration component (<b>430</b>) operates in several stages, transforming the HDL code (<b>410</b>) through several intermediate formats before outputting the scheduled SIF code (<b>450</b>). </p>
+<p id="p-0065" num="0064"> 1. Transforming HDL to SIF </p>
+<p id="p-0066" num="0065"> Initially, the architectural exploration component (<b>430</b>) converts the HDL code (<b>410</b>) into a SIF representation. Later transformations, including scheduling, operate upon data in the SIF representation. </p>
+<p id="p-0067" num="0066"> In the SIF representation, a statement of the class SIF_Sequential corresponds to the main process of the HDL code (<b>410</b>). The sequential statement is a compound statement that controls other statements such as basic statements and control statements (e.g., loop, if, case). Table 2 describes various types of basic SIF statements.  
+<tables id="TABLE-US-00002" num="2">
+<table frame="none" colsep="0" rowsep="0" pgwide="1">
+<tgroup align="left" colsep="0" rowsep="0" cols="1">
+<colspec colname="1" colwidth="259PT" align="center"/>
+<thead>
+<row>
+<entry namest="1" nameend="1" align="center">TABLE 2</entry>
+</row>
+</thead>
+<tbody valign="top">
+<row>
+<entry/>
+</row>
+<row>
+<entry namest="1" nameend="1" align="center" rowsep="1"/>
+</row>
+<row>
+<entry>Basic SIF Statements</entry>
+</row>
+</tbody>
+</tgroup>
+<tgroup align="left" colsep="0" rowsep="0" cols="2">
+<colspec colname="1" colwidth="56PT" align="left"/>
+<colspec colname="2" colwidth="203PT" align="left"/>
+<tbody valign="top">
+<row>
+<entry>Type</entry>
+<entry>Description</entry>
+</row>
+<row>
+<entry namest="1" nameend="2" align="center" rowsep="1"/>
+</row>
+<row>
+<entry>Assignment</entry>
+<entry>Operations which involve data transfer without significant processing</entry>
+</row>
+<row>
+<entry/>
+<entry>delay. Not mapped to library components, assignment operations are</entry>
+</row>
+<row>
+<entry/>
+<entry>implemented in later synthesis by data path connections and merged</entry>
+</row>
+<row>
+<entry/>
+<entry>into the multiplexer interconnection structure. Assignment</entry>
+</row>
+<row>
+<entry/>
+<entry>operations relate to variables; accesses to signal are considered I/O</entry>
+</row>
+<row>
+<entry/>
+<entry>operations. If a signal is local to a process and is not to be treated</entry>
+</row>
+<row>
+<entry/>
+<entry>as I/O, the signal is transformed into a variable before scheduling.</entry>
+</row>
+<row>
+<entry/>
+<entry>Assignment operations include assignments, concatenations,</entry>
+</row>
+<row>
+<entry/>
+<entry>readslices, writeslices, multiplexer operations, and other simple logic</entry>
+</row>
+<row>
+<entry/>
+<entry>functions</entry>
+</row>
+<row>
+<entry>I/O</entry>
+<entry>Operations involving signals, including inputs and outputs. If a data</entry>
+</row>
+<row>
+<entry/>
+<entry>processing operation accesses a signal, an assignment is extracted to</entry>
+</row>
+<row>
+<entry/>
+<entry>allow independent scheduling of the I/O operation and the data</entry>
+</row>
+<row>
+<entry/>
+<entry>processing operation. If an input and an output of an operation are</entry>
+</row>
+<row>
+<entry/>
+<entry>both signals, the operation is split using assignments so that the read</entry>
+</row>
+<row>
+<entry/>
+<entry>and the write can be scheduled separately</entry>
+</row>
+<row>
+<entry>Control</entry>
+<entry>Operations controlling the execution of a loop. Control flow</entry>
+</row>
+<row>
+<entry>Flow</entry>
+<entry>operations appear as exit and next statements in VHDL, and as</entry>
+</row>
+<row>
+<entry/>
+<entry>terminate or iterate statements in SIF. The evaluation of the</entry>
+</row>
+<row>
+<entry/>
+<entry>condition of the exit/next statement is not part of the control flow</entry>
+</row>
+<row>
+<entry/>
+<entry>statement.</entry>
+</row>
+<row>
+<entry>Real</entry>
+<entry>Operations which have a delay and are mapped to library</entry>
+</row>
+<row>
+<entry/>
+<entry>components. Real operations include additions, multiplications,</entry>
+</row>
+<row>
+<entry/>
+<entry>subtractions, divisions, comparisons, increments and decrements.</entry>
+</row>
+<row>
+<entry>Clock</entry>
+<entry>Operations corresponding to statements that model cycle-by-cycle</entry>
+</row>
+<row>
+<entry>synchronizations</entry>
+<entry>behavior in HDL code (e.g., WAIT statements in VHDL). Clock</entry>
+</row>
+<row>
+<entry/>
+<entry>synchronizations are not ultimately scheduled, but rather are used to</entry>
+</row>
+<row>
+<entry/>
+<entry>generate constraints in a design schedule.</entry>
+</row>
+<row>
+<entry namest="1" nameend="2" align="center" rowsep="1"/>
+</row>
+</tbody>
+</tgroup>
+</table>
+</tables>
+</p>
+<p id="p-0068" num="0067"> 2. Creating a Constrained Control/Data Flow Graph </p>
+<p id="p-0069" num="0068"> The architectural exploration component (<b>430</b>) creates a constrained control/data flow graph [&#x201c;CDFG&#x201d;] based upon data dependencies implicit in the SIF representation. The data dependencies indicate the order in which operations must be performed. In the constrained CDFG, nodes represent operations and dependency arcs connect nodes to indicate data dependencies. </p>
+<p id="p-0070" num="0069"> The constrained CDFG maintains data dependencies and implies I/O timing requirements for the design. The constrained CDFG includes the input(s) and output(s), the operations, the flow of data from the input(s) to the output(s), and the control structures for conditionals and loops. I/O timing requirements relate to the timing of input and output operations, i.e., interface timing, and may imply a required I/O scheduling mode (e.g., fixed, super state, free) for the design. </p>
+<p id="p-0071" num="0070"> 3. Allocating Resources </p>
+<p id="p-0072" num="0071"> The architectural exploration component (<b>430</b>) then creates a low-level CDFG based upon resource and cycle constraints. The architectural exploration component (<b>430</b>) determines how many and which kinds of resources will be used, which heavily influences the area/performance tradeoff for a design schedule. Allocating a large number of resources typically leads to a more parallel, faster design; allocating a small number typically leads to a slower, but smaller design. </p>
+<p id="p-0073" num="0072"> In allocation, the designer can indicate a clock cycle constraint, libraries of components for operations, and number constraints for components. For operations, the designer can specify one or more types of components onto which operations can be mapped. Alternatively, the designer can specify that the design be scheduled with a maximum number of components, and the architectural exploration component (<b>430</b>) can automatically perform allocation. </p>
+<p id="p-0074" num="0073"> After allocation, the low-level CDFG provides constraints used in later scheduling. These constraints includes clock frequency, resource assignments for operations, resource sharing constraints, resource number constraints, and initiation interval. A resource assignment for an operation indicates operation delay for the assigned component. A resource sharing constraint indicates whether operations may share a component. For example, if c-steps for the operations do not overlap or if the operations appear in exclusive branches, the operations can share a component. A resource number constraint restricts the number of available components, and can affect whether operations can share a component. In a pipelined loop, a subsequent iteration of the loop begins before the current iteration completes. The initiation interval indicates the number of cycles after which a new iteration starts in a pipelined loop. </p>
+<p id="p-0075" num="0074"> 4. Scheduling </p>
+<p id="p-0076" num="0075"> A scheduler assigns operations to clock cycles to determine cycle-accurate behavior for the design. The scheduler, also described in the section entitled &#x201c;Scheduling,&#x201d; operates in two stages. </p>
+<p id="p-0077" num="0076"> In the first stage, the scheduler computes a schedule, but does not modify the SIF representation of the design. Instead, the hierarchical Gantt chart (<b>440</b>) presents the results of scheduling. The scheduler works with an interactive feedback loop that allows the designer to evaluate the architectute, adjust constraints, and reinvoke scheduling for a new architecture with a different area/performance tradeoff. The scheduler then generates new scheduling results, which are presented in the hierarchical Gantt chart (<b>440</b>). In alternative embodiments, a hierarchical Gantt chart presents scheduling results based upon a non-SIF representation of the design. </p>
+<p id="p-0078" num="0077"> In the second stage, after the designer selects an implementation, the scheduler applies the schedule to modify the SIF representation of the design. The scheduler outputs scheduled SIF code (<b>450</b>), which can be simulated in cycle-accurate simulation. In the second stage, the hierarchical Gantt chart (<b>440</b>) is closed due to potential changes to the SIF representation. </p>
+<p id="p-0079" num="0078"> D. RTL Code Generation </p>
+<p id="p-0080" num="0079"> The RTL code generation component (<b>460</b>) converts the scheduled SIF code (<b>450</b>) into RTL code (<b>470</b>). In doing so, the RTL code generation component (<b>460</b>) optimizes memory allocation and binds operation components to structural components. The RTL code generation component (<b>460</b>) also performs optimizations to generate explicit finite state machines and data path components (e.g., registers, multiplexers, functional units). The optimizations include register and component sharing, multiplexer optimization, finite state machine optimization, and glue logic generation and optimization. </p>
+<p id="p-0081" num="0080"> The RTL code generation component (<b>460</b>) performs optimizations and generates RTL netlists in two steps. After the first step, the RTL netlist is at the operation level. After the second step, the RTL netlist is structural (i.e., operations are bound to structural components). The RTL code (<b>470</b>) can be simulated in RTL simulation and passed to one or more downstream synthesis tools (e.g., an RTL synthesis tool). </p>
+<p id="h-0008" num="0000"> III. Scheduling </p>
+<p id="p-0082" num="0081"> The scheduler assigns operations to clock cycles to determine the cycle-by-cycle behavior of a design. The scheduler separately schedules fragments of the design called basic blocks. The scheduler treats a loop body as a basic block. When a basic block is scheduled, the scheduler assigns every operation of the block to a c-step. C-steps are numbered from 1 to N relative to the start of the block. In addition, the scheduler may schedule operations other than real operations and I/O writes in a c-step <b>0</b> for the block. </p>
+<p id="p-0083" num="0082"> The scheduler determines a design schedule based upon various constraints imposed by the designer and upstream design tool components. The SIF representation implies data dependency and I/O timing constraints. Resource allocation provides clock cycle, resource assignment, resource sharing, resource number, and initiation interval constraints. The designer can further provide relative timing, absolute timing, and latency constraints. </p>
+<p id="p-0084" num="0083"> The scheduler is called one or more times for each basic block. If the scheduler is called multiple times, quadratic algorithms may be used to solve for a design schedule in terms of number of operations, variables, constraints, c-steps, etc. Numerous scheduling algorithms exist; different algorithms are optimized for different circumstances. The scheduler uses any of an As Soon As Possible (ASAP) algorithm, an As Late As Possible (ALAP) algorithm, and an incremental heuristic algorithm. In alternative embodiments, the scheduler uses a list algorithm, a force-directed algorithm, another heuristic algorithm, integer linear programming techniques, or some other type of scheduling algorithm. </p>
+<p id="p-0085" num="0084"> In alternative embodiments, the scheduler produces a design schedule according to other scheduling rules. </p>
+<p id="p-0086" num="0085"> A. Basic Blocks </p>
+<p id="p-0087" num="0086"> A basic block is a fragment of the design (in SIF representation) which is scheduled separately. A basic block is typically a list of statements, for example, statements of a loop body. Basic blocks may be nested, and nested basic blocks are scheduled in a depth first manner by default. A nested block is treated as an assignment operation during scheduling of its enclosing block. </p>
+<p id="p-0088" num="0087"> The scheduler separately schedules each basic block, and a set of controller states is reserved for each block. Each controller state of the design schedule can be matched to a block. Until later synthesis generates a controller, the controller states are represented as clock synchronizations. All real or I/O write operations of different blocks are separated by at least one clock synchronization to keep them in different states. </p>
+<p id="p-0089" num="0088"> Basic blocks are determined before scheduling. The scheduler identifies basic blocks, for example, identifying loops or other fragments that should be scheduled separately (e.g., different length branches of an if/then statement). The designer can follow design conventions to segregate basic blocks into loops for scheduling. In an alternative embodiment, the designer annotates code with user pragmas to indicate basic blocks to the scheduler. </p>
+<p id="p-0090" num="0089"> The scheduler recognizes pipelined loops. Pipelining is a loop optimization to increase throughput by starting an iteration of the loop before the previous iteration finishes. The innermost basic block of a loop may be pipelined. To pipeline an entire loop, the loop must consist of a single basic block without sub-loops (or with the sub-loops completely unrolled). </p>
+<p id="p-0091" num="0090"> The scheduler can schedule multi-cycle operations. A multi-cycle operation is scheduled across more than one cycle, which requires transfer of operands and results to and from data path components in different c-steps. Whether an operation is multi-cycle depends on the component mapped to the operation and the cycle constraint. </p>
+<p id="p-0092" num="0091"> B. Control Steps [&#x201c;C-Steps&#x201d;]</p>
+<p id="p-0093" num="0092"> When a basic block is scheduled, the scheduler assigns every operation of the block to a c-step. A c-step represents a clock cycle in a block iteration. For each block, the number of c-steps corresponds to the number of clock cycles in one iteration of the block. For a design with nested blocks, the total number of clock cycles needed to execute the design is the sum of, for each block, the number of c-steps multiplied by the number of iterations. </p>
+<p id="p-0094" num="0093"> The scheduler numbers c-steps for each block from 1 to N relative to the start of the block. N is the latency of the block. If a block includes branches of an if/then or case statement, the 1 to N numbering separately continues over each branch. For example, for a block with alternative single c-step branches, each branch's c-step has the same c-step number. To enforce consistent numbering of c-steps that follow the branches, each branch has the same number of c-steps. If different branches have different numbers of c-steps, the different branches are treated as sub-blocks. </p>
+<p id="p-0095" num="0094"> Clock synchronizations separate c-steps in the SIF representation. Each c-step numbered from 1 to N is preceded by a clock synchronization. Thus, the number of a c-step indicates the number of clock synchronizations preceding the c-step, and the number of clock synchronizations in a block indicates the latency of the block. </p>
+<p id="p-0096" num="0095"> The scheduler can assign certain operations to a c-step <b>0</b> for a block, in which case the operations execute in the previous controller state. Real operations and I/O write operations cannot be scheduled in c-step <b>0</b>, but other types of operations (including loop statements treated as assignments) can. If a block has no real or I/O write operations, the latency of the block may be 0 c-steps, and the block does not require any clock synchronizations. </p>
+<p id="p-0097" num="0096"> The last c-step of a basic block is not followed by a clock synchronization. To enforce the condition that real and I/O write operations of different basic blocks are separated by at least one clock synchronization, real and I/O write operations are not scheduled after a nested block in the same c-step. The enclosing block includes a clock synchronization statement after the block before a real operation executes in the enclosing block. </p>
+<p id="p-0098" num="0097"> The designer can constrain the timing of a design schedule through relative timing, absolute timing, and/or latency constraints. A relative timing constraint defines the relative position of two operations in the same block; a constraint not to schedule two operations in the same block is specified as a resource constraint. A relative timing constraint can specify a minimum, a maximum, or an exact distance between operations. Distances are in units of c-steps and refer to static scheduling results. When no sub-block exists between constrained operations, the scheduling delay corresponds to actual delay between the constrained operations. A latency constraint specifies the latency of a block, and can specify a minimum, maximum, or exact latency. Internally, each block has a start operation and an end operation. A latency constraint is transformed into a relative timing constraint between the start and end operations. An absolute timing constraint specifies the c-step in which an operation must be scheduled, relative to the start of the block including the operation. </p>
+<p id="p-0099" num="0098"> C. I/O Scheduling Modes </p>
+<p id="p-0100" num="0099"> The scheduler operates in any of several available I/O scheduling modes. Different modes give the scheduler different degrees of freedom to change the external behavior of the design. An I/O scheduling mode defines where the scheduler may insert or remove clock synchronizations and how the scheduler may move operations. Table 3 summarizes I/O three scheduling modes.  
+<tables id="TABLE-US-00003" num="3">
+<table frame="none" colsep="0" rowsep="0" pgwide="1">
+<tgroup align="left" colsep="0" rowsep="0" cols="1">
+<colspec colname="1" colwidth="259PT" align="center"/>
+<thead>
+<row>
+<entry namest="1" nameend="1" align="center">TABLE 3</entry>
+</row>
+</thead>
+<tbody valign="top">
+<row>
+<entry/>
+</row>
+<row>
+<entry namest="1" nameend="1" align="center" rowsep="1"/>
+</row>
+<row>
+<entry>I/O Scheduling Modes</entry>
+</row>
+</tbody>
+</tgroup>
+<tgroup align="left" colsep="0" rowsep="0" cols="2">
+<colspec colname="1" colwidth="42PT" align="left"/>
+<colspec colname="2" colwidth="217PT" align="left"/>
+<tbody valign="top">
+<row>
+<entry>Mode</entry>
+<entry>Description</entry>
+</row>
+<row>
+<entry namest="1" nameend="2" align="center" rowsep="1"/>
+</row>
+<row>
+<entry>Fixed</entry>
+<entry>The external cycle-by-cycle behavior of the design at the interface is not</entry>
+</row>
+<row>
+<entry/>
+<entry>changed; simulation of I/O assignments matches before and after</entry>
+</row>
+<row>
+<entry/>
+<entry>scheduling. Basic blocks keep their latency; the rules enforcing uniform</entry>
+</row>
+<row>
+<entry/>
+<entry>branch length are satisfied before scheduling. I/O operations, control flow</entry>
+</row>
+<row>
+<entry/>
+<entry>operations, and sub-blocks are scheduled where they appear before</entry>
+</row>
+<row>
+<entry/>
+<entry>scheduling. Real and assignment operations may be moved, so long as</entry>
+</row>
+<row>
+<entry/>
+<entry>data dependencies are not violated, because the scheduling of these</entry>
+</row>
+<row>
+<entry/>
+<entry>operations does not affect external behavior.</entry>
+</row>
+<row>
+<entry>Super State</entry>
+<entry>Scheduling may expand an original control state to a set of one or more</entry>
+</row>
+<row>
+<entry/>
+<entry>control states called a super state, which entails insertion of clock</entry>
+</row>
+<row>
+<entry/>
+<entry>synchronizations. The order of I/O operations is not changed. In every</entry>
+</row>
+<row>
+<entry/>
+<entry>block, I/O operations, control flow operations, and sub-blocks are</entry>
+</row>
+<row>
+<entry/>
+<entry>scheduled where they appear before scheduling, and I/O operations are</entry>
+</row>
+<row>
+<entry/>
+<entry>kept in order with control flow operations and sub-blocks. I/O write</entry>
+</row>
+<row>
+<entry/>
+<entry>operations, however, are scheduled in the last state of a super state.</entry>
+</row>
+<row>
+<entry>Free</entry>
+<entry>The scheduler ignores original clock synchronizations, and may change the</entry>
+</row>
+<row>
+<entry/>
+<entry>latency of blocks. I/O operations to the same port, however, are</entry>
+</row>
+<row>
+<entry/>
+<entry>scheduled in their original order, and I/O operations are kept in order with</entry>
+</row>
+<row>
+<entry/>
+<entry>control flow operations and sub-blocks. The designer can explicitly</entry>
+</row>
+<row>
+<entry/>
+<entry>impose additional timing constraints.</entry>
+</row>
+<row>
+<entry namest="1" nameend="2" align="center" rowsep="1"/>
+</row>
+</tbody>
+</tgroup>
+</table>
+</tables>
+</p>
+<p id="p-0101" num="0100"> In fixed and super state modes, the scheduler may not add clock synchronizations between I/O write operations. Because of the condition that I/O write operations of different blocks must be separated by at least one clock synchronization, scheduling of certain specifications is infeasible. </p>
+<p id="h-0009" num="0000"> IV. Hierarchical Gantt Chart </p>
+<p id="p-0102" num="0101"> A hierarchical Gantt chart helps the designer visualize the results of scheduling, and accurately presents the actual timing and scheduling of a design schedule. The hierarchical Gantt chart includes a hierarchical list of scheduled operations and hierarchical design schedule blocks. The hierarchical Gantt chart represents operations with negligible or no delay using pseudo-operation icons. </p>
+<p id="p-0103" num="0102"> <figref idref="DRAWINGS">FIG. 5</figref> shows a technique (<b>500</b>) in a design tool for presenting scheduling information (including design schedule blocks and a list of scheduled operations) in a hierarchical Gantt chart according to the illustrative embodiment. The design tool of <figref idref="DRAWINGS">FIG. 5</figref> expands or collapses presentation of scheduling information for a block in response to commands from the designer. </p>
+<p id="p-0104" num="0103"> After the start (<b>505</b>), the design tool displays (<b>510</b>) a label and icon for a top-level loop in the hierarchical Gantt chart. The label and icon summarize the top-level loop, which includes zero or more nested blocks, in a collapsed form. Each of the zero or more nested blocks is for a nested loop, a branch of execution, or another separately scheduled fragment of the design. </p>
+<p id="p-0105" num="0104"> The design tool then receives (<b>520</b>) valid presentation input for a selected block. For example, if a selected block is collapsed, valid presentation input for the selected block expands the block. If a selected block is expanded, valid presentation input for the selected block collapses the block. </p>
+<p id="p-0106" num="0105"> If the presentation input directs the design tool to expand (<b>530</b>) the selected block, the design tool displays (<b>540</b>) the design schedule block and operation list for the selected block in the hierarchical Gantt chart. If the presentation input directs the design tool to collapse (<b>550</b>) the selected block, the design tool hides (<b>560</b>) the design schedule block and operation list for the selected block in the hierarchical Gantt chart, for example, presenting instead a label and icon. If the presentation input directs the design tool to close (<b>570</b>) the hierarchical Gantt chart, the technique (<b>500</b>) ends (<b>580</b>). </p>
+<p id="p-0107" num="0106"> In practice, the design tool receives numerous other kinds of presentation input from the designer, for example, commands to alter presentation of the hierarchical Gantt chart in another manner, adjust scheduling constraints, recalculate scheduling results, or apply scheduling results to SIF code. </p>
+<p id="p-0108" num="0107"> The design tool can hierarchically presents design schedule blocks and lists of scheduled operations together or separately. In alternative embodiments, the design tool uses other techniques to hierarchically present scheduling information. </p>
+<p id="p-0109" num="0108"> A. Hierarchical Design Schedule Blocks </p>
+<p id="p-0110" num="0109"> <figref idref="DRAWINGS">FIGS. 6</figref><i>a</i>-<b>6</b><i>d </i>are diagrams of hierarchical design schedule blocks for a design schedule with a nested block for a nested loop. <figref idref="DRAWINGS">FIGS. 6</figref><i>a</i>-<b>6</b><i>c </i>show various views of the hierarchical design schedule blocks, and <figref idref="DRAWINGS">FIG. 6</figref><i>d </i>shows a pipelined design schedule block for the nested loop. </p>
+<p id="p-0111" num="0110"> <figref idref="DRAWINGS">FIG. 6</figref><i>a </i>shows a design schedule block (<b>600</b>) for a Loop <b>20</b>, which encloses Loop <b>40</b>. A column (<b>610</b>) listing scheduled operations includes a label (<b>612</b>) for the Loop <b>20</b> block and labels for the non-filtered operations of the Loop <b>20</b> block. The non-filtered operations include real operations such as Add <b>27</b> (label <b>614</b>) as well as the Loop <b>40</b> sub-block (label <b>616</b>). </p>
+<p id="p-0112" num="0111"> The design schedule block (<b>600</b>) includes five c-steps (<b>620</b>, <b>630</b>, <b>640</b>, <b>650</b>, <b>660</b>) numbered relative to the beginning of the design schedule block (<b>600</b>). Clock synchronization operations (shown as bold-face vertical bars) separate the c-steps. Each c-step includes a clock overhead space (shown as shaded space), which is reserved for certain types of operations with neglible or no delay. For example, c-step C<b>4</b> (<b>660</b>) is separated from c-step C<b>3</b> (<b>650</b>) with a clock synchronization (<b>661</b>). C-step C<b>4</b> includes a clock overhead space (<b>668</b>). As the last c-step of the Loop <b>20</b> block, a clock synchronization of the Loop <b>20</b> block does not follow c-step C<b>4</b>. </p>
+<p id="p-0113" num="0112"> For each scheduled operation, the design schedule block (<b>600</b>) shows a scheduled position (shown as heavily shaded space) within a scheduling frame (shown as a rectangular outline). The scheduling frame indicates potential locations for the operation in the design schedule block (<b>600</b>), depending on the scheduling algorithm used (e.g., ASAP, ALAP), and preserving data dependencies within the block. For example, the operation Write <b>48</b> (label <b>618</b>) has a scheduled position (<b>664</b>) in c-step C<b>4</b> (<b>660</b>). The scheduling frame (<b>665</b>) for the operation indicates the potential locations for the scheduled position (<b>664</b>). </p>
+<p id="p-0114" num="0113"> Real operations (e.g., additions, multiplications) are scheduled in the real spaces (shown as clear areas) of the c-steps of the design schedule block (<b>600</b>), and other operations can also be scheduled in the real spaces. For example, the real space (<b>662</b>) of c-step C<b>4</b> (<b>660</b>) includes the scheduled position (<b>664</b>) for the operation I/O operation Write <b>48</b> (label <b>618</b>). Basic sub-blocks for nested blocks are scheduled inside a clock overhead space. Assignment, I/O, and control flow operations can be scheduled inside clock overhead spaces or real spaces. C-step C<b>0</b> (<b>620</b>) includes clock overhead space, but no real space. Only basic sub-blocks, and assignments, I/O reads, and control flow operations are scheduled in c-step C<b>0</b> (<b>620</b>). </p>
+<p id="p-0115" num="0114"> In the design schedule block (<b>600</b>) for the Loop <b>20</b> block, the nested Loop <b>40</b> sub-block is scheduled in c-step C<b>3</b> (<b>650</b>) as a single operation with negligible delay (namely, an assignment operation). Responsive to designer input, the design tool expands or collapses presentation of design schedule sub-block for nested Loop <b>40</b>. <figref idref="DRAWINGS">FIGS. 6</figref><i>b </i>and <b>6</b><i>c </i>show two different expanded presentations of the design schedule sub-block (<b>601</b>) for nested Loop <b>40</b>. </p>
+<p id="p-0116" num="0115"> <figref idref="DRAWINGS">FIG. 6</figref><i>b </i>shows the design schedule sub-block (<b>601</b>) as viewed in a separate window from the design schedule block (<b>600</b>). The design schedule sub-block (<b>601</b>) includes three c-steps (<b>670</b>, <b>680</b>, <b>690</b>) numbered relative to the beginning of the design schedule sub-block (<b>601</b>). The constraints of the design schedule sub-block (<b>601</b>) can differ from the constraints of the design schedule block (<b>600</b>), but the same rules for presenting clock synchronizations, clock overhead spaces, real spaces, and operation assignments apply. </p>
+<p id="p-0117" num="0116"> <figref idref="DRAWINGS">FIG. 6</figref><i>c </i>shows the design schedule sub-block (<b>601</b>) nested within the design schedule block (<b>600</b>). The design schedule sub-block (<b>601</b>) is nested within c-step C<b>3</b> (<b>650</b>) of the design schedule block (<b>600</b>). To present the design schedule sub-block (<b>601</b>), the design tool expands c-step c<b>3</b> (<b>650</b>) of the design schedule block (<b>600</b>). Before a clock overhead space (<b>658</b>), the expanded c-step C<b>3</b> (<b>650</b>) includes an additional overhead space (<b>653</b>) in which operations with negligible or no delay can be scheduled. The additional overhead space (<b>653</b>) separates the real space (<b>652</b>) of c-step C<b>3</b> (<b>650</b>) from sub-block space (<b>655</b>) that contains the design schedule sub-block (<b>601</b>) but no operations of the design schedule block (<b>600</b>). The design schedule sub-block (<b>601</b>) itself is the same as in <figref idref="DRAWINGS">FIG. 6</figref><i>b. </i>Both the design schedule block (<b>600</b>) and the design schedule sub-block (<b>601</b>) end without clock synchronization operations. </p>
+<p id="p-0118" num="0117"> <figref idref="DRAWINGS">FIG. 6</figref><i>d </i>shows a pipelined design schedule sub-block (<b>602</b>) for nested Loop <b>40</b> as viewed in a separate window from the design schedule block (<b>600</b>). The pipelined design schedule sub-block (<b>602</b>) shows a second iteration of the nested Loop <b>40</b> beginning as the first iteration completes its c-step C<b>1</b>. Each iteration of the pipelined design scheduled sub-block (<b>602</b>) includes independently numbered c-steps relative to the start of the iteration. The pipelined design schedule sub-block (<b>602</b>) can be nested within the design schedule block (<b>600</b>). </p>
+<p id="p-0119" num="0118"> <figref idref="DRAWINGS">FIGS. 7</figref><i>a</i>-<b>7</b><i>e </i>are screen shots of a hierarchical Gantt chart (<b>700</b>) with a hierarchical list (<b>710</b>) of scheduled operations, hierarchical design schedule blocks (<b>720</b>), and pseudo-operation icons. The hierarchical Gantt chart (<b>700</b>) shows a design schedule for the VHDL listing (<b>100</b>) of <figref idref="DRAWINGS">FIG. 1</figref>. <figref idref="DRAWINGS">FIGS. 7</figref><i>a</i>-<b>7</b><i>e </i>show various views of the hierarchical Gantt chart (<b>700</b>) as presentation of scheduling information for the nested blocks expands. </p>
+<p id="p-0120" num="0119"> The hierarchical Gantt chart (<b>700</b>) includes a row (<b>705</b>) of buttons that the designer actuates when interactively exploring the design schedule. From left to right, the functions of the buttons are: select mode, dataflow mode, configure, print, show loops only, zoom in, zoom out, zoom fit, zoom full, recalculate schedule, and apply schedule. The hierarchical list (<b>710</b>) and the pseudo-operation icons are described below. </p>
+<p id="p-0121" num="0120"> <figref idref="DRAWINGS">FIG. 7</figref><i>a </i>shows the hierarchical Gantt chart (<b>700</b>) with collapsed presentation of scheduling information for the WHILE loop (<b>120</b>) and FOR loops (<b>130</b>, <b>140</b>). The design schedule block (<b>721</b>) for the main loop (<b>110</b>) is scheduled in two c-steps. For each scheduled operation of the main loop (<b>110</b>), the main loop design schedule block (<b>721</b>) includes an operation icon indicating a schedule position, and a schedule frame can indicate a range for the schedule position. I/O read and assignment operations do not execute in c-step C<b>0</b>, as the main loop (<b>110</b>) is the top-level loop. The design schedule block for the WHILE loop (<b>140</b>) is presented as a single operation icon labeled L in the clock overhead space of c-step C<b>1</b> in the main loop design schedule block (<b>721</b>). </p>
+<p id="p-0122" num="0121"> <figref idref="DRAWINGS">FIGS. 7</figref><i>b </i>and <b>7</b><i>c </i>show the hierarchical Gantt chart (<b>700</b>) with expanded presentation of scheduling information for the WHILE loop (<b>120</b>) and collapsed presentation of scheduling information for the FOR loops (<b>130</b>, <b>140</b>). The design schedule block (<b>722</b>) for the WHILE loop (<b>120</b>) is scheduled in a single c-step and presented in the clock overhead space of c-step C<b>1</b> of the main loop design schedule block (<b>721</b>). For the WHILE loop design schedule block (<b>722</b>), I/O read, assignment, and control flow operations are scheduled in c-step C<b>0</b>. The design schedule blocks for the FOR loops (<b>130</b>, <b>140</b>) are presented as single operation icons labeled L in c-step C<b>0</b> of the WHILE loop design schedule block (<b>722</b>). A real operation icon represents the GREATEREQUAL operation (a real operation) in the real space of c-step C<b>1</b> of the WHILE loop design schedule block (<b>722</b>). </p>
+<p id="p-0123" num="0122"> <figref idref="DRAWINGS">FIG. 7</figref><i>d </i>and <b>7</b><i>e </i>show the hierarchical Gantt chart (<b>700</b>) with expanded presentation of scheduling information for the WHILE loop (<b>120</b>) and the FOR loops (<b>130</b>, <b>140</b>). Each of the design schedule blocks (<b>723</b>, <b>724</b>) for the FOR loops (<b>130</b>, <b>140</b>) is scheduled in a single c-step; both are presented in c-step C<b>0</b> of the WHILE loop design schedule block (<b>722</b>). For the FOR loop design schedule blocks (<b>723</b>, <b>724</b>), real operation icons represent real operations (i.e., addition, subtraction, decrements, increment) in the real space of the FOR loop design schedule blocks (<b>723</b>, <b>724</b>). Pseudo-operation icons represent other operations anywhere in the FOR loop design schedule blocks (<b>723</b>, <b>724</b>), so long as data dependencies are preserved. </p>
+<p id="p-0124" num="0123"> B. Hierarchical List of Scheduled Operations </p>
+<p id="p-0125" num="0124"> <figref idref="DRAWINGS">FIGS. 7</figref><i>a, </i><b>7</b><i>b, </i>and <b>7</b><i>d </i>show a hierarchical list (<b>710</b>) of scheduled operations that expands and collapses as the design tool expands and collapses presentation of nested blocks. The hierarchical list (<b>710</b>) emphasizes which scheduled operations are associated with which nested blocks, making it easier for the designer to understand the hierarchical Gantt chart. </p>
+<p id="p-0126" num="0125"> The hierarchical list (<b>710</b>) includes labels for scheduled operations. The hierarchical list (<b>710</b>) indents labels for the operations of a nested block to offset their presentation relative to labels for the operations of the enclosing block. The hierarchical list (<b>710</b>) presents a block icon adjacent a label for nested block. The block icon indicates whether presentation of scheduling information for the nested block is expanded (&#x201c;&#x2212;&#x201d;) or collapsed (&#x201c;+&#x201d;). Alternatively, the hierarchical list (<b>710</b>) uses only indentation, uses a different block icon convention, or uses another technique for emphasizing presentation of labels for nested block operations relative to labels for enclosing block operations. </p>
+<p id="p-0127" num="0126"> In <figref idref="DRAWINGS">FIG. 7</figref><i>a, </i>the hierarchical list (<b>710</b>) includes labels for main loop operations indented relative to a block label SEQUENTIAL &#x201c;main&#x201d; for the entire design. Adjacent the block label for the entire design, a block icon (<b>711</b>) indicates that the presentation of scheduling information for the main loop (<b>110</b>) is expanded. The block icon (<b>712</b>) adjacent the label LOOP &#x201c;loop1&#x201d; indicates collapsed presentation of scheduling information for the WHILE loop (<b>120</b>). </p>
+<p id="p-0128" num="0127"> In <figref idref="DRAWINGS">FIG. 7</figref><i>b, </i>the hierarchical list (<b>710</b>) expands the presentation of scheduling information for the WHILE loop (<b>120</b>), presenting labels for WHILE loop operations indented relative to labels for the main loop operations. The block icon (<b>712</b>) for the WHILE loop (<b>120</b>) indicates the expanded presentation of scheduling information for the WHILE loop (<b>120</b>). The block icons (<b>713</b>, <b>714</b>) adjacent the FOR loop labels LOOP &#x201c;loop28&#x201d; and LOOP &#x201c;loop33&#x201d; indicate collapsed presentation of scheduling information for those loops. </p>
+<p id="p-0129" num="0128"> In <figref idref="DRAWINGS">FIG. 7</figref><i>d, </i>the hierarchical list (<b>710</b>) expands the presentation of scheduling information for the FOR loops (<b>130</b>, <b>140</b>), presenting labels for FOR loop operations indented relative to the labels for the WHILE loop operations. The block icons (<b>713</b>, <b>714</b>) adjacent the FOR loop labels LOOP &#x201c;loop28&#x201d; and LOOP &#x201c;loop33&#x201d; indicate expanded presentation of scheduling information for those loops. </p>
+<p id="p-0130" num="0129"> C. Presentation of Pseudo-Operation Icons <figref idref="DRAWINGS">FIGS. 7</figref><i>a, </i><b>7</b><i>c, </i>and <b>7</b><i>e </i>show real operation icons and pseudo-operation icons in the hierarchical design schedule blocks (<b>720</b>) of the hierarchical Gantt chart (<b>700</b>). The real operation icons are rectangular; the pseudo-operation icons are circular. Each operation icon has a character label identifying the operation that the icon represents. In addition, different types of operations are represented with different color icons. For example, the loop operation icon is white with black characters, while other operation icons are shaded with white characters. </p>
+<p id="p-0131" num="0130"> The rectangular real operation icons represent scheduled operations with significant delay. The width of a real operation icon roughly indicates actual delay for the operation using the component mapped to the operation and relative to the duration of a clock cycle. Real operation icons represent real operations (e.g., additions, subtractions, multiplications, divisions, comparisons, increments, decrements) that are ultimately synthesized to corresponding structural components. </p>
+<p id="p-0132" num="0131"> The circular pseudo-operation icons represent scheduled operations with negligible delay as well as notional scheduled operations (which help illustrate scheduling but have no exact structural counterpart). The shape of a pseudo-operation icon does not correlate with a delay, and does not mislead the designer by presenting an operation as having a significant actual delay. Operations represented by pseudo-operation icons are typically synthesized into data paths, multiplexers, or other connection logic, or have a minimal delay. In the illustrative embodiment, pseudo-operation icons represent assignments (including loops treated like assignments), I/O operations, and control flow operations. </p>
+<p id="p-0133" num="0132"> In an alternative embodiment, a Gantt chart uses rectangular icons with pointed ends for all operations. Thus, a six-sided icon represents a real operation, with icon width roughly indicating actual delay for the real operation. For a pseudo-operation, the six-sided icon collapses to a diamond as the width of the top and bottom sides is reduced to zero. The six-sided icon can show a range of delays down to zero, and the pointed ends form a diamond that is visible for operations with negligible or no delay. </p>
+<p id="p-0134" num="0133"> In other alternative embodiments, a Gantt chart uses other conventions to differentiate icons for different types of operations. These conventions can use any combination of shape, color, and character identifiers, and can operate along a different partitioning of operation types. </p>
+<p id="p-0135" num="0134"> Having described and illustrated the principles of our invention with reference to an illustrative embodiment, it will be recognized that the illustrative embodiment can be modified in arrangement and detail without departing from such principles. It should be understood that the programs, processes, or methods described herein are not related or limited to any particular type of computer apparatus, unless indicated otherwise. Various types of general purpose or specialized computer apparatus may be used with or perform operations in accordance with the teachings described herein. Elements of the illustrative embodiment shown in software may be implemented in hardware and vice versa. </p>
+<p id="p-0136" num="0135"> In view of the many possible embodiments to which the principles of our invention may be applied, it should be recognized that the detailed embodiments are illustrative only and should not be taken as limiting the scope of our invention. Rather, we claim as our invention all such embodiments as may come within the scope and spirit of the following claims and equivalents thereto. </p>
+<?detailed-description description="Detailed Description" end="tail"?>
+</description>
+<claims id="claims">
+<claim id="CLM-00001" num="00001">
+<claim-text><b>1</b>. In a design tool, a method comprising: 
+<claim-text>displaying a top-level schedule for a design that includes one or more loops; and </claim-text>
+<claim-text>displaying a first loop schedule for a first loop of the one or more loops, wherein timing within the first loop schedule is presented relative to the first loop schedule, and wherein timing within the top-level schedule is presented relative to the top-level schedule. </claim-text>
+</claim-text>
+ </claim>
+<claim id="CLM-00002" num="00002">
+<claim-text><b>2</b>. The method of <claim-ref idref="CLM-00001">claim 1</claim-ref> wherein the displaying the first loop schedule hierarchically nests the first loop schedule within the top-level schedule. </claim-text>
+ </claim>
+<claim id="CLM-003-5" num="003-5">
+<claim-text><b>3</b>.-<b>5</b>. (canceled) </claim-text>
+ </claim>
+<claim id="CLM-00006" num="00006">
+<claim-text><b>6</b>. The method of <claim-ref idref="CLM-00001">claim 1</claim-ref> further comprising: 
+<claim-text>hiding the first loop schedule responsive to a command from a designer. </claim-text>
+</claim-text>
+ </claim>
+<claim id="CLM-00007" num="00007">
+<claim-text><b>7</b>. The method of <claim-ref idref="CLM-00001">claim 1</claim-ref> further comprising: 
+<claim-text>displaying a textual list of scheduled operations; and </claim-text>
+<claim-text>displaying an icon adjacent a first loop label in the textual list, the icon indicating whether the first loop schedule is expanded or collapsed. </claim-text>
+</claim-text>
+ </claim>
+<claim id="CLM-00008" num="00008">
+<claim-text><b>8</b>. (canceled) </claim-text>
+ </claim>
+<claim id="CLM-00009" num="00009">
+<claim-text><b>9</b>. The method of <claim-ref idref="CLM-00001">claim 1</claim-ref> wherein the top-level schedule includes at least one pseudo-operation icon. </claim-text>
+ </claim>
+<claim id="CLM-00010" num="00010">
+<claim-text><b>10</b>. The method of <claim-ref idref="CLM-00001">claim 1</claim-ref> wherein the first loop includes plural alternative branches of execution having different lengths. </claim-text>
+ </claim>
+<claim id="CLM-00011" num="00011">
+<claim-text><b>11</b>. The method of <claim-ref idref="CLM-00001">claim 1</claim-ref> wherein the design tool is a behavioral synthesis tool. </claim-text>
+ </claim>
+<claim id="CLM-00012" num="00012">
+<claim-text><b>12</b>. A computer-readable medium storing computer-executable instructions for causing a computer programmed thereby to perform the method of <claim-ref idref="CLM-00001">claim 1</claim-ref>. </claim-text>
+ </claim>
+<claim id="CLM-00013" num="00013">
+<claim-text><b>13</b>. In a design tool, a method of presenting information for a design, the method comprising: 
+<claim-text>presenting first information for a block of a design, the block including a sub-block nested within the block of the design; and </claim-text>
+<claim-text>presenting second information for the sub-block of the design, wherein timing within the block is presented as independent of timing within the sub-block, and wherein the timing within the sub-block is presented as independent of the timing within the block. </claim-text>
+</claim-text>
+ </claim>
+<claim id="CLM-00014" num="00014">
+<claim-text><b>14</b>. The method of <claim-ref idref="CLM-00013">claim 13</claim-ref> wherein the block is for a top-level loop, wherein the top-level loop includes a nested loop, and wherein the sub-block is for the nested loop. </claim-text>
+ </claim>
+<claim id="CLM-00015" num="00015">
+<claim-text><b>15</b>. The method of <claim-ref idref="CLM-00013">claim 13</claim-ref> wherein the sub-block is for one of plural alternative branches of execution within the block. </claim-text>
+ </claim>
+<claim id="CLM-00016" num="00016">
+<claim-text><b>16</b>. The method of <claim-ref idref="CLM-00013">claim 13</claim-ref> wherein the first information is a block schedule and the second information is a sub-block schedule. </claim-text>
+ </claim>
+<claim id="CLM-00017" num="00017">
+<claim-text><b>17</b>. The method of <claim-ref idref="CLM-00013">claim 13</claim-ref> wherein the first information is a block schedule and the second information is an icon representing a sub-block schedule. </claim-text>
+ </claim>
+<claim id="CLM-00018" num="00018">
+<claim-text><b>18</b>. The method of <claim-ref idref="CLM-00017">claim 17</claim-ref> wherein the icon appears in a clock overhead space of a step of the block schedule. </claim-text>
+ </claim>
+<claim id="CLM-00019" num="00019">
+<claim-text><b>19</b>. The method of <claim-ref idref="CLM-00013">claim 13</claim-ref> wherein timing within the sub-block is presented relative to the sub-block. </claim-text>
+ </claim>
+<claim id="CLM-00020" num="00020">
+<claim-text><b>20</b>. The method of <claim-ref idref="CLM-00013">claim 13</claim-ref> wherein control steps indicate the timing within the block and the timing within the sub-block, and wherein each of the block and the sub-block includes an independently numbered set of control steps. </claim-text>
+ </claim>
+<claim id="CLM-00021" num="00021">
+<claim-text><b>21</b>. The method of <claim-ref idref="CLM-00013">claim 13</claim-ref> wherein the presenting the second information nests the second information within the first information. </claim-text>
+ </claim>
+<claim id="CLM-00022" num="00022">
+<claim-text><b>22</b>. The method of <claim-ref idref="CLM-00016">claim 16</claim-ref> further comprising presenting the sub-block schedule in a separate window. </claim-text>
+ </claim>
+<claim id="CLM-00023" num="00023">
+<claim-text><b>23</b>. The method of <claim-ref idref="CLM-00013">claim 13</claim-ref> further comprising: 
+<claim-text>presenting a list of operation labels including one or more sub-block operation labels indented relative to one or more block operation labels in the list. </claim-text>
+</claim-text>
+ </claim>
+<claim id="CLM-00024" num="00024">
+<claim-text><b>24</b>. The method of <claim-ref idref="CLM-00013">claim 13</claim-ref> further comprising: 
+<claim-text>presenting third information for a second sub-block of the design, wherein the timing within the block is presented as independent of timing within the second sub-block, and wherein the timing within the second sub-block is presented as independent of the timing within the block. </claim-text>
+</claim-text>
+ </claim>
+<claim id="CLM-00025" num="00025">
+<claim-text><b>25</b>. The method of <claim-ref idref="CLM-00013">claim 13</claim-ref> wherein the design tool is a behavioral synthesis tool. </claim-text>
+ </claim>
+<claim id="CLM-00026" num="00026">
+<claim-text><b>26</b>. A computer-readable medium storing computer-executable instructions for causing a computer programmed thereby to perform the method of <claim-ref idref="CLM-00013">claim 13</claim-ref>. </claim-text>
+ </claim>
+<claim id="CLM-00027" num="00027">
+<claim-text><b>27</b>. In a design tool, a method comprising: 
+<claim-text>presenting plural nested schedules for a design, each of the plural nested schedules including: </claim-text>
+<claim-text>a line of control step labels, wherein control step timing for each of the plural nested schedules is relative to that nested schedule; and </claim-text>
+<claim-text>one or more lines of schedule information including at least one operation icon. </claim-text>
+</claim-text>
+ </claim>
+<claim id="CLM-00028" num="00028">
+<claim-text><b>28</b>. The method of <claim-ref idref="CLM-00027">claim 27</claim-ref> wherein the plural nested schedules include a top-level schedule, and wherein presentation of each of the plural nested schedules other than the top-level schedule is in a clock overhead space of a control step of the schedule enclosing the nested schedule. </claim-text>
+ </claim>
+<claim id="CLM-00029" num="00029">
+<claim-text><b>29</b>. The method of <claim-ref idref="CLM-00027">claim 27</claim-ref> wherein presentation of each of the plural nested schedules expands or collapses responsive to designer input. </claim-text>
+ </claim>
+<claim id="CLM-00030" num="00030">
+<claim-text><b>30</b>. The method of <claim-ref idref="CLM-00027">claim 27</claim-ref> wherein the design tool is a behavioral synthesis tool. </claim-text>
+ </claim>
+<claim id="CLM-00031" num="00031">
+<claim-text><b>31</b>. In an electronic circuit design tool or system design tool, a method of presenting a list of operations for an electronic circuit design or system design, the method comprising: 
+<claim-text>presenting a top-level list of one or more operations for the design, wherein the top-level list includes a first loop label for a first nested loop; and </claim-text>
+<claim-text>presenting a sub-list of one or more operations for the first nested loop, wherein the sub-list is indented relative to the top-level list. </claim-text>
+</claim-text>
+ </claim>
+<claim id="CLM-00032" num="00032">
+<claim-text><b>32</b>. The method of <claim-ref idref="CLM-00031">claim 31</claim-ref> further comprising: 
+<claim-text>responsive to a collapse command, hiding the sub-list. </claim-text>
+</claim-text>
+ </claim>
+<claim id="CLM-00033" num="00033">
+<claim-text><b>33</b>. The method of <claim-ref idref="CLM-00031">claim 31</claim-ref> wherein the design tool is a behavioral synthesis tool. </claim-text>
+ </claim>
+<claim id="CLM-00034" num="00034">
+<claim-text><b>34</b>. A computer-readable medium storing computer-executable instructions for causing a computer programmed thereby to perform the method of <claim-ref idref="CLM-00031">claim 31</claim-ref>. </claim-text>
+ </claim>
+<claim id="CLM-00035" num="00035">
+<claim-text><b>35</b>. In an electronic circuit design tool or system design tool, a method of presenting a list of operations for an electronic circuit design or system design, the method comprising: 
+<claim-text>presenting a top-level list of one or more operations for the design, wherein the top-level list includes a first loop label for a first nested loop; and </claim-text>
+<claim-text>presenting an icon adjacent the first loop label, the icon indicating whether a sub-list of one or more operations for the first nested loop is expanded or collapsed. </claim-text>
+</claim-text>
+ </claim>
+<claim id="CLM-36-41" num="36-41">
+<claim-text><b>36</b>.-<b>41</b>. (canceled) </claim-text>
+ </claim>
+<claim id="CLM-00042" num="00042">
+<claim-text><b>42</b>. The method of <claim-ref idref="CLM-00001">claim 1</claim-ref> wherein the design tool is an electronic circuit design tool or system design tool, and wherein the design is an electronic circuit design or system design. </claim-text>
+ </claim>
+<claim id="CLM-00043" num="00043">
+<claim-text><b>43</b>. The method of <claim-ref idref="CLM-00013">claim 13</claim-ref> wherein the design tool is an electronic circuit design tool or system design tool, and wherein the design is an electronic circuit design or system design. </claim-text>
+ </claim>
+<claim id="CLM-00044" num="00044">
+<claim-text><b>44</b>. The method of <claim-ref idref="CLM-00013">claim 13</claim-ref> wherein the timing within the block is presented as independent in that the second information is presented within a single control step of the block regardless of number of control steps of the sub-block. </claim-text>
+ </claim>
+<claim id="CLM-00045" num="00045">
+<claim-text><b>45</b>. The method of <claim-ref idref="CLM-00013">claim 13</claim-ref> wherein the sub-block includes a sub-sub-block, the method further comprising presenting third information for the sub-sub-block, wherein the timing within the block, the timing within the sub-block, and the timing within the sub-sub-block are presented as being independent of each other. </claim-text>
+ </claim>
+<claim id="CLM-00046" num="00046">
+<claim-text><b>46</b>. The method of <claim-ref idref="CLM-00017">claim 17</claim-ref> wherein the icon is presented in a scheduling frame that shows allowable locations of the sub-block schedule within the block schedule. </claim-text>
+ </claim>
+<claim id="CLM-00047" num="00047">
+<claim-text><b>47</b>. The method of <claim-ref idref="CLM-00027">claim 27</claim-ref> wherein the design tool is an electronic circuit design tool or system design tool, and wherein the design is an electronic circuit design or system design. </claim-text>
+ </claim>
+<claim id="CLM-00048" num="00048">
+<claim-text><b>48</b>. The method of <claim-ref idref="CLM-00027">claim 27</claim-ref> wherein each of the at least one operation icon represents a scheduled operation.</claim-text>
+ </claim>
+</claims>
+</us-patent-application>

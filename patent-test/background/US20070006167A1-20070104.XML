@@ -1,0 +1,370 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE us-patent-application SYSTEM "us-patent-application-v42-2006-08-23.dtd" [ ]>
+<us-patent-application lang="EN" dtd-version="v4.2 2006-08-23" file="US20070006167A1-20070104.XML" status="PRODUCTION" id="us-patent-application" country="US" date-produced="20061221" date-publ="20070104">
+<us-bibliographic-data-application lang="EN" country="US">
+<publication-reference>
+<document-id>
+<country>US</country>
+<doc-number>20070006167</doc-number>
+<kind>A1</kind>
+<date>20070104</date>
+</document-id>
+</publication-reference>
+<application-reference appl-type="utility">
+<document-id>
+<country>US</country>
+<doc-number>11140841</doc-number>
+<date>20050531</date>
+</document-id>
+</application-reference>
+<us-application-series-code>11</us-application-series-code>
+<classifications-ipcr>
+<classification-ipcr>
+<ipc-version-indicator><date>20060101</date></ipc-version-indicator>
+<classification-level>A</classification-level>
+<section>G</section>
+<class>06</class>
+<subclass>F</subclass>
+<main-group>9</main-group>
+<subgroup>44</subgroup>
+<symbol-position>F</symbol-position>
+<classification-value>I</classification-value>
+<action-date><date>20070104</date></action-date>
+<generating-office><country>US</country></generating-office>
+<classification-status>B</classification-status>
+<classification-data-source>H</classification-data-source>
+</classification-ipcr>
+</classifications-ipcr>
+<classification-national>
+<country>US</country>
+<main-classification>717130000</main-classification>
+</classification-national>
+<invention-title id="d0e102">Optimizing binary-level instrumentation via instruction scheduling</invention-title>
+<parties>
+<applicants>
+<applicant sequence="00" app-type="applicant-inventor" designation="us-only">
+<addressbook>
+<last-name>Luk</last-name>
+<first-name>Chi-Keung</first-name>
+<address>
+<city>Ashland</city>
+<state>MA</state>
+<country>US</country>
+</address>
+</addressbook>
+<nationality>
+<country>US</country>
+</nationality>
+<residence>
+<country>US</country>
+</residence>
+</applicant>
+<applicant sequence="01" app-type="applicant-inventor" designation="us-only">
+<addressbook>
+<last-name>Tal</last-name>
+<first-name>Ady</first-name>
+<address>
+<city>Zichron Yaacov</city>
+<country>IL</country>
+</address>
+</addressbook>
+<nationality>
+<country>IL</country>
+</nationality>
+<residence>
+<country>IL</country>
+</residence>
+</applicant>
+<applicant sequence="02" app-type="applicant-inventor" designation="us-only">
+<addressbook>
+<last-name>Cohn</last-name>
+<first-name>Robert</first-name>
+<address>
+<city>Salem</city>
+<state>NH</state>
+<country>US</country>
+</address>
+</addressbook>
+<nationality>
+<country>US</country>
+</nationality>
+<residence>
+<country>US</country>
+</residence>
+</applicant>
+<applicant sequence="03" app-type="applicant-inventor" designation="us-only">
+<addressbook>
+<last-name>Beimel</last-name>
+<first-name>Jonathan</first-name>
+<address>
+<city>Michmoret</city>
+<country>IL</country>
+</address>
+</addressbook>
+<nationality>
+<country>IL</country>
+</nationality>
+<residence>
+<country>IL</country>
+</residence>
+</applicant>
+</applicants>
+<correspondence-address>
+<addressbook>
+<name>TROP PRUNER &#x26; HU, PC</name>
+<address>
+<address-1>1616 S. VOSS ROAD, SUITE 750</address-1>
+<city>HOUSTON</city>
+<state>TX</state>
+<postcode>77057-2631</postcode>
+<country>US</country>
+</address>
+</addressbook>
+</correspondence-address>
+</parties>
+</us-bibliographic-data-application>
+<abstract id="abstract">
+<p id="p-0001" num="0000">In one embodiment, the present invention includes a method for receiving a command to insert instrumentation code into a code segment, analyzing the code segment to determine an optimal location for the instrumentation code within the code segment, and inserting the instrumentation code at the optimal location to generate an instrumented code segment. The instrumented code segment may then be executed and may provide for improved performance over unoptimized instrumented code. Other embodiments are described and claimed. </p>
+</abstract>
+<drawings id="DRAWINGS">
+<figure id="figure-D00000" num="00000">
+<img id="EMI-D00000" he="171.26mm" wi="97.35mm" file="US20070006167A1-20070104-D00000.TIF" alt="embedded image" img-content="drawing" img-format="tif"/>
+</figure>
+<figure id="figure-D00001" num="00001">
+<img id="EMI-D00001" he="233.09mm" wi="150.45mm" file="US20070006167A1-20070104-D00001.TIF" alt="embedded image" img-content="drawing" img-format="tif"/>
+</figure>
+<figure id="figure-D00002" num="00002">
+<img id="EMI-D00002" he="200.49mm" wi="157.73mm" orientation="landscape" file="US20070006167A1-20070104-D00002.TIF" alt="embedded image" img-content="drawing" img-format="tif"/>
+</figure>
+<figure id="figure-D00003" num="00003">
+<img id="EMI-D00003" he="213.36mm" wi="178.99mm" file="US20070006167A1-20070104-D00003.TIF" alt="embedded image" img-content="drawing" img-format="tif"/>
+</figure>
+<figure id="figure-D00004" num="00004">
+<img id="EMI-D00004" he="172.47mm" wi="177.12mm" file="US20070006167A1-20070104-D00004.TIF" alt="embedded image" img-content="drawing" img-format="tif"/>
+</figure>
+</drawings>
+<description id="description">
+<?summary-of-invention description="Summary of Invention" end="lead"?>
+<heading level="2" id="h-0001">BACKGROUND </heading>
+<p id="p-0002" num="0001"> Embodiments of the present invention relate to software operation, and more particularly to optimizing instrumentation code. </p>
+<p id="p-0003" num="0002"> As software complexity increases, instrumentation, which is a technique for inserting extra code into an application to observe its behavior, is becoming more important. Instrumentation can be performed at various stages in a software development cycle: in source code, at compile time, post link time, or at run time. </p>
+<p id="p-0004" num="0003"> Robust and powerful software instrumentation tools are used for program analysis tasks such as profiling, performance evaluation, and bug detection. In binary instrumentation systems, a user (e.g., a tool writer) specifies where in the binary image he/she desires to insert the instrumentation. Typical instrumentation points are before/after an instruction, before/after a basic block, or before/after a function. Generally, the instrumentation code is placed at the exact place specified by the user. </p>
+<p id="p-0005" num="0004"> Static instrumentation has certain limitations compared to dynamic instrumentation. For example, it is possible to mix code and data in an executable, and a static tool may not have enough information to distinguish the two code types. Dynamic tools, in contrast, can rely on execution to discover all of the code at run time. Other difficult problems for static systems are indirect branches, shared libraries, and dynamically-generated code. </p>
+<p id="p-0006" num="0005"> Accordingly, for at least certain applications, dynamic instrumentation can be more effective. There are two approaches to dynamic instrumentation: probe-based and just-in-time (JIT)-based instrumentation. The probe-based approach works by dynamically replacing instructions in the original program with trampolines that branch to the instrumentation code. The drawbacks of probe-based systems are that: (i) instrumentation is not transparent because original instructions in memory are overwritten by trampolines; (ii) on architectures where instruction sizes vary (e.g., an x86-based architecture), an instruction cannot be replaced by a trampoline that occupies more bytes than the instruction itself because it will overwrite the following instruction; and (iii) trampolines are implemented by one or more levels of branches, which can incur a significant performance overhead. These drawbacks make fine-grained instrumentation challenging on probe-based systems. </p>
+<p id="p-0007" num="0006"> In contrast, the JIT-based approach is more suitable for fine-grained instrumentation, as it works by dynamically compiling the binary and inserting instrumentation code (or calls to it) within the binary. However, depending on where the code is inserted into the binary, performance degradation may occur, as the instrumentation code can affect various resources, such as registers and the like. For example, instrumentation code typically causes one or more registers that store information to be spilled and rewritten after execution of the instrumentation code. Such spilling and rewriting causes flushing of various processor resources, and thus leads to degraded performance. </p>
+<p id="p-0008" num="0007"> A need thus exists to optimize instrumentation code.</p>
+<?summary-of-invention description="Summary of Invention" end="tail"?>
+<?brief-description-of-drawings description="Brief Description of Drawings" end="lead"?>
+<heading level="2" id="h-0002">BRIEF DESCRIPTION OF THE DRAWINGS </heading>
+<p id="p-0009" num="0008"> <figref idref="DRAWINGS">FIG. 1</figref> is a flow diagram of a method in accordance with one embodiment of the present invention. </p>
+<p id="p-0010" num="0009"> <figref idref="DRAWINGS">FIG. 2</figref> is a block diagram of a software architecture in accordance with one embodiment of the present invention. </p>
+<p id="p-0011" num="0010"> <figref idref="DRAWINGS">FIG. 3</figref> is a flow diagram of a method in accordance with an embodiment of the present invention. </p>
+<p id="p-0012" num="0011"> <figref idref="DRAWINGS">FIG. 4</figref> is a block diagram of a system in accordance with one embodiment of the present invention. </p>
+<?brief-description-of-drawings description="Brief Description of Drawings" end="tail"?>
+<?detailed-description description="Detailed Description" end="lead"?>
+<heading level="2" id="h-0003">DETAILED DESCRIPTION </heading>
+<p id="p-0013" num="0012"> In various embodiments, efficient instrumentation may be effected by using a just-in-time (JIT) compiler to insert and optimize the instrumentation code. Code may be dynamically instrumented in various manners, including code caching and trace linking, register reallocation, inlining, liveness analysis, and instruction scheduling. While some embodiments may be performed dynamically, other embodiments may be implemented in other stages of software development. </p>
+<p id="p-0014" num="0013"> JIT-based instrumentation in accordance with an embodiment of the present invention may defer code discovery until run time, allowing instrumentation to be robust. Embodiments can seamlessly handle mixed code and data, variable-length instructions, statically unknown indirect jump targets, dynamically loaded libraries, and dynamically generated code, among other structures. </p>
+<p id="p-0015" num="0014"> Behavior of an original application may be preserved by providing instrumentation transparency. That is, the application observes the same addresses (both instruction and data) and same values (both register and memory) as it would in an uninstrumented execution. Transparency makes the information collected by instrumentation more relevant and correct. </p>
+<p id="p-0016" num="0015"> In some embodiments, instrumentation is performed by a JIT compiler. The input to this compiler is not bytecodes, however, but a native executable. The compiler intercepts execution of the first instruction of the executable and generates (&#x201c;compiles&#x201d;) new code for the straight-line code sequence starting at this instruction. It then transfers control to the generated sequence. The generated code sequence is almost identical to the original code sequence, but the compiler ensures that it regains control when a branch exits the sequence. After regaining control, the compiler generates more code for the branch target and continues execution. Whenever the compiler fetches code, an application programming interface (API) for performing instrumentation has the opportunity to instrument the code before it is translated for execution. The translated code and its instrumentation may be saved in a code cache for future execution of the same sequence of instructions to improve performance, in some embodiments. </p>
+<p id="p-0017" num="0016"> Referring now to <figref idref="DRAWINGS">FIG. 1</figref>, shown is a flow diagram of a method in accordance with one embodiment of the present invention. As shown in <figref idref="DRAWINGS">FIG. 1</figref>, method <b>10</b> may be used to perform just-in-time (JIT) compilation of code and further to dynamically instrument the code during compilation. Method <b>10</b> may begin by initiating a JIT compiler (block <b>15</b>). The compiler may then fetch the binary code to be compiled (block <b>20</b>). For example, in some embodiments the compiler may fetch a first portion of a native executable, for example, a first functional block. Next, the compiler may determine whether an instrumentation tool has been invoked (diamond <b>30</b>). That is, the compiler may determine whether a user seeks to instrument the binary code that has been fetched. If so, the compiler inserts the instrumentation code into the binary code (block <b>35</b>). As will be discussed further below, in various embodiments the instrumentation code inserted into the binary may be optimized in various manners. Next (or alternately directly from diamond <b>30</b> if no instrumentation instructions were received), the compiler translates the binary code and places the code into a code cache (block <b>40</b>). </p>
+<p id="p-0018" num="0017"> From there, the code may be released for execution (block <b>45</b>). Accordingly, the code may be executed from the code cache (block <b>50</b>). Execution may continue until a branch is reached in the executed code (diamond <b>60</b>). Thus if no branch is reached, the code continues executing in a loop between block <b>50</b> and diamond <b>60</b>. If instead, a branch is reached at diamond <b>60</b>, control passes to diamond <b>70</b>. There, it may be determined whether the target code is included already in the code cache (diamond <b>70</b>). If so, control returns to block <b>50</b> for execution of the code from the code cache. If instead the target code is not included in the code cache, control may return to block <b>20</b>, as described above. </p>
+<p id="p-0019" num="0018"> <figref idref="DRAWINGS">FIG. 2</figref> is a block diagram of a software architecture in accordance with one embodiment. Software architecture <b>100</b> provides a high-level view of the interaction between instrumentation tools and other software (and hardware) of a system. A compiler <b>130</b> is used to compile an application <b>120</b>. To allow a user to instrument application <b>120</b>, an instrumentation tool <b>110</b> may be provided. As shown in <figref idref="DRAWINGS">FIG. 2</figref>, compiler <b>130</b> also interacts with an operating system (OS) <b>170</b>, which in turn interacts with underlying hardware <b>180</b> of a system. As shown in <figref idref="DRAWINGS">FIG. 2</figref>, there are three binary programs present when an instrumented program is running namely, application <b>120</b>, compiler <b>130</b>, and instrumentation tool <b>110</b>. Compiler <b>130</b> is the engine that performs just-in-time compilation and instruments application <b>120</b>. Instrumentation tool <b>110</b> contains the instrumentation and analysis routines and is linked with a library that allows it to communicate with compiler <b>130</b>. </p>
+<p id="p-0020" num="0019"> At the highest level, compiler <b>130</b> includes a virtual machine (VM) <b>140</b>, a code cache <b>135</b>, and one or more instrumentation API's <b>145</b> invoked by instrumentation tool <b>110</b>. VM <b>140</b> includes a JIT compiler <b>150</b>, an emulation unit <b>160</b>, and a dispatcher <b>155</b>. After compiler <b>130</b> gains control of application <b>120</b>, VM <b>140</b> coordinates its components to execute application <b>120</b>. Specifically, JIT compiler <b>150</b> compiles and instruments application code, which is then launched by dispatcher <b>155</b>. The compiled code is stored in code cache <b>135</b>. That is, only code residing in code cache <b>135</b> is executed: the original code is not executed. Emulation unit <b>160</b> interprets instructions that cannot be executed directly, and may be used for system calls which require special handling from VM <b>140</b>. </p>
+<p id="p-0021" num="0020"> In some embodiments, an application is compiled one trace at a time. A trace is a straight-line sequence of instructions which terminates at one of the following conditions: (i) an unconditional control transfer (e.g., branch, call, or return); (ii) a predefined number of conditional control transfers; or (iii) a predefined number of instructions have been fetched in the trace. In addition to the last exit, a trace may have multiple side-exits (i.e., conditional control transfers). Each exit initially branches to a stub, which redirects control to the VM. The VM determines the target address (which is statically unknown for indirect control transfers), generates a new trace for the target if it has not been generated before, and resumes execution at the target trace. </p>
+<p id="p-0022" num="0021"> To improve performance, in some embodiments the compiler may attempt to branch directly from a trace exit to the target trace, bypassing the stub and VM. This process is referred to herein as &#x201c;trace linking&#x201d;. Linking a direct control transfer is straightforward, as it has a unique target. The branch may be patched at the end of one trace to jump to the target trace. However, an indirect control transfer (e.g., a jump, call, or return) has multiple possible targets and therefore implicates a target-prediction mechanism. </p>
+<p id="p-0023" num="0022"> Precise liveness information of registers at trace exits makes register allocation more effective, since dead registers can be reused by the compiler without introducing spills. The term &#x201c;dead register&#x201d; refers to a register that will have its contents modified at a next instruction (i.e., it contains invalid information). Without a complete flow graph, liveness may be incrementally computed. For example, after a trace at address A is compiled, the liveness at the beginning of the trace may be recorded in a hash table using address A as the key. If a trace exit has a statically-known target, the liveness information may be retrieved from the hash table to compute more precise liveness for the current trace. In such manner, register spills introduced by the compiler's register allocation may be reduced. </p>
+<p id="p-0024" num="0023"> Much of the slowdown from instrumentation may be caused by executing the instrumentation code, rather than compilation time (which includes inserting the instrumentation code). Therefore, it may be beneficial to spend more compilation time in optimizing calls to analysis routines. Of course, the run time overhead of executing analysis routines highly depends on their invocation frequency and complexity. Many frequently-executed analysis routines of instrumentation code perform only simple tasks such as counting and tracing. Embodiments of the present invention may optimize those cases by inlining the analysis routines, which reduces execution overhead. Without inlining, a bridge routine is called to save all caller-saved registers, set up analysis routine arguments, and finally call the analysis routine. Each analysis routine requires two calls and two returns for each invocation. With inlining, the bridge may be eliminated and thus the two calls and returns may be avoided. Also, the caller-saved registers need not be explicitly saved. Instead, the caller-saved registers may be renamed in the inlined body of the analysis routine, allowing a register allocator to manage spilling. Furthermore, inlining enables other optimizations like constant folding of analysis routine arguments. </p>
+<p id="p-0025" num="0024"> In various embodiments additional optimizations on instrumentation code may be effected. For example, most analysis routines modify a condition code or conditional flags register (referred to as the &#x201c;eflags&#x201d; register in an x86 environment). For example, if an analysis routine increments a counter, the eflags register is modified. Thus, before execution of the instrumentation code the original eflags register value as seen by the application is to be preserved prior to modifying the eflags register. However, accessing the eflags register is a fairly expensive operation because it must be done by pushing it onto the stack. Moreover, a switch to another stack may be performed before pushing/popping the eflags register to avoid changing the application stack. </p>
+<p id="p-0026" num="0025"> The compiler may avoid saving/restoring the eflags register as much as possible by using a liveness analysis on the eflags register. The liveness analysis tracks the individual bits in the eflags register written and read by each instruction. If it is determined that the eflags register is dead at the point where an analysis routine call is inserted, saving and restoring of the eflags register may be avoided. </p>
+<p id="p-0027" num="0026"> In some embodiments, the instrumentation code further may be optimized if it can be scheduled, provided that the resulting schedule still honors the original semantics of the instrumentation. For example, if a user wants to obtain an execution count of a basic block, he/she usually updates a counter at the basic block's entry. Nevertheless, it is legal to put the counter update anywhere inside the basic block. Having this scheduling feasibility opens up various optimization opportunities. For instance, the counter update may be placed at a point in the basic block where there is a free register or a dead register, for example. Then the counter update can take this register for its own use, thereby avoiding the need to spill a register. On an in-order machine such as the Intel&#xae; Itanium&#x2122; processor, the counter update may be scheduled into existing no operation (nops) instructions (if any) inside the basic block and hence the instrumentation could potentially be done at no cost. </p>
+<p id="p-0028" num="0027"> In general, it is safe to schedule instrumentation code that does not access the register and memory values used in the application. This orthogonal relation between the instrumentation and the application may be referred to as &#x201c;data independency&#x201d;. In some embodiments, different approaches to scheduling instrumentation code may be effected. A first approach is a user-directed approach, where the tool writer provides hints to the instrumentation engine about where to schedule instrumentation code. The tool writer guarantees data independency. That is, the instrumentation tool may accept the user's indication of data independency at face value and schedule instrumentation code accordingly. The second approach is an automatic approach, in which the instrumentation engine itself analyzes the code to be instrumented and determines if the data independency exists. </p>
+<p id="p-0029" num="0028"> In an implementation of the first approach, a user may be provided with a command to provide the data independency hint. The command may be termed &#x201c;IPOINT_ANYWHERE&#x201d;, in one embodiment. Via this command, the tool writer can specify that the instrumentation code can be scheduled anywhere within the scope of instrumentation (e.g., a basic block, trace, or function). Upon receiving this command, the instrumentation tool may seek to optimize the instrumentation code by selective scheduling of the code within the block or function. For instance, the compiler can insert the call (i.e., the instrumentation code or analysis routine) immediately before an instruction that overwrites a register (or eflags register) and thereby the analysis routine can use that register (or eflags register) without first spilling it. </p>
+<p id="p-0030" num="0029"> As an example, an optimization that avoids saving/restoring the eflags register during execution of instrumented binary code may provide improved program performance. Different manners of avoiding overwriting of the eflags register in the instrumentation code may be performed. </p>
+<p id="p-0031" num="0030"> A first method may analyze code of the instrumented scope (e.g., a basic block) for an instruction that overwrites the eflags register. If such an instruction, say i, is found, the instrumentation code may be scheduled immediately before i. Since the eflags register is already dead after i, there is no need to save the eflags register before executing the instrumentation code. Referring now to Table 1 below, shown is an example code segment that includes a number of instructions. The middle code block of Table 1 shows a basic block to be instrumented. As shown, the block includes an instruction to move the contents of a first register to a second register (i.e., esi to edi), and then to compare a value of the second register to another value. This comparison instruction will thus overwrite at least a portion of the eflags register. Finally, the code block includes a jump instruction to a target branch.  
+<tables id="TABLE-US-00001" num="1">
+<table frame="none" colsep="0" rowsep="0">
+<tgroup align="left" colsep="0" rowsep="0" cols="1">
+<colspec colname="1" colwidth="217PT" align="center"/>
+<thead>
+<row>
+<entry namest="1" nameend="1" align="center">TABLE 1</entry>
+</row>
+<row>
+<entry/>
+</row>
+<row>
+<entry namest="1" nameend="1" align="center" rowsep="1"/>
+</row>
+</thead>
+<tbody valign="top">
+<row>
+<entry/>
+</row>
+<row>
+<entry>
+<chemistry id="CHEM-US-00001" num="1">
+<img id="EMI-C00001" he="60.62mm" wi="65.62mm" file="US20070006167A1-20070104-C00001.TIF" alt="embedded image" img-content="chem" img-format="tif"/>
+</chemistry>
+</entry>
+</row>
+<row>
+<entry namest="1" nameend="1" align="center" rowsep="1"/>
+</row>
+</tbody>
+</tgroup>
+</table>
+</tables>
+</p>
+<p id="p-0032" num="0031"> Table 1 also includes two instrumented versions of the code, namely an instrumented version in accordance with an embodiment of the present invention (shown on the right side of Table 1) and an instrumented version of the code segment without implementing optimization methods (i.e., instrumented without scheduling) as shown on the left side of Table 1. </p>
+<p id="p-0033" num="0032"> Referring to the unoptimized instruction code on the left side of Table 1, since the eflags register is alive at the first instruction (cmova), the eflags register is saved and restored around the increment instruction (the desired instrumentation function). Also the instrumentation code switches to another stack before the pushf instruction, which flushes the entire processor pipeline, to avoid touching the user stack (for instrumentation transparency reasons). Accordingly, the instrumented code uses six instructions and further causes the entire processor pipeline to be flushed, which is a very expensive process. </p>
+<p id="p-0034" num="0033"> In contrast, referring to the right side of Table 1, shown is an instrumented code block resulting from instrumentation in accordance with an embodiment of the present invention. Because the desired instrumentation instruction, namely a counter update (i.e., inc (eax)) is scheduled immediately before the compare instruction (cmp), which writes the eflags register, there is no need to save the eflags register. Accordingly, only a single instruction is added for purposes of the instrumentation. Furthermore, there is no need to spill any registers or change stacks. As such, the processor pipeline need not be flushed and execution of the instrumentation code is thus optimized. </p>
+<p id="p-0035" num="0034"> If the first method is not applicable, a second method may be performed. Namely, an instruction in the scope being instrumented that overwrites a general-purpose register may be sought. With this free register, an instruction sequence may be generated that performs the intended instrumentation but does not modify the eflags register. An example is given in Table 2. </p>
+<p id="p-0036" num="0035"> As shown in Table 2, an original code block is presented, along with an instrumented code version in accordance with an embodiment of the present invention (i.e., on the right side of Table 2), and an unoptimized instrumented version (i.e., on the left side of Table 2). As shown in Table 2, the original code block moves the contents of a first register to a second register (i.e., ebx to edi) and secondly moves the contents of a third register to a fourth register (i.e., esi to edx). Then the code block jumps to a target branch.  
+<tables id="TABLE-US-00002" num="2">
+<table frame="none" colsep="0" rowsep="0">
+<tgroup align="left" colsep="0" rowsep="0" cols="1">
+<colspec colname="1" colwidth="217PT" align="center"/>
+<thead>
+<row>
+<entry namest="1" nameend="1" align="center">TABLE 2</entry>
+</row>
+<row>
+<entry/>
+</row>
+<row>
+<entry namest="1" nameend="1" align="center" rowsep="1"/>
+</row>
+</thead>
+<tbody valign="top">
+<row>
+<entry/>
+</row>
+<row>
+<entry>
+<chemistry id="CHEM-US-00002" num="2">
+<img id="EMI-C00002" he="60.62mm" wi="65.62mm" file="US20070006167A1-20070104-C00002.TIF" alt="embedded image" img-content="chem" img-format="tif"/>
+</chemistry>
+</entry>
+</row>
+<row>
+<entry namest="1" nameend="1" align="center" rowsep="1"/>
+</row>
+</tbody>
+</tgroup>
+</table>
+</tables>
+</p>
+<p id="p-0037" num="0036"> The optimized instrumented code block shown on the right side of Table 2 schedules three new instructions prior to the second move instruction. These three instructions make use of the free register edx to perform an increment without modifying the eflags register. The added instrumentation instruction &#x201c;lea&#x201d; is an x86 instruction that computes the effective address of the given addressing mode, and does not modify the eflags register. Accordingly, the optimized instrumented code adds three instructions and avoids saving/restoring of the eflags register. While shown with the use of this particular instruction and register in the embodiment of Table 2, it is to be understood that other instructions and registers that do not modify the eflags register or another conditional code register may be implemented in other embodiments. </p>
+<p id="p-0038" num="0037"> In contrast, referring to the instrumented code block on the left side of Table 2, the original code block is instrumented in the same manner as described above regarding Table 1. Accordingly, expensive stack switches and processor flushes occur. </p>
+<p id="p-0039" num="0038"> Referring now to <figref idref="DRAWINGS">FIG. 3</figref>, shown is a flow diagram of a method in accordance with an embodiment of the present invention. As shown in <figref idref="DRAWINGS">FIG. 3</figref>, method <b>200</b> may be used to optimize placement of instrumentation code within a code block. Method <b>200</b> may begin by receiving an instruction to insert the instrumentation code (block <b>210</b>). As discussed above, such an instruction or command may be received from a tool writer. Next it may be determined if the instruction provides a data independency hint (diamond <b>215</b>). As discussed above, this hint may indicate to the compiler or other instrumentation engine that there are no dependencies between application data and instrumentation data. If such a hint is present, control may pass directly to block <b>225</b> where the code to be instrumented is analyzed. For example, the code may be analyzed to determine whether one or more instructions within the code causes a condition code register (e.g., the eflags register) to be updated (e.g., modified or overwritten). If so, prior to that instruction the register is considered dead. Thus it may be determined whether an instruction modifies the condition code register (diamond <b>230</b>). If so, the instrumentation code may be inserted immediately prior to that instruction (block <b>240</b>). Accordingly, the instrumentation code has been scheduled to an optimized location and method <b>200</b> ends. </p>
+<p id="p-0040" num="0039"> If instead at diamond <b>230</b> the analysis indicates that the condition code register is not modified, next it may be determined whether an instruction within the code overwrites a general-purpose register (diamond <b>250</b>). In some embodiments, overwriting this general-purpose register may not affect the condition code register. If such an instruction exists, control may pass to block <b>240</b> where the instrumentation code is inserted immediately prior to such instruction (block <b>240</b>). Thus an optimized location for the instrumentation code may be realized, and method <b>200</b> concludes. </p>
+<p id="p-0041" num="0040"> If instead at diamond <b>250</b> it is determined that no instructions overwrite a general-purpose register, control may pass to diamond <b>260</b>. There it may be determined whether any instructions in the code are no operation (nop) instructions (diamond <b>260</b>). If one or more such instructions exist, instrumentation code may be placed in one or more of those nops (block <b>270</b>). From both of block <b>270</b> and diamond <b>260</b>, the method may conclude. </p>
+<p id="p-0042" num="0041"> Even when a user does not provide a data independency hint, the instrumentation tool may attempt to schedule instrumentation code for purposes of optimization. Specifically, if at diamond <b>215</b> it is determined that the user does not provide a data independency hint, next it may be determined whether a data independency exists in the code to be instrumented (diamond <b>220</b>). In various embodiments, the compiler may analyze the code to check for such independencies. If the independency exists, control may pass to block <b>225</b>. In contrast, if no such independency exists, the method may terminate. </p>
+<p id="p-0043" num="0042"> Embodiments may be implemented in a computer program. As such, these embodiments may be stored on a storage or signal medium including instructions which can be used to program a system to perform the embodiments. The storage medium may include, but is not limited to, any type of disk including floppy disks, optical disks, compact disk read-only memories (CD-ROMs), compact disk rewritables (CD-RWs), and magneto-optical disks, semiconductor devices such as read-only memories (ROMs), random access memories (RAMs) such as dynamic RAMs (DRAMs), erasable programmable read-only memories (EPROMs), electrically erasable programmable read-only memories (EEPROMs), flash memories, magnetic or optical cards, or any type of media suitable for storing electronic instructions. Similarly, embodiments may be implemented as software modules executed by a programmable control device, such as a computer processor or a custom designed state machine. </p>
+<p id="p-0044" num="0043"> Now referring to <figref idref="DRAWINGS">FIG. 4</figref>, in one embodiment a computer system <b>400</b> includes a processor <b>410</b>, which may include a general-purpose or special-purpose processor such as a microprocessor, microcontroller, a programmable gate array (PGA), and the like. As used herein, the term &#x201c;computer system&#x201d; may refer to any type of processor-based system, such as a desktop computer, a server computer, a laptop computer, or the like. </p>
+<p id="p-0045" num="0044"> The processor <b>410</b> may be coupled over a host bus <b>415</b> to a memory hub <b>430</b> in one embodiment, which may be coupled to a system memory <b>420</b> (e.g., a dynamic random access memory (RAM)) via a memory bus <b>425</b>. Programs such as an instrumentation tool and a JIT compiler in accordance with an embodiment of the present invention may be stored in system memory <b>420</b> during operation. The memory hub <b>430</b> may also be coupled over an Advanced Graphics Port (AGP) bus <b>433</b> to a video controller <b>435</b>, which may be coupled to a display <b>437</b>. The AGP bus <b>433</b> may conform to the Accelerated Graphics Port Interface Specification, Revision 2.0, published May 4, 1998, by Intel Corporation, Santa Clara, Calif. </p>
+<p id="p-0046" num="0045"> The memory hub <b>430</b> may also be coupled (via a hub link <b>438</b>) to an input/output (I/O) hub <b>440</b> that is coupled to a input/output (I/O) expansion bus <b>442</b> and a Peripheral Component Interconnect (PCI) bus <b>444</b>, as defined by the PCI Local Bus Specification, Production Version, Revision 2.1 dated June 1995. The I/O expansion bus <b>442</b> may be coupled to an I/O controller <b>446</b> that controls access to one or more I/O devices. As shown in <figref idref="DRAWINGS">FIG. 4</figref>, these devices may include in one embodiment storage devices, such as a floppy disk drive <b>450</b> and input devices, such as keyboard <b>452</b> and mouse <b>454</b>. The I/O hub <b>440</b> may also be coupled to, for example, a hard disk drive <b>456</b> and a compact disc (CD) drive <b>458</b>, as shown in <figref idref="DRAWINGS">FIG. 4</figref>. It is to be understood that other storage media may also be included in the system. </p>
+<p id="p-0047" num="0046"> The PCI bus <b>444</b> may also be coupled to various components including, for example, a network controller <b>460</b> that is coupled to a network port (not shown). Additional devices may be coupled to the I/O expansion bus <b>442</b> and the PCI bus <b>444</b>, such as an input/output control circuit coupled to a parallel port, serial port, a non-volatile memory, and the like. </p>
+<p id="p-0048" num="0047"> Although the description makes reference to specific components of the system <b>400</b>, it is contemplated that numerous modifications and variations of the described and illustrated embodiments may be possible. More so, while <figref idref="DRAWINGS">FIG. 4</figref> shows a block diagram of a system such as a personal computer, it is to be understood that embodiments of the present invention may be implemented in a wireless device such as a cellular phone, personal digital assistant (PDA) or the like. </p>
+<p id="p-0049" num="0048"> While the present invention has been described with respect to a limited number of embodiments, those skilled in the art will appreciate numerous modifications and variations therefrom. It is intended that the appended claims cover all such modifications and variations as fall within the true spirit and scope of this present invention. </p>
+<?detailed-description description="Detailed Description" end="tail"?>
+</description>
+<us-chemistry idref="CHEM-US-00001" cdx-file="US20070006167A1-20070104-C00001.CDX" mol-file="US20070006167A1-20070104-C00001.MOL"/>
+<us-chemistry idref="CHEM-US-00002" cdx-file="US20070006167A1-20070104-C00002.CDX" mol-file="US20070006167A1-20070104-C00002.MOL"/>
+<claims id="claims">
+<claim id="CLM-00001" num="00001">
+<claim-text><b>1</b>. A method comprising: 
+<claim-text>receiving a command to insert instrumentation code into a code segment; </claim-text>
+<claim-text>analyzing the code segment to determine an optimal location for the instrumentation code within the code segment; and </claim-text>
+<claim-text>inserting the instrumentation code at the optimal location to generate an instrumented code segment. </claim-text>
+</claim-text>
+ </claim>
+<claim id="CLM-00002" num="00002">
+<claim-text><b>2</b>. The method of <claim-ref idref="CLM-00001">claim 1</claim-ref>, wherein receiving the command comprises receiving an indication from a user of a data independency between the code segment and the instrumentation code. </claim-text>
+ </claim>
+<claim id="CLM-00003" num="00003">
+<claim-text><b>3</b>. The method of <claim-ref idref="CLM-00001">claim 1</claim-ref>, wherein analyzing the code segment comprises determining if an instruction of the code segment causes an update to a condition code register. </claim-text>
+ </claim>
+<claim id="CLM-00004" num="00004">
+<claim-text><b>4</b>. The method of <claim-ref idref="CLM-00003">claim 3</claim-ref>, further comprising inserting the instrumentation code immediately prior to the instruction. </claim-text>
+ </claim>
+<claim id="CLM-00005" num="00005">
+<claim-text><b>5</b>. The method of <claim-ref idref="CLM-00001">claim 1</claim-ref>, wherein analyzing the code segment comprises determining if an instruction of the code segment overwrites a general-purpose register. </claim-text>
+ </claim>
+<claim id="CLM-00006" num="00006">
+<claim-text><b>6</b>. The method of <claim-ref idref="CLM-00001">claim 1</claim-ref>, further comprising automatically analyzing the code segment without receiving a data independency hint from a user. </claim-text>
+ </claim>
+<claim id="CLM-00007" num="00007">
+<claim-text><b>7</b>. The method of <claim-ref idref="CLM-00001">claim 1</claim-ref>, wherein inserting the instrumentation code at the optimal location prevents movement of register data to a stack. </claim-text>
+ </claim>
+<claim id="CLM-00008" num="00008">
+<claim-text><b>8</b>. The method of <claim-ref idref="CLM-00001">claim 1</claim-ref>, further comprising analyzing the code segment using a just-in-time compiler. </claim-text>
+ </claim>
+<claim id="CLM-00009" num="00009">
+<claim-text><b>9</b>. The method of <claim-ref idref="CLM-00001">claim 1</claim-ref>, wherein inserting the instrumentation code comprises dynamically instrumenting the code segment. </claim-text>
+ </claim>
+<claim id="CLM-00010" num="00010">
+<claim-text><b>10</b>. The method of <claim-ref idref="CLM-00001">claim 1</claim-ref>, further comprising storing the instrumented code segment in a code cache and executing the instrumented code segment from the code cache. </claim-text>
+ </claim>
+<claim id="CLM-00011" num="00011">
+<claim-text><b>11</b>. The method of <claim-ref idref="CLM-00001">claim 1</claim-ref>, wherein the optimal location comprises a no operation instruction of the code segment. </claim-text>
+ </claim>
+<claim id="CLM-00012" num="00012">
+<claim-text><b>12</b>. A method comprising: 
+<claim-text>receiving a data independency hint from a user corresponding to a relation between application data of an application program and instrumentation data of instrumentation code; </claim-text>
+<claim-text>scheduling a position within the application program for the instrumentation code based on the data independency hint; and </claim-text>
+<claim-text>inserting the instrumentation code at the scheduled position. </claim-text>
+</claim-text>
+ </claim>
+<claim id="CLM-00013" num="00013">
+<claim-text><b>13</b>. The method of <claim-ref idref="CLM-00012">claim 12</claim-ref>, further comprising analyzing the application program to determine if an instruction causes an update to a condition code register. </claim-text>
+ </claim>
+<claim id="CLM-00014" num="00014">
+<claim-text><b>14</b>. The method of <claim-ref idref="CLM-00013">claim 13</claim-ref>, wherein scheduling the position comprises selecting a location immediately prior to the instruction for inserting the instrumentation code. </claim-text>
+ </claim>
+<claim id="CLM-00015" num="00015">
+<claim-text><b>15</b>. The method of <claim-ref idref="CLM-00012">claim 12</claim-ref>, further comprising analyzing the application program to determine if an instruction overwrites a general-purpose register. </claim-text>
+ </claim>
+<claim id="CLM-00016" num="00016">
+<claim-text><b>16</b>. An article comprising a machine-accessible medium having instructions that when executed cause a system to: 
+<claim-text>receive a command to insert instrumentation code into a code segment; </claim-text>
+<claim-text>analyze the code segment to determine an optimal location for the instrumentation code within the code segment; and </claim-text>
+<claim-text>insert the instrumentation code at the optimal location to generate an instrumented code segment. </claim-text>
+</claim-text>
+ </claim>
+<claim id="CLM-00017" num="00017">
+<claim-text><b>17</b>. The article of <claim-ref idref="CLM-00016">claim 16</claim-ref>, further comprising instructions that when executed cause the system to receive an indication from a user of a data independency between the code segment and the instrumentation code. </claim-text>
+ </claim>
+<claim id="CLM-00018" num="00018">
+<claim-text><b>18</b>. The article of <claim-ref idref="CLM-00016">claim 16</claim-ref>, further comprising instructions that when executed cause the system to determine if an instruction of the code segment causes an update to a condition code register. </claim-text>
+ </claim>
+<claim id="CLM-00019" num="00019">
+<claim-text><b>19</b>. The article of <claim-ref idref="CLM-00016">claim 16</claim-ref>, further comprising instructions that when executed cause the system to dynamically instrument the code segment. </claim-text>
+ </claim>
+<claim id="CLM-00020" num="00020">
+<claim-text><b>20</b>. The article of <claim-ref idref="CLM-00016">claim 16</claim-ref>, further comprising instructions that when executed cause the system to store the instrumented code segment in a code cache and execute the instrumented code segment from the code cache. </claim-text>
+ </claim>
+<claim id="CLM-00021" num="00021">
+<claim-text><b>21</b>. A system comprising: 
+<claim-text>a storage including instructions that when executed cause the system to receive a data independency hint from a user corresponding to a relation between application data of an application program and instrumentation data of instrumentation code, schedule a position within the application program for the instrumentation code based on the data independency hint, and insert the instrumentation code at the scheduled position; and </claim-text>
+<claim-text>a dynamic random access memory coupled to the storage. </claim-text>
+</claim-text>
+ </claim>
+<claim id="CLM-00022" num="00022">
+<claim-text><b>22</b>. The system of <claim-ref idref="CLM-00021">claim 21</claim-ref>, further comprising a just-in-time compiler to compile the application program and to insert the instrumentation code therein. </claim-text>
+ </claim>
+<claim id="CLM-00023" num="00023">
+<claim-text><b>23</b>. The system of <claim-ref idref="CLM-00022">claim 22</claim-ref>, further comprising a code cache to store the compiled application program including the instrumentation code. </claim-text>
+ </claim>
+<claim id="CLM-00024" num="00024">
+<claim-text><b>24</b>. The system of <claim-ref idref="CLM-00021">claim 21</claim-ref>, wherein the storage further includes instructions that when executed cause the system to analyze the application program to determine if an instruction causes an update to a condition code register. </claim-text>
+ </claim>
+<claim id="CLM-00025" num="00025">
+<claim-text><b>25</b>. The system of <claim-ref idref="CLM-00023">claim 23</claim-ref>, further comprising a dispatcher to launch the compiled application program. </claim-text>
+ </claim>
+<claim id="CLM-00026" num="00026">
+<claim-text><b>26</b>. The system of <claim-ref idref="CLM-00022">claim 22</claim-ref>, further comprising a virtual machine including the just-in-time compiler, an emulation unit and a dispatcher.</claim-text>
+ </claim>
+</claims>
+</us-patent-application>

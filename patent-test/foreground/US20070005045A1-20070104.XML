@@ -1,0 +1,438 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE us-patent-application SYSTEM "us-patent-application-v42-2006-08-23.dtd" [ ]>
+<us-patent-application lang="EN" dtd-version="v4.2 2006-08-23" file="US20070005045A1-20070104.XML" status="PRODUCTION" id="us-patent-application" country="US" date-produced="20061221" date-publ="20070104">
+<us-bibliographic-data-application lang="EN" country="US">
+<publication-reference>
+<document-id>
+<country>US</country>
+<doc-number>20070005045</doc-number>
+<kind>A1</kind>
+<date>20070104</date>
+</document-id>
+</publication-reference>
+<application-reference appl-type="utility">
+<document-id>
+<country>US</country>
+<doc-number>11478416</doc-number>
+<date>20060628</date>
+</document-id>
+</application-reference>
+<us-application-series-code>11</us-application-series-code>
+<classifications-ipcr>
+<classification-ipcr>
+<ipc-version-indicator><date>20060101</date></ipc-version-indicator>
+<classification-level>A</classification-level>
+<section>A</section>
+<class>61</class>
+<subclass>B</subclass>
+<main-group>17</main-group>
+<subgroup>00</subgroup>
+<symbol-position>F</symbol-position>
+<classification-value>I</classification-value>
+<action-date><date>20070104</date></action-date>
+<generating-office><country>US</country></generating-office>
+<classification-status>B</classification-status>
+<classification-data-source>H</classification-data-source>
+</classification-ipcr>
+<classification-ipcr>
+<ipc-version-indicator><date>20060101</date></ipc-version-indicator>
+<classification-level>A</classification-level>
+<section>A</section>
+<class>61</class>
+<subclass>B</subclass>
+<main-group>18</main-group>
+<subgroup>18</subgroup>
+<symbol-position>L</symbol-position>
+<classification-value>I</classification-value>
+<action-date><date>20070104</date></action-date>
+<generating-office><country>US</country></generating-office>
+<classification-status>B</classification-status>
+<classification-data-source>H</classification-data-source>
+</classification-ipcr>
+</classifications-ipcr>
+<classification-national>
+<country>US</country>
+<main-classification>606001000</main-classification>
+<further-classification>606032000</further-classification>
+</classification-national>
+<invention-title id="d0e161">Indicator for tool state and communication in multi-arm robotic telesurgery</invention-title>
+<us-related-documents>
+<us-provisional-application>
+<document-id>
+<country>US</country>
+<doc-number>60695611</doc-number>
+<date>20050630</date>
+</document-id>
+</us-provisional-application>
+</us-related-documents>
+<parties>
+<applicants>
+<applicant sequence="00" app-type="applicant-inventor" designation="us-only">
+<addressbook>
+<last-name>Mintz</last-name>
+<first-name>David</first-name>
+<address>
+<city>Sunnyvale</city>
+<state>CA</state>
+<country>US</country>
+</address>
+</addressbook>
+<nationality>
+<country>US</country>
+</nationality>
+<residence>
+<country>US</country>
+</residence>
+</applicant>
+<applicant sequence="01" app-type="applicant-inventor" designation="us-only">
+<addressbook>
+<last-name>Morley</last-name>
+<first-name>Tracey</first-name>
+<middle-name>Ann</middle-name>
+<address>
+<city>Sunnyvale</city>
+<state>CA</state>
+<country>US</country>
+</address>
+</addressbook>
+<nationality>
+<country>US</country>
+</nationality>
+<residence>
+<country>US</country>
+</residence>
+</applicant>
+<applicant sequence="02" app-type="applicant-inventor" designation="us-only">
+<addressbook>
+<last-name>Walker</last-name>
+<first-name>Theodeore</first-name>
+<middle-name>Charles</middle-name>
+<address>
+<city>Portola Valley</city>
+<state>CA</state>
+<country>US</country>
+</address>
+</addressbook>
+<nationality>
+<country>US</country>
+</nationality>
+<residence>
+<country>US</country>
+</residence>
+</applicant>
+<applicant sequence="03" app-type="applicant-inventor" designation="us-only">
+<addressbook>
+<last-name>Larkin</last-name>
+<first-name>David</first-name>
+<middle-name>Q.</middle-name>
+<address>
+<city>Menlo Park</city>
+<state>CA</state>
+<country>US</country>
+</address>
+</addressbook>
+<nationality>
+<country>US</country>
+</nationality>
+<residence>
+<country>US</country>
+</residence>
+</applicant>
+<applicant sequence="04" app-type="applicant-inventor" designation="us-only">
+<addressbook>
+<last-name>Hanuschik</last-name>
+<first-name>Michael</first-name>
+<middle-name>Lee</middle-name>
+<address>
+<city>Sunnyvale</city>
+<state>CA</state>
+<country>US</country>
+</address>
+</addressbook>
+<nationality>
+<country>US</country>
+</nationality>
+<residence>
+<country>US</country>
+</residence>
+</applicant>
+</applicants>
+<correspondence-address>
+<addressbook>
+<name>PATENT DEPT;INTUITIVE SURGICAL, INC</name>
+<address>
+<address-1>1266 KIFER RD</address-1>
+<address-2>BUILDING 101</address-2>
+<city>SUNNYVALE</city>
+<state>CA</state>
+<postcode>94086</postcode>
+<country>US</country>
+</address>
+</addressbook>
+</correspondence-address>
+</parties>
+<assignees>
+<assignee>
+<addressbook>
+<orgname>Intuitive Surgical INC.</orgname>
+<role>03</role>
+<address>
+<city>Sunnyvale</city>
+<state>CA</state>
+<country>US</country>
+</address>
+</addressbook>
+</assignee>
+</assignees>
+</us-bibliographic-data-application>
+<abstract id="abstract">
+<p id="p-0001" num="0000">Medical and/or robotic devices, systems and methods can provide an indicator associated with each manipulator assembly of a multi-arm telerobotic or telesurgical system. The exemplary indicator comprises a multi-color light emitting diode (LED) mounted to a manipulator moving an associated surgical instrument, allowing the indicator to display any of a wide variety of signals. The invention may provide an additional user interface to facilitate communications between the telesurgical system and/or members of a telesurgical team. </p>
+</abstract>
+<drawings id="DRAWINGS">
+<figure id="figure-D00000" num="00000">
+<img id="EMI-D00000" he="129.48mm" wi="107.51mm" file="US20070005045A1-20070104-D00000.TIF" alt="embedded image" img-content="drawing" img-format="tif"/>
+</figure>
+<figure id="figure-D00001" num="00001">
+<img id="EMI-D00001" he="193.29mm" wi="141.22mm" file="US20070005045A1-20070104-D00001.TIF" alt="embedded image" img-content="drawing" img-format="tif"/>
+</figure>
+<figure id="figure-D00002" num="00002">
+<img id="EMI-D00002" he="210.14mm" wi="166.45mm" file="US20070005045A1-20070104-D00002.TIF" alt="embedded image" img-content="drawing" img-format="tif"/>
+</figure>
+<figure id="figure-D00003" num="00003">
+<img id="EMI-D00003" he="212.43mm" wi="113.54mm" orientation="landscape" file="US20070005045A1-20070104-D00003.TIF" alt="embedded image" img-content="drawing" img-format="tif"/>
+</figure>
+<figure id="figure-D00004" num="00004">
+<img id="EMI-D00004" he="177.38mm" wi="161.04mm" file="US20070005045A1-20070104-D00004.TIF" alt="embedded image" img-content="drawing" img-format="tif"/>
+</figure>
+<figure id="figure-D00005" num="00005">
+<img id="EMI-D00005" he="187.45mm" wi="154.86mm" file="US20070005045A1-20070104-D00005.TIF" alt="embedded image" img-content="drawing" img-format="tif"/>
+</figure>
+<figure id="figure-D00006" num="00006">
+<img id="EMI-D00006" he="236.05mm" wi="92.63mm" file="US20070005045A1-20070104-D00006.TIF" alt="embedded image" img-content="drawing" img-format="tif"/>
+</figure>
+<figure id="figure-D00007" num="00007">
+<img id="EMI-D00007" he="232.92mm" wi="160.70mm" file="US20070005045A1-20070104-D00007.TIF" alt="embedded image" img-content="drawing" img-format="tif"/>
+</figure>
+<figure id="figure-D00008" num="00008">
+<img id="EMI-D00008" he="210.06mm" wi="128.35mm" file="US20070005045A1-20070104-D00008.TIF" alt="embedded image" img-content="drawing" img-format="tif"/>
+</figure>
+<figure id="figure-D00009" num="00009">
+<img id="EMI-D00009" he="241.98mm" wi="161.04mm" orientation="landscape" file="US20070005045A1-20070104-D00009.TIF" alt="embedded image" img-content="drawing" img-format="tif"/>
+</figure>
+<figure id="figure-D00010" num="00010">
+<img id="EMI-D00010" he="242.74mm" wi="159.85mm" orientation="landscape" file="US20070005045A1-20070104-D00010.TIF" alt="embedded image" img-content="drawing" img-format="tif"/>
+</figure>
+<figure id="figure-D00011" num="00011">
+<img id="EMI-D00011" he="236.81mm" wi="95.76mm" orientation="landscape" file="US20070005045A1-20070104-D00011.TIF" alt="embedded image" img-content="drawing" img-format="tif"/>
+</figure>
+<figure id="figure-D00012" num="00012">
+<img id="EMI-D00012" he="159.51mm" wi="166.03mm" file="US20070005045A1-20070104-D00012.TIF" alt="embedded image" img-content="drawing" img-format="tif"/>
+</figure>
+<figure id="figure-D00013" num="00013">
+<img id="EMI-D00013" he="130.98mm" wi="157.90mm" file="US20070005045A1-20070104-D00013.TIF" alt="embedded image" img-content="drawing" img-format="tif"/>
+</figure>
+<figure id="figure-D00014" num="00014">
+<img id="EMI-D00014" he="201.93mm" wi="160.61mm" file="US20070005045A1-20070104-D00014.TIF" alt="embedded image" img-content="drawing" img-format="tif"/>
+</figure>
+<figure id="figure-D00015" num="00015">
+<img id="EMI-D00015" he="178.14mm" wi="120.65mm" file="US20070005045A1-20070104-D00015.TIF" alt="embedded image" img-content="drawing" img-format="tif"/>
+</figure>
+</drawings>
+<description id="description">
+<?cross-reference-to-related-applications description="Cross Reference To Related Applications" end="lead"?>
+<heading level="2" id="h-0001">CROSS-REFERENCES TO RELATED APPLICATIONS </heading>
+<p id="p-0002" num="0001"> This non-provisional United States (U.S.) patent application claims the benefit of U.S. provisional patent Application No. 60/695,611 entitled &#x201c;INDICTOR FOR TOOL STATE AND COMMUNICTION IN MULTI-ARM ROBOTIC TELESURGERY&#x201d; filed on Jun. 30, 2005 by inventors DAVID MINTZ, ET AL.</p>
+<?cross-reference-to-related-applications description="Cross Reference To Related Applications" end="tail"?>
+<?summary-of-invention description="Summary of Invention" end="lead"?>
+<heading level="2" id="h-0002">STATEMENT AS TO RIGHTS TO INVENTIONS MADE UNDER FEDERALLY SPONSORED RESEARCH OR DEVELOPMENT </heading>
+<p id="p-0003" num="0002"> Not applicable. </p>
+<heading level="2" id="h-0003">REFERENCE TO A &#x201c;SEQUENCE LISTING,&#x201d; A TABLE, OR A COMPUTER PROGRAM LISTING APPENDIX SUBMITTED ON A COMPACT DISK. </heading>
+<p id="p-0004" num="0003"> Not applicable. </p>
+<heading level="2" id="h-0004">BACKGROUND OF THE INVENTION </heading>
+<p id="p-0005" num="0004"> The present invention is generally related to medical and/or robotic devices, systems, and methods. In an exemplary embodiment, the invention provides an indicator associated with one or more robotic manipulator assemblies for communication of a state of the manipulator assembly or other component of the robotic system, for identification of one or more particular manipulators, or the like. The indicator(s) can provide an additional user interface between the robotic system and, for example, a surgical assistant, system operator, or the like. </p>
+<p id="p-0006" num="0005"> Minimally invasive medical techniques are intended to reduce the amount of extraneous tissue which is damaged during diagnostic or surgical procedures, thereby reducing patient recovery time, discomfort, and deleterious side effects. One effect of minimally invasive surgery, for example, may be reduced post-operative hospital recovery times. Because the average hospital stay for a standard surgery is typically significantly longer than the average stay for an analogous minimally invasive surgery, increased use of minimally invasive techniques could save millions of dollars in hospital costs each year. While many of the surgeries performed each year in the United States could potentially be performed in a minimally invasive manner, only a portion of the current surgeries use these advantageous techniques due to limitations in minimally invasive surgical instruments and the additional surgical training involved in mastering them. </p>
+<p id="p-0007" num="0006"> Minimally invasive robotic surgical or telesurgical systems have been developed to increase a surgeon's dexterity and avoid some of the limitations on traditional minimally invasive techniques. In telesurgery, the surgeon uses some form of remote control, e.g., a servomechanism or the like, to manipulate surgical instrument movements, rather than directly holding and moving the instruments by hand. In telesurgery systems, the surgeon can be provided with an image of the surgical site at the surgical workstation. While viewing a two or three dimensional image of the surgical site on a display, the surgeon performs the surgical procedures on the patient by manipulating master control devices, which in turn control motion of the servomechanically operated instruments. </p>
+<p id="p-0008" num="0007"> The servomechanism used for telesurgery will often accept input from two master controllers (one for each of the surgeon's hands) and may include two or more robotic arms or manipulators on each of which a surgical instrument is mounted. Operative communication between master controllers and associated robotic arm and instrument assemblies is typically achieved through a control system. The control system typically includes at least one processor which relays input commands from the master controllers to the associated robotic arm and instrument assemblies and back from the instrument and arm assemblies to the associated master controllers in the case of, e.g., force feedback or the like. One example of a robotic surgical system is the DA VINCI&#xae; system available from Intuitive Surgical, Inc. of Mountain View, Calif. </p>
+<p id="p-0009" num="0008"> The roles and interaction among the persons making up a telesurgical team may differ from those of conventional surgery. As telesurgery is often performed in an internal surgical site, at least some of those working under the direction of the lead surgeon (or other robotic system operator) may not have direct access to or direct visualization of the ongoing tissue manipulations. For example, surgical assistants within the operating room may remove a first surgical instrument (such as an electrosurgical scalpel) from a manipulator and replace it with a different surgical instrument (such as a needle holder), as a surgeon may desire the use of different surgical instruments during different phases of a surgical procedure. Similarly, the assistant may reposition a surgical instrument during a procedure, so that rather than approaching the procedure from a first minimally invasive access site, the instrument is advanced toward the internal surgical site from a second, different access site. More complex robotic systems (and team interactions) may also be used. For example, as surgery is often performed with more than two tools, input devices may be provided for one or more additional surgeons, with each additional surgeon robotically controlling (for example) at least one surgical instrument. </p>
+<p id="p-0010" num="0009"> While the new telesurgical systems, devices and methods have proven highly effective and advantageous, still further improvements would be desirable. In general, it would be desirable to provide improved robotic and/or surgical devices, systems and methods, particularly for performing telesurgical procedures. It may also be desirable to provide improved techniques for communication among the members of a telesurgical team, and for interfacing with the telesurgical apparatus so as to more fully take advantage of the capabilities of telesurgery to provide enhanced patient outcomes with improved efficiencies. It may be particularly beneficial to avoid unnecessary interruptions and distractions of a surgeon or other system operator, and to avoid delays and/or mistakes in the coordinated activities of a telesurgical team. </p>
+<heading level="2" id="h-0005">BRIEF SUMMARY OF THE INVENTION </heading>
+<p id="p-0011" num="0010"> The present invention is generally related to medical and/or robotic devices, systems and methods. An exemplary embodiment of the present invention provides a visual indicator associated with each manipulator assembly (and, hence, each surgical instrument) of a multi-arm telesurgical system. The exemplary indicator comprises a multi-color light emitting diode (LED), allowing the indicator to display any of a wide variety of signals through combinations of color, blinking, and the like. By establishing and using an appropriate indicator signal lexicography, the indicator can identify, for example: 
+<ul id="ul0001" list-style="none">
+    <li id="ul0001-0001" num="0000">
+    <ul id="ul0002" list-style="none">
+        <li id="ul0002-0001" num="0011"> whether the manipulator and surgical instrument are following input movement commands of a lead surgeon; </li>
+        <li id="ul0002-0002" num="0012"> whether movement of the surgical instrument is inhibited (for example, when the manipulator is in a clutch mode to allow manual movement); </li>
+        <li id="ul0002-0003" num="0013"> whether the surgical instrument is at, near, or beyond its intended useful life; </li>
+        <li id="ul0002-0004" num="0014"> whether a second surgeon has control of the surgical instrument; </li>
+        <li id="ul0002-0005" num="0015"> whether a fault is preventing robotic movement of the surgical instrument; and/or the like. 
+<br/>
+ A surgeon may also optionally initiate a signal from one or more of the indicators so as to identify an associated surgical instrument to be removed and replaced, or the like. As the surgeon will often remain immersed in the ongoing surgical procedure, and as it may be difficult to determine which instrument was, for example, previously being controlled by the surgeon's right hand and is now to be replaced, such indicators may significantly facilitate communications between the telesurgical system and/or members of a telesurgical team, potentially increasing efficiencies and enhancing patient outcomes. An identifiable signal is output from the selected indicator to a person near by. 
+</li>
+    </ul>
+    </li>
+</ul>
+</p>
+<p id="p-0012" num="0016"> In a first aspect, the invention provides a robotic method comprising moving a first end effector of a first manipulator assembly in response to a first robotic command. The first manipulator assembly has a first indicator. A second end effector of a second manipulator assembly is moved in response to a second robotic command. The second manipulator assembly has a second indicator. A command is transmitted from a processor, with the command being selectably directed to the first indicator and/or the second indicator. </p>
+<p id="p-0013" num="0017"> In many embodiments, the end effectors will include the working ends of surgical instruments. The person receiving the identifiable signal will often be a member of a robotic surgical team within an operating room, with the processor acting as a master/slave telesurgical controller. In such embodiments, a movement command may be input by a system operator, and the system operator may also select which of the manipulator assemblies is to output the first signal. This can allow the system operator to maintain his or her concentration on movements of the end effectors shown in a display while communicating to, for example, an assistant regarding a specific surgical instrument. For example, rather than telling the assistant to &#x201c;replace the electrosurgical scalpel on the arm now wiggling back and forth with a needle driver,&#x201d; the surgeon can instead merely request a needle driver and activate the indicator of the appropriate manipulator assembly. Optionally, the processor may select the appropriate indicator and manipulator assembly, such as when the tool mounted on a manipulator reaches or exceeds its intended useful life. </p>
+<p id="p-0014" num="0018"> The indicator will often include a visual indicator, with the first signal including a visual pattern such as blinking or the like, an identifiable color, or some other identifiable visual signal. In an exemplary telesurgical system, the indicators each include a plurality of light emitting diodes (LED). A variety of alternative indicators might also be employed, including any of the wide variety of light sources capable of generating different colors, audible indicators for generating tones or verbal signals, and the like. Preferably, a plurality of separately identifiable signals can be output from each indicator, thereby providing a user interface for communication to the assistant or the like regarding an associated manipulator assembly. </p>
+<p id="p-0015" num="0019"> Typically, each manipulator assembly will include a manipulator movably supporting a tool holder, and a tool releasably mounted to the tool holder. The tool will generally include the end effector. The first identifiable signal may indicate, for example, a state of the tool, which specific manipulator assembly is operatively associated with a specific input device, an overall condition or state of all of the manipulator assemblies, an identity of one or more components of the selected manipulator assembly, or the like. Some listing or lexicography explaining the meaning of each identifiable signal will often be provided or known by the person receiving the signal, and that person will often take action in response to the signal, such as reconfiguring the manipulator assembly from which the signal is being output. The reconfiguration may include replacement of a tool of the manipulator assembly with another tool having a different (or the same) end effector, changing a mode of the manipulator assembly so as to initiate or inhibit master/slave movement of the end effector, or the like. </p>
+<p id="p-0016" num="0020"> It will often be beneficial to include readily identifiable signal types or groups. For example, when the first signal includes a yellow color, it may communicate a warning that the associated manipulator assembly remains functional, but needs attention now or in the near future. A signal including a red color may communicate a sufficient fault along the robotic system chain to interrupt end effector movement. </p>
+<p id="p-0017" num="0021"> A variety of refinements may be implemented with use of the manipulator assembly indicator. For example, the system operator who is inputting movement commands may benefit from graphical indicia in his or her display that corresponds to the first identifiable signal. Hence, when the system indicates that a tool is near the end of its life or the like by flashing the indicator, the same information may be communicated to the system operator by simple flashing of an icon on the operator's display screen, by superimposing a flashing color on the end effector of the instrument as shown in the display, or the like. In some embodiments, along with indicating which currently mounted tool or end effector is to be replaced, the processor may also energize another indicator associated with the new tool that is now desired, such as by flashing an LED at an appropriate location on a tool tray, or the like. </p>
+<p id="p-0018" num="0022"> In another aspect, the invention provides a surgical robotic method comprising inputting a robotic movement command from a system operator to an input device. A surgical end effector of a manipulator assembly moves in response to the robotic command. The system operator views the movements of the end effector in a display while inputting the command. An identifiable visual signal is transmitted from a visual indicator of the manipulator assembly to a person nearby. In response, the person manually reconfigures the manipulator assembly. </p>
+<p id="p-0019" num="0023"> In yet another aspect, the invention provides a surgical robotic system comprising a first manipulator assembly having a first indicator and a first end effector. The first end effector is movable in response to a first movement command. The second manipulator assembly has a second indicator and a second end effector. The second end effector is movable in response to a second movement command. A processor is coupled to the first and second indicators, and selectively induces at least one of the indicators to output a first signal identifiable by a person nearby.</p>
+<?summary-of-invention description="Summary of Invention" end="tail"?>
+<?brief-description-of-drawings description="Brief Description of Drawings" end="lead"?>
+<heading level="2" id="h-0006">BRIEF DESCRIPTION OF THE DRAWINGS </heading>
+<p id="p-0020" num="0024"> <figref idref="DRAWINGS">FIG. 1</figref> is a schematic plan view of a portion of an operating theater illustrating a robotic surgical system in use, including a master surgeon console or workstation for inputting a surgical procedure and a robotic manipulator system for robotically moving surgical instruments having surgical end effectors at a surgical site within a patient. </p>
+<p id="p-0021" num="0025"> <figref idref="DRAWINGS">FIG. 2</figref> is a perspective view of an exemplary manipulator system, including positioning linkages or set up joints which allow two patient side robotic manipulators and one endoscope or camera robotic manipulator to be pre-configured for surgery. </p>
+<p id="p-0022" num="0026"> <figref idref="DRAWINGS">FIG. 3</figref> is a perspective view of an exemplary articulated surgical instrument for use in the system of <figref idref="DRAWINGS">FIG. 1</figref>. </p>
+<p id="p-0023" num="0027"> <figref idref="DRAWINGS">FIG. 4</figref> is a perspective from above of an alternative manipulator system including a plurality of positioning linkages, each supporting a manipulator assembly. </p>
+<p id="p-0024" num="0028"> <figref idref="DRAWINGS">FIG. 5</figref> is a perspective view of an exemplary manipulator for use in the manipulator system of <figref idref="DRAWINGS">FIG. 4</figref>. </p>
+<p id="p-0025" num="0029"> <figref idref="DRAWINGS">FIG. 6</figref> is a detailed view of a portion of the manipulator of <figref idref="DRAWINGS">FIG. 5</figref>, showing a tool holder and adjacent indicator for outputting visual signals. </p>
+<p id="p-0026" num="0030"> <figref idref="DRAWINGS">FIG. 7</figref> shows the indicator of <figref idref="DRAWINGS">FIG. 6</figref> in isolation. </p>
+<p id="p-0027" num="0031"> <figref idref="DRAWINGS">FIG. 8</figref> is a schematic block diagram of an embodiment of an alternative robotic system and method for its use by a plurality of system operators. </p>
+<p id="p-0028" num="0032"> <figref idref="DRAWINGS">FIG. 9</figref> is a flow chart schematically describing a method for reconfiguring a manipulator assembly in response to an identifiable signal from an associated indicator. </p>
+<p id="p-0029" num="0033"> <figref idref="DRAWINGS">FIG. 10</figref> is a listing of separately identifiable visual signals which may be then generated by the indicator of <figref idref="DRAWINGS">FIG. 6</figref>, along with their associated meanings. </p>
+<p id="p-0030" num="0034"> <figref idref="DRAWINGS">FIG. 11</figref> illustrates colors which can be generated by the indicator of <figref idref="DRAWINGS">FIG. 6</figref>, along with the general meanings of those colors. </p>
+<p id="p-0031" num="0035"> <figref idref="DRAWINGS">FIG. 12</figref> is a listing of indicator signal colors and associated general meanings. </p>
+<p id="p-0032" num="0036"> <figref idref="DRAWINGS">FIG. 13</figref> is a listing of indicator signals and associated specific meanings. </p>
+<p id="p-0033" num="0037"> <figref idref="DRAWINGS">FIG. 14</figref> illustrates An exemplary quick reference guide to the meanings of indicator signals for a telesurgical system.</p>
+<?brief-description-of-drawings description="Brief Description of Drawings" end="tail"?>
+<?detailed-description description="Detailed Description" end="lead"?>
+<heading level="2" id="h-0007">DETAILED DESCRIPTION OF THE INVENTION </heading>
+<p id="p-0034" num="0038"> The present invention generally provides improved robotic and/or medical devices, systems and methods. Embodiments of the present invention are particularly well suited for telesurgery, often providing an additional form of user interface that can enhance communication between a surgical system operator, an assistant, any other members of a telesurgical team and/or the telesurgical system. Other embodiments of the invention may be well suited for use in other telerobotic or robotic environments, particularly with robotic systems having a plurality of manipulators. </p>
+<p id="p-0035" num="0039"> <figref idref="DRAWINGS">FIGS. 1-3</figref> illustrate components of a robotic surgical system <b>1</b> for performing minimally invasive robotic surgery. System <b>1</b> is similar to that described in more detail in U.S. Pat. No. 6,246,200, the full disclose of which is incorporated herein by reference. A system operator O (generally a surgeon) performs a minimally invasive surgical procedure on a patient P lying on an operating table T. The system operator O manipulates one or more input devices or masters <b>2</b> at a surgeon's console <b>3</b>. In response to the surgeon's input commands, a computer processor <b>4</b> of console <b>3</b> directs movement of endoscopic surgical instruments or tools <b>5</b>, effecting servomechanical movement of the instruments via a robotic patient-side manipulator system <b>6</b> (a cart-mounted system in this example). </p>
+<p id="p-0036" num="0040"> Typically, manipulator system <b>6</b> includes at least <b>3</b> robotic manipulator assemblies. Two linkages <b>7</b> (mounted at the sides of the cart in this example) support and position manipulators <b>8</b> with linkages <b>7</b> in generally supporting a base of the manipulators <b>8</b> at a fixed location during at least a portion of the surgical procedure. Manipulators <b>8</b> move surgical tools <b>5</b> for robotic manipulation of tissues. One additional linkage <b>9</b> (mounted at the center of the cart in this example) supports and positions manipulator <b>10</b> which controls the motion of an endoscope/camera probe <b>11</b> to capture an image (preferably stereoscopic) of the internal surgical site. The fixable portion of positioning linkages <b>7</b>, <b>9</b> of the patient-side system is sometimes referred to herein as a &#x201c;set-up arm.&#x201d;</p>
+<p id="p-0037" num="0041"> The image of the internal surgical site is shown to operator O by a stereoscopic display <b>12</b> in surgeon's console <b>3</b>. The internal surgical site is simultaneously shown to assistant A by an assistance display <b>14</b>. Assistant A can help prior to and during a surgical procedure. Prior to surgery, assistant A typically covers at least a portion of the system with sterile drapes. Such draping of the system may include attaching sterile adapters, cannulas, and/or the like to manipulators <b>8</b>, switching one or more of the manipulators into and out of a manually articulatable clutch mode, and the like. Assistant A also assists in prepositioning manipulator assemblies <b>8</b> and <b>10</b> relative to patient P using set-up linkage arms <b>7</b>, <b>9</b>; in swapping tools <b>5</b> from one or more of the surgical manipulators for alternative surgical tools or instruments <b>5</b>&#x2032;; in operating related non-robotic medical instruments and equipment; in manually moving a manipulator assembly so that the associated tool accesses the internal surgical site through a different aperture, and the like. Some or all of these activities may be facilitated by providing feedback to assistant A via the indicators described herein, with the indicators often providing feedback to the assistant regarding a state of the manipulator assembly, a state of the tool mounted thereon, and/or a state of the robotic surgical system. </p>
+<p id="p-0038" num="0042"> In general terms, the linkages <b>7</b>, <b>9</b> are used primarily during set-up of patient-side system <b>6</b>, and typically remain in a fixed configuration during at least a portion of a surgical procedure. Manipulators <b>8</b>, <b>10</b> each comprise a driven linkage which is actively articulated under the direction of surgeon's console <b>3</b>. Although one or more of the joints of the set-up arm may optionally be driven and robotically controlled, at least some of the set-up arm joints may be configured for manual positioning by assistant A. Each associated combination of a set-up joint, manipulator and tool is encompassed within the term &#x201c;manipulator assembly&#x201d; as that term is used herein, although some manipulator assemblies may not include set-up joints, and the manipulator assembly will not include a tool at all times. </p>
+<p id="p-0039" num="0043"> For convenience, a manipulator such as manipulator <b>8</b> that is supporting a surgical tool used to manipulate tissues is sometimes referred to as a patient-side manipulator (PSM), while a manipulator <b>10</b> which controls an image capture or data acquisition device such as endoscope <b>11</b> may be referred to as an endoscope-camera manipulator (ECM). The manipulators may optionally actuate, maneuver and control a wide variety of instruments, tools, image capture devices and the like which are useful for surgery. </p>
+<p id="p-0040" num="0044"> As can be seen in <figref idref="DRAWINGS">FIGS. 1 and 2</figref>, indicators <b>20</b> are disposed on each manipulator assembly. In the exemplary embodiments, indicators <b>20</b> are disposed on manipulators <b>8</b>, <b>10</b> near the interface between the manipulators and their mounted tools <b>5</b>. In alternative embodiments, indicators <b>20</b> and may instead be disposed on set-up joints <b>7</b>, <b>9</b>, on tools <b>5</b>, elsewhere on manipulators <b>8</b>, <b>10</b>, or the like, with the indicators preferably being sufficiently close to the tools so that a signal generated by a particular indicator can be readily associated with a particular tool when the signal is viewed by assistant A. In <figref idref="DRAWINGS">FIG. 1</figref>, additional indicators <b>20</b> are shown in a rack or other structure supporting additional tools <b>5</b>&#x2032;, with each indicator again being associated with a particular tool (or type of tool). </p>
+<p id="p-0041" num="0045"> As can be seen in <figref idref="DRAWINGS">FIG. 1</figref>, the system operator O is largely immersed in the environment of and interaction with workstation <b>3</b>. The system operator sees images presented by display <b>12</b> and manipulates input devices <b>2</b>, and in the exemplary embodiment, processor <b>4</b> correlates the movement of the end effectors of tools <b>5</b> so that the images of the end effectors follow the movements of the input devices in the hands of the system operator O. </p>
+<p id="p-0042" num="0046"> It can be advantageous to avoid distracting system operator O during a surgical procedure so as to require the operator to shift his or her attention away from the internal surgical site. Even when assistant A is replacing a tool <b>5</b> with an alternative tool <b>5</b>&#x2032;, the system operator may continue manipulating tissues with another tool, or may want to continue to view the surgical site to monitor bleeding, and/or the like. Nonetheless, it may be difficult for the system operator to communicate clearly with assistant A regarding which tool <b>5</b> is to be replaced by an alternate tool. Specifically, as endoscope <b>11</b> may be at any convenient orientation, the tool associated with the right hand of system operator O will often not be disposed to the right of the endoscope, particularly as viewed by the assistant. </p>
+<p id="p-0043" num="0047"> So as to unambiguously identify a tool <b>5</b> to be replaced assistant A, system operator O may input a command into workstation <b>3</b> (such as by pushing a button on the input device <b>2</b>, actuating foot peddle, inputting a voice command, or the like) so that indicator <b>20</b> on the manipulator assembly associated with the specific tool <b>5</b> generates a visually identifiable signal that can be viewed by the assistant. A corresponding graphical indication of the signal may be provided to system operator O in display <b>12</b>, such as presentation of an appropriate icon, superimposing of text on the surgical site, the use of image processing to superimpose false colors on the image of the appropriate end effector, or the like. In response to the signal on indicator <b>20</b>, assistant A can remove and replace the identified tool <b>5</b>. Optionally, each alternative tool <b>5</b>&#x2032; may also have an associated indicator <b>20</b>, allowing the processor to transmit a signal so as to indicate which alternative tool the system operator O is to be mounted on the robotic system. </p>
+<p id="p-0044" num="0048"> There are a number of additional uses for indicators <b>20</b> in telesurgical system <b>1</b>. For example, assistant A will often manually position tools <b>5</b> and endoscope <b>11</b> when setting up for a surgical procedure, when reconfiguring the manipulator system <b>6</b> for a different phase of a surgical procedure, when removing and replacing a tool with an alternate tool <b>5</b>&#x2032;, and the like. During such manual reconfiguring of the manipulator assembly by assistant A, the manipulator assembly may be placed in a different mode than is used during master/slave telesurgery, with the manually repositionable mode as sometimes being referred to as a clutch mode. The manipulator assembly may change between the tissue manipulation mode and the clutch mode in response to an input such as pushing a button on manipulator <b>8</b> (or some other component to the manipulator assembly) thereby allowing assistant A to change the manipulator mode. By generating appropriate visually identifiable signals with indicators <b>20</b> whenever the manipulator is in clutch mode, assistant A can avoid errors and increase the efficiency of the surgical procedure. </p>
+<p id="p-0045" num="0049"> Indicators <b>20</b> may also show an associated identifiable signal when, for example, no tool is attached to the manipulator, when a sterile adaptor or interface between tool <b>5</b> and manipulator <b>8</b> is not properly attached, if an instrument mounted onto a manipulator is incompatible with that manipulator, if the instrument has reached the end of its useful life, and/or the like. For some of these signals, system operator O may initiate generation of the signal and may specify the associated manipulator assembly from which the signal is to be produced. In others, processor <b>4</b> may initiate the signal and/or indicate which manipulator assembly(s) are to be indicated. For example, in the case of a power failure, robotic system <b>1</b> may continue to operate using backup batteries. So as to indicate to the assistant A that a power failure has occurred, indicators <b>20</b> on all manipulators may blink, optionally blinking with a yellow light as a warning. As the power in the battery is drained so that robotic system <b>1</b> can no longer continue to provide robotic movement of the tools, all indicators <b>20</b> may blink red, thereby indicating a system fault. A wide variety of alternative signals may also be provided, some of which are indicated by the exemplary lexicographies of <figref idref="DRAWINGS">FIGS. 10-14</figref>. </p>
+<p id="p-0046" num="0050"> <figref idref="DRAWINGS">FIG. 4</figref> illustrates a perspective view of the articulated surgical tool or instrument <b>5</b>. Tool <b>5</b> has a proximal housing <b>24</b> which interfaces with a tool holder of the manipulator, generally providing a quick release mounting engagement through a sterile adapter or interface. Tool <b>5</b> includes an elongate shaft <b>23</b> supporting an end effector <b>28</b> relative to proximal housing <b>24</b>. Proximal housing <b>24</b> includes a drive mechanism that accepts and transmits drive signals or drive motion between the manipulator <b>8</b> and the end effector <b>28</b>. Proximal housing <b>24</b> also contains circuitry that can generate signals for transmission to processor <b>4</b> so as to identify a type of the tool, indicate a remaining useful life of the tool, and/or the like. The exemplary circuitry may include a memory, such as a Dallas&#x2122; part or the like, and exemplary structures and methods for transmitting of information between the memory of tool <b>5</b> and processor <b>4</b> may be described in application Ser. No. 10/839,727, filed on May 4, 2004 and entitled &#x201c;Tool Memory-Based Software Upgrades for Robotic Surgery&#x201d; the full disclosure of which is incorporated herein by reference. An articulated wrist <b>29</b> may provide two degrees of freedom of motion between end effector <b>28</b> and shaft <b>23</b>, and the shaft may be rotateable relative to proximal housing <b>24</b> about the axis of the shaft so as to provide the end effector <b>28</b> with the three orientational degrees of freedom within the patient's body. Control over actuation of end effector <b>28</b>, such as opening or closing of jaws or the like, may represent an additional degree of freedom, for a total of four distal degrees of freedom. In some embodiments, an indicator <b>20</b> may be mounted on housing <b>24</b>. </p>
+<p id="p-0047" num="0051"> Referring now to <figref idref="DRAWINGS">FIG. 4</figref>, a perspective view from above of an alternative modular manipulator support assembly <b>30</b> may be mounted to a ceiling of an operating room. The modular manipulator support <b>30</b> aligns and supports a robotic manipulator system relative to a set of desired surgical incision sites in a patient's body. Modular manipulator support <b>30</b> generally includes an orientating platform <b>36</b> and a plurality of configurable set-up linkage arms <b>38</b>, <b>40</b>, <b>42</b>, <b>44</b> coupleable to the orienting platform. Each arm movably supports an associated manipulator <b>32</b>, <b>34</b>, which in turn movably supports an associated tool or an image capture device. Orienting platform <b>36</b> also supports an assistant display <b>104</b>, which may be used for set-up, instrument changes, viewing of the procedure and the like. The structures and use of any of the components of modular manipulator support assembly <b>30</b> are analogous to those described above regarding manipulator system <b>6</b>, and are more fully and described in copending U.S. patent application Ser. No. 11/043,688, filed on Jan. 24, 2005, and entitled &#x201c;Modulator Manipulator Support For Robotic Surgery&#x201d; (Attorney Docket Number 017516-009900US), the full disclosure of which is incorporated herein by reference. As generally described above, each manipulator <b>32</b>, <b>34</b> of modular manipulator support <b>30</b> may include an indicator <b>20</b>. </p>
+<p id="p-0048" num="0052"> Manipulator <b>32</b> is shown in more detail in <figref idref="DRAWINGS">FIG. 5</figref>, which also shows indicator <b>20</b> near a tool holder <b>52</b>. The exemplary indicator <b>20</b> is shown in more detail in <figref idref="DRAWINGS">FIG. 6</figref>, and in isolation (with some of the internal components being schematically shown by dashed lines) in <figref idref="DRAWINGS">FIG. 7</figref>. The exemplary indicator <b>20</b> generally comprises a clear and/or translucent polymer body <b>54</b> in which a pair of light emitting diode arrays (LED) <b>56</b> are mounted. LED <b>56</b> include a red LED, a blue LED and a green LED. The exemplary LEDs are commercially available from ______, located in ______, while the exemplary polymer body may comprise a material such as ______. [PLEASE SPECIFY THE NAME AND LOCATION OF YOUR LED SUPPLIER, AND THE MATERIAL OF YOUR TOWER CAP, IF APPROPRIATE] The LEDs of each array can be independently energized to any of a plurality of illumination or brightness levels, allowing indicator <b>20</b> to generate signals in a wide variety of colors, as schematically illustrated in <figref idref="DRAWINGS">FIG. 11</figref>. Additionally, the overall level of illumination from indicator <b>20</b> may be varied, and a pattern may be imposed on the cover signal by blinking and the illumination on and off, alternating between two different colors, alternating between two different illumination levels, simultaneously displaying two different colors, or the like. The speed of blinking may also be controlled or altered in more complex modulation patterns (with long and short blinks, Morse code, and the like). </p>
+<p id="p-0049" num="0053"> As different colors may be combined with different illumination levels and different modulation patterns in a signal, a very large number of independently identifiable signals can be generated, often being more than three separately identifiable signals, typically being more than 10 separately identifiable signals, and optionally of being more than 100 separately identifiable signals. Interpretation of the identifiable signals may be facilitated by a listing correlating signals and their meaning, such as that included as <figref idref="DRAWINGS">FIG. 10</figref>. In some embodiments, a relatively simple signal scheme with a more limited number of signals output by indicator <b>20</b> may be combined with supplemental text or graphics output from the assistant display <b>114</b> or the like. Hence, the assistant may know that they should look for additional information on the assistant display in response to one or more signals. </p>
+<p id="p-0050" num="0054"> So as to facilitate interpretation of the signals generated by indicators <b>20</b>, any of a wide variety of signal conventions may be established and/or employed. For example, as can be understood with reference to <figref idref="DRAWINGS">FIG. 11</figref>, signals including the color yellow may generally indicate a warning. Optionally, the manipulator assembly may continue to function while its indicator <b>20</b> displays such a yellow warning signal, but the assistant may understand that some action may be advisable. The specific action or meaning of the warning signal may depend on other aspects of the signal, such as other colors being interspersed with a blinking yellow illumination pattern, speed of blinking, or the like. Signals including red may indicate a current or imminent fault that is now or may soon interfere with operation of the manipulator assembly. Green may optionally indicate normal operation is underway, blue may indicate an instrument or a tool is engaged, and/or that a guided tool change is underway or has been requested. Purple may indicate that a second surgeon or system operator is actively controlling the manipulator assembly, or the like. Slow blinking lights may generally indicate a less urgent state than a rapidly blinking indicator <b>20</b>. Some of these possible conventions are graphically illustrated in <figref idref="DRAWINGS">FIG. 11</figref>. </p>
+<p id="p-0051" num="0055"> Referring now to <figref idref="DRAWINGS">FIG. 8</figref>, a schematic block diagram of a somewhat more complex system <b>60</b> is provided. Exemplary cooperative telesurgical systems which may be modified to take advantage of the additional user interface provided by indicators <b>20</b> is described in more detail in U.S. Pat. No. 6,659,939, the full disclosure of which is incorporated herein by reference. In the exemplary system of <figref idref="DRAWINGS">FIG. 8</figref>, a first system operator O<b>1</b> provides input to a first input device <b>2</b>. Processor <b>4</b> selectively couples the movement commands from the first input device <b>2</b> to any of a plurality of manipulator assemblies, for example, to manipulator A and manipulator D. A second system operator O<b>2</b> inputs movement commands to a second input device <b>2</b> so as to effect movement of a manipulator <b>32</b> manipulator assembly B. </p>
+<p id="p-0052" num="0056"> When the second system operator O<b>2</b> desires the tool <b>5</b> attached to manipulator assembly B be replaced an alternate tool <b>5</b>&#x2032;, for example, tool F, the system operator may verbally instruct assistant A to mount tool F to his manipulator assembly. The indicator <b>20</b> of manipulator assembly B generates a signal in response to an appropriate input by the second system operator O<b>2</b>, clearly indicating to the assistant A which tool from which manipulator assembly is to be replaced. </p>
+<p id="p-0053" num="0057"> As noted above, additional indicators may optionally be associated with each of the alternative tools <b>5</b>&#x2032;, thereby foregoing any need for verbal instruction to the assistant regarding which alternative tool is to be mounted to the manipulator. Toward that end, alternative tools <b>5</b>&#x2032; may be included in a tool rack <b>62</b> which is coupled to processor <b>4</b>, often so as to provide communication between the circuitry of alternative tools <b>5</b>&#x2032; and the processor. This can allow the processor to read identifying information from the tools, thereby allowing the processor to determine which alternative tools or tool types are available and/or appropriate to mount on the manipulator system. An LED or other indicator may be associated with each alternative tool <b>5</b>&#x2032; included in the tool rack, and processor <b>4</b> may transmit a signal to the tool rack so as to energize one or more indicator associated with one or more tools. Hence, when system operator O<b>1</b> indicates to processor <b>4</b> a desire to replace a mounted tool <b>5</b> (for example, tool B on manipulator B) with a different type of tool, a list of available tools and/or tool types may be displayed to the system operator. In response to the system operator selecting (for example, a tool type corresponding to tool F, indicators <b>20</b> associated with tool B and tool F may be activated, indicating to the assistant A that these two tools should be exchanged. </p>
+<p id="p-0054" num="0058"> Processor <b>4</b> will typically include data processing hardware and software, with the software typically comprising machine-readable code. The machine-readable code will embody software programming instructions to implement some or all of the methods described herein. While processor <b>4</b> is shown as a single block in the simplified schematic of <figref idref="DRAWINGS">FIG. 8</figref>, the processor may comprise a number of data processing circuits, with at least a portion of the processing optionally being performed adjacent input device <b>1</b>, a portion being performed adjacent manipulator B, and the like. Any of a wide variety of centralized or distributed data processing architectures may be employed. Similarly, the programming code may be implemented as a number of separate programs or subroutines, or may be integrated into a number of other aspects of the robotic systems described herein. </p>
+<p id="p-0055" num="0059"> Referring now to <figref idref="DRAWINGS">FIG. 9</figref>, a flowchart <b>70</b> schematically illustrates a method for implementing an embodiment of the present invention. The method <b>70</b> may begin with a change <b>72</b> in state of the manipulator, tool, system, or the like. For example, an assistant may actuate a clutch mode button on the manipulator, the tool may reach the end of its useful life, a manipulator fault may be detected, or the like. In other embodiments, the system operator may initiate method <b>70</b> by requesting a new tool <b>74</b>, or in some other manner indicating which of one or more manipulator assemblies is to generate a signal to be perceived by an assistant or some other person. </p>
+<p id="p-0056" num="0060"> Regardless of whether the signal is initiated by a change in state or a system operator, the processor will typically transmit an appropriate command to one or more of the manipulator assemblies <b>76</b>, and, in response, the indicator on that manipulator assembly will display a visual signal <b>78</b>. Optionally, corresponding graphics may be shown in a system operator display <b>80</b>, thereby allowing the system operator to maintain his or her concentration on the internal surgical site. </p>
+<p id="p-0057" num="0061"> In response to the visual signal, the other person, such as an assistant, may optionally reconfigure the manipulator assembly <b>82</b>. For example, the assistant may remove and replace a tool (with its end effector) or may manually reposition the manipulator linkage so as to move the end effector into a desired position. In some embodiments, the assistant may merely monitor the manipulator assembly in response to one or more visual signals, and may optionally prepare to take some appropriate action if the visual signal changes so as to indicate that such an action is appropriate. </p>
+<p id="p-0058" num="0062"> <figref idref="DRAWINGS">FIGS. 10-14</figref> indicate meanings of different signals which may be generated by the exemplary multicolor LED indicators described herein. <figref idref="DRAWINGS">FIG. 10</figref> shows a potential lexicography for using the indicators as a manipulator user interface (&#x201c;UI&#x201d;), while <figref idref="DRAWINGS">FIG. 11</figref> illustrates some general meanings of signal colors from the indicators. <figref idref="DRAWINGS">FIG. 12</figref> shows alternative general meanings of the two three-color LED indicators <b>20</b> included in each manipulator assembly. By transmitting these or other color signals with sufficient brightness through a clear or translucent plastic cap at a position on the manipulator assembly along the tool insertion axis away from the patient, the signals may be readily identified throughout a wide area. As the red, green, and blue elements of each LED array have a brightness that can be independently controlled, and as the two LED arrays of an indicator may be independently controlled, a wide variety of identifiable signal colors may be generated. </p>
+<p id="p-0059" num="0063"> <figref idref="DRAWINGS">FIG. 13</figref> specifically identifies system, manipulator assembly, and/or tool states that may be associated with several specific signals from the manipulator assembly indicators. Synchronous blinking encompasses blinking of both LED arrays within a single indicator of a manipulator assembly, as can be understood with reference to <figref idref="DRAWINGS">FIGS. 6 and 7</figref>. Alternate blinking encompasses energizing of the two LED arrays with out-of-phase blinking, so that when one LED array is on, the other is off. Still further additional signals may be generated by the indicators to communicate alternative information. For example, signals (such as a quick green blink) may indicate that a component (such as a cannula, sterile adapter, tool or surgical instrument, or the like) that has recently or just been mounted to the manipulator system is valid and accepted. Alternative signals may indicate that a tool change is requested by the system operator, that an energizable instrument (such as an electrocautery instrument or the like) is being activated by the system operator, and the like. Different signal characteristics may optionally be associated with recoverable faults and unrecoverable faults. Hence, a wide variety of still further alternative signals may be included. </p>
+<p id="p-0060" num="0064"> While described in some detail, for clarity of understanding and by way of example, a variety of changes, adaptations, and modifications will be obvious to those of skill in the art. Hence, the scope of the present invention is limited solely by the appended claims. </p>
+<?detailed-description description="Detailed Description" end="tail"?>
+</description>
+<us-claim-statement>What is claimed is: </us-claim-statement>
+<claims id="claims">
+<claim id="CLM-00001" num="00001">
+<claim-text><b>1</b>. A robotic method comprising: 
+<claim-text>moving a first end effector of a first manipulator assembly in response to a first robotic command, the first manipulator assembly having a first indicator; </claim-text>
+<claim-text>moving a second end effector of a second manipulator assembly in response to a second robotic command, the second manipulator assembly having a second indicator; </claim-text>
+<claim-text>transmitting a command from a processor to, selectably, the first indicator or the second indicator; and </claim-text>
+<claim-text>outputting a first identifiable signal from the selected indicator to a person near the first and second manipulator assemblies. </claim-text>
+</claim-text>
+ </claim>
+<claim id="CLM-00002" num="00002">
+<claim-text><b>2</b>. The robotic method of <claim-ref idref="CLM-00001">claim 1</claim-ref>, wherein the first and second end effectors comprise surgical end effectors, and wherein the person is within an operating room with a patient and the first and second manipulator assemblies. </claim-text>
+ </claim>
+<claim id="CLM-00003" num="00003">
+<claim-text><b>3</b>. The robotic method of <claim-ref idref="CLM-00002">claim 2</claim-ref>, wherein the processor comprises a master/slave telesurgical controller. </claim-text>
+ </claim>
+<claim id="CLM-00004" num="00004">
+<claim-text><b>4</b>. The robotic method of <claim-ref idref="CLM-00002">claim 2</claim-ref>, wherein the movement command is input by a system operator, further comprising selecting, per the system operator, the selected indicator from at least among the first indicator and the second indicator so that the first signal communicates the system operator's selection to the person. </claim-text>
+ </claim>
+<claim id="CLM-00005" num="00005">
+<claim-text><b>5</b>. The robotic method of <claim-ref idref="CLM-00004">claim 4</claim-ref>, wherein the system operator is viewing the movements of the end effectors in a display while inputting the command movements, and wherein the fist identifiable signal allows the system operator to identify a manipulator assembly without looking away from the display. </claim-text>
+ </claim>
+<claim id="CLM-00006" num="00006">
+<claim-text><b>6</b>. The robotic method of <claim-ref idref="CLM-00002">claim 2</claim-ref>, wherein the movement command is input by a system operator, and wherein the processor selects the selected indicator independent of the input from the system operator. </claim-text>
+ </claim>
+<claim id="CLM-00007" num="00007">
+<claim-text><b>7</b>. The robotic method of <claim-ref idref="CLM-00001">claim 1</claim-ref>, wherein the indicator comprises a visual indicator, and wherein the first identifiable signal comprises at least one of a visual pattern or a color. </claim-text>
+ </claim>
+<claim id="CLM-00008" num="00008">
+<claim-text><b>8</b>. The robotic method of <claim-ref idref="CLM-00007">claim 7</claim-ref>, wherein the first and second visual indicators each comprise a plurality of light emitting diodes (LED), and wherein the first identifiable signal comprises a blinking pattern and the color. </claim-text>
+ </claim>
+<claim id="CLM-00009" num="00009">
+<claim-text><b>9</b>. The robotic method of <claim-ref idref="CLM-00007">claim 7</claim-ref>, further comprising displaying a plurality of separately identifiable signals, each identifiable signal being transmitted from an associated indicator and providing communication to the person regarding an associated manipulator assembly. </claim-text>
+ </claim>
+<claim id="CLM-00010" num="00010">
+<claim-text><b>10</b>. The robotic method of <claim-ref idref="CLM-00001">claim 1</claim-ref>, wherein each manipulator assembly comprises: 
+<claim-text>a manipulator movably supporting a tool holder; and </claim-text>
+<claim-text>a tool releasably mountable to the tool holder and having the end effector; and </claim-text>
+<claim-text>wherein the first identifiable signal indicates: 
+<claim-text>a state of the tool of the selected manipulator assembly, </claim-text>
+<claim-text>an operative association between the tool of the selected manipulator assembly and a first input device, </claim-text>
+<claim-text>a state of the manipulator assemblies, </claim-text>
+<claim-text>a state of a robotic system, the robotic system including the manipulator assemblies, an input device, and the processor, or </claim-text>
+<claim-text>an identity of at least one component of the selected manipulator assembly. </claim-text>
+</claim-text>
+</claim-text>
+ </claim>
+<claim id="CLM-00011" num="00011">
+<claim-text><b>11</b>. The robotic method of <claim-ref idref="CLM-00010">claim 10</claim-ref>, wherein the first identifiable signal communicates to the person the state of the tool of the selected manipulator assembly. </claim-text>
+ </claim>
+<claim id="CLM-00012" num="00012">
+<claim-text><b>12</b>. The robotic method of <claim-ref idref="CLM-00010">claim 10</claim-ref>, wherein the tool of the selected manipulator assembly comprises an electrosurgical instrument, and wherein the state of the tool of the selected manipulator assembly communicated by the first identifiable signal to the person comprises an electrosurgically energized state. </claim-text>
+ </claim>
+<claim id="CLM-00013" num="00013">
+<claim-text><b>13</b>. The robotic method of <claim-ref idref="CLM-00010">claim 10</claim-ref>, wherein the first identifiable signal communicates to the person the state of the robotic system. </claim-text>
+ </claim>
+<claim id="CLM-00014" num="00014">
+<claim-text><b>14</b>. The robotic method of <claim-ref idref="CLM-00013">claim 13</claim-ref>, wherein the state of the robotic system communicated by the first identifiable signal to the person comprises a low battery state or a loss of imaging state. </claim-text>
+ </claim>
+<claim id="CLM-00015" num="00015">
+<claim-text><b>15</b>. The robotic method of <claim-ref idref="CLM-00010">claim 10</claim-ref>, further comprising manually reconfiguring, by the person and in response to the first identifiable signal, the manipulator assembly of the selected indicator. </claim-text>
+ </claim>
+<claim id="CLM-00016" num="00016">
+<claim-text><b>16</b>. The robotic method of <claim-ref idref="CLM-00015">claim 15</claim-ref>, wherein the manual reconfiguration comprises replacement of the tool of the selected manipulator assembly with another tool having a third end effector. </claim-text>
+ </claim>
+<claim id="CLM-00017" num="00017">
+<claim-text><b>17</b>. The robotic method of <claim-ref idref="CLM-00001">claim 1</claim-ref>, wherein the first identifiable signal comprises a yellow color and communicates a warning to the person regarding an associated manipulator assembly of the selected indicator while the associated manipulator assembly remains capable of end effector movement. </claim-text>
+ </claim>
+<claim id="CLM-00018" num="00018">
+<claim-text><b>18</b>. The robotic method of <claim-ref idref="CLM-00001">claim 1</claim-ref>, wherein the first identifiable signal comprises a red color and communicates to the person a robotic system fault regarding the manipulator assembly of the selected indicator, such that the associated manipulator assembly will not provide robotic end effector movement. </claim-text>
+ </claim>
+<claim id="CLM-00019" num="00019">
+<claim-text><b>19</b>. The robotic method of <claim-ref idref="CLM-00001">claim 1</claim-ref>, wherein the first identifiable signal communicates to the person that the person is to take action regarding the manipulator assembly of the selected indicator so as to enable robotic end effector movement. </claim-text>
+ </claim>
+<claim id="CLM-00020" num="00020">
+<claim-text><b>20</b>. The robotic method of <claim-ref idref="CLM-00001">claim 1</claim-ref>, wherein the system includes a plurality of input devices for manipulation by a plurality of system operators, and wherein the first identifiable signal communicates to the person that a first input device associated with a first system operator is operatively associated with the manipulator assembly of the selected indicator so as to effect master/slave following. </claim-text>
+ </claim>
+<claim id="CLM-00021" num="00021">
+<claim-text><b>21</b>. The robotic method of <claim-ref idref="CLM-00001">claim 1</claim-ref>, further comprising displaying, to a system operator inputting end effector movement commands to an input device and viewing the end effector movements in a display, graphical indicia corresponding to the first identifiable signal in the display. </claim-text>
+ </claim>
+<claim id="CLM-00022" num="00022">
+<claim-text><b>22</b>. The robotic method of <claim-ref idref="CLM-00001">claim 1</claim-ref>, further comprising selectively energizing an indicator associated with another end effector, wherein the person replaces the end effector of the manipulator assembly outputting the first signal with the other end effector. </claim-text>
+ </claim>
+<claim id="CLM-00023" num="00023">
+<claim-text><b>23</b>. The robotic method of <claim-ref idref="CLM-00022">claim 22</claim-ref>, wherein the indicator associated with the other end effector is included in a tool rack, the tool rack comprising a plurality of differing tool rack end effectors and a plurality of tool rack indicators, each tool rack end effector associated with a tool rack indicator, wherein the other end effector is selected from among the plurality of tool rack end effectors in response to a signal from the processor to the tool rack. </claim-text>
+ </claim>
+<claim id="CLM-00024" num="00024">
+<claim-text><b>24</b>. A surgical robotic method comprising: 
+<claim-text>inputting a robotic movement command from a system operator to an input device; </claim-text>
+<claim-text>moving a surgical end effector of a manipulator assembly in response to the command; </claim-text>
+<claim-text>viewing, by the system operator, the movement of the end effector in a display while inputting the command; </claim-text>
+<claim-text>transmitting, from a visual indicator of the manipulator assembly, an identifiable visual signal to a person near the manipulator assembly; and </claim-text>
+<claim-text>in response to the visual indicator, manually reconfiguring, by the person, the manipulator assembly. </claim-text>
+</claim-text>
+ </claim>
+<claim id="CLM-00025" num="00025">
+<claim-text><b>25</b>. A robotic system comprising: 
+<claim-text>a first manipulator assembly having a first indicator and a first end effector, the first end effector movable in response to a first movement command; </claim-text>
+<claim-text>a second manipulator assembly having a second indicator and a second end effector, the second end effector movable in response to a second movement command; and </claim-text>
+<claim-text>a processor coupled to the first indicator and to the second indicator, the processor selectably inducing at least one of the first indicator or the second indicator to output a first signal identifiable by a person nearby. </claim-text>
+</claim-text>
+ </claim>
+<claim id="CLM-00026" num="00026">
+<claim-text><b>26</b>. The robotic system of <claim-ref idref="CLM-00025">claim 25</claim-ref>, further comprising a tool rack coupled to the processor, the tool rack comprising a plurality of differing tool rack end effectors and a plurality of tool rack indicators, each tool rack end effector associated with a tool rack indicator, wherein the other end effector is selected from among the plurality of tool rack end effectors in response to a signal transmitted from the processor to the tool rack.</claim-text>
+ </claim>
+</claims>
+</us-patent-application>

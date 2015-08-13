@@ -1,0 +1,331 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE us-patent-application SYSTEM "us-patent-application-v42-2006-08-23.dtd" [ ]>
+<us-patent-application lang="EN" dtd-version="v4.2 2006-08-23" file="US20070006067A1-20070104.XML" status="PRODUCTION" id="us-patent-application" country="US" date-produced="20061221" date-publ="20070104">
+<us-bibliographic-data-application lang="EN" country="US">
+<publication-reference>
+<document-id>
+<country>US</country>
+<doc-number>20070006067</doc-number>
+<kind>A1</kind>
+<date>20070104</date>
+</document-id>
+</publication-reference>
+<application-reference appl-type="utility">
+<document-id>
+<country>US</country>
+<doc-number>11471299</doc-number>
+<date>20060620</date>
+</document-id>
+</application-reference>
+<us-application-series-code>11</us-application-series-code>
+<priority-claims>
+<priority-claim sequence="01" kind="national">
+<country>JP</country>
+<doc-number>2005-192836</doc-number>
+<date>20050630</date>
+</priority-claim>
+</priority-claims>
+<classifications-ipcr>
+<classification-ipcr>
+<ipc-version-indicator><date>20060101</date></ipc-version-indicator>
+<classification-level>A</classification-level>
+<section>G</section>
+<class>06</class>
+<subclass>F</subclass>
+<main-group>17</main-group>
+<subgroup>00</subgroup>
+<symbol-position>F</symbol-position>
+<classification-value>I</classification-value>
+<action-date><date>20070104</date></action-date>
+<generating-office><country>US</country></generating-office>
+<classification-status>B</classification-status>
+<classification-data-source>H</classification-data-source>
+</classification-ipcr>
+<classification-ipcr>
+<ipc-version-indicator><date>20060101</date></ipc-version-indicator>
+<classification-level>A</classification-level>
+<section>G</section>
+<class>06</class>
+<subclass>F</subclass>
+<main-group>17</main-group>
+<subgroup>30</subgroup>
+<symbol-position>L</symbol-position>
+<classification-value>I</classification-value>
+<action-date><date>20070104</date></action-date>
+<generating-office><country>US</country></generating-office>
+<classification-status>B</classification-status>
+<classification-data-source>H</classification-data-source>
+</classification-ipcr>
+</classifications-ipcr>
+<classification-national>
+<country>US</country>
+<main-classification>715501100</main-classification>
+<further-classification>707003000</further-classification>
+<further-classification>707006000</further-classification>
+</classification-national>
+<invention-title id="d0e188">Electronic apparatus with a Web page browsing function</invention-title>
+<parties>
+<applicants>
+<applicant sequence="00" app-type="applicant-inventor" designation="us-only">
+<addressbook>
+<last-name>Kikuchi</last-name>
+<first-name>Masaaki</first-name>
+<address>
+<city>Fussa-shi</city>
+<country>JP</country>
+</address>
+</addressbook>
+<nationality>
+<country>JP</country>
+</nationality>
+<residence>
+<country>JP</country>
+</residence>
+</applicant>
+</applicants>
+<correspondence-address>
+<addressbook>
+<name>FRISHAUF, HOLTZ, GOODMAN &#x26; CHICK, PC</name>
+<address>
+<address-1>220 Fifth Avenue</address-1>
+<address-2>16TH Floor</address-2>
+<city>NEW YORK</city>
+<state>NY</state>
+<postcode>10001-7708</postcode>
+<country>US</country>
+</address>
+</addressbook>
+</correspondence-address>
+</parties>
+<assignees>
+<assignee>
+<addressbook>
+<orgname>Casio Computer Co., Ltd.</orgname>
+<role>03</role>
+<address>
+<city>Tokyo</city>
+<country>JP</country>
+</address>
+</addressbook>
+</assignee>
+</assignees>
+</us-bibliographic-data-application>
+<abstract id="abstract">
+<p id="p-0001" num="0000">A Web page browsing apparatus has stored keywords such as a &#x201c;next&#x201d; which is a clue to pass to a next page. When an &#x201c;Advance&#x201d; key of a key-in unit is operated, a HTML file of a Web page displayed presently on a display is searched for a character string which is used as a keyword to jump to a next page. When the character string is searched out, a URL written with the searched-out character string is extracted as a URL of a next page. A HTML file of a Web page represented by the extracted URL is acquired from a Web server accessed in accordance with the extracted URL and displayed as a Web page next to the presently displayed page. </p>
+</abstract>
+<drawings id="DRAWINGS">
+<figure id="figure-D00000" num="00000">
+<img id="EMI-D00000" he="151.89mm" wi="126.62mm" file="US20070006067A1-20070104-D00000.TIF" alt="embedded image" img-content="drawing" img-format="tif"/>
+</figure>
+<figure id="figure-D00001" num="00001">
+<img id="EMI-D00001" he="239.52mm" wi="158.24mm" orientation="landscape" file="US20070006067A1-20070104-D00001.TIF" alt="embedded image" img-content="drawing" img-format="tif"/>
+</figure>
+<figure id="figure-D00002" num="00002">
+<img id="EMI-D00002" he="145.97mm" wi="167.64mm" file="US20070006067A1-20070104-D00002.TIF" alt="embedded image" img-content="drawing" img-format="tif"/>
+</figure>
+<figure id="figure-D00003" num="00003">
+<img id="EMI-D00003" he="188.30mm" wi="95.50mm" file="US20070006067A1-20070104-D00003.TIF" alt="embedded image" img-content="drawing" img-format="tif"/>
+</figure>
+<figure id="figure-D00004" num="00004">
+<img id="EMI-D00004" he="148.93mm" wi="162.81mm" file="US20070006067A1-20070104-D00004.TIF" alt="embedded image" img-content="drawing" img-format="tif"/>
+</figure>
+<figure id="figure-D00005" num="00005">
+<img id="EMI-D00005" he="189.06mm" wi="170.86mm" orientation="landscape" file="US20070006067A1-20070104-D00005.TIF" alt="embedded image" img-content="drawing" img-format="tif"/>
+</figure>
+<figure id="figure-D00006" num="00006">
+<img id="EMI-D00006" he="217.17mm" wi="167.98mm" file="US20070006067A1-20070104-D00006.TIF" alt="embedded image" img-content="drawing" img-format="tif"/>
+</figure>
+<figure id="figure-D00007" num="00007">
+<img id="EMI-D00007" he="222.59mm" wi="172.13mm" file="US20070006067A1-20070104-D00007.TIF" alt="embedded image" img-content="drawing" img-format="tif"/>
+</figure>
+<figure id="figure-D00008" num="00008">
+<img id="EMI-D00008" he="244.35mm" wi="170.86mm" file="US20070006067A1-20070104-D00008.TIF" alt="embedded image" img-content="drawing" img-format="tif"/>
+</figure>
+<figure id="figure-D00009" num="00009">
+<img id="EMI-D00009" he="232.75mm" wi="168.91mm" file="US20070006067A1-20070104-D00009.TIF" alt="embedded image" img-content="drawing" img-format="tif"/>
+</figure>
+</drawings>
+<description id="description">
+<?summary-of-invention description="Summary of Invention" end="lead"?>
+<heading level="2" id="h-0001">CROSS-REFERENCE TO RELATED APPLICATIONS </heading>
+<p id="p-0002" num="0001"> This application is based upon and claims the benefit of priority from prior Japanese Patent Application No. 2005-192836, filed Jun. 30, 2005, the entire contents of which are incorporated herein by reference. </p>
+<heading level="2" id="h-0002">BACKGROUND OF THE INVENTION 1. Field of the Invention </heading>
+<p id="p-0003" num="0002"> The present invention relates to electronic apparatus and more particularly to such apparatus with a Web page browsing function for causing a Web page provided by a Web server to be displayed efficiently. </p>
+<p id="p-0004" num="0003"> 2. Description of the Related Art </p>
+<p id="p-0005" num="0004"> Generally, in a Web browser of a mobile phone or a PC (Personal Computer), an URL (Uniform Resource Locater) to be accessed is directly inputted by a keyboard or an URL registered beforehand in a bookmark is selected, thereby accessing a Web server corresponding to the URL, acquiring a HTML file from the server and displaying a Web page of sentences and images. </p>
+<p id="p-0006" num="0005"> Furthermore, a character string to which a URL that specifies the location of a next Web page is linked is displayed with an under bar or the color of the characters is changed so as to be discriminated from other character strings on a displayed Web page. The linked character string is clicked, for example, with a mouse to obtain a HTML file to display the next Web page. </p>
+<p id="p-0007" num="0006"> &#x201c;Back&#x201d; and &#x201c;Forward&#x201d; buttons are prepared for the Web browser's functions to display the Web page immediately preceding the presently displayed Web page based on a record of the URLs stored as a history. </p>
+<p id="p-0008" num="0007"> Recently, a plurality of Web pages are used to display a large amount of information such as, for example, review reports, introductions, diary pages, results of site retrievals and lists of commodities in shop sites because an increasing quantity of such information cannot be displayed on only one Web page. </p>
+<p id="p-0009" num="0008"> Thus, in order to display a next Web page, a link button such as, for example shown by &#x201c;to Next page&#x201d;, appearing somewhere on a page presently under display is found by scrawling and then clicked, thereby jumping to the next page, which is, however, a complicated operation. </p>
+<p id="p-0010" num="0009"> Japanese Patent Publication Hei 10-326137 discloses a portable information collection apparatus that comprises an &#x201c;Advance&#x201d; key that can be repeatedly operated to sequentially read and display a large amount of information stored in the collection apparatus. This Publication, however, fails to disclose functions to sequentially obtain and display linked pages like Web pages easily and in good order. </p>
+<p id="p-0011" num="0010"> It is therefore an object of the present invention to provide an electronic apparatus with a display screen on which respective Web pages can be switchingly displayed easily in good order without requiring any complicated operation even when the display screen is small. </p>
+<heading level="2" id="h-0003">BRIEF SUMMARY OF THE INVENTION </heading>
+<p id="p-0012" num="0011"> The present invention provides an electronic apparatus comprising a Web page browser for acquiring a file written in a markup language from a Web server on a network, thereby displaying a corresponding Web page. Then, a URL extractor retrieves a specified character string from the file and extracts a linked URL written with the specified character string. The Web page browser also accesses the linked URL extracted by the URL extractor to acquire a corresponding Web page. A next-page displaying unit then displays as a next page the Web page acquired by the URL extractor. </p>
+<p id="p-0013" num="0012"> The present invention also provides an electronic apparatus comprising a Web page browser for acquiring a file written in a markup language from a Web server on a network, thereby displaying a corresponding Web page. Then a URL producing unit produces a URL of a candidate page to be displayed next from information written in the file. A reading unit beforehand reads a file of a Web page indicated by the URL produced by the URL producing unit. A determining unit then determines whether the file of the Web page read beforehand by the reading unit is appropriate as a next page to be displayed.</p>
+<?summary-of-invention description="Summary of Invention" end="tail"?>
+<?brief-description-of-drawings description="Brief Description of Drawings" end="lead"?>
+<heading level="2" id="h-0004">BRIEF DESCRIPTION OF THE SEVERAL VIEWS OF THE DRAWING </heading>
+<p id="p-0014" num="0013"> The accompanying drawings, which are incorporated in and constitute a part of the specification, illustrate embodiments of the present invention and, together with the general description given above and the detailed description of the embodiments given below, serve to explain the principles of the present invention in which: </p>
+<p id="p-0015" num="0014"> <figref idref="DRAWINGS">FIG. 1</figref> is a block diagram of an electronic circuit for a portable terminal apparatus as one embodiment of the present invention; </p>
+<p id="p-0016" num="0015"> <figref idref="DRAWINGS">FIGS. 2A and 2B</figref> are front and right side views, respectively, of the terminal apparatus; </p>
+<p id="p-0017" num="0016"> <figref idref="DRAWINGS">FIG. 3</figref> illustrates the content of data stored in a next-page link search keyword memory prepared in a RAM of the terminal apparatus; </p>
+<p id="p-0018" num="0017"> <figref idref="DRAWINGS">FIG. 4</figref> illustrates the content of data stored in a contents-page link search keyword memory prepared in the RAM; </p>
+<p id="p-0019" num="0018"> <figref idref="DRAWINGS">FIG. 5</figref> illustrates the content of data stored in a history memory provided in the RAM; </p>
+<p id="p-0020" num="0019"> <figref idref="DRAWINGS">FIG. 6</figref> illustrates a Web page displayed on a browser picture based on a browser processing operation of the terminal apparatus; </p>
+<p id="p-0021" num="0020"> <figref idref="DRAWINGS">FIG. 7</figref> shows a HTML file written in HTML as a markup language which composes the Web page of <figref idref="DRAWINGS">FIG. 6</figref>; </p>
+<p id="p-0022" num="0021"> <figref idref="DRAWINGS">FIG. 8</figref> is a flowchart of a Web page displaying process performed in a first embodiment; </p>
+<p id="p-0023" num="0022"> <figref idref="DRAWINGS">FIG. 9</figref> shows only file names of a plurality of URLs having a common directory, whose display is omitted, stored in the Web page displaying process performed in the first embodiment; </p>
+<p id="p-0024" num="0023"> <figref idref="DRAWINGS">FIG. 10</figref> shows an example of extracted URLs to which no URL to be next accessed can be selected from the file names of the URLs; </p>
+<p id="p-0025" num="0024"> <figref idref="DRAWINGS">FIG. 11</figref> shows the content of data stored in a link beforehand read keyword memory prepared in the RAM in a next page allocating process included in a Web page displaying process in a second embodiment; and </p>
+<p id="p-0026" num="0025"> <figref idref="DRAWINGS">FIG. 12</figref> is a flowchart of the next page allocating process.</p>
+<?brief-description-of-drawings description="Brief Description of Drawings" end="tail"?>
+<?detailed-description description="Detailed Description" end="lead"?>
+<heading level="2" id="h-0005">DETAILED DESCRIPTION OF THE INVENTION </heading>
+<heading level="2" id="h-0006">First Embodiment </heading>
+<p id="p-0027" num="0026"> <figref idref="DRAWINGS">FIG. 1</figref> is a block diagram of an electronic circuit for a portable terminal apparatus <b>10</b> to which the present invention is applied. <figref idref="DRAWINGS">FIG. 2A and 2B</figref> are front and right side views, respectively, of the terminal apparatus <b>10</b>. </p>
+<p id="p-0028" num="0027"> The terminal apparatus <b>10</b> is either a PDA (Personal Digital Assistant) or a mobile telephone with a Web page browsing function or a portable apparatus composed only for Web page browsing purpose. The apparatus <b>10</b> may comprise a computer that reads a program recorded on one of various recording media or a received program and that is controlled by the program. The electric circuit of the apparatus <b>10</b> comprises a controller composed of a CPU (Central Processing Unit) <b>11</b>. </p>
+<p id="p-0029" num="0028"> The controller <b>11</b> controls operation of the respective circuits of the apparatus <b>10</b> using a RAM <b>15</b> as a working memory in accordance with a control program stored beforehand in a storage device <b>12</b> such as a flash ROM, a control program read from an external recording medium such as a memory card (or ROM card) <b>13</b> into the storage device <b>12</b>, or a control program read into the storage device <b>12</b> from a Web server (in this case, a program server) <b>20</b> on the Internet (or communication network) N. The control program stored in the storage device <b>12</b> is started up in accordance with an input signal given by a user at a key-in unit <b>16</b> that includes a slidable keyboard <b>16</b>X or a communication signal communicated between the terminal apparatus <b>10</b> and each Web server <b>20</b> on the Internet N to which the terminal apparatus <b>12</b> is connected through a communication unit <b>14</b>. </p>
+<p id="p-0030" num="0029"> The controller <b>11</b> is connected to the storage device <b>12</b>, communication unit <b>14</b>, RAM <b>15</b>, key-in unit <b>16</b> (<b>16</b>X), a display made of an LCD <b>17</b>, and an LED control unit <b>18</b>. As shown in <figref idref="DRAWINGS">FIG. 2A</figref>, the LED control unit <b>18</b> flashes green and red LEDs <b>18</b>G and <b>18</b>R provided at an upper center of the front of the terminal apparatus <b>10</b> for ascertaining the acquisition of a Web page. </p>
+<p id="p-0031" num="0030"> The storage device <b>12</b> has stored a system program <b>12</b><i>a </i>that controls operation of the whole terminal apparatus <b>10</b>, a communication program <b>12</b><i>b </i>that is used for data communication between the terminal apparatus <b>10</b> and the respective Web servers <b>20</b> on the Internet (or communication network) N through the communication unit <b>14</b>, a browser program <b>12</b><i>c </i>to display a Web page (see <figref idref="DRAWINGS">FIG. 6</figref>) obtained from a Web server <b>20</b> on the Internet N, and a next-page search program <b>12</b><i>d </i>to easily and rapidly shift a display from the presently displayed Web page to a next Web page. </p>
+<p id="p-0032" num="0031"> As shown in <figref idref="DRAWINGS">FIG. 2A</figref>, the key-in unit <b>16</b> comprises a &#x201c;power source&#x201d; key <b>16</b><i>a </i>operated to turn on/off a power source (not shown), a browser start-up &#x201c;B&#x201d; key <b>16</b><i>b </i>operated to start up the browser program <b>12</b><i>c</i>, a group of cursor keys <b>16</b><i>c </i>operated to move a cursor pointer on the display picture, and an advance &#x201c;Ad&#x201d; key (or button) <b>16</b><i>d </i>operated to advance a display from a Web page under display to a next one, all of these keys being disposed to the left of the display <b>17</b>. </p>
+<p id="p-0033" num="0032"> As shown in <figref idref="DRAWINGS">FIG. 2B</figref>, the terminal apparatus <b>10</b> is sized enough to be held by a user's single hand. As shown by a double-headed arrow R in <figref idref="DRAWINGS">FIG. 2B</figref>, the back part of the apparatus case comprises the downward slidable keyboard <b>16</b>X, which has thereon alphanumerical/sign keys <b>16</b><i>e </i>used to input any characters/signs to the apparatus <b>10</b>. Reference numeral <b>16</b>Y denotes the front or display side of the case. All the keys (or buttons) <b>16</b><i>a</i>-<b>16</b><i>e </i>of the key-in unit <b>16</b> (or <b>16</b>X) are sized, and shaped and arranged so as to allow the user to operate them with his or her single hand. </p>
+<p id="p-0034" num="0033"> The RAM <b>15</b> comprises working memory areas such as an URL memory <b>15</b><i>a</i>, a HTML memory <b>15</b><i>b</i>, a display image memory <b>15</b><i>c</i>, a next-page link search keyword memory <b>15</b><i>d</i>, a contents page link search keyword memory <b>15</b><i>e</i>, a history memory <b>15</b><i>f</i>, and an extracted URL memory <b>15</b><i>g. </i></p>
+<p id="p-0035" num="0034"> The URL memory <b>15</b><i>a </i>stores the URL of an access destination Web server <b>20</b> on the Internet (or communication network) N. The HTML memory <b>15</b><i>b </i>stores a HTML file (see <figref idref="DRAWINGS">FIG. 7</figref>) obtained from the Web server <b>20</b> in accordance with the URL of the access destination. The display image memory <b>15</b><i>c </i>stores data on an image to be displayed on the display screen <b>17</b>, for example, image data of a Web page (see <figref idref="DRAWINGS">FIG. 6</figref>) to which the HTML file (see <figref idref="DRAWINGS">FIG. 7</figref>) is converted in accordance with the browser program <b>12</b><i>c. </i></p>
+<p id="p-0036" num="0035"> <figref idref="DRAWINGS">FIG. 3</figref> illustrates the content of data stored in the next-page link search keyword memory <b>15</b><i>d </i>prepared in the RAM <b>15</b>. This memory <b>15</b><i>d </i>stores in this order a plurality of keywords &#x201c;next/advance/page/...&#x201d; to extract an URL of the next Web page from the HTML file (see <figref idref="DRAWINGS">FIG. 7</figref>) of the Web page presently under display (see <figref idref="DRAWINGS">FIG. 6</figref>) stored in the HTML memory <b>15</b><i>b. </i></p>
+<p id="p-0037" num="0036"> <figref idref="DRAWINGS">FIG. 4</figref> illustrates data stored in the contents page link search keyword memory <b>15</b><i>e </i>prepared in the RAM <b>15</b>. The memory <b>15</b><i>e </i>stores in this order a plurality of keywords &#x201c;contents/index/list/cover&#x201d; to extract the URL of the contents page from the HTML file (see <figref idref="DRAWINGS">FIG. 7</figref>) of the Web page presently under display (see <figref idref="DRAWINGS">FIG. 6</figref>) stored in the HTML memory <b>15</b><i>b. </i></p>
+<p id="p-0038" num="0037"> <figref idref="DRAWINGS">FIG. 5</figref> illustrates the content of data stored in the history memory <b>15</b><i>f </i>of in the RAM <b>15</b>. The history memory <b>15</b><i>f </i>has stored a history of the Web pages displayed so far, that is, the operations each for jumping from a Web page to a different one, as used so far, and the URLs of the different pages in corresponding relationship. The operations include one of specifying a bookmark in which the URL of a user's desired Web page is beforehand registered, one of specifying with a cursor pointer a link button on the presently displayed Web page, and one of operating the &#x201c;Advance&#x201d; key <b>16</b><i>d. </i></p>
+<p id="p-0039" num="0038"> A URL of a &#x201c;next page&#x201d; or a URL of the &#x201c;contents&#x201d; page is automatically extracted from the HTML file (see <figref idref="DRAWINGS">FIG. 7</figref>) of the presently displayed Web page (see <figref idref="DRAWINGS">FIG. 6</figref>) and stored in the extracted URL memory <b>15</b><i>g </i>in the Web page display process (see <figref idref="DRAWINGS">FIG. 8</figref>) to be performed by operating the &#x201c;Advance&#x201d; key <b>16</b><i>d </i>(see <figref idref="DRAWINGS">FIGS. 9 and 10</figref>). </p>
+<p id="p-0040" num="0039"> In the portable apparatus <b>10</b> of this embodiment, texts following the last sign &#x201c;/&#x201d; of the URL of a Web page to be accessed or linked with are hereinafter referred to as a &#x201c;file name&#x201d; and texts preceding the last signs &#x201c;/&#x201d; are hereinafter referred to as a &#x201c;directory&#x201d;. For example, concerning URL=&#x201c;http://www.asio.co.jp/product/a/page01.htm&#x201d;, the file name is &#x201c;page01.htm&#x201d; and the directory name is &#x201c;product/a&#x201d;. </p>
+<p id="p-0041" num="0040"> <figref idref="DRAWINGS">FIG. 6</figref> shows a Web page P<b>1</b> represented by an access destination URL [http://www.asio.co.jp/product/a/page003.htm] <b>15</b><i>a </i>displayed on the browser picture BR in the browser processing operation of the terminal apparatus <b>10</b>. </p>
+<p id="p-0042" num="0041"> <figref idref="DRAWINGS">FIG. 7</figref> illustrates the content of a HTML file <b>15</b><i>b </i>written in HTML as a markup language composing the Web page P<b>1</b> of <figref idref="DRAWINGS">FIG. 6</figref>. That is, characters and images <b>15</b><i>c </i>on the Web page P<b>1</b> displayed on the browser picture BR are obtained by the browser processing operation of the source codes written in the HTML file <b>15</b><i>b. </i></p>
+<p id="p-0043" num="0042"> For example, in order to display a next-page link button &#x201c;To Next page&#x201d; Py on the Web page P<b>1</b>, a character string of the next page link button Py is written as a source code: </p>
+<p id="p-0044" num="0043"> [&#x3c;A href=&#x201c;http://www.asio.co.jp/product/a/page004.htm&#x201d;&#x3e; to next page &#x3c;/A&#x3e;] Cy. </p>
+<p id="p-0045" num="0044"> Also, in order to display the preceding page link button &#x201c;To Preceding page&#x201d; Px on the same Web page P<b>1</b>, a character string of the preceding page link button Px is written as a source code: </p>
+<p id="p-0046" num="0045"> [&#x3c;A href=&#x201c;http://www.asio.co.jp/product/a/page002.htm&#x201d;&#x3e; to preceding page &#x3c;/A&#x3e;] Cx. </p>
+<p id="p-0047" num="0046"> In order to display the contents page link button &#x201c;To Contents page&#x201d; Pz on the same Web page P<b>1</b>, a character string of the contents page link button Pz is written as a source code: </p>
+<p id="p-0048" num="0047"> [&#x3c;A href =&#x201c;http://www.asio.co.jp/product/a/index.htm&#x201d;&#x3e; to contents page &#x3c;/A&#x3e;] Cz. </p>
+<p id="p-0049" num="0048"> That is, according to the Web page display function of the terminal apparatus <b>10</b>, when the &#x201c;Advance&#x201d; key <b>16</b><i>d </i>is operated, for example, on the browser picture BR displaying the web page P<b>1</b> of <figref idref="DRAWINGS">FIG. 6</figref>, a link destination URL: </p>
+<p id="p-0050" num="0049"> http://www.asio.co.jp/product/a/page004.htm </p>
+<p id="p-0051" num="0050"> written in the source code Cy containing the word &#x201c;next&#x201d; is extracted from the HTML file <b>15</b><i>b </i>of <figref idref="DRAWINGS">FIG. 7</figref>, and a next Web page (with page0004.html) following the presently displayed Web page (with page003.html) can be displayed by operating the &#x201c;Advance&#x201d; key (or button) <b>16</b><i>d. </i></p>
+<p id="p-0052" num="0051"> The Web page display function of the terminal apparatus <b>10</b> will be written next. <figref idref="DRAWINGS">FIG. 8</figref> is a flowchart of the Web display process of the first embodiment to be performed when the &#x201c;Advance&#x201d; key is operated. </p>
+<p id="p-0053" num="0052"> When a browser startup &#x201c;B&#x201d; key <b>16</b><i>b </i>of the key-in unit <b>16</b> is operated, the browser program <b>12</b><i>c </i>is started up, a HTML file <b>15</b><i>b </i>is acquired from a &#x201c;Web server <b>20</b> connected in accordance with the URL stored in the URL memory <b>15</b><i>a</i>, and then a corresponding Web page is displayed on the browser picture BR. When in this state the &#x201c;Advance&#x201d; key <b>16</b><i>d </i>of the key-in unit <b>16</b> is operated, it is then determined whether the lowest end of the Web page is displayed presently on the display unit <b>17</b> (step S<b>1</b>). </p>
+<p id="p-0054" num="0053"> If not, the Web page is scrawled downward and then displayed (step S<b>1</b>&#x2192;S<b>2</b>). </p>
+<p id="p-0055" num="0054"> When it is then determined that the lowest end of the Web page is displayed, a HTML file corresponding to the presently displayed Web page stored in the HTML memory <b>15</b><i>b </i>of the RAM <b>15</b> is read (step S<b>1</b>&#x2192;S<b>3</b>). Then, the HTML file is searched for keywords stored in the next-page link search keyword memory <b>15</b><i>d </i>(see <figref idref="DRAWINGS">FIG. 3</figref>) matching, for example, character strings &#x201c;next&#x201d;, &#x201c;advance&#x201d;, etc. When a matching keyword is searched out, its URL written in the source code is then extracted and stored in the extracted URL memory <b>15</b><i>g </i>(step S<b>4</b>). </p>
+<p id="p-0056" num="0055"> When one character string is matched with one of the keywords stored in the next-page link search keyword memory <b>15</b><i>d </i>and a corresponding URL written with the character string is extracted (Step S<b>5</b>&#x2192;S<b>6</b>), the green LED <b>18</b>G provided at an upper center of the front of the terminal apparatus <b>10</b> is then flashed three times (two times+once) by the LED control unit <b>18</b>, thereby notifying the user that an appropriate next page will be displayed (step S<b>6</b>&#x2192;S<b>7</b>, S<b>8</b>). </p>
+<p id="p-0057" num="0056"> Then, the URL stored in the extracted URL memory <b>15</b><i>g </i>is written into the URL memory <b>15</b><i>a</i>, and a HTML file of a Web page is read from a Web server <b>20</b> corresponding to the link destination URL (step S<b>9</b>). </p>
+<p id="p-0058" num="0057"> Then, the jumping operation (involving operation of the &#x201c;Advance&#x201d; button), as used this time, and the extracted URL are recorded in corresponding relationship in the history memory <b>15</b><i>f </i>(see <figref idref="DRAWINGS">FIG. 5</figref>) of the RAM <b>15</b> (step S<b>10</b>). Then, a next Web page based on the HTML file read in step S<b>9</b> is displayed on the display screen <b>17</b> (step S<b>11</b>). </p>
+<p id="p-0059" num="0058"> When the presently displayed Web page contains a plurality of next-page link search keywords, a plurality of character strings are matched with the keywords and a plurality of URLs written with the keywords are extracted in step S<b>4</b>. Then the extracted URLs are stored as shown in <figref idref="DRAWINGS">FIG. 9</figref>. <figref idref="DRAWINGS">FIG. 9</figref> shows only file names of the stored plurality of URLs whose common directory is omitted. When the plurality of URLs are stored as just described above, the determination in step S<b>6</b> is NO. Then, from among the plurality of URLs a URL is selected which is next in order to that of the presently displayed page and more particularly whose page number or sign written in the file name thereof most closely follow those of the URL of the presently displayed page (step S<b>6</b>&#x2192;S<b>12</b>) </p>
+<p id="p-0060" num="0059"> When one URL following that of the presently displayed page is extracted, it is determined whether the file name of the extracted URL is similar to the presently displayed URL file name (step S<b>13</b>&#x2192;S<b>14</b>) . If so (YES in step S<b>14</b>), the green LED <b>18</b>G is flashed three times by the LED control unit <b>18</b>, thereby notifying the user that an appropriate next page will be displayed (steps S<b>7</b>, S<b>8</b>). Then, a Web server <b>20</b> corresponding to the selected URL is accessed and the HTML file of a Web page thereof is read (step S<b>9</b>). </p>
+<p id="p-0061" num="0060"> The page jumping operation used this time and the extracted URL are recorded in corresponding relationship in the history memory <b>15</b><i>f </i>(see <figref idref="DRAWINGS">FIG. 5</figref>) of the RAM <b>15</b> (step S<b>10</b>). Then, a next Web page corresponding to the HTML file read in step S<b>9</b> is displayed on the display <b>17</b> (step S<b>11</b>). </p>
+<p id="p-0062" num="0061"> When it is determined in step S<b>14</b> that the extracted URL file name is not similar to that displayed presently, or that even no one URL can be selected from the plurality of URLs based on their file names (No in step S<b>13</b>), a URL is selected, which is next in order to that of the presently displayed page and more particularly whose page number or sign written in the directory name thereof most closely follow those of the URL of the presently displayed page, from among the plurality of URLs (step S<b>15</b>). </p>
+<p id="p-0063" num="0062"> <figref idref="DRAWINGS">FIG. 10</figref> illustrates an example of extracted URLs from the file names of which no one URL can be selected. In this example, a plurality of pages are given the same file name &#x201c;indext.htm&#x201d;. In this case, no appropriate file name can be selected and a desired URL is selected by referring to the directory names. </p>
+<p id="p-0064" num="0063"> After a URL is selected in step S<b>15</b>, it is then determined whether the selected URL directory name is similar to that of the URL displayed presently page (step S<b>16</b>&#x2192;S<b>17</b>). </p>
+<p id="p-0065" num="0064"> When it is determined that the URL following that of the presently displayed page is selected and similar in directory name to the presently displayed URL (Yes in step S<b>17</b>), the green LED <b>18</b>G is then flashed once by the LED control unit <b>18</b>, thereby notifying the user that a next page appropriate to some extent will be displayed (steps S<b>7</b>, S<b>8</b>). Then, a Web server <b>20</b> corresponding to the selected URL is accessed and the HTML file of the Web page thereof is read (step S<b>9</b>). </p>
+<p id="p-0066" num="0065"> The page jumping operation used this time and the URL extracted this time are then recorded in corresponding relationship in the history memory <b>15</b><i>f </i>(see <figref idref="DRAWINGS">FIG. 5</figref>) of the RAM <b>15</b> (step S<b>10</b>). Then, a next Web page corresponding to the HTML file read in step S<b>9</b> is displayed on the browser picture BR based on the HTML file (step S<b>11</b>). </p>
+<p id="p-0067" num="0066"> When it is determined in step S<b>17</b> that the extracted URL is not similar to the presently displayed URL (NO in step S<b>17</b>) or it is determined in step S<b>16</b> that even no one URL can be selected from the plurality of link destination URLs stored in the extracted URL memory <b>15</b><i>g</i><b>2</b> (NO in step S<b>16</b>), the red LED <b>18</b>R is flashed three times by the LED control unit <b>18</b>, thereby notifying the user that the presently displayed Web page will be regarded as the last one (step S<b>18</b>). </p>
+<p id="p-0068" num="0067"> Then, in order to jump to the contents Web page, the HTML file <b>15</b><i>b </i>of the presently displayed Web page is searched for character strings matching keywords &#x201c;contents&#x201d;, &#x201c;index&#x201d;, etc., stored in the contents page link search keyword memory <b>15</b><i>e </i>of <figref idref="DRAWINGS">FIG. 4</figref> (step S<b>19</b>). </p>
+<p id="p-0069" num="0068"> When an URL indicative of the contents page is extracted (step S<b>20</b>), a HTML file of its Web page is read from a Web server <b>20</b> corresponding to the URL (step S<b>9</b>). </p>
+<p id="p-0070" num="0069"> Then, the page jumping operation used this time and the URL extracted this time are recorded in corresponding relationship in the history memory <b>15</b><i>f </i>(see <figref idref="DRAWINGS">FIG. 5</figref>) of the RAM <b>15</b> (step S<b>10</b>). Then, a contents Web page corresponding to the HTML file read in step S<b>9</b> is displayed on the display device <b>17</b> (step S<b>11</b>). </p>
+<p id="p-0071" num="0070"> When no URL indicative of the contents page is extracted in step S<b>20</b>, one is selected from among the URLs stored in the history memory <b>15</b><i>f </i>in order to return to the diverging-point Web page (step S<b>21</b>). That is, in this step the history of the Web page URLs is searched back, starting with the presently displayed Web page, for an URL of a Web page having a directory name different from that of the presently displayed Web page, or involving the diverging point to the presently displayed Web page. When that URL is searched out, it is then selected as such. </p>
+<p id="p-0072" num="0071"> When the URL of the Web page involving the diverging point is selected from the URL history (step S<b>22</b>), a Web server <b>20</b> corresponding to that URL is accessed and the HTML file of the Web page involving the diverging point is read (step S<b>9</b>). </p>
+<p id="p-0073" num="0072"> The page jumping operation used this time and the URL selected this time are recorded in corresponding relationship in the history memory <b>15</b><i>f </i>(step S<b>10</b>). Then, the Web page involving the diverging point read in step S<b>9</b> is displayed on the display device <b>17</b> based on the HTML file of the Web page (step S<b>11</b>). </p>
+<p id="p-0074" num="0073"> When in steps S<b>21</b> and S<b>22</b> the URL of the Web page involving the diverging point cannot be obtained, the history of the page jumping operation involving up to the presently displayed Web page stored in the history memory <b>15</b><i>f </i>is searched back for a URL of the destination Web page to which a jump was made in the past in a page jumping operation (for example, using the &#x201c;cursor pointer&#x201d;) different from the presently employed one using the &#x201c;Advance&#x201d; key (or button). When that URL is searched out, it is selected as the URL of the Web page involving the diverging point to the presently displayed Web page (step S<b>23</b>). </p>
+<p id="p-0075" num="0074"> Then, in a manner similar to that mentioned above, a HTML file of the Web page corresponding to the URL involving the diverging point is read (step S<b>9</b>). Then, the page jumping operation used this time and the URL selected this time are recorded in the history memory <b>15</b><i>f </i>(step S<b>10</b>). Then, the diverging point Web page read in step S<b>9</b> is displayed on the display screen <b>17</b> (step S<b>11</b>). </p>
+<p id="p-0076" num="0075"> While if the lowest edge of the picture is not displayed when the &#x201c;Advance&#x201d; key is operated in the processing of <figref idref="DRAWINGS">FIG. 8</figref> the displayed picture is scrawled such that the lowest edge of the picture is displayed, two separate keys &#x201c;Scrawl&#x201d; and &#x201c;Advance&#x201d; may be provided such that as soon as the &#x201c;Advance&#x201d; key is operated, a page jump is made from the presently displayed page to a next page. </p>
+<p id="p-0077" num="0076"> Thus, according to the Web page displaying function of the first embodiment, even the terminal apparatus <b>10</b> with a small display screen can display the respective Web pages subsequent to the presently displayed Web pages easily and in good order by operating the &#x201c;Advance&#x201d; key <b>16</b><i>d </i>only once without requiring any troublesome scrawling operations. And, even when the presently displayed Web page is the last of a series of Web pages, the contents Web page or the diverging-point Web page is selected and displayed appropriately. </p>
+<heading level="2" id="h-0007">Second Embodiment </heading>
+<p id="p-0078" num="0077"> The terminal apparatus <b>10</b> of the second embodiment has a next page allocation function. In the next page allocation function of the second embodiment, the URL of a candidate Web page to be displayed next is obtained either by extracting the linked URL written in the presently displayed HTML file or by changing an order-indicating number or sign included in the file name of the present access destination URL. The URL obtained is then accessed, thereby reading the HTML file of a Web page thereof. Then, link beforehand read keywords are extracted from the read Web page HTML file and the presently displayed HTML file. Then, it is determined which of both the HTML files is earlier in order or which of the order-indicating number or signs included in both the URLS is earlier in order. Then, the URL of a page involving the HTML file determined to be earlier set as a destination URL to be linked to when the &#x201c;Advance&#x201d; key <b>16</b><i>d </i>is operated. </p>
+<p id="p-0079" num="0078"> <figref idref="DRAWINGS">FIG. 11</figref> shows the content of data stored in the link beforehand read keyword memory <b>15</b><i>h </i>provided in the RAM <b>15</b> in the next page allocating function involving the Web page display in the second embodiment. The memory <b>15</b><i>h </i>has an area in which keywords such as &#x201c;chapter W, section X, subsection Y, paragraph Z&#x201d;, &#x201c;volume X&#x201d; and &#x201c;page X&#x201d; indicative of an order of a Web page are stored and order values of the respective keywords are temporarily stored. </p>
+<p id="p-0080" num="0079"> <figref idref="DRAWINGS">FIG. 12</figref> is a flowchart indicative of a next-page allocating process involving the display of a Web page in the second embodiment. When the browser startup &#x201c;B&#x201d; key <b>16</b><i>b </i>is operated, the browser program <b>12</b><i>c </i>is started up, and the apparatus is connected to a Web server <b>20</b> in accordance with a corresponding URL stored in the URL memory <b>15</b><i>a</i>. Then, a corresponding HTML file <b>15</b><i>b </i>is acquired from the Web server <b>20</b>, and when a corresponding Web page is displayed on the browser picture BR, keywords such as &#x201c;chapter W, section X, subsection Y, paragraph Z&#x201d;, &#x201c;volume X&#x201d;, and &#x201c;page X&#x201d; recorded in the link beforehand read keyword memory <b>15</b><i>h </i>are extracted from the displayed HTML file (step A<b>1</b>). Then an URL linked to another Web page is extracted (step A<b>2</b>). </p>
+<p id="p-0081" num="0080"> When it is determined that there is the linked URL in the HTML file in the displayed page (YES in step A<b>3</b>), the HTML file of a Web page of the linked URL is read beforehand from a corresponding Web server <b>20</b> on the Internet N (step A<b>3</b>&#x2192;A<b>4</b>), and then keywords stored in the link beforehand read keyword memory <b>15</b><i>h </i>are extracted from the read HTML file (step A<b>5</b>). </p>
+<p id="p-0082" num="0081"> When it is determined in step A<b>6</b> that a keyword extracted from the read beforehand HTML file in step A<b>5</b> and the keyword extracted from the presently displayed HTML file in step A<b>1</b> are, for example, the same &#x201c;volume&#x201d; (YES in step A<b>6</b>), it is then determined whether or not they are highly relevant depending on whether or not their order-indicating number signs &#x201c;X&#x201d; are successive (step A<b>7</b>). </p>
+<p id="p-0083" num="0082"> When the determination is affirmative in step A<b>7</b>, the green LED <b>18</b>G is flashed three times, thereby notifying the user that an appropriate linked URL is extracted (step A<b>7</b>&#x2192;A<b>8</b><i>a</i>) Then, the URL of the HTML file including the keyword determined to be highly relevant is stored in the RAM <b>15</b> (Step A<b>9</b>) and set as a link destination URL to be selected when the &#x201c;Advance&#x201d; key <b>16</b><i>d </i>of the key-in unit <b>16</b> is operated (step A<b>10</b>). </p>
+<p id="p-0084" num="0083"> When the determination is negative in step A<b>7</b>, the green LED <b>18</b>G is flashed once, thereby notifying the user that a linked URL to some extent appropriate is extracted (step A<b>7</b>&#x2192;A<b>8</b><i>b</i>) Then, the URL of the HTML file including the keyword determined to be not highly relevant is recorded in the RAM <b>15</b> (step A<b>9</b>) and set as a link destination URL to be selected when the &#x201c;Advance&#x201d; key <b>16</b><i>d </i>is operated (step A<b>10</b>). </p>
+<p id="p-0085" num="0084"> When it is determined in step A<b>6</b> that both the keywords are different (or, for example, &#x201c;volume X&#x201d; and &#x201c;page X&#x201d;, respectively) and not relevant (NO in step A<b>6</b>), the URL history recorded so far in the RAM <b>15</b> is searched back for the URL of the contents page by comparing the URL of the presently displayed page with the respective URLs of the history, thereby recording the URL of the contents page in the RAM <b>15</b> (step A<b>11</b>). </p>
+<p id="p-0086" num="0085"> Then, the red LED <b>18</b>R is flashed three times, thereby notifying the user that the presently displayed Web page is the last one (step A<b>12</b>), and the URL of the contents page recorded in the RAM <b>15</b> is set as a link destination URL to be selected when the &#x201c;Advance&#x201d; key <b>16</b><i>d </i>is operated (step A<b>10</b>). </p>
+<p id="p-0087" num="0086"> When it is determined in step A<b>3</b> that no linked URL is written in the HTML file of the presently displayed page, an order-indicating number or sign in the file name of the presently displayed Web page URL <b>15</b><i>a </i>is changed to a next subsequent one (step A<b>3</b>&#x2192;A<b>13</b>). Then, the HTML file is read beforehand from the corresponding Web server <b>20</b> on the Internet N, using the URL of the changed file name as a link destination URL (step A<b>14</b>). </p>
+<p id="p-0088" num="0087"> When the HTML file of a Web page indicated by the changed URL is read and it is determined that the changed URL is present as a link destination (YES in step A<b>15</b>), it is determined whether the changed URL is highly relevant to the URL of the presently displayed page depending on whether the order-indicating number or sign included in the file name of the changed link destination URL is next to that included in the file name of the URL of the presently displayed page (step A<b>16</b>). </p>
+<p id="p-0089" num="0088"> If so, the green LED <b>18</b>G is flashed three times, thereby notifying the user that an appropriate link destination is extracted (step A<b>16</b>&#x2192;A<b>17</b><i>a</i>). Then, the URL of the changed file name determined to be highly relevant is recorded in the RAM <b>15</b> (step A<b>18</b>) and set as a link destination URL to be selected when the &#x201c;Advance&#x201d; key <b>16</b><i>d </i>is operated (step A<b>10</b>). </p>
+<p id="p-0090" num="0089"> When it is determined in step A<b>16</b> that the changed link destination URL is not highly relevant to the presently displayed page, the green LED <b>18</b>G is flashed once, thereby notifying the user that a link destination appropriate to some extent is extracted (step A<b>16</b>&#x2192;A<b>17</b><i>b</i>). Then, the link destination URL determined to be not highly relevant is recorded in the RAM <b>15</b> (step A<b>18</b>) and set as a link destination URL to be selected when the &#x201c;Advance&#x201d; key <b>16</b><i>d </i>is operated (step A<b>10</b>). </p>
+<p id="p-0091" num="0090"> When it is determined in step A<b>15</b> that no jump can be made from the presently displayed page to the Web page indicated by the changed URL and that no changed URL is present as a link destination (NO in step A<b>15</b>), the URL link history recorded so far in the RAM <b>15</b> is searched back for the URL of the contents page by comparing the respective URLs of the history with the presently displayed page URL, and then the URL of the contents page is recorded in the RAM <b>15</b> (step A<b>11</b>). </p>
+<p id="p-0092" num="0091"> Then, the red LED <b>18</b>R is flashed three times, thereby notifying the user that the presently displayed Web page is the last one (step A<b>12</b>). Then, the URL of the contents page recorded in the RAM <b>15</b> is set as a link destination URL to be selected when the &#x201c;Advance&#x201d; key <b>16</b><i>d </i>is operated (step A<b>10</b>). </p>
+<p id="p-0093" num="0092"> Each of the Web page displaying methods performed by the portable apparatus <b>10</b> in the respective embodiments including the Web page displaying process of the first embodiment shown in the flowchart of <figref idref="DRAWINGS">FIG. 8</figref> and the next-page allocating process involving the Web page display of the second embodiment shown in the flowchart of <figref idref="DRAWINGS">FIG. 12</figref> can be stored and distributed as programs executable by computers in an external recording medium <b>13</b> such as a memory card (such as a ROM or RAM card), a magnetic disk (such as a floppy disk or a hard disk), an optical disk (such as a CD-ROM or a DVD), or a semiconductor memory. Various computer terminals having a Web linking function and a browser function can read a program stored in the external recording medium <b>13</b> into the storage device <b>12</b> and controlled by the read program so as to perform the Web page display function and the next-page allocating function involving the Web page display as described in the aforementioned embodiments, thereby performing processes similar to those mentioned above. </p>
+<p id="p-0094" num="0093"> Data on the programs to perform the various aforementioned processes can be transmitted in the form of a program code through the communication network (or the Internet) N. The program data can be captured from the computer terminal (or program server) <b>20</b> connected to the communication network (or the Internet) N, thereby performing the web page display function and the next-page allocating function involving the Web page display. </p>
+<p id="p-0095" num="0094"> Various modifications and changes may be made thereto without departing from the broad spirit and scope of this invention. The above-described embodiments are intended to illustrate the present invention, not to limit the scope of the present invention. The scope of the present invention is shown by the attached claims rather than the embodiments. Various modifications made within the meaning of an equivalent of the claims of the invention and within the claims are to be regarded to be in the scope of the present invention. </p>
+<p id="p-0096" num="0095"> This application is based on Japanese Patent Application No. 2005-192836 filed on Jun. 30, 2005 and including specification, claims, drawings and summary. The disclosure of the above Japanese patent application is incorporated herein by reference in its entirety. </p>
+<?detailed-description description="Detailed Description" end="tail"?>
+</description>
+<us-claim-statement>What is claimed is: </us-claim-statement>
+<claims id="claims">
+<claim id="CLM-00001" num="00001">
+<claim-text><b>1</b>. An electronic apparatus comprising: 
+<claim-text>Web page browsing means for acquiring a file written in a markup language from a Web server on a network, thereby displaying a corresponding Web page; </claim-text>
+<claim-text>URL extracting means for retrieving a specified character string from the file and for extracting a linked URL written with the specified character string; </claim-text>
+<claim-text>the Web page browsing means also accessing the linked URL extracted by the URL extracting means to acquire a corresponding Web page; and </claim-text>
+<claim-text>next-page displaying means for displaying as a next page the Web page acquired by the Web page browsing means. </claim-text>
+</claim-text>
+ </claim>
+<claim id="CLM-00002" num="00002">
+<claim-text><b>2</b>. The electronic apparatus of <claim-ref idref="CLM-00001">claim 1</claim-ref>, comprising an operation key to give a command to display a next page. </claim-text>
+ </claim>
+<claim id="CLM-00003" num="00003">
+<claim-text><b>3</b>. The electronic apparatus of <claim-ref idref="CLM-00002">claim 2</claim-ref>, wherein the URL extracting means comprises keyword storage means that has stored a plurality of keywords including at least a word &#x201c;next&#x201d; as a keyword, and the URL extracting means retrieves and extracts from the file a keyword matching at least one of the plurality of keywords stored in the keyword storage means. </claim-text>
+ </claim>
+<claim id="CLM-00004" num="00004">
+<claim-text><b>4</b>. The electronic apparatus of <claim-ref idref="CLM-00003">claim 3</claim-ref>, further comprising URL selecting means for, when the URL extracting means extracts a plurality of URLs, selecting one URL from the extracted plurality of URLs based on the URL of the presently displayed page; and 
+<claim-text>the next-page displaying means displays a Web page indicated by a URL extracted by the URL extracting means or a URL selected by the URL selecting means. </claim-text>
+</claim-text>
+ </claim>
+<claim id="CLM-00005" num="00005">
+<claim-text><b>5</b>. The electronic apparatus of <claim-ref idref="CLM-00004">claim 4</claim-ref>, further comprising contents page retrieving means for, when the URL extracting means retrieves no keywords matching those stored in the keyword storage means, retrieving a URL indicative of a contents page from the presently displayed file; and 
+<claim-text>contents page displaying means for displaying as a next page the contents page indicated by the URL retrieved by the contents page retrieving means. </claim-text>
+</claim-text>
+ </claim>
+<claim id="CLM-00006" num="00006">
+<claim-text><b>6</b>. The electronic apparatus of <claim-ref idref="CLM-00004">claim 4</claim-ref>, further comprising: 
+<claim-text>operation history storage means for sequentially storing URLs of Web pages displayed in a user's respective operation methods and data indicative of the respective operation methods in corresponding relationship; </claim-text>
+<claim-text>diverging-point URL selecting means for, when the URL extracting means retrieves in the file no keywords matching those stored in the keyword storage means, selecting the URL of a Web page which became a diverging point based on the user's operations stored in the operation history storage means; and </claim-text>
+<claim-text>diverging-point page displaying means for displaying as a next page the Web page that became a diverging point indicated by the URL that was obtained by the diverging-point URL selecting means. </claim-text>
+</claim-text>
+ </claim>
+<claim id="CLM-00007" num="00007">
+<claim-text><b>7</b>. A computer readable Web page browsing program for causing a computer to acquire a file written in a markup language from a Web server on a network, thereby displaying a corresponding Web page, the program causing the computer to function as: 
+<claim-text>URL extracting means for retrieving a specified character string from the file and for extracting a linked URL written with the specified character string; and </claim-text>
+<claim-text>next-page displaying means for displaying as a next page a Web page acquired by accessing the URL extracted by the URL extracting means. </claim-text>
+</claim-text>
+ </claim>
+<claim id="CLM-00008" num="00008">
+<claim-text><b>8</b>. An electronic apparatus comprising: 
+<claim-text>Web page browsing means for acquiring a file written in a markup language from a Web server on a network, thereby displaying a corresponding Web page; </claim-text>
+<claim-text>URL producing means for producing a URL of a candidate page to be displayed next from information written in the file; </claim-text>
+<claim-text>reading means for beforehand reading a file of a Web page indicated by the URL produced by the URL producing means; and </claim-text>
+<claim-text>determining means for determining whether the file of the Web page read beforehand by the reading means is appropriate as a next page to be displayed. </claim-text>
+</claim-text>
+ </claim>
+<claim id="CLM-00009" num="00009">
+<claim-text><b>9</b>. The electronic apparatus of <claim-ref idref="CLM-00008">claim 8</claim-ref>, wherein 
+<claim-text>the URL producing means comprises: </claim-text>
+<claim-text>URL extracting means for extracting a linked URL written in the file of the presently displayed Web page as that of a candidate Web page to be displayed next; and </claim-text>
+<claim-text>the determining means comprises: </claim-text>
+<claim-text>present-page keyword extracting means for extracting a character string of a keyword indicative of an order of the presently displayed Web page from its file; </claim-text>
+<claim-text>read page keyword extracting means for extracting a character string of a keyword indicative of an order of the read page from its file; and </claim-text>
+<claim-text>relevancy determining means for determining whether there is relevancy between the character string of a keyword indicative of an order of the presently displayed page extracted by the present-page keyword extracting means and that of a keyword indicative of an order of the read page extracted by the read page keyword extracting means, and if so, for determining that the read Web page is appropriate as a next page. </claim-text>
+</claim-text>
+ </claim>
+<claim id="CLM-00010" num="00010">
+<claim-text><b>10</b>. The electronic apparatus of <claim-ref idref="CLM-00008">claim 8</claim-ref>, wherein; 
+<claim-text>the URL producing means comprises: </claim-text>
+<claim-text>URL changing means for changing a file name of a URL of the presently displayed Web page as a URL of a candidate Web page to be displayed next; and </claim-text>
+<claim-text>the determining means comprises: </claim-text>
+<claim-text>relevancy determining means for determining whether there is relevancy between the URL of the read Web page and that of the presently displayed Web page, and if so, for determining that the beforehand read Web page is appropriate as a next page. </claim-text>
+</claim-text>
+ </claim>
+<claim id="CLM-00011" num="00011">
+<claim-text><b>11</b>. A computer readable Web page browsing program for causing a computer to acquire a file written in a markup language from a Web server on a network, thereby displaying a corresponding Web page, the program causing the computer to function as: 
+<claim-text>URL producing means for producing a URL of a candidate page to be displayed next from information written in the file; </claim-text>
+<claim-text>reading means for beforehand reading a file of a Web page indicated by the URL produced by the URL producing means; and </claim-text>
+<claim-text>determining means for determining whether the file of the Web page read beforehand by the reading means is appropriate as a next page to be displayed.</claim-text>
+</claim-text>
+ </claim>
+</claims>
+</us-patent-application>

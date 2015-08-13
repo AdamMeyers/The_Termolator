@@ -1,0 +1,428 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE us-patent-application SYSTEM "us-patent-application-v42-2006-08-23.dtd" [ ]>
+<us-patent-application lang="EN" dtd-version="v4.2 2006-08-23" file="US20070002941A1-20070104.XML" status="PRODUCTION" id="us-patent-application" country="US" date-produced="20061221" date-publ="20070104">
+<us-bibliographic-data-application lang="EN" country="US">
+<publication-reference>
+<document-id>
+<country>US</country>
+<doc-number>20070002941</doc-number>
+<kind>A1</kind>
+<date>20070104</date>
+</document-id>
+</publication-reference>
+<application-reference appl-type="utility">
+<document-id>
+<country>US</country>
+<doc-number>11169569</doc-number>
+<date>20050630</date>
+</document-id>
+</application-reference>
+<us-application-series-code>11</us-application-series-code>
+<classifications-ipcr>
+<classification-ipcr>
+<ipc-version-indicator><date>20060101</date></ipc-version-indicator>
+<classification-level>A</classification-level>
+<section>H</section>
+<class>03</class>
+<subclass>K</subclass>
+<main-group>5</main-group>
+<subgroup>159</subgroup>
+<symbol-position>F</symbol-position>
+<classification-value>I</classification-value>
+<action-date><date>20070104</date></action-date>
+<generating-office><country>US</country></generating-office>
+<classification-status>B</classification-status>
+<classification-data-source>H</classification-data-source>
+</classification-ipcr>
+<classification-ipcr>
+<ipc-version-indicator><date>20060101</date></ipc-version-indicator>
+<classification-level>A</classification-level>
+<section>H</section>
+<class>03</class>
+<subclass>H</subclass>
+<main-group>7</main-group>
+<subgroup>40</subgroup>
+<symbol-position>L</symbol-position>
+<classification-value>I</classification-value>
+<action-date><date>20070104</date></action-date>
+<generating-office><country>US</country></generating-office>
+<classification-status>B</classification-status>
+<classification-data-source>H</classification-data-source>
+</classification-ipcr>
+<classification-ipcr>
+<ipc-version-indicator><date>20060101</date></ipc-version-indicator>
+<classification-level>A</classification-level>
+<section>H</section>
+<class>03</class>
+<subclass>H</subclass>
+<main-group>7</main-group>
+<subgroup>30</subgroup>
+<symbol-position>L</symbol-position>
+<classification-value>I</classification-value>
+<action-date><date>20070104</date></action-date>
+<generating-office><country>US</country></generating-office>
+<classification-status>B</classification-status>
+<classification-data-source>H</classification-data-source>
+</classification-ipcr>
+</classifications-ipcr>
+<classification-national>
+<country>US</country>
+<main-classification>375229000</main-classification>
+<further-classification>375348000</further-classification>
+<further-classification>375350000</further-classification>
+</classification-national>
+<invention-title id="d0e217">System and method for performing adaptive phase equalization</invention-title>
+<parties>
+<applicants>
+<applicant sequence="00" app-type="applicant-inventor" designation="us-only">
+<addressbook>
+<last-name>Low</last-name>
+<first-name>Timothy</first-name>
+<middle-name>D.</middle-name>
+<address>
+<city>Beaverton</city>
+<state>OR</state>
+<country>US</country>
+</address>
+</addressbook>
+<nationality>
+<country>US</country>
+</nationality>
+<residence>
+<country>US</country>
+</residence>
+</applicant>
+<applicant sequence="01" app-type="applicant-inventor" designation="us-only">
+<addressbook>
+<last-name>Coe</last-name>
+<first-name>Matthew</first-name>
+<middle-name>T.</middle-name>
+<address>
+<city>Hillsboro</city>
+<state>OR</state>
+<country>US</country>
+</address>
+</addressbook>
+<nationality>
+<country>US</country>
+</nationality>
+<residence>
+<country>US</country>
+</residence>
+</applicant>
+</applicants>
+<correspondence-address>
+<addressbook>
+<name>FLESHNER &#x26; KIM, LLP</name>
+<address>
+<address-1>P.O. BOX 221200</address-1>
+<city>CHANTILLY</city>
+<state>VA</state>
+<postcode>20153</postcode>
+<country>US</country>
+</address>
+</addressbook>
+</correspondence-address>
+</parties>
+<assignees>
+<assignee>
+<orgname>Intel Corporation</orgname>
+<role>02</role>
+</assignee>
+</assignees>
+</us-bibliographic-data-application>
+<abstract id="abstract">
+<p id="p-0001" num="0000">An equalization circuit includes a detector to detect at least one bit pattern on a signal line and a transmit offset circuit to determine a phase-shift setting corresponding to the bit pattern detected by the detector. The phase-shift setting controls a delay in transmission of data on the signal line that suppresses noise including but not limited to inter-symbol interference. </p>
+</abstract>
+<drawings id="DRAWINGS">
+<figure id="figure-D00000" num="00000">
+<img id="EMI-D00000" he="135.70mm" wi="189.42mm" file="US20070002941A1-20070104-D00000.TIF" alt="embedded image" img-content="drawing" img-format="tif"/>
+</figure>
+<figure id="figure-D00001" num="00001">
+<img id="EMI-D00001" he="256.37mm" wi="182.29mm" orientation="landscape" file="US20070002941A1-20070104-D00001.TIF" alt="embedded image" img-content="drawing" img-format="tif"/>
+</figure>
+<figure id="figure-D00002" num="00002">
+<img id="EMI-D00002" he="254.51mm" wi="195.41mm" file="US20070002941A1-20070104-D00002.TIF" alt="embedded image" img-content="drawing" img-format="tif"/>
+</figure>
+<figure id="figure-D00003" num="00003">
+<img id="EMI-D00003" he="229.79mm" wi="169.08mm" orientation="landscape" file="US20070002941A1-20070104-D00003.TIF" alt="embedded image" img-content="drawing" img-format="tif"/>
+</figure>
+<figure id="figure-D00004" num="00004">
+<img id="EMI-D00004" he="225.21mm" wi="159.51mm" orientation="landscape" file="US20070002941A1-20070104-D00004.TIF" alt="embedded image" img-content="drawing" img-format="tif"/>
+</figure>
+<figure id="figure-D00005" num="00005">
+<img id="EMI-D00005" he="248.84mm" wi="181.19mm" orientation="landscape" file="US20070002941A1-20070104-D00005.TIF" alt="embedded image" img-content="drawing" img-format="tif"/>
+</figure>
+<figure id="figure-D00006" num="00006">
+<img id="EMI-D00006" he="220.81mm" wi="193.63mm" file="US20070002941A1-20070104-D00006.TIF" alt="embedded image" img-content="drawing" img-format="tif"/>
+</figure>
+<figure id="figure-D00007" num="00007">
+<img id="EMI-D00007" he="255.95mm" wi="199.47mm" file="US20070002941A1-20070104-D00007.TIF" alt="embedded image" img-content="drawing" img-format="tif"/>
+</figure>
+<figure id="figure-D00008" num="00008">
+<img id="EMI-D00008" he="236.56mm" wi="181.19mm" orientation="landscape" file="US20070002941A1-20070104-D00008.TIF" alt="embedded image" img-content="drawing" img-format="tif"/>
+</figure>
+<figure id="figure-D00009" num="00009">
+<img id="EMI-D00009" he="225.04mm" wi="174.24mm" file="US20070002941A1-20070104-D00009.TIF" alt="embedded image" img-content="drawing" img-format="tif"/>
+</figure>
+<figure id="figure-D00010" num="00010">
+<img id="EMI-D00010" he="237.66mm" wi="89.15mm" file="US20070002941A1-20070104-D00010.TIF" alt="embedded image" img-content="drawing" img-format="tif"/>
+</figure>
+<figure id="figure-D00011" num="00011">
+<img id="EMI-D00011" he="217.34mm" wi="91.19mm" file="US20070002941A1-20070104-D00011.TIF" alt="embedded image" img-content="drawing" img-format="tif"/>
+</figure>
+<figure id="figure-D00012" num="00012">
+<img id="EMI-D00012" he="216.32mm" wi="90.42mm" file="US20070002941A1-20070104-D00012.TIF" alt="embedded image" img-content="drawing" img-format="tif"/>
+</figure>
+<figure id="figure-D00013" num="00013">
+<img id="EMI-D00013" he="230.63mm" wi="174.16mm" orientation="landscape" file="US20070002941A1-20070104-D00013.TIF" alt="embedded image" img-content="drawing" img-format="tif"/>
+</figure>
+</drawings>
+<description id="description">
+<?summary-of-invention description="Summary of Invention" end="lead"?>
+<heading level="2" id="h-0001">FIELD </heading>
+<p id="p-0002" num="0001"> This invention relates in at least some of its embodiments to an equalization circuit for suppressing noise on data lines. </p>
+<heading level="2" id="h-0002">BACKGROUND </heading>
+<p id="p-0003" num="0002"> Buffer circuits (e.g., input/output (I/O) buffers) are widely used to facilitate the transfer of data from one component to another within a system. For example, a microprocessor may use a buffer (driver) to transmit data to and receive data from other components (such as a memory or chipset) via buses. </p>
+<p id="p-0004" num="0003"> The performance of a bus buffer is typically characterized by the amount of delay between the time a clock signal is applied to an input of the buffer and the time valid data is provided at an output of the buffer. This delay time is referred to as time from clock to output, or TCO. Generally speaking, if TCO is too long, the system operating frequency may be reduced to allow time for the output to arrive at a receiving end of the bus. On the other hand, if the delay is too short, the output may arrive too quickly. TCO variations, therefore, must be controlled to remain between two limits, i.e., within a TCO window. </p>
+<p id="p-0005" num="0004"> The size of the TCO window may be limited by the presence of noise, and especially inter-symbol interference (ISI). As the front-side buses of many microprocessor systems are pushed to faster speeds, timing margins for the bus are reduced. The ISI build-up that results can cause duty cycle mismatches on external signals that vary with different data bit patterns. The resulting mismatches limit the TCO window and thus substantially degrade system performance.</p>
+<?summary-of-invention description="Summary of Invention" end="tail"?>
+<?brief-description-of-drawings description="Brief Description of Drawings" end="lead"?>
+<heading level="2" id="h-0003">BRIEF DESCRIPTION OF THE DRAWINGS </heading>
+<p id="p-0006" num="0005"> <figref idref="DRAWINGS">FIG. 1</figref> is a diagram showing a phase equalization circuit in accordance with one embodiment of the present invention. </p>
+<p id="p-0007" num="0006"> <figref idref="DRAWINGS">FIG. 2</figref> is a diagram showing one possible implementation of a local look-up table included in a phase equalization circuit. </p>
+<p id="p-0008" num="0007"> <figref idref="DRAWINGS">FIG. 3</figref> is a diagram showing a pattern detector for use in a phase equalization circuit. </p>
+<p id="p-0009" num="0008"> <figref idref="DRAWINGS">FIG. 4</figref> is a diagram showing one possible implementation of a transmit clock offset circuit included in a phase equalization circuit. </p>
+<p id="p-0010" num="0009"> <figref idref="DRAWINGS">FIG. 5</figref> is a diagram showing a phase equalization circuit for a side-band pin shown in <figref idref="DRAWINGS">FIG. 1</figref>. </p>
+<p id="p-0011" num="0010"> <figref idref="DRAWINGS">FIG. 6A</figref> is a diagram showing one type of circuit for capturing a set-up timing requirement for the phase equalization circuit of <figref idref="DRAWINGS">FIG. 5</figref>, and <figref idref="DRAWINGS">FIG. 6B</figref> is a graph showing timing waveforms that may be used to capture the set-up timing requirement. </p>
+<p id="p-0012" num="0011"> <figref idref="DRAWINGS">FIG. 7</figref> is a diagram showing a more detailed view of the phase equalization circuit for the side-band pin. </p>
+<p id="p-0013" num="0012"> <figref idref="DRAWINGS">FIG. 8</figref> is a diagram showing one possible implementation of a TCO centering logic circuit included in the side-band pin equalization circuit. </p>
+<p id="p-0014" num="0013"> <figref idref="DRAWINGS">FIG. 9</figref> is a diagram showing an implementation of the side-band pin equalization circuit used in a receive mode. </p>
+<p id="p-0015" num="0014"> <figref idref="DRAWINGS">FIG. 10A</figref> is a flow chart showing blocks included in a method for performing phase equalization in accordance with one embodiment of the present invention, <figref idref="DRAWINGS">FIG. 10B</figref> is a flow chart showing blocks which may be used to detect a bit pattern on a signal line which, for example, may correspond to a data bus line, <figref idref="DRAWINGS">FIG. 10C</figref> is a flow chart showing blocks which may be used to obtain phase-shift values in <figref idref="DRAWINGS">FIG. 10A</figref>, and <figref idref="DRAWINGS">FIG. 10D</figref> is a flow chart showing blocks which may be used to update phase-shift values stored in the local look-up table mentioned in <figref idref="DRAWINGS">FIG. 10C</figref>. </p>
+<p id="p-0016" num="0015"> <figref idref="DRAWINGS">FIG. 11</figref> is a diagram showing a processing system which may include any one or more of the embodiments of the phase equalization circuit and side-band equalization circuit.</p>
+<?brief-description-of-drawings description="Brief Description of Drawings" end="tail"?>
+<?detailed-description description="Detailed Description" end="lead"?>
+<heading level="2" id="h-0004">DETAILED DESCRIPTION OF EMBODIMENTS </heading>
+<p id="p-0017" num="0016"> <figref idref="DRAWINGS">FIG. 1</figref> shows an input/output (I/O) buffer <b>1</b> which transfers data between a component bus <b>2</b> and one or more integrated circuits, such as but not limited to the circuits of a microprocessor system. The bus may be a front-side bus having gunning transceiver logic (GTL) pins coupled to the microprocessor at one end and to a core circuit which supplies or receives data at the other end. Other buses are also possible. I/O buffers may be coupled to both ends of the bus, or just one end. </p>
+<p id="p-0018" num="0017"> Buffer <b>1</b> includes a plurality of equalization circuits <b>5</b><sub>a</sub>-<b>5</b><sub>n</sub>, each coupled to respective one of a plurality of lines of the bus <b>2</b>. The equalization circuits perform processing operations (e.g., adaptive phase equalization) which collectively control the timing of data transmitted on and received from the bus. For illustrative purposes, the structure of one equalization circuit is shown with the understanding that the other equalization circuits may have the same or similar structure. In other embodiments, the equalization circuits may differ. </p>
+<p id="p-0019" num="0018"> Each phase equalization circuit includes an outbound multiplexer latch <b>14</b> and a transmit clock offset timing circuit <b>13</b>. Data from the core, or otherwise received by or for transmission on the bus, is sent from the latch through analog driver circuitry <b>18</b> to a respective one of a plurality of external pins or pads. The latch is controlled by a clock signal which, for example, may originate from a delay-locked loop circuit <b>20</b>. The clock signal determines when the data is sent through the latch. A compensated delay line <b>25</b> may be provided to control the timing of a clock signal edge that controls output of the data from the latch. By controlling the timing of this edge, the data is shifted in time in a way that suppresses noise including but not necessarily limited to inter-symbol interference (ISI). </p>
+<p id="p-0020" num="0019"> In accordance with one embodiment, each equalization circuit <b>5</b><sub>a</sub>-<b>5</b><sub>n </sub>controls the time shift for a respective one of the pins (or data bits) using a pattern detector and local look-up table <b>11</b>, which are coupled in tandem to the transmit clock offset timing circuit. The pattern detector detects a bit pattern in the data and the local look-up table stores information which controls the generation of a clock offset signal from circuit <b>13</b>. The clock offset signal, in turn, controls the transmission timing of data on the bus. Together, circuits <b>11</b> through <b>14</b> apply phase equalization to the bit data that adaptively compensates for real-time duty-cycle mismatch that causes inter-symbol interference. </p>
+<p id="p-0021" num="0020"> More specifically, the adaptive phase equalization is performed by adjusting the phase of the data transferred to (or received from) the bus based on a pattern of bits detected in the data. This phase adjustment reduces the mismatch and suppresses noise (ISI) on the front-side bus transmission lines, thereby allowing for a wider TCO margin window and enhanced system performance. In one illustrative application, this form of equalization may be used to realize both source synchronous and common clock timing optimization. </p>
+<p id="p-0022" num="0021"> <figref idref="DRAWINGS">FIG. 2</figref> shows one possible implementation of the bit pattern detector and local look-up table. This circuit is coupled to or may form part of a bit pattern detector which has eight flip-flops <b>121</b><sub>1</sub>-<b>121</b><sub>8 </sub>connected in series and which operates in a manner similar to the detector discussed in <figref idref="DRAWINGS">FIG. 2</figref>. Together, the flip-flops store a history of data bits received from a respective one of the bus signal lines. Signal <b>125</b> corresponds to the newest bits of the data stream. </p>
+<p id="p-0023" num="0022"> The table itself is formed from an enable selection circuit <b>122</b> which generates a plurality of enable signals (en<b>0</b>-en<b>6</b>) in association with a respective number of predetermined bit patterns. Detection of the bit patterns may be performed using an array of logic gates having inputs coupled to different combinations of the flip-flop outputs. These logic gates may generate the enable signals in a manner analogous to the AND gates shown in <figref idref="DRAWINGS">FIG. 2</figref>. For example, the enable selection circuit may include seven AND gates having inputs coupled to flip-flop outputs that respectively correspond to the entries in the bit pattern column of the table. </p>
+<p id="p-0024" num="0023"> In operation, the data bits are shifted through the chain of flip-flops by a clock signal <b>126</b>, and the Q outputs of the flip-flops are input into the enable selection circuit. The selection circuit outputs one of the enable selection signals (en<b>0</b>-en<b>6</b>) based on the detected bit pattern. The selection signal, en<b>0</b>, is indicative of a default value with subsequent signals corresponding to the designated bit patterns in the table. While seven enable signals are shown, a different number of enable signals may be generated in alternative embodiments. </p>
+<p id="p-0025" num="0024"> The enable selection signal from circuit <b>122</b> determines a phase-shift value output from a shift-selection circuit <b>124</b>; that is, each enable selection signals en<b>1</b>-en<b>6</b> selects one of a plurality of phase-shift values, Shift<b>0</b>&#x3c;2:0&#x3e; to Shift<b>5</b>&#x3c;2:0&#x3e;, and default enable selection signal en<b>0</b> selects default value <b>000</b>. These values correspond to ones generated by logic circuitry <b>123</b>, which may be formed from a matrix of flip-flops. The flip-flops in each column of the matrix are coupled to a respective bit of input data, e.g., D<sub>0</sub>, D<sub>1</sub>, D<sub>2</sub>, . . . , D<sub>n</sub>. The enable selection signal selects the output of one of these flip-flops for each bit to generate a phase-shift value which corresponds to the output of the local look-up table. Shift-selection circuit <b>124</b> may be a multiplexer or some other signal selection circuit. </p>
+<p id="p-0026" num="0025"> <figref idref="DRAWINGS">FIG. 3</figref> shows another possible implementation of the bit pattern detector. This detector includes a chain of flip-flops <b>111</b><sub>1 </sub>to <b>111</b><sub>n </sub>and a number of logic gates <b>112</b>-<b>114</b> coupled to receive different combinations of outputs of the flip-flops. The flip-flop chain holds a copy of the data bits on the bus for the last n clock cycles. The newest bits of the data stream are received by flip-flop <b>111</b><sub>1</sub>, and these bits are shifted in time through the chain based on an input data clock signal. The chain, therefore, effectively operates as a short-term memory for storing a history of bits received on a respective one of the bus lines. In this example, n equals <b>6</b> and the logic gates are AND gates. In other embodiments, n may be a number higher or lower than <b>6</b> and the AND gates may be replaced or supplemented with other logic circuits. </p>
+<p id="p-0027" num="0026"> In operation, logic gates <b>112</b>-<b>114</b> search the data to detect predetermined bit patterns received over time. These bit patterns may be ones that are to be phase equalized in accordance with the present embodiment. In this example, three bit patterns are detected: <b>0110</b>xx, <b>01110</b>x, and <b>011110</b>. In other embodiments, different bit patterns and/or different numbers of bit patterns may be detected. Detection of zeros in each bit pattern may result from inverting inputs into the logic gates. </p>
+<p id="p-0028" num="0027"> When the patterns are detected, corresponding ones of the logic gates generate enable signals, en<b>0</b>, en<b>1</b>, and en<b>2</b>. These enable signals may each hold a predetermined logical value (e.g., a true or high value) until a new value causing a pattern deviation is clocked into the flip-flop chain. The enable signals control the output of the local look-up table in <figref idref="DRAWINGS">FIG. 1</figref>, e.g., the bit pattern detector filters through the data stream and compares the detected pattern to the local look-up table. The local look-up table, then, generates a phase-shift value based on a result of this comparison. </p>
+<p id="p-0029" num="0028"> The local look-up table may be a memory (e.g., RAM) that stores a plurality of predetermined bit patterns in association with a respective number of clock offset values. Because the clock offset values control the timing of the data output, these values produce different phase shifts in the data which, when properly selected, suppress ISI. </p>
+<p id="p-0030" num="0029"> <figref idref="DRAWINGS">FIG. 4</figref> shows one possible implementation of the transmit clock offset circuit <b>13</b>. Initially, the clock offset circuit may be selected to correspond to a default setting output from circuit <b>210</b>, which, for example, may be a register or memory cell. The selection is made by a multiplexer <b>220</b> in response to a first value of default enable selection signal en<b>0</b> output from the look-up table. An adjustment of the setting is made when a phase-shift value is output from circuit <b>124</b>, shown in <figref idref="DRAWINGS">FIG. 3</figref>. When this occurs, the phase-shift value (e.g., corresponding to a time-shift value) is subtracted from the default clock setting, and the resulting phase-shift setting is selected for output when the logical value of enable selection signal en<b>0</b> changes to reflect that one of enable selection signals en<b>1</b>-en<b>6</b> has been output from the local look-up table <b>122</b>. Alternatively, the phase-shift value from circuit <b>124</b> may be passed through multiplexer <b>220</b> as the phase-shift setting based on the changed logical value of en<b>0</b>. </p>
+<p id="p-0031" num="0030"> The phase-shift setting output from multiplexer <b>220</b> is used to select which one of the plurality of delayed clock values from compensated delay line <b>25</b> are to be transferred through multiplexer/interpolator <b>230</b>. The delayed value is used as a clock signal <b>240</b> for adjusting the time offset, and thus the phase-shift, of a respective one of the data bits output from outbound multiplexer latch <b>14</b>. </p>
+<p id="p-0032" num="0031"> Returning to <figref idref="DRAWINGS">FIG. 1</figref>, a global adaptive phase equalization circuit <b>30</b> may be used to control the clock offset values in the equalization circuits for all or a portion of the data bits. Circuit <b>30</b> performs this function adaptively based on detection of a signal received on a side-band pin of the data bus. This side-band pin may cycle through one or more pre-programmed (e.g., test) patterns that model ISI build-up across all or a portion of the data pins. In performing this function, the side-band pin may operate like the other GTL pins except that equalization circuit <b>30</b> may calculate an intended or optimal transmit timing offset which cancels ISI effects in the bus data. The patterns may be fixed-length patterns, variable-length patterns, or a combination of both. </p>
+<p id="p-0033" num="0032"> The global equalization circuit includes a TCO centering controller <b>31</b>, a pattern generator <b>32</b>, a pattern detector <b>33</b>, a global look-up table <b>34</b>, a transmit timing adjust circuit <b>35</b>, and an outbound multiplexer latch <b>36</b>. An error-checking circuit <b>37</b> may also be included for performing error detection and correction for data bits received by the side-band pin, e.g., in data receive mode. The TCO centering controller makes corresponding adjustments in the TCO window based on results output from the error checking circuit. </p>
+<p id="p-0034" num="0033"> <figref idref="DRAWINGS">FIG. 5</figref> shows one possible implementation of the transmit timing adjust circuit. This circuit includes transmit clock selection logic <b>351</b>, a maximum TCO clock setting circuit <b>352</b>, a reference clock setting circuit <b>353</b>, and a clock offset calculator <b>354</b>. In operation, pattern generator <b>32</b> generates one or more pre-programmed (e.g., test) bit patterns. These patterns may model ISI build-up across one or more of the data pins. Examples of these patterns are listed below: 
+<ul id="ul0001" list-style="none">
+    <li id="ul0001-0001" num="0000">
+    <ul id="ul0002" list-style="none">
+        <li id="ul0002-0001" num="0034"> <b>000001</b> </li>
+        <li id="ul0002-0002" num="0035"> <b>100001</b> </li>
+        <li id="ul0002-0003" num="0036"> X<b>10001</b> </li>
+        <li id="ul0002-0004" num="0037"> XX<b>1001</b> </li>
+        <li id="ul0002-0005" num="0038"> XXX<b>101</b> 
+<br/>
+ In this pattern, the variable &#x201c;X&#x201d; is used to represent any bit value. In alternative embodiments, different predetermined patterns may be used for modeling ISI build-up or for modeling other features of interest. 
+</li>
+    </ul>
+    </li>
+</ul>
+</p>
+<p id="p-0035" num="0039"> The global look-up table (GLUT) transmits phase-shift values to respective ones of the local look-up tables (LLUTs) in equalization circuits <b>5</b><sub>a</sub>-<b>5</b><sub>n</sub>. In accordance with one embodiment, these phase-shift values may correspond to clock offset codes. Initially, the GLUT transmits predetermined or default codes to the LLUTs. These codes are then adjusted based on the output of the transmit timing adjust circuit. More specifically, transmit clock selection logic <b>351</b> outputs a clock selection code in the GLUT based on a clock selection control signal <b>355</b>. The clock selection code, and indeed all the codes stored in the GLUT, may correspond to phase-shift values. </p>
+<p id="p-0036" num="0040"> Clock setting circuit <b>352</b> includes a register which may hold the absolute clock select value corresponding to the maximum TCO margin condition for the current pattern being applied. TCO (time from clock to out) may represent the time that elapses between when the transmit clock edge occurs and when the data being clocked out appears on the external bus. This time, thus, provides a metric indicating a deviation (or margin) from an ideal or intended timing of a signal transmission on the bus. Put differently, TCO margin may represent the difference between the actual timing of the signal transition on the bus and the time where a setup or hold violation will occur at the receiver. The TCO margin, thus, may be used as a basis for determining margin failure. </p>
+<p id="p-0037" num="0041"> The side-band circuits provide a measurement of this margin. By tracking clock settings which cause read failures at the receiver (both early and late failures may be recorded), the clock setting closest to the ideal or an intended transmit timing may be calculated from the standpoint of the receiver. As will be explained in greater detail, the side-band pin of the receiver checks the data on the bus against the pattern known to be transmitted. Feedback regarding the data integrity of the side-band pin may then be returned to the transmitter on the handshake pin. </p>
+<p id="p-0038" num="0042"> Reference clock setting circuit <b>353</b> includes a register which holds a reference clock setting. This clock setting value may be the clock setting before phase equalization is applied, and accordingly may be referred to as the default clock setting. Circuit <b>353</b>, thus, outputs a signal indicative of the clock setting used to transmit data with no phase equalization. </p>
+<p id="p-0039" num="0043"> Clock offset calculator <b>354</b> may calculate the clock offset by subtracting the Max TCO margin clock setting held in register <b>352</b> from the reference clock setting held in register <b>353</b>. The resulting signal forms a clock offset code (e.g., a digital signal) which represents the magnitude of a clock shift value relative to the reference (or default) clock setting for a given phase shift. Put differently, the code which results from this subtraction operation generates a representation of the offset from the default clock which may help to achieve a maximum TCO margin. The GLUT stores the current clock offset code in a register whose address is determined by the bit pattern currently being transmitted by the side-band pin. This code and the other codes stored and output from the GLUT may correspond to phase-shift settings. </p>
+<p id="p-0040" num="0044"> Once generated, each bit pattern is input into the pattern detector. The pattern detector then outputs bit pattern as an output data stream, and may also output phase-shift enable and reference centering signals. The output data stream path may be arranged as follows. </p>
+<p id="p-0041" num="0045"> The bit pattern from generator <b>32</b> may be sent to latch <b>39</b> through the pattern detector. Latch <b>39</b> outputs this pattern to muxlatch <b>36</b>, and in so doing captures a set-up timing requirement used to model the core-to-I/O timing. The pattern from latch <b>39</b> may be output based on a nominal transmit clock signal <b>67</b> from clock selection logic <b>351</b>, and muxlatch <b>36</b> may output this pattern based on a phase-shifted transmit clock signal <b>66</b> also output from logic <b>351</b>. The output of the muxlatch is then transmitted on side-band pin <b>395</b> through GTL buffer <b>65</b>. </p>
+<p id="p-0042" num="0046"> <figref idref="DRAWINGS">FIG. 6A</figref> shows an example of how the set-up timing requirement may be captured by latch <b>39</b>. In the GTL bus protocol, the test (or data) pattern from detector <b>33</b> may be flopped before it is transmitted through the GTL buffer. The flop may be performed by p-latch <b>39</b> and n-latch (master and slave). While passing through the latches, the data may be transmitted off an edge (e.g., the falling edge) of the data clock signal <b>388</b>, which may correspond to the nominal clock signal shown in <figref idref="DRAWINGS">FIG. 5</figref>. A duty cycle adjust circuit <b>389</b> may adjust the duty cycle of this clock signal to control when the data pattern is transmitted onto the GTL buffer. Circuit <b>389</b> may be included in or correspond to transmit clock selection logic <b>351</b>. </p>
+<p id="p-0043" num="0047"> <figref idref="DRAWINGS">FIG. 6B</figref> shows a timing diagram of how transmitting data may be pushed or pulled through adjustment of the clock duty cycle. In this diagram, Dataclk corresponds to the transmitting clock signal <b>388</b>, signal <b>387</b> corresponds to the output of the master latch (e.g., latch <b>39</b>), signal <b>386</b> corresponds to the adjusted duty cycle of clock signal <b>388</b> output from circuit <b>389</b>, and signal <b>385</b> corresponds to the output of the slave latch (e.g., latch <b>36</b>). As shown, the adjustments made by circuit <b>389</b> may push or pull the position of the falling edge of the data clock signal <b>388</b> to achieve an intended set-up timing requirement. This requirement may be set, for example, to correspond to a time which data must arrive at latch <b>39</b> before corruption occurs. </p>
+<p id="p-0044" num="0048"> As indicted, latch <b>36</b> shifts the data output from flip-flop <b>39</b> for transmission on the side-band pin through GTL output buffer <b>65</b> based on phase-shifted transmit clock signal <b>66</b> output from logic circuit <b>351</b>. Signal <b>66</b> may be one of the clock signals output from clock selection logic circuit <b>351</b>, and may be selected by clock selection signal <b>355</b>. Clock signal <b>355</b> may be independently generated or may correspond to clock select signal <b>501</b> ultimately used to determine the phase-shifted output of multiplexer <b>540</b>. (See <figref idref="DRAWINGS">FIG. 8</figref>). Latch <b>36</b> delays the output of the data output from flip-flop <b>39</b> based on the phase-shifted transmit clock signal, and the result is transmitted to the side-band pin through the GTL output buffer. </p>
+<p id="p-0045" num="0049"> Referring again to <figref idref="DRAWINGS">FIG. 5</figref>, the GLUT stores each of the outputs from the clock offset calculator <b>354</b> corresponding, for example, to different ISI conditions on the bus. When the GLUT has been completely updated with a full set of clock offset codes (e.g., phase-shift settings), which may occur when pattern generator <b>32</b> has generated all of its output test patterns and clock offset values have been generated for each of these test patterns, the codes are transmitted from the GLUT to the local look-up tables in each of circuits <b>5</b><sub>a</sub>-<b>5</b><sub>n</sub>. The local look-up tables then output phase-shift settings (e.g., from circuit <b>124</b> in <figref idref="DRAWINGS">FIG. 3</figref>) based on the newly received codes from the GLUT. These new codes may help to achieve optimum clock offset values corresponding to the different bit patterns that are detected on the data bus lines. </p>
+<p id="p-0046" num="0050"> <figref idref="DRAWINGS">FIG. 7</figref> shows a more detailed view of circuits that may be used in one implementation of the phase equalization circuit for the side-band pin. In this view, during transmit mode, a counter <b>410</b> is sequentially incremented to select a pattern of interest, which, in turn, enables a corresponding entry in the GLUT to be edited, overwritten, or updated. The increment signal may be generated from any one of a variety of circuits including but not limited to a finite state machine. </p>
+<p id="p-0047" num="0051"> The counter outputs a pattern select signal <b>411</b>, which causes the pattern generator to select one of a plurality of pre-programmed test patterns. The pattern generator may be a decoder programmed to output a given one of the test patterns in response to each counter code. A two-bit counter may help allow four patterns to be optimized, a three-bit counter may help allow eight patterns to be optimized, and so on. The logic may be scaled according to the number of specific patterns to be equalized for successful transmission. </p>
+<p id="p-0048" num="0052"> Multiplexer <b>412</b> receives a transmit clock signal and a receive clock signal. The transmit clock signal is received when the side-band pin is to transmit data on the bus, and the receive clock signal is received when the side-band pin is to receive data on the bus. This may allow both bus agents to determine independent phase equalization values. </p>
+<p id="p-0049" num="0053"> Pattern generator <b>32</b> updates the output pattern in response to the clock signal output from multiplexer <b>412</b>. This may involve outputting the next stored test pattern of a plurality of pre-programmed test patterns. The pattern generator may also send the test pattern to a separate error checking logic circuit, e.g., circuit <b>37</b>. This circuit compares the pattern to incoming input/output (I/O) data, and then checks to see that the receiver did indeed receive the intended pattern. </p>
+<p id="p-0050" num="0054"> The counter outputs a &#x201c;done&#x201d; signal when all the pre-programmed patterns have been tested and the GLUT has been updated with settings produced from the test patterns. Prior to generation of the done signal, the value of the done signal is not true. As a result, the GLUT is enabled and entries can be updated. During this time, the output of the GLUT may be disabled. The counter, then, counts through all the test patterns and updates the GLUT with entries produced from the test patterns. When finished, the done signal becomes true, the GLUT input is disabled, and the GLUT output is enabled. When the counter cycles through all values a second time (with the done signal being a true value, the GLUT outputs its entries to update the local look-up tables provided in the equalization circuit for each data bus line. </p>
+<p id="p-0051" num="0055"> The done signal is inverted by an inverter <b>413</b>, and this inverted signal serves as an enable input into a decoder <b>414</b>. This decoder may be an n-to-2<sup>n </sup>decoder with enable. When the &#x201c;done&#x201d; signal is not true, meaning that the GLUT is currently being updated, each n-bit counter value is decoded to a single bit enable signal which enables an address in the GLUT. In the example given in <figref idref="DRAWINGS">FIG. 7</figref>, each three-bit counter code may be mapped to an entry in the GLUT. Also, in this example, only six of a possible eight codes are used. As the counter steps through the test patterns, the corresponding address in the GLUT is enabled. At the end of the test cycle, the optimum clock setting value is stored in the enabled flops. </p>
+<p id="p-0052" num="0056"> In this exemplary implementation, GLUT matrix <b>415</b> may include a column of D flip-flops for each bit of side-band data G<b>0</b>-G<b>2</b>. G<b>2</b> represents the most significant clock setting bit, and G<b>0</b> represents the least significant clock setting bit. Each row of flip-flops in the matrix holds the optimum phase-shift setting for the data pattern represented by the update signal connected to each of the three flops in each row of the GLUT. Each row in the GLUT corresponds to the three-bit clock offset setting determined to be optimum for the pattern under test at the time. </p>
+<p id="p-0053" num="0057"> The pattern select signal <b>411</b> from counter <b>410</b> is also sent to a decoder <b>416</b>, which generates a selection signal which selects one of the shift values output from the GLUT matrix. The output of multiplexer <b>418</b> is sent to the local look-up tables along with the output of decoder <b>416</b>. This allows the LLUTs to be updated with the information in the GLUT, once the GLUT is completely updated. </p>
+<p id="p-0054" num="0058"> Signal <b>420</b> output from the pattern generator <b>32</b> is input into the pattern detector <b>33</b>. Signal <b>420</b> may be a serialized test pattern output from the pattern generator. The pattern detector may also generate various enable signals based on which pattern is detected. The output data stream may simply be, for example, signal <b>420</b> repeated to the output buffer. The phase shift-enable signal may be asserted when a pre-programmed pattern has been detected. These operations may be explained in greater detail, for example, in the following manner. </p>
+<p id="p-0055" num="0059"> Initially, counter <b>410</b> selects the GLUT address to be updated and the test pattern based on pattern select signal <b>411</b>. The pattern may then be serially transmitted through the pattern detector as the data stream <b>539</b> for transmission along the GTL output data path, e.g., a side-band pin. The pattern may be temporarily buffered in the pattern detector during this time. Once the full (e.g., six-bit) test pattern is loaded into the pattern detector, phase shift enable signal <b>541</b> may be asserted. Transmission of the output data stream and buffering of the test pattern in the pattern detector may be performed in parallel. In this embodiment, phase equalization may then be performed only on the least significant bit, and the remaining bits may be provide for modeling ISI effects. Also, a reference TCO signal <b>538</b> may be asserted during cycles when a pre-programmed pattern has not been detected, or when the adaptive phase equalization feature has been disabled. </p>
+<p id="p-0056" num="0060"> Further, in this or alternative embodiments, counter <b>410</b> may control the selection of the correct entry in the GLUT for update based on feedback from a receiver located at an opposing end of the bus line connected to the side-band pin. Returning to <figref idref="DRAWINGS">FIG. 5</figref>, the feedback may be generated in response to the test pattern transmitted on side-band pin <b>395</b> through GTL output buffer <b>65</b>. At a receiving end of the bus, a circuit similar to circuit <b>30</b> may be provided. This circuit receives the transmitted test pattern through a complementary side-band pin and compares the test pattern to one or more test patterns in its own pattern generator, stored, for example, in its own global look-up table. </p>
+<p id="p-0057" num="0061"> The compare circuit may correspond to error checking logic <b>610</b> as also shown in <figref idref="DRAWINGS">FIG. 5</figref>. Based on a result of this comparison, logic <b>610</b> generates a pass or fail bit to be sent as feedback to the transmission side of the bus. The pass or fail bit may be received through an error side-band pin <b>620</b>, and input into a master latch control circuit <b>630</b> for determining, for example, the TCO margin boundary. (The error bit may also referred to as a receiver (Rx) error bit; see also <figref idref="DRAWINGS">FIG. 10</figref>.) As described in greater detail below, determination of the TCO margin boundary may involve continuously performing a phase shift on the least significant bit of the pattern bit until a maximum or other intended TCO window is achieved. </p>
+<p id="p-0058" num="0062"> <figref idref="DRAWINGS">FIGS. 8 and 9</figref> collectively show one way in which the increment counter procedure may be performed based on the error bit value on the receiver path. According to this procedure, a pass-fail condition may mark one end boundary of the TCO window. A finite state machine may be a centering control machine which steps through each possible clock setting, while transmitting each of the predetermined patterns on the side-band pin. When the optimum clock setting is determined for the pattern under test, the counter will be incremented, causing it to output the next predetermined pattern for test. </p>
+<p id="p-0059" num="0063"> One possible implementation of the TCO centering controller <b>31</b> is shown in <figref idref="DRAWINGS">FIG. 8</figref>, which also may be relied on to indicate how this circuit adjusts clock offset values in equalization circuits <b>5</b><sub>a</sub>-<b>5</b><sub>n</sub>. Controller <b>31</b> may be a logic circuit that snoops an error bit handshake that occurs between transmitting and receiving sides of the bus. The controller may include or be coupled to a counter <b>510</b>, a clock select latch <b>511</b>, a hold latch <b>512</b>, a center value calculator <b>513</b>, and a TCO center reference setting circuit <b>514</b>. </p>
+<p id="p-0060" num="0064"> Counter <b>510</b> is an n-bit counter (e.g., n=4) which receives a phase-shift enable signal <b>541</b> and a counter increment signal <b>542</b>, both of which may be generated by the finite state machine controlling the TCO window centering process. The centering process is implemented as a testing procedure. During this procedure, the phase-shift enable signal enables the counter to cycle through a predetermined set of clock select values. Each value is output as a clock select signal <b>501</b>, which, for example, corresponds to a 4-bit phase-shift value represented by &#x201c;clock select &#x3c;3:0&#x3e;&#x201d; The 4-bit representation allows signal <b>501</b> to assume one of 2<sup>4</sup>=16 different phase shift values. The value of signal <b>501</b> may be updated to a next value when the counter increment signal is asserted. Clock select latch <b>511</b> stores the clock select value of the signal <b>501</b> when enabled by latch enable signal <b>502</b> during each step of the cycle, which may also be generated by the finite state machine. </p>
+<p id="p-0061" num="0065"> More specifically, during testing, the finite state machine cycles through a predetermined set of phase-shift values. Assuming that the range of possible phase-shift values is greater than the range of phase-shift values that allow proper operation of the bus, feedback from the side-band error pin produces a subset of phase-shift values which result in the correct data being received by an agent coupled to a receiving side of the bus. This agent may have the same structure as shown in <figref idref="DRAWINGS">FIG. 1</figref>. </p>
+<p id="p-0062" num="0066"> The subset of valid phase-shift values may correspond to the &#x201c;passing window.&#x201d; As the test is carried out, latch <b>512</b> holds a first window edge while latch <b>511</b> continues to look for a second window edge. Once both extreme passing values are obtained, the center value of the window is calculated by the window center calculator <b>513</b>. In accordance with one embodiment, nominal transmit clock signal <b>67</b> may control output of signal <b>530</b> from clock select latch <b>511</b>. This process will now be explained in greater detail. (As previously indicated, in accordance with at least one embodiment, a &#x201c;passing value&#x201d; is determined based on a comparison of the received data pattern and the patterns from the pattern generator. The result is then fed back into the error side-band pin as, for example, a logic-low signal for passing and a logic-high signal for failure.) </p>
+<p id="p-0063" num="0067"> Clock select latch <b>511</b> inputs two signals, <b>503</b> and <b>504</b>, into hold latch <b>512</b> and center value calculator <b>513</b> respectively. The hold latch stores a lower bound of the passing clock select setting which corresponds to one edge of the TCO window; that is, latch <b>512</b> stores the value of signal <b>503</b> (e.g., the current value of latch <b>511</b>) when feedback from the side-band pin indicates that the lower bound of the passing window has been detected. This frees up clock select latch <b>511</b> to continue on looking for an upper bound of the passing clock select setting, which corresponds to a second edge of the TCO window. </p>
+<p id="p-0064" num="0068"> Once the upper bound is found, the center value calculator <b>513</b> uses the upper bound information stored in latch <b>511</b> and the lower bound information stored in latch <b>512</b> to calculate the center of the passing window. In one embodiment, the upper and lower bounds may define an maximum TCO window. The center value calculator may then calculate the clock select value closest to the center of the range defined by the clock select values stored in latch <b>511</b> and <b>512</b>, which correspond to the upper and lower bound of the passing operation region respectively. This calculation may be performed, for example, by adding the upper and lower bounds and then dividing by two. In alternative embodiments, a different approach may be used to calculate the center value. </p>
+<p id="p-0065" num="0069"> Latch enable signal <b>506</b> may be generated by the finite state machine. The timing of latch enable signals <b>502</b> and <b>506</b> may be as follows. Latch enable signal <b>502</b> may be asserted every time the counter is incremented, so that the new value can get loaded into the register. Latch enable signal <b>506</b> may be asserted when the first passing data pattern on the side-band signal is detected, to store the clock select value that yielded the first passing data pattern on the bus. </p>
+<p id="p-0066" num="0070"> The center value calculator <b>513</b> generates a signal <b>507</b> which is input into TCO center reference setting circuit <b>514</b>. Signal <b>507</b> may represent an optimal or other clock setting value. This value may be subtracted from the reference setting stored in latch <b>514</b> to yield the clock offset from the reference setting for maximum TCO margin (signal <b>550</b>). </p>
+<p id="p-0067" num="0071"> The reference setting circuit <b>514</b> may perform two functions depending on the type of system that uses the phase equalization circuitry. In one implementation, circuit <b>514</b> may be a read-only memory (ROM) programmed with a default clock value determined from system simulation and testing. In this implementation, signal <b>507</b> may be ignored and the signal &#x201c;reference enable&#x201d; may not used. </p>
+<p id="p-0068" num="0072"> Another (e.g., higher performance implementation) may include a basic calibration cycle which runs to determine an exact optimum clock setting for each data buffer, without the presence of ISI on signal traces. After the calibration cycle is completed for each pin of the bus, phase equalization offsets may be applied based on optimum or other clock settings rather than average clock settings. In this case, signal <b>507</b> represents the optimum or another clock setting with no ISI for each pin. The storage of the optimum clock setting in this register would be controlled by the signal &#x201c;reference enable.&#x201d; This reference enable signal may be generated by the TCO centering control logic circuit. </p>
+<p id="p-0069" num="0073"> The TCO center reference setting circuit <b>514</b> generates a signal <b>509</b> which is subtracted from the output of calculator <b>513</b>. As previously indicated, the resulting difference signal <b>550</b>, labeled G[2:0], is the clock setting offset from the reference clock setting which yields the greatest TCO margin for a given bit pattern. G[2:0] is the value stored in the GLUT and then later in the LLUTs. </p>
+<p id="p-0070" num="0074"> Multiplexer <b>540</b> selects one of a plurality of predetermined time delays from DLL delay line <b>25</b>. This selection is made based on the clock select signal <b>530</b> output from latch <b>511</b>. Select signal <b>530</b> may therefore select which of the time delays from DLL line <b>25</b> is used to control transfer of the output data stream onto the bus. AND gate <b>538</b> logically combines the time delay value <b>560</b> output from MUX <b>540</b> with an inverted value of a transmit clock signal <b>535</b>. The resulting signal controls the output of the data stream from flip-flop <b>570</b>. </p>
+<p id="p-0071" num="0075"> <figref idref="DRAWINGS">FIG. 9</figref> shows one possible implementation of the error checking logic circuit <b>37</b> in <figref idref="DRAWINGS">FIG. 1</figref> used to process data received from the bus through the side-band pin, e.g., during receive mode. This circuit includes an error checking logic unit <b>610</b>, an error side-band pin <b>620</b>, and a master latch controller <b>630</b>. In operation, the error checking logic unit <b>610</b> receives data from the pattern generator. This may be the same data pattern that is transmitted out from the driving agent. The receiving agent compares the data received to values obtained from the pattern generator. </p>
+<p id="p-0072" num="0076"> Also, in logic unit <b>610</b>, the incoming data is synchronized with the receiver clock and compared against the pattern generator data. The data should match, and an error bit is generated if they do not. The error bit may be generated, for example, based on an XOR operation on the data patterns. </p>
+<p id="p-0073" num="0077"> Once the error bit is generated, it is drive back to the transmitter and into master latch control circuit <b>630</b>, which, in turn, controls the TCO centering logic. The master latch control circuit receives the &#x201c;done&#x201d; signal from counter <b>410</b>, and then de-asserts the latch <b>1</b> enable signal, the latch <b>2</b> enable signal, and the increment counter in response. More specifically, when the error bit changes from Pass to Fail, the latch <b>1</b> enable signal is de-asserted. When the error bit changes from Fail to Pass, the latch <b>2</b> enable signal is de-asserted. And when the error bit changes from Pass to Fail, the increment counter is de-asserted. (The latch <b>1</b> enable signal corresponds to signal <b>502</b>, t latch <b>2</b> enable signal corresponds to signal <b>506</b>.) </p>
+<p id="p-0074" num="0078"> The master latch control circuit also generates a &#x201c;Global Done&#x201d; signal. This signal indicates that the transmitter agent GLUT is done updating and that the transmitter and receiver agents can now reverse roles. The LLUT is then updated to based on the GLUT output. </p>
+<p id="p-0075" num="0079"> <figref idref="DRAWINGS">FIG. 10A</figref> is a flow chart showing blocks included in a method for performing phase equalization in accordance with one embodiment of the present invention. The method includes detecting at least one bit pattern on a signal line, which, for example, may be one of a plurality of data bus lines. (B<b>650</b>). A phase-shift value corresponding to the bit pattern is obtained. (B<b>651</b>). A phase-shift setting may be determined based on the phase-shift value (B<b>652</b>). One of a plurality of delayed signals (e.g., clock signals) are selected based on the phase-shift setting. (B<b>653</b>). Transmission of data on the signal line is performed based on the selected one of the delayed signals. (B<b>654</b>). And, inter-symbol interference is suppressed based on this delayed transmission. (B<b>655</b>). </p>
+<p id="p-0076" num="0080"> <figref idref="DRAWINGS">FIG. 10B</figref> is a flow chart showing blocks which may be used to detect a bit pattern on a signal line which, for example, may correspond to a data bus line. This may be accomplished by storing bit values transmitted on the signal line in, for example, the chain of flip-flops shown in <figref idref="DRAWINGS">FIG. 2</figref>. (B<b>661</b>). The stored values are then analyzed to detect the bit pattern, for example, based on the logic circuits also shown in <figref idref="DRAWINGS">FIG. 2</figref>. (B<b>662</b>). </p>
+<p id="p-0077" num="0081"> <figref idref="DRAWINGS">FIG. 10C</figref> is a flow chart showing blocks which may be used to obtain phase-shift values in <figref idref="DRAWINGS">FIG. 10A</figref>. These blocks include storing a local look-up table of phase-shift values in association with a respective number of predetermined bit patterns. (B<b>671</b>). A phase-shift value is then output from the local look-up table corresponding to the detected bit pattern. (B<b>672</b>). </p>
+<p id="p-0078" num="0082"> <figref idref="DRAWINGS">FIG. 10D</figref> is a flow chart showing blocks which may be used to update phase-shift values stored in the local look-up table mentioned in <figref idref="DRAWINGS">FIG. 10C</figref>. These blocks include applying test patterns on a side-band pin of the data bus. (B<b>681</b>). Inter-symbol interference build-up is detected based on feedback received on the side-band pin in response to the applied test patterns. (B<b>682</b>). Phase-shift values are calculated based on the feedback (B<b>683</b>), and these values are then stored in seriatim in a global look-up table (B<b>684</b>). The local look-up table is then updated with the values stored in the global look-up table. (B<b>685</b>). </p>
+<p id="p-0079" num="0083"> <figref idref="DRAWINGS">FIG. 11</figref> shows a system which includes a processor <b>700</b>, a power supply <b>710</b>, and a memory <b>720</b> which, for example, may be a random-access memory. The processor includes an arithmetic logic unit <b>702</b> and an internal cache <b>704</b>. The system may also include a graphical interface <b>730</b>, a chipset <b>740</b>, a cache <b>750</b>, a network interface <b>760</b>, and a wireless communications unit <b>770</b>, which may be incorporated within the network interface. While these additional circuits are shown as residing outside the processor block, in alternative embodiments one or more of these circuits may reside on the same chip as the processor, which, for example, may be a microprocessor. In these instances, the associated connections would also be included on chip. Also, alternatively or additionally, a wireless communications unit <b>780</b> may be coupled to or included on chip with the processor, and a direct connection may exist between memory <b>720</b> and the processor as well. Further, the power supply may be a battery in one embodiment and an AC/DC converter in another embodiment. </p>
+<p id="p-0080" num="0084"> An equalization circuit in accordance with any of the embodiments of the present invention may be used on any GTL front-side bus. In <figref idref="DRAWINGS">FIG. 11</figref>, the processor and the chipset may communicate on a bus and transceiving entities, each equipped with communicating equalization circuits. </p>
+<p id="p-0081" num="0085"> The processor may be a microprocessor or any other type of processor, and may be included on a chip die with all or any combination of the remaining features, or one or more of the remaining features may be electrically coupled to the microprocessor die through known connections and interfaces. Also, the connections that are shown are merely illustrative, as other connections between or among the elements depicted may exist depending, for example, on chip platform, functionality, or application requirements. </p>
+<p id="p-0082" num="0086"> Any reference in this specification to an &#x201c;embodiment&#x201d; means that a particular feature, structure, or characteristic described in connection with the embodiment is included in at least one embodiment of the invention. The appearances of such phrases in various places in the specification are not necessarily all referring to the same embodiment. Further, when a particular feature, structure, or characteristic is described in connection with any embodiment, it is submitted that it is within the purview of one skilled in the art to effect such feature, structure, or characteristic in connection with other ones of the embodiments. </p>
+<p id="p-0083" num="0087"> Furthermore, for ease of understanding, certain functional blocks may have been delineated as separate blocks; however, these separately delineated blocks should not necessarily be construed as being in the order in which they are discussed or otherwise presented herein. For example, some blocks may be able to be performed in an alternative ordering, simultaneously, etc. </p>
+<p id="p-0084" num="0088"> Although the present invention has been described herein with reference to a number of illustrative embodiments, it should be understood that numerous other modifications and embodiments can be devised by those skilled in the art that will fall within the spirit and scope of the principles of this invention. More particularly, reasonable variations and modifications are possible in the component parts and/or arrangements of the subject combination arrangement within the scope of the foregoing disclosure, the drawings and the appended claims without departing from the spirit of the invention. In addition to variations and modifications in the component parts and/or arrangements, alternative uses will also be apparent to those skilled in the art. </p>
+<?detailed-description description="Detailed Description" end="tail"?>
+</description>
+<us-claim-statement>We claim: </us-claim-statement>
+<claims id="claims">
+<claim id="CLM-00001" num="00001">
+<claim-text><b>1</b>. An equalization circuit, comprising: 
+<claim-text>a detector to detect at least one bit pattern on a signal line; and </claim-text>
+<claim-text>a transmit offset circuit to determine a phase-shift setting corresponding to the bit pattern detected by the detector, the phase-shift setting to control a delay in transmission of data on the signal line to help reduce inter-symbol interference. </claim-text>
+</claim-text>
+ </claim>
+<claim id="CLM-00002" num="00002">
+<claim-text><b>2</b>. The circuit of <claim-ref idref="CLM-00001">claim 1</claim-ref>, wherein the detector includes: 
+<claim-text>a plurality of storage circuits to store respective values of past bits transmitted on the signal line; and </claim-text>
+<claim-text>at least one logic circuit to detect the bit pattern based on the values stored in at least some of the storage circuits. </claim-text>
+</claim-text>
+ </claim>
+<claim id="CLM-00003" num="00003">
+<claim-text><b>3</b>. The circuit of <claim-ref idref="CLM-00001">claim 1</claim-ref>, wherein the transmit offset circuit is to select one of a plurality of different delayed signals based on the phase-shift setting, the selected delayed signal to control the delay in transmission of the data on the signal line. </claim-text>
+ </claim>
+<claim id="CLM-00004" num="00004">
+<claim-text><b>4</b>. The circuit of <claim-ref idref="CLM-00003">claim 3</claim-ref>, wherein the different delayed signals are clock signals delayed by different amounts of time. </claim-text>
+ </claim>
+<claim id="CLM-00005" num="00005">
+<claim-text><b>5</b>. The circuit of <claim-ref idref="CLM-00003">claim 3</claim-ref>, further comprising: 
+<claim-text>a latch to output the data for transmission on the signal line based on the selected delayed signal. </claim-text>
+</claim-text>
+ </claim>
+<claim id="CLM-00006" num="00006">
+<claim-text><b>6</b>. The circuit of <claim-ref idref="CLM-00001">claim 1</claim-ref>, wherein the signal line forms a bit line in a data bus. </claim-text>
+ </claim>
+<claim id="CLM-00007" num="00007">
+<claim-text><b>7</b>. The circuit of <claim-ref idref="CLM-00006">claim 6</claim-ref>, wherein the data bus is coupled to a microprocessor. </claim-text>
+ </claim>
+<claim id="CLM-00008" num="00008">
+<claim-text><b>8</b>. The circuit of <claim-ref idref="CLM-00001">claim 1</claim-ref>, further comprising: 
+<claim-text>a circuit to associate a plurality of phase-shift values with predetermined bit patterns, wherein the associating circuit is to output a phase shift-value corresponding to the bit pattern detected by the detector and wherein the time offset circuit is to determine the phase-shift setting based on the phase-shift value output from the associating circuit. </claim-text>
+</claim-text>
+ </claim>
+<claim id="CLM-00009" num="00009">
+<claim-text><b>9</b>. The circuit of <claim-ref idref="CLM-00008">claim 8</claim-ref>, further comprising: 
+<claim-text>an adaptive circuit to set the phase-shift values in the associating circuit based on inter-symbol interference build-up on the signal line. </claim-text>
+</claim-text>
+ </claim>
+<claim id="CLM-00010" num="00010">
+<claim-text><b>10</b>. The circuit of <claim-ref idref="CLM-00009">claim 9</claim-ref>, wherein the adaptive circuit is to determine the inter-symbol interference build-up on the signal line by applying test patterns to another signal line. </claim-text>
+ </claim>
+<claim id="CLM-00011" num="00011">
+<claim-text><b>11</b>. The circuit of <claim-ref idref="CLM-00010">claim 10</claim-ref>, wherein said another signal line is coupled to a side-band pin of a data bus which includes the signal line. </claim-text>
+ </claim>
+<claim id="CLM-00012" num="00012">
+<claim-text><b>12</b>. The circuit of <claim-ref idref="CLM-00010">claim 10</claim-ref>, wherein the adaptive circuit includes: 
+<claim-text>a pattern generator to form the test patterns; </claim-text>
+<claim-text>an offset calculator to calculate the phase-shift values based on feedback received in response to transmission of the test patterns on said another signal line; and </claim-text>
+<claim-text>another circuit to store the phase-shift values calculated by the offset calculator. </claim-text>
+</claim-text>
+ </claim>
+<claim id="CLM-00013" num="00013">
+<claim-text><b>13</b>. The circuit of <claim-ref idref="CLM-00012">claim 12</claim-ref>, wherein said another circuit transmits the phase-shift values for storage to the associating circuit. </claim-text>
+ </claim>
+<claim id="CLM-00014" num="00014">
+<claim-text><b>14</b>. The circuit of <claim-ref idref="CLM-00001">claim 1</claim-ref>, further comprising: 
+<claim-text>centering controller to determine a window of clock offset values, wherein one of the clock offset values corresponds to the phase-shift setting for the bit pattern detected by the detector. </claim-text>
+</claim-text>
+ </claim>
+<claim id="CLM-00015" num="00015">
+<claim-text><b>15</b>. A method, comprising: 
+<claim-text>detecting at least one bit pattern on a signal line; </claim-text>
+<claim-text>determining a phase-shift setting which corresponds to the detected bit pattern; and </claim-text>
+<claim-text>controlling a delay in transmission of data on the signal line based on the phase-shift setting, said transmission delay to help reduce inter-symbol interference. </claim-text>
+</claim-text>
+ </claim>
+<claim id="CLM-00016" num="00016">
+<claim-text><b>16</b>. The method of <claim-ref idref="CLM-00015">claim 15</claim-ref>, wherein detecting includes: 
+<claim-text>storing respective values of past bits transmitted on the signal line; and </claim-text>
+<claim-text>detecting the bit pattern based on at least some of the stored values of past bits. </claim-text>
+</claim-text>
+ </claim>
+<claim id="CLM-00017" num="00017">
+<claim-text><b>17</b>. The method of <claim-ref idref="CLM-00015">claim 15</claim-ref>, wherein controlling includes: 
+<claim-text>selecting one of a plurality of different delayed signals based on the phase-shift setting, the selected delayed signal is to control the delay in transmission of the data on the signal line. </claim-text>
+</claim-text>
+ </claim>
+<claim id="CLM-00018" num="00018">
+<claim-text><b>18</b>. The method of <claim-ref idref="CLM-00015">claim 15</claim-ref>, wherein the signal line forms a bit line in a data bus. </claim-text>
+ </claim>
+<claim id="CLM-00019" num="00019">
+<claim-text><b>19</b>. The method of <claim-ref idref="CLM-00015">claim 15</claim-ref>, wherein determining includes: 
+<claim-text>obtaining a phase-shift value corresponding to the detected bit pattern; and </claim-text>
+<claim-text>determining the phase-shift setting based on the phase-shift value, wherein the phase shift value is obtained from a look-up table that stores a plurality of phase-shift values in association with a respective number of bit patterns. </claim-text>
+</claim-text>
+ </claim>
+<claim id="CLM-00020" num="00020">
+<claim-text><b>20</b>. The method of <claim-ref idref="CLM-00019">claim 19</claim-ref>, further comprising: 
+<claim-text>detecting inter-symbol interference build-up on the signal line; and </claim-text>
+<claim-text>setting the phase-shift values in the look-up table based on the detected inter-symbol interference build-up. </claim-text>
+</claim-text>
+ </claim>
+<claim id="CLM-00021" num="00021">
+<claim-text><b>21</b>. The method of <claim-ref idref="CLM-00020">claim 20</claim-ref>, wherein detecting inter-symbol interference build-up includes: 
+<claim-text>applying test patterns to another signal line; and </claim-text>
+<claim-text>detecting the inter-symbol interference build-up based on feedback received on said another signal line in response to the applied test patterns. </claim-text>
+</claim-text>
+ </claim>
+<claim id="CLM-00022" num="00022">
+<claim-text><b>22</b>. The method of <claim-ref idref="CLM-00021">claim 21</claim-ref>, wherein said another signal line is coupled to a side-band pin of a data bus which includes the signal line. </claim-text>
+ </claim>
+<claim id="CLM-00023" num="00023">
+<claim-text><b>23</b>. The method of <claim-ref idref="CLM-00021">claim 21</claim-ref>, further comprising: 
+<claim-text>calculating the phase-shift values based on the feedback received on said another signal line; and </claim-text>
+<claim-text>storing the phase-shift values in another look-up table as the phase-shift values are calculated. </claim-text>
+</claim-text>
+ </claim>
+<claim id="CLM-00024" num="00024">
+<claim-text><b>24</b>. The method of <claim-ref idref="CLM-00023">claim 23</claim-ref>, further comprising: 
+<claim-text>loading the phase-shift values in said another look-up table into the look-up table when after a predetermined number of the phase-shift values have been calculated. </claim-text>
+</claim-text>
+ </claim>
+<claim id="CLM-00025" num="00025">
+<claim-text><b>25</b>. The method of <claim-ref idref="CLM-00015">claim 15</claim-ref>, further comprising: 
+<claim-text>centering a window of clock offset values, </claim-text>
+<claim-text>wherein one of the clock offset values corresponds to the phase-shift setting corresponding to the detected bit pattern. </claim-text>
+</claim-text>
+ </claim>
+<claim id="CLM-00026" num="00026">
+<claim-text><b>26</b>. A system, comprising: 
+<claim-text>a first circuit; and </claim-text>
+<claim-text>a second circuit including an equalization circuit having: 
+<claim-text>(a) a detector to detect at least one bit pattern on a signal line coupled between the first and second circuits; and </claim-text>
+<claim-text>(b) a transmit offset circuit to determine a phase-shift setting corresponding to the bit pattern detected by the detector, the phase-shift setting to control a delay in transmission of data on the signal line to help reduce inter-symbol interference. </claim-text>
+</claim-text>
+</claim-text>
+ </claim>
+<claim id="CLM-00027" num="00027">
+<claim-text><b>27</b>. The system of <claim-ref idref="CLM-00026">claim 26</claim-ref>, wherein the first and second circuits are selected from the group consisting of a processor, a cache, a power supply, a graphical interface, an arithmetic logic unit, a chipset, a memory, a network interface, and a wireless communications unit. </claim-text>
+ </claim>
+<claim id="CLM-00028" num="00028">
+<claim-text><b>28</b>. The system of <claim-ref idref="CLM-00026">claim 26</claim-ref>, wherein the first circuit is coupled to a battery.</claim-text>
+ </claim>
+</claims>
+</us-patent-application>

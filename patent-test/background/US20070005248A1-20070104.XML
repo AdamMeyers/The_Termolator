@@ -1,0 +1,299 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE us-patent-application SYSTEM "us-patent-application-v42-2006-08-23.dtd" [ ]>
+<us-patent-application lang="EN" dtd-version="v4.2 2006-08-23" file="US20070005248A1-20070104.XML" status="PRODUCTION" id="us-patent-application" country="US" date-produced="20061221" date-publ="20070104">
+<us-bibliographic-data-application lang="EN" country="US">
+<publication-reference>
+<document-id>
+<country>US</country>
+<doc-number>20070005248</doc-number>
+<kind>A1</kind>
+<date>20070104</date>
+</document-id>
+</publication-reference>
+<application-reference appl-type="utility">
+<document-id>
+<country>US</country>
+<doc-number>11171001</doc-number>
+<date>20050629</date>
+</document-id>
+</application-reference>
+<us-application-series-code>11</us-application-series-code>
+<classifications-ipcr>
+<classification-ipcr>
+<ipc-version-indicator><date>20060101</date></ipc-version-indicator>
+<classification-level>A</classification-level>
+<section>G</section>
+<class>06</class>
+<subclass>F</subclass>
+<main-group>17</main-group>
+<subgroup>10</subgroup>
+<symbol-position>F</symbol-position>
+<classification-value>I</classification-value>
+<action-date><date>20070104</date></action-date>
+<generating-office><country>US</country></generating-office>
+<classification-status>B</classification-status>
+<classification-data-source>H</classification-data-source>
+</classification-ipcr>
+</classifications-ipcr>
+<classification-national>
+<country>US</country>
+<main-classification>701301000</main-classification>
+</classification-national>
+<invention-title id="d0e102">Data reconstruction in link-based interconnects</invention-title>
+<parties>
+<applicants>
+<applicant sequence="00" app-type="applicant-inventor" designation="us-only">
+<addressbook>
+<last-name>Averill</last-name>
+<first-name>Gregory</first-name>
+<middle-name>S.</middle-name>
+<address>
+<city>Fort Collins</city>
+<state>CO</state>
+<country>US</country>
+</address>
+</addressbook>
+<nationality>
+<country>US</country>
+</nationality>
+<residence>
+<country>US</country>
+</residence>
+</applicant>
+<applicant sequence="01" app-type="applicant-inventor" designation="us-only">
+<addressbook>
+<last-name>Apparao</last-name>
+<first-name>Padmashree</first-name>
+<middle-name>K.</middle-name>
+<address>
+<city>Portland</city>
+<state>OR</state>
+<country>US</country>
+</address>
+</addressbook>
+<nationality>
+<country>US</country>
+</nationality>
+<residence>
+<country>US</country>
+</residence>
+</applicant>
+</applicants>
+<correspondence-address>
+<addressbook>
+<name>RYDER IP LAW;C/O INTELLEVATE</name>
+<address>
+<address-1>P. O. BOX 52050</address-1>
+<city>MINNEAPOLIS</city>
+<state>MN</state>
+<postcode>55402</postcode>
+<country>US</country>
+</address>
+</addressbook>
+</correspondence-address>
+</parties>
+<assignees>
+<assignee>
+<orgname>Intel Corporation</orgname>
+<role>02</role>
+</assignee>
+</assignees>
+</us-bibliographic-data-application>
+<abstract id="abstract">
+<p id="p-0001" num="0000">In general, in one aspect, the disclosure describes an apparatus including a receiver to receive a data packet as a plurality of data vectors over an interconnect. The interconnect includes a plurality of lanes. The apparatus also includes an error detector to detect errors in the data vectors. A buffer is used to store the data vectors received error free. A processor requests a retransmission of the packet if data vectors making up the packet are received with errors. The retransmission of the data packet includes at least a subset of the data vectors being transmitted on different lanes. An assembler reconstructs the data packet once the plurality of data vectors making up the data packet are stored in the buffer. The data packet can be reconstructed even if it was never sent correctly in a single transmission. </p>
+</abstract>
+<drawings id="DRAWINGS">
+<figure id="figure-D00000" num="00000">
+<img id="EMI-D00000" he="118.24mm" wi="162.56mm" file="US20070005248A1-20070104-D00000.TIF" alt="embedded image" img-content="drawing" img-format="tif"/>
+</figure>
+<figure id="figure-D00001" num="00001">
+<img id="EMI-D00001" he="225.64mm" wi="178.99mm" file="US20070005248A1-20070104-D00001.TIF" alt="embedded image" img-content="drawing" img-format="tif"/>
+</figure>
+<figure id="figure-D00002" num="00002">
+<img id="EMI-D00002" he="229.45mm" wi="194.06mm" file="US20070005248A1-20070104-D00002.TIF" alt="embedded image" img-content="drawing" img-format="tif"/>
+</figure>
+<figure id="figure-D00003" num="00003">
+<img id="EMI-D00003" he="222.25mm" wi="165.69mm" file="US20070005248A1-20070104-D00003.TIF" alt="embedded image" img-content="drawing" img-format="tif"/>
+</figure>
+<figure id="figure-D00004" num="00004">
+<img id="EMI-D00004" he="215.90mm" wi="173.91mm" orientation="landscape" file="US20070005248A1-20070104-D00004.TIF" alt="embedded image" img-content="drawing" img-format="tif"/>
+</figure>
+<figure id="figure-D00005" num="00005">
+<img id="EMI-D00005" he="231.48mm" wi="184.74mm" orientation="landscape" file="US20070005248A1-20070104-D00005.TIF" alt="embedded image" img-content="drawing" img-format="tif"/>
+</figure>
+<figure id="figure-D00006" num="00006">
+<img id="EMI-D00006" he="234.19mm" wi="186.69mm" file="US20070005248A1-20070104-D00006.TIF" alt="embedded image" img-content="drawing" img-format="tif"/>
+</figure>
+<figure id="figure-D00007" num="00007">
+<img id="EMI-D00007" he="206.93mm" wi="172.30mm" orientation="landscape" file="US20070005248A1-20070104-D00007.TIF" alt="embedded image" img-content="drawing" img-format="tif"/>
+</figure>
+</drawings>
+<description id="description">
+<?summary-of-invention description="Summary of Invention" end="lead"?>
+<heading level="2" id="h-0001">BACKGROUND </heading>
+<p id="p-0002" num="0001"> High-speed link-based interconnects transfer large amounts of data at high speeds from one location (a transmitter) to another (a receiver). The data being transmitted over the links may have multiple parameters (speeds, protocols, size, quality of service). In order to meet the high-speed requirements, the transmitter divides the data (e.g., a packet) into smaller components (e.g., bits, bytes, segments) and transmits the smaller components over multiple lanes (channels). It may take multiple cycles to transmit the packet over the lanes. After transmitting the smaller components one or more parity bits (or bits of some more complex error coding scheme) may be transmitted on each lane for error checking. The receiver receives the smaller components from each lane and stores them until the data packet is received in full. The receiver utilizes the parity bits to determine if the data received on each lane (e.g., data vector) or across lanes (for more complex error detection schemes) was transmitted correctly. If there are no errors in any of the data vectors the packet is put back together. If there were errors in one or more of the lanes, the erroneous data vectors (and possibly all for the data vectors associated with the data packet) may be discarded and the data packet may be retransmitted. The retransmission of the packet is normally retried a predefined number of times. </p>
+<p id="p-0003" num="0002"> Errors in data vectors may be caused by either transient or permanent failures in the lanes that transmitted them. Transient failures occur intermittently where permanent errors occur more regularly/consistently or constantly. The number of errors per lane is monitored and if a certain threshold (or one of several thresholds) is achieved the lane may be deemed to have a permanent failure. When errors occur on a lane (or lanes) but a threshold number of errors have not been surpassed (transient failures), the data packet is retransmitted as it is assumed that the error will not be maintained and a successful retry can be achieved. If a certain lane (or lanes) surpasses a threshold (permanent failures) the lane (or a plurality of lanes) may be shut down while the lane is fixed. When a lane or lanes are shut down for repair, the bandwidth available is reduced accordingly. It is not uncommon to shut down half of the available lanes (e.g., 4 out of 8) in order to repair or replace a faulty lane or lanes. </p>
+<p id="p-0004" num="0003"> If a transient failure is maintained for several cycles, the same data packet may be unsuccessfully transmitted several times with the same data vector being received in error each time. As the speed of data transmission continues to increase, it is likely that the number of errors (whether permanent or transient) experienced will increase. Retransmitting data on faulty lanes or reducing the bandwidth available in order to correct faulty lanes degrade performance. </p>
+<?summary-of-invention description="Summary of Invention" end="tail"?>
+<?brief-description-of-drawings description="Brief Description of Drawings" end="lead"?>
+<heading level="2" id="h-0002">BRIEF DESCRIPTION OF THE DRAWINGS </heading>
+<p id="p-0005" num="0004"> The features and advantages of the various embodiments will become apparent from the following detailed description in which: </p>
+<p id="p-0006" num="0005"> <figref idref="DRAWINGS">FIG. 1</figref> illustrates an example system using a link based interconnect, according to one embodiment; </p>
+<p id="p-0007" num="0006"> <figref idref="DRAWINGS">FIG. 2</figref> illustrates an example transmission scenario for a data packet over a link-based interconnect having intermittent failures, according to one embodiment; </p>
+<p id="p-0008" num="0007"> <figref idref="DRAWINGS">FIG. 3A</figref> illustrates an example transmission scenario for a data packet over a link-based interconnect having intermittent failures on different lanes, according tone embodiment; </p>
+<p id="p-0009" num="0008"> <figref idref="DRAWINGS">FIG. 3B</figref> illustrates an example transmission scenario for a data packet over a link-based interconnect having sustained intermittent/permanent failures, according tone embodiment; </p>
+<p id="p-0010" num="0009"> <figref idref="DRAWINGS">FIG. 4</figref> illustrates an example rotating retransmission scenario for a data packet over a link-based interconnect, according tone embodiment; </p>
+<p id="p-0011" num="0010"> <figref idref="DRAWINGS">FIG. 5</figref> illustrates an example link-based interconnect having multiple lane failures, according tone embodiment; </p>
+<p id="p-0012" num="0011"> <figref idref="DRAWINGS">FIG. 6</figref> illustrates an example transmitter used for link-based interconnects, according to one embodiment; </p>
+<p id="p-0013" num="0012"> <figref idref="DRAWINGS">FIG. 7</figref> illustrates an example receiver used for link-based interconnects, according to one embodiment; </p>
+<p id="p-0014" num="0013"> <figref idref="DRAWINGS">FIG. 8</figref> illustrates an example flowchart for transmitting/retransmitting data over a link-based interconnect, according to one embodiment; and </p>
+<p id="p-0015" num="0014"> <figref idref="DRAWINGS">FIG. 9</figref> illustrates an example store-and-forward device with serial links, according to one embodiment. </p>
+<?brief-description-of-drawings description="Brief Description of Drawings" end="tail"?>
+<?detailed-description description="Detailed Description" end="lead"?>
+<heading level="2" id="h-0003">DETAILED DESCRIPTION </heading>
+<p id="p-0016" num="0015"> <figref idref="DRAWINGS">FIG. 1</figref> illustrates an example system <b>100</b> utilizing a link-based interconnect <b>110</b> to connect a first device (transmitter) <b>120</b> to a second device (receiver) <b>130</b>. The interconnect <b>110</b> includes a plurality of lanes (channels) <b>140</b> connecting the transmitter <b>120</b> to the receiver <b>130</b>. Data (packets) being transmitted from the transmitter <b>120</b> to the receiver <b>130</b> are striped across the lanes. Striping is the process of breaking a large packet into smaller pieces (chunks) and transmitting the smaller pieces across multiple lanes. The smaller pieces may be bits, segments, bytes, or words. For example, an 8-byte packet may be divided into 64 1-bit chunks, 16 4-bit chucks, 8 1-byte chunks, or 2 4-byte chunks (words). </p>
+<p id="p-0017" num="0016"> If an 8 lane interconnect <b>110</b> was utilized to transmit the 8-byte packet 1 bit per lane per cycle, 1 byte would be transmitted each cycle and it would take 8 cycles to transmit the entire packet. Error checking schemes may be transmitted after the data is transmitted. For example, the error detection scheme may be transmitted during clock cycles <b>9</b> and <b>10</b>. The data received on a lane forming a data vector (e.g., bit vector) for the lane. In the above example, a bit vector would consist of 8 bits of data and 2 error checking bits. </p>
+<p id="p-0018" num="0017"> The error checking scheme may be parity bits, or may be a more complex error checking scheme that may be calculated over multiple lanes or for the packet (e.g., cyclic redundancy codes (CRCs)). </p>
+<p id="p-0019" num="0018"> If the 8 lane interconnect <b>110</b> was utilized to transmit the 8-byte packet 4-bits per lane per cycle, 4 bytes would be transmitted each cycle and it would take 2 cycles to transmit the entire packet. If the 8 lane interconnect <b>110</b> was utilized to transmit the 8-byte packet 1 byte per lane per cycle, 8 bytes would be transmitted each cycle and it would take 1 cycle to transmit the entire packet. In one embodiment, the error checking scheme (e.g., parity bits) may be transmitted in a cycle after the data is transmitted (e.g., third cycle, second cycle). Alternatively, the error checking scheme may be appended to the data bits and transmitted each clock cycle. If the error checking scheme is transmitted each clock cycle it would be possible to check the data received each clock cycle rather than waiting for a complete data vector for the channel. If the error checking scheme is included with the data, the number of bits being transmitted in the cycle either needs to be expanded (e.g., 10 total bits, 8 data bits and 2 parity bits) or the number of data bits needs to be reduced by the number of parity bits (e.g., 8 total bits, 6 data bits and 2 parity bits). </p>
+<p id="p-0020" num="0019"> The receiver <b>130</b> receives the data vectors making up a data packet. The receiver <b>130</b> may include a buffer to hold a received data packet organized by the data vectors received per lane. The receiver <b>120</b> may use the error checking scheme to determine if the data vectors were transmitted and received correctly or were received in error. If one or more of the data vectors were received in error the data packet will need to be retransmitted. The receiver <b>130</b> may request the transmitter <b>120</b> to retry transmitting the packet. </p>
+<p id="p-0021" num="0020"> According to one embodiment, the receiver <b>130</b> may discard the data vectors making up the packet if one or more of the data vectors contained an error. In order for a packet to be received and reassembled, all the data vectors making up the packet have to be received correctly. If intermittent failures occur on at least one lane during transmission of a data packet, the data packet would not be received in full or capable of being reassembled. </p>
+<p id="p-0022" num="0021"> <figref idref="DRAWINGS">FIG. 2</figref> illustrates an example scenario of a data packet being transmitted over a link-based interconnect having intermittent failures. The packet is 2 bytes and the interconnect includes 4 lanes (lanes <b>0</b>-<b>3</b>). If 1 bit is transmitted per lane per clock cycle it would take 4 clock cycles (<b>1</b>-<b>4</b>) to transmit the packet (bits <b>0</b>-<b>15</b>). The bits may be transmitted in order over the lanes. For example, bits <b>0</b>-<b>3</b> over lanes <b>0</b>-<b>3</b> respectively during clock cycle <b>1</b>, bits <b>4</b>-<b>7</b> over lanes <b>0</b>-<b>3</b> during clock cycle <b>2</b>, bits <b>8</b>-<b>11</b> during clock cycle <b>3</b>, and bits <b>12</b>-<b>15</b> during clock cycle <b>4</b>. Parity bits may be added per lane after the transmission of the data (e.g., clock cycles <b>5</b> and <b>6</b>). </p>
+<p id="p-0023" num="0022"> The data vector (bit vector) for the lanes are checked for errors using the parity bits, once the packet is received by the receiver <b>130</b>. If an error occurred during transmission of any of the bits in the bit vector, the bit vector will contain errors that should be detected utilizing the parity bits. As illustrated, bit <b>1</b> that was transmitted on lane <b>1</b> during the first clock cycle and bit <b>15</b> that was transmitted on lane <b>3</b> during the fourth clock cycle were erroneously transmitted, so that the bit vector for lanes <b>1</b> and <b>3</b> would be in error. </p>
+<p id="p-0024" num="0023"> The bits and bit vectors are illustrated by bit number for ease of understanding and discussion. The bits would be 0s or 1s and the bit vectors would be a series of 0s and/or 1s (4 data bits followed by 2 parity bits). For example, the bit vector for lane <b>0</b> may be 0010<sub>&#x2014;</sub>10, where the first 4 bits are the data that will be used to reassemble the packet and the last two bits are the parity bits used to determine if there are any errors in the bit vector. The &#x201c;_&#x201d; is simply to easily distinguish the data and parity bits. </p>
+<p id="p-0025" num="0024"> <figref idref="DRAWINGS">FIG. 2</figref> was described with respect to a single bit being transmitted each cycle. As noted above the various embodiments described herein are not limited to single bit transmission per cycle. Rather, the data could be transmitted by segments (e.g., multiple bits) or bytes where the number would represent the segment number or the byte number and the data vector would be the combination of segments and/or bytes transmitted over a particular lane. For example, if 4 bits were transmitted each cycle followed by a single 4 bit parity sequence in cycle <b>5</b> (no cycle six), the data vector would consist of a total of 2 bytes of data and &#xbd; byte of parity (e.g., 0101<sub>&#x2014;</sub>1111<sub>&#x2014;</sub>0000<sub>&#x2014;</sub>1010<sub>&#x2014;</sub>1100). The &#x201c;_&#x201d; is simply to easily distinguish the data and/or parity bits that were transmitted during each cycle. In this example, the packet would be 8 bytes. </p>
+<p id="p-0026" num="0025"> It should also be noted that the parity bits (or other error detection scheme) may be included in the segment transmitted each clock cycle. When discussing different embodiments in the remainder of the disclosure, we will discuss with regard to single bits being transmitted each cycle and each lane transmitting a bit vector (the bits transmitted via the lane) for ease of understanding. However, the various embodiments are not limited thereby. </p>
+<p id="p-0027" num="0026"> According to one embodiment, when one or more data vectors that are part of a packet are received erroneously, the receiver may discard the packet and request retransmission of the packet. Once, a packet is received error free it will be assembled and processed. The receiver may request up to a predetermined number of retries to receive the packet error free. </p>
+<p id="p-0028" num="0027"> FIGS. <b>3</b>A-B illustrate example transmission/retransmissions of packets over an interconnect. The individual clock cycles, the chunks of data sent per cycle, and the error detection schemes transmitted that may make up the transmission of the packet are not shown. Additionally, for simplicity only the data vector numbers are shown. As described above, the data vectors would be some combination of bits. </p>
+<p id="p-0029" num="0028"> <figref idref="DRAWINGS">FIG. 3A</figref> illustrates an example scenario of the transmission of a data packet over a link-based interconnect having intermittent failures on different lanes. During the first transmission attempt, bit vector <b>2</b> transmitted on lane <b>2</b> has errors so that the packet will not be able to be reassembled and retransmission will be requested. During the second transmission attempt, bit vector <b>7</b> transmitted on lane <b>7</b> has errors so that the packet will not be able to be reassembled and retransmission will be requested. During the third transmission attempt, bit vector <b>4</b> transmitted on lane <b>4</b> has errors so that the packet will not be able to be reassembled. As illustrated the transmission of the packet failed three times due to intermittent failures on different lanes. During each transmission attempt <b>7</b> of the 8 bit vectors were received error free. However, the entire packet was never received error free. </p>
+<p id="p-0030" num="0029"> According to one embodiment, the receiver <b>130</b> maintains the bit vectors that were received correctly for each packet and after all of the data vectors have been received correctly reassembles the data packet. Using the example of <figref idref="DRAWINGS">FIG. 3A</figref>, during the first transmission of the data packet <b>7</b> of the 8 bit vectors making up the packet would be received correctly (vector <b>2</b> would be discarded as it was received in error). During the second transmission, the faulty bit vector (vector <b>2</b>) is received without error and the packet could then be reassembled. </p>
+<p id="p-0031" num="0030"> According to one embodiment, the transmitter <b>120</b> will retransmit the plurality of data vectors making up the packet over the same lanes. If there is a permanent failure (or a temporary failure that is maintained for several data transfer cycles) in one or more of the lanes <b>140</b> retransmitting the packet, the packet may continually be received in error and discarded because the data vector(s) being received via the lane(s) <b>140</b> in error will continue to have errors. </p>
+<p id="p-0032" num="0031"> <figref idref="DRAWINGS">FIG. 3B</figref> illustrates an example scenario of the transmission of a data packet over a link-based interconnect having sustained intermittent/permanent failures. The packet is divided into 8 data vectors that are transmitted over 8 lanes during a data transfer cycle. During each transmission cycle the bit vector transmitted over lane <b>1</b> is received in error so that the data packet can not be reassembled. The packet is likely to be retransmitted a predetermined number of times (e.g., 3) before the packet is discarded. The receiver <b>130</b> may monitor the number of failures on the particular lanes and may flag the lane as inoperative if a threshold number of failures are surpassed. If the lane is flagged as inoperative it may be shut down thus reducing the bandwidth available and degrading the interconnect. As discussed earlier, it is possible that multiple lanes (e.g., half) are shut down when a particular lane or lanes is declared inoperative. The inoperative lanes(s) may be eligible for repair or replacement. </p>
+<p id="p-0033" num="0032"> According to one embodiment, the transmitter <b>120</b> may rotate the order in which the data vectors making up a packet are retransmitted after a failure is detected on a lane. The rotation may simply be to rotate the bit vectors in either direction (e.g., one lane forward). Rotating the bit vectors enables a complete data packet to be received if an intermittent failure persists on a single lane or if the lane has a permanent failure. </p>
+<p id="p-0034" num="0033"> <figref idref="DRAWINGS">FIG. 4</figref> illustrates an example scenario of a rotating transmission of bit vectors in a data packet over a link-based interconnect having sustained intermittent/permanent failures. The packet is transmitted over 8 lanes. During each transmission the bit vector transmitted over lane <b>2</b> is received in error. During the first transmission bit vector <b>2</b> is received in error over lane <b>2</b>. During the second transmission each of the bit vectors is shifted forwarded a lane so that bit vector <b>1</b> is receiver in error on lane <b>2</b> and bit vector <b>2</b> is received correctly on lane <b>3</b>. The receiver has now received each of the bit vectors in the packet after two data transmissions of the packet even though there was a sustained error on one of the lanes. </p>
+<p id="p-0035" num="0034"> According to one embodiment, the rotation of the data vectors may be agreed to in advance so that when a particular bit vector is received in error (an error occurred on a particular lane) the transmitter <b>120</b> automatically knows to do a certain rotation once the receiver <b>130</b> informs the transmitter <b>120</b> that the data packet was received with an error (lane error occurred on may not be necessary). For example, if an error is detected during transmission of the packet the data vectors are rotated one lane forward for retransmission. </p>
+<p id="p-0036" num="0035"> According to another embodiment, the determination of the rotation may be made after the error is detected. The determination may be made by the receiver <b>130</b>, as the receiver <b>130</b> will know which bit vector (lane) failed for the current packet. Moreover, the receiver <b>130</b> may track which lanes have failed in the past and may make a decision regarding rotation based on the current failures as well as historical failures. Alternatively, the decision of how to rotate the bit vectors for retransmission may be made by the transmitter <b>120</b>. In order for the transmitter <b>120</b> to make the decision it will have to be apprised about which lane failed and possibility be apprised about previous failures. The decision may be made by both the receiver <b>130</b> and the transmitter <b>120</b> in conjunction with one another, with each providing some analysis to the decision. However the decision is made, both the transmitter <b>120</b> and the receiver <b>130</b> need to be aware of what the rotation is going to be so that the bit vectors are transmitted and received correctly and so that the packet can be accurately reassembled at the receiver <b>130</b>. </p>
+<p id="p-0037" num="0036"> The determination of what rotation to make may be simple or may be complex. For example, the rotation may be simply one lane in either direction or may be multiple lanes in either direction. The determination of what rotation to make may depend on the lane that failed and previous failures of the various lanes. For example, if lane <b>2</b> failed this time and lane <b>3</b> has a history of intermittent failures a decision could be made to rotate one lane backwards or two lanes forward so that the faulty data vector is transmitted on lane <b>1</b> or lane <b>4</b> and not lanes <b>2</b> or <b>3</b> for the retransmission. </p>
+<p id="p-0038" num="0037"> According to one embodiment, rather than a rotation a swap may be made where the bit vector transmitted over the faulty lane may be retransmitted on a lane that transmitted a valid bit vector and the valid bit vector may be retransmitted on the faulty lane while the other lanes are maintained the same. For example if lane <b>3</b> failed during transmission of a packet, the bit vector transmitted on lane <b>3</b> may be retransmitted on lane <b>7</b> and the bit vector transmitted on lane <b>7</b> may be retransmitted on lane <b>3</b> with the other lanes retransmitting the same bit vectors. The decision of which lane to swap may be predetermined (e.g., lanes <b>1</b> and <b>2</b> swap, lanes <b>3</b> and <b>4</b> swap) or may be made based on various parameters including previous lane failures. </p>
+<p id="p-0039" num="0038"> The rotation or swapping has been discussed with respect to single lane failures but is clearly not limited thereto. The same type of rotation or swapping could occur if multiple lane failures were detected. The rotation or swapping may be predefined or may be based on the circumstances surrounding the failure. With multiple lane failures, predetermined rotations or swaps become more complicated. For example, if two consecutive lanes failed and the predetermined rotation was one lane, the error in the first lane would be retransmitted on the second lane (possibly increasing the chance of another failure in the transmission of the packet if the second lane failed again). </p>
+<p id="p-0040" num="0039"> If the rotation is based on the circumstances, the rotation should be made in a manner that reduces the number of retries necessary to assemble a complete packet. An algorithm may be used to determine how to rotate the vectors. The algorithm may be simple or it may be complex. A simple algorithm may be able to process certain types of multiple failures so that a single retry transmits failed vectors over non-failed lanes. For example if two consecutive lanes failed, the simple algorithm could rotate the data vectors two lanes. Likewise if multiple failures occurred every other lane, a simple rotation of one lane would result in a retransmission of the failed vectors on non-failed lanes. </p>
+<p id="p-0041" num="0040"> <figref idref="DRAWINGS">FIG. 5</figref> illustrates an exemplary interconnect having multiple failed lanes. The interconnect has 8 lanes labeled A-H with lanes A, B and G having failures. As two consecutive lanes are failed a single lane rotation would result in a retransmission of the failed vector from lane A being retransmitted over failed lane B. A two-lane rotation would result in the retransmission of faulty data vectors from lanes A and B over error-free lanes C and D. However, a double rotation would result in faulty data vector from lane G being retransmitted on faulty lane A. The double rotation takes care of two of the three errors. A second retransmission of two lanes would result in the faulty data vector from lane G and then lane A being retransmitted over error-free lane C. The simple algorithm enabled the packet to be transmitted error free with three transmissions (two retransmissions). </p>
+<p id="p-0042" num="0041"> A complex algorithm may be able to analyze multiple failures spread across the interconnect and determine optimum rotation to have fewest retries to transmit complete packet. For example, a complex algorithm may be able to analyze the three failures of <figref idref="DRAWINGS">FIG. 5</figref> and determine that by doing a rotation of four lanes the failed vectors can be transmitted over an error-free lane with one retransmission. The faulty data vectors transmitted over lanes A, B and G would be retransmitted over lanes E, F and C respectively. </p>
+<p id="p-0043" num="0042"> The algorithm for determining the desired rotation for retransmission of a packet having multiple failed vectors may also take into account previous failures that have occurred. For example, if it is known that a certain lane has continually failed though it did not fail on the transmission of the specific packet the algorithm may avoid retransmitting on that lane. </p>
+<p id="p-0044" num="0043"> According to one embodiment, a swap may be performed for multiple failures rather than a rotation. The three failures of <figref idref="DRAWINGS">FIG. 5</figref> (lanes A, B, and G) may be swapped with any three of the five lanes that correctly transmitted data vectors while the other two lanes may stay the same. For example, lanes A and C, B and D, and G and H may swap while lanes E and F remain the same. The swapping may take into account previous failures that have been tracked. For example, if lanes C and D previously had a large amount of failures those lanes may be maintained the same and lanes E and F may instead swap with lanes A and B. </p>
+<p id="p-0045" num="0044"> The rotation or swapping of lanes enables data to be transmitted even if a lane or lanes have permanent failures as the data received in error on the first transmission can be rotated or swapped around the faulty lanes. Moreover, data can continue to be transmitted while a lane is repaired or replaced without the need for taking down multiple lanes (e.g., half) while the repair or replacement is performed. Without the rotation or swapping permanent failures would need top be corrected at which point the bandwidth of the system may be cut in half. Failures on the remaining half would further reduce bandwidth as additional retransmissions would be required. For example, in <figref idref="DRAWINGS">FIG. 5</figref> the rotation/swapping scenario enables the system to continue performing with only five lanes by rotating the data vectors over those 5 lanes. Without the rotation/swapping embodiments, the first 4 lanes may need to be taken off line to replace/repair lanes A and B leaving only 3 error free lanes to transmit data and the possibility of multiple retransmissions being necessary due to errors on lane G. </p>
+<p id="p-0046" num="0045"> <figref idref="DRAWINGS">FIG. 6</figref> illustrates an exemplary transmitter (transmission module) <b>600</b> for transmitting a packet over an interconnect. The transmitter <b>600</b> may include a stripper <b>610</b>, a plurality of error modules <b>620</b>, and a plurality of lane transmitters <b>630</b>. The stripper <b>610</b> receives a packet and divides the packet into a plurality of smaller pieces (e.g., bits, segments, bytes) and assigns the smaller pieces to specific lanes (channels) of a plurality of lanes. For example if an 8-byte (64-bit) packet is received, the packet may be divided into eight 1-byte (8-bit) chunks and each chunk may be associated with a specific lane. In this example, only a single clock cycle would be necessary to transmit the packet. If multiple cycles were necessary the data transmitted over each lane would be combined to create a data vector for the lane. </p>
+<p id="p-0047" num="0046"> The stripper <b>610</b> selects what smaller pieces (and data vectors) are transmitted on what lane. If retransmission of a packet is necessary the data vectors may be transmitted over the same lanes. Alternatively, the transmitter <b>600</b> may rotate or swap the data vectors that are transmitted on each lane. The stripper <b>610</b> may make the determination about rotating or swapping based on input from a receiver or it may be instructed how to rotate or swap from the receiver or from some other external function that may determine how to rotate or swap based on the results of previous transmissions of the packet. </p>
+<p id="p-0048" num="0047"> The error modules <b>620</b> add some type of error checking scheme in the form of additional bits to the end of each data vector. The error checking bits may be parity bits, cyclic redundancy code (CRC) bits, or other error checking scenarios. The error checking bits may be transmitted at the end of the data (e.g., during clock cycles <b>9</b>, <b>10</b> if the data was transmitted during cycles <b>1</b>-<b>8</b>) or may be transmitted with the data in each cycle. The data vectors are the data and error bits transmitted for a lane. The data vector (stripe) for each lane is then provided to an associated lane transmitter <b>630</b> for transmitting over the interconnect. There are a total of N transmitters <b>630</b>, one for each lane. </p>
+<p id="p-0049" num="0048"> <figref idref="DRAWINGS">FIG. 7</figref> illustrates an exemplary receiver (receiving module) <b>700</b> for receiving a packet over an interconnect. The receiver <b>700</b> may includes a plurality of lane receivers <b>710</b>, a plurality or error checkers <b>720</b>, and a destriper <b>730</b>. The line receivers <b>710</b> receive and buffer data over the lanes. The error modules <b>720</b> check to see if the data received is in error by utilizing the error detection bits. The data vectors are provided to a destriper <b>730</b> that takes the data vectors from each lane and reconstructs the packet. The destriper monitors if there was an error in any of the data vectors associated with the packet. If there was an error the data packet needs to be retransmitted. The receiver <b>700</b> will notify the transmitter of the failure. </p>
+<p id="p-0050" num="0049"> The receiver <b>700</b> may also include a buffer <b>740</b> that maintains the error-free data vectors for each packet. The buffer <b>740</b> may also monitor which lane the erroneous data vector was received on. The receiver <b>700</b> may also include a rotation determination module <b>750</b> that looks at the errors in the packet and determines how to rotate the data vectors on retransmission in order to limit the number of retries required. The buffer <b>740</b> may also record errors in lanes and compare to an error threshold. If the lane exceeds the error threshold it may be configured out of the system until it can be repaired. As previously noted, according to some embodiments an entire half of the available lanes may be deactivated while a repair is done. Shutting down half of the lanes allows for an easy determination of how to transmit the data with reduced bandwidth (send same amount of data over each lane but require twice as many data transmission cycles). The rotation determination module <b>750</b> may utilize the error status of each of the lanes in making a determination as to how to rotate or swap the data vectors when the packet is retransmitted. </p>
+<p id="p-0051" num="0050"> The transmitter and the receiver were discussed in separate figures as separate devices. As data transmission is likely bidirectional, a transceiver is likely located on each end of an interconnect and can either transmit or receive packets as data vectors over a plurality of lanes. </p>
+<p id="p-0052" num="0051"> <figref idref="DRAWINGS">FIG. 8</figref> illustrates an example flow chart for retransmission of packets with errors. Initially a packet to be transmitted over the interconnect is received <b>800</b>. The packet is divided into a plurality of smaller pieces and the smaller pieces are assigned to lanes <b>805</b>. The smaller pieces may be a single bit or may be larger but have a maximum size that is smaller than a packet. A data vector is the combination of smaller pieces that are transmitted over a lane. An error detection scheme (e.g., parity bits) is added to the data vectors <b>810</b>. The data vectors (including the error detection scheme) are transmitted over a plurality of lanes that are part of the interconnect <b>815</b>. The data vectors are received <b>820</b> and are checked for errors <b>825</b> using the error detection scheme. A determination is made as to whether there are any faulty data vectors in the packet <b>830</b>. If there were no faulty data vectors (<b>830</b> No), the data vectors are reassembled into the packet <b>890</b>. If there were errors in at least one of the data vectors (<b>830</b> yes) the valid data vectors are stored <b>835</b> and the errors are reviewed in order to determine a retransmission strategy <b>840</b>. The retransmission strategy may be rotate the data vectors one lane. </p>
+<p id="p-0053" num="0052"> Once the transmission strategy is determined a request for retransmission under those parameters is requested <b>845</b>. The data vectors are then retransmitted in accordance with the retransmission instructions <b>850</b>. The data vectors are received <b>855</b> and checked for errors <b>860</b>. The data vectors of most importance are those that were previously transmitted in error as the others will already be stored in a buffer (<b>835</b>) awaiting the missing vector(s) so that the packet can be reassembled. A determination will be made as to whether any of the previously erroneous data vectors still have errors <b>865</b>. If there are errors (<b>865</b> Yes), any new valid vectors will be stored <b>835</b> and the errors will be analyzed <b>840</b>. If there are no errors (<b>865</b> No) then the packet is reassembled <b>890</b>. </p>
+<p id="p-0054" num="0053"> The embodiments described above for rotating the transmission of faulty data vectors can be used in multiple environments. The lane rotation could be used in parallel high-speed links, can be used in serial interconnects and could be used in digital interconnects. For example, the various embodiments described above could be used on a processor. The lane rotation could be used to transmit data between functions on a processor, between a processor and memory (on die or off die), between processors, or between a processor and periphery. The processor could be part of a computer or could be part of high-speed telecommunications equipment (e.g., store-and-forward devices). </p>
+<p id="p-0055" num="0054"> <figref idref="DRAWINGS">FIG. 9</figref> illustrates an example system for transmitting data amongst various sources and destinations. The system may transmit the data using any number of protocols including Asynchronous Transfer Mode (ATM), Internet Protocol (IP), and Time Division Multiplexing (TDM). The data may be sent in variable length or fixed length blocks, such as cells, packets or frames. The communication lines used to transmit data may be fiber, copper, or other mediums. The system includes at least one store-and forward device <b>9005</b>, such as a router or packet switch. The store-and-forward device <b>900</b> includes a plurality of ingress modules <b>910</b> connected through a crossbar <b>920</b> to a plurality of egress modules <b>130</b>. The crossbar <b>920</b> may be electrical or optical. The ingress modules <b>910</b> and the egress modules <b>930</b> are typically two sides of a line card. The line cards may be Ethernet (e.g., Gigabit, 10 Base T), ATM, Fibre channel, Synchronous Optical Network (SONET), and Synchronous Digital Hierarchy (SDH), amongst others. A plurality of serial links <b>940</b> may be used to transmit data from the ingress modules <b>910</b> to the crossbar <b>920</b> and from the cross bar <b>920</b> to the egress modules <b>930</b>. The serial links <b>940</b> may utilize the rotation/swapping embodiments. The combination of the crossbar <b>920</b> and the serial links <b>940</b> on each side thereof may also utilize the rotation/swapping embodiments described herein. </p>
+<p id="p-0056" num="0055"> Although the various embodiments have been illustrated by reference to specific embodiments, it will be apparent that various changes and modifications may be made. Reference to &#x201c;one embodiment&#x201d; or &#x201c;an embodiment&#x201d; means that a particular feature, structure or characteristic described in connection with the embodiment is included in at least one embodiment. Thus, the appearances of the phrase &#x201c;in one embodiment&#x201d; or &#x201c;in an embodiment&#x201d; appearing in various places throughout the specification are not necessarily all referring to the same embodiment. </p>
+<p id="p-0057" num="0056"> Different implementations may feature different combinations of hardware, firmware, and/or software. It may be possible to implement, for example, some or all components of various embodiments in software and/or firmware as well as hardware, as known in the art. Embodiments may be implemented in numerous types of hardware, software and firmware known in the art, for example, integrated circuits, including ASICs and other types known in the art, printed circuit broads, components, etc. </p>
+<p id="p-0058" num="0057"> The various embodiments are intended to be protected broadly within the spirit and scope of the appended claims. </p>
+<?detailed-description description="Detailed Description" end="tail"?>
+</description>
+<us-claim-statement>What is claimed: </us-claim-statement>
+<claims id="claims">
+<claim id="CLM-00001" num="00001">
+<claim-text><b>1</b>. An apparatus comprising: 
+<claim-text>a receiver to receive a data packet as a plurality of data vectors over an interconnect, wherein the interconnect includes a plurality of lanes; </claim-text>
+<claim-text>an error detector to detect errors in the plurality of data vectors; </claim-text>
+<claim-text>a buffer to store the data vectors received error free; </claim-text>
+<claim-text>a processor to request a retransmission of the data packet if at least some subset of the plurality of data vectors have not been received error free, wherein the retransmission of the data packet includes at least a subset of the data vectors being transmitted on different lanes; and </claim-text>
+<claim-text>an assembler to reconstruct the data packet once the plurality of data vectors making up the data packet are stored in said buffer, wherein the data packet can be reconstructed even if it was never sent correctly in a single transmission. </claim-text>
+</claim-text>
+ </claim>
+<claim id="CLM-00002" num="00002">
+<claim-text><b>2</b>. The apparatus of <claim-ref idref="CLM-00001">claim 1</claim-ref>, wherein the retransmission includes the data vectors being rotated. </claim-text>
+ </claim>
+<claim id="CLM-00003" num="00003">
+<claim-text><b>3</b>. The apparatus of <claim-ref idref="CLM-00001">claim 1</claim-ref>, wherein the retransmission includes the data vectors being rotated one lane. </claim-text>
+ </claim>
+<claim id="CLM-00004" num="00004">
+<claim-text><b>4</b>. The apparatus of <claim-ref idref="CLM-00001">claim 1</claim-ref>, wherein the retransmission includes the data vectors being rotated based on lanes having errors. </claim-text>
+ </claim>
+<claim id="CLM-00005" num="00005">
+<claim-text><b>5</b>. The apparatus of <claim-ref idref="CLM-00001">claim 1</claim-ref>, wherein the retransmission includes data vectors with errors and data vectors without errors swapping lanes. </claim-text>
+ </claim>
+<claim id="CLM-00006" num="00006">
+<claim-text><b>6</b>. The apparatus of <claim-ref idref="CLM-00001">claim 1</claim-ref>, wherein said processor analyses the failed vectors and includes a rotation plan in the retransmission request. </claim-text>
+ </claim>
+<claim id="CLM-00007" num="00007">
+<claim-text><b>7</b>. The apparatus of <claim-ref idref="CLM-00001">claim 1</claim-ref>, wherein said processor includes an accounting of the failures with the retransmission request. </claim-text>
+ </claim>
+<claim id="CLM-00008" num="00008">
+<claim-text><b>8</b>. The apparatus of <claim-ref idref="CLM-00001">claim 1</claim-ref>, wherein the data vectors include a portion of the data packet and error detection bits. </claim-text>
+ </claim>
+<claim id="CLM-00009" num="00009">
+<claim-text><b>9</b>. The apparatus of <claim-ref idref="CLM-00008">claim 8</claim-ref>, wherein the error detection bits are parity bits. </claim-text>
+ </claim>
+<claim id="CLM-00010" num="00010">
+<claim-text><b>10</b>. The apparatus of <claim-ref idref="CLM-00008">claim 8</claim-ref>, wherein the error detection bits are cyclic redundancy codes (CRCs). </claim-text>
+ </claim>
+<claim id="CLM-00011" num="00011">
+<claim-text><b>11</b>. A method comprising: 
+<claim-text>receiving data vectors making up a packet over a plurality of lanes of an interconnect; </claim-text>
+<claim-text>checking the data vectors for errors; </claim-text>
+<claim-text>storing the data vectors received error free in a buffer; </claim-text>
+<claim-text>requesting retransmission of the packet if at least some subset of the data vectors have not been received error free; </claim-text>
+<claim-text>receiving the retransmission of the packet, wherein at least a subset of the data vectors making up the packet are received on different lanes; and </claim-text>
+<claim-text>reassembling the packet once the plurality of data vectors making up the data packet are stored in said buffer, wherein the data packet can be reassembled even if it was never sent correctly in a single transmission. </claim-text>
+</claim-text>
+ </claim>
+<claim id="CLM-00012" num="00012">
+<claim-text><b>12</b>. The method of <claim-ref idref="CLM-00011">claim 11</claim-ref>, wherein said requesting includes requesting the data vectors be rotated a predefined number of lanes. </claim-text>
+ </claim>
+<claim id="CLM-00013" num="00013">
+<claim-text><b>13</b>. The method of <claim-ref idref="CLM-00011">claim 11</claim-ref>, wherein said requesting includes requesting the data vectors be rotated based on errors. </claim-text>
+ </claim>
+<claim id="CLM-00014" num="00014">
+<claim-text><b>14</b>. The method of <claim-ref idref="CLM-00011">claim 11</claim-ref>, wherein said requesting includes requesting the data vectors with errors and the data vectors without errors swap lanes. </claim-text>
+ </claim>
+<claim id="CLM-00015" num="00015">
+<claim-text><b>15</b>. The method of <claim-ref idref="CLM-00011">claim 11</claim-ref>, further comprising analyzing the failed vectors and generating a rotation plan based thereon. </claim-text>
+ </claim>
+<claim id="CLM-00016" num="00016">
+<claim-text><b>16</b>. The method of <claim-ref idref="CLM-00011">claim 11</claim-ref>, further comprising transmitting an accounting of the failures with the retransmission request. </claim-text>
+ </claim>
+<claim id="CLM-00017" num="00017">
+<claim-text><b>17</b>. The method of <claim-ref idref="CLM-00011">claim 11</claim-ref>, wherein the data vectors include a portion of the packet and error detection bits. </claim-text>
+ </claim>
+<claim id="CLM-00018" num="00018">
+<claim-text><b>18</b>. The method of <claim-ref idref="CLM-00017">claim 17</claim-ref>, wherein the error detection bits are parity bits. </claim-text>
+ </claim>
+<claim id="CLM-00019" num="00019">
+<claim-text><b>19</b>. The method of <claim-ref idref="CLM-00017">claim 17</claim-ref>, wherein the error detection bits are cyclic redundancy codes (CRCs). </claim-text>
+ </claim>
+<claim id="CLM-00020" num="00020">
+<claim-text><b>20</b>. A computer comprising: 
+<claim-text>a microprocessor die including: </claim-text>
+<claim-text>a receiver to receive a data packet as a plurality of data vectors over an interconnect, wherein the interconnect includes a plurality of lanes; and </claim-text>
+<claim-text>a processor to check the data vectors for errors, to store data packets having no errors, to request a retransmission of the packet if at least one data vector contains an error, and to reassemble the data packet once the data vectors making up the packet are stored, wherein the retransmission of the data packet includes at least a subset of the data vectors being transmitted on different lanes; and </claim-text>
+<claim-text>an off-die memory device. </claim-text>
+</claim-text>
+ </claim>
+<claim id="CLM-00021" num="00021">
+<claim-text><b>21</b>. The computer of <claim-ref idref="CLM-00020">claim 20</claim-ref>, wherein the data vectors are rotated to different lanes. </claim-text>
+ </claim>
+<claim id="CLM-00022" num="00022">
+<claim-text><b>22</b>. The computer of <claim-ref idref="CLM-00020">claim 20</claim-ref>, wherein failed data vectors and error-free data vectors swap lanes. </claim-text>
+ </claim>
+<claim id="CLM-00023" num="00023">
+<claim-text><b>23</b>. A store and forward device comprising 
+<claim-text>a plurality of Ethernet cards to receive data from and transmit data to external sources; and </claim-text>
+<claim-text>a switch to route data amongst the Ethernet cards; and </claim-text>
+<claim-text>an interconnect to transmit packets between the switch and the Ethernet cards over a plurality of lanes, wherein if transmission of the packet fails retransmission of the packet includes the rotating of the data vectors to different lanes. </claim-text>
+</claim-text>
+ </claim>
+<claim id="CLM-00024" num="00024">
+<claim-text><b>24</b>. The device of <claim-ref idref="CLM-00023">claim 23</claim-ref>, wherein the data vectors are rotated to different lanes. </claim-text>
+ </claim>
+<claim id="CLM-00025" num="00025">
+<claim-text><b>25</b>. The device of <claim-ref idref="CLM-00023">claim 23</claim-ref>, wherein failed data vectors and error-free data vectors swap lanes.</claim-text>
+ </claim>
+</claims>
+</us-patent-application>

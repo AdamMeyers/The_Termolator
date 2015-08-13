@@ -1,0 +1,1124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE us-patent-application SYSTEM "us-patent-application-v42-2006-08-23.dtd" [ ]>
+<us-patent-application lang="EN" dtd-version="v4.2 2006-08-23" file="US20070001705A1-20070104.XML" status="PRODUCTION" id="us-patent-application" country="US" date-produced="20061221" date-publ="20070104">
+<us-bibliographic-data-application lang="EN" country="US">
+<publication-reference>
+<document-id>
+<country>US</country>
+<doc-number>20070001705</doc-number>
+<kind>A1</kind>
+<date>20070104</date>
+</document-id>
+</publication-reference>
+<application-reference appl-type="utility">
+<document-id>
+<country>US</country>
+<doc-number>11212358</doc-number>
+<date>20050826</date>
+</document-id>
+</application-reference>
+<us-application-series-code>11</us-application-series-code>
+<priority-claims>
+<priority-claim sequence="01" kind="national">
+<country>JP</country>
+<doc-number>2005-191513</doc-number>
+<date>20050630</date>
+</priority-claim>
+</priority-claims>
+<classifications-ipcr>
+<classification-ipcr>
+<ipc-version-indicator><date>20060101</date></ipc-version-indicator>
+<classification-level>A</classification-level>
+<section>G</section>
+<class>01</class>
+<subclass>R</subclass>
+<main-group>31</main-group>
+<subgroup>26</subgroup>
+<symbol-position>F</symbol-position>
+<classification-value>I</classification-value>
+<action-date><date>20070104</date></action-date>
+<generating-office><country>US</country></generating-office>
+<classification-status>B</classification-status>
+<classification-data-source>H</classification-data-source>
+</classification-ipcr>
+</classifications-ipcr>
+<classification-national>
+<country>US</country>
+<main-classification>324765000</main-classification>
+</classification-national>
+<invention-title id="d0e117">Integrated circuit and circuit board</invention-title>
+<parties>
+<applicants>
+<applicant sequence="00" app-type="applicant-inventor" designation="us-only">
+<addressbook>
+<last-name>Yokota</last-name>
+<first-name>Tetsuya</first-name>
+<address>
+<city>Kawasaki</city>
+<country>JP</country>
+</address>
+</addressbook>
+<nationality>
+<country>JP</country>
+</nationality>
+<residence>
+<country>JP</country>
+</residence>
+</applicant>
+</applicants>
+<correspondence-address>
+<addressbook>
+<name>Patrick G. Burns, Esq.;GREER, BURNS &#x26; CRAIN, LTD.</name>
+<address>
+<address-1>Suite 2500</address-1>
+<address-2>300 South Wacker Dr.</address-2>
+<city>Chicago</city>
+<state>IL</state>
+<postcode>60606</postcode>
+<country>US</country>
+</address>
+</addressbook>
+</correspondence-address>
+</parties>
+<assignees>
+<assignee>
+<orgname>FUJITSU LIMITED</orgname>
+<role>03</role>
+</assignee>
+</assignees>
+</us-bibliographic-data-application>
+<abstract id="abstract">
+<p id="p-0001" num="0000">In an integrated circuit implemented on a circuit board, output lines of an output circuit that outputs a logic signal are connected to the circuit board by soldering of a leadless terminal that cannot be seen as being implemented. A fault diagnosing unit tests an output voltage of the leadless terminal with respect to the circuit board as being implemented to determine whether the output voltage is a normal voltage or an abnormal voltage. The fault diagnosing unit includes a pseudo-output unit that applies a pseudo-set predetermined pseudo-output voltage to the leadless terminal, a first switching unit that cuts a connection of the output terminal to the leadless terminal at the time of fault diagnosis, a second switching unit that supplies a pseudo-output voltage of the pseudo-output unit to the leadless terminal side as being cut, a measuring unit that measures a voltage of the leadless terminal in a fault diagnosis state resulting from diagnosis switching, and a determining unit that determines from the measured voltage whether a voltage of the leadless terminal is a normal voltage or an abnormal voltage. </p>
+</abstract>
+<drawings id="DRAWINGS">
+<figure id="figure-D00000" num="00000">
+<img id="EMI-D00000" he="137.10mm" wi="206.12mm" file="US20070001705A1-20070104-D00000.TIF" alt="embedded image" img-content="drawing" img-format="tif"/>
+</figure>
+<figure id="figure-D00001" num="00001">
+<img id="EMI-D00001" he="239.86mm" wi="156.21mm" file="US20070001705A1-20070104-D00001.TIF" alt="embedded image" img-content="drawing" img-format="tif"/>
+</figure>
+<figure id="figure-D00002" num="00002">
+<img id="EMI-D00002" he="263.74mm" wi="191.43mm" orientation="landscape" file="US20070001705A1-20070104-D00002.TIF" alt="embedded image" img-content="drawing" img-format="tif"/>
+</figure>
+<figure id="figure-D00003" num="00003">
+<img id="EMI-D00003" he="265.26mm" wi="187.45mm" orientation="landscape" file="US20070001705A1-20070104-D00003.TIF" alt="embedded image" img-content="drawing" img-format="tif"/>
+</figure>
+<figure id="figure-D00004" num="00004">
+<img id="EMI-D00004" he="256.71mm" wi="193.21mm" file="US20070001705A1-20070104-D00004.TIF" alt="embedded image" img-content="drawing" img-format="tif"/>
+</figure>
+<figure id="figure-D00005" num="00005">
+<img id="EMI-D00005" he="260.01mm" wi="192.19mm" file="US20070001705A1-20070104-D00005.TIF" alt="embedded image" img-content="drawing" img-format="tif"/>
+</figure>
+<figure id="figure-D00006" num="00006">
+<img id="EMI-D00006" he="258.91mm" wi="188.13mm" file="US20070001705A1-20070104-D00006.TIF" alt="embedded image" img-content="drawing" img-format="tif"/>
+</figure>
+<figure id="figure-D00007" num="00007">
+<img id="EMI-D00007" he="210.06mm" wi="142.24mm" file="US20070001705A1-20070104-D00007.TIF" alt="embedded image" img-content="drawing" img-format="tif"/>
+</figure>
+<figure id="figure-D00008" num="00008">
+<img id="EMI-D00008" he="257.22mm" wi="141.31mm" file="US20070001705A1-20070104-D00008.TIF" alt="embedded image" img-content="drawing" img-format="tif"/>
+</figure>
+<figure id="figure-D00009" num="00009">
+<img id="EMI-D00009" he="266.45mm" wi="189.91mm" orientation="landscape" file="US20070001705A1-20070104-D00009.TIF" alt="embedded image" img-content="drawing" img-format="tif"/>
+</figure>
+<figure id="figure-D00010" num="00010">
+<img id="EMI-D00010" he="272.71mm" wi="180.26mm" orientation="landscape" file="US20070001705A1-20070104-D00010.TIF" alt="embedded image" img-content="drawing" img-format="tif"/>
+</figure>
+<figure id="figure-D00011" num="00011">
+<img id="EMI-D00011" he="264.33mm" wi="187.11mm" orientation="landscape" file="US20070001705A1-20070104-D00011.TIF" alt="embedded image" img-content="drawing" img-format="tif"/>
+</figure>
+<figure id="figure-D00012" num="00012">
+<img id="EMI-D00012" he="267.04mm" wi="156.63mm" orientation="landscape" file="US20070001705A1-20070104-D00012.TIF" alt="embedded image" img-content="drawing" img-format="tif"/>
+</figure>
+</drawings>
+<description id="description">
+<?summary-of-invention description="Summary of Invention" end="lead"?>
+<p id="p-0002" num="0001"> This application is a priority based on prior application No. JP 2005-191513, filed Jun. 30, 2005, in Japan. </p>
+<heading level="2" id="h-0001">BACKGROUND OF THE INVENTION </heading>
+<p id="p-0003" num="0002"> 1. Field of the Invention </p>
+<p id="p-0004" num="0003"> The present invention relates to an integrated circuit implemented on a circuit board by a soldering connection of a leadless terminals, and the circuit board, and particularly to an integrated circuit and a circuit board that perform self-diagnosis of a fault of a leadless terminal. </p>
+<p id="p-0005" num="0004"> 2. Description of the Related Arts </p>
+<p id="p-0006" num="0005"> Conventionally, in order to achieve demands for downsizing of equipment, such as information apparatuses, and also to achieve high-speed signal transmission, downsizing of components and high-density implementation have been pursued. To achieve such high-density implementation, an ingeniously-devised configuration is used in a package of an integrated circuit. Conventionally, as a leadless package structure suitable for high-density implementation of an integrated circuit, a ball grid array has been known. The ball grid array, commonly called BGA, is a package in which leadless terminals configured by soldering balls are disposed in a lattice shape at regular spacing on the back surface of a package having contact with a printed circuit board, wherein the leadless terminals are soldered to the pattern of the corresponding printed circuit board. The leadless terminals are on the back side of the package in a narrow space between the package and the printed circuit board. Therefore, solder paste for binding is applied in advance to the pattern of the printed circuit board through a printing process, and the entire package is then heated to melt the solder for binding attached to a terminal portion, thereby achieving soldering. [Patent Document 1] Japanese Patent Laid-Open Publication No. 11-64465 </p>
+<p id="h-0002" num="0000"> [Patent Document 2] Japanese Patent Laid-Open Publication No. 2000-206199 </p>
+<p id="p-0007" num="0006"> In a circuit arrangement having implemented thereon an integrated circuit using a ball grid array as a package structure, an unaccounted fault occurs at a high frequency. To track down a cause of such a fault, a method is generally taken such that, with full knowledge of operations at a level of a large-scale apparatus using the circuit arrangement, a malfunction portion is estimated based on various phenomena, measurement data, etc., and then portions that might have caused the fault are narrowed down by a check through direct-current characteristic measurement. However, such tracking down involves many difficulties in skills in trouble diagnosis and the number of processes, and therefore is not easy. To track down such a malfunction portion, it is required to see the state of the leadless terminals on the back side of the package for use in the integrated circuit. However, the terminal portions are hidden on the back side of the package, making it difficult to detect, through a visual inspection, an abnormality, poor connection, short-circuit trouble due to attachment of a foreign matter, and others in the soldering portion. Furthermore, it is often difficult to connect a jig of a measuring device to the leadless terminal or the printed circuit board pattern of a connection destination so as to determine a characteristic abnormality inside the integrated circuit. This poses a problem in specifying a troubled portion in various tests. </p>
+<heading level="2" id="h-0003">SUMMARY OF THE INVENTION </heading>
+<p id="p-0008" num="0007"> According to the present invention, the purpose is to provide an integrated circuit and a circuit board allowing a diagnosis of a fault resulting from the state of a terminal in an integrated circuit having a package structure soldered to a circuit board with leadless terminals that cannot be seen or are hard to be seen from outside as being implemented. </p>
+<p id="p-0009" num="0008"> The present invention provides an integrated circuit. The integrated circuit according to the present invention includes: an output circuit that outputs a logic signal; a leadless terminal connecting an output line of the output circuit, being connected by soldering to a circuit board, and being not able to be seen as being implemented; and a fault diagnosing unit that tests an output voltage of the leadless terminal as being implemented on the circuit board to determine whether the output voltage is a normal voltage or an abnormal voltage. </p>
+<p id="p-0010" num="0009"> Here, the fault diagnosing unit includes: a pseudo-output unit that applies a pseudo-set predetermined pseudo-output voltage to the leadless terminal; a switching unit (first switching unit and second switching unit) that cuts a connection of the output circuit to the leadless terminal at the time of fault diagnosis, and supplies the pseudo-output voltage of the pseudo-output unit to the leadless terminal side as being cut; a measuring unit that measures a voltage of the leadless terminal in a fault diagnosis state by the switching unit; and a determining unit that determines, from the voltage measured by the measuring unit, whether the voltage of the leadless terminal is a normal voltage or an abnormal voltage. </p>
+<p id="p-0011" num="0010"> In the integrated circuit of the present invention, when a plurality of the output circuits are present, the switching unit sequentially cuts connections of leadless terminals with the plurality of output circuits at the time of fault diagnosis and, in synchronization with the cutting of the leadless terminal, connects an output of the pseudo-output unit to a relevant one of the leadless terminals. </p>
+<p id="p-0012" num="0011"> The switching unit includes a first switching unit that cuts an output of the output circuit from the leadless terminal at the time of the fault diagnosis and a second switching unit that connects the output of the pseudo-output unit to the leadless terminal side cut by the first switching unit. </p>
+<p id="p-0013" num="0012"> The pseudo-output unit outputs a resistance divided voltage generated by a resistance series circuit as the pseudo-output voltage. </p>
+<p id="p-0014" num="0013"> With an external circuit of the circuit board making a pull-up connection of an input line to a power source line via a pull-up resistor, when the measured voltage is in a predetermined voltage range centering on a specific voltage defined by a resistance of the pseudo-output unit and the pull-up resistor, the determining unit determines that the measured voltage is a normal voltage, and when the measured voltage is outside the predetermined voltage range, determines that the measured voltage is an abnormal voltage resulting from a soldering trouble of the leadless terminal. </p>
+<p id="p-0015" num="0014"> With an external circuit of the circuit board making a pull-down connection of an input line to a ground via a pull-down resistor, when the measured voltage is in a predetermined voltage range centering on a specific voltage defined by a resistance of the pseudo-output unit and the pull-down resistor, the determining unit determines that the measured voltage is a normal voltage, and when the measured voltage is outside the predetermined voltage range, determines that the measured voltage is an abnormal voltage resulting from a soldering trouble of the leadless terminal. </p>
+<p id="p-0016" num="0015"> With an external circuit of the circuit board being in a floating state in which an input line is cut from a power source line and a ground, when the measured voltage is in a predetermined voltage range centering on a specific voltage defined by a divided voltage resistance of the pseudo-output unit, the determining unit determines that the measured voltage is a normal voltage, and when the measured voltage is outside the predetermined voltage range, determines that the measured voltage is an abnormal voltage resulting from a soldering trouble of the leadless terminal. </p>
+<p id="p-0017" num="0016"> The pseudo-output unit is provided to divide external circuits on the circuit board into groups corresponding to a connection of a pull-up resistor, a connection of a pull-down resistor, or floating without a connection of the pull-up resistor or the pull-down resistor and output a pseudo-output voltage unique to each group. </p>
+<p id="p-0018" num="0017"> The output circuit includes an input/output circuit. The fault diagnosing unit performs fault diagnosis upon receipt from a processor incorporated in the integrated circuit or implemented on the circuit board and responds with the diagnosis result. </p>
+<p id="p-0019" num="0018"> A circuit board having implemented thereon an integrated circuit and a circuit external thereto, the circuit board including: an output circuit that outputs a logic signal; a leadless terminal connecting an output line of the output circuit and being connected by soldering to a circuit board; and a fault diagnosing unit that tests an output voltage of the leadless terminal as being implemented on the circuit board to determine whether the output voltage is a normal voltage or an abnormal voltage. </p>
+<p id="p-0020" num="0019"> According to the present invention, even if a soldering portion between a leadless terminal and a pattern of a circuit board cannot be seen with the circuit board having implemented thereon an integrated circuit, upon an instruction for fault diagnosis from a processor implemented on or included in the circuit board to the integrated circuit, a predetermined output of a pseudo-output unit is applied to the leadless terminal side, with an output circuit being cut from the leadless terminal, to measure a terminal voltage. From the measurement voltage, it is determined whether the leadless terminal has a normal voltage or an abnormal voltage, thereby allowing easy diagnosis of the state of soldering of the leadless terminal. </p>
+<p id="p-0021" num="0020"> Abnormalities that can be detected from this fault diagnosis are as follows. </p>
+<p id="p-0022" num="0021"> (1) An increase in leak current or short-circuit trouble caused by a foreign matter or the like being attached between a leadless terminal of the integrated circuit and a ground pattern, power-source pattern, or another signal line of low impedance of the circuit board. </p>
+<p id="p-0023" num="0022"> (2) An increase in leak current or short-circuit trouble caused at a portion to which a leadless terminal is connected inside the integrated circuit. Thus, when a malfunction occurs in equipment or apparatus having incorporated therein a circuit board having implemented thereon an integrated circuit including a fault diagnosing unit according to the present invention, an integrated-circuit fault diagnosis according to the present invention is performed, thereby easily tracking down the present or absent of a fault resulting from the state of soldering of a leadless terminal that cannot be seen from outside. Also, with the integrated-circuit fault diagnosis according to the present invention being included in a product inspecting process, a malfunction can be resolved in a stage prior to product shipping, thereby improving yields and reliability of the product. The above and other objects, features, and advantages of the present invention will become more apparent from the following detailed description with reference to the drawings. </p>
+<?summary-of-invention description="Summary of Invention" end="tail"?>
+<?brief-description-of-drawings description="Brief Description of Drawings" end="lead"?>
+<heading level="2" id="h-0004">BRIEF DESCRIPTION OF THE DRAWINGS </heading>
+<p id="p-0024" num="0023"> <figref idref="DRAWINGS">FIGS. 1A and 1B</figref> are drawings for describing an integrated circuit according to the present invention with a package structure using a ball grid array; </p>
+<p id="p-0025" num="0024"> <figref idref="DRAWINGS">FIGS. 2A and 2B</figref> are block diagrams showing a fault diagnosing unit according to the present invention provided on the integrated circuit of <figref idref="DRAWINGS">FIGS. 1A and 1B</figref> together with external circuits on a circuit board; </p>
+<p id="p-0026" num="0025"> <figref idref="DRAWINGS">FIGS. 3A</figref> to <b>3</b>C are drawings for describing the fault diagnosing unit and diagnosis principles when a pull-up resistor is connected to an input line of an external circuit; </p>
+<p id="p-0027" num="0026"> <figref idref="DRAWINGS">FIGS. 4A</figref> to <b>4</b>C are drawings for describing the fault diagnosing unit and diagnosis principles when a pull-down resistor is connected to the input line of the external circuit; </p>
+<p id="p-0028" num="0027"> <figref idref="DRAWINGS">FIGS. 5A</figref> to <b>5</b>C are drawings for describing the fault diagnosing unit and diagnosis principles when the input line of the external circuit is floating; </p>
+<p id="p-0029" num="0028"> <figref idref="DRAWINGS">FIG. 6</figref> is a flowchart of fault diagnosis control by an MPU of <figref idref="DRAWINGS">FIGS. 2A and 2B</figref>; </p>
+<p id="p-0030" num="0029"> <figref idref="DRAWINGS">FIG. 7</figref> is a flowchart of a diagnosis process by the fault diagnosing circuit of <figref idref="DRAWINGS">FIGS. 2A and 2B</figref>; </p>
+<p id="p-0031" num="0030"> <figref idref="DRAWINGS">FIGS. 8A and 8B</figref> are circuit block diagrams showing a fault diagnosing unit according to another embodiment of the present invention with output circuits divided into groups; and </p>
+<p id="p-0032" num="0031"> <figref idref="DRAWINGS">FIGS. 9A and 9B</figref> are circuit block diagrams showing a fault diagnosing unit according to still another embodiment of the present invention that is applied to input/output circuits.</p>
+<?brief-description-of-drawings description="Brief Description of Drawings" end="tail"?>
+<?detailed-description description="Detailed Description" end="lead"?>
+<heading level="2" id="h-0005">DETAILED DESCRIPTION OF THE PREFERRED EMBODIMENTS </heading>
+<p id="p-0033" num="0032"> <figref idref="DRAWINGS">FIGS. 1A and 1B</figref> are drawings for describing a package structure of an integrated circuit using a ball grid array according to the present invention. <figref idref="DRAWINGS">FIG. 1A</figref> is a perspective view of the front side of an integrated circuit <b>10</b>, wherein a chip <b>52</b> is disposed on a multilayer printed circuit board <b>50</b>, and the terminal side of the multilayer printed circuit board <b>50</b> and the chip <b>52</b> are connected to each other with Au wires <b>54</b> with their top being sealed by resin <b>56</b>. As shown in <figref idref="DRAWINGS">FIG. 1B</figref>, which is a drawing for describing the back side, soldering balls <b>58</b> are disposed in a lattice shape. The integrated circuit <b>10</b> having the above-described structure is positioned by applying solder paste for bonding through a printing process to the pattern of a circuit board having implemented thereon the integrated circuit <b>10</b> and then heating the entire package, thereby melting the soldering balls <b>58</b> for soldering. Therefore, with the integrated circuit <b>10</b> being implemented on the circuit board through soldering, the state of soldering by the soldering balls <b>58</b> with the pattern at the back side cannot be seen from outside. </p>
+<p id="p-0034" num="0033"> <figref idref="DRAWINGS">FIGS. 2A and 2B</figref> are circuit block diagrams with the integrated circuit <b>10</b> of <figref idref="DRAWINGS">FIGS. 1A and 1B</figref> being implemented through soldering on the circuit board <b>12</b>. In <figref idref="DRAWINGS">FIGS. 2A and 2B</figref>, the integrated circuit <b>10</b> using the ball-grid-array package includes a fault diagnosing unit <b>48</b> for performing fault diagnosis of leadless terminals connected to the pattern by soldering balls. The fault diagnosing unit <b>48</b> tests an output voltage of a leadless terminal fixed by soldering with soldering balls, with the integrated circuit <b>10</b> being implemented on the circuit board <b>12</b>, to determine whether the output voltage is a normal voltage or an abnormal voltage. Correspondingly to the fault diagnosing unit <b>48</b> of the integrated circuit <b>10</b>, an MPU <b>20</b> implemented on the circuit board <b>12</b> includes a fault diagnosis control unit <b>46</b>. In a diagnosis process by the fault diagnosing unit <b>48</b> of the integrated circuit <b>10</b>, when a device using the circuit board <b>12</b> is connected to testing equipment for test processing in the stage where assembly in the manufacturing line has been completed, a fault diagnosis process is simultaneously performed. The testing equipment having connected thereto the device allows a testing program to be downloaded to, for example, memory of the MPU <b>20</b>. The MPU <b>20</b> executes the testing program downloaded to its memory to perform a necessary testing process. The testing program downloaded from the testing equipment includes a fault diagnosis program according to the present invention. By executing the fault diagnosis program, the function of the fault diagnosis control unit <b>46</b> of the MPU <b>20</b> is achieved. That is, the MPU <b>20</b> executes the fault diagnosis program downloaded from the testing equipment to achieve the function of the fault diagnosis control unit <b>46</b>, instructs via a bus <b>30</b> the fault diagnosing unit <b>48</b> included in the integrated circuit <b>10</b> to perform fault diagnosis for diagnosing the state of soldering of the leadless terminals, receives the diagnosis results obtained through a fault diagnosing operation of the fault diagnosing unit <b>48</b>, and then notifies the results to the testing equipment. Inside the integrated circuit <b>10</b>, a logic circuit <b>62</b> is provided. The logic circuit <b>62</b> is connected to output circuits <b>64</b>-<b>1</b> to <b>64</b>-<b>6</b> for outputting a logic signal according to a logic level of H or L. Output lines from the output circuits <b>64</b>-<b>1</b> to <b>64</b>-<b>6</b> are connected to external circuits <b>66</b>-<b>1</b> to <b>66</b>-<b>6</b> by a circuit pattern via leadless terminals <b>65</b>-<b>1</b> to <b>65</b>-<b>6</b> connected to the pattern on the circuit board <b>12</b> by the soldering balls <b>58</b> shown in <figref idref="DRAWINGS">FIGS. 1A and 1B</figref>. A circuit portion including the leadless terminals <b>65</b>-<b>1</b> to <b>65</b>-<b>6</b> at output side on the integrated circuit <b>10</b> described above is provided with the fault diagnosing unit <b>48</b> of the present invention. The fault diagnosing unit <b>48</b> of the present invention includes a first switching unit <b>68</b>, a second switching unit <b>72</b>, a switching control unit <b>76</b>, a pseudo-output unit <b>78</b>, a measuring unit <b>80</b>, a determining unit <b>82</b>, and a bus interface unit <b>84</b>. When the switching control unit <b>76</b> receives a fault diagnosis instruction from the MPU <b>20</b> via the bus interface unit <b>84</b>, the first switching unit <b>68</b> cuts the output circuits <b>64</b>-<b>1</b> to <b>64</b>-<b>6</b> from the corresponding leadless terminals <b>65</b>-<b>1</b> to <b>65</b>-<b>6</b>, respectively. That is, the first switching unit <b>68</b> includes switches <b>70</b>-<b>1</b> to <b>70</b>-<b>6</b>. At the normal state, the switches <b>70</b>-<b>1</b> to <b>70</b>-<b>6</b> are closed in an ON state to connect outputs of the output circuits <b>64</b>-<b>1</b> to <b>64</b>-<b>6</b> to the leadless terminals <b>65</b>-<b>1</b> and <b>65</b>-<b>6</b>. Upon reception of a fault diagnosis instruction from the MPU <b>20</b>, the switches <b>70</b>-<b>1</b> to <b>70</b>-<b>6</b> are sequentially switched with a switch control signal from the switching control unit <b>76</b> in the order of the switches <b>70</b>-<b>1</b> to <b>70</b>-<b>6</b> from an ON state to an OFF state, thereby sequentially cutting the connection of the output circuits <b>64</b>-<b>1</b> to <b>64</b>-<b>6</b> to leadless terminals <b>65</b>-<b>1</b> and <b>65</b>-<b>6</b>. The second switching unit <b>72</b> includes switches <b>74</b>-<b>1</b> to <b>74</b>-<b>6</b> to connect an output of the pseudo-output unit <b>78</b> to the leadless terminals <b>65</b>-<b>1</b> to <b>65</b>-<b>6</b> side. The second switching unit <b>72</b> performs switching control in synchronization with the first switching unit <b>68</b>. That is, in synchronization with sequential cutting of the switches <b>70</b>-<b>1</b> to <b>70</b>-<b>6</b> of the first switching unit <b>68</b>, the switches <b>74</b>-<b>1</b> to <b>74</b>-<b>6</b> of the second switching unit <b>72</b> are sequentially turned on. For example, with the switch <b>74</b>-<b>1</b> being turned on to the output line at the leadless terminal <b>65</b>-<b>1</b> side that was cut from the output circuit <b>64</b>-<b>1</b> by the switch <b>70</b>-<b>1</b>, a pseudo-output voltage of pseudo-output unit <b>78</b> is supplied. The pseudo-output unit <b>78</b> outputs a predetermined pseudo-output voltage for fault diagnosis of the leadless terminals <b>65</b>-<b>1</b> to <b>65</b>-<b>6</b>. As a pseudo-output voltage Vs output from the pseudo-output unit <b>78</b>, for example, a half of a power supply voltage Vc at the output circuit <b>64</b>, that is, Vc/2, is output by a resistance-voltage-divider circuit. The measuring unit <b>80</b> sequentially measures terminal voltages at the leadless terminals <b>65</b>-<b>1</b> and <b>65</b>-<b>6</b> with a pseudo-output voltage being applied to the leadless terminal <b>65</b>-<b>1</b> by switching of the first switching unit <b>68</b> and the second switching unit <b>72</b>, and then outputs the results to the determining unit <b>82</b>. The determining unit <b>82</b> determines, from the voltages measured by the measuring unit <b>80</b>, whether the voltage of each of the leadless terminals <b>65</b>-<b>1</b> to <b>65</b>-<b>6</b> is a normal voltage or an abnormal voltage resulting from an increase in leak current, short-circuit malfunction, or the like caused by a foreign matter or the like attached between the leadless terminals <b>65</b>-<b>1</b> to <b>65</b>-<b>6</b> and the pattern at the power source side or the pattern at the ground side of the circuit board <b>12</b>. The determination results obtained by the determining unit <b>82</b> as to the leadless terminals <b>65</b>-<b>1</b> to <b>65</b>-<b>6</b> are reported from the bus interface unit <b>84</b> via the bus <b>30</b> to the MPU <b>20</b>. As the bus interface unit <b>84</b>, the one included in the integrated circuit <b>10</b> can be used as it is. Here, determinations by the determining unit <b>82</b> provided to the fault diagnosing unit <b>48</b> as to whether the measured voltage of each of the leadless terminals <b>65</b>-<b>1</b> to <b>65</b>-<b>6</b> is a normal voltage or an abnormal voltage differ depending on the type of the input circuits of the external circuits <b>66</b>-<b>1</b> to <b>66</b>-<b>6</b>. </p>
+<p id="p-0035" num="0034"> That is, as input circuit portions of the external circuits <b>66</b>-<b>1</b> to <b>66</b>-<b>6</b>, the following three types are present: </p>
+<p id="h-0006" num="0000"> (1) A circuit with an input line being connected to a power source line with a pull-up resistor; </p>
+<p id="h-0007" num="0000"> (2) A circuit with an input line being connected to ground with a pull-down resistor; and </p>
+<p id="p-0036" num="0035"> (3) An input circuit in a floating state with neither a pull-up resistor nor a pull-down resistor being connected to an input line. Also, since the external circuits <b>66</b>-<b>1</b> to <b>66</b>-<b>6</b> are CMOS circuits in most cases, their impedance is sufficiently high, and therefore the output voltages of the leadless terminals <b>65</b>-<b>1</b> to <b>65</b>-<b>6</b> depend solely on the pull-up resistor, the pull-down resistor, or the floating state. </p>
+<p id="p-0037" num="0036"> <figref idref="DRAWINGS">FIGS. 3A</figref> to <b>3</b>C are drawings for describing the diagnosis principles by the fault diagnosing unit and when a pull-up resistor is connected to an input line of an external circuit. <figref idref="DRAWINGS">FIG. 3A</figref> particularly depicts an output system of the output circuit <b>64</b>-<b>1</b> of the integrated circuit <b>10</b>, wherein the external circuit <b>66</b>-<b>1</b> connected to the leadless terminal <b>65</b>-<b>1</b> is connected to a power source line of the power source voltage Vc with a pull-up resistor <b>90</b>. Also, the pseudo-output unit <b>78</b> provided to the integrated circuit <b>10</b> makes a serial connection of resistances <b>86</b> and <b>88</b> to a portion between the power source line of the power source voltage Vc and ground, and a voltage at its connecting point is taken as a pseudo-output voltage Vs for output. Here, when resistance values of the resistances <b>86</b> and <b>88</b> are taken as R1 and R2, respectively, R1=R2 is set, for example. Therefore, the pseudo-output voltage Vs with the switch <b>74</b>-<b>1</b> being cut is Vs=Vc/2. The leadless terminal <b>65</b>-<b>1</b> does not have a foreign matter or the like at the normal time, but may have a foreign matter <b>92</b> or a foreign matter <b>94</b> attached thereto for some reason. The foreign matter <b>92</b> is attached between the leadless terminal <b>65</b>-<b>1</b> and Vc of the power source line, and has a resistance component Rx. Furthermore, the foreign matter <b>94</b> is attached between the leadless terminal <b>65</b>-<b>1</b> and the ground pattern of the external circuit, and similarly has a resistance component Ry. Here, depending on the state of the foreign matters, the resistance components Rx and Ry have varying values and are not constant. In operation, the fault diagnosing unit turns off the switch <b>70</b>-<b>1</b> as shown to cut the output circuit <b>64</b>-<b>1</b> from the leadless terminal <b>65</b>-<b>1</b>, and simultaneously turns on the switch <b>74</b>-<b>1</b> to apply the pseudo-output voltage Vs from the pseudo-output unit <b>78</b> to the leadless terminal <b>65</b>-<b>1</b>. In this state, the voltage of the leadless terminal <b>65</b>-<b>1</b> is measured by the measuring unit <b>80</b>. <figref idref="DRAWINGS">FIG. 3B</figref> shows, with the fault diagnosing unit being in operation, the resistances <b>86</b> and <b>88</b> of the pseudo-output unit <b>78</b> for the leadless terminal <b>65</b>-<b>1</b>, the pull-up resistor <b>90</b> of the input line of the external circuit <b>66</b>-<b>1</b>, and further an equivalent circuit by the foreign matters <b>92</b> and <b>94</b> attached to the leadless terminal <b>65</b>-<b>1</b>. In <figref idref="DRAWINGS">FIG. 3B</figref>, when no foreign matter is attached to the leadless terminal <b>65</b>-<b>1</b>, a resistor circuit formed of the resistances <b>86</b> and <b>88</b> and the pull-up resistor <b>90</b> is configured. The voltage Vs of the leadless terminal <b>65</b>-<b>1</b> at this time is:  
+<maths id="MATH-US-00001" num="1">
+<math overflow="scroll">
+<mtable>
+  <mtr>
+    <mtd>
+      <mrow>
+        <mi>Vs</mi>
+        <mo>=</mo>
+        <mrow>
+          <mfrac>
+            <mrow>
+              <mi>R</mi>
+              <mo>&#x2062;</mo>
+              <mstyle>
+                <mtext>&#x2003;</mtext>
+              </mstyle>
+              <mo>&#x2062;</mo>
+              <mn>2</mn>
+            </mrow>
+            <mrow>
+              <mrow>
+                <mo>(</mo>
+                <mrow>
+                  <mrow>
+                    <mi>R</mi>
+                    <mo>&#x2062;</mo>
+                    <mstyle>
+                      <mtext>&#x2003;</mtext>
+                    </mstyle>
+                    <mo>&#x2062;</mo>
+                    <mn>1</mn>
+                  </mrow>
+                  <mo>//</mo>
+                  <mrow>
+                    <mi>R</mi>
+                    <mo>&#x2062;</mo>
+                    <mstyle>
+                      <mtext>&#x2003;</mtext>
+                    </mstyle>
+                    <mo>&#x2062;</mo>
+                    <mn>3</mn>
+                  </mrow>
+                </mrow>
+                <mo>)</mo>
+              </mrow>
+              <mo>+</mo>
+              <mrow>
+                <mi>R</mi>
+                <mo>&#x2062;</mo>
+                <mstyle>
+                  <mtext>&#x2003;</mtext>
+                </mstyle>
+                <mo>&#x2062;</mo>
+                <mn>2</mn>
+              </mrow>
+            </mrow>
+          </mfrac>
+          <mo>&#x2062;</mo>
+          <mi>Vc</mi>
+        </mrow>
+      </mrow>
+    </mtd>
+    <mtd>
+      <mrow>
+        <mo>[</mo>
+        <mrow>
+          <mi>Equation</mi>
+          <mo>&#x2062;</mo>
+          <mstyle>
+            <mtext>&#x2003;</mtext>
+          </mstyle>
+          <mo>&#x2062;</mo>
+          <mn>1</mn>
+        </mrow>
+        <mo>]</mo>
+      </mrow>
+    </mtd>
+  </mtr>
+</mtable>
+</math>
+</maths>
+</p>
+<p id="p-0038" num="0037"> Here, when R1=R2=R3, Vs becomes as Vs=Vc&#xd7;2/3, where (R1//R3) represents a parallel resistance value of &#x201c;1/{(1/R1)+(1/R3)}&#x201d; of the resistances R1 and R3 in a simple form. <figref idref="DRAWINGS">FIG. 3C</figref> shows a normal voltage Vs with respect to the power supply voltage Vc in the normal state of the leadless terminal <b>65</b>-<b>1</b>. A range centering on the voltage at the normal time with &#xb1;&#x394;V is denoted as a normal voltage range <b>98</b>. On the other hand, as to the leadless terminal <b>65</b>-<b>1</b> as shown in <figref idref="DRAWINGS">FIG. 3A</figref>, when the foreign matter <b>92</b> is attached between the leadless terminal <b>65</b>-<b>1</b> and the power supply line of the power voltage Vc, as shown in <figref idref="DRAWINGS">FIG. 3B</figref>, the resistance component Rx is added due to the foreign matter <b>92</b>. The voltage Vs of the leadless terminal <b>65</b>-<b>1</b> in this case is:  
+<maths id="MATH-US-00002" num="2">
+<math overflow="scroll">
+<mtable>
+  <mtr>
+    <mtd>
+      <mrow>
+        <mi>Vs</mi>
+        <mo>=</mo>
+        <mrow>
+          <mfrac>
+            <mrow>
+              <mi>R</mi>
+              <mo>&#x2062;</mo>
+              <mstyle>
+                <mtext>&#x2003;</mtext>
+              </mstyle>
+              <mo>&#x2062;</mo>
+              <mn>2</mn>
+            </mrow>
+            <mrow>
+              <mrow>
+                <mo>(</mo>
+                <mrow>
+                  <mrow>
+                    <mrow>
+                      <mi>R</mi>
+                      <mo>&#x2062;</mo>
+                      <mstyle>
+                        <mtext>&#x2003;</mtext>
+                      </mstyle>
+                      <mo>&#x2062;</mo>
+                      <mn>1</mn>
+                    </mrow>
+                    <mo>//</mo>
+                    <mrow>
+                      <mi>R</mi>
+                      <mo>&#x2062;</mo>
+                      <mstyle>
+                        <mtext>&#x2003;</mtext>
+                      </mstyle>
+                      <mo>&#x2062;</mo>
+                      <mn>3</mn>
+                    </mrow>
+                  </mrow>
+                  <mo>//</mo>
+                  <mi>Rx</mi>
+                </mrow>
+                <mo>)</mo>
+              </mrow>
+              <mo>+</mo>
+              <mrow>
+                <mi>R</mi>
+                <mo>&#x2062;</mo>
+                <mstyle>
+                  <mtext>&#x2003;</mtext>
+                </mstyle>
+                <mo>&#x2062;</mo>
+                <mn>2</mn>
+              </mrow>
+            </mrow>
+          </mfrac>
+          <mo>&#x2062;</mo>
+          <mi>Vc</mi>
+        </mrow>
+      </mrow>
+    </mtd>
+    <mtd>
+      <mrow>
+        <mo>[</mo>
+        <mrow>
+          <mi>Equation</mi>
+          <mo>&#x2062;</mo>
+          <mstyle>
+            <mtext>&#x2003;</mtext>
+          </mstyle>
+          <mo>&#x2062;</mo>
+          <mn>2</mn>
+        </mrow>
+        <mo>]</mo>
+      </mrow>
+    </mtd>
+  </mtr>
+</mtable>
+</math>
+</maths>
+<br/>
+ and thus the voltage Vs of the leadless terminal <b>65</b>-<b>1</b> is increase by the addition of the resistance component Rx due to the foreign matter <b>92</b>. 
+<br/>
+ Therefore, a voltage range exceeding the normal voltage range in <figref idref="DRAWINGS">FIG. 3C</figref> is taken as an abnormal voltage range <b>100</b>. Also, as shown in <figref idref="DRAWINGS">FIG. 3A</figref>, when the foreign matter <b>94</b> is attached between the leadless terminal <b>65</b>-<b>1</b> and the external ground pattern, the resistance component Ry is added to <figref idref="DRAWINGS">FIG. 3B</figref> due to the foreign matter <b>94</b>. 
+</p>
+<p id="p-0039" num="0038"> The voltage Vs of the leadless terminal <b>65</b>-<b>1</b> in this case is:  
+<maths id="MATH-US-00003" num="3">
+<math overflow="scroll">
+<mtable>
+  <mtr>
+    <mtd>
+      <mrow>
+        <mi>Vs</mi>
+        <mo>=</mo>
+        <mrow>
+          <mfrac>
+            <mrow>
+              <mi>R</mi>
+              <mo>&#x2062;</mo>
+              <mstyle>
+                <mtext>&#x2003;</mtext>
+              </mstyle>
+              <mo>&#x2062;</mo>
+              <mn>2</mn>
+            </mrow>
+            <mrow>
+              <mrow>
+                <mo>(</mo>
+                <mrow>
+                  <mrow>
+                    <mi>R</mi>
+                    <mo>&#x2062;</mo>
+                    <mstyle>
+                      <mtext>&#x2003;</mtext>
+                    </mstyle>
+                    <mo>&#x2062;</mo>
+                    <mn>1</mn>
+                  </mrow>
+                  <mo>//</mo>
+                  <mrow>
+                    <mi>R</mi>
+                    <mo>&#x2062;</mo>
+                    <mstyle>
+                      <mtext>&#x2003;</mtext>
+                    </mstyle>
+                    <mo>&#x2062;</mo>
+                    <mn>3</mn>
+                  </mrow>
+                </mrow>
+                <mo>)</mo>
+              </mrow>
+              <mo>+</mo>
+              <mrow>
+                <mo>(</mo>
+                <mrow>
+                  <mrow>
+                    <mi>R</mi>
+                    <mo>&#x2062;</mo>
+                    <mstyle>
+                      <mtext>&#x2003;</mtext>
+                    </mstyle>
+                    <mo>&#x2062;</mo>
+                    <mn>2</mn>
+                  </mrow>
+                  <mo>//</mo>
+                  <mi>Ry</mi>
+                </mrow>
+                <mo>)</mo>
+              </mrow>
+            </mrow>
+          </mfrac>
+          <mo>&#x2062;</mo>
+          <mi>Vc</mi>
+        </mrow>
+      </mrow>
+    </mtd>
+    <mtd>
+      <mrow>
+        <mo>[</mo>
+        <mrow>
+          <mi>Equation</mi>
+          <mo>&#x2062;</mo>
+          <mstyle>
+            <mtext>&#x2003;</mtext>
+          </mstyle>
+          <mo>&#x2062;</mo>
+          <mn>3</mn>
+        </mrow>
+        <mo>]</mo>
+      </mrow>
+    </mtd>
+  </mtr>
+</mtable>
+</math>
+</maths>
+<br/>
+ In this case, with the resistance component Ry being added due to the foreign matter <b>94</b>, the voltage of the leadless terminal <b>65</b>-<b>1</b> is below the normal voltage range <b>98</b> in <figref idref="DRAWINGS">FIG. 3C</figref>. Therefore, a voltage range under the normal voltage range <b>98</b> is taken as the abnormal voltage range <b>102</b>. As such, when the pull-up resistor <b>90</b> is connected to the external circuit <b>66</b>-<b>1</b>, the normal voltage range <b>98</b> and the abnormal voltage areas <b>100</b> and <b>102</b> in <figref idref="DRAWINGS">FIG. 3C</figref> are set in advance as determination criteria in the determining unit <b>82</b> of <figref idref="DRAWINGS">FIGS. 2A and 2B</figref>. In comparison with the measured voltage Vs of the leadless terminal obtained through measurement by the measuring unit <b>80</b> through a fault testing operation, it is determined whether the voltage is a normal voltage or an abnormal voltage. 
+</p>
+<p id="p-0040" num="0039"> <figref idref="DRAWINGS">FIGS. 4A</figref> to <b>4</b>C are drawings for describing the fault diagnosing unit and diagnosis principles when a pull-down resistor is connected to the input line of the external circuit. <figref idref="DRAWINGS">FIG. 4A</figref> particularly depicts an output system of the output circuit <b>64</b>-<b>1</b>, wherein a pull-down resistor <b>96</b> is connected to the external circuit <b>66</b>-<b>1</b> connected to the leadless terminal <b>65</b>-<b>1</b>. There is a possibility of existence of the foreign matter <b>92</b> attached between the power source line of the power source voltage Vc and the leadless terminal <b>65</b>-<b>1</b> or the foreign matter <b>94</b> attached between the ground pattern and the leadless terminal <b>65</b>-<b>1</b>. <figref idref="DRAWINGS">FIG. 4B</figref> shows an equivalent circuit of a resistance connection with respect to the leadless terminal <b>65</b>-<b>1</b> of <figref idref="DRAWINGS">FIG. 4A</figref>. At the normal time, the resistances <b>86</b>, <b>88</b>, <b>96</b> form a resistor circuit network. With the foreign matter <b>92</b> or <b>94</b> being attached, the corresponding resistance Rx or Ry is added. </p>
+<p id="p-0041" num="0040"> Here, at the normal time, the voltage Vs of the leadless terminal <b>65</b>-<b>1</b> in <figref idref="DRAWINGS">FIG. 4B</figref> is:  
+<maths id="MATH-US-00004" num="4">
+<math overflow="scroll">
+<mtable>
+  <mtr>
+    <mtd>
+      <mrow>
+        <mi>Vs</mi>
+        <mo>=</mo>
+        <mrow>
+          <mfrac>
+            <mrow>
+              <mo>(</mo>
+              <mrow>
+                <mrow>
+                  <mi>R</mi>
+                  <mo>&#x2062;</mo>
+                  <mstyle>
+                    <mtext>&#x2003;</mtext>
+                  </mstyle>
+                  <mo>&#x2062;</mo>
+                  <mn>2</mn>
+                </mrow>
+                <mo>//</mo>
+                <mrow>
+                  <mi>R</mi>
+                  <mo>&#x2062;</mo>
+                  <mstyle>
+                    <mtext>&#x2003;</mtext>
+                  </mstyle>
+                  <mo>&#x2062;</mo>
+                  <mn>4</mn>
+                </mrow>
+              </mrow>
+              <mo>)</mo>
+            </mrow>
+            <mrow>
+              <mrow>
+                <mi>R</mi>
+                <mo>&#x2062;</mo>
+                <mstyle>
+                  <mtext>&#x2003;</mtext>
+                </mstyle>
+                <mo>&#x2062;</mo>
+                <mn>1</mn>
+              </mrow>
+              <mo>+</mo>
+              <mrow>
+                <mo>(</mo>
+                <mrow>
+                  <mrow>
+                    <mi>R</mi>
+                    <mo>&#x2062;</mo>
+                    <mstyle>
+                      <mtext>&#x2003;</mtext>
+                    </mstyle>
+                    <mo>&#x2062;</mo>
+                    <mn>2</mn>
+                  </mrow>
+                  <mo>//</mo>
+                  <mrow>
+                    <mi>R</mi>
+                    <mo>&#x2062;</mo>
+                    <mstyle>
+                      <mtext>&#x2003;</mtext>
+                    </mstyle>
+                    <mo>&#x2062;</mo>
+                    <mn>4</mn>
+                  </mrow>
+                </mrow>
+                <mo>)</mo>
+              </mrow>
+            </mrow>
+          </mfrac>
+          <mo>&#x2062;</mo>
+          <mi>Vc</mi>
+        </mrow>
+      </mrow>
+    </mtd>
+    <mtd>
+      <mrow>
+        <mo>[</mo>
+        <mrow>
+          <mi>Equation</mi>
+          <mo>&#x2062;</mo>
+          <mstyle>
+            <mtext>&#x2003;</mtext>
+          </mstyle>
+          <mo>&#x2062;</mo>
+          <mn>4</mn>
+        </mrow>
+        <mo>]</mo>
+      </mrow>
+    </mtd>
+  </mtr>
+</mtable>
+</math>
+</maths>
+<br/>
+ When the foreign matter <b>92</b> is attached between the power source line and the leadless terminal, the voltage Vs is:  
+<maths id="MATH-US-00005" num="5">
+<math overflow="scroll">
+<mtable>
+  <mtr>
+    <mtd>
+      <mrow>
+        <mi>Vs</mi>
+        <mo>=</mo>
+        <mrow>
+          <mfrac>
+            <mrow>
+              <mo>(</mo>
+              <mrow>
+                <mrow>
+                  <mi>R</mi>
+                  <mo>&#x2062;</mo>
+                  <mstyle>
+                    <mtext>&#x2003;</mtext>
+                  </mstyle>
+                  <mo>&#x2062;</mo>
+                  <mn>2</mn>
+                </mrow>
+                <mo>//</mo>
+                <mrow>
+                  <mi>R</mi>
+                  <mo>&#x2062;</mo>
+                  <mstyle>
+                    <mtext>&#x2003;</mtext>
+                  </mstyle>
+                  <mo>&#x2062;</mo>
+                  <mn>4</mn>
+                </mrow>
+              </mrow>
+              <mo>)</mo>
+            </mrow>
+            <mrow>
+              <mrow>
+                <mo>(</mo>
+                <mrow>
+                  <mrow>
+                    <mi>R</mi>
+                    <mo>&#x2062;</mo>
+                    <mstyle>
+                      <mtext>&#x2003;</mtext>
+                    </mstyle>
+                    <mo>&#x2062;</mo>
+                    <mn>1</mn>
+                  </mrow>
+                  <mo>//</mo>
+                  <mrow>
+                    <mi>R</mi>
+                    <mo>&#x2062;</mo>
+                    <mstyle>
+                      <mtext>&#x2003;</mtext>
+                    </mstyle>
+                    <mo>&#x2062;</mo>
+                    <mi>x</mi>
+                  </mrow>
+                </mrow>
+                <mo>)</mo>
+              </mrow>
+              <mo>+</mo>
+              <mrow>
+                <mo>(</mo>
+                <mrow>
+                  <mrow>
+                    <mi>R</mi>
+                    <mo>&#x2062;</mo>
+                    <mstyle>
+                      <mtext>&#x2003;</mtext>
+                    </mstyle>
+                    <mo>&#x2062;</mo>
+                    <mn>2</mn>
+                  </mrow>
+                  <mo>//</mo>
+                  <mrow>
+                    <mi>R</mi>
+                    <mo>&#x2062;</mo>
+                    <mstyle>
+                      <mtext>&#x2003;</mtext>
+                    </mstyle>
+                    <mo>&#x2062;</mo>
+                    <mn>4</mn>
+                  </mrow>
+                </mrow>
+                <mo>)</mo>
+              </mrow>
+            </mrow>
+          </mfrac>
+          <mo>&#x2062;</mo>
+          <mi>Vc</mi>
+        </mrow>
+      </mrow>
+    </mtd>
+    <mtd>
+      <mrow>
+        <mo>[</mo>
+        <mrow>
+          <mi>Equation</mi>
+          <mo>&#x2062;</mo>
+          <mstyle>
+            <mtext>&#x2003;</mtext>
+          </mstyle>
+          <mo>&#x2062;</mo>
+          <mn>5</mn>
+        </mrow>
+        <mo>]</mo>
+      </mrow>
+    </mtd>
+  </mtr>
+</mtable>
+</math>
+</maths>
+<br/>
+ and, on the other hand, when the foreign matter <b>94</b> is attached between the ground pattern and the leadless terminal, the voltage Vs is:  
+<maths id="MATH-US-00006" num="6">
+<math overflow="scroll">
+<mtable>
+  <mtr>
+    <mtd>
+      <mrow>
+        <mi>Vs</mi>
+        <mo>=</mo>
+        <mrow>
+          <mfrac>
+            <mrow>
+              <mo>(</mo>
+              <mrow>
+                <mrow>
+                  <mrow>
+                    <mi>R</mi>
+                    <mo>&#x2062;</mo>
+                    <mstyle>
+                      <mtext>&#x2003;</mtext>
+                    </mstyle>
+                    <mo>&#x2062;</mo>
+                    <mn>2</mn>
+                  </mrow>
+                  <mo>//</mo>
+                  <mrow>
+                    <mi>R</mi>
+                    <mo>&#x2062;</mo>
+                    <mstyle>
+                      <mtext>&#x2003;</mtext>
+                    </mstyle>
+                    <mo>&#x2062;</mo>
+                    <mn>4</mn>
+                  </mrow>
+                </mrow>
+                <mo>//</mo>
+                <mi>Ry</mi>
+              </mrow>
+              <mo>)</mo>
+            </mrow>
+            <mrow>
+              <mrow>
+                <mi>R</mi>
+                <mo>&#x2062;</mo>
+                <mstyle>
+                  <mtext>&#x2003;</mtext>
+                </mstyle>
+                <mo>&#x2062;</mo>
+                <mn>1</mn>
+              </mrow>
+              <mo>+</mo>
+              <mrow>
+                <mo>(</mo>
+                <mrow>
+                  <mrow>
+                    <mrow>
+                      <mi>R</mi>
+                      <mo>&#x2062;</mo>
+                      <mstyle>
+                        <mtext>&#x2003;</mtext>
+                      </mstyle>
+                      <mo>&#x2062;</mo>
+                      <mn>2</mn>
+                    </mrow>
+                    <mo>//</mo>
+                    <mrow>
+                      <mi>R</mi>
+                      <mo>&#x2062;</mo>
+                      <mstyle>
+                        <mtext>&#x2003;</mtext>
+                      </mstyle>
+                      <mo>&#x2062;</mo>
+                      <mn>4</mn>
+                    </mrow>
+                  </mrow>
+                  <mo>//</mo>
+                  <mi>Ry</mi>
+                </mrow>
+                <mo>)</mo>
+              </mrow>
+            </mrow>
+          </mfrac>
+          <mo>&#x2062;</mo>
+          <mi>Vc</mi>
+        </mrow>
+      </mrow>
+    </mtd>
+    <mtd>
+      <mrow>
+        <mo>[</mo>
+        <mrow>
+          <mi>Equation</mi>
+          <mo>&#x2062;</mo>
+          <mstyle>
+            <mtext>&#x2003;</mtext>
+          </mstyle>
+          <mo>&#x2062;</mo>
+          <mn>6</mn>
+        </mrow>
+        <mo>]</mo>
+      </mrow>
+    </mtd>
+  </mtr>
+</mtable>
+</math>
+</maths>
+<br/>
+ as the above. 
+</p>
+<p id="p-0042" num="0041"> Here, when it is assumed that R1=R2=R4, Vs=Vc/3. The voltage at the time of a fault diagnosis operation for the leadless terminal <b>65</b>-<b>1</b> is, as shown in <figref idref="DRAWINGS">FIG. 4C</figref>, in a range of a normal voltage range <b>104</b>, an abnormal voltage range <b>106</b> due to the foreign matter <b>92</b> attached between the power source line and the leadless terminal, and an abnormal voltage range <b>108</b> due to the foreign matter <b>94</b> attached between the ground pattern and the leadless terminal. The normal voltage range <b>104</b> and the abnormal voltage ranges <b>106</b> and <b>108</b> are set as determination criteria in the determining unit <b>82</b> of <figref idref="DRAWINGS">FIGS. 2A and 2B</figref> correspondingly to the external circuit <b>66</b>-<b>1</b> having the pull-down resistor <b>96</b>. </p>
+<p id="p-0043" num="0042"> <figref idref="DRAWINGS">FIGS. 5A</figref> to <b>5</b>C are drawings for describing the fault diagnosing unit and diagnosis principles when the input line of the external circuit is in a floating state. <figref idref="DRAWINGS">FIG. 5A</figref> particularly depicts an output system of the output circuit <b>64</b>-<b>1</b>, wherein the input line of the external circuit <b>66</b>-<b>1</b> has no connection with a pull-up resistor or a pull-down resistor and is in a floating state. As for the leadless terminal <b>65</b>-<b>1</b> connected to the input line in a floating state, there is a possibility of attachment of the foreign matter <b>92</b> between the power source line and the leadless terminal or the foreign matter <b>94</b> between the ground line and the leadless terminal. <figref idref="DRAWINGS">FIG. 5B</figref> shows a resistor circuit network viewed from the leadless terminal <b>65</b>-<b>1</b> with respect to the input line of the external circuit in a floating state shown in <figref idref="DRAWINGS">FIG. 5A</figref>. In this case, at the normal time, only the resistances <b>86</b> and <b>88</b> of the pseudo-output unit <b>78</b> are present. To these, the resistance component Rx due to the foreign matter <b>92</b> attached between the power source line and the leadless terminal and the resistance component Ry due to the foreign matter <b>94</b> attached between the ground line and the leadless terminal are added. </p>
+<p id="p-0044" num="0043"> The voltage Vs of the leadless terminal <b>65</b>-<b>1</b> in this case is:  
+<maths id="MATH-US-00007" num="7">
+<math overflow="scroll">
+<mtable>
+  <mtr>
+    <mtd>
+      <mrow>
+        <mi>Vs</mi>
+        <mo>=</mo>
+        <mrow>
+          <mfrac>
+            <mrow>
+              <mi>R</mi>
+              <mo>&#x2062;</mo>
+              <mstyle>
+                <mtext>&#x2003;</mtext>
+              </mstyle>
+              <mo>&#x2062;</mo>
+              <mn>2</mn>
+            </mrow>
+            <mrow>
+              <mrow>
+                <mi>R</mi>
+                <mo>&#x2062;</mo>
+                <mstyle>
+                  <mtext>&#x2003;</mtext>
+                </mstyle>
+                <mo>&#x2062;</mo>
+                <mn>1</mn>
+              </mrow>
+              <mo>+</mo>
+              <mrow>
+                <mi>R</mi>
+                <mo>&#x2062;</mo>
+                <mstyle>
+                  <mtext>&#x2003;</mtext>
+                </mstyle>
+                <mo>&#x2062;</mo>
+                <mn>2</mn>
+              </mrow>
+            </mrow>
+          </mfrac>
+          <mo>&#x2062;</mo>
+          <mi>Vc</mi>
+        </mrow>
+      </mrow>
+    </mtd>
+    <mtd>
+      <mrow>
+        <mo>[</mo>
+        <mrow>
+          <mi>Equation</mi>
+          <mo>&#x2062;</mo>
+          <mstyle>
+            <mtext>&#x2003;</mtext>
+          </mstyle>
+          <mo>&#x2062;</mo>
+          <mn>7</mn>
+        </mrow>
+        <mo>]</mo>
+      </mrow>
+    </mtd>
+  </mtr>
+</mtable>
+</math>
+</maths>
+<br/>
+ When the foreign matter <b>92</b> is attached between the power source line and the leadless terminal, the voltage is:  
+<maths id="MATH-US-00008" num="8">
+<math overflow="scroll">
+<mtable>
+  <mtr>
+    <mtd>
+      <mrow>
+        <mi>Vs</mi>
+        <mo>=</mo>
+        <mrow>
+          <mfrac>
+            <mrow>
+              <mi>R</mi>
+              <mo>&#x2062;</mo>
+              <mstyle>
+                <mtext>&#x2003;</mtext>
+              </mstyle>
+              <mo>&#x2062;</mo>
+              <mn>2</mn>
+            </mrow>
+            <mrow>
+              <mrow>
+                <mo>(</mo>
+                <mrow>
+                  <mrow>
+                    <mi>R</mi>
+                    <mo>&#x2062;</mo>
+                    <mstyle>
+                      <mtext>&#x2003;</mtext>
+                    </mstyle>
+                    <mo>&#x2062;</mo>
+                    <mn>1</mn>
+                  </mrow>
+                  <mo>//</mo>
+                  <mrow>
+                    <mi>R</mi>
+                    <mo>&#x2062;</mo>
+                    <mstyle>
+                      <mtext>&#x2003;</mtext>
+                    </mstyle>
+                    <mo>&#x2062;</mo>
+                    <mi>x</mi>
+                  </mrow>
+                </mrow>
+                <mo>)</mo>
+              </mrow>
+              <mo>+</mo>
+              <mrow>
+                <mi>R</mi>
+                <mo>&#x2062;</mo>
+                <mstyle>
+                  <mtext>&#x2003;</mtext>
+                </mstyle>
+                <mo>&#x2062;</mo>
+                <mn>2</mn>
+              </mrow>
+            </mrow>
+          </mfrac>
+          <mo>&#x2062;</mo>
+          <mi>Vc</mi>
+        </mrow>
+      </mrow>
+    </mtd>
+    <mtd>
+      <mrow>
+        <mo>[</mo>
+        <mrow>
+          <mi>Equation</mi>
+          <mo>&#x2062;</mo>
+          <mstyle>
+            <mtext>&#x2003;</mtext>
+          </mstyle>
+          <mo>&#x2062;</mo>
+          <mn>8</mn>
+        </mrow>
+        <mo>]</mo>
+      </mrow>
+    </mtd>
+  </mtr>
+</mtable>
+</math>
+</maths>
+<br/>
+ On the other hand, when the foreign matter <b>94</b> is attached between the ground line and the leadless terminal, the voltage is:  
+<maths id="MATH-US-00009" num="9">
+<math overflow="scroll">
+<mtable>
+  <mtr>
+    <mtd>
+      <mrow>
+        <mi>Vs</mi>
+        <mo>=</mo>
+        <mrow>
+          <mfrac>
+            <mrow>
+              <mo>(</mo>
+              <mrow>
+                <mrow>
+                  <mi>R</mi>
+                  <mo>&#x2062;</mo>
+                  <mstyle>
+                    <mtext>&#x2003;</mtext>
+                  </mstyle>
+                  <mo>&#x2062;</mo>
+                  <mn>2</mn>
+                </mrow>
+                <mo>//</mo>
+                <mi>Ry</mi>
+              </mrow>
+              <mo>)</mo>
+            </mrow>
+            <mrow>
+              <mrow>
+                <mi>R</mi>
+                <mo>&#x2062;</mo>
+                <mstyle>
+                  <mtext>&#x2003;</mtext>
+                </mstyle>
+                <mo>&#x2062;</mo>
+                <mn>1</mn>
+              </mrow>
+              <mo>+</mo>
+              <mrow>
+                <mo>(</mo>
+                <mrow>
+                  <mrow>
+                    <mi>R</mi>
+                    <mo>&#x2062;</mo>
+                    <mstyle>
+                      <mtext>&#x2003;</mtext>
+                    </mstyle>
+                    <mo>&#x2062;</mo>
+                    <mn>2</mn>
+                  </mrow>
+                  <mo>//</mo>
+                  <mi>Ry</mi>
+                </mrow>
+                <mo>)</mo>
+              </mrow>
+            </mrow>
+          </mfrac>
+          <mo>&#x2062;</mo>
+          <mi>Vc</mi>
+        </mrow>
+      </mrow>
+    </mtd>
+    <mtd>
+      <mrow>
+        <mo>[</mo>
+        <mrow>
+          <mi>Equation</mi>
+          <mo>&#x2062;</mo>
+          <mstyle>
+            <mtext>&#x2003;</mtext>
+          </mstyle>
+          <mo>&#x2062;</mo>
+          <mn>9</mn>
+        </mrow>
+        <mo>]</mo>
+      </mrow>
+    </mtd>
+  </mtr>
+</mtable>
+</math>
+</maths>
+<br/>
+ as the above. 
+</p>
+<p id="p-0045" num="0044"> <figref idref="DRAWINGS">FIG. 5C</figref> shows the normal voltage range <b>110</b> and the abnormal voltage ranges <b>112</b> and <b>114</b> correspondingly to the equivalent circuit of <figref idref="DRAWINGS">FIG. 5B</figref>. When R1=R2, the normal voltage range <b>110</b> is in a range of &#xb1;&#x394;V of Vc/2 obtained through voltage division by the resistance <b>86</b> and <b>88</b> of the pseudo-output unit <b>78</b>. When the foreign matter <b>92</b> is attached between the power source line and the leadless terminal, the voltage is in the abnormal voltage range <b>112</b> exceeding the normal voltage range <b>110</b>. On the other hand, when the foreign matter <b>94</b> is attached between the ground pattern and the leadless terminal, the voltage is in the abnormal voltage range <b>114</b> lower than the normal voltage range <b>110</b>. Values of the normal voltage range <b>110</b> and the abnormal voltage ranges <b>112</b> and <b>114</b> are previously set in the determining unit <b>82</b> of <figref idref="DRAWINGS">FIGS. 2A and 2B</figref> as determination criteria correspondingly to the fact that the external circuit is in a floating state. </p>
+<p id="p-0046" num="0045"> <figref idref="DRAWINGS">FIG. 6</figref> is a flowchart of fault diagnosis control by the MPU <b>20</b> of <figref idref="DRAWINGS">FIGS. 2A and 2B</figref>. In <figref idref="DRAWINGS">FIG. 6</figref>, a fault diagnosis program is loaded from testing equipment in step S<b>1</b>. With the function of the fault diagnosis control unit <b>46</b> achieved by this execution of the fault diagnosis program, in step S<b>2</b>, a fault diagnosis command is issued to the integrated circuit <b>10</b> including the fault diagnosis function as to the leadless terminal, thereby making an instruction for fault diagnosis. Then in step S<b>3</b>, it is checked whether the diagnosis result has been received from the diagnosis target, and upon receipt of the diagnosis result, the diagnosis result is stored in a diagnosis file in step S<b>4</b>. Then in step S<b>5</b>, it is checked whether diagnosis has been performed on all integrated circuits. As with the integrated circuit <b>10</b>, a fault diagnosis command is issued in step S<b>2</b> to another integrated circuit including the fault diagnosing unit <b>48</b>, thereby causing a self-diagnosis process to be performed, and then the processes in steps S<b>2</b> to S<b>4</b> of receiving the diagnosis result and storing the diagnosis result in the diagnosis file are repeated. If it is determined in step S<b>5</b> that diagnosis has been performed on all integrated circuits, the diagnosis file is transmitted to the testing equipment in step S<b>6</b>. In step S<b>7</b>, the fault diagnosis program is unloaded. </p>
+<p id="p-0047" num="0046"> <figref idref="DRAWINGS">FIG. 7</figref> is a flowchart of a diagnosis process by the fault diagnosing unit of <figref idref="DRAWINGS">FIGS. 2A and 2B</figref>. In <figref idref="DRAWINGS">FIG. 7</figref>, the fault diagnosis process is such that, after the pseudo-output unit <b>78</b> is activated in step S<b>1</b>, one of a plurality of output circuits is selected in step S<b>2</b>, and the corresponding switch of the first switching unit <b>68</b> is turned off in step S<b>3</b>, thereby cutting the connection of the selected output circuit with the leadless terminal. Then in step S<b>4</b>, the corresponding switch of the second switching unit <b>72</b> is turned on, thereby applying a pseudo-output voltage to the leadless terminal. With this state, the voltage of the leadless terminal is measured in step S<b>5</b> by the measuring unit <b>80</b>. In step S<b>6</b>, the measured voltage is determined by the determining unit <b>82</b>. In the determination process, in step S<b>7</b>, if the measured voltage is in the normal voltage range, the procedure goes to step S<b>9</b>. If it is in the abnormal voltage range, an abnormal flag in the self-diagnosis file is turned on in step S<b>8</b>. Then in step S<b>9</b>, it is checked whether the process has been performed on all of the output circuits. If the process has not been completed, the processes from step S<b>2</b> are repeated. If it is determined in step S<b>9</b> that the process has been performed on all of the output circuits, after a response with the fault diagnosis file is sent to the MPU <b>20</b> in step S<b>10</b>, a recovery process of recovering the fault diagnosing unit to an initial state is performed in step S<b>11</b>, thereby ending a series of the processes. </p>
+<p id="p-0048" num="0047"> <figref idref="DRAWINGS">FIGS. 8A and 8B</figref> shows another embodiment of the fault diagnosing unit according to another embodiment of the present invention provided on the integrated circuit <b>10</b>. This embodiment has a feature that, in accordance with pull-up resistors, pull-down resistors, and a floating state of the input lines of the external output circuits, the external circuits are divided into groups, and a pseudo-output voltage unique to each group of the external circuits is supplied. In <figref idref="DRAWINGS">FIGS. 8A and 8B</figref>, the logic circuit <b>62</b> of the integrated circuit <b>10</b> implemented on the circuit board <b>12</b> includes the output circuits <b>64</b>-<b>1</b> to <b>64</b>-<b>6</b>. The external circuits <b>66</b>-<b>1</b> to <b>66</b>-<b>6</b> on the circuit board <b>12</b> that are connected via the leadless terminals <b>65</b>-<b>1</b> to <b>65</b>-<b>6</b> are classified into a group containing the external circuits <b>66</b>-<b>1</b> and <b>66</b>-<b>2</b> having pull-up resistors <b>90</b>-<b>1</b> and <b>90</b>-<b>2</b>, respectively, connected to their input lines, a group containing the external circuits <b>66</b>-<b>3</b> and <b>66</b>-<b>4</b> having pull-down resistors <b>96</b>-<b>3</b> and <b>96</b>-<b>4</b>, respectively, connected to their input lines, and further a group containing the external circuits <b>66</b>-<b>5</b> and <b>66</b>-<b>6</b> in a floating state without having connected thereto a pull-up resistor or a pull-down resistor. Correspondingly to the grouping of the external circuits <b>66</b>-<b>1</b> to <b>66</b>-<b>6</b>, the fault diagnosing unit <b>48</b> provided on the integrated circuit <b>10</b> includes pseudo-output units <b>78</b>-<b>1</b>, <b>78</b>-<b>2</b>, and <b>78</b>-<b>3</b> for the respective groups. The pseudo-output unit <b>78</b>-<b>1</b> is provided correspondingly to the group containing of the external circuits <b>66</b>-<b>1</b> and <b>66</b>-<b>2</b> including the pull-up resistors <b>90</b>-<b>1</b> and <b>90</b>-<b>2</b>, respectively, and its circuit configuration is the one shown in <figref idref="DRAWINGS">FIG. 3B</figref>, for example. In the embodiment of <figref idref="DRAWINGS">FIGS. 8A and 8B</figref>, the resistance values R1and R2 of the resistances <b>86</b> and <b>88</b>, respectively, of each pseudo-output unit <b>78</b> are set so that the normal voltage range <b>98</b> shown in <figref idref="DRAWINGS">FIG. 3C</figref> is located at a center position representing a half of the power supply voltage Vc. Also, the pseudo-output unit <b>78</b>-<b>2</b> of <figref idref="DRAWINGS">FIGS. 8A and 8B</figref> corresponds to the group containing the external circuits <b>66</b>-<b>3</b> and <b>66</b>-<b>4</b> having connected thereto the pull-down resistors <b>96</b>-<b>3</b> and <b>96</b>-<b>4</b>, respectively. The pseudo-output unit <b>78</b>-<b>2</b> outputs, for example, a divided voltage by a series circuit of the resistances <b>86</b> and <b>88</b> shown in <figref idref="DRAWINGS">FIG. 4B</figref>. Unlike in <figref idref="DRAWINGS">FIG. 4C</figref> where the normal voltage range <b>104</b> is present at a lower voltage side, the resistance values R1and R2 of the resistances <b>86</b> and <b>88</b>, respectively, are set so that the normal voltage range is located at an approximately center representing a half of the power supply voltage Vc. Furthermore, the pseudo-output unit <b>78</b>-<b>3</b> is provided correspondingly to the external circuits <b>66</b>-<b>5</b> and <b>66</b>-<b>6</b> in a floating state. In this case, as shown in <figref idref="DRAWINGS">FIG. 5C</figref>, the normal voltage range <b>110</b> is located at an approximately center representing a half of the power supply voltage Vc. Therefore, as with <figref idref="DRAWINGS">FIG. 5B</figref>, a circuit is formed where the resistance values R1and R2 of the resistances <b>86</b> and <b>88</b>, respectively, are set as R1=R2. As such, by setting a pseudo-output voltage for each of a pull-up resistor, a pull-down resistor, and a floating state in the input lines of the external circuits, the normal voltage range with respect to the power supply voltage can be set as a half (approximately the center) of the normal voltage range even with different types of the input line of the external device. With this, irrespectively of the pull-up resistor, the pull-down resistor, or the floating state, the same determination criteria can be used for the determination range of the normal voltage and the abnormal voltage in the determination circuit <b>52</b>, thereby simplifying the determination process. </p>
+<p id="p-0049" num="0048"> <figref idref="DRAWINGS">FIGS. 9A and 9B</figref> shows still another embodiment of the integrated circuit according to the present invention. In this embodiment, the fault diagnosing unit of the present invention is provided for the leadless terminals connecting input/output lines of an input/output circuit provided to the integrated circuit <b>10</b> to the pattern on the circuit board <b>12</b>. In <figref idref="DRAWINGS">FIGS. 9A and 9B</figref>, the integrated circuit <b>10</b> includes input/output circuits <b>102</b>-<b>1</b> to <b>102</b>-<b>6</b> for the logic circuit <b>62</b>, which are connected via the leadless terminals <b>65</b>-<b>1</b> to <b>65</b>-<b>6</b> to external circuits <b>66</b>-<b>1</b> to <b>66</b>-<b>6</b> on the circuit board <b>12</b> each also having an input/output function. Also in this case, as the fault diagnosing unit <b>48</b> according to the present invention, the first switching unit <b>68</b>, the second switching unit <b>72</b>, the switching control unit <b>76</b>, the pseudo-output unit <b>78</b>, the measuring unit <b>80</b>, the determining unit <b>82</b>, and the bus interface unit <b>84</b> are provided. With this, an abnormal voltage due to a foreign substance attached, by soldering of the leadless terminal <b>65</b>-<b>1</b>, between the leadless terminal and the power supply line or ground line can be determined through a fault diagnosis operation and then be reported to the outside. Here, in the above embodiment, as the package structure in which the state of soldering of the terminal to the circuit board, with the terminal as being implemented on the circuit board, cannot been seen from the outside, the ball grid array is taken as an example. Other than that, the structure in which the soldering portion is difficult to see from the outside as being implemented includes QFN (Quad Flat Non-Leaded Package), LCC (Leadless Chip Carrier), or the like. The LCC and QFN have a package with a structure in which only an electrode pad is formed without a lead. For an integrated circuit in a package structure having such a leadless terminal, as with the ball grid array, a fault diagnosing unit for the leadless terminal according to the present invention is provided, thereby making it possible to detect an abnormality due to soldering of the leadless terminal as fault diagnosis. Also, devices using a circuit board having implemented thereon the integrated circuit of the present invention include appropriate information processing apparatuses and equipment, for example, magnetic disk apparatus. Furthermore, in the above embodiment, a case where an MPU (processor) is implemented on a circuit board having implemented thereon the integrated circuit of the present invention is taken as an example. Alternatively, the MPU can be incorporated in the integrated circuit. Still further, the present invention includes appropriate modifications without impairing the purpose or advantage of the present invention, and is not restricted by numerical values shown in the above embodiment. </p>
+<?detailed-description description="Detailed Description" end="tail"?>
+</description>
+<us-math idrefs="MATH-US-00001" nb-file="US20070001705A1-20070104-M00001.NB">
+<img id="EMI-M00001" he="6.69mm" wi="76.20mm" file="US20070001705A1-20070104-M00001.TIF" alt="embedded image" img-content="math" img-format="tif"/>
+</us-math>
+<us-math idrefs="MATH-US-00002" nb-file="US20070001705A1-20070104-M00002.NB">
+<img id="EMI-M00002" he="6.69mm" wi="76.20mm" file="US20070001705A1-20070104-M00002.TIF" alt="embedded image" img-content="math" img-format="tif"/>
+</us-math>
+<us-math idrefs="MATH-US-00003" nb-file="US20070001705A1-20070104-M00003.NB">
+<img id="EMI-M00003" he="7.03mm" wi="76.20mm" file="US20070001705A1-20070104-M00003.TIF" alt="embedded image" img-content="math" img-format="tif"/>
+</us-math>
+<us-math idrefs="MATH-US-00004" nb-file="US20070001705A1-20070104-M00004.NB">
+<img id="EMI-M00004" he="6.69mm" wi="76.20mm" file="US20070001705A1-20070104-M00004.TIF" alt="embedded image" img-content="math" img-format="tif"/>
+</us-math>
+<us-math idrefs="MATH-US-00005" nb-file="US20070001705A1-20070104-M00005.NB">
+<img id="EMI-M00005" he="6.69mm" wi="76.20mm" file="US20070001705A1-20070104-M00005.TIF" alt="embedded image" img-content="math" img-format="tif"/>
+</us-math>
+<us-math idrefs="MATH-US-00006" nb-file="US20070001705A1-20070104-M00006.NB">
+<img id="EMI-M00006" he="7.03mm" wi="76.20mm" file="US20070001705A1-20070104-M00006.TIF" alt="embedded image" img-content="math" img-format="tif"/>
+</us-math>
+<us-math idrefs="MATH-US-00007" nb-file="US20070001705A1-20070104-M00007.NB">
+<img id="EMI-M00007" he="6.35mm" wi="76.20mm" file="US20070001705A1-20070104-M00007.TIF" alt="embedded image" img-content="math" img-format="tif"/>
+</us-math>
+<us-math idrefs="MATH-US-00008" nb-file="US20070001705A1-20070104-M00008.NB">
+<img id="EMI-M00008" he="6.69mm" wi="76.20mm" file="US20070001705A1-20070104-M00008.TIF" alt="embedded image" img-content="math" img-format="tif"/>
+</us-math>
+<us-math idrefs="MATH-US-00009" nb-file="US20070001705A1-20070104-M00009.NB">
+<img id="EMI-M00009" he="7.03mm" wi="76.20mm" file="US20070001705A1-20070104-M00009.TIF" alt="embedded image" img-content="math" img-format="tif"/>
+</us-math>
+<us-claim-statement>What is claimed is: </us-claim-statement>
+<claims id="claims">
+<claim id="CLM-00001" num="00001">
+<claim-text><b>1</b>. An integrated circuit comprising: </claim-text>
+<claim-text>an output circuit that outputs a logic signal; </claim-text>
+<claim-text>a leadless terminal connecting an output line of the output circuit and being connected by soldering to a circuit board; and 
+<claim-text>a fault diagnosing unit that tests an output voltage of the leadless terminal as being implemented on the circuit board to determine whether the output voltage is a normal voltage or an abnormal voltage. </claim-text>
+</claim-text>
+ </claim>
+<claim id="CLM-00002" num="00002">
+<claim-text><b>2</b>. The integrated circuit according to <claim-ref idref="CLM-00001">claim 1</claim-ref>, wherein the fault diagnosing unit includes: 
+<claim-text>a pseudo-output unit that applies a predetermined pseudo-output voltage to the leadless terminal; </claim-text>
+<claim-text>a switching unit that cuts a connection of the output circuit to the leadless terminal at the time of fault diagnosis, and supplies the pseudo-output voltage of the pseudo-output unit to the leadless terminal side as being cut; </claim-text>
+<claim-text>a measuring unit that measures a voltage of the leadless terminal in a fault diagnosis state by the switching unit; and </claim-text>
+<claim-text>a determining unit that determines, from the voltage measured by the measuring unit, whether the voltage of the leadless terminal is a normal voltage or an abnormal voltage. </claim-text>
+</claim-text>
+ </claim>
+<claim id="CLM-00003" num="00003">
+<claim-text><b>3</b>. The integrated circuit according to <claim-ref idref="CLM-00002">claim 2</claim-ref>, wherein when a plurality of said output circuits are present, the switching unit sequentially cuts connections of leadless terminals with the plurality of output circuits at the time of fault diagnosis and, in synchronization with the cutting of the leadless terminal, connects an output of the pseudo-output unit to a relevant one of the leadless terminals. </claim-text>
+ </claim>
+<claim id="CLM-00004" num="00004">
+<claim-text><b>4</b>. The integrated circuit according to <claim-ref idref="CLM-00002">claim 2</claim-ref>, wherein the switching unit includes a first switching unit that cuts an output of the output circuit from the leadless terminal at the time of the fault diagnosis and a second switching unit that connects the output of the pseudo-output unit to the leadless terminal side cut by the first switching unit. </claim-text>
+ </claim>
+<claim id="CLM-00005" num="00005">
+<claim-text><b>5</b>. The integrated circuit according to <claim-ref idref="CLM-00002">claim 2</claim-ref>, wherein the pseudo-output unit outputs a resistance divided voltage generated by a resistance series circuit as the pseudo-output voltage. </claim-text>
+ </claim>
+<claim id="CLM-00006" num="00006">
+<claim-text><b>6</b>. The integrated circuit according to <claim-ref idref="CLM-00005">claim 5</claim-ref>, wherein with an external circuit of the circuit board making a pull-up connection of an input line to a power source line via a pull-up resistor, when the measured voltage is in a predetermined voltage range centering on a specific voltage defined by a resistance of the pseudo-output unit and the pull-up resistor, the determining unit determines that the measured voltage is a normal voltage, and when the measured voltage is outside the predetermined voltage range, determines that the measured voltage is an abnormal voltage resulting from a soldering connection of the leadless terminal. </claim-text>
+ </claim>
+<claim id="CLM-00007" num="00007">
+<claim-text><b>7</b>. The integrated circuit according to <claim-ref idref="CLM-00005">claim 5</claim-ref>, wherein with an external circuit of the circuit board making a pull-down connection of an input line to a ground via a pull-down resistor, when the measured voltage is in a predetermined voltage range centering on a specific voltage defined by a resistance of the pseudo-output unit and the pull-down resistor, the determining unit determines that the measured voltage is a normal voltage, and when the measured voltage is outside the predetermined voltage range, determines that the measured voltage is an abnormal voltage resulting from a soldering connection of the leadless terminal. </claim-text>
+ </claim>
+<claim id="CLM-00008" num="00008">
+<claim-text><b>8</b>. The integrated circuit according to <claim-ref idref="CLM-00005">claim 5</claim-ref>, wherein with an external circuit of the circuit board being in a floating state in which an input line is cut from a power source line and a ground, when the measured voltage is in a predetermined voltage range centering on a specific voltage defined by a divided voltage resistance of the pseudo-output unit, the determining unit determines that the measured voltage is a normal voltage, and when the measured voltage is outside the predetermined voltage range, determines that the measured voltage is an abnormal voltage resulting from a soldering connection of the leadless terminal. </claim-text>
+ </claim>
+<claim id="CLM-00009" num="00009">
+<claim-text><b>9</b>. The integrated circuit according to <claim-ref idref="CLM-00001">claim 1</claim-ref>, the pseudo-output unit is provided to divide external circuits on the circuit board into groups corresponding to a connection of a pull-up resistor, a connection of a pull-down resistor, or floating without a connection of the pull-up resistor or the pull-down resistor and output a pseudo-output voltage unique to each group. </claim-text>
+ </claim>
+<claim id="CLM-00010" num="00010">
+<claim-text><b>10</b>. The integrated circuit according to <claim-ref idref="CLM-00001">claim 1</claim-ref>, wherein the output circuit includes an input/output circuit. </claim-text>
+ </claim>
+<claim id="CLM-00011" num="00011">
+<claim-text><b>11</b>. The integrated circuit according to <claim-ref idref="CLM-00001">claim 1</claim-ref>, wherein the fault diagnosing unit performs fault diagnosis upon receipt of an instruction from a processor incorporated in the integrated circuit or implemented on the circuit board and responds with the diagnosis result. </claim-text>
+ </claim>
+<claim id="CLM-00012" num="00012">
+<claim-text><b>12</b>. A circuit board having implemented thereon an integrated circuit and a circuit external thereto, the circuit board comprising: 
+<claim-text>an output circuit that outputs a logic signal; </claim-text>
+<claim-text>a leadless terminal connecting an output line of the output circuit and being connected by soldering to a circuit board; and </claim-text>
+<claim-text>a fault diagnosing unit that tests an output voltage of the leadless terminal as being implemented on the circuit board to determine whether the output voltage is a normal voltage or an abnormal voltage. </claim-text>
+</claim-text>
+ </claim>
+<claim id="CLM-00013" num="00013">
+<claim-text><b>13</b>. The circuit board according to <claim-ref idref="CLM-00012">claim 12</claim-ref>, wherein the fault diagnosing unit includes a pseudo-output unit that applies a pseudo-set predetermined pseudo-output voltage to the leadless terminal; 
+<claim-text>a switching unit that cuts a connection of the output circuit to the leadless terminal at the time of fault diagnosis, and supplies the pseudo-output voltage of the pseudo-output unit to the leadless terminal side as being cut; </claim-text>
+<claim-text>a measuring unit that measures a voltage of the leadless terminal in a fault diagnosis state by the switching unit; and </claim-text>
+<claim-text>a determining unit that determines, from the voltage measured by the measuring unit, whether the voltage of the leadless terminal is a normal voltage or an abnormal voltage. </claim-text>
+</claim-text>
+ </claim>
+<claim id="CLM-00014" num="00014">
+<claim-text><b>14</b>. The circuit board according to <claim-ref idref="CLM-00013">claim 13</claim-ref>, wherein when a plurality of said output circuits are present, the switching unit sequentially cuts connections of leadless terminals with the plurality of output circuits at the time of fault diagnosis and, in synchronization with the cutting of the leadless terminal, connects an output of the pseudo-output unit to a relevant one of the leadless terminals. </claim-text>
+ </claim>
+<claim id="CLM-00015" num="00015">
+<claim-text><b>15</b>. The circuit board according to <claim-ref idref="CLM-00013">claim 13</claim-ref>, wherein the switching unit includes a first switching unit that cuts an output of the output circuit from the leadless terminal at the time of the fault diagnosis and a second switching unit that connects the output of the pseudo-output unit to the leadless terminal side cut by the first switching unit. </claim-text>
+ </claim>
+<claim id="CLM-00016" num="00016">
+<claim-text><b>16</b>. The circuit board according to <claim-ref idref="CLM-00013">claim 13</claim-ref>, wherein the pseudo-output unit outputs a resistance divided voltage generated by a resistance series circuit as the pseudo-output voltage. </claim-text>
+ </claim>
+<claim id="CLM-00017" num="00017">
+<claim-text><b>17</b>. The circuit board according to <claim-ref idref="CLM-00016">claim 16</claim-ref>, wherein with an external circuit of the circuit board making a pull-up connection of an input line to a power source line via a pull-up resistor, when the measured voltage is in a predetermined voltage range centering on a specific voltage defined by a resistance of the pseudo-output unit and the pull-up resistor, the determining unit determines that the measured voltage is a normal voltage, and when the measured voltage is outside the predetermined voltage range, determines that the measured voltage is an abnormal voltage resulting from a soldering connection of the leadless terminal. </claim-text>
+ </claim>
+<claim id="CLM-00018" num="00018">
+<claim-text><b>18</b>. The circuit board according to <claim-ref idref="CLM-00017">claim 17</claim-ref>, wherein with an external circuit of the circuit board making a pull-down connection of an input line to a ground via a pull-down resistor, when the measured voltage is in a predetermined voltage range centering on a specific voltage defined by a resistance of the pseudo-output unit and the pull-down resistor, the determining unit determines that the measured voltage is a normal voltage, and when the measured voltage is outside the predetermined voltage range, determines that the measured voltage is an abnormal voltage resulting from a soldering connection of the leadless terminal. </claim-text>
+ </claim>
+<claim id="CLM-00019" num="00019">
+<claim-text><b>19</b>. The circuit board according to <claim-ref idref="CLM-00017">claim 17</claim-ref>, wherein with an external circuit of the circuit board being in a floating state in which an input line is cut from a power source line and a ground, when the measured voltage is in a predetermined voltage range centering on a specific voltage defined by a divided voltage resistance of the pseudo-output unit, the determining unit determines that the measured voltage is a normal voltage, and when the measured voltage is outside the predetermined voltage range, determines that the measured voltage is an abnormal voltage resulting from a soldering connection of the leadless terminal. </claim-text>
+ </claim>
+<claim id="CLM-00020" num="00020">
+<claim-text><b>20</b>. The circuit board according to <claim-ref idref="CLM-00017">claim 17</claim-ref>, wherein the fault diagnosing unit performs fault diagnosis upon receipt of an instruction from a processor incorporated in the integrated circuit or implemented on the circuit board and responds with the diagnosis result.</claim-text>
+ </claim>
+</claims>
+</us-patent-application>

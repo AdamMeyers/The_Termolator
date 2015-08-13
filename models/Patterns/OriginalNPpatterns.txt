@@ -1,0 +1,119 @@
+pattern set np;
+
+np-of-np	:=  [constit cat=np pa=PA]:HeadC
+		    "of"
+		    [constit cat=np isName=Name]:CompC;
+
+when np-of-np   add [constit cat=np pa=PA isName=Name headC=HeadC of=CompC];
+
+// np-of-np-of-np	:=  [constit cat=np] "of"
+//		    ([constit cat=np pa=PA]:HeadC
+//		     "of"
+//		     [constit cat=np isName=Name]:CompC):NpOfNp;
+//
+// when np-of-np-of-np add [constit cat=np pa=PA isName=Name headC=HeadC of=CompC] over NpOfNp;
+
+appos		:=  appos1 | appos2;
+
+appos1		:=  [constit cat=np isName=true pa=PA]:HeadC ","
+		    [constit cat=np isName=false]:Apposite sa* final-punct;
+
+appos2		:=  [constit cat=np isName=false pa=PA]:HeadC ","
+                    [constit cat=np isName=true]:Apposite sa* final-punct;
+
+sa		:=  pp | [constit cat=adv];
+
+pp		:=  [constit cat=p] [constit cat=np];  
+
+final-punct	:=  "," | ";" | ".";
+
+when appos	add [constit cat=np pa=PA isName=true headC=HeadC apposite=Apposite];
+
+pattern set conj;
+
+n-and-n		:=  [constit cat=np]:N1 conj [constit cat=np]:N2;
+
+conj		:=  "and" | "or";
+
+when n-and-n	addFeatures [conj=N2] to N1;
+
+n3-list		:=  [constit cat=np]:N1 "," [constit cat=np]:N2 ","? conj [constit cat=np]:N3;
+
+when n3-list	addFeatures [conj=N2] to N1, addFeatures [conj=N3] to N2;
+
+n4-list		:=  [constit cat=np]:N1 "," [constit cat=np]:N2  "," [constit cat=np]:N3 
+		    ","? conj [constit cat=np]:N4;
+
+when n4-list	addFeatures [conj=N2] to N1, addFeatures [conj=N3] to N2,
+		addFeatures [conj=N4] to N3;
+
+n5-list		:=  [constit cat=np]:N1 "," [constit cat=np]:N2  "," [constit cat=np]:N3 
+		    "," [constit cat=np]:N4 ","? conj [constit cat=np]:N5;
+
+when n5-list	addFeatures [conj=N2] to N1, addFeatures [conj=N3] to N2,
+		addFeatures [conj=N4] to N3, addFeatures [conj=N5] to N4;
+
+n6-list		:=  [constit cat=np]:N1 "," [constit cat=np]:N2  "," [constit cat=np]:N3 
+		    "," [constit cat=np]:N4 "," [constit cat=np]:N5 ","? conj [constit cat=np]:N6;
+
+when n6-list	addFeatures [conj=N2] to N1, addFeatures [conj=N3] to N2,
+		addFeatures [conj=N4] to N3, addFeatures [conj=N5] to N4,
+		addFeatures [conj=N6] to N5;
+
+pattern set vp;
+
+v-np		:=  [constit cat=vgroup pa=PA-verb]:HeadC [constit cat=np]:Obj;
+
+when v-np	add [constit cat=vp pa=PA-verb headC=HeadC object=Obj];
+
+vp-intrans	:=  [constit cat=vgroup pa=PA-verb]:HeadC;
+
+when vp-intrans	add [constit cat=vp pa=PA-verb headC=HeadC];
+
+v-inf-np	:=  "to"? [constit cat=vgroup-inf pa=PA-verb]:HeadC [constit cat=np]:Obj;
+
+when v-inf-np	add [constit cat=vp-inf pa=PA-verb headC=HeadC object=Obj];
+
+ving-np		:=  [constit cat=vgroup-ving pa=PA-verb]:HeadC [constit cat=np]:Obj;
+
+when ving-np	add [constit cat=vingo pa=PA-verb headC=HeadC object=Obj];
+
+// modifiers using vp
+
+pattern set rnv;
+
+rn-wh		:=  [constit cat=np pa=PA]:NPHead 
+		    (","? ("who"|"which"|"that") [constit cat=vp pa=PA-verb]:RN-vp ","?):RN;
+
+when rn-wh	add [constit cat=rn-wh pa=PA-verb headC=RN-vp subject=NPHead] over RN,
+		add [constit cat=np pa=PA headC=NPHead];
+
+rn-vingo	:=  [constit cat=np pa=PA]:NPHead
+		    [constit cat=vingo pa=PA-verb]:RN;
+
+when rn-vingo	add [constit cat=rn-vingo pa=PA-verb headC=RN subject=NPHead] over RN,
+		add [constit cat=np pa=PA headC=NPHead];
+
+rn-venpass	:=  [constit cat=np pa=PA]:NPHead
+		    [constit cat=vgroup-ven pa=PA-verb]:RN;
+
+when rn-venpass	add [constit cat=rn-venpass pa=PA-verb headC=RN object=NPHead] over RN,
+		add [constit cat=np pa=PA headC=NPHead];
+
+pattern set s;
+
+np-vp		:=  [constit cat=np]:Subj [constit cat=vp pa=PA-verb]:HeadC;
+
+when np-vp	add [constit cat=s pa=PA-verb headC=HeadC subject=Subj];
+
+np-vp-pass	:=  [constit cat=np]:Obj [constit cat=vgroup-pass pa=PA-verb]:HeadC;
+
+when np-vp-pass	add [constit cat=s pa=PA-verb headC=HeadC object=Obj];
+
+// pattern set pp;
+
+// prepositional phrase (unattached)
+
+// pp		:=  [constit cat=p] [constit cat=np];
+
+// when pp		add [constit cat=pp];

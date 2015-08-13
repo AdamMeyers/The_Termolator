@@ -1,0 +1,1641 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.1//EN' 'http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd'>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="generator" content="Docutils 0.8: http://docutils.sourceforge.net/"/>
+<title>WE'RE CIVILIZED!</title>
+<meta content="38287" name="PG.Id"/>
+<meta content="We're Civilized!" name="PG.Title"/>
+<meta content="2011-12-13" name="PG.Released"/>
+<meta content="Public Domain" name="PG.Rights"/>
+<meta content="Frank van Drogen" name="PG.Producer"/>
+<meta content="Greg Weeks" name="PG.Producer"/>
+<meta content="the Online Distributed Proofreading Team at http://www.pgdp.net" name="PG.Producer"/>
+<meta content="Mark Clifton" name="DC.Creator"/>
+<meta content="Alex Apostolides" name="DC.Creator"/>
+<meta content="We're Civilized!" name="DC.Title"/>
+<meta content="en" name="DC.Language"/>
+<meta content="1953" name="DC.Created"/>
+
+
+<link href="images/cover.jpg" rel="coverpage"/>
+<link href="http://purl.org/dc/terms/" rel="schema.DCTERMS"/>
+<link href="http://id.loc.gov/vocabulary/relators" rel="schema.MARCREL"/>
+<meta content="We're Civilized!" name="DCTERMS.title"/>
+<meta content="civilized.rst" name="DCTERMS.source"/>
+<meta content="en" scheme="DCTERMS.RFC4646" name="DCTERMS.language"/>
+<meta content="2011-12-13T19:06:52.619009+00:00" scheme="DCTERMS.W3CDTF" name="DCTERMS.modified"/>
+<meta content="Project Gutenberg" name="DCTERMS.publisher"/>
+<meta content="Public Domain in the USA." name="DCTERMS.rights"/>
+<link href="http://www.gutenberg.org/ebooks/38287" rel="DCTERMS.isFormatOf"/>
+<meta content="Mark Clifton" name="DCTERMS.creator"/>
+<meta content="Alex Apostolides" name="DCTERMS.creator"/>
+<meta content="2011-12-13" scheme="DCTERMS.W3CDTF" name="DCTERMS.created"/>
+<meta content="width=device-width" name="viewport"/>
+<meta content="EpubMaker 0.3 by Marcello Perathoner &lt;webmaster@gutenberg.org&gt;" name="generator"/>
+<style type="text/css">
+/* 
+Project Gutenberg common docutils stylesheet.
+
+This stylesheet contains styles common to HTML and EPUB.  Put styles
+that are specific to HTML and EPUB into their relative stylesheets.
+
+:Author: Marcello Perathoner (webmaster@gutenberg.org)
+:Copyright: This stylesheet has been placed in the public domain.
+
+This stylesheet is based on:
+
+  :Author: David Goodger (goodger@python.org)
+  :Copyright: This stylesheet has been placed in the public domain.
+
+  Default cascading style sheet for the HTML output of Docutils.
+
+*/
+
+/* ADE 1.7.2 chokes on !important and throws all css out. */
+
+/* FONTS */
+
+.italics    { font-style: italic }
+.bold       { font-weight: bold }
+.small-caps { }
+.gesperrt   { }
+.antiqua    { font-style: italic } /* what else can we do ? */
+.monospaced { font-family: monospace }
+
+.smaller    { font-size: smaller }
+.larger     { font-size: larger }
+
+.xx-small   { font-size: xx-small }
+.x-small    { font-size: x-small }
+.small      { font-size: small }
+.medium     { font-size: medium }
+.large      { font-size: large }
+.x-large    { font-size: x-large }
+.xx-large   { font-size: xx-large }
+
+.text-transform-uppercase { text-transform: uppercase }
+.text-transform-lowercase { text-transform: lowercase }
+.text-transform-none      { text-transform: none }
+
+.red        { color: red }
+.green      { color: green }
+.blue       { color: blue }
+.yellow     { color: yellow }
+.white      { color: white }
+.gray       { color: gray }
+.black      { color: black }
+
+/* ALIGN */
+
+.left       { text-align: left }
+.center     { text-align: center }
+.right      { text-align: right }
+.justify    { text-align: justify }
+
+/* LINE HEIGHT */
+
+body        { line-height: 1.5 }
+p           { margin: 1.5em 0 }
+
+/* PAGINATION */
+
+.title, .subtitle     { page-break-inside: avoid;
+			page-break-after:  avoid }
+.titlepage, 
+#pg-header            { page-break-inside: avoid }
+
+/* SECTIONS */
+
+body         { text-align: justify }
+
+p.noindent   { text-indent: 0 }
+
+.boxed       { border: 1px solid black; padding: 1em }
+.topic       { margin: 5% 0; border: 1px solid black; padding: 1em }
+div.section  { clear: both }
+
+div.line-block       { margin: 1.5em 0 }  /* same leading as p */
+div.line-block.inner { margin: 0 0 0 10% }
+div.line             { margin-left: 20%; text-indent: -20%; }
+.line-block.noindent div.line { margin-left: 0; text-indent: 0; }
+
+hr.docutils  { margin: 1.5em 40%; border: none; border-bottom: 1px solid black; }
+
+.clearpage,
+.cleardoublepage,
+.vfill,
+.vspace      { border: 0px solid white }
+
+.title               { margin: 1.5em 0 }
+.title.with-subtitle { margin-bottom: 0 }
+.subtitle            { margin: 1.5em 0 }
+
+/* ugly hack to give more specifity. 
+   because ADE chokes on !important */
+.first.first { margin-top: 0 } 
+.last.last   { margin-bottom: 0 }
+
+/* header font style */
+/* http://dev.w3.org/csswg/css3-fonts/#propdef-font-size */
+
+h1.title                     { font-size: 200%; }  /* for book title only */
+h2.title, p.subtitle.level-1 { font-size: 150%; margin-top: 4.5em;  margin-bottom: 2em }
+h3.title, p.subtitle.level-2 { font-size: 120%; margin-top: 2.25em; margin-bottom: 1.25em }
+h4.title, p.subtitle.level-3 { font-size: 100%; margin-top: 1.5em;  margin-bottom: 1.5em;  font-weight: bold; }
+h5.title, p.subtitle.level-4 { font-size:  89%; margin-top: 1.87em; margin-bottom: 1.69em; font-style: italic; }
+h6.title, p.subtitle.level-5 { font-size:  60%; margin-top: 3.5em;  margin-bottom: 2.5em }
+
+/* title page */
+
+h1.document-title, 
+p.document-subtitle     { text-align: center }
+
+div.titlepage,
+#pg-header,
+h1.document-title       { margin: 10% 0 5% 0 }
+p.document-subtitle     { margin:  0  0 5% 0 }
+
+/* PG header and footer */
+#pg-machine-header { }
+#pg-produced-by { }
+
+li.toc-entry            { list-style-type: none }
+ul.open li, ol.open li  { margin-bottom: 1.5em }
+
+p.attribution           { margin-top: 0; text-align: right }
+
+.example-rendered { 
+    margin: 1em 5%; border: 1px dotted red;  padding: 1em; background-color: #ffd }
+.literal-block.example-source   { 
+    margin: 1em 5%; border: 1px dotted blue; padding: 1em; background-color: #eef }
+
+/* DROPCAPS */
+
+/* BLOCKQUOTES */
+
+blockquote { margin: 1.5em 10% }
+
+blockquote.epigraph { }
+
+blockquote.highlights { }
+
+div.local-contents { margin: 1.5em 10% }
+
+div.abstract { margin: 3em 10% }
+div.caption  { margin: 1.5em 10%; text-align: center; font-style: italic }
+div.legend   { margin: 1.5em 10% }
+
+.hidden { display: none }
+
+.invisible { visibility: hidden; color: white } /* white: mozilla print bug */
+
+a.toc-backref {
+  text-decoration: none ;
+  color: black }
+
+dl.docutils dd {
+  margin-bottom: 0.5em }
+
+div.figure { margin: 3em 0 }
+
+img { max-width: 100% }
+
+div.footer, div.header {
+  clear: both;
+  font-size: smaller }
+
+div.sidebar {
+  margin: 0 0 0.5em 1em ;
+  border: medium outset ;
+  padding: 1em ;
+  background-color: #ffffee ;
+  width: 40% ;
+  float: right ;
+  clear: right }
+
+div.sidebar p.rubric {
+  font-family: sans-serif ;
+  font-size: medium }
+
+div.topic {
+  margin: 3em 0 }
+
+ol.simple, ul.simple { margin: 1.5em 0 }
+
+ol.toc-list,    ul.toc-list    { padding-left:  0  }
+ol ol.toc-list, ul ul.toc-list { padding-left:  5% }
+
+ol.arabic {
+  list-style: decimal }
+
+ol.loweralpha {
+  list-style: lower-alpha }
+
+ol.upperalpha {
+  list-style: upper-alpha }
+
+ol.lowerroman {
+  list-style: lower-roman }
+
+ol.upperroman {
+  list-style: upper-roman }
+
+p.credits {
+  font-style: italic ;
+  font-size: smaller }
+
+p.label {
+  white-space: nowrap }
+
+p.rubric {
+  font-weight: bold ;
+  font-size: larger ;
+  color: maroon ;
+  text-align: center }
+
+p.sidebar-title {
+  font-family: sans-serif ;
+  font-weight: bold ;
+  font-size: larger }
+
+p.sidebar-subtitle {
+  font-family: sans-serif ;
+  font-weight: bold }
+
+p.topic-title {
+  font-weight: bold }
+
+pre.address {
+  margin-bottom: 0 ;
+  margin-top: 0 ;
+  font: inherit }
+
+.literal-block, .doctest-block {
+  margin-left: 2em ;
+  margin-right: 2em; }
+
+span.classifier {
+  font-family: sans-serif ;
+  font-style: oblique }
+
+span.classifier-delimiter {
+  font-family: sans-serif ;
+  font-weight: bold }
+
+span.interpreted {
+  font-family: sans-serif }
+
+span.option {
+  white-space: nowrap }
+
+span.pre {
+  white-space: pre }
+
+span.problematic {
+  color: red }
+
+span.section-subtitle {
+  /* font-size relative to parent (h1..h6 element) */
+  font-size: 100% }
+
+table { margin-top: 1.5em; margin-bottom: 1.5em; border-spacing: 0 }
+table.align-left, table.align-right { margin-top: 0 }
+
+table.table                { border-collapse: collapse; }
+table.table thead          { border: 1px solid black; border-width: 2px 0 0 }
+table.table tbody          { border: 1px solid black; border-width: 2px 0 }
+table.table tr             { border: 1px solid black; border-width: 0 0 1px }
+table.table tr.last        { border-width: 0 }
+table.table td, 
+table.table th             { padding: 1ex 1em; vertical-align: middle }
+
+table.table.norules tr             { border-width: 0 }
+table.table.norules td, 
+table.table.norules th             { padding: 0.5ex 1em }
+table.table.norules tr.first td    { padding-top: 1ex }
+table.table.norules tr.last td     { padding-bottom: 1ex }
+table.table.norules tr.first th    { padding-top: 1ex }
+table.table.norules tr.last th     { padding-bottom: 1ex }
+
+
+table.citation {
+  border-left: solid 1px gray;
+  margin-left: 1px }
+
+table.docinfo {
+  margin: 3em 4em }
+
+table.docutils { }
+
+tr.footnote.footnote td, tr.footnote.footnote th { 
+  padding: 0 0.5em 1.5em;
+}
+
+table.docutils td, table.docutils th,
+table.docinfo td, table.docinfo th {
+  padding: 0 0.5em;
+  vertical-align: top }
+
+table.docutils th.field-name, table.docinfo th.docinfo-name {
+  font-weight: bold ;
+  text-align: left ;
+  white-space: nowrap ;
+  padding-left: 0 }
+
+/* used to remove borders from tables and images */
+.borderless, table.borderless td, table.borderless th {
+  border: 0 }
+
+table.borderless td, table.borderless th {
+  /* Override padding for "table.docutils td" with "!important".
+     The right padding separates the table cells. */
+  padding: 0 0.5em 0 0 } /* FIXME: was !important */
+
+h1 tt.docutils, h2 tt.docutils, h3 tt.docutils,
+h4 tt.docutils, h5 tt.docutils, h6 tt.docutils {
+  font-size: 100% }
+
+ul.auto-toc {
+  list-style-type: none }
+</style>
+<style type="text/css">
+/* 
+Project Gutenberg HTML docutils stylesheet.
+
+This stylesheet contains styles specific to HTML.
+*/
+
+/* FONTS */
+
+em                { font-style: normal }
+strong            { font-weight: normal }
+.small-caps       { font-variant: small-caps }
+.gesperrt         { letter-spacing: 0.1em }
+
+/* ALIGN */
+
+.align-left       { clear: left;
+		    float: left;
+		    margin-right: 1em }
+
+.align-right      { clear: right;
+		    float: right;
+		    margin-left: 1em }
+
+.align-center     { margin-left: auto;
+		    margin-right: auto }
+
+div.shrinkwrap    { display: table; }
+
+/* SECTIONS */
+
+body              { margin: 5% 10% 5% 10% }
+
+/* compact list items containing just one p */
+li p.pfirst       { margin-top: 0; margin-bottom: 0 } 
+
+.first            { margin-top: 0 !important } 
+.last             { margin-bottom: 0 !important }
+
+.dropcap          { float: left; }
+span.dropcap      { margin: 0 0.1em 0 0; line-height: 1 }
+img.dropcap       { margin: 0 0.5em 0 0; }
+
+/* PAGINATION */
+
+@media screen {
+   .coverpage, .frontispiece, .titlepage, .verso, 
+   .contents, .foreword, .preface, .introduction, .dedication, .prologue,
+   .epilogue, .appendix, .glossary, .bibliography, .index, .colophon,
+   .footnotes, .plainpage
+                      { margin: 10%  0 }
+   .clearpage         { margin: 10% }
+   .cleardoublepage   { margin: 10% }
+   .vfill             { margin:  5% 10% }
+}
+
+@media print {
+    /* margin-top disappears after a page-break, thus padding */
+   .frontispiece, .verso, .plainpage, .section.level-2,
+   .clearpage         { page-break-before: always; padding-top: 1px }
+
+   .coverpage, .titlepage, 
+   .contents, .foreword, .preface, .introduction, .dedication, .prologue,
+   .epilogue, .appendix, .glossary, .bibliography, .index, .colophon,
+   .footnotes,
+   .cleardoublepage   { page-break-before: right; padding-top: 1px }
+
+   .vfill             { margin-top: 20% }
+   h2.title           { margin-top: 20% }
+}
+</style>
+<style type="text/css">
+.pageno       { position: absolute; right: 95%; font: medium sans-serif; }
+.pageno:after { color: gray; content: '[' attr(title) ']' }
+.toc-pageref  { float: right }
+pre           { font-family: monospace; font-size: 0.9em; white-space: pre-wrap }
+</style>
+</head>
+<body>
+<div class="document" id="we-re-civilized">
+<h1 class="document-title level-1 pfirst title">WE'RE CIVILIZED!</h1>
+
+<!-- -*- encoding: utf-8 -*- -->
+<div class="container language-en pgheader" xml:lang="en" id="pg-header">
+<p class="noindent pfirst">This eBook is for the use of anyone anywhere at no cost and with
+almost no restrictions whatsoever. You may copy it, give it away or
+re-use it under the terms of the <a class="reference internal pginternal" href="#project-gutenberg-license">Project Gutenberg License</a>
+included with this eBook or online at
+<a class="reference external" href="http://www.gutenberg.org/license">http://www.gutenberg.org/license</a>.</p>
+<div class="vspace" style="height: 1em">
+</div>
+<div class="container" id="pg-machine-header">
+<p class="noindent pfirst">Title: We're Civilized!</p>
+<p class="noindent pnext">Author: Mark Clifton and Alex Apostolides</p>
+<p class="noindent pnext">Release Date: December 13, 2011 [EBook #38287]</p>
+<p class="noindent pnext">Language: English</p>
+<p class="noindent pnext">Character set encoding: UTF-8</p>
+<div class="vspace" style="height: 1em">
+</div>
+<p class="noindent pnext" id="pg-start-line">*** START OF THIS PROJECT GUTENBERG EBOOK WE'RE CIVILIZED! ***</p>
+</div>
+<div class="vspace" style="height: 4em">
+</div>
+<div class="container" id="pg-produced-by">
+<p class="noindent pfirst">Produced by Frank van Drogen, Greg Weeks, and the Online Distributed Proofreading Team at <a class="reference external" href="http://www.pgdp.net">http://www.pgdp.net</a>.</p>
+<div class="vspace" style="height: 1em">
+</div>
+</div>
+</div>
+<div class="align-center auto-scaled center figure" style="margin-left: 21%; width: 57%">
+<img class="center" style="display: block; width: 100%" alt="images/cover.jpg" src="images/cover.jpg" width="100%"/>
+</div>
+<!--  -->
+<blockquote><div>
+<div class="line-block outermost">
+<div class="line"><span class="x-large">WE'RE CIVILIZED!</span></div>
+<div class="line"> </div>
+<div class="line">By MARK CLIFTON and ALEX APOSTOLIDES</div>
+<div class="line"> </div>
+</div>
+</div></blockquote>
+<blockquote class="epigraph"><div>
+<p class="pfirst"><em class="italics">Naturally, the superior race
+should win ... but superior by
+which standards ... and whose?</em></p>
+<p class="pnext">Illustrated by BALBALIS</p>
+</div></blockquote>
+<div class="align-center auto-scaled figure" style="margin-left: 21%; width: 57%">
+<img style="display: block; width: 100%" alt="images/im1.jpg" src="images/im1.jpg" width="100%"/>
+</div>
+<p class="pfirst">The females and children
+worked among the lichen
+growth, picking off the fattest,
+ripest leaves for their food
+and moisture, completing their
+arc of the circle of symbiosis.</p>
+<p class="pnext">The males worked at the surface
+of the canals, or in open
+excavations. Their wide, mutated
+hands chipped into the rock-hard
+clay, opening a channel which
+was to be filled with sand and
+then sealed off with clay on all
+sides and surface. That water
+might seep through the sand
+without evaporation, without
+loss, from the poles to the equator
+of Mars—seep unimpeded, so
+that moisture might reach the
+lichen plants of everyone, so that
+none might thirst or hunger.</p>
+<p class="pnext">The seepage must flow. Not
+even buried in the dim racial
+memory had there ever been one
+who took more than his share,
+for this would be like the fingers
+of one hand stealing blood from
+the fingers of the other.</p>
+<p class="pnext">Among the Mars race there
+were many words for contentment,
+kinship of each to all.
+There were words to express the
+ecstasy of watching the eternal
+stars, by night and by day,
+through the thin blackish atmosphere.
+There were words to express
+the joy of opening slitted
+nostrils to breathe deeply in those
+protected places where the blowing
+sands did not swirl, of opening
+folds of rubbery skin to catch
+the weak rays of the distant Sun.</p>
+<p class="pnext">But there were no words for
+"mine" as separate from "yours."
+And there was no urge to cry
+out, "Why am I here? What is
+the purpose of it all?"</p>
+<p class="pnext">Each had his purpose, serene,
+unquestioning. Each repaired or
+extended the seepage canals so
+that others, unborn, might know
+the same joys and ecstasies as
+they. The work was in itself a
+part of the total joy, and they
+resisted it no more than healthy
+lungs resist clear, cool air.</p>
+<p class="pnext">So far back that even the concept
+of beginnings had been forgotten,
+the interwoven fabric of
+their symbiotic interdependence
+seeped through their lives as naturally
+as the precious water
+seeped through the canal sands.
+As far back as that, they had
+achieved civilization.</p>
+<p class="pnext">Their kind of civilization.</p>
+<hr class="docutils"/>
+<p class="pfirst">Captain Griswold maintained
+an impassive face. (Let that,
+too, be a part of the legend.)
+Without expression, he looked
+through the screen at the red land
+flashing below the ship. But unconsciously
+he squared his shoulders,
+breathed deeply, enjoying
+the virile pull of his uniform over
+his expanding chest. Resolutely
+he pushed aside the vision of
+countless generations of school
+children, yet to come, repeating
+the lesson dutifully to their
+teachers.</p>
+<p class="pnext">"Captain Thomas H. Griswold
+took possession of Mars, June
+14, 2018."</p>
+<p class="pnext">No, he must not allow any
+mood of vanity to spoil his own
+memories of this moment. It was
+beside the point that his name
+would rank with the great names
+of all times. Still, the history of
+the moment could not be denied.</p>
+<p class="pnext">Lieutenant Atkinson's voice
+broke through his preoccupation,
+and saved him the immodest
+thought of wondering if perhaps
+his cap visor might not be worn
+a little more rakishly to one side.
+He must father a custom, something
+distinctive of those who
+had been to Mars—</p>
+<p class="pnext">"Another canal, sir."</p>
+<p class="pnext">Below them, a straight line of
+gray-green stretched to the horizon,
+contrasting sharply with the
+red ferrous oxide of the landscape.
+An entire planet of ferrous
+oxide—iron—steel for the already
+starving technology of the Western
+Alliance. The captain felt a momentary
+irritation that even this
+narrow swath displaced the precious
+iron ore.</p>
+<p class="pnext">Obviously these canals served
+no purpose. His ship had circled
+the planet at its equator, and
+again from pole to pole. Canals
+everywhere, but nothing else.
+Enough time and fuel had been
+wasted. They must land. Obviously
+there was no intelligent life.
+But the history of the moment
+must not be marred by any
+haste. There must be no question
+within the books yet to be written.
+There must be no accredited
+voice of criticism raised.</p>
+<p class="pnext">"My compliments to Mr. Berkeley,"
+he said harshly to Lt. Atkinson,
+"and would he kindly
+step to the control room?" He
+paused and added dryly, "At his
+convenience."</p>
+<p class="pnext">Mister Berkeley, indeed. What
+was it they called the civilian—an
+ethnologist? A fellow who was
+supposed to be an authority on
+races, civilizations, mores and
+customs of groups. Well, the man
+was excess baggage. There would
+be no races to contact here. A
+good thing, too. These civilian
+experts with their theories—show
+them a tooth and they'll dream
+up a monster. Show them a
+fingernail paring and they'll deduce
+a civilization from it. Nonsense!</p>
+<p class="pnext">"You wanted to see me, Captain?"
+The voice was young,
+quiet, controlled.</p>
+<hr class="docutils"/>
+<p class="pfirst">Without haste, Captain
+Griswold turned and faced
+Berkeley. Not only a theorist, but
+a young theorist. These super-bright
+young men with their
+sharp blue eyes. A lot of learning
+and no knowledge. A lot of wisdom
+and no common sense. He
+carefully controlled his voice,
+concealing his lack of respect for
+the civilian.</p>
+<p class="pnext">"Well, Mr. Berkeley, we have
+quartered the globe. We have seen
+no evidence of civilization."</p>
+<p class="pnext">"You discount the canals, Captain?"
+Berkeley asked, as if more
+from curiosity than refutation.</p>
+<p class="pnext">"I must discount them," the
+captain  answered  decisively.
+"Over all the planet we have seen
+no buildings, not even ruins, no
+evidence at all that intelligence
+exists here."</p>
+<p class="pnext">"I consider straight lines, running
+half the length of a world,
+to be evidence of something, sir."
+It was a flat statement, given
+without emphasis.</p>
+<p class="pnext">Arguments! Arguments! Little
+men who have to inflate themselves
+into a stature of importance—destroy
+the sacred history
+of the moment. But quietly now.
+There must be no memory of
+petty conflict.</p>
+<p class="pnext">"Where are their buildings, Mr.
+Berkeley?" he asked with patient
+tolerance. "Where are their factories?
+The smoke from their factories?
+The highways? The
+transportation facilities? Where
+are the airplanes? Even this thin
+air would support a fast jet. I
+do not require they have spaceships,
+Mr. Berkeley, to concede
+them intelligence. I do not require
+they be the equal of Man.
+I also have some scientific training.
+And my training tells me I
+cannot recognize the existence of
+something where there is no evidence
+at all."</p>
+<p class="pnext">"The canals," Berkeley answered.
+His voice also was controlled,
+for he, too, knew the
+history of this moment. But his
+concern was not for his own name
+in the history books. He knew
+only too well what its writers did
+to individuals for the sake of
+expediency. His concern was that
+this moment never be one of deep
+shame for Man. "Perhaps they
+have no buildings, no factory
+smoke, because they don't need
+them. Perhaps they don't have
+highways because they don't
+want to go anywhere. Perhaps
+their concept of living is completely
+unlike ours."</p>
+<hr class="docutils"/>
+<p class="pfirst">Griswold shrugged his
+shoulders. "We speak an entirely
+different language, Mr.
+Berkeley."</p>
+<p class="pnext">"I'm afraid you're right, Captain,"
+Berkeley sighed. "And it
+might be a tragic thing that we
+do. Remember, European man
+spoke a different language from
+that of the American Indian, the
+Mayan, Polynesian, African, Indonesian—"
+He broke off as if
+the list were endless. "I ask only
+that we don't hasten into the
+same errors all over again."</p>
+<p class="pnext">"We can't hover here above the
+surface forever," Griswold said
+irritably. "We have quartered the
+globe. The other experts are
+anxious to land, so they can get
+to their work. We have made a
+search for your civilization and
+we have not found it."</p>
+<p class="pnext">"I withdraw all objections to
+landing, Captain. You are entirely
+correct. We must land."</p>
+<p class="pnext">The intercom on the wall
+squawked into life.</p>
+<p class="pnext">"Observation to Control. Observation
+to Control. Network of
+canals forming a junction ahead."</p>
+<p class="pnext">"Prepare for landing, Lieutenant
+Atkinson," Griswold commanded
+sharply. "At the junction."
+He turned and watched the
+screen. "There, Mr. Berkeley,
+dead ahead. A dozen—at least a
+dozen of your canals joining at
+one spot. Surely, if there were a
+civilization at all, you would find
+it at such a spot." Slowly and
+carefully, he constructed the
+pages of history. "I do not wish
+the implication ever to arise that
+this ship's commander, or any
+of its personnel, failed to cooperate
+in every way with the
+scientific authorities aboard."</p>
+<p class="pnext">"I know that, Captain," Berkeley
+answered. "And I agree. The
+junction, then."</p>
+<hr class="docutils"/>
+<p class="pfirst">The sigh of servo-mechanism,
+the flare of intolerably hot
+blue flame, and the ship stood
+motionless above the junction of
+canals. Ponderously, slowly, she
+settled; held aloft by the pillars
+of flame beneath her, directly
+above the junction, fusing the
+sand in the canals to glass, exploding
+their walls with steam.
+Within their warm and protected
+burrows beside the canals, slitted
+nostrils closed, iris of eyes contracted,
+fluted layers of skin
+opened and pulled tight, and
+opened again convulsively in the
+reflexes of death.</p>
+<p class="pnext">There was a slight jar only as
+the ship settled to the ground,
+bathed in the mushrooming
+flame.</p>
+<p class="pnext">"A good landing, Lieutenant,"
+Captain Griswold complimented.
+"A good landing, indeed."</p>
+<p class="pnext">His head came up and he
+watched the screen to see the
+landscape reappear through the
+dust and steam.</p>
+<p class="pnext">"Prepare to disembark in approximately
+six hours, Lieutenant.
+The heat should have subsided
+sufficiently by then. The
+ship's officers, the civ—er—scientific
+party, a complement of men.
+I will lead the way. You, Lieutenant,
+will carry the flag and
+the necessary appurtenances to
+the ceremony. We will hold it
+without delay."</p>
+<p class="pnext">Berkeley was watching the
+screen also. He wondered what
+the effect of the landing heat
+would be on the canals. He wondered
+why it had been considered
+necessary to land squarely on the
+junction; why Man always, as if
+instinctively, does the most destructive
+thing he can.</p>
+<p class="pnext">He shrugged it away. Wherever
+they landed might have been the
+wrong place.</p>
+<hr class="docutils"/>
+<p class="pfirst">Farther along the canals,
+where the heat had not
+reached, the Mars race began to
+emerge from their protecting burrows.
+They had seen the meteor
+hurtling downward, and it was
+part of their conditioning to seek
+their burrows when any threatening
+phenomenon occurred.</p>
+<p class="pnext">Flaming meteors had fallen before,
+but never in the interlocked
+racial mind was there memory of
+one which had fallen directly on
+a canal junction. Within the fabric
+of their instinct, they sensed
+the fused sand, the broken clay
+walls, the water boiling through
+the broken walls, wasted. They
+sensed the waters on the other
+side of the barrier seeping onward,
+leaving sand unfilled.
+Within the nerves of their own
+bodies they felt the anticipated
+pangs of tendril roots searching
+down into the sand for water, and
+not finding it.</p>
+<p class="pnext">The urgency came upon them,
+all within the region, to remove
+this meteor; restore the canals
+as soon as the heat would permit.
+They began to gather, circling the
+meteor, circling the scorched
+ground around it. The urgency of
+getting at it before there was too
+much water lost drove them in
+upon the hot ground.</p>
+<p class="pnext">The unaccustomed heat held
+them back. They milled uncertainly,
+in increasing numbers,
+around the meteor.</p>
+<hr class="docutils"/>
+<p class="pfirst">Since Captain Griswold had
+not asked him to leave the
+control room during landing
+operations, Berkeley still stood
+and watched the screen. At the
+first appearance of the Mars race
+emerging from the soil, he exclaimed
+in great excitement:</p>
+<p class="pnext">"There they are! There they
+are, Captain!"</p>
+<p class="pnext">Griswold came over and stood
+beside him, watching the screen.
+His eyes widened.</p>
+<p class="pnext">"Horrible," he muttered in revulsion.
+The gorge arose in his
+throat and stopped his speech for
+a moment. But history took possession
+of him again. "I suppose
+we will get accustomed to their
+appearance in time," he conceded.</p>
+<p class="pnext">"They're the builders, Captain.
+Wonderful!" Berkeley exulted.
+"Those shovel-shaped forelimbs—they're
+the builders!"</p>
+<p class="pnext">"Perhaps," Griswold agreed.
+"But in the way a mole or gopher—still,
+if they were intelligent
+enough to be trained for mining
+operations—but then you certainly
+cannot call these things intelligent,
+Mr. Berkeley."</p>
+<p class="pnext">"How do we know, Captain?"</p>
+<p class="pnext">But the Captain was looking
+about vainly for buildings, for
+factory smoke, for highways.</p>
+<p class="pnext">"Lieutenant Atkinson!" he
+called.</p>
+<p class="pnext">"Yes, sir."</p>
+<p class="pnext">"Send an immediate order
+throughout the ship. The Mars
+things are not to be molested."
+He glanced at Berkeley as he
+gave the order, and then glanced
+away. "Double the complement
+of men on the landing party and
+see that they are fully armed."
+Then back to Berkeley, "A good
+leader guards against every contingency.
+But there will be no
+indiscriminate slaughter. You
+may be assured of that. I am as
+anxious as you that Man—"</p>
+<p class="pnext">"Thank you, Captain," Berkeley
+answered. "And the planting
+of the flag? The taking possession?"</p>
+<p class="pnext">"Well, now, Mr. Berkeley,
+what shall we do, now that we
+have seen some—things? Go
+away? Leave an entire planet of
+iron ore to be claimed later by
+Eastern Alliance? The enemy is
+not far behind us in their technology,
+Mr. Berkeley."</p>
+<p class="pnext">He warmed to his theme, his
+head came up, his shoulders back.</p>
+<p class="pnext">"Suppose these things are intelligent.
+Suppose they do have
+feelings of one kind or another.
+What would happen to them if
+the Eastern Alliance laid claim
+to this planet? Under us, at least,
+they will have protection. We will
+set aside reservations where they
+may live in peace. Obviously they
+live in burrows in the ground; I
+see no buildings. Their total food
+supply must be these miserable
+plants. What a miserable existence
+they have now!</p>
+<p class="pnext">"We will change that. We will
+provide them with adequate food,
+the food to fill their empty stomachs—if
+they have stomachs. We
+will clothe their repulsive nakedness.
+If they have enough sense
+to learn, we will give them the
+pride of self-employment in our
+mines and factories. We would
+be less than human, Mr. Berkeley,
+if we did not acknowledge
+our duty."</p>
+<p class="pnext">The light of noble intention
+shone in his face. He was swept
+away with his own eloquence.</p>
+<p class="pnext">"If," he finished, "we take care
+of the duty, the destiny will take
+care of itself!"</p>
+<p class="pnext">That was very good. He hoped
+they would have the grace to
+quote him on that. It was a fine
+summing up of his entire character.</p>
+<p class="pnext">Berkeley smiled a rueful smile.
+There was no stopping it. It was
+not a matter of not planting the
+flag, not taking possession. The
+captain was right. If not the Western
+Alliance, then certainly the
+Eastern Alliance. His quarrel was
+not with the captain nor with
+the duty, but with the destiny.
+The issue was not to be decided
+now. It had already been decided—decided
+when the first apeman
+had crept into the tree nest of
+another and stolen his mate.</p>
+<p class="pnext">Man takes. Whether it be by
+barbaric rapine, or reluctant acceptance
+of duty through carefully
+contrived diplomacy, Man
+takes.</p>
+<p class="pnext">Berkeley turned and made his
+way out of the control room.</p>
+<hr class="docutils"/>
+<p class="pfirst">Outside, the soil shifted in
+its contortions of cooling.
+The wind whispered dryly over
+the red landscape, sending up
+little swirls of dust, eternally
+shifting it from one place to another.
+The soil was less hot, and
+as it cooled, the Mars race
+pressed inward. Theirs was the
+urgency to get at this meteor as
+quickly as possible, remove it,
+start the water flowing once more.</p>
+<p class="pnext">"Observation reports ground
+cool enough for landing!" The
+magic words seemed to sing into
+the control cabin.</p>
+<p class="pnext">"Summon all landing party,"
+Captain Griswold commanded
+immediately.</p>
+<p class="pnext">The signal bells rang throughout
+the ship. The bell in the
+supercargo cabin rang also. With
+the other scientists, Berkeley
+dressed in his protecting suit,
+fitted the clear glassite oxygen
+helmet over his head, fastened it.
+Together with the rest, he stood
+at the designated airlock to await
+the captain's coming.</p>
+<p class="pnext">And the captain did not keep
+them waiting. At precisely the
+right moment, with only a flicker
+of a side glance at the photographic
+equipment, the captain
+strode ahead of his officers to the
+airlock. The sealing doors of the
+corridor behind them closed,
+shutting off the entire party,
+making the corridor itself into a
+great airlock.</p>
+<p class="pnext">There was a long sigh, and the
+great beams of the locks moved
+ponderously against their weight.
+There was the rush of air from
+the corridor as the heavier pressure
+rushed out through the
+opening locks, to equalize with
+the thin air of Mars. With the
+air rushed outward fungus spores,
+virus, microbes; most of them to
+perish under the alien conditions,
+but some to survive—and thrive.</p>
+<p class="pnext">The red light above the lock
+was blinking on-off-on-off. The
+officers, the scientists, the armed
+men, watched the light intently.
+It blinked off for the last time.
+The locks were open. The great
+ramp settled to the ground.</p>
+<hr class="docutils"/>
+<p class="pfirst">In ordered, military file, the
+captain at their head, the
+landing party passed down the
+corridor, through the locks, out
+upon the ramp beneath the blue-black
+sky; and down to the red
+soil. Captain Griswold was the
+first man to set foot on Mars,
+June 14, 2018. The photographers
+were second.</p>
+<p class="pnext">Now the Mars race was moving
+closer to the ship, but the
+ground was still too hot for their
+unprotected feet. The pressing
+need for removing the meteor
+possessed them. The movement of
+the men disembarking from the
+ship was to them no more than
+another unintelligible aspect of
+this incredible meteor.</p>
+<p class="pnext">The sound of a bugle pierced
+the thin air, picked up by the
+loudspeaker from the ship, reverberating
+through their helmets.
+The landing party formed a
+semi-circle at the foot of the
+ramp.</p>
+<p class="pnext">Captain Griswold, his face as
+rigidly set as the marble statuary
+of him to follow, reached out and
+took the flag from Lieutenant
+Atkinson. He planted it firmly,
+without false motion, in the
+framework one of the men had
+set upon the baked ground to
+receive it.</p>
+<p class="pnext">He pointed to the north, the
+south, the east, the west. He
+brought his hands together, palms
+downward, arms fully out-stretched
+in front of him. He
+spread his arms wide open and
+down, then back together and up;
+completing a circle which encompassed
+all the planet. He held out
+his right hand and received the
+scroll from Lieutenant Atkinson.</p>
+<p class="pnext">With a decisive gesture, not
+quite theatrical, he unfurled the
+scroll. He read in a voice firm
+enough to impress all posterity:</p>
+<p class="pnext">"By virtue of authority invested
+in me from the Supreme
+Council of the Western Alliance,
+the only true representatives of
+Earth and Man, I take possession
+of all this planet in the name of
+our President, the Supreme Council,
+the Western Alliance, Earth,
+and in the name of God."</p>
+<hr class="docutils"/>
+<p class="pfirst">The ground was cool enough
+now that their feet might bear
+it. The pain was great, but it was
+lost in the greater pain of feeling
+the killing obstruction the great
+meteor had brought to their
+canals. The Mars race began to
+press inward, inexorably.</p>
+<p class="pnext">It was in the anticlimactic
+moment, following the possession
+ceremony, when men milled
+around in uncertainty, that Lt.
+Atkinson saw the Mars race had
+come closer and were still moving.</p>
+<p class="pnext">"The monsters!" he exclaimed
+in horror. "They're attacking!"</p>
+<p class="pnext">Berkeley looked, and from the
+little gestures of movement out
+of his long training he deduced
+their true motive.</p>
+<p class="pnext">"Not against us!" he cried.
+"The ship."</p>
+<p class="pnext">Perhaps his words were more
+unfortunate than his silence
+might have been; for the ship
+was of greater concern to Captain
+Griswold than his own person.</p>
+<p class="pnext">"Halt!" Griswold shouted toward
+the approaching Mars race.
+"Halt or I'll fire!"</p>
+<p class="pnext">The Mars race paid no heed.
+Slowly they came forward, each
+step on the hot ground a torture,
+but a pain which could be borne.
+The greater torture, the one they
+could not bear, was the ache to
+press against this meteor, push it
+away, that they might dig the
+juncture clean again. As a man
+whose breath is stopped fights
+frantically for air, concerned with
+nothing else, so they felt the desperation
+of drying sands.</p>
+<p class="pnext">They came on.</p>
+<p class="pnext">"For the last time," Griswold
+shouted, "halt!" He made a motion
+with his hands, as if to push
+them back, as if to convey his
+meaning by signs. Involuntarily,
+then, his eyes sought those of
+Berkeley. A look of pleading,
+helplessness. Berkeley met the
+glance and read the anxiety there,
+the tragic unwillingness of the
+man to arouse posterity's rage
+or contempt.</p>
+<p class="pnext">It was a brief glance only from
+both men and it was over. Captain
+Griswold's head came up;
+his shoulders straightened in the
+face of the oncoming monsters.
+They were close now, and coming
+closer. As always, the experts
+were free with their advice when
+it was not needed. When the
+chips were down, they could do
+no more than smirk and shrug
+a helpless shoulder.</p>
+<p class="pnext">He gave the command, and
+now there was no uncertainty.</p>
+<p class="pnext">"Fire!"</p>
+<hr class="docutils"/>
+<p class="pfirst">The celebration was being held
+in the Great Stadium, the
+largest, most costly structure that
+Man had ever built. It was a fitting
+structure for the more important
+football games; and used
+on occasion, if they could be
+fitted in without upsetting the
+schedule, for State affairs. Now
+the stadium was filled to capacity,
+its floor churned by the careless
+feet of the thousands upon
+thousands who had managed to
+obtain an entrance.</p>
+<p class="pnext">From the quarter-mile-high
+tiers of seats, from the floor of
+the stadium, the shouts welled
+up, washing over the platform at
+the North end.</p>
+<p class="pnext">"Griswold! Griswold!"</p>
+<p class="pnext">It was not yet time for history
+to assess the justice of the massacre.</p>
+<p class="pnext">The President raised his hand.
+The battery of video cameras
+picked up each move.</p>
+<p class="pnext">"Our hopes, our fears, our
+hearts, our prayers rode through
+every space-dark, star-flecked
+mile with these glorious pioneers."
+He turned then to the
+captain. "For the people of Earth,
+<em class="italics">Admiral</em> Griswold, this medal. A
+new medal for a Guider of Destiny,
+Maker of Empire, Son of
+Man!"</p>
+<p class="pnext">The voice faltered, stopped.</p>
+<p class="pnext">The crowd on the floor of the
+stadium was pressing outward
+from the center, screaming in
+pain and terror. At the moment
+when the people should be quiet,
+rapt in reverence, they were emptying
+the floor of the stadium.
+But not willingly. They were being
+pressed back and out, as a
+great weight pushes its way
+through water. Those who could
+move outward no farther were
+crushed where they stood.</p>
+<p class="pnext">And then the ship appeared.</p>
+<p class="pnext">Hazy of outline, shimmering
+with impossible angles, seen by
+its glinting fire of light rather
+than by its solid form, as if its
+reality were in some other dimension
+and this only a projection,
+the ship appeared.</p>
+<p class="pnext">The President's hand reached
+out and gripped Griswold's
+shoulder as he leaned back and
+back, trying to determine its vast
+height. A silence then clutched
+the crowd—a terrified silence.</p>
+<p class="pnext">A full minute passed. Even on
+the platform, where all the pioneers
+of Mars were assembled
+with Earth's dignitaries, even
+there the people cowered back
+away from this unseeable, unknowable
+horror.</p>
+<p class="pnext">But one man leaned forward
+instead, frantically studying the
+shimmering outline of the ship.
+One man—Berkeley.</p>
+<p class="pnext">With the training of the ethnologist,
+a man who really can
+deduce an entire civilization from
+mystifying data, he recognized
+the tremendous import.</p>
+<p class="pnext">At the end of that minute,
+without warning, a group of
+figures hovered in the air near
+the floor of the stadium.</p>
+<hr class="docutils"/>
+<p class="pfirst">Quickly, Berkeley's eyes
+assessed their form, their
+color, the increasing solidity of
+the humanoids. There are some
+movements, some gestures, common
+to all things of intelligence—the
+pause, the resolution, the lift
+of pride.</p>
+<p class="pnext">"No!" he screamed and started
+forward. "Oh, no! We're civilized.
+We're intelligent!" He was pulled
+back, as in his terror he tried to
+leap from the platform to get at
+the humanoids.</p>
+<p class="pnext">Held there, unable to move, he
+read the meaning of the actions
+of the group hovering near the
+ship. One flashed a shining tentacle
+around, as if to point to the
+stadium, the pitifully small
+spaceship on display, the crowds
+of people.</p>
+<p class="pnext">The leader manifestly ignored
+him. He flowed forward a pace,
+his ovoid head held high in pride
+and arrogance. He pointed a tentacle
+toward the south end of the
+stadium, and a pillar of leaping
+flame arose; fed with no fuel,
+never to cease its fire, the symbol
+of possession.</p>
+<p class="pnext">He pointed his tentacles to the
+north, the south, the east, the
+west. He motioned with his tentacles,
+as if to encircle all of
+Earth.</p>
+<p class="pnext">He unfurled a scroll and began
+to read.</p>
+<p class="pnext">—MARK CLIFTON &amp; ALEX APOSTOLIDES</p>
+<blockquote><div>
+<div class="line-block outermost">
+<div class="line"><span class="small-caps">Transcribers note</span>: This etext was produced from Galaxy Science Fiction August 1953. Extensive research did not uncover any evidence that the U.S. copyright on this publication was renewed.</div>
+</div>
+</div></blockquote>
+<div class="vspace" style="height: 5em">
+</div>
+<p class="pfirst" id="pg-end-line">*** END OF THIS PROJECT GUTENBERG EBOOK WE'RE CIVILIZED! ***</p>
+<div class="backmatter">
+</div>
+<div class="language-en level-2 pgfooter section" xml:lang="en" id="a-word-from-project-gutenberg">
+<span id="pg-footer"/><h2 class="level-2 pfirst section-title title">A Word from Project Gutenberg</h2>
+<p class="pfirst">We will update this book if we find any errors.</p>
+<p class="pnext">This book can be found under: <a class="reference external" href="http://www.gutenberg.org/ebooks/38287">http://www.gutenberg.org/ebooks/38287</a></p>
+<p class="pnext">Creating the works from public domain print editions means that no one
+owns a United States copyright in these works, so the Foundation (and
+you!) can copy and distribute it in the United States without
+permission and without paying copyright royalties.  Special rules, set
+forth in the General Terms of Use part of this license, apply to
+copying and distributing Project Gutenberg™ electronic works to
+protect the Project Gutenberg™ concept and trademark. Project
+Gutenberg is a registered trademark, and may not be used if you charge
+for the eBooks, unless you receive specific permission. If you do not
+charge anything for copies of this eBook, complying with the rules is
+very easy. You may use this eBook for nearly any purpose such as
+creation of derivative works, reports, performances and research.
+They may be modified and printed and given away – you may do
+practically <em class="italics">anything</em> with public domain eBooks.  Redistribution is
+subject to the trademark license, especially commercial
+redistribution.</p>
+<div class="level-3 section" id="the-full-project-gutenberg-license">
+<span id="project-gutenberg-license"/><h3 class="level-3 pfirst section-title title">The Full Project Gutenberg License</h3>
+<p class="pfirst"><em class="italics">Please read this before you distribute or use this work.</em></p>
+<p class="pnext">To protect the Project Gutenberg™ mission of promoting the free
+distribution of electronic works, by using or distributing this work
+(or any other work associated in any way with the phrase “Project
+Gutenberg”), you agree to comply with all the terms of the Full
+Project Gutenberg™ License available with this file or online at
+<a class="reference external" href="http://www.gutenberg.org/license">http://www.gutenberg.org/license</a>.</p>
+<div class="level-4 section" id="section-1-general-terms-of-use-redistributing-project-gutenberg-electronic-works">
+<h4 class="level-4 pfirst section-title title">Section 1. General Terms of Use &amp; Redistributing Project Gutenberg™ electronic works</h4>
+<p class="pfirst"><strong class="bold">1.A.</strong> By reading or using any part of this Project Gutenberg™
+electronic work, you indicate that you have read, understand, agree to
+and accept all the terms of this license and intellectual property
+(trademark/copyright) agreement. If you do not agree to abide by all
+the terms of this agreement, you must cease using and return or
+destroy all copies of Project Gutenberg™ electronic works in your
+possession. If you paid a fee for obtaining a copy of or access to a
+Project Gutenberg™ electronic work and you do not agree to be bound by
+the terms of this agreement, you may obtain a refund from the person
+or entity to whom you paid the fee as set forth in paragraph 1.E.8.</p>
+<p class="pnext"><strong class="bold">1.B.</strong> “Project Gutenberg” is a registered trademark. It may only be
+used on or associated in any way with an electronic work by people who
+agree to be bound by the terms of this agreement. There are a few
+things that you can do with most Project Gutenberg™ electronic works
+even without complying with the full terms of this agreement. See
+paragraph 1.C below. There are a lot of things you can do with Project
+Gutenberg™ electronic works if you follow the terms of this agreement
+and help preserve free future access to Project Gutenberg™ electronic
+works. See paragraph 1.E below.</p>
+<p class="pnext"><strong class="bold">1.C.</strong> The Project Gutenberg Literary Archive Foundation (“the
+Foundation” or PGLAF), owns a compilation copyright in the collection
+of Project Gutenberg™ electronic works. Nearly all the individual
+works in the collection are in the public domain in the United
+States. If an individual work is in the public domain in the United
+States and you are located in the United States, we do not claim a
+right to prevent you from copying, distributing, performing,
+displaying or creating derivative works based on the work as long as
+all references to Project Gutenberg are removed. Of course, we hope
+that you will support the Project Gutenberg™ mission of promoting free
+access to electronic works by freely sharing Project Gutenberg™ works
+in compliance with the terms of this agreement for keeping the Project
+Gutenberg™ name associated with the work. You can easily comply with
+the terms of this agreement by keeping this work in the same format
+with its attached full Project Gutenberg™ License when you share it
+without charge with others.</p>
+<p class="pnext"><strong class="bold">1.D.</strong> The copyright laws of the place where you are located also
+govern what you can do with this work. Copyright laws in most
+countries are in a constant state of change. If you are outside the
+United States, check the laws of your country in addition to the terms
+of this agreement before downloading, copying, displaying, performing,
+distributing or creating derivative works based on this work or any
+other Project Gutenberg™ work.  The Foundation makes no
+representations concerning the copyright status of any work in any
+country outside the United States.</p>
+<p class="pnext"><strong class="bold">1.E.</strong> Unless you have removed all references to Project Gutenberg:</p>
+<p class="pnext"><strong class="bold">1.E.1.</strong> The following sentence, with active links to, or other
+immediate access to, the full Project Gutenberg™ License must appear
+prominently whenever any copy of a Project Gutenberg™ work (any work
+on which the phrase “Project Gutenberg” appears, or with which the
+phrase “Project Gutenberg” is associated) is accessed, displayed,
+performed, viewed, copied or distributed:</p>
+<blockquote><div>
+<p class="pfirst">This eBook is for the use of anyone anywhere at no cost and with
+almost no restrictions whatsoever. You may copy it, give it away or
+re-use it under the terms of the Project Gutenberg License included
+with this eBook or online at <a class="reference external" href="http://www.gutenberg.org">http://www.gutenberg.org</a></p>
+</div></blockquote>
+<p class="pfirst"><strong class="bold">1.E.2.</strong> If an individual Project Gutenberg™ electronic work is
+derived from the public domain (does not contain a notice indicating
+that it is posted with permission of the copyright holder), the work
+can be copied and distributed to anyone in the United States without
+paying any fees or charges. If you are redistributing or providing
+access to a work with the phrase “Project Gutenberg” associated with
+or appearing on the work, you must comply either with the requirements
+of paragraphs 1.E.1 through 1.E.7 or obtain permission for the use of
+the work and the Project Gutenberg™ trademark as set forth in
+paragraphs 1.E.8 or 1.E.9.</p>
+<p class="pnext"><strong class="bold">1.E.3.</strong> If an individual Project Gutenberg™ electronic work is
+posted with the permission of the copyright holder, your use and
+distribution must comply with both paragraphs 1.E.1 through 1.E.7 and
+any additional terms imposed by the copyright holder. Additional terms
+will be linked to the Project Gutenberg™ License for all works posted
+with the permission of the copyright holder found at the beginning of
+this work.</p>
+<p class="pnext"><strong class="bold">1.E.4.</strong> Do not unlink or detach or remove the full Project
+Gutenberg™ License terms from this work, or any files containing a
+part of this work or any other work associated with Project
+Gutenberg™.</p>
+<p class="pnext"><strong class="bold">1.E.5.</strong> Do not copy, display, perform, distribute or redistribute
+this electronic work, or any part of this electronic work, without
+prominently displaying the sentence set forth in paragraph 1.E.1 with
+active links or immediate access to the full terms of the Project
+Gutenberg™ License.</p>
+<p class="pnext"><strong class="bold">1.E.6.</strong> You may convert to and distribute this work in any binary,
+compressed, marked up, nonproprietary or proprietary form, including
+any word processing or hypertext form. However, if you provide access
+to or distribute copies of a Project Gutenberg™ work in a format other
+than “Plain Vanilla ASCII” or other format used in the official
+version posted on the official Project Gutenberg™ web site
+(<a class="reference external" href="http://www.gutenberg.org">http://www.gutenberg.org</a>), you must, at no additional cost, fee or
+expense to the user, provide a copy, a means of exporting a copy, or a
+means of obtaining a copy upon request, of the work in its original
+“Plain Vanilla ASCII” or other form. Any alternate format must include
+the full Project Gutenberg™ License as specified in paragraph 1.E.1.</p>
+<p class="pnext"><strong class="bold">1.E.7.</strong> Do not charge a fee for access to, viewing, displaying,
+performing, copying or distributing any Project Gutenberg™ works
+unless you comply with paragraph 1.E.8 or 1.E.9.</p>
+<p class="pnext"><strong class="bold">1.E.8.</strong> You may charge a reasonable fee for copies of or providing
+access to or distributing Project Gutenberg™ electronic works provided
+that</p>
+<ul class="open">
+<li><p class="first pfirst">You pay a royalty fee of 20% of the gross profits you derive from
+the use of Project Gutenberg™ works calculated using the method you
+already use to calculate your applicable taxes. The fee is owed to
+the owner of the Project Gutenberg™ trademark, but he has agreed to
+donate royalties under this paragraph to the Project Gutenberg
+Literary Archive Foundation. Royalty payments must be paid within 60
+days following each date on which you prepare (or are legally
+required to prepare) your periodic tax returns. Royalty payments
+should be clearly marked as such and sent to the Project Gutenberg
+Literary Archive Foundation at the address specified in Section 4,
+“Information about donations to the Project Gutenberg Literary
+Archive Foundation.”</p>
+</li>
+<li><p class="first pfirst">You provide a full refund of any money paid by a user who notifies
+you in writing (or by e-mail) within 30 days of receipt that s/he
+does not agree to the terms of the full Project Gutenberg™
+License. You must require such a user to return or destroy all
+copies of the works possessed in a physical medium and discontinue
+all use of and all access to other copies of Project Gutenberg™
+works.</p>
+</li>
+<li><p class="first pfirst">You provide, in accordance with paragraph 1.F.3, a full refund of
+any money paid for a work or a replacement copy, if a defect in the
+electronic work is discovered and reported to you within 90 days of
+receipt of the work.</p>
+</li>
+<li><p class="first pfirst">You comply with all other terms of this agreement for free
+distribution of Project Gutenberg™ works.</p>
+</li>
+</ul>
+<p class="pfirst"><strong class="bold">1.E.9.</strong> If you wish to charge a fee or distribute a Project
+Gutenberg™ electronic work or group of works on different terms than
+are set forth in this agreement, you must obtain permission in writing
+from both the Project Gutenberg Literary Archive Foundation and
+Michael Hart, the owner of the Project Gutenberg™ trademark. Contact
+the Foundation as set forth in Section 3. below.</p>
+<p class="pnext"><strong class="bold">1.F.</strong></p>
+<p class="pnext"><strong class="bold">1.F.1.</strong> Project Gutenberg volunteers and employees expend
+considerable effort to identify, do copyright research on, transcribe
+and proofread public domain works in creating the Project Gutenberg™
+collection. Despite these efforts, Project Gutenberg™ electronic
+works, and the medium on which they may be stored, may contain
+“Defects,” such as, but not limited to, incomplete, inaccurate or
+corrupt data, transcription errors, a copyright or other intellectual
+property infringement, a defective or damaged disk or other medium, a
+computer virus, or computer codes that damage or cannot be read by
+your equipment.</p>
+<p class="pnext"><strong class="bold">1.F.2.</strong> LIMITED WARRANTY, DISCLAIMER OF DAMAGES – Except for the
+“Right of Replacement or Refund” described in paragraph 1.F.3, the
+Project Gutenberg Literary Archive Foundation, the owner of the
+Project Gutenberg™ trademark, and any other party distributing a
+Project Gutenberg™ electronic work under this agreement, disclaim all
+liability to you for damages, costs and expenses, including legal
+fees. YOU AGREE THAT YOU HAVE NO REMEDIES FOR NEGLIGENCE, STRICT
+LIABILITY, BREACH OF WARRANTY OR BREACH OF CONTRACT EXCEPT THOSE
+PROVIDED IN PARAGRAPH 1.F.3. YOU AGREE THAT THE FOUNDATION, THE
+TRADEMARK OWNER, AND ANY DISTRIBUTOR UNDER THIS AGREEMENT WILL NOT BE
+LIABLE TO YOU FOR ACTUAL, DIRECT, INDIRECT, CONSEQUENTIAL, PUNITIVE OR
+INCIDENTAL DAMAGES EVEN IF YOU GIVE NOTICE OF THE POSSIBILITY OF SUCH
+DAMAGE.</p>
+<p class="pnext"><strong class="bold">1.F.3.</strong> LIMITED RIGHT OF REPLACEMENT OR REFUND – If you discover a
+defect in this electronic work within 90 days of receiving it, you can
+receive a refund of the money (if any) you paid for it by sending a
+written explanation to the person you received the work from. If you
+received the work on a physical medium, you must return the medium
+with your written explanation. The person or entity that provided you
+with the defective work may elect to provide a replacement copy in
+lieu of a refund. If you received the work electronically, the person
+or entity providing it to you may choose to give you a second
+opportunity to receive the work electronically in lieu of a refund. If
+the second copy is also defective, you may demand a refund in writing
+without further opportunities to fix the problem.</p>
+<p class="pnext"><strong class="bold">1.F.4.</strong> Except for the limited right of replacement or refund set
+forth in paragraph 1.F.3, this work is provided to you ‘AS-IS,’ WITH
+NO OTHER WARRANTIES OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT
+LIMITED TO WARRANTIES OF MERCHANTIBILITY OR FITNESS FOR ANY PURPOSE.</p>
+<p class="pnext"><strong class="bold">1.F.5.</strong> Some states do not allow disclaimers of certain implied
+warranties or the exclusion or limitation of certain types of
+damages. If any disclaimer or limitation set forth in this agreement
+violates the law of the state applicable to this agreement, the
+agreement shall be interpreted to make the maximum disclaimer or
+limitation permitted by the applicable state law. The invalidity or
+unenforceability of any provision of this agreement shall not void the
+remaining provisions.</p>
+<p class="pnext"><strong class="bold">1.F.6.</strong> INDEMNITY – You agree to indemnify and hold the Foundation,
+the trademark owner, any agent or employee of the Foundation, anyone
+providing copies of Project Gutenberg™ electronic works in accordance
+with this agreement, and any volunteers associated with the
+production, promotion and distribution of Project Gutenberg™
+electronic works, harmless from all liability, costs and expenses,
+including legal fees, that arise directly or indirectly from any of
+the following which you do or cause to occur: (a) distribution of this
+or any Project Gutenberg™ work, (b) alteration, modification, or
+additions or deletions to any Project Gutenberg™ work, and (c) any
+Defect you cause.</p>
+</div>
+<div class="level-4 section" id="section-2-information-about-the-mission-of-project-gutenberg">
+<h4 class="level-4 pfirst section-title title">Section 2. Information about the Mission of Project Gutenberg™</h4>
+<p class="pfirst">Project Gutenberg™ is synonymous with the free distribution of
+electronic works in formats readable by the widest variety of
+computers including obsolete, old, middle-aged and new computers. It
+exists because of the efforts of hundreds of volunteers and donations
+from people in all walks of life.</p>
+<p class="pnext">Volunteers and financial support to provide volunteers with the
+assistance they need, is critical to reaching Project Gutenberg™'s
+goals and ensuring that the Project Gutenberg™ collection will remain
+freely available for generations to come. In 2001, the Project
+Gutenberg Literary Archive Foundation was created to provide a secure
+and permanent future for Project Gutenberg™ and future generations. To
+learn more about the Project Gutenberg Literary Archive Foundation and
+how your efforts and donations can help, see Sections 3 and 4 and the
+Foundation web page at <a class="reference external" href="http://www.pglaf.org">http://www.pglaf.org</a> .</p>
+</div>
+<div class="level-4 section" id="section-3-information-about-the-project-gutenberg-literary-archive-foundation">
+<h4 class="level-4 pfirst section-title title">Section 3. Information about the Project Gutenberg Literary Archive Foundation</h4>
+<p class="pfirst">The Project Gutenberg Literary Archive Foundation is a non profit
+501(c)(3) educational corporation organized under the laws of the
+state of Mississippi and granted tax exempt status by the Internal
+Revenue Service. The Foundation's EIN or federal tax identification
+number is 64-6221541. Its 501(c)(3) letter is posted at
+<a class="reference external" href="http://www.gutenberg.org/fundraising/pglaf">http://www.gutenberg.org/fundraising/pglaf</a> . Contributions to the
+Project Gutenberg Literary Archive Foundation are tax deductible to
+the full extent permitted by U.S.  federal laws and your state's laws.</p>
+<p class="pnext">The Foundation's principal office is located at 4557 Melan Dr.
+S. Fairbanks, AK, 99712., but its volunteers and employees are
+scattered throughout numerous locations. Its business office is
+located at 809 North 1500 West, Salt Lake City, UT 84116, (801)
+596-1887, email <a class="reference external" href="mailto:business@pglaf.org">business@pglaf.org</a>. Email contact links and up to date
+contact information can be found at the Foundation's web site and
+official page at <a class="reference external" href="http://www.pglaf.org">http://www.pglaf.org</a></p>
+<p class="pnext">For additional contact information:</p>
+<blockquote><div>
+<div class="line-block outermost">
+<div class="line">Dr. Gregory B. Newby</div>
+<div class="line">Chief Executive and Director</div>
+<div class="line"><a class="reference external" href="mailto:gbnewby@pglaf.org">gbnewby@pglaf.org</a></div>
+</div>
+</div></blockquote>
+</div>
+<div class="level-4 section" id="section-4-information-about-donations-to-the-project-gutenberg-literary-archive-foundation">
+<h4 class="level-4 pfirst section-title title">Section 4. Information about Donations to the Project Gutenberg Literary Archive Foundation</h4>
+<p class="pfirst">Project Gutenberg™ depends upon and cannot survive without wide spread
+public support and donations to carry out its mission of increasing
+the number of public domain and licensed works that can be freely
+distributed in machine readable form accessible by the widest array of
+equipment including outdated equipment. Many small donations ($1 to
+$5,000) are particularly important to maintaining tax exempt status
+with the IRS.</p>
+<p class="pnext">The Foundation is committed to complying with the laws regulating
+charities and charitable donations in all 50 states of the United
+States. Compliance requirements are not uniform and it takes a
+considerable effort, much paperwork and many fees to meet and keep up
+with these requirements. We do not solicit donations in locations
+where we have not received written confirmation of compliance. To SEND
+DONATIONS or determine the status of compliance for any particular
+state visit <a class="reference external" href="http://www.gutenberg.org/fundraising/donate">http://www.gutenberg.org/fundraising/donate</a></p>
+<p class="pnext">While we cannot and do not solicit contributions from states where we
+have not met the solicitation requirements, we know of no prohibition
+against accepting unsolicited donations from donors in such states who
+approach us with offers to donate.</p>
+<p class="pnext">International donations are gratefully accepted, but we cannot make
+any statements concerning tax treatment of donations received from
+outside the United States. U.S. laws alone swamp our small staff.</p>
+<p class="pnext">Please check the Project Gutenberg Web pages for current donation
+methods and addresses. Donations are accepted in a number of other
+ways including checks, online payments and credit card donations. To
+donate, please visit: <a class="reference external" href="http://www.gutenberg.org/fundraising/donate">http://www.gutenberg.org/fundraising/donate</a></p>
+</div>
+<div class="level-4 section" id="section-5-general-information-about-project-gutenberg-electronic-works">
+<h4 class="level-4 pfirst section-title title">Section 5. General Information About Project Gutenberg™ electronic works.</h4>
+<p class="pfirst">Professor Michael S. Hart is the originator of the Project Gutenberg™
+concept of a library of electronic works that could be freely shared
+with anyone. For thirty years, he produced and distributed Project
+Gutenberg™ eBooks with only a loose network of volunteer support.</p>
+<p class="pnext">Project Gutenberg™ eBooks are often created from several printed
+editions, all of which are confirmed as Public Domain in the
+U.S. unless a copyright notice is included. Thus, we do not
+necessarily keep eBooks in compliance with any particular paper
+edition.</p>
+<p class="pnext">Each eBook is in a subdirectory of the same number as the eBook's
+eBook number, often in several formats including plain vanilla ASCII,
+compressed (zipped), HTML and others.</p>
+<p class="pnext">Corrected <em class="italics">editions</em> of our eBooks replace the old file and take over
+the old filename and etext number. The replaced older file is
+renamed. <em class="italics">Versions</em> based on separate sources are treated as new
+eBooks receiving new filenames and etext numbers.</p>
+<p class="pnext">Most people start at our Web site which has the main PG search
+facility:</p>
+<blockquote><div>
+<p class="pfirst"><a class="reference external" href="http://www.gutenberg.org">http://www.gutenberg.org</a></p>
+</div></blockquote>
+<p class="pfirst">This Web site includes information about Project Gutenberg™, including
+how to make donations to the Project Gutenberg Literary Archive
+Foundation, how to help produce our new eBooks, and how to subscribe
+to our email newsletter to hear about new eBooks.</p>
+</div>
+</div>
+</div>
+</div>
+</body>
+</html>

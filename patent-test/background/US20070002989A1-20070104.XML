@@ -1,0 +1,416 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE us-patent-application SYSTEM "us-patent-application-v42-2006-08-23.dtd" [ ]>
+<us-patent-application lang="EN" dtd-version="v4.2 2006-08-23" file="US20070002989A1-20070104.XML" status="PRODUCTION" id="us-patent-application" country="US" date-produced="20061221" date-publ="20070104">
+<us-bibliographic-data-application lang="EN" country="US">
+<publication-reference>
+<document-id>
+<country>US</country>
+<doc-number>20070002989</doc-number>
+<kind>A1</kind>
+<date>20070104</date>
+</document-id>
+</publication-reference>
+<application-reference appl-type="utility">
+<document-id>
+<country>US</country>
+<doc-number>11170979</doc-number>
+<date>20050630</date>
+</document-id>
+</application-reference>
+<us-application-series-code>11</us-application-series-code>
+<classifications-ipcr>
+<classification-ipcr>
+<ipc-version-indicator><date>20060101</date></ipc-version-indicator>
+<classification-level>A</classification-level>
+<section>H</section>
+<class>04</class>
+<subclass>L</subclass>
+<main-group>7</main-group>
+<subgroup>00</subgroup>
+<symbol-position>F</symbol-position>
+<classification-value>I</classification-value>
+<action-date><date>20070104</date></action-date>
+<generating-office><country>US</country></generating-office>
+<classification-status>B</classification-status>
+<classification-data-source>H</classification-data-source>
+</classification-ipcr>
+</classifications-ipcr>
+<classification-national>
+<country>US</country>
+<main-classification>375355000</main-classification>
+</classification-national>
+<invention-title id="d0e102">Method and system for link jitter compensation including a fast data recovery circuit</invention-title>
+<parties>
+<applicants>
+<applicant sequence="00" app-type="applicant-inventor" designation="us-only">
+<addressbook>
+<last-name>Song</last-name>
+<first-name>Hongjiang</first-name>
+<address>
+<city>Mesa</city>
+<state>AZ</state>
+<country>US</country>
+</address>
+</addressbook>
+<nationality>
+<country>US</country>
+</nationality>
+<residence>
+<country>US</country>
+</residence>
+</applicant>
+</applicants>
+<correspondence-address>
+<addressbook>
+<name>BUCKLEY, MASCHOFF, TALWALKAR LLC</name>
+<address>
+<address-1>50 LOCUSTAVENUE</address-1>
+<city>NEW CANAAN</city>
+<state>CT</state>
+<postcode>06840</postcode>
+<country>US</country>
+</address>
+</addressbook>
+</correspondence-address>
+</parties>
+</us-bibliographic-data-application>
+<abstract id="abstract">
+<p id="p-0001" num="0000">A method and apparatus, in some embodiments the apparatus includes a sampler, using a plurality of sampling clocks, to sample a first set of data of an incoming data signal to determine a first phase shift indicator and to sample a second set of data of the incoming data signal to determine a second phase shift indicator, a data recovery circuit (DRC) including control logic to determine a phase control signal based on the first and the second phase shift indicators, and a phase interpolator to receive the phase control signal and adjust a phase of the sampling clocks, wherein the phase interpolator provides the plurality of sampling clocks. </p>
+</abstract>
+<drawings id="DRAWINGS">
+<figure id="figure-D00000" num="00000">
+<img id="EMI-D00000" he="93.47mm" wi="188.72mm" file="US20070002989A1-20070104-D00000.TIF" alt="embedded image" img-content="drawing" img-format="tif"/>
+</figure>
+<figure id="figure-D00001" num="00001">
+<img id="EMI-D00001" he="187.45mm" wi="135.38mm" orientation="landscape" file="US20070002989A1-20070104-D00001.TIF" alt="embedded image" img-content="drawing" img-format="tif"/>
+</figure>
+<figure id="figure-D00002" num="00002">
+<img id="EMI-D00002" he="260.01mm" wi="159.17mm" orientation="landscape" file="US20070002989A1-20070104-D00002.TIF" alt="embedded image" img-content="drawing" img-format="tif"/>
+</figure>
+<figure id="figure-D00003" num="00003">
+<img id="EMI-D00003" he="247.23mm" wi="176.19mm" orientation="landscape" file="US20070002989A1-20070104-D00003.TIF" alt="embedded image" img-content="drawing" img-format="tif"/>
+</figure>
+<figure id="figure-D00004" num="00004">
+<img id="EMI-D00004" he="239.10mm" wi="180.85mm" orientation="landscape" file="US20070002989A1-20070104-D00004.TIF" alt="embedded image" img-content="drawing" img-format="tif"/>
+</figure>
+<figure id="figure-D00005" num="00005">
+<img id="EMI-D00005" he="221.32mm" wi="153.42mm" file="US20070002989A1-20070104-D00005.TIF" alt="embedded image" img-content="drawing" img-format="tif"/>
+</figure>
+<figure id="figure-D00006" num="00006">
+<img id="EMI-D00006" he="185.17mm" wi="163.32mm" orientation="landscape" file="US20070002989A1-20070104-D00006.TIF" alt="embedded image" img-content="drawing" img-format="tif"/>
+</figure>
+</drawings>
+<description id="description">
+<?summary-of-invention description="Summary of Invention" end="lead"?>
+<p id="p-0002" num="0001"> In PC environments, there is a continuing desire to lower costs and to increase communication link performance. This desire is present in the context of, for example, in high speed serial technology communication links and protocols that may be used to replace parallel communication links. Regarding PC architecture, the high speed serial technology communication links may include RS-232 (Recommended Standard-232C, a standard interface approved by the Electronic Industries Alliance (EIA) for connecting serial devices), Ethernet (ANSI/IEEE Std. 802.3-2002, published Mar. 8, 2002), USB 2.0 (Universal Serial Bus 2.0, released on Apr. 27, 2000), serial ATA (Serial ATA: High Speed Serialized AT Attachment, Revision 1.0a, Jan. 7, 2003), and PCI-Express (Peripheral Component Interconnect Base Specification:, rev. 1.1) Gen. 1 and Gen. 2 links having 2.5 Gb/s and 5 Gb/s data rates, respectively. </p>
+<p id="p-0003" num="0002"> Phase variations or jitter may exist on a communication link. The phase jitter may indicate a distortion of a signal caused by poor synchronization between a transmitter and a receiver resulting from various non-idealities in the circuit elements (e.g., a reference clock chip, printed circuit board traces, connectors, transmitter and receiver PLL's (phase locked loops), etc.) of the communication link components. There have been numerous attempts to reduce jitter on communication links to achieve a greater link data rate with a specified bit-error-rate (BER). However, it is typical of past efforts to address the problem of link jitter by trying to minimize the jitter at a source of the jitter by, for example, using better board materials, better board and power supply designs, a better clock chip having lower clock jitter, and better designed transmitter and receiver phase locked loops (PLL) that minimize on-chip jitter, etc. Moreover, it is costly to implement such improved materials and designs. </p>
+<?summary-of-invention description="Summary of Invention" end="tail"?>
+<?brief-description-of-drawings description="Brief Description of Drawings" end="lead"?>
+<heading level="2" id="h-0001">BRIEF DESCRIPTION OF THE DRAWINGS </heading>
+<p id="p-0004" num="0003"> <figref idref="DRAWINGS">FIG. 1</figref> is a block diagram of an exemplary circuit; </p>
+<p id="p-0005" num="0004"> <figref idref="DRAWINGS">FIG. 2</figref> is a block diagram of an exemplary apparatus, according to some embodiments hereof; </p>
+<p id="p-0006" num="0005"> <figref idref="DRAWINGS">FIG. 3</figref> is an exemplary timing diagram, according to some embodiments hereof; </p>
+<p id="p-0007" num="0006"> <figref idref="DRAWINGS">FIG. 4 s</figref> an exemplary schematic diagram of an apparatus, according to some embodiments hereof; </p>
+<p id="p-0008" num="0007"> <figref idref="DRAWINGS">FIG. 5</figref> is an exemplary flow diagram of a method, according to some embodiments hereof; and </p>
+<p id="p-0009" num="0008"> <figref idref="DRAWINGS">FIG. 6</figref> is a block diagram of an exemplary system, according to some embodiments hereof.</p>
+<?brief-description-of-drawings description="Brief Description of Drawings" end="tail"?>
+<?detailed-description description="Detailed Description" end="lead"?>
+<heading level="2" id="h-0002">DETAILED DESCRIPTION </heading>
+<p id="p-0010" num="0009"> The several embodiments described herein are solely for the purpose of illustration. Embodiments may include any currently or hereafter-known versions of the elements described herein. Therefore, persons skilled in the art will recognize from this description that other embodiments may be practiced with various modifications and alterations. </p>
+<p id="p-0011" num="0010"> <figref idref="DRAWINGS">FIG. 1</figref> is a block diagram of a receiver circuit, generally referenced by numeral <b>100</b>. Receiver <b>100</b> may be an implementation of a PCI-Express&#xae; link (e.g., PCI-Express, Gen. 1 rated at 2.5 Gb/s; Gen. 2 rated at 5.0 Gb/s). Receiver <b>100</b> includes a signal buffer <b>105</b>, which may be an amplifier or other signal conditioner to amplify, filter, or place the incoming data signal in a condition to facilitate processing of the signal by the receiver. Data signals from buffer <b>105</b> are provided to a sampler <b>110</b> that samples or captures a portion of the incoming data signal. Sampler <b>110</b> may store sampled signal data locally. Sampler <b>110</b> samples the incoming data signal with 4 phase interpolator (PI) output clock phase signals <b>115</b> {ph<b>1</b>, ph<b>2</b>, ph<b>3</b>, ph<b>4</b> } that are provided by PI <b>125</b>. Alignment circuit <b>140</b> receives inputs of four sampled incoming data signals <b>135</b> that are sampled with the 4 PI output clock phase signals <b>115</b> and also receives an input of a PI clock phase signal <b>130</b> from PI <b>125</b>. Alignment circuit <b>140</b> operates to align the sampled incoming data signals <b>135</b> with the PI clock phase signal <b>130</b>. Alignment (i.e., tracking) errors from alignment circuit <b>140</b> are provided to a proportional filter <b>150</b>. Proportional filter <b>150</b>, using the errors generated by aligning the phases of the four sampled signals <b>135</b> with PI clock phase signal <b>130</b>, operates to average the errors from alignment circuit <b>125</b> to form a control signal <b>155</b>. Control signal <b>155</b> is received by PI <b>125</b> and provides an indication of whether the phase of the 4 phase output clocks of sampler <b>110</b> should be advanced (i.e., lead) or delayed (i.e., lag) so that receiver <b>100</b> is synchronized with the incoming data signal. A serial input parallel output (PISO) converter <b>145</b> provides recovered synchronized data as an output thereof. </p>
+<p id="p-0012" num="0011"> Operationally, the phases {ph<b>1</b>, ph<b>2</b>, ph<b>3</b>, ph<b>4</b>} of the 4 PI output clock phase signals are adaptively adjusted with respect to the fixed input reference clock <b>120</b> {ck<b>1</b>, ck<b>2</b>, ck<b>3</b>, ck<b>4</b>} such that ph<b>1</b> and ph<b>3</b> track a center of an eye of the incoming data signal and ph<b>2</b> and ph<b>4</b> track the transition points of the incoming data signal. </p>
+<p id="p-0013" num="0012"> Receiver <b>100</b> may reduce jitter in a communication link operating at frequencies in the range of about 2.5 Gb/s. However, receiver <b>100</b> and the methods used thereby to reduce communication link jitter, may be limited at higher frequencies and may effectively be limited in a range of about (3-5) Mhz. The limited bandwidth is due, at least in part, to the averaging operations of a large number of errors processed by proportional filter <b>150</b>. Also, the accuracy of receiver <b>100</b> may be compromised due to relatively large dithering that may be caused by high latency periods in the proportional filtering operations of receiver <b>100</b>. The limited achievable bandwidth and high latency of receiver <b>100</b> may reduce an efficiency and/or effectiveness of the receiver at higher frequencies (e.g., above about 3 Mhz). </p>
+<p id="p-0014" num="0013"> <figref idref="DRAWINGS">FIG. 2</figref> is an exemplary block diagram of an apparatus <b>200</b>, in accordance with some of the embodiments herein. Receiver <b>200</b> includes a signal buffer <b>205</b> that may be an amplifier, signal conditioner, or filter to amplify, filter, or place the incoming data signal in a condition to facilitate further processing of the signal by apparatus <b>200</b>. Data signals from buffer <b>205</b> are provided to a sampler <b>210</b> that samples or captures a portion of the incoming data signal. Sampler <b>210</b> samples the incoming data signals using 4 PI output clock phase signals <b>215</b> {ph<b>1</b>, ph<b>2</b>, ph<b>3</b>, ph<b>4</b>} from PI <b>225</b>. PI <b>225</b> derives the 4 PI output clock phase signals from reference clock signals <b>220</b>. There may be about a difference of about 90&#xb0; between the 4 phases of the output clocks. Sampler <b>210</b> may store sampled signal data locally. Sampler <b>210</b> samples the incoming data signal with a 4-phase clock signal <b>115</b> {ph<b>1</b>, ph<b>2</b>, ph<b>3</b>, ph<b>4</b>} that is provided by a phase interpolator (PI) <b>125</b>. </p>
+<p id="p-0015" num="0014"> Sampler <b>210</b> operates to track a center of an eye of the incoming data signal using, for example, ph<b>1</b> and ph<b>3</b> of the 4-phase clock signal <b>215</b> and provides indication signals of such tracking (<b>230</b>). Sampler <b>210</b> operates to track a transition of the incoming data signal using, for example, ph<b>2</b> and ph<b>4</b> of the incoming data signal and provides indication signals of such tracking (<b>230</b>). </p>
+<p id="p-0016" num="0015"> A fast data recovery circuit (DRC) logic device <b>235</b> receives tracking indication signals <b>230</b> as inputs from sampler <b>210</b>. Based on the received tracking indication signals, DRC logic device <b>235</b> determines phase control signals <b>240</b> that are input to PI <b>225</b>. Phase control signals <b>240</b> provided to PI <b>225</b> may be determined by a combination of logic circuits. Phase control signals <b>240</b> are used by PI <b>225</b> to adjust the PI clock phases. In some embodiments herein, phase control signals <b>240</b> are used to adjust the phases of the PI output clocks by either advancing, retarding, or making no adjustments to the phases of the PI output clocks. </p>
+<p id="p-0017" num="0016"> It can be seen in <figref idref="DRAWINGS">FIG. 2</figref> that DRC device <b>235</b> does not have a direct reference clock input thereto. DRC device <b>235</b> effectively makes a determination regarding the type of phase control signal <b>240</b> to provide to PI <b>225</b> based on timing factors derived from tracking indication signals <b>230</b> of the sampled incoming signal data. DRC device <b>235</b> does not attempt to align the sampled incoming signal to a separate reference clock signal. DRC device <b>235</b> reduces the variation (i.e., jitter) of the incoming signal by making determinations based on multiples of the sampled incoming signal data. </p>
+<p id="p-0018" num="0017"> <figref idref="DRAWINGS">FIG. 3</figref> provides an exemplary timing diagram <b>300</b> for an apparatus and method, in accordance with some embodiments herein. As shown, incoming data signal <b>305</b> is sampled by 4 PI output clock phases {ph<b>1</b>, ph<b>2</b>, ph<b>3</b>, ph<b>4</b>}. The sampling period or unit interval (U<b>1</b>) for the illustrated example is <b>400</b> picoseconds (ps). As illustrated, a first triplet or set of data sampled by ph<b>1</b>, ph<b>2</b>, and ph<b>3</b> is used to check an alignment of ph<b>2</b> to a transition between data bit-(N) and data bit-(N+1). A second triplet or set of data sampled by ph<b>3</b>, ph<b>4</b>, and ph<b>1</b> is used to check an alignment of ph<b>4</b> to a transition between data bit-(N+1) and data bit-(N+2). </p>
+<p id="p-0019" num="0018"> The processing of the first triplet of data sampled by ph<b>1</b>, ph<b>2</b>, and ph<b>3</b> is done at time <b>320</b> and the processing of the second triplet of data sampled by ph<b>3</b>, ph<b>4</b>, and ph<b>1</b> is done at time <b>325</b>. Also, DRC logic device <b>235</b> may provide the phase control signals to the PI at time <b>325</b>. The DRC logic device may provide the phase control signals to the PI at time <b>325</b> since, for example, the logic used to make a determination is relatively uncomplicated. Factors such as the DRC logic device not attempting to align (i.e., synchronize) sampled data bits with a reference clock and the shortcomings thereof (e.g., latency issues) may also facilitate relatively fast processing of the sampled signal data. </p>
+<p id="p-0020" num="0019"> Thus, in some embodiments herein, a sampling decision (e.g., to advance, to retard, or not to adjust phases of the PI output clock signals) and updating of the control signal to the PI may be made in a single sampling period <b>315</b> as shown in <figref idref="DRAWINGS">FIG. 3</figref>. The DRC logic device operates directly from the output clocks of the PI, at about a rate half of the incoming data signal. </p>
+<p id="p-0021" num="0020"> <figref idref="DRAWINGS">FIG. 4</figref> is an exemplary implementation of an apparatus <b>400</b> including a DRC logic device in accordance with some embodiments herein. Apparatus <b>400</b> includes a sampler <b>405</b> that samples the incoming data signal with a 4 PI output clock phase signals <b>410</b> (ph<b>1</b>, ph<b>2</b>, ph<b>3</b>, ph<b>4</b>} that are provided by a phase interpolator (PI) <b>415</b>. PI <b>415</b> derives the 4 PI output clock phase signals from reference clock signals <b>420</b> input thereto. </p>
+<p id="p-0022" num="0021"> Sampler <b>405</b> tracks a center of an eye of the incoming data signal using, for example, ph<b>1</b> and ph<b>3</b> of the 4 PI output clock phase signals <b>410</b> and provides indication signals of such tracking (e.g., D<b>1</b>, D<b>2</b>). Sampler <b>405</b> tracks a transition of the incoming data signal using, for example, ph<b>2</b> and ph<b>4</b> of the incoming data signal and provides indication signals of such tracking (e.g., E<b>1</b>, E<b>2</b>). </p>
+<p id="p-0023" num="0022"> A fast data recovery circuit (DRC) logic device <b>425</b> receives as inputs the tracking indication signals (e.g., D<b>1</b>, D<b>2</b>, E<b>1</b>, E<b>2</b>) from sampler <b>405</b>. Based on the received tracking indication signals, DRC logic device <b>420</b> determines phase control signals <b>430</b> that are provided as control signal inputs to PI <b>415</b>. Phase control signals <b>430</b> (i.e., R and L) may be determined by the exemplary logic circuits shown or other circuitry. The phase control signals <b>430</b> are used to adjust the PI output clock phases by providing an indication to adjust the phases of the PI output clocks by either advancing, retarding, or making no adjustments to the phases of the PI output clocks. A SIPO converter <b>435</b> connected to sampler <b>405</b> outputs recovered (i.e., synchronized) data. </p>
+<p id="p-0024" num="0023"> Referring again to <figref idref="DRAWINGS">FIG. 3</figref>, the first triplet of data sampled by ph<b>1</b>, ph<b>2</b>, and ph<b>3</b> is used to check the alignment of ph<b>2</b> to the transition between data bit-(N) and bit-(N+1). A PI phase shift output indicator is set to (R<b>1</b>=1, L<b>1</b>=0), (R<b>1</b>=0, L<b>1</b>=1) or (R<b>1</b>=0, L<b>1</b>=0) and latched at Ph<b>2</b> if ph<b>2</b> leads, lags or there is no transition detection between Bit-N and Bit-(N+1) occurs, respectively. Similarly, the data triplet of ph<b>3</b>, ph<b>4</b>, and ph<b>1</b> is used to check the alignment of ph<b>4</b> to the next transition between data bit-(N+1) and bit-(N+2) and to set indicator {R2, L2}. The two indicators (i.e., R<b>1</b>, L<b>1</b> and R<b>2</b>, L<b>2</b>) are combined to determine how to adjust the PI output phases. </p>
+<p id="p-0025" num="0024"> An example of a logic table, Table 1, is provided herein below to illustrate the efficient logic that may be used in accordance with some of the methods, systems and apparatuses herein. In the table, an &#x201c;X&#x201d; indicates a do not car value. For example, (R=1, L=0), (R=0, L=1) and (R=0, L=0) represent phase control signals to retard, advance, or not adjusted, respectively, during updating of the phases of the PI's output clocks.  
+<tables id="TABLE-US-00001" num="1">
+<table frame="none" colsep="0" rowsep="0">
+<tgroup align="left" colsep="0" rowsep="0" cols="7">
+<colspec colname="OFFSET" colwidth="21PT" align="left"/>
+<colspec colname="1" colwidth="14PT" align="center"/>
+<colspec colname="2" colwidth="42PT" align="center"/>
+<colspec colname="3" colwidth="14PT" align="center"/>
+<colspec colname="4" colwidth="56PT" align="center"/>
+<colspec colname="5" colwidth="14PT" align="center"/>
+<colspec colname="6" colwidth="56PT" align="center"/>
+<thead>
+<row>
+<entry/>
+<entry namest="OFFSET" nameend="6" align="center">TABLE 1</entry>
+</row>
+<row>
+<entry/>
+<entry/>
+</row>
+<row>
+<entry/>
+<entry namest="OFFSET" nameend="6" align="center" rowsep="1"/>
+</row>
+<row>
+<entry/>
+<entry>R1</entry>
+<entry>L1</entry>
+<entry>R2</entry>
+<entry>L2</entry>
+<entry>R</entry>
+<entry>L</entry>
+</row>
+<row>
+<entry/>
+<entry namest="OFFSET" nameend="6" align="center" rowsep="1"/>
+</row>
+</thead>
+<tbody valign="top">
+<row>
+<entry/>
+<entry>0</entry>
+<entry>0</entry>
+<entry>0</entry>
+<entry>0</entry>
+<entry>0</entry>
+<entry>0</entry>
+</row>
+<row>
+<entry/>
+<entry>0</entry>
+<entry>0</entry>
+<entry>0</entry>
+<entry>1</entry>
+<entry>0</entry>
+<entry>1</entry>
+</row>
+<row>
+<entry/>
+<entry>0</entry>
+<entry>0</entry>
+<entry>1</entry>
+<entry>0</entry>
+<entry>1</entry>
+<entry>0</entry>
+</row>
+<row>
+<entry/>
+<entry>0</entry>
+<entry>0</entry>
+<entry>1</entry>
+<entry>1</entry>
+<entry>X</entry>
+<entry>X</entry>
+</row>
+<row>
+<entry/>
+<entry>0</entry>
+<entry>1</entry>
+<entry>0</entry>
+<entry>0</entry>
+<entry>0</entry>
+<entry>1</entry>
+</row>
+<row>
+<entry/>
+<entry>0</entry>
+<entry>1</entry>
+<entry>0</entry>
+<entry>1</entry>
+<entry>0</entry>
+<entry>1</entry>
+</row>
+<row>
+<entry/>
+<entry>0</entry>
+<entry>1</entry>
+<entry>1</entry>
+<entry>0</entry>
+<entry>0</entry>
+<entry>0</entry>
+</row>
+<row>
+<entry/>
+<entry>0</entry>
+<entry>1</entry>
+<entry>1</entry>
+<entry>1</entry>
+<entry>X</entry>
+<entry>X</entry>
+</row>
+<row>
+<entry/>
+<entry>1</entry>
+<entry>0</entry>
+<entry>0</entry>
+<entry>0</entry>
+<entry>1</entry>
+<entry>0</entry>
+</row>
+<row>
+<entry/>
+<entry>1</entry>
+<entry>0</entry>
+<entry>0</entry>
+<entry>1</entry>
+<entry>X</entry>
+<entry>X</entry>
+</row>
+<row>
+<entry/>
+<entry>1</entry>
+<entry>0</entry>
+<entry>1</entry>
+<entry>0</entry>
+<entry>1</entry>
+<entry>0</entry>
+</row>
+<row>
+<entry/>
+<entry>1</entry>
+<entry>0</entry>
+<entry>1</entry>
+<entry>1</entry>
+<entry>X</entry>
+<entry>X</entry>
+</row>
+<row>
+<entry/>
+<entry>1</entry>
+<entry>1</entry>
+<entry>0</entry>
+<entry>0</entry>
+<entry>X</entry>
+<entry>X</entry>
+</row>
+<row>
+<entry/>
+<entry>1</entry>
+<entry>1</entry>
+<entry>0</entry>
+<entry>1</entry>
+<entry>X</entry>
+<entry>X</entry>
+</row>
+<row>
+<entry/>
+<entry>1</entry>
+<entry>1</entry>
+<entry>1</entry>
+<entry>0</entry>
+<entry>X</entry>
+<entry>X</entry>
+</row>
+<row>
+<entry/>
+<entry>1</entry>
+<entry>1</entry>
+<entry>1</entry>
+<entry>1</entry>
+<entry>X</entry>
+<entry>X</entry>
+</row>
+<row>
+<entry/>
+<entry namest="OFFSET" nameend="6" align="center" rowsep="1"/>
+</row>
+</tbody>
+</tgroup>
+</table>
+</tables>
+</p>
+<p id="p-0026" num="0025"> <figref idref="DRAWINGS">FIG. 5</figref> is an exemplary flow diagram of a method in accord with some embodiments herein. At <b>505</b>, a incoming data is sampled to determine a first phase shift indicator. At <b>510</b>, the incoming data is sampled to determine a second phase shift indicator. The first and second phase shift indicators may track a center of an eye of a data bit of the incoming data signal and transitions between adjacent data bits of the incoming data signal using any number of methods and techniques, including but not limited to those discussed herein. </p>
+<p id="p-0027" num="0026"> At operation <b>515</b>, a determination of a phase control signal is made. The phase control signal may be used to provide an indication of whether a phase of a sampling clock should be advance, retarded, or not adjusted. The determination is based on the first and second phase shift indicators. </p>
+<p id="p-0028" num="0027"> At operation <b>520</b>, the phase control signal may be provided to, for example, a PI or other device that may be used to make fine adjustments to the sampling clocks. </p>
+<p id="p-0029" num="0028"> <figref idref="DRAWINGS">FIG. 6</figref> is an exemplary system <b>600</b> according to some embodiments herein. System <b>600</b> may comprise the fast DRC logic device described hereinabove. System <b>600</b> includes a transmitter <b>605</b> to transmit data synchronized to a first clock <b>610</b> over an interconnect/bus <b>615</b>. In some embodiments, transmitter <b>605</b> may be a wireless transmitter that communicates via a wireless communication ink. A receiver device <b>630</b> is coupled to interconnect/bus <b>620</b> and is synchronized to a second clock <b>625</b>. In an some embodiments, first clock <b>610</b> and second clock <b>625</b> may be the same clock. Receiver device <b>620</b> may include a buffer <b>630</b>, a sampler <b>635</b>, a DRC logic device <b>640</b>, a PI <b>645</b>, and a SIPO converter <b>650</b> that may operate in accordance with some of the methods and apparatuses herein. For example, buffer <b>630</b> may amplify the incoming data signal that is sampled by sampler <b>635</b> with a number of phased clocks output by PI <b>645</b>. DRC logic device may determine a phase control signal in a manner such as some of the methods disclosed herein. The phase control signal may be used to adjust, if at all, phases of the PI output clocks used in sampling the incoming data signal such that a jitter or variation in the incoming data signal is reduced. The recovered data signal having a reduced jitter is passed to SIPO <b>650</b> that outputs the recovered data. </p>
+<p id="p-0030" num="0029"> It should be appreciated that the effective bandwidth of some embodiments of some of the DRC logic devices and apparatuses herein may include frequencies in a range of about 50 Mhz to about 100 Mhz bandwith. Also, the fast processing possible by some of the apparatuses, methods, and systems herein provide low loop latencies that may improve tracking accuracy thereof. </p>
+<p id="p-0031" num="0030"> The foregoing disclosure has been described with reference to specific exemplary embodiments thereof. It will, however, be evident that various modifications and changes may be made thereto without departing from the broader spirit and scope set forth in the appended claims. </p>
+<?detailed-description description="Detailed Description" end="tail"?>
+</description>
+<us-claim-statement>What is claimed is: </us-claim-statement>
+<claims id="claims">
+<claim id="CLM-00001" num="00001">
+<claim-text><b>1</b>. An apparatus comprising: 
+<claim-text>a sampler, using a plurality of sampling clocks, to sample a first set of data of an incoming data signal to determine a first phase shift indicator and to sample a second set of data of the incoming data signal to determine a second phase shift indicator; </claim-text>
+<claim-text>a data recovery circuit (DRC) including control logic to determine a phase control signal based on the first and the second phase shift indicators; and </claim-text>
+<claim-text>a phase interpolator to receive the phase control signal and adjust a phase of the sampling clocks, wherein the phase interpolator provides the plurality of sampling clocks. </claim-text>
+</claim-text>
+ </claim>
+<claim id="CLM-00002" num="00002">
+<claim-text><b>2</b>. The apparatus of <claim-ref idref="CLM-00001">claim 1</claim-ref>, wherein the first set of data is a data bit-(N) and data bit-(N+1), and the second set of data is data bit-(N+1) and data bit-(N+2). </claim-text>
+ </claim>
+<claim id="CLM-00003" num="00003">
+<claim-text><b>3</b>. The apparatus of <claim-ref idref="CLM-00001">claim 1</claim-ref>, wherein the DRC adjusts the phase of the sampling clocks to align successive sets of data sampled from the incoming data signal. </claim-text>
+ </claim>
+<claim id="CLM-00004" num="00004">
+<claim-text><b>4</b>. The apparatus of <claim-ref idref="CLM-00001">claim 1</claim-ref>, wherein the DRC operates at about half of a rate of the incoming data signal. </claim-text>
+ </claim>
+<claim id="CLM-00005" num="00005">
+<claim-text><b>5</b>. The apparatus of <claim-ref idref="CLM-00001">claim 1</claim-ref>, wherein the DRC does not align the first set of data or the second set of data with a reference clock signal. </claim-text>
+ </claim>
+<claim id="CLM-00006" num="00006">
+<claim-text><b>6</b>. The apparatus of <claim-ref idref="CLM-00001">claim 1</claim-ref>, further comprising a serial input parallel output converter coupled to an output of the sampler. </claim-text>
+ </claim>
+<claim id="CLM-00007" num="00007">
+<claim-text><b>7</b>. The apparatus of <claim-ref idref="CLM-00001">claim 1</claim-ref>, wherein the DRC has a processing latency of about 1 period of the incoming data signal. </claim-text>
+ </claim>
+<claim id="CLM-00008" num="00008">
+<claim-text><b>8</b>. A method comprising: 
+<claim-text>sampling a first set of data of an incoming data signal to determine a first phase shift indicator using a plurality of phases of a plurality of sampling clocks; </claim-text>
+<claim-text>sampling a second set data of the incoming data signal to determine a second phase shift indicator using a plurality of phases of the plurality of sampling clocks; </claim-text>
+<claim-text>determining, using a data recovery circuit (DRC) logic device, a phase control signal based on the first and the second phase shift indicators; and </claim-text>
+<claim-text>providing the phase control signal to a phase interpolator to adjust a phase of the sampling clocks that are provided thereby. </claim-text>
+</claim-text>
+ </claim>
+<claim id="CLM-00009" num="00009">
+<claim-text><b>9</b>. The method of <claim-ref idref="CLM-00008">claim 8</claim-ref>, wherein the first set of data is a data bit-(N) and data bit-(N+1), and the second set of data is data bit-(N+1) and data bit-(N+2). </claim-text>
+ </claim>
+<claim id="CLM-00010" num="00010">
+<claim-text><b>10</b>. The method of <claim-ref idref="CLM-00008">claim 8</claim-ref>, wherein the determination of the first phase shift indicator is based on a transition between data bit-(N) and data bit-(N+1), and the determination of the second phase shift indicator is based on a transition between data bit-(N+1) and data bit-(N+2). </claim-text>
+ </claim>
+<claim id="CLM-00011" num="00011">
+<claim-text><b>11</b>. The method of <claim-ref idref="CLM-00008">claim 8</claim-ref>, wherein the DRC logic device operates at about half of the rate of the incoming data signal. </claim-text>
+ </claim>
+<claim id="CLM-00012" num="00012">
+<claim-text><b>12</b>. The method of <claim-ref idref="CLM-00008">claim 8</claim-ref>, wherein the DRC does not align the first set of data or the second set of data with a reference clock signal. </claim-text>
+ </claim>
+<claim id="CLM-00013" num="00013">
+<claim-text><b>13</b>. The method of <claim-ref idref="CLM-00008">claim 8</claim-ref>, further comprising amplifying the incoming data signal prior to sampling the sampling. </claim-text>
+ </claim>
+<claim id="CLM-00014" num="00014">
+<claim-text><b>14</b>. The method of <claim-ref idref="CLM-00008">claim 8</claim-ref>, further comprising providing a serial input parallel output converter coupled to an output of the sampler to provide a recovered data signal. </claim-text>
+ </claim>
+<claim id="CLM-00015" num="00015">
+<claim-text><b>15</b>. The method of <claim-ref idref="CLM-00008">claim 8</claim-ref>, wherein the phase control signal provides an indication to advance, to retard, or not to adjust the phase of the sampling clocks provided by the phase interpolator. </claim-text>
+ </claim>
+<claim id="CLM-00016" num="00016">
+<claim-text><b>16</b>. The method of <claim-ref idref="CLM-00008">claim 8</claim-ref>, wherein the DRC logic device does not receive an input of a reference clock signal. </claim-text>
+ </claim>
+<claim id="CLM-00017" num="00017">
+<claim-text><b>17</b>. The method of <claim-ref idref="CLM-00008">claim 8</claim-ref>, wherein the DRC logic device has a processing latency of about 1 period of the incoming data signal. </claim-text>
+ </claim>
+<claim id="CLM-00018" num="00018">
+<claim-text><b>18</b>. A system comprising: 
+<claim-text>a wireless transmitting device synchronized to a first clock; and </claim-text>
+<claim-text>a receiving device coupled to the transmitting device and synchronized to a second clock, the receiving device comprising: 
+<claim-text>a sampler, using a plurality of sampling clocks, to sample a first set of data of an incoming data signal to determine a first phase shift indicator and to sample a second set of data of the incoming data signal to determine a second phase shift indicator; </claim-text>
+<claim-text>a data recovery circuit (DRC) including control logic to determine a phase control signal based on the first and the second phase shift indicators; and </claim-text>
+<claim-text>a phase interpolator to receive the phase control signal and adjust a phase of the sampling clocks, wherein the phase interpolator provides the plurality of sampling clocks. </claim-text>
+</claim-text>
+</claim-text>
+ </claim>
+<claim id="CLM-00019" num="00019">
+<claim-text><b>19</b>. The system of <claim-ref idref="CLM-00018">claim 18</claim-ref>, wherein the sampling clocks are derived from the second clock. </claim-text>
+ </claim>
+<claim id="CLM-00020" num="00020">
+<claim-text><b>20</b>. The system of <claim-ref idref="CLM-00018">claim 18</claim-ref>, wherein the first set of data is a data bit-(N) and data bit-(N+1), and the second set of data is data bit-(N+1) and data bit-(N+2). </claim-text>
+ </claim>
+<claim id="CLM-00021" num="00021">
+<claim-text><b>21</b>. The system of <claim-ref idref="CLM-00018">claim 18</claim-ref>, wherein the DRC adjusts the phase of the sampling clocks to align successive sets of data sampled from the incoming data signal.</claim-text>
+ </claim>
+</claims>
+</us-patent-application>

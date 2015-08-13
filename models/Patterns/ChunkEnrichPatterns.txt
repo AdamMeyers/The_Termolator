@@ -1,0 +1,91 @@
+pattern set np;
+
+// np-of-np
+
+np-of-np	:=  [constit cat=np]:HeadC
+		    "of"
+		    [constit cat=np]:CompC;
+
+when np-of-np   add [constit cat=np headC=HeadC of=CompC];
+
+np-of-np-of-np	:=  [constit cat=np] "of" [constit cat=np] "of" [constit cat=np isName=Name];
+
+when np-of-np-of-np add [constit cat=np];
+
+//np np
+
+npnp        := [constit cat=np] [constit cat=np];
+
+when npnp   add [constit cat=np];
+
+pattern set conj;
+
+n-and-n		:=  [constit cat=np]:N1 conj [constit cat=np]:N2;
+
+conj		:=  "and" | "or";
+
+when n-and-n	add [npgroup cat=n2 conj=N1], addFeatures [conj=N2] to N1;
+
+n3-list		:=  [constit cat=np]:N1 "," [constit cat=np]:N2 ","? conj [constit cat=np]:N3;
+
+when n3-list	add [npgroup cat=n3 conj=N1], addFeatures [conj=N2] to N1,
+                addFeatures [conj=N3] to N2;
+
+n4-list		:=  [constit cat=np]:N1 "," [constit cat=np]:N2  "," [constit cat=np]:N3
+		    ","? conj [constit cat=np]:N4;
+
+when n4-list	add [npgroup cat=n4 conj=N1], addFeatures [conj=N2] to N1,
+                addFeatures [conj=N3] to N2, addFeatures [conj=N4] to N3;
+
+n5-list		:=  [constit cat=np]:N1 "," [constit cat=np]:N2  "," [constit cat=np]:N3
+		    "," [constit cat=np]:N4 ","? conj [constit cat=np]:N5;
+
+when n5-list	add [npgroup cat=n5 conj=N1], addFeatures [conj=N2] to N1,
+                addFeatures [conj=N3] to N2, addFeatures [conj=N4] to N3,
+                addFeatures [conj=N5] to N4;
+
+n6-list		:=  [constit cat=np]:N1 "," [constit cat=np]:N2  "," [constit cat=np]:N3
+		    "," [constit cat=np]:N4 "," [constit cat=np]:N5 ","? conj [constit cat=np]:N6;
+
+when n6-list	add [npgroup cat=n6 conj=N1], addFeatures [conj=N2] to N1,
+                addFeatures [conj=N3] to N2, addFeatures [conj=N4] to N3,
+                addFeatures [conj=N5] to N4, addFeatures [conj=N6] to N5;
+
+n7-list		:=  [constit cat=np]:N1 "," [constit cat=np]:N2  "," [constit cat=np]:N3
+		    "," [constit cat=np]:N4 "," [constit cat=np]:N5 "," [constit cat=np]:N6
+		    ","? conj [constit cat=np]:N7;
+
+when n7-list	add [npgroup cat=n7 conj=N1], addFeatures [conj=N2] to N1,
+                addFeatures [conj=N3] to N2, addFeatures [conj=N4] to N3,
+                addFeatures [conj=N5] to N4, addFeatures [conj=N6] to N5,
+                addFeatures [conj=N7] to N6;
+
+n8-list		:=  [constit cat=np]:N1 "," [constit cat=np]:N2  "," [constit cat=np]:N3
+		    "," [constit cat=np]:N4 "," [constit cat=np]:N5 "," [constit cat=np]:N6
+		    "," [constit cat=np]:N7 ","? conj [constit cat=np]:N8;
+
+when n8-list	add [npgroup cat=n8 conj=N1], addFeatures [conj=N2] to N1,
+                addFeatures [conj=N3] to N2, addFeatures [conj=N4] to N3,
+                addFeatures [conj=N5] to N4, addFeatures [conj=N6] to N5,
+                addFeatures [conj=N7] to N6, addFeatures [conj=N8] to N7;
+
+n9-list		:=  [constit cat=np]:N1 "," [constit cat=np]:N2  "," [constit cat=np]:N3
+		    "," [constit cat=np]:N4 "," [constit cat=np]:N5 "," [constit cat=np]:N6
+		    "," [constit cat=np]:N7 "," [constit cat=np]:N8 ","? conj [constit cat=nap]:N9;
+
+when n9-list	add [npgroup cat=n9 conj=N1], addFeatures [conj=N2] to N1,
+                addFeatures [conj=N3] to N2, addFeatures [conj=N4] to N3,
+                addFeatures [conj=N5] to N4, addFeatures [conj=N6] to N5,
+                addFeatures [conj=N7] to N6, addFeatures [conj=N8] to N7,
+                addFeatures [conj=N9] to N8;
+
+n10-list		:=  [constit cat=np]:N1 "," [constit cat=np]:N2  "," [constit cat=np]:N3
+                "," [constit cat=np]:N4 "," [constit cat=np]:N5 "," [constit cat=np]:N6
+                "," [constit cat=np]:N7 "," [constit cat=np]:N8 "," [constit cat=nap]:N9
+                ","? conj [constit cat=np]:N10;
+
+when n10-list	add [npgroup cat=n10 conj=N1], addFeatures [conj=N2] to N1,
+                addFeatures [conj=N3] to N2, addFeatures [conj=N4] to N3,
+                addFeatures [conj=N5] to N4, addFeatures [conj=N6] to N5,
+                addFeatures [conj=N7] to N6, addFeatures [conj=N8] to N7,
+                addFeatures [conj=N9] to N8, addFeatures [conj=N10] to N9;

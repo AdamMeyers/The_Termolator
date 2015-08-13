@@ -1,0 +1,217 @@
+
+  
+    
+      
+        Introduction
+        For many years, scientists believed that point mutations
+        in genes are the genetic switches for somatic and inherited
+        diseases such as cystic fibrosis, phenylketonuria and
+        cancer. For this to be the case, disease-associated amino
+        acid substitutions should occur in functionally important
+        regions of the protein products of genes. While it has been
+        shown in specific cases that disease-associated amino acid
+        substitutions affect protein function, until now few
+        studies have examined this across many genes. Here we
+        provide direct evidence that disease-associated point
+        mutations occur in functionally important regions of the
+        genome and are not distributed equally across the coding
+        regions of genes. This work supports recent efforts to
+        collect disease associated mutational data in databases and
+        suggests that many of the mutations represented in those
+        databases are the likely underlying molecular cause of
+        disease.
+        Recently there have been a number of commercial and
+        public projects aimed at collecting and understanding human
+        genomic variation [ 1 ] . The goal of these projects is to
+        provide an understanding of how genotype is associated with
+        disease, how it affects our response to drugs and how it
+        affects the protein products of genes. Examples of these
+        projects include the SNP Consortium, the Human Genome
+        Mutation Database [ 2 ] , many gene specific databases ( [
+        3 4 ] , for example), and both public and private genome
+        sequencing efforts [ 5 ] . Much of the data that is being
+        collected are mutations annotated with their observed
+        phenotype. Automated annotation methods based on structural
+        and evolutionary parameters can lead to insight into the
+        molecular basis of disease.
+        With more than 4,000,000 identified variations and with
+        over 20,000 of them annotated with a phenotype, we are
+        facing the problem of having many uncharacterized
+        mutations. Algorithms are needed for automatically
+        annotating these gene variations to gain insight into how
+        they affect the gene's regulation and/or function of its
+        protein products. Using many collection technologies,
+        uncharacterized SNP data is being placed in public
+        databases such as the Human Genome Mutation Database (over
+        20,000 entries) [ 2 ] and the National Cancer Institute's
+        CGAP-GAI (Cancer Genome Anatomy Project Genetic Annotation
+        Initiative) [ 6 ] . The CGAP-GAI group has identified
+        10,243 SNPs by examining publicly available EST (Expressed
+        Sequence Tag) chromatograms.
+        Software for analyzing unannotated SNPs in known disease
+        associated genes will be especially useful when previously
+        unobserved mutations are discovered. Every human has
+        genotypic differences from the standard genome
+        approximately every thousand base pairs [ 7 8 9 ] . Given
+        knowledge of how a genotype differs from the standard, it
+        is important to be able to predict which of the variations
+        are likely to be the cause of disease or other phenotypic
+        differences. Evolutionary information about regulatory and
+        coding regions of genes can be used to highlight certain
+        mutations or groups of mutations that are attributable to a
+        phenotype [ 10 11 12 ] .
+        Early tools using phylogenetic and structural
+        information have shown promise in predicting the functional
+        consequences of a mutation [ 13 ] . These reports predict
+        that anywhere between 20-36% of non-synonymous SNPs alter
+        the function of a gene's protein product. In the report by
+        Chasman and Adams, evolutionary information was predicted
+        to be a useful component in determining whether a mutation
+        is deleterious [ 13 14 ] . Disease causing mutations are
+        also likely structurally perturbing at the protein level [
+        15 ] . Ng and Henikoff have introduced SIFT, a method for
+        predicting functional SNPs from a database of unannotated
+        polymorphisms [ 16 17 ] .
+        The relationship between disease-associated mutation
+        positions and evolutionary conservation has been reported
+        in specific cases. An analysis of the breast and ovarian
+        cancer susceptibility gene, BRCA1, showed that
+        disease-associated mutations tend to occur in highly
+        conserved regions [ 18 ] . An analysis of homologous
+        sequences in the androgen receptor has shown similar
+        results [ 10 ] . Keratin 12, KRT12, is associated with
+        Meesmann Corneal Epithelial Dystrophy (MCD). Reported
+        mutations often occur in the highly conserved
+        alpha-helix-initiation motif of rod domain 1A or in the
+        alpha-helix-termination motif of rod domain 2B [ 19 ] .
+        Structure based analysis methods have also been used to
+        analyze Osteogenesis imperfecta associated COL1A1 mutations
+        and disease-associated P53 mutations (Mooney and Klein,
+        unpublished), [ 20 ] . Miller and Kumar have reported that
+        disease-associated mutations are conserved in seven model
+        genes [ 21 ] .
+        To determine the degree to which mutation positions
+        differ evolutionarily from other positions, we have built
+        alignments of homologous genes for 231 disease-associated
+        genes. These multiple alignments have then been used to
+        assess the difference in evolutionary conservation for
+        positions that are both disease-associated and not
+        associated. The results show that, in general, positions
+        with disease-associated mutations are conserved more than
+        the average position in the alignment. This suggests the
+        most conserved mutations are likely to be the causative
+        agents of disease, and our data set identifies these
+        mutations.
+      
+      
+        Results and Discussion
+        Our method compares the negative entropy of
+        disease-associated columns within an alignment to other
+        columns in that alignment. The goal of this work is to
+        build these alignments, map the mutations to them, and show
+        that disease-associated positions are, in general,
+        conserved. The analysis was performed on the built
+        alignments and the results are shown in Table 1.
+        To collect the mutation data, 231 genes were used for
+        the analysis. They were chosen because they had a reported
+        cDNA sequence, disease-associated mutations and homologs in
+        SWISSPROT. These genes are listed in Table 1. Each
+        alignment consists of all the homologs in SWISSPROT as
+        determined by a BLAST search with an e-value threshold of
+        10e-15. For each alignment the negative entropy for each
+        column was calculated.
+        The conservation ratio parameter is defined as the
+        average negative entropy of analyzable positions with
+        reported mutations divided by the average negative entropy
+        of every analyzable position in the gene sequence. Analysis
+        was performed on 231 genes and 6185 mutations and of those
+        we found that 84.0% had conservation ratios less than one.
+        From those, 139 genes had more than ten analyzable
+        mutations and, of those, 88.0% had conservation ratios less
+        than one.
+        Use of evolutionary information is a promising approach
+        to automated characterization of mutations. These results
+        show that although conservation alone is not a perfect
+        predictive measure, there is useful information contained
+        in sequence alignments containing homologous genes.
+        Approaches using conservation in a multiple alignment
+        should work better when associated with other methods such
+        as structural analysis, population analysis and
+        experimental data. Knowledge of how the sequence pool
+        clusters into families may increase the sensitivity of the
+        method.
+        Our measured parameter, the conservation ratio, is a
+        quantity that measures the usefulness of a multiple
+        alignment for characterizing mutations in a gene sequence.
+        Knowledge of more mutations in a gene does not necessarily
+        lower the conservation ratio. We expect that knowledge of
+        more mutations in a gene will increase the statistical
+        significance of the conservation ratio. This is the likely
+        underlying cause of the result showing that genes with 10
+        or mutations increases are more likely to have a
+        conservation ratio less than one.
+        The alignments and BLAST searches are integrated on the
+        website, http://cancer.stanford.edu/mut-paper/.
+      
+      
+        Conclusions
+        In conclusion, there are estimated to be 30,000
+        non-synonymous differences between an individual and the
+        draft genome [ 23 5 7 8 9 ] . Determination of which
+        positions are likely to be disease associated is a
+        challenging and important problem. The finding that
+        disease-associated mutations occur in positions of
+        functional importance supports recent efforts for the
+        building of methods to predict which positions are likely
+        to be disease associated [ 14 13 16 17 ] . These methods
+        are likely to incorporate protein structure, the amino acid
+        identity of the mutation and phylogenetic information. In
+        an interesting twist, this observation also suggests that
+        this data may be useable as a functional genomics tool for
+        understanding the function of the protein products of genes
+        on a molecular level. Such a method would use the inherent
+        functional information contained in a phenotypically
+        annotated polymorphism to infer functional importance
+        within a gene.
+      
+      
+        Methods
+        Non-synonymous mutations were acquired from the Human
+        Genome Mutation Database
+        http://archive.uwcm.ac.uk/uwcm/mg/hgmd0.html. 231 genes
+        were chosen with known disease-association each having
+        SWISSPROT homologs, a cDNA sequence and mutations in the
+        coding region. For each of those genes, all known
+        non-synonymous mutations were then downloaded with the cDNA
+        sequence for that gene.
+        Each cDNA sequence was then translated and placed in a
+        FASTA formatted file. For each of the resultant files a
+        BLAST [ 24 ] search was performed against the SwissProt
+        database. All sequences from the returned hits were then
+        stored in FASTA format files. For each of the genes that
+        returned BLAST results with e-value scores smaller than
+        1e-15, ClustalW [ 25 ] was used to build a sequence
+        alignment.
+        For each amino acid in the position of interest, the
+        negative entropy was determined using the following formula
+        [ 26 ] :
+        
+        Where the P 
+        i are the probabilities of finding a
+        particular amino acid at that position. For this analysis,
+        gapped positions, "-", were considered independent amino
+        acids.
+        For each known mutation, the negative entropy of the
+        column it occupies was tabulated. The average negative
+        entropy for each mutation within a gene was compared to the
+        average entropy of all columns satisfying the criteria for
+        analysis. Mutations outside of the coding region or
+        mutations encoding termination codons were discarded.
+        The list of genes was then sorted by average negative
+        entropy of the mutations. We then calculated the
+        conservation entropy, CE, using:
+        CE = average NE of mutation positions/average NE of all
+        positions in the gene sequence
+      
+    
+  

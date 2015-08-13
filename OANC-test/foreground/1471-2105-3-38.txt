@@ -1,0 +1,880 @@
+
+  
+    
+      
+        Background
+        
+          Model of an oscillating biochemical network
+          In [ 8 ] , Laub and Loomis propose a model of the
+          molecular network underlying adenosine 3',5'-cyclic
+          monophosphate (cAMP) oscillations observed in fields of
+          chemotactic 
+          Dictyostelium discoideum cells. The
+          model, based on the network depicted in Fig. 1, induces
+          the spontaneous oscillations in cAMP observed during the
+          early development of 
+          D. discoideum. 
+          In this model, changes in the enzymatic activities of
+          these proteins are described by a system of seven
+          non-linear differential equations:
+          
+          where the state variable 
+          x = [ 
+          x 
+          1 ,..., 
+          x 
+          7 ] represents the concentrations of
+          the seven proteins: 
+          x 
+          1 = [ACA], 
+          x 
+          2 = [PKA], 
+          x 
+          3 = [ERK2], 
+          x 
+          4 = [REG A], 
+          x 
+          5 = [Internal cAMP], 
+          x 
+          6 = [External cAMP] and 
+          x 
+          7 = [CAR1] and the fourteen different 
+          k 
+          
+            i 
+           represent system parameter values. It was shown
+          numerically in [ 8 ] that spontaneous oscillations appear
+          at the nominal parameter values found in Table 1. Note
+          that because there are typographical errors in the
+          original paper, the values being used here for the
+          nominal parameters were obtained directly from the
+          authors of [ 8 ] .
+          This particular model is primarily concerned with
+          describing self-sustaining oscillations in the
+          biochemical system. From Fig. 2, it is clear that at the
+          nominal parameter values of the model, this is achieved.
+          We seek to determine whether the system is robust - that
+          is, if we change these kinetic parameters, will the
+          systems oscillatory behaviour persist? We next present
+          two possible means, based on whether parameters are
+          changed one at a time or in groups.
+        
+      
+      
+        Methods
+        
+          Single parameter robustness: Bifurcation
+          analysis
+          Self-sustained oscillations such as those being
+          modelled here appear as stable limit cycles in trajectory
+          of the underlying dynamical system [ 11 ] . The existence
+          and stability of these limit cycles may change under
+          parametric perturbations. Whenever a stable periodic
+          solution loses stability as we vary the underlying
+          parameters of the system and this solution transitions to
+          another qualitative solution - for example, a
+          steady-state equilibrium - we say that the system
+          undergoes a 
+          Hopf bifurcation. It is therefore
+          possible to use bifurcation theory as a means of
+          quantifying the robustness of this oscillatory network
+          model [ 12 13 ] .
+          Using the bifurcation analysis package AUTO [ 14 ] ,
+          it is possible to produce one-parameter bifurcation
+          diagrams for each of the model parameters 
+          k 
+          
+            i 
+           . These diagrams illustrate the steady-state
+          behaviour of the systems as the parameter values are
+          changed. Suppose that Hopf bifurcations occur at 
+          
+            k 
+           
+          
+            i 
+           and 
+          
+            i 
+           so that (stable) limit cycles occur for the range ( 
+          
+            k 
+            
+              i 
+             
+           , 
+          
+            i 
+           ). Both the size of this interval as well as the
+          proximity of the nominal parameter value to either
+          boundary are measures of the robustness of the system. To
+          compare the robustness of the system to the different
+          parameters, we can define a series of parametric
+          robustness measures. We define the 
+          degree of robustness (DOR) for each
+          parameter 
+          k 
+          
+            i 
+           as:
+          
+          It is straightforward to see that this value is always
+          between zero and one. The former indicates extreme
+          parameter sensitivity whereas the latter implies large
+          insensitivity.
+          Bifurcation diagrams provide an excellent means of
+          determining the robustness of systems to single parameter
+          perturbations. We next describe a method for analysing
+          and quantifying robustness to simultaneous changes in
+          several parameters.
+        
+        
+          Multiparametric robustness: Structural singular
+          values
+          
+            Determining the limit cycle: Harmonic balance
+            method
+            The first step is to obtain a mathematical
+            expression for the limit cycle oscillation. The
+            harmonic balance method can be used [ 17 ] . The basic
+            idea is to represent the limit cycle by a Fourier
+            series with unknown coefficients ( 
+            a 
+            
+            n , 
+            i  , φ 
+            
+            n , 
+            i  ) and period 
+            T :
+            
+            The non-linear differential equation can be used to
+            set up a series of algebraic equations that the
+            coefficients must satisfy. These equations can be
+            solved using numerical packages such as Mathematica or
+            Maple. Depending on the particular form of the limit
+            cycle, a small finite number of coefficients can be
+            used. We can denote this periodic solution as 
+            x *( 
+            t ).
+          
+          
+            Linearization
+            The non-linear differential equation must now be
+            linearized about this periodic orbit [ 17 ] . Writing
+            the state vector 
+            x ( 
+            t ) as
+            
+            x ( 
+            t ) = 
+            x *( 
+            t ) + 
+            x 
+            δ ( 
+            t )
+            then the local behaviour of the non-linear system is
+            governed by that of the linearized system:
+            
+            δ ( 
+            t ) ≅ 
+            J ( 
+            x *( 
+            t )) 
+            x 
+            ≈ ( 
+            t )
+            where 
+            J is the Jacobian matrix of the
+            vector field 
+            f . Note that since the
+            linearization is performed about a periodic orbit, the
+            linear system is periodic.
+          
+          
+            Restructuring into nominal/uncertainty
+            systems
+            The Jacobian matrix includes all uncertain
+            parameters. At this point we need to separate the
+            system into a nominal model and a feedback
+            interconnection that involves all parametric
+            uncertainty. We first write each parameter as
+            
+            where 
+            k 
+            
+              i 
+             is the nominal value and δ 
+            
+              i 
+             is the relative amount of perturbation in the 
+            i thparameter. We now separate
+            the Jacobian matrix as
+            
+            J ( 
+            x *( 
+            t )) = 
+            A 
+            0 ( 
+            t ) + 
+            B 
+            0 ( 
+            t ) Δ 
+            C 
+            0 ( 
+            t ) (4)
+            where 
+            A 
+            0 ( 
+            t ) is the Jacobian matrix with
+            all parameters at their nominal value, and Δ is a
+            diagonal matrix containing all the uncertainties δ 
+            
+              i 
+             . Let 
+            y ( 
+            t ) = 
+            C 
+            0 ( 
+            t ) 
+            x 
+            δ ( 
+            t ) and 
+            u ( 
+            t ) = Δ 
+            y ( 
+            t ), the system is now of the
+            form of Eqn. (2) (with 
+            x ( 
+            t ) replaced by 
+            x 
+            δ ( 
+            t )).
+          
+          
+            Discretization
+            The system can be discretized by sampling the state
+            and output with sampling period 
+            h = 
+            T/n , where 
+            n is a positive integer and
+            assuming that the inputs are piecewise constant; this
+            is also a standard technique in control engineering [
+            18 ] . In particular, a linear continuous-time system
+            governed by Eqn. (2) gives rise to the discrete-time,
+            linear system
+            ξ ( 
+            k + 1) = 
+            A 
+            
+              d 
+             ( 
+            k ) ξ( 
+            k ) + 
+            B 
+            
+              d 
+             ( 
+            k ) 
+            v ( 
+            k )
+            η ( 
+            k ) = 
+            C 
+            
+              d 
+             ( 
+            k ) ξ( 
+            k )
+            where 
+            A 
+            
+              d 
+             ( 
+            k ) = Φ ( 
+            kh + 
+            h , 
+            kh ), 
+            B 
+            
+              d 
+             ( 
+            k ) = Φ ( 
+            kh + 
+            h , 
+            s ) 
+            B 
+            0 ( 
+            s ) 
+            ds , 
+            C 
+            
+              d 
+             ( 
+            k ) = 
+            C 
+            0 ( 
+            kh ), and Φ ( 
+            t , τ) is the transition matrix
+            of 
+            A 
+            0 ( 
+            t ) [ 19 ] . The discretized
+            signals are 
+            v ( 
+            k ) = 
+            u ( 
+            kh ), η( 
+            k ) = 
+            y ( 
+            kh ), and ξ( 
+            k ) = 
+            x ( 
+            kh ). Periodicity of 
+            A 
+            
+              d 
+             and 
+            B 
+            
+              d 
+             is preserved due to the periodicity of the
+            transition matrix. Moreover, it is not difficult to
+            confirm that 
+            A 
+            
+              d 
+             , 
+            B 
+            
+              d 
+             and 
+            C 
+            
+              d 
+             are periodic with period 
+            n . The uncertainty matrix after
+            discretization is now Δ 
+            
+              d 
+             . The discretization step is illustrated in Fig.
+            4A.
+          
+          
+            Lifting
+            The final step in preparing the system for SSV
+            analysis is to transform the periodic, linearized
+            system into an equivalent time-invariant one. The
+            technique for this is known as 
+            lifting [ 18 ] . Rather than
+            giving the general formulae, it is easier to illustrate
+            the general principle with an example.
+            Suppose that a discrete-time system with state
+            variable ξ, input 
+            v , and output η obeys the
+            difference equation
+            ξ ( 
+            k + 1) = 
+            a ( 
+            k )ξ( 
+            k ) + 
+            b ( 
+            k ) 
+            v ( 
+            k )
+            η ( 
+            k ) = 
+            c ( 
+            k )ξ( 
+            k )
+            where the time varying coefficients 
+            a ( 
+            k ), 
+            b ( 
+            k ) and 
+            c ( 
+            k ) are all periodic with period
+            two. Calculating the state variable and output
+            step-by-step leads to:
+            
+            for any integer 
+            p . By defining "lifted" inputs
+            and outputs
+            
+            and considering the system state only at the even
+            time points ( ( 
+            p ) = ξ(2 
+            p )) we arrive at an equivalent
+            time-invariant system.
+            The lifting technique has been illustrated above for
+            a discrete-time system with period two; however, it can
+            be applied to systems with arbitrary period - though
+            the corresponding formulae are considerably more
+            complicated; see [ 18 ] .
+          
+          
+            Computation of SSV
+            There is considerable literature in control theory
+            on the computation of the SSV; see for example [ 20 21
+            22 ] . For general classes of uncertainty, computing μ 
+            Δ is known to be NP-hard [ 21 ] .
+            Typically, given the feedback loop consisting of 
+            G and Δ we compute upper and
+            lower bounds for the SSV [ 15 ] . The lower bound is
+            exactly equal to μ 
+            Δ [ 15 ] ; unfortunately computing
+            this lower bound involves a search over a non-convex
+            set and therefore may converge to local optimums that
+            are not global. In contrast, the upper bound can be
+            rewritten in terms of a convex optimisation problem, so
+            that a global minimum can be obtained. However, this
+            upper bound is, in general not tight. A software
+            package is commercially available that can compute μ 
+            upper and uses a power algorithm
+            to attempt to compute μ 
+            lower [ 22 ] .
+          
+        
+      
+      
+        Results
+        
+          Single parameter robustness
+          The robustness of Laub and Loomis's oscillatory model
+          was first analysed by means of single-parameter
+          bifurcation diagrams. Four typical diagrams are shown in
+          Fig. 5. The activity of internal cAMP ( 
+          x 
+          5 ) is plotted as a function of the
+          variation of each parameter. We use internal cAMP in the
+          diagram as it is the element that is usually observed
+          experimentally [ 23 ] . In each of the diagrams, there
+          are three types of solutions: stable steady state,
+          unstable steady state and limit cycle oscillations.
+          These diagrams illustrate that Hopf bifurcations occur
+          for each parameter; that is, the oscillatory behaviour
+          exists only in a limited range of parameters around the
+          nominal value. For each of these parameters, the
+          respective intervals and values for degree-of-robustness
+          are found in Table 1.
+        
+        
+          Structural singular value
+          From the numerical simulation (Fig. 2) of the
+          non-linear model, we observed that the oscillatory curves
+          did not deviate greatly from a simple harmonic oscillator
+          plus a constant offset. Thus, to obtain an analytic
+          expression for the periodic orbits we assume that the
+          state variables are expanded into Fourier series
+          containing only the fundamental and constant terms:
+          
+          for each of the seven states. Since it is the relative
+          phase shift between each state variable that is relevant,
+          we assume that θ 
+          1 = 0. The substitution of the Fourier
+          series into the original equations leads to a series of
+          real algebraic equations for the coefficients (not shown)
+          whose solution was obtained using Mathematica. This leads
+          us to obtain the corresponding periodic solutions where
+          the values of 
+          A 
+          0, 
+          i  , 
+          A 
+          1, 
+          i  and θ 
+          
+            i 
+           are found in Table 2. The period 
+          T is approximately 7.31 minutes.
+          This analytic solution matches well with the numerical
+          simulation except for an arbitrary phase shift, which
+          does not affect the shape and location of the limit cycle
+          in the phase space and can thereby be ignored (not
+          shown).
+          Following our prescribed methods, we next linearized
+          the system. The Jacobian matrix is obtained and was
+          decomposed as in Eqn. (4) to obtain:
+          
+          The matrix 
+          B 
+          0 ( 
+          t ) = { 
+          B 
+          
+          i , 
+          j  } where
+          
+          Similarly, the matrix 
+          C 
+          0 ( 
+          t ) = { 
+          C 
+          
+          i , 
+          j  } where all coefficients are
+          zero except for the following:
+          
+          Finally, 
+          D 
+          0 = 0 and the perturbation structure
+          is given by
+          Δ = diag {δ 
+          1 ,δ 
+          2 ,δ 
+          2 ,δ 
+          3 ,δ 
+          4 ,δ 
+          5 ,δ 
+          6 ,δ 
+          6 ,δ 
+          8 ,δ 
+          8 ,δ 
+          9 ,δ 
+          10 ,δ 
+          10 ,δ 
+          11 ,δ 
+          12 ,δ 
+          13 ,δ 
+          14 }
+          Note that since the nominal trajectory is periodic,
+          the matrix functions in the nominal description are also
+          periodic. Note also that in the uncertainty matrix, Δ,
+          some uncertainties are repeated (δ 
+          2 ,δ 
+          6 ,δ 
+          8 and δ 
+          10 ) while δ 
+          7 is missing.
+          The system was then discretized and lifted following
+          the procedure outlined above. A comparison of the system
+          response for each of the approximations at the nominal
+          parameter values is given in Fig. 4B.
+          For the sampling time we tried various values of 
+          n but found negligible differences
+          for values above eight. Finally, we computed the bounds
+          on the SSV. Once again, we found that the values of these
+          two bounds were not affected much by the sampling
+          frequency provided that 
+          n is greater than eight. The upper
+          bound was successfully computed using [ 22 ] . The
+          maximum over all frequencies is approximately 12.06.
+          However, the high dimension of system causes convergence
+          problem during the computation of μ 
+          lower using this package. To obtain
+          an acceptable lower bound, we calculate the spectral
+          radius at each frequency. This gives us a lower bound for
+          μ 
+          lower . The plot of the bounds for
+          the SSV when 
+          n = 16 is shown in Fig. 6. We can
+          use μ 
+          lower to obtain a conservative
+          region for robust stability. The highest value over all
+          frequencies for μ 
+          lower is approximately 2.636.
+        
+      
+      
+        Discussion
+        Recent years has seen an appreciation that key cellular
+        properties are robust to variations in individual parameter
+        values. Based on the topology of many of these networks,
+        this should not be surprising. Feedback - both negative and
+        positive - control systems are ubiquitous in most
+        biological networks [ 24 ] and one of the reasons for using
+        feedback is that it reduces sensitivity of a system's
+        behaviour to its parameter values.
+        In modelling biological networks, it is important that
+        this robustness also be in evidence. The particular
+        behaviour being characterized by the model should not rely
+        on precise values of the model's parameters - for example,
+        reaction rate constants or protein concentrations. In
+        particular, a precise measurement of these constants is
+        difficult whereas protein concentrations will vary from one
+        cell to another or throughout the lifetime of any
+        individual. Deviations from the nominal model parameter
+        values should not result in a loss of the network's
+        performance; thus, parameter sensitivity can be used to
+        validate mathematical models of biochemical system. That
+        is, the more insensitive the system response is to the
+        accuracy of the parameter, the more faith we should have in
+        the model [ 25 ] .
+        In looking at certain classes of behaviour, where
+        qualitative changes in the stability of the system are
+        possible, bifurcation diagrams provide an elegant means of
+        evaluating robustness. For example, in evaluating the
+        robustness of the model of Laub and Loomis, of primary
+        importance is determining whether the oscillatory behaviour
+        will persist if the parameter values are altered. This
+        qualitative difference in performance - from limit cycle
+        oscillations to constant steady states - can be quantified
+        and compared across parameters or from one model to
+        another. Once the robustness of the oscillatory behaviour
+        is established, further investigations of the robustness of
+        some of the oscillatory features, for example frequency and
+        amplitude can further be evaluated.
+        From the bifurcation diagrams obtained for each of the
+        fourteen parameters, we know that oscillations exist only
+        in a limited range around the nominal value. We find the
+        system to be quite sensitive to variations in 
+        k 
+        2 , 
+        k 
+        4 , 
+        k 
+        10 and 
+        k 
+        14 and mostly insensitive to the others.
+        Single-parameter bifurcation analysis also shows that the
+        amplitude of the oscillation is greatly affected by the
+        variation of 9 parameters ( 
+        k 
+        1 , 
+        k 
+        2 , 
+        k 
+        4 , 
+        k 
+        6 , 
+        k 
+        7 , 
+        k 
+        10 , 
+        k 
+        11 , 
+        k 
+        12 , and 
+        k 
+        14 ).
+        Based on the SSV stability to interpret multiple
+        parameter sensitivity, we can conclude that robust
+        stability of the periodic orbits will be maintained,
+        provided that
+        
+        Since the uncertainty matrix consists only of diagonal
+        entries, this bound applies to each of the individual
+        parameters. Thus, we can guarantee that the system will be
+        robustly stable provided that no single parameter differs
+        more than 8.3% from its nominal value.
+        In our analysis we found a large gap between μ 
+        upper and our lower bound for μ. As
+        we later show, for this system the upper bound is fairly
+        tight, as we are able to obtain a destabilizing
+        perturbation of size 9%. For general biological models, a
+        robustness measure based on the upper bound μ 
+        upper may also be more appropriate.
+        Robustness bounds for systems in which arbitrarily
+        slowly-time-varying parameter values are allowed are known
+        [ 26 ] . For these systems it has been shown that the
+        bounds converge as the time-variations approach zero to the
+        upper bound μ 
+        upper [ 26 ] . Since many of the
+        parameters in models of biochemical networks represent
+        features that will vary over time, such as enzyme
+        concentrations, this number may therefore be more
+        indicative of the model's true robustness.
+        The ability to consider the effect of time-variations on
+        the robustness of the system is one great advantage of the
+        SSV over other methodologies. One drawback of the SSV
+        approach compared to the bifurcation theory is that it does
+        not provide the precise combination of parameters that
+        destabilizes the system - only its size. Also, since the
+        upper bound is only sufficient to guarantee robustness,
+        this number may, in general, give an overly conservative
+        notion of robustness.
+        It must be emphasized that the SSV approach denoted here
+        is based on the linearized model of the system. For some
+        classes of systems this linearization may not be possible -
+        in this case, the linear SSV approach documented here will
+        not be applicable. However, for most models used to
+        describe biochemical reactions, this should not be a
+        problem.
+        Because we are concentrating exclusively on the local
+        stability of the linearized model, important parameters of
+        the oscillatory behaviour such as robustness of the
+        frequency and amplitudes of oscillation are not evaluated.
+        Also, the effect of parameter variations on the equilibrium
+        orbit are omitted. In particular, varying the kinetic
+        parameters will change the behaviour of the system in two
+        different ways: the equilibrium periodic orbit will change
+        and the stability of deviations about this orbit will also
+        change. The SSV allows one to quantify the robustness of
+        the second of these two effects. It does not say anything
+        directly regarding the effect of parameter variations on
+        the equilibrium periodic orbit. One way of bounding the
+        effect of these parameter changes is to write the original
+        differential equation as
+        ( 
+        t ) = 
+        f ( 
+        x , 
+        k )
+        where 
+        k = 
+        k 
+        0 + δ is the set of kinetic parameters
+        with nominal values 
+        k 
+        0 . If the nominal periodic orbit (when
+        δ = 0) is given by
+        
+        x *( 
+        t ) = 
+        x ( 
+        t ) - 
+        x 
+        δ ( 
+        t )
+        then, linearizing about this orbit yields
+        
+        δ ( 
+        t ) = 
+        A ( 
+        t ) 
+        x 
+        δ ( 
+        t ) + 
+        v 
+        where δ is a constant vector that includes the effect of
+        this parametric uncertainty. Thus, the system can be
+        considered as being perturbed by a constant input signal 
+        v . Provided that the homogeneous
+        system is exponentially stable (and this is guaranteed by
+        the existence of a stable limit cycle) and that 
+        v is not "too large", the perturbed
+        system's state will remain in a neighbourhood of the origin
+        if the 
+        f ( 
+        x , 
+        p ) in the original equation is
+        reasonably well behaved in 
+        k . Detailed bounds and conditions on
+        
+        f are given in Theorem 5.1 of [ 17 ]
+        , though it should be emphasized that these bounds tend to
+        be overly conservative in practice.
+        To illustrate the local nature of the SSV analysis for
+        this system, we perturbed the system parameters by varying
+        amounts. The particular parameters were either increased or
+        decreased so as to bring them closer to the Hopf
+        bifurcation. For example, the nominal value of 
+        k 
+        1 is closer to 
+        
+          k 
+         
+        1 than to 
+        1 so that we reduced 
+        k 
+        1 whereas 
+        k 
+        4 is closer to 
+        4 than to 
+        
+          k 
+         
+        4 so we increased 
+        k 
+        4 . In Fig. 7we show the response of
+        these systems to changes of 7% and 9% both for the
+        linearized system - where the linearized response has been
+        superimposed on the nominal limit cycle (Fig. 7A) and the
+        original non-linear system (Fig. 7B). For the smaller
+        value, the linearized response is stable and we see that,
+        after a transient, the response settles to the nominal
+        limit cycle. We also see this same behaviour in the
+        response of the non-linear system with this level of
+        parameter perturbation. For a 9% change in the parameters,
+        however, the linearized system is unstable. We see this as
+        a deviation from the nominal limit cycle. In the non-linear
+        system's response, this translates into an end to the
+        stable limit cycle. The response does not "blow up" but
+        instead settles into a fixed point.
+        This example illustrates how a robustness analysis of
+        the linearized system can be used to deduce the robustness
+        of the original non-linear system, as it shows that when
+        the linearized system is unstable, the desired behaviour of
+        the non-linear system will no longer be present. This
+        example also points out the fact that the upper bound μ 
+        upper ≅ 8.3% is not overly
+        conservative for this system as we were able to produce a
+        destabilizing perturbation of size 9%.
+        Finally, we note that multiparametric robustness
+        analysis considered here is based on local properties of
+        the dynamical system, since we are evaluating the
+        robustness of the linearized model. Extensions to the
+        non-linear model are the subject of active investigation [
+        27 ] .
+        However, it is by combining the robustness analysis of
+        both single and multiple parameters, we can obtain a more
+        thorough understanding of the region of stability of the
+        periodic solution in the high dimensional parameter space
+        and use this to improve upon the model. In this particular
+        example, we find that the system's robustness is governed
+        by several "robustness limiting" parameters, 
+        k 
+        2 , 
+        k 
+        4 , 
+        k 
+        10 and 
+        k 
+        14 .
+      
+      
+        Conclusions
+        Determining the robustness of mathematical models of
+        biological systems is important for several reasons. First,
+        there is growing evidence that many aspects of the networks
+        being modelled have evolved in such a way so that they are
+        robust as this allows them to tolerate natural variations
+        in the environment. Thus, faithful models should replicate
+        this robustness. Second, robustness of the models provide a
+        means of validating model quality since the performance of
+        the models should not rely on precisely tuned parameter
+        values that are impossible - or at best - difficult to
+        measure exactly.
+        In this paper, we illustrated the use of two tools
+        developed in dynamical systems theory and control
+        engineering to assess robustness quantitatively. For an
+        example, we considered an oscillatory molecular network
+        model due to Laub and Loomis that aims at describing
+        oscillatory behaviour in cAMP signalling observed in the
+        social amoeba 
+        D. discoideum. This behaviour appears
+        as a stable limit cycle of the equations describing the
+        model. We have evaluated the degree to which this limit
+        cycle is robust to variations in all the system
+        parameters.
+        The robustness of the oscillatory behaviour to single
+        parameter variations was quantified using bifurcation
+        analysis. Using the bifurcation analysis software tool AUTO
+        we determined that single parameter changes as small as 20%
+        from the nominal value can cause the limit cycle to
+        disappear and a stable equilibrium to appear. In addition
+        to the stability robustness, AUTO is also able to evaluate
+        the sensitivity of the amplitude of the oscillation to
+        these parameter changes.
+        To investigate the robustness of the model to
+        simultaneous changes in parameter values, the structured
+        singular value (SSV) analysis tool was used. Once the
+        system was in the correct framework for SSV analysis, we
+        were able to determine that the system can only tolerate
+        very small changes in the parameter values - in the order
+        of 8% - if we allow these parameters to vary with time
+        arbitrarily slowly.
+        Finally, it is important to note that to understand
+        completely the robustness properties of a model, it is
+        appropriate to combine single and multiple parameter
+        sensitivity analyses.
+      
+      
+        Authors' contributions
+        LM carried out the computational studies and analysis.
+        PAI conceived of the study and participated in its design
+        and coordination. All authors read and approved the final
+        manuscript.
+      
+    
+  
