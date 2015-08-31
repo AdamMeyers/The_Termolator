@@ -907,7 +907,7 @@ def filter_terms (infile, \
     else:
         reject_stream = False
     ## make_stat_term_dictionary4
-    instream = open(infile)
+    instream = open(infile,errors='replace')
     lines = instream.readlines()
     instream.close()
     line_lists = collapse_lines(lines,alternate_lists)
