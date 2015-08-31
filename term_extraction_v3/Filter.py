@@ -86,6 +86,23 @@ def removeStops(string): #NOT NEEDED AS NP EXTRACTING REMOVES THEM
             return ""
     string = _reGlue(words)
     return string
+
+def bad_unicode(string):
+    for char in string:
+        if ord(char)>127:
+            print(char)
+            return(True) 
+            
+def remove_non_unicode(string):
+    output = ''
+    for char in string:
+        if ord(char)>127:
+            output=output+' '
+        else:
+            output=output+char
+    output = output.strip(' ')
+    return(output)
+    
 def stem(string):
     """Stem a phrase"""
     global stemmer
@@ -102,15 +119,23 @@ def stem(string):
     #    stemdict[string2] = string
     # FIX ME
     if string not in stemdict:
-        temp = stemmer.stem(string)
-        stemdict[string] = temp
-        if temp not in unstemdict:
+        if bad_unicode(string):
+            ## added A. Meyers 8/28/15
+            temp = stemmer.stem(remove_non_unicode(string))
+        else:
+            temp = stemmer.stem(string)
+        if temp:
+            stemdict[string] = temp
+        if not temp:
+            pass
+        elif temp not in unstemdict:
             unstemdict[temp] = [string]
         elif string not in unstemdict[temp]:
             unstemdict[temp].append(string)
     else:
         temp = stemdict[string]
     return temp
+
 def unstem(string):
     """Undo stemming of a phrase"""
     global stemdict

@@ -42,7 +42,7 @@ def do_provider_search(term,provider):
     data = str(url_stream.read())
     return(data)
 
-def do_provider_search_with_pause(term,provider,time=1,reps=0):
+def do_provider_search_with_pause(term,provider,timing=1,reps=0):
     ## without this function, the system will halt every time
     ## the internet connection is interupted
     if reps>5:
@@ -53,8 +53,8 @@ def do_provider_search_with_pause(term,provider,time=1,reps=0):
             output = do_provider_search(term,provider)
         except:
             print('Temporary internet search failure. Trying again')
-            time.sleep(time)
-            output = do_provider_search_with_pause(term,provider,time=time,reps=reps+1)
+            time.sleep(timing)
+            output = do_provider_search_with_pause(term,provider,timing=timing,reps=reps+1)
     return(output)
 
 
@@ -136,7 +136,7 @@ def get_top_ten(term,provider='Yahoo'):
             total_results = False
         return(output,total_results)
     else:
-       return(False,False)
+       return([],False)
 
 
 def print_top_10(term,provider='yahoo'):
