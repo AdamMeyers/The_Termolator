@@ -1471,13 +1471,21 @@ def find_inline_terms(lines,fact_file,pos_file,terms_file,marked_paragraphs=Fals
 def get_pos_structure (line):
     start_end = re.compile('S:([0-9]+) E:([0-9]+)')
     line = line.strip()
-    fields = line.split('|||')
+    if line[0:3]=='|||':
+        fields = ['|||']
+        fields2 = line[3:].split('|||')
+        fields.extend(fields2[1:])
+    else:
+        fields = line.split('|||')
     word = fields[0]
     pos = fields[2]
     start_end_out = start_end.search(fields[1])
-    start,end = start_end_out.group(1),start_end_out.group(2)
-    start = int(start)
-    end=int(end)
+    if start_end_out:
+        start,end = start_end_out.group(1),start_end_out.group(2)
+        start = int(start)
+        end=int(end)
+    else:
+        return(False,False,False,False)
     return(word,pos,start,end)
 
                 
@@ -1512,7 +1520,9 @@ def make_term_chunk_file(pos_file,term_file,abbreviate_file,chunk_file,no_head_t
     with open(pos_file) as instream,open(chunk_file,'w') as outstream:
         for line in instream:
             word,pos,start,end = get_pos_structure(line)
-            if start_term:
+            if not word:
+                pass
+            elif start_term:
                 if start < end_term:
                     CHUNK_TAG = 'I-NP'
                 else:
