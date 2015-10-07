@@ -64,7 +64,7 @@ def find_output_sets_by_comp_title(section, require_id=True,link_id_required=Tru
     ## substitute number for id
     ## 1) find <div class="compTitle" ...>... <a ... href=URL> TITLE </a> ...</div>
     ## 2) <div class="compText aAbs" > abstract </div>
-    div_title_pattern = re.compile('<div [^>]*class="compTitle"[^>]*>(.*?)</div>')
+    div_title_pattern = re.compile('<div [^>]*class="compTitle[^"]*"[^>]*>(.*?)</div>')
     a_link_pattern = re.compile('<a ([^>]*)>(.*?)</a>')
     ## id_a_link_pattern = re.compile('<a id=([^>]*)>(.*?)</a>')
     href_search = re.compile('href="([^"]*)"')
