@@ -89,7 +89,9 @@ def find_output_sets_by_comp_title(section, require_id=True,link_id_required=Tru
         a_link = a_link_pattern.search(title_match.group(1))
         if a_link:
             title_value = a_link.group(2)
-        href_pattern = href_search.search(a_link.group(1))
+            href_pattern = href_search.search(a_link.group(1))
+        else:
+            href_pattern = False
         if href_pattern:
             href_value = href_pattern.group(1)
         id_num = id_num+1
