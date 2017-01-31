@@ -1470,7 +1470,7 @@ def find_inline_terms(lines,fact_file,pos_file,terms_file,marked_paragraphs=Fals
 
 def get_pos_structure (line):
     start_end = re.compile('S:([0-9]+) E:([0-9]+)')
-    line = line.strip()
+    line = line.strip(' '+os.linesep+'\t')
     if line[0:3]=='|||':
         fields = ['|||']
         fields2 = line[3:].split('|||')
