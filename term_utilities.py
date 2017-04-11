@@ -4,7 +4,8 @@ import shutil
 import re
 
 DICT_DIRECTORY = os.path.dirname(os.path.realpath(__file__)) + os.sep
-
+## DICT_DIRECTORY = '../'
+## DICT_DIRECTORY = './'
 ORG_DICTIONARY = DICT_DIRECTORY+'org_dict.txt'
 LOC_DICTIONARY = DICT_DIRECTORY+'location-lisp2-ugly.dict'
 NAT_DICTIONARY = DICT_DIRECTORY+'nationalities.dict'
@@ -22,6 +23,8 @@ verb_morph_file = DICT_DIRECTORY+'verb-morph-2000.dict'
 noun_morph_file = DICT_DIRECTORY+'noun-morph-2000.dict'
 
 jargon_files = [DICT_DIRECTORY+'chemicals.dict',DICT_DIRECTORY+'more_jargon_words.dict']
+dictionary_table = {'legal': DICT_DIRECTORY+'legal_dictionary.dict'}
+special_domains = []
 
 stat_adj_dict = {}
 stat_term_dict = {}
@@ -107,6 +110,15 @@ last_word_loc = re.compile(r'(STREET|AVENUE|BOULEVARD|LANE|PLACE)$',re.I)
 xml_pattern = re.compile(r'<([/!?]?)([a-z?\-]+)[^>]*>',re.I)
 
 xml_string = '<([/!?]?)([a-z?\-]+)[^>]*>'
+
+## abbreviate patterns -- the b patterns ignore square brackets
+global parentheses_pattern2
+global parentheses_pattern3
+parentheses_pattern2a = re.compile(r'[(\[]([ \t]*)([^)\]]*)([)\]]|$)')
+parentheses_pattern3a = re.compile(r'(\s|^)[(\[]([^)\]]*)([)\]]|$)([^a-zA-Z0-9-]|$)')
+parentheses_pattern2b = re.compile(r'[(]([ \t]*)([^)]*)([)]|$)')   
+parentheses_pattern3b = re.compile(r'(\s|^)[(]([^)]*)([)\]]|$)([^a-zA-Z0-9-]|$)')
+
 
 html_fields_to_remove = ['style','script']
 
@@ -364,6 +376,8 @@ def read_in_pos_file (infile=pos_file):
         line = line.strip()
         items = line.split('\t')
         pos_dict[items[0]]=items[1:]
+    for dictionary in special_domains:
+        jargon_files.append(dictionary_table[dictionary])
     for jargon_file in jargon_files:
         ## remove jargon from dictionary
         with open(jargon_file) as instream:
@@ -415,15 +429,35 @@ def read_in_nom_dict (infile=nom_file):
         else:
             nom_dict[word] = [nom_class]
 
-read_in_pos_file()
-update_pos_dict()
-read_in_org_dictionary(ORG_DICTIONARY,dictionary='org',lower=True)
-read_in_org_dictionary(LOC_DICTIONARY,dictionary='loc',lower=True)
-read_in_nom_map_dict()
-read_in_verb_morph_file()
-read_in_noun_morph_file()
-read_in_nom_dict()
+def initialize_utilities():
+    global parentheses_pattern2
+    global parentheses_pattern3
+    read_in_pos_file()
+    update_pos_dict()
+    read_in_org_dictionary(ORG_DICTIONARY,dictionary='org',lower=True)
+    read_in_org_dictionary(LOC_DICTIONARY,dictionary='loc',lower=True)
+    read_in_nom_map_dict()
+    read_in_verb_morph_file()
+    read_in_noun_morph_file()
+    read_in_nom_dict()
+    if 'legal' in special_domains:
+        parentheses_pattern2 = parentheses_pattern2b
+        parentheses_pattern3 = parentheses_pattern3b
+    else:
+        parentheses_pattern2 = parentheses_pattern2a
+        parentheses_pattern3 = parentheses_pattern3a
 
+def parentheses_pattern_match(instring,start,pattern_number):
+    if 'legal' in special_domains:
+        if pattern_number == 2:
+            return(parentheses_pattern2b.search(instring,start))
+        else:
+            return(parentheses_pattern3b.search(instring,start))
+    else:
+        if pattern_number == 2:
+            return(parentheses_pattern2a.search(instring,start))
+        else:
+            return(parentheses_pattern3a.search(instring,start))
 
 def breakup_line_into_chunks(inline,difference):
     size = 1000

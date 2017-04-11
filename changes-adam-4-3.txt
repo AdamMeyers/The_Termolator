@@ -1,0 +1,11 @@
+1) make_termolator_fact_txt_files.py
+   -- minor adjustment to fix bug for xml/html files
+2) fixed DICT_DIRECTORY in term_utilties.py
+3) Add parameter for list of topics (10th parameter)
+4) Added initialize_utilities() to deal with paramterized differences between topics:
+   if 'legal' is a member of special_domains:
+      (a) we include the dictionary of legal terms
+      (b) we don't use square brackets for abbreviations
+5) fixed some errors in detecting the abbreviate relation
+6) created run_abbreviate.sh to run abbreviate separately from
+   the rest of the program

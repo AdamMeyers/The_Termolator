@@ -230,7 +230,8 @@ def get_next_word(instring,start):
                 end = next_word.end()
                 found = next_word
         elif (instring[border]=='(') and (border>0) and (not re.search('\s',instring[border-1])):
-            paren_pat = parentheses_pattern2.search(instring,border)
+            paren_pat =  parentheses_pattern_match(instring,border,2)
+            ### parentheses_pattern2.search(instring,border)
             if paren_pat and (not re.search('\s',paren_pat.group(1))):
                 ## require matching paren pattern
                 ## field 1 is pre-left paren (null), field 2 is between parens, field 3 is right paren
@@ -240,7 +241,8 @@ def get_next_word(instring,start):
                 end = found.end()
                 found = False
         elif (start == found.start()) and (found.end() == start+1) and (instring[start]=='('):
-            paren_pat = parentheses_pattern2.search(instring,start)
+            paren_pat = parentheses_pattern_match(instring,start,2)
+            ### parentheses_pattern2.search(instring,start)
             if paren_pat and (not re.search('\s',paren_pat.group(1))) and (len(instring)> paren_pat.end()+1) \
               and (not re.search('\s',instring[paren_pat.end()+1])):
               found = paren_pat
@@ -578,7 +580,8 @@ def get_topic_terms(text,offset,filter_off=False):
     double_quote_pattern=re.compile('(\s|^)["“]([^"“”]*?)["”](\s|$)')
     first_character_pattern=re.compile('[^ ,\.?><\'";:\]\[{}\-_=)(*&\^%$\#@!~]')
     start = 0
-    paren_pat = parentheses_pattern3.search(text,start)
+    paren_pat = parentheses_pattern_match(text,start,3)
+    ### parentheses_pattern3.search(text,start)
     txt_markup_match = txt_markup.search(text,start)
     pieces = []
     topic_terms = []
@@ -595,7 +598,8 @@ def get_topic_terms(text,offset,filter_off=False):
             txt_markup_match = txt_markup.search(text,start)
         elif paren_pat and (paren_pat.start()<start):
             ## in case parens are inside of txt_markup
-            paren_pat = parentheses_pattern3.search(text,start)
+            ### paren_pat = parentheses_pattern3.search(text,start)
+            paren_pat = parentheses_pattern_match(text,start,3)
         elif txt_markup_match and (not paren_pat):
             txt_markup_match = txt_markup.search(text,start)
         else:
@@ -640,7 +644,8 @@ def get_topic_terms(text,offset,filter_off=False):
             else:
                 pieces.extend([[start,text[start:paren_pat.start()]],[paren_pat.start(2),paren_pat.group(2)]])
                 start = paren_pat.end()            
-            paren_pat = parentheses_pattern3.search(text,paren_pat.end())
+                ### paren_pat = parentheses_pattern3.search(text,paren_pat.end())
+                paren_pat = parentheses_pattern_match(text,paren_pat.end(),3)
     if start and (len(text) > start):
         pieces.append([start,text[start:]])
     if len(pieces)==0:
@@ -1478,8 +1483,11 @@ def get_pos_structure (line):
     else:
         fields = line.split('|||')
     word = fields[0]
-    pos = fields[2]
-    start_end_out = start_end.search(fields[1])
+    if len(fields)<3:
+        start_end_out = False
+    else:
+        pos = fields[2]
+        start_end_out = start_end.search(fields[1])
     if start_end_out:
         start,end = start_end_out.group(1),start_end_out.group(2)
         start = int(start)
@@ -1534,7 +1542,8 @@ def make_term_chunk_file(pos_file,term_file,abbreviate_file,chunk_file,no_head_t
                 CHUNK_TAG = 'B-NP'
             else:
                 CHUNK_TAG = 'O'
-            outstream.write(word+'\t'+word+'\t'+pos+'\t'+CHUNK_TAG+os.linesep)
+            if word:
+                outstream.write(word+'\t'+word+'\t'+pos+'\t'+CHUNK_TAG+os.linesep)
 
 def make_term_chunk_file_list(infiles,outfiles,no_head_terms_only=False):
     with open(infiles) as instream, open(outfiles) as outfile_stream:

@@ -3,6 +3,7 @@
 import os
 import sys
 from term_utilities import *
+initialize_utilities()
 
 def modify_paragraph_delimiters(paragraph_starts,paragraph_ends,paragraph_non_starts,paragraph_non_ends):
     matched_outstarts = []
@@ -110,6 +111,7 @@ def create_termolotator_fact_txt_files(input_file,txt2_file,txt3_file,fact_file)
                 hypothetical_end = (starts1[0]-1)
                 if not hypothetical_end in ends1:
                     ends1.append(hypothetical_end)
+                    ends1.sort()
                     ## balances the addition of 0 as a start
             length = length+len(string2)
             start = start+len(string2)

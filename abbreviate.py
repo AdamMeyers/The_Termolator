@@ -3,14 +3,11 @@ from term_utilities import *
 global abbr_to_full_dict
 global full_to_abbr_dict
 global id_number
-global parentheses_pattern2
 global word_split_pattern
 global ABBREVIATION_STOP_WORDS
 global greek_match_table
 global number_match_table
 
-parentheses_pattern2 = re.compile(r'[(\[]([ \t]*)([^)\]]*)([)\]]|$)')
-parentheses_pattern3 = re.compile(r'(\s|^)[(\[]([^)\]]*)([)\]]|$)([^a-zA-Z0-9-]|$)')
 word_split_pattern = re.compile(r'[^\w@]+')
 ABBREVIATION_STOP_WORDS = ['a','the','an','and','or','but','about','above','after','along','amid','among','as','at','by','for','from','in','into','like','minus','near','of','off','on','onto','out','over','past','per','plus','since','till','to','under','until','up','via','vs','with','that']
 
@@ -28,6 +25,7 @@ def ill_formed_abbreviation_pattern(abbreviation_pattern):
     ## attempts to identify parentheses that do not contain abbreviations
     ## first type is of the form (X,Y) (or (X,Y,Z,...) where X and Y are
     ## single characters
+    ## 57
     token_list = re.split('[,;]',abbreviation_pattern.group(2))
     out = []
     if len(token_list) > 1:
@@ -592,13 +590,89 @@ def find_search_end(line,search_end):
         return((pattern.start()+1),Fail)
     else:
         return(search_end,Fail)
+
+def invalid_abbreviation(ARG2_string):
+    if ARG2_string.islower() and ((ARG2_string in pos_dict) \
+                                  or (ARG2_string in nom_dict)):
+        return(True)
+    elif ARG2_string.istitle() and ((ARG2_string.lower() in pos_dict)
+                                    or (ARG2_string.lower() in nom_dict)\
+                                    or ((ARG2_string.lower() in location_dictionary)
+                                        and (not 'ABBREVIATION-OF' in location_dictionary[ARG2_string.lower()]))):
+        return(True)
+    elif ARG2_string.isupper() and roman(ARG2_string):
+        return(True)
+
+def invalid_abbrev_of(ARG2_string,ARG1_string,recurs=False):
+    if (ARG2_string == '') or (ARG1_string == ''):
+        return(True)
+    elif ' ' in ARG1_string:
+        return(False) ## these errors are only for single word cases
+    elif (not recurs) and (ARG2_string[-1] in 'sS') and (ARG1_string[-1] in 'sS') \
+      and (not invalid_abbrev_of(ARG2_string[:-1],ARG1_string[:-1],recurs=True)):
+      ## handles plurals
+      return(False)
+    elif ARG1_string.lower().startswith(ARG2_string.lower()):
+        return(False) ## prefixes are valid 1 word abbreviations
+    elif (len(ARG2_string)==2) and (ARG2_string[0].lower() == ARG1_string[0].lower()) \
+      and (ARG2_string[-1].lower() == ARG1_string[-1].lower()):
+        return(False) ## first and last character matches are valid abbreviations
+    else:
+        string_index = 0
+        abbrev_index = 0
+        string = ARG1_string.lower()
+        abbrev = ARG2_string.lower()
+        OK = True
+        string_type = False
+        string_char = False
+        match = False
+        next_type = False
+        while (string_index < len(string)) and (abbrev_index < len(abbrev)):
+        ## match initial consonant and vowel clusters
+            last_type = string_type
+            last_match = match
+            string_char = string[string_index]
+            abbrev_char = abbrev[abbrev_index]
+            if string_char == abbrev_char:
+                match = True
+            else:
+                match = False
+            if string_char in 'aeiou':
+                string_type = 'vowel'
+            else:
+                string_type = 'consonant'
+            if (string_index<(len(string)-1)):
+                if string[string_index+1] in 'aeiou':
+                    next_type = 'vowel'
+                else:
+                    next_type = 'consonant'
+            else:
+                next_type = False
+            # print(1,string_char,abbrev_char,match,string_type)
+            # print(2,last_type,last_match)
+            # print(3,abbrev_index)
+            if match and (last_match 
+                          or (last_type != string_type) \
+                          or ((string_type == 'consonant') and (next_type =='vowel'))):
+                ## looking for match and vowel/consonant cluster border
+                ## abbrev char can be vowel following consonant
+                ## or consonant that is either preceded or followed by a vowel
+                abbrev_index = abbrev_index+1
+            string_index = string_index + 1
+#        print('final',string_index,len(string),abbrev_index,len(abbrev))
+        if abbrev_index == len(abbrev):
+            return(False)
+        else:
+            return(True)
+                
+    
     
 def get_next_abbreviate_relations(previous_line,line,position):
-    global parentheses_pattern2
     global word_split_pattern
     output = []
     start = 0
-    pattern = parentheses_pattern2.search(line,start)
+    pattern = parentheses_pattern_match(line,start,2)
+    ### parentheses_pattern2.search(line,start)
     ## allows for unclosed parenthesis
     more_words = False
     ARG2_begin = False
@@ -756,8 +830,12 @@ def get_next_abbreviate_relations(previous_line,line,position):
                     ## perhaps provide offsets explicitly (start position = start of first word + offset)
                     ## end position = end position of pattern + offset
             if result:
-                ARG1 = make_nyu_entity(output_type,ARG1_string,ARG1_begin,ARG1_end)
-                ARG2 = make_nyu_entity(output_type,ARG2_string,ARG2_begin,ARG2_end)
+                if invalid_abbreviation(ARG2_string) or invalid_abbrev_of(ARG2_string,ARG1_string):
+                    ARG1 = False
+                    ARG2 = False
+                else:
+                    ARG2 = make_nyu_entity(output_type,ARG2_string,ARG2_begin,ARG2_end)
+                    ARG1 = make_nyu_entity(output_type,ARG1_string,ARG1_begin,ARG1_end)
                 relation_start = min(ARG1_begin,ARG2_begin)
                 relation_end = max(ARG1_end,ARG2_end)
                 if ARG1 and ARG2:
@@ -772,7 +850,8 @@ def get_next_abbreviate_relations(previous_line,line,position):
             extend_antecedent = True
         else:
             extend_antecedent = False
-        pattern = parentheses_pattern2.search(line,start)
+        pattern = parentheses_pattern_match(line,start,2)
+        ## pattern = parentheses_pattern2.search(line,start)
     return(output)
 
 def record_abbreviate_dictionary(fulltext,abbreviation):
@@ -904,8 +983,20 @@ def read_in_abbrev_dicts_from_files(abbr_to_full_file,full_to_abbr_file):
         for line in full_to_abbr_dict:
             line_list = line.strip().split('\t')
             full_to_abbr_dict[line_list[0]]=line_list[1:]
-
             
+
+def run_abbreviate_on_file_list(file_list,dict_prefix=False):
+    start = True
+    with open(file_list) as instream:          
+        for line in instream:
+            file_prefix = line.strip()
+            lines = get_lines_from_file(file_prefix+'.txt3')
+            run_abbreviate_on_lines(lines,file_prefix+'.abbr',reset_dictionary=start)
+            if start:
+                start = False
+    if dict_prefix:
+        save_abbrev_dicts(dict_prefix+".dict_abbr_to_full",dict_prefix+".dict_full_to_abbr")
+        
 def get_expanded_forms_from_abbreviations (term):   
     variations = [term.upper(),term.lower()]
     if (len(variations[0])>2) and (variations[0][-1] == 'S'):

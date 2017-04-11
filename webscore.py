@@ -25,6 +25,24 @@ import time
 basic_yahoo_search_url_prefix = '''https://search.yahoo.com/search?p='''
 basic_bing_search_url_prefix = '''https://search.yahoo.com/search?q='''
 ## basic_google_search_url_prefix = '''https://www.google.com/search?q='''
+webscore_dict = {}
+
+def load_web_score_dict_file(dict_file):
+    webscore_dict.clear()
+    if os.path.isfile(dict_file):
+        with open(dict_file) as instream:
+            for line in instream:
+                line = line.strip(os.linesep)
+                term,score = line.split('\t')
+                webscore_dict[term] = float(score)
+    else:
+        print(dict_file,'does not exist. Will be created')
+
+def write_webscore_dictionary(dict_file):
+    if len(webscore_dict)>0:
+        with open(dict_file,'w') as outstream:
+            for term in webscore_dict:
+                outstream.write(term+'\t'+str(webscore_dict[term])+'\n')
 
 def replace_spaces_with_plus (term):
     return(term.replace(' ','+'))
@@ -89,6 +107,7 @@ def find_output_sets_by_comp_title(section, require_id=True,link_id_required=Tru
         a_link = a_link_pattern.search(title_match.group(1))
         if a_link:
             title_value = a_link.group(2)
+        if a_link:     
             href_pattern = href_search.search(a_link.group(1))
         else:
             href_pattern = False
@@ -242,7 +261,9 @@ def do_search_and_classify_top_10(term,provider='yahoo',minimum=5,debug=False,st
         ## return(rating,reference_score,total_results)
     return(rating,total_results)
         
-def webscore_one_term(term,debug=False):
+def webscore_one_term(term,debug=False,use_web_score_dict=False):
+    if use_web_score_dict and (term in webscore_dict):
+        return(webscore_dict[term])
     search_rating, total_results = do_search_and_classify_top_10(term,debug=False)
     ## search_rating = (academic_count+patent_count)/10
     ## total_results = number of hits
@@ -263,6 +284,9 @@ def webscore_one_term(term,debug=False):
     ## see the comments in do_search_and_classify_top_10
     if score == 'unscored':
         print('unscored:',term)
+        if use_web_score_dict:
+            webscore_dict[term] = 0
         return(0)
+    if use_web_score_dict:
+        webscore_dict[term] = score
     return(score)
-

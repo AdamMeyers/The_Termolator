@@ -3,12 +3,23 @@ The Termolator Program 0.1 is licensed under the Apache license 2.0
 Meyers, Yifan He, Zachary Glass and Shasha Liao and released in July,
 2015.
 
+The Termolator Program 0.2 is also licensed under the Apache license
+2.0 (http://www.apache.org/licenses/LICENSE-2.0). It is a revision of
+the original program. It was revised by Adam Meyers, John Ortega and
+Vlad Tyshkevich. The main changes are: (i) bug fixes; (ii) The
+new version uses Python 3 exclusively -- the Python 2 portions of the
+original code have all been changed; (iii) additional features have
+been added so the program will work better with legal text; (iv) changes
+to the abbreviation program intended to improve precision and (v)
+the capability to store web search based scores and look them up on
+subsequent runs rather than recalculating them.
+
 The Termolator takes two sets of documents as input a FOREGROUND set
 and a BACKGROUND set and finds instances of terminology that are more
 characteristic of the FOREGROUND than the background.  Input files can
 be either .txt, .html or .xml (the latter only working if it uses HTML
 style markup to delimit text). UTF-8 encoding (which includes ASCII)
-is preferred, but ISO-8859-1 will as well.
+is preferred, but ISO-8859-1 will work as well.
 
 Details of the original system are described in
 the accompanying paper (termolator-paper-2015.pdf):
@@ -23,10 +34,9 @@ We have modified the system somewhat for this distribution to make it
 easier to use.
 
 Dependencies: If you have not already done so, you should install the
-   python 2 version of the NLTK (see
-   http://www.nltk.org/install.html). To see if it is already
-   installed, attempt to "import nltk" in Python 2. If you get an
-   error, than install it.
+   python 3 version of the NLTK (see http://www.nltk.org/install.html). 
+   To see if it is already installed, attempt to "import nltk" in 
+   Python 3. If you get an error, than install it.
 
 Instructions for Using program:
 
@@ -36,7 +46,7 @@ Instructions for Using program:
 
 2) To run the system, the command is
 
-   $TERMOLATOR/run_termolator.sh FOREGROUND BACKGROUND EXTENSION OUTPUT_NAME TRUE-OR-FALSE TRUE-OR-FALSE 30000 5000 PROGRAM-DIRECTORY
+   $TERMOLATOR/run_termolator.sh FOREGROUND BACKGROUND EXTENSION OUTPUT_NAME TRUE-OR-FALSE TRUE-OR-FALSE 30000 5000 PROGRAM-DIRECTORY ADDITIONAL_TOPIC_STRING
 
 The arguments are defined as follows:
 
@@ -51,11 +61,20 @@ The arguments are defined as follows:
    Argument 8 Top N -- number of terms you want to keep in the end (suggested 5000-10000)
    Argument 9 (PROGRAM-DIRECTORY) = the directory where the program is, e.g., 
    	        $TERMOLATOR if you set this variable.
+   Argument 10 (ADDITIONAL_TOPIC_STRING) = topics connected with a plus sign, e.g., legal+finance.
+   	       These topics are split by plus signs. The resulting topics correspond to key words 
+	       in the dictionary_table variable in term_utilities.py. Currently, only the "legal"
+	       topic is supported. If there are no additional topics, this variable should have
+	       "false" as a value. If you add the legal topic, a dictionary of legal terms will
+	       be downloaded and some specialized rules will be invoked for abbreviations. Other
+	       topic specific features may be added in the future.
 
-To test the program, we suggest going to one of our 3 test directories and running the command from there:
+To test the program, we suggest going to one of our 3 test directories and running the command from there. Note that we will shorly 
+be adding a corpus of court decisions, for which the legal topic features are useful. We have not yet tested whether these same features
+are useful for the patent directory provided here.
 
    a) subdirectory: gutenberg-test
-      command:      $TERMOLATOR/run_termolator.sh foreground.list background.list .htm knitting True True 30000 5000 $TERMOLATOR
+      command:      $TERMOLATOR/run_termolator.sh foreground.list background.list .htm knitting True True 30000 5000 $TERMOLATOR false
       
       -- The "True" setting will make this run take an extra 10 minutes to run about 600 
        	 web searches, but the results are more accurate as a result.
@@ -67,7 +86,7 @@ To test the program, we suggest going to one of our 3 test directories and runni
 	 For more information of Project Gutenberg, go to: https://www.gutenberg.org/
 
    b) subdirectory: OANC-test
-      command:      $TERMOLATOR/run_termolator.sh foreground.list background.list .txt biology True False 30000 5000 $TERMOLATOR
+      command:      $TERMOLATOR/run_termolator.sh foreground.list background.list .txt biology True False 30000 5000 $TERMOLATOR false
 
       -- This run will be faster than the previous run per term generated. If False is replaced by True, 
       	 the system will take an extra 3 hours (about 1 second for each of 10,000 terms),
@@ -79,7 +98,7 @@ To test the program, we suggest going to one of our 3 test directories and runni
 	 are all about biology. For more information about the OANC, go to: http://www.anc.org/data/oanc/
 
    c) subdirectory: patent-test
-      command:	    $TERMOLATOR/run_termolator.sh foreground.list background.list .XML surgery True False 30000 5000 $TERMOLATOR
+      command:	    $TERMOLATOR/run_termolator.sh foreground.list background.list .XML surgery True False 30000 5000 $TERMOLATOR false
 
       -- This run should generate about 4700 terms. If False is changed to True, it will take an additional 
       	 1.5 hours, but  achieve better results.
@@ -185,20 +204,29 @@ size.
 
 Thirdly, as we have already demonstrated, use of the Relevance score
 as determined by Arguments 6 and 7 effect total processing time.  Each
-web search takes about .8 seconds and there is one web search per term,
-so 30K terms can take about 7 hours. For this reason, we currently set
-a hard limit on the total number of terms in the output to the minimum
-of: a) 30% of the terms produced by the previous stage (these tend to
-be higher quality) and b) 30K terms (we assume it is not worth it to
-wait longer than this for the results). When run on 5000 foreground
-and background files, the system typically ends up generating
-relevance scores for 20-30K terms.
+web search takes about .8 seconds and there is one web search per
+term, so 30K terms can take about 7 hours. For this reason, we
+currently set a hard limit on the total number of terms in the output
+to the minimum of: a) 30% of the terms produced by the previous stage
+(these tend to be higher quality) and b) 30K terms (we assume it is
+not worth it to wait longer than this for the results). When run on
+5000 foreground and background files, the system typically ends up
+generating relevance scores for 20-30K terms. Also variable $4 is used
+to create a dictionary of Relevance Scores for particular terms. If
+you call the program a second time with the same $4 value, this
+dictionary will be loaded and relevance scores in for terms in the
+dictionary will be looked up rather than calculated. This can speed up
+run time significantly. It is of course possible to change the way the
+system is run to store all relevance scores in one central
+dictionary. We have not provided a script for this, but it is fairly
+straight-forward to do.
 
 In summary, the example described here would take about 24 hours to
 run. However, the following factors could lead to substantially
 shorter runtimes: (a) reusing preprocessed background data; (b) using
-fewer than 5000 files; (c) opting for fewer than 30K terms for
-using the websearch metric (see below).
+fewer than 5000 files; (c) opting for fewer than 30K terms for using
+the websearch metric (see below); and (d) reusing relevance scores via
+a dictionary.
 
 7) Known Issues relating to the Relevance Score (arguments 6 and 7)
    A) Internet Outages can cause the cause the system to fail.
@@ -207,7 +235,7 @@ using the websearch metric (see below).
       system not working. In particular, the function "get_top_ten" in
       webscore.py may need to be changed to reflect such future changes.
    C) If extensive use is made of the system, Yahoo! may ban you from using
-      there search engine. We have used 40K or so searches at a time and not had
+      their search engine. We have used 40K or so searches at a time and not had
       this happen. However, if it did, a different way of accessing the
       search engine would be necessary and the setting up of a Yahoo
       account would be needed. It would cost approximately .08 cents
@@ -216,15 +244,18 @@ using the websearch metric (see below).
       
 8) Known Issues with the POS tagger. We currently assume a maximum
    file size of 500000 bytes. This can be changed by editing the
-   TERMOLATOR_POS.properties file. However, are current POS tagger
+   TERMOLATOR_POS.properties file. However, our current POS tagger
    uses lots of memory for large files. So it is not advisable to
    raise this amount by a lot. An alternative is to shorten or split
    very large files when using them with this system.
 
-9) Known Issue -- The distributional system seems to clash with some
+9) We experienced the following issue with version 0.1 which used
+   Python 2 for nltk. We have not experienced it yet with version 0.2
+   (which only uses Python 3) and do not currently know whether it is
+   still an issue. The distributional system seems to clash with some
    instances of NLTK, but not others. We suspect that there may be
    some default encoding settings somewhere, which could default to
-   ascii, rather than utf-8 for some setups.
+   ascii, rather than utf-8 for some setups. 
 
    For problematic setups, we have gotten the following error messages
    during the distributional phase of the system:
@@ -233,4 +264,6 @@ using the websearch metric (see below).
       	if word.endswith("ied"):
 	   UnicodeDecodeError: 'ascii' codec can't decode byte 0xc2 in position 7: ordinal not in range(128)
 
+  Once again, we have not tested the all-python-3 version to know whether or not
+  this is still an issue.
 

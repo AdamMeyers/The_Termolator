@@ -896,10 +896,17 @@ def filter_terms (infile, \
                   percent_cutoff=.3, \
                   numeric_cutoff=30000,\
                   reject_file = False, \
-                  penalize_initial_the = True):
+                  penalize_initial_the = True, \
+                  web_score_dict_file=False
+                  ):
     ## it is possible that some people may want to allow NPs as well as noun groups as terms
     if abbr_full_file and full_abbr_file:
         read_in_abbrev_dicts_from_files(abbr_full_file,full_abbr_file)
+    if use_web_score and web_score_dict_file:
+        load_web_score_dict_file(web_score_dict_file)
+        use_web_score_dict = True
+    else:
+        use_web_score_dict = False
     stat_scores = []
     alternate_lists = {}
     if reject_file:
@@ -963,7 +970,7 @@ def filter_terms (infile, \
                 stream = False
         else:
             if use_web_score:
-                webscore = webscore_one_term(term) ### fix this
+                webscore = webscore_one_term(term,use_web_score_dict=use_web_score_dict) ### fix this
                 combined_score = webscore*confidence
                 out.extend([webscore,combined_score])
                 final_output.append([combined_score,out])
@@ -997,5 +1004,7 @@ def filter_terms (infile, \
             stream.write(term+'\t'+classification+'\t'+rating+'\t'+well_formedness_score+'\t'+rank_score+'\t'+confidence+'\t'+webscore+'\t'+combined_score+os.linesep)
         else:
             stream.write(term+'\t'+classification+'\t'+rating+'\t'+well_formedness_score+'\t'+rank_score+'\t'+confidence+os.linesep)
+    if use_web_score and web_score_dict_file:
+        write_webscore_dictionary(web_score_dict_file)
      
     
