@@ -69,6 +69,8 @@ The arguments are defined as follows:
 	       be downloaded and some specialized rules will be invoked for abbreviations. Other
 	       topic specific features may be added in the future.
 
+IMPORTANT PATH INFORMATION: If FOREGROUND and BACKGROUND files contain absolute paths, this command will work from anywhere.  Otherwise, you should run from the directory containing FOREGROUND and BACKGROUND. We will call this the DATA_DIRECTORY.  The files listed in FOREGROUND andBACKGROUND should be paths relative to the DATA_DIRECTORY.
+
 To test the program, we suggest going to one of our 3 test directories and running the command from there. Note that we will shorly 
 be adding a corpus of court decisions, for which the legal topic features are useful. We have not yet tested whether these same features
 are useful for the patent directory provided here.
