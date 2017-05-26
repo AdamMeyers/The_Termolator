@@ -462,6 +462,12 @@ def parentheses_pattern_match(instring,start,pattern_number):
 def breakup_line_into_chunks(inline,difference):
     size = 1000
     start = 0
+    if difference == 0:
+        ## this seems to happen sometimes
+        ## perhaps this is the case where
+        ## the current filters do not 
+        ## detect good break points
+        return([inline])
     output = []
     while start < len(inline):
         end = start + size
