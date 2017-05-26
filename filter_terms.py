@@ -97,6 +97,8 @@ def topic_term_rating(word,pos):
                 return('Medium')
             else:
                 return('Bad')
+    elif word in jargon_words:
+        return('Medium')
     elif pos in ['PLURAL','AMBIG_PLURAL']:
         if word in noun_base_form_dict:
             base = noun_base_form_dict[word][0]
@@ -264,7 +266,7 @@ def get_noun_nom_map(word):
         return(False)
 
 def normal_word(word):
-    if (word in pos_dict):
+    if (word in pos_dict) and (not word in jargon_words):
         pos = pos_dict[word][:]
         if 'PERSON_NAME' in pos:
             if len(pos)>1:
@@ -661,13 +663,18 @@ def term_classify(line,mitre=False):
                         term_string=stringify_word_list(word_seq)
                     else:
                         term_string = False
-                    if topic_term_ok(word_seq,pos_seq,term_string):
+                    OK_term,has_OOV  =  topic_term_ok(word_seq,pos_seq,term_string)
+                    if OK_term:
                         ok_np = 1+ ok_np
+                        if has_OOV:
+                            rating = 'Good'
+                        else:
+                            rating = 'Medium'
                         if np_1:
-                            np_2 = [word_seq, 'Good']
+                            np_2 = [word_seq, rating]
                             np_2_bases,np_2_variants,main_base = get_morph_variants(word_seq,pos_seq,'NP')
                         else:
-                            np_1 = [word_seq, 'Good']
+                            np_1 = [word_seq, rating]
                             np_1_pos_seq = word_seq
                             np_1_bases,np_1_variants,main_base = get_morph_variants(word_seq,pos_seq,'NP')
                     else:
@@ -733,7 +740,7 @@ def term_classify(line,mitre=False):
                         rating = 'Medium'
                     else:
                         rating = 'Good'
-                elif (np_1[1] == 'OK') or (np_2[1] == 'OK'):
+                elif (np_1[1] in ['OK','Medium']) or (np_2[1] in ['OK','Medium']):
                     rating = 'Medium'
                 else:
                     rating = 'Bad'
@@ -810,7 +817,7 @@ def term_classify(line,mitre=False):
                         rating = 'Medium'
                     else:
                         rating = 'Good'
-                elif (np_1[1] == 'OK') or (np_2[1] == 'OK'):
+                elif (np_1[1] in ['OK','Medium']) or (np_2[1] == ['OK','Medium']):
                     rating = 'Medium'
                 else:
                     rating = 'Bad'

@@ -592,7 +592,9 @@ def find_search_end(line,search_end):
         return(search_end,Fail)
 
 def invalid_abbreviation(ARG2_string):
-    if ARG2_string.islower() and ((ARG2_string in pos_dict) \
+    if not isinstance(ARG2_string,str):
+        return(True)
+    elif ARG2_string.islower() and ((ARG2_string in pos_dict) \
                                   or (ARG2_string in nom_dict)):
         return(True)
     elif ARG2_string.istitle() and ((ARG2_string.lower() in pos_dict)

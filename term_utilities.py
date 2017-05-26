@@ -34,6 +34,7 @@ verb_base_form_dict = {}
 verb_variants_dict = {}
 nom_dict = {} 
 pos_dict = {}
+jargon_words = set()
 pos_offset_table = {}
 organization_dictionary = {}
 location_dictionary = {}
@@ -383,8 +384,10 @@ def read_in_pos_file (infile=pos_file):
         with open(jargon_file) as instream:
             for line in instream.readlines():
                 word = line.strip()
+                word = word.lower()
                 if word in pos_dict:
-                    pos_dict.pop(word)
+                    ## pos_dict.pop(word)
+                    jargon_words.add(word)
 
 def update_pos_dict (name_infiles=[person_name_file,nat_name_file],other_infiles=[skippable_adj_file,out_ing_file,time_name_file]):
     global pos_dict
@@ -528,7 +531,24 @@ def remove_xml(string):
     output = xml_pattern.sub('',string)
     return(output)
 
+def clean_string_of_ampersand_characters(string):
+    ampersand_char_pattern = re.compile('&[^;]+;')
+    ampersand_char_pattern2 = re.compile('&[^;<]+[<]')
+    match = ampersand_char_pattern.search(string)
+    if not match:
+        match = ampersand_char_pattern2.search(string)
+    while match:
+        if match.group(0).endswith('<'):
+            string = string[:match.start()]+(len(match.group(0))-1)*' '+string[match.end()-1:]
+        else:
+            string = string[:match.start()]+len(match.group(0))*' '+string[match.end():]
+        match = ampersand_char_pattern.search(string)
+        if not match:
+            match = ampersand_char_pattern2.search(string)
+    return(string)
+
 def remove_xml_spit_out_paragraph_start_end(string,offset):
+    string = clean_string_of_ampersand_characters(string)
     next_xml = xml_pattern.search(string)
     start = 0
     out_string = ''

@@ -50,23 +50,8 @@ def ugly_word(word):
 
 
 def topic_term_ok(word_list,pos_list,term_string):
-    if len(term_string) == 1:
-        return(False)
-    elif (len(term_string) == 2) and (("." in term_string) or (term_string[1] in '0123456789')):
-        ## a single initial is not a term
-        return(False)
-    elif term_dict_check(term_string.lower(), stat_term_dict):
-        return(True)
-    elif term_stop_words_with_periods.search(term_string):
-        return(False)
-    if [pos_list[-1] == 'PLURAL'] and (pos_list[-1][-1]=='s'):
-        bases = derive_base_form_from_plural(word_list[-1].lower())
-        if bases:
-            for base in bases:
-                if nationality_check(base):
-                    return(False)
-    OOV_count = 0
     signif_term = 0
+    OOV_count = 0
     nominalization_count = 0
     nom_length = 0
     non_final_common_noun = 0
@@ -75,10 +60,28 @@ def topic_term_ok(word_list,pos_list,term_string):
     has_lower = False
     has_upper = False
     has_ugly = False
-    if pos_list[-1]=='PERSON_NAME':
-        return(False)
-    if (len(word_list)==1) and (len(word_list[0])==1):
-        return(False)
+    if len(term_string) == 1:
+        return(False,False)
+    elif (len(term_string) == 2) and (("." in term_string) or (term_string[1] in '0123456789')):
+        ## a single initial is not a term
+        return(False,False)
+    elif term_dict_check(term_string.lower(), stat_term_dict):
+        ## return(True,False)
+        signif_term = 1
+    elif term_stop_words_with_periods.search(term_string):
+        return(False,False)
+    if (signif_term == 0) and [pos_list[-1] == 'PLURAL'] and (pos_list[-1][-1]=='s'):
+        bases = derive_base_form_from_plural(word_list[-1].lower())
+        if bases:
+            for base in bases:
+                if nationality_check(base):
+                    return(False,False)
+    if signif_term > 0:
+        pass
+    elif pos_list[-1]=='PERSON_NAME':
+        return(False,False)
+    elif (len(word_list)==1) and (len(word_list[0])==1):
+        return(False,False)
     for num in range(len(word_list)):
         if word_list[num].isupper():
             has_upper = True
@@ -89,6 +92,7 @@ def topic_term_ok(word_list,pos_list,term_string):
         oov = False
         lower = word_list[num].lower()
         ugly = False
+        jargon_word_count = 0
         if word_list[num].isupper():
             allcaps = True
         else:
@@ -103,6 +107,8 @@ def topic_term_ok(word_list,pos_list,term_string):
             if 'NOUN_OOV' == pos_list[num]:
                 oov = True
                 OOV_count = 1 + OOV_count
+            elif lower in jargon_words:
+                jargon_word_count = jargon_word_count + 1
             if lower in noun_base_form_dict:
                 base = noun_base_form_dict[lower][0]
             else:
@@ -128,7 +134,7 @@ def topic_term_ok(word_list,pos_list,term_string):
             nom_rank = nom_class(lower,pos_list[num])
         if (nom_rank>0) or  (pos_list[num]=='TECH_ADJECTIVE'):
             nominalization_count = 1 + nominalization_count
-        elif (not oov) and common and (num==0) or (lower in ['invention','inventions']):
+        elif (not oov) and (jargon_word_count == 0) and common and (num==0) or (lower in ['invention','inventions']):
             non_final_common_noun = non_final_common_noun+1
         if nom_rank >= 2:
             ## only record length if real nominalization (not other nom class)
@@ -139,23 +145,27 @@ def topic_term_ok(word_list,pos_list,term_string):
             if length > nom_length:
                 nom_length = length
     if has_ugly:
-        return(False)
+        return(False,False)
     if signif_term>0:
-        return(True)
+        return(True,OOV_count>1)
     if not alpha:
-        return(False)
+        return(False,False)
     if has_upper and (not has_lower) and has_section_heading_word:
-        return(False)
-    if (OOV_count >= 1) or ((nominalization_count >=3) and (len(word_list)>=4)):
-        return(True)
+        return(False,False)
+    if (OOV_count >= 1) or ((nominalization_count >=3) and (len(word_list)>=4)) or (jargon_word_count > 0):
+        return(True,True)
     if non_final_common_noun>0:
-        return(False)
+        return(False,False)
     elif (nom_length>11):
-        return(True)
-    elif (len(word_list)>1) and (nominalization_count >= 1):
-        return(True)
+        return(True,OOV_count>1)
+    elif (len(word_list)>1) and ((nominalization_count >= 1) or (jargon_word_count >=1)):
+        return(True,OOV_count>1)
     else:
-        return(False)
+        return(False,False)
+
+def topic_term_ok_boolean(word_list,pos_list,term_string):
+    value1,value2 = topic_term_ok(word_list,pos_list,term_string)
+    return(value1)
 
 def get_next_word(instring,start):
     ## 1) don't split before paren or , unless
@@ -627,12 +637,12 @@ def get_topic_terms(text,offset,filter_off=False):
                 if result[4]:
                     ARG2_start = paren_pat.start(2)+offset
                     ARG2_end = ARG2_start+len(abbreviation)-1
-                    if filter_off or (topic_term_ok([result[2]],'NOUN_OOV',result[2]) and topic_term_ok([abbreviation[1:]],'NOUN_OOV',abbreviation[1:])):
+                    if filter_off or (topic_term_ok_boolean([result[2]],'NOUN_OOV',result[2]) and topic_term_ok_boolean([abbreviation[1:]],'NOUN_OOV',abbreviation[1:])):
                         topic_terms.extend([[ARG1_start,ARG1_end,result[2]],[ARG2_start,ARG2_end,abbreviation[1:]]])
                 else:
                     ARG2_start = paren_pat.start(2)+offset
                     ARG2_end = ARG2_start+len(abbreviation)
-                    if filter_off or (topic_term_ok([result[2]],'NOUN_OOV',result[2]) and topic_term_ok([abbreviation],'NOUN_OOV',abbreviation)):
+                    if filter_off or (topic_term_ok_boolean([result[2]],'NOUN_OOV',result[2]) and topic_term_ok_boolean([abbreviation],'NOUN_OOV',abbreviation)):
                         topic_terms.extend([[ARG1_start,ARG1_end,result[2]],[ARG2_start,ARG2_end,abbreviation]])
                 pieces.append([start,text[start:paren_pat.start()]])
                 if txt_markup_match and (txt_markup_match.start()>start) and (txt_markup_match.end()<paren_pat.end()):
@@ -756,7 +766,7 @@ def get_topic_terms(text,offset,filter_off=False):
                             term_string = interior_white_space_trim(piece2[term_start-start:piece2_start])
                         else:
                             term_string = False
-                        if current_out_list and (filter_off or topic_term_ok(current_out_list,current_pos_list,term_string)):
+                        if current_out_list and (filter_off or topic_term_ok_boolean(current_out_list,current_pos_list,term_string)):
                             start_offset = term_start + meta_start+offset
                             end_offset = piece2_start+start+meta_start+offset
                             topic_terms.append([start_offset,end_offset,term_string])
@@ -779,7 +789,7 @@ def get_topic_terms(text,offset,filter_off=False):
                             term_string = interior_white_space_trim(piece2[term_start-start:next_word_end-end_minus])
                         else:
                             term_string = False
-                        if filter_off or topic_term_ok(current_out_list,current_pos_list,term_string):
+                        if filter_off or topic_term_ok_boolean(current_out_list,current_pos_list,term_string):
                             start_offset = term_start + meta_start+offset
                             end_offset = next_word_end+start+meta_start+offset-end_minus
                             topic_terms.append([start_offset,end_offset,term_string])
@@ -808,7 +818,7 @@ def get_topic_terms(text,offset,filter_off=False):
                             term_string = interior_white_space_trim(piece2[term_start-start:next_word_end])
                         else:
                             term_string = False
-                        if filter_off or topic_term_ok(current_out_list,current_pos_list,term_string):
+                        if filter_off or topic_term_ok_boolean(current_out_list,current_pos_list,term_string):
                             ## Roman Numerals can tack on to other terms
                             current_out_list.append(piece3)
                             current_pos_list.append(pos)
@@ -850,7 +860,7 @@ def get_topic_terms(text,offset,filter_off=False):
                                 term_string = interior_white_space_trim(piece2[term_start-start:next_word_end])
                             else:
                                 term_string = False
-                            if filter_off or topic_term_ok(current_out_list,current_pos_list,term_string):
+                            if filter_off or topic_term_ok_boolean(current_out_list,current_pos_list,term_string):
                                 start_offset = term_start + meta_start+offset
                                 end_offset = next_word_end+start+meta_start+offset
                                 topic_terms.append([start_offset,end_offset,term_string])
@@ -876,7 +886,7 @@ def get_topic_terms(text,offset,filter_off=False):
                                 current_pos_list = [pos]
                                 term_start = next_word_start + start
                             term_string = interior_white_space_trim(piece2[term_start-start:next_word_end-2])
-                            if filter_off or topic_term_ok(current_out_list,current_pos_list,term_string):
+                            if filter_off or topic_term_ok_boolean(current_out_list,current_pos_list,term_string):
                                 start_offset = term_start + meta_start+offset
                                 end_offset = next_word_end+start+meta_start+offset
                                 topic_terms.append([start_offset,end_offset,term_string])
@@ -934,7 +944,7 @@ def get_topic_terms(text,offset,filter_off=False):
                             term_string = interior_white_space_trim(piece2[term_start-start:piece2_start])
                         else:
                             term_string = False
-                        if current_out_list and (filter_off or topic_term_ok(current_out_list,current_pos_list,term_string)):
+                        if current_out_list and (filter_off or topic_term_ok_boolean(current_out_list,current_pos_list,term_string)):
                             start_offset = term_start + meta_start+offset
                             end_offset = piece2_start+start+meta_start+offset
                             topic_terms.append([start_offset,end_offset,term_string])
@@ -981,7 +991,7 @@ def get_topic_terms(text,offset,filter_off=False):
                                 current_pos_list = [pos]
                                 term_start = next_word_start + start
                                 term_string = interior_white_space_trim(piece2[term_start-start:next_word_end-2])
-                                if filter_off or topic_term_ok(current_out_list,current_pos_list,term_string):
+                                if filter_off or topic_term_ok_boolean(current_out_list,current_pos_list,term_string):
                                     start_offset = term_start + meta_start+offset
                                     end_offset = next_word_end+start+meta_start+offset
                                     topic_terms.append([start_offset,end_offset,term_string])
@@ -1017,7 +1027,7 @@ def get_topic_terms(text,offset,filter_off=False):
                 piece3, next_word_start,next_word_end = get_next_word(piece2,piece2_start)
             if current_out_list:
                 term_string = interior_white_space_trim(piece2[term_start-start:piece2_start])
-                if filter_off or topic_term_ok(current_out_list,current_pos_list,term_string):
+                if filter_off or topic_term_ok_boolean(current_out_list,current_pos_list,term_string):
                     start_offset = term_start + meta_start+offset
                     end_offset = piece2_start+start+meta_start+offset
                     topic_terms.append([start_offset,end_offset,term_string])
@@ -1040,7 +1050,7 @@ def get_term_lemma(term,term_type=False):
     elif term_type and (term_type != 'chunk-based'):
         ## this takes care of all the patterned cases
         output = term.upper()
-    elif (term in abbr_to_full_dict) and (len(abbr_to_full_dict[term])>0) and (term.isupper() or (not term in pos_dict)):
+    elif (term in abbr_to_full_dict) and (len(abbr_to_full_dict[term])>0) and (term.isupper() or (not term in pos_dict) or (term in jargon_words)):
         output = abbr_to_full_dict[term][0]
     else:
         last_word_match = last_word_pat.search(term)

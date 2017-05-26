@@ -76,7 +76,7 @@ if [ "$5" = "True" ]; then
     $TERMOLATOR/run_make_term_chunk.py internal_pos_terms_abbr_list internal_background_tchunk_list
 fi
 
-echo "calling distributional_component.py in term_extration using foreground and background tchunk list with $5 outputting to file $4.all_terms"
+echo "calling distributional_component.py in term_extration using foreground and background tchunk list with output to file $4.all_terms"
 
 python $TERMOLATOR/distributional_component.py internal_foreground_tchunk_list internal_background_tchunk_list > $4.all_terms
 
