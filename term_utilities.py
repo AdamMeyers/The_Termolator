@@ -123,7 +123,7 @@ parentheses_pattern3b = re.compile(r'(\s|^)[(]([^)]*)([)\]]|$)([^a-zA-Z0-9-]|$)'
 
 html_fields_to_remove = ['style','script']
 
-text_html_fields = ['p','h1','h2','h3','h4','h5','h6','li','dt','dd','address','pre','td','caption']
+text_html_fields = ['p','h1','h2','h3','h4','h5','h6','li','dt','dd','address','pre','td','caption','br']
 ## some of these may require additional formatting to properly process them, e.g., 
 ## the following (not implemented) may require additional new lines: address, pre
 
