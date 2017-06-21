@@ -50,26 +50,38 @@ Instructions for Using program:
 
 The arguments are defined as follows:
 
-   Argument 1 (FOREGROUND) = a file listing the documents in the foreground set
-   Argument 2 (BACKGROUND) = a file listing the documents in the background set
-   Argument 3 (EXTENSION) = the extension of input files
-   Argument 4 (OUTPUT_NAME) = name of output file (without extension)
-   Argument 5 (TRUE-OR-FALSE) = True or False (do background files need to be processed)
-   Argument 6 (TRUE-OR-FALSE) = True if you want the system to use the relevance 
-   	      	score for determining rankings and False otherwise.
-   Argument 7 Maximum Number of Terms Considered (suggested = 30000)
-   Argument 8 Top N -- number of terms you want to keep in the end (suggested 5000-10000)
-   Argument 9 (PROGRAM-DIRECTORY) = the directory where the program is, e.g., 
-   	        $TERMOLATOR if you set this variable.
-   Argument 10 (ADDITIONAL_TOPIC_STRING) = topics connected with a plus sign, e.g., legal+finance.
-   	       These topics are split by plus signs. The resulting topics correspond to key words 
+#####  Argument 1 (FOREGROUND) 
+  a file listing the documents in the foreground set
+#####  Argument 2 (BACKGROUND) 
+  a file listing the documents in the background set
+#####  Argument 3 (EXTENSION) 
+  the extension of input files
+#####  Argument 4 (OUTPUT_NAME) 
+  name of output file (without extension)
+#####  Argument 5 (TRUE-OR-FALSE) 
+  True or False (do background files need to be processed)
+#####  Argument 6 (TRUE-OR-FALSE) 
+  True if you want the system to use the relevance score for determining rankings and False otherwise.
+#####  Argument 7 
+  Maximum Number of Terms Considered (suggested = 30000)
+#####  Argument 8 
+  Top N -- number of terms you want to keep in the end (suggested 5000-10000)
+#####  Argument 9 (PROGRAM-DIRECTORY) 
+  the directory where the program is, e.g., $TERMOLATOR if you set this variable.
+##### Argument 10 (ADDITIONAL_TOPIC_STRING) 
+  topics connected with a plus sign, e.g., legal+finance.
+         These topics are split by plus signs. The resulting topics correspond to key words 
 	       in the dictionary_table variable in term_utilities.py. Currently, only the "legal"
 	       topic is supported. If there are no additional topics, this variable should have
 	       "false" as a value. If you add the legal topic, a dictionary of legal terms will
 	       be downloaded and some specialized rules will be invoked for abbreviations. Other
 	       topic specific features may be added in the future.
 
-IMPORTANT PATH INFORMATION: If FOREGROUND and BACKGROUND files contain absolute paths, this command will work from anywhere.  Otherwise, you should run from the directory containing FOREGROUND and BACKGROUND. We will call this the DATA_DIRECTORY.  The files listed in FOREGROUND andBACKGROUND should be paths relative to the DATA_DIRECTORY.
+#####  IMPORTANT PATH INFORMATION: 
+If FOREGROUND and BACKGROUND files contain absolute paths, this command will work from anywhere.  
+Otherwise, you should run from the directory containing FOREGROUND and BACKGROUND. 
+We will call this the DATA_DIRECTORY.  
+The files listed in FOREGROUND and BACKGROUND should be paths relative to the DATA_DIRECTORY.
 
 To test the program, we suggest going to one of our 3 test directories and running the command from there. Note that we will shorly 
 be adding a corpus of court decisions, for which the legal topic features are useful. We have not yet tested whether these same features
