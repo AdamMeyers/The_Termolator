@@ -4,6 +4,7 @@ import sys
 
 from inline_terms import *
 
+## @func comp_termChunker
 def main(args):
     infile_list = args[1]
     outfile_list = args[2]

@@ -1,13 +1,14 @@
 from abbreviate import *
 
 et_al_citation = re.compile(' et[.]? al[.]? *$')
-ok_path_types = ['url'] ##  currently 'ratio' is not an ok_path_type
+ok_path_types = ['url']  ##  currently 'ratio' is not an ok_path_type
 compound_inbetween_string = re.compile('^ +(of|for) +((the|a|[A-Z]\.) +)?$',re.I)
 term_stop_words_with_periods = re.compile('(^|\s)(u\.s|e\.g|i\.e|u\.k|c\.f|see|ser)([\.\s]|$)',re.I)
 
 lemma_dict = {}
 cluster_hash = {}
 
+## @func comp_termChunker
 def derive_base_form_from_plural(word):
     if word in noun_base_form_dict:
         return(noun_base_form_dict[word])
@@ -129,7 +130,7 @@ def topic_term_ok(word_list,pos_list,term_string):
             nom_rank = 0
             has_section_heading_word = True
         elif pos_list[num] in ['PLURAL','AMBIG_PLURAL']:
-            nom_rank = nom_class(base,pos_list[num]) ## 2 (for real nom), 1 (for other nom class), 0 for no nom class
+            nom_rank = nom_class(base,pos_list[num])  ## 2 (for real nom), 1 (for other nom class), 0 for no nom class
         else:
             nom_rank = nom_class(lower,pos_list[num])
         if (nom_rank>0) or  (pos_list[num]=='TECH_ADJECTIVE'):
@@ -285,6 +286,7 @@ def next_splitter_pattern(piece,start):
         pattern = splitters.search(piece,start)
     return(pattern)
 
+## @func comp_termChunker
 def is_nom_piece(word):
     lower = word.lower()
     if lower in ['invention','inventions']:
@@ -1040,6 +1042,7 @@ def get_topic_terms(text,offset,filter_off=False):
                 last = False
     return(topic_terms)
 
+## @func comp_termChunker
 def get_term_lemma(term,term_type=False):
     ## add plural --> singular
     ## print(term,term_type)
@@ -1506,7 +1509,7 @@ def get_pos_structure (line):
         return(False,False,False,False)
     return(word,pos,start,end)
 
-                
+## @func comp_termChunker
 def make_term_chunk_file(pos_file,term_file,abbreviate_file,chunk_file,no_head_terms_only=False):
     term_hash = {}
     start_term = False
@@ -1555,6 +1558,7 @@ def make_term_chunk_file(pos_file,term_file,abbreviate_file,chunk_file,no_head_t
             if word:
                 outstream.write(word+'\t'+word+'\t'+pos+'\t'+CHUNK_TAG+os.linesep)
 
+## @func comp_termChunker
 def make_term_chunk_file_list(infiles,outfiles,no_head_terms_only=False):
     with open(infiles) as instream, open(outfiles) as outfile_stream:
         inlist = instream.readlines()

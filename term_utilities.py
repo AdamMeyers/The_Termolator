@@ -26,15 +26,15 @@ jargon_files = [DICT_DIRECTORY+'chemicals.dict',DICT_DIRECTORY+'more_jargon_word
 dictionary_table = {'legal': DICT_DIRECTORY+'legal_dictionary.dict'}
 special_domains = []
 
-stat_adj_dict = {}
-stat_term_dict = {}
-noun_base_form_dict = {}
+stat_adj_dict = {}          ## @func comp_termChunker
+stat_term_dict = {}         ## @func comp_termChunker
+noun_base_form_dict = {}    ## @func comp_termChunker
 plural_dict = {}
 verb_base_form_dict = {}
 verb_variants_dict = {}
 nom_dict = {} 
 pos_dict = {}
-jargon_words = set()
+jargon_words = set()        ## @arch shared static state
 pos_offset_table = {}
 organization_dictionary = {}
 location_dictionary = {}
@@ -193,6 +193,7 @@ def fix_stray_colons (string):
         output = string[:position]+'-colon-'+fix_stray_colons(string[border:])
     return(output)
 
+## todo: not used
 def is_lisp_key_word (string):
     return(string[0] == ':')
 
@@ -307,6 +308,7 @@ def add_dictionary_entry(line,dictionary,shallow,lower=False,patent=False):
         else:    
             actual_dict[entry_dict['ORTH'].upper()] = [entry_dict]
 
+## @arch global state mutation
 def read_in_org_dictionary(dict_file,dictionary='org',shallow=True,lower=False,patent=False):
     if dictionary == 'org':
         organization_dictionary.clear()
@@ -328,6 +330,7 @@ def read_in_nom_map_dict (infile=nom_map_file):
         word,nominalization = line.strip().split('\t')
         nom_map_dict[word]=nominalization
 
+## @func comp_termChunker
 def read_in_noun_morph_file (infile=noun_morph_file):
     global noun_base_form_dict
     global plural_dict
@@ -676,6 +679,7 @@ def resolve_differences_with_pos_tagger(word,offset,dict_pos,tagger_pos):
     else:
         return(dict_pos)
 
+## @func comp_termChunker
 def closed_class_conflict(word):
     if word in closed_class_stop_words:
         return(True)
@@ -699,7 +703,8 @@ def verbal_profile(word):
     if (len(word)>5) and re.search('[aeiou][b-df-hj-np-ts-z]ed$',word):
         return(True)        
 
-
+## @arch global state mutation
+## @func comp_termChunker
 def read_in_stat_term_dict (indict,dict_dir=DICT_DIRECTORY):
     global stat_term_dict
     global stat_adj_dict
@@ -755,7 +760,8 @@ def term_dict_check(term,test_dict):
         pat = re.search('-([^-]+)$',term)
         if pat and pat.group(1) in test_dict:
             return(True)
-        
+
+## @func comp_termChunker
 def guess_pos(word,is_capital,offset=False):
     pos = []
     plural = False
