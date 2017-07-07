@@ -24,9 +24,13 @@ class Metric:
             # gen = [Document(general+genFile) for genFile in os.listdir(general) if genFile[-4:]=='.txt']
             gen = map(lambda x: Document(filename=x.strip(),overwrite=overwrite), open(general).readlines())
             # we only need the sum for the general class
-            for i in range(len(list(gen))):
-                for w in gen[i].counts:
-                    self.genDocs.counts[w] += gen[i].counts[w]
+            ## python3 compatibility change
+            for iterator in gen:
+                for w in iterator.counts:
+                    self.genDocs.counts[w] += iterator.counts[w]
+            # for i in range(len(list(gen))):
+            #     for w in gen[i].counts:
+            #         self.genDocs.counts[w] += gen[i].counts[w]
         # General document group is given as a corpus
         else:
             logging.debug('Loading from general corpus...')
@@ -106,7 +110,10 @@ class Metric:
                 negFreq = self.genDocs.counts[word]
             else:
                 negFreq = 0
-            DR = posFreq*math.log(len(word)+2.0)/(negFreq+posFreq)
+            if (negFreq+posFreq) !=0:
+                DR = posFreq*math.log(len(word)+2.0)/(negFreq+posFreq)
+            else:
+                DR = 0 ## AM july 2017 -- assuming 0/0 equals 0
             self._DR[word] = DR
         return DR
     def _calDC(self, word):
@@ -120,8 +127,12 @@ class Metric:
             DC = 0
             for doc in self.rdgDocs:
                 if word in doc.counts:
-                    ptd = doc.counts[word]/float(posFreq)
-                    DC += ptd*math.log(1/ptd)
+                    if posFreq != 0:
+                        ptd = doc.counts[word]/float(posFreq)
+                        DC += ptd*math.log(1/ptd)
+                    else:
+                        ptd = 0
+                        DC = 0 ## AM July 2017 -- assumes 0/0 = 0
             self._DC[word] = DC
         return DC
     def _calDRDC(self, word):
@@ -167,7 +178,8 @@ of a proposed term"""
                     for doc in self.rdgDocs:
                         token_rel += doc.token_counts[t]
                     token_total = token_rel + self.genDocs.token_counts[t]
-                    tokenDR += token_rel/float(token_total)
+                    if token_total>0: ## AM July 7 -- treating 0 divided by 0 as 0
+                        tokenDR += token_rel/float(token_total)
             tokenDR /= len(tokens)
             self._TokenDR[word] = tokenDR
         return tokenDR
