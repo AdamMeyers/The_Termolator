@@ -199,7 +199,7 @@ class NPParser:
                 if t:
                     fd[t]+=1
         if overwrite or (not os.path.isfile(filename+'.nps')):
-            f = open(filename+'.nps','w')
+            f = open(filename+'.nps','wb')
             pickle.dump((filters, fd), f)
             f.close()
         if os.path.exists(filterfname):

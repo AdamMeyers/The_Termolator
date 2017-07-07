@@ -24,7 +24,7 @@ class Metric:
             # gen = [Document(general+genFile) for genFile in os.listdir(general) if genFile[-4:]=='.txt']
             gen = map(lambda x: Document(filename=x.strip(),overwrite=overwrite), open(general).readlines())
             # we only need the sum for the general class
-            for i in range(len(gen)):
+            for i in range(len(list(gen))):
                 for w in gen[i].counts:
                     self.genDocs.counts[w] += gen[i].counts[w]
         # General document group is given as a corpus
@@ -461,25 +461,25 @@ for use in weighted scoring. This method is VERY slow."""
         #                'Entropy':0.5, 'KLDiv':0.5}
         for i in range(100):
             for w in self.weights:
-                print w, 1
+                print(w, 1)
                 currweight = self.weights[w]
                 currscore = self.scoreByRankSum(termfiles, measure='Weighted')
-                print w, 2
+                print (w, 2)
                 self.weights[w] = currweight - 0.1
                 score = self.scoreByRankSum(termfiles, measure='Weighted')
-                print w, 3
+                print (w, 3)
                 if score < currscore:
                     continue
-                print w, 4
+                print (w, 4)
                 self.weights[w] = currweight + 0.1
                 score = self.scoreByRankSum(termfiles, measure='Weighted')
-                print w, 5
+                print (w, 5)
                 if score < currscore:
                     continue
-                print w, 6
+                print (w, 6)
                 self.weights[w] = currweight
-                print w, 7
-            print self.weights
+                print (w, 7)
+            print (self.weights)
         return self.weights
     def _EMWeights(testfolder, N=300):
         """Use EM to find and return a dictionary of weights for use in \
@@ -496,7 +496,7 @@ weighted scoring. Here we are minimizing the perplexity of a held out set."""
         # Which measures to use:
         measures = ['TFIDF', 'IDF', 'TokenIDF', 'DRDC', 'TokenDRDC', 'KLDiv']
         # Calculate term hypothesized probability distribution
-        print 'Calculating probabilities...',
+        print ('Calculating probabilities...',)
         Probs={}
         for measure in measures:
             ranklist = metric.rankTerms(measure)
@@ -507,10 +507,10 @@ weighted scoring. Here we are minimizing the perplexity of a held out set."""
                 Probs[measure][item[0]] = 2**item[1]
                 if Probs[measure][item[0]]==0.0:
                     raise('Rounding Error! P = 0.0')
-            print measure+' ',
-        print 'done'
+            print (measure+' ',)
+        print ('done')
         # import test set
-        print 'Retrieving test set...',
+        print ('Retrieving test set...',)
         try:
             self.testwords
         except:
@@ -525,7 +525,7 @@ weighted scoring. Here we are minimizing the perplexity of a held out set."""
                     testwords.extend(Filter.unstem(w))
             #restore Filter.stemdict
             Filter.stemdict, Filter.unstemdict = backupstems
-        print 'done'
+        print ('done')
         # set initial weights
         weight = {}
         for measure in measures:
@@ -533,7 +533,7 @@ weighted scoring. Here we are minimizing the perplexity of a held out set."""
         # set tolerance
         tolerance = 1e-10
         # E-M loop
-        print 'Optimizing weights...',
+        print ('Optimizing weights...',)
         delta = 1.0
         weight_old = weight.copy()
         while delta > tolerance:
@@ -562,7 +562,7 @@ weighted scoring. Here we are minimizing the perplexity of a held out set."""
                 weight_old[j] = weight[j]
                 weight[j] = c[j]/sum(c.values())
                 delta += (weight[j]-weight_old[j])**2
-        print 'done'
+        print ('done')
         # set those weights
         metric.setWeights(weight)
         return weight

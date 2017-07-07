@@ -32,7 +32,7 @@ def _get_stops(filename=dir_name + 'patentstops.txt'):
         stops = stopwords.words('english')
 def _get_stemdict(filename):
     logger.debug('Loading stemming dictionary...')
-    f = open(filename)
+    f = open(filename, 'rb')
     global stemdict
     global unstemdict
     stemdict, unstemdict = pickle.load(f)
