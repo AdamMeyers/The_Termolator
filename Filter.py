@@ -39,7 +39,7 @@ def _get_stemdict(filename):
     f.close()
 def _save_stemdict(filename):
     logger.debug('Saving stemming dictionary...')
-    f = open(filename, 'w')
+    f = open(filename, 'wb')
     global stemdict
     global unstemdict
     pickle.dump((stemdict, unstemdict),f)

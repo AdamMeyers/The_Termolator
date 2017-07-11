@@ -178,7 +178,7 @@ class NPParser:
         """Input file, output a FreqDist of terms"""
         filterfname = os.path.join(os.path.dirname(filename),'filter.save')
         if os.path.exists(filename+'.nps') and os.path.exists(filterfname):
-            f = open(filename+'.nps')
+            f = open(filename+'.nps','rb')
             old_filters, fd = pickle.load(f)
             f.close()
             if old_filters == filters:

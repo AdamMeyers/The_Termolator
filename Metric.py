@@ -23,11 +23,17 @@ class Metric:
             logging.debug('Loading general documents from '+general)
             # gen = [Document(general+genFile) for genFile in os.listdir(general) if genFile[-4:]=='.txt']
             gen = map(lambda x: Document(filename=x.strip(),overwrite=overwrite), open(general).readlines())
+            ## note that the iterator only les us calculate this once
+            ## this is OK because this is the initialization function
+            ## other maps should be cast into lists
             # we only need the sum for the general class
             ## python3 compatibility change
             for iterator in gen:
+                ## print(1,iterator,2,iterator.counts)
                 for w in iterator.counts:
+                    ## print(2,w,iterator.counts[w]) ## 57 OK 
                     self.genDocs.counts[w] += iterator.counts[w]
+                    ## input('pausing')
             # for i in range(len(list(gen))):
             #     for w in gen[i].counts:
             #         self.genDocs.counts[w] += gen[i].counts[w]
@@ -68,7 +74,8 @@ class Metric:
         # Related Document Group -- we need each document separately
         logging.debug('Loading RDG from '+rdgDir+'...')
         #self.rdgDocs = [Document(rdgDir+rdgFile) for rdgFile in os.listdir(rdgDir) if rdgFile[-4:]=='.txt']
-        self.rdgDocs = map(lambda x: Document(filename=x.strip(),overwrite=overwrite), open(rdgDir).readlines())
+        self.rdgDocs = list (map(lambda x: Document(filename=x.strip(),overwrite=overwrite), open(rdgDir).readlines()))
+        ## Python 3 compatibility -- rdgDocs needs to be a list and Python3 makes it an iterator
         logging.debug('done')
         if not os.path.exists(filtfname):
             Filter._save_stemdict(filtfname)
@@ -80,8 +87,11 @@ class Metric:
             freq = self._TermFreq[word]
         else:
             freq = 0
+            ## print(0,'Looking for',word)
             for doc in self.rdgDocs:
+                ## print(0,doc)
                 if word in doc.counts:
+                    ## print(1,word,doc.counts[word]) ## 57
                     freq += doc.counts[word]
             self._TermFreq[word] = freq
         return freq
@@ -178,7 +188,8 @@ of a proposed term"""
                     for doc in self.rdgDocs:
                         token_rel += doc.token_counts[t]
                     token_total = token_rel + self.genDocs.token_counts[t]
-                    if token_total>0: ## AM July 7 -- treating 0 divided by 0 as 0
+                    if token_total!=0: ## AM July 7 -- treating 0 divided by 0 as 0
+                        ## changed to !=0 from > 0 on July 10
                         tokenDR += token_rel/float(token_total)
             tokenDR /= len(tokens)
             self._TokenDR[word] = tokenDR
