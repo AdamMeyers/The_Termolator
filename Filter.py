@@ -1,14 +1,19 @@
-import re, pickle, logging, os
-from nltk.stem import PorterStemmer as Stemmer # NLTK's license, Apache
-from nltk.corpus import stopwords # not encumbered by license, see stopwords.readme()
+import logging
+import os
+import pickle
+import re
 
-abbreviations={}
+from nltk.corpus import stopwords  # not encumbered by license, see stopwords.readme()
+from nltk.stem import PorterStemmer as Stemmer  # NLTK's license, Apache
+
+abbreviations = {}
 stops = []
 stemmer = None
-stemdict = {} # stemming dictionary
-unstemdict = {} # reverse stemming dictionary
+stemdict = {}  # stemming dictionary
+unstemdict = {}  # reverse stemming dictionary
 dir_name = os.path.dirname(os.path.realpath(__file__)) + os.sep
 logger = logging.getLogger()
+
 
 def _get_abbreviations(filename='./jargon.out'):
     """Import abbreviations from jargon file"""
@@ -20,6 +25,8 @@ def _get_abbreviations(filename='./jargon.out'):
         for w in shortwords:
             abbreviations[w] = fullword
     f.close()
+
+
 def _get_stops(filename=dir_name + 'patentstops.txt'):
     """Import stop words either from a text file or stopwords corpus"""
     global stops
@@ -30,6 +37,8 @@ def _get_stops(filename=dir_name + 'patentstops.txt'):
         f.close()
     else:
         stops = stopwords.words('english')
+
+
 def _get_stemdict(filename):
     logger.debug('Loading stemming dictionary...')
     f = open(filename, 'rb')
@@ -37,13 +46,17 @@ def _get_stemdict(filename):
     global unstemdict
     stemdict, unstemdict = pickle.load(f)
     f.close()
+
+
 def _save_stemdict(filename):
     logger.debug('Saving stemming dictionary...')
     f = open(filename, 'wb')
     global stemdict
     global unstemdict
-    pickle.dump((stemdict, unstemdict),f)
+    pickle.dump((stemdict, unstemdict), f)
     f.close()
+
+
 def _reGlue(words):
     """Helper function to turn a list of words into a string"""
     ret = ""
@@ -51,6 +64,8 @@ def _reGlue(words):
         ret += words[i] + " "
     ret = ret.strip()
     return ret
+
+
 def expand(string):
     """Expand abbreviations within string"""
     global abbreviations
@@ -63,7 +78,9 @@ def expand(string):
             words[i] = temp
     string = _reGlue(words)
     return string
-def removeStops(string): #NOT NEEDED AS NP EXTRACTING REMOVES THEM
+
+
+def removeStops(string):  # NOT NEEDED AS NP EXTRACTING REMOVES THEM
     """Strip stop words off the beginning and ending of a phrase"""
     global stops
     if not stops:
@@ -87,46 +104,49 @@ def removeStops(string): #NOT NEEDED AS NP EXTRACTING REMOVES THEM
     string = _reGlue(words)
     return string
 
+
 def bad_unicode(string):
     for char in string:
-        if ord(char)>127:
+        if ord(char) > 127:
             print(char)
-            return(True) 
-            
+            return (True)
+
+
 def remove_non_unicode(string):
     output = ''
     for char in string:
-        if ord(char)>127:
-            output=output+' '
+        if ord(char) > 127:
+            output = output + ' '
         else:
-            output=output+char
+            output = output + char
     output = output.strip(' ')
-    return(output)
-    
+    return (output)
+
+
 def stem(string):
     """Stem a phrase"""
     global stemmer
     if not stemmer:
         stemmer = Stemmer()
-    #words = string.split()
-    #for i in range(len(words)):
+    # words = string.split()
+    # for i in range(len(words)):
     #    words[i] = self.stemmer.stem(words[i])
     # stemming last word only
-    #string = self._reGlue(words)
+    # string = self._reGlue(words)
     #
-    #string2 = stemmer.stem(string)
-    #if string2 not in stemdict:
+    # string2 = stemmer.stem(string)
+    # if string2 not in stemdict:
     #    stemdict[string2] = string
     # FIX ME
     if string not in stemdict:
         if bad_unicode(string):
             ## added A. Meyers 8/28/15
             string = remove_non_unicode(string)
-            if len(string)>3:
+            if len(string) > 3:
                 temp = stemmer.stem(string)
             else:
                 temp = string
-        elif len(string)>3:
+        elif len(string) > 3:
             ## print('***',string,'***')
             temp = stemmer.stem(string)
         else:
@@ -143,23 +163,28 @@ def stem(string):
         temp = stemdict[string]
     return temp
 
+
 def unstem(string):
     """Undo stemming of a phrase"""
     global stemdict
-    #if string in stemdict:
+    # if string in stemdict:
     #    return stemdict[string]
-    #else:
+    # else:
     #    return string
     if string in unstemdict:
         return unstemdict[string]
     else:
         return [string]
+
+
 def lowercase(string):
     """Return an all lowercase representation of a string"""
     return string.lower()
+
+
 def isWord(string):
     """Test the legitimacy of the proposed phrase. Taken from Shasha's implementation"""
-    #criteria:
+    # criteria:
     pattern = re.compile(r"""
 (
 &lt
@@ -180,15 +205,16 @@ def isWord(string):
         return ''
     elif re.findall(pattern, string):
         return ''
-    #must contain at least one letter
+    # must contain at least one letter
     for i in range(len(string)):
         if string[i].isalpha():
             return string
     return ''
 
-# available filters:    
-criteria={'abbreviation': expand,
-          'stops': removeStops,
-          'stem': stem,
-          'case': lowercase,
-          'isWord': isWord}
+
+# available filters:
+criteria = {'abbreviation': expand,
+            'stops': removeStops,
+            'stem': stem,
+            'case': lowercase,
+            'isWord': isWord}
