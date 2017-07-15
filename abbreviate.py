@@ -16,8 +16,8 @@ ABBREVIATION_STOP_WORDS = ['a', 'the', 'an', 'and', 'or', 'but', 'about', 'above
 id_number = 0
 abbr_to_full_dict = {}
 full_to_abbr_dict = {}
-greek_match_table = {'Α': 'A', 'Β': 'B', 'Γ': 'G', 'Δ': 'D', 'Ε': 'E', 'Ζ': 'Z', 'Η': 'H', 'Θ': 'T', \
-                     'Ι': 'I', 'Κ': 'K', 'Λ': 'L', 'Μ': 'M', 'Ν': 'N', 'Ξ': 'X', 'Ο': 'O', \
+greek_match_table = {'Α': 'A', 'Β': 'B', 'Γ': 'G', 'Δ': 'D', 'Ε': 'E', 'Ζ': 'Z', 'Η': 'H', 'Θ': 'T',
+                     'Ι': 'I', 'Κ': 'K', 'Λ': 'L', 'Μ': 'M', 'Ν': 'N', 'Ξ': 'X', 'Ο': 'O',
                      'Π': 'P', 'Ρ': 'R', 'Σ': 'S', 'Τ': 'T', 'Υ': 'U', 'Φ': 'P', 'Χ': 'C', 'Ψ': 'P', 'ϖ': 'P'}
 
 number_match_table = {'ONE': '1', 'TWO': '2', 'THREE': '3', 'FOUR': '4', 'FIVE': '5', 'SIX': '6', 'SEVEN': '7', 'EIGHT': '8', 'NINE': '9', 'FIRST': '1', 'SECOND': '2',
