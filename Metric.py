@@ -1,28 +1,36 @@
-import math, nltk, logging, os
+import logging
+import math
+import nltk
+
+import Filter
+import Settings
+import TestData
+import Wordlist
 from Document import *
-import TestData, Wordlist, Settings
+import Filter
 
 class Metric:
     """Metric contains all the functions necessary to score an RDG's terminology."""
-    def __init__(self, rdgDir, general, working_dir = '.',overwrite=False):
+
+    def __init__(self, rdgDir, general, working_dir='.', overwrite=False):
         # available metrics
-        self.metrics = {'DR':self._calDR, 'DC':self._calDC,
-                        'DRDC':self._calDRDC, 'IDF':self._calIDF,
-                        'TFIDF':self._calTFIDF, 'TokenDRDC':self._calTokenDRDC,
-                        'TokenIDF':self._calTokenIDF, 'Entropy':self._calEntropy,
-                        'KLDiv':self._calKLDiv, 'Weighted':self._calWeighted,
-                        'TF':self._calTF}
+        self.metrics = {'DR': self._calDR, 'DC': self._calDC,
+                        'DRDC': self._calDRDC, 'IDF': self._calIDF,
+                        'TFIDF': self._calTFIDF, 'TokenDRDC': self._calTokenDRDC,
+                        'TokenIDF': self._calTokenIDF, 'Entropy': self._calEntropy,
+                        'KLDiv': self._calKLDiv, 'Weighted': self._calWeighted,
+                        'TF': self._calTF}
         # input files
         self.genDocs = Document(overwrite=overwrite)
-        #filtfname = os.path.join(rdgDir, 'filter.save')
+        # filtfname = os.path.join(rdgDir, 'filter.save')
         filtfname = os.path.join(working_dir, '.filter.save')
         if os.path.exists(filtfname):
             Filter._get_stemdict(filtfname)
         # General document group is given as files in a directory
-        if type(general)== type(str()):
-            logging.debug('Loading general documents from '+general)
+        if type(general) == type(str()):
+            logging.debug('Loading general documents from ' + general)
             # gen = [Document(general+genFile) for genFile in os.listdir(general) if genFile[-4:]=='.txt']
-            gen = map(lambda x: Document(filename=x.strip(),overwrite=overwrite), open(general).readlines())
+            gen = map(lambda x: Document(filename=x.strip(), overwrite=overwrite), open(general).readlines())
             ## note that the iterator only les us calculate this once
             ## this is OK because this is the initialization function
             ## other maps should be cast into lists
@@ -34,9 +42,9 @@ class Metric:
                     ## print(2,w,iterator.counts[w]) ## 57 OK 
                     self.genDocs.counts[w] += iterator.counts[w]
                     ## input('pausing')
-            # for i in range(len(list(gen))):
-            #     for w in gen[i].counts:
-            #         self.genDocs.counts[w] += gen[i].counts[w]
+                    # for i in range(len(list(gen))):
+                    #     for w in gen[i].counts:
+                    #         self.genDocs.counts[w] += gen[i].counts[w]
         # General document group is given as a corpus
         else:
             logging.debug('Loading from general corpus...')
@@ -47,7 +55,7 @@ class Metric:
             logging.debug('Bigrams loading')
             trigrams = nltk.trigrams(words)
             logging.debug('Trigrams loading')
-            #filters = ['abbreviation', 'case', 'stem']
+            # filters = ['abbreviation', 'case', 'stem']
             filters = Settings.getCorpusFilters()
             logging.debug('Filtering unigrams')
             for w in words:
@@ -72,13 +80,14 @@ class Metric:
                     self.genDocs.counts[w] += 1
             logging.debug('done')
         # Related Document Group -- we need each document separately
-        logging.debug('Loading RDG from '+rdgDir+'...')
-        #self.rdgDocs = [Document(rdgDir+rdgFile) for rdgFile in os.listdir(rdgDir) if rdgFile[-4:]=='.txt']
-        self.rdgDocs = list (map(lambda x: Document(filename=x.strip(),overwrite=overwrite), open(rdgDir).readlines()))
+        logging.debug('Loading RDG from ' + rdgDir + '...')
+        # self.rdgDocs = [Document(rdgDir+rdgFile) for rdgFile in os.listdir(rdgDir) if rdgFile[-4:]=='.txt']
+        self.rdgDocs = list(map(lambda x: Document(filename=x.strip(), overwrite=overwrite), open(rdgDir).readlines()))
         ## Python 3 compatibility -- rdgDocs needs to be a list and Python3 makes it an iterator
         logging.debug('done')
         if not os.path.exists(filtfname):
             Filter._save_stemdict(filtfname)
+
     def _getTermFreq(self, word):
         """Returns the term frequency in the rdgDocs"""
         if not hasattr(self, '_TermFreq'):
@@ -95,6 +104,7 @@ class Metric:
                     freq += doc.counts[word]
             self._TermFreq[word] = freq
         return freq
+
     def _getTermDocFreq(self, word):
         """Returns the document frequency of a term in the rdg"""
         if not hasattr(self, '_TermDocFreq'):
@@ -108,6 +118,7 @@ class Metric:
                     freq += 1
             self._TermDocFreq[word] = freq
         return freq
+
     def _calDR(self, word):
         """Returns the document relevance of a proposed term"""
         if not hasattr(self, '_DR'):
@@ -120,12 +131,13 @@ class Metric:
                 negFreq = self.genDocs.counts[word]
             else:
                 negFreq = 0
-            if (negFreq+posFreq) !=0:
-                DR = posFreq*math.log(len(word)+2.0)/(negFreq+posFreq)
+            if (negFreq + posFreq) != 0:
+                DR = posFreq * math.log(len(word) + 2.0) / (negFreq + posFreq)
             else:
-                DR = 0 ## AM july 2017 -- assuming 0/0 equals 0
+                DR = 0  ## AM july 2017 -- assuming 0/0 equals 0
             self._DR[word] = DR
         return DR
+
     def _calDC(self, word):
         """Returns the document consensus of a proposed term"""
         if not hasattr(self, '_DC'):
@@ -138,25 +150,29 @@ class Metric:
             for doc in self.rdgDocs:
                 if word in doc.counts:
                     if posFreq != 0:
-                        ptd = doc.counts[word]/float(posFreq)
-                        DC += ptd*math.log(1/ptd)
+                        ptd = doc.counts[word] / float(posFreq)
+                        DC += ptd * math.log(1 / ptd)
                     else:
                         ptd = 0
-                        DC = 0 ## AM July 2017 -- assumes 0/0 = 0
+                        DC = 0  ## AM July 2017 -- assumes 0/0 = 0
             self._DC[word] = DC
         return DC
+
     def _calDRDC(self, word):
         """Returns the document relevance-document consensus \
 (DRDC) of a proposed term"""
-        return self._calDR(word)*self._calDC(word)
+        return self._calDR(word) * self._calDC(word)
+
     def _calIDF(self, word):
         """Returns the document relevance-inverse document frequency \
 (DR-IDF) of a proposed term"""
-        return self._calDR(word)/math.log(self._getTermDocFreq(word)+3.0)
+        return self._calDR(word) / math.log(self._getTermDocFreq(word) + 3.0)
+
     def _calTF(self, word):
         """Returns the term frequency of a proposed term"""
-        #I ADDED THIS ONE FOR REFERENCE
+        # I ADDED THIS ONE FOR REFERENCE
         return self._getTermFreq(word)
+
     def _calTFIDF(self, word):
         """Returns the term frequency-inverse document frequency (TF-IDF) \
 of a proposed term"""
@@ -169,9 +185,10 @@ of a proposed term"""
             for doc in self.rdgDocs:
                 if word in doc.counts and doc.counts[word] > maxFreq:
                     maxFreq = doc.counts[word]
-            TFIDF = self._calDR(word)*maxFreq
+            TFIDF = self._calDR(word) * maxFreq
             self._TFIDF[word] = TFIDF
         return TFIDF
+
     def _calTokenDR(self, word):
         """Token frequency adjustment helper function"""
         if not hasattr(self, '_TokenDR'):
@@ -183,28 +200,31 @@ of a proposed term"""
             tokens = word.split()
             for t in tokens:
                 if not t.isdigit():
-                    #the frequencies are based on pure word counts, not NP counts!
+                    # the frequencies are based on pure word counts, not NP counts!
                     token_rel = 0.0
                     for doc in self.rdgDocs:
                         token_rel += doc.token_counts[t]
                     token_total = token_rel + self.genDocs.token_counts[t]
-                    if token_total!=0: ## AM July 7 -- treating 0 divided by 0 as 0
+                    if token_total != 0:  ## AM July 7 -- treating 0 divided by 0 as 0
                         ## changed to !=0 from > 0 on July 10
-                        tokenDR += token_rel/float(token_total)
+                        tokenDR += token_rel / float(token_total)
             tokenDR /= len(tokens)
             self._TokenDR[word] = tokenDR
         return tokenDR
+
     def _calTokenDRDC(self, word):
         """Returns the document relevance-document consensus (DRDC) of \
 a proposed term, adjusted for token frquency"""
-        return self._calDRDC(word)*self._calTokenDR(word)
+        return self._calDRDC(word) * self._calTokenDR(word)
+
     def _calTokenIDF(self, word):
         """Returns the document relevance-inverse document frequency \
 (DR-TokenIDF) of a proposed term, adjusted for token frequency"""
-        return self._calIDF(word)*self._calTokenDR(word)
+        return self._calIDF(word) * self._calTokenDR(word)
+
     def _calEntropy(self, word):
         """Return the pseudo-entropy of a proposed term"""
-        #-sum(p*log(p)) = -sum((c/N)*log(c/N))
+        # -sum(p*log(p)) = -sum((c/N)*log(c/N))
         # = -sum((1/N)*c*(log(c)-log(N)))
         # = -sum((1/N)*c*log(c)) + sum((1/N)*c*log(N))
         # = -(1/N)sum(clog(c))+(log(N)/N)*sum(c)
@@ -212,13 +232,14 @@ a proposed term, adjusted for token frquency"""
         # ~ -sum(clog(c)) + A*N
         # ~ -sum(clog(c)) + B
         # ~ -sum(clog(c))
-##        # but flip sign since "most negative" here is actually most important
-##        #observations+1 to avoid log(0)
+        ##        # but flip sign since "most negative" here is actually most important
+        ##        #observations+1 to avoid log(0)
         c = (self._getTermFreq(word) + 1)
-        return -c*math.log(c)
+        return -c * math.log(c)
+
     def _calKLDiv(self, word):
         """Return the pseudo-log relative entropy of a proposed term"""
-        #sum(log(p/q)*p)
+        # sum(log(p/q)*p)
         # = sum(log((c1/N1)/(c2/N2))*(c1/N1))
         # = sum(log(c1*N2/(c2*N1))*c1/N1)
         # = sum((log(c1*N2)-log(c2*N1))*c1/N1)
@@ -228,22 +249,23 @@ a proposed term, adjusted for token frquency"""
         # = (1/N1)sum((log(c1)-log(c2))c1) + (1/N1)log(N2/N1)*N1
         # = (1/N1)sum((log(c1)-log(c2))c1) + log(N2/N1)
         # ~ sum((log(c1)-log(c2))*c1)
-        #q (c2) is gen, p (c1) is rdg
-        #observations+1 to avoid log(0)
+        # q (c2) is gen, p (c1) is rdg
+        # observations+1 to avoid log(0)
         c1 = self._getTermFreq(word) + 1
         c2 = (self.genDocs.counts[word] + 1)
-        return (math.log(c1) - math.log(c2))*c1
+        return (math.log(c1) - math.log(c2)) * c1
+
     def _calSectionPrior(self, word):
         """NOT CURRENTLY SUPPORTED"""
-        #CURRENTLY, THIS DOESN'T SUM TO ONE!!!!!
-        #priors = {'Acknowledgements':0.01, 'Conclusion':0.9, 'Background':0.9,
+        # CURRENTLY, THIS DOESN'T SUM TO ONE!!!!!
+        # priors = {'Acknowledgements':0.01, 'Conclusion':0.9, 'Background':0.9,
         #          'Results':0.8, 'Methods':0.25, 'Authors\' contributions':0.1,
         #          'Discussion':0.9, 'Introduction':0.9,
         #          'Results and Discussion':0.8, 'Supplementary Material':0.1,
         #          'Supporting Information':0.1}
-        #priors = {'Supplementary Material': 0.001}
+        # priors = {'Supplementary Material': 0.001}
         p = 1.0
-        #for section in priors:
+        # for section in priors:
         #    found = False
         #    for doc in self.rdgDocs:
         #        for s in doc.sections:
@@ -257,41 +279,43 @@ a proposed term, adjusted for token frquency"""
         #        p *= priors[section]
         #    else:
         #        p *= (1.0-priors[section])
-        #if p <= 0 or p >= 1:
+        # if p <= 0 or p >= 1:
         #    print p
         #
         #
-        #nominal = 0.4 #Nominal value
-        #p = nominal
-        #for doc in self.rdgDocs:
+        # nominal = 0.4 #Nominal value
+        # p = nominal
+        # for doc in self.rdgDocs:
         #    for s in doc.sections:
         #        temp = 0.0
         #        if s.title in priors:
         #            if word in s.text:
         #                temp += priors[s.title]
         #        p+=temp
-        #p/=len(self.rdgDocs)
-        #if p > nominal:
+        # p/=len(self.rdgDocs)
+        # if p > nominal:
         #    print p
         return p
+
     def setWordlistProbs(self, probs):
         """Input dictionary of probabilities for terms in wordlists.
 Keys = 'patent', 'science', 'law', 'common', and 'medicine'."""
         self.lstProbs = probs.copy()
+
     def _calWordlistPrior(self, word):
         ## piece of Zak's code that is not used
         lstfolder = './wordlists/'
-        lstfiles = [('patent', 'patents.lst'),('science', 'academic.lst'),
-                    ('law','idcourts.lst'), ('law', 'nycourts.lst'),
-                    ('law','uscourts.lst'), ('common', 'gsl.lst'),
-                    ('medicine','medical_roots.lst')]
+        lstfiles = [('patent', 'patents.lst'), ('science', 'academic.lst'),
+                    ('law', 'idcourts.lst'), ('law', 'nycourts.lst'),
+                    ('law', 'uscourts.lst'), ('common', 'gsl.lst'),
+                    ('medicine', 'medical_roots.lst')]
         if not hasattr(self, 'lstProbs'):
-            self.lstProbs = {'patent':0.75, 'science':0.25, 'law':0.25,
-                             'common':0.01, 'medicine':0.75}
+            self.lstProbs = {'patent': 0.75, 'science': 0.25, 'law': 0.25,
+                             'common': 0.01, 'medicine': 0.75}
         if not hasattr(self, 'wordlistdict'):
             self.wordlistdict = {}
             for item in lstfiles:
-                lst = Wordlist.load(lstfolder+item[1])
+                lst = Wordlist.load(lstfolder + item[1])
                 if item[0] in self.wordlistdict:
                     self.wordlistdict[item[0]] += lst
                 else:
@@ -303,43 +327,46 @@ Keys = 'patent', 'science', 'law', 'common', and 'medicine'."""
         for label in self.wordlistdict:
             stems = Filter.unstem(word)
             for s in stems:
-                matches = Wordlist.patternFind(self.wordlistdict[label],w,False)
+                matches = Wordlist.patternFind(self.wordlistdict[label], w, False)
                 if matches:
                     prior *= lstProbs[label]
                     break
         return prior
+
     def setWeights(self, dictWeights):
         """Input dictionary of weights for weighted measurements.
 Keys = 'DC', 'DR', 'DRDC', 'TokenDRDC', 'IDF', 'TFIDF', 'TokenIDF', 'Entropy', 'KLDiv'."""
         self.weights = dictWeights.copy()
+
     def _calWeighted(self, word):
         """Returns the weighted score of a word over several different metrics"""
         ret = 0.0
         try:
             self.weights
         except:
-        #    self.weights = {'DC': -1.1, 'TokenIDF': 0.8, 'TokenDRDC': 0.8,
-        #                    'TFIDF': 0.3, 'IDF': 0.1, 'DR': 0.2, 'DRDC': 0.2}
-        #    self.weights = {'TFIDF': 0.4, 'KLDiv': 0.4, 'Entropy': 0.1,
-        #                    'IDF': 0.6, 'TokenDRDC': 0.3, 'DR': 0.4,
-        #                    'DC': -1.8, 'TokenIDF': 1.7, 'DRDC': 0.5}
-        #    self.weights = {'DC': -2.0, 'TokenIDF': 0.8, 'TokenDRDC': 0.7,
-        #                    'TFIDF': 0.3, 'IDF': 0.1, 'DR': 0.3,
-        #                    'DRDC': 0.26,'KLDiv':0.01,'Entropy':0.04}
+            #    self.weights = {'DC': -1.1, 'TokenIDF': 0.8, 'TokenDRDC': 0.8,
+            #                    'TFIDF': 0.3, 'IDF': 0.1, 'DR': 0.2, 'DRDC': 0.2}
+            #    self.weights = {'TFIDF': 0.4, 'KLDiv': 0.4, 'Entropy': 0.1,
+            #                    'IDF': 0.6, 'TokenDRDC': 0.3, 'DR': 0.4,
+            #                    'DC': -1.8, 'TokenIDF': 1.7, 'DRDC': 0.5}
+            #    self.weights = {'DC': -2.0, 'TokenIDF': 0.8, 'TokenDRDC': 0.7,
+            #                    'TFIDF': 0.3, 'IDF': 0.1, 'DR': 0.3,
+            #                    'DRDC': 0.26,'KLDiv':0.01,'Entropy':0.04}
             self.weights = Settings.getMetricWeights()
         for measure in self.weights:
-            ret += self.weights[measure]*self.metrics[measure](word)
-        #ret *= self._calSectionPrior(word)
-        #ret *= self._calWordlistPrior(word)
+            ret += self.weights[measure] * self.metrics[measure](word)
+        # ret *= self._calSectionPrior(word)
+        # ret *= self._calWordlistPrior(word)
         return ret
+
     def rankTerms(self, measure='DRDC'):
         """Score the RDG, return list of (word, rank) tuples"""
         ranking = []
-        #fd = FreqDist()
-        #for d in self.rdgDocs:
+        # fd = FreqDist()
+        # for d in self.rdgDocs:
         #    for w in d.counts.keys():
         #        fd[w] += d.counts[w]            
-        #words = fd.keys()
+        # words = fd.keys()
         logging.debug('Entering rankTerms, loading keys...')
         words = set()
         for d in self.rdgDocs:
@@ -350,52 +377,54 @@ Keys = 'DC', 'DR', 'DRDC', 'TokenDRDC', 'IDF', 'TFIDF', 'TokenIDF', 'Entropy', '
         for w in words:
             i += 1
             if i % 1000 == 0:
-                logging.debug('Measuring word '+str(i))
+                logging.debug('Measuring word ' + str(i))
             temp = self.metrics[measure](w)
-            for s in Filter.unstem(w): #include all word variants
+            for s in Filter.unstem(w):  # include all word variants
                 ranking.append((s, temp))
-            #ranking.append((w, temp))
+                # ranking.append((w, temp))
         logging.debug('Done')
-##        # force ranks to be [0,1]
-##        minimum = min(map(lambda x: x[1], ranking)) #to enforce >= 0
-##        if minimum < 0:
-##            minimum = abs(minimum)
-##        else:
-##            minumum = 0.0
-##        # add a placeholder for unknown words
-##        ranking.append(('[UNK]', -minimum - 9e-11)) # smallest value: 1e-11 before normalization
-##        minimum += 1e-10 #to avoid rank of 0
-##        ranking = [(r[0], r[1]+minimum) for r in ranking]
-##        total = sum(map(lambda x: x[1], ranking))
-##        # save log(rank) to avoid floating point precision errors
-##        ranking = [(r[0], math.log(r[1],2)-math.log(total),2) for r in ranking]
+        ##        # force ranks to be [0,1]
+        ##        minimum = min(map(lambda x: x[1], ranking)) #to enforce >= 0
+        ##        if minimum < 0:
+        ##            minimum = abs(minimum)
+        ##        else:
+        ##            minumum = 0.0
+        ##        # add a placeholder for unknown words
+        ##        ranking.append(('[UNK]', -minimum - 9e-11)) # smallest value: 1e-11 before normalization
+        ##        minimum += 1e-10 #to avoid rank of 0
+        ##        ranking = [(r[0], r[1]+minimum) for r in ranking]
+        ##        total = sum(map(lambda x: x[1], ranking))
+        ##        # save log(rank) to avoid floating point precision errors
+        ##        ranking = [(r[0], math.log(r[1],2)-math.log(total),2) for r in ranking]
         logging.debug('Sorting...')
         ranking.sort(key=lambda x: x[1], reverse=True)
         logging.debug('Done')
         return ranking
+
     def rankFile(self, filename, measure='DRDC'):
         """Score a file rather than an entire RDG. NOT SUPPORTED!"""
         ranking = []
-        d = Document(filename=filename,overwrite=overwrite)
+        d = Document(filename=filename, overwrite=overwrite)
         for w in d.counts:
             temp = self.metrics[measure](w)
             for s in Filter.unstem(w):
                 ranking.append((s, temp))
-##        # force ranks to be [0,1]
-##        minimum = min(map(lambda x: x[1], ranking)) #to enforce >= 0
-##        if minimum < 0:
-##            minimum = abs(minimum)
-##        else:
-##            minumum = 0.0
-##        # add a placeholder for unknown words
-##        ranking.append(('[UNK]', -minimum - 9e-11)) # smallest value: 1e-11 before normalization
-##        minimum += 1e-10 #to avoid rank of 0
-##        ranking = [(r[0], r[1]+minimum) for r in ranking]
-##        total = sum(map(lambda x: x[1], ranking))
-##        # save log(rank) to avoid floating point precision errors
-##        ranking = [(r[0], math.log(r[1],2)-math.log(total),2) for r in ranking]
+            ##        # force ranks to be [0,1]
+            ##        minimum = min(map(lambda x: x[1], ranking)) #to enforce >= 0
+            ##        if minimum < 0:
+            ##            minimum = abs(minimum)
+            ##        else:
+            ##            minumum = 0.0
+            ##        # add a placeholder for unknown words
+            ##        ranking.append(('[UNK]', -minimum - 9e-11)) # smallest value: 1e-11 before normalization
+            ##        minimum += 1e-10 #to avoid rank of 0
+            ##        ranking = [(r[0], r[1]+minimum) for r in ranking]
+            ##        total = sum(map(lambda x: x[1], ranking))
+            ##        # save log(rank) to avoid floating point precision errors
+            ##        ranking = [(r[0], math.log(r[1],2)-math.log(total),2) for r in ranking]
         ranking.sort(key=lambda x: x[1], reverse=True)
         return ranking
+
     def rankWordList(self, filename, measure='DRDC'):
         """Score a word list stored in a file (one word per line)."""
         ranking = []
@@ -406,34 +435,35 @@ Keys = 'DC', 'DR', 'DRDC', 'TokenDRDC', 'IDF', 'TFIDF', 'TokenIDF', 'Entropy', '
             if w != '':
                 words.append(w)
         f.close()
-        useStem = 'stem' in Settings.getDocumentFilters() #are words stemmed?
+        useStem = 'stem' in Settings.getDocumentFilters()  # are words stemmed?
         for w in words:
             if useStem:
                 temp = self.metrics[measure](Filter.stem(w))
-                #for s in Filter.unstem(w):
+                # for s in Filter.unstem(w):
                 #    ranking.append((s, temp))
             else:
                 temp = self.metrics[measure](w)
             ranking.append((w, temp))
-##        # force ranks to be [0,1]
-##        minimum = min(map(lambda x: x[1], ranking)) #to enforce >= 0
-##        if minimum < 0:
-##            minimum = abs(minimum)
-##        else:
-##            minumum = 0.0
-##        # add a placeholder for unknown words
-##        ranking.append(('[UNK]', -minimum - 9e-11)) # smallest value: 1e-11 before normalization
-##        minimum += 1e-10 #to avoid rank of 0
-##        ranking = [(r[0], r[1]+minimum) for r in ranking]
-##        total = sum(map(lambda x: x[1], ranking))
-##        # save log(rank) to avoid floating point precision errors
-##        ranking = [(r[0], math.log(r[1],2)-math.log(total),2) for r in ranking]
+        ##        # force ranks to be [0,1]
+        ##        minimum = min(map(lambda x: x[1], ranking)) #to enforce >= 0
+        ##        if minimum < 0:
+        ##            minimum = abs(minimum)
+        ##        else:
+        ##            minumum = 0.0
+        ##        # add a placeholder for unknown words
+        ##        ranking.append(('[UNK]', -minimum - 9e-11)) # smallest value: 1e-11 before normalization
+        ##        minimum += 1e-10 #to avoid rank of 0
+        ##        ranking = [(r[0], r[1]+minimum) for r in ranking]
+        ##        total = sum(map(lambda x: x[1], ranking))
+        ##        # save log(rank) to avoid floating point precision errors
+        ##        ranking = [(r[0], math.log(r[1],2)-math.log(total),2) for r in ranking]
         ranking.sort(key=lambda x: x[1], reverse=True)
         return ranking
+
     def scoreByRankSum(self, termfiles, measure='DRDC'):
         """Score a metric on a document against a premade list."""
         terms = set()
-        filters = ['abbreviation', 'case']#['abbreviation', 'case', 'stem']
+        filters = ['abbreviation', 'case']  # ['abbreviation', 'case', 'stem']
         for f in termfiles:
             temp = TestData.load(f)
             for w in temp:
@@ -444,19 +474,20 @@ Keys = 'DC', 'DR', 'DRDC', 'TokenDRDC', 'IDF', 'TFIDF', 'TokenIDF', 'Entropy', '
         ranking = self.rankTerms(measure)
         score = 0
         for t in terms:
-            r = filter(lambda x: x[0]==t, ranking)
-            #print t + ': ' + str(r)
+            r = filter(lambda x: x[0] == t, ranking)
+            # print t + ': ' + str(r)
             if r:
                 r = r[0]
                 score += ranking.index(r)
             else:
-                score += len(ranking)+1
-        #print score
+                score += len(ranking) + 1
+        # print score
         return score
+
     def scoreByTop(self, termfiles, measure='DRDC', n=300):
         """Score a metric on a document against a premade list."""
         terms = set()
-        filters = ['abbreviation', 'case'] #['abbreviation', 'case', 'stem']
+        filters = ['abbreviation', 'case']  # ['abbreviation', 'case', 'stem']
         for f in termfiles:
             temp = TestData.load(f)
             for w in temp:
@@ -467,19 +498,20 @@ Keys = 'DC', 'DR', 'DRDC', 'TokenDRDC', 'IDF', 'TFIDF', 'TokenIDF', 'Entropy', '
         ranking = self.rankTerms(measure)
         score = 0
         for t in terms:
-            r = filter(lambda x: x[0]==t, ranking[:n])
-            #print t + ': ' + str(r)
+            r = filter(lambda x: x[0] == t, ranking[:n])
+            # print t + ': ' + str(r)
             if r:
                 score += 1
-        #print score
+        # print score
         return score
+
     def _twiddleWeights(self, termfiles):
         """Use twiddle to find and return a dictionary of weights \
 for use in weighted scoring. This method is VERY slow."""
-        self.weights = {'DR':0.5, 'DC':0.5, 'DRDC':0.5, 'IDF':0.5,
-                        'TFIDF':0.5, 'TokenDRDC':0.5, 'TokenIDF':0.5,
-                        'Entropy':0.5, 'KLDiv':0.5}
-        #self.weights = {'DR': 0.2, 'DC': -1.1, 'DRDC': 0.2, 'TokenDRDC': 0.8,
+        self.weights = {'DR': 0.5, 'DC': 0.5, 'DRDC': 0.5, 'IDF': 0.5,
+                        'TFIDF': 0.5, 'TokenDRDC': 0.5, 'TokenIDF': 0.5,
+                        'Entropy': 0.5, 'KLDiv': 0.5}
+        # self.weights = {'DR': 0.2, 'DC': -1.1, 'DRDC': 0.2, 'TokenDRDC': 0.8,
         #                'TFIDF': 0.3, 'IDF': 0.1, 'TokenIDF': 0.8,
         #                'Entropy':0.5, 'KLDiv':0.5}
         for i in range(100):
@@ -487,23 +519,24 @@ for use in weighted scoring. This method is VERY slow."""
                 print(w, 1)
                 currweight = self.weights[w]
                 currscore = self.scoreByRankSum(termfiles, measure='Weighted')
-                print (w, 2)
+                print(w, 2)
                 self.weights[w] = currweight - 0.1
                 score = self.scoreByRankSum(termfiles, measure='Weighted')
-                print (w, 3)
+                print(w, 3)
                 if score < currscore:
                     continue
-                print (w, 4)
+                print(w, 4)
                 self.weights[w] = currweight + 0.1
                 score = self.scoreByRankSum(termfiles, measure='Weighted')
-                print (w, 5)
+                print(w, 5)
                 if score < currscore:
                     continue
-                print (w, 6)
+                print(w, 6)
                 self.weights[w] = currweight
-                print (w, 7)
-            print (self.weights)
+                print(w, 7)
+            print(self.weights)
         return self.weights
+
     def _EMWeights(testfolder, N=300):
         """Use EM to find and return a dictionary of weights for use in \
 weighted scoring. Here we are minimizing the perplexity of a held out set."""
@@ -515,53 +548,53 @@ weighted scoring. Here we are minimizing the perplexity of a held out set."""
         # Loop until delta_w < tolerance:
         # E: c_i = (1/N)SUM_j(w_i*q_i(NP_j)/SUM_n(w_n*q_n(NP_j)))
         # M: w_i = c_i/SUM_n(c_n)
-        #---------------------------
+        # ---------------------------
         # Which measures to use:
         measures = ['TFIDF', 'IDF', 'TokenIDF', 'DRDC', 'TokenDRDC', 'KLDiv']
         # Calculate term hypothesized probability distribution
-        print ('Calculating probabilities...',)
-        Probs={}
+        print('Calculating probabilities...', )
+        Probs = {}
         for measure in measures:
             ranklist = metric.rankTerms(measure)
             # hypothesized probability distribution
             # (of NPs being members of the set of terminology):
             Probs[measure] = {}
             for item in ranklist:
-                Probs[measure][item[0]] = 2**item[1]
-                if Probs[measure][item[0]]==0.0:
-                    raise('Rounding Error! P = 0.0')
-            print (measure+' ',)
-        print ('done')
+                Probs[measure][item[0]] = 2 ** item[1]
+                if Probs[measure][item[0]] == 0.0:
+                    raise ('Rounding Error! P = 0.0')
+            print(measure + ' ', )
+        print('done')
         # import test set
-        print ('Retrieving test set...',)
+        print('Retrieving test set...', )
         try:
             self.testwords
         except:
-            #backup Filter dictionaries, as loading new documents will change them
+            # backup Filter dictionaries, as loading new documents will change them
             backupstems = [Filter.stemdict, Filter.unstemdict]
             Filter.stemdict = {}
             Filter.unstemdict = {}
-            temp = [Document(filename=testfolder+f,overwrite=overwrite) for f in os.listdir(testfolder) if f[-4:]=='.txt']
+            temp = [Document(filename=testfolder + f, overwrite=overwrite) for f in os.listdir(testfolder) if f[-4:] == '.txt']
             testwords = []
             for i in range(len(temp)):
                 for w in temp[i].counts:
                     testwords.extend(Filter.unstem(w))
-            #restore Filter.stemdict
+            # restore Filter.stemdict
             Filter.stemdict, Filter.unstemdict = backupstems
-        print ('done')
+        print('done')
         # set initial weights
         weight = {}
         for measure in measures:
-            weight[measure] = 1.0/len(measures)
+            weight[measure] = 1.0 / len(measures)
         # set tolerance
         tolerance = 1e-10
         # E-M loop
-        print ('Optimizing weights...',)
+        print('Optimizing weights...', )
         delta = 1.0
         weight_old = weight.copy()
         while delta > tolerance:
-            #print 'Squared change in weight: '+str(delta)
-            #E:
+            # print 'Squared change in weight: '+str(delta)
+            # E:
             c = {}
             # go through measures
             for j in weight:
@@ -572,22 +605,23 @@ weighted scoring. Here we are minimizing the perplexity of a held out set."""
                     NP = self.testwords[i]
                     if not NP in Probs[j]:
                         NP = '[UNK]'
-                    numer = weight[j]*Probs[j][NP]
+                    numer = weight[j] * Probs[j][NP]
                     denom = 0.0
                     # sum through all the measures
                     for n in weight:
-                        denom += weight[n]*Probs[n][NP]
-                    c[j] += numer/denom
-                c[j] *= (1.0/N)
-            #M:
+                        denom += weight[n] * Probs[n][NP]
+                    c[j] += numer / denom
+                c[j] *= (1.0 / N)
+            # M:
             delta = 0.0
             for j in weight:
                 weight_old[j] = weight[j]
-                weight[j] = c[j]/sum(c.values())
-                delta += (weight[j]-weight_old[j])**2
-        print ('done')
+                weight[j] = c[j] / sum(c.values())
+                delta += (weight[j] - weight_old[j]) ** 2
+        print('done')
         # set those weights
         metric.setWeights(weight)
         return weight
+
     def findWeights(self, testfolder):
         return _EMWeights(self, testfolder, 300)

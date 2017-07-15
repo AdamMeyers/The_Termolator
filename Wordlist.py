@@ -1,8 +1,11 @@
-import os, re
-from nltk.corpus import brown # Probably an unencumbered license
+import os
+import re
+
 from nltk import FreqDist
+from nltk.corpus import brown  # Probably an unencumbered license
 
 fd = None
+
 
 def load(filename):
     """Load wordlist file, return a list of words.
@@ -18,22 +21,24 @@ EOF
         raise OSError(2, 'Error reading from file')
     lst = []
     f = open(filename)
-    #skip header
+    # skip header
     for line in f:
         if line == '[Start]\n':
             break
-    #get words
+    # get words
     for line in f:
         lst.append(line[:-1])
     f.close()
     return lst
 
+
 def compile_lst(lst):
     """Compile a list of words into one regular expression."""
-    string = '\\b('+'|'.join(lst)+')\\b'
+    string = '\\b(' + '|'.join(lst) + ')\\b'
     pattern = re.compile(string, re.VERBOSE | re.IGNORECASE)
     return pattern
-        
+
+
 def stripAbbrevations(lst):
     """Strip abbrieviations from a list of words (ie. "WORD (WRD)" -> "WORD")\
 , return a dictionary with key=abbreviation and value=full word."""
@@ -44,11 +49,12 @@ def stripAbbrevations(lst):
         abbrev = re.findall(pattAbbrev, lst[i])
         full = re.findall(pattFull, lst[i])
         if abbrev:
-            abbrev=abbrev[0]
-            full=full[0].strip()
+            abbrev = abbrev[0]
+            full = full[0].strip()
             ret[abbrev] = full
             lst[i] = full
     return ret
+
 
 def patternFind(pattern, text, uncommon_only=True):
     """Find all matches of a pattern in a text, \
@@ -60,8 +66,9 @@ optionally restricting matches to uncommon words only."""
         if not fd:
             words = brown.words()
             fd = FreqDist(words)
-        matches = [m for m in matches if fd[m]<3] #3 is handwavy, but decent
+        matches = [m for m in matches if fd[m] < 3]  # 3 is handwavy, but decent
     return set(matches)
+
 
 def listFind(lst, text):
     """Return the set of all elements of a list that are found in a given text."""

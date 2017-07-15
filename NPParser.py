@@ -1,23 +1,33 @@
-#NOTE: THE GENIA TAGGER HAS A RESTRICTIVE LICENSE,
-#USE AN UNENCUMBERED GENIA-STYLE ALTERNATIVE
-import subprocess, os, logging, pickle
+# NOTE: THE GENIA TAGGER HAS A RESTRICTIVE LICENSE,
+# USE AN UNENCUMBERED GENIA-STYLE ALTERNATIVE
+import logging
+import os
+import pickle
+import subprocess
+
 from nltk import FreqDist
+
 import Filter
 
 genia_path = './genia/'
+
+
 ### assumes genia tagger -- not currently used
 
 class Word:
     """Each Word contains a string representation, part-of-speech tag, and \
 chunk tag."""
+
     def __init__(self, word, pos, chunk):
         self.word = word
         self.pos = pos
         self.chunk = chunk
+
     def __str__(self):
-        #s = "[" + self.word + ": " + self.pos + ", " + self.chunk + "]"
+        # s = "[" + self.word + ": " + self.pos + ", " + self.chunk + "]"
         s = self.word
         return s
+
 
 ##class NounPhrase:
 ##    """A NounPhrase is a collection of Word objects."""
@@ -58,9 +68,9 @@ class Genia:
         """Input a file, return a list of tagged Word objects"""
         words = []
         # only run Genia tagger if not already precomputed
-        if not os.path.exists(filename+'.genia'):
-            logging.info(filename+'.genia not found. This will slow things down.')
-            logging.debug('Computing '+filename+'.genia')
+        if not os.path.exists(filename + '.genia'):
+            logging.info(filename + '.genia not found. This will slow things down.')
+            logging.debug('Computing ' + filename + '.genia')
             # change directory, otherwise Genia fails
             wdir = os.getcwd()
             os.chdir(genia_path)
@@ -68,16 +78,16 @@ class Genia:
             # change directory back
             os.chdir(wdir)
             stdout = p.communicate()[0]
-            #print stderr
+            # print stderr
             logging.debug('done')
             # save to file for next time
-            logging.debug('Saving '+filename+'.genia')
-            f = open(filename+'.genia','w')
+            logging.debug('Saving ' + filename + '.genia')
+            f = open(filename + '.genia', 'w')
             f.write(stdout)
             f.close()
             logging.debug('done')
         else:
-            f = open(filename+'.genia')
+            f = open(filename + '.genia')
             stdout = f.read()
             f.close()
         # get info
@@ -113,11 +123,12 @@ class GeniaReader:
             words.append(w)
         return words
 
+
 class NPParser:
     def extractNPs(self, words):
         """Takes a list of Word objects as input, returns a list of NounPhrases."""
-        NPs = [] # list of NounPhrases
-        NP = [] # NounPhrase is a list of Words
+        NPs = []  # list of NounPhrases
+        NP = []  # NounPhrase is a list of Words
         for i in range(len(words)):
             # B-NP starts a new phrase
             if words[i].chunk == "B-NP":
@@ -135,6 +146,7 @@ class NPParser:
                     NPs.append(NP)
                 NP = []
         return NPs
+
     def extractPossibleTerms(self, NP, relaxed=False):
         """Takes a NounPhrase and outputs a list of strings of possible terms"""
         terms = set()
@@ -153,7 +165,7 @@ class NPParser:
         # if not relaxed, collect all possible terms beginning at pos
         if not relaxed:
             term = ""
-            for i in range(pos,len(NP)):
+            for i in range(pos, len(NP)):
                 # add each successive subset to the list
                 # i.e. "word1", "word1 word2", "word1 word2 word3"
                 term = term + " " + NP[i].word
@@ -162,23 +174,25 @@ class NPParser:
                     terms.add(term.strip())
         # collect all possible terms beginning at the end
         term = ""
-        for i in range(len(NP)-1, pos-1, -1):
+        for i in range(len(NP) - 1, pos - 1, -1):
             # add each successive subset to the list
             # i.e. "word3", "word2 word3", "word1 word2 word3"
             term = NP[i].word + " " + term
             terms.add(term.strip())
         return terms
+
     def getNPs(self, filename):
         """Input a file, output a list of noun phrases"""
         g = GeniaReader()
         words = g.load(filename)
         NPs = self.extractNPs(words)
         return NPs
+
     def getTerms(self, filename, filters=[], relaxed=False, overwrite=False):
         """Input file, output a FreqDist of terms"""
-        filterfname = os.path.join(os.path.dirname(filename),'filter.save')
-        if os.path.exists(filename+'.nps') and os.path.exists(filterfname):
-            f = open(filename+'.nps','rb')
+        filterfname = os.path.join(os.path.dirname(filename), 'filter.save')
+        if os.path.exists(filename + '.nps') and os.path.exists(filterfname):
+            f = open(filename + '.nps', 'rb')
             old_filters, fd = pickle.load(f)
             f.close()
             if old_filters == filters:
@@ -192,14 +206,14 @@ class NPParser:
             terms = self.extractPossibleTerms(NP, relaxed)
             # filter each term by some given criteria
             # this requires keeping case information until this point
-            #filt = Filter.Filter() # class containing all filters
+            # filt = Filter.Filter() # class containing all filters
             for t in terms:
                 for f in filters:
                     t = Filter.criteria[f](t)
                 if t:
-                    fd[t]+=1
-        if overwrite or (not os.path.isfile(filename+'.nps')):
-            f = open(filename+'.nps','wb')
+                    fd[t] += 1
+        if overwrite or (not os.path.isfile(filename + '.nps')):
+            f = open(filename + '.nps', 'wb')
             pickle.dump((filters, fd), f)
             f.close()
         if os.path.exists(filterfname):
