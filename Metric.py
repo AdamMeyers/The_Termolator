@@ -2,11 +2,12 @@ import logging
 import math
 import nltk
 
+import Filter
 import Settings
 import TestData
 import Wordlist
 from Document import *
-
+import Filter
 
 class Metric:
     """Metric contains all the functions necessary to score an RDG's terminology."""
