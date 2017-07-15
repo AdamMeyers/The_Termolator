@@ -90,10 +90,10 @@ echo "calling distributional_component.py in term_extration using foreground and
 $TERMOLATOR/distributional_component.py $4.internal_foreground_tchunk_list $4.internal_background_tchunk_list > $4.all_terms
 
 if [ "${12}" = "False" ]; then
-   echo "calling filter_term_output.py with filter_term_output.py $4 $4.outputweb.score $6 $7 ${10}"
+   echo "calling filter_term_output.py with $4 $4.outputweb.score $6 $7 ${10}"
    $TERMOLATOR/filter_term_output.py $4 $4.outputweb.score $6 $7 ${10}
 else
-   echo "calling filter_term_output.py with filter_term_output.py $4 ${12} $6 $7 ${10}"
+   echo "calling filter_term_output.py with $4 ${12} $6 $7 ${10}"
    $TERMOLATOR/filter_term_output.py $4 ${12} $6 $7 ${10}
 fi
 
