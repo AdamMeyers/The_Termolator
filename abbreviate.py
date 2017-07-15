@@ -274,15 +274,24 @@ def get_word_substring_at_end(words, line, inbetween=False, no_check=False):
                 inbetween = inbetween[:inbetween_space]
     line_upper = line.upper().rstrip(' ')
     line_position = len(line_upper)
+    not_found = False    
     for number in range(len(words)):
         word_position = -1-number
         word = words[word_position]
-        line_position = line_upper.rindex(word.upper(),0,line_position)
-    outstring = line[line_position:]
-    if inbetween:
+        word = word.upper()
+        if word in line_upper[0:line_position]:
+            line_position = line_upper.rindex(word,0,line_position)
+        else:
+            not_found = True
+            break
+    if not_found:
+        outstring = False
+    else:
+        outstring = line[line_position:]
+    if outstring and inbetween:
         outstring=outstring+inbetween
-    outstring=outstring.rstrip(' ')
-    if unbalanced_delimiter(outstring) and (not no_check):
+        outstring=outstring.rstrip(' ')
+    if outstring and unbalanced_delimiter(outstring) and (not no_check):
         ## if there is a left or right bracket, but not both
         ## this is ill-formed
         new_position,outstring = fix_unbalanced(outstring,line,line_position)
@@ -525,10 +534,10 @@ def abbreviation_match(abbreviation,previous_words,line,abbreviation_position,li
     if out_string:
         output_type = classify_abbreviated_string(out_string,wordlist=matching_words)
     if matching_words and out_string and (not Fail):
-        if out_string[1] in '''`'"“"”''':
+        if (len(out_string)> 1) and (out_string[1] in '''`'"“"”'''):
             out_string = out_string[1:]
             begin = begin+1
-        if len(out_string)>1 and (out_string[-1] in '''`'"“"”'''):
+        if (len(out_string)>1) and (out_string[-1] in '''`'"“"”'''):
             out_string = out_string[:-1]
             end = end-1
         return([begin,end,out_string,output_type,one_off])
@@ -1012,3 +1021,34 @@ def get_expanded_forms_from_abbreviations (term):
                     ## print(2,'*',variation,'*',item)
                     output.append(item)
     return(output) 
+
+def make_abbr_dicts_from_abbr(infiles,full_to_abbr_file,abbr_to_full_file):
+    global abbr_to_full_dict
+    global full_to_abbr_dict
+    abbr_to_full_dict.clear()
+    full_to_abbr_dict.clear()
+    arg1_pattern = re.compile('ARG1_TEXT="([^"]*)"')
+    arg2_pattern = re.compile('ARG2_TEXT="([^"]*)"')
+    with open(infiles) as liststream:
+        for infile in liststream:
+            infile = infile.strip()
+            with open(infile) as instream:
+                for line in instream:
+                    if line.startswith('RELATION'):
+                        arg1_match = arg1_pattern.search(line)
+                        arg2_match = arg2_pattern.search(line)
+                        if arg1_match and arg2_match:
+                            full_name = arg1_match.group(1).upper()
+                            abbr = arg2_match.group(1).upper()
+                            if (abbr in abbr_to_full_dict):
+                                if (not full_name in abbr_to_full_dict[abbr]):
+                                    abbr_to_full_dict[abbr].append(full_name)
+                            else:
+                                abbr_to_full_dict[abbr] = [full_name]
+                            if (full_name in full_to_abbr_dict):
+                                if (not abbr in full_to_abbr_dict[full_name]):
+                                    full_to_abbr_dict[full_name].append(abbr)
+                            else:
+                                full_to_abbr_dict[full_name] = [abbr]
+    save_abbrev_dicts(abbr_to_full_file,full_to_abbr_file)
+    

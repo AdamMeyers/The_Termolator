@@ -32,14 +32,14 @@ def _get_stops(filename=dir_name + 'patentstops.txt'):
         stops = stopwords.words('english')
 def _get_stemdict(filename):
     logger.debug('Loading stemming dictionary...')
-    f = open(filename)
+    f = open(filename, 'rb')
     global stemdict
     global unstemdict
     stemdict, unstemdict = pickle.load(f)
     f.close()
 def _save_stemdict(filename):
     logger.debug('Saving stemming dictionary...')
-    f = open(filename, 'w')
+    f = open(filename, 'wb')
     global stemdict
     global unstemdict
     pickle.dump((stemdict, unstemdict),f)
@@ -121,9 +121,16 @@ def stem(string):
     if string not in stemdict:
         if bad_unicode(string):
             ## added A. Meyers 8/28/15
-            temp = stemmer.stem(remove_non_unicode(string))
-        else:
+            string = remove_non_unicode(string)
+            if len(string)>3:
+                temp = stemmer.stem(string)
+            else:
+                temp = string
+        elif len(string)>3:
+            ## print('***',string,'***')
             temp = stemmer.stem(string)
+        else:
+            temp = string
         if temp:
             stemdict[string] = temp
         if not temp:
