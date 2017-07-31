@@ -68,6 +68,15 @@ The arguments are defined as follows:
 	       "false" as a value. If you add the legal topic, a dictionary of legal terms will
 	       be downloaded and some specialized rules will be invoked for abbreviations. Other
 	       topic specific features may be added in the future.
+   Argument 11 If True, skip preprocessing for Foreground. This only comes in useful if you want to
+   	       run the same Foreground with different backgrounds. So usually, this field should just
+	       contain "False".
+   Argument 12 The name of the webscore file or "False". If this value is False and you Argument 6 is True,
+   	       a dictionary of webscore results are stored in a file that combines $4 with a file type of
+	       ".outputweb.score".  If, however, you choose a filename, the system will use that filename
+	       to store the webscore. The latter option enables one to reuse the webscores from previous runs
+	       and can save considerable time in calculating this score. Each Yahoo websearch used to calculate
+	       this score takes about .75 seconds. Caching these values may make Yahoo searches less frequent.
 
 IMPORTANT PATH INFORMATION: If FOREGROUND and BACKGROUND files contain absolute paths, this command will work from anywhere.  Otherwise, you should run from the directory containing FOREGROUND and BACKGROUND. We will call this the DATA_DIRECTORY.  The files listed in FOREGROUND andBACKGROUND should be paths relative to the DATA_DIRECTORY.
 
@@ -76,9 +85,9 @@ be adding a corpus of court decisions, for which the legal topic features are us
 are useful for the patent directory provided here.
 
    a) subdirectory: gutenberg-test
-      command:      $TERMOLATOR/run_termolator.sh foreground.list background.list .htm knitting True True 30000 5000 $TERMOLATOR false
+      command:      $TERMOLATOR/run_termolator.sh foreground.list background.list .htm knitting True True 30000 5000 $TERMOLATOR False False False
       
-      -- The "True" setting will make this run take an extra 10 minutes to run about 600 
+      -- The "True" setting in field 6 will make this run take an extra 10 minutes to run about 600 
        	 web searches, but the results are more accurate as a result.
 
       -- These texts are taken from the English portion of Project Gutenberg, a repository of public 
@@ -88,10 +97,10 @@ are useful for the patent directory provided here.
 	 For more information of Project Gutenberg, go to: https://www.gutenberg.org/
 
    b) subdirectory: OANC-test
-      command:      $TERMOLATOR/run_termolator.sh foreground.list background.list .txt biology True False 30000 5000 $TERMOLATOR false
+      command:      $TERMOLATOR/run_termolator.sh foreground.list background.list .txt biology True False 30000 5000 $TERMOLATOR False False False
 
-      -- This run will be faster than the previous run per term generated. If False is replaced by True, 
-      	 the system will take an extra 3 hours (about 1 second for each of 10,000 terms),
+      -- This run will be faster than the previous run per term generated. If the False in field in field 6 is 
+      	 replaced by True, the system will take an extra 3 hours (about 1 second for each of 10,000 terms),
       	 but the results will be better.
 
       -- These texts are taken from the Open American National Corpus (OANC), a project devoted to collecting 
@@ -100,9 +109,9 @@ are useful for the patent directory provided here.
 	 are all about biology. For more information about the OANC, go to: http://www.anc.org/data/oanc/
 
    c) subdirectory: patent-test
-      command:	    $TERMOLATOR/run_termolator.sh foreground.list background.list .XML surgery True False 30000 5000 $TERMOLATOR false
+      command:	    $TERMOLATOR/run_termolator.sh foreground.list background.list .XML surgery True False 30000 5000 $TERMOLATOR False False False
 
-      -- This run should generate about 4700 terms. If False is changed to True, it will take an additional 
+      -- This run should generate about 4700 terms. If False in field 6 is changed to True, it will take an additional 
       	 1.5 hours, but  achieve better results.
 
       -- These documents are taken from Google patents. We downloaded files and divided them by the US patent 

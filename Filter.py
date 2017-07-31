@@ -35,14 +35,14 @@ def _get_stemdict(filename):
     f = open(filename, 'rb')
     global stemdict
     global unstemdict
-    stemdict, unstemdict = pickle.load(f)
+    stemdict, unstemdict = pickle.load(f,encoding="utf-8")
     f.close()
 def _save_stemdict(filename):
     logger.debug('Saving stemming dictionary...')
     f = open(filename, 'wb')
     global stemdict
     global unstemdict
-    pickle.dump((stemdict, unstemdict),f)
+    pickle.dump((stemdict, unstemdict),f,encoding="utf-8")
     f.close()
 def _reGlue(words):
     """Helper function to turn a list of words into a string"""

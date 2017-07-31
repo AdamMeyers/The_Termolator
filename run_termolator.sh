@@ -16,7 +16,7 @@
 ##       separated by '+, i.e., 'legal+financial'. The value should
 ##       be False if not used
 ## refer to as ${10}
-## $11 = (optional) if True, means skip preprocessing of Foreground
+## $11 = If True, means skip preprocessing of Foreground
 ##       only comes in useful if you want to run the same foreground
 ##       against different backgrounds -- probably not a common occurrance.
 ## $12 = webscore file (or False)
