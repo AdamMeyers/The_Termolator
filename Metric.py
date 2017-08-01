@@ -1,6 +1,8 @@
+#!/usr/bin/env python3
 import math, nltk, logging, os
 from Document import *
 import TestData, Wordlist, Settings
+import pickle
 
 class Metric:
     """Metric contains all the functions necessary to score an RDG's terminology."""
@@ -12,6 +14,9 @@ class Metric:
                         'TokenIDF':self._calTokenIDF, 'Entropy':self._calEntropy,
                         'KLDiv':self._calKLDiv, 'Weighted':self._calWeighted,
                         'TF':self._calTF}
+        # used for restoring ranking 
+        # from previous
+        self.rankingmap = {}
         # input files
         self.genDocs = Document(overwrite=overwrite)
         #filtfname = os.path.join(rdgDir, 'filter.save')
@@ -112,7 +117,10 @@ class Metric:
         """Returns the document relevance of a proposed term"""
         if not hasattr(self, '_DR'):
             self._DR = {}
-        if word in self._DR:
+        ## check map
+        if (word,'DR') in self.rankingmap:
+            DR = self.rankingmap[(word,'DR')]
+        elif word in self._DR:
             DR = self._DR[word]
         else:
             posFreq = self._getTermFreq(word)
@@ -130,7 +138,9 @@ class Metric:
         """Returns the document consensus of a proposed term"""
         if not hasattr(self, '_DC'):
             self._DC = {}
-        if word in self._DC:
+        if (word,'DC') in self.rankingmap:
+            DC = self.rankingmap[(word,'DC')]
+        elif word in self._DC:
             DC = self._DC[word]
         else:
             posFreq = self._getTermFreq(word)
@@ -148,11 +158,17 @@ class Metric:
     def _calDRDC(self, word):
         """Returns the document relevance-document consensus \
 (DRDC) of a proposed term"""
-        return self._calDR(word)*self._calDC(word)
+        if (word,'DRDC') in self.rankingmap:
+            return self.rankingmap[(word,'DRDC')]
+        else:
+            return self._calDR(word)*self._calDC(word)
     def _calIDF(self, word):
         """Returns the document relevance-inverse document frequency \
 (DR-IDF) of a proposed term"""
-        return self._calDR(word)/math.log(self._getTermDocFreq(word)+3.0)
+        if (word,'IDF') in self.rankingmap:
+            return self.rankingmap[(word,'IDF')]
+        else:
+            return self._calDR(word)/math.log(self._getTermDocFreq(word)+3.0)
     def _calTF(self, word):
         """Returns the term frequency of a proposed term"""
         #I ADDED THIS ONE FOR REFERENCE
@@ -197,11 +213,17 @@ of a proposed term"""
     def _calTokenDRDC(self, word):
         """Returns the document relevance-document consensus (DRDC) of \
 a proposed term, adjusted for token frquency"""
-        return self._calDRDC(word)*self._calTokenDR(word)
+        if (word,'TokenDRDC') in self.rankingmap:
+            return self.rankingmap[(word,'TokenDRDC')]
+        else:
+            return self._calDRDC(word)*self._calTokenDR(word)
     def _calTokenIDF(self, word):
         """Returns the document relevance-inverse document frequency \
 (DR-TokenIDF) of a proposed term, adjusted for token frequency"""
-        return self._calIDF(word)*self._calTokenDR(word)
+        if (word,'TokenIDF') in self.rankingmap:
+            return self.rankingmap[(word,'TokenIDF')]
+        else:
+            return self._calIDF(word)*self._calTokenDR(word)
     def _calEntropy(self, word):
         """Return the pseudo-entropy of a proposed term"""
         #-sum(p*log(p)) = -sum((c/N)*log(c/N))
@@ -332,9 +354,63 @@ Keys = 'DC', 'DR', 'DRDC', 'TokenDRDC', 'IDF', 'TFIDF', 'TokenIDF', 'Entropy', '
         #ret *= self._calSectionPrior(word)
         #ret *= self._calWordlistPrior(word)
         return ret
-    def rankTerms(self, measure='DRDC'):
+    def rankTerms(self, measure='DRDC', save=True):
         """Score the RDG, return list of (word, rank) tuples"""
         ranking = []
+        ranking_map = {} # separate map to not impose
+        #fd = FreqDist()
+        #for d in self.rdgDocs:
+        #    for w in d.counts.keys():
+        #        fd[w] += d.counts[w]            
+        #words = fd.keys()
+        logging.debug('Entering rankTerms, loading keys...')
+        words = set()
+        for d in self.rdgDocs:
+            words.update(d.counts.keys())
+        logging.debug('Done')
+        logging.debug('Measuring ranks...')
+        i = 0
+        for w in words:
+            i += 1
+            if i % 1000 == 0:
+                logging.debug('Measuring word '+str(i))
+            temp = self.metrics[measure](w)
+            for s in Filter.unstem(w): #include all word variants
+                ranking.append((s, temp))
+                if save:
+                    #logging.error("Saving word: " + str(s) + " to ranking.pkl  with measurement: " + measure + " and value: " + str(temp))
+                    ranking_map[(s,measure)]=temp
+            #ranking.append((w, temp))
+        logging.debug('Done')
+##        # force ranks to be [0,1]
+##        minimum = min(map(lambda x: x[1], ranking)) #to enforce >= 0
+##        if minimum < 0:
+##            minimum = abs(minimum)
+##        else:
+##            minumum = 0.0
+##        # add a placeholder for unknown words
+##        ranking.append(('[UNK]', -minimum - 9e-11)) # smallest value: 1e-11 before normalization
+##        minimum += 1e-10 #to avoid rank of 0
+##        ranking = [(r[0], r[1]+minimum) for r in ranking]
+##        total = sum(map(lambda x: x[1], ranking))
+##        # save log(rank) to avoid floating point precision errors
+##        ranking = [(r[0], math.log(r[1],2)-math.log(total),2) for r in ranking]
+        logging.debug('Sorting...')
+        ranking.sort(key=lambda x: x[1], reverse=True)
+        #pickle.dump(ranking_map, open('ranking.pkl','w'))
+        f = open('ranking.pkl', 'wb')
+        #pickle.dump(ranking_map,f,encoding="utf-8")
+        pickle.dump(ranking_map,f)
+        logging.debug('Done')
+        return ranking
+    def rankTermsFromPrevious(self, measure='DRDC'):
+        """Score the RDG, return list of (word, rank) tuples"""
+        # we only need the sum for the general class
+        #self.rankingmap = pickle.load(open('ranking.pkl','r'))
+        f = open('ranking.pkl', 'rb')
+        #self.rankingmap = pickle.load(f, encoding="utf-8")
+        self.rankingmap = pickle.load(f)
+        ranking = [] # this ranking is a local array, not the cached
         #fd = FreqDist()
         #for d in self.rdgDocs:
         #    for w in d.counts.keys():
@@ -355,7 +431,7 @@ Keys = 'DC', 'DR', 'DRDC', 'TokenDRDC', 'IDF', 'TFIDF', 'TokenIDF', 'Entropy', '
             for s in Filter.unstem(w): #include all word variants
                 ranking.append((s, temp))
             #ranking.append((w, temp))
-        logging.debug('Done')
+          #logging.debug('Done')
 ##        # force ranks to be [0,1]
 ##        minimum = min(map(lambda x: x[1], ranking)) #to enforce >= 0
 ##        if minimum < 0:
@@ -371,6 +447,7 @@ Keys = 'DC', 'DR', 'DRDC', 'TokenDRDC', 'IDF', 'TFIDF', 'TokenIDF', 'Entropy', '
 ##        ranking = [(r[0], math.log(r[1],2)-math.log(total),2) for r in ranking]
         logging.debug('Sorting...')
         ranking.sort(key=lambda x: x[1], reverse=True)
+        #self.rankingmap.sort(key=lambda x: x[1], reverse=True)
         logging.debug('Done')
         return ranking
     def rankFile(self, filename, measure='DRDC'):

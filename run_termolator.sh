@@ -20,6 +20,7 @@
 ##       only comes in useful if you want to run the same foreground
 ##       against different backgrounds -- probably not a common occurrance.
 ## $12 = webscore file (or False)
+## $13 = use saved pickle terms file
 
 echo "The Output File is: $4"
 echo "background files processed? $5"
@@ -28,6 +29,7 @@ echo "max number of terms? $7"
 echo "keep terms? $8"
 echo "termolator path $9"
 echo "dedicated webscore file ${12}"
+echo "use previous saved pickel file for terms ${13}"
 
 ## Step 1: Finding inline terms for foreground files
 echo "Running Step 1: finding inline terms for foreground files"
@@ -87,7 +89,11 @@ fi
 
 echo "calling distributional_component.py in term_extration using foreground and background tchunk list with output to file $4.all_terms"
 
-$TERMOLATOR/distributional_component.py $4.internal_foreground_tchunk_list $4.internal_background_tchunk_list > $4.all_terms
+if [ "${13}" = "True" ]; then
+   $TERMOLATOR/distributional_component.py RankFromPrevious $4.internal_foreground_tchunk_list $4.internal_background_tchunk_list > $4.all_terms
+else
+   $TERMOLATOR/distributional_component.py NormalRank $4.internal_foreground_tchunk_list $4.internal_background_tchunk_list > $4.all_terms
+fi
 
 if [ "${12}" = "False" ]; then
    echo "calling filter_term_output.py with filter_term_output.py $4 $4.outputweb.score $6 $7 ${10}"
