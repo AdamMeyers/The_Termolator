@@ -6,8 +6,10 @@ import pickle
 
 class Metric:
     """Metric contains all the functions necessary to score an RDG's terminology."""
-    def __init__(self, rdgDir, general, working_dir = '.',overwrite=False):
+    def __init__(self, rdgDir, general, working_dir = '.',overwrite=False,rank_from_previous=False,background_cache_file='ranking.pkl'):
         # available metrics
+        global bck_cache_file
+        bck_cache_file = background_cache_file
         self.metrics = {'DR':self._calDR, 'DC':self._calDC,
                         'DRDC':self._calDRDC, 'IDF':self._calIDF,
                         'TFIDF':self._calTFIDF, 'TokenDRDC':self._calTokenDRDC,
@@ -24,7 +26,9 @@ class Metric:
         if os.path.exists(filtfname):
             Filter._get_stemdict(filtfname)
         # General document group is given as files in a directory
-        if type(general)== type(str()):
+        if rank_from_previous:
+            pass
+        elif type(general)== type(str()):
             logging.debug('Loading general documents from '+general)
             # gen = [Document(general+genFile) for genFile in os.listdir(general) if genFile[-4:]=='.txt']
             gen = map(lambda x: Document(filename=x.strip(),overwrite=overwrite), open(general).readlines())
@@ -397,8 +401,8 @@ Keys = 'DC', 'DR', 'DRDC', 'TokenDRDC', 'IDF', 'TFIDF', 'TokenIDF', 'Entropy', '
 ##        ranking = [(r[0], math.log(r[1],2)-math.log(total),2) for r in ranking]
         logging.debug('Sorting...')
         ranking.sort(key=lambda x: x[1], reverse=True)
-        #pickle.dump(ranking_map, open('ranking.pkl','w'))
-        f = open('ranking.pkl', 'wb')
+        #pickle.dump(ranking_map, open(bck_cache_file,'w'))
+        f = open(bck_cache_file, 'wb')
         #pickle.dump(ranking_map,f,encoding="utf-8")
         pickle.dump(ranking_map,f)
         logging.debug('Done')
@@ -406,8 +410,8 @@ Keys = 'DC', 'DR', 'DRDC', 'TokenDRDC', 'IDF', 'TFIDF', 'TokenIDF', 'Entropy', '
     def rankTermsFromPrevious(self, measure='DRDC'):
         """Score the RDG, return list of (word, rank) tuples"""
         # we only need the sum for the general class
-        #self.rankingmap = pickle.load(open('ranking.pkl','r'))
-        f = open('ranking.pkl', 'rb')
+        #self.rankingmap = pickle.load(open(bck_cache_file,'r'))
+        f = open(bck_cache_file, 'rb')
         #self.rankingmap = pickle.load(f, encoding="utf-8")
         self.rankingmap = pickle.load(f)
         ranking = [] # this ranking is a local array, not the cached

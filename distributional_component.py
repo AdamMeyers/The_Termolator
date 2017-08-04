@@ -10,8 +10,9 @@ MAX_LEN = 50
 rank_from_previous=False
 
 def __main__(args):
+    """Input an RDG (and background) and other parameters, output a terms list"""
     global rank_from_previous
-    """Input an RDG (and background), output a terms list"""
+    global background_cache_file
     logging.basicConfig(level=LEVEL)
     working_dir = '.'
     overwrite = True
@@ -24,8 +25,19 @@ def __main__(args):
         # test if the folder is real
         if not os.path.isfile(rdgfolder):
             raise
+        outfile = args[3]
+        background_cache_file = args[4]
+        if background_cache_file.lower() == 'false':
+            background_cache_file = 'ranking.pkl'
+        if rank_from_previous and not(os.path.isfile(background_cache_file)):
+            exception_string = background_cache_file + ' does not exist.\n'
+            exception_string += 'Please rerun the system. If you choose the "rank from previous" option, \n'
+            exception_string += 'you must choose an existing cached background file. When you rerun,'
+            exception_string += 'you may not need to preprocess the foreground on the next run.'
+            print(exception_string)
+            raise Exception('Exiting')
         # Optional arguments:
-        i = 3
+        i = 5
         while i < len(args):
             # Optionally set measure
             if args[i] == '-m':
@@ -56,7 +68,7 @@ def __main__(args):
                 # Optionally set reference folder:
                 reffolder = args[i]
                 # test if the folder is real
-                if not os.path.isfile(reffolder):
+                if (not os.path.isfile(reffolder)) and (not rank_from_previous):
                     raise
                 i += 1
         # default measure to 'Weighted'
@@ -69,7 +81,8 @@ def __main__(args):
         exit(-1)
     # log parameters
     logging.info('RDG Folder: '+rdgfolder)
-    if 'reffolder' in locals():
+    if ('reffolder' in locals()) and (not rank_from_previous):
+        ## if 'reffolder' in locals():
         logging.info('Reference Folder: '+reffolder)
     else:
         logging.info('Reference Folder: None')
@@ -84,7 +97,8 @@ def __main__(args):
     #logging.error("LOCLS:" + str(locals()))
     try:
         if 'reffolder' in locals():
-            metric = Metric(rdgfolder, reffolder, working_dir = working_dir,overwrite=overwrite) # reference files given
+            ## if not rank_from_previous:
+            metric = Metric(rdgfolder, reffolder, working_dir = working_dir,overwrite=overwrite,rank_from_previous=rank_from_previous,background_cache_file=background_cache_file) # reference files given
             # Get rankings
             logging.debug('Ranking terms...')
             if 'testfile' in locals():
@@ -95,10 +109,12 @@ def __main__(args):
                 else:
                     ranking = metric.rankTerms(measure)
             try:
-                for i in range(len(ranking)):
-                    if (len(ranking[i][0]) > MAX_LEN):
-                        continue
-                    sys.stdout.write(ranking[i][0]+'\t'+str(ranking[i][1])+'\n')
+                with open(outfile,'w') as outstream:
+                    for i in range(len(ranking)):
+                        if (len(ranking[i][0]) > MAX_LEN):
+                            continue
+                    ## sys.stdout.write(ranking[i][0]+'\t'+str(ranking[i][1])+'\n')
+                        outstream.write(ranking[i][0]+'\t'+str(ranking[i][1])+'\n')
             except IOError as e:
                 if e.errno == errno.EPIPE: #no longer printing to stdout
                     return

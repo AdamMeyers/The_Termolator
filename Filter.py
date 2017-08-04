@@ -90,7 +90,7 @@ def removeStops(string): #NOT NEEDED AS NP EXTRACTING REMOVES THEM
 def bad_unicode(string):
     for char in string:
         if ord(char)>127:
-            print(char)
+            ## print(char)
             return(True) 
             
 def remove_non_unicode(string):

@@ -26,6 +26,7 @@ basic_yahoo_search_url_prefix = '''https://search.yahoo.com/search?p='''
 basic_bing_search_url_prefix = '''https://search.yahoo.com/search?q='''
 ## basic_google_search_url_prefix = '''https://www.google.com/search?q='''
 webscore_dict = {}
+webscore_supp_dict = {}
 
 def load_web_score_dict_file(dict_file):
     webscore_dict.clear()
@@ -39,10 +40,10 @@ def load_web_score_dict_file(dict_file):
         print(dict_file,'does not exist. Will be created')
 
 def write_webscore_dictionary(dict_file):
-    if len(webscore_dict)>0:
-        with open(dict_file,'w') as outstream:
-            for term in webscore_dict:
-                outstream.write(term+'\t'+str(webscore_dict[term])+'\n')
+    if len(webscore_supp_dict)>0:
+        with open(dict_file,'a') as outstream:
+            for term in webscore_supp_dict:
+                outstream.write(term+'\t'+str(webscore_supp_dict[term])+'\n')
 
 def replace_spaces_with_plus (term):
     return(term.replace(' ','+'))
@@ -285,8 +286,8 @@ def webscore_one_term(term,debug=False,use_web_score_dict=False):
     if score == 'unscored':
         print('unscored:',term)
         if use_web_score_dict:
-            webscore_dict[term] = 0
+            webscore_supp_dict[term] = 0
         return(0)
     if use_web_score_dict:
-        webscore_dict[term] = score
+        webscore_supp_dict[term] = score
     return(score)

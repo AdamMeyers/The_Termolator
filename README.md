@@ -6,17 +6,19 @@ Meyers, Yifan He, Zachary Glass and Shasha Liao and released in July,
 The Termolator Program 0.2 is also licensed under the Apache license
 2.0 (http://www.apache.org/licenses/LICENSE-2.0). It is a revision of
 the original program. It was revised by Adam Meyers, John Ortega and
-Vlad Tyshkevich. The main changes are: (i) bug fixes; (ii) The
-new version uses Python 3 exclusively -- the Python 2 portions of the
+Vlad Tyshkevich. The main changes are: (i) bug fixes; (ii) The new
+version uses Python 3 exclusively -- the Python 2 portions of the
 original code have all been changed; (iii) additional features have
-been added so the program will work better with legal text; (iv) changes
-to the abbreviation program intended to improve precision and (v)
+been added so the program will work better with legal text; (iv)
+changes to the abbreviation program intended to improve precision, (v)
 the capability to store web search based scores and look them up on
-subsequent runs rather than recalculating them.
+subsequent runs rather than recalculating them; and (vi) a caching
+feature has been added to make runs with different foregrounds, but
+the same background file more efficient.
 
 The Termolator takes two sets of documents as input a FOREGROUND set
 and a BACKGROUND set and finds instances of terminology that are more
-characteristic of the FOREGROUND than the background.  Input files can
+characteristic of the FOREGROUND than the BACKGROUND.  Input files can
 be either .txt, .html or .xml (the latter only working if it uses HTML
 style markup to delimit text). UTF-8 encoding (which includes ASCII)
 is preferred, but ISO-8859-1 will work as well.
@@ -54,7 +56,9 @@ The arguments are defined as follows:
    Argument 2 (BACKGROUND) = a file listing the documents in the background set
    Argument 3 (EXTENSION) = the extension of input files
    Argument 4 (OUTPUT_NAME) = name of output file (without extension)
-   Argument 5 (TRUE-OR-FALSE) = True or False (do background files need to be processed)
+   Argument 5 (TRUE-OR-FALSE) = True or False (do background files need to be processed?)
+   	      If False, stored background cache will be loaded (see Argument 13).
+	      If True, background information will be stored as a cache file (see Argument 13).
    Argument 6 (TRUE-OR-FALSE) = True if you want the system to use the relevance 
    	      	score for determining rankings and False otherwise.
    Argument 7 Maximum Number of Terms Considered (suggested = 30000)
@@ -68,8 +72,9 @@ The arguments are defined as follows:
 	       "false" as a value. If you add the legal topic, a dictionary of legal terms will
 	       be downloaded and some specialized rules will be invoked for abbreviations. Other
 	       topic specific features may be added in the future.
-   Argument 11 If True, skip preprocessing for Foreground. This only comes in useful if you want to
-   	       run the same Foreground with different backgrounds. So usually, this field should just
+   Argument 11 If True, skip preprocessing for Foreground. This comes in useful if you want to
+   	       run the same Foreground with different backgrounds or if for any reason, you have
+	       already preprocessed the foreground file. So usually, this field should just
 	       contain "False".
    Argument 12 The name of the webscore file or "False". If this value is False and you Argument 6 is True,
    	       a dictionary of webscore results are stored in a file that combines $4 with a file type of
@@ -77,18 +82,26 @@ The arguments are defined as follows:
 	       to store the webscore. The latter option enables one to reuse the webscores from previous runs
 	       and can save considerable time in calculating this score. Each Yahoo websearch used to calculate
 	       this score takes about .75 seconds. Caching these values may make Yahoo searches less frequent.
+   Argument 13 The name of the background cache file associated with Argument 5. If you list False as the background
+               file, a default name (ranking.pkl) will be used (info will be saved to or loaded from this file). It
+	       is suggested that you use the .pkl file type, since this is a Python pickle file.
 
 IMPORTANT PATH INFORMATION: If FOREGROUND and BACKGROUND files contain absolute paths, this command will work from anywhere.  Otherwise, you should run from the directory containing FOREGROUND and BACKGROUND. We will call this the DATA_DIRECTORY.  The files listed in FOREGROUND andBACKGROUND should be paths relative to the DATA_DIRECTORY.
 
-To test the program, we suggest going to one of our 3 test directories and running the command from there. Note that we will shorly 
-be adding a corpus of court decisions, for which the legal topic features are useful. We have not yet tested whether these same features
-are useful for the patent directory provided here.
+To test the program, we suggest going to one of our 3 test directories and running the command from there. Note that 
+we will shorly be adding a corpus of court decisions, for which the legal topic features are useful. We have not 
+yet tested whether these same features are useful for the patent directory provided here.
 
    a) subdirectory: gutenberg-test
-      command:      $TERMOLATOR/run_termolator.sh foreground.list background.list .htm knitting True True 30000 5000 $TERMOLATOR False False False
+      command:      $TERMOLATOR/run_termolator.sh foreground.list background.list .htm knitting False True 30000 5000 $TERMOLATOR False False False gutenberg.pkl
       
       -- The "True" setting in field 6 will make this run take an extra 10 minutes to run about 600 
-       	 web searches, but the results are more accurate as a result.
+       	 web searches, but the results are more accurate as a result. 
+
+      -- After this run, the background statistics will be stored in gutenberg.pkl. Thus, for a 
+      	 second run, possibly with a different foreground, setting the fifth parameter to True
+         will make run time be somewhat faster, especially if the sixth parameter is set to False and
+	 the websearch score is not used.
 
       -- These texts are taken from the English portion of Project Gutenberg, a repository of public 
       	 domain texts. The FOREGROUND is a set of chapters of "The Project Gutenberg eBook of Encyclopedia 
@@ -97,7 +110,7 @@ are useful for the patent directory provided here.
 	 For more information of Project Gutenberg, go to: https://www.gutenberg.org/
 
    b) subdirectory: OANC-test
-      command:      $TERMOLATOR/run_termolator.sh foreground.list background.list .txt biology True False 30000 5000 $TERMOLATOR False False False
+      command:      $TERMOLATOR/run_termolator.sh foreground.list background.list .txt biology True False 30000 5000 $TERMOLATOR False False False OANC.pkl
 
       -- This run will be faster than the previous run per term generated. If the False in field in field 6 is 
       	 replaced by True, the system will take an extra 3 hours (about 1 second for each of 10,000 terms),
@@ -109,7 +122,7 @@ are useful for the patent directory provided here.
 	 are all about biology. For more information about the OANC, go to: http://www.anc.org/data/oanc/
 
    c) subdirectory: patent-test
-      command:	    $TERMOLATOR/run_termolator.sh foreground.list background.list .XML surgery True False 30000 5000 $TERMOLATOR False False False
+      command:	  $TERMOLATOR/run_termolator.sh foreground.list background.list .XML surgery True False 30000 5000 $TERMOLATOR False False False patent.pk  
 
       -- This run should generate about 4700 terms. If False in field 6 is changed to True, it will take an additional 
       	 1.5 hours, but  achieve better results.
@@ -208,10 +221,12 @@ background files point to files that have been processed). We have
 found that preprocessing takes about 120 megabytes per hour on our
 current PCs (2.53 ghz Xenon) or 3 hours for 360 megabytes (5000
 patents). Assuming that the foreground and background corpora are
-approximately the same size, we estimate that foreground corpora it
-will take about 6 hours to do preprocessing on both.  The
-distributional processing will take about 11 hours for files of this
-size.
+approximately the same size, we estimate that foreground corpora will
+take about 6 hours to do preprocessing on both.  The distributional
+processing will take about 11 hours for files of this size. Note that
+the distributional processing will be shorter (we have not measured
+this yet) if you are running on a previously processed background
+corpus and use the associated cache (.pkl) file.
 
 Thirdly, as we have already demonstrated, use of the Relevance score
 as determined by Arguments 6 and 7 effect total processing time.  Each
@@ -222,15 +237,15 @@ to the minimum of: a) 30% of the terms produced by the previous stage
 (these tend to be higher quality) and b) 30K terms (we assume it is
 not worth it to wait longer than this for the results). When run on
 5000 foreground and background files, the system typically ends up
-generating relevance scores for 20-30K terms. Also variable $4 is used
-to create a dictionary of Relevance Scores for particular terms. If
-you call the program a second time with the same $4 value, this
-dictionary will be loaded and relevance scores in for terms in the
-dictionary will be looked up rather than calculated. This can speed up
-run time significantly. It is of course possible to change the way the
-system is run to store all relevance scores in one central
-dictionary. We have not provided a script for this, but it is fairly
-straight-forward to do.
+generating relevance scores for 20-30K terms. Also the system will
+create a dictionary of Relevance Scores for terms. You can keep one
+such dictionary for all runs of termolator and send it to Termolator
+via Argument 12. Each run will update this dictionary of Relevance
+scores and prevent terms from being web-searched more than
+once. Alternatively, if you set Argument 12 to False, variable $4 will
+be used to create a dictionary of Relevance scores called
+$4.outputweb.score. Either way, re-using relevance scores can result
+in a significant speed-up.
 
 In summary, the example described here would take about 24 hours to
 run. However, the following factors could lead to substantially
@@ -245,13 +260,15 @@ a dictionary.
       the way search results are printed out, this can result in the 
       system not working. In particular, the function "get_top_ten" in
       webscore.py may need to be changed to reflect such future changes.
-   C) If extensive use is made of the system, Yahoo! may ban you from using
-      their search engine. We have used 40K or so searches at a time and not had
-      this happen. However, if it did, a different way of accessing the
-      search engine would be necessary and the setting up of a Yahoo
-      account would be needed. It would cost approximately .08 cents
-      per search through https://yboss.yahooapis.com/ysearch/web
-      and further adjustments to the code would be required to make this work.
+   C) If extensive use is made of the system, Yahoo! may ban you from
+      using their search engine for a time. We have used 40K or so
+      searches at a time and not had this happen. However, if it did,
+      a different way of accessing the search engine would be
+      necessary and the setting up of a Yahoo account would be
+      needed. Last time we checked, it would cost approximately .08
+      cents per search through https://yboss.yahooapis.com/ysearch/web
+      and further adjustments to the code would be required to make
+      this work.
       
 8) Known Issues with the POS tagger. We currently assume a maximum
    file size of 500000 bytes. This can be changed by editing the
@@ -275,6 +292,5 @@ a dictionary.
       	if word.endswith("ied"):
 	   UnicodeDecodeError: 'ascii' codec can't decode byte 0xc2 in position 7: ordinal not in range(128)
 
-  Once again, we have not tested the all-python-3 version to know whether or not
-  this is still an issue.
+  Once again, we have not seen this error yet with the current all-python-3 version.
 
