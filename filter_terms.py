@@ -898,6 +898,7 @@ def filter_terms (infile, \
                   outfile,\
                   abbr_full_file,\
                   full_abbr_file, \
+                  abbr_files = False, \
                   use_web_score = True, \
                   ranking_pref_cutoff = .001, \
                   percent_cutoff=.3, \
@@ -908,7 +909,11 @@ def filter_terms (infile, \
                   ):
     ## it is possible that some people may want to allow NPs as well as noun groups as terms
     if abbr_full_file and full_abbr_file:
-        read_in_abbrev_dicts_from_files(abbr_full_file,full_abbr_file)
+        if os.path.isfile(abbr_full_file) and os.path.isfile(full_abbr_file):
+            read_in_abbrev_dicts_from_files(abbr_full_file,full_abbr_file)
+        elif abbr_files:
+            make_abbr_dicts_from_abbr(abbr_files,full_abbr_file,abbr_full_file)
+            ## this creates abbr dicts and loads them
     if use_web_score and web_score_dict_file:
         load_web_score_dict_file(web_score_dict_file)
         use_web_score_dict = True
@@ -956,7 +961,10 @@ def filter_terms (infile, \
     output.sort()
     output.reverse()
     confidence_position = min(round(len(output)*percent_cutoff),numeric_cutoff)
-    confidence_cutoff = output[confidence_position][0]
+    if len(output)>0:
+        confidence_cutoff = output[confidence_position][0]
+    else:
+        confidence_cutoff = 0
     no_more_good_ones = False
     for out in output:
         confidence,term,keep,classification,rating,well_formedness_score,rank_score = out

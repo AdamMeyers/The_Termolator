@@ -637,12 +637,12 @@ def get_topic_terms(text,offset,filter_off=False):
                 if result[4]:
                     ARG2_start = paren_pat.start(2)+offset
                     ARG2_end = ARG2_start+len(abbreviation)-1
-                    if filter_off or (topic_term_ok_boolean([result[2]],'NOUN_OOV',result[2]) and topic_term_ok_boolean([abbreviation[1:]],'NOUN_OOV',abbreviation[1:])):
+                    if filter_off or (topic_term_ok_boolean([result[2]],['NOUN_OOV'],result[2]) and topic_term_ok_boolean([abbreviation[1:]],'NOUN_OOV',abbreviation[1:])):
                         topic_terms.extend([[ARG1_start,ARG1_end,result[2]],[ARG2_start,ARG2_end,abbreviation[1:]]])
                 else:
                     ARG2_start = paren_pat.start(2)+offset
                     ARG2_end = ARG2_start+len(abbreviation)
-                    if filter_off or (topic_term_ok_boolean([result[2]],'NOUN_OOV',result[2]) and topic_term_ok_boolean([abbreviation],'NOUN_OOV',abbreviation)):
+                    if filter_off or (topic_term_ok_boolean([result[2]],['NOUN_OOV'],result[2]) and topic_term_ok_boolean([abbreviation],'NOUN_OOV',abbreviation)):
                         topic_terms.extend([[ARG1_start,ARG1_end,result[2]],[ARG2_start,ARG2_end,abbreviation]])
                 pieces.append([start,text[start:paren_pat.start()]])
                 if txt_markup_match and (txt_markup_match.start()>start) and (txt_markup_match.end()<paren_pat.end()):

@@ -35,7 +35,7 @@ echo "max number of terms? $7"
 echo "keep terms? $8"
 echo "termolator path $9"
 echo "dedicated webscore file ${12}"
-echo "use previous saved pickel file for terms ${13}"
+echo "use previous saved pickle file for terms ${13}"
 
 ## Step 1: Finding inline terms for foreground files
 echo "Running Step 1: finding inline terms for foreground files"
@@ -50,6 +50,7 @@ if [ "${11}" = "False" ]; then
     $TERMOLATOR/make_io_file.py $1 $4.internal_pos_terms_abbr_list .pos .terms .abbr
 fi
 
+$TERMOLATOR/make_io_file.py $1 $4.internal_abbr_list .abbr
 $TERMOLATOR/make_io_file.py $1 $4.internal_foreground_tchunk_list .tchunk
 $TERMOLATOR/make_io_file.py $2 $4.internal_background_tchunk_list .tchunk
 
@@ -107,10 +108,10 @@ fi
 
 if [ "${12}" = "False" ]; then
    echo "calling filter_term_output.py with filter_term_output.py $4 $4.outputweb.score $6 $7 ${10}"
-   $TERMOLATOR/filter_term_output.py $4 $4.outputweb.score $6 $7 ${10}
+   $TERMOLATOR/filter_term_output.py $4 $4.outputweb.score $6 $7 $4.internal_abbr_list ${10}
 else
    echo "calling filter_term_output.py with filter_term_output.py $4 ${12} $6 $7 ${10}"
-   $TERMOLATOR/filter_term_output.py $4 ${12} $6 $7 ${10}
+   $TERMOLATOR/filter_term_output.py $4 ${12} $6 $7 $4.internal_abbr_list ${10}
 fi
 
 echo "Final terms can be found in $4.out_term_list from the scored file in $4.scored_output"
@@ -119,5 +120,5 @@ head -$8 $4.scored_output | cut -f 1 > $4.out_term_list
 echo "Cleaning up files"
 rm -f $4.internal_prefix_list $4.internal_pos_list $4.internal_txt_fact_list $4.internal_fact_pos_list
 rm -f $4.internal_txt_fact_pos_list $4.internal_pos_terms_abbr_list $4.internal_foreground_tchunk_list
-rm -f $4.internal_background_tchunk_list 
+rm -f $4.internal_background_tchunk_list $4.internal_abbr_list
 
