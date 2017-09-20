@@ -70,7 +70,7 @@ US
 
 
 
-BOYLE FREDRICKSON NEWHOLM STEIN &#x26; GRATZ, S.C.
+BOYLE FREDRICKSON NEWHOLM STEIN        GRATZ, S.C.
 
 250 E. WISCONSIN AVENUE
 SUITE 1030
@@ -117,7 +117,7 @@ BACKGROUND OF THE INVENTION
  1. Field of the Invention 
  This invention relates generally to multimode engines capable of operating in multiple fueling modes, and, more particularly, relates to a method and apparatus for transitioning between fueling modes in such an engine so as to reduce engine speed fluctuations and/or other undesired responses to such transitions. 
  2. Discussion of the Related Art 
- So-called &#x201c;multimode&#x201d; engines are capable of operating in multiple fueling modes in that they are powered by different fuels or combinations of fuels depending, e.g., on the prevailing engine speed and load conditions. For example, a dual fuel engine can typically operate in two modes, namely, a &#x201c;diesel mode&#x201d; and a &#x201c;pilot ignited gaseous fuel mode.&#x201d; In the diesel mode, the engine is fueled solely by a liquid fuel, typically diesel fuel. In the pilot ignited gaseous fuel mode, the engine is fueled primarily by a gaseous fuel, such as natural gas or propane, which is ignited by a relatively small quantity or &#x201c;pilot&#x201d; charge of a liquid fuel, typically diesel fuel or engine lube oil. 
+ So-called         multimode         engines are capable of operating in multiple fueling modes in that they are powered by different fuels or combinations of fuels depending, e.g., on the prevailing engine speed and load conditions. For example, a dual fuel engine can typically operate in two modes, namely, a         diesel mode         and a         pilot ignited gaseous fuel mode.         In the diesel mode, the engine is fueled solely by a liquid fuel, typically diesel fuel. In the pilot ignited gaseous fuel mode, the engine is fueled primarily by a gaseous fuel, such as natural gas or propane, which is ignited by a relatively small quantity or         pilot         charge of a liquid fuel, typically diesel fuel or engine lube oil. 
  Depending upon the particular engine utilized, there are typically at least two transition points within the operating range of a dual fuel engine. Specifically, the typical engine is operated in pilot ignited gaseous fuel mode except at the condition that the excess air ratio (lambda) does not permit, such as, (1) very light load under all engine speeds and, (2) at high load, low speed conditions. The transition historically was triggered and controlled based solely as a function of speed and/or load without attempting to achieve a smooth transition. This relatively uncontrolled transition could lead to undesired speed fluctuations. For example, in a prior art dual fuel system, as the vehicle is driving up a hill while operating in pilot ignited gaseous fuel mode, the vehicle's engine speed may lug down sufficiently to trigger a changeover to diesel mode. An uncontrolled rapid switchover to diesel may cause a power surge and a resultant increase in vehicle speed back above the pilot ignited gaseous fuel transition speed for the prevailing load, whereupon the engine switches back to pilot ignited gaseous fuel mode and experiences a power drop. As a result, the vehicle speed may again drop below the transition speed with a resultant switchover to diesel mode. Hence, the engine may switch frequently and repeatedly between operating modes, resulting in noticeable speed surges and droops. 
  Some prior systems have recognized the problem identified above and have attempted to address it by taking the total energy content of the fuel(s) into account during the transition in an attempt avoid power surges and droops. For instance, U.S. Pat. No. 6,101,986 to Brown (the Brown patent) controls the delivery of diesel and gaseous fuel to the engine during transition between the pilot ignited gaseous fuel mode and the diesel mode to maintain the energy content of combined fuel charge at the desired value of the diesel fuel charge supplied at the end of the transition period. As a result, the quantity of diesel fuel progressively increases during the transition period, while the quantity of gaseous fuel progressively decreases. The process is repeated in a cycle-by-cycle basis until the actual diesel fuel quantity equals the desired quantity for diesel only operation, at which point the transition is considered complete. 
  U.S. Published Patent Application Serial No. 2002/07816 to Zur Loye similarly discloses a method for controlling a homogenous charge dual fuel engine to switch between diesel only mode and pilot ignited gaseous fuel mode while keeping the total fuel energy content constant. 
@@ -142,14 +142,14 @@ DETAILED DESCRIPTION OF THE PREFERRED EMBODIMENTS
  Referring to FIG. 1, a dual fuel engine 20 to which the invention is applicable includes a number of cylinders 22 (only one of which is shown), an intake system 24 supplying an air/EGR combustion mixture to the cylinders 22, an exhaust system 26, a fueling system 28, an EGR system 30, and other components (not shown) commonly found on a compression ignition engine such as intake and exhaust valves. The intake system 24 comprises an air intake manifold 32 having a split outlet connected to the various cylinders 22 and an inlet connected to an air filter 34 by an intake passage 36. The exhaust system 26 comprises an exhaust manifold 38 having a split inlet coupled to the various cylinders and an outlet coupled to an exhaust passage 40 having an oxidation catalyst 42 thereon for catalytically reducing the exhaust gas before exhausting them to the atmosphere. The illustrated engine 20 is a turbocharged engine having a compressor 44 located in air intake passage 36 upstream of the intake manifold 32 and a turbine 46 located in the exhaust passage 40 downstream of the exhaust manifold 38. A controllable turbo air bypass (TAB) valve 50 is also provided in the air intake system 24 for further treating and/or controlling the flow of compressed air to the airflow intake manifold 32. The TAB valve 50 is located in a TAB line 51 bypassing the compressor 44. 
  The EGR system 30 of this embodiment is configured to recirculate a portion of the exhaust gases through an EGR line 58 having an inlet in fluid communication with an outlet of the turbine 46 and an outlet in fluid communication with the intake passage 36 upstream of the compressor 44. The EGR system 30 includes, from upstream to downstream end, a diesel particulate trap 52, an EGR cooler 54, an EGR valve 56, and an EGR filter 57, all located in the EGR line 58. The outlet of the EGR line 58 discharges into the EGR inlet of a venturi 60 that is disposed in the intake passage 36 upstream of the compressor inlet. The venturi 60 also has a fresh air inlet that receives ambient air from the air filter 34 and a mixture outlet that discharges the air/EGR mixture to the compressor inlet. 
  The fueling system 28 includes an electronically controllable gaseous fuel source 62 and a separately electronically controllable diesel fuel source 64. The gaseous fuel source 62 may be configured to supply gaseous fuel to each cylinder 22 of the engine 20 either in the form of a premixed charge or via high pressure direct injection (HPDI). If it is configured to supply a premixed charge, the gaseous fuel source 62 may comprise a tank that stores compressed natural gas (CNG) or liquefied natural gas (LNG), one or more shut off valves, and either a single metering valve discharging into a single throttle body at the entrance of the engine's air intake manifold 32 or a separate injector provided for each cylinder's supply passage or each cylinder's intake port. If it is configured for HPDI, the gaseous fuel supply source 62 will be configured to inject natural gas directly into each cylinder 22 using one or more dedicated high pressure injectors. 
- The diesel fuel source 64 may supply any liquid fuel capable of auto ignition in the traditional &#x201c;diesel&#x201d; cycle. It may comprise either a &#x201c;single point&#x201d; system that injects fuel from a single injector into the engine's air intake manifold 32 or a &#x201c;multi point&#x201d; system that injects fuel directly into each cylinder 22 or into each cylinder's air intake passage. In either case, the diesel injector(s) each comprise an electronically controlled injector supplied with diesel fuel or the like from a conventional tank and a supply line. Fuel is typically directed to the injector(s) from the tank via a filter, a pump, a high pressure relief valve, and a pressure regulator, none of which are shown. 
+ The diesel fuel source 64 may supply any liquid fuel capable of auto ignition in the traditional         diesel         cycle. It may comprise either a         single point         system that injects fuel from a single injector into the engine's air intake manifold 32 or a         multi point         system that injects fuel directly into each cylinder 22 or into each cylinder's air intake passage. In either case, the diesel injector(s) each comprise an electronically controlled injector supplied with diesel fuel or the like from a conventional tank and a supply line. Fuel is typically directed to the injector(s) from the tank via a filter, a pump, a high pressure relief valve, and a pressure regulator, none of which are shown. 
  A controller 66 is also provided for controlling operation of the fuel sources 62 and 64, the TAB valve 50, the EGR valve 56, and possibly other components of the engine. The controller 66 receives signals indicative of O2 concentration in the intake mixture, intake mixture temperature or air charge temperature (ACT), intake mixture pressure or manifold absolute pressure (MAP), speed, load, and possibly additional data. 
  MAP is monitored by a sensor located in or near the intake manifold. The MAP sensor may be part of a block or module 68 that also measures ACT at the same location. O2 concentration indicative data may be supplied by an O2 concentration sensor 70 located in the intake passage 36 at the compressor inlet. Crank angle, speed, load, and any other data desired for combustion control is supplied via known sensors, collectively denoted 72 in FIG. 1. 
  The controller 66 can control the TAB valve 50, the EGR valve 56, and/or the fuel sources 62 and 64 based on the monitored and calculated parameters so as to optimize performance characteristics such as NOx reduction, HC reduction, and condensation prevention. The control preferably is implemented on a cylinder-by-cylinder, cycle-by-cycle basis. 
  Controller 66 also ascertains actual lambda, preferably on a cylinder-by-cylinder and cycle-by-cycle basis. Lambda may be ascertained mathematically from a calibrated fuel flow together with a determination of air flow using a speed density calculation using input from one or more of the sensors 68, 70, and 72 and/or may be measured somewhat more directly using a lambda sensor (not shown) in the exhaust stream. 
  The dual fuel engine 20 of this embodiment is also configured to switch between operating modes automatically with changes in speed and load conditions. 
  The engine 20 is preferably configured so as to operate in the pilot ignited gaseous fuel mode during as much of its speed/load range as practical. It is therefore desirable to have two speed-dependent transition points for a given vehicle load (at least at low speeds), with the engine being operated in pilot ignited gaseous fuel mode except under 1) low speed and high load conditions, and 2) light load and all speed conditions. Diesel operation is desired under low speed/high load conditions, as may be present when the engine speed lugs down when a loaded vehicle climbs a hill, because the engine's turbocharger may no longer be capable supplying sufficient turbo boost air at the reduced speed to produce an optimal pilot ignited premixed natural gas combustion at the desired relatively rich lambda of, e.g., 1.5. Diesel operation is also desired at low loads under all speed conditions in order to prevent lambda from exceeding the lean limit for premixed natural gas. The speed and load conditions under which transition between operating modes takes place may vary depending upon engine design. They will preferably be selected from a map stored in the controller 66. For instance, referring to FIG. 2, curves 80 and 82 illustrate the upper and lower transition lines over the entire speed/load range of a six cylinder engine to which the invention is applicable. Such an engine operates in pilot ignited gaseous fuel mode over most of its range, between curves 80 and 82 as indicated in FIG. 2. While operating in pilot ignited gaseous fuel mode, there will be some speed and load conditions under which the optimal gas lambda may not be achievable in an unthrottled engine. A skip fire strategy therefore is preferably employed to optimize lambda for the prevailing engine operations when the engine is operating in pilot ignited gaseous fuel mode. A suitable strategy for optimizing lambda through skip fire is disclosed in U.S. Pat. No. 5,553,575, the subject matter of which is hereby incorporated by reference. The speed/load range through which skip fire is employed in the illustrated embodiment is bordered by curves 84 and 82 in FIG. 2. 
- Conventional dual fuel engines do not adequately take the primary fuel lambda, i.e., gas lambda in pilot ignited gaseous fuel mode and diesel lambda in diesel mode, into account during transition. They therefore do not always achieve a smooth transition between operating modes. For instance, conventional dual fuel engines always operate the engine at a relatively high gas lambda (on the order of 1.8) in pilot ignited gaseous fuel mode and do not monitor the diesel lambda in diesel mode. Diesel lambda may be reduced immediately to approximately the diesel smoke limit (typically on the order of lambda 1.3) upon transitioning to diesel only mode. However, as described in more detail in the Background section above, the heightened power and decrease in commanded fuel at the relatively low diesel lambda could result in a premature or undesired switching back to pilot ignited gaseous fuel mode. In order to overcome or avoid these problems, diesel lambda preferably is taken into account during this transition period by controlling fuel delivery to set the diesel lambda at a relatively high value at the beginning of the transition period and thereafter reduce diesel lambda incrementally during the transition period until it reaches a level that is at or slightly above the diesel smoke limit. The initial diesel lambda value at the beginning of the transition period and rate of diesel lambda decrease preferably are set and maintained by maintaining the actual diesel lambda to be at or above a diesel lambda limit, &#x3bb;diesel-limit. The &#x3bb;diesel-limit in turn, is in it at dependent at least in part upon the existing gas lambda, &#x3bb;gas and is thereafter reduced during the remaining of the transition period. A preferred technique for determining &#x3bb;diesel-limit at the beginning of the transition period and for controlling engine operation based on &#x3bb;diesel-limit will be now be described. 
+ Conventional dual fuel engines do not adequately take the primary fuel lambda, i.e., gas lambda in pilot ignited gaseous fuel mode and diesel lambda in diesel mode, into account during transition. They therefore do not always achieve a smooth transition between operating modes. For instance, conventional dual fuel engines always operate the engine at a relatively high gas lambda (on the order of 1.8) in pilot ignited gaseous fuel mode and do not monitor the diesel lambda in diesel mode. Diesel lambda may be reduced immediately to approximately the diesel smoke limit (typically on the order of lambda 1.3) upon transitioning to diesel only mode. However, as described in more detail in the Background section above, the heightened power and decrease in commanded fuel at the relatively low diesel lambda could result in a premature or undesired switching back to pilot ignited gaseous fuel mode. In order to overcome or avoid these problems, diesel lambda preferably is taken into account during this transition period by controlling fuel delivery to set the diesel lambda at a relatively high value at the beginning of the transition period and thereafter reduce diesel lambda incrementally during the transition period until it reaches a level that is at or slightly above the diesel smoke limit. The initial diesel lambda value at the beginning of the transition period and rate of diesel lambda decrease preferably are set and maintained by maintaining the actual diesel lambda to be at or above a diesel lambda limit,        diesel-limit. The        diesel-limit in turn, is in it at dependent at least in part upon the existing gas lambda,        gas and is thereafter reduced during the remaining of the transition period. A preferred technique for determining        diesel-limit at the beginning of the transition period and for controlling engine operation based on        diesel-limit will be now be described. 
  Initially, during transition from pilot ignited gaseous fuel mode, the mass of diesel pilot fuel required to maintain a constant total fuel energy content can be determined on an equivalent total energy basis as follows:  
 
 
@@ -179,7 +179,7 @@ DETAILED DESCRIPTION OF THE PREFERRED EMBODIMENTS
             
               
                 x
-                &#x2061;
+                        
                 
                   (
                   
@@ -200,7 +200,7 @@ DETAILED DESCRIPTION OF THE PREFERRED EMBODIMENTS
                   
                   )
                 
-                &#x2062;
+                        
                 
                   (
                   
@@ -235,7 +235,7 @@ DETAILED DESCRIPTION OF THE PREFERRED EMBODIMENTS
  x=the pilot diesel mass fraction. 
  Under these conditions: 
 
-Qdiesel-equ=HVR&#xd7;QDF&#x2003;&#x2003;(2) 
+Qdiesel-equ=HVR      QDF                (2) 
 
  where: 
 
@@ -245,12 +245,12 @@ Qdiesel-equ=HVR&#xd7;QDF&#x2003;&#x2003;(2)
  LHVdiesel=18272 Btu/lb, 
  LHVgas=20440 Btu/lb, 
  Pilot %=0.10, 
- LHVDF=0.1&#xd7;18272+0.9&#xd7;20440=20223 Btu/lb, and 
+ LHVDF=0.1      18272+0.9      20440=20223 Btu/lb, and 
  HVR=0.9035, then: 
 
-Qdiesel-gas=0.9035&#xd7;QDF&#x2003;&#x2003;(3) 
+Qdiesel-gas=0.9035      QDF                (3) 
 
- &#x3bb;diesel-limit can now be determined as a function of the &#x3bb;gas using the following equations:  
+        diesel-limit can now be determined as a function of the        gas using the following equations:  
 
 
 
@@ -259,7 +259,7 @@ Qdiesel-gas=0.9035&#xd7;QDF&#x2003;&#x2003;(3)
       
         
           
-            &#x3bb;
+                   
             gas
           
           =
@@ -273,7 +273,7 @@ Qdiesel-gas=0.9035&#xd7;QDF&#x2003;&#x2003;(3)
               
                 
                   x
-                  &#x2061;
+                          
                   
                     (
                     
@@ -283,7 +283,7 @@ Qdiesel-gas=0.9035&#xd7;QDF&#x2003;&#x2003;(3)
                     )
                   
                 
-                &#x2062;
+                        
                 
                   (
                   
@@ -304,7 +304,7 @@ Qdiesel-gas=0.9035&#xd7;QDF&#x2003;&#x2003;(3)
                 
                 )
               
-              &#x2062;
+                      
               
                 (
                 
@@ -313,7 +313,7 @@ Qdiesel-gas=0.9035&#xd7;QDF&#x2003;&#x2003;(3)
                 
                 )
               
-              &#x2062;
+                      
               
                 (
                 
@@ -325,15 +325,15 @@ Qdiesel-gas=0.9035&#xd7;QDF&#x2003;&#x2003;(3)
             
           
         
-        &#x2062;
+                
         
           
 
         
-        &#x2062;
+                
         
           Hence
-          &#x2062;
+                  
           
             :
           
@@ -360,7 +360,7 @@ Qdiesel-gas=0.9035&#xd7;QDF&#x2003;&#x2003;(3)
           
             
               x
-              &#x2061;
+                      
               
                 (
                 
@@ -370,7 +370,7 @@ Qdiesel-gas=0.9035&#xd7;QDF&#x2003;&#x2003;(3)
                 )
               
             
-            &#x2062;
+                    
             
               (
               
@@ -384,10 +384,10 @@ Qdiesel-gas=0.9035&#xd7;QDF&#x2003;&#x2003;(3)
           
             
               
-                &#x3bb;
+                       
                 gas
               
-              &#x2061;
+                      
               
                 (
                 
@@ -398,7 +398,7 @@ Qdiesel-gas=0.9035&#xd7;QDF&#x2003;&#x2003;(3)
                 )
               
             
-            &#x2062;
+                    
             
               (
               
@@ -407,7 +407,7 @@ Qdiesel-gas=0.9035&#xd7;QDF&#x2003;&#x2003;(3)
               
               )
             
-            &#x2062;
+                    
             
               (
               
@@ -437,11 +437,11 @@ Qdiesel-gas=0.9035&#xd7;QDF&#x2003;&#x2003;(3)
  Massair is the mass of the air charge, 
  SAFRdiesel is the stoichiometric air-fuel ratio of diesel fuel, and 
  SAFRgas is the stoichiometric air-fuel ratio of gaseous fuel. 
- At the instant of transition from dual fuel to diesel operating modes, the air mass remains constant. &#x3bb;diesel-limit can therefore be determined as below, based on equivalent air mass and total fuel energy.  
+ At the instant of transition from dual fuel to diesel operating modes, the air mass remains constant.        diesel-limit can therefore be determined as below, based on equivalent air mass and total fuel energy.  
 
 
 
-  &#x2003;
+          
   
     
       
@@ -450,20 +450,20 @@ Qdiesel-gas=0.9035&#xd7;QDF&#x2003;&#x2003;(3)
             
               
                 
-                  &#x3bb;
+                         
                   
                     diesel
-                    &#x2062;
+                            
                     
                       -
                     
-                    &#x2062;
+                            
                     limit
                   
                 
                 =
                 
-                &#x2062;
+                        
                 
                   
                     Mass
@@ -476,17 +476,17 @@ Qdiesel-gas=0.9035&#xd7;QDF&#x2003;&#x2003;(3)
                         Q
                         
                           diesel
-                          &#x2062;
+                                  
                           
                             -
                           
-                          &#x2062;
+                                  
                           equ
                         
                       
                       )
                     
-                    &#x2062;
+                            
                     
                       (
                       
@@ -505,13 +505,13 @@ Qdiesel-gas=0.9035&#xd7;QDF&#x2003;&#x2003;(3)
               
                 =
                 
-                &#x2062;
+                        
                 
                   
                     
                       
                         x
-                        &#x2061;
+                                
                         
                           (
                           
@@ -521,7 +521,7 @@ Qdiesel-gas=0.9035&#xd7;QDF&#x2003;&#x2003;(3)
                           )
                         
                       
-                      &#x2062;
+                              
                       
                         (
                         
@@ -535,10 +535,10 @@ Qdiesel-gas=0.9035&#xd7;QDF&#x2003;&#x2003;(3)
                     
                       
                         
-                          &#x3bb;
+                                 
                           gas
                         
-                        &#x2061;
+                                
                         
                           (
                           
@@ -549,7 +549,7 @@ Qdiesel-gas=0.9035&#xd7;QDF&#x2003;&#x2003;(3)
                           )
                         
                       
-                      &#x2062;
+                              
                       
                         (
                         
@@ -558,7 +558,7 @@ Qdiesel-gas=0.9035&#xd7;QDF&#x2003;&#x2003;(3)
                         
                         )
                       
-                      &#x2062;
+                              
                       
                         (
                         
@@ -575,14 +575,14 @@ Qdiesel-gas=0.9035&#xd7;QDF&#x2003;&#x2003;(3)
                         Q
                         DF
                       
-                      &#x2061;
+                              
                       
                         (
                         HVR
                         )
                       
                     
-                    &#x2062;
+                            
                     
                       (
                       
@@ -619,14 +619,14 @@ Qdiesel-gas=0.9035&#xd7;QDF&#x2003;&#x2003;(3)
     
       
         
-          &#x3bb;
+                 
           
             diesel
-            &#x2062;
+                    
             
               -
             
-            &#x2062;
+                    
             limit
           
         
@@ -635,7 +635,7 @@ Qdiesel-gas=0.9035&#xd7;QDF&#x2003;&#x2003;(3)
           
             
               x
-              &#x2061;
+                      
               
                 (
                 
@@ -648,10 +648,10 @@ Qdiesel-gas=0.9035&#xd7;QDF&#x2003;&#x2003;(3)
             +
             
               
-                &#x3bb;
+                       
                 gas
               
-              &#x2061;
+                      
               
                 (
                 
@@ -664,7 +664,7 @@ Qdiesel-gas=0.9035&#xd7;QDF&#x2003;&#x2003;(3)
           
           
             HVR
-            &#x2061;
+                    
             
               (
               
@@ -702,14 +702,14 @@ Qdiesel-gas=0.9035&#xd7;QDF&#x2003;&#x2003;(3)
     
       
         
-          &#x3bb;
+                 
           
             diesel
-            &#x2062;
+                    
             
               -
             
-            &#x2062;
+                    
             limit
           
         
@@ -719,22 +719,22 @@ Qdiesel-gas=0.9035&#xd7;QDF&#x2003;&#x2003;(3)
             
               
                 0.1
-                &#xd7;
+                      
                 14.5
               
               +
               
                 16
-                &#xd7;
+                      
                 
-                  &#x3bb;
+                         
                   gas
                 
               
             
             
               0.9035
-              &#xd7;
+                    
               14.5
             
           
@@ -744,11 +744,11 @@ Qdiesel-gas=0.9035&#xd7;QDF&#x2003;&#x2003;(3)
             +
             
               1.22
-              &#x2062;
+                      
               
                 (
                 
-                  &#x3bb;
+                         
                   gas
                 
                 )
@@ -770,17 +770,17 @@ Qdiesel-gas=0.9035&#xd7;QDF&#x2003;&#x2003;(3)
 
 
 
- A preferred technique for controlling engine operation based on the &#x3bb;diesel-limit prevailing at the beginning of the transition period is illustrated in FIG. 3. The technique is implemented via a routine programmed into the controller 66. The routine 100 proceeds from Start in Block 102 to Block 104, where it determines &#x3bb;gas either directly from a sensor or indirectly from other measured values as described above. It sets the &#x3bb;diesel-limit for the prevailing &#x3bb;gas, preferably using Equation (8) above. It then proceeds to Block 106 and sets Qdiesel-equ for the prevailing total fuel quantity (QDF) using Equation (2) above. Then, in Block 108, the routine 100 calculates the actual &#x3bb;diesel, either directly or indirectly from the known Qdiesel and Qair. The routine 100 then proceeds to Block 110 and determines whether &#x3bb;diesel is less than &#x3bb;diesel-limit. If not, the routine 100 proceeds to Block 112, where the controller 66 controls the diesel fuel source 64 to deliver the commanded fuel quantity Qdiesel-equ, at which point transition is considered to be complete, and the routine 100 ends in Block 114. 
- If, on the other hand, the answer to the inquiry of Block 110 is YES, indicating that the transition period is not yet complete, Qdiesel-limit is calculated in Block 116 using the prevailing &#x3bb;diesel-limit, and the diesel fuel source 64 is controlled in Block 118 to deliver the determined diesel quantity Qdiesel-limit. 
- Then, in Block 120, the routine 100 adjusts &#x3bb;diesel-limit downwardly from the initial, relatively high value (typically about 2.0), toward the diesel smoke limit (typically about 1.3) pursuant to a predetermined schedule. The predetermined schedule may be engine speed dependent and/or time dependent. It is preferably engine speed dependent to allow for more diesel fuel delivery when the engine speed is being pulled down by a heavy load, with a resulting decrease in turbo speed and associated decrease in the available air quantity. 
- The routine 100 then returns to Block 108 to update the current diesel lambda and continues to Block 110 to determine that &#x3bb;diesel-actual exceeds &#x3bb;diesel-limit, in which case the routine for 100 proceeds through Blocks 112 and 114 to complete the transition. 
- As indicated above, it is also desirable to keep the transition line (curve 80 shown in FIG. 2) between diesel mode and the pilot ignited gaseous fuel mode at the highest practical load level for a given speed and to permit the engine to switch to pilot ignited natural gaseous fuel mode as soon as feasible as speed increases under heavy load. This goal can be achieved by introducing a gas lambda rich limit and by controlling engine operation to stay in diesel mode only when &#x3bb;gas-actual exceeds a lambda gas &#x3bb;gas-rich-limit Specifically: 
+ A preferred technique for controlling engine operation based on the        diesel-limit prevailing at the beginning of the transition period is illustrated in FIG. 3. The technique is implemented via a routine programmed into the controller 66. The routine 100 proceeds from Start in Block 102 to Block 104, where it determines        gas either directly from a sensor or indirectly from other measured values as described above. It sets the        diesel-limit for the prevailing        gas, preferably using Equation (8) above. It then proceeds to Block 106 and sets Qdiesel-equ for the prevailing total fuel quantity (QDF) using Equation (2) above. Then, in Block 108, the routine 100 calculates the actual        diesel, either directly or indirectly from the known Qdiesel and Qair. The routine 100 then proceeds to Block 110 and determines whether        diesel is less than        diesel-limit. If not, the routine 100 proceeds to Block 112, where the controller 66 controls the diesel fuel source 64 to deliver the commanded fuel quantity Qdiesel-equ, at which point transition is considered to be complete, and the routine 100 ends in Block 114. 
+ If, on the other hand, the answer to the inquiry of Block 110 is YES, indicating that the transition period is not yet complete, Qdiesel-limit is calculated in Block 116 using the prevailing        diesel-limit, and the diesel fuel source 64 is controlled in Block 118 to deliver the determined diesel quantity Qdiesel-limit. 
+ Then, in Block 120, the routine 100 adjusts        diesel-limit downwardly from the initial, relatively high value (typically about 2.0), toward the diesel smoke limit (typically about 1.3) pursuant to a predetermined schedule. The predetermined schedule may be engine speed dependent and/or time dependent. It is preferably engine speed dependent to allow for more diesel fuel delivery when the engine speed is being pulled down by a heavy load, with a resulting decrease in turbo speed and associated decrease in the available air quantity. 
+ The routine 100 then returns to Block 108 to update the current diesel lambda and continues to Block 110 to determine that        diesel-actual exceeds        diesel-limit, in which case the routine for 100 proceeds through Blocks 112 and 114 to complete the transition. 
+ As indicated above, it is also desirable to keep the transition line (curve 80 shown in FIG. 2) between diesel mode and the pilot ignited gaseous fuel mode at the highest practical load level for a given speed and to permit the engine to switch to pilot ignited natural gaseous fuel mode as soon as feasible as speed increases under heavy load. This goal can be achieved by introducing a gas lambda rich limit and by controlling engine operation to stay in diesel mode only when        gas-actual exceeds a lambda gas        gas-rich-limit Specifically: 
  When transitioning from diesel to dual fuel mode, 
- &#x3bb;gas-equ can be derived from Equation (7) and calculated by:  
+        gas-equ can be derived from Equation (7) and calculated by:  
 
 
 
-  &#x2003;
+          
   
     
       
@@ -789,46 +789,46 @@ Qdiesel-gas=0.9035&#xd7;QDF&#x2003;&#x2003;(3)
             
               
                 
-                  &#x3bb;
+                         
                   
                     
-                      &#x2003;
+                              
                     
-                    &#x2062;
+                            
                     
                       gas
-                      &#x2062;
+                              
                       
-                        &#x2003;
+                                
                       
                       -
                       
-                        &#x2003;
+                                
                       
-                      &#x2062;
+                              
                       equ
                     
                   
                 
                 =
                 
-                &#x2062;
+                        
                 
                   
                     
                       
                         
-                          &#x3bb;
+                                 
                           diesel
                         
-                        &#x2061;
+                                
                         
                           (
                           HVR
                           )
                         
                       
-                      &#x2062;
+                              
                       
                         (
                         
@@ -841,7 +841,7 @@ Qdiesel-gas=0.9035&#xd7;QDF&#x2003;&#x2003;(3)
                     -
                     
                       x
-                      &#x2061;
+                              
                       
                         (
                         
@@ -865,19 +865,19 @@ Qdiesel-gas=0.9035&#xd7;QDF&#x2003;&#x2003;(3)
               
                 =
                 
-                &#x2062;
+                        
                 
                   
                     (
                     HVR
                     )
                   
-                  &#x2062;
+                          
                   
                     (
                     
                       
-                        &#x3bb;
+                               
                         diesel
                       
                       -
@@ -885,7 +885,7 @@ Qdiesel-gas=0.9035&#xd7;QDF&#x2003;&#x2003;(3)
                     
                     )
                   
-                  &#x2062;
+                          
                   
                     
                       SAFR
@@ -915,7 +915,7 @@ Qdiesel-gas=0.9035&#xd7;QDF&#x2003;&#x2003;(3)
 
 
 
- When the current &#x3bb;diesel is 2.0 in diesel mode, &#x3bb;gas-equ will be 1.556 in pilot ignited gaseous fuel mode at transition. 
+ When the current        diesel is 2.0 in diesel mode,        gas-equ will be 1.556 in pilot ignited gaseous fuel mode at transition. 
 
  Hence:  
 
@@ -928,11 +928,11 @@ Qdiesel-gas=0.9035&#xd7;QDF&#x2003;&#x2003;(3)
           Q
           
             DF
-            &#x2062;
+                    
             
               -
             
-            &#x2062;
+                    
             equ
           
         
@@ -958,9 +958,9 @@ Qdiesel-gas=0.9035&#xd7;QDF&#x2003;&#x2003;(3)
 
 
 
- The preferred technique for this control is illustrated in FIG. 4, which illustrates a routine 130 that once again is implemented via a program in the controller 66. The routine 130 proceeds from Start in Block 132 to Block 134 where the prevailing &#x3bb;diesel is determined and the &#x3bb;gas-equ is then determined, preferable using Equation (9) above. Then, in Block 136, QDF-equ is set based on the current Qdiesel, preferably using Equation (10) above. &#x3bb;gas-actual is then calculated in Block 138, preferably using Equation (4) above. Then, in Block 140, the routine 130 determines whether &#x3bb;gas-actual is less than a &#x3bb;gas-rich-limit, which is the lowest gas lambda that is acceptable for achieving the desired operating characteristic. For instance, &#x3bb;gas is usually maintained at a value of approximately 1.8. However, at low engine speeds, the turbocharger may not be capable of providing a &#x3bb;gas of 1.8. If &#x3bb;gas drops below an engine dependent minimum value, &#x3bb;gas-rich-limit, the engine may knock. &#x3bb;gas-rich-limit will typically be about 1.5 and is determined empirically based on the prevailing manifold absolute pressure, (MAP), air charge temperature (ACT), and other parameters, if desired. Switching over to diesel mode when &#x3bb;gas-actual drops below &#x3bb;gas-rich-limit will prevent engine from knocking. 
+ The preferred technique for this control is illustrated in FIG. 4, which illustrates a routine 130 that once again is implemented via a program in the controller 66. The routine 130 proceeds from Start in Block 132 to Block 134 where the prevailing        diesel is determined and the        gas-equ is then determined, preferable using Equation (9) above. Then, in Block 136, QDF-equ is set based on the current Qdiesel, preferably using Equation (10) above.        gas-actual is then calculated in Block 138, preferably using Equation (4) above. Then, in Block 140, the routine 130 determines whether        gas-actual is less than a        gas-rich-limit, which is the lowest gas lambda that is acceptable for achieving the desired operating characteristic. For instance,        gas is usually maintained at a value of approximately 1.8. However, at low engine speeds, the turbocharger may not be capable of providing a        gas of 1.8. If        gas drops below an engine dependent minimum value,        gas-rich-limit, the engine may knock.        gas-rich-limit will typically be about 1.5 and is determined empirically based on the prevailing manifold absolute pressure, (MAP), air charge temperature (ACT), and other parameters, if desired. Switching over to diesel mode when        gas-actual drops below        gas-rich-limit will prevent engine from knocking. 
  If the answer to the inquiry of Block 140 is NO, the routine 130 delivers natural gas and pilot fuel in the amount required to obtain the desired total energy fuel content in Block 142, at which point the transition period is considered complete and the routine 130 ends in Block 144. However, if the answer to the inquiry of Block 140 is YES, indicating, e.g., that engine knock is imminent, the engine 20 stays in diesel mode, and the controller 66 controls the diesel fuel source 64 in Block 146 to deliver the diesel fuel quantity Qdiesel required to obtain the desired total fuel energy content. The routine 130 then returns to Block 132, and Blocks 134, 136, 138, 140, and 146 are repeated on a cycle-by-cycle basis for the duration of the transition period. 
- Other engine characteristics could also be controlled during the transition period. For instance, diesel pilot injection timing may be controlled in addition to lambda control. Most engine control system employs two separate diesel injection timing maps, one for diesel mode and the other for pilot ignited gaseous fuel mode. During the transition period, the diesel injection timing often will shift as a new map is selected. These shifts may be dramatic, leading to a noticeable and rapid change in engine performance. The transition can be smoothed by adjusting diesel injection timing incrementally over a number of operating cycles rather than all at once. The size of each increment &#x201c;I&#x201d; may vary with designer preference and a particular engine's sensitivity to changes in ignition timing under the prevailing operating conditions. Pilot diesel injection timing may also be adjusted during the transition from diesel mode to pilot ignited gaseous fuel mode for maintaining constant engine torque. The adjustment of pilot diesel injection timing from the nominal injection timing map is preferably determined empirically based on the actual gas lambda. 
+ Other engine characteristics could also be controlled during the transition period. For instance, diesel pilot injection timing may be controlled in addition to lambda control. Most engine control system employs two separate diesel injection timing maps, one for diesel mode and the other for pilot ignited gaseous fuel mode. During the transition period, the diesel injection timing often will shift as a new map is selected. These shifts may be dramatic, leading to a noticeable and rapid change in engine performance. The transition can be smoothed by adjusting diesel injection timing incrementally over a number of operating cycles rather than all at once. The size of each increment         I         may vary with designer preference and a particular engine's sensitivity to changes in ignition timing under the prevailing operating conditions. Pilot diesel injection timing may also be adjusted during the transition from diesel mode to pilot ignited gaseous fuel mode for maintaining constant engine torque. The adjustment of pilot diesel injection timing from the nominal injection timing map is preferably determined empirically based on the actual gas lambda. 
  To the extent that they might not be apparent from the above, the scope of variations falling within the scope of the present invention will become apparent from the appended claims. 
 
 
@@ -1034,14 +1034,14 @@ adjusting diesel fuel delivery so as to maintain the actual diesel lambda at or 
 
 
   
-    &#x3bb;
+           
     
       diesel
-      &#x2062;
+              
       
         -
       
-      &#x2062;
+              
       limit
     
   
@@ -1050,7 +1050,7 @@ adjusting diesel fuel delivery so as to maintain the actual diesel lambda at or 
     
       
         x
-        &#x2061;
+                
         
           (
           
@@ -1063,10 +1063,10 @@ adjusting diesel fuel delivery so as to maintain the actual diesel lambda at or 
       +
       
         
-          &#x3bb;
+                 
           gas
         
-        &#x2061;
+                
         
           (
           
@@ -1079,7 +1079,7 @@ adjusting diesel fuel delivery so as to maintain the actual diesel lambda at or 
     
     
       HVR
-      &#x2061;
+              
       
         (
         
@@ -1096,7 +1096,7 @@ adjusting diesel fuel delivery so as to maintain the actual diesel lambda at or 
 where: 
 x=the prevailing pilot diesel mass fraction, 
 SAFRdiesel=the stoichiometric air-fuel ratio for the diesel fuel, 
-&#x3bb;gas=the determined actual gas lambda at the beginning of the transition period, 
+       gas=the determined actual gas lambda at the beginning of the transition period, 
 SAFRgas=the stoichiometric air-fuel ratio for the gaseous fuel, and 
 HVR=the prevailing mass ratio of the diesel fuel to the total fuel charge on an equivalent total fuel energy basis. 
 
@@ -1145,14 +1145,14 @@ adjusting ignition timing incrementally over a plurality of engine operating cyc
 
 
   
-    &#x3bb;
+           
     
       diesel
-      &#x2062;
+              
       
         -
       
-      &#x2062;
+              
       limit
     
   
@@ -1161,7 +1161,7 @@ adjusting ignition timing incrementally over a plurality of engine operating cyc
     
       
         x
-        &#x2061;
+                
         
           (
           
@@ -1174,10 +1174,10 @@ adjusting ignition timing incrementally over a plurality of engine operating cyc
       +
       
         
-          &#x3bb;
+                 
           gas
         
-        &#x2061;
+                
         
           (
           
@@ -1190,7 +1190,7 @@ adjusting ignition timing incrementally over a plurality of engine operating cyc
     
     
       HVR
-      &#x2061;
+              
       
         (
         
@@ -1207,7 +1207,7 @@ adjusting ignition timing incrementally over a plurality of engine operating cyc
 where: 
 x=the prevailing diesel fuel mass fraction, 
 SAFRdiesel=the stoichiometric air-fuel ratio for the diesel fuel, 
-&#x3bb;gas=the determined actual gas lambda at the beginning of the transition period, 
+       gas=the determined actual gas lambda at the beginning of the transition period, 
 SAFRgas=the stoichiometric air-fuel ratio for the gaseous fuel, and 
 HVR=the prevailing mass ratio of the diesel fuel to the total fuel charge on an equivalent total fuel energy basis. 
 
@@ -1262,14 +1262,14 @@ adjust diesel fuel delivery to maintain the actual diesel lambda at or above the
 
 
   
-    &#x3bb;
+           
     
       diesel
-      &#x2062;
+              
       
         -
       
-      &#x2062;
+              
       limit
     
   
@@ -1278,7 +1278,7 @@ adjust diesel fuel delivery to maintain the actual diesel lambda at or above the
     
       
         x
-        &#x2061;
+                
         
           (
           
@@ -1291,10 +1291,10 @@ adjust diesel fuel delivery to maintain the actual diesel lambda at or above the
       +
       
         
-          &#x3bb;
+                 
           gas
         
-        &#x2061;
+                
         
           (
           
@@ -1307,7 +1307,7 @@ adjust diesel fuel delivery to maintain the actual diesel lambda at or above the
     
     
       HVR
-      &#x2061;
+              
       
         (
         
@@ -1324,7 +1324,7 @@ adjust diesel fuel delivery to maintain the actual diesel lambda at or above the
 where: 
 x=the prevailing diesel fuel mass fraction, 
 SAFRdiesel=the stoichiometric air-fuel ratio for the diesel fuel, 
-&#x3bb;gas=the determined gas lambda at the beginning of the transition period, 
+       gas=the determined gas lambda at the beginning of the transition period, 
 SAFRgas=the stoichiometric air-fuel ratio for the gaseous fuel, and 
 HVR=the prevailing mass ratio of the liquid fuel to the total fuel charge on an equivalent total fuel energy basis. 
 

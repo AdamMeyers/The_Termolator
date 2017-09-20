@@ -27,7 +27,6 @@ def main(args):
     abbr_full_file = file_prefix + ".dict_abbr_to_full"
     full_abbr_file = file_prefix + ".dict_full_to_abbr"
     reject_file = file_prefix + ".rejected-terms"
-    print('***',abbr_file_list)
     filter_terms(input_file,output_file,abbr_full_file,full_abbr_file,use_web_score=use_web_score,numeric_cutoff=max_term_number,reject_file=reject_file,web_score_dict_file=web_score_dict_file,abbr_files=abbr_file_list)
 
 if __name__ == '__main__': sys.exit(main(sys.argv))

@@ -1488,27 +1488,356 @@ def get_pos_structure (line):
     line = line.strip(' '+os.linesep+'\t')
     if line[0:3]=='|||':
         fields = ['|||']
-        fields2 = line[3:].split('|||')
+        fields2 = line[3:].split(' ||| ')
         fields.extend(fields2[1:])
     else:
-        fields = line.split('|||')
-    word = fields[0]
+        fields = line.split(' ||| ')
+    word = fields[0].strip(' ')
     if len(fields)<3:
         start_end_out = False
     else:
-        pos = fields[2]
+        pos = fields[2].strip(' ')
         start_end_out = start_end.search(fields[1])
     if start_end_out:
-        start,end = start_end_out.group(1),start_end_out.group(2)
+        start,end = start_end_out.group(1).strip(' '),start_end_out.group(2).strip(' ')
         start = int(start)
         end=int(end)
     else:
         return(False,False,False,False)
     return(word,pos,start,end)
 
-                
-def make_term_chunk_file(pos_file,term_file,abbreviate_file,chunk_file,no_head_terms_only=False):
+def guess_limited_ptb_pos(word):
+    ## assumes these are words that are part of an Noun Group (an NP
+    ## up to and including the head noun, but no right modifiers) --
+    ## also assumes that these same words are missing from the original
+    ## non lemma entry. Also, some wrong POS may result in correct analysis.
+    
+    ## Thus certain POS tags are assumed to be rare and we can take advantage
+    ## of several biases based on this situation.
+    ## COMLEX POS: ADJECTIVE ADVERB ADVPART AUX CARDINAL CCONJ DET NOUN ORDINAL
+    ## PREP PRONOUN QUANT SCONJ SCOPE TITLE VERB WORD
+    ## Added POS: PERSON_NAME NATIONALITY
+    ## others
+    if (word in noun_base_form_dict) and word.endswith('s'):
+        return('NNS')        
+    elif not word in pos_dict:
+        if word.endswith('s'):
+            return('NNS')
+        else:
+            return('NN')
+    else:
+        entry = pos_dict[word]
+    if 'PREP' in entry:
+        return('IN')
+    elif 'CCONJ' in entry:
+        return('CC')
+    elif 'CARDINAL' in entry:
+        return('CD')
+    elif 'ADJECTIVE' in entry:
+        return('JJ')
+    elif ('DET' in entry) or ('QUANT' in entry) or ('SCOPE' in entry):
+        return('DT')
+    elif ('TITLE' in entry) or ('NOUN' in entry):
+        if word.endswith('s') and (not word.endswith('sis')):
+            return('NNS')
+        else:
+            return('NN')
+    elif ('VERB' in entry) and (word.endswith('ing') or word.endswith('ed') or word.endswith('en')):
+        if word.endswith('ing'):
+            return('VBG')
+        else:
+            return('VBN')
+    elif ('NATIONALITY' in entry) or ('ORDINAL' in entry):
+        return('JJ')
+    else:
+        for CPOS, PPOS in [['PERSON_NAME','NNP'], ['ADVPART','RP'],['ADVERB','RB']]:
+            ## CPOS = COMLEX POS
+            ## PPOS = Penn Treebank POS
+            if CPOS in entry:
+                return(PPOS)
+        return('NN')
+
+def get_singular_from_plural(word):
+    if '-' in word:
+        sublist = word.split('-')
+        base = ''
+        for subword in sublist:
+            ## split removed all hyphens so recursion will be limited to
+            ## one level
+            if (subword in noun_base_form_dict) or ((not subword in pos_dict) and (subword.endswith('s'))):
+                subword = get_singular_from_plural(subword)
+            if base == '':
+                base = subword
+            else:
+                base = base + '-'+subword
+    elif (len(word) == 1) or ((len(word) ==2) and not(word.endswith('s'))):
+        return(word)
+    elif (word in noun_base_form_dict):
+        base = noun_base_form_dict[word][0]
+        ## issue for bases --> basis or base
+        ##           leaves --> leave and leaf
+        ## and other cases of plurals with multiple base forms
+    elif (len(word)>3) and word.endswith('ses') and (word[:-3]+'sis' in pos_dict) and ('NOUN' in pos_dict[word[:-3]+'sis']):
+        base = word[:-3]+'sis'
+    elif (len(word)>3) and word.endswith('ies') and (word[:-3]+'y' in pos_dict) and ('NOUN' in pos_dict[word[:-3]+'y']):
+        base = word[:-3]+'y'
+    elif word.endswith('s') and (word[:-1] in pos_dict) and ('NOUN' in pos_dict[word[:-1]]):
+        base = word[:-1]
+    elif (len(word)>2) and word.endswith('es') and (word[:-2] in pos_dict) and ('NOUN' in pos_dict[word[:-2]]):
+        base = word[:-2]
+    elif (len(word)>3) and word.endswith('ies'):
+        base = word[:-3]+'y'
+    elif word.endswith('s'):
+        base = word[:-1]
+    elif word.endswith('a'):
+        ## based on word istribution
+        if (len(word)>3) and re.search('[aeiou]ra$',word):
+            base = word[:-3]+'us'
+            ## covers  corpora --> corpus, genera --> genus, opera --> opus
+        elif re.search('[in]a$',word):
+            base = word[:-2]+'on'
+            ## covers ganglion, phenomenon
+            ## misses criterion, ganglion (hard to differentiate from
+            ## default case below)
+        elif word.endswith('oa'):
+            base = word+'n'
+            ## covers protazoan and similar words
+        else:
+            base = word[:-1]+'um'
+            ## default case 
+            ## plural to singular a--> um after d,i,l,r,t,b,n,v,u 
+            ## r always after nonvowel -- no conflict with first case
+    elif word.endswith('i'):
+        base = word[:1]+'us'
+        ## I don't see pattern with exceptions to i --> us
+        ## catharsi	catharsis 
+        ## ciceroni	cicerone
+        ## dilettanti	dilettante
+        ## genii	genie
+        ## graffiti	graffito
+        ## soli	solo
+    elif (len(word)>2) and re.search('[aeiou]e$',word):
+        base = word[:-1]
+        ## no exceptions in word list
+    elif word.endswith('e'):
+        base = word[:-1]+'a'
+        ## very few cases
+    elif word.endswith('children'):
+        base = word[:-3]
+        ## most of exceptions to 'en' rule below
+    elif (len(word)>2) and word.endswith('en'):
+        base = word[:-2]+'an'
+        ## other exceptions isolated: oxen, fellaheen and brethren
+    elif (len(word)>2) and word.endswith('ux'):
+        base = word[:-1]
+        ## no exceptions in word list
+    elif (len(word)>2) and word.endswith('im'):
+        base = word[:-2]
+    else:
+        base = word
+    return(base)
+
+def process_lemma_term_tuples(current_tuples,string,lemma):
+    ## just making sure it works
+    ## find and convert all NNS to NN
+    output_list = []
+    if string.lower() == lemma.lower():
+        for word,pos,chunk_tag in current_tuples:
+            if pos == 'FW':
+                pos = guess_limited_ptb_pos(word.lower())
+            if pos == 'NNS':
+                word = get_singular_from_plural(word)
+                pos = 'NN'
+            output_list.append([word,pos,chunk_tag])
+    else:
+        term_tokens = string.lower().split(' ')
+        mini_pos_dict = {}
+        for word,pos,chunk_tag in current_tuples:
+            if pos == 'FW':
+                pos = guess_limited_ptb_pos(word.lower())
+            mini_pos_dict[word]=pos
+        lemma_tokens = lemma.lower().split(' ')
+        for num in range(len(lemma_tokens)):
+            if num == 0:
+                chunk = 'B-NP'
+            else:
+                chunk = 'I-NP'
+            word = lemma_tokens[num]
+            if word in mini_pos_dict:
+                pos = mini_pos_dict[word]
+            elif (len(word)>1) and word.endswith('s') and (word[:-1] in mini_pos_dict):
+                if mini_pos_dict[word[:-1]] == 'NN':
+                    pos = 'NN'
+                    word = word[:-1]
+                elif mini_pos_dict[word[:-1]] == 'NNP':
+                    pos = 'NNPS'
+                else:
+                    pos = guess_limited_ptb_pos(word)
+                    if pos == 'NNS':
+                        word = get_singular_from_plural(word)
+                        pos = 'NN'
+            elif (len(word)>3) and word.endswith('ses') and ((word[:-3]+'sis') in mini_pos_dict) and \
+              (mini_pos_dict[(word[:-3]+'sis')] == 'NNS'):
+              pos = 'NN'
+              word = word[:-3]
+            elif (len(word)>2) and word.endswith('es') and (word[:-2] in mini_pos_dict):
+                if mini_pos_dict[word[:-2]] == 'NN':
+                    pos = 'NN'
+                    word = word[:-2]
+                elif mini_pos_dict[word[:-2]] == 'NNP':
+                    pos = 'NNPS'
+                else:
+                    pos = guess_limited_ptb_pos(word)
+                    if pos == 'NNS':
+                        word = get_singular_from_plural(word)
+                        pos = 'NN'
+            elif (len(word)>3) and word.endswith('ies') and (word[:-3]+'y' in mini_pos_dict):
+                if mini_pos_dict[word[:-3]+'y'] == 'NN':
+                    pos = 'NN'
+                    word = word[:-3]
+                elif mini_pos_dict[word[:-3]] == 'NNP':
+                    pos = 'NNPS'
+                else:
+                    pos = guess_limited_ptb_pos(word)
+                    if pos == 'NNS':
+                        word = get_singular_from_plural(word)
+                        pos = 'NN'
+            else:
+                pos = guess_limited_ptb_pos(word)
+                if pos == 'NNS':
+                    word = get_singular_from_plural(word)
+                    pos = 'NN'
+            output_list.append([word,pos,chunk])
+    ## first item in output_list is full list, remaining items are substrings (ending in an original plural)
+    return(output_list)
+
+richard_count = 0
+supreme_count = 0
+
+def bug_test(string):
+    global richard_count
+    global supreme_count
+    if (string == 'richard') and (richard_count < 10):
+        richard_count += 1
+        return(True)
+    elif (string == 'opinion') and (supreme_count < 10):
+        supreme_count += 1
+        return(True)
+    else:
+        return(False)
+
+def add_tuples_to_lemma_dict(string,lemma,new_tuples,old_tuples,lemma_dict,term_file=False):
+    # if (len(string)>0) and (string[0]==' ') or (string[-1]==' '):
+    #     print('*** border spaces in string:',string)
+    # if (len(lemma)>0) and (lemma[0]==' ') or (lemma[-1]==' '):
+    #     print('*** border spaces in lemma:',lemma) 
+    if re.search(' (of|for) .*(of|for) ',string,re.I):
+        use_substrings = False
+        use_original_tuples = False
+    elif re.search(' (of|for) ',string,re.I):
+        use_substrings = True
+        use_original_tuples = False
+    else:
+        use_substrings = True
+        use_original_tuples = True
+        ## only use substrings if the lemma is not transformed more than once 
+        ## one transformation is fine for cases like:
+        ## "recognition of spoken language" --> "spoken language recognition"
+        ## (substrings: "spoken language" and "language recognition" are OK
+        ## For long strings, some substrings may be odd and shouldn't be used, e.g.\
+        ## Example: The transformation applies twice on:
+        ## "economic beliefs for the judgment of legislative bodies"
+        ##   resulting in the lemma:
+        ## "legislative body judgment economic belief"
+        ##
+        ## The undisirable substring "body judgment" may result
+        ## without this constraint
+    for num in range(len(old_tuples)):
+        if old_tuples[num][1]=='FW':
+            old_tuples[num][1]=guess_limited_ptb_pos(old_tuples[num][0])
+    for num in range(len(new_tuples)):
+        if new_tuples[num][1]=='FW':
+            new_tuples[num][1]=guess_limited_ptb_pos(new_tuples[num][0])    
+    string = string.strip(' ')
+    lemma = lemma.strip(' ')
+    lemma2 = new_tuples[0][0].strip(' ')
+    for word,pos,chunk in new_tuples[1:]:
+        if ' ' in word:
+            ## print('*** border spaces in word:',word)
+            word = word.strip(' ')
+        if word != '':
+            lemma2 += (' '+word)
+    lemma2 = lemma2.lower()
+    if lemma in lemma_dict:
+        if not string in lemma_dict[lemma]:
+            lemma_dict[lemma].append(string)
+    elif len(lemma)>1:
+        lemma_dict[lemma]=[string]
+    if lemma2 != lemma:
+        if lemma2 in lemma_dict:
+            if not string in lemma_dict[lemma2]:
+                lemma_dict[lemma2].append(string)
+        elif len(lemma2)>1:
+            lemma_dict[lemma2]=[string]
+    lemma_sequence = []
+    ## also match up subsequences of NNS and premods
+    if use_original_tuples:
+        for num in range(len(old_tuples)):
+            old_triple = old_tuples[num]
+            if (old_triple[1] in ['NNS','NNPS']):
+                ## The subsequence will be the whole sequence if
+                ## num is equal to len of the current lemma_subsequence.
+                ## In that case, the dictionary item already must exist
+                for position in range(0,1+len(lemma_sequence)):
+                    ## use -1 to go from last position to first,
+                    ## ensuring that subsquences end in NNS
+                    if position==0:
+                        string3 = old_triple[0].lower().strip(' ')
+                        lemma3 = get_singular_from_plural(string3).lower()
+                    else:
+                        previous_word = lemma_sequence[-1*position].strip(' ').lower()
+                        lemma3 = previous_word + ' ' + lemma3
+                        string3 = previous_word + ' ' + string3
+                    if lemma3 in lemma_dict:
+                        if not string3 in lemma_dict[lemma3]:
+                            lemma_dict[lemma3].append(string3)
+                    elif len(lemma3)>1:
+                        lemma_dict[lemma3] = [string3]
+                lemma_sequence = []
+                ## re-initialize sequences
+            elif old_triple[1] in ['NN','JJ','JJR','JJS','NNP','VBG','VBN']:
+                lemma_sequence.append(old_triple[0].lower())
+            else:
+                lemma_sequence = []
+                ## re-initialize sequence
+                ## we only care about those ending in NNS
+    elif use_substrings:
+        for num in range(len(new_tuples)):
+            if not new_tuples[num]:
+                pass
+            elif len(new_tuples[num]) != 3:
+                print('new_tuples should have length 3')
+                print(new_tuples)
+            else:
+                word,pos,bio_tag = new_tuples[num]
+                if (pos == 'NN') and (word.lower() in plural_dict):
+                    lemma3 = plural_dict[word.lower()][0]
+                    string3 = word.lower()
+                    if num>0:
+                        for position in range(num-1):
+                            previous_word = new_tuples[position][0].strip(' ').lower() ###
+                            lemma3 = previous_word + ' '+lemma3
+                            string3 = previous_word+ ' '+string3
+                    if lemma3 in lemma_dict:
+                        if not string3 in lemma_dict[lemma3]:
+                            lemma_dict[lemma3].append(string3)
+                    elif len(lemma3)>1:
+                        lemma_dict[lemma3]=[string3]
+
+    
+def make_term_chunk_file(pos_file,term_file,abbreviate_file,chunk_file,abbr_to_full,no_head_terms_only=False,use_lemmas=True,lemma_dict= False):
     term_hash = {}
+    started_term = False
     start_term = False
     end_term = False
     with open(term_file) as instream:
@@ -1532,30 +1861,88 @@ def make_term_chunk_file(pos_file,term_file,abbreviate_file,chunk_file,no_head_t
         with open(abbreviate_file) as instream:
             for line in instream:
                 fvs = get_integrated_line_attribute_value_structure_no_list(line,['JARGON'])
-                if 'START' in fvs:
+                if ('START' in fvs):
                     START = int(fvs['START'])
-                    term_hash[START] = fvs
+                    if not START in term_hash:
+                        term_hash[START] = fvs
+                        fvs['STRING']=fvs['TEXT']
+                        if fvs['STRING'] in abbr_to_full:
+                            fvs['LEMMA']=abbr_to_full[fvs['STRING']][0]
+                        else:
+                            fvs['LEMMA']=fvs['STRING']
+                        ## don't overwrite term info
+    lemma = False
     with open(pos_file) as instream,open(chunk_file,'w') as outstream:
+        term_tuples = []
+        current_tuples = []
         for line in instream:
             word,pos,start,end = get_pos_structure(line)
+            word = word.strip(' ')
             if not word:
                 pass
-            elif start_term:
+            elif started_term:
                 if start < end_term:
-                    CHUNK_TAG = 'I-NP'
+                    current_tuples.append([word,pos,'I-NP'])
                 else:
-                    start_term = False
-                    CHUNK_TAG = 'O'
+                    if use_lemmas:
+                        string = term_hash[start_term]['STRING'].lower()
+                        lemma = term_hash[start_term]['LEMMA'].lower()
+                        new_tuples = process_lemma_term_tuples(current_tuples,string,lemma)
+                        add_tuples_to_lemma_dict(string,lemma,new_tuples,current_tuples,lemma_dict,term_file=term_file)
+                        term_tuples.extend(new_tuples)
+                    else:
+                        term_tuples.extend(current_tuples)
+                    if start in term_hash:
+                        started_term = True
+                        start_term = start
+                        end_term = int(term_hash[start]['END'])
+                        current_tuples = [[word,pos,'B-NP']]
+                    else:
+                        term_tuples.append([word,pos,'0'])
+                        current_tuples = []
+                        started_term = False
+                        start_term = False
             elif start in term_hash:
-                start_term = True
+                started_term = True
+                start_term=start
                 end_term = int(term_hash[start]['END'])
-                CHUNK_TAG = 'B-NP'
+                current_tuples = [[word,pos,'B-NP']]
             else:
-                CHUNK_TAG = 'O'
-            if word:
-                outstream.write(word+'\t'+word+'\t'+pos+'\t'+CHUNK_TAG+os.linesep)
+                term_tuples.append([word,pos,'0'])
+        if started_term:
+            if use_lemmas:
+                string = term_hash[start_term]['STRING'].lower()
+                lemma = term_hash[start_term]['LEMMA'].lower() ## bug fix AM 9/9/17
+                new_tuples = process_lemma_term_tuples(current_tuples,string,lemma)
+                add_tuples_to_lemma_dict(string,lemma,new_tuples,current_tuples,lemma_dict,term_file=term_file)
+                ## first item in new_tuples is the full list
+                ## additional items are substrings
+                term_tuples.extend(new_tuples)
+            else:
+                term_tuples.extend(current_tuples)
+        for word,pos,CHUNK_TAG  in term_tuples:
+            outstream.write(word+'\t'+word+'\t'+pos+'\t'+CHUNK_TAG+'\n')
+        
 
-def make_term_chunk_file_list(infiles,outfiles,no_head_terms_only=False):
+def make_term_chunk_file_list(infiles,outfiles,abbr_to_full,special_ds,lemma_dict_file,no_head_terms_only=False,use_lemmas=True):
+    global special_domains
+    abbr_to_full_dict = {}
+    lemma_dict = {}
+    if os.path.isfile(lemma_dict_file):
+        with open(lemma_dict_file) as instream:
+            for line in instream:
+                line = line.strip(os.linesep)
+                items = line.split('\t')
+                lemma_dict[items[0]]=items[1:]
+    if len(pos_dict)==0:
+        if special_ds:
+            special_domains.extend(special_ds.split('+'))
+        initialize_utilities()
+    with open(abbr_to_full) as instream:
+        for line in instream:
+            line = line.strip(os.linesep)
+            line_list = line.split('\t')
+            abbr_to_full_dict[line_list[0]]=line_list[1:]
     with open(infiles) as instream, open(outfiles) as outfile_stream:
         inlist = instream.readlines()
         outlist = outfile_stream.readlines()
@@ -1574,7 +1961,42 @@ def make_term_chunk_file_list(infiles,outfiles,no_head_terms_only=False):
         except:
             print("Error opening input/output files:")
             print("Input: %s\nOutput: %s" % inlist[i].strip(),outlist[i].strip())
-        make_term_chunk_file(pos_file,term_file,abbreviate_file,chunk_file,no_head_terms_only=no_head_terms_only)
-                
+        make_term_chunk_file(pos_file,term_file,abbreviate_file,chunk_file,abbr_to_full=abbr_to_full_dict,no_head_terms_only=no_head_terms_only,use_lemmas=use_lemmas,lemma_dict=lemma_dict)
+    if lemma_dict_file and (len(lemma_dict)>0):
+        keys = list(lemma_dict.keys())
+        keys.sort()
+        with open(lemma_dict_file,'w') as outstream:
+            for key in keys:
+                outstream.write(key)
+                for value in lemma_dict[key]:
+                    outstream.write('\t'+value)
+                outstream.write('\n')
 
+def make_top_terms_with_lemma_output_file(scored_output_file,lemma_dictionary_file,cutoff,output_file):
+    lemma_dictionary = {}
+    ## total_lines = 0
+    with open(lemma_dictionary_file) as instream:
+        for line in instream:
+            ## total_lines += 1
+            line = line.strip(os.linesep).lower()
+            line_list = line.split('\t')
+            lemma =line_list[0]
+            items=line_list[1:]
+            lemma_dictionary[lemma] = items
+    with open(scored_output_file) as instream,open(output_file,'w') as outstream:
+            ## cutoff = min(cutoff,total_lines)
+        line = 'start'
+        total = 0
+        while (total < cutoff) and line:
+            total = total + 1
+            line = instream.readline()
+            if line:
+                lemma,tab,rest = line.partition('\t')
+                lemma = lemma.lower()
+                outstream.write(lemma)
+                if lemma in lemma_dictionary:
+                    for form in lemma_dictionary[lemma]:
+                        if form != lemma:
+                            outstream.write('\t'+form)
+                outstream.write('\n')
     

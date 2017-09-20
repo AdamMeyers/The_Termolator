@@ -25,6 +25,8 @@ import time
 basic_yahoo_search_url_prefix = '''https://search.yahoo.com/search?p='''
 basic_bing_search_url_prefix = '''https://search.yahoo.com/search?q='''
 ## basic_google_search_url_prefix = '''https://www.google.com/search?q='''
+webcorp_prefix = '''http://www.webcorp.org.uk/live/search.jsp?search='''
+webcorp_suffix = '''&i=on&span=c50&api=faroo&bingLang=xx&farooLang=xx&info=on&filter=#options'''
 webscore_dict = {}
 webscore_supp_dict = {}
 
@@ -34,8 +36,16 @@ def load_web_score_dict_file(dict_file):
         with open(dict_file) as instream:
             for line in instream:
                 line = line.strip(os.linesep)
-                term,score = line.split('\t')
-                webscore_dict[term] = float(score)
+                if '\t' in line:
+                    ## there is an unresolved bug
+                    ## that comes up if a line in the webscore
+                    ## dictionary only has a single item in it
+                    ## "ValueError: not enough values to unpack (expected 2, got 1)"
+                    ## it is unclear how this happens. So the above if statement
+                    ## and an additional check when writing to the dictionary will
+                    ## hopefully prevent this
+                    term,score = line.split('\t')
+                    webscore_dict[term] = float(score)
     else:
         print(dict_file,'does not exist. Will be created')
 
@@ -43,20 +53,36 @@ def write_webscore_dictionary(dict_file):
     if len(webscore_supp_dict)>0:
         with open(dict_file,'a') as outstream:
             for term in webscore_supp_dict:
-                outstream.write(term+'\t'+str(webscore_supp_dict[term])+'\n')
+                if re.search('[a-zA-Z]',term):
+                    ## this if statement goes along with the "ValueError" mentioned above
+                    outstream.write(term+'\t'+str(webscore_supp_dict[term])+'\n')
 
 def replace_spaces_with_plus (term):
     return(term.replace(' ','+'))
     
 def do_provider_search(term,provider):
+    if provider == 'webcorp':
+        use_quotes = False
+    else:
+        use_quotes = True
     if provider == 'yahoo':
         url_prefix = basic_yahoo_search_url_prefix
+        url_suffix = False
     elif provider == 'bing':
         url_prefix = basic_bing_search_url_prefix
+        url_suffix = False
+    elif provider == 'webcorp':
+        url_prefix = webcorp_prefix
+        url_suffix = webcorp_suffix
     # Google blocks program-generated searches 
     else:
         print('no such provider implemented:',provider)
-    url = url_prefix + '"'+replace_spaces_with_plus(term)+'"'
+    if use_quotes:
+        url = url_prefix + '"'+replace_spaces_with_plus(term)+'"'
+    else:
+        url = url_prefix + replace_spaces_with_plus(term)
+    if url_suffix:
+        url = url+url_suffix
     url_stream = urllib.request.urlopen(url)
     data = str(url_stream.read())
     return(data)
@@ -122,12 +148,60 @@ def find_output_sets_by_comp_title(section, require_id=True,link_id_required=Tru
         output.append(output_set)
         title_match = div_title_pattern.search(section,title_match.end())
     return(output)
+
+def clean_webcorp_text(intext):
+    first_item = re.compile(' +[0-9]+: +')
+    start_match = first_item.search(intext)
+    if start_match:
+        intext = intext[start_match.start():]
+    outtext = re.sub('\\\\[trn]',' ',intext)
+    outtext = re.sub('^[^a-zA-Z]*',' ',outtext)
+    outtext = re.sub('[^a-zA-Z]*$',' ',outtext)
+    return(outtext)
+
+def find_webcorp_output_sets(section):
+    ## returns list of upto 10 records
+    ## each record consists of: url, title, id_code, abstract
+    ## each item in list starts: <strong>1)  (or other number)
+    next_item_pattern = re.compile('strong>(10|[0-9])\) *<a href="[^>]*>([^<]*)</a>')
+    end_pattern = re.compile('<a name="options">')
+    strong_end = re.compile('</strong>',re.I)
+    start = 0
+    match = next_item_pattern.search(section,start)
+    if match:
+        strong_end_match = strong_end.search(section,match.end())
+    else:
+        strong_end_match
+    end = end_pattern.search(section)
+    output = []
+    while match and end and (start < end.start()):
+        match_id = match.group(1)
+        url = match.group(2)
+        start = match.end()
+        match = next_item_pattern.search(section,start)
+        if match and strong_end_match:
+            text = clean_webcorp_text(remove_xml(section[strong_end_match.end():match.start()]))
+            start = match.end()
+            strong_end_match = strong_end.search(section,start)
+        else:
+            text = clean_webcorp_text(remove_xml(section[start:end.start()]))
+            end = False
+        output.append([url,'',match_id,text])
+    return(output)
     
+
+
 def get_top_ten(term,provider='Yahoo'):
     global test_out
     provider = provider.lower()
-    get_total_results = re.compile('<span[^>]*> *([0-9,]+) results *</span>')
-    questionable_result_check = re.compile('((Showing)|(Including)) results for .{,40}<a href="https://search.yahoo.com/search')
+    if provider in ['yahoo','bing']:
+        get_total_results = re.compile('<span[^>]*> *([0-9,]+) results *</span>')
+        questionable_result_check = re.compile('((Showing)|(Including)) results for .{,40}<a href="https://search.yahoo.com/search')
+    elif provider in ['webcorp']:
+        get_total_results = re.compile('Search API returned ([0-9]+) hits. WebCorp successfully')
+        questionable_result_check = re.compile('No results found',re.I)
+    else:
+        print('Error: This system is not designed for the',provider,"search engine. Please use Yahoo, Bing or Web as a Corpus (webcorp)")
     full_page = do_provider_search_with_pause(term,provider)
     total_results_match = False
     questionable_results = False
@@ -144,12 +218,18 @@ def get_top_ten(term,provider='Yahoo'):
             ## X="abstr" and indicates an abstract follows
             ##   -- other stuff follows <a url links with other labels, e.g., 
             ## titles that include Video Results or Image Results
-        output = find_output_sets_by_comp_title(section)
+        if provider in ['yahoo','bing']:
+            output = find_output_sets_by_comp_title(section)
                 ## makes list: url, title, link label, abstract
                 ## for Yahoo searches
                 ## keyword searches would catch patents easily and somewhat
                 ## articles as well
                 ## should do Bing test as well
+        elif provider in ['webcorp']:
+            output = find_webcorp_output_sets(section)
+        else:
+            ## not tuned to other search engines
+            output = False
         if questionable_results:
             total_results = False
         elif total_results_match:
@@ -262,10 +342,10 @@ def do_search_and_classify_top_10(term,provider='yahoo',minimum=5,debug=False,st
         ## return(rating,reference_score,total_results)
     return(rating,total_results)
         
-def webscore_one_term(term,debug=False,use_web_score_dict=False):
+def webscore_one_term(term,debug=False,use_web_score_dict=False,provider='yahoo'):
     if use_web_score_dict and (term in webscore_dict):
         return(webscore_dict[term])
-    search_rating, total_results = do_search_and_classify_top_10(term,debug=False)
+    search_rating, total_results = do_search_and_classify_top_10(term,debug=False,provider=provider)
     ## search_rating = (academic_count+patent_count)/10
     ## total_results = number of hits
     ## sample call: score_one_term('speech recognition system')

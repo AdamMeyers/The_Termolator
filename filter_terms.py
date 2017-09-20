@@ -390,7 +390,7 @@ def term_classify(line,mitre=False):
     else:
         words = word_split(line)
     if len(words) == 1:
-        pos = guess_pos(words[0].lower(),False)
+        pos = guess_pos(words[0].lower(),False,case_neutral=True)
         base2 = False
         abbrevs = False
         output = False
@@ -523,7 +523,7 @@ def term_classify(line,mitre=False):
             if word in ['and','or']:
                 pos = 'CCONJ'
             else:
-                pos = guess_pos(word,False) ## the Mitre output is monocase (all lowercase)
+                pos = guess_pos(word,False,case_neutral=False) ## the Mitre output is monocase (all lowercase)
             ## print(pos,word)
             ## print(current_chunk)
             if pos == 'PREP':
@@ -868,7 +868,7 @@ def ok_statistical_term(term,lenient=False,penalize_initial_the=False):
             well_formedness = well_formedness+.25            
         return(True,classification,chunks,rating,well_formedness)
     elif classification in ['SIMPLE','HYPHENATION']:
-        POS = guess_pos(term.lower(),term.istitle())
+        POS = guess_pos(term.lower(),term.istitle(),case_neutral=True)
         if lenient and classification == 'SIMPLE':
             if rating != 'Good':
                 rating = rating+'_but_top_term'
@@ -890,7 +890,7 @@ def ok_statistical_term(term,lenient=False,penalize_initial_the=False):
             well_formedness = well_formedness * .5
             return(False,POS,chunks,rating,well_formedness)
     elif (classification == 'In_or_Out_of_Dictionary'): 
-        POS = guess_pos(term.lower(),term.istitle())
+        POS = guess_pos(term.lower(),term.istitle(),case_neutral=True)
     well_formedness = well_formedness * .5
     return(False,classification,chunks,rating,well_formedness)
 

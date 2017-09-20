@@ -210,7 +210,7 @@ DETAILED DESCRIPTION
  Display System 
  FIG. 1A is a block diagram illustrating an example of a prior art display system. The display system may be a liquid crystal display (LCD) monitor. Typically, from the front, LCD monitor 101 may include a first polarizer 115A, a first glass substrate 105A, color filters 106, a liquid crystal (LC) matrix 110 and spacer balls 111, a second glass substrate 105B, a second polarizer 115B, a light guide 103, and a light diffuser 104. The color filters 106 may be etched onto the first glass substrate 105A. The second glass substrate 105B may include pixels electronics 114. The pixel electronics 114 may include transistors and storage capacitors (not shown) and are used to control light passing through the LC matrix 110. On each side of the LC matrix 110 may be an alignment film (not shown). 
  A light source 120 (also referred to as a back light) is positioned near the light guide 103. Light from the light source 120 is transmitted by the light guide 103 and the light diffuser 104 to the light polarizer 115B. The light polarizer 115B may then distribute the light uniformly to the LC matrix 110. Display data may be delivered to the LCD monitor 101 by a graphics controller 150 associated with a processor 160 within computer system 100. Although not shown, the computer system 100 may also include other components (e.g., memory, bus, etc.) that may be used to control information to be displayed on the LCD monitor 101. 
- The LC matrix 110 (also referred to as a thin film transistor (TFT) matrix) may include multiple cells, as illustrated in an example in FIG. 1B. Each cell may represent a pixel (picture element) such as, for example, pixel 175. Each pixel from the LC matrix 110 may be associated with pixel electronics. Typically, each pixel is comprised of three sub-pixels. For example, the pixel 175 may include sub-pixels 175A, 175B and 175C. The higher the resolution of the LCD monitor 101, the higher the number of pixels (and accordingly the number of sub-pixels) and the higher the number of pixel electronics. For example, for an LCD display with XGA (extended graphics array) resolution, the number of pixels may be 1024&#xd7;768&#xd7;3 with the last multiplier reflecting the number of sub-pixels. 
+ The LC matrix 110 (also referred to as a thin film transistor (TFT) matrix) may include multiple cells, as illustrated in an example in FIG. 1B. Each cell may represent a pixel (picture element) such as, for example, pixel 175. Each pixel from the LC matrix 110 may be associated with pixel electronics. Typically, each pixel is comprised of three sub-pixels. For example, the pixel 175 may include sub-pixels 175A, 175B and 175C. The higher the resolution of the LCD monitor 101, the higher the number of pixels (and accordingly the number of sub-pixels) and the higher the number of pixel electronics. For example, for an LCD display with XGA (extended graphics array) resolution, the number of pixels may be 1024      768      3 with the last multiplier reflecting the number of sub-pixels. 
  Each sub-pixel may be associated with a primary color (e.g., red, green, or blue). The pixel electronics 114 may include a transistor that acts as a switch to control the light passing through each of the sub-pixels. The light that passes through may then go through the color filter 106 which may filter all colors except for the primary color that the sub-pixel is associated with. The color filter (also referred to as micro-filters) 106 may be integrated into the first glass substrate 105A. For example, the sub-pixels 175A, 175B and 175C may be associated with a red, green, and blue filter, respectively. This is illustrated in an example in FIG. 1C. The amount of light that the pixel electronics 176A allow passing through the sub-pixel 175A (associated with the red filter) depend on the properties of the data to be displayed at the pixel 175. For example, when the data 180 is to be displayed (at the pixel 175) in a specific color, the pixel electronics 176A, 176B and 176C may allow different levels of light to pass through to the three sub-pixels 175A, 175B and 175C, respectively. In this example, the combination of the different light level passing through the sub-pixels 175A, 175B and 175C (and filtered by the red, green and blue filters, respectively) may be viewed by a user as the desired color. 
  It may be noted that the data 180 may be delivered to the pixel 175 at every frame interval (also referred to as a frame refresh rate), and the color of the data is displayed to the user via the red, green and blue filters at the same time during the frame interval. For example, when the frame refresh rate is 60 Hz, the colors red, green, and blue may also be transmitted via the sub-pixels 175A, 175B and 175C simultaneously at 60 Hz and until the next frame refresh. 
  As illustrated in FIG. 1C, the sub-pixels 175A, 175B and 175C may be separated from one another by vertical grid lines 185A and 185B. There may also be horizontal and vertical grid lines separating adjacent pixels. These grid lines may be wires associated one or more sub-pixels within the liquid crystal matrix 110. For example, the wires may be used to carry signals to the pixel electronics 176A, 176B and 176C. When there are more pixels (e.g., higher resolution), there are more wires. The number of wires may occupy a large percentage of the LC matrix 110 and may substantially block the light that is delivered by the light polarizer 115B. In addition to the wires, the pixel electronics 176A, 176B and 176C may also block the light that is delivered by the light polarizer 115B. 
@@ -221,11 +221,11 @@ DETAILED DESCRIPTION
   
     
       Aperture
-      &#x2062;
+              
       
-        &#x2003;
+                
       
-      &#x2062;
+              
       Ratio
     
     =
@@ -252,10 +252,10 @@ DETAILED DESCRIPTION
           
         
       
-      &#x2248;
+              
       
         60
-        &#x2062;
+                
         %
       
     
@@ -265,7 +265,7 @@ DETAILED DESCRIPTION
 
 
 
- where Apixel is the transmissive area of the pixel, ATFT is the area occupied by the TFT (or pixel electronics) in each pixel, and ALine is the area occupied by the row and column grid lines for each pixel. For a high definition LCD display having a resolution of 1920&#xd7;1080 pixels, the aperture ratio may be approximately 60%. To compensate for the low aperture ratio, the intensity of the light source 120 may need to be increased to increase the brightness resulting in higher power consumption. 
+ where Apixel is the transmissive area of the pixel, ATFT is the area occupied by the TFT (or pixel electronics) in each pixel, and ALine is the area occupied by the row and column grid lines for each pixel. For a high definition LCD display having a resolution of 1920      1080 pixels, the aperture ratio may be approximately 60%. To compensate for the low aperture ratio, the intensity of the light source 120 may need to be increased to increase the brightness resulting in higher power consumption. 
 
  Color Cylinder 
 
@@ -281,11 +281,11 @@ DETAILED DESCRIPTION
 
   
     Aperture
-    &#x2062;
+            
     
-      &#x2003;
+              
     
-    &#x2062;
+            
     Ratio
   
   =
@@ -306,7 +306,7 @@ DETAILED DESCRIPTION
             1
             3
           
-          &#x2062;
+                  
           
             (
             
@@ -325,10 +325,10 @@ DETAILED DESCRIPTION
         
       
     
-    &#x2248;
+            
     
       82
-      &#x2062;
+              
       %
     
   
@@ -336,7 +336,7 @@ DETAILED DESCRIPTION
 
 
 
- Note that the total number of pixel electronics and grid lines are divided by three. With the LCD display having 1920&#xd7;1080 pixels, the aperture ratio may be &#x3e;80%. Thus for a similar display brightness, the power consumption associated with the light may be reduced by more than 20% in this example. 
+ Note that the total number of pixel electronics and grid lines are divided by three. With the LCD display having 1920      1080 pixels, the aperture ratio may be       80%. Thus for a similar display brightness, the power consumption associated with the light may be reduced by more than 20% in this example. 
 
  Speed of Rotation of the Color Cylinder 
 
@@ -346,7 +346,7 @@ DETAILED DESCRIPTION
  Synchronization 
  The frame controller 415 may receive rotation information associated with a color cylinder (e.g., color cylinder 200). The rotation information may include color segment information 410. The frame controller 415 may use the rotation information and the color segment information 410 to synchronize with a sub-frame to be displayed. For example, when the color segment information 410 indicates that the current color segment is red (block 410A), the frame controller 415 may deliver the sub-frame 400A, etc. It may be noted that the data associated with the sub-frame 400A can include those that may be displayed in a color that needs the color red as a primary color. Depending on how much of the color red is needed at the pixel level, the pixel electronics 305 (illustrated in FIG. 3) may control the level of the red light to pass through. As mentioned above, in this example a user may see the display as all red. 
  For one embodiment, the data associated with each sub-frame may be displayed for a time interval that is approximately equal to the color segment interval. For example, when the frame controller 415 synchronizes the color segment information 410 with the sub-frame to be displayed, the time that the primary color is distributed by the light polarizer 115B may be similar to the time the sub-frame associated with the same primary color is shown on the improved LCD display. As illustrated in FIG. 4, the time that the red color is distributed by the light polarizer 115B (block 410A) may be similar to the time that the sub-frame associated with the red color is displayed (block 400A). It may be noted that as the rotation of the color cylinder (e.g., cylinder 200) transitions from the red segment (block 410A) to the green segment (block 410B), the frame controller 415 may transition from the sub-frame 400A to the sub-frame 400B. It may also be noted that when there are multiples of three color segments or when the sizes of the color segments are not similar, the frame controller 415 may need to be synchronize the sub-frames accordingly. 
- To support the displaying of the three sub-frames within a frame interval, the LC material employed in the LCD matrix 110 may need to be faster than they are in the traditional LC matrix. For example, in the traditional LCD monitors, an LC response time of 20-25 ms may be considered adequate. To support the techniques described herein, the LC response time may need to be at least three-times as fast (e.g. &#x2dc;8 ms). 
+ To support the displaying of the three sub-frames within a frame interval, the LC material employed in the LCD matrix 110 may need to be faster than they are in the traditional LC matrix. For example, in the traditional LCD monitors, an LC response time of 20-25 ms may be considered adequate. To support the techniques described herein, the LC response time may need to be at least three-times as fast (e.g.        8 ms). 
  Process 
  FIG. 5 is a block diagram illustrating an example of a process that may be used to control the displaying of the sub-frames, in accordance with one embodiment. The process assumes that the color cylinder is rotating and that the sequence of the color segments is red segment, green segment and blue segment. Other sequence may also be used. In this example, as shown in block 505, the red color segment of the color cylinder is currently used as a color filter. This information is received by the frame controller 415 and used to cause the sub-frame associated with the red color to be displayed, as shown in block 510. At block 515, a test is performed to determine if the color cylinder rotates from the red color segment to the green color segment. If the transition to the green color segment has not taken place, the process flows to block 510 where the frame controller 415 continues to display the sub-frame associated with the red color. 
  If the transition from the red segment to the green segment takes place, the process flows to block 520 where the frame controller 415 displays the sub-frame associated with the green color instead of the sub-frame associated with the red color. At block 525, a test is performed to determine if the color cylinder rotates from the green color segment to the blue color segment. If the transition to the blue color segment has not taken place, the process flows to block 520 where the frame controller 415 continues to display the sub-frame associated with the green color. If the transition from the green segment to the blue segment takes place, the process flows to block 530 where the frame controller 415 displays the sub-frame associated with the blue color instead of the sub-frame associated with the green color. 

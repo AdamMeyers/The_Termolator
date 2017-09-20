@@ -6,7 +6,7 @@ import pickle
 
 class Metric:
     """Metric contains all the functions necessary to score an RDG's terminology."""
-    def __init__(self, rdgDir, general, working_dir = '.',overwrite=False,rank_from_previous=False,background_cache_file='ranking.pkl'):
+    def __init__(self, rdgDir, general, working_dir = '.',overwrite=False,rank_from_previous=False,background_cache_file='ranking.pkl', full_to_abbr = False):
         # available metrics
         global bck_cache_file
         bck_cache_file = background_cache_file
@@ -22,9 +22,7 @@ class Metric:
         # input files
         self.genDocs = Document(overwrite=overwrite)
         #filtfname = os.path.join(rdgDir, 'filter.save')
-        filtfname = os.path.join(working_dir, '.filter.save')
-        if os.path.exists(filtfname):
-            Filter._get_stemdict(filtfname)
+        #filtfname = os.path.join(working_dir, '.filter.save')
         # General document group is given as files in a directory
         if rank_from_previous:
             pass
@@ -61,6 +59,12 @@ class Metric:
             logging.debug('Filtering unigrams')
             for w in words:
                 for filt in filters:
+                    # if filt == 'abbreviation':
+                    #     w = Filter.criteria[filt](w,full_to_abbr) 
+                    #     ## Somewhat of a kludge, the more general approach
+                    #     ## would be to allow all filters to take multiple arguments.
+                    #     ## If these get expanded, that would be the way to go.
+                    # else:
                     w = Filter.criteria[filt](w)
                 if w:
                     self.genDocs.counts[w] += 1
@@ -86,8 +90,8 @@ class Metric:
         self.rdgDocs = list (map(lambda x: Document(filename=x.strip(),overwrite=overwrite), open(rdgDir).readlines()))
         ## Python 3 compatibility -- rdgDocs needs to be a list and Python3 makes it an iterator
         logging.debug('done')
-        if not os.path.exists(filtfname):
-            Filter._save_stemdict(filtfname)
+
+
     def _getTermFreq(self, word):
         """Returns the term frequency in the rdgDocs"""
         if not hasattr(self, '_TermFreq'):
@@ -327,8 +331,8 @@ Keys = 'patent', 'science', 'law', 'common', and 'medicine'."""
                 self.wordlistdict[label] = pattern
         prior = 1.0
         for label in self.wordlistdict:
-            stems = Filter.unstem(word)
-            for s in stems:
+            ## stems = Filter.unstem(word)
+            for s in [word]:
                 matches = Wordlist.patternFind(self.wordlistdict[label],w,False)
                 if matches:
                     prior *= lstProbs[label]
@@ -379,7 +383,8 @@ Keys = 'DC', 'DR', 'DRDC', 'TokenDRDC', 'IDF', 'TFIDF', 'TokenIDF', 'Entropy', '
             if i % 1000 == 0:
                 logging.debug('Measuring word '+str(i))
             temp = self.metrics[measure](w)
-            for s in Filter.unstem(w): #include all word variants
+            for s in [w]: 
+                ## Filter.unstem(w): #include all word variants
                 ranking.append((s, temp))
                 if save:
                     #logging.error("Saving word: " + str(s) + " to ranking.pkl  with measurement: " + measure + " and value: " + str(temp))
@@ -432,7 +437,8 @@ Keys = 'DC', 'DR', 'DRDC', 'TokenDRDC', 'IDF', 'TFIDF', 'TokenIDF', 'Entropy', '
             if i % 1000 == 0:
                 logging.debug('Measuring word '+str(i))
             temp = self.metrics[measure](w)
-            for s in Filter.unstem(w): #include all word variants
+            for s in [w]:
+                ## Filter.unstem(w): #include all word variants
                 ranking.append((s, temp))
             #ranking.append((w, temp))
           #logging.debug('Done')
@@ -460,7 +466,8 @@ Keys = 'DC', 'DR', 'DRDC', 'TokenDRDC', 'IDF', 'TFIDF', 'TokenIDF', 'Entropy', '
         d = Document(filename=filename,overwrite=overwrite)
         for w in d.counts:
             temp = self.metrics[measure](w)
-            for s in Filter.unstem(w):
+            for s in [w]:
+                ## Filter.unstem(w):
                 ranking.append((s, temp))
 ##        # force ranks to be [0,1]
 ##        minimum = min(map(lambda x: x[1], ranking)) #to enforce >= 0
@@ -487,14 +494,14 @@ Keys = 'DC', 'DR', 'DRDC', 'TokenDRDC', 'IDF', 'TFIDF', 'TokenIDF', 'Entropy', '
             if w != '':
                 words.append(w)
         f.close()
-        useStem = 'stem' in Settings.getDocumentFilters() #are words stemmed?
+        ## useStem = 'stem' in Settings.getDocumentFilters() #are words stemmed?
         for w in words:
-            if useStem:
-                temp = self.metrics[measure](Filter.stem(w))
-                #for s in Filter.unstem(w):
-                #    ranking.append((s, temp))
-            else:
-                temp = self.metrics[measure](w)
+            # if useStem:
+            #     temp = self.metrics[measure](Filter.stem(w))
+            #     #for s in Filter.unstem(w):
+            #     #    ranking.append((s, temp))
+            # else:
+            temp = self.metrics[measure](w)
             ranking.append((w, temp))
 ##        # force ranks to be [0,1]
 ##        minimum = min(map(lambda x: x[1], ranking)) #to enforce >= 0
@@ -514,7 +521,7 @@ Keys = 'DC', 'DR', 'DRDC', 'TokenDRDC', 'IDF', 'TFIDF', 'TokenIDF', 'Entropy', '
     def scoreByRankSum(self, termfiles, measure='DRDC'):
         """Score a metric on a document against a premade list."""
         terms = set()
-        filters = ['abbreviation', 'case']#['abbreviation', 'case', 'stem']
+        filters = ['case']#['abbreviation', 'case', 'stem']
         for f in termfiles:
             temp = TestData.load(f)
             for w in temp:
@@ -537,7 +544,7 @@ Keys = 'DC', 'DR', 'DRDC', 'TokenDRDC', 'IDF', 'TFIDF', 'TokenIDF', 'Entropy', '
     def scoreByTop(self, termfiles, measure='DRDC', n=300):
         """Score a metric on a document against a premade list."""
         terms = set()
-        filters = ['abbreviation', 'case'] #['abbreviation', 'case', 'stem']
+        filters = ['case'] #['abbreviation', 'case', 'stem']
         for f in termfiles:
             temp = TestData.load(f)
             for w in temp:
@@ -619,16 +626,17 @@ weighted scoring. Here we are minimizing the perplexity of a held out set."""
             self.testwords
         except:
             #backup Filter dictionaries, as loading new documents will change them
-            backupstems = [Filter.stemdict, Filter.unstemdict]
-            Filter.stemdict = {}
-            Filter.unstemdict = {}
+            ## backupstems = [Filter.stemdict, Filter.unstemdict]
+            ### I don't think this code will ever actually be loaded
+            ## Filter.stemdict = {}
+            ## Filter.unstemdict = {}
             temp = [Document(filename=testfolder+f,overwrite=overwrite) for f in os.listdir(testfolder) if f[-4:]=='.txt']
             testwords = []
-            for i in range(len(temp)):
-                for w in temp[i].counts:
-                    testwords.extend(Filter.unstem(w))
-            #restore Filter.stemdict
-            Filter.stemdict, Filter.unstemdict = backupstems
+            # for i in range(len(temp)):
+            #     for w in temp[i].counts:
+            #         testwords.extend(Filter.unstem(w))
+            # #restore Filter.stemdict
+            # Filter.stemdict, Filter.unstemdict = backupstems
         print ('done')
         # set initial weights
         weight = {}

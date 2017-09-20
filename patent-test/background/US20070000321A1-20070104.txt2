@@ -100,7 +100,7 @@ US
 
 
 
-WADDEY &#x26; PATTERSON, P.C.
+WADDEY        PATTERSON, P.C.
 
 1600 DIVISION STREET, SUITE 500
 NASHVILLE
@@ -189,7 +189,7 @@ In a liquid sensing system, an RF signal is applied to a series-resonant circuit
 
 
 CROSS-REFERENCES TO RELATED APPLICATIONS 
- This application is a Non-Provisional Utility application which claims benefit of co-pending U.S. Patent Application Ser. No. 60/679,562 filed May 10, 2005, entitled &#x201c;SYSTEM AND METHOD OF FUEL LEVEL SENSING USING EMF SENSING&#x201d; which is hereby incorporated by reference.
+ This application is a Non-Provisional Utility application which claims benefit of co-pending U.S. Patent Application Ser. No. 60/679,562 filed May 10, 2005, entitled         SYSTEM AND METHOD OF FUEL LEVEL SENSING USING EMF SENSING         which is hereby incorporated by reference.
 
 
 STATEMENT REGARDING FEDERALLY SPONSORED RESEARCH OR DEVELOPMENT 
@@ -207,7 +207,7 @@ BRIEF SUMMARY OF THE INVENTION
  Depending on the position and orientation of the system coil, and/or the use of ground planes and other RF directional devices, the measured electrical parameter can represent the volume of liquid in the entire container or the volume of liquid in only a portion of the container. 
  The system and method can sense and measure liquid levels in other containers including oil tanks and water tanks and is not limited to the examples used in this description. The system can be used in a wide variety of scientific, consumer, industrial, and medical environments. 
  Preferably, the system includes auto-calibration hardware and software that enables the system to automatically determine an optimum system operating frequency. In one embodiment of the system, the optimum system operating frequency is selected to be a frequency above or below the resonant frequency of the series LCR circuit. The choice of this operating frequency over the resonant frequency allows for larger changes in voltage drop relative to changes in liquid volume. Preferably, the system is tuned to operate at a frequency between a lower and upper value. 
- In one embodiment, auto-compensation is provided so that the measured electrical parameter provides an accurate indication of the liquid level in the tank, independent of variations in operating conditions, such as ambient temperature. In another embodiment, the system can measure&#x2014;and be calibrated for&#x2014;variations in the electrical properties of the liquid itself. 
+ In one embodiment, auto-compensation is provided so that the measured electrical parameter provides an accurate indication of the liquid level in the tank, independent of variations in operating conditions, such as ambient temperature. In another embodiment, the system can measure        and be calibrated for        variations in the electrical properties of the liquid itself. 
  The system can include a physical or wireless data interface to facilitate external transmission of the compensated measurement from the system to a fuel gauge or to a central controller in the vehicle. In some embodiments, the system may transmit raw data to a receiver connected to a central controller, with compensation of the raw data being performed in the central controller. The data can be transmitted periodically, in response to a change, by request from the central controller, or by request from an external device such as a diagnostic device.
 
 
@@ -229,9 +229,9 @@ BRIEF DESCRIPTION OF THE SEVERAL VIEWS OF THE DRAWINGS
  FIG. 12(a) is graphical plot showing the effects of temperature on system fuel level readings before temperature compensation. 
  FIG. 12(b) is graphical plot showing a linearization of the effects of temperature on system fuel level readings. 
  FIG. 13 is graphical plot showing the effects of temperature on system fuel level readings, with and without temperature compensation, using a linearized temperature compensation algorithm in accordance with FIG. 12(b). 
- FIG. 14(a) is a graphical plot showing the effects of temperature on system fuel level readings during a driving test from a full tank to &#xbc; tank of fuel, with and without temperature compensation, using a linearized temperature compensation algorithm in accordance with FIG. 12(b). 
- FIG. 14(b) is a graphical plot showing the effects of temperature on system fuel level readings during a driving test from a full tank to &#x215c; tank using a linearized temperature compensation algorithm in accordance with FIG. 12(b). 
- FIG. 14(c) is a graphical plot showing the effects of temperature on system fuel level readings during a driving test from a &#x215c; full tank to an empty tank using a linearized temperature compensation algorithm in accordance with FIG. 12(b). 
+ FIG. 14(a) is a graphical plot showing the effects of temperature on system fuel level readings during a driving test from a full tank to        tank of fuel, with and without temperature compensation, using a linearized temperature compensation algorithm in accordance with FIG. 12(b). 
+ FIG. 14(b) is a graphical plot showing the effects of temperature on system fuel level readings during a driving test from a full tank to          tank using a linearized temperature compensation algorithm in accordance with FIG. 12(b). 
+ FIG. 14(c) is a graphical plot showing the effects of temperature on system fuel level readings during a driving test from a          full tank to an empty tank using a linearized temperature compensation algorithm in accordance with FIG. 12(b). 
  FIG. 15 is a graphical plot of system response as ambient temperature is varying through the entire operating temperature range. 
  FIG. 16 is a flow chart illustrating the steps associated with the temperature compensation algorithm used in one embodiment of the system. 
  FIG. 17 is a flow chart illustrating the steps associated with auto-calibration of the RF signal generator at system initialization. 
@@ -252,32 +252,32 @@ DETAILED DESCRIPTION OF THE INVENTION
  Another embodiment of the PCB 85 and fuel tank mounting is shown in FIG. 10. In this embodiment, the PCB 85 is attached to a mounting plate 17 which can also act as a heat sink. The mounting plate 17 is then attached a wall of the fuel tank 15. The PCB 85 further includes a connector 16 that electrically connects the system 10 to the vehicle electrical system and to the vehicle data bus for purposes of transmitting a fuel level signal. The fuel level signal can be transmitted using a physical (hard-wired) connection or using a wireless connection. 
  When the PCB 85 and coil 65 are positioned proximate to or inside the tank 15 as shown, liquid in the tank 15 will electrically load the series-resonant circuit formed by capacitor 60, coil 65, and resistor 70. Accordingly, when the controller 30 activates the RF generator 35, the coil 65 is excited by a substantially sinusoidal RF signal at a constant frequency. The loading caused by fuel proximate the coil 65 will either reduce the Q of the resonant circuit and/or change its resonant frequency. In either case, the voltage measured across the resistor 70 (or across the internal resistance of the coil 65) will vary by an amount that is proportional to a change in fuel level, due to a corresponding change in impedance of the coil 65. This change in voltage is converted to a digital signal in the ADC 40 and processed by the controller 30 so that a corresponding data output from the PWM/DAC 45 can be transmitted to a fuel gauge or vehicle central controller (not shown.) 
  Other embodiments of the system 10 can use a parallel resonant circuit with other means of measuring a parameter that represents a change in loading of the resonant circuit caused by changes in fuel level in the tank. 
- Preferably, the operating frequency of the RF generator 35 is adjusted so that it is slightly above the resonant frequency of the series-resonant LCR circuit. As shown on FIG. 11, the system operating frequency is selected to define a liquid level sensing window on a relatively steep portion of the frequency response curve, thereby providing maximum sensitivity to changes in liquid level. When the printed circuit board 85 and coil 65 are placed on a fuel tank 15, the series resonant circuit will have a different resonant frequency that varies from tank to tank due to component tolerances, tolerance on tank dimensions, coil dimensions, track width, etc. In order to compensate for these variations, an auto-calibration method is preferably used. In one embodiment of such a method, the controller 30 includes a calibration module that finds the resonant frequency (fc) of the series-resonant circuit after first power up (or on request), then adjusts the operating frequency of the RF generator 35 to a frequency (f1) so that the system is operating on the linear slope throughout the entire operating temperature range (&#x2212;40 to +80 C). 
+ Preferably, the operating frequency of the RF generator 35 is adjusted so that it is slightly above the resonant frequency of the series-resonant LCR circuit. As shown on FIG. 11, the system operating frequency is selected to define a liquid level sensing window on a relatively steep portion of the frequency response curve, thereby providing maximum sensitivity to changes in liquid level. When the printed circuit board 85 and coil 65 are placed on a fuel tank 15, the series resonant circuit will have a different resonant frequency that varies from tank to tank due to component tolerances, tolerance on tank dimensions, coil dimensions, track width, etc. In order to compensate for these variations, an auto-calibration method is preferably used. In one embodiment of such a method, the controller 30 includes a calibration module that finds the resonant frequency (fc) of the series-resonant circuit after first power up (or on request), then adjusts the operating frequency of the RF generator 35 to a frequency (f1) so that the system is operating on the linear slope throughout the entire operating temperature range (        40 to +80 C). 
  Referring to the flow chart in FIG. 17, the controller 30 varies the frequency f of the RF generator 35 in steps from 0 to 255, where 0 corresponds to the lowest frequency (6.34 MHz) and 255 corresponds to the highest frequency (9.66 MHz). However, use of the system is not restricted to these frequencies. In one embodiment, the lowest frequency is 7.4 MHZ and the highest frequency is 8.3 MHz. For each frequency, the controller 30 samples the data from ADC 40 and reads V, the voltage across resistor 70. The controller 30 varies the operating frequency f (sweeping the frequency from low to high or from high to low) in order to find the resonant frequency of the series-resonant circuit. The controller 30 then adjusts and fixes the frequency f1 to a point in a substantially linear section of the frequency response curve. The variation from full to empty tank should be in the substantially linear zone (f1 to f2) as shown on FIG. 11. Once the nominal operating frequency of the system 10 is selected, it can remain fixed for as long as the system 10 remains in the vehicle. 
- Electronic components and systems in motor vehicles will preferably operate properly over a wide range of ambient temperatures. Changes in temperature can induce system output errors. This is shown with raw system data from the ADC 40 graphed in FIG. 12(a) and linearized in FIG. 12(b). In order to compensate for the effects of temperature, the system output is characterized over the entire range of operating temperatures (&#x2212;40 to +80 C) at Empty and Full tank. FIG. 15 shows system voltage output as a function of temperature through a full temperature range. As an approximation, the graph is divided into sections, where each section is linear following the equations below: 
+ Electronic components and systems in motor vehicles will preferably operate properly over a wide range of ambient temperatures. Changes in temperature can induce system output errors. This is shown with raw system data from the ADC 40 graphed in FIG. 12(a) and linearized in FIG. 12(b). In order to compensate for the effects of temperature, the system output is characterized over the entire range of operating temperatures (        40 to +80 C) at Empty and Full tank. FIG. 15 shows system voltage output as a function of temperature through a full temperature range. As an approximation, the graph is divided into sections, where each section is linear following the equations below: 
 
-If t&#x3c;t1: V=a0T+b0 
+If t      t1: V=a0T+b0 
 
-If t1&#x3c;t&#x3c;tref: V=a1T+b1 
+If t1      t      tref: V=a1T+b1 
 
-If tref&#x3c;t&#x3c;t2: V=cst 
+If tref      t      t2: V=cst 
 
-If t2&#x3c;t&#x3c;t3: V=a2T+b2 
+If t2      t      t3: V=a2T+b2 
 
-If t&#x3e;t3: V=a3T+b3 
+If t      t3: V=a3T+b3 
 
  One embodiment of the system 10, as shown in FIG. 4, was installed in a test vehicle similar to that shown in FIG. 1. The system coil 65 was wound and configured as follows: 
  Number of turns=35 
- Physical Size=50&#xd7;50 mm, Spiral 
+ Physical Size=50      50 mm, Spiral 
  Track width=0.15 mm 
  Distance between tracks=0.4 mm (center to center) 
  The series-resonant circuit included the following component values: 
  L=68 uH 
  R=33 ohms 
  C=10 pF 
- The ground plane was configured to be 50&#xd7;50 mm and positioned a few centimeters away from coil 65, as shown in FIG. 8. The fuel tank 15 had the following dimensions: w=950 mm, l=670 mm, h=210 mm, with a fuel capacity of approximately 80 liters. Note that if the resistance in the series-resonant LCR circuit is provided by the internal resistance of the coil rather than by a discrete resistor, the actual resistance will likely be lower, on the order of 20 ohms or less. 
- In a first test, the effects of temperature on system output were measured as follows: The vehicle was driven for 10 minutes then stopped for 20 minutes in order to obtain a fuel level signal (at ADC 40) at different temperatures. This test was repeated at three different fuel levels (full, &#xbe; and empty). The test results are shown on the graph in FIG. 12(a). As can be seen, the ADC 40 output vs. temperature varies according to a pattern (oscillating around a line) at all liquid levels. Therefore, to compensate for the temperature, as a first approximation, a simple linearization algorithm was implemented as shown in FIG. 12(b). 
- After the temperature compensation algorithm was programmed into the system controller 30, the vehicle was driven for 20 minutes starting from cold (outside temperature=&#x2212;7 C) with an empty tank. The temperature, fuel level, and temperature compensated fuel level signals were recorded as displayed in the graph shown in FIG. 13. The compensated fuel level ADC 40 output remains stable around 65 counts (corresponding to an empty tank) when the temperature and the measured fuel level varies. Thus, the temperature compensation algorithm compensates for the changes due to temperature so that the fuel gauge always shows the actual empty level. 
+ The ground plane was configured to be 50      50 mm and positioned a few centimeters away from coil 65, as shown in FIG. 8. The fuel tank 15 had the following dimensions: w=950 mm, l=670 mm, h=210 mm, with a fuel capacity of approximately 80 liters. Note that if the resistance in the series-resonant LCR circuit is provided by the internal resistance of the coil rather than by a discrete resistor, the actual resistance will likely be lower, on the order of 20 ohms or less. 
+ In a first test, the effects of temperature on system output were measured as follows: The vehicle was driven for 10 minutes then stopped for 20 minutes in order to obtain a fuel level signal (at ADC 40) at different temperatures. This test was repeated at three different fuel levels (full,        and empty). The test results are shown on the graph in FIG. 12(a). As can be seen, the ADC 40 output vs. temperature varies according to a pattern (oscillating around a line) at all liquid levels. Therefore, to compensate for the temperature, as a first approximation, a simple linearization algorithm was implemented as shown in FIG. 12(b). 
+ After the temperature compensation algorithm was programmed into the system controller 30, the vehicle was driven for 20 minutes starting from cold (outside temperature=        7 C) with an empty tank. The temperature, fuel level, and temperature compensated fuel level signals were recorded as displayed in the graph shown in FIG. 13. The compensated fuel level ADC 40 output remains stable around 65 counts (corresponding to an empty tank) when the temperature and the measured fuel level varies. Thus, the temperature compensation algorithm compensates for the changes due to temperature so that the fuel gauge always shows the actual empty level. 
  In a further test, the vehicle was driven for 230 miles starting with a full tank, stopping at regular intervals (approx. every 30 miles). The temperature, fuel level, and temperature compensated fuel level signals were recorded. The results are shown in FIGS. 14(a)-(c). The compensated fuel level signal from ADC 40 reading varies linearly from 115 to 90 when the temperature and the measured fuel level vary up and down. This demonstrates that the temperature compensation module compensates for the changes due to temperature, so that the fuel gauge always shows the real level. 
  The system 10 of the present invention can also be used to detect variations in the electrical properties associated with different liquids placed into the tank 15. For example, if diesel fuel is placed into a fuel tank of a vehicle that runs on gasoline (or vice-versa), this mistake can be detected upon activation of the system. Using a voltage measurement taken across a portion of the series-resonant LCR circuit, it is possible to determine the type or composition of liquid fuel in the tank due to the variation in the electrical properties of the liquid. Using the test set-up of FIG. 18, FIG. 19 shows system output profiles corresponding to the different fuel types described in the table below when placed in a fuel tank.  
 
@@ -354,7 +354,7 @@ gasoline
 
 6
 M25
-M25 &#x2212; [75% MS8004] + [25% methanol
+M25          [75% MS8004] + [25% methanol
 
 
 

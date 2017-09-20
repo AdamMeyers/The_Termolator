@@ -756,7 +756,7 @@ def term_dict_check(term,test_dict):
         if pat and pat.group(1) in test_dict:
             return(True)
         
-def guess_pos(word,is_capital,offset=False):
+def guess_pos(word,is_capital,offset=False,case_neutral=False):
     pos = []
     plural = False
     if offset and (offset in pos_offset_table):
@@ -969,6 +969,12 @@ def guess_pos(word,is_capital,offset=False):
         ## assume out-of-vocabulary (OOV) words ending in 's' can be nouns, given the right circumstances
     elif roman(word):
         return('ROMAN_NUMBER')
+    elif (case_neutral or is_capital) and (len(word)<6):
+        if ((word.title() in pos_dict) and ('TITLE' in pos_dict[word.title()])) or \
+          (((word.title()+ '.') in pos_dict) and ('TITLE' in pos_dict[word.title()+'.'])):
+            return('OTHER')
+        else:
+            return('NOUN_OOV')
     else:
         return('NOUN_OOV')
         ## otherwise assume most OOV words are nouns

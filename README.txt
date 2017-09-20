@@ -3,18 +3,18 @@ The Termolator Program 0.1 is licensed under the Apache license 2.0
 Meyers, Yifan He, Zachary Glass and Shasha Liao and released in July,
 2015.
 
-The Termolator Program 0.2 is also licensed under the Apache license
-2.0 (http://www.apache.org/licenses/LICENSE-2.0). It is a revision of
-the original program. It was revised by Adam Meyers, John Ortega and
-Vlad Tyshkevich. The main changes are: (i) bug fixes; (ii) The new
-version uses Python 3 exclusively -- the Python 2 portions of the
-original code have all been changed; (iii) additional features have
-been added so the program will work better with legal text; (iv)
-changes to the abbreviation program intended to improve precision, (v)
-the capability to store web search based scores and look them up on
-subsequent runs rather than recalculating them; and (vi) a caching
-feature has been added to make runs with different foregrounds, but
-the same background file more efficient.
+The Termolator Program 0.2 (including 0.21 and 0.22) is also licensed
+under the Apache license 2.0(http://www.apache.org/licenses/LICENSE-2.0). 
+It is a revision of the original program. It was revised by Adam
+Meyers, John Ortega and Vlad Tyshkevich. The main changes are: (i) bug
+fixes; (ii) The new version uses Python 3 exclusively -- the Python 2
+portions of the original code have all been changed; (iii) additional
+features have been added so the program will work better with legal
+text; (iv) changes to the abbreviation program intended to improve
+precision, (v) the capability to store web search based scores and
+look them up on subsequent runs rather than recalculating them; and
+(vi) a caching feature has been added to make runs with different
+foregrounds, but the same background file more efficient; (vi)
 
 The Termolator takes two sets of documents as input a FOREGROUND set
 and a BACKGROUND set and finds instances of terminology that are more
@@ -46,7 +46,8 @@ Instructions for Using program:
    TERMOLATOR program. Setting an environmental variable (called
    TERMOLATOR) is suggested. 
 
-2) To run the system, the command is
+2) To run the main system, the command is as follows (an additional
+   way of running the system will be described in section 7):
 
    $TERMOLATOR/run_termolator.sh FOREGROUND BACKGROUND EXTENSION OUTPUT_NAME TRUE-OR-FALSE TRUE-OR-FALSE 30000 5000 PROGRAM-DIRECTORY ADDITIONAL_TOPIC_STRING
 
@@ -76,12 +77,16 @@ The arguments are defined as follows:
    	       run the same Foreground with different backgrounds or if for any reason, you have
 	       already preprocessed the foreground file. So usually, this field should just
 	       contain "False".
-   Argument 12 The name of the webscore file or "False". If this value is False and you Argument 6 is True,
-   	       a dictionary of webscore results are stored in a file that combines $4 with a file type of
-	       ".outputweb.score".  If, however, you choose a filename, the system will use that filename
-	       to store the webscore. The latter option enables one to reuse the webscores from previous runs
-	       and can save considerable time in calculating this score. Each Yahoo websearch used to calculate
-	       this score takes about .75 seconds. Caching these values may make Yahoo searches less frequent.
+
+   Argument 12 The name of some of the shared cached data to be used in multiple runs. This is currently
+   	       being used as a prefix for both webscore files and for lemma dictionary files, e.g., if
+               argument 12 is 'biology', the files ??? will either be created or updated when the program
+	       is run. If the value of argument 12, Argument 4 will be used instead, i.e., the files 
+	       $4_lemma.dict and $4.webscore will be used. Of course a webscore file will only be generated
+	       in either case if Argument 6 is True. These cached files make it unnecessary to recalculate
+	       webscores for terms that have previously been looked up (saving as much as .75 seconds per
+	       term). It also allows different forms of a lemma to be saved over a larger amount of documents
+	       (both foreground and background) so that more forms of a lemma are likely to be found.
    Argument 13 The name of the background cache file associated with Argument 5. If you list False as the background
                file, a default name (ranking.pkl) will be used (info will be saved to or loaded from this file). It
 	       is suggested that you use the .pkl file type, since this is a Python pickle file.
@@ -93,13 +98,13 @@ we will shorly be adding a corpus of court decisions, for which the legal topic 
 yet tested whether these same features are useful for the patent directory provided here.
 
    a) subdirectory: gutenberg-test
-      command:      $TERMOLATOR/run_termolator.sh foreground.list background.list .htm knitting False True 30000 5000 $TERMOLATOR False False False gutenberg.pkl
+      command:      $TERMOLATOR/run_termolator.sh foreground.list background.list .htm knitting True True 30000 5000 $TERMOLATOR False False False gutenberg.pkl
       
       -- The "True" setting in field 6 will make this run take an extra 10 minutes to run about 600 
        	 web searches, but the results are more accurate as a result. 
 
       -- After this run, the background statistics will be stored in gutenberg.pkl. Thus, for a 
-      	 second run, possibly with a different foreground, setting the fifth parameter to True
+      	 second run, possibly with a different foreground, setting the fifth parameter to False
          will make run time be somewhat faster, especially if the sixth parameter is set to False and
 	 the websearch score is not used.
 
@@ -144,7 +149,17 @@ files have any of the following file extensions, as these may be overwritten by 
 4) The output produce by the file includes the following, based on the OUTPUT_NAME:
 
    OUTPUT_NAME.out_term_list --- This is the final output, a list of the top N terms in order of rank, 
-   			     	 where N = Argument 8 above
+   			     	 where N = Argument 8 above. Each line consists of the term lemma 
+				 followed by variants of that lemma, separated by tabs. Consider the
+				 following 2 lines from the sample OANC-test biology.out_term_list file:
+
+				 glucocorticoid receptor\tglucocorticoid receptors\tgr
+				 p53 activation\tactivation of p53
+
+				 As these examples show, the lemma appears first. Then alternative forms 
+				 appear including plurals, abbreviations and/or noun phrases with 
+				 prepositional phrase right modifiers (we assume that the left modified noun
+				 noun compounds are the lemmas).
 
    OUTPUT_NAME.scored_output --- This is a superset of the previous list, approximately the top 30% of the terms
    			     	 considered by the system or the top K terms, if K is lower than 30%, and 
@@ -153,7 +168,7 @@ files have any of the following file extensions, as these may be overwritten by 
 				 will take around 24,000 seconds or just under 7 hours.
 
    		             --- There are several columns on each line, divided by tabs, as follows: 
-			     	 Column 1 -- the term
+			     	 Column 1 -- the term (just the lemma)
 			     	 Column 2 -- a rule classification (used to determine if the term is well-formed)
 				 Column 3 -- a value Good, Medium, Neutral (measuring the quality of the term by some set of rules)
 				 Column 4 -- a score between 0 and 1 measuring term quality
@@ -198,7 +213,37 @@ files have any of the following file extensions, as these may be overwritten by 
    FILE.tchunk and FILE.tchunk.nps -- these are files that organize the terms from FILE.terms 
    	       	   		      into a form that the distributional system can process
 
-6) Runtime
+6) In addition the following files are created for purposes of speeding up processing in multiple runs:
+
+   $13 -- a pickled file storing the background component of the distributional score
+   $12_lemma.dict -- a lemma dictionary, used to generate the non-initial columns in 
+   		     the .out_term_list files
+   $12.webscore -- A file saving webscores for terms
+
+7) In addition to the "main" way of running the system, it is also
+   possible to run using a single file as foreground.  We are
+   currently generating one set of terms using each supreme court
+   decision as foreground and the full set of supreme court decisions
+   as background. In future versions, we will provide an example from
+   this run. To do this, we use the following script with the
+   following arguments:
+
+   run_termolator_with_1_file_foreground.sh FOREGROUND BACKGROUND EXTENSION OUTPUT_NAME TRUE-OR-FALSE TRUE-OR-FALSE 10000 1000 PROGRAM-DIRECTORY ADDITIONAL_TOPIC_STRING
+
+   This takes all the same arguments as run_termolator.sh, with the following exceptions:
+
+   Argument 1 (FOREGROUND) is one foreground file, rather than a file
+       containing a list of files. The filetype is left out
+   Arguments 7 and 8 -- lower numbers are recommended for single
+       files. Intially we assume 10000 and 1000, but these numbers are
+       probably too high
+
+   For the first run, Arguments 5 and 11 should both be True and True
+   if the foreground file is part of the background. If not, then
+   Argument 11 should be False.  For subsequent runs Argument 5 should
+   be False (assuming the same background is being used).
+
+8) Runtime
 
 There are the following factors to consider. 
 
@@ -254,7 +299,7 @@ fewer than 5000 files; (c) opting for fewer than 30K terms for using
 the websearch metric (see below); and (d) reusing relevance scores via
 a dictionary.
 
-7) Known Issues relating to the Relevance Score (arguments 6 and 7)
+9) Known Issues relating to the Relevance Score (arguments 6 and 7)
    A) Internet Outages can cause the cause the system to fail.
    B) The score is based on free Yahoo! web searches. If Yahoo! changes
       the way search results are printed out, this can result in the 
@@ -270,14 +315,14 @@ a dictionary.
       and further adjustments to the code would be required to make
       this work.
       
-8) Known Issues with the POS tagger. We currently assume a maximum
+10) Known Issues with the POS tagger. We currently assume a maximum
    file size of 500000 bytes. This can be changed by editing the
    TERMOLATOR_POS.properties file. However, our current POS tagger
    uses lots of memory for large files. So it is not advisable to
    raise this amount by a lot. An alternative is to shorten or split
    very large files when using them with this system.
 
-9) We experienced the following issue with version 0.1 which used
+11) We experienced the following issue with version 0.1 which used
    Python 2 for nltk. We have not experienced it yet with version 0.2
    (which only uses Python 3) and do not currently know whether it is
    still an issue. The distributional system seems to clash with some

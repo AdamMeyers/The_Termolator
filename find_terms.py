@@ -27,5 +27,38 @@ def find_inline_terms_for_file_list(file_list,dict_prefix=False):
         if dict_prefix:
             save_abbrev_dicts(dict_prefix+".dict_abbr_to_full",dict_prefix+".dict_full_to_abbr")
             ## save_unigram_dict(dict_prefix+".dict_unigram")
-        
 
+def increment_lemma_dict(infile,dictionary):
+    with open(infile) as instream:
+        ## this allows each phrase to have multiple corresponding lemmas, but
+        ## in practice, we will only really assume one lemma per phrase
+        for line in instream:
+            line = line.strip(os.linesep)
+            line_entry = get_integrated_line_attribute_value_structure_no_list(line,'TERM') 
+            if line_entry:
+                lemma = line_entry['LEMMA'].lower()
+                lemma = lemma.strip('\'"()')
+                phrase = line_entry['STRING'].lower()
+                phrase = phrase.strip('\'"()')
+                if phrase in dictionary:
+                    if not lemma in dictionary[phrase]:
+                        dictionary[phrase].append(lemma)
+                else:
+                    dictionary[phrase]=[lemma]
+            ## eliminates detected NEs: URL, ORGANIZATION, LOCATION, ...
+            
+
+def make_lemma_dict(terms_files,lemma_dict):
+    lemma_dictionary = {}
+    with open(terms_files) as instream:
+        for line in instream:
+            line = line.strip(os.linesep)
+            increment_lemma_dict(line,lemma_dictionary)
+    with open(lemma_dict,'w',) as outstream:
+        keys = list(lemma_dictionary.keys())
+        keys.sort()
+        for key in keys:
+            outstream.write(key)
+            for value in lemma_dictionary[key]:
+                outstream.write('\t'+value)
+            outstream.write('\n')

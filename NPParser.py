@@ -87,7 +87,7 @@ class Genia:
             if len(temp) < 4:
                 continue
             # get the word (and it's attributes)
-            w = Word(temp[0], temp[2], temp[3])
+            w = Word(temp[0].strip(' '), temp[2], temp[3])
             # add to the list
             words.append(w)
         return words
@@ -108,7 +108,7 @@ class GeniaReader:
             if len(temp) < 4:
                 continue
             # get the word (and it's attributes)
-            w = Word(temp[0], temp[2], temp[3])
+            w = Word(temp[0].strip(' '), temp[2], temp[3])
             # add to the list
             words.append(w)
         return words
@@ -123,6 +123,7 @@ class NPParser:
             if words[i].chunk == "B-NP":
                 # If the previous phrase exists, end it and add to list
                 if NP:
+                    ## NPs.append(NP)
                     NPs.append(NP)
                 # Start a new phrase
                 NP = [words[i]]
@@ -132,6 +133,7 @@ class NPParser:
             # any other tag breaks the phrase
             else:
                 if NP:
+                    ## NPs.append(NP)
                     NPs.append(NP)
                 NP = []
         return NPs
@@ -143,7 +145,7 @@ class NPParser:
         pos = 0
         while pos < len(NP):
             token = NP[pos]
-            if token.pos == "JJ" or token.pos[:2] == "NN":
+            if (token.pos == "JJ") or (token.pos[:2] == "NN" ) or (token.pos in ['VBG','VBN']):
                 break
             else:
                 pos += 1
@@ -156,7 +158,7 @@ class NPParser:
             for i in range(pos,len(NP)):
                 # add each successive subset to the list
                 # i.e. "word1", "word1 word2", "word1 word2 word3"
-                term = term + " " + NP[i].word
+                term = term + " " + NP[i].word.strip(' ')
                 # cannot end on pos tag "JJ"
                 if not NP[i].pos == "JJ":
                     terms.add(term.strip())
@@ -165,8 +167,11 @@ class NPParser:
         for i in range(len(NP)-1, pos-1, -1):
             # add each successive subset to the list
             # i.e. "word3", "word2 word3", "word1 word2 word3"
-            term = NP[i].word + " " + term
-            terms.add(term.strip())
+            if NP[i].pos[:2] in ['NN','JJ','VBG','VBN']:
+                ## added restriction to prevent terms starting with
+                ## weird POS's (like IN)
+                term = NP[i].word.strip(' ') + " " + term
+                terms.add(term.strip())
         return terms
     def getNPs(self, filename):
         """Input a file, output a list of noun phrases"""
@@ -176,14 +181,12 @@ class NPParser:
         return NPs
     def getTerms(self, filename, filters=[], relaxed=False, overwrite=False):
         """Input file, output a FreqDist of terms"""
-        filterfname = os.path.join(os.path.dirname(filename),'filter.save')
-        if os.path.exists(filename+'.nps') and os.path.exists(filterfname):
+        ## filterfname = os.path.join(os.path.dirname(filename),'filter.save')
+        if os.path.exists(filename+'.nps'):
             f = open(filename+'.nps','rb')
             old_filters, fd = pickle.load(f)
             f.close()
             if old_filters == filters:
-                if not Filter.unstemdict:
-                    Filter._get_stemdict(filterfname)
                 return fd
         NPs = self.getNPs(filename)
         fd = FreqDist()
@@ -202,6 +205,6 @@ class NPParser:
             f = open(filename+'.nps','wb')
             pickle.dump((filters, fd), f)
             f.close()
-        if os.path.exists(filterfname):
-            os.remove(filterfname)
+        # if os.path.exists(filterfname):
+        #     os.remove(filterfname)
         return fd

@@ -677,6 +677,11 @@ def invalid_abbrev_of(ARG2_string,ARG1_string,recurs=False):
             return(True)
                 
     
+def trim_end_spaces_from_offset_and_string(end,string):
+    while (len(string)>0) and (string[-1] == ' '):
+        string = string[:-1]
+        end = end-1
+    return(end,string)
     
 def get_next_abbreviate_relations(previous_line,line,position):
     global word_split_pattern
@@ -780,6 +785,7 @@ def get_next_abbreviate_relations(previous_line,line,position):
                 ARG1_begin = result[0]
                 ARG1_end = result[1]
                 ARG1_string = result[2]
+                ARG1_end,ARG1_string = trim_end_spaces_from_offset_and_string(ARG1_end,ARG1_string)
                 output_type = result[3]
             elif len(abbreviation)==1:
             ## single capital letters divided by spaces, are an alternative match, e.g., (J R A)
@@ -811,6 +817,7 @@ def get_next_abbreviate_relations(previous_line,line,position):
                     ARG1_begin = result[0]
                     ARG1_end = result[1]
                     ARG1_string = result[2]
+                    ARG1_end,ARG1_string = trim_end_spaces_from_offset_and_string(ARG1_end,ARG1_string)
                     output_type = result[3]
             elif ' ' in pattern.group(0):
                 ## possibility of a multi-word item in parentheses (antecedent) matching the word right before
@@ -834,6 +841,7 @@ def get_next_abbreviate_relations(previous_line,line,position):
                         ARG2_string = abbreviation
                         ARG1_begin = pattern.start()+position+1
                         ARG1_end = ARG1_begin+len(ARG1_string) ## result[1]-1
+                        ARG1_end,ARG1_string = trim_end_spaces_from_offset_and_string(ARG1_end,ARG1_string)
                         ARG2_begin = previous_word.start()+position ## result[0] ## correct for lookup, but not for calculated
                         ARG2_end =  ARG2_begin+len(ARG2_string)
                         output_type = result[3]
@@ -866,20 +874,32 @@ def get_next_abbreviate_relations(previous_line,line,position):
     return(output)
 
 def record_abbreviate_dictionary(fulltext,abbreviation):
-    ## print(fulltext,abbreviation,argclass)
     global abbr_to_full_dict
     global full_to_abbr_dict
-    ### also need to update full_to_abbr_dict *** 57 ***
     key = abbreviation ## use naturally occuring form of abbreviations (otherwise causes problems, e.g., if abbreviation is OR
     value = regularize_match_string1(fulltext)
+    ## put dictionary items at front of lists
+    ## this ensures that the most recently encountered
+    ## abbreviation relations will have precedence in cases of ambiguity,
+    ## e.g., If ABC is an abbreviation for both "already been chewed" and "alaskan bear chow",
+    ##       the most recent use will take precedent. Since we run abbreviate on file shortly
+    ##       before inline term extraction, the correct relation is likely to be favored.
     if key in abbr_to_full_dict:
         if not value in abbr_to_full_dict[key]:
-            abbr_to_full_dict[key].append(value)
+            abbr_to_full_dict[key].insert(0,value)
+            ## abbr_to_full_dict[key].append(value)
+        elif not abbr_to_full_dict[key][0] == value:
+             abbr_to_full_dict[key].remove(value)
+             abbr_to_full_dict[key].insert(0,value)
     else:
         abbr_to_full_dict[key] = [value]
     if value in full_to_abbr_dict:
         if not key in full_to_abbr_dict[value]:
-            full_to_abbr_dict[value].append(key)
+            full_to_abbr_dict[value].insert(0,key)
+            ## full_to_abbr_dict[value].append(key)
+        elif not full_to_abbr_dict[value][0] == key:
+            full_to_abbr_dict[value].remove(key)
+            full_to_abbr_dict[value].insert(0,key)
     else:
         full_to_abbr_dict[value] = [key]
 
