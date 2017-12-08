@@ -60,6 +60,12 @@ fi
 
 ## not sure if this really is necessary
 ## $TERMOLATOR/possibly_create_abbreviate_dicts.py $4.internal_abbr_list $4.dict_full_to_abbr $4.dict_abbr_to_full
+if test -f temporary_TERMOLATOR_POS.properties; then 
+    echo "Using Existing temporary_TERMOLATOR_POS.properties file"
+else
+    echo "FuseJet.path1 = ${TERMOLATOR}/models" > temporary_TERMOLATOR_POS.properties
+    tail -n +2 ${TERMOLATOR}/TERMOLATOR_POS.properties >> temporary_TERMOLATOR_POS.properties
+fi
 
 if [ "$5" = "True" ]; then
 ## Step 2 if not already processed, process the backgound files to find all
@@ -73,6 +79,7 @@ if [ "$5" = "True" ]; then
     $TERMOLATOR/make_io_file.py $2 $4.internal_pos_terms_abbr_list .pos .terms .abbr
     $TERMOLATOR/make_termolator_fact_txt_files.py $4.internal_prefix_list $3
 ## generates fact, txt2 and txt3 files from input files
+    echo "Calling Java Consule TJet jar with properties above"
     java -Xmx16g -cp ${TERMOLATOR}/TJet.jar FuseJet.Utils.Console ./temporary_TERMOLATOR_POS.properties $4.internal_txt_fact_list $4.internal_pos_list
 ## generates POS files
     $TERMOLATOR/run_adjust_missing_char_pos.py $4.internal_fact_pos_list
@@ -90,14 +97,6 @@ if [ "${11}" = "False" ]; then
     $TERMOLATOR/make_io_file.py $1 $4.internal_pos_terms_abbr_list .pos .terms .abbr
     $TERMOLATOR/make_termolator_fact_txt_files.py $4.internal_prefix_list $3
 ## generates fact, txt2 and txt3 files from input files
-
-    if test -f temporary_TERMOLATOR_POS.properties; then 
-        echo "Using Existing temporary_TERMOLATOR_POS.properties file"
-    else
-        echo "FuseJet.path1 = ${TERMOLATOR}/models" > temporary_TERMOLATOR_POS.properties
-        tail -n +2 ${TERMOLATOR}/TERMOLATOR_POS.properties >> temporary_TERMOLATOR_POS.properties
-    fi
-
     echo "Calling Java Consule TJet jar with properties above"
     java -Xmx16g -cp ${TERMOLATOR}/TJet.jar FuseJet.Utils.Console ./temporary_TERMOLATOR_POS.properties $4.internal_txt_fact_list $4.internal_pos_list
 ## generates POS files
