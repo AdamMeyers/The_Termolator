@@ -40,13 +40,13 @@ echo "use previous saved pickle file for terms ${13}"
 ## Step 1: Finding inline terms for foreground files
 echo "Running Step 1: finding inline terms for foreground files"
 TERMOLATOR=${9:-$TERMOLATORPATH}
-$TERMOLATOR/make_io_file.py $1 $4.internal_prefix_list BARE
+$TERMOLATOR/possibly_create_abbreviate_dicts.py $4.internal_abbr_list $4.dict_full_to_abbr $4.dict_abbr_to_full$TERMOLATOR/make_io_file.py $1 $4.internal_prefix_list BARE
 
 $TERMOLATOR/make_io_file.py $1 $4.internal_abbr_list .abbr
 $TERMOLATOR/make_io_file.py $1 $4.internal_foreground_tchunk_list .tchunk
 $TERMOLATOR/make_io_file.py $2 $4.internal_background_tchunk_list .tchunk
 
-$TERMOLATOR/possibly_create_abbreviate_dicts.py $4.internal_abbr_list $4.dict_full_to_abbr $4.dict_abbr_to_full
+
 
 if [ "${12}" = "False" ]; then
    lemma_dict="$4_lemma.dict"
