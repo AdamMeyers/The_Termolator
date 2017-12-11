@@ -40,7 +40,6 @@ echo "use previous saved pickle file for terms ${13}"
 ## Step 1: Finding inline terms for foreground files
 echo "Running Step 1: finding inline terms for foreground files"
 TERMOLATOR=${9:-$TERMOLATORPATH}
-$TERMOLATOR/possibly_create_abbreviate_dicts.py $4.internal_abbr_list $4.dict_full_to_abbr $4.dict_abbr_to_full$TERMOLATOR/make_io_file.py $1 $4.internal_prefix_list BARE
 
 $TERMOLATOR/make_io_file.py $1 $4.internal_abbr_list .abbr
 $TERMOLATOR/make_io_file.py $1 $4.internal_foreground_tchunk_list .tchunk
@@ -90,6 +89,7 @@ if [ "$5" = "True" ]; then
 fi
 
 if [ "${11}" = "False" ]; then
+    $TERMOLATOR/make_io_file.py $1 $4.internal_prefix_list BARE
     $TERMOLATOR/make_io_file.py $1 $4.internal_pos_list .pos
     $TERMOLATOR/make_io_file.py $1 $4.internal_txt_fact_list .txt3 .fact
     $TERMOLATOR/make_io_file.py $1 $4.internal_fact_pos_list .fact .pos
@@ -108,6 +108,8 @@ if [ "${11}" = "False" ]; then
     echo "Adjusting for Special Chars"
     $TERMOLATOR/run_find_inline_terms.py $4.internal_prefix_list $4 ${10}
     ## runs inline term detection
+
+   $TERMOLATOR/possibly_create_abbreviate_dicts.py $4.internal_abbr_list $4.dict_full_to_abbr $4.dict_abbr_to_full
 
     echo "Chunking for inline term detection"
     $TERMOLATOR/run_make_term_chunk.py $4.internal_pos_terms_abbr_list $4.internal_foreground_tchunk_list $4.dict_abbr_to_full ${10} ${lemma_dict}
