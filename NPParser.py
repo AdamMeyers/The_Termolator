@@ -137,8 +137,11 @@ class NPParser:
                     NPs.append(NP)
                 NP = []
         return NPs
-    def extractPossibleTerms(self, NP, relaxed=False):
+    def extractPossibleTerms(self, NP, relaxed=False, disable_substrings=True):
         """Takes a NounPhrase and outputs a list of strings of possible terms"""
+        ## bug fix -- substrings handled when creating tchunk file (after 2017 recoding)
+        ## this function may overgenerate
+        ## disable_substrings portion of this function to test this
         terms = set()
         # set pos equal to the possible terms' start position
         # (i.e. trim leading words)
@@ -164,14 +167,15 @@ class NPParser:
                     terms.add(term.strip())
         # collect all possible terms beginning at the end
         term = ""
-        for i in range(len(NP)-1, pos-1, -1):
-            # add each successive subset to the list
-            # i.e. "word3", "word2 word3", "word1 word2 word3"
-            if NP[i].pos[:2] in ['NN','JJ','VBG','VBN']:
-                ## added restriction to prevent terms starting with
-                ## weird POS's (like IN)
-                term = NP[i].word.strip(' ') + " " + term
-                terms.add(term.strip())
+        if not disable_substrings:
+            for i in range(len(NP)-1, pos-1, -1):
+                # add each successive subset to the list
+                # i.e. "word3", "word2 word3", "word1 word2 word3"
+                if NP[i].pos[:2] in ['NN','JJ','VBG','VBN']:
+                    ## added restriction to prevent terms starting with
+                    ## weird POS's (like IN)
+                    term = NP[i].word.strip(' ') + " " + term
+                    terms.add(term.strip())
         return terms
     def getNPs(self, filename):
         """Input a file, output a list of noun phrases"""
