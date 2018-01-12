@@ -50,9 +50,13 @@ $TERMOLATOR/make_io_file.py $2 $4.internal_background_tchunk_list .tchunk
 if [ "${12}" = "False" ]; then
    lemma_dict="$4_lemma.dict"
    web_scores="$4.webscore"
+   bk_full_abb_dict=$4_bk.dict_full_to_abbr
+   bk_abb_full_dict=$4_bk.dict_abbr_to_full
 else
    lemma_dict="${12}_lemma.dict"
    web_scores="${12}.webscore"
+   bk_full_abb_dict=${12}_bk.dict_full_to_abbr
+   bk_abb_full_dict=${12}_bk.dict_abbr_to_full
 fi
 
 
@@ -74,7 +78,7 @@ if [ "$5" = "True" ]; then
     $TERMOLATOR/make_io_file.py $2 $4.internal_pos_list .pos
     $TERMOLATOR/make_io_file.py $2 $4.internal_txt_fact_list .txt3 .fact
     $TERMOLATOR/make_io_file.py $2 $4.internal_fact_pos_list .fact .pos
-    $TERMOLATOR/make_io_file.py $2 $4.internal_txt_fact_pos_list .txt2 .fact .pos
+##    $TERMOLATOR/make_io_file.py $2 $4.internal_txt_fact_pos_list .txt2 .fact .pos
     $TERMOLATOR/make_io_file.py $2 $4.internal_pos_terms_abbr_list .pos .terms .abbr
     $TERMOLATOR/make_termolator_fact_txt_files.py $4.internal_prefix_list $3
 ## generates fact, txt2 and txt3 files from input files
@@ -84,7 +88,8 @@ if [ "$5" = "True" ]; then
     $TERMOLATOR/run_adjust_missing_char_pos.py $4.internal_fact_pos_list
 ## adjustment for special characters
     $TERMOLATOR/run_find_inline_terms.py $4.internal_prefix_list false ${10}
-    $TERMOLATOR/run_make_term_chunk.py $4.internal_pos_terms_abbr_list $4.internal_background_tchunk_list $4.dict_abbr_to_full ${10} ${lemma_dict}
+    $TERMOLATOR/possibly_create_abbreviate_dicts.py $4.internal_abbr_list bk_full_abb_dict bk_abb_full_dict
+    $TERMOLATOR/run_make_term_chunk.py $4.internal_pos_terms_abbr_list $4.internal_background_tchunk_list  bk_abb_full_dict ${10} ${lemma_dict}
     echo "calling distributional_component.py in term_extration using foreground and background tchunk list with output to file $4.all_terms"
 fi
 
@@ -93,7 +98,7 @@ if [ "${11}" = "False" ]; then
     $TERMOLATOR/make_io_file.py $1 $4.internal_pos_list .pos
     $TERMOLATOR/make_io_file.py $1 $4.internal_txt_fact_list .txt3 .fact
     $TERMOLATOR/make_io_file.py $1 $4.internal_fact_pos_list .fact .pos
-    $TERMOLATOR/make_io_file.py $1 $4.internal_txt_fact_pos_list .txt2 .fact .pos
+##    $TERMOLATOR/make_io_file.py $1 $4.internal_txt_fact_pos_list .txt2 .fact .pos
     $TERMOLATOR/make_io_file.py $1 $4.internal_pos_terms_abbr_list .pos .terms .abbr
     $TERMOLATOR/make_termolator_fact_txt_files.py $4.internal_prefix_list $3
 ## generates fact, txt2 and txt3 files from input files
@@ -138,6 +143,7 @@ $TERMOLATOR/make_final_output_file.py $4.scored_output ${lemma_dict} $8 $4.out_t
 
 echo "Cleaning up files"
 rm -f $4.internal_prefix_list $4.internal_pos_list $4.internal_txt_fact_list $4.internal_fact_pos_list
-rm -f $4.internal_txt_fact_pos_list $4.internal_pos_terms_abbr_list $4.internal_foreground_tchunk_list
+## rm -f $4.internal_txt_fact_pos_list 
+rm -f $4.internal_pos_terms_abbr_list $4.internal_foreground_tchunk_list
 rm -f $4.internal_background_tchunk_list $4.internal_abbr_list
 

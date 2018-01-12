@@ -2,7 +2,7 @@ from abbreviate import *
 
 et_al_citation = re.compile(' et[.]? al[.]? *$')
 ok_path_types = ['url'] ##  currently 'ratio' is not an ok_path_type
-compound_inbetween_string = re.compile('^ +(of|for) +((the|a|[A-Z]\.) +)?$',re.I)
+compound_inbetween_string = re.compile('^ +(of|for) +((the|a|an|[A-Z]\.) +)?$',re.I)
 term_stop_words_with_periods = re.compile('(^|\s)(u\.s|e\.g|i\.e|u\.k|c\.f|see|ser)([\.\s]|$)',re.I)
 
 lemma_dict = {}
@@ -1319,7 +1319,117 @@ def write_term_becomes_person(outstream,term,instances):
         outstream.write('PERSON ID="NYU_ID_'+str(term_id_number)+'" STRING="'+term+'"')
         outstream.write(' START='+str(start)+' END='+str(end)+os.linesep)
 
-def find_inline_terms(lines,fact_file,pos_file,terms_file,marked_paragraphs=False,filter_off=False):
+def filter_txt_triples_by_start_end(start_end_filters,txt_strings):
+    ## ** 57 **
+    ## start_end_filters = sorted list of start end pairs
+    ## txt_strings = sorted triples: start,end,string
+    ## next deal with modified strings
+    if len(start_end_filters)==0:
+        return(txt_strings)
+    output = []
+    next_block_start, next_block_end = start_end_filters.pop(0)
+    if len(txt_strings) == 0:
+        done = True
+    else: 
+        done = False
+    start = 'not ready'
+    while not done:
+        if start == 'not ready':
+            if len(txt_strings) == 0:
+                break
+            ## if there are no more triples, we are done here
+            else:
+                start, end, string = txt_strings.pop(0)
+        if (next_block_end == 'Done'):
+            output.append([start,end,string])
+            start = 'not ready'
+        else:
+            while (next_block_end < start) and (len(start_end_filters)>0):
+                next_block_start, next_block_end = start_end_filters.pop(0)
+            if (len(start_end_filters)==0) and (next_block_end < start):
+                next_block_end = 'Done'
+        if next_block_end == 'Done':
+            pass        
+        elif (start == next_block_start) and (end == next_block_end):
+            ## trivial case of identity, ignore start/end
+            start = 'not ready'
+        elif end <= next_block_start:
+            ## case 1 block is passed current start and end (no effect)
+            output.append([start,end,string])
+            start = 'not ready'
+        elif (start >= next_block_start) and (start <= next_block_end):
+            ## this occurs if start is somewhere inside block
+            if end > next_block_end:
+                ## case 2: this is the overlapping case where start end overlaps the block, but starts
+                ## after the block starts
+                start = next_block_end
+                new_size = end-start
+                if new_size <2:
+                    start = 'not ready'
+                elif not ' ' in string[-1*(new_size+1):(-1*(new_size-1))]:
+                    ## new string should start with a space or previous string should end with one
+                    if ' ' in string[-1*new_size:]:
+                        space_position = string[-1*new_size:].index(' ')
+                        start = start + space_position
+                        new_size = end-start
+                        modified_string = string[-1*new_size:]
+                        output.append([start,end,modified_string])
+                        start = 'not ready'
+                    else:
+                        start = 'not ready'
+                else:
+                    modified_string = string[-1*new_size:]
+                    if len(modified_string) != end-start:
+                        print(1,'end',end,'start',start)
+                        print('length',len(modified_string),modified_string)
+                ### modified_string = **** 57 ****
+                    output.append([start,end,modified_string])
+                    start = 'not ready'
+            else:
+                ## case 3 this should only occur if start,end are totally inside of the block
+                ## in which case this start/end segment should be ignored
+                start = 'not ready'
+        elif (start <= next_block_start) and (end <=next_block_end):
+            ## this only arises if start is before the block and
+            ## end overlaps it
+            end = next_block_start
+            new_size = end-start
+            ### modified_string = **** 57 ****
+            modified_string = string[:new_size]
+            if len(modified_string) != end-start:
+                print(2,'end',end,'start',start)
+                print('length',len(modified_string),modified_string)
+            output.append([start,end,modified_string])
+            start = 'not ready'
+        elif (start < next_block_start) and (end > next_block_end):
+            ## if the block is inside of start/end
+            block_size=next_block_end-next_block_start
+            end1 = next_block_start
+            new_size = end1-start
+            modified_string = string[:new_size]
+            ### modified_string = **** 57 ****
+            if len(modified_string) != end1-start:
+                print(3,'end1',end1,'start',start)
+                print('length',len(modified_string),modified_string)
+            output.append([start,end1,modified_string])
+            ### modified_string = **** 57 ****
+            start = next_block_end
+            ## leave end alone
+            ### modified_string = **** 57 ****
+            string = string[new_size+block_size:]
+            ## this new start,end,string is compared to the next
+            ## block -- (the previous blocking string cut it into 2 parts)
+        else:
+            ## This should never happen
+            print('Unexpected condition for filter_txt_triples_by_start_end')
+            print(start,end,string)
+            print(next_block_start,next_block,end)
+            output.append([start,end,string])
+            start = 'not ready'
+    return(output)
+
+def find_inline_terms(lines,fact_file,pos_file,terms_file,marked_paragraphs=False,\
+                      filter_off=False,start_end_filters=False):
     global abbr_to_full_dict
     global full_to_abbr_dict
     global term_id_number
@@ -1374,6 +1484,8 @@ def find_inline_terms(lines,fact_file,pos_file,terms_file,marked_paragraphs=Fals
             so_far = end
         if current_block != '':
             txt_strings.append([start,end,current_block])
+    if start_end_filters:
+        txt_strings = filter_txt_triples_by_start_end(start_end_filters,txt_strings)
     for start,end,text in txt_strings:
         text = re.sub(line_break_match, ' \g<1>',text)
         if (text.count('\t')+text.count(' '))<(len(text)/3):
