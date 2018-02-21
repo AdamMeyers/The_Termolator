@@ -220,28 +220,65 @@ files have any of the following file extensions, as these may be overwritten by 
    		     the .out_term_list files
    $12.webscore -- A file saving webscores for terms
 
-7) In addition to the "main" way of running the system, it is also
-   possible to run using a single file as foreground.  We are
-   currently generating one set of terms using each supreme court
-   decision as foreground and the full set of supreme court decisions
-   as background. In future versions, we will provide an example from
-   this run. To do this, we use the following script with the
-   following arguments:
+7) In addition to the "main" way of running the system, there are three additional options.
 
-   run_termolator_with_1_file_foreground.sh FOREGROUND BACKGROUND EXTENSION OUTPUT_NAME TRUE-OR-FALSE TRUE-OR-FALSE 10000 1000 PROGRAM-DIRECTORY ADDITIONAL_TOPIC_STRING
+   A. Single File as foregound. It is possible to run using a single
+      file as foreground.  We are currently generating one set of terms
+      using each supreme court decision as foreground and the full set of
+      supreme court decisions as background. In future versions, we will
+      provide an example from this run. To do this, we use the following
+      script with the following arguments:
 
-   This takes all the same arguments as run_termolator.sh, with the following exceptions:
+      run_termolator_with_1_file_foreground.sh FOREGROUND BACKGROUND EXTENSION OUTPUT_NAME TRUE-OR-FALSE TRUE-OR-FALSE 10000 1000 PROGRAM-DIRECTORY ADDITIONAL_TOPIC_STRING
 
-   Argument 1 (FOREGROUND) is one foreground file, rather than a file
-       containing a list of files. The filetype is left out
-   Arguments 7 and 8 -- lower numbers are recommended for single
-       files. Intially we assume 10000 and 1000, but these numbers are
-       probably too high
+      This takes all the same arguments as run_termolator.sh, with the following exceptions:
 
-   For the first run, Arguments 5 and 11 should both be True and True
-   if the foreground file is part of the background. If not, then
-   Argument 11 should be False.  For subsequent runs Argument 5 should
-   be False (assuming the same background is being used).
+      Argument 1 (FOREGROUND) is one foreground file, rather than a file
+         containing a list of files. The filetype is left out
+      Arguments 7 and 8 -- lower numbers are recommended for single
+         files. Intially we assume 10000 and 1000, but these numbers are
+         probably too high
+
+      For the first run, Arguments 5 and 11 should both be True and True
+      if the foreground file is part of the background. If not, then
+      Argument 11 should be False.  For subsequent runs Argument 5 should
+      be False (assuming the same background is being used).
+
+    B. Phase 1 Only -- Suppose you do not want to run the full
+       Termolator system. Suppose you are only interested identifying
+       the technical noun groups that we use as input to the
+       distributional system. 
+
+       The script run_terms_only.sh takes only five arguments, a subset of the arguments of the full
+       run_termolator.sh script.
+       	   Argument 1: input files -- a file listing the input txt, or hml (or xml) files
+	   Argument 2: file type of input files
+	   Argument 3: output_file_name (mainly used for creating dictionary/caching files)
+	   Argument 4: directory of termlolator (like run_termolator.sh)
+	   Argumeng 5: name of special topic area  (like run_termolator.sh)
+
+       The program creates some of the same preprocessing files that run_termolator.sh creates, but does
+       not continue to produce a term list. I suspect that the most useful output files are the .terms
+       and .abbr files.  The .terms files are the files listing the technical noun groups found in each
+       of the input files and the .abbr files are the list of abbreviation relations found.
+
+    C. There is a more experimental option. This has only been partially implemented and not completely 
+       tested. Suppose, you want to run Phase 1, but you find that there is some other type of constituent,
+       e.g., named entities, that you can detect by some other means. Furthermore, suppose that Termolator is
+       making errors whereever there are named entities and you would like to eliminate terms that "conflict" 
+       with these NEs. There is an additional python file that will remove any term from the "terms" files.
+       We have not tested this a lot yet, so it is not currently used in any of the shell scripts, so you
+       may have to customize a shell script if you want to incorporate this in a run (either with 
+       run_termolator.sh or with run_terms_only.sh).
+
+       In find_terms.py, there is a function find_inline_terms_for_file_list, which is called by 
+       run_find_inline_terms.py (by the shell scripts). That function takes an optional keyword argument
+       "ne_filter_ending".  If you set that ending to a file type, e.g., ".ne" or the like. The program
+       will look for files of that type. Those files will be assumed to include lines of XML with "start" 
+       and "end" values, e.g., 
+       <citation id="108713_1" entry_type="standard_case" start="1" end="20" reporter="U.S." standard_reporter="U.S." volume="410" page_number="113" year="1973" line="2">410 U.S. 113 (1973)</citation>
+       The values other than start and end do not matter.  The terms collected will not be constrained so
+       they do not include any strings between instances of "start" and "end" found in that file.
 
 8) Runtime
 
