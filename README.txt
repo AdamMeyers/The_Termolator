@@ -49,7 +49,7 @@ Instructions for Using program:
 2) To run the main system, the command is as follows (an additional
    way of running the system will be described in section 7):
 
-   $TERMOLATOR/run_termolator.sh FOREGROUND BACKGROUND EXTENSION OUTPUT_NAME TRUE-OR-FALSE TRUE-OR-FALSE 30000 5000 PROGRAM-DIRECTORY ADDITIONAL_TOPIC_STRING
+   $TERMOLATOR/run_termolator.sh FOREGROUND BACKGROUND EXTENSION OUTPUT_NAME TRUE-OR-FALSE TRUE-OR-FALSE 30000 5000 PROGRAM-DIRECTORY ADDITIONAL_TOPIC_STRING TRUE-OR-FALSE general_file_name_or_FALSE SHARED_BACKGROUND_FILENAME.pkl
 
 The arguments are defined as follows:
 
@@ -77,11 +77,10 @@ The arguments are defined as follows:
    	       run the same Foreground with different backgrounds or if for any reason, you have
 	       already preprocessed the foreground file. So usually, this field should just
 	       contain "False".
-
    Argument 12 The name of some of the shared cached data to be used in multiple runs. This is currently
    	       being used as a prefix for both webscore files and for lemma dictionary files, e.g., if
-               argument 12 is 'biology', the files ??? will either be created or updated when the program
-	       is run. If the value of argument 12, Argument 4 will be used instead, i.e., the files 
+               argument 12 is 'biology', the files will either be created or updated when the program
+	       is run. If the value of argument 12 is False, Argument 4 will be used instead, i.e., the files 
 	       $4_lemma.dict and $4.webscore will be used. Of course a webscore file will only be generated
 	       in either case if Argument 6 is True. These cached files make it unnecessary to recalculate
 	       webscores for terms that have previously been looked up (saving as much as .75 seconds per
@@ -229,7 +228,7 @@ files have any of the following file extensions, as these may be overwritten by 
       provide an example from this run. To do this, we use the following
       script with the following arguments:
 
-      run_termolator_with_1_file_foreground.sh FOREGROUND BACKGROUND EXTENSION OUTPUT_NAME TRUE-OR-FALSE TRUE-OR-FALSE 10000 1000 PROGRAM-DIRECTORY ADDITIONAL_TOPIC_STRING
+      run_termolator_with_1_file_foreground.sh FOREGROUND BACKGROUND EXTENSION OUTPUT_NAME TRUE-OR-FALSE TRUE-OR-FALSE 10000 1000 PROGRAM-DIRECTORY ADDITIONAL_TOPIC_STRING TRUE_OR_FALSE general_file_name_or_FALSE SHARED_BACKGROUND_FILENAME.pkl
 
       This takes all the same arguments as run_termolator.sh, with the following exceptions:
 
