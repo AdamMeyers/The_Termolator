@@ -35,11 +35,18 @@ class Metric:
             ## other maps should be cast into lists
             # we only need the sum for the general class
             ## python3 compatibility change
+            ## TrueTdf updates by Y Gu 6/2018 (next 2 lines + 5 lines in for loop)
+            self.genDocs.wCounts = {} #for numBackDocsContains(t)
+            self.genDocsNum = 0 #for numBackDocs
             for iterator in gen:
-                ## print(1,iterator,2,iterator.counts)
+                self.genDocsNum += 1
                 for w in iterator.counts:
                     ## print(2,w,iterator.counts[w]) ## 57 OK 
                     self.genDocs.counts[w] += iterator.counts[w]
+                    if w in self.genDocs.wCounts:
+                        self.genDocs.wCounts[w] += 1
+                    else:
+                        self.genDocs.wCounts[w] = 1
                     ## input('pausing')
             # for i in range(len(list(gen))):
             #     for w in gen[i].counts:
@@ -170,6 +177,14 @@ class Metric:
             return self.rankingmap[(word,'DRDC')]
         else:
             return self._calDR(word)*self._calDC(word)
+    # edit to calculate true IDF = log (numBackDocs/numBackDocs(t)) Y. Gu edit 6/2018
+    def _calTrueIDF(self,word):
+        if word in self.genDocs.wCounts:
+            # +1 in case the count is zero, add-one smoothing
+            return math.log((self.genDocsNum + 1)/(self.genDocs.wCounts[word] +1)) 
+        else: 
+            # what to do when numberBackDocsContain(t) = 0, 
+            return math.log((self.genDocsNum + 1)/1)
     def _calIDF(self, word):
         """Returns the document relevance-inverse document frequency \
 (DR-IDF) of a proposed term"""
@@ -193,7 +208,9 @@ of a proposed term"""
             for doc in self.rdgDocs:
                 if word in doc.counts and doc.counts[word] > maxFreq:
                     maxFreq = doc.counts[word]
-            TFIDF = self._calDR(word)*maxFreq
+            #edit to use true IDF instad of DR Y. Gu edit 6/2018
+            #TFIDF = self._calDR(word)*maxFreq
+            TFIDF = self._calTrueIDF(word)*maxFreq
             self._TFIDF[word] = TFIDF
         return TFIDF
     def _calTokenDR(self, word):
