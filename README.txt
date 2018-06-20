@@ -23,17 +23,20 @@ be either .txt, .html or .xml (the latter only working if it uses HTML
 style markup to delimit text). UTF-8 encoding (which includes ASCII)
 is preferred, but ISO-8859-1 will work as well.
 
-Details of the original system are described in
-the accompanying paper (termolator-paper-2015.pdf):
+The essential details of the June 2018 system are described in the
+following paper:
 
-	A. Meyers, Y. He, Z. Glass and O. Babko-Malaya (2015). The
-	Termolator: Terminology Recognition based on Chunking-,
-	Statistical- and Search-based Scores.  Workshop on Mining
-	Scientific Papers: Computational Linguistics and
-	Bibliometrics.
+	A. Meyers, Y. He, Z. Glass, J. Ortega, S. Liao,
+	A. Grieve-Smith, R. Grishman and O. Babko-Malaya (2018).  The
+	Termolator: Terminology Recognition Based on Chunking,
+	Statistical and Search-Based Scores Research Metrics and
+	Analytics (RMA).
 
-We have modified the system somewhat for this distribution to make it
-easier to use.
+This can be downloaded at:
+
+https://www.frontiersin.org/articles/10.3389/frma.2018.00019/full
+
+We will continue to modify the system over time.
 
 Dependencies: If you have not already done so, you should install the
    python 3 version of the NLTK (see http://www.nltk.org/install.html). 
