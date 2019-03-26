@@ -18,6 +18,7 @@
 
 from term_utilities import *
 import urllib.request
+import requests
 import re
 import math
 import time
@@ -83,9 +84,13 @@ def do_provider_search(term,provider):
         url = url_prefix + replace_spaces_with_plus(term)
     if url_suffix:
         url = url+url_suffix
-    url_stream = urllib.request.urlopen(url)
-    data = str(url_stream.read())
-    return(data)
+    ## url_stream = urllib.request.urlopen(url)
+    response = requests.get(url).text
+    ## data = str(url_stream.read())
+    # data = url_stream.inof().get_content_charset()
+    # data = url_stream.read().decode('utf-8')
+    # print(2)
+    return(response)
 
 def do_provider_search_with_pause(term,provider,timing=1,reps=0):
     ## without this function, the system will halt every time
@@ -96,7 +101,8 @@ def do_provider_search_with_pause(term,provider,timing=1,reps=0):
     else:
         try:
             output = do_provider_search(term,provider)
-        except:
+        except Exception as ex:
+            print(ex)
             print('Temporary internet search failure. Trying again')
             time.sleep(timing)
             output = do_provider_search_with_pause(term,provider,timing=timing,reps=reps+1)
@@ -313,8 +319,6 @@ def do_search_and_classify_top_10(term,provider='yahoo',minimum=5,debug=False,st
         elif academic_document_match.search(url) or academic_document_match.search(title) \
            or academic_document_match.search(abstract):
             academic_count = 1+academic_count
-        # elif reference_match.search(url) or reference_match.search(title) or reference_match.search(abstract):
-        #     reference_count = 1+reference_count
         else:
             for doc in [url,title,abstract]:
                 if dot_pdf.search(doc):
