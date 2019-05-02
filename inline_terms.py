@@ -7,6 +7,7 @@ term_stop_words_with_periods = re.compile('(^|\s)(u\.s|e\.g|i\.e|u\.k|c\.f|see|s
 
 lemma_dict = {}
 cluster_hash = {}
+term_latin_pp_hash = {}
 
 def derive_base_form_from_plural(word):
     if word in noun_base_form_dict:
@@ -60,6 +61,10 @@ def topic_term_ok(word_list,pos_list,term_string):
     has_lower = False
     has_upper = False
     has_ugly = False
+    if (pos_list[-1] == 'INSIDE_LATIN_PP'):
+        return(False,False)
+    if term_string == False:
+        return(False,False)
     if len(term_string) == 1:
         return(False,False)
     elif (len(term_string) == 2) and (("." in term_string) or (term_string[1] in '0123456789')):
@@ -439,7 +444,7 @@ def get_next_path_match(text,start):
             ## current_start = path_match.end()
             ## path_match = path_chunk_formula.search(text,current_start)
             print('this should be impossible -- there must be a bug')
-            input()
+            ## input()
             return(False,False)
     return(False,False)
 
@@ -472,7 +477,7 @@ def get_formulaic_term_pieces(text,offset):
                 end_offset = next_match.end(2)+offset
                 term_string = next_match.group(2)
                 start = next_match.end(2)
-                output.append([start_offset,end_offset,term_string,match_type])
+                output.append([start_offset,end_offset,term_string,False,False,match_type])
                 ## print(term_string)
             else:
                 start_offset = next_match.start()+offset
@@ -481,9 +486,9 @@ def get_formulaic_term_pieces(text,offset):
                 if match_type == 'path':
                     ## preparing for futher elaboration of code
                     if path_type in ok_path_types:
-                        output.append([start_offset,end_offset,term_string,path_type])
+                        output.append([start_offset,end_offset,term_string,False,False,path_type])
                 else:
-                    output.append([start_offset,end_offset,term_string,match_type])
+                    output.append([start_offset,end_offset,term_string,False,False,match_type])
                 start = next_match.end()
             if next_match == path_match:
                 path_match,path_type = get_next_path_match(text,start)
@@ -523,7 +528,7 @@ def merge_formulaic_and_regular_term_tuples(term_tuples,formulaic_tuples):
             next_formula = False
         elif not next_formula:
             for term in term_tuples[term_pointer:]:
-                if len(term)<4:
+                if len(term)<6:
                     term.append('chunk-based')
                 output.append(term)
             next_term = False
@@ -564,7 +569,7 @@ def global_formula_filter(term_list,term_hash,type_hash):
     chemical_filter_pattern = re.compile('^([A-Z]*)([0-9])$')
     chemical_matches = {}
     for term in term_list:
-        if (term in type_hash) and (type_hash[term] == 'chemical'):
+        if (term in type_hash) and (type_hash[term][0] == 'chemical'):
             match = chemical_filter_pattern.search(term)
             if match:
                 key = match.group(1)
@@ -631,19 +636,22 @@ def get_topic_terms(text,offset,filter_off=False):
             else:
                 ## lowercase nouns in pos_dict are probably not really abbreviations
                 result = abbreviation_match(abbreviation,previous_words,text,search_end,offset,False,False)
+                ## result is a list
             if result and (result[3] == 'JARGON'):
+                ## ARG1 is the full form
+                ## ARG2 is the abbreviation
                 ARG1_start = result[0]
                 ARG1_end = result[1]
                 if result[4]:
                     ARG2_start = paren_pat.start(2)+offset
                     ARG2_end = ARG2_start+len(abbreviation)-1
                     if filter_off or (topic_term_ok_boolean([result[2]],['NOUN_OOV'],result[2]) and topic_term_ok_boolean([abbreviation[1:]],'NOUN_OOV',abbreviation[1:])):
-                        topic_terms.extend([[ARG1_start,ARG1_end,result[2]],[ARG2_start,ARG2_end,abbreviation[1:]]])
+                        topic_terms.extend([[ARG1_start,ARG1_end,result[2],False,'ABBREVIATION'],[ARG2_start,ARG2_end,abbreviation[1:],False,'ABBREVIATION']])
                 else:
                     ARG2_start = paren_pat.start(2)+offset
                     ARG2_end = ARG2_start+len(abbreviation)
                     if filter_off or (topic_term_ok_boolean([result[2]],['NOUN_OOV'],result[2]) and topic_term_ok_boolean([abbreviation],'NOUN_OOV',abbreviation)):
-                        topic_terms.extend([[ARG1_start,ARG1_end,result[2]],[ARG2_start,ARG2_end,abbreviation]])
+                        topic_terms.extend([[ARG1_start,ARG1_end,result[2],False,'ABBREVIATION'],[ARG2_start,ARG2_end,abbreviation,False,'ABBREVIATION']])
                 pieces.append([start,text[start:paren_pat.start()]])
                 if txt_markup_match and (txt_markup_match.start()>start) and (txt_markup_match.end()<paren_pat.end()):
                     start = txt_markup_match.start()
@@ -720,7 +728,7 @@ def get_topic_terms(text,offset,filter_off=False):
     ## each resulting piece an then be analyzed syntactically based on word class
     for meta_start,piece in pieces2:
         ## parse each piece separately
-        ## current_out_list = False
+        ## current_out_list = []
         ## need a new version of splitters that provides offsets
         start = 0
         split_position = next_splitter_pattern(piece,start) 
@@ -728,6 +736,9 @@ def get_topic_terms(text,offset,filter_off=False):
             last = True
         else:
             last = False
+        current_latin_pp_struct = False
+        latin_pp = False
+        latin_pp_start = False
         while split_position or last:
             start_match = first_character_pattern.search(piece,start)
             if start_match:
@@ -736,8 +747,9 @@ def get_topic_terms(text,offset,filter_off=False):
                 piece2 = piece[start:]
             else:
                 piece2 = piece[start:split_position.start()]
-            current_out_list = False
-            current_pos_list = False
+            current_out_list = []
+            current_pos_list = []
+            latin_pp = False
             pre_np = False
             first_piece = True
             last_pos = False
@@ -756,22 +768,52 @@ def get_topic_terms(text,offset,filter_off=False):
                     pass
                 else:
                     pos = guess_pos(lower,is_capital,offset=word_offset)
+                    if current_latin_pp_struct:
+                        if lower in latin_pp_dict:
+                            ## if there are two latin_pps in a row
+                            ## the first is not part of a term (we assume)
+                            ## this restarts the latin_pp buffer
+                            current_latin_pp_struct = {'words': [lower],'dict_entry':latin_pp_dict[lower],'start':next_word_start+start}
+                        elif lower in current_latin_pp_struct['dict_entry']:
+                            current_latin_pp_struct['words'].append(lower)
+                            current_latin_pp_struct['dict_entry']= \
+                              current_latin_pp_struct['dict_entry'][lower]
+                            pos = 'INSIDE_LATIN_PP'
+                        elif '*NONE*' in current_latin_pp_struct['dict_entry']:
+                            ## a PP has been fully matched, ending with
+                            ## the preceding word
+                            pp_length = len(current_latin_pp_struct['words'])
+                            latin_pp = ' '.join(current_latin_pp_struct['words'])
+                            current_out_list = [latin_pp]
+                            current_pos_list = ['TECH_ADJECTIVE']
+                            ## term_start = min(term_start,current_latin_pp_struct['start'])
+                            term_start = current_latin_pp_struct['start']
+                            current_latin_pp_struct = False
+                        ## if completed structure,
+                        ## make one big tech_adjective
+                    elif lower in latin_pp_dict:
+                        current_latin_pp_struct = {'words': [lower],'dict_entry':latin_pp_dict[lower],'start':next_word_start+start}
                     if (pos == 'SKIPABLE_ADJ') and is_capital:
                         pos = 'ADJECTIVE'
                     if (pos in ['SKIPABLE_ADJ']) and not(current_out_list):
                         pass
+                    # elif current_latin_pp_struct and not latin_pp:
+                    #     pass
                     elif pos in ['DET','PREP']:
                         pre_np = True
                         if current_out_list:
                             term_string = interior_white_space_trim(piece2[term_start-start:piece2_start])
                         else:
                             term_string = False
-                        if current_out_list and (filter_off or topic_term_ok_boolean(current_out_list,current_pos_list,term_string)):
+                        if (term_string == False) or (term_string == ''):
+                            pass
+                        elif current_out_list and (filter_off or topic_term_ok_boolean(current_out_list,current_pos_list,term_string)):
                             start_offset = term_start + meta_start+offset
                             end_offset = piece2_start+start+meta_start+offset
-                            topic_terms.append([start_offset,end_offset,term_string])
-                        current_out_list = False
-                        current_pos_list = False
+                            topic_terms.append([start_offset,end_offset,term_string,latin_pp,current_pos_list])
+                        current_out_list = []
+                        current_pos_list = []
+                        latin_pp = False
                     elif pos in ['AMBIG_POSSESS','POSSESS']:
                         if piece3.endswith("'s"):
                             piece3 = piece3[:-2]
@@ -792,9 +834,10 @@ def get_topic_terms(text,offset,filter_off=False):
                         if filter_off or topic_term_ok_boolean(current_out_list,current_pos_list,term_string):
                             start_offset = term_start + meta_start+offset
                             end_offset = next_word_end+start+meta_start+offset-end_minus
-                            topic_terms.append([start_offset,end_offset,term_string])
-                        current_out_list = False
-                        current_pos_list = False
+                            topic_terms.append([start_offset,end_offset,term_string,latin_pp,current_pos_list])
+                        current_out_list = []
+                        current_pos_list = []
+                        latin_pp = False
                         pre_np = False
                         first_piece=False
                     elif (len(piece3)==1) and piece3.isalpha() and (len(piece2)>next_word_start+1) \
@@ -824,9 +867,10 @@ def get_topic_terms(text,offset,filter_off=False):
                             current_pos_list.append(pos)
                             start_offset = term_start + meta_start+offset
                             end_offset = next_word_end+start+meta_start+offset
-                            topic_terms.append([start_offset,end_offset,term_string])
-                        current_out_list = False
-                        current_pos_list = False
+                            topic_terms.append([start_offset,end_offset,term_string,latin_pp,current_pos_list])
+                        current_out_list = []
+                        current_pos_list = []
+                        latin_pp = False
                         pre_np = False
                         first_piece=False
                     elif (pos in ['PLURAL','AMBIG_PLURAL']) or (current_out_list and (len(current_out_list)>=1) and \
@@ -863,18 +907,21 @@ def get_topic_terms(text,offset,filter_off=False):
                             if filter_off or topic_term_ok_boolean(current_out_list,current_pos_list,term_string):
                                 start_offset = term_start + meta_start+offset
                                 end_offset = next_word_end+start+meta_start+offset
-                                topic_terms.append([start_offset,end_offset,term_string])
-                                current_out_list = False
-                                current_pos_list = False
+                                topic_terms.append([start_offset,end_offset,term_string,latin_pp,current_pos_list])
+                                current_out_list = []
+                                current_pos_list = []
+                                latin_pp = False
                             else:
-                                current_out_list = False
-                                current_pos_list = False
+                                current_out_list = []
+                                current_pos_list = []
+                                latin_pp = False
                         pre_np = False
                         first_piece=False
                     elif pos in ['NOUN','POSSESS_OOV','AMBIG_NOUN','PERSON_NAME','NOUN_OOV']:
                         ## out of vocab possessive
                     ## evaluate piece by POS
-                    ## looking for sequences of pieces that either: a) are unambigous nouns; or b) are OOV words
+                    ## looking for sequences of pieces that either: 
+                    ## a) are unambigous nouns; or b) are OOV words
                         if piece3.endswith("'s"):
                             piece3a = piece3[:-2]
                             piece3b = piece3[-2:]
@@ -889,12 +936,14 @@ def get_topic_terms(text,offset,filter_off=False):
                             if filter_off or topic_term_ok_boolean(current_out_list,current_pos_list,term_string):
                                 start_offset = term_start + meta_start+offset
                                 end_offset = next_word_end+start+meta_start+offset
-                                topic_terms.append([start_offset,end_offset,term_string])
-                                current_out_list = False
-                                current_pos_list = False
+                                topic_terms.append([start_offset,end_offset,term_string,latin_pp,current_pos_list])
+                                current_out_list = []
+                                current_pos_list = []
+                                latin_pp = False
                             else:
-                                current_out_list = False
-                                current_pos_list = False
+                                current_out_list = []
+                                current_pos_list = []
+                                latin_pp = False
                             pre_np = True
                             first_piece=False
                         elif current_out_list:
@@ -920,6 +969,7 @@ def get_topic_terms(text,offset,filter_off=False):
                               ((pos == 'ADJECTIVE') and (is_capital or term_dict_check(piece3,stat_adj_dict)))):
                         current_out_list = [piece3]
                         current_pos_list = [pos]
+                        latin_pp = False
                         term_start = next_word_start + start
                         pre_np = False
                         first_piece=False                                    
@@ -931,6 +981,7 @@ def get_topic_terms(text,offset,filter_off=False):
                         ## considering allowing -ing verbs also, but this causes problems
                         current_out_list = [piece3]
                         current_pos_list = [pos]
+                        latin_pp = False
                         term_start = next_word_start + start
                         pre_np = False
                         first_piece=False
@@ -947,9 +998,10 @@ def get_topic_terms(text,offset,filter_off=False):
                         if current_out_list and (filter_off or topic_term_ok_boolean(current_out_list,current_pos_list,term_string)):
                             start_offset = term_start + meta_start+offset
                             end_offset = piece2_start+start+meta_start+offset
-                            topic_terms.append([start_offset,end_offset,term_string])
-                            current_out_list = False
-                            current_pos_list = False
+                            topic_terms.append([start_offset,end_offset,term_string,latin_pp,current_pos_list])
+                            current_out_list = []
+                            current_pos_list = []
+                            latin_pp = False
                             pre_np = False
                             first_piece=False
                             if (len(piece3)>1) and pos in ['NOUN','POSSESS_OOV','AMBIG_NOUN','PERSON_NAME','NOUN_OOV']:
@@ -965,6 +1017,7 @@ def get_topic_terms(text,offset,filter_off=False):
                                 else:
                                     current_out_list = [piece3]
                                     current_pos_list = [pos]
+                                    latin_pp = False
                                     term_start = next_word_start + start
                                     pre_np = False
                                     first_piece = True
@@ -974,12 +1027,14 @@ def get_topic_terms(text,offset,filter_off=False):
                                  ((pos == 'ADJECTIVE') and (is_capital or term_dict_check(piece3,stat_adj_dict)))):
                                 current_out_list = [piece3]
                                 current_pos_list = [pos]
+                                latin_pp = False
                                 term_start = next_word_start + start
                                 pre_np = False
                                 first_piece=False                                    
                             else:
-                                current_out_list = False
-                                current_pos_list = False
+                                current_out_list = []
+                                current_pos_list = []
+                                latin_pp = False
                                 pre_np = False
                                 first_piece=False
                             last_pos = pos
@@ -994,17 +1049,19 @@ def get_topic_terms(text,offset,filter_off=False):
                                 if filter_off or topic_term_ok_boolean(current_out_list,current_pos_list,term_string):
                                     start_offset = term_start + meta_start+offset
                                     end_offset = next_word_end+start+meta_start+offset
-                                    topic_terms.append([start_offset,end_offset,term_string])
-                                    current_out_list = False
-                                    current_pos_list = False
+                                    topic_terms.append([start_offset,end_offset,term_string,latin_pp,current_pos_list])
+                                    current_out_list = []
+                                    current_pos_list = []
                                 else:
-                                    current_out_list = False
-                                    current_pos_list = False
+                                    current_out_list = []
+                                    current_pos_list = []
+                                latin_pp = False
                                 pre_np = True
                                 first_piece=False
                             else:
                                 current_out_list = [piece3]
                                 current_pos_list = [pos]
+                                latin_pp = False
                                 term_start = next_word_start + start
                                 pre_np = False
                                 first_piece = True
@@ -1014,14 +1071,16 @@ def get_topic_terms(text,offset,filter_off=False):
                               ((pos == 'ADJECTIVE') and (is_capital or term_dict_check(piece3,stat_adj_dict)))):
                               current_out_list = [piece3]
                               current_pos_list = [pos]
+                              latin_pp = False
                               term_start = next_word_start + start
                               pre_np = False
                               first_piece=False                                    
                         else:
-                            current_out_list = False
-                            current_pos_list = False
+                            current_out_list = []
+                            current_pos_list = []
                             pre_np = False
                             first_piece=False
+                            latin_pp = False
                     last_pos = pos
                 piece2_start = next_word_end
                 piece3, next_word_start,next_word_end = get_next_word(piece2,piece2_start)
@@ -1030,7 +1089,7 @@ def get_topic_terms(text,offset,filter_off=False):
                 if filter_off or topic_term_ok_boolean(current_out_list,current_pos_list,term_string):
                     start_offset = term_start + meta_start+offset
                     end_offset = piece2_start+start+meta_start+offset
-                    topic_terms.append([start_offset,end_offset,term_string])
+                    topic_terms.append([start_offset,end_offset,term_string,latin_pp,current_pos_list])
             if split_position:
                 start = split_position.end()
                 split_position = next_splitter_pattern(piece,start)
@@ -1080,6 +1139,7 @@ def get_term_lemma(term,term_type=False):
     return(output)
 
 def get_compound_lemma(compound_term,first_term,second_term):
+    global lemma_dict
     if compound_term in lemma_dict:
         return(lemma_dict[compound_term])
     else:
@@ -1270,8 +1330,9 @@ def term_string_edit(instring):
     output = re.sub('>','&gt;',instring)
     return(output)
 
-def write_term_summary_fact_set(outstream,term,instances,lemma_count,head_term=False,head_lemma=False,term_type=False):
+def write_term_summary_fact_set(outstream,term,instances,lemma_count,head_term=False,head_lemma=False,term_type=False,latin_pp=False,term_subtype=False):
     global term_id_number
+    global lemm_dict
     frequency = len(instances)
     lemma = lemma_dict[term]
     lemma_freq = lemma_count[lemma]
@@ -1287,8 +1348,14 @@ def write_term_summary_fact_set(outstream,term,instances,lemma_count,head_term=F
             outstream.write(' HEAD_TERM="'+term_string_edit(head_term)+'"')
         if head_lemma:
             outstream.write(' HEAD_LEMMA="'+term_string_edit(head_lemma)+'"')
-        if term_type and (not term_type == 'url'):
-            outstream.write(' TERM_PATTERN_TYPE="'+term_type+'"')
+        if term_type:
+            ## includes lists of POS tags
+            if (term_type == 'chunk-based') and isinstance(term_subtype,list):
+                outstream.write(' TERM_PATTERN_TYPE="'+'chunk-based:'+str(term_subtype)+'"')
+            else:
+                outstream.write(' TERM_PATTERN_TYPE="'+term_type+'"')
+        if latin_pp:
+            outstream.write(' Contains_Latin_PP="'+latin_pp+'"')
         outstream.write(os.linesep)
 
 def write_term_becomes_article_citation(outstream,term,instances):
@@ -1428,12 +1495,22 @@ def filter_txt_triples_by_start_end(start_end_filters,txt_strings):
             start = 'not ready'
     return(output)
 
+def resolve_term_type(term_type,term_subtype):
+    ## do not change type 'chemical'
+    ## due to interaction with global_formula_filter
+    if isinstance(term_subtype,list):
+        return(term_type,term_subtype)
+    else:
+        return(term_type,False)
+
 def find_inline_terms(lines,fact_file,pos_file,terms_file,marked_paragraphs=False,\
                       filter_off=False,start_end_filters=False):
     global abbr_to_full_dict
     global full_to_abbr_dict
     global term_id_number
     global term_hash
+    global term_latin_pp_hash
+    global lemma_dict
     term_id_number = 0
     line_break_match = os.linesep+'(([ \t]*)[^A-Z \t])'
     start_ends = []
@@ -1444,6 +1521,7 @@ def find_inline_terms(lines,fact_file,pos_file,terms_file,marked_paragraphs=Fals
     lemma_count = {}
     head_hash = {}
     term_type_hash = {}
+    term_latin_pp_hash = {}
     structure_pattern = re.compile('STRUCTURE *TYPE="TEXT" *START=([0-9]*) *END=([0-9]*)',re.I)
     if os.path.isfile(pos_file):
         load_pos_offset_table(pos_file)
@@ -1467,7 +1545,8 @@ def find_inline_terms(lines,fact_file,pos_file,terms_file,marked_paragraphs=Fals
             big_txt = big_txt + re.sub(os.linesep,' ',line)
         for start,end in start_ends:
             txt_strings.append([start,end,big_txt[start:end]])
-    else:
+    elif len(start_ends)>0:
+        ## changed from else, to prevent a bug (when start_ends is empty)
         start,end = start_ends[0]
         end = 0
         current_block = ''
@@ -1490,18 +1569,29 @@ def find_inline_terms(lines,fact_file,pos_file,terms_file,marked_paragraphs=Fals
         text = re.sub(line_break_match, ' \g<1>',text)
         if (text.count('\t')+text.count(' '))<(len(text)/3):
             ##  ignore tables
-            term_triples = get_topic_terms(text,start,filter_off=filter_off)
+            term_quints = get_topic_terms(text,start,filter_off=filter_off)
             formulaic_tuples = get_formulaic_term_pieces(text,start)
-            term_tuples = merge_formulaic_and_regular_term_tuples(term_triples,formulaic_tuples)
+            term_tuples = merge_formulaic_and_regular_term_tuples(term_quints,formulaic_tuples)
         else:
             term_tuples = []
         compound_tuples = []
         last_tuple = False
-        for t_start,t_end,term,term_type in term_tuples:
+        test_len = [0,0]
+        # for term in term_tuples:
+        #     if len(term)==6:
+        #         test_len[0]+=1
+        #     else:
+        #         print(term)
+        #         input('pause')
+        #         test_len[1]+=1
+        # print(test_len)
+        for t_start,t_end,term,latin_pp,term_subtype,term_type in term_tuples:
             ## for now we will limit compounding not to function and
             ## lemmas not to merge entries unless term_type ==
             ## 'chunk-based'
-            if term in term_hash:
+            if term == False:
+                pass
+            elif term in term_hash:
                 term_hash[term].append([t_start,t_end])
                 lemma = get_term_lemma(term,term_type=term_type)
                 if lemma in lemma_count:
@@ -1510,7 +1600,9 @@ def find_inline_terms(lines,fact_file,pos_file,terms_file,marked_paragraphs=Fals
                     lemma_count[lemma]=1
             else:
                 term_hash[term]=[[t_start,t_end]]
-                term_type_hash[term] = term_type
+                term_type_hash[term] = resolve_term_type(term_type,term_subtype)
+                if latin_pp:
+                    term_latin_pp_hash[term] = latin_pp
                 lemma = get_term_lemma(term,term_type=term_type)
                 if lemma in lemma_count:
                     lemma_count[lemma]=lemma_count[lemma]+1
@@ -1520,10 +1612,10 @@ def find_inline_terms(lines,fact_file,pos_file,terms_file,marked_paragraphs=Fals
                 inbetween = compound_inbetween_string.search(big_txt[last_tuple[1]:t_start])
                 if inbetween:
                     compound_term = interior_white_space_trim(big_txt[last_tuple[0]:t_end])
-                     ## compound_term = re.sub('\s+',' ',big_txt[last_tuple[0]:t_end])
-                    compound_tuple = [last_tuple[0],t_end,compound_term,'chunk-based']
-                    ## term_tuples.append(compound_tuple)
-                    if compound_term in term_hash:
+                    compound_tuple = [last_tuple[0],t_end,compound_term,False,'COMPOUND','chunk-based']
+                    if compound_term == False:
+                        pass
+                    elif compound_term in term_hash:
                         term_hash[compound_term].append([last_tuple[0],t_end])
                         lemma = get_compound_lemma(compound_term,last_tuple[2],term)
                         if lemma in lemma_count:
@@ -1533,6 +1625,7 @@ def find_inline_terms(lines,fact_file,pos_file,terms_file,marked_paragraphs=Fals
                     else:
                         term_hash[compound_term]=[[last_tuple[0],t_end]]
                         head_hash[compound_term]=last_tuple[2]
+                        term_type_hash[compound_term]=['COMPOUND',False]
                         lemma = get_compound_lemma(compound_term,last_tuple[2],term)
                         if lemma in lemma_count:
                             lemma_count[lemma]=lemma_count[lemma]+1
@@ -1541,8 +1634,10 @@ def find_inline_terms(lines,fact_file,pos_file,terms_file,marked_paragraphs=Fals
                     last_tuple=compound_tuple[:]
                 elif not re.search('[^\s]',big_txt[last_tuple[1]:t_start]):
                     compound_term = interior_white_space_trim(big_txt[last_tuple[0]:t_end])
-                    compound_tuple = [last_tuple[0],t_end,compound_term,'chunk-based']
-                    if compound_term in term_hash:
+                    compound_tuple = [last_tuple[0],t_end,compound_term,False,'COMPOUND','chunk-based']
+                    if compound_term == False:
+                        pass
+                    elif compound_term in term_hash:
                         term_hash[compound_term].append([last_tuple[0],t_end])
                         lemma = get_compound_lemma(compound_term,last_tuple[2],term)
                         if lemma in lemma_count:
@@ -1562,6 +1657,7 @@ def find_inline_terms(lines,fact_file,pos_file,terms_file,marked_paragraphs=Fals
                             lemma_count[lemma]=lemma_count[lemma]+1
                         else:
                             lemma_count[lemma]=1
+                        term_type_hash[compound_term]=['COMPOUND',False]
                 else:
                     last_tuple=[t_start,t_end,term,term_type]
             else:
@@ -1571,8 +1667,17 @@ def find_inline_terms(lines,fact_file,pos_file,terms_file,marked_paragraphs=Fals
     global_formula_filter(term_list,term_hash,term_type_hash)
     with open(terms_file,'w') as outstream:
         for term in term_list:
-            if (term in term_type_hash) and (not term_type_hash[term] in [False,'chunk-based']):
-                write_term_summary_fact_set(outstream,term,term_hash[term],lemma_count,head_term=term.upper(),head_lemma=term.upper(),term_type=term_type_hash[term])                
+            if term in term_latin_pp_hash:
+                latin_pp = term_latin_pp_hash[term]
+            else:
+                latin_pp = False
+            if term == '':
+                print('*',term_type_hash[term])
+            if (term in term_type_hash) and \
+              (not term_type_hash[term][0] in [False,'chunk-based','COMPOUND']) and \
+              (not isinstance(term_type_hash[term],list)):
+                ## type dependent line *** 57 ***
+                write_term_summary_fact_set(outstream,term,term_hash[term],lemma_count,head_term=term.upper(),head_lemma=term.upper(),term_type=term_type_hash[term][0],latin_pp=latin_pp,term_subtype=term_type_hash[term][1])  
             elif et_al_citation.search(term):
                 write_term_becomes_article_citation(outstream,term,term_hash[term])
             elif org_ending_pattern.search(term) or org_head_ending(term,head_hash):
@@ -1587,13 +1692,14 @@ def find_inline_terms(lines,fact_file,pos_file,terms_file,marked_paragraphs=Fals
                     if head_term in lemma_dict:
                         head_lemma = lemma_dict[head_term]
                     elif head_term in term_type_hash:
-                        head_lemma = get_term_lemma(head_term,term_type=(term_type_hash(head_term)))
+                        head_type,head_subtype = term_type_hash(head_term)
+                        head_lemma = get_term_lemma(head_term,term_type=head_type)
                     else:
                         head_lemma = get_term_lemma(head_term)
                 else:
                     head_term = False
                     head_lemma = False
-                write_term_summary_fact_set(outstream,term,term_hash[term],lemma_count,head_term=head_term,head_lemma=head_lemma)
+                write_term_summary_fact_set(outstream,term,term_hash[term],lemma_count,head_term=head_term,head_lemma=head_lemma,term_type=term_type_hash[term][0],term_subtype=term_type_hash[term][1])
 
 def get_pos_structure (line):
     start_end = re.compile('S:([0-9]+) E:([0-9]+)')
@@ -2038,8 +2144,9 @@ def make_term_chunk_file(pos_file,term_file,abbreviate_file,chunk_file,abbr_to_f
 
 def make_term_chunk_file_list(infiles,outfiles,abbr_to_full,special_ds,lemma_dict_file,no_head_terms_only=False,use_lemmas=True):
     global special_domains
+    global lemma_dict
     abbr_to_full_dict = {}
-    lemma_dict = {}
+    ## lemma_dict = {}
     if os.path.isfile(lemma_dict_file):
         with open(lemma_dict_file) as instream:
             for line in instream:
@@ -2084,7 +2191,286 @@ def make_term_chunk_file_list(infiles,outfiles,abbr_to_full,special_ds,lemma_dic
                     outstream.write('\t'+value)
                 outstream.write('\n')
 
-def make_top_terms_with_lemma_output_file(scored_output_file,lemma_dictionary_file,cutoff,output_file):
+
+    ## 1/31/2019 -- an approach for getting a precise list of
+    ## inline terms to use with the distributional system.
+    ## Unlike our previous system, this does not have its
+    ## roots in our original Noun Chunk Genia-based system.
+    ## We assume the following
+    ## *  All instances of JARGON from the .abbr file are candidates,
+    ##    but are only added to our list of terms if the same
+    ## * Instances of terms of type COMPOUND, chemical, path, gene
+    ## * Instances of terms of type chunk-based
+    ##   -- record lemma instead of base form
+    ## * Selected substrings of multi-word terms of type chunk-based
+    ##   but do so on a second pass.
+    ##   -- select all substrings such that:
+    ##      (a) they end in a noun of some sort ** check
+    ##      (b) if 2 nouns are "split", the substring ** not implemented yet **
+    ##          must occur elsewhere either as:
+    ##          (i) an exact match or
+    ##          (ii) a substring match such that
+    ##               the adjacent left or right term
+    ##               does not match the left or right term
+    ##               that is cut. "Match" means "identical if case and
+    ##               punctuation is removed.
+    ##      (c) contain some technical word (OOV, tech_adj or nom) ** check
+    ##      (d) do not split up any latin_pps (these are represented
+    ##          as a single TECH-ADJ with spaces in between)
+    ##          -- there will be a mismatch in word length and
+    ##             length of phrase
+    ##          TECH_ADJECTIVE will always precede a noun ** check
+    ##      (e) eliminate single words that are note either OOV or nominalizations
+    ##          check so-called "PLURAL" to see if they are OOV as well ** check
+
+def make_term_and_substring_list(term_file,abbr_file,outfile,no_head_terms_only=False,\
+                                 abbr_to_full=False,special_domain=False,initialized=False,
+                                 lemma_dict_file=False
+                                 ):
+    global special_domains
+    global abbr_to_full_dict
+    global lemma_dict
+    if not initialized:
+        ## print('initializing make_term_and_substring_list')
+        abbr_to_full_dict = {}
+        lemma_dict = {}
+        if special_domain:
+            special_domains.extend(special_domain.split('+'))
+        initialize_utilities()
+        if abbr_to_full:
+            with open(abbr_to_full) as instream:
+                for line in instream:
+                    line = line.strip(os.linesep)
+                    line_list = line.split('\t')
+                    abbr_to_full_dict[line_list[0]]=line_list[1:]
+        if lemma_dict_file and os.path.isfile(lemma_dict_file):
+            with open(lemma_dict_file) as instream:
+                for line in instream:
+                    for line in instream:
+                        line = line.strip(os.linesep)
+                        items = line.split('\t')
+                        lemma_dict[items[0]]=items[1:]
+    word_term_hash = {} ## not sure we need this
+    ## links each word in a term to the set of 
+    ## terms that they are a part of
+    ## not sure if I need start_term_hash or not
+    start_term_hash = {}
+    ## links every start position to the set of terms
+    ## that start at that position
+    term_out = []
+    chunks_to_check = []
+    with open(term_file) as instream:
+        for line in instream:
+            fvs = get_integrated_line_attribute_value_structure_no_list(line,['TERM'])
+            if 'TERM_PATTERN_TYPE' in fvs:
+                type_value = fvs['TERM_PATTERN_TYPE']
+            if (not fvs) or \
+              ((no_head_terms_only) and ('HEAD_TERM' in fvs) and re.search(' (of|for) ', fvs['STRING'].lower())):
+                pass
+            else:
+                LEMMA = fvs['LEMMA']
+                STRING = fvs['STRING']
+                term_out.append(LEMMA)
+                # if not STRING.upper() in lemma_dict:
+                #     lemma_dict[STRING.upper()] = [LEMMA]
+                # elif not LEMMA  in lemma_dict[STRING.upper()]:
+                #     lemma_dict[STRING.upper()].append(LEMMA)
+                # ## proposed fix on 4/29/2019 for consistency -- which direction?
+                if not LEMMA.upper() in lemma_dict:
+                     lemma_dict[LEMMA.upper()]=[STRING.upper()]
+                elif not STRING.upper() in lemma_dict[LEMMA.upper()]:
+                    lemma_dict[LEMMA.upper()].append(STRING.upper())
+                START = int(fvs['START'])
+                END = int(fvs['END'])
+                if not START in start_term_hash:
+                    start_term_hash[START]=[LEMMA]
+                else:
+                    if not START in start_term_hash:
+                        start_term_hash[START]=[LEMMA]
+                    elif not LEMMA in start_term_hash[START]:
+                        start_term_hash[START].append(LEMMA)
+                if type_value.startswith('chunk-based:'):
+                    ## print('abc','*'+type_value+'*','efg')
+                    POS_SEQ = eval(type_value[len("chunk-based:"):])
+                    chunks_to_check.append([fvs['STRING'],LEMMA,POS_SEQ,START,END])
+    substrings = [] 
+    for string,LEMMA,POS_SEQ,START,END in chunks_to_check:
+        if len(POS_SEQ)> 1:
+            words = string.split(' ')
+            ## search from right to left
+            ## we also need start and end so
+            ## we can avoid duplicates of abbreviations
+            ## from the abbreviation file
+            
+            ## triples: [new_string,preceder,follower]
+            ## goal -- find other term such that:
+            ## new_string is a substring
+            ## neither preceder, nor follower is present
+            ## example: a) exact match; b) different match
+            stop = False
+            new_pos_seq = POS_SEQ[:]
+            # substrings should include previous word and following word
+            # in order to do this check later
+            previous_word = False
+            next_word = False
+            while (not stop) and (len(new_pos_seq) == len(words)):
+                ## (a) makes sure subsequence ends in a noun of some sort
+                new_pos_seq.pop()
+                next_word = words.pop()
+                if len(new_pos_seq) == 0:
+                    stop = True
+                elif new_pos_seq[-1] in \
+                     ['PLURAL','AMBIG_PLURAL','NOUN',\
+                      'AMBIG_NOUN','NOUN_OOV']:
+                    new_string = ' '.join(words)
+                    if (new_pos_seq[-1] == 'NOUN_OOV') or is_nom_piece(words[-1]) \
+                      or ((len(new_pos_seq)>1) and (new_pos_seq[-2] == 'TECH_ADJECTIVE')):
+                      
+                        substrings.append([new_string,previous_word,next_word,START,END])
+                else:
+                    stop = True
+            ## For 5 word long sequence
+            ## above looks at first 4 words, then first 3, ... first 1
+            words = string.split(' ')
+            previous_word = False
+            next_word = False
+            if len(POS_SEQ) == len(words):
+                ## don't do this for the latin pp case
+                new_pos_seq = POS_SEQ[:]
+                for num in range(1,len(words)):
+                    previous_word = words[num-1]
+                    new_pos_seq = new_pos_seq[num:]
+                    new_words = words[num:]
+                    if len(new_pos_seq) == 0:
+                        break
+                    if (new_pos_seq[-1] == 'NOUN_OOV') or is_nom_piece(words[-1]) \
+                      or ((len(new_pos_seq)>1) and (new_pos_seq[-2] == 'TECH_ADJECTIVE')):
+                      substrings.append([' '.join(new_words),previous_word,next_word,START,END])
+            ## For 5 word long sequence
+            ## above should look at last 4 words, then last 3, ... last 1
+            words = string.split(' ')
+            if (len(POS_SEQ) == len(words)) and (len(words)>2):
+                new_pos_seq = POS_SEQ[:]
+                for num in range(1,len(words)-1):
+                    previous_word = words[num-1]
+                    next_word = words[num+1]
+                    if new_pos_seq[num] == 'NOUN_OOV':
+                        substrings.append([words[num],previous_word,next_word,START,END])
+            ## This is meant to handle single words not handled by previous 2 loops
+    if abbr_file:
+        with open(abbr_file) as instream:
+            for line in instream:
+                fvs = get_integrated_line_attribute_value_structure_no_list(line,['JARGON'])
+                if fvs:
+                    START = int(fvs['START'])
+                    TEXT = fvs['TEXT'].upper()
+                    if not START in start_term_hash:
+                        start_term_hash[START]=[TEXT]
+                        term_out.append(TEXT)
+                    elif not TEXT in start_term_hash[START]:
+                        start_term_hash[START].append(TEXT)
+                        term_out.append(TEXT)
+    term_set = set(term_out)
+    for substring,left,right,START,END in substrings:
+        ## We are qualifying instances here
+        ## 1) we must make sure that instance, as is, does
+        ##    not exactly match an abbreviation (these are already accounted for)
+        ## 2) If left is not False,
+        ## we must make sure that the term, at least one time,
+        ## is not immediately preceded by left
+        ## 3) Similarly if right is not false, we make sure that
+        ## at least once, it is not followed by right.
+        Fail = False
+        if START in start_term_hash:
+            partial_match = False
+            ## regexp_match = False
+            substring_index = False
+            for match in start_term_hash[START]:
+                ## possibly use .find instead of regexp to avoid special character issues
+                ## ** 57 **
+                substring_index = match.find(substring)
+                ## regexp_match = re.search(substring,match)
+                # if (not partial_match) and regexp_match:
+                #     partial_match = match
+                #     break
+                if (not partial_match) and (substring_index != -1):
+                    partial_match = match
+                    break
+            if (substring_index != -1):
+                new_start = START+substring_index
+                if new_start in start_term_hash:
+                    for possible_match in start_term_hash[new_start]:
+                        Fail = True
+                        break
+            # if regexp_match:
+            #     new_start = START+regexp_match.start()
+            #     if new_start in start_term_hash:
+            #         for possible_match in start_term_hash[new_start]:
+            #             Fail = True
+            #             break
+        if Fail:
+            ## if the substring is already mentioned as an abbreviation
+            pass
+        elif (substring.upper() in term_set):
+                ## if the same string already passed
+                ## we do not need to check again
+            term_out.append(substring.upper())
+        elif substring in lemma_dict:
+            term_out.append(lemma_dict[substring][0])
+            ## pick first lemma
+        else:
+            substring = substring.upper()
+            if left:
+                left = left.upper()
+            if right:
+                right = right.upper()
+            for term_to_match in term_set:
+                ## part_match = re.search(substring,term_to_match)
+                part_start = term_to_match.find(substring)
+                ## possibilities: 
+                ## a) no evidence (pass); 
+                ## b) correct (add to terms and break)
+                if part_start == -1:
+                    pass
+                else:
+                    if left:
+                        left_match = re.search(change_parens_to_dots(left+' +'+substring),term_to_match)
+                    else:
+                        left_match = False
+                    if right:
+                        right_match = re.search(change_parens_to_dots(substring+' '+right),term_to_match)
+                    else:
+                        right_match = False
+                    if (not (left or right)):
+                       term_set.add(substring)
+                       term_out.append(substring)
+                       ## we found the term
+                       break
+                    elif (left and left_match) or (right and right_match):
+                       ## if left or right are the same
+                       ## in the sample, then the substring
+                       ## may require this left or right
+                       ## so this one should not be recorded
+                       ## unless there are other instances
+                       ## where left or right are not there
+                        pass
+                    else:
+                        term_set.add(substring)
+                        term_out.append(substring)
+                        break
+    with open(outfile,'w') as outstream:
+        ## term_out.sort()
+        for term in term_out:
+            if not(type(term))==str:
+                print(term,type(term))
+                input('pause')
+            outstream.write(term+'\n')
+    ## print('lemma_dict length',len(lemma_dict))
+    
+            
+                
+
+def make_top_terms_with_lemma_output_file(scored_output_file,lemma_dictionary_file,cutoff,output_file, abbr_to_full_file = False, full_to_abbr_file = False):
     lemma_dictionary = {}
     ## total_lines = 0
     with open(lemma_dictionary_file) as instream:
@@ -2095,6 +2481,20 @@ def make_top_terms_with_lemma_output_file(scored_output_file,lemma_dictionary_fi
             lemma =line_list[0]
             items=line_list[1:]
             lemma_dictionary[lemma] = items
+    abbr_to_full = {}
+    if abbr_to_full_file:
+        with open(abbr_to_full_file) as instream:
+            for line in instream:
+                line = line.strip(os.linesep).lower()
+                line_list = line.split('\t')
+                abbr_to_full[line_list[0]]= line_list[1:]
+    full_to_abbr = {}
+    if full_to_abbr_file:
+        with open(full_to_abbr_file) as instream:
+            for line in instream:
+                line = line.strip(os.linesep).lower()
+                line_list = line.split('\t')
+                full_to_abbr[line_list[0]]= line_list[1:]
     with open(scored_output_file) as instream,open(output_file,'w') as outstream:
             ## cutoff = min(cutoff,total_lines)
         line = 'start'
@@ -2106,9 +2506,36 @@ def make_top_terms_with_lemma_output_file(scored_output_file,lemma_dictionary_fi
                 lemma,tab,rest = line.partition('\t')
                 lemma = lemma.lower()
                 outstream.write(lemma)
+                additional_forms = []
                 if lemma in lemma_dictionary:
                     for form in lemma_dictionary[lemma]:
                         if form != lemma:
-                            outstream.write('\t'+form)
+                            additional_forms.append(form)
+                more_forms = []
+                for form in additional_forms:
+                    if form in abbr_to_full:
+                        for form2 in abbr_to_full[form]:
+                            if (not form2 == lemma) and (not form2 in additional_forms) and (not form2 in more_forms):
+                                more_forms.append(form2)
+                    elif form in full_to_abbr:
+                        for form2 in full_to_abbr[form]:
+                            if (not form2 == lemma) and (not form2 in additional_forms) and (not form2 in more_forms):
+                                more_forms.append(form2)
+                additional_forms.extend(more_forms)
+                for form in additional_forms:
+                    outstream.write('\t'+form)
                 outstream.write('\n')
     
+def record_lemma_dict(lemma_dict_file):
+    global lemma_dict
+    ## print('final_lemma_dict_length',len(lemma_dict))
+    if len(lemma_dict) == 0:
+        return(False)
+    keys = list(lemma_dict.keys())
+    keys.sort()
+    with open(lemma_dict_file,'w') as outstream:
+        for key in keys:
+            outstream.write(key)
+            for value in lemma_dict[key]:
+                outstream.write('\t'+value)
+            outstream.write('\n')

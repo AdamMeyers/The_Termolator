@@ -3,10 +3,11 @@ The Termolator Program 0.1 is licensed under the Apache license 2.0
 Meyers, Yifan He, Zachary Glass and Shasha Liao and released in July,
 2015.
 
-The Termolator Program 0.2 (including 0.21 and 0.22) is also licensed
-under the Apache license 2.0(http://www.apache.org/licenses/LICENSE-2.0). 
-It is a revision of the original program. It was revised by Adam
-Meyers, John Ortega and Vlad Tyshkevich. The main changes are: (i) bug
+The Termolator Program 0.2 (including 0.21, 0.22, 0.23, etc.) is also
+licensed under the Apache license
+2.0(http://www.apache.org/licenses/LICENSE-2.0).  It is a revision of
+the original program. It was revised by Adam Meyers, John Ortega, Vlad
+Tyshkevich, Yuling Gu and Leizhen Shi. The main changes are: (i) bug
 fixes; (ii) The new version uses Python 3 exclusively -- the Python 2
 portions of the original code have all been changed; (iii) additional
 features have been added so the program will work better with legal
@@ -14,7 +15,17 @@ text; (iv) changes to the abbreviation program intended to improve
 precision, (v) the capability to store web search based scores and
 look them up on subsequent runs rather than recalculating them; and
 (vi) a caching feature has been added to make runs with different
-foregrounds, but the same background file more efficient; (vi)
+foregrounds, but the same background file more efficient; (vi) The
+tchunk component of the previous system has been replaced (later
+versions) with a substring component. The main effect of this is that
+the substrings of noun chunks that are tested by the system are
+linguistically motivated -- they must be legitimate noun groups
+themselves and they must be observed in other contexts; (vii) a n-gram
+filter (later versions) has been added so that unusually formatted
+text (bibliographies, tables, charts, etc.) are likely to be ignored
+as input; (vii) a version of the Chinese Termolator is incorporated
+that is more closely connected to the English version (the import of
+this feature is not complete as of this writing)
 
 The Termolator takes two sets of documents as input a FOREGROUND set
 and a BACKGROUND set and finds instances of terminology that are more
@@ -22,6 +33,9 @@ characteristic of the FOREGROUND than the BACKGROUND.  Input files can
 be either .txt, .html or .xml (the latter only working if it uses HTML
 style markup to delimit text). UTF-8 encoding (which includes ASCII)
 is preferred, but ISO-8859-1 will work as well.
+
+The biggest difference in running the system as of May 2019 is the
+need for an extra parameter (parameter number 14), described below.
 
 The essential details of the June 2018 system are described in the
 following paper:
@@ -52,7 +66,7 @@ Instructions for Using program:
 2) To run the main system, the command is as follows (an additional
    way of running the system will be described in section 7):
 
-   $TERMOLATOR/run_termolator.sh FOREGROUND BACKGROUND EXTENSION OUTPUT_NAME TRUE-OR-FALSE TRUE-OR-FALSE 30000 5000 PROGRAM-DIRECTORY ADDITIONAL_TOPIC_STRING TRUE-OR-FALSE general_file_name_or_FALSE SHARED_BACKGROUND_FILENAME.pkl
+   $TERMOLATOR/run_termolator.sh FOREGROUND BACKGROUND EXTENSION OUTPUT_NAME TRUE-OR-FALSE TRUE-OR-FALSE 30000 5000 PROGRAM-DIRECTORY ADDITIONAL_TOPIC_STRING TRUE-OR-FALSE general_file_name_or_FALSE SHARED_BACKGROUND_FILENAME.pkl MINIMUM_PROBABILITY_OR_FALSE
 
 The arguments are defined as follows:
 
@@ -92,6 +106,16 @@ The arguments are defined as follows:
    Argument 13 The name of the background cache file associated with Argument 5. If you list False as the background
                file, a default name (ranking.pkl) will be used (info will be saved to or loaded from this file). It
 	       is suggested that you use the .pkl file type, since this is a Python pickle file.
+   Argument 14 Is either a number, the string "patent", "normal" or "False". This argument is used by the language 
+               model to cause the program to eliminate some blocks of text. The intension is that "abnormal" text
+	       such as bibliographies, tables or charts will be ignored because terms extracted from such text are
+	       likely to be of low quality. "False" causes this component not to do anything. The number should be a
+	       negative number between 0 and -2.  We are currently using -.2 (negative 2/10) for patent text and -1 for
+	       other texts. You can also use the strings "patent" and "normal" in place of these 2 values. The meaning
+	       is that text that the language model classifies as having a probability of less than some number of standard
+	       deviations from the mean probability is ignored, whereas higher probability text is processed. Patents tend
+	       to have more tables and in-text bibliographies than "normal" text and therefore we assume a higher
+	       threshold.
 
 IMPORTANT PATH INFORMATION: If FOREGROUND and BACKGROUND files contain absolute paths, this command will work from anywhere.  Otherwise, you should run from the directory containing FOREGROUND and BACKGROUND. We will call this the DATA_DIRECTORY.  The files listed in FOREGROUND andBACKGROUND should be paths relative to the DATA_DIRECTORY.
 
@@ -100,7 +124,7 @@ we will shorly be adding a corpus of court decisions, for which the legal topic 
 yet tested whether these same features are useful for the patent directory provided here.
 
    a) subdirectory: gutenberg-test
-      command:      $TERMOLATOR/run_termolator.sh foreground.list background.list .htm knitting True True 30000 5000 $TERMOLATOR False False False gutenberg.pkl
+      command:      $TERMOLATOR/run_termolator.sh foreground.list background.list .htm knitting True True 30000 5000 $TERMOLATOR False False False gutenberg.pkl -1
       
       -- The "True" setting in field 6 will make this run take an extra 10 minutes to run about 600 
        	 web searches, but the results are more accurate as a result. 
@@ -116,8 +140,10 @@ yet tested whether these same features are useful for the patent directory provi
 	 same repository. Thus the resulting terminology list consists of terms in the domain of "knitting".
 	 For more information of Project Gutenberg, go to: https://www.gutenberg.org/
 
+      -- The threshold probability is set to -1 standard deviations below the mean probability.
+
    b) subdirectory: OANC-test
-      command:      $TERMOLATOR/run_termolator.sh foreground.list background.list .txt biology True False 30000 5000 $TERMOLATOR False False False OANC.pkl
+      command:      $TERMOLATOR/run_termolator.sh foreground.list background.list .txt biology True False 30000 5000 $TERMOLATOR False False False OANC.pkl -1
 
       -- This run will be faster than the previous run per term generated. If the False in field in field 6 is 
       	 replaced by True, the system will take an extra 3 hours (about 1 second for each of 10,000 terms),
@@ -128,8 +154,10 @@ yet tested whether these same features are useful for the patent directory provi
 	 biology related documents and the background consists of 100 random documents.  The resulting terminology 
 	 are all about biology. For more information about the OANC, go to: http://www.anc.org/data/oanc/
 
+      -- The threshold probability is set to -1 standard deviations below the mean probability.
+
    c) subdirectory: patent-test
-      command:	  $TERMOLATOR/run_termolator.sh foreground.list background.list .XML surgery True False 30000 5000 $TERMOLATOR False False False patent.pk  
+      command:	  $TERMOLATOR/run_termolator.sh foreground.list background.list .XML surgery True False 30000 5000 $TERMOLATOR False False False patent.pk  -.2
 
       -- This run should generate about 4700 terms. If False in field 6 is changed to True, it will take an additional 
       	 1.5 hours, but  achieve better results.
@@ -139,14 +167,16 @@ yet tested whether these same features are useful for the patent directory provi
 	 main_classification field in the XML), which are all about "Surgery".  The background is a set of 
 	 randomly selected patents. The resulting terminology are all in the domain of "Surgery".
 
+      -- The threshold probability is set to -.2 standard deviations below the mean probability.  Blocks of text are
+      	 likely to be ignored if they are too different from the norm (based on the OANC text).
+
 3) Choice of foreground and background documents. Different choices will effect the sort of terminology the system 
 will recognize. We recommend between 500 and 5000 small files for both foreground and background or fewer large 
 files. The example documents should give you some idea of what is possible. As the examples show, different numbers 
 of files are possible.
 
 We suggest creating directories which have only the input (foreground and background) files in them and then none of the 
-files have any of the following file extensions, as these may be overwritten by the system: .abbr .fact .pos .tchunk 
-.tchunk.nps .terms .txt2 .txt3 .
+files have any of the following file extensions, as these may be overwritten by the system: .abbr .fact .pos .substring .terms .txt2 .txt3 .
 
 4) The output produce by the file includes the following, based on the OUTPUT_NAME:
 
@@ -212,8 +242,10 @@ files have any of the following file extensions, as these may be overwritten by 
    FILE.terms -- this identifies terms inline, by means of our chunking program. The start 
    	         and end positions point to character offsets in the .txt3 file.
    FILE.abbr -- this file identifies relations between abbreviations and full forms in text
-   FILE.tchunk and FILE.tchunk.nps -- these are files that organize the terms from FILE.terms 
-   	       	   		      into a form that the distributional system can process
+   FILE.subtring -- this file includes both terms from FILE.terms and well-formed 
+   		    substrings  of those words used by the distributional system.
+		    Note that in earlier versions of Termolator, .tchunk and 
+		    .tchunk.nps files were used for a similar purpose.
 
 6) In addition the following files are created for purposes of speeding up processing in multiple runs:
 
@@ -231,7 +263,7 @@ files have any of the following file extensions, as these may be overwritten by 
       provide an example from this run. To do this, we use the following
       script with the following arguments:
 
-      run_termolator_with_1_file_foreground.sh FOREGROUND BACKGROUND EXTENSION OUTPUT_NAME TRUE-OR-FALSE TRUE-OR-FALSE 10000 1000 PROGRAM-DIRECTORY ADDITIONAL_TOPIC_STRING TRUE_OR_FALSE general_file_name_or_FALSE SHARED_BACKGROUND_FILENAME.pkl
+      run_termolator_with_1_file_foreground.sh FOREGROUND BACKGROUND EXTENSION OUTPUT_NAME TRUE-OR-FALSE TRUE-OR-FALSE 10000 1000 PROGRAM-DIRECTORY ADDITIONAL_TOPIC_STRING TRUE_OR_FALSE general_file_name_or_FALSE SHARED_BACKGROUND_FILENAME.pkl MINIMUM_PROBABILITY_OR_FALSE
 
       This takes all the same arguments as run_termolator.sh, with the following exceptions:
 
@@ -378,3 +410,6 @@ a dictionary.
 
   Once again, we have not seen this error yet with the current all-python-3 version.
 
+12) One of the newest features is the argument 14 (MINIMUM_PROBABILITY_OR_FALSE) feature. This feature is used to cause the system to ignore text that is too different from "normal" text.  Normal text is defined according to an N-gram character-based language model.  A number of character-based language models were tested, but the one that worked the best so far, assumed exactly 5 distinctions between characters: LETTER, WHITESPACE, DIGIT, PUNCTUATION, OTHER and looked for the average probability of 5-grams of these characters within a block of text. This, for example, tended to rule out text with an excess of punctuation and spaces. This language model was run on the Open American National Corpus text (see http://www.anc.org/) in the file all-OANC.txt. The average 5-gram probability is calculated for each segment in that corpus. The results are averaged and the standard deviation is calculated. This information is then used to classify sections in other text. 
+
+The files gen2_lang.model and OANC.profile2 are derived in this manner and currently used to classify input to Termolator.  The function "train_on_OANC" in "make_language_model.py" can be used to derive the files and  "print_OANC_demo" can be used to gain some insight into how this works. Other language models which we did not end up using are also present in "make_language_model.py".

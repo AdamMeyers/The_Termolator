@@ -1,8 +1,9 @@
 from term_utilities import *
 from abbreviate import *
 from inline_terms import *
+from ne_filter import *
 
-def find_inline_terms_for_file_list(file_list,dict_prefix=False):
+def find_inline_terms_for_file_list(file_list,dict_prefix=False,ne_filter_ending=False,fact_suffix='.fact'):
     start = True
     with open(file_list) as instream:
         # if dict_prefix:
@@ -20,8 +21,11 @@ def find_inline_terms_for_file_list(file_list,dict_prefix=False):
             
             # if dict_prefix:
             #     increment_unigram_dict_from_lines(lines)
-
-            find_inline_terms(lines,file_prefix+'.fact',file_prefix+'.pos',file_prefix+'.terms')
+            if ne_filter_ending and os.path.isfile(file_prefix+ne_filter_ending):
+                start_end_filter_positions = read_in_filter_positions(file_prefix+ne_filter_ending)
+            else:
+                start_end_filter_positions = False
+            find_inline_terms(lines,file_prefix+fact_suffix,file_prefix+'.pos',file_prefix+'.terms',start_end_filters=start_end_filter_positions)
             if start:
                 start = False
         if dict_prefix:

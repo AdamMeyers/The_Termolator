@@ -228,7 +228,10 @@ of a proposed term"""
                     if token_total!=0: ## AM July 7 -- treating 0 divided by 0 as 0
                         ## changed to !=0 from > 0 on July 10
                         tokenDR += token_rel/float(token_total)
-            tokenDR /= len(tokens)
+            if len(tokens) == 0:
+                tokenDR = 0 ## prevent divide by zero error 3/11/2019
+            else:
+                tokenDR /= len(tokens)
             self._TokenDR[word] = tokenDR
         return tokenDR
     def _calTokenDRDC(self, word):

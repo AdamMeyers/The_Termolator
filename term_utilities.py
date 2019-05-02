@@ -21,6 +21,7 @@ out_ing_file = DICT_DIRECTORY+'out_ing.dict'
 time_name_file = DICT_DIRECTORY+'time_names.dict'
 verb_morph_file = DICT_DIRECTORY+'verb-morph-2000.dict'
 noun_morph_file = DICT_DIRECTORY+'noun-morph-2000.dict'
+latin_pp_infile = DICT_DIRECTORY+'short_latin_pps.dict'
 
 jargon_files = [DICT_DIRECTORY+'chemicals.dict',DICT_DIRECTORY+'more_jargon_words.dict']
 dictionary_table = {'legal': DICT_DIRECTORY+'legal_dictionary.dict'}
@@ -78,6 +79,14 @@ signal_set=['academically', 'accordance', 'according', 'accordingly', 'actuality
 ## ne_stop_words = ['et', 'co', 'al', 'eds','corp','inc','sa','cia','ltd','GmbH','Esq','PhD']
 
 NE_stop_words = ['eds','publications?','et', 'co', 'al', 'eds','corp','inc','sa','cia','ltd','gmbh','esq','phd','natl','acad','sci','proc','chem','soc']
+
+latin_prepositions =['a','ab','ad','ante','au','circum','contra','cum',
+                               'de','e','en','ex','in','infra','inter','intra',
+                               'nem','par','paraeter','post','prae','pro','sine',
+                               'sub','super','ultra']
+
+latin_pp_dict = {}
+
 
 ARG1_NAME_TABLE ={'EXEMPLIFY':'SUBCLASS','DISCOVER':'INVENTOR','MANUFACTURE':'MAKER','SUPPLY':'SUPPLIER',\
                       'ORIGINATE':'INVENTOR','ALIAS':'FULLNAME','ABBREVIATE':'FULLNAME','BETTER_THAN':'BETTER',\
@@ -596,7 +605,10 @@ def replace_less_than_with_positions(string,offset):
 def interior_white_space_trim(instring):
     out1 = re.sub('\s+',' ',instring)
     out2 = re.sub('\s*(.*[^\s])\s*$','\g<1>',out1)
-    return(out2)
+    if out2 == '':
+        return(False)
+    else:
+        return(out2)
 
 def isStub(line):
     if (len(line)<1000) and re.search('[\(\[][ \t]*$',line):
@@ -632,6 +644,37 @@ def load_pos_offset_table(pos_file):
                 start = int(start_end_strings[0][2:])
                 pos = line_info[2]
                 pos_offset_table[start] = pos
+
+def add_words_to_trie_dict (word_list,dictionary):
+    if word_list[0] in dictionary:
+        next_dict = dictionary[word_list[0]]
+    else:
+        next_dict = {}
+        dictionary[word_list[0]] = next_dict
+    if (len(word_list)==1):
+        if (not '*NONE*' in next_dict):
+            next_dict['*NONE*'] = True
+    else:
+        add_words_to_trie_dict(word_list[1:],next_dict)
+
+def load_latin_pps ():
+    latin_pp_dict.clear()
+    with open(latin_pp_infile) as instream:
+        for line in instream:
+            line = line.strip()
+            words = line.split(' ')
+            prep = words[0]
+            if not prep in latin_prepositions:
+                print(prep,'Is not one of the latin prepositions that we have recorded')
+            if prep in latin_pp_dict:
+                next_segment = latin_pp_dict[prep]
+            else:
+                next_segment = {}
+                latin_pp_dict[prep]=next_segment
+            add_words_to_trie_dict(words[1:],next_segment)
+
+## execute
+load_latin_pps()
 
 def citation_number(word):
     ## There may still be clashes with standard
@@ -1093,6 +1136,15 @@ def get_my_string_list(input_file):
         instream = open(input_file,encoding='ISO-8859-1')
         output = instream.readlines()
     return(output)
-    
-    
+
+def change_parens_to_dots(instring):
+    out = ''
+    for char in instring:
+        if not char.lower() in 'abcdefghijklmnopqrstuvwxyz0123456789':
+        #if char in '[]()':
+            out += '.'
+        else:
+            out+=char
+    return(out)
+        
     
