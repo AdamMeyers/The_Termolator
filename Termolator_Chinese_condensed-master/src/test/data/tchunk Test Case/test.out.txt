@@ -1,0 +1,840 @@
+﻿本_DT 发明_NN 公开_VV 了_AS 一_CD 种_M 能动_JJ 医疗_NN 设备_NN 系统_NN ，_PU 该_DT 能动_JJ 医疗_NN 设备_NN 系统_NN 具有_VV ：_PU 具有_VV 关节_NN 的_DEC 能动_JJ 医疗_NN 设备_NN ；_PU 能动_JJ 医疗_NN 设备_NN 驱动部_NN ；_PU 指示_VV 输入部_NN ；_PU 指示_VV 输入部_NN 驱动部_NN ，_PU 其_PN 被_SB 反馈_VV 输入_VV 有_VE 作用于_VV 能动_VV 医疗_NN 设备_NN 上_LC 的_DEG 力_NN 信息_NN ，_PU 并_CC 根据_P 力_NN 信息_NN 来_MSP 驱动_VV 指示_NN 输入_NN 部_NN ；_PU 判定部_NN ，_PU 其_PN 判定_VV 在_P 驱动_NN 指示_VV 输入部_NN 的_DEC 驱动力_NN 的_DEC 作用_NN 方向_NN 上_LC 有_VE 无_VE 阈值_NN 以上_LC 的_DEG 运动量_NN 产生_VV ；_PU 以及_CC 控制部_NN ，_PU 在_P 有_VE 阈值_NN 以上_LC 的_DEG 运动量_NN 产生_VV 的_DEC 情况_NN 下_LC ，_PU 所_MSP 述_VV 控制部_NN 抑制_VV 指示_NN 输入部_NN 驱动部_NN 和_CC 能动_JJ 医疗_NN 设备_NN 驱动部_NN 中_LC 的_DEG 至少_AD 一方_VA 的_DEC 驱动_NN 。_PU
+技术_NN 领域_NN
+本_DT 发明_NN 涉及_VV 根据_P 指示_VV 输入部_NN 的_DEG 指示_NN 信号_NN 来_MSP 驱动_VV 能动_JJ 医疗_NN 设备_NN 的_DEC 能动_JJ 医疗_NN 设备_NN 系统_NN 。_PU
+更_AD 详细_VA 地_DEV 说_VV ，_PU 涉及_VV 具有_VV 通过_P 指示_VV 输入部_NN 的_DEG 指示_NN 信号_NN 电_SB 驱动_VV 的_DEC 、_PU 能_VV 弯曲_VV 的_DEC 弯_NN 曲部_NN 的_DEG 电动_NN 弯曲_NN 内窥镜_NN 、_PU 具有_VV 能_VV 弯折_VV 或_CC 弯曲_VV 的_DEC 关节_NN 的_DEC 能动_NN 处理_NN 器具_NN 、_PU 或者_CC 具有_VV 能_VV 弯曲_VV 的_DEC 弯_NN 曲部_NN 的_DEC 能动_JJ 套管_NN 。_PU
+背景_NN 技术_NN
+近年_NT ，_PU 内窥镜_NN 广泛_AD 使用_VV 在_P 医疗_NN 领域_NN 和_CC 工业_NN 领域_NN 中_LC 。_PU
+并且_VV ，_PU 处理_NN 器具_NN 也_AD 与_P 内窥镜_NN 组合_VV 而_MSP 广泛_AD 使用_VV 在_P 医疗_NN 领域_NN 中_LC 。_PU
+在_P 作为_P 这样_PN 的_DEG 医疗_NN 设备_NN 的_DEG 例如_AD 内窥镜_NN 中_LC ，_PU 从_P 通过_P 手动_JJ 操作_NN 使_VV 弯曲部_NN 弯曲_VV 的_DEC 内窥镜_NN ，_PU 到_VV 利用_VV 电动机_NN 的_DEG 驱动_NN 力电_NN 驱动_VV 弯曲部_NN 弯曲_VV 的_DEC 所谓_JJ 电动_JJ 弯曲_NN 内_LC 窥镜_NN 得到_VV 了_AS 实_AD 用化_VV 。_PU
+并且_AD ，_PU 在_P 处理_NN 器具_NN 中_LC ，_PU 利用_VV 电动机_NN 的_DEC 驱动力_NN 对_P 设_VV 在_P 处理_NN 器具_NN 的_DEG 前_JJ 端侧_NN 的_DEC 能_VV 弯_NN 折_VV 或_CC 弯曲_VV 的_DEC 关节_NN 进行_VV 电_NN 驱动_NN 地_DEC 所谓_JJ 能动_NN 处理_NN 器具_NN 是_VC 公知_VV 的_DEC 。_PU
+例如_AD ，_PU 在_P 日本_NR 特开_NN ２００７_CD －_PU １８５３５５_CD 号_M 公报_NN 中_LC 公开_VV 了_AS 一_CD 种_M 电动_JJ 弯曲_NN 内_LC 窥镜_NN 。_PU
+在_P 日本_NR 特开_NN ２００７_CD －_PU １８５３５５_CD 号_M 公报_NN 的_DEC 电动_JJ 弯曲_NN 内_LC 窥镜_NN 中_LC ，_PU 通过_P 由_P 操作者_NN 进行_VV 的_DEC 操纵杆_NN （_PU 指示_VV 输入部_NN ）_PU 的_DEG 指示_NN 输入_VV ，_PU 控制部_NN 经由_P 电动机_NN 驱动器_NN 使_VV 作为_P 驱动部_NN 的_DEG 电动机_NN 旋转_VV 驱动_NN ，_PU 利用_VV 该_DT 旋转_NN 驱动_VV 的_DEC 电动机_NN 牵引弯_NN 曲_NN 金属_NN 线_NN ，_PU 从而_AD 驱动_VV 设_VV 在_P 插入_NN 部_NN 上_LC 的_DEG 弯曲部_NN 弯曲_VV 。_PU
+而且_AD ，_PU 具有_VV 这样_JJ 的_DEG 所谓_JJ 力觉_NN 反馈_VV 功能_NN ，_PU 即_AD ：_PU 由_P 弯曲_NN 状态_NN 检测部_NN 检测_VV 弯曲部_NN 的_DEG 弯曲_NN 状态_NN ，_PU 根据_P 弯曲_NN 状态_NN ，_PU 利用_VV 伺服_NN 电动机_NN 朝_AD 放倒_VV 操纵杆_NN 的_DEG 方向_NN 产生_VV 反作_NN 用力_NN 。_PU
+然而_AD ，_PU 如_P 日本_NR 特开_NN ２００７_CD －_PU １８５３５５_CD 号_M 公报_NN 所_MSP 述_VV ，_PU 在_P 力觉_NN 反馈_NN 执行_VV 功能_NN 的_DEC 状态_NN 中_LC ，_PU 操作者_NN 的_DEG 手_NN 离开_VV 操纵杆_NN 等_ETC 的_DEG 情况_NN 下_LC ，_PU 在_P 力觉_NN 反馈_NN 进行_VV 作用_NN 的_DEC 方向_NN （_PU 即_AD 伺服_NN 电动机_NN 使_VV 操纵杆_NN 运动_VV 的_DEC 方向_NN ）_PU 上_LC 操纵杆_NN 急剧_JJ 运动_NN 。_PU
+伴随_VV 操纵杆_NN 的_DEG 急剧_NN 运动_NN ，_PU 弯_NN 曲部_NN 也_AD 急剧_AD 运动_VV ，_PU 结果_AD 进行_VV 了_AS 操作者_NN 不_AD 期望_VV 的_DEC 动作_NN 。_PU
+为此_AD ，_PU 期望_NN 能_VV 提供_VV 一_CD 种_M 可_VV 有效_VA 地_DEV 控制_VV 这_DT 种_M 动作_NN 、_PU 并且_CC 对_P 操作者_NN 来说_AD 使用_VV 便利_VA 或者_CC 操作性_NN 良好_VA 的_DEC 系统_NN 。_PU
+换句话说_AD ，_PU 期望_NN 提供_VV 这样_JJ 一_CD 种_M 具有_VV 力觉_NN 反馈_NN 的_DEC 系统_NN ，_PU 在_P 该_DT 系统_NN 中_LC ，_PU 在_P 操作_NN 者手_NN 离开_VV 指示_VV 输入部_NN 等_ETC 的_DEG 情况_NN 下_LC ，_PU 可_VV 通过_P 反馈_NN 来_MSP 抑制_VV 电动_JJ 弯曲_NN 内_LC 窥镜_NR 、_PU 能动_JJ 处理_NN 器具_NN 、_PU 能动_JJ 套管_NN 、_PU 能动_JJ 医疗_NN 设备_NN 等_ETC 在_P 操作者_NN 不_AD 期望_VV 的_DEC 方向_NN 运动_VV 的_DEC 动作_NN 。_PU
+内容_NN
+本_DT 发明_NN 是_VC 鉴于_VV 上述_JJ 方面_NN 而_MSP 作成_VV 的_DEC ，_PU 本_DT 发明_NN 的_DEG 目的_NN 是_VC 提供_VV 一_CD 种_M 对_P 力_JJ 信息_NN 进行_VV 反馈_NN 的_DEC 能动_JJ 医疗_NN 设备_NN 系统_NN ，_PU 在_P 该_DT 系统_NN 中_LC ，_PU 在_P 操作者_NN 不_AD 期望_VV 的_DEC 方向_NN 上_LC 产生_VV 了_AS 规定_JJ 阈值_NN 以上_LC 的_DEG 运动_NN 的_DEC 情况_NN 下_LC ，_PU 可_VV 抑制_VV 该_DT 运动_NN 。_PU
+本_DT 发明_NN 的_DEG 能动_JJ 医疗_NN 设备_NN 系统_NN 具有_VV ：_PU
+能动_JJ 医疗_NN 设备_NN ，_PU 其_PN 具有_VV 至少_AD 一_CD 个_M 转动_VV 的_DEC 关节_NN ；_PU
+能动_JJ 医疗_NN 设备_NN 驱动部_NN ，_PU 其_PN 电驱_NN 动_VV 所_MSP 述_VV 能动_JJ 医疗_NN 设备_NN ；_PU
+指示_VV 输入部_NN ，_PU 其_PN 通过_P 操作者_NN 输入_VV 用于_VV 驱动_VV 所_MSP 述_VV 能动_JJ 医疗_NN 设备_NN 的_DEG 指示_NN ；_PU
+指示_VV 输入部_NN 驱动部_NN ，_PU 其_PN 被_SB 反馈_VV 输入_VV 有_VE 作用于_VV 所_MSP 述_VV 能动_JJ 医疗_NN 设备_NN 上_LC 的_DEG 力_NN 信息_NN ，_PU 并_CC 根据_P 所_MSP 述_VV 力_NN 信息_NN 来电_LC 驱动_VV 所_MSP 述_VV 指示_VV 输入部_NN ；_PU
+判定部_NN ，_PU 其_PN 判定_VV 在_P 驱动_VV 所_MSP 述_VV 指示_VV 输入部_NN 的_DEC 驱动力_NN 的_DEC 作用_NN 方向_NN 上_LC 有_VE 无_VE 规定_NN 阈值_NN 以上_LC 的_DEG 运动量_NN 产生_VV ；_PU 以及_CC
+控制部_NN ，_PU 在_P 有_VE 所_MSP 述_VV 阈值_NN 以上_LC 的_DEG 运动量_NN 产生_VV 的_DEC 情况_NN 下_LC ，_PU 根据_P 所_MSP 述_VV 判定部_NN 的_DEG 判定_NN 来_MSP 抑制_VV 所_MSP 述_VV 指示_VV 输入部_NN 驱动部_NN 和_CC 所_MSP 述_VV 能动_JJ 医疗_NN 设备_NN 驱动部_NN 中_LC 的_DEG 至少_AD 一方_VA 的_DEC 驱动_NN 。_PU
+说明_NN
+图_NN １_CD 是_VC 示出_VV 本_DT 发明_NN 实施例_NN １_CD 的_DEG 处理_NN 器具_NN 系统_NN 的_DEG 外观_NN 的_DEC 立体图_NN 。_PU
+图_NN ２_CD 是_VC 示出_VV 实施例_NN １_CD 的_DEG 处理_NN 器具_NN 系统_NN 的_DEC 内部_NN 结构_NN 的_DEG 结构图_NN 。_PU
+图_NN ３_CD 是_VC 示出_VV 在_P 实施例_NN １_CD 中_LC 使用_VV 的_DEC 通常_JJ 情况_NN 下_LC 的_DEG 控制_NN 系统_NN 的_DEG 结构_NN 例_NN 的_DEG 框线图_NN 。_PU
+图_NN ４_CD 是_VC 示出_VV 实施例_NN １_CD 的_DEG 处理_NN 进程_NN 的_DEC 流程图_NN 。_PU
+图_NN ５_CD 是_VC 示出_VV 实施例_NN １_CD 中_LC 的_DEG 特定_JJ 情况_NN 下_LC 的_DEG 控制_NN 系统_NN 的_DEG 结构_NN 例_NN 的_DEG 框线图_NN 。_PU
+图_NN ６_CD 是_VC 实施例_NN １_CD 中_LC 的_DEG 动作_JJ 说明图_NN 。_PU
+图_NN ７_CD 是_VC 示出_VV 作为_P 通常_JJ 情况_NN 下_LC 的_DEG 控制_NN 系统_NN 的_DEC 另_DT 一_CD 结构例_NN 的_DEG 力反_NN 馈式_JJ 双向_JJ 控制_NN 系统_NN 的_DEG 框线图_NN 。_PU
+图_NN ８_CD 是_VC 示出_VV 作为_P 通常_JJ 情况_NN 下_LC 的_DEG 控制_NN 系统_NN 的_DEC 另_DT 一_CD 结构例_NN 的_DEG 对称式_JJ 双向_JJ 控制_NN 系统_NN 的_DEG 框线图_NN 。_PU
+图_NN ９_CD 是_VC 示出_VV 作为_P 通常_JJ 情况_NN 下_LC 的_DEG 控制_NN 系统_NN 的_DEC 另_DT 一_CD 结构例_NN 的_DEG 并行式_JJ 双向_JJ 控制_NN 系统_NN 的_DEG 框线图_NN 。_PU
+图_NN １０_CD 是_VC 示出_VV 本_DT 发明_NN 实施例_NN ２_CD 的_DEG 处理_NN 器具_NN 系统_NN 的_DEG 外观_NN 的_DEC 立体图_NN 。_PU
+图_NN １１_CD 是_VC 示出_VV 实施例_NN ２_CD 的_DEG 变形例_NN 的_DEG 处理_NN 器具_NN 系统_NN 的_DEG 外观_NN 的_DEC 立体图_NN 。_PU
+图_NN １２_CD 是_VC 示出_VV 处理部_NN 的_DEG 结构_NN 的_DEC 立体图_NN 。_PU
+图_NN １３_CD 是_VC 示出_VV 本_DT 发明_NN 实施例_NN ３_CD 的_DEG 内窥镜_NN 系统_NN 的_DEG 结构_NN 的_DEG 结构图_NN 。_PU
+图_NN １４_CD 是_VC 示出_VV 在_P 实施例_NN ３_CD 中_LC 使用_VV 的_DEC 通常_JJ 情况_NN 下_LC 的_DEG 控制_NN 系统_NN 的_DEG 结构_NN 例_NN 的_DEG 框线图_NN 。_PU
+图_NN １５_CD 是_VC 示出_VV 实施例_NN ３_CD 的_DEG 处理_NN 进程_NN 的_DEC 流程图_NN 。_PU
+具体_JJ 实施_NN 方式_NN
+以下_NN ，_PU 参照_VV 附图_NN 说明_VV 本_DT 发明_NN 的_DEG 实施例_NN 。_PU
+另外_AD ，_PU 在_P 本_DT 说明书_NN 中_LC 使用_VV 的_DEC 基于_VV 判定_VV 的_DEC “_PU 抑制_NN ”_PU 是_VC 指_VV ：_PU 将_BA 后述_JJ 的_DEG 基于_JJ 指示_NN 输入_VV 驱动部_NN 的_DEG 指示_NN 输入部_NN 的_DEG 动作_NN 、_PU 以及_CC 追踪指示_VV 输入部_NN 的_DEG 动作_NN 的_DEC 能动_JJ 医疗_NN 设备_NN 的_DEG 动作限_NN 制成_VV 削弱_NN 或_CC 停止_VV 其_PN 在_P 操作者_NN 期望_VV 的_DEC 运动量_NN 以上_LC 进行_VV 动作_NN 的_DEC 方式_NN 加以_VV 限制_NN 。_PU
+（_PU 实施例_NN １_CD ）_PU
+图_NN １_CD 至_CC 图_NN ９_CD 涉及_VV 的_DEC 本_DT 实施例_NN 由_P 具有_VV 能动_NN 机构_NN 的_DEG 处理_NN 器具_NN 构成_VV 。_PU
+图_NN １_CD 所_MSP 示_VV 的_DEC 本_DT 发明_NN 的_DEG 实施例_NN １_CD 的_DEG 处理_NN 器具_NN 系统_NN １_CD 具有_VV ：_PU 指示_VV 输入部_NN ２_CD ，_PU 其_PN 具有_VV 用于_VV 由_P 手术者_NN 等_ETC 操作者_NN 进行_VV 指示_NN 输入_NN （_PU 或_CC 指示_VV 操作_NN ）_PU 的_DEC 活动部_NN ；_PU 指示_VV 输入部_NN 驱动部_NN ３_CD ，_PU 其_PN 电驱_NN 动该_AD 指示_VV 输入部_NN ２_CD ；_PU 处理部_NN ４_CD ，_PU 其_PN 形成_VV 有_VE 能动_JJ 医疗_NN 设备_NN ，_PU 该_DT 能动_JJ 医疗_NN 设备_NN 具有_VV 用于_VV 进行_VV 处理_NN 的_DEC 活动部_NN ；_PU 处理部_NN 驱动部_NN ５_CD ，_PU 其_PN 按照_P 指示_VV 输入部_NN ２_CD 的_DEG 指示_NN 输入_VV 来电_PN 驱动_VV 该_DT 处理部_NN ４_CD ；_PU 以及_CC 控制部_NN ６_CD ，_PU 其_PN 进行_VV 指示_NN 输入部_NN 驱动部_NN ３_CD 和_CC 处理部_NN 驱动部_NN ５_CD 的_DEG 驱动_NN 控制_NN 。_PU
+在_P 图_NN １_CD 所_MSP 示_VV 的_DEC 实施例_NN 中_LC ，_PU 指示_VV 输入部_NN ２_CD 构成_VV 为_VC 具有_VV 指示_VV 输入_NN 用_P 能动_VV 医疗_NN 设备_NN ，_PU 且_CC 该_DT 指示_NN 输入_VV 用_P 能动_JJ 医疗_NN 设备_NN 的_DEG 形状_NN 与_CC 处理部_NN ４_CD 中_LC 的_DEG 至少_AD 构成_VV 活动部_NN 的_DEC 能动_JJ 医疗_NN 设备_NN 大致_AD 相似_VA 或_CC 类似_VA 。_PU
+具体_VA 地_DEV 说_VV ，_PU 处理部_NN ４_CD 具有_VV 作为_P 用于_VV 进行_VV 处理_NN 的_DEC 活动部_NN 的_DEC 圆管_NN 形状_NN 的_DEC 关节段_NN （_PU 或_CC 臂_NN ）_PU １１_CD 、_PU １１_CD 、_PU １１_CD ，_PU 并_CC 具有_VV 分别_AD 利用_VV 关节轴_NN １１ａ_CD 、_PU １１ｂ_CD 、_PU １１ｃ_CD 自由_AD 转动_VV 的_DEC 能动_JJ 医疗_NN 设备_NN 结构_NN 。_PU
+并且_VV ，_PU 同样_AD ，_PU 由_P 操作者_NN 对_P 处理部_NN ４_CD 进行_VV 指示_NN 操作_NN 的_DEG 指示_NN 输入部_NN ２_CD 具有_VV 作为_P 用于_VV 进行_VV 指示_NN 输入_VV 操作_NN 的_DEC 活动部_NN 的_DEC 圆管_NN 形状_NN 的_DEC 关节段_NN １１_CD ′_PU 、_PU １１_CD ′_PU 、_PU １１_CD ′_PU ，_PU 并_CC 具有_VV 分别_AD 利用_VV 关节轴_NN １１ａ_CD ′_PU 、_PU １１ｂ_CD ′_PU 、_PU １１ｃ_CD ′_PU 自由_P 转动_VV 地_DEV 连接_VV 的_DEC 结构_NN 。_PU
+然后_AD ，_PU 当_P 操作者_NN 把持_NN 指示_VV 输入部_NN ２_CD 侧_NN 来_MSP 进行_VV 指示_NN 输入_VV 操作_NN 时_LC ，_PU 具体_VA 地_DEV 说_VV ，_PU 转动_VV 关节轴_NN １１ａ_CD ′_PU 、_PU １１ｂ_CD ′_PU 、_PU １１ｃ_CD ′_PU 来_MSP 操作_VV 各_DT 关节段_NN 时_LC ，_PU 通过_P 控制部_NN ６_CD 的_DEG 控制_NN 来_MSP 驱动_VV 关节轴_NN １１ａ_CD 、_PU １１ｂ_CD 、_PU １１ｃ_CD ，_PU 以_MSP 使_VV 处理部_NN ４_CD 侧_NN 也_AD 处于_VV 与_CC 指示_VV 输入部_NN ２_CD 的_DEG 位置_NN ／_PU 姿势_NN 对应_VV 的_DEC 位置_NN ／_PU 姿势_NN 。_PU
+因此_AD ，_PU 当_P 把_BA 指示_VV 输入部_NN ２_CD 视为_VV 能动_JJ 医疗_NN 设备_NN 用_VV 主机_NN （_PU 主机_NN ）_PU 时_LC ，_PU 可_VV 将_BA 处理部_NN ４_CD 视为_AD 能动_VV 医疗_NN 设备_NN （_PU 从_P 机_NN ）_PU 。_PU
+然后_AD ，_PU 由_P 手术者_NN 把持_NN 主机_NN 来_MSP 操作_VV 能动_JJ 医疗_NN 设备_NN 使_VV 其_PN 处于_VV 期望_NN 的_DEC 位置_NN ／_PU 姿势_NN 状态_NN ，_PU 从而_AD 通过_P 控制部_NN ６_CD 对_P 处理部_NN 驱动部_NN ５_CD 的_DEG 控制_NN ，_PU 以_MSP 追踪_VV 该_DT 主机_NN 的_DEG 位置_NN ／_PU 姿势_NN 的_DEC 方式_NN 驱动_VV 能动_NN 医疗_NN 设备_NN ，_PU 能够_VV 将_BA 能动_JJ 医疗_NN 设备_NN 设定_VV 为_VC 相同_VA 的_DEC 位置_NN ／_PU 姿势_NN 状态_NN 。_PU
+图_NN ２_CD 示出_VV 该_DT 处理_NN 器具_NN 系统_NN １_CD 的_DEG 内部_NN 结构_NN 。_PU
+另外_AD ，_PU 在_P 图_NN ２_CD 中_LC 示意性_NN 示出_VV 关节轴_NN （_PU 转动轴_NN ）_PU １１ａ_CD ～_PU １１ｃ_CD 、_PU １１ａ_CD ′_PU ～_PU １１ｃ_CD ′_PU 等_ETC 。_PU
+如_P 上_NN 所_MSP 述_VV ，_PU 处理部_NN ４_CD 和_CC 指示_VV 输入部_NN ２_CD 分别_AD 具有_VV 多_CD 个_M 关节轴_NN １１ａ_CD ～_PU １１ｃ_CD 、_PU １１ａ_CD ′_PU ～_PU １１_CD ｃ′_M 。_PU
+具体_VA 地_DEV 说_VV ，_PU 如_P 图_NN ２_CD 所_MSP 示_VV ，_PU 在_P 使_VV 其_PN 纸面_NN 为_VC Ｘ_NN －_PU Ｙ_NN 平面_JJ 的_DEG 情况_NN 下_LC ，_PU 最_AD 前端_NN 的_DEC 关节轴_NN （_PU 转动_NN 轴_NN ）_PU １１ａ_CD 成为_VV 垂直_VV 于_P 纸面_NN 的_DEC Ｚ_NN 轴_NN 方向_NN ，_PU 随后_VV 的_DEC 关节轴_NN １１ｂ_CD 成为_VV 纸面_NN 内_LC 的_DEG Ｙ轴_NN 方向_NN ，_PU 随后_VV 的_DEC 关节轴_NN １１ｃ_CD 成为_VV 垂直_VV 于_P 纸面_NN 的_DEC Ｚ_NN 轴_NN 方向_NN 。_PU
+其他_DT 的_DEG 关节轴_NN １１ａ_CD ′_PU ～_PU １１ｃ_CD ′_PU 与_P 关节轴_NN １１ａ_CD ～_PU １１ｃ_CD 的_DEC 情况_NN 相同_VA 。_PU
+并且_AD ，_PU 在_P 处理部_NN ４_OD （_PU 的_DEG 关节段_NN １１_CD ）_PU 内_LC 分别_AD 插通_VV （_PU 贯穿_VV ）_PU 有用于_VV 传递_VV 使_VV 关节轴_NN １１ａ_CD ～_PU １１ｃ_CD 转动_VV 的_DEC 力_NN 的_DEC 金属线_NN １２ａ_CD 、_PU １２ａ_CD 、_PU １２ｂ_CD 、_PU １２ｂ_CD 、_PU １２ｃ_CD 、_PU １２_CD ｃ_M （_PU 与_P 其_PN 类似_VA 的_DEC 具体_JJ 结构_NN 参照_VV 后述_JJ 的_DEG 图_NN １２_CD ）_PU 。_PU
+金属线_NN １２ｉ_CD 、_PU １２_CD ｉ_M （_PU ｉａ_NN ～_PU ｃ_CD ）_PU 的_DEG 前端_NN 绕_VV 关节轴_NN １１ｉ_CD 固定_VV ，_PU 其_PN 后端_NN 架设_VV 或者_CC 卷绕_VV 固定_VV 在_P 处理部_NN 驱动部_NN ５_CD 内_LC 的_DEC 滑轮_NN １３ｉ_CD 上_LC 。_PU
+并且_VV ，_PU 该_DT 滑轮_NN １３ｉ_CD 安装_VV 在_P 作为_VV 驱动部_NN （_PU 或_CC 动力部_NN ）_PU 的_DEG 电动机_NN １４ｉ_CD 的_DEG 旋转轴_NN 上_LC ，_PU 在_P 该_DT 电动机_NN １４ｉ_CD 的_DEG 旋转轴_NN 上_LC 安装_VV 有_VE 作为_P 检测_VV 其_PN 旋转角_NN （_PU 转动_NN 角_NN ）_PU 的_DEC 位置_NN 传感器_NN 的_DEG 例如_AD 旋转_VV 编码_NN 器_NN （_PU 简称为_P 编码器_NN ）_PU １５ｉ_CD 。_PU
+另外_AD ，_PU 在_P 电动机_NN １４ｉ_CD 上_LC 通常_AD 安装_VV 有_VE 未作_JJ 图示_NN 的_DEC 齿轮_NN 。_PU
+电动机_NN １４ｉ_CD 通过_P 分别_AD 被_SB 施加_VV 来_MSP 自_VV 电动机_NN 驱动器_NN １６ｉ_CD 的_DEG 驱动_NN 信号_NN 而_MSP 旋转_VV 驱动_NN 。_PU
+并且_AD ，_PU 在_P 金属线_NN １２ｉ_CD 、_PU １２ｉ_CD 的_DEG 后端_NN 侧_NN 安装_VV 有_VE 张力_NN 传感器_NN １７ｉ_CD 、_PU １７ｉ_CD ，_PU 该_DT 张力_NN 传感器_NN １７ｉ_CD 、_PU １７ｉ_CD 检测_VV 作_VV 用于_VV 各_DT 金属线_NN １２ｉ_CD 、_PU １２ｉ_CD 上_LC 的_DEG 力_NN ，_PU 换_VV 句话_NN 说使_NN 关节_NN 段绕_NN 关节轴_NN １１ｉ_CD 旋转_VV 的_DEC 力_NN （_PU 扭矩_NN ）_PU 。_PU
+另外_AD ，_PU 设置_VV 张力_NN 传感器_NN １７ｉ_CD 、_PU １７ｉ_CD 的_DEG 位置_NN 不_AD 限于_VV 金属线_NN １２ｉ_CD 、_PU １２ｉ_CD 的_DEG 后端_NN 侧_NN 附近_NN ，_PU 也_CC 可以_VV 是_VC 能_VV 安装_VV 的_DEC 任意_NN 位置_NN 。_PU
+并且_AD ，_PU 不_AD 限于_VV 张力_NN 传感器_NN ，_PU 只要_CS 是_VC 压敏_JJ 传感器_NN 、_PU 应变_VV 传感器_NN 等_ETC 、_PU 能_VV 直接_AD 或_CC 间接_AD 地_DEV 检测_VV 张力_NN 的_DEC 传感器_NN ，_PU 都_AD 能_VV 优选_VV 地_DEV 使用_VV 。_PU
+并且_AD ，_PU 基于_P 张力_NN 传感器_NN １７ｉ_CD 的_DEG 检测_NN 信号_NN 的_DEC 力_NN 信息_NN 和_CC 基于_P 编码器_NN １５ｉ_CD 的_DEG 检测_NN 信号_NN 的_DEC 位置_NN 信息_NN 被_SB 输入_VV 到_VV 构成_VV 控制部_NN ６_CD 的_DEG ＣＰＵ_NN ０２_NOI ２１_CD 。_PU
+该_DT ＣＰＵ_NN ０２_NOI ２１_CD 经由_P 电动机_NN 驱动器_NN １６ｉ_CD 来_MSP 控制_VV 电动机_NN １４ｉ_CD 的_DEG 旋转_NN 。_PU
+并且_VV ，_PU 指示_VV 输入部_NN ２_CD 的_DEG 结构_NN 与_CC 处理部_NN ４_OD 相同_VA ，_PU 对_P 表示_VV 指示_NN 输入部_NN ２_CD 中_LC 的_DEG 构成_VV 要素_NN 的_DEG 标号_NN 附_NN 上_LC ′_PU 来_MSP 表示_VV 指示_NN 输入_NN 部_NN ２_CD 的_DEG 构成_NN 要素_NN 。_PU
+并且_VV ，_PU 指示_VV 输入部_NN 驱动部_NN ３_CD 的_DEG 结构_NN 中_LC ，_PU 除了_P 未_AD 设有_VV 处理部_NN 驱动部_NN ５_CD 中_LC 的_DEG 张力_NN 传感器_NN １７ｉ_CD 以外_LC ，_PU 其他_DT 与_P 处理部_NN 驱动部_NN ５_CD 相同_VA ，_PU 对_P 表示_VV 处理部_NN 驱动部_NN ５_CD 中_LC 的_DEG 构成_VV 要素_NN 的_DEG 标号附_NN 上_LC ′_PU 来_MSP 表示_VV 指示_NN 输入部_NN 驱动部_NN ３_CD 的_DEG 构成_NN 要素_NN 。_PU
+能_VV 检测_VV 操作者_NN 对_P 指示_VV 输入部_NN ２_CD 的_DEG 指示_NN 输入_VV 操作_NN 的_DEG 编码_NN 器_NN １５_CD ａ′_M ～_PU １５_CD ｃ′_M 的_DEG 检测_NN 信号_NN 作为_P 位置_NN 信息_NN 被_SB 输入_VV 到_VV 构成_VV 控制部_NN ６_CD 的_DEG ＣＰＵ_NN ０２_NOI ２１_CD 。_PU
+即_AD ，_PU 由_P 操作者_NN 操作_VV 的_DEC （_PU 构成_VV 主机_NN ）_PU 的_DEC 关节轴_NN １１ａ_CD ′_PU ～_PU １１ｃ_CD ′_PU 的_DEG 旋转_NN 方向_NN 和_CC 旋转角_NN （_PU 将_BA 其_PN 定义_VV 为_VC 转动角_NN ）_PU 通过_P 编码器_NN １５_CD ａ′_M ～_PU １５ｃ_CD ′_PU 来_MSP 检测_VV ，_PU 该_DT 编码器_NN 的_DEG 输出_NN 信号_NN 作为_VV 检测_NN 信号_NN 被_SB 输入_VV 到_VV ＣＰＵ０２２１_NN 。_PU
+ＣＰＵ０２２１_NN 此时_NT 将_BA 该_DT 检测_NN 信号_NN 与_P 来自_VV 检测_NN 处理部_NN ４_CD 侧_NN （_PU 即_AD 构成_VV 能动_JJ 医疗_NN 设备_NN ）_PU 的_DEC 关节轴_NN １１ａ_CD ～_PU １１ｃ_CD 的_DEG 转动角_NN 的_DEC 编码器_NN １５ａ_CD ～_PU １５ｃ_CD 的_DEG 检测_NN 信号_NN 进行_VV 比较_NN 。_PU
+然后_AD ，_PU ＣＰＵ０２２１_NN 生成_VV 从_P 来自_VV 编码器_NN １５_CD ａ′_M ～_PU １５_CD ｃ′_M 的_DEG 检测_NN 信号_NN 中_LC 减去_VV 来自_VV 编码器_NN １５ａ_CD ～_PU １５ｃ_CD 的_DEG 检测_NN 信号_NN 后_LC 的_DEG 差值_NN 的_DEC 检测_NN 信号_NN ，_PU 将_BA 该_DT 差值_NN 作为_VV 驱动_NN 处理部_NN ４_CD 的_DEG 指令_NN 值_NN ，_PU 经由_P 电动机_NN 驱动器_NN １６ａ_CD ～_PU １６ｃ_CD 使_VV 关节轴_NN １１ａ_CD ～_PU １１ｃ_CD 转动_VV 。_PU
+由此_AD ，_PU 处理部_NN ４_CD 的_DEG 位置_NN ／_PU 姿势_NN 被_SB 控制_VV 成_VV 追踪_NN 指示_VV 输入部_NN ２_CD 的_DEG 位置_NN ／_PU 姿势_NN 。_PU
+在_P 本_DT 实施例_NN 中_LC ，_PU 而且_AD ，_PU 对_P 绕关_JJ 节轴_NN １１ａ_CD ～_PU １１ｃ_CD 的_DEG 转动_NN 进行_VV 作用_NN 的_DEC 力_NN 由_P 张力_NN 传感器_NN １７ａ_CD ～_PU １７ｃ_CD 检测_NN ，_PU 该_DT 检测_NN 信号_NN 也_AD 作为_VV 力_NN 信息_NN 被_SB 输入_VV 到_VV ＣＰＵ０２２１_NN 。_PU
+然后_AD ，_PU ＣＰＵ０２２１_NN 反馈_VV 该_DT 检测_NN 信号_NN ，_PU 以_MSP 使_VV 经由_P 电动机_NN 驱动器_NN １６_CD ａ′_M ～_PU １６ｃ_CD ′_PU 驱动_VV 关节轴_NN １１ａ_CD ′_PU ～_PU １１_CD ｃ′_M 。_PU
+这样_AD ，_PU 形成_VV 了_AS 如下_VV 的_DEC 力_NN 信息_NN 反馈_NN 单元_NN ，_PU 即_AD ：_PU 该_DT 力_NN 信息_NN 反馈_NN 单元_NN 使作_VV 用于_VV 关节轴_NN １１ａ_CD ～_PU １１ｃ_CD 上_LC 的_DEG 力反映_NN 到_VV 关节轴_NN １１ａ_CD ′_PU ～_PU １１ｃ_CD ′_PU 侧_NN 。_PU
+另外_AD ，_PU 也_AD 可以_VV 预先_AD 可变_VV 地_DEV 设定_VV 在_P 进行_VV 反馈_NN 的_DEC 情况_NN 下_LC 作为_P 控制_VV 参数_NN 的_DEG 增益_NN 等_ETC 。_PU
+另外_AD ，_PU 根据_P 后述_JJ 的_DEG 判定部_NN ２１ａ_CD 的_DEG 判定_NN 结果_NN ，_PU 作为_VV 抑制_NN 指示_VV 输入部_NN 驱动部_NN ３_CD 和_CC 处理部_NN 驱动部_NN ５_CD 的_DEG 驱动_NN 的_DEC 具体_JJ 例_NN ，_PU 除了_P 停止_VV 这些_DT 部分_NN 的_DEC 驱动_NN 、_PU 或者_CC 减弱_VV 其_PN 驱动_NN 以外_LC ，_PU 还_AD 可以_VV 变更_AD 控制_VV 模式_NN 、_PU 或者_CC 变更_AD 控制_VV 参数_NN 的_DEC 值_NN 。_PU
+这样_AD ，_PU 通过_P 进行_VV 力_JJ 信息_NN 的_DEC 反馈_NN ，_PU 相对于_P 操作_NN 指示_VV 输入部_NN ２_CD 的_DEG 操作者_NN ，_PU 能够_VV 将_BA 作用于_VV 处_NN 理部_NN ４_CD 上_LC 的_DEG 力_NN 在_P 指示_NN 输入_NN 部_NN ２_CD 再现_VV ，_PU 可_VV 在_P 接近于_VV 由_P 指示_VV 输入部_NN ２_CD 直接_AD 进行_VV 处理_NN 的_DEC 环境_NN 的_DEC 状态_NN 下_LC 进行_VV 处理部_NN ４_CD 的_DEG 处理_NN ，_PU 从而_AD 提高_VV 了_AS 操作性_NN 。_PU
+另外_AD ，_PU 在_P 本_DT 实施例_NN 中_LC ，_PU 设有_VV 检测_NN 处理部_NN ４_CD 侧_NN 的_DEG 位置_NN 信息_NN 的_DEC 位置_NN 传感器_NN 和_CC 检测力_NN 信息_NN 的_DEC 力_NN 传感器_NN ，_PU 然而_AD 在_P 能够_VV 使用_VV 位置_NN 传感器_NN 计算力_NN 信息_NN 的_DEC 情况_NN 下_LC ，_PU 也_AD 可以_VV 构成_VV 为_VC 仅_AD 设置_VV 位置_NN 传感器_NN 。_PU
+在_P 本_DT 实施例_NN 中_LC ，_PU 为了_P 进一步_AD 提高_VV 操作性_NN ，_PU 构成_VV 控制部_NN ６_CD 的_DEG ＣＰＵ_NN ０２_NOI ２１_CD 始终_M （_PU 作为_P 具体_JJ 例_NN ，_PU 每_AD 隔_VV 大致_AD 固定_VV 周期_NN ）_PU 监视_VV 提供_VV 给_P 指示_VV 输入部_NN ２_CD 的_DEG 力_NN 信息_NN ，_PU 更_AD 具体_VA 地_DEV 说_VV ，_PU 提供_VV 给_P 电动机_NN 驱动器_NN １６_CD ａ′_M ～_PU １６ｃ_CD ′_PU 的_DEG 直流_NN （_PU ＤＣ_NN ）_PU 的_DEG 电流_NN 指令值_NN 的_DEC 方向_NN （_PU 该_DT 直流_JJ 电流_NN 的_DEG 方向_NN ）_PU 、_PU 以及_CC 此_DT 时_NN 的_DEG 指示_NN 输入_NN 部_NN ２_CD 的_DEG 运动量_NN （_PU 具体_VA 地_DEV 说_VV 是_VC 每_DT 单位_NN 时间_NN 的_DEG 运动量_NN ，_PU 根据_P 编码器_NN １５_CD ａ′_M ～_PU １５_CD ｃ′_M 的_DEG 检测_NN 信号_NN 来_MSP 获得_VV ）_PU 。_PU
+利用_VV 该_DT 监视_NN ，_PU ＣＰＵ０２２１_NN 具有_VV 这样_PN 的_DEG 判定部_NN ２１ａ_CD 的_DEG 功能_NN ，_PU 即_AD ：_PU 该_DT 判定部_NN ２１ａ_CD 判定_VV 提供_VV 给_P 指示_VV 输入部_NN ２_CD 的_DEG 力_NN 的_DEG 方向_NN 与_CC 指示_VV 输入部_NN ２_CD 运动_VV 的_DEC 方向_NN 是否_AD 一致_VA 、_PU 且_CC 该_DT 运动量_NN 是否_AD 超过_VV 阈值_NN 。_PU
+然后_AD ，_PU 当_P 通过_P 该_DT 判定部_NN ２１ａ_CD 判定_VV 为_VC 驱动力_NN 作用_NN 的_DEC 方向_NN 与_CC 指示_VV 输入部_NN ２_CD 的_DEG 运动量_NN 的_DEG 方向_NN 一致_VA 、_PU 且_CC 该_DT 运动量_NN 超过_VV 阈_DER 值_VV 时_LC ，_PU ＣＰＵ_NN ０２_NOI ２１_CD 变更_VV 例如_AD 该_DT 控制_NN 系统_NN 的_DEG 控制_NN 状态_NN 。_PU
+另外_AD ，_PU 在_P 进行_VV 这_DT 种_M 判定_VV 的_DEC 情况_NN 下_LC ，_PU 在_P 本_DT 实施例_NN 中_LC ，_PU 在_P 多_CD 个_M 关节轴_NN １１ａ_CD ′_PU ～_PU １１ｃ_CD ′_PU 中_LC 对_P 每_DT 个_M 关节_NN 轴分_NN 别_AD 独立_VA 地_DEV 进行_VV 判定_NN 。_PU
+即_AD ，_PU 通过_P 进行_VV 与_CC 仅_AD 具有_VV 一_CD 个_M 关节轴_NN 的_DEG 处理_NN 器具_NN 的_DEG 情况_NN 相同_VA 的_DEC 判定_NN ，_PU 可_VV 同样_AD 地_DEV 应用于_VV 多_CD 个_M 关节轴_NN 的_DEC 情况_NN 。_PU
+作为_P 变更_VV 该_DT 控制_NN 状态_NN 的_DEC 具体_JJ 例_NN 有_VE 若干_CD ，_PU 然而_AD 基本上_AD 在_P 由_P 判定部_NN ２１ａ_CD 判定_VV 为_VC 产生_VV 了_AS 超过_VV 阈值_NN 的_DEC 运动量_NN 的_DEC 情况_NN 下_LC ，_PU 变更_VV 为_VC 抑制_VV 该_DT 运动_NN 的_DEC 控制_NN 状态_NN 。_PU
+并且_AD ，_PU 在_P 由_P 判定部_NN ２１ａ_CD 判定_VV 为_VC 超过_VV 阈值_NN 的_DEC 判定_NN 输出_VV 的_DEC 情况_NN 下_LC ，_PU 如_P 图_NN ２_CD 所_MSP 示_VV ，_PU ＣＰＵ０２２１_NN 利用_VV 作为_P 提示_VV 判定_NN 信息_NN 的_DEC 提示_NN 部_NN 的_DEG 显示_NN 部_VV ２２_OD 显示_VV 处于_VV 超过_VV 阈值_NN 的_DEC 状态_NN 的_DEG 意思_NN 来_MSP 提示_VV （_PU 视觉_NN 上_LC 通知_VV ）_PU 手术者_NN ，_PU 同时_AD 还_AD 利用_VV 扬声器_NN ２３_CD 进行_VV 声音_NN 的_DEG 通知_NN 。_PU
+并且_AD ，_PU 在_P 判定_VV 为_VC 超过_VV 该_DT 阈值_NN 的_DEC 情况_NN 下_LC ，_PU ＣＰＵ０２２１_NN 进行_VV 如下_JJ 控制_NN ：_PU 使_VV 未_AD 作_VV 图示_NN 的_DEC 定时器_NN 启动_NN ，_PU 经过_P 一定_JJ 时间_NN 后_LC ，_PU 恢复_VV 到_VV 通常_JJ 的_DEG 控制_NN 状态_NN 。_PU
+图_NN ３_CD 示出_VV 作为_P 本_DT 实施例_NN 中_LC 使用_VV 的_DEC （_PU 通常_JJ 情况_NN 下_LC 的_DEC ）_PU 控制_NN 系统_NN 的_DEG 控制_NN 模式_NN 构成例_NN 的_DEG 力回_NN 送式_VV （_PU 力_BA 反送式_JJ ）_PU 双向_JJ 控制_NN 系统_NN 的_DEG 框线图_NN 。_PU
+另外_AD ，_PU 图_NN ３_CD 中_LC 的_DEG 指示_NN 输入部_NN 控制部_NN ３_CD ′_PU 是_VC 包含_VV 图_NN ２_CD 中_LC 的_DEG 指示_NN 输入部_NN 驱动部_NN ３_CD 和_CC 对_P 其_PN 直接_AD 控制_VV 的_DEC 控制部_NN ６_CD 的_DEG 一_CD 部分_NN 机构_NN 而_MSP 示出_VV 的_SP ，_PU 并且_CC ，_PU 同样_AD 地_DEV ，_PU 处_NN 理部_NN 控制部_NN ５_CD ′_PU 也_AD 是_VC 包含_VV 图_NN ２_CD 中_LC 的_DEG 处_NN 理部_NN 驱动部_NN ５_CD 和_CC 对_P 其_PN 直接_AD 控制_VV 的_DEC 控制部_NN ６_CD 的_DEG 一_CD 部分_NN 机构_NN 而_MSP 示出_VV 的_SP 。_PU
+并且_AD ，_PU 图_NN ３_CD 中_LC 的_DEG 指示_NN 输入部_NN ２_CD 的_DEG 位置_NN 信息_NN Ｘ_NN ｍ_NN 是_VC 对_P 通过_P 图_NN ２_CD 中_LC 的_DEG 多_CD 个_M 关节_NN 轴_NN １１ａ_CD ′_PU ～_PU １１ｃ_CD ′_PU 的_DEG 转动角_NN 决定_VV 的_DEC 位置_NN 信息_NN 的_DEC 总称_NN ，_PU 处理部_NN ４_CD 的_DEG 位置_NN 信息_NN Ｘｓ_NN 是_VC 对_P 通过_P 图_NN ２_CD 中_LC 的_DEG 多_CD 个_M 关节轴_NN １１ａ_CD ～_PU １１ｃ_CD 的_DEG 转动角_NN 决定_VA 的_DEC 位置_NN 信息_NN 的_DEC 总称_NN ，_PU 处理部_NN ４_CD 的_DEC 力_NN 信息_NN Ｆｓ_NN 也_AD 同样_AD 地_DEV 表示_VV 作_VV 用于_VV 多_CD 个_M 关节轴_NN １１ａ_CD ′_PU ～_PU １１ｃ_CD ′_PU 上_LC 的_DEC 力_NN 信息_NN 。_PU
+在_P 图_NN ３_CD 所_MSP 示_VV 的_DEC 力回送式_JJ 双向_JJ 控制_NN 中_LC ，_PU 将_AD 通过_P 对_P 指示_VV 输入部_NN ２_CD 的_DEG 输入_NN 指示_VV 而_MSP 产生_VV 的_DEC 位置_NN 信息_NN Ｘｍ_NN 减去_VV 处理部_NN ４_CD 的_DEG 位置_NN 信息_NN Ｘｓ_NN 并送_VV 到_VV 处理部_NN 控制部_NN ５_CD ′_PU ，_PU 该_DT 处理部_NN 控制部_NN ５_CD ′_PU 根据_P 相_AD 减后_VV 的_DEC 位置_NN 信息_NN Ｘｍ－_CD Ｘｓ_NN 来_MSP 进行_VV 处理部_NN ４_CD 的_DEG 位置_NN 控制_VV 。_PU
+并且_VV ，_PU 作用于_VV 处理部_NN ４_CD 上_LC 的_DEG 力_NN 信息_NN Ｆｓ_NN 被_SB 送到_VV 指示_VV 输入部_NN 控制部_NN ３_CD ′_PU ，_PU 该_DT 指示_NN 输入部_NN 控制部_NN ３_CD ′_PU 根据_P 该_DT 力_NN 信息_NN Ｆｓ_NN 对_P 指示_VV 输入部_NN ２_CD 进行_VV 力控制_NN （_PU 驱动_NN ）_PU 。_PU
+下面_NN ，_PU 参照_VV 图_NN ４_CD 来_MSP 说明_VV 根据_P 本_DT 实施例_NN 的_DEG 包含_VV ＣＰＵ０２２１_NN （_PU 的_DEG 判定部_NN ２１ａ_CD ）_PU 的_DEG 判定_VV 的_DEC 处理_NN 进程_NN 。_PU
+当_P 接通_VV 了_AS 图_NN ２_CD 的_DEG 处理_NN 器具_NN 系统_NN １_CD 的_DEG 电源_NN 时_LC ，_PU 该_DT 处理_NN 器具_NN 系统_NN １_CD 如_P 步骤_NN Ｓ１_CD 所_MSP 示_VV ，_PU 在_P 规定_VV 的_DEC 控制_NN 系统_NN （_PU 的_DEG 控制_NN 模式_NN ）_PU 中_LC 开始_AD 控制_VV 动作_NN 。_PU
+具体_VA 地_DEV 说_VV ，_PU ＣＰＵ_NN ０２_NOI ２１_CD 在_P 图_NN ３_CD 所_MSP 示_VV 的_DEC 力回_NN 送式_VV 双向_JJ 控制_NN 系统_NN 的_DEG 控制_NN 模式_NN 、_PU 即_AD 力_NN 回送式_JJ 双向_JJ 控制_NN 模式_NN 中_LC 开始_AD 控制_VV 动作_NN 。_PU
+在_P 随后_NT 的_DEG 步骤_NN Ｓ２_CD 中_LC ，_PU ＣＰＵ０２２１_NN 处于_VV 等待_VV 绕_VV 处理部_NN ４_CD 的_DEG 关节_NN 轴_NN １１ａ_CD ～_PU １１ｃ_CD 作用_NN 的_DEC 力_NN （_PU 张力_NN 传感器_NN １７ａ_CD ～_PU １７ｃ_CD 的_DEG 检测_NN 信号_NN ）_PU 进行_VV 作用_NN 的_DEC 处理_NN 状态_NN 。_PU
+然后_AD ，_PU 当_P 检测_VV 出该力_NN 的_DEC 作用_NN 时_LC ，_PU 如_P 步骤_NN Ｓ３_CD 所_MSP 示_VV ，_PU ＣＰＵ_NN ０２_NOI ２１_CD 将_BA 与_P 该_DT 力_NN 对应_VV 的_DEC 电流_NN 指令值_NN 提供_VV 给_P 电动机_NN 驱动器_NN １６_CD ｊ′_M 。_PU
+这里_PN ，_PU 电动机_NN 驱动器_NN １６_CD ｊ_PU ′_PU 对应于_VV 张力_NN 传感器_NN １７ａ_CD ～_PU １７ｃ_CD 中_LC 的_DEG 张力_NN 传感器_NN １７ｊ_CD 的_DEG 检测_NN 信号_NN 。_PU
+并且_VV ，_PU 该_DT 电流_NN 指令值_NN 还_AD 包含_VV 使_VV 电动机_NN １４_CD ｊ_PU ′_PU 旋转_VV 的_DEC 方向_NN 。_PU
+另外_AD ，_PU 在_P 检测_VV 出绕_VV 多_CD 个_M 关节轴_NN 的_DEG 力_NN 的_DEG 作用_NN 的_DEC 情况_NN 下_LC ，_PU 对_P 各_DT 关节_NN 轴独_NN 立地_AD 进行_VV 图_NN ４_CD 的_DEG 控制_NN 动作_NN 。_PU
+然后_AD ，_PU 如_P 步骤_NN Ｓ４_CD 所_MSP 示_VV ，_PU 利用_VV 由_P 电动机_NN 驱动器_NN １６_CD ｊ_PU ′_PU 驱动_VV 的_DEC 电动机_NN １４ｊ_CD ′_PU 来_MSP 提供_VV 绕_AD 对应_VV 的_DEC 关节轴_NN １１ｊ_CD ′_PU 转动_VV 的_DEC 力_NN 。_PU
+并且_AD ，_PU 如_P 步骤_NN Ｓ５_CD 所_MSP 示_VV ，_PU ＣＰＵ０２２１_NN 通过_P 编码器_NN １５_CD ｊ′_M 的_DEG 检测_NN 信号_NN ，_PU 监视_VV 指示_NN 输入部_NN ２_CD 的_DEG 关节_NN 轴_NN １１ｊ_CD ′_PU 的_DEG 转动角_NN 。_PU
+然后_AD ，_PU 如_P 步骤_NN Ｓ６_CD 所_MSP 示_VV ，_PU ＣＰＵ０２２１_NN 判定_VV 使_VV 关节轴_NN １１ｊ_CD ′_PU 转动_VV 的_DEC 力_NN （_PU 驱动力_NN ）_PU 的_DEG 方向_NN 与_CC （_PU 通过_P 前面_JJ 的_DEG 步骤_NN Ｓ４_CD 检测_VV 的_DEC ）_PU 运动_NN 方向_NN 是否_AD 一致_VA 。_PU
+在_P 不_AD 一致_VA 的_DEC 情况_NN 下_LC ，_PU 回到_VV 步骤_NN Ｓ２_CD 。_PU
+另_DT 一_CD 方面_NN ，_PU 在_P 判定_VV 为_VC 一致_VA 的_DEC 情况_NN 下_LC ，_PU 在_P 随后_NT 的_DEG 步骤_NN Ｓ７_CD 中_LC ，_PU ＣＰＵ０２２１_NN 判定_VV 运动量_NN （_PU 动作量_NN ）_PU 是否_AD 超过_VV 预先_AD 设定_VV 的_DEC 阈值_NN 。_PU
+换句话说_AD ，_PU ＣＰＵ０２２１_NN 判定_VV 在_P 驱动_NN 指示_VV 输入部_NN ２_CD 的_DEG 驱动力_NN 的_DEC 作用_NN 方向_NN 上_LC 有_VE 无_VE 规定_NN 阈值_NN 以上_LC 的_DEG 运动量_NN 产生_VV 。_PU
+然后_AD ，_PU 在_P 未超_NN 过阈值_NN 的_DEC 情况_NN 下_LC ，_PU 回到_VV 步骤_NN Ｓ２_CD ，_PU 反之_AD 在_P 超过_VV 阈值_NN 的_DEC 判定_NN 输出_VV 的_DEC 情况_NN 下_LC ，_PU 在_P 随后_NT 的_DEG 步骤_NN Ｓ８_CD 中_LC ，_PU ＣＰＵ０２２１_NN 抑制_VV 该_DT 控制_NN 系统_NN 中_LC 的_DEG 动力部_NN （_PU 驱动部_NN ）_PU 的_DEG 动作_NN ，_PU 或者_CC 变更_VV 为_VV 另_DT 一_CD 控制_NN 模式_NN 来_MSP 进行_VV 动力部_NN 的_DEG 动作_NN 抑制_NN 。_PU
+具体_VA 地_DEV 说_VV ，_PU ＣＰＵ０２２１_NN 停止_VV 电动机_NN １４_CD ｊ_PU ′_PU 和_CC 电动机_NN １４_CD ｊ_PU 这_DT 两_CD 个_M 动力部_NN 的_DEG 动作_NN ，_PU 或者_CC 停止_VV 至少_AD 其中_NN 一_CD 方_NN 的_DEG 动作_NN 。_PU
+或者_AD ，_PU 在_P 该_PN 判定_VV 前_LC 的_DEG 控制_NN 系统_NN 采用_VV 了_AS 图_NN ３_CD 所_MSP 示_VV 的_DEC 力回_NN 送式_VV 双向_JJ 控制_NN 系统_NN 的_DEG 控制_NN 模式_NN 的_DEC 情况_NN 下_LC ，_PU ＣＰＵ_NN ０２_NOI ２１_CD 可以_VV 从_P 该_DT 力回_NN 送式_VV 双向_JJ 控制_NN 系统_NN 的_DEG 控制_NN 模式_NN 变更_VV 为_VC 图_NN ５_CD 所_MSP 示_VV 的_DEC 作为_VV 特定_JJ 情况_NN 下_LC 的_DEG 控制_NN 模式_NN 的_DEG 例如_AD 单向_NN 控制_VV 系统_NN 的_DEG 控制_NN 模式_NN 、_PU 即_AD 单向_JJ 控制_NN 模式_NN 。_PU
+此外_AD ，_PU 例如_AD 可以_VV 不_AD 变更_VV 控制_NN 模式_NN ，_PU 而_CC 由_P ＣＰＵ０２２１_NN 变更_VV 控制_VV 参数_NN 。_PU
+例如_AD ，_PU 在_P 图_NN ３_CD 的_DEG 力回_NN 送式_VV 双向_JJ 控制_NN 模式_NN 的_DEC 状态_NN 下_LC ，_PU ＣＰＵ０２２１_NN 可以_VV 变更_AD 用于_VV 由_P 指示_VV 输入部_NN 控制部_NN ３_CD ′_PU 驱动_NN 指示_VV 输入部_NN ２_CD 的_DEG 控制_NN 参数_NN 、_PU 以及_CC 用于_VV 由_P 处_NN 置部_NN 控制部_NN ５_CD ′_PU 驱动_NN 处置部_NN ４_CD 的_DEG 控制_NN 参数_NN 。_PU
+该_DT 情况_NN 下_LC 的_DEG 变更_NN 只要_CS 是_VC 至少_AD 抑制_VV （_PU 停止_VV 或_CC 减弱_VV ）_PU 指示_VV 输入部_NN ２_CD 的_DEG 驱动_NN 或_CC 处理部_NN ４_CD 的_DEG 驱动_NN 的_DEC 变更_NN 即_AD 可_VV 。_PU
+在_P 图_NN ５_CD 所_MSP 示_VV 的_DEC 单向_JJ 控制_NN 系统_NN 的_DEG 控制_NN 模式_NN 中_LC ，_PU 指示_VV 输入部_NN ２_CD 与_CC 指示_VV 输入部_NN 控制部_NN ３_CD ′_PU 分离_VV ，_PU 指示_VV 输入部_NN ２_CD 不_AD 通过_P 指示_VV 输入部_NN 驱动部_NN ３_CD ′_PU 驱动_VV 。_PU
+即_AD ，_PU 在_P 该_DT 单向_JJ 控制_NN 系统_NN 的_DEG 控制_NN 模式_NN 下_LC ，_PU 即使_CS 力作_VV 用于_VV 处理部_NN ４_CD 、_PU 且_CC 其_PN 力_NN 信息_NN 被_SB 反馈_VV 给_P 指示_VV 输入部_NN 控制部_NN ３_CD ′_PU ，_PU 也_AD 处于_VV 不_AD 驱动_VV 指示_VV 输入部_NN ２_CD 的_DEG 控制_NN 模式_NN 的_DEC 状态_NN 。_PU
+换句话说_AD ，_PU 该_DT 单向_JJ 控制_NN 系统_NN 的_DEG 控制_NN 模式_NN 只_AD 是_VC 根据_P 对_P 指示_VV 输入部_NN ２_CD 的_DEG 输入_NN 指示_VV 来_MSP 对_P 处理部_NN ４_CD 的_DEG 位置_NN 进行_VV 控制_NN ，_PU 不_AD 具有_VV 力_NN 信息_NN 反馈_NN 单元_NN 。_PU
+因此_AD ，_PU 当_P 根据_P 上述_JJ （_PU 超过_JJ 阈值_NN 的_DEC ）_PU 判定_VV 结果_NN 变更_VV 为_VC 该_DT 控制_NN 模式_NN 时_LC ，_PU 以后_AD 只要_VV 操作者_NN 没有_VE 实际_JJ 对_NN 指示_VV 输入部_NN ２_CD 进行_VV 输入_NN 指示_NN ，_PU 就_AD 能_VV 解除_VV （_PU 通过_P 解除_VV 来_MSP 抑制_VV ）_PU 指示_VV 输入部_NN ２_CD 和_CC 处理部_NN ４_CD 进行_VV 不_AD 期望_VV 的_DEC 运动_NN 。_PU
+并且_AD ，_PU 在_P 该_DT 情况_NN 下_LC ，_PU 利用_VV 显示部_NN ２２_CD 等_ETC 将_BA 步骤_NN Ｓ７_CD 的_DEG 判定_NN 结果_NN 或者_CC 步骤_NN Ｓ８_CD 的_DEG 信息_NN 通知_VV 给_P 操作者_NN 。_PU
+并且_AD ，_PU 在_P 随后_NT 的_DEG 步骤_NN Ｓ９_CD 中_LC ，_PU ＣＰＵ０２２１_NN 处于_VV 利用_VV 根据_P 该_DT 判定_JJ 结果_NN 而_MSP 起动_VV 的_DEC 定时器_NN 来_MSP 等待_VV 经过_P 规定_JJ 时间_NN 的_DEC 状态_NN 。_PU
+当_P 经过_P 规定_NN 时间_NN 时_LC ，_PU 如_P 步骤_NN Ｓ１０_CD 所_MSP 示_VV ，_PU ＣＰＵ０２２１_NN 进行_VV 恢复_VV 到_VV 最初_JJ 的_DEG 控制_NN 系统_NN 的_DEC 状态_NN （_PU 换句话说_AD 解除_VV 抑制_VV ）_PU 的_DEC 处理_NN ，_PU 回到_VV 步骤_NN Ｓ２_CD 的_DEG 处理_NN 。_PU
+使用_VV 图_NN ６_CD 来_MSP 补充_VV 说明图_NN ４_CD 中_LC 的_DEG 动作_NN 。_PU
+另外_AD ，_PU 在_P 图_NN ６_CD 中_LC ，_PU 处理部_NN ４_CD 和_CC 指示_VV 输入部_NN ２_CD 的_DEG 右侧_NN 是_VC 前_JJ 端侧_NN 。_PU
+并且_VV ，_PU 假定_VV 了_AS 以下_JJ 情况_NN ：_PU 操作者_NN （_PU 手术者_NN ）_PU 将_BA 处理部_NN ４_CD 插入_VV 到体_NN 内_LC ，_PU 用_P 手指_JJ 把持_NN 处于_VV 体外_NN 的_DEG 指示_NN 输入部_NN ２_CD ，_PU 利用_VV 处理部_NN ４_CD 进行_VV 处理_NN 。_PU
+如_P 上_NN 所_MSP 述_VV ，_PU 操作者_NN 用_P 手指_JJ 把持_NN 指示_VV 输入部_NN ２_CD 来_MSP 进行_VV 绕例_NN 如_P 关节轴_NN １１ｊ_CD ′_PU 并_CC 沿_P 例如_AD 箭头_NN Ａ_NN 的_DEG 方向_NN 运动_VV 的_DEC 操作_NN ，_PU 从而_AD 处理_VV 部_NN ４_CD 也_AD 以_P 追踪_VV 该_DT 位置_NN 信息_NN Ｘ_NN ｍ_NN 的_DEC 方式_NN 绕_VV 关节轴_NN １１_CD ｊ_PU 并_CC 沿_P 相同_VA 的_DEC Ａ_NN 方向_NN 运动_VV 。_PU
+在_P 该_DT 情况_NN 下_LC ，_PU 当_P 为了_P 绕关_VV 节轴_NN １１ｊ_CD 运动_VV 而_CC 作用_VV 的_DEC 力是力_NN 信息_NN Ｆｓ_NN 时_LC ，_PU 该_DT 力_NN 信息_NN Ｆｓ_NN 经由_P 控制部_NN ６_CD 进行_VV 力反馈_NN ，_PU 作为_VV 力_NN 信息_NN Ｆｍ_NN 作用于_VV 关节轴_NN １１_CD ｊ′_M 。_PU
+当_P 处理部_NN ４_CD 侧_NN 接触_VV 到_VV 例如体_NN 内脏器_NN 等_ETC 的_DEG 壁面_NN ２４_CD 、_PU 且_CC 通过_P 该_DT 壁面_NN ２４_CD 作用_VV 有_VE 妨碍_VV 关节轴_NN １１ｊ_CD 旋转_VV 的_DEC 反作_NN 用力_NN Ｆｓ_NN ′_PU 时_LC ，_PU 该_DT 反作_NN 用力_NN Ｆｓ_NN ′_PU 也_AD 进行_VV 力_JJ 反馈_NN ，_PU 作为_P 反作_VV 用力_NN 信息_NN Ｆｍ_NN ′_PU 作用于_VV 关节轴_NN １１_CD ｊ′_M 。_PU
+在_P 通常_JJ 的_DEG 操作_NN 状态_NN 中_LC ，_PU 操作者_NN 可_VV 将_BA 通过_P 力反馈_NN 而_MSP 作用于_VV 处_NN 理部_NN ４_CD 侧_NN 的_DEG 关节轴_NN １１ｊ_CD 的_DEG 力_NN Ｆｓ_NN 和_CC 反作_VV 用_VV 力_NN Ｆｓ_NN ′_PU 作为_VV 力_NN Ｆｍ_M 和_CC 反作_VV 用_VV 力_NN Ｆｍ_M ′_PU ，_PU 用_P 把持_NN 的_DEC 手指_NN （_PU 手_NN ）_PU 进行_VV 来_MSP 掌握_VV （_PU 识别_NN ）_PU ，_PU 因而_AD ，_PU 这样_AD 一来_VV ，_PU 在_P 处理部_NN ４_CD 侧_NN 接触_VV 到壁面_NN ２４_CD 的_DEC 状态_NN 下_LC ，_PU 也_AD 能_VV 把握_VV 该_DT 力_NN 的_DEG 大小_NN 和_CC 方向_NN ，_PU 可_VV 提高_VV 操作性_NN 。_PU
+然而_AD ，_PU 当_P 这样_AD 作用_VV 了_AS 反作_VV 用力_NN Ｆｍ_NN ′_PU 的_DEC 状态_NN 下_LC ，_PU 例如_AD 手术者_NN 的_DEG 手无意_NN 中_LC 离开_VV 指示_VV 输入部_NN ２_CD 时_LC ，_PU 通过_P 手术者_NN 的_DEG 操作_NN 而_MSP 产生_VV 的_DEC 力_NN Ｆｍ_NN 消失_VV 。_PU
+因此_AD ，_PU 指示_VV 输入部_NN ２_CD 侧_NN 根据_P 反作_JJ 用力_NN 信息_NN Ｆｍ_NN ′_PU 在_P 该_DT 反作_NN 用力_NN Ｆｍ_NR ′_PU 的_DEG 方向_NN 上_LC 急剧_AD 运动_NN （_PU 该_DT 方向_NN 由_P 箭头_NN Ｃ_NN 表示_VV ）_PU ，_PU 该_DT 运动_NN 的_DEC 位置_NN 信息_NN Ｘｍ_NR 作为_VV 指示_VV 输入部_NN ２_CD 侧_NN 的_DEG 指示_NN 输入_VV 也_AD 作用于_VV 处_NN 理部_NN ４_CD 侧_NN ，_PU 使得_VV 处理部_NN ４_CD 侧_NN 也_AD 在_P 箭头_NN Ｃ_NN 的_DEG 方向_NN 上_LC 急剧_AD 运动_VV 。_PU
+即_AD ，_PU 处于_VV 进行_VV 了_AS 不_AD 期望_VV 的_DEC 动作_NN 的_DEC 状况_NN ，_PU 然而_AD 在_P 本_DT 实施例_NN 中_LC ，_PU 监视_VV 该_DT 情况_NN 下_LC 的_DEG 对_JJ 指示_NN 输入部_NN ２_CD 的_DEG 反作_NN 用力_VV 的_DEC 方向_NN 以及_CC 朝_P 该_DT 方向_NN 的_DEG 运动_NN ，_PU 在_P 产生_VV 了_AS 这_DT 种_M 运动_NN 的_DEC 情况_NN 下_LC ，_PU 且_CC 在_P 该_DT 运动量_NN 超过_VV 阈值_NN 的_DEC 情况_NN 下_LC ，_PU 停止_VV 该_DT 动力部_NN （_PU 或_CC 动力源_NN ）_PU 的_DEG 动作_NN 等_ETC 来_MSP 抑制_VV 不_AD 期望_VV 的_DEC 动作_NN 。_PU
+通过_P 按_P 这样_JJ 执行_NN 功能_NN 的_DEC 本_DT 实施例_NN ，_PU 能够_VV 有效_VA 地_DEV 防止_VV 产生_VV 不_AD 期望_VV 的_DEC 动作_NN ，_PU 能够_VV 维持_VV 良好_VA 的_DEC 操作性_NN 。_PU
+并且_AD ，_PU 由于_P 考虑_VV 到_VV 暂时性_NN 产生_VV 这_DT 种_M 不_AD 期望_VV 的_DEC 动作_NN ，_PU 因而_AD 在_P 规定_NN 时间_NN 后_LC 返回_VV 到_VV 通常_JJ 的_DEG 控制_NN 系统_NN 的_DEC 状态_NN ，_PU 操作者_NN 能_VV 继续_VV 进行_VV 在_P 通常_JJ 情况_NN 的_DEC 操作性_NN 良好_VA 的_DEC 状态_NN 下_LC 进行_VV 控制_NN 的_DEC 动作_NN 。_PU
+在_P 上述_JJ 说明_NN 中_LC ，_PU 假定_VV 通常_JJ 情况_NN 下_LC 的_DEG 规定_VV 的_DEC 控制_NN 系统_NN 是_VC 图_NN ３_CD 所_MSP 示_VV 的_DEC 力_NN 回送式_JJ 双向_JJ 控制_NN 系统_NN 作_VV 了_AS 说明_VV ，_PU 然而_CC 本_DT 实施例_NN 不_AD 限于_VV 此_PN ，_PU 也_CC 可以_VV 采用_VV 图_NN ７_CD 所_MSP 示_VV 的_DEC 力反_NN 馈式_VV 双向_JJ 控制_NN 系统_NN 。_PU
+该_DT 力_NN 反馈式_JJ 双向_JJ 控制_NN 系统_NN 采用_VV 这样_JJ 的_DEG 结构_NN ：_PU 在_P 图_NN ３_CD 所_MSP 示_VV 的_DEC 力回_NN 送式_VV 双向_JJ 控制_NN 系统_NN 中_LC ，_PU 还_AD 检测_VV 作用于_VV 指示_VV 输入部_NN ２_CD 上_LC 的_DEG 力_NN 信息_NN Ｆｍ_CD ，_PU 将_BA 从_P 该_DT 力_NN 信息_NN Ｆｍ_NN 中_LC 减去_VV 处理部_NN ４_CD 的_DEC 力_NN 信息_NN 后_LC 的_DEG 力_NN 信息_NN Ｆｍ_CD －_PU Ｆｓ_NN 输入_VV 到_VV 指示_VV 输入部_NN 控制部_NN ３_CD ′_PU 。_PU
+该_DT 力_NN 反馈式_JJ 双向_JJ 控制_NN 系统_NN 在_P 力_NN 回送式_JJ 双向_JJ 控制_NN 系统_NN 中_LC 如_P 上_NN 所_MSP 述_VV ，_PU 将_BA 作用于_VV 指示_VV 输入部_NN ２_CD 上_LC 的_DEG 力_NN 信息_NN Ｆｍ_NN 以_MSP 回送_VV 到_VV 指示_VV 输入部_NN ２_CD 的_DEG 方式_NN 进行_VV 动力_NN 辅助_NN ，_PU 因而_AD 可_VV 减轻_VV 指示_VV 输入部_NN ２_CD 的_DEG 操作_NN 力量_NN 而_MSP 提高_VV 操作性_NN 。_PU
+然后_AD ，_PU 在_P 作为_VV 通常_JJ 情况_NN 下_LC 的_DEG 规定_VV 的_DEC 控制_NN 系统_NN 使用_VV 了_AS 该_DT 力_NN 反馈式_JJ 双向_JJ 控制_NN 系统_NN 的_DEC 情况_NN 下_LC ，_PU 在_P 图_NN ４_CD 的_DEG 步骤_NN Ｓ_CD ７_CD 的_DEG 判定_NN 结果_VV 的_DEC 情况_NN 下_LC ，_PU 如_VV 在_P 步骤_NN Ｓ８_CD 中_LC 所_MSP 说明_VV 那样_VA ，_PU ＣＰＵ０２２１_NN 只_AD 要_VV 抑制_VV 该_DT 控制_NN 系统_NN 的_DEG 动力_NN 部_NN 的_DEG 动作_NN 、_PU 或者_CC 变更_VV 控制_NN 系统_NN 的_DEG 控制_NN 模式_NN 即_AD 可_VV 。_PU
+具体_VA 地_DEV 说_VV ，_PU ＣＰＵ０２２１_NN 在_P 该_DT 力_NN 反馈式_JJ 双向_JJ 控制_NN 系统_NN 的_DEG 控制_NN 模式_NN 的_DEC 情况_NN 下_LC ，_PU 停止_VV 两_CD 个_M 电动机_NN １４_CD ｊ_PU 、_PU １４ｊ_CD ′_PU 的_DEG 动作_NN ，_PU 或者_CC 停止_VV 至少_AD 其中_NN 一_CD 方_NN 的_DEG 动作_NN 。_PU
+或者_AD ，_PU ＣＰＵ０２２１_NN 可以_VV 将_BA 控制_NN 模式_NN 变更_VV 为_VC 例如_AD 图_NN ５_CD 的_DEG 控制_NN 模式_NN 。_PU
+并且_VV ，_PU 作为_VV 通常_JJ 情况_NN 下_LC 的_DEG 规定_VV 的_DEC 控制_NN 系统_NN ，_PU 可以_VV 采用_VV 图_NN ８_OD 所_MSP 示_VV 的_DEC 对称式_JJ 双向_JJ 控制_NN 系统_NN 。_PU
+该_DT 对称式_JJ 双向_JJ 控制_NN 系统_NN 的_DEG 优点_NN 是_VC ：_PU 利用_VV 使_VV 指示_VV 输入部_NN ２_CD 和_CC 处理部_NN ４_CD 的_DEG 位置_NN 信息_NN 一致_VA 的_DEC 控制_NN 方法_NN ，_PU 不_AD 使用_VV 力_NN 传感器_NN 即_AD 能够_VV 实现_VV 双向_JJ 控制_NN 。_PU
+即_AD ，_PU 在_P 该_DT 对称式_JJ 双向_JJ 控制_NN 系统_NN 中_LC ，_PU 将_BA 从_P 指示_VV 输入部_NN ２_CD 的_DEG 位置_NN 信息_NN Ｘ_NN ｍ_NN 中_LC 减去_VV 处理部_NN ４_CD 的_DEG 位置_NN 信息_NN Ｘ_NN ｓ_NN 后_LC 的_DEG 位置_NN 信息_NN Ｘｍ－_CD Ｘｓ_NN 发送_VV 到_VV 指示_VV 输入部_NN 控制部_NN ３_CD ′_PU 和_CC 处理部_NN 控制部_NN ５_CD ′_PU 。_PU
+指示_VV 输入部_NN 控制部_NN ３_CD ′_PU 和_CC 处理部_NN 控制部_NN ５_CD ′_PU 根据_P 位置_NN 信息_NN Ｘｍ－_CD Ｘｓ_NN 分别_AD 以_P 使_VV 指示_VV 输入部_NN ２_CD 和_CC 处理部_NN ４_CD 一致_VV 的_DEC 方式_NN 进行_VV 位置_NN 控制_NN 。_PU
+在_P 使用_VV 该_DT 对称式_JJ 双向_JJ 控制_NN 系统_NN 的_DEC 情况_NN 下_LC ，_PU 在_P 图_NN ４_CD 的_DEG 步骤_NN Ｓ７_CD 的_DEG 判定_NN 结果_NN 的_DEC 情况_NN 下_LC ，_PU 如_VV 在_P 步骤_NN Ｓ８_CD 中_LC 所_MSP 说明_VV 那样_VA ，_PU ＣＰＵ０２２１_NN 只要_AD 抑制_VV 该_DT 控制_NN 系统_NN 的_DEG 动力_NN 部_NN 的_DEG 动作_NN 、_PU 或者_CC 变更_VV 控制_NN 模式_NN 即_AD 可_VV 。_PU
+具体_VA 地_DEV 说_VV ，_PU 在_P 基于_P 该_DT 对称式_JJ 双向_JJ 控制_NN 系统_NN 的_DEG 控制_NN 模式_NN 的_DEC 情况_NN 下_LC ，_PU ＣＰＵ_NN ２１_CD 停止_VV 两_CD 个_M 电动机_NN １４_CD ｊ_PU 、_PU １４ｊ_CD ′_PU 的_DEG 动作_NN ，_PU 或者_CC 停止_VV 至少_AD 其中_NN 一_CD 方_NN 的_DEG 动作_NN 。_PU
+或者_AD ，_PU ＣＰＵ０２２１_NN 可以_VV 变更_VV 该_DT 控制_NN 模式_NN 。_PU
+并且_VV ，_PU 作为_VV 通常_JJ 情况_NN 下_LC 的_DEG 规定_VV 的_DEC 控制_NN 系统_NN ，_PU 可以_VV 采用_VV 图_NN ９_CD 所_MSP 示_VV 的_DEC 并行式_JJ 双向_JJ 控制_NN 系统_NN 。_PU
+该_DT 并行式_JJ 双向_JJ 控制_NN 系统_NN 将_AD 从_P 指示_VV 输入部_NN ２_CD 的_DEG 力_NN 信息_NN Ｆｍ_NN 中_LC 减去_VV 处理部_NN ４_CD 的_DEC 力_NN 信息_NN Ｆｓ_NN 后_LC 的_DEG 力_NN 信息_NN Ｆｍ－Ｆｓ_NN 输入_VV 到_VV 位置_NN 指_VV 令生_VV 成部_NN ２５_CD ，_PU 生成成为_VV 位置_NN 指令_NN 的_DEC 位置_NN 信息_NN Ｘ_NN 。_PU
+并且_AD ，_PU 在_P 该_DT 并行式_JJ 双向_JJ 控制_NN 系统_NN 中_LC ，_PU 从_P 作为_P 该_DT 位置_NN 指令_NN 的_DEC 位置_NN 信息_NN Ｘ_NN 中_LC 减去_VV 指示_VV 输入部_NN ２_CD 的_DEG 位置_NN 信息_NN Ｘ_NN ｍ_NN 后_LC 的_DEG 位置_NN 信息_NN Ｘ_NN －_PU Ｘｍ_NN 被_SB 送到_VV 指示_VV 输入部_NN 控制部_NN ３_CD ′_PU ，_PU 指示_VV 输入部_NN 控制部_NN ３_CD ′_PU 根据_P 该_DT 位置_NN 信息_NN Ｘ－Ｘｍ_NN 来_MSP 控制_VV 指示_VV 输入部_NN ２_CD 。_PU
+并且_AD ，_PU 从_P 位置_NN 信息_NN Ｘ_NN 中_LC 减去_VV 处理部_NN ４_CD 的_DEG 位置_NN 信息_NN Ｘｓ_NN 后_LC 的_DEG 位置_NN 信息_NN Ｘ－Ｘｓ_NN 被_SB 送到_VV 处理部_NN 控制部_NN ５_CD ′_PU ，_PU 处理部_NN 控制部_NN ５_CD ′_PU 根据_P 该_DT 位置_NN 信息_NN Ｘ_NN －_PU Ｘｓ_NN 来_MSP 控制_VV 处理部_NN ４_CD 。_PU
+在_P 该_DT 情况_NN 下_LC ，_PU 在_P 图_NN ４_CD 的_DEG 步骤_NN Ｓ７_CD 的_DEG 判定_NN 结果_NN 的_DEC 情况_NN 下_LC ，_PU 如_VV 在_P 步骤_NN Ｓ８_CD 中_LC 所_MSP 说明_VV 那样_VA ，_PU ＣＰＵ０２２１_NN 只要_AD 抑制_VV 该_DT 控制_NN 系统_NN 的_DEG 动力_NN 部_NN 的_DEG 动作_NN 、_PU 或者_CC 变更_VV 控制_NN 模式_NN 即_AD 可_VV 。_PU
+如_P 以_P 上_DT 说明_NN 那样_VA ，_PU 根据_P 本_DT 实施例_NN ，_PU 操作者_NN 能够_VV 抑制_VV 不_AD 期望_VV 的_DEC 运动_NN ，_PU 能够_VV 提高_VV 操作者_NN 的_DEG 操作性_NN 。_PU
+（_PU 实施例_NN ２_CD ）_PU
+下面_NN 参照_VV 图_NN １０_CD 来_MSP 说明_VV 本_DT 发明_NN 的_DEG 实施例_NN ２_CD 。_PU
+图_NN １０_CD 示出_VV 本_DT 发明_NN 的_DEG 实施例_NN ２_CD 的_DEG 处理_NN 器具_NN 系统_NN １Ｂ_CD 。_PU
+该_DT 处理_NN 器具_NN 系统_NN １Ｂ_CD 是_VC 将_BA 其_PN 处理器_NN 具_VV 主体_NN ５１_CD 插通_VV 到_CC 设置_VV 在_P 内窥镜_NN ３２_CD 的_DEG 插入部_NN ３３_OD 上_LC 的_DEG 通道_NN 内_LC 来_MSP 使用_VV 的_DEC ，_PU 其中_NN 内_LC 窥镜_NR ３２_CD 的_DEG 插入_NN 部_NN ３３_CD 插入_VV 到_VV 体腔_NN 内_LC 。_PU
+该_DT 内窥镜_NN ３２_CD 具有_VV ：_PU 插入部_NN ３３_OD ，_PU 其_PN 插入_VV 到_VV 体腔_NN 内_LC ；_PU 操作部_NN ３４_CD ，_PU 其_PN 设_VV 在_P 该_DT 插入部_NN ３３_CD 的_DEG 后端_NN ；_PU 以及_CC 通用_VV 连接线_NN 缆_NN ３５_CD ，_PU 其_PN 从_P 该_DT 操作部_NN ３４_CD 延伸_VV 出_VV ，_PU 该_DT 通用_JJ 连接线缆_NN ３５_CD 的_DEG 未作_NN 图示_NN 的_DEG 端部_NN 的_DEC 连接器_NN 自由_P 插拔_VV 地_DEV 连接_VV 于_P 光源_NN 装置_NN 和_CC 信号_NN 处理_NN 装置_NN 。_PU
+插入部_NN ３３_CD 具有_VV ：_PU 前_JJ 端部_NN ４１_CD ，_PU 其_PN 设有_VV 照明窗_NN 和_CC 观察窗_NN ；_PU 自由_AD 弯曲_VV 的_DEC 弯曲部_NN ４２_CD ，_PU 其_PN 设_VV 在_P 该_DT 前端部_NN ４１_CD 的_DEG 后端_NN ；_PU 以及_CC 挠性部_NN ４３_OD ，_PU 其_PN 长度_NN 方向_NN 上_LC 从_P 该_DT 弯曲部_NN ４２_CD 的_DEG 后端_NN 到达_VV 操作部_NN ３４_CD 。_PU
+并且_AD ，_PU 在_P 操作部_NN ３４_CD 上_LC 设有_VV 用于_VV 对_P 弯曲部_NN ４２_CD 进行_VV 弯曲_NN 操作_VV 的_DEC 弯曲_NN 旋钮_NN ４４_CD 。_PU
+并且_AD ，_PU 在_P 操作部_NN 的_DEG 前端_NN 附近_VV 设有_VV 插入_VV 处理_NN 器具_NN 的_DEG 处理_NN 器具_NN 插入口_NN （_PU 简_AD 记_VV 为_VC 插入口_NN ）_PU ４５_CD ，_PU 该_DT 插入口_NN ４５_CD 与_CC 其_PN 内部_NN 的_DEG 通道_NN 连通_VV 。_PU
+然后_AD ，_PU 在_P 本_DT 实施例_NN 中_LC ，_PU 将_BA 构成_VV 处理_NN 器具_NN 系统_NN １Ｂ_CD 的_DEC 细长_NN 的_DEC 处理器_NN 具_VV 主体_NN ５１_CD 从_P 该_DT 插入口_NN ４５_CD 插入_VV ，_PU 使_VV 其_PN 前端_NN 侧_NN 的_DEG 处理部_NN 从_P 通道_NN 的_DEC 前端_NN 开口_VV 突出_VV ，_PU 可_VV 对_P 处理_NN 对象_NN 部位_NN 进行_VV 治疗_NN 用_VV 的_DEC 处理_NN 。_PU
+处理_NN 器具_NN 系统_NN １Ｂ_CD 具有_VV ：_PU 处理器_NN 具_VV 主体_NN （_PU 或_CC 处理_NN 器具_NN ）_PU ５１_CD ，_PU 其_PN 在_P 前端_NN 设有_VV 处理部_NN ５４_CD ；_PU 作为_P 动力部_NN 的_DEG 电动_NN 机箱_NN ５５_CD ，_PU 其_PN 与_P 该_DT 处理器_NN 具_VV 主体_NN ５１_CD 的_DEG 后端_NN 连接_VV ；_PU 指示_VV 输入部_NN ５２_CD ，_PU 其_PN 由_P 手术者_NN 进行_VV 指示_NN 输入_VV 操作_NN ；_PU 驱动器箱_NN ５３_CD ，_PU 其_PN 收纳_VV 有_VE 该_DT 指示_NN 输入部_NN ５２_CD 的_DEG 电动机_NN 驱动器_NN ；_PU 以及_CC 控制_NN 装置_NN ５６_CD ，_PU 其_PN 控制_VV 该_DT 驱动器箱_NN ５３_CD 和_CC 电动_NN 机箱_NN ５５_CD 。_PU
+处理器_NN 具_VV 主体_NN ５１_CD 在_P 细长_NN 且_CC 具有_VV 挠性_NN 的_DEC 轴部_NN 的_DEC 前端_NN 设有_VV 与_P 图_NN １_OD 类_M 似_VA 的_DEC 处理部_NN ５４_CD 。_PU
+不过_AD ，_PU 在_P 本_DT 实施例_NN 中_LC ，_PU 处理部_NN ５４_CD 采用_VV 使_VV 杯片_NN 分别_AD 绕关_VV 节轴_NN （_PU 为_VC 便于_VV 说明_NN ，_PU 表示_VV 为_VC １１ａ_CD 、_PU １１ｄ_CD ）_PU 独立_AD 转动_VV 的_DEC 结构_NN 。_PU
+并且_AD ，_PU 各_DT 关节轴_NN １１ｉ_CD 经由_VV 金属线_NN １２ｉ_CD 与_CC 电动_NN 机箱_NN ５５_CD 内_LC 的_DEG 动力部_NN 连接_VV 。_PU
+电动_NN 机箱_NN ５５_CD 内部_NN 内置_VV 有_VE 图_NN ２_CD 所_MSP 示_VV 的_DEC 包含_VV 电动机_NN １４ａ_CD ～_PU １４ｃ_CD 的_DEC 处理部_NN 驱动部_NN ５_CD 的_DEG 构成_NN 要素_NN ，_PU 并_CC 对应于_VV 在_P 图_NN ２_CD 中_LC 进一步_AD 追加_VV 了_AS 关节轴_NN １１ｄ_CD ，_PU 还_AD 追加_VV 内_LC 置_VV 有_VE 电动机_NN １４ｄ_CD 、_PU 编码器_NN １５ｄ_CD 以及_CC 张力_NN 传感器_NN １７ｄ_CD 。_PU
+另_DT 一_CD 方面_NN ，_PU 指示_VV 输入部_NN ５２_CD 采用_VV 这样_JJ 的_DEG 结构_NN ：_PU 在_P 图_NN ２_CD 所_MSP 示_VV 的_DEC 指示_NN 输入部_NN ２_CD 中_LC ，_PU 将_BA 电动机_NN １４_CD ａ′_M ～_PU １４ｃ_CD ′_PU 和_CC 编码_NN 器_NN １５_CD ａ′_M ～_PU １５ｃ_CD ′_PU 设_VV 在_P 指示_VV 输入部_NN ５２_CD 内_LC 。_PU
+并且_VV ，_PU 对应于_VV 与_P 上述_JJ 关节轴_NN １１ｄ_CD 的_DEG 追加_NN 对应_VV 的_DEC 关节轴_NN １１_CD ｄ′_M ，_PU 追加_VV 设有_VV 电动机_NN １４ｄ_CD ′_PU 和_CC 编码_NN 器_NN １５_CD ｄ′_M 。_PU
+即_AD ，_PU 在_P 构成_VV 指示_VV 输入部_NN ５２_CD 的_DEG 各_DT 关节轴_NN 上_LC 直接_AD 安装_VV 有_VE 电动机_NN １４ｉ_CD ′_PU 和_CC 编码_NN 器_NN １５_CD ｉ′_M 。_PU
+因此_AD ，_PU 在_P 本_DT 实施例_NN 中_LC ，_PU 在_P 指示_VV 输入部_NN ５２_CD 内_LC 不_AD 使用_VV 实施例_NN １_CD 的_DEG 金属_NN 线_NN １２ａ′_CD ～_PU １２_CD ｃ′_M 。_PU
+而且_AD ，_PU 采用_VV 在_P 驱动_NN 器箱_NN ５３_CD 内_LC 收纳_VV 有_VE 图_NN ２_CD 的_DEG 电动机_NN 驱动器_NN １６_CD ａ′_M ～_PU １６_CD ｃ′_M 和_CC １６ｄ_CD ′_PU 的_DEG 结构_NN 。_PU
+并且_AD ，_PU 控制_NN 装置_NN ５６_CD 的_DEG 结构_NN 与_CC 例如_AD 图_NN ２_CD 的_DEG 控制部_NN ６_CD 相同_VA ，_PU 控制_NN 装置_NN ５６_CD 通过_P 电缆_NN 分别_AD 连接_VV 到_VV 驱动器箱_NN ５３_CD 和_CC 电动_NN 机箱_NN ５５_CD 。_PU
+并且_AD ，_PU 在_P 本_DT 实施例_NN 中_LC ，_PU 指示_VV 输入部_NN ５２_CD 形成_VV 为_VC 模拟_JJ 处理部_NN ５４_CD 的_DEG 形状_NN ，_PU 更_AD 具体_VA 地_DEV 说_VV 是_VC 与_P 处理部_NN ５４_CD 相比_VV 尺寸_NN 较_AD 大_VA 的_DEC 接近于_VV 相似形_JJ 的_DEG 形状_NN 。_PU
+不过_AD ，_PU 在_P 图_NN １０_CD 的_DEG 结构例_NN 中_LC ，_PU 在_P 指示_VV 输入部_NN ５２_CD 中_LC ，_PU 电动机_NN １４_CD ｉ′_NN 和_CC 编码器_NN １５ｉ_CD ′_PU 突出_VV ，_PU 这_PN 与_P 处理部_NN ５４_CD 在_P 形状_NN 上_LC 稍有_VV 不同_VA 。_PU
+在_P 本_DT 实施例_NN 中_LC ，_PU 可_VV 采用_VV 这样_JJ 的_DEG 结构_NN ：_PU 为了_P 使_VV 指示_VV 输入部_NN ５２_CD 形成_VV 为_P 更_AD 近似于_VV 处理部_NN ５４_CD 的_DEG 形状_NN ，_PU 不_AD 像_VV 实施例_NN １_CD 那样_AD 在_P 指示_VV 输入部_NN ５２_CD 内_LC 设置_VV 电动机_NN １４_CD ｉ′_NN 和_CC 编码器_NN １５_CD ｉ′_M ，_PU 而_CC 与_P 处理部_NN ５４一_CD 样经_P 由_P 金属线_NN 驱动_VV 其_PN 关节轴_NN 。_PU
+本_DT 实施例_NN 利用_VV 在_P 内窥镜_NN ３２_CD 的_DEG 通道_NN 内_LC 插通_VV 且_CC 从_P 其_PN 前端_NN 开口_NN 突出_VV 的_DEC 处理部_NN ５４_CD ，_PU 对_P 通过_P 内窥镜_NN ３２_CD 观察_VV 到_VV 的_DEC 体腔_NN 内_LC 的_DEG 病变部_NN 等_ETC 处理_NN 对象_NN 部位_NN 进行_VV 治疗_NN 用_VV 的_DEC 处理_NN 。_PU
+在_P 该_DT 情况_NN 下_LC ，_PU 作为_VV 操作者_NN 的_DEG 手术者_NN 通过_P 操作_NN 形状_NN 与_CC 处理部_NN ５４_CD 类似_VV 的_DEC 指示_NN 输入部_NN ５２_CD ，_PU 能够_VV 使_VV 处理部_NN ５４_CD 追踪_VV 该_DT 操作_NN 的_DEC 姿势_NN 。_PU
+因此_AD ，_PU 能够_VV 在_P 良好_JJ 操作性_NN 的_DEC 状态_NN 下_LC 进行_VV 处理_NN 。_PU
+另外_AD ，_PU 控制_NN 装置_NN ５６_CD 进行_VV 与_P 实施例_NN １_OD 的_DEG 情况_NN 相同_VA 的_DEC 控制_NN 、_PU 例如_AD 图_NN ４_CD 等_ETC 所_MSP 示_VV 的_DEC 控制_NN 。_PU
+根据_P 本_DT 实施例_NN ，_PU 手术者_NN 能够_VV 在_P 良好_JJ 操作性_NN 的_DEC 状态_NN 下_LC 对_P 体腔_NN 内_LC 的_DEG 病变部_NN 等_ETC 进行_VV 处理_NN 。_PU
+并且_AD ，_PU 与_P 实施例_NN １_OD 的_DEG 情况_NN 一样_VA ，_PU 能够_VV 通过_P 图_NN ４_OD 所_MSP 示_VV 的_DEC 控制_NN 动作_NN 来_MSP 抑制_VV 不_AD 期望_VV 的_DEC 运动_NN ，_PU 能够_VV 提高_VV 操作性_NN 。_PU
+图_NN １１_CD 示出_VV 变形例_NN 的_DEG 处理_NN 器具_NN 系统_NN １Ｃ_CD 。_PU
+该_DT 变形例_NN 的_DEG 处理_NN 器具_NN 系统_NN １Ｃ_CD 采用_VV 了_AS 处理部_NN ５４Ｃ_CD 来_MSP 取代_VV 图_NN １０_CD 中_LC 的_DEG 处理部_NN ５４_CD ，_PU 该_DT 处理部_NN ５４Ｃ_CD 具有_VV 例如_AD ２_CD 个_M 关节轴_NN 且_CC 包括_VV Ｌ_NN 字_NN 形状_NN 的_DEC 前端_NN 处_NN 理部_NN 。_PU
+并且_VV ，_PU 该_DT 处理_NN 器具_NN 系统_NN １Ｃ_CD 采用_VV 这样_PN 的_DEG 结构_NN ：_PU 指示_VV 输入部_NN ５２_CD 不_AD 使用_VV 模拟_JJ 处理部_NN ５４_CD 的_DEC 主机_NN 的_DEG 结构_NN ，_PU 而_CC 采用_VV 与_P 处理部_NN ５４Ｃ_CD 不_AD 类似_VA 的_DEC 操纵杆_NN 装置_NN ５２_CD Ｃ_M ，_PU 该_DT 操纵杆_NN 装置_NN ５２_CD Ｃ_M 具有_VV 作为_P 能_VV 在_P 不同_VA 的_DEC 多_CD 个_M 方向_NN 上_LC 倾斜_VV 的_DEC 杆_NN 的_DEG 操纵_NN 杆_NN ５８_CD 。_PU
+然后_AD ，_PU 通过_P 操纵杆_NN 装置_NN ５２_CD Ｃ_NN 中_LC 的_DEG 倾斜_NN 来_MSP 进行_VV 指示_NN 输入_VV 的_DEC 操纵杆_NN ５８_CD 的_DEC 、_PU 例如_AD 在_P 上下_NN 方向_NN 上_LC 倾斜_VV 的_DEC 指示_NN 输入_VV 操作_NN 对应_VV 于_P 处理部_NN ５４Ｃ_CD 的_DEG 关节_NN 轴_NN １１ａ_CD 的_DEG 转动_NN ，_PU 操纵杆_NN ５８_CD 的_DEG 例如_AD 在_P 左右_NN 方向_NN 上_LC 倾斜_VV 的_DEC 指示_NN 输入_VV 操作_NN 对应_VV 于_P 处理部_NN ５４Ｃ_CD 的_DEG 关节_NN 轴_NN １１ｂ_CD 的_DEG 转动_NN 。_PU
+另外_AD ，_PU 在_P 图_NN １１_OD 的_DEG 结构_NN 例_NN 中_LC ，_PU 图_NN １０_CD 的_DEG 驱动器_NN 箱_NN ５３_CD 的_DEG 功能_NN 被_SB 收纳_VV 在_P 操纵杆_NN 装置_NN ５２Ｃ_CD 的_DEG 内部_NN 或_CC 图_NN １１_CD 的_DEG 控制_NN 装置_NN ５６_CD Ｃ_M 的_DEG 内部_NN 。_PU
+图_NN １２_CD 示出_VV 处理部_NN ５４Ｃ_CD 的_DEG 具体_JJ 结构_NN 。_PU
+关节段_NN １１_CD 、_PU １１_CD 、_PU １１_CD 分别_AD 通过_P 铆钉_NN 等_ETC 关节轴_NN １１ａ_CD 、_PU １１ｂ_CD 在_P 相互_AD 正交_VV 的_DEC 方向_NN 上_LC 自由_AD 转动_VV 地_DEV 连接_VV 。_PU
+在_P 关节段_NN １１_CD 内_LC 插通_VV 、_PU 且_CC 用于_VV 使_VV 关节轴_NN １１ａ_CD 朝_CC 一_CD 个_M 方向_NN （_PU 在_P 图_NN １２_CD 中_LC 为_P 纸面_NN 的_DEC 大_JJ 致下侧_NN ）_PU 转动_VV 的_DEC 金属线_NN １２ａ_CD 固定_VV 在_P 关节轴_NN １１ａ_CD 前方_NN 的_DEC 关节段_NN １１_CD 上_LC 的_DEC 切口部_NN 中_LC 。_PU
+用于_VV 使_VV 该_DT 关节轴_NN １１ａ_CD 朝相_JJ 反方向_NN （_PU 在_P 图_NN １２_CD 中_LC 为_P 纸面_NN 的_DEG 大致_CD 上侧_NN ）_PU 转动_VV 的_DEC 未作_JJ 图示_NN 的_DEC 金属线_NN １２ａ_CD 也_AD 同样_AD 地_DEV 固定_VV 。_PU
+并且_VV ，_PU 同样_AD 用于_VV 使_VV 关节轴_NN １１ｂ_CD 朝_CC 一_CD 个_M 方向_NN （_PU 在_P 图_NN １２_CD 中_LC 为_VC 大致_AD 垂直_VV 于_P 纸面_NN 的_DEG 上_NN 侧_NN ）_PU 转动_VV 的_DEC 金属线_NN １２ｂ_CD 固定_VV 在_P 关节轴_NN １１ｂ_CD 前方_NN 的_DEC 关节段_NN １１_CD 上_LC 的_DEC 切口部_NN 中_LC 。_PU
+用于_VV 使_VV 关节轴_NN １１ｂ_CD 朝相_JJ 反方_NN 向_P 转动_VV 的_DEC 未作_JJ 图示_NN 的_DEC 金属线_NN １２ｂ_CD 也_AD 同样_AD 地_DEV 固定_VV 。_PU
+在_P 该_DT 变形例_NN 中_LC ，_PU 例如_AD 电动_NN 机箱_NN ５５_CD Ｃ_M ，_PU 其_PN 电动机_NN 、_PU 编码器_NN 数量_NN 分别_AD 由_P 电动_NN 机箱_NN ５５_CD 中_LC 的_DEG ４_CD 个_M 变为_VV ２_CD 个_M 。_PU
+并且_AD ，_PU 张力_NN 传感器_NN 数量_NN 由_P ８_CD 个_M 变为_VV ４_CD 个_M 。_PU
+操纵杆_NN 装置_NN ５２_CD Ｃ_CD 侧_NN 的_DEG 电动机_NN 和_CC 编码器_NN 数量_NN 与_CC 电动_NN 机箱_NN ５５Ｃ_CD 的_DEC 情况_NN 相同_VA 。_PU
+其_PN 他_PN 与_P 实施例_NN ２_OD 相同_VA 。_PU
+本_DT 变形例_NN 可_VV 通过_P 操纵杆_NN ５８_CD 的_DEG 倾斜_NN 操作_VV 将_BA 处理部_NN ５４Ｃ_CD 控制_VV 成_VV 与_P 倾斜_VV 操作_NN 对应_VV 的_DEC 姿势_NN 状态_NN 。_PU
+并且_AD ，_PU 本_DT 变形例_NN 的_DEG 效果_NN 与_P 实施例_NN ２_CD 或_CC 实施例_NN １_CD 大致_AD 相同_VA 。_PU
+（_PU 实施例_NN ３_CD ）_PU
+下面_NN 参照_VV 图_NN １３_CD 来_MSP 说明_VV 本_DT 发明_NN 的_DEG 实施例_NN ３_CD 。_PU
+图_NN １３_CD 示出_VV 本_DT 发明_NN 实施例_NN ３_CD 的_DEG 内窥镜_NN 系统_NN ６１_CD 。_PU
+在_P 实施例_NN ２_CD 中_LC 采用_VV 了_AS 内窥镜_NN ３２_CD ，_PU 针对_P 该_DT 内窥镜_NN ３２_CD ，_PU 由_P 手术者_NN 进行_VV 通过_P 手动_NN 来_MSP 转动_VV 弯曲_NN 旋钮_NN ４４_CD 的_DEC 操作_NN ，_PU 从而_AD 通过_P 手动_JJ 使弯_NN 曲部_NN ４２_CD 弯曲_NN 。_PU
+与_P 此_PN 相对_VV ，_PU 本_DT 实施例_NN 具有_VV 电动_JJ 弯曲_NN 内窥_NN 镜_NN ，_PU 针对_P 该_DT 电动_JJ 弯曲_NN 内窥_NN 镜_NN ，_PU 由_P 手术者_NN 进行_VV 使_VV 操纵杆_NN 装置_NN 倾斜_VV 的_DEC 操作_NN （_PU 指示_VV 输入_NN ）_PU ，_PU 从而_AD 使用_VV 动力部_NN （_PU 驱动部_NN ）_PU 来电_NR （_PU 能动_NR ）_PU 驱动_VV 弯曲部_NN ４２_CD 。_PU
+该_DT 内窥镜_NN 系统_NN ６１_CD 具有_VV ：_PU 电动_JJ 弯曲_NN 内窥镜_NN （_PU 以下_NN 简称_VV 为_VC 内窥镜_NN ）_PU ３２_CD Ｄ_M ；_PU 光源_NN 装置_NN ３７_CD ，_PU 其_PN 将_BA 照明光_NN 提供_VV 给_P 该_DT 内窥镜_NN ３２_CD Ｄ_M ；_PU 作为_P 信号_NN 处理_NN 装置_NN 的_DEG 视频_NN 处理器_NN ３８_CD ，_PU 其_PN 对_P 该_DT 内窥镜_NN ３２_CD Ｄ_CD 的_DEG 摄像_NN 元件_NN 进行_VV 信号_NN 处_NN 理_NN ；_PU 以及_CC 显示_VV 监视器_NN ３９_CD ，_PU 其_PN 显示_VV 从_P 该_DT 视频_NN 处理器_NN ３８_CD 输出_VV 的_DEC 影像_NN 信号_NN 。_PU
+并且_VV ，_PU 该_DT 内窥镜_NN ３２_CD Ｄ_NN 与_CC 图_NN １０_CD 的_DEG 内窥镜_NN ３２一_CD 样_M 具有_VV 插入部_NN ３３_CD 、_PU 操作部_NN ３４_CD 以及_CC 通用_VV 连接线缆_NN ３５_CD ，_PU 插入部_NN ３３_CD 由_P 前_JJ 端部_NN ４１_CD 、_PU 弯曲部_NN ４２_CD 以及_CC 挠性部_NN ４３_CD 构成_VV 。_PU
+并且_AD ，_PU 在_P 操作部_NN ３４_OD 的_DEG 前端_NN 设有_VV 插入口_NN ４５_CD ，_PU 该_DT 插入口_NN ４５_CD 与_CC 插入部_NN ３３_CD 的_DEG 长度_NN 方向_NN 上_LC 所_MSP 设置_VV 的_DEC 通道_NN ６０_CD 连通_VV 。_PU
+于是_AD ，_PU 手术者_NN 能够_VV 从_P 该_DT 插入口_NN ４５_CD 插入_VV 形成_VV 例如图_NN １１_CD 的_DEG 处置_NN 器具_NN 系统_NN １Ｃ_CD 的_DEG 处置器_NN 具_VV 主体_NN ５１_CD ，_PU 且_CC 该_DT 处置器_NN 具_VV 主体_NN ５１_CD 具有_VV 处_NN 置部_NN ５４_CD Ｃ_M 。_PU
+另外_AD ，_PU 手术者_NN 还_AD 能够_VV 取代_VV 处理_NN 器具_NN 系统_NN １Ｃ_CD 而_CC 将_BA 图_NN １０_CD 中_LC 所_MSP 说明_VV 的_DEC 处理_NN 器具_NN 系统_NN １Ｂ_CD 插通_VV 到_VV 插入口_NN ４５_CD 内_LC 来_MSP 进行_VV 处理_NN 。_PU
+并且_AD ，_PU 手术者_NN 还_AD 能够_VV 将_BA 不_AD 具有_VV 动力部_NN 的_DEG 未作_NN 图示_NN 的_DEC 处理器_NN 具插_VV 通到_VV 插入口_NN ４５_CD 内_LC 来_MSP 进行_VV 处理_NN 。_PU
+而且_AD ，_PU 该_DT 内窥镜_NN 系统_NN ６１_CD 具有_VV ：_PU 操纵杆_NN 装置_NN ６３_CD ，_PU 其_PN 具有_VV 对_P 弯曲_JJ 的_DEG 指示_NN 输入_NN 进行_VV 操作_NN 的_DEC 操纵杆_NN ６２_CD ；_PU 电动_NN 机箱_NN （_PU 或_CC 电动机_NN 单元_NN ）_PU ６４_CD ，_PU 其_PN 设_VV 在_P 例如_AD 操作部_NN ３４_CD 内_LC ，_PU 用作_VV 对_P 形成_VV 本_DT 实施例_NN 中_LC 的_DEG 能动_JJ 医疗_NN 设备_NN 的_DEG 弯曲部_NN ４２_CD 进行_VV 弯曲_NN 驱动_VV 的_DEC 动力部_NN ；_PU 驱动器箱_NN ６５_CD ，_PU 其_PN 驱动_VV 该_DT 电动_NN 机箱_NN ６４_CD 内_LC 的_DEG 作_VV 为动_JJ 力部_NN 的_DEC 电动机_NN ；_PU 以及_CC 控制_NN 装置_NN ６６_CD ，_PU 其_PN 进行_VV 弯曲部_NN ４２_CD 的_DEG 弯曲_NN 控制_NN 。_PU
+通过_P 与_P 通用_JJ 连接缆_NN ３５_CD 的_DEG 端部_NN 的_DEC 连接器_NN 自由_AD 插拔_VV 地_DEV 连接_VV 的_DEC 光源_NN 装置_NN ３７_CD 产生_VV 的_DEC 照明_NN 光_AD 被_SB 提供_VV 给_P 内窥镜_NN ３２Ｄ_CD 的_DEG 导光_NN 部件_NN （_PU ｌｉｇｈｔ_NR ０２_NOI ｇｕｉｄｅ_NR ）_PU ７１_CD ，_PU 从_P 该_DT 导光_NN 部件_NN ７１_CD 的_DEG 前_JJ 端面_NN 射出_VV 照明光_NN 。_PU
+安装_VV 在_P 观察窗_NN 上_LC 的_DEC 物镜_NN ７２_CD 使_VV 由_P 照明_NN 光_NN 照明_NN 的_DEG 患部_NN 等_ETC 被_SB 摄体_VV 的_DEC 光学_NN 像_P 成像_VV 。_PU
+在_P 成像_VV 的_DEC 位置_NN 上_LC 配置_VV 有_VE 电荷_NN 耦合_NN 元件_NN （_PU 简_AD 记_VV 为_VC ＣＣＤ_NN ）_PU ７３_CD 。_PU
+该_DT ＣＣＤ_NN ７３_CD 经由_P 信号线_NN 与_CC 视频_NN 处理器_NN ３８_CD 内_LC 的_DEG ＣＣＤ_NN 驱动_NN 电路_NN ７４_CD 及_CC 影像_CD 处理_NN 电路_NN ７５_CD 连接_VV 。_PU
+ＣＣＤ_NN 驱动_NN 电路_NN ７４_CD 将_BA ＣＣＤ_NN 驱动_NN 信号_NN 施加_VV 给_P ＣＣＤ_NN ０２_NOI ７３_CD ，_PU 并_CC 从_P ＣＣＤ０２７３_CD 输出_VV 由_P ＣＣＤ_NN ０２_NOI ７３_CD 进行_VV 了_AS 光电_NN 转换_VV 后_LC 的_DEG 摄像_NN 信号_NN 。_PU
+从_P ＣＣＤ_NN ０２_NOI ７３_CD 输出_VV 的_DEC 摄像_NN 信号_NN 通过_P 影像_JJ 处理_NN 电路_NN ７５_CD 的_DEC 信号_NN 处理_NN 被_SB 转换_VV 成_VV 影像_NN 信号_NN 。_PU
+然后_AD ，_PU 在_P 输入_VV 了_AS 该_DT 影像_NN 信号_NN 的_DEC 显示_NN 监视器_NN ３９_CD 的_DEC 显示面_NN 上_LC 的_DEG 内_JJ 窥镜_NN 图像_NN 显示_VV 区域_NN ３９ａ_CD 内_LC ，_PU 作为_P 内窥镜_NN 图像_VV 而_CC 显示_VV 出成_VV 像_P 在_P ＣＣＤ_NN ０２_NOI ７３_CD 上_LC 的_DEC 光学_NN 像_NN 。_PU
+并且_AD ，_PU 弯_NN 曲部_NN ４２_CD 通过_P 作为_VV 关节轴_NN （_PU 转动轴_NN ）_PU 的_DEG 铆钉_NN ７７_CD 与_CC 多_CD 个_M 关节段_NN 或_CC 弯_NN 曲框_NN ７６_CD 自由_AD 转动_VV 地_DEV 连接_VV 。_PU
+另外_AD ，_PU 在_P 图_NN １３_CD 中_LC ，_PU 简化_NN 示出_VV 仅_AD 在_P 垂直_VV 于_P 纸面_NN 的_DEG 方向_NN 上_LC 自由_AD 转动_VV 的_DEC 铆钉_NN ７７_CD ，_PU 然而_AD 实际上_AD ，_PU 在_P 长度_NN 方向_NN 上_LC 邻接_VV 的_DEC 弯_NN 曲框_NN ７６_CD 通过_P 铆钉_NN ７７_CD 连接_VV 成_VV 在_P 上下_NN 方向_NN 和_CC 左右_NN 方向_NN 上_LC 交替_VV 地_DEV 自由_AD 转动_VV 。_PU
+并且_AD ，_PU 在_P 插入部_NN ３３_OD 内_LC 沿_P 上下_NN 方向_NN 和_CC 左右_NN 方向_NN 插通_VV 的_DEC 成对_VV 的_DEC 弯曲_JJ 金属线_NN ７８ｕ_CD 、_PU ７８ｄ_CD 、_PU ７８ｌ_CD 、_PU ７８ｒ_CD 的_DEG 前端_NN 固定_VV 在_P 最前_JJ 端_NN 的_DEG 弯曲框_NN ７６_CD 或_CC 前_JJ 端部_NN ４１_CD 上_LC ，_PU 其_PN 后端_NN 分别_AD 通过_P 架设_VV 等_ETC 固定_VV 在_P 操作部_NN ３４_CD 内_LC 的_DEG 上_JJ 下_JJ 弯曲_NN 用_P 滑轮_NN ７９ａ_CD 和_CC 左_JJ 右弯_NN 曲_NN 用_P 滑轮_NN ７９ｂ_CD 上_LC 。_PU
+各_DT 滑轮_NN ７９ａ_CD 、_PU ７９ｂ_CD 分别_AD 与_P 作为_P 动力部_NN 的_DEG 电动机_NN ８１ａ_CD 、_PU ８１ｂ_CD 的_DEG 旋转轴_NN 自由_AD 转动_VV 地_DEV 连接_VV 。_PU
+各_DT 电动机_NN ８１ａ_CD 、_PU ８１ｂ_CD 的_DEG 旋转轴_NN 分别_AD 与_P 编码器_NN ８２ａ_CD 、_PU ８２ｂ_CD 连接_VV ，_PU 编码器_NN ８２ａ_CD 、_PU ８２ｂ_CD 分别_AD 检测_VV 电动机_NN ８１ａ_CD 、_PU ８１ｂ_CD 的_DEG 旋转角_NN 。_PU
+并且_AD ，_PU 在_P 滑轮_NN ７９ａ_CD 、_PU ７９ｂ_CD 前方_NN 的_DEC 各_DT 弯_NN 曲金_NN 属线_NN ７８ｕ_CD 、_PU ７８ｄ_CD ；_PU ７８ｌ_CD 、_PU ７８ｒ_CD 上_LC 安装_VV 有_VE 检测_NN 作_VV 用于_VV 各_DT 弯_M 曲_NN 金属_NN 线_NN 上_LC 的_DEG 张力_NN 的_DEC 张力_NN 传感器_NN ８３ａ_CD 、_PU ８３ａ_CD ；_PU ８３ｂ_CD 、_PU ８３ｂ_CD 。_PU
+驱动弯_NN 曲部_NN ４２_CD 弯曲_VV 的_DEC 电动机_NN ８１ａ_CD 、_PU ８１ｂ_CD 分别_AD 与_P 电动机_NN 驱动器_NN ８４ａ_CD 、_PU ８４ｂ_CD 连接_VV ，_PU 并_CC 通过_P 来自_VV 电动机_NN 驱动器_NN ８４ａ_CD 、_PU ８４ｂ_CD 的_DEC 电动机_NN 驱动_NN 信号_NN 的_DEC 施加_VV 而_CC 进行_VV 旋转_NN 驱动_NN 。_PU
+并且_VV ，_PU 电动机_NN 驱动器_NN ８４ａ_CD 、_PU ８４ｂ_CD 与_CC 构成_VV 控制_NN 装置_NN ６６_CD 的_DEG ＣＰＵ０２８５_NN 连接_VV 。_PU
+该_DT ＣＰＵ０２８５_NN 控制_VV 电动机_NN 驱动器_NN ８４ａ_CD 、_PU ８４ｂ_CD 的_DEG 控制_NN 动作_NN 等_ETC 弯曲_JJ 动作_NN 。_PU
+并且_AD ，_PU 编码器_NN ８２ａ_CD 、_PU ８２ｂ_CD 的_DEG 检测_NN 信号_NN 和_CC 张力_NN 传感器_NN ８３ａ_CD ～_PU ８３ｂ_CD 的_DEG 检测_NN 信号_NN 也_AD 被_SB 输入_VV 到_VV ＣＰＵ０２８５_NN 。_PU
+另外_AD ，_PU 在_P 本_DT 实施例_NN 中_LC ，_PU 设有_VV ：_PU 作为_P 检测_VV 弯曲部_NN ４２_CD 侧_NN 的_DEG 位置_NN 信息_NN 的_DEC 位置_NN 传感器_NN 的_DEG 编码_NN 器_NN ８２ａ_CD 、_PU ８２ｂ_CD ，_PU 以及_CC 作为_VV 检测力_NN 信息_NN 的_DEC 力_NN 传感器_NN 的_DEG 张力_NN 传感器_NN ８３ａ_CD 、_PU ８３ｂ_CD ，_PU 然而_AD 在_P 使用_NN 位置_NN 传感器_NN 能够_VV 计算_VV 力_NN 信息_NN 的_DEC 情况_NN 下_LC ，_PU 可以_VV 采用_VV 仅_AD 设置_VV 位置_NN 传感器_NN 的_DEG 结构_NN 。_PU
+并且_AD ，_PU 在_P 操纵杆_NN 装置_NN ６３_CD 内_LC ，_PU 在_P 操纵杆_NN ６２_CD 基_NN 端部_NN 的_DEG 在_P 上_JJ 下_JJ 方向_NN 上_LC 自由_AD 转动_VV 地_DEV 支撑_VV 的_DEC 辊_NN ８６ａ_CD 上_LC 连接_VV 有_VE 作为_P 动力部_NN 的_DEG 电动机_NN ８１ａ_CD ′_PU 的_DEG 旋转轴_NN 。_PU
+而且_AD ，_PU 在_P 该_DT 电动机_NN ８１ａ_CD ′_PU 的_DEG 旋转轴_NN 上_LC 连接_VV 有_VE 编码器_NN ８２ａ′_CD ，_PU 编码器_NN ８２ａ′_CD 检测_VV 操纵杆_NN ６２_CD 的_DEG 上下_NN 方向_NN 上_LC 的_DEC 倾斜角_NN （_PU 换句话说_AD 是_VC 电动机_NN ８１ａ_CD ′_PU 的_DEG 旋转角_NN ）_PU 。_PU
+同样_AD ，_PU 在_P 操纵杆_NN ６２_CD 基_NN 端部_NN 的_DEC 在_P 左右_NN 方向_NN 上_LC 自由_AD 转动_VV 地_DEV 支撑_VV 的_DEC 辊_NN ８６ｂ_CD 上_LC 连接_VV 有_VE 作为_P 动力部_NN 的_DEG 电动机_NN ８１ｂ_CD ′_PU 的_DEG 旋转轴_NN 。_PU
+而且_AD ，_PU 在_P 该_DT 电动机_NN ８１ｂ_CD ′_PU 的_DEG 旋转轴_NN 上_LC 连接_VV 有_VE 编码器_NN ８２ｂ′_CD ，_PU 编码器_NN ８２ｂ′_CD 检测_VV 操纵杆_NN ６２_CD 的_DEG 左右_NN 方向_NN 上_LC 的_DEC 倾斜角_NN （_PU 换句话说_AD 是_VC 电动机_NN ８１ｂ_CD ′_PU 的_DEG 旋转角_NN ）_PU 。_PU
+而且_AD ，_PU 电动机_NN ８１ａ_CD ′_PU 、_PU ８１ｂ_CD ′_PU 分别_AD 与_P 电动机_NN 驱动器_NN ８４ａ_CD ′_PU 、_PU ８４ｂ_CD ′_PU 连接_VV ，_PU 这些_DT 电动机_NN 驱动器_NN ８４ａ_CD ′_PU 、_PU ８４ｂ_CD ′_PU 的_DEG 动作_NN 由_P ＣＰＵ０２８５_NN 来_MSP 控制_VV 。_PU
+编码器_NN ８２ａ′_CD 、_PU ８２ｂ′_CD 的_DEG 检测_NN 信号_NN 被_SB 输入_VV 到_VV 该_DT ＣＰＵ０２８５_NN 。_PU
+然后_AD ，_PU ＣＰＵ_NN ０２８５_CD 按照_P 内置_NN 的_DEG 闪存_NN ８５ａ_CD 内_LC 的_DEG 程序_NN 执行_VV 弯曲_VA 的_DEC 控制_NN 动作_NN 。_PU
+该_DT 弯曲_NN 的_DEG 控制_NN 动作_NN 采用_VV 了_AS 例如_AD 图_NN １４_CD 所_MSP 示_VV 的_DEC 力回_NN 送式_VV 双向_JJ 控制_NN 系统_NN 的_DEG 控制_NN 模式_NN ，_PU 与_P 图_NN ３_CD 的_DEG 力回_NN 送式_VV 双向_JJ 控制_NN 系统_NN 的_DEG 控制_NN 模式_NN 相同_VA 。_PU
+即_AD ，_PU 将_BA 图_NN ３_CD 的_DEG 指示_NN 输入部_NN ２_CD 改读_VV 为_VC 操纵杆_NN ６２_CD ，_PU 同样_AD 将_BA 指示_VV 输入部_NN 控制部_NN ３_CD ′_PU 改读_NN 为_VC 包含_VV 操纵杆_NN ６２_CD 的_DEG 动力_NN 部_NN 的_DEG 作为_P 控制部_NN 的_DEC 操纵杆_NN 控制部_NN ９３_CD ，_PU 将_BA 处理部_NN ４_CD 改读_VV 为_VC 弯曲部_NN ４２_CD ，_PU 将_BA 处理部_NN 控制部_NN ５_CD ′_PU 改读_VV 为_VC 包含_VV 弯曲部_NN ４２_CD 的_DEC 动力部_NN 的_DEG 作为_JJ 控制部_NN 的_DEG 弯_NN 曲部_NN 控制部_NN ９５_CD ，_PU 则_AD 控制_VV 内容_NN 与_P 图_NN ３_OD 相同_VA 。_PU
+因此_AD ，_PU 使用_VV 与_P 图_NN ３_OD 相同_VA 的_DEC 位置_NN 信息_NN Ｘｍ_CD 、_PU Ｘｓ_NN 和_CC 力_NN 信息_NN Ｆｓ_NN 来_MSP 表示_VV 。_PU
+并且_AD ，_PU ＣＰＵ０２８５_NN 具有_VV 这样_PN 的_DEG 判定部_NN ８５ｂ_CD 的_DEC 功能_NN ：_PU 该_DT 判定部_NN ８５ｂ_CD 按照_P 该_DT 程序_NN ，_PU 通常_AD 以_P 固定_VV 的_DEC 周期_NN 监视_VV 是否_AD 产生_VV 了_AS 作_VV 用于_VV 操纵杆_NN ６２_CD 上_LC 的_DEG 驱动力_NN 的_DEC 方向_NN 与_CC 运动_NN （_PU 倾斜_VV ）_PU 的_DEG 方向_NN 一_CD 致的状态_VV ，_PU 并_CC 在_P 产生_VV 了_AS 该_DT 状态_NN 的_DEC 情况_NN 下_LC 判定_VV 该_DT 运动量_NN （_PU 动作量_NN ）_PU 是否_AD 超过_VV 阈_NN 值_NN 。_PU
+换句话说_AD ，_PU 判定部_NN ８５ｂ_CD 判定_VV 在_P 驱动_VV 操纵杆_NN ６２_CD 的_DEC 驱动力_NN 的_DEC 作用_NN 方向_NN 上_LC 有_VE 无_VE 规定_NN 阈值_NN 以上_LC 的_DEG 运动量_NN 产生_VV 。_PU
+然后_AD ，_PU 在_P 由_P 判定部_NN ８５ｂ_CD 判定_VV 为_VC 该_DT 运动量_NN 超过_VV 阈值_NN 的_DEC 判定_NN 输出_VV 的_DEC 情况_NN 下_LC ，_PU 在_P 显示_NN 装置_NN ６６_CD 的_DEG 操作_NN 面板_NN ８９_CD 的_DEG （_PU 作为_P 判定_VV 信息_NN 的_DEC 提示_NN 部_NN 的_DEC ）_PU 显示部_NN 进行_VV 显示_NN ，_PU 将_BA 该_DT 状态_NN 提示_VV 给_P 手术者_NN 等_ETC 。_PU
+并且_AD ，_PU 在_P 本_DT 实施例_NN 中_LC ，_PU ＣＰＵ_NN ０２８５_CD 将_BA 弯曲_NN 的_DEG 控制_NN 状态_NN 所_MSP 涉及_VV 的_DEC 信息_NN 送到_VV 视频_NN 处理器_NN ３８_CD 的_DEG 影像_NN 处理_NN 电路_NN ７５_CD ，_PU 使_VV 该_DT 信息_NN 重叠_VV 在_P 影像_NN 信号_NN 上_LC 。_PU
+然后_AD ，_PU 例如_AD 在_P 显示_VV 监视器_NN ３９_CD 中_LC 的_DEG 弯曲_JJ 控制_NN 信息_NN 显示_VV 区域_NN ３９ｂ_CD 内_LC ，_PU 显示_NN 工作_NN 中_LC 的_DEG 控制_NN 模式_NN 等_ETC 信息_NN ，_PU 且_CC 还_AD 包含_VV 以下_JJ 的_DEG 判定_NN 信息_NN 的_DEC 显示_NN 。_PU
+如_P 上_NN 所_MSP 述_VV ，_PU 在_P 由_P 判定部_NN ８５ｂ_CD 判定_VV 为_VC 运动量_NN 超过_VV 阈值_NN 的_DEC 判定_NN 输出_VV 的_DEC 情况_NN 下_LC ，_PU 将_BA 运动量_NN 超过_VV 阈值_NN 的_DEC 内容_NN 、_PU 以及_CC 根据_P 判定_JJ 结果_NN 变更_VV 为_VC 与_P 通常_JJ 情况_NN 下_LC 的_DEG 控制_NN 模式_NN 不同_VA 的_DEC 控制_NN 模式_NN 的_DEG 意思_NN 等_ETC 显示_VV 在_P 弯曲_NR 控制_NN 信息_NN 显示_VV 区域_NN ３９ｂ_CD 内_LC 。_PU
+通过_P 在_P 内窥镜_NN 图像_VV 的_DEC 最近_JJ 处_NN 显示_VV 判定部_NN ８５ｂ_CD 的_DEG 判定_NN 结果_NN 的_DEC 信息_NN 等_ETC ，_PU 从而_AD 手术者_NN 能够_VV 迅速_AD 知道_VV 该_DT 信息_NN 。_PU
+另外_AD ，_PU 在_P 本_DT 实施例_NN 中_LC ，_PU ＣＰＵ０２８５_NN 在_P 通常_JJ 情况_NN 下_LC 以_P 图_NN １４_OD 所_MSP 示_VV 的_DEC 力回_NN 送式_VV 双向_JJ 控制_NN 系统_NN 的_DEG 控制_NN 模式_NN 进行_VV 控制_NN 动作_VV ，_PU 除了_P 具有_VV 根据_P 运动量_NN 超过_VV 阈值_NN 的_DEC 判定_NN 结果_NN 而_MSP 变更_VV 为_VV 另_DT 一_CD 控制_NN 模式_NN 的_DEG 控制_NN 模式_NN 变更_VV 功能_NN 以外_LC ，_PU 还_AD 具有_VV 控制_NN 参数_NN 设定部_NN ８５ｃ_CD 的_DEC 功能_NN ，_PU 该_DT 控制_NN 参数_NN 设定部_NN ８５ｃ_CD 变更_VV 并_CC 设定_VV 用于_VV 对_P 形成_VV 动力部_NN 的_DEG 电动机_NN ８１ａ_CD 、_PU ８１ｂ_CD 和_CC ８１ａ_CD ′_PU 、_PU ８１ｂ_CD ′_PU 进行_VV 旋转_NN 驱动_VV 的_DEC 控制_NN 参数_NN 。_PU
+作为_P 该_DT 控制_NN 参数_NN ，_PU 在_P 运动量_NN 超过_VV 阈值_NN 的_DEC 判定_NN 结果_NN 之后_LC ，_PU 通过_P 变更_VV 从_P 此前_NT 的_DEG 情况_NN 开始_VV 降低_VV 例如_AD 响应_NN 速度_NN 的_DEG 响应_NN 速度_NN 用_P 控制_NN 参数_NN ，_PU 来_MSP 抑制_VV 不_AD 期望_VV 的_DEC 动作_NN 。_PU
+此外_AD ，_PU 也_AD 可以_VV 变更_VV 与_P 驱动力_NN 大小有_AD 关系_VV 的_DEC 控制_NN 参数_NN 以_MSP 减小_VV 驱动力_NN 。_PU
+也_AD 可以_VV 在_P 实施例_NN １_CD 等_ETC 中_LC 设置_VV 该_DT 控制_NN 参数_NN 设定部_NN ８５ｃ_CD 的_DEC 功能_NN 。_PU
+另外_AD ，_PU 在_P 本_DT 实施例_NN 中_LC ，_PU 在_P 控制_NN 装置_NN ６６_CD 内_LC 设有_VV 阈值_NN 设定部_NN ９０ａ_NN ，_PU 该_DT 阈值_NN 设定部_NN ９０ａ_NN 可_VV 变_VV 地_DEV 设定_VV 在_P 所_MSP 述_VV 判定部_NN ８５ｂ_CD 的_DEG 判定_NN 中_LC 所_MSP 使用_VV 的_DEC 运动量_NN 的_DEG 阈值_NN 。_PU
+然后_AD ，_PU 手术者_NN 通过_P 操作_NN 阈值_NN 设定部_NN ９０ａ_CD ，_PU 能够_VV 从_P 例如_AD 标准_NN 阈值_NN 变更_VV 并_CC 设定_VV 为_VC 手术者_NN 期望_VV 的_DEC 阈值_NN 来_MSP 使用_VV 。_PU
+并且_AD ，_PU 在_P 该_DT 控制_NN 装置_NN ６６_CD 内_LC 设有_VV 驱动力_NN 设定部_NN ９０ｂ_CD ，_PU 该_DT 驱动力_NN 设定部_NN ９０ｂ_CD 在_P 将_BA 作用于_VV 弯_NN 曲部_NN ４２_CD 上_LC 的_DEG 力_NN 信息_NN 反馈_VV 给_P 操纵杆_NN ６２_CD 来_MSP 驱动_VV 操纵杆_NN ６２_CD 的_DEC 情况_NN 下_LC ，_PU 调整_VV 该_DT 驱动力_NN 。_PU
+该_DT 驱动力_NN 设定部_NN ９０ｂ_NN 将_BA 以下_JJ 说明_NN 的_DEC 系数_NN Ｋ_NN 输出_VV 到_VV ＣＰＵ０２８５_NN ，_PU ＣＰＵ_NN ０２８５_CD 根据_P 该_DT 系数_NN Ｋ_NN 来_MSP 调整_VV 施加_VV 到作_VV 为_VC 指示_VV 输入部_NN 的_DEC 操纵杆_NN ６２_CD 上_LC 的_DEG 驱动力_NN 。_PU
+例如_AD ，_PU 如_P 图_NN １４_OD 所_MSP 示_VV ，_PU 在_P 力_NN 信息_NN Ｆｓ_NN 从_P 弯曲部_NN ４２_CD 被_SB 反馈_VV 并_CC 输入_VV 到_VV 构成_VV 操纵杆_NN 控制部_NN ９３_CD 的_DEG 控制_NN 装置_NN ６６_CD 的_DEG ＣＰＵ０２８５_NN 的_DEC 情况_NN 下_LC ，_PU ＣＰＵ０２８５_NN 通常_AD 以_P 与_P 该_DT 力_NN 信息_NN Ｆｓ_NN 相当_VA 的_DEC 驱动力_NN Ｆｓ_NN ′_PU 驱动_NN 作为_P 指示_VV 输入部_NN 的_DEC 操纵杆_NN ６２_CD 。_PU
+与_P 此_PN 相对_VV ，_PU 手术者_NN 通过_P 操作_NN 驱动力_NN 设定部_NN ９０ｂ_CD ，_PU 以_MSP 能_VV 进行_VV 可_VV 变_VV 设定_VV 的_DEC 系数_NN Ｋ_NN 乘以_VV 力_NN 信息_NN Ｆｓ_NN 后_LC 的_DEG 驱动力_NN Ｋ_NN ·_PU Ｆｓ_NN ′_PU 驱动_VV 操纵杆_NN ６２_CD 。_PU
+另外_AD ，_PU 系数_NN Ｋ_NN 是_VC 例如_AD ０_CD ＜_PU Ｋ_CD ＜_PU １０_CD 。_PU
+手术者_NN 能够_VV 将_BA 反馈_NN 给_P 操纵杆_NN ６２_CD 的_DEG 力_NN 的_DEG 大小_NN 设定_VV 为_VC 手术者_NN 认为_VV 容易_AD 知道_VV 的_DEC 系数_NN Ｋ_NN 的_DEG 值_NN 再_AD 使用_VV 。_PU
+另外_AD ，_PU 可以_VV 将_BA 阈值_NN 设定部_NN ９０ａ_NN 和_CC 驱动力_NN 设定部_NN ９０ｂ_NN 应用于_VV 其他_DT 实施例_NN 。_PU
+并且_AD ，_PU 在_P 控制_NN 装置_NN ６６_CD 内_LC 设有_VV 未_AD 作_VV 图示_NN 的_DEC 加速度_NN 传感器_NN ，_PU 在_P 对_P 该_DT 控制_NN 装置_NN ６６_CD 施加_VV 了_AS 预先_AD 设定_VV 的_DEC 值_NN 以上_LC 的_DEG 冲击_NN 的_DEC 情况_NN 下_LC ，_PU 或者_CC 在_VV 对_P 将_AD 构成_VV 内_LC 窥镜_NN 系统_NN ６１_CD 的_DEG 内窥镜_NN ３２_CD Ｄ_M 、_PU 光源_NN 装置_NN ３７_CD 、_PU 视频_NN 处理器_NN ３８_CD 、_PU 显示_VV 监视器_NN ３９_CD 等_ETC 连接_VV 起来_VV 的_DEC 电缆_NN 等_ETC 施加_VV 了_AS 预先_AD 设定_VV 的_DEC 值_NN 以上_LC 的_DEG 冲击_NN 的_DEC 情况_NN 下_LC ，_PU ＣＰＵ０２８５_NN 停止_VV 对_P 弯曲部_NN ４２_CD 和_CC 操纵杆_NN ６２_CD 进行_VV 能动_NN 驱动_VV 的_DEC 动力部_NN 的_DEG 动作_NN 和_CC 各_DT 部分_NN 的_DEG 电力_NN 提供_VV 。_PU
+本_DT 实施例_NN 的_DEG 动作_NN 是_VC 图_NN １５_CD 所_MSP 示_VV 的_DEC 处理_NN 进程_NN 。_PU
+图_NN １５_CD 所_MSP 示_VV 的_DEC 处理_NN 进程_NN 是_VC 与_P 在_P 图_NN ４_CD 中_LC 将_BA 处理部_NN ４_CD 改读_VV 为_VC 弯曲部_NN ４２_CD 等_ETC 对应_JJ 的_DEG 构成_VV 要素_NN 的_DEC 内容_NN 大致_AD 相同_VA 的_DEC 动作_NN 。_PU
+即_AD ，_PU 当_P 接通_VV 了_AS 图_NN １３_CD 的_DEG 内窥镜_NN 系统_NN ６１_CD 的_DEG 电源_NN 时_LC ，_PU 该_DT 内窥镜_NN 系统_NN ６１_CD 如_P 步骤_NN Ｓ２１_CD 所_MSP 示_VV 在_P 规定_VV 的_DEC 控制_NN 系统_NN 中_LC 开始_AD 控制_VV 动作_NN 。_PU
+具体_VA 地_DEV 说_VV ，_PU ＣＰＵ_NN ０２８５_CD 在_P 图_NN １４_CD 所_MSP 示_VV 的_DEC 力回_NN 送式_VV 双向_JJ 控制_NN 系统_NN 的_DEG 控制_NN 模式_NN 下_LC 开始_AD 控制_VV 动作_NN 。_PU
+在_P 随后_NT 的_DEG 步骤_NN Ｓ２２_CD 中_LC ，_PU ＣＰＵ０２８５_NN 处于_VV 这样_PN 的_DEG 处理_NN 状态_NN ，_PU 即_AD ：_PU 根据_P 张力_NN 传感器_NN ８３ａ_CD ～_PU ８３ｄ_CD 的_DEG 检测_NN 信号_NN 来_NN 等_ETC 待力_NN 是否_AD 作用于_VV 弯曲部_NN ４２_CD （_PU 的_DEG 作为_P 关节轴_NN 的_DEG 铆钉_NN ７７_CD ）_PU 。_PU
+然后_AD ，_PU 当_P 检测_VV 出该力_NN 的_DEC 作用_NN 时_LC ，_PU 如_P 步骤_NN Ｓ２３_CD 所_MSP 示_VV ，_PU ＣＰＵ０２８５_NN 将_BA 与_P 该_DT 力_NN 对应_VV 的_DEC 电流_NN 指令值_NN 提供_VV 给_P 电动机_NN 驱动器_NN ８４_CD ｋ′_M （_PU ｋａ_NN 或_CC ｂ）_NN 。_PU
+这里_PN ，_PU ｋ_NN 对应于_VV 张力_NN 传感器_NN ８１ａ_CD ～_PU ８１ｂ_CD 中_LC 的_DEG 检测_NN 信号_NN 。_PU
+并且_VV ，_PU 该_DT 电流_NN 指令值_NN 还_AD 包含_VV 使_VV 电动机_NN ８１ｋ_CD ′_PU 旋转_VV 的_DEC 方向_NN 。_PU
+然后_AD ，_PU 如_P 步骤_NN Ｓ２４_CD 所_MSP 示_VV ，_PU 利用_VV 由_P 电动机_NN 驱动器_NN ８４_CD ｋ′_NN 驱动_VV 的_DEC 电动机_NN ８１_CD ｋ′_M ，_PU 将_BA 与_P 弯曲部_NN ４２_CD 弯曲_VV 的_DEC 方向_NN 对应_VV 的_DEC 力_NN 提供_VV 给_P 操纵杆_NN ６２_CD 的_DEG （_PU 辊_NN ８６ｋ_CD ）_PU 。_PU
+并且_AD ，_PU 如_P 步骤_NN Ｓ２５_CD 所_MSP 示_VV ，_PU ＣＰＵ_NN ０２８５_CD 根据_P 编码器_NN ８２_CD ｋ_M ′_PU 的_DEG 检测_NN 信号_NN 来_MSP 监视_VV 操纵杆_NN ６２_CD 的_DEG 运动量_NN （_PU 倾斜_VV 的_DEC 运动量_NN ）_PU 。_PU
+然后_AD ，_PU 如_P 步骤_NN Ｓ２６_CD 所_MSP 示_VV ，_PU ＣＰＵ０２８５_NN 判定_VV 提供_VV 给_P 操纵杆_NN ６２_CD 的_DEG 力_NN 的_DEG 方向_NN 与_CC （_PU 通过_P 前面_JJ 的_DEG 步骤_NN Ｓ２４_CD 检测_VV 的_DEC ）_PU 运动_NN （_PU 倾斜_VV ）_PU 方向_NN 是否_AD 一致_VA 。_PU
+在_P 不_AD 一致_VA 的_DEC 情况_NN 下_LC ，_PU 回到_VV 步骤_NN Ｓ２２_CD 。_PU
+另_DT 一_CD 方面_NN ，_PU 在_P 判定_VV 为_VC 一致_VA 的_DEC 情况_NN 下_LC ，_PU 在_P 随后_NT 的_DEG 步骤_NN Ｓ２７_CD 中_LC ，_PU ＣＰＵ０２８５_NN 判定_VV 运动量_NN 是否_AD 超过_VV 预先_AD 设定_VV 的_DEC 阈值_NN 。_PU
+在_P 未_AD 超过_VV 阈值_NN 的_DEC 情况_NN 下_LC ，_PU ＣＰＵ０２８５_NN 回到_VV 步骤_NN Ｓ２２_CD 。_PU
+反之_AD 在_P 超过_VV 阈值_NN 的_DEC 判定_NN 输出_VV 的_DEC 情况_NN 下_LC ，_PU 在_P 随后_NT 的_DEG 步骤_NN Ｓ２８_CD 中_LC ，_PU ＣＰＵ０２８５_NN 抑制_VV 该_DT 控制_NN 系统_NN 中_LC 的_DEG 动力部_NN 的_DEG 动作_NN ，_PU 或者_CC 变更_VV 为_VV 另_DT 一_CD 控制_NN 模式_NN 。_PU
+另外_AD ，_PU ＣＰＵ０２８５_NN 也_CC 可以_VV 通过_P 变更_JJ 控制_NN 参数_NN 来_MSP 抑制_VV 动力部_NN 的_DEG 动作_NN 。_PU
+作为_P 步骤_NN Ｓ２８_CD 的_DEG 处理_NN ，_PU 具体_VA 地_DEV 说_VV ，_PU ＣＰＵ０２８５_NN 停止_VV 电动机_NN ８１_CD ｋ′_NN 和_CC ８１ｋ_CD 这_DT 两_CD 个_M 动力部_NN 的_DEG 动作_NN ，_PU 或者_CC 停止_VV 至少_AD 其中_NN 一_CD 方_NN 的_DEG 动作_NN 。_PU
+或者_AD ，_PU 在_P 该_PN 判定_VV 前_LC 的_DEG 控制_NN 系统_NN 是_VC 图_NN １４_CD 所_MSP 示_VV 的_DEC 力回_NN 送式_VV 双向_JJ 控制_NN 系统_NN 的_DEC 情况_NN 下_LC ，_PU ＣＰＵ０２８５_NN 可以_VV 从_P 该_DT 力回_NN 送式_VV 双向_JJ 控制_NN 系统_NN 的_DEG 控制_NN 模式_NN 变更_VV 为_VC 图_NN ５_CD 所_MSP 示_VV 的_DEC 单向_JJ 控制_NN 系统_NN 的_DEG 控制_NN 模式_NN 。_PU
+或者_AD ，_PU ＣＰＵ０２８５_NN 进行_VV 控制_NN 参数_NN 的_DEG 变更_NN 。_PU
+并且_AD ，_PU 在_P 该_DT 情况_NN 下_LC ，_PU ＣＰＵ_NN ０２８５_CD 将_BA 步骤_NN Ｓ２７_CD 的_DEG 判定_NN 结果_NN 、_PU 或者_CC 步骤_NN Ｓ２８_CD 的_DEG 信息_NN 显示_VV 在_P 操作_NN 面板_NN ８９_CD 的_DEG 显示部_NN 、_PU 以及_CC 显示_VV 监视器_NN ３９_CD 的_DEG 弯曲_NN 控制_NN 信息_NN 显示_VV 区域_NN ３９ｂ_CD 内_LC ，_PU 通知_VV 给_P 手术_NN 者_NN 。_PU
+并且_AD ，_PU 在_P 随后_NT 的_DEG 步骤_NN Ｓ２９_CD 中_LC ，_PU ＣＰＵ０２８５_NN 处于_VV 利用_VV 根据_P 该_DT 判定_JJ 结果_NN 而_MSP 起动_VV 的_DEC 定时器_NN 来_MSP 等待_VV 经过_P 规定_JJ 时间_NN 的_DEC 状态_NN 。_PU
+然后_AD ，_PU 当_P 经过_P 规定_NN 时间_NN 时_LC ，_PU 如_P 步骤_NN Ｓ３０_CD 所_MSP 示_VV ，_PU ＣＰＵ０２８５_NN 进行_VV 恢复_VV 到_VV 最初_JJ 的_DEG 控制_NN 系统_NN 的_DEC 状态_NN 的_DEC 处理_NN ，_PU 回到_VV 步骤_NN Ｓ２２_CD 。_PU
+根据_P 本_DT 实施例_NN ，_PU 在_P 把持_NN 操纵杆_NN ６２_CD 对_P 弯曲部_NN ４２_CD 进行_VV 弯曲_NN 指示_VV 操作_NN （_PU 弯曲_VV 输入_VV 操作_NN ）_PU 的_DEC 情况_NN 下_LC ，_PU 手术者_NN 能够_VV 有效_VA 地_DEV 防止_VV 进行_VV 手术者_NN 不_AD 期望_VV 的_DEC 动作_NN 。_PU
+并且_AD ，_PU 在_P 规定_NN 时间_NN 后_LC ，_PU 能够_VV 恢复_VV 到_VV 通常_JJ 的_DEG 控制_NN 状态_NN ，_PU 能够_VV 在_P 良好_JJ 操作性_NN 的_DEC 状态_NN 下_LC 继续_AD 进行_VV 内窥镜_NN 检测_VV 和_CC 处理_VV 等_ETC 。_PU
+另外_AD ，_PU 作为_P 实施例_NN ３_CD 对_P 具有_VV 作为_P 能动_VV 医疗_NN 设备_NN 执行_VV 功能_NN 的_DEC 弯曲部_NN ４２_CD 的_DEG 内窥镜_NN ３２_CD Ｄ_CD 的_DEG 情况_NN 作_VV 了_AS 说明_VV ，_PU 然而_AD 同样_AD 也_AD 能_VV 应用于_VV 内窥镜_NN ３２Ｄ_CD 以外_LC 的_DEC 情况_NN 。_PU
+具体_VA 地_DEV 说_VV ，_PU 同样_AD 能_VV 应用于_VV 采用_VV 这样_JJ 的_DEG 结构_NN 的_DEC 情况_NN ：_PU 在_P 具有_VV 能_VV 插通_VV 处理_NN 器具_NN １Ｂ_OD ～_PU １Ｃ_OD 的_DEG 通道_NN 、_PU 或者_CC 能_VV 插通_VV 内窥镜_NN ３２_CD 、_PU ３２Ｄ_CD 的_DEG 插入部_NN ３３_CD 的_DEG 通道_NN 的_DEC 细长_NN 插入_VV 辅助_JJ 部件_NN 或_CC 插入_VV 引导_JJ 部件_NN （_PU 所谓_JJ 套管_NN （_PU ｏｖｅｒｔｕｂｅ_NR ）_PU ）_PU 上_LC ，_PU 如_P 图_NN １３_OD 所_MSP 示_VV 设置_VV 电_NN 驱动_NN 的_DEC 弯曲部_NN ４２_CD 来_MSP 形成_VV 能动_JJ 套管_NN ，_PU 并_CC 如_P 在_P 实施例_NN ３_CD 中_LC 所_MSP 说明_VV 那_DT 样_M 对_P 该_DT 弯曲部_NN ４２_CD 进行_VV 电_NN 驱动_NN 和_CC 控制_NN 。_PU
+另外_AD ，_PU 将_BA 上述_JJ 的_DEG 实施例_NN 等_ETC 部分_NN 地_DEV 组合_VV 而_MSP 构成_VV 的_DEC 实施例_NN 等_ETC 也_AD 属于_VV 本_DT 发明_NN 。_PU
+并且_AD ，_PU 在_P 控制_NN 装置_NN ６６_CD 与_CC 多_CD 种_M 医疗_NN 设备_NN 连接_VV 的_DEC 情况_NN 下_LC ，_PU 可以_VV 根据_P 所_MSP 连接_VV 的_DEC 医疗_NN 设备_NN 的_DEG 组合_NN 和_CC 种类_NN 自动_AD 设定_VV 或_CC 选择_VV 最佳_JJ 的_DEG 控制_NN 参数_NN 。_PU
+１_CD ．_PU 一_CD 种_M 能动_JJ 医疗_NN 设备_NN 系统_NN ，_PU 其_PN 特征_NN 在于_VV ，_PU 该_DT 能动_JJ 医疗_NN 设备_NN 系统_NN 具有_VV ：_PU
+能动_JJ 医疗_NN 设备_NN ，_PU 其_PN 具有_VV 自由_AD 转动_VV 的_DEC 至少_AD 一_CD 个_M 关节_NN ；_PU
+能动_JJ 医疗_NN 设备_NN 驱动部_NN ，_PU 其_PN 电驱_NN 动_VV 所_MSP 述_VV 能动_JJ 医疗_NN 设备_NN ；_PU
+指示_VV 输入部_NN ，_PU 其_PN 通过_P 操作者_NN 输入_VV 用于_VV 驱动_VV 所_MSP 述_VV 能动_JJ 医疗_NN 设备_NN 的_DEG 指示_NN ；_PU
+指示_VV 输入部_NN 驱动部_NN ，_PU 其_PN 被_SB 反馈_VV 输入_VV 有_VE 作用于_VV 所_MSP 述_VV 能动_JJ 医疗_NN 设备_NN 上_LC 的_DEG 力_NN 信息_NN ，_PU 并_CC 根据_P 所_MSP 述_VV 力_NN 信息_NN 来电_LC 驱动_VV 所_MSP 述_VV 指示_VV 输入部_NN ；_PU
+判定部_NN ，_PU 其_PN 判定_VV 在_P 驱动_VV 所_MSP 述_VV 指示_VV 输入部_NN 的_DEC 驱动力_NN 的_DEC 作用_NN 方向_NN 上_LC 有_VE 无_VE 规定_NN 阈值_NN 以上_LC 的_DEG 运动量_NN 产生_VV ；_PU 以及_CC
+控制部_NN ，_PU 在_P 由_P 所_MSP 述_VV 判定部_NN 判定_VV 为_VC 有_VE 所_MSP 述_VV 阈值_NN 以上_LC 的_DEG 运动量_NN 产生_VV 的_DEC 判定_NN 结果_NN 的_DEC 情况_NN 下_LC ，_PU 所_MSP 述_VV 控制部_NN 抑制_VV 所_MSP 述_VV 指示_VV 输入部_NN 驱动部_NN 和_CC 所_MSP 述_VV 能动_JJ 医疗_NN 设备_NN 驱动部_NN 中_LC 的_DEG 至少_AD 一方_VA 的_DEC 驱动_NN 。_PU
+２_CD ．_PU 根据_P 权利_NN 要求_NN １_CD 所_MSP 述_VV 的_DEC 能动_JJ 医疗_NN 设备_NN 系统_NN ，_PU 其_PN 特征_NN 在于_VV ，_PU 所_MSP 述_VV 能动_JJ 医疗_NN 设备_NN 系统_NN 包含_VV 电动_JJ 弯曲_NN 内_LC 窥镜_NN 或_CC 能动_JJ 套管_NN ，_PU 该_DT 电动_JJ 弯曲_NN 内_LC 窥镜_NN 或_CC 能动_JJ 套管_NN 形成_VV 有_VE 具备_VV 多_CD 个_M 所_MSP 述_VV 关节_NN 的_DEC 弯曲部_NN ，_PU 并_CC 电_CS 驱动_VV 所_MSP 述_VV 弯曲部_NN 弯曲_VV ，_PU 或者_CC 所_MSP 述_VV 能动_JJ 医疗_NN 设备_NN 系统_NN 包含_VV 电动_JJ 弯折_NN 或_CC 电动_JJ 弯曲_NN 所_MSP 述_VV 关节_NN 的_DEC 能动_NN 处理_NN 器具_NN 。_PU
+３_CD ．_PU 根据_P 权利_NN 要求_NN １_CD 所_MSP 述_VV 的_DEC 能动_JJ 医疗_NN 设备_NN 系统_NN ，_PU 其_PN 特征_NN 在于_VV ，_PU 所_MSP 述_VV 指示_VV 输入部_NN 是_VC 能_VV 倾斜_VV 的_DEC 操纵杆_NN 。_PU
+４_CD ．_PU 根据_P 权利_NN 要求_NN １_CD 所_MSP 述_VV 的_DEC 能动_JJ 医疗_NN 设备_NN 系统_NN ，_PU 其_PN 特征_NN 在于_VV ，_PU 所_MSP 述_VV 指示_VV 输入部_NN 为_VC 与_P 所_MSP 述_VV 能动_JJ 医疗_NN 设备_NN 大致_AD 相似_VA 的_DEC 形状_NN 。_PU
+５_CD ．_PU 根据_P 权利_NN 要求_NN １_CD 所_MSP 述_VV 的_DEC 能动_JJ 医疗_NN 设备_NN 系统_NN ，_PU 其_PN 特征_NN 在于_VV ，_PU 在为_VV 所_MSP 述_VV 判定部_NN 的_DEG 所_MSP 述_VV 判定_NN 结果_NN 的_DEC 情况_NN 下_LC ，_PU 所_MSP 述_VV 控制部_NN 将_AD 控制_VV 所_MSP 述_VV 指示_NN 输入_VV 部_VV 驱动部_NN 和_CC 所_MSP 述_VV 能动_JJ 医疗_NN 设备_NN 驱动部_NN 的_DEC 驱动_NN 的_DEC 控制_NN 模式_NN 从_P 所_MSP 述_VV 判定_NN 结果_NN 之前_LC 的_DEG 控制_NN 模式_NN 变更_VV 。_PU
+６_CD ．_PU 根据_P 权利_NN 要求_NN ２_CD 所_MSP 述_VV 的_DEC 能动_JJ 医疗_NN 设备_NN 系统_NN ，_PU 其_PN 特征_NN 在于_VV ，_PU 在为_VV 所_MSP 述_VV 判定部_NN 的_DEG 所_MSP 述_VV 判定_NN 结果_NN 的_DEC 情况_NN 下_LC ，_PU 所_MSP 述_VV 控制部_NN 将_AD 控制_VV 所_MSP 述_VV 指示_NN 输入_VV 部_VV 驱动部_NN 和_CC 所_MSP 述_VV 能动_JJ 医疗_NN 设备_NN 驱动部_NN 的_DEC 驱动_NN 的_DEC 控制_NN 模式_NN 从_P 所_MSP 述_VV 判定_NN 结果_NN 之前_LC 的_DEG 控制_NN 模式_NN 变更_VV 。_PU
+７_CD ．_PU 根据_P 权利_NN 要求_NN ５_CD 所_MSP 述_VV 的_DEC 能动_JJ 医疗_NN 设备_NN 系统_NN ，_PU 其_PN 特征_NN 在于_VV ，_PU 在为_P 所_MSP 述_VV 判定部_NN 的_DEG 所_MSP 述_VV 判定_NN 结果_NN 的_DEC 情况_NN 下_LC ，_PU 所_MSP 述_VV 控制部_NN 从_P 所_MSP 述_VV 判定_NN 结果_NN 之前_LC 的_DEG 反馈_NN 所_MSP 述_VV 力_NN 信息_NN 的_DEC 控制_NN 模式_NN 变更_VV 为_VC 在_P 所_MSP 述_VV 判定_NN 结果_VV 后_LC 不_AD 反馈_VV 所_MSP 述_VV 力_NN 信息_NN 的_DEC 控制_NN 模式_NN 。_PU
+８_CD ．_PU 根据_P 权利_NN 要求_NN ７_CD 所_MSP 述_VV 的_DEC 能动_JJ 医疗_NN 设备_NN 系统_NN ，_PU 其_PN 特征_NN 在于_VV ，_PU 反馈_VV 所_MSP 述_VV 力_NN 信息_NN 的_DEC 控制_NN 模式_NN 是_VC 力_NN 回送式_JJ 双向_JJ 控制_NN 模式_NN 或_CC 者力_NN 反馈式_JJ 双向_JJ 控制_NN 模式_NN 。_PU
+９_CD ．_PU 根据_P 权利_NN 要求_NN １_CD 所_MSP 述_VV 的_DEC 能动_JJ 医疗_NN 设备_NN 系统_NN ，_PU 其_PN 特征_NN 在于_VV ，_PU 在为_VV 所_MSP 述_VV 判定部_NN 的_DEG 所_MSP 述_VV 判定_NN 结果_NN 的_DEC 情况_NN 下_LC ，_PU 所_MSP 述_VV 控制部_NN 变更_VV 在_P 驱动_VV 所_MSP 述_VV 指示_VV 输入部_NN 驱动部_NN 和_CC 所_MSP 述_VV 能动_JJ 医疗_NN 设备_NN 驱动部_NN 中_LC 所_MSP 使用_VV 的_DEC 控制_NN 参数_NN 。_PU
+１０_CD ．_PU 根据_P 权利_NN 要求_NN ２_CD 所_MSP 述_VV 的_DEC 能动_JJ 医疗_NN 设备_NN 系统_NN ，_PU 其_PN 特征_NN 在于_VV ，_PU 在为_VV 所_MSP 述_VV 判定部_NN 的_DEG 所_MSP 述_VV 判定_NN 结果_NN 的_DEC 情况_NN 下_LC ，_PU 所_MSP 述_VV 控制部_NN 变更_VV 在_P 由_P 所_MSP 述_VV 指示_VV 输入部_NN 驱动部_NN 对_P 所_MSP 述_VV 指示_VV 输入部_NN 的_DEC 驱动_NN 或者_CC 由_P 所_MSP 述_VV 能动_JJ 医疗_NN 设备_NN 驱动部_NN 对_P 所_MSP 述_VV 能动_JJ 医疗_NN 设备_NN 的_DEG 驱动_NN 中_LC 所_MSP 使用_VV 的_DEC 控制_NN 参数_NN 。_PU
+１１_CD ．_PU 根据_P 权利_NN 要求_NN １０_CD 所_MSP 述_VV 的_DEC 能动_JJ 医疗_NN 设备_NN 系统_NN ，_PU 其_PN 特征_NN 在于_VV ，_PU 在为_P 所_MSP 述_VV 判定部_NN 的_DEG 所_MSP 述_VV 判定_NN 结果_NN 的_DEC 情况_NN 下_LC ，_PU 所_MSP 述_VV 控制部_NN 至少_AD 变更_VV 所_MSP 述_VV 控制_NN 参数_NN ，_PU 以_MSP 使_VV 抑制_VV 所_MSP 述_VV 指示_VV 输入部_NN 和_CC 所_MSP 述_VV 能动_JJ 医疗_NN 设备_NN 中_LC 的_DEG 至少_AD 一方_VA 的_DEC 驱动_NN 。_PU
+１２_CD ．_PU 根据_P 权利_NN 要求_NN １_CD 所_MSP 述_VV 的_DEC 能动_JJ 医疗_NN 设备_NN 系统_NN ，_PU 其_PN 特征_NN 在于_VV ，_PU 所_MSP 述_VV 控制部_NN 在_P 从_P 所_MSP 述_VV 判定部_NN 的_DEG 所_MSP 述_VV 判定_NN 结果_NN 开始_VV 经过_P 规定_JJ 时间_NN 后_LC 解除_VV 所_MSP 述_VV 抑制_NN 。_PU
+１３_CD ．_PU 根据_P 权利_NN 要求_NN １_CD 所_MSP 述_VV 的_DEC 能动_JJ 医疗_NN 设备_NN 系统_NN ，_PU 其_PN 特征_NN 在于_VV ，_PU 所_MSP 述_VV 能动_JJ 医疗_NN 设备_NN 系统_NN 还_AD 具有_VV 提示_VV 所_MSP 述_VV 判定部_NN 所_MSP 判定_VV 的_DEC 信息_NN 的_DEC 提示部_NN 。_PU
+１４_CD ．_PU 根据_P 权利_NN 要求_NN １_CD 所_MSP 述_VV 的_DEC 能动_JJ 医疗_NN 设备_NN 系统_NN ，_PU 其_PN 特征_NN 在于_VV ，_PU 所_MSP 述_VV 能动_JJ 医疗_NN 设备_NN 系统_NN 还_AD 具有_VV 在_P 变更_VV 了_AS 控制_NN 模式_NN 的_DEC 情况_NN 下_LC 显示_VV 变更_VV 后_LC 的_DEG 控制_NN 模式_NN 的_DEC 显示部_NN 。_PU
+１５_CD ．_PU 根据_P 权利_NN 要求_NN １_CD 所_MSP 述_VV 的_DEC 能动_JJ 医疗_NN 设备_NN 系统_NN ，_PU 其_PN 特征_NN 在于_VV ，_PU 所_MSP 述_VV 能动_JJ 医疗_NN 设备_NN 是_VC 使用_VV 作为_P 所_MSP 述_VV 关节_NN 的_DEC 第１_OD 关节_NN 和_CC 第２_OD 关节_NN 来_MSP 构成_VV 的_DEC ，_PU 并且_CC 所_MSP 述_VV 指示_VV 输入部_NN 具有_VV 用于_VV 分别_AD 驱动_VV 所_MSP 述_VV 第１_OD 关节_NN 和_CC 所_MSP 述_VV 第２_OD 关节_NN 的_DEC 第１_OD 指示_VV 输入部_NN 和_CC 第２_OD 指示_VV 输入部_NN ，_PU 而且_CC 所_MSP 述_VV 第１_OD 指示_VV 输入部_NN 和_CC 所_MSP 述_VV 第２_OD 指示_VV 输入部_NN 是_VC 由_P 所_MSP 述_VV 指示_VV 输入部_NN 驱动部_NN 分别_AD 以_P 第１_OD 驱动力_NN 和_CC 第２_OD 驱动力_NN 来_MSP 驱动_VV 的_DEC ，_PU 所_MSP 述_VV 第１_OD 驱动力_NN 和_CC 所_MSP 述_VV 第２_OD 驱动力_NN 与_CC 分别_AD 作用于_VV 所_MSP 述_VV 第１_OD 关节_NN 和_CC 所_MSP 述_VV 第２_OD 关节_NN 上_LC 的_DEG 力_NN 信息_NN 对应_VV 。_PU
+１６_CD ．_PU 根据_P 权利_NN 要求_NN １５_CD 所_MSP 述_VV 的_DEC 能动_JJ 医疗_NN 设备_NN 系统_NN ，_PU 其_PN 特征_NN 在于_VV ，_PU 所_MSP 述_VV 判定部_NN 分别_AD 判定_VV ：_PU 在_P 作_VV 用于_VV 所_MSP 述_VV 第１_OD 指示_VV 输入部_NN 的_DEC 所_MSP 述_VV 第１_OD 驱动力_NN 的_DEC 作用_NN 方向_NN 上_LC 有_VE 无_VE 规定_NN 阈值_NN 以上_LC 的_DEG 运动量_NN 产生_VV ，_PU 以及_CC 在_P 作用于_VV 所_MSP 述_VV 第２_OD 指示_VV 输入部_NN 的_DEC 所_MSP 述_VV 第２_OD 驱动力_NN 的_DEC 作用_NN 方向_NN 上_LC 有_VE 无_VE 规定_NN 阈值_NN 以上_LC 的_DEG 运动量_NN 产生_VV 。_PU
+１７_CD ．_PU 根据_P 权利_NN 要求_NN １_CD 所_MSP 述_VV 的_DEC 能动_JJ 医疗_NN 设备_NN 系统_NN ，_PU 其_PN 特征_NN 在于_VV ，_PU 所_MSP 述_VV 能动_JJ 医疗_NN 设备_NN 系统_NN 具有_VV 电动_JJ 弯曲_NN 内窥_NN 镜_NN ，_PU 该_DT 电动_JJ 弯曲_NN 内_LC 窥镜_NN 电_NN 驱动_NN 配备_VV 多_CD 个_M 关节_NN 而_MSP 形成_VV 的_DEC 弯曲部_NN 进行_VV 弯曲_NN ，_PU 并且_CC 所_MSP 述_VV 能动_JJ 医疗_NN 设备_NN 系统_NN 具有_VV 信号_NN 处理_NN 装置_NN ，_PU 该_DT 信号_NN 处理_NN 装置_NN 对_P 通过_P 设在_VV 所_MSP 述_VV 电动_JJ 弯曲_NN 内_LC 窥镜_NN 上_LC 的_DEG 摄像_JJ 元件_NN 所_MSP 拍摄_VV 的_DEC 图像_NN 进行_VV 信号_NN 处理_VV 。_PU
+１８_CD ．_PU 根据_P 权利_NN 要求_NN １７_CD 所_MSP 述_VV 的_DEC 能动_JJ 医疗_NN 设备_NN 系统_NN ，_PU 其_PN 特征_NN 在于_VV ，_PU 所_MSP 述_VV 能动_JJ 医疗_NN 设备_NN 系统_NN 还_AD 具有_VV 显示_VV 通过_P 所_MSP 述_VV 信号_NN 处理_NN 装置_NN 的_DEC 信号_NN 处理_NN 而_MSP 生成_VV 的_DEC 内_JJ 窥镜_NN 图像_NN 的_DEC 显示_NN 监视器_NN ，_PU 并且_CC 所_MSP 述_VV 显示_NN 监视器_NN 提示_VV 所_MSP 述_VV 判定部_NN 所_MSP 判定_VV 的_DEC 信息_NN 。_PU
+１９_CD ．_PU 根据_P 权利_NN 要求_NN １_CD 所_MSP 述_VV 的_DEC 能动_JJ 医疗_NN 设备_NN 系统_NN ，_PU 其_PN 特征_NN 在于_VV ，_PU 所_MSP 述_VV 能动_JJ 医疗_NN 设备_NN 系统_NN 还_AD 具有_VV 驱动力_NN 设定部_NN ，_PU 该_DT 驱动力_NN 设定部_NN 可_VV 变_VV 地_DEV 设定_VV 根据_P 所_MSP 述_VV 力_NN 信息_NN 电驱_NN 动_VV 所_MSP 述_VV 指示_NN 输入_NN 部_NN 的_DEG 驱动力_NN 的_DEG 大小_NN 。_PU
+２０_CD ．_PU 根据_P 权利_NN 要求_NN １_CD 所_MSP 述_VV 的_DEC 能动_JJ 医疗_NN 设备_NN 系统_NN ，_PU 其_PN 特征_NN 在于_VV ，_PU 所_MSP 述_VV 能动_JJ 医疗_NN 设备_NN 系统_NN 还_AD 具有_VV 可_VV 变_VV 地_DEV 设定_VV 所_MSP 述_VV 阈值_NN 的_DEC 值_NN 的_DEG 阈值_NN 设定部_NN 。_PU
+﻿本_DT 发明_NN 公开_VV 了_AS 一_CD 种_M 利用_VV 地沟油_NN 提炼_VV 工业_NN 油脂_NN 的_DEC 成套_NN 设备_NN 及_CC 方法_NN ，_PU 属于_VV 化工_JJ 生产_NN 及_CC 环保_JJ 技术_NN 领域_NN 。_PU
+设备_NN 包括_VV 原料池_NN 、_PU 提炼罐_NN 、_PU 气压_NN 过滤器_NN 、_PU 分离罐_NN 、_PU 水洗罐_NN 、_PU 沉淀罐_NN ，_PU 前_DT 级_M 出料_NN 口到_VV 后_DT 级_M 进料口_NN 经_P 油泵_NN 依次_AD 连接_VV ，_PU 还_AD 包括_VV 锅炉_NN 和_CC 污水_NN 处理器_NN ；_PU 分离罐_NN 、_PU 沉淀罐_NN 的_DEG 出料口_NN 位于_VV 罐斗_NN 的_DEG 中部_NN ，_PU 其_PN 底端_NN 出口_VV 为_VC 排污口_NN ，_PU 提炼_VV 罐_NN 、_PU 水_NN 洗罐_VV 的_DEC 顶部_NN 连接_VV 蒸汽管_NN ；_PU 分离_NN 罐_NN 、_PU 沉淀罐_NN 中_LC 设有_VV 蒸汽_VV 加热管_NN ，_PU 由_P 锅炉_NN 到_VV 分离罐_NN 的_DEG 进气口_NN 、_PU 出气口_NN 、_PU 沉淀罐_NN 的_DEG 进气口_NN 、_PU 出气口_NN ，_PU 回到_VV 提炼罐_NN ；_PU 提炼罐_NN 、_PU 分离罐_NN 、_PU 水洗罐_NN 和_CC 沉淀罐_NN 的_DEG 外壁_NN 均_AD 设有_VV 液面_NN 计位器_NN 和_CC 温度表_NN 。_PU
+工艺_NN 步骤_NN 为_VC ：_PU 提炼_VV 、_PU 过滤_NN 、_PU 分离_VV 、_PU 水洗_NN 、_PU 沉淀_NN ，_PU 成品_NN 油_NN 装桶_NN 及_CC 污水_NN 处理_NN 。_PU
+本_DT 发明_NN 设备_NN 简单_VA 、_PU 操作_NN 方便_VA 、_PU 便于_VV 推广_NN ，_PU 生产_NN 过程_NN 无_VE 异味_NN ，_PU 成品_NN 油脂_NN 质量_NN 好_VA ，_PU 能耗_NN 低_VA ，_PU 生产_NN 效率_NN 高_VA ，_PU 出油率_NN 高_VA ，_PU 废水_NN 符合_VV 排放_VV 标准_NN ，_PU 中间_NN 产品_NN 可_VV 循环_AD 利用_VV ，_PU 无_VE 二_OD 次_M 污染_NN 排放_VV 。_PU
+所属_JJ 技术_NN 领域_NN
+本_DT 发明_NN 涉及_VV 油脂化工_NN 设备_NN 及_CC 方法_NN ，_PU 尤其是_AD 利用_VV 地沟油_NN 作为_VV 原料_NN 生产_NN 工业_NN 油脂_NN 的_DEC 成套_NN 设备_NN 及_CC 方法_NN ，_PU 属于_VV 化工_JJ 生产_NN 及_CC 环保_JJ 技术_NN 领域_NN 。_PU
+背景_NN 技术_NN
+目前_NT ，_PU 在_P 餐饮业_NN 排出_VV 的_DEC 废液_NN 中_LC 含有_VV 不_AD 少_VA 的_DEC 油脂_NN ，_PU 引起_VV 了_AS 地沟_NN 堵塞_NN 和_CC 资源_NN 的_DEG 浪费_NN ，_PU 地沟_NR 油_NN 是_VC 一_CD 种_M 产生_VV 于_P 餐饮业_NN 和_CC 食品_NN 生产_NN 企业_NN 的_DEC 废液_NN ，_PU 其中_NN 含有_VV 不_AD 少_VA 的_DEC 油脂_NN ，_PU 直接_AD 排放_VV 会_VV 造成_VV 下水_NN 管道_NN 堵塞_NN 和_CC 资源_NN 浪费_VV ，_PU 并_CC 对_P 环境_NN 造成_VV 污染_NN 。_PU
+而_AD 以_P 此_PN 为_VV 原料_NN 提炼_VV 工业_NN 油脂_NN 大多_AD 采用_VV 原始_VA 的_DEC “_PU 土_NN 灶式_NN ”_PU 方法_NN ，_PU 即_AD 将_BA 地沟油_NN 在_P 土灶式_JJ 大锅_NN 中_LC 加热_VV ，_PU 使_VV 其_PN 分解_VV 后_LC ，_PU 再_AD 人工_AD 将_BA 上面_NN 的_DEG 油脂_NN 提取_VV 出来_VV 。_PU
+此_DT 方法_NN 存在_VV 的_DEC 问题_NN 是_VC ：_PU
+１_CD 、_PU 提炼_VV 时_LC 异味_NN 散发_VV 严重_VA ；_PU
+２_CD 、_PU 油脂_NN 含_VV 水_NN 过高_VV ；_PU
+３_CD 、_PU 分离_JJ 容器_NN 中_LC 油脚渣_NN 未经_AD 处理_NN 而_MSP 造成_VV 二_CD 次_M 污染_NN ；_PU
+４_CD 、_PU 废水_NN 排放_VV 不_AD 达标_VV ；_PU
+５_CD 、_PU 人工_NN 操作_NN 存在_VV 烫伤_NN 等_ETC 安全_JJ 隐患_NN ；_PU
+６_CD 、_PU 容易_AD 引起_VV 火灾_NN ；_PU
+７_CD 、_PU 蒸汽_JJ 损耗_NN 大_VA 、_PU 能耗_NN 高_VA ；_PU
+８_CD 、_PU 生产_NN 效率_NN 低_VA ，_PU 出油率_NN 低_VA 。_PU
+内容_NN
+针对_P 以上_JJ 人工_NN 操作_NN 存在_VV 的_DEC 隐患_NN 和_CC 缺点_NN ，_PU 本_DT 发明_NN 提供_VV 一_CD 种_M 利用_VV 地沟油_NN 提炼_VV 工业_NN 油脂_NN 的_DEC 成套_NN 设备_NN 及_CC 方法_NN 。_PU
+本_DT 发明_NN 解决_VV 其_PN 技术_NN 问题_NN 所_MSP 采用_VV 的_DEC 技术_NN 方案_NN 是_VC ：_PU
+利用_VV 地沟油_NN 提炼_VV 工业_NN 油脂_NN 的_DEC 成套_NN 设备_NN ，_PU 包括_VV 原料池_NN 、_PU 提炼_NN 罐_NN 、_PU 气压_NN 过滤器_NN 、_PU 分离_NN 罐_NN 、_PU 水洗_NN 罐_NN 、_PU 沉淀罐_NN ，_PU 前_DT 级_M 出料_NN 口到_VV 后_DT 级_M 进料口_NN 经_P 油泵_NN 依次_AD 连接_VV ，_PU 还_AD 包括_VV 锅炉_NN 和_CC 污水_NN 处理器_NN ；_PU 分离罐_NN 、_PU 沉淀罐_NN 的_DEG 出料口_NN 位于_VV 罐斗_NN 的_DEG 中部_NN ，_PU 分离_VV 罐_NN 、_PU 沉淀罐_NN 的_DEG 底端_NN 出口_VV 为_VC 排污口_NN ，_PU 与_P 污水_NN 处理器_NN 连接_VV ；_PU 提炼_NN 罐_NN 、_PU 水_NN 洗罐_VV 的_DEC 顶部_NN 连接_VV 蒸汽管_NN ，_PU 与_P 锅炉_NN 相连_VV ；_PU 分离_NN 罐_NN 、_PU 沉淀罐_NN 中_LC 设有_VV 蒸汽_VV 加热管_NN ，_PU 由_P 锅炉_NN 到_VV 分离罐_NN 地_DEG 进气口_NN 、_PU 出气口_NN 、_PU 沉淀罐_NN 的_DEG 进气口_NN 、_PU 出气口_NN ，_PU 回到_VV 提炼罐_NN ；_PU 提炼罐_NN 、_PU 分离罐_NN 、_PU 水洗_NN ０２_CD 罐_NN 和_CC 沉淀罐_NN 的_DEG 外壁_NN 均_AD 设有_VV 液面_NN 计位器_NN 和_CC 温度_NN 表_NN 。_PU
+利用_VV 地沟油_NN 提炼_VV 工业_NN 油脂_NN 的_DEC 方法_NN ，_PU 包括_VV 以下_JJ 工艺_NN 步骤_NN ：_PU
+Ａ_OD ．_PU 打开_VV 相应蒸_NN 汽管_NN 阀门_NN 和_CC 蒸汽_VV 加热管_NN 阀门_NN ；_PU 打开_VV 活性碳_NN 排气_NN 装置_NN ；_PU
+Ｂ_OD ．_PU 用_P 泥浆泵_NN 将_BA 原料池_NN 中_LC 的_DEG 地沟油_NN 吸入_VV 输送_VV 到_VV 提炼罐_NN 中_LC ，_PU 其中_NN 的_DEG 搅拌_NN 装置_NN 由_P 调速_NN 变频_NN 电机_NN 带动_VV ，_PU 搅拌_VV 转速_NN 为_VC ０_CD －_PU ２０_CD ｒ／ｍｉｎ_M ；_PU 当_P 温度_NN 表达_VV 到_VV ８０_CD ℃_M 、_PU 同时_AD 通过_VV 液面_NN 计位器_NN 观察_VV 油水_NN 达到_VV 液化_NN 状态_NN 时_LC ，_PU 停止_VV 蒸汽_NN 输入_VV ；_PU 开启_VV 搅拌_VV 装置_NN 搅拌_VV ２．５_CD 小时_M 后_LC ，_PU 打开_VV 出料口_NN 阀门_NN ，_PU 将_BA 液化_VV 后_LC 的_DEG 半成品_NN 油料_NN 用_P 油泵_NN 输出_VV 到_VV 气压_NN 过滤器_NN 中_LC ；_PU 其中_NN 的_DEG 油脚渣_NN 过滤_VV 于_P 滤芯网_NN 、_PU 滤布袋_NN 内_LC ，_PU 油水_NN 混合_VV 液_NN 由_P 油泵_NN 输入_VV 到_VV 分离罐_NN 中_LC ；_PU
+Ｃ_OD ．_PU 油水_NN 混合_VV 液_NN 输入_VV 到_VV 分离罐_NN 后_LC ，_PU 在_P 温度_NN 为_VC ８_CD －_PU １５_CD ℃_M 的_DEC 状态_NN 下_LC 静置_VV １．５２_CD 小时_AD 沉淀_VV ，_PU 油_NN 与_CC 水_NN 完全_AD 分离_VV ，_PU 从_P 液面_NN 计位器_NN 观察_NN ，_PU 当_P 油水_NN 结合面_NN 高于_VV 出料口_NN 时_LC ，_PU 打开_VV 罐体_NN 底部_NN 排污阀_NN ，_PU 缓慢_AD 排出_VV 污水_NN ，_PU 直_AD 至_P 油水_NN 结合面_NN 略_AD 低于_VV 出料口_NN 时_LC ，_PU 关闭_JJ 排污阀_NN ，_PU 打开_VV 出料口_NN 阀门_NN ，_PU 水面_NN 上_LC 层_NN 的_DEG 半净油脂_NN 输入_VV 到_VV 水洗罐_NN ，_PU 罐锥体_NN 内剩_NN 余_NN 污水_NN 输入_VV 到_VV 污水_NN 处理器_NN 的_DEC 前置_NN 隔_VV 油_NN 池_VV ，_PU 经_P 三_CD 级_M 隔油池_NN ，_PU 将_BA 略_AD 剩_VV 油脂_NN 的_DEC 净_JJ 污水_NN 输入_VV 到_VV 污水池_NN 中_LC ；_PU
+Ｄ_OD ．_PU 半净_NN 油脂_NN 输入_VV 水洗罐_NN ５_CD 后_LC ，_PU 通过_P 蒸汽管_NN 冲入_VV 蒸汽_NN ，_PU 加热_VV 到_VV ５０_CD －_PU ８０_CD ℃_M ，_PU 并_CC 加入_VV 比例_NN 为_VC ５_CD ‰_PU 食盐粉_NN ，_PU 蒸汽_VV 里_LC 的_DEG 水份_NN 和_CC 食盐粉_NN 与_P 油脂_NN 经_P 搅拌_NN 装置_NN 混合_VV 搅拌_VV ，_PU 约_AD １．５２_CD 小时_M 后_LC ，_PU 输入_VV 到沉_JJ 淀罐_NN 中_LC ；_PU
+Ｅ_OD ．_PU 半净_NN 油脂_NN 输入_VV 到沉_JJ 淀罐_NN 后_LC ，_PU 在_VV 在_P 温度_NN 为_VC ８_CD －_PU １５_CD ℃_M 的_DEC 状态_NN 下_LC 静_AD 置_VV １．５２_CD 小时_M 沉淀_VV ，_PU 油_NN 与_CC 水_NN 完全_AD 分离_VV ，_PU 从_P 液面_NN 计位器_NN 观察_NN ，_PU 当_P 油水_NN 结合_VV 面_NN 高于_VV 出料口_NN 时_LC ，_PU 打开_VV 罐体_NN 底部_NN 排污阀_NN ，_PU 缓慢_AD 排出_VV 污水_NN ，_PU 直_AD 至_P 油水_NN 结合面_NN 略_AD 低于_VV 出料口_NN 时_LC ，_PU 关闭_JJ 排污阀_NN ，_PU 打开_VV 出料口_NN 阀门_NN ，_PU 水面_NN 上_LC 层_NN 的_DEG 净油脂_NN 输入_VV 到_VV 储油罐_NN ；_PU 罐锥体_NN 内_LC 剩余_VV 污水_NN 输入_VV 到_VV 污水_NN 处理器_NN 的_DEC 前置_NN 隔_VV 油_NN 池_VV ，_PU 经_P 三_CD 级_M 隔油池_NN ，_PU 将_BA 略_AD 剩_VV 油脂_NN 隔离_VV 后_LC 的_DEG 净_JJ 污水_NN 输入_VV 到_VV 污水池_NN 中_LC 。_PU
+本_DT 发明_NN 的_DEG 有益_JJ 效果_NN 是_VC ，_PU 设备_NN 简单_VA 、_PU 操作_NN 方便_VA 、_PU 便于_VV 推广_NN ，_PU 生产_NN 过程_NN 无_VE 异味_NN ，_PU 成品_NN 油脂_NN 质量_NN 好_VA ，_PU 能耗_NN 低_VA ，_PU 生产_NN 效率_NN 高_VA ，_PU 出油率_NN 高_VA ，_PU 废水_NN 符合_VV 排放_VV 标准_NN ，_PU 中间_NN 产品_NN 可_VV 循环_AD 利用_VV ，_PU 无_VE 二_OD 次_M 污染_NN 排放_VV 。_PU
+说明_NN
+图_NN １_CD 是_VC 本_DT 发明_NN 总体_NN 结构_NN 示意图_NN ；_PU
+图_NN 中_LC 零部件_NN 及_CC 编号_NN ：_PU
+１_CD －_PU 原料池_NN ，_PU ２_CD －_PU 提炼罐_NN ，_PU ３_CD －_PU 气压_NN 过滤器_NN ，_PU ４_CD －_PU 分离罐_NN ，_PU ５_CD －_PU 水洗罐_NN ，_PU
+６_CD －_PU 沉淀_VV 罐_NN ，_PU ７_CD －_PU 储油桶_NN ，_PU ８_CD －_PU 锅炉_AD ，_PU ９－污水_NN 处理器_NN ，_PU １０_CD －_PU 活性炭_NN 排气_NN 装置_NN 。_PU
+具体_JJ 实施_NN 方式_NN
+下面_NN 结合_VV 实施例_NN 对_P 本_DT 发明_NN 进一步_AD 说明_VV ：_PU
+如_P 图_NN １_CD ，_PU 利用_VV 地沟油_NN 提炼_VV 工业_NN 油脂_NN 的_DEC 成套_NN 设备_NN ，_PU 包括_VV 原料池_NN １_CD 、_PU 提炼_VV 罐_NN ２_CD 、_PU 气压_NN 过滤器_NN ３_CD 、_PU 分离罐_NN ４_NN 、_PU 水_NN 洗罐_VV ５_CD 、_PU 沉淀_VV 罐_NN ６_CD ，_PU 前_DT 级_M 出料_NN 口到_VV 后_DT 级_M 进料口_NN 经_P 油泵_NN 依次_AD 连接_VV ；_PU 还_AD 包括_VV 锅炉_NN ８_CD 和_CC 污水_NN 处理器_NN ９_CD ；_PU 分离罐_NN ４_CD 、_PU 沉淀_VV 罐_NN ６_CD 的_DEG 出料_NN 口_NN 位于_VV 罐斗_NN 的_DEG 中部_NN ，_PU 分离罐_NN ４_CD 、_PU 沉淀_JJ 罐_NN ６_OD 的_DEG 底端_NN 出口_VV 为_VC 排污_NN 口_NN ，_PU 与_P 污水_NN 处理_NN 器_NN ９_CD 连接_VV ；_PU 提炼_VV 罐_NN ２_CD 、_PU 水_NN 洗罐_VV ５_CD 的_DEG 顶部_NN 连接_VV 蒸汽管_NN ，_PU 与_P 锅炉_NN ８_CD 相连_VV ；_PU 分离_VV 罐_NN ４_CD 、_PU 沉淀_VV 罐_NN ６_CD 中_LC 设有_VV 蒸汽_NN 加热管_NN ，_PU 由_P 锅炉_NN ８_CD 到_VV 分离罐_NN ４_CD 的_DEG 进气口_NN 、_PU 出气口_NN 、_PU 沉淀罐_NN ６_CD 的_DEG 进气口_NN 、_PU 出气口_NN ，_PU 回到_VV 提炼罐_NN ２_CD ；_PU 提炼罐_NN ２_CD 、_PU 分离罐_NN ４_NN 、_PU 水_NN 洗罐_VV ５_CD 和_CC 沉淀_JJ 罐_NN ６_OD 的_DEG 外壁_NN 均_AD 设有_VV 与_P 液面_NN 计位器_NN 和_CC 温度_NN 表_NN 。_PU
+提炼罐_NN ２_CD 、_PU 水洗罐_NN ５_CD 内_LC 设有_VV 搅拌_NN 装置_NN 和_CC 调速_JJ 变频_NN 电机_NN 。_PU
+气压_NN 过滤器_NN ３_CD 内_LC 设有_VV 滤芯网_NN 、_PU 滤布袋_NN 。_PU
+分离罐_NN ４_CD 、_PU 沉淀_VV 罐_NN ６_CD 中_LC 的_DEG 蒸汽_NN 加热管_NN 为_VC 回转管_NN 。_PU
+污水_NN 处理器_NN ９_CD 中_LC 设有_VV 三_CD 级_M 前置_NN 隔_VV 油池_NN 。_PU
+提炼罐_NN ２_CD 、_PU 分离罐_NN ４_NN 、_PU 水_NN 洗罐_VV ５_CD 和_CC 沉淀罐_NN ６_CD 的_DEG 上方_NN 均_AD 设有_VV 活性碳_NN 排气_NN 装置_NN １０_CD 。_PU
+设备_NN 装置_NN 结构_NN 及_CC 流程_NN ：_PU
+蒸汽_VV 锅炉_NN ８_CD 通过_P 输汽管_NN 连接_VV 锥底形_JJ 提炼罐_NN ２_CD ，_PU 通过_P 蒸汽_NN 加热_VV 至_VV 油水_NN 分离_VV 后_LC ，_PU 通过_P 输油管_NN 连接_VV 气压_NN 过滤器_NN ３_CD ，_PU 过滤_VV 后_LC 通过_P 输油管_NN 连接_VV 锥底形_JJ 分离罐_NN ４_CD ，_PU 沉淀_JJ 水份_NN 后_LC 输入_VV 锥底形_JJ 水洗罐_NN ５_CD ，_PU 通过_P 水洗_NN 后_LC 再_AD 输入_VV 锥底形_JJ 沉淀罐_NN ６_CD ，_PU 通过_P 沉淀_VV 使_VV 油水_NN 分离_VV 后_LC ，_PU 成品_NN 油_NN 输入_VV 储油桶_NN ７_NN 中_LC ；_PU 污水_NN 排入_VV 污水_NN 处理器_NN ９_CD 中_LC ，_PU 达标_VV 后_LC 循环_VV 到_VV 水_NN 塔供_VV 锅炉_NT 使用_VV 。_PU
+利用_VV 地沟油_NN 提炼_VV 工业_NN 油脂_NN 的_DEC 方法_NN ，_PU 包括_VV 以下_JJ 工艺_NN 步骤_NN ：_PU
+Ａ_OD ．_PU 打开_VV 相应蒸_NN 汽管_NN 阀门_NN 和_CC 蒸汽_VV 加热管_NN 阀门_NN ；_PU 打开_VV 活性碳_NN 排气_NN 装置_NN １０_CD ；_PU
+Ｂ_OD ．_PU 用_P 泥浆泵_NN 将_BA 原料池_NN １_CD 中_LC 的_DEG 地沟油_NN 输送_VV 到_VV 提炼罐_NN ２_CD 中_LC ，_PU 其中_NN 的_DEG 搅拌_NN 装置_NN 由_P 调速_NN 变频_NN 电机_NN 带动_VV ，_PU 搅拌_VV 转速_VV 为_VC ０_CD －_PU ２０_CD ｒ／ｍｉｎ_M ；_PU 当_P 温度_NN 表达_VV 到_VV ８０_CD ℃_M 、_PU 同时_AD 通过_VV 液面_NN 计位器_NN 观察_VV 油水_NN 达到_VV 液化_NN 状态_NN 时_LC ，_PU 停止_VV 蒸汽_NN 输入_VV ；_PU 开启_VV 搅拌_VV 装置_NN 搅拌_VV ２．５_CD 小时_M 后_LC ，_PU 打开_VV 出料口_NN 阀门_NN ，_PU 将_BA 液化_VV 后_LC 的_DEG 半成品_NN 油料_NN 用_P 油泵_NN 输出_VV 到_VV 气压_NN 过滤器_NN ３_CD 中_LC ；_PU 其中_NN 的_DEG 油脚渣_NN 过滤_VV 于_P 滤芯网_NN 、_PU 滤布袋_NN 内_LC ，_PU 油水_NN 混合_VV 液_NN 由_P 油泵_NN 输入_VV 到_VV 分离罐_NN ４_NN 中_LC ；_PU
+Ｃ_OD ．_PU 油水_NN 混合_VV 液_NN 输入_VV 到_VV 分离罐_NN ４_CD 后_LC ，_PU 在_P 温度_NN 为_VC ８_CD －_PU １５_CD ℃_M 的_DEC 状态_NN 下_LC 静_AD 置_VV １．５_CD －_PU ２_CD 小时_M 沉淀_VV ，_PU 油_NN 与_CC 水_NN 完全_AD 分离_VV ，_PU 从_P 液面_NN 计位器_NN 观察_NN ，_PU 当_P 油水_NN 结合_VV 面_NN 高于_VV 出料口_NN 时_LC ，_PU 打开_VV 罐体_NN 底部_NN 排污阀_NN ，_PU 缓慢_AD 排出_VV 污水_NN ，_PU 直_AD 至_P 油水_NN 结合面_NN 略_AD 低于_VV 出料口_NN 时_LC ，_PU 关闭_JJ 排污阀_NN ，_PU 打开_VV 出料口_NN 阀门_NN ，_PU 水面_NN 上_LC 层_NN 的_DEG 半净油脂_NN 输入_VV 到_VV 水洗罐_NN ５_CD ，_PU 罐锥体_NN 内剩_NN 余_NN 污水_NN 输入_VV 到_VV 污水_NN 处理器_NN ９_CD 的_DEG 前置_NN 隔_VV 油_NN 池_VV ，_PU 经_P 三_CD 级_M 隔油池_NN ，_PU 将_BA 略_AD 剩_VV 油脂_NN 的_DEC 净_JJ 污水_NN 输入_VV 到_VV 污水池_NN 中_LC ；_PU
+Ｄ_OD ．_PU 半净_NN 油脂_NN 输入_VV 水洗罐_NN ５_CD 后_LC ，_PU 通过_P 蒸汽管_NN 冲入_VV 蒸汽_NN ，_PU 加热_VV 到_VV ５０８０_CD ℃_M ，_PU 并_CC 加入_VV 比例_NN 为_VC ５_CD ‰_PU 食盐粉_NN ，_PU 蒸汽_VV 里_LC 的_DEG 水份_NN 和_CC 食盐粉_NN 与_P 油脂_NN 经_P 搅拌_NN 装置_NN 混合_VV 搅拌_VV ，_PU 约_AD １．５_CD －_PU ２_CD 小时_M 后_LC ，_PU 输入_VV 到_VV 沉淀罐_NN ６_CD 中_LC ；_PU
+Ｅ_OD ．_PU 半净_NN 油脂_NN 输入_VV 到沉_JJ 淀罐_NN ６_CD 后_LC ，_PU 在_VV 在_P 温度_NN 为_VC ８_CD －_PU １５_CD ℃_M 的_DEC 状态_NN 下_LC 静_AD 置_VV １．５_CD －_PU ２_CD 小时_M 沉淀_VV ，_PU 油_NN 与_CC 水_NN 完全_AD 分离_VV ，_PU 从_P 液面_NN 计位器_NN 观察_NN ，_PU 当_P 油水_NN 结合_VV 面_NN 高于_VV 出料口_NN 时_LC ，_PU 打开_VV 罐体_NN 底部_NN 排污阀_NN ，_PU 缓慢_AD 排出_VV 污水_NN ，_PU 直_AD 至_P 油水_NN 结合面_NN 略_AD 低于_VV 出料口_NN 时_LC ，_PU 关闭_JJ 排污阀_NN ，_PU 打开_VV 出料口_NN 阀门_NN ，_PU 水面_NN 上_LC 层_NN 的_DEG 净油脂_NN 输入_VV 到_VV 储油桶_NN ７_CD ；_PU 罐锥体_NN 内_LC 剩余_VV 污水_NN 输入_VV 到_VV 污水_NN 处理器_NN ９_CD 的_DEG 前置_NN 隔_VV 油_NN 池_VV ，_PU 经_P 三_CD 级_M 隔油池_NN ，_PU 将_BA 略_AD 剩_VV 油脂_NN 隔离_VV 后_LC 的_DEG 净_JJ 污水_NN 输入_VV 到_VV 污水池_NN 中_LC 。_PU
+设备_NN 制造_NN 及_CC 工艺_NN 流程_NN ：_PU
+１_CD 、_PU 原料池_NN
+以_P ０．４_CD ｃｍ_M 厚_JJ 钢板_NN 制成_VV 为_VC １_CD 立方米_M 的_DEG 容积_NN （_PU 也_AD 可_VV 根据_P 实际_JJ 情况_NN 确定_VV 容积_NN ）_PU ，_PU 回收_VV 的_DEC 地沟_NN 油_NN 原料_NN 倒入_VV 原料池_NN ，_PU 用_P 泥浆泵_NN 输送_VV 到_VV 提炼罐_NN ２_NN 中_LC 。_PU
+２_CD 、_PU 提炼_VV 罐_NN
+以_P ０．４_CD ｃｍ_M 厚_JJ 钢板_NN 制成_VV ，_PU 直径_NN 和_CC 高度_NN 比_NN 为_VC ２_CD :_PU ５_CD 的_DEG 柱_NN 形_NN 锥底_NN 形状_NN ，_PU 其_PN 目的_NN 一_CD 是_VC 提炼_VV 罐_NN ２_CD 的_DEG 口径_NN 小_VA ，_PU 便于_VV 收集_VV 处理_VV 散发_VV 异味_NN ；_PU 二_CD 是_VC 锥底_NN 便于_VV 提炼_VV 完成_VV 后_LC 的_DEG 半成_JJ 品集_NN 中_LC 输入_VV 下道_NN 工序_NN 。_PU
+提炼罐_NN ２_CD 内_LC 设置_VV 直冲_JJ 蒸汽管_NN ，_PU 用_P 蒸汽_NN 对_P 原料_NN 加热_NN 和_CC 并_CC 与_P 其_PN 混合_VV 为_VC 油水_NN 混合_VV 液_NN ；_PU 还_AD 设有_VV 搅拌_NN 装置_NN ，_PU 搅拌_NN 装置_NN 以_MSP 调速_VV 变频_NN 电机_NN 为_VC 动力_NN ，_PU 搅拌_VV 转速_NN 设置_VV 为_VC ０_CD －_PU ２０_CD ｒ／ｍｉｎ_M 。_PU
+搅拌_NN 装置_NN 的_DEG 作用_NN 是_VC 使_VV 原料_NN 在_P 蒸汽_JJ 加热_NN 时_LC 混合_VV 均匀_VA ，_PU 快速_AD 达到_VV 提炼_NN 要求_VV 的_DEC 温度_NN ，_PU 节约_VV 蒸汽_NN ，_PU 提高_VV 效率_NN 。_PU
+在_P 提炼罐_NN ２_CD 外壁_NN 安装_VV 一_CD 个_M 与_P 提炼罐_NN 高度_NN 一致_VA 的_DEC 液面_NN 计位器_NN ，_PU 其_PN 目的_NN 是_VC 便于_VV 观察_VV 原料_NN 的_DEG 液化_NN 状态_NN ，_PU 在_P 另_DT 一_CD 侧_NN 安装_VV 一_CD 个_M 温度_NN 表_NN ，_PU 便于_P 观察_VV 提炼_VV 时_LC 的_DEG 实时_NN 温度_NN ，_PU 当_P 温度_NN 达到_VV 要求_VV 时_LC ，_PU 同时_AD 通过_P 计位器_NN 观察_VV 达到_VV 液化_NN 状态_NN 时_LC ，_PU 立即_AD 停止_VV 输入_NN 蒸汽_NN ，_PU 更_AD 好_VA 地_DEV 节约_VV 能源_NN 。_PU
+罐_NN 上_NN 端高_NN ５０_CD ｃｍ_M 处_NN 安装_VV 活性炭_NN 排气_NN 装置_NN ，_PU 收集_VV 提炼_VV 时_LC 散发_VV 的_DEC 异味_NN ，_PU 经_P 活性炭_NN 吸_VV 滤_NN 处理_NN 后_LC ，_PU 通过_P 室外_NN １０_CD ｍ高_M 的_DEC 排气管_NN 排出_VV ，_PU 解决_VV 了_AS 异味_NN 问题_NN 。_PU
+通过_P 提炼罐_NN ２_CD 内_LC 蒸汽_NN 温度_NN 达到_VV ８０_CD ℃_M 并_CC 搅拌_VV ２．５_CD 小时_M 后_LC ，_PU 原料_NN 充分_AD 液化_VV ，_PU 油_NN 、_PU 渣_NN 、_PU 水_NN 已_AD 明显_AD 分离_VV 。_PU
+将_AD 液化_VV 后_LC 的_DEG 半成品_NN 油经_NN 提炼_VV 罐_NN 底部_NN 出料口_NN 输出_VV 到_VV 气压_NN 过滤器_NN ３_CD 中_LC 。_PU
+３_CD 、_PU 气压_NN 过滤器_NN
+以_P 空压机_NN 、_PU 高_JJ 压泵_NN 、_PU 滤芯网_NN 、_PU 滤布_NN 构成_VV 。_PU
+通过_P 空压机_NN 和_CC 高_JJ 压泵_NN 的_DEG 作用_NN ，_PU 将_BA 输入_VV 半成_JJ 品油_NN 中_LC 的_DEG 油脚渣_NN 过滤_VV 于_P 滤布袋_NN 内_LC 。_PU
+油水_NN 混合_VV 液再_NN 进入_VV 分离罐_NN ４_NN 中_LC ，_PU 进入_VV 沉淀_NN 工序_NN ，_PU 滤布袋_NN 内_LC 的_DEG 油脚渣_NN 用_P 抽吸泵_NN 输入_VV 到_VV 搅拌机_NN ，_PU 添加_VV 辅料_NN （_PU 谷壳_NN 或_CC 锯木屑_NN ）_PU 充分_AD 搅拌_VV ，_PU 搅拌_VV 至_VV 稠糊状_NN 后_LC ，_PU 通过_P 榨包_VV 进入_VV 液压_NN 榨油机_NN 压榨_VV ，_PU 压榨_VV 的_DEC 油水_NN 混合_VV 液_DER 再_AD 输入_VV 分离罐_NN ４_CD 沉淀_VV ，_PU 压干_VV 的_DEC 油饼_NN 脚料_NN 投入_VV 锅炉_NN 中_LC 作为_VV 燃料_NN ，_PU 可_VV 替代_VV 部分_NN 燃煤_VV 。_PU
+４_CD 、_PU 分离_VV 罐_NN
+以_P ０．４_CD ｃｍ_M 钢板_NN 制成_VV 圆柱形_JJ 锥底_NN 形状_NN ，_PU 内置_NN 蒸汽_VV 加热管_NN ，_PU 确保_VV 液体_NN 温度_NN 在_P ８_CD －_PU １５_CD ℃_M ，_PU 外置_NN 液面_NN 计位器_NN 和_CC 测温表_NN ，_PU 锥体_NN 下端_NN 为_VV 污水_NN 排出口_NN ，_PU 在_P 锥体_NN 中部_NN 开设_VV 出料口_NN ，_PU 罐_NN 上端_NN 高_VA ５０_CD ｃｍ_M 处_NN 安装_VV 活性炭_NN 排气_NN 装置_NN １０_CD 。_PU
+当_P 过滤_VV 后_LC 的_DEG 半成_JJ 品油_NN 输入_VV 分离罐_NN ４_CD 后_LC ，_PU 在_P 确保_NT ８１５_CD ℃_M 静止_JJ 状态_NN 下_LC ，_PU 进行_VV １．５_CD －_PU ２_CD 小时_M 的_DEG 沉淀_NN ，_PU 油_NN 、_PU 水_NN 已_AD 完全_AD 分离_VV ，_PU 从_P 计位器_NN 观察_NN ，_PU 当_P 油水_NN 结合面_NN 高于_VV 罐体_NN 出_VV 油孔_NN 时_LC ，_PU 打开_VV 罐体_NN 锥体_NN 底部_NN 排污阀_NN ，_PU 缓慢_AD 排出_VV 污水_NN ，_PU 直_AD 至_P 油水_NN 结合面_NN 低于_VV 出料口_NN ０．５_CD ｃｍ_M 时_LC ，_PU 立即_AD 关闭_VV 排污阀_NN ，_PU 这时_NT ，_PU 水面_NN 上_LC 层_NN 的_DEG 次净油脂_NN 从_P 出料_NN 口_NN 直接_AD 输入_VV 水洗罐_NN ５_CD 。_PU
+次_M 净_JJ 油脂_NN 输出_VV 完毕_VV ，_PU 将_BA 剩余_NN 锥体_NN 的_DEC 污水_NN 输入_VV 污水_NN 处理器_NN ９_CD 的_DEG 前置_NN 的_DEC 隔油池_NN ，_PU 隔油池_NN 将_BA 略剩_NN 的_DEC 油脂_NN 隔离_VV 后_LC ，_PU 净_JJ 污水_NN 进入_VV 污水池_NN ，_PU 进行_VV 处理_NN 过程_NN 。_PU
+５_CD 、_PU 水洗_NN 罐_NN
+其_PN 制造_VV 材质_NN 、_PU 形状_NN 及_CC 结构_NN 与_CC 提炼罐_NN ２_CD 一致_VA ，_PU 当_P 次_M 净油脂_NN 输入_VV 水洗罐_NN ５_CD 后_LC ，_PU 通过_P 蒸汽管_NN 直接_AD 冲入_VV 蒸汽_JJ 加热_NN ，_PU 并_CC 加入_VV 比例_NN 为_VC ５_CD ‰_PU 的_DEG 食盐粉_NN ，_PU 温度_NN 达到_VV ５０８０_CD ℃_M 时_LC ，_PU 蒸汽_VV 里_LC 的_DEG 水份_NN 、_PU 盐粉_NN 与_P 油脂_NN 混合_VV 为_VC 油水_NN 混合_VV 液_NN 经_P 搅拌_NN 装置_NN 搅拌_VV 约_AD １．５２_CD 小时_M 后_LC ，_PU 水份_NN 和_CC 盐粉_NN 将_BA 吸附_NN 油脂_NN 中_LC 的_DEG 浑蚀色_NN 及_CC 微状_JJ 杂质_NN ，_PU 油脂_NN 被_SB 进一步_AD 净化_VV ，_PU 输入_VV 沉淀_JJ 罐_NN ６_CD 。_PU
+６_CD 、_PU 沉淀罐_NN
+其_PN 设置_VV 与_P 分离罐_NN ４_CD 的_DEG 内_JJ 结构_NN 一致_VA ，_PU 油水_NN 混合_VV 液_NN 输入_VV 沉淀_JJ 罐_NN ６_CD 后_LC ，_PU 经_P 加热_NN 沉淀_VV ，_PU 得到_VV 净_JJ 油脂_NN ，_PU 将_BA 其_PN 输入_VV 储油桶_NN ７_CD 。_PU
+７_CD 、_PU 污水_NN 处理器_NN
+设有_VV 三_CD 级_M 前置_NN 隔_VV 油_NN 池_VV ，_PU 主要_AD 解决_VV 在_P 污水_NN 排放_NN 中_LC 存在_VV 少量_CD 的_DEG 油脂_NN 。_PU
+隔油池_NN 中_LC 的_DEG 油脂_NN 定期_AD 回收_VV 后_LC 进入_VV 车间_NN 提炼_VV ，_PU 污水_NN 经_P 处理_NN 达标_VV 后_LC 进入_VV 水塔_NN ，_PU 用于_VV 锅炉_NN 用水_NN 及_CC 冲洗_VV 地面_NN 、_PU 洗车_NN 等_ETC 。_PU
+原料_NN 地_DEC 沟油_NN 经_P 液化_NN →_PU 过滤_NN →_PU 分离_VV →_PU 水洗_NN →_PU 沉淀_NN 过程_NN ，_PU 同时_AD 进行_VV 加热_NN 后_LC ，_PU 逐级_NN 进行_VV 净化_NN ，_PU 解决_VV 了_AS 原始_JJ 提炼_NN 方法_NN 存在_VV 的_DEC 水_NN 、_PU 杂_AD 超标_VV 的_DEC 主要_JJ 问题_NN 及_CC 人工_NN 操作_NN 的_DEC 安全_NN 隐患_NN ，_PU 活性炭_NN 排气_NN 装置_NN １０_CD 解决_VV 了_AS 提炼_VV 时_LC 散发_VV 的_DEC 异味_NN 问题_NN 。_PU
+本_DT 提炼_NN 方法_NN 同时_AD 也_AD 提高_VV 了_AS 自动化_NN 程度_NN 。_PU
+其_PN 最终_JJ 产品_NN 的_DEG 含_VV 杂量_NN 在_P １_CD －_CC ２％_CD 内_LC 。_PU
+１_CD ．_PU 一_CD 种_M 利用_VV 地沟油_NN 提炼_VV 工业_NN 油脂_NN 的_DEC 成套_NN 设备_NN ，_PU 包括_VV 原料池_NN （_PU １_CD ）_PU 、_PU 提炼罐_NN （_PU ２_CD ）_PU 、_PU 气压_NN 过滤器_NN （_PU ３_CD ）_PU 、_PU 分离罐_NN （_PU ４_CD ）_PU 、_PU 水洗罐_NN （_PU ５_CD ）_PU 、_PU 沉淀罐_NN （_PU ６_CD ）_PU ，_PU 前级_JJ 出料_NN 口到_VV 后_DT 级_M 进料_NN 口_NN 经_P 油泵_NN 依次_AD 连接_VV ，_PU 其_PN 特征_NN 在于_VV ，_PU 还_AD 包括_VV 锅炉_NN （_PU ８_CD ）_PU 和_CC 污水_NN 处理器_NN （_PU ９_CD ）_PU ；_PU 分离罐_NN （_PU ４_CD ）_PU 、_PU 沉淀罐_NN （_PU ６_CD ）_PU 的_DEG 出料口_NN 位于_VV 罐斗_NN 的_DEG 中部_NN ，_PU 分离罐_NN （_PU ４_CD ）_PU 、_PU 沉淀_JJ 罐_NN （_PU ６_CD ）_PU 的_DEG 底端_NN 出口_VV 为_VC 排污口_NN ，_PU 与_P 污水_NN 处理器_NN （_PU ９_CD ）_PU 连接_VV ；_PU 提炼罐_NN （_PU ２_CD ）_PU 、_PU 水洗罐_NN （_PU ５_CD ）_PU 的_DEG 顶部_NN 连接蒸_NN 汽管_NN ，_PU 与_P 锅炉_NN （_PU ８_CD ）_PU 相连_VV ；_PU 分离罐_NN （_PU ４_CD ）_PU 、_PU 沉淀_JJ 罐_NN （_PU ６_CD ）_PU 中_LC 设有_VV 蒸汽_VV 加热管_NN ，_PU 由_P 锅炉_NN （_PU ８_CD ）_PU 到_P 分离罐_NN （_PU ４_CD ）_PU 的_DEG 进气口_NN 、_PU 出气口_NN 、_PU 沉淀罐_NN （_PU ６_CD ）_PU 的_DEG 进气口_NN 、_PU 出气口_NN ，_PU 回到_VV 提炼罐_NN （_PU ２_CD ）_PU ；_PU 提炼罐_NN （_PU ２_CD ）_PU 、_PU 分离罐_NN （_PU ４_CD ）_PU 、_PU 水洗罐_NN （_PU ５_CD ）_PU 和_CC 沉淀罐_NN （_PU ６_CD ）_PU 的_DEG 外壁_NN 均_AD 设有_VV 液面_NN 计位器_NN 和_CC 温度表_NN 。_PU
+２_CD ．_PU 根据_P 权利_NN 要求_NN １_CD 所_MSP 述_VV 的_DEC 利用_VV 地沟油_NN 提炼_VV 工业_NN 油脂_NN 的_DEC 成套_NN 设备_NN ，_PU 其_PN 特征_NN 在于_VV ，_PU 所_MSP 述_VV 的_DEC 提炼罐_NN （_PU ２_CD ）_PU 、_PU 水洗罐_NN （_PU ５_CD ）_PU 内_LC 设有_VV 搅拌_NN 装置_NN 和_CC 调速_NN 变频_NN 电机_NN 。_PU
+３_CD ．_PU 根据_P 权利_NN 要求_NN １_CD 所_MSP 述_VV 的_DEC 利用_VV 地沟油_NN 提炼_VV 工业_NN 油脂_NN 的_DEC 成套_NN 设备_NN ，_PU 其_PN 特征_NN 在于_VV ，_PU 所_MSP 述_VV 的_DEC 气压_NN 过滤器_NN （_PU ３_CD ）_PU 内_LC 设有_VV 滤芯网_NN 、_PU 滤布袋_NN 。_PU
+４_CD ．_PU 根据_P 权利_NN 要求_NN １_CD 所_MSP 述_VV 的_DEC 利用_VV 地沟油_NN 提炼_VV 工业_NN 油脂_NN 的_DEC 成套_NN 设备_NN ，_PU 其_PN 特征_NN 在于_VV ，_PU 所_MSP 述_VV 的_DEC 分离罐_NN （_PU ４_CD ）_PU 、_PU 沉淀_JJ 罐_NN （_PU ６_CD ）_PU 中_LC 的_DEG 蒸汽_JJ 加热管_NN 为_VC 回转管_NN 。_PU
+５_CD ．_PU 根据_P 权利_NN 要求_NN １_CD 所_MSP 述_VV 的_DEC 利用_VV 地沟油_NN 提炼_VV 工业_NN 油脂_NN 的_DEC 成套_NN 设备_NN ，_PU 其_PN 特征_NN 在于_VV ，_PU 所_MSP 述_VV 的_DEC 污水_NN 处理器_NN （_PU ９_CD ）_PU 中_LC 设有_VV 三_CD 级_M 前置_NN 隔_VV 油_NN 池_VV 。_PU
+６_CD ．_PU 根据_P 权利_NN 要求_NN １_CD 所_MSP 述_VV 的_DEC 利用_VV 地沟油_NN 提炼_VV 工业_NN 油脂_NN 的_DEC 成套_NN 设备_NN ，_PU 其_PN 特征_NN 在于_VV ，_PU 所_MSP 述_VV 的_DEC 提炼罐_NN （_PU ２_CD ）_PU 、_PU 分离罐_NN （_PU ４_CD ）_PU 、_PU 水洗罐_NN （_PU ５_CD ）_PU 和_CC 沉淀罐_NN （_PU ６_CD ）_PU 的_DEG 上方_NN 均_AD 设有_VV 活性碳_NN 排气_NN 装置_NN （_PU １０_CD ）_PU 。_PU
+７_CD ．_PU 一_CD 种_M 利用_VV 地沟油_NN 提炼_VV 工业_NN 油脂_NN 的_DEC 方法_NN ，_PU 其_PN 特征_NN 在于_VV ，_PU 包括_VV 以下_JJ 工艺_NN 步骤_NN ：_PU
+Ａ_OD ．_PU 打开_VV 相应蒸_NN 汽管_NN 阀门_NN 和_CC 蒸汽_VV 加热管_NN 阀门_NN ；_PU 打开_VV 活性碳_NN 排气_NN 装置_NN （_PU １０_CD ）_PU ；_PU
+Ｂ_OD ．_PU 用_P 泥浆泵_NN 将_BA 原料池_NN （_PU １_CD ）_PU 中_LC 的_DEG 地沟油_NN 吸入_VV 输送_VV 到_VV 提炼罐_NN （_PU ２_CD ）_PU 中_LC ，_PU 其中_NN 的_DEG 搅拌_NN 装置_NN 由_P 调速_NN 变频_NN 电机_NN 带动_VV ，_PU 搅拌_VV 转速_NN 为_VC ０_CD －_PU ２０_CD ｒ／ｍｉｎ_M ；_PU 当_P 温度_NN 表达_VV 到_VV ８０_CD ℃_M 、_PU 同时_AD 通过_VV 液面_NN 计位器_NN 观察_VV 油水_NN 达到_VV 液化_NN 状态_NN 时_LC ，_PU 停止_VV 蒸汽_NN 输入_VV ；_PU 开启_VV 搅拌_VV 装置_NN 搅拌_VV ２．５_CD 小时_M 后_LC ，_PU 打开_VV 出料口_NN 阀门_NN ，_PU 将_BA 液化_VV 后_LC 的_DEG 半成品_NN 油料_NN 用_P 油泵_NN 输出_VV 到_VV 气压_NN 过滤器_NN （_PU ３_CD ）_PU 中_LC ；_PU 其中_NN 的_DEG 油脚渣_NN 过滤_VV 于_P 滤芯网_NN 、_PU 滤布袋_NN 内_LC ，_PU 油水_NN 混合_VV 液_NN 由_P 油泵_NN 输入_VV 到_VV 分离罐_NN （_PU ４_CD ）_PU 中_LC ；_PU
+Ｃ_OD ．_PU 油水_NN 混合_VV 液_NN 输入_VV 到_VV 分离罐_NN （_PU ４_CD ）_PU 后_LC ，_PU 在_P 温度_NN 为_VC ８_CD －_PU １５_CD ℃_M 的_DEC 状态_NN 下_LC 静_AD 置_VV １．５_CD －_PU ２_CD 小时_M 沉淀_VV ，_PU 油_NN 与_CC 水_NN 完全_AD 分离_VV ，_PU 从_P 液面_NN 计位器_NN 观察_NN ，_PU 当_P 油水_NN 结合_VV 面_NN 高于_VV 出料口_NN 时_LC ，_PU 打开_VV 罐体_NN 底部_NN 排污阀_NN ，_PU 缓慢_AD 排出_VV 污水_NN ，_PU 直_AD 至_P 油水_NN 结合面_NN 略_AD 低于_VV 出料口_NN 时_LC ，_PU 关闭_JJ 排污阀_NN ，_PU 打开_VV 出料口_NN 阀门_NN ，_PU 水面_NN 上_LC 层_NN 的_DEG 半净油脂_NN 输入_VV 到_VV 水洗罐_NN （_PU ５_CD ）_PU ，_PU 罐锥体_NN 内剩_NN 余_NN 污水_NN 输入_VV 到_VV 污水_NN 处理器_NN （_PU ９_CD ）_PU 的_DEG 前置_NN 隔_VV 油_NN 池_VV ，_PU 经_P 三_CD 级_M 隔油池_NN ，_PU 将_BA 略_AD 剩_VV 油脂_NN 的_DEC 净_JJ 污水_NN 输入_VV 到_VV 污水池_NN 中_LC ；_PU
+Ｄ_OD ．_PU 半净_NN 油脂_NN 输入_VV 水洗罐_NN ５_CD 后_LC ，_PU 通过_P 蒸汽管_NN 冲入_VV 蒸汽_NN ，_PU 加热_VV 到_VV ５０_CD －_PU ８０_CD ℃_M ，_PU 并_CC 加入_VV 比例_NN 为_VC ５_CD ‰_PU 食盐粉_NN ，_PU 蒸汽_VV 里_LC 的_DEG 水份_NN 和_CC 食盐粉_NN 与_P 油脂_NN 经_P 搅拌_NN 装置_NN 混合_VV 搅拌_VV ，_PU 约_AD １．５_CD －_PU ２_CD 小时_M 后_LC ，_PU 输入_VV 到_VV 沉淀罐_NN （_PU ６_CD ）_PU 中_LC ；_PU
+Ｅ_OD ．_PU 半净_NN 油脂_NN 输入_VV 到_VV 沉淀罐_NN （_PU ６_CD ）_PU 后_LC ，_PU 在_P 温度_NN 为_VC ８_CD －_PU １５_CD ℃_M 的_DEC 状态_NN 下_LC 静置_VV １．５_CD －_PU ２_CD 小时_AD 沉淀_VV ，_PU 油_NN 与_CC 水_NN 完全_AD 分离_VV ，_PU 从_P 液面_NN 计位器_NN 观察_NN ，_PU 当_P 油水_NN 结合面_NN 高于_VV 出料口_NN 时_LC ，_PU 打开_VV 罐体_NN 底部_NN 排污阀_NN ，_PU 缓慢_AD 排出_VV 污水_NN ，_PU 直_AD 至_P 油水_NN 结合面_NN 略_AD 低于_VV 出料口_NN 时_LC ，_PU 关闭_JJ 排污阀_NN ，_PU 打开_VV 出料口_NN 阀门_NN ，_PU 水面_NN 上_LC 层_NN 的_DEG 净油脂_NN 输入_VV 到_VV 储油罐_NN （_PU ７_CD ）_PU ；_PU 罐锥体_NN 内_LC 剩余_VV 污水_NN 输入_VV 到_VV 污水_NN 处理器_NN （_PU ９_CD ）_PU 的_DEG 前置_NN 隔_VV 油_NN 池_VV ，_PU 经_P 三_CD 级_M 隔油池_NN ，_PU 将_BA 略_AD 剩_VV 油脂_NN 隔离_VV 后_LC 的_DEG 净_JJ 污水_NN 输入_VV 到_VV 污水池_NN 中_LC 。_PU
+﻿一_CD 种_M 保健_NN 球_NN ，_PU 包括_VV 球体_NN ，_PU 其_PN 特征_NN 在于_VV ：_PU 球体_NN 由_P 主副_JJ 半球_NN 组成_VV ，_PU 球体_NN 为_VC 空心_NN ，_PU 两_CD 半球体_NN 活动_AD 连接_VV ，_PU 球_NN 内_LC 装有_VV 一带_JJ 偏心轮_NN 的_DEC 微型_JJ 电机_NN ，_PU 通过_P 开关_NN 和_CC 电源_NN 连接_VV 。_PU
+利用_VV 偏心_NN 的_DEC 旋转_NN 使_VV 球体_NN 产生_VV 振动_NN ，_PU 对_P 手部_NN 穴位_NN 产生_VV 刺激_NN ，_PU 起到_VV 保健_VV 按摩_NN 作用_NN 。_PU
+本_DT 实用_JJ 新型_NN 属于_VV 一_CD 种_M 保健_NN 用品_NN ，_PU 特别_AD 涉及_VV 一_CD 种_M 保健球_NN 。_PU
+现有_JJ 的_DEG 保健球_NN 一般_AD 为_VC 一_CD 对_P 钢球_NN ，_PU 人们_NN 特别_AD 是_VC 老年人_NN 可_VV 用_P 它_PN 在_P 手_NN 中_LC 转动_VV 摩挲_NN ，_PU 起到_VV 活络_NN 手部_NN 关节_NN 及_CC 保健_NN 作用_NN 。_PU
+但_AD 这_DT 种_M 保健球_NN 按_P 摩作_NN 用_VV 不_AD 太_AD 明显_VA ，_PU 对_P 手部_NN 穴位_NN 的_DEG 刺激_NN 作用_NN 较_AD 弱_VA ，_PU 效果_NN 不_AD 太_AD 明显_VA 。_PU
+申请号_NN 为_VC ８５２０４３７６_CD 的_DEG 实用_JJ 新型_NN 公开_VV 了_AS 一_CD 种_M 表面_NN 有_VE 突出_JJ 点_NN 和_CC 小孔_NN 的_DEC 空心_JJ 健身球_NN ，_PU 其_PN 球体_NN 为_VC 空心_NN ，_PU 球壳_NN 上_LC 分布_VV 许多_CD 突_BA 出点_NN 和_CC 小孔_NN ，_PU 突_AD 出点_NN 是_VC 增加_VV 健_VV 身球_NN 对_P 手指_JJ 手掌_NN 穴位_NN 的_DEG 刺激_NN ，_PU 小孔_NN 是_VC 使_VV 球腔_NN 中_LC 的_DEG 芳香物_NN 或_CC 药物_NN 挥发_VV 出来_VV ，_PU 即使_CS 这样_AD ，_PU 由于_P 仅依_AD 靠_P 手部_NN 运动_VV 使球_NN 转动_VV 地_DEC 频率_NN 较_AD 低_VA ，_PU 对_P 手部_NN 穴部_NN 的_DEG 刺激_NN 仍然_AD 不_AD 够_AD 明显_VA 。_PU
+本_DT 实用_JJ 新型_NN 的_DEG 目的_NN 在于_VV 提供_VV 一_CD 种_M 对_P 手部_NN 穴位_NN 刺激_NN 频率_NN 高_VA 、_PU 按摩_NN 作用_NN 强_VA 的_DEC 保健_NN 球_NN 。_PU
+其_PN 技术_NN 方案_NN 为_VC ：_PU 球体_NN 由_P 主_JJ 副_JJ 两_CD 半球_NN 组成_VV ，_PU 球体_NN 为_VC 空心_NN ，_PU 两_CD 半球体_NN 活动_AD 连接_VV ，_PU 球_NN 内_LC 装有_VV 一带_JJ 偏心轮_NN 微型_NN 电机_NN ，_PU 通过_P 开关_NN 和_CC 电源_NN 连接_VV 。_PU
+所_MSP 述_VV 的_DEC 两_CD 半球_NN 螺纹_NN 连接_VV ，_PU 两_CD 半球_NN 中_LC 间有_VV 一_CD 定板_NN ，_PU 一面_NN 装有_VV 电池_NN ，_PU 一_CD 面_NN 有_VE 固定_JJ 电机_NN 的_DEG 肋板_NN ，_PU 主_JJ 半球_NN 内_LC 有_VE 两_CD 个_M 固定柱_NN 和_CC 固定_JJ 电机_NN 用_VV 的_DEC 肋板_NN ，_PU 固定板_NN 通过_P 螺钉_NN 和_CC 固定柱_NN 相_AD 连接_VV 。_PU
+所_MSP 述_VV 的_DEC 开关_NN 为_P 水银_NN 开关_NN ，_PU 主_JJ 副_JJ 半球_NN 上_LC 均_AD 有_VE 突起_VV 细纹_NN 。_PU
+由于_P 采用_VV 带_VV 偏心轮_NN 的_DEC 微型_JJ 电机_NN ，_PU 由于_P 偏心轮_NN 的_DEG 旋转_NN 而_MSP 使_VV 保健球_NN 较_AD 快速_VA 地_DEV 振动_VV ，_PU 从而_AD 对于_P 手部_NN 穴位_NN 产生_VV 较_AD 强_VA 的_DEC 刺激_NN 作用_NN ，_PU 按摩_VV 保健_NN 作用_NN 明显_VA 。_PU
+下面_NN 结合_VV 附图_NN 并_CC 通过_P 实施例_NN 进一步_AD 说明_VV 本_DT 实用_JJ 新型_NN ：_PU
+图_NN １_CD 为_VC 本_DT 实用_JJ 新型_NN 的_DEG 结构_NN 示意图_NN 。_PU
+实施例_NN ：_PU 由_P 主_JJ 半球_NN １_CD 、_PU 副_JJ 半球_NN ２_CD 组成_VV 保健球_NN 的_DEG 球体_NN ，_PU 主_JJ 副_JJ 半球_NN 螺纹_NN 连接_VV ，_PU 两_CD 半球_NN 中_LC 间有_VV 一_CD 固定板_NN ３_CD ，_PU 一_CD 面_NN 装有_VV 电池_NN ４_CD ，_PU 另_DT 一_CD 面_NN 有_VE 固定_JJ 微型_JJ 电机_NN ５_CD 的_DEG 肋板_NN ６_CD ，_PU 主_JJ 半球_NN １_CD 内_LC 有_VE 对称_P 两_CD 个_M 固定柱_NN ７_CD （_PU 其中_NN 一_CD 个_M 未_AD 示出_VV ）_PU 和_CC 固定_JJ 电机_NN ５_CD 的_DEG 肋板_NN ８_CD ，_PU 固定板_NN ３_CD 和_CC 固定柱_NN ７_CD 通过_P 螺钉_NN ９_CD 固定_VV 。_PU
+带有_VV 偏心轮_NN １０_CD 的_DEG 微型_JJ 电机_NN ５_CD 由_P 肋板_NN ６_CD 和_CC 肋板_NN ８_CD 卡紧_NN ，_PU 微型_JJ 电机_NN ５_CD 通过_P 水银_NN 开关_NN １１_CD 和_CC 电池_NN 连接_VV 。_PU
+在_P 球体_NN 表面_NN ，_PU 主_JJ 副_JJ 半球_NN 上_LC 均_AD 有_VE 突起_VV 的_DEC 细纹_NN １２_CD 。_PU
+主_JJ 副_JJ 半球_NN 上_LC 各_AD 有_VE 一_CD 圆凹_NN １３_CD ，_PU 便于_VV 平时_AD 平稳_AD 放置_VV 。_PU
+用_P 本_DT 实施例_NN 公开_VV 的_DEC 保健球_NN 锻炼_VV 时_LC ，_PU 将_BA 其_PN 握_VV 在_P 手中_NN ，_PU 并_CC 作_VV 转动_VV ，_PU 当_P 水银_NN 开关_NN 接通_VV 时_LC ，_PU 微型_JJ 电机_NN 带动_VV 偏心轮_NN 旋转_NN 产生_VV 振动_NN 对_P 手部_NN 穴位_NN 产生_VV 刺激_NN ，_PU 球体_NN 表面_NN 突起_VV 的_DEC 细纹_NN 更加_AD 增强_VV 了_AS 这_DT 一_CD 效果_NN ，_PU 保健_VV 作用_NN 明显_VA 。_PU
+１_CD 、_PU 一_CD 种_M 保健球_NN ，_PU 包括_VV 球体_NN ，_PU 其_PN 特征_NN 在于_VV ：_PU 球体_NN 由_P 主_JJ 副_JJ 两_CD 半球_NN 组成_VV ，_PU 且_CC 球体_NN 为_VC 空心_NN ，_PU 两_CD 半球体_NN 活动_AD 连接_VV ，_PU 球_NN 内_LC 装有_VV 一带_JJ 偏心轮_NN 的_DEC 微型_JJ 电机_NN ，_PU 通过_P 开关_NN 和_CC 电源_NN 连接_VV 。_PU
+２_CD 、_PU 如_P 权利_NN 要求_NN １_CD 所_MSP 述_VV 的_DEC 保健球_NN ，_PU 其_PN 特征_NN 在于_VV ：_PU 两_CD 半球_NN 螺纹_NN 连接_VV ，_PU 两_CD 半球_NN 中_LC 间有_VV 一_CD 固定板_NN ，_PU 一_CD 面_NN 装有_VV 电池_NN ，_PU 一_CD 面_NN 有_VE 固定_JJ 电机_NN 用_VV 的_DEC 肋板_NN ，_PU 主_JJ 半球_NN 内_LC 有_VE 两_CD 个_M 固定柱_NN 和_CC 固定_JJ 电机_NN 用_VV 的_DEC 肋板_NN ，_PU 固定板_NN 通过_P 螺钉_NN 和_CC 固定柱_NN 相_AD 连接_VV 。_PU
+３_CD 、_PU 如_P 权利_NN 要求_NN １_CD 或_CC ２_CD 所_MSP 述_VV 的_DEC 保健球_NN ，_PU 其_PN 特征_NN 在于_VV ：_PU 所_MSP 述_VV 的_DEC 开关_NN 为_VC 水银_NN 开关_NN 。_PU
+４_CD 、_PU 如_P 权利_NN 要求_NN １_CD 或_CC ２_CD 所_MSP 述_VV 的_DEC 保健球_NN ，_PU 其_PN 特征_NN 在于_VV ：_PU 主_JJ 副_JJ 半球_NN 上_LC 均_AD 有_VE 突起_VV 的_DEC 细纹_NN 。_PU
+５_CD 、_PU 如_P 权利_NN 要求_NN ３_CD 所_MSP 述_VV 的_DEC 保健球_NN ，_PU 其_PN 特征_NN 在于_VV ：_PU 主_JJ 副_JJ 半球_NN 上_LC 均_AD 有_VE 突起_VV 的_DEC 细纹_NN 。_PU
+﻿一_CD 种_M 计算机_NN 软_JJ 驱_NN 、_PU 硬盘_NN 抗_VV 冲击架_NN ，_PU 是_VC 在_P 一架体_NN 内_LC 固装_VV 有_VE 软驱_NN 和_CC 硬盘_NN ，_PU 在_P 架体_NN 内壁_NN 与_CC 软驱_NN 及_CC 硬盘_NN 之间_LC 填充_VV 有_VE 粘_P 弹性_JJ 阻尼_NN 材料_NN 。_PU
+本_DT 实用_JJ 新型_NN 结构_NN 简单_VA ，_PU 加工_NN 制造_NN 容易_VA ，_PU 耐_VV 冲击_NN 、_PU 振动_NN 性能_NN 好_VA ，_PU 可_VV 有效_AD 改善_VV 软_JJ 驱_NN 、_PU 硬盘_NN 的_DEG 工作_NN 环境_NN ，_PU 有效_JJ 拓展_NN 计算机_NN 操作_VV 使用_NN 范围_NN ，_PU 提高_VV 其_PN 使用_VV 的_DEC 可靠性_NN ，_PU 可_VV 满足_VV 特种_JJ 行业_NN 对_P 计算机_NN 使用_NN 性能_NN 的_DEG 要求_NN ，_PU 适于_VV 作为_P 振动_JJ 冲击_NN 较_AD 大_VA 的_DEC 环境_NN 下_LC 计算_VV 软_JJ 驱_NN 、_PU 硬盘_NN 的_DEG 固定_NN 装置_NN 。_PU
+本_DT 实用_JJ 新型_NN 是_VC 一_CD 种_M 计算机_NN 软_JJ 驱_NN 、_PU 硬盘_NN 抗_VV 冲击架_NN 。_PU
+随着_P 计算机_NN 制造_NN 工艺_NN 的_DEG 不断_JJ 进步_NN 和_CC 完善_VV ，_PU 其_PN 软驱_NN 和_CC 硬盘_NN 的_DEG 结构_NN 越来越_AD 精密_VV ，_PU 制造_VV 及_CC 安装_VV 精度_NN 极_AD 高_VA ，_PU 性能_NN 相当_AD 可靠_VA 。_PU
+也_AD 正_AD 由于_P 其_PN 精度_NN 高_VA ，_PU 因此_AD ，_PU 它们_PN 也_AD 存在_VV 一_CD 个_M 致命_NN 的_DEC 弱点_NN ，_PU 即_AD 抗_VV 振动_NN ，_PU 冲击_NN 性能_NN 较_AD 差_VA ，_PU 在_P 外界_NN 冲击_NN ，_PU 振动_NN 作用_NN 下_LC ，_PU 将_BA 直接_AD 损坏_VV 其_PN 磁头_NN ，_PU 导致_VV 其_PN 无法_AD 正常_AD 工作_VV ，_PU 这_PN 就_AD 给_P 特殊_JJ 行业_NN 的_DEG 计算机_NN 应用_VV 带来_VV 诸多_CD 不便_NN ，_PU 如_P 军队_NN 、_PU 野外_NN 作业_NN 等_ETC 领域_NN 。_PU
+本_DT 实用_JJ 新型_NN 的_DEG 目的_NN 在于_VV 克服_VV 现有_JJ 技术_NN 之_DEG 不_AD 足而_AD 提供_VV 一_CD 种_M 结构_NN 简单_VA ，_PU 加工_VV 制造_NN 容易_VA ，_PU 具良_VV 好_VA 减振_NN 效果_NN 的_DEC 计算软_NN 驱_NN 、_PU 硬盘_NN 抗冲_VV 击架_NN 。_PU
+本_DT 实用_JJ 新型_NN 是_VC 采用_VV 下述_JJ 方案_NN 实现_VV 的_SP ：_PU 在_P 一架体_NN 内_LC 固装_VV 有_VE 软驱_NN 和_CC 硬盘_NN ，_PU 在_P 架体_NN 内壁_NN 与_CC 软驱_NN 及_CC 硬盘_NN 之间_LC 填充_VV 有_VE 粘_P 弹性_JJ 阻尼_NN 材料_NN 。_PU
+本_DT 实用_JJ 新型_NN 的_DEG 具体_JJ 结构_NN ，_PU 下面_NN 结合_VV 附图_NN 详细_JJ 说明_NN ：_PU
+附图_NN 为_VC 本_DT 实用_JJ 新型_JJ 立体图_NN 。_PU
+见_VV 附图_NN ，_PU 本_DT 实用_JJ 新型_NN 一_CD 种_M 计算机_NN 软_JJ 驱_NN 、_PU 硬盘_NN 抗_VV 冲击架_NN 是_VC 在_P 一架体_NN １_CD 内_LC 固装_VV 有_VE 软驱_NN ２_CD 、_PU 硬盘_NN ３_CD ，_PU 在_P 架体_NN １_CD 内壁_NN 与_CC 软驱_NN ２_CD 、_PU 硬盘_NN ３_CD 之间_LC 填充_VV 有_VE 粘_P 弹性_JJ 阻尼_NN 材料_NN ４_CD 。_PU
+本_DT 实用_JJ 新型_NN 的_DEG 工作_NN 原理_NN 简述_VV 如下_VV ：_PU 本_DT 实用_JJ 新型_NN 由于_P 将_BA 软驱_NN 、_PU 硬盘_NN 安装_VV 在_P 抗冲_NN 击架_NN 内_LC 并_CC 在_P 架体_NN 内壁_NN 与_CC 软驱_NN 、_PU 硬盘_NN 之间_LC 充有_VV 粘弹性_NN 阻尼_NN 材料_NN ，_PU 因此_AD ，_PU 当_P 遇_VV 外力_NN 冲击_NN 、_PU 振动_VV 时_LC ，_PU 其_PN 冲击_NN 振动_NN 能量_VV 的_DEC ９０％_CD 将_BA 由_P 粘弹性_NN 阻尼_NN 材料_NN 吸收_VV ，_PU 有效_VA 地_DEV 降低_VV 了_AS 软_JJ 驱_NN 、_PU 硬盘_NN 所_MSP 受_VV 的_DEC 冲击_NN 力_NN ，_PU 提高_VV 了_AS 其_PN 耐_VV 冲击_NN 、_PU 振动_NN 能力_NN ，_PU 采用_VV 本_DT 实用_JJ 新型_NN 地_DEG 结构_NN 方式_NN ，_PU 可_VV 使_VV 软_JJ 驱_NN 、_PU 硬盘_NN 的_DEC 抗_VV 振动_NN 、_PU 冲击_NN 性能_NN 指标_AD 分别_AD 由_P １_CD 克_M 和_CC １０_CD 克_M 提高_VV 到_VV ３_CD 克_M 和_CC １５_OD 克_M ，_PU 极_AD 大地_AD 改善_VV 了_AS 软驱_NN 、_PU 硬盘_NN 对_P 外部_NN 工作_NN 环境_NN 的_DEG 要求_NN ，_PU 基本上_AD 能_VV 满足_VV 军用_NN 及_CC 野外_NN 作业_NN 对_P 计算机_NN 性能_NN 的_DEG 要求_NN 。_PU
+有效_JJ 拓展_NN 计算机_NN 的_DEG 使用_NN 范围_NN 。_PU
+综上所述_AD ，_PU 本_DT 实用_JJ 新型_NN 结构_NN 简单_VA ，_PU 加工_VV 制造_NN 容易_VA ，_PU 耐_VV 冲击_NN 、_PU 振动_NN 性能_NN 好_VA ，_PU 可_VV 有效_AD 改善_VV 软_JJ 驱_NN 、_PU 硬盘_NN 的_DEG 工作_NN 环境_NN ，_PU 有效_JJ 拓展_NN 计算机_NN 操作_VV 使用_NN 范围_NN ，_PU 提高_VV 其_PN 使用_VV 的_DEC 可靠性_NN ，_PU 可_VV 满足_VV 特种_JJ 行业_NN 对_P 计算机_NN 使用_NN 性能_NN 的_DEG 要求_NN ，_PU 适于_VV 作为_P 振动_JJ 冲击_NN 较_AD 大_VA 的_DEC 环境_NN 下_LC 计算_VV 软_JJ 驱_NN 、_PU 硬盘_NN 的_DEG 固定_NN 装置_NN 。_PU
+一_CD 种_M 计算机_NN 软_JJ 驱_NN 、_PU 硬盘_NN 抗_VV 冲击架_NN ，_PU 其_PN 特征_NN 在于_VV 在_P 一架体_NN １_CD 内_LC 固装_VV 有_VE 软驱_NN ２_CD 、_PU 硬盘_NN ３_CD ，_PU 在_P 架体_NN １_CD 内壁_NN 与_CC 软驱_NN ２_CD 、_PU 硬盘_NN ３_CD 之间_LC 填充_VV 有_VE 粘_P 弹性_JJ 阻尼_NN 材料_NN ４_CD 。_PU
+﻿本_DT 发明_NN 提供_VV 了_AS 一_CD 种_M 具有_VV 至少_AD 三维_VA 的_DEC 多维观_NN 感图_NN 像_VV 的_DEC 图片_NN ，_PU 涉及_VV 图片_NN 技术_NN 领域_NN ，_PU 用于_VV 张贴_VV 广告_NN 等_ETC 。_PU
+它_PN 包括_VV 图案_NN 底图层_NN ３_CD 、_PU 覆盖_VV 在_P 图案_NN 底图层_NN ３_CD 的_DEG 正_JJ 表面_NN 的_DEC 光学_NN 透镜片_NN ，_PU 从而_AD 组成_VV 复合_JJ 基片_NN ，_PU 其_PN 特点_NN 在于_VV ：_PU 在_P 所_MSP 述_VV 复合_JJ 基片_NN 的_DEC 至少_AD 一_CD 个_M 外_JJ 表面_NN 粘有_VV 胶贴_NN ６_CD ，_PU 本_DT 发明_NN 结构_NN 简单_VA ，_PU 在_P 使用_VV 时_LC 不_AD 产生_VV 人工_JJ 错位_NN ，_PU 可_VV 揭贴_VV 方便_VA 地_DEV 粘_VV 至_P 橱窗_NN 等_ETC 平面_NN 上_LC ，_PU 用作_VV 广告_NN 、_PU 装饰_NN 。_PU
+技术_NN 领域_NN
+本_DT 发明_NN 涉及_VV 一_CD 种_M 图片_NN ，_PU 特别_AD 涉及_VV 一_CD 种_M 具有_VV 至少_AD 三维_VA 的_DEC 多维观_NN 感图_NN 像_VV 的_DEC 图片_NN 。_PU
+背景_NN 技术_NN
+在_P 现有_JJ 技术_NN 中_LC ，_PU 几_CD 种_M 具有_VV 至少_AD 三维_VA 的_DEC 多维观_NN 感图_NN 像_VV 的_DEC 图片_NN 的_DEG 制造_NN 方法_NN 例如_AD ：_PU
+参照_VV 图_NN １_CD 、_PU 图_NN ２_CD 、_PU 和_CC 图_NN ３_CD ，_PU 一_CD 种_M 光学_NN 透镜_NN ，_PU 它_PN 包括_VV 透明_VV 的_DEC 薄片_NN １_CD ，_PU 其_PN 特点_NN 在于_VV ：_PU
+（_PU １_CD ）_PU 、_PU 薄片_NN １_CD 有_VE 一_CD 个_M 表面_NN １１_CD 为_VC 平面_NN ；_PU
+（_PU ２_CD ）_PU 、_PU 薄片_NN １_CD 的_DEG 另_DT 一_CD 个_M 表面_NN 有_VE 连续_JJ 的_DEG 凸弧_NN 形面_NN １２_CD ；_PU
+（_PU ３_CD ）_PU 、_PU 各弧_JJ 形面_NN 的_DEC 交接处_NN 形成_VV 为直线_NN １３_CD 。_PU
+其中_NN ，_PU Ｂ_NN 为_VC 弧底_NN 宽_VA 、_PU ｈ１_NN 为_VC 弧高_VV 、_PU ｈ２_NN 为_VC 薄片_NN １_CD 的_DEG 厚度_NN 。_PU
+把_BA 所_MSP 述_VV 光学_NN 透镜_NN 覆盖_VV 在_P 与_P 该_DT 光学_NN 透镜片_NN 相_AD 匹配_VV 的_DEC 采用_VV 数码_NN 技术_NN 处理_VV 过_AS 地_DEC 图片_NN 的_DEG 图案_NN 表面_NN ，_PU 就_AD 使_VV 该_DT 图像_NN 具有_VV 多维_JJ 观感_NN （_PU 例如_AD 至少_AD 三维_VA 的_DEC 多维图_NN 像_P 及_CC 变化图_NN 像_VV 感_VV ）_PU 。_PU
+光学_NN 透镜_NN 的_DEC 材料_NN 可取_VV ＰＰ_NN 或_CC ＰＶＣ_NN 或_CC ＰＥＴ_NN 或_CC ＰＥＴＧ_NN 或_CC ＰＳ_NN 或_CC ＡＰＥＴ_NN 、_PU ＰＣ_NN 、_PU ＡＰＰＭ_NN 或_CC 其它_DT 塑料_NN 。_PU
+关于_P 光学_NN 透镜_NN 的_DEC 色彩_NN ，_PU 可取_VV 无色_JJ 或_CC 彩色_JJ 透明_JJ 材料_NN 。_PU
+关于_P 光学_NN 透镜_NN 的_DEC 透光率_NN ，_PU 可取_VV 不同_JJ 透光_NN 程度_NN 的_DEC 材料_NN 。_PU
+参照_VV 图_NN ４_CD ，_PU 把_BA 光学_NN 透镜_NN 覆盖_VV 在_P 与_P 光学_NN 透镜_NN 相_AD 匹配_VV 的_DEC 采用_VV 数码_NN 技术_NN 处理_VV 过_AS 的_DEC 图案_NN 底图层_NN ３_CD 的_DEG 正_JJ 表面_NN （_PU 在_P 两_CD 者_NN 之间_LC 如_P 图_NN ４_CD 所_MSP 示_VV 夹有_VV 玻璃_NN ４_CD 或_CC 其它_DT 透明_JJ 薄片_NN ）_PU 。_PU
+透过_P 光学_NN 透镜_NN １_CD 的_DEG 凸弧_NN 形面_NN １２_CD 观看_VV 图案_NN 底图层_NN ３_CD ，_PU 可以_VV 看到_VV 至少_AD 三维_VA 的_DEC 多维图_NN 像_P 及_CC 变化_NN 图像_NN 。_PU
+由于_P 所_MSP 述_VV 的_DEC 玻璃_NN ４_CD 有时_AD 采用_VV 橱窗_NN 玻璃_NN 或_CC 墙_NN 玻璃_NN ，_PU 又_CC ，_PU 光学_NN 透镜片_NN 与_CC 图案_NN 底层_NN ３_CD 容易_AD 因_P 人工_NN 操作_NN 错位_NN ，_PU 所以_AD 使用_VV 不便_VA 。_PU
+参照_VV 图_NN ５_CD 和_CC 图_NN ６_CD ，_PU 另_DT 一_CD 种_M 光学_NN 透镜_NN １Ａ_OD 有_VE 一_CD 个_M 表面_NN １１１_CD 为_VC 平面_NN ，_PU 其_PN 另_DT 一_CD 个_M 表面_NN 有_VE 凸角_NN 双_CD 平面_NN （_PU 平面_NN ２２_CD 和_CC 平面_NN ２６_CD ）_PU 直条_AD 连接_VV 成有_VV 序凹_NN 凸面_NN ，_PU 平面_NN ２２_CD 和_CC 平面_NN ２６_CD 相交_VV 于_P 直线_NN ２１_CD 。_PU
+光学_NN 透镜_NN １Ａ_CD 可_VV 替代_VV 光学_NN 透镜_NN １_CD ，_PU 两_CD 者_NN 使用_NN 方法_NN 类同_VA 。_PU
+相邻_VV 的_DEC 直线_NN ２１_CD 之间_LC 有_VE 设定_VV 的_DEC 可_VV 调节_VV 的_DEC 距离_NN ｄ_NN ，_PU 所_MSP 述_VV 凸角_NN 的_DEG 高度_NN 为_VC ｈ３_CD ，_PU 优选_VV 的_DEC 有关_JJ 参数_NN 为_VC ：_PU
+（_PU １_CD ）_PU ５_CD ｍｍ_M ≥_NN ｄ_OD ≥_NN ０．０１_CD ｍｍ_M ，_PU 例如_AD ；_PU
+（_PU ３_CD ）_PU 光学_NN 透镜_NN １Ａ_OD 薄片_NN 的_DEG 厚度_NN ｈ_NN ２_CD 为_VC ，_PU １０_CD ｍｍ_M ≥_CC ｈ２_CD ≥_CC ０．１_CD ｍｍ_M ，_PU 例如_AD 。_PU
+参照_VV 图_NN ７_CD ，_PU 另_DT 一_CD 种_M 光学_NN 透镜_NN 为_VC ，_PU 在_P 透明_VA 的_DEC 薄片_NN ５_CD 的_DEG 两_CD 个_M 平_JJ 表面_NN 中_LC 的_DEG 一_CD 个_M 平面_NN ５１_CD 采用_VV 喷绘_NN 等_ETC 方式_NN 涂有_VV 细长_JJ 的_DEG 遮光层_NN ５２_CD ，_PU 遮光层_NN ５２_CD 的_DEG 宽度_NN 相等_VV 或_CC 不_AD 相等_VA ，_PU 遮光层_NN ５２_CD 的_DEG 间距_NN 相等_VV 或_CC 不_AD 相等_VV ，_PU 通常_AD ，_PU 遮光层_NN ５２_CD 的_DEG 宽度_NN 大于_VV 遮光层_NN ５２_CD 的_DEG 间距_NN （_PU 详见_NN 中国_NR 专利_NN 申请号_NN ０２１２６６０１８_CD 公开_VV 的_DEC 专利_NN 申请_NN 文件_NN ）_PU 。_PU
+应用_VV 上述_JJ 几_CD 种_M 光学_NN 透镜_NN 与_CC 图案_NN 底图层_NN ３_CD 制造_VV 复合_JJ 基片_NN 的_DEC 现有_JJ 技术_NN 已_AD 有_VE 多_CD 项_M 专利_NN 申请_NN 公开_VV 。_PU
+发明_NN 内容_NN
+本_DT 发明_NN 的_DEG 目的_NN 是_VC 提供_VV 一_CD 种_M 结构_NN 简单_VA 、_PU 使用_NN 方便_VA 的_DEC 具有_VV 至少_AD 三维_VA 的_DEC 多维_NN 观感_VV 图像_NN 的_DEC 图片_NN 。_PU
+本_DT 发明_NN 是_VC 这样_AD 实现_VV 的_SP ：_PU
+１_CD 、_PU 一_CD 种_M 具有_VV 至少_AD 三维_VA 的_DEC 多维观_NN 感图_NN 像_VV 的_DEC 图片_NN ，_PU 它_PN 包括_VV 图案_NN 底图层_NN ３_CD 、_PU 覆盖_VV 在_P 图案_NN 底图层_NN ３_CD 的_DEG 正_JJ 表面_NN 的_DEC 光学_NN 透镜片_NN ，_PU 从而_AD 组成_VV 复合_JJ 基片_NN ，_PU 其_PN 特点_NN 在于_VV ：_PU 在_P 所_MSP 述_VV 复合_JJ 基片_NN 的_DEC 至少_AD 一_CD 个_M 外_JJ 表面_NN 粘有_VV 整_DT 面_NN 或_CC 局部_NN 胶贴_NN ６_CD 和_CC 粘胶_NN ７_CD 。_PU
+因_P 结构_NN 简单_VA ，_PU 使用_VV 时_LC ，_PU 把_BA 胶贴_NN ６_CD 与_CC 所_MSP 述_VV 复合_JJ 基片_NN 分离_VV ，_PU 在_P 复合_JJ 基片_NN 上_LC 留有_VV 粘胶_NN ７_CD ，_PU 可_VV 很_AD 方便_VA 地_DEV 粘_VV 至_P 橱窗_NN 等_ETC ，_PU 无人_AD 工错位_VV 。_PU
+２_CD 、_PU 在_P 上述_JJ 第１_OD 种_M 技术_NN 方案_NN 的_DEG 基础_NN 上_LC ，_PU 其_PN 特点_NN 在于_VV ：_PU 在_P 图案_NN 底图层_NN ３_CD 的_DEG 反表面_NN 如_P 也_AD 要_VV 印绘图_NN 像_P 时_NN 则_AD 可_VV 另_PN 覆盖_VV 图案_NN 保护层_NN 。_PU
+因为_P 有_VE 图案_NN 保护层_NN ，_PU 所以_AD 图案_NN 底图层_NN ３_CD 不_AD 易_AD 被_LB 粘胶_NN ７_CD 粘连_VV 而_MSP 损坏_VV 。_PU
+附图_NN 说明_NN
+图_NN １_CD 是_VC 现有_JJ 技术_NN 的_DEC 一_CD 种_M 光学_NN 透镜_NN 的_DEG 主视_NN 示意图_NN 。_PU
+图_NN ２_CD 是_VC 图_NN １_CD 的_DEG 局部_NN 放大_VV 的_DEC 仰视图_NN 。_PU
+图_NN ３_CD 是_VC 如_P 图_NN １_CD 和_CC 图_NN ２_CD 所_MSP 示_VV 的_DEC 光学_NN 透镜_NN 的_DEG 局部_NN 放大_VV 的_DEC 斜视图_NN 。_PU
+图_NN ４_CD 是_VC 如_P 图_NN ３_CD 所_MSP 示_VV 的_DEC 光学_NN 透镜_NN 覆盖_NN 在_P 采用_VV 数码_NN 技术_NN 处理_VV 过_AS 的_DEC 图案_NN 底图层_NN 表面_NN 的_DEC 示意图_NN 。_PU
+图_NN ５_CD 是_VC 现有_JJ 技术_NN 的_DEC 另_DT 一_CD 种_M 光学_NN 透镜_NN 的_DEG 主视_NN 示意图_NN 。_PU
+图_NN ６_CD 是_VC 图_NN ５_CD 的_DEG 局部_NN 放大_VV 的_DEC 仰视图_NN 。_PU
+图_NN ７_CD 是_VC 现有_JJ 技术_NN 另_DT 一_CD 种_M 光学_NN 透镜_NN 的_DEC 斜视_NN 示意图_NN 。_PU
+图_NN ８_CD 是_VC 本_DT 发明_NN 一_CD 种_M 具有_VV 至少_AD 三维_VA 的_DEC 多维观_NN 感图_NN 像_VV 的_DEC 图片_NN 的_DEG 斜视_NN 示意图_NN 。_PU
+图_NN ９_CD 是_VC 本_DT 发明_NN 一_CD 种_M 具有_VV 至少_AD 三维_VA 的_DEC 多维_NN 观感_VV 的_DEC 图片_NN 和_CC 电子_NN 闪光_NN 装置_NN 的_DEG 主视_NN 示意图_NN 。_PU
+具体_JJ 实施_NN 方式_NN
+参照_VV 图_NN ８_CD ，_PU 在_P 如_P 图_NN ３_CD 所_MSP 示_VV 的_DEC 光学_NN 透镜_NN １_CD 的_DEG 一_CD 个_M 平_JJ 表面_NN １１_CD 直接_AD 印绘_VV 与_P 该_DT 光学_NN 透镜片_NN 相_AD 匹配_VV 的_DEC 采用_VV 数码_NN 技术_NN 处理_VV 过_AS 的_DEC 图案_NN 底图层_NN ３_CD ，_PU 制成_VV 所_MSP 述_VV 复合_JJ 基片_NN ，_PU 将_BA 胶贴_NN ６_CD 利用_VV 双_CD 面胶_NN 的_DEC 粘胶_NN ７_CD 粘_VV 在_P 图案_NN 底层_NN ３_CD 的_DEG 反_JJ 表面_NN 或_CC ／_PU 和_CC 粘_VV 在_P 光学_NN 透镜片_NN 的_DEG 外_JJ 表面_NN ，_PU 即_AD 制成_VV 本_DT 发明_NN 的_DEG 产品_NN 。_PU
+最_AD 好_VA ，_PU 在_P 图案_NN 底层_NN ３_CD 的_DEG 反_JJ 表面_NN 预先_AD 涂_VV 一_CD 层_M 透明_VA 的_DEC 保护涂_NN 层_NN ，_PU 然后_AD 再_AD 将_BA 胶贴_NN ６_CD 粘_VV 在_P 所_MSP 述_VV 保护_NN 涂层_NN 上_LC ，_PU 这样_AD ，_PU 当_P 胶贴_NN ６_CD 被_SB 剥离_VV 图案_NN 底图层_NN ３_CD 时_LC ，_PU 粘胶_NN ７_CD 不_AD 易_AD 对_P 图案_NN 底图层_NN ３_CD 产生_VV 破坏_NN 。_PU
+最_AD 好_VA ，_PU 胶贴_NN ６_CD 和_CC 粘胶_NN ７_CD 选用_VV 粘性适_NN 中_LC 的_DEG 双面胶_NN ，_PU 便于_VV 贴_VV 或_CC 揭于_VV 玻璃_NN 。_PU
+粘接点_NN 的_DEC 部位_NN 与_P 面积_NN 大小_NN 可_VV 根据_P 附着物_NN 的_DEC 材质_NN 而_MSP 定_VV 。_PU
+使用_VV 时_LC ，_PU 例如_AD 参照_VV 图_NN ８_CD ，_PU 把_BA 胶贴_NN ６_CD 剥离_VV 所_MSP 述_VV 复合_JJ 基片_NN ，_PU 在_P 复合_JJ 基片_NN 的_DEC 表面_NN 留有_VV 粘胶_NN ７_CD ，_PU 利用_VV 粘胶_NN ７_CD 粘合_VV 至_VV 橱窗_NN 的_DEG 外_JJ 表面_NN 或_CC 墙壁_NN 等_ETC 附着物_NN ，_PU 很_AD 方便_VA 地_DEV 完成_VV 装饰_NN 、_PU 广告_NN 等_ETC 展示_NN 。_PU
+当_P 橱窗_NN 等_ETC 附着物_NN 为_VC 玻璃_NN 等_ETC 透明_JJ 物体_NN 时_LC ，_PU 本_DT 发明_NN 的_DEG 多维_JJ 观感_NN 的_DEC 效果_NN 更_AD 好_VA ，_PU 因为_P 光线_NN 可_VV 从_P 复合_JJ 基片_NN 的_DEC 背面_NN 穿透_VV 至_VV 复合_JJ 基片_NN 的_DEG 正面_NN 。_PU
+如果_CS 胶贴_NN ６_CD 贴_VV 在_P 光学_NN 透镜片_NN 的_DEG 外_JJ 表面_NN ，_PU 则_AD 可_VV 将_BA 复合_JJ 基片_NN 粘_VV 在_P 玻璃_NN 橱窗_NN 的_DEG 内_JJ 表面_NN 以_P 防止_VV 被_SB 风雨_VV 而_MSP 损坏_VV 。_PU
+或者_CC 参照_VV 图_NN ９_CD ，_PU 当_P 在_P 使用_NN 状态_NN 时_LC ，_PU 在_P 图案_NN 底图层_NN ３_CD 背面_NN 的_DEC 空间_NN 部位_NN 设有_VV 电子_NN 闪光_NN 装置_NN 的_DEC 电子_NN 闪光_NN 点面_NN 构成_VV 图形_NN 的_DEC 光源_NN ８_CD ，_PU 在_P 这样_AD 观看_VV 光学_NN 透镜_NN １_CD 时_LC ，_PU 观感_NN 效果_NN 就_AD 增加_VV 了_AS 光艺_NN 术感_NN 。_PU
+最_AD 好_VA ，_PU 粘胶_NN ７_CD 采用_VV 透明度_NN 好_VA 的_DEC 粘胶_NN 。_PU
+，_PU 当_P 将_BA 本_DT 发明_NN 图片_NN 粘_VV 在_P 玻璃_NN 橱窗_NN 等_ETC 透明_JJ 材料_NN 的_DEG 表面_NN 时_LC ，_PU 背射光_NN 可以_VV 透过_P 粘胶_NN ７_CD 再_AD 透过_VV 本_DT 发明_NN 图片_NN ，_PU 从而_AD 使观_VV 赏_VV 本_DT 发明_NN 图片_NN 的_DEC 效果_NN 不_AD 受到_VV 透明度_NN 不_AD 好_VA 的_DEC 粘胶_NN 的_DEG 影响_NN 。_PU
+１_CD 、_PU 一_CD 种_M 具有_VV 至少_AD 三维_VA 的_DEC 多维观_NN 感图_NN 像_VV 的_DEC 图片_NN ，_PU 它_PN 包括_VV 图案_NN 底图层_NN （_PU ３_CD ）_PU 、_PU 覆盖_VV 在_P 图案_NN 底层_NN （_PU ３_CD ）_PU 的_DEG 正_JJ 表面_NN 的_DEC 光学_NN 透镜片_NN ，_PU 从而_AD 组成_VV 复合_JJ 基片_NN ，_PU 其_PN 特征_NN 在于_VV ：_PU 在_P 所_MSP 述_VV 复合_JJ 基片_NN 的_DEC 至少_AD 一_CD 个_M 外_JJ 表面_NN 粘有_VV 胶贴_NN （_PU ５_CD ）_PU 和_CC 粘胶_NN （_PU ７_CD ）_PU 。_PU
+２_CD 、_PU 根据_P 权利_NN 要求_NN １_CD 所_MSP 述_VV 的_DEC 一_CD 种_M 具有_VV 至少_AD 三维_VA 的_DEC 多维观_NN 感图_NN 像_VV 的_DEC 图片_NN ，_PU 其_PN 特征_NN 在于_VV ：_PU 在_P 图案_NN 底图层_NN （_PU ３_CD ）_PU 的_DEG 反_JJ 表面_NN 覆盖_VV 有_VE 图案_NN 保护层_NN 。_PU
+３_CD 、_PU 根据_P 权利_NN 要求_NN １_CD 所_MSP 述_VV 的_DEC 一_CD 种_M 具有_VV 至少_AD 三维_VA 的_DEC 多维观_NN 感图_NN 像_VV 的_DEC 图片_NN ，_PU 其_PN 特征_NN 在于_VV ：_PU 粘胶_NN （_PU ７_CD ）_PU 为_VC 透明_VA 的_DEC 粘胶_NN 。_PU
+４_CD 、_PU 根据_P 权利_NN 要求_NN １_CD 或_CC ２_CD 或_CC ３_CD 所_MSP 述_VV 的_DEC 一_CD 种_M 具有_VV 至少_AD 三维_VA 的_DEC 多维观_NN 感图_NN 像_VV 的_DEC 图片_NN ，_PU 其_PN 特征_NN 在于_VV ：_PU 在_P 图案_NN 底图层_NN （_PU ３_CD ）_PU 的_DEG 背面_NN 的_DEC 空间_NN 部位_NN 设有_VV 电子_NN 闪光_NN 光源_NN （_PU ８_CD ）_PU 。_PU
+﻿本_DT 实用_JJ 新型_NN 涉及_VV 一_CD 种_M 复合_JJ 水泥_NN 刨花板_NN ，_PU 其_PN 特征_NN 在于_VV 在_P 水泥_NN 刨花板_NN 基板_NN （_PU ３_CD ）_PU 上_LC 粘接_VV 一_CD 层_M 防火板_NN （_PU ２_CD ）_PU ，_PU 在_P 防火板_NN （_PU ２_CD ）_PU 上_LC 粘接_VV 至少_AD 一_CD 层_M 三氧化二铝_NN 耐磨_VV 浸_VV 渍纸_NN （_PU １_CD ）_PU ，_PU 以_MSP 增加_VV 表面_NN 的_DEC 装饰性_NN 及_CC 耐磨性_NN 。_PU
+所_MSP 述_VV 的_DEC 水泥_NN 刨花板_NN 基板_NN 中_LC 可以_VV 加入_VV ２５_CD －_CC ３５%_CD 木质_NN 纤维_NN ，_PU 以_MSP 增加_VV 其_PN 强度_NN 。_PU
+本_DT 实用_JJ 新型_NN 的_DEG 优点_NN 在于_VV ：_PU 由于_P 采用_VV 水泥_NN 刨花板_NN 与_CC 防火板_NN 及_CC 三氧化二铝_NN 结合_VV 为_VV 一体_NN ，_PU 使得_VV 其_PN 表面_NN 装饰性_NN 及_CC 耐磨性_NN 大为_AD 提高_VV ，_PU 它_PN 可以_VV 代替_VV 胶合板_NN 、_PU 木_JJ 工板_NN 、_PU 木_NN 地板_NN 等_ETC ，_PU 节约_VV 树木_NN 资源_NN ，_PU 环保_NN 节能_VV ，_PU 广泛_VA 的_DEC 应用于_VV 护_P 墙板_NN 、_PU 装饰_NN 隔断_VV 、_PU 地面_NN 装饰_NN 等_ETC 领域_NN 。_PU
+技术_NN 领域_NN ：_PU
+本_DT 实用_JJ 新型_NN 涉及_VV 一_CD 种_M 建筑_NN 装饰_NN 用_VV 的_DEC 水泥_NN 刨花板_NN ，_PU 特别_AD 涉及_VV 一_CD 种_M 具有_VV 高_JJ 耐磨_NN 表面_NN 的_DEC 复合_JJ 水泥_NN 刨花板_NN 。_PU
+背景_NN 技术_NN ：_PU
+目前_NT 建筑_NN 装饰_NN 中_LC 的_DEG 护墙板_NN 、_PU 隔断板_NN 主要_AD 采用_VV 木质_NN 的_DEC 复合板_NN 或_CC 木_NN 工板_NN ，_PU 它们_PN 需要_VV 使用_VV 大量_CD 的_DEG 林木_NN 资源_NN ，_PU 价格_NN 也_AD 比较_AD 昂贵_VA 。_PU
+而_AD 普通_JJ 水泥板_NN 、_PU 石膏板_NN 等_ETC 因_P 其_PN 表面_NN 装饰性_NN 较_AD 差_VA 则_AD 主要_AD 用于_VV 吊顶_VV 、_PU 隔音_NN 等_ETC 场所_NN 。_PU
+针对_P 上述_JJ 问题_NN 进行_VV 广泛_NN 检索_VV ，_PU 尚未_AD 发现_VV 有_VE 解决_VV 此_DT 问题_NN 相关_VV 的_DEC 技术_NN 方案_NN 。_PU
+实用_JJ 新型_NN 内容_NN ：_PU
+本_DT 实用_JJ 新型_NN 的_DEG 目的_NN 就_AD 是为_AD 克服_VV 已_AD 有_VE 普通_JJ 水泥板_NN 、_PU 石_NN 膏板_NN 表面_NN 装饰性_NN 较_AD 差_VA 的_DEC 缺点_NN ，_PU 而_CC 提供_VV 的_DEC 一_CD 种_M 具有_VV 较_AD 好_VA 装饰性_NN 及_CC 高_JJ 耐磨_NN 表面_NN 的_DEC 复合_JJ 水泥_NN 刨花板_NN 。_PU
+为了_P 实现_VV 上述_JJ 目的_NN ，_PU 本_DT 实用_JJ 新型_NN 采用_VV 了_AS 如下_JJ 技术_NN 方案_NN ：_PU
+一_CD 种_M 复合_JJ 水泥_NN 刨花板_NN ，_PU 它_PN 包括_VV 水泥_NN 刨花板_NN 基板_NN ，_PU 其_PN 特征_NN 在于_VV ：_PU 在_P 水泥_NN 刨花板_NN 基板_NN 上_LC 粘接_VV 一_CD 层_M 防火板_NN 。_PU
+以_P 上述_JJ 技术_NN 方案_NN 为_VV 基础_NN ，_PU 可以_VV 在_P 防火板_NN 上_LC 粘接_VV 至少_AD 一_CD 层_M 三氧化二铝_NN 耐磨_VV 浸_VV 渍纸_NN ，_PU 以_MSP 增加_VV 表面_NN 的_DEG 耐磨性_NN 。_PU
+所_MSP 述_VV 的_DEC 水泥_NN 刨花板_NN 基板_NN 中_LC 可以_VV 加入_VV ２５_CD －_CC ３５%_CD 木质_NN 纤维_NN ，_PU 以_MSP 增加_VV 其_PN 强度_NN 。_PU
+所_MSP 述_VV 的_DEC 防火板_NN 可以_VV 采用_VV 由_P 多_CD 层_M 三聚氰胺_NN 浸_VV 渍纸_NN 经过_P 层叠_JJ 压制_NN 而_MSP 成_VV ，_PU 这些_PN 都_AD 是_VC 市场_NN 上_LC 公知_VV 的_DEC 产品_NN 。_PU
+上述_JJ 复合_JJ 水泥_NN 刨花板_NN 的_DEG 生产_NN 方法_NN 如下_VV ：_PU
+一_CD 、_PU 将_BA 树木_NN 粉碎_VV 成_VV 木质_NN 纤维_NN （_PU ２５_CD －_CC ３５%_CD ）_PU ，_PU 水泥_NN （_PU ６５_CD —_PU ７５%_CD ）_PU 加水_NN 调匀_VV ，_PU 放入_VV 压力_NN 成型_NN 设备_NN 中_LC 压制_VV 成型_NN ，_PU 经过_P 干燥_VV 后_LC ，_PU 将_BA 干燥_NN 的_DEC 粗水_JJ 泥板_NN 两_CD 面_NN 砂光_NN ，_PU 得到_VV 精水_JJ 泥板_NN 。_PU
+二_CD 、_PU 将_BA 精水_JJ 泥板_NN 放入_VV 后成_JJ 型机_NN 中_LC ，_PU 精水_JJ 泥板_NN 表面涂_NN 一_CD 层_NN 万_CD 能胶_NN ，_PU 然后_AD 将_BA 防火板_NN 粘贴_VV 于_P 精水_JJ 泥板_NN 的_DEG 表面_NN ，_PU 加压力_NN １０_CD ｋｇｆ／ｃｍ_M 分钟_NN 内_LC ，_PU 将_BA 防火板_NN 粘贴_VV 于_P 精水_JJ 泥板_NN 表面_NN ，_PU 最终_AD 构成_VV 装饰板_NN 。_PU
+三_CD 、_PU 本_DT 实用_JJ 新型_NN 还_AD 可以_VV 做成_VV 地板_NN ，_PU 首先_AD 将_BA 三氧化二铝_NN 耐磨_VV 浸渍_VV 纸_NN 加温_VV 加压_NN 粘接于_VV 防火板_NN 上_LC ，_PU 所_MSP 用_VV 的_DEC 温度_NN 在_VV １２０_CD ℃_M —_PU ２００_CD ℃_M ，_PU 压力_NN 在_VV ２５_CD ｋｇ／ｃｍ_M 时间_NN 保持_VV 在_P ２０_CD —_PU １００_CD 分钟_M ，_PU 此时_NT 三氧化二铝_NN 耐磨_VV 浸_VV 渍纸_NN 已经_AD 牢固_VA 的_DEC 粘接于_VV 防火板_NN 上_LC ；_PU 再_AD 将_BA 粘接_VV 有_VE 三氧化二铝_NN 耐磨_VV 浸_VV 渍纸_NN 的_DEC 防火板_NN ，_PU 加压力_NN １０_CD ｋｇｆ／ｃｍ_M 温度_NN １６０_CD ℃_M ，_PU 时间_NN 在_P ５_CD 分钟_M 内_LC ，_PU 将_BA 防火板_NN 粘贴_VV 于_P 精水_JJ 泥板_NN 表面_NN ，_PU 最终_AD 构成_VV 高_JJ 耐磨_NN 地板_NN 。_PU
+本_DT 实用_JJ 新型_NN 的_DEG 优点_NN 在于_VV ：_PU 由于_P 采用_VV 水泥_NN 刨花板_NN 与_CC 防火板_NN 及_CC 三氧化二铝_NN 结合_VV 为_VV 一体_NN ，_PU 使得_VV 其_PN 表面_NN 装饰性_NN 及_CC 耐磨性_NN 大为_AD 提高_VV ，_PU 它_PN 可以_VV 代替_VV 胶合板_NN 、_PU 木_JJ 工板_NN 、_PU 木_NN 地板_NN 等_ETC ，_PU 节约_VV 树木_NN 资源_NN ，_PU 环保_NN 节能_VV ，_PU 广泛_VA 的_DEC 应用于_VV 护_P 墙板_NN 、_PU 装饰_NN 隔断_VV 、_PU 地面_NN 装饰_NN 等_ETC 领域_NN 。_PU
+附图_NN 说明_NN ：_PU
+图_NN １_CD 是_VC 本_DT 实用_JJ 新型_NN 的_DEG 主视图_NN 。_PU
+具体_JJ 实施_NN 方式_NN
+实施例_NN 一_CD ：_PU 取含_VV 有_VE 木质_NN 纤维_NN （_PU ３０％_CD ）_PU ，_PU 水泥_NN （_PU ７０％_CD ）_PU 粗水_NN 泥板_NN ，_PU 将_BA 两_CD 面_NN 砂光_NN ，_PU 得到_VV 精水_JJ 泥板_NN 。_PU
+将_BA 精水_JJ 泥板_NN 放入_VV 后成_JJ 型机_NN 中_LC ，_PU 精水_JJ 泥板_NN 表面涂_NN 一_CD 层_NN 万_CD 能胶_NN ，_PU 然后_AD 将_BA 防火板_NN 粘贴_VV 于_P 精水_JJ 泥板_NN 的_DEG 表面_NN ，_PU 加压力_NN １０_CD ｋｇｆ／ｃｍ_M 分钟_M ，_PU 最终_AD 将_BA 防火板_NN 粘贴_VV 于_P 精水_JJ 泥板_NN 表面_NN ，_PU 最终_AD 构成_VV 装饰_NN 用_P 复合_JJ 水泥_NN 刨花板_NN 。_PU
+实施例_NN 二_CD 、_PU 首先_AD 将_BA 三氧化二铝_NN 耐磨_VV 浸渍_VV 纸_NN 加温_VV 加压_NN 粘接于_VV 防火板_NN 上_LC ，_PU 所_MSP 用_VV 的_DEC 温度_NN 在_VV １２０_CD ℃_M —_PU ２００_CD ℃_M ，_PU 压力_NN 在_VV ２５_CD ｋｇ／ｃｍ_M 钟_NN ，_PU 此时_NT 三氧化二铝_NN 耐磨_VV 浸_VV 渍纸_NN 已经_AD 牢固_VA 的_DEC 粘接于_VV 防火板_NN 上_LC ；_PU 再_AD 将_BA 粘接_VV 有_VE 三氧化二铝_NN 耐磨_VV 浸_VV 渍纸_NN 的_DEC 防火板_NN ，_PU 加压力_NN １０_CD ｋｇｆ／ｃｍ_M 分钟_NN 内_LC ，_PU 将_BA 防火板_NN 粘贴_VV 于_P 精水_JJ 泥板_NN 表面_NN ，_PU 最终_AD 构成_VV 可以_VV 作为_P 高耐_JJ 磨地板_NN 用_VV 的_DEC 。_PU
+１_CD ．_PU 一_CD 种_M 复合_JJ 水泥_NN 刨花板_NN ，_PU 它_PN 包括_VV 水泥_NN 刨花板_NN 基板_NN ，_PU 其_PN 特征_NN 在于_VV ：_PU 在_P 水泥_NN 刨花板_NN 基板_NN 上_LC 粘接_VV 一_CD 层_M 防火板_NN 。_PU
+２_CD ．_PU 根据_P 权利_NN 要求_NN １_CD 所_MSP 述_VV 的_DEC 复合_JJ 水泥_NN 刨花板_NN ，_PU 其_PN 特征_NN 在于_VV 在_P 防火板_NN 上_LC 粘接_VV 至少_AD 一_CD 层_M 三氧化二铝_NN 耐磨_VV 浸_VV 渍纸_NN 。_PU
+３_CD ．_PU 根据_P 权利_NN 要求_NN １_CD 或_CC ２_CD 所_MSP 述_VV 的_DEC 复合_JJ 水泥_NN 刨花板_NN ，_PU 其_PN 特征_NN 在于_VV 水泥_NN 刨花板_NN 基板_NN 中_LC 含有_VV ２５_CD －_CC ３５%_CD 木质_NN 纤维_NN 。_PU
+﻿本_DT 实用_JJ 新型_NN 涉及_VV 一_CD 种_M 内_LC 设_VV 中心_JJ 换热器_NN 的_DEG 径向_JJ 催化_NN 剂床_NN 层_NN ，_PU 其_PN 主要_AD 解决_VV 了_AS 现有_JJ 径向_JJ 催化剂_NN 床_NN 层_NN 的_DEG 气体_NN 阻力_NN 较_AD 高_VA ，_PU 不_AD 利于_VV 床_NN 层_NN 出口_NN 热量_NN 间_LC 接移_VV 热_VA 以及_CC 反应器_NN 的_DEG 大型_JJ 化等_NN 技术_NN 问题_NN ；_PU 其_PN 特征_NN 在于_VV 还_AD 包括_VV 有_VE 一_CD 冷_VA 、_PU 热气体_NN 中_LC 心换_VV 热_JJ 器_NN ，_PU 所_MSP 述_VV 的_DEC 冷_VA 、_PU 热气体_NN 中心_NN 换热器_NN 设置_VV 在_P 径向_JJ 催化剂_NN 床_NN 层_NN 筐内_NN ；_PU 本_DT 实用_JJ 新型_NN 的_DEG 有益_JJ 效果_NN 是_VC 在_P 径向_JJ 催化剂_NN 床层_NN 内_LC 设置_VV 一_CD 冷_M 、_PU 热气体_NN 中心_NN 换热器_NN ，_PU 采用_VV 这_DT 种_M 结构_NN ，_PU 反应_VV 后_LC 的_DEG 气体_NN 与_CC 管_NN 内_LC 冷气体_NN 间接_AD 换热_VV ，_PU 确保_VV 进一步_AD 降低_VV 催化剂_NN 床层_NN 的_DEC 气体_NN 温度_NN ，_PU 这样_AD 不仅_CC 可_VV 利于_VV 床_NN 层出口_NN 热量_NN 间_LC 接移_VV 热_VA 且_CC 还_AD 可_VV 降低_VV 径向_NN 催化剂_NN 床层_NN 内_LC 的_DEG 气体_NN 阻力_NN 。_PU
+技术_NN 领域_NN
+本_DT 实用_JJ 新型_NN 涉及_VV 一_CD 种_M 催化_NN 剂床_NN 层_NN ，_PU 更_AD 具体_VA 的_DEV 说_VV 是_VC 涉及_VV 一_CD 种_M 内设_NN 中心_NN 换热器_NN 的_DEG 径向_JJ 催化_NN 剂床_NN 层_NN ，_PU 主要_AD 应用于_VV 煤化工_NN 领域_NN 。_PU
+背景_NN 技术_NN
+径向_JJ 催化剂_NN 床层_NN 作为_VV 合成氨_NN 、_PU 合成_VV 甲醇_NN 、_PU 合成_VV 甲烷_NN 的_DEG 反应器_NN 的_DEG 核心_NN 设备_NN ，_PU 但_CC 由于_P 现有_JJ 径向_NN 催化剂_NN 床_NN 层_NN 易受_NN 系统_NN 压力_NN 的_DEG 限制_NN ，_PU 不_AD 能_VV 适应_VV 在_P 低压_NN 状态_NN 下_LC 工作_VV ，_PU 且_CC 由于_P 现有_JJ 径向_NN 催化剂_NN 床_NN 层_NN 的_DEG 气体_NN 阻力_NN 较_AD 高_VA ，_PU 不_AD 利于_VV 床_NN 层_NN 出口_NN 热量_NN 间_LC 接移_VV 热_VA 以及_CC 反应器_NN 的_DEG 大型_JJ 化_NN 。_PU
+内容_NN
+为了_P 解决_VV 现有_JJ 径向_JJ 催化剂_NN 床_NN 层_NN 的_DEG 气体_NN 阻力_NN 较_AD 高_VA ，_PU 不_AD 利于_VV 床_NN 层_NN 出口_NN 热量_NN 间_LC 接移_VV 热_VA 以及_CC 反应器_NN 的_DEG 大型_JJ 化等_NN 技术_NN 问题_NN ；_PU 本_DT 实用_JJ 新型_NN 提供_VV 一_CD 种_M 内_LC 设_VV 中心_JJ 换热器_NN 的_DEG 径向_JJ 催化_NN 剂床_NN 层_NN ，_PU 其_PN 不仅_AD 可_VV 降低_VV 催化剂_NN 床层_NN 的_DEC 气体_NN 阻力_NN ，_PU 同时_AD 还_AD 可_VV 方便_VV 催化剂_NN 床_NN 层_NN 地_DEG 出口_NN 热量_NN 间接_NN 移热_NN 和_CC 反应器_NN 的_DEG 大型_JJ 化_NN 。_PU
+为_P 解决_VV 以上_JJ 技术_NN 问题_NN ，_PU 本_DT 实用_JJ 新型_NN 采取_VV 的_DEC 技术_NN 方案_NN 是_VC 一_CD 种_M 内设_NN 中心_NN 换热器_NN 的_DEG 径向_JJ 催化剂_NN 床_NN 层_NN ，_PU 其_PN 包括_VV 有_VE 径向_JJ 催化_NN 剂床_NN 层筐_NN 及_CC 冷气_NN 收集_VV 室_SP ，_PU 其_PN 特征_NN 在于_VV 还_AD 包括_VV 有_VE 一_CD 冷_VA 、_PU 热气体_NN 中心_NN 换热器_NN ，_PU 所_MSP 述_VV 的_DEC 冷_VA 、_PU 热气体_NN 中心_NN 换热器_NN 设置_VV 在_P 径向_JJ 催化剂_NN 床_NN 层_NN 筐内_NN 。_PU
+进一步_AD ，_PU 所_MSP 述_VV 的_DEC 冷_VA 、_PU 热气体_NN 中心_NN 换热器_NN 由_P 中心_NN 两_CD 用管_VV 、_PU 上部_NN 支撑_VV 管板_NN 、_PU 换热管_NN （_PU 波节管_NN 或_CC 圆管_NN ）_PU 、_PU 下_JJ 活动_JJ 管板_NN 、_PU 下部_NN 活动_JJ 封头_NN 、_PU 锥形_JJ 密封_NN 筒体_NN 、_PU 冷气管_NN 、_PU 反应_JJ 气体_NN 出口_NN 、_PU 冷气_NN 分布_VV 室_BA 组成_VV 。_PU
+进一步_AD ，_PU 所_MSP 述_VV 的_DEC 径向_JJ 催化_NN 剂床_NN 层_NN 筐_NN 由_P 催化剂_NN 压板_NN 、_PU 进气孔_NN 、_PU 气体_NN 分布孔_NN 、_PU 气体_NN 分布_VV 筒_NN 、_PU 气体_NN 腔体_NN 外层_NN 圆筒_NN 、_PU 气体_NN 分布_VV 腔体_NN 、_PU 双层_NN 流动_NN 分布板_NN 、_PU 气体_NN 收集_VV 孔_NN 、_PU 气体_NN 收集_VV 外筒_NN 、_PU 气体_NN 收集_VV 内筒_NN 、_PU 热气体_NN 收集_VV 腔体_NN 及_CC 承载_VV 封头_NN 组成_VV ，_PU 所_MSP 述_VV 的_DEC 进气孔_NN 、_PU 气体_NN 分布孔_NN 分布_VV 在_P 气体_NN 分布_VV 筒_NN 上_LC 的_DEG 下端_NN ；_PU 所_MSP 述_VV 的_DEC 气体_NN 分布_NN 腔体_NN 设置_VV 在_P 气体_NN 分布_VV 筒_NN 和_CC 气体_NN 腔体_NN 外层_NN 圆筒_NN 之间_LC 。_PU
+进一步_AD ，_PU 所_MSP 述_VV 的_DEC 冷气_NN 收集_VV 室_AS 由_P 密封_NN 封头_NN 、_PU 密封_NN 法兰_NN 、_PU 密封_NN 填料_NN 组合件_NN Ｉ_NN 、_PU 密封_NN 填料_NN 组合件_NN ＩＩ_CD 、_PU 封头_NN 外套管_NN 和_CC 密封_NN 填料_NN 组合件_NN ＩＩＩ_CD 组成_VV 。_PU
+本_DT 实用_JJ 新型_NN 的_DEG 有益_JJ 效果_NN 是_VC 在_P 径向_JJ 催化剂_NN 床层_NN 内_LC 设置_VV 一_CD 冷_M 、_PU 热气体_NN 中心_NN 换热器_NN ，_PU 采用_VV 这_DT 种_M 结构_NN ，_PU 反应_VV 后_LC 的_DEG 气体_NN 与_CC 管_NN 内_LC 冷气体_NN 间接_AD 换热_VV ，_PU 确保_VV 进一步_AD 降低_VV 催化剂_NN 床层_NN 的_DEC 气体_NN 温度_NN ，_PU 这样_AD 不仅_CC 可_VV 利于_VV 床_NN 层出口_NN 热量_NN 间_LC 接移_VV 热_VA 且_CC 还_AD 可_VV 降低_VV 径向_NN 催化剂_NN 床层_NN 内_LC 的_DEG 气体_NN 阻力_NN 。_PU
+说明_NN
+图_NN １_CD 为_VC 本_DT 实用_JJ 新型_NN 实施例_NN 一_CD 种_M 内设_NN 中心_NN 换热器_NN 的_DEG 径向_JJ 催化剂_NN 床_NN 层_NN 的_DEG 剖视_NN 结构_NN 图_NN
+具体_JJ 实施_NN 方案_NN
+下面_NN 结合_VV 附图_NN 对_P 本_DT 实用_JJ 新型_NN 实施_NN 方式_NN 作_VV 进一步_JJ 说明_NN ：_PU
+如_P 图_NN １_CD 所_MSP 示_VV ，_PU 本_DT 实用_JJ 新型_NN 一_CD 种_M 内_LC 设_VV 中心_JJ 换热器_NN 的_DEG 径向_JJ 催化_NN 剂床_NN 层_NN ，_PU 其_PN 包括_VV 有_VE 径向_JJ 催化剂_NN 床层筐_NN １_CD 及_CC 冷气_NN 收集_VV 室_NN ２_CD ，_PU 为了_P 解决_VV 现有_JJ 径向_NN 催化剂_NN 床_NN 层_NN 的_DEG 气体_NN 阻力_NN 较_AD 高_VA ，_PU 不_AD 利于_VV 床_NN 层_NN 出口_NN 热量_NN 间_LC 接移_VV 热_VA 以及_CC 反应器_NN 的_DEG 大型_JJ 化等_NN 技术_NN 问题_NN ；_PU 在_P 径向_NN 催化剂_NN 床层_NN 内_LC 还_AD 设有_VV 一_CD 冷_M 、_PU 热气体_NN 中心_NN 换热器_NN ３_CD ，_PU 采用_VV 这_DT 种_M 结构_NN ，_PU 反应_VV 后_LC 的_DEG 气体_NN 与_CC 管_NN 内_LC 冷气体_NN 间接_AD 换热_VV ，_PU 确保_VV 进一步_AD 降低_VV 催化剂_NN 床层_NN 的_DEC 气体_NN 温度_NN ，_PU 这样_AD 不仅_CC 可_VV 利于_VV 床_NN 层出口_NN 热量_NN 间_LC 接移_VV 热_VA 且_CC 还_AD 可_VV 降低_VV 径向_NN 催化剂_NN 床层_NN 内_LC 的_DEG 气体_NN 阻力_NN 。_PU
+在_P 本_DT 实施例_NN 中_LC ，_PU 所_MSP 述_VV 的_DEC 冷_VA 、_PU 热气体_NN 中心_NN 换热器_NN ３_CD 由_P 中心_NN 两_CD 用管_NN ３１_CD 、_PU 上部_NN 支撑_VV 管板_NN ３２_CD 、_PU 换热管_NN ３３_CD 、_PU 下_JJ 活动_JJ 管板_NN ３４_CD 、_PU 下部_NN 活动_JJ 封头_NN ３５_CD 、_PU 锥形_JJ 密封筒体_NN ３６_CD 、_PU 冷气管_NN ３７_CD 、_PU 反应_JJ 气体_NN 出口_NN ３８_CD 、_PU 冷气_NN 分布_VV 室_VE ３９_CD 组成_VV 。_PU
+在_P 本_DT 实施例_NN 中_LC ，_PU 所_MSP 述_VV 的_DEC 径向_JJ 催化_NN 剂床_NN 层_NN 筐_NN １_CD 由_P 催化剂_NN 压板_NN １１_CD 、_PU 气体_NN 分布_VV 孔_VV １２_CD 、_PU 气体_NN 分布_VV 筒_VV １３_CD 、_PU 气体_NN 腔体_NN 外层_NN 圆筒_NN １４_CD 、_PU 气体_NN 分布_VV 腔体_NN １５_CD 、_PU 双_CD 层_M 流动_NN 分布板_NN １６_CD 、_PU 气体_NN 收集_VV 孔_NN １７_CD 、_PU 气体_NN 收集_VV 外筒_NN １８_CD 、_PU 气体_NN 收集_VV 内_LC 筒_P １９_CD 、_PU 热气体_NN 收集_VV 腔体_NN ２０_CD 及_CC 承载_VV 封头_NN ２１_CD 组成_VV ，_PU 所_MSP 述_VV 的_DEC 进气孔_NN １２_CD 、_PU 气体_NN 分布孔_NN １３_CD 分布_VV 在_P 气体_NN 分布_VV 筒_VE １４_CD 上_LC 的_DEG 下端_NN ；_PU 所_MSP 述_VV 的_DEC 气体_NN 分布_NN 腔体_NN １６_CD 设置_VV 在_P 气体_NN 分布_VV 筒_VE １４_CD 和_CC 气体_NN 腔体_NN 外层_NN 圆筒_NN １５_CD 之间_LC ；_PU 采用_VV 这_DT 种_M 结构_NN ，_PU 气体_NN 由_P 进气孔_NN 进入_VV 气体_NN 分布_NN 腔体_NN １５_CD 内_LC 并_CC 依次_AD 经过_VV 气体_NN 分布_VV 孔_VV １２_CD 、_PU 双_CD 层_M 流动_NN 分布板_NN １６_CD 进入_VV 径向_JJ 催化_NN 剂床_NN 层_NN 筐_NN ２_CD 进行_VV 化学_NN 反应_NN ，_PU 反应_VV 后_LC 的_DEG 气体_NN 由_P 气体_NN 收集_VV 孔_NN １７_CD 进入_VV 热气体_NN 收集_VV 腔体_NN ２０_CD ，_PU 并_CC 在_P 冷_VA 、_PU 热气体_NN 中心_NN 换热器_NN ３_CD 的_DEG 管外_NN 流动_NN 与_CC 管_NN 内_LC 冷气体_NN 换热_VV ，_PU 换热_VV 后_LC 由_P 反应_JJ 气体_NN 出口_NN ３８_CD 流出_VV 。_PU
+在_P 本_DT 实施例_NN 中_LC ，_PU 所_MSP 述_VV 的_DEC 冷气_NN 收集_VV 室_NN ２_CD 由_P 密封_NN 封头_NN ２７_CD 、_PU 密封_NN 法兰_NN ２２_CD 、_PU 密封_NN 填料_NN 组合件_NN Ｉ_OD ０２_NOI ２３_CD 、_PU 密封_VV 填料_NN 组合件_NN ＩＩ_CD ０２_NOI ２４_CD 、_PU 封_NN 头_NN 外套_NN 管_VV ２５_CD 和_CC 密封_NN 填料_NN 组合件_NN ＩＩＩ２６_CD 组成_VV 。_PU
+上述_JJ 实施例_NN 不_AD 应视_VV 为_VC 对_P 本_DT 实用_JJ 新型_NN 的_DEG 限制_NN ，_PU 但_AD 任何_DT 基于_P 本_DT 实用_JJ 新型_NN 的_DEG 精神_NN 所_MSP 作_VV 的_DEC 改进_NN ，_PU 都_AD 应_VV 在_P 本_DT 实用_JJ 新型_NN 的_DEG 保护_NN 范围_NN 之内_LC 。_PU
+１_CD ．_PU 一_CD 种_M 内设_NN 中心_NN 换热器_NN 的_DEG 径向_JJ 催化剂_NN 床_NN 层_NN ，_PU 其_PN 包括_VV 有_VE 径向_JJ 催化_NN 剂床_NN 层筐_NN 及_CC 冷气_NN 收集_VV 室_SP ；_PU 其_PN 特征_NN 在于_VV 还_AD 包括_VV 有_VE 一_CD 冷_VA 、_PU 热气体_NN 中心_NN 换热器_NN ，_PU 所_MSP 述_VV 的_DEC 冷_VA 、_PU 热气体_NN 中心_NN 换热器_NN 设置_VV 在_P 径向_JJ 催化剂_NN 床_NN 层_NN 筐内_NN 。_PU
+２_CD ．_PU 根据_P 权利_NN 要求_NN １_CD 所_MSP 述_VV 的_DEC 一_CD 种_M 内设_NN 中心_NN 换热器_NN 的_DEG 径向_JJ 催化剂_NN 床_NN 层_NN ，_PU 其_PN 特征_NN 在于_VV 所_MSP 述_VV 的_DEC 冷_VA 、_PU 热气体_NN 中心_NN 换热器_NN 由_P 中心_NN 两_CD 用管_VV 、_PU 上部_NN 支撑_VV 管板_NN 、_PU 换热管_NN 、_PU 下_JJ 活动_JJ 管板_NN 、_PU 下部_NN 活动_JJ 封头_NN 、_PU 锥形_JJ 密封_NN 筒体_NN 、_PU 冷气管_NN 、_PU 反应_JJ 气体_NN 出口_NN 、_PU 冷气_NN 分布_VV 室_BA 组成_VV 。_PU
+３_CD ．_PU 根据_P 权利_NN 要求_NN １_CD 所_MSP 述_VV 的_DEC 一_CD 种_M 内设_NN 中心_NN 换热器_NN 的_DEG 径向_JJ 催化剂_NN 床_NN 层_NN ，_PU 其_PN 特征_NN 在于_VV 所_MSP 述_VV 的_DEC 径向_JJ 催化剂_NN 床_NN 层_CC 筐_NN 由_P 催化剂_NN 压板_NN 、_PU 进气孔_NN 、_PU 气体_NN 分布孔_NN 、_PU 气体_NN 分布_VV 筒_NN 、_PU 气体_NN 腔体_NN 外层_NN 圆筒_NN 、_PU 气体_NN 分布_VV 腔体_NN 、_PU 双层_NN 流动_NN 分布板_NN 、_PU 气体_NN 收集_VV 孔_NN 、_PU 气体_NN 收集_VV 外筒_NN 气体_NN 收集_VV 内筒_NN 、_PU 热气体_NN 收集_VV 腔体_NN 及_CC 承载_VV 封头_NN 组成_VV ，_PU 所_MSP 述_VV 的_DEC 进气孔_NN 、_PU 气体_NN 分布孔_NN 分布_VV 在_P 气体_NN 分布_VV 筒_NN 上_LC 的_DEG 下端_NN ；_PU 所_MSP 述_VV 的_DEC 气体_NN 分布_NN 腔体_NN 设置_VV 在_P 气体_NN 分布_VV 筒_NN 和_CC 气体_NN 腔体_NN 外层_NN 圆筒_NN 之间_LC 。_PU
+４_CD ．_PU 根据_P 权利_NN 要求_NN １_CD 所_MSP 述_VV 的_DEC 一_CD 种_M 内设_NN 中心_NN 换热器_NN 的_DEG 径向_JJ 催化剂_NN 床_NN 层_NN ，_PU 其_PN 特征_NN 在于_VV 所_MSP 述_VV 的_DEC 冷气_NN 收集_VV 室_AS 由_P 密封_JJ 封头_NN 、_PU 密封法_NN 兰_NN 、_PU 密封_NN 填料_NN 组合件_NN Ｉ_NN 、_PU 密封_NN 填料_NN 组合件_NN ＩＩ_CD 、_PU 封头_NN 外套管_NN 和_CC 密封_NN 填料_NN 组合件_NN ＩＩＩ_CD 组成_VV 。_PU
+转动式_JJ 蹬骨_NN 手术_NN 器械_NN ，_PU 用于_VV 医疗_NN 手术_NN 。_PU
+它_PN 由_P 手柄_NN 、_PU 长臂_NN 和_CC 工作端_NN 所_MSP 构成_VV 。_PU
+长_JJ 臂_NN 由_P 可_VV 转动_VV 的_DEC 外套_NN 和_CC 内轴_NN 组成_VV ，_PU 工作端_NN 与_CC 长臂_NN 之间_LC 构成_VV 夹角_NN 。_PU
+器械_NN 与_CC 相应_JJ 的_DEG 人工_NN 蹬骨_NN 配套_VV 使用_VV ，_PU 具有_VV 手术_NN 时_LC 不_AD 遮挡_VV 手术者_NN 视线_NN ，_PU 占据_VV 空间_NN 小_VA ，_PU 安装_VV 蹬骨_NN 方便_VA ，_PU 易于_VV 调整_VV 、_PU 易于_VV 掌握_VV 操作_NN 方法_NN ，_PU 操作_NN 方法_NN 简便_VA 等_ETC 优点_NN 。_PU
+本_DT 实用_JJ 新型_NN 是_VC 一_CD 种_M 用于_VV 医疗_NN 手术_NN 、_PU 主要_AD 用于_VV 中耳_JJ 手术_NN 的_DEC 医疗_NN 器械_NN 。_PU
+目前_NT 治疗_VV 耳硬化症_NN 的_DEC 方法_NN 是_VC 蹬骨_NN 摘除_VV 术_NN ，_PU 蹬骨_NN 摘除_VV 后_LC ，_PU 可以_VV 用_P 各_DT 种_M 人工物_NN 代替_VV ，_PU 这_DT 种_M 代替物_NN 通常_AD 叫_VV 人_NN 工蹬骨_NN 。_PU
+人工_NN 蹬骨_VV 的_DEC 器械_NN 一般_AD 是_VC 根据_P 人工蹬_NN 骨_VV 自身_PN 的_DEG 形状_NN 所_MSP 设计_VV ，_PU 手术_NN 的_DEC 技巧_NN 与_CC 器械_NN 地灵_NN 活_AD 适用_VV ，_PU 是_VC 保证_VV 手术_NN 成功_VV 不_AD 可_VV 少_VA 的_DEC 条件_NN 。_PU
+已_AD 有_VE 的_DEC 蹬骨_NN 手术_NN 器械_NN 一般_AD 是_VC 手柄_NN 和_CC 工作端_NN 在_P 同_DT 一_CD 平面_NN 内_LC 或者_CC 是_VC 由_P 手柄_NN 、_PU 长臂_NN 、_PU 工作端_NN 组成_VV ，_PU 长_JJ 臂_NN 可以_VV 轴向_JJ 移动_NN 等_ETC ，_PU 这_DT 种_M 结构_NN 的_DEC 器械_NN ，_PU 使用_VV 时_LC 易_AD 遮挡_VV 手术者_NN 视线_NN ，_PU 占据_VV 空间_NN 大_VA ，_PU 手柄_NN 前端_NN 或_CC 长臂很_JJ 难做_NN 的_DEC 足够_NN 小_VA ，_PU 还_AD 有_VE 的_DEC 器械_NN 结构_NN 比_NOI 较_AD 复杂_VA ，_PU 操作_NN 难度_NN 较_AD 大_VA ，_PU 不_AD 易_AD 掌握_VV ，_PU 致使_VV 蹬骨_NN 手术_NN 目前_NT 只_AD 能_VV 在_P 极少_JJ 数医院_NN 进行_VV 。_PU
+本_DT 实用_JJ 新型_NN 的_DEG 目的_NN 是_VC ，_PU 针对_P 上述_JJ 器械_NN 存在_VV 的_DEC 不足_NN ，_PU 设计_VV 一_CD 种_M 转动式_JJ 蹬骨_NN 手术_NN 器械_NN ，_PU 它_PN 与_CC 相应_JJ 的_DEG 人_NN 工蹬_NN 骨配套_NN 使用_VV ，_PU 使_VV 蹬骨_NN 手术_NN 变得_VV 比较_AD 简单_VA 易行_VA ，_PU 使_VV 它_PN 成为_VV 具有_VV 一般_JJ 显微_NN 手术_NN 经验_NN 的_DEC 医师_NN 所_MSP 能_VV 进行_VV 的_DEC 一_CD 种_M 普通_JJ 手术_NN ，_PU 从而_AD 解除_VV 广大_JJ 病人_NN 的_DEG 痛苦_NN 。_PU
+本_DT 实用_JJ 新型_NN 的_DEG 主要_JJ 结构_NN 特点_NN 是_VC ，_PU 工作端_NN 与_P 长臂_NN 构成_VV 夹角_NN ，_PU 长臂_NN 由_P 外套_NN 、_PU 内轴_NN 组成_VV ，_PU 使用_VV 时_LC ，_PU 外套_NN 、_PU 内轴_NN 均_AD 可_VV 转动_VV ，_PU 工作端_NN 上_LC 有_VE 两_CD 个_M 钢柱_NN ，_PU 钢柱_NN 可_VV 直接_AD 插入_VV 蹬骨_NN 园环_NN 中_LC ，_PU 套入_VV 砧骨_NN 长_VA 突_CC 处_NN ，_PU 由于_P 长臂与_JJ 工作端_NN 处于_VV 异面_NN ，_PU 所以_AD 手术_NN 时_LC ，_PU 不_AD 易_AD 遮挡_VV 手术者_NN 视线_NN ，_PU 手柄_NN 可_VV 用_P 弹性_JJ 材料_NN 制做_VV 或者_CC 在_P 手柄_NN 之间_LC 加限_VV 位_VV 弹簧_NN ，_PU 使_VV 手柄_NN 自身_PN 有_VE 一定_JJ 的_DEG 限位_NN 作用_NN 。_PU
+由于_P 本_DT 实用_JJ 新型_NN 是_VC 根据_P 相应_JJ 的_DEG 人_NN 工蹬_NN 骨_NN 所_MSP 设计_VV ，_PU 能够_VV 与_P 这_DT 种_M 蹬骨_NN 配套_VV 使用_VV 的_DEC 器械_NN ，_PU 也_AD 可_VV 采用_VV 长_JJ 臂_NN 与_P 手柄_NN 在_P 同_DT 一_CD 平面_NN 内_LC 的_DEG 结构_NN ，_PU 或者_CC 长_JJ 臂_NN 的_DEG 外套_NN 、_PU 内轴_NN 不_AD 转动_VV 的_DEC 结构_NN ，_PU 但_CC 工作_NN 端_NN 必须_VV 与_P 长臂_NN 构成_VV 角度_NN ；_PU 本_DT 实用_JJ 新型_NN 的_DEG 工作端_NN 还_AD 可以_VV 制成_VV 钳式_NN 、_PU 剪式_NN 、_PU 镊式_NN 、_PU 听骨_NN 钳式_NN 、_PU 扩张_NN 器式_NN 等_ETC 形状_NN ，_PU 它们_PN 可以_VV 制成_VV 各_DT 种_M 不同_JJ 尺寸_NN 和_CC 规格_NN ，_PU 用_VV 在_P 许多_CD 狭窄管_NN 腔_NN 等_ETC 部位_NN 。_PU
+由于_P 本_DT 实用_JJ 新型_NN 的_DEG 工作端_NN 与_P 长臂_NN 之间_LC 构成_VV 角度_NN ，_PU 长臂_NN 采用_VV 了_AS 可_VV 转动_VV 的_DEC 外套_NN 、_PU 内轴_NN 的_DEG 结构_NN 等_ETC ，_PU 所以_AD 解决_VV 了_AS 手术_NN 时_LC 易_AD 遮挡_VV 视线_NN 的_DEC 问题_NN ，_PU 这_DT 种_M 结构_NN 的_DEC 械械_NN 能够_VV 做得_VV 足够_VA 小_VA ，_PU 手术_NN 占据_VV 空间_NN 小_AD 适应_VV 了_AS 手术_NN 需要_VV ，_PU 使_VV 蹬骨_NN 安装_NN 方便_VA ，_PU 易于_VV 调整_VV ，_PU 该_DT 器械_NN 结构_NN 简单_VA ，_PU 易于_VV 掌握_VV 操作_NN 方法_NN ，_PU 具有_VV 一般_AD 显_VV 微_JJ 手术_NN 经验_VV 的_DEC 医生_NN ，_PU 均_AD 可_VV 方便_VA 地_DEV 用_P 本_DT 器械_NN 进行_VV 蹬骨_NN 手术_NN 。_PU
+下面_NN 对照_VV 附图_NN ，_PU 将_BA 最佳_JJ 方案_NN 及_CC 操作_NN 步骤_NN 做_VV 进一步_JJ 说明_NN 。_PU
+附图_NN １_CD 是_VC 本_DT 实用_JJ 新型_NN 的_DEG 主视图_NN ，_PU 附图_NN ２_CD 是_VC 左_JJ 视图_NN ，_PU 附图_NN ３_CD 是_VC 工作端_NN 放大_VV 剖视图_NN 。_PU
+附图_NN １_CD 中_LC （_PU １_CD ）_PU 是_VC 工作端_NN ，_PU 工作端_NN （_PU １_CD ）_PU 有_VE 两_CD 个_M 小_JJ 钢柱_NN （_PU ５_CD ）_PU 、_PU （_PU ６_CD ）_PU ，_PU 钢柱_NN （_PU ５_CD ）_PU 与_P 内轴_NN （_PU ４_CD ）_PU 、_PU 手柄_NN （_PU ８_CD ）_PU 连为_VV 一体_NN ，_PU 钢柱_NN （_PU ６_CD ）_PU 与_CC 外套_NN （_PU ３_CD ）_PU 、_PU 手柄_NN （_PU １０_CD ）_PU 连为_VV 一体_NN ，_PU 安装_VV 蹬骨_NN 时_LC ，_PU 钢柱_NN （_PU ５_CD ）_PU 、_PU （_PU ６_CD ）_PU 插入_VV 蹬骨_NN 的_DEG 园环_NN 中_LC ，_PU 长臂_JJ （_PU ２_CD ）_PU 将_BA 蹬骨_NN 送_VV 至_P 砧骨_NN 长_VA 突_CC 豆状_NN 突_CC 外侧_NN ，_PU 收缩_VV 手柄_NN （_PU ８_CD ）_PU 、_PU （_PU １０_CD ）_PU ，_PU 外套_NN （_PU ３_CD ）_PU 、_PU 内轴_NN （_PU ４_CD ）_PU 分别_AD 转动_VV ，_PU 使_VV 钢柱_NN （_PU ５_CD ）_PU 、_PU （_PU ６_CD ）_PU 间_LC 距扩_NN 大_VA ，_PU 即_AD 相应_JJ 的_DEG 蹬骨园_NN 环扩_NN 大_VA ，_PU 此时_NT ，_PU 将_BA 蹬骨_NN 套入_VV 砧骨_NN 长_VA 突_SP ，_PU 然后_AD 放松_VV 手柄_NN ，_PU 使_VV 蹬骨_NN 上_LC 的_DEC 弹簧_NN 夹夹_VV 在_P 砧骨_NN 长_VA 突_AD 上_LC ，_PU 退出_VV 本_DT 器械_NN ，_PU 蹬骨_NN 安装_VV 工作_NN 完成_VV 。_PU
+手柄_NN 与_CC 长臂_NN （_PU ２_CD ）_PU 之间_LC 的_DEG 连接处_NN 可以_VV 焊接_VV ，_PU 手柄_NN 之间_LC 加_VV 的_DEC 限位_NN 弹簧_NN （_PU ９_CD ）_PU 分别_AD 固定_VV 在_P 手柄_NN 突_AD 出_VV 端_NN （_PU ７_CD ）_PU 、_PU （_PU １１_CD ）_PU 上_LC 。_PU
+附图_NN ４_CD 、_PU ５_CD 、_PU ６_CD 、_PU ７_CD 、_PU ８_CD 分别_AD 是_VC 本_DT 实用_JJ 新型_NN 可_VV 用于_VV 其它_DT 医疗_NN 手术_NN 中_LC 工作端_NN 的_DEG 结构图_NN ，_PU 附图_NN ４_CD 是_VC 钳式_NN ，_PU 附图_NN ５_CD 是_VC 听骨_NN 钳式_NN ，_PU 附图_NN ６_CD 是_VC 扩张器式_NN ，_PU 附图_NN ７_CD 是_VC 镊式_NN ，_PU 附图_NN ８_CD 是_VC 剪式_NN 。_PU
+１_CD 、_PU 一_CD 种_M 用于_VV 中耳_JJ 手术_NN 的_DEC 蹬骨_NN 医疗_NN 器械_NN ，_PU 它_PN 由_P 手柄_NN （_PU ８_CD ）_PU 、_PU （_PU １０_CD ）_PU ，_PU 长臂_NN （_PU ２_CD ）_PU 和_CC 工作端_NN （_PU １_CD ）_PU 所_MSP 构成_VV 。_PU
+其_PN 特征_NN 在于_VV ，_PU 工作端_NN （_PU １_CD ）_PU 与_CC 长臂_NN （_PU ２_CD ）_PU 之间_LC 构成_VV 夹角_NN ，_PU 长臂_NR （_PU ２_CD ）_PU 由_P 可以_VV 转动_VV 的_DEC 外套_NN （_PU ３_CD ）_PU 和_CC 内轴_NN （_PU ４_CD ）_PU 组成_VV 。_PU
+２_CD 、_PU 按照_P 权利_NN 要求_NN １_CD 的_DEG 蹬骨_NN 医疗_NN 器械_NN ，_PU 其_PN 特征_NN 在于_VV ，_PU 长_JJ 臂_NN （_PU ２_CD ）_PU 与_P 手柄_NN （_PU ８_CD ）_PU 、_PU （_PU １０_CD ）_PU 之间_LC 可_VV 构成_VV 不同_VA 的_DEC 角度_NN ，_PU 或者_CC 长臂_JJ （_PU ２_CD ）_PU 与_P 手柄_NN （_PU ８_CD ）_PU 、_PU （_PU １０_CD ）_PU 在_P 同_DT 一_CD 平面_NN 内_LC 。_PU
+３_CD 、_PU 按照_P 权利_NN 要求_NN １_CD 或_CC ２_CD 的_DEG 蹬骨_NN 医疗_NN 器械_NN ，_PU 其_PN 特征_NN 在于_VV ，_PU 手柄_NN （_PU ８_CD ）_PU 、_PU （_PU １０_CD ）_PU 可_VV 用_P 弹性_JJ 材料_NN 制做_VV 或_CC 在_P 手柄_NN （_PU ８_CD ）_PU 、_PU （_PU １０_CD ）_PU 之间_LC 加限_VV 位_VV 弹簧_NN ，_PU 使_VV 手柄_NN 自身_PN 有_VE 一定_JJ 的_DEG 限位_NN 作用_NN 。_PU
+４_CD 、_PU 按照_P 权利_NN 要求_NN １_CD 的_DEG 蹬骨_NN 医疗_NN 器械_NN ，_PU 其_PN 特征_NN 在于_VV ，_PU 工作端_NN （_PU １_CD ）_PU 可以_VV 是_VC 钳式_NN 、_PU 镊式_NN 、_PU 剪式_NN 、_PU 听骨_NN 钳式_NN 或_CC 扩张器式_NN 。_PU
+滚珠_NN 传动_NN 装置_NN ，_PU 本_DT 发明_NN 是_VC 属_VV 机械_NN 工程_NN ，_PU 本_DT 发明_NN 是_VC 提高_VV 蜗杆_NN 传动_NN 装置_NN 的_DEG 效率_NN 和_CC 扩大_VV 蜗杆_NN 传动_NN 装置_NN 的_DEG 使用_NN 领域_NN ，_PU 蜗杆_NN 滚珠_NN 传动_NN 装置_NN 的_DEG 特征_NN 是_VC 由_P 蜗杆_NN 、_PU 滚珠_NN 、_PU 滚珠_NN 导轨_NN 和_CC 滚珠_NN 回路_NN 所_MSP 组成_VV 。_PU
+蜗杆_NN 滚珠_NN 传动_NN 装置_NN 体积_NN 小_VA ，_PU 结构_NN 紧凑_VA ，_PU 传动_NN 效率_NN 高_VA ，_PU 角速比_NN 大_VA ，_PU 运输_NN 平稳_VA ，_PU 无_VE 噪声_NN ，_PU 适用于_VV 机械_NN 设备_NN 的_DEG 增速_NN 和_CC 减速_JJ 传动_NN ，_PU 定_VV 级_NN 和_CC 变级_NN 传动_NN 以及_CC 高速_JJ 传动_NN 。_PU
+发明_NN 是_VC 属_VV 机械_NN 工程_NN
+根据_P 清华_NN 大学_NN 机械_NN 设计_NN 教研_VV 组_NN 和_CC 中央_NN 广播_JJ 电视_NN 大学_NN 合编_VA 的_DEC 《_PU 机械_NN 原理_NN 》_PU 中_LC 所_MSP 述_VV ，_PU 现有_JJ 技术_NN 中_LC ，_PU 蜗杆_NN 是_VC 与_P 蜗轮_NN 直接_AD 啮合_VV 完成_VV 机械_NN 传动_VV 的_DEC ，_PU 在_P 蜗杆_NN 蜗轮_NN 传动_NN 装置_NN 中_LC ，_PU 蜗杆_NN 是_VC 直径_NN 小_VA ，_PU 轴向_NN 长_VA ，_PU 齿数少_NN ，_PU 螺旋升_JJ 角小_NN 的_DEC 螺旋_NN 齿轮_NN 。_PU
+蜗轮_NN 是_VC 直径_NN 大_VA ，_PU 轴向_NN 短_VA ，_PU 齿数多_NN ，_PU 螺旋升_NN 角_AD 大_VA 的_DEC 螺旋_NN 齿轮_NN 。_PU
+现有_JJ 技术_NN 中_LC ，_PU 蜗杆_NN 是_VC 用_P 钢材_NN 制成_VV ，_PU 蜗轮_NN 是_VC 用_P 青铜_NN 制成_VV 。_PU
+蜗杆_NN 蜗轮_NN 装置_NN 的_DEC 缺点_NN 是_VC 传动_NN 效率_NN 低_VA ，_PU 不_AD 能_VV 用于_VV 大_JJ 功率_NN ，_PU 增速_VV 和_CC 高速_JJ 的_DEG 传动_NN 领域_NN 中_LC ，_PU 改变_VV 角速比_NN 时_LC 必须_VV 同时_AD 更换_VV 蜗杆_NN 和_CC 蜗轮_NN ，_PU 制造_VV 成本_NN 高_VA ，_PU 体积_NN 尙嫌_NN 大_VA 。_PU
+本_DT 发明_NN 的_DEG 目的_NN 是_VC 提高_VV 蜗杆_NN 传动_NN 装置_NN 的_DEG 效率_NN ，_PU 扩大_VV 使用_NN 领域_NN ，_PU 缩小_VV 体积_NN ，_PU 降低_VV 制造_NN 成本_NN 。_PU
+蜗杆_NN 滚珠_NN 传动_NN 装置_NN 是_VC 由_P 蜗杆_NN 、_PU 滚珠_NN 、_PU 滚珠_NN 导轨_NN 和_CC 滚珠_NN 回路_NN 所_MSP 组成_VV 。_PU
+在_P 蜗杆_NN 滚珠_NN 传动_NN 装置_NN 中_LC ，_PU 主动_JJ 蜗杆_NN 和_CC 从动_JJ 蜗杆_NN 的_DEC 轴心线_NN 相_AD 平行_VV ，_PU 两_CD 蜗杆_NN 地_DEG 最小_JJ 轴心_NN 距_VV 是_VC 蜗杆_NN 齿顶园_NN 半径_NN 之_DEG 和_CC 。_PU
+两_CD 蜗杆_NN 不_AD 直接_AD 啮合_VV ，_PU 它们_PN 是_VC 通过_P 与_P 滚珠_NN 的_DEC 啮合_NN 实现_VV 机械_NN 传动_VV 的_DEC 。_PU
+机械力_NN 的_DEC 传递_NN 过程_NN 是_VC ：_PU 主动_JJ 蜗杆_NN －_PU 滚珠_NN －_PU 从_P 动蜗杆_NN 。_PU
+在_P 蜗杆_NN 滚珠_NN 传动_NN 装置_NN 中_LC ，_PU 蜗杆_NN 的_DEG 螺旋_NN 齿槽_NN 是_VC 与_P 滚珠_NN 相_AD 啮合_VV 的_DEC 园弧形_NN 。_PU
+蜗杆_NN 滚珠_NN 传动_NN 装置_NN 中_LC 的_DEG 蜗杆_NN 根据_P 需要_NN 可_VV 制成_VV 左旋_NN 或_CC 是_VC 右_JJ 旋_NN ，_PU 单头_NN 或_CC 是_VC 多头_VA ，_PU 小_JJ 螺旋_NN 升_VV 角_NN 或_CC 是_VC 大_JJ 螺旋_NN 升角_VV ，_PU 单段_JJ 或是_CC 多_CD 段_M ，_PU 不同_JJ 升角_NN 及_CC 旋向_VV 的_DEC 蜗杆_NN 。_PU
+蜗杆_NN 滚珠_NN 传动_NN 装置_NN 中_LC 的_DEG 滚珠_NN 是_VC 园形_NN 的_DEC 钢性_JJ 球体_NN 。_PU
+抛光_VV 的_DEC 钢球_NN 特别_AD 适用于_VV 蜗杆_NN 滚珠_NN 传动_NN 装置_NN 。_PU
+滚珠_NN 在_P 蜗杆_NN 滚珠_NN 传动_NN 装置_NN 中_LC ，_PU 直接_AD 与_P 主动_JJ 蜗杆_NN 和_CC 从动_JJ 蜗杆_NN 啮合_VV ，_PU 滚珠_NN 既_AD 是_VC 两_CD 蜗杆_NN 机械力_NN 传递_VV 的_DEC 桥梁_NN ，_PU 又_AD 是_VC 装置_NN 赖以_VV 运转_VV 的_DEC 枢纽_NN 。_PU
+蜗杆_NN 滚珠_NN 传动_NN 装置_NN 中_LC 的_DEG 滚珠_NN 导轨_NN 是_VC 由_P 刚性_NN 的_DEC 轨道_NN 所_MSP 组成_VV 。_PU
+所_MSP 述_VV 导轨_NN 的_DEG 刚性_JJ 轨道_NN 的_DEG 轨面_NN 是_VC 与_P 滚珠_NN 相_AD 啮合_VV 的_DEC 园弧形_NN 。_PU
+滚珠_NN 导轨_NN 是_VC 和_P 壳体_NN 一起_AD 铸造_VV 加工_VV 而_MSP 成_VV ，_PU 可_VV 在_P 轨面_NN 上_LC 镀_VV 上_NN 减_VV 摩擦_NN 耐磨_NN 材料_NN ，_PU 或是_CC 用_VV 减_VV 摩擦_NN 耐磨_NN 材料_NN 制成_VV 的_DEC 导轨_NN 固定_VV 在_P 壳体_NN 或_CC 专用_NN 的_DEC 支架_NN 上_LC 。_PU
+导轨_NN 在_P 传动_NN 装置_NN 中_LC 的_DEG 作用_NN 是_VC 保持_VV 滚珠_NN 与_CC 蜗杆_NN 的_DEG 正常_JJ 啮合_NN 和_CC 引导_VV 滚珠_VV 的_DEC 正常_JJ 运行_NN 。_PU
+蜗杆_NN 滚珠_NN 传动_NN 装置_NN 中_LC 的_DEG 滚珠_NN 回路_NN 是_VC 与_P 导轨_NN 两_CD 端_NN 相_AD 含接_VV 的_DEC 供_VV 滚珠_NN 循环_NN 运动_VV 的_DEC 孔道_NN 所_MSP 组成_VV 。_PU
+滚珠_NN 回路_NN 是_VC 与_P 壳体_NN 一起_AD 铸造_VV 加工_VV 而_MSP 成_VV ，_PU 或是_CC 用_VV 管道_NN 制成_VV 的_DEC 滚珠_NN 回路_NN 固定_VV 在_P 壳体_NN 上_LC 。_PU
+回路_NN 中_LC 必须_VV 光滑_NN ，_PU 使_VV 滚珠_NN 能_VV 在_P 其中_NN 顺利_NN 地_DEC 循环_NN 运动_NN 。_PU
+在_P 图_NN １_CD 中_LC ，_PU 主动_JJ 蜗杆_NN １_CD 旋转_VV 运动_NN 时_LC ，_PU 蜗杆_NN 螺旋齿_NN 产生_VV 的_DEC 轴向力_NN 推动_VV 与_P 之_PN 啮合_VV 的_DEC 滚珠_NN ３_CD 沿着_P 导轨_NN ４_CD 作_VV 直线_NN 运动_NN ，_PU 滚珠_NN ３_CD 的_DEG 直线_NN 运动_NN 作用于_VV 与_P 之_PN 啮合_VV 的_DEC 从动_JJ 蜗杆_NN ２_CD 的_DEG 螺旋齿_NN 上_LC ，_PU 螺旋齿_NN 产生_VV 的_DEC 径向力_NN 推动_VV 从_P 动蜗杆_NN ２_CD 旋转_VV ，_PU 从而_AD 完成_VV 机械_NN 传动_VV 的_DEC 全_DT 过程_NN 。_PU
+主动_JJ 蜗杆_NN １_CD 的_DEG 不断_JJ 旋转_NN 运动_NN ，_PU 使_VV 滚珠_NN ３_CD 沿着_P 导轨_NN ４_CD 往前_AD 运动_VV ，_PU 当_P 滚珠_NN ３_CD 运动_VV 到_VV 导轨_NN 的_DEG 终端_NN 时_LC ，_PU 被_SB 导轨_VV 的_DEC 弧线_NN 轨道_NN 推出_VV 啮合_NN 中心线_NN ，_PU 与_P 两_CD 蜗杆_NN 脱离_VV 啮合_VV ，_PU 接着_AD 被_SB 旋转_VV 的_DEC 蜗杆_NN 推进_VV 滚珠_NN 回路_NN ５_CD ，_PU 此时_AD 滚_VV 珠_NN 回路_NN 中_LC 已_AD 储满_VV 了_AS 滚珠_NN ，_PU 进入_VV 滚珠_NN 回路_NN 中_LC 的_DEG 滚珠_NN ３_CD 就_AD 将_BA 另_DT 一_CD 端_NN 的_DEG 一_CD 颗_M 滚珠_NN 推进_VV 导轨_NN ，_PU 与_P 两_CD 蜗_NN 进行_VV 啮合_NN 。_PU
+这_PN 是_VC 蜗杆_NN 滚珠_NN 传动_NN 装置_NN 的_DEC 同时_JJ 換珠_NN 过程_NN 。_PU
+蜗杆_NN 滚珠_NN 传动_NN 装置_NN 的_DEC 另_DT 一_CD 种_M 換珠_NN 过程_NN 是_VC 延_VV 时_NN 換珠_NN 过程_NN ，_PU
+在_P 只_AD 需_VV 作有_VV 限往_VV 复_AD 旋转_VV 的_DEC 蜗杆_NN 滚珠_NN 传动_NN 装置_NN 中_LC ，_PU 不_AD 需要_VV 滚_VV 珠_NN 回路_NN 。_PU
+在_P 蜗杆_NN 滚珠_NN 传动_NN 装置_NN 中_LC ，_PU 蜗杆_NN 的_DEG 旋转_NN 方向_NN 是_VC 由_P 主动_JJ 蜗杆_NN 与_CC 从动_JJ 蜗杆_NN 的_DEG 螺旋线_NN 方向_NN 所_MSP 决定_VV 的_DEC ，_PU 两_CD 蜗杆_NN 的_DEG 螺旋线_NN 方向_NN 相同_VA 则_DEC 旋转_NN 方向_NN 也_AD 相同_VA ，_PU 两_CD 蜗杆_NN 的_DEG 螺旋线_NN 方向_NN 相反_VA 则_AD 旋转_VV 方向_NN 也_AD 相反_VV 。_PU
+其_PN 原理_NN 如_P 图_NN ２_CD 。_PU
+在_P 图_NN ２_CD <_PU １>_CD 中_LC ，_PU 主动_JJ 蜗杆_NN １_CD 是_VC 右_JJ 螺旋线_NN 的_DEC 蜗杆_NN ，_PU 从_P 动蜗杆_NN ２_CD 也_AD 是_VC 右_JJ 螺旋线_NN 的_DEC 蜗杆_NN 。_PU
+当_P 蜗杆_NN １_CD 往_P 箭头_NN 方向_NN 顺时针_AD 旋转_VV 时_LC ，_PU 推动_VV 滚珠_NN ３_CD 沿着_P 导轨_NN ４_CD 往_P 箭头_NN 方向_NN 作_VV 直线_NN 运动_NN ，_PU 蜗杆_NN ２_CD 在_P 滚珠_NN ３_CD 的_DEG 作用_NN 下_LC 往_P 箭头_NN 方向_NN 作顺_VV 时_LC 针_M 旋转_NN 。_PU
+在_P 图_NN ２_CD <_PU １>_CD 中_LC ，_PU 主动_JJ 蜗杆_NN １_CD 是_VC 右_JJ 螺旋线_NN 的_DEC 蜗杆_NN ，_PU 从_P 动蜗杆_NN ２_CD 是_VC 左_JJ 螺旋线_NN 的_DEC 蜗杆_NN 。_PU
+当_P 蜗杆_NN １_CD 往_P 箭头_NN 方向_NN 顺时针_AD 旋转_VV 时_LC ，_PU 推动_VV 滚珠_NN ３_CD 沿着_P 导轨_NN ４_CD 往_P 箭头_NN 方向_NN 作_VV 直线_NN 运动_NN ，_PU 右_JJ 螺旋线_NN 蜗杆_NN ２_CD 在_P 滚珠_NN ３_CD 的_DEG 作用_NN 下_LC ，_PU 往_P 箭头_NN 方向_NN 作反_VV 时_LC 针_M 运转_NN 。_PU
+在_P 蜗杆_NN 滚珠_NN 传动_NN 装置_NN 中_LC ，_PU 两_CD 蜗杆_NN 的_DEG 角速比_NN 是_VC 与_P 蜗杆_NN 的_DEG 直径_NN 和_CC 蜗杆_NN 螺旋_NN 升角_VV 正切值_NN 的_DEC 乘积_NN 成_VV 反比_VV ，_PU
+实际_JJ 应用_NN 中_LC ，_PU 蜗杆_NN １_CD 常_AD 与_P 蜗杆_NN ２_CD 的_DEG 直径_NN 相等_VV ，_PU 这样_PN 的_DEG 蜗杆_NN 滚珠_NN 传动_NN 装置_NN 的_DEG 角速_NN 比_NN 就_AD 由_P 两_CD 蜗杆_NN 的_DEG 螺旋升_NN 角_NN 决_AD 定_VV 。_PU
+蜗杆_NN 滚珠_NN 传动_NN 装置_NN 的_DEG 角速比_NN 大_VA ，_PU 一般_AD 工作_VV 在_VV １００_CD 以下_LC ，_PU 高_VA 的_DEC 可_VV 达_VV ５００_CD ，_PU 二_CD 级_M 变速_NN 可_VV 达_VV １００００_CD 以上_LC 。_PU
+图_NN ３_CD 是_VC 二_CD 级_M 蜗杆_NN 滚珠_NN 传动_NN 装置_NN 。_PU
+第一_OD 级_M 的_DEG 主动_JJ 蜗杆_NN １_CD 旋转_VV 时_LC ，_PU 推动_VV 与_P 之_PN 啮合_VV 的_DEC 滚珠_NN ３_CD 沿着_P 第一_OD 级_M 的_DEG 导轨_NN ４_CD 作_VV 直线_NN 运动_NN ，_PU 滚珠_NN ３_CD 的_DEG 运动_NN 推动_VV 与_P 之_PN 啮合_VV 的_DEC 蜗杆_NN ２_CD 旋转_VV 。_PU
+蜗杆_NN ２_CD 分_M 两_CD 段_M ，_PU 第一_OD 段_M 是_VC 第一_OD 级_M 的_DEG 从动_NN 蜗杆_NN ，_PU 第二_OD 段_M 是_VC 第二_OD 级_M 的_DEG 主动_NN 蜗杆_NN 。_PU
+蜗杆_NN ２_CD 的_DEG 旋转_NN ，_PU 推动_VV 第二_OD 段_M 蜗杆_NN 相_AD 啮合_VV 的_DEC 滚珠_NN ２３_CD 沿着_P 导轨_NN ２４_CD 作_VV 直线_NN 运动_NN ，_PU 滚珠_NN ２３_CD 的_DEG 直线_NN 运动_NN 推动_VV 第二_OD 级_M 从动_JJ 蜗杆_NN ２２_CD 旋转_VV ，_PU 从而_AD 实现_VV 二级_JJ 传动_NN 。_PU
+在_P 二_CD 级_M 蜗杆_NN 滚珠_NN 传动_NN 装置_NN 中_LC ，_PU 各_DT 级_M 的_DEG 滚珠_NN 、_PU 滚珠_NN 导轨_NN ，_PU 滚珠_NN 回路_NN 是_VC 自_P 成_VV 系统_NN 的_SP 。_PU
+在_P 蜗杆_NN 滚珠_NN 传动_NN 装置_NN 中_LC ，_PU 蜗杆_NN 的_DEG 螺旋升_NN 角_AD 小_VA 时_LC ，_PU 蜗杆_NN 产生_VV 的_DEC 轴向_JJ 推力_NN 大_VA ，_PU 为了_P 克服_VV 轴向_NN 推力_NN ，_PU 可_VV 采用_VV 两_CD 段_M 螺旋齿_NN 的_DEC 蜗杆_NN ，_PU 这_DT 两_CD 段_M 螺旋齿_NN 螺旋_NN 升_VV 角_NN 相等_VA ，_PU 螺旋_NN 方向_NN 相反_VA 。_PU
+在_P 无_VE 轴_NN 向_P 力蜗杆_NN 滚珠_NN 传动_NN 装置_NN 中_LC ，_PU 各_DT 段_M 的_DEG 滚珠_NN 、_PU 滚珠_NN 导轨_NN 、_PU 滚珠_NN 回路_NN 是_VC 自_P 成_VV 系统_NN 的_SP 。_PU
+蜗杆_NN 滚珠_NN 传动_NN 装置_NN 的_DEG 积极_NN 效果_NN 是_VC 传动_NN 效率_NN 高_VA 、_PU 角速比_NN 大_VA 、_PU 结构_NN 紧奏_VA ，_PU 改变_VV 转速_NN 和_CC 转向_VV 只_AD 需_VV 更换_VV 一_CD 根_M 蜗杆_NN ，_PU 运转_NN 平稳_VA 无_VE 噪声_NN ，_PU 体积_NN 小_VA ，_PU 重量_NN 轻_VA ，_PU 制造_NN 成本_NN 低_VA 。_PU
+蜗杆_NN 滚珠_NN 传动_NN 装置_NN 适用于_VV 机械_NN 设备_NN 的_DEG 定级_NN 传动_NN 、_PU 变级_NN 传动_NN 、_PU 增速_JJ 传动_NN 、_PU 减速_JJ 传动_NN 和_CC 高速_JJ 传动_NN 。_PU
+实施例_NN ：_PU 车床_NN 蜗杆_NN 滚珠_NN 变速_VV 箱_NN
+车床_NN 蜗杆_NN 滚珠_NN 变速箱_NN 是_VC 由_P 四_CD 根_M 蜗杆_NN 和_CC 三套_NN 滚珠_NN 系统_NN 所_MSP 组成_VV 。_PU
+如_P 图_NN ４_CD 所_MSP 示_VV 。_PU
+变速箱_NN 中_LC 的_DEG 四_CD 根_M 蜗杆_NN ，_PU 每_DT 一_CD 根_M 上_LC 都_AD 有_VE 三_CD 段_M 不同_JJ 螺旋_NN 升角_VV 的_DEC 螺旋齿_NN 。_PU
+滚珠_NN 系统_NN 中_LC 的_DEG 滚珠_NN 导轨_NN 和_CC 滚珠_NN 回路_NN 是_VC 与_P 蜗杆_NN 滚珠_NN 传动_NN 装置_NN 的_DEG 壳体_NN 一起_AD 加工_VV 成_VV 后_LC ，_PU 再_AD 固定_VV 在_P 箱体_NN 中_LC 。_PU
+变速箱_AD 的_DEG 变速_NN 是_VC 由_P 三_CD 挡_VV 手动_JJ 齿轮条_NN 机构_NN 变换_VV 不同_JJ 升角_NN 的_DEC 螺旋齿段_NN 实现_VV 的_SP 。_PU
+变速箱_AD 在_P 換挡_NN 时_LC ，_PU 拉出_VV 手轮_NN ，_PU 手轮_NN 上_LC 的_DEC 定位销_NN 退出_VV 定位孔_NN ，_PU 齿轮也_NN 与_CC 锁紧_JJ 齿条_NN 脱离_VV 啮合_NN 。_PU
+旋转_JJ 手轮_NN 时_LC ，_PU 与_P 手轮_NN 联成_VV 一体_NN 的_DEC 齿轮_NN 就_AD 传动_VV 始终_AD 与_P 之_PN 啮合_VV 的_DEC 拨叉_NN 齿条_NN 沿_P 轴向_NN 运动_VV ，_PU 齿条_NN 上_LC 拨叉_VV 推动_VV 蜗杆_NN 完成_VV 变换_NN 螺齿段_NN 的_DEG 动作_NN 。_PU
+此时_NT 松开_VV 手轮_NN ，_PU 在_P 压力_NN 弹簧_NN 的_DEG 作用_NN 下_LC ，_PU 定位销_NN 进入_VV 定位孔_NN ，_PU 齿轮_NN 同时_AD 与_P 锁紧_NN 齿条_NN 啮合_VV ，_PU 实行_VV 自锁_NN ，_PU 并_CC 承受_VV 蜗杆_NN 上_LC 的_DEG 轴向_JJ 推力_NN 。_PU
+变速箱_NN 中_LC 的_DEG 蜗杆_NN 采用_VV 分段_NN 加工_NN ，_PU 然后_AD 用_P 键销_NN 将_BA 它们_PN 组合_VV 成_VV 蜗杆_NN ，_PU 这_DT 种_M 方法_NN 加工_VV 容易_VA ，_PU 适合_VV 大_JJ 规模_NN 的_DEC 生产_NN 。_PU
+可_VV 采用_VV 现有_JJ 技术_NN 加工_NN 。_PU
+图_NN ４_CD 标记_VV 的_DEC 说明_NN ：_PU １_CD 、_PU ２_CD 蜗杆_NN ，_PU ３_CD 、_PU 滚珠_NN ，_PU ４_CD 、_PU 导轨_NN ，_PU ５_CD 、_PU 滚珠_NN 回路_NN ，_PU ６_CD 、_PU 壳体_NN ，_PU ７_CD 、_PU 花键轴_NN ，_PU ８_CD 、_PU 光杆轴_NN ，_PU ９_CD 、_PU 齿轮_NN ，_PU １０_CD 、_PU 手轮轴_NN ，_PU １１_CD 、_PU 拨叉_NN 齿条_NN ，_PU １２_CD 、_PU 锁紧_JJ 齿条_NN ，_PU １３_CD 、_PU 齿条_NN 导轨_NN ，_PU １４_CD 、_PU 轴_NN 向_P 推力_NN 球_NN 轴承_NN ，_PU １５_CD 、_PU 压力_NN 弹簧_NN ，_PU １６_CD 、_PU 定位销_NN ，_PU １７_CD 、_PU 手轮_NN ，_PU １８_CD 、_PU １９_CD 箱体_NN ，_PU ２０_CD 、_PU 螺栓孔_NN 。_PU
+１_CD 、_PU 一_CD 种_M 蜗杆_NN 传动_NN 装置_NN ，_PU 其_PN 特征_NN 是_VC 由_P 蜗杆_NN ，_PU 滚珠_NN 、_PU 滚珠_NN 导轨_NN 和_CC 滚珠_NN 回路_NN 所_MSP 组成_VV 。_PU
+２_CD 、_PU 根据_P 权利_NN 要求_NN １_CD 所_MSP 述_VV 的_DEC 装置_NN ，_PU 其_PN 特征_NN 在于_VV 所_MSP 述_VV 的_DEC 蜗杆_NN 的_DEG 螺旋_NN 齿槽_NN 是_VC 与_P 滚珠_NN 相_AD 啮合_VV 的_DEC 园弧形_NN 。_PU
+３_CD 、_PU 根据_P 权利_NN 要求_NN １_CD 所_MSP 述_VV 的_DEC 装置_NN ，_PU 其_PN 特征_NN 在于_VV 所_MSP 述_VV 的_DEC 蜗杆_NN 轴心线_NN 相_AD 平行_VV ，_PU 最_AD 小轴_NN 心距_NN 是_VC 两_CD 蜗杆_NN 半径_NN 之_DEG 和_CC 。_PU
+４_CD 、_PU 根据_P 权利_NN 要求_NN １_CD 所_MSP 述_VV 的_DEC 装置_NN ，_PU 其_PN 特征_NN 在于_VV 所_MSP 述_VV 的_DEC 滚珠_NN 是_VC 园形_NN 的_DEC 刚性_JJ 球体_NN 。_PU
+５_CD 、_PU 根据_P 权利_NN 要求_NN １_CD 所_MSP 述_VV 的_DEC 装置_NN ，_PU 其_PN 特征_NN 在于_VV 所_MSP 述_VV 的_DEC 滚珠_NN 导轨_NN 是_VC 由_P 刚性_JJ 轨道_NN 所_MSP 组成_VV 。_PU
+６_CD 、_PU 根据_P 权利_NN 要求_NN ５_CD 所_MSP 述_VV 的_DEC 导轨_NN ，_PU 其_PN 特征_NN 在于_VV 所_MSP 述_VV 的_DEC 刚性_JJ 轨道_NN 的_DEG 轨面_NN 是_VC 与_P 滚珠_NN 相_AD 啮合_VV 的_DEC 园弧形_NN 。_PU
+７_CD 、_PU 根据_P 权利_NN 要求_NN １_CD 所_MSP 述_VV 的_DEC 装置_NN ，_PU 其_PN 特征_NN 在于_VV 所_MSP 述_VV 的_DEC 滚珠_NN 回路_NN 是_VC 由_P 与_P 滚珠_NN 导轨_NN 两_CD 端_NN 相_AD 含接_VV 的_DEC 供_VV 滚珠_NN 循环_NN 运动_VV 的_DEC 孔道_NN 所_MSP 组成_VV 。_PU
+本_DT 发明_NN 提供_VV 一_CD 种_M 由_P （_PU α－氯－α－肟基_NN ）_PU 乙酰苯_NN 直接_AD 制备_VV 芳乙胺卤酸盐_NN 的_DEC 方法_NN 。_PU
+该_DT 方法_NN 包括_VV 在_P 基本_JJ 无水分_JJ 的_DEG 有机酸_NN 中_LC ，_PU 在_P 过滤金_NN 属_VV 催化剂_NN 存在_VV 下_LC 的_DEG 氢化_NN 反应_NN 。_PU
+该_DT 方法_NN 通过_P 转化４－羟基（α－氯－α－肟基_NN ）_PU 乙酰苯_NN 到_VV 酪胺盐酸盐_NN 来_MSP 说明_VV 。_PU
+本_DT 发明_NN 公开_VV 了_AS 一_CD 种_M 通过_P 氢化_NN 还原_NN （_PU α－氯－α－肟基_NN ）_PU 乙酰苯_NN 和_CC 取代_NN 的_DEC （_PU α－氯－α－肟基_NN ）_PU 乙_CD 酰苯_NN 制备_VV 芳_CD 乙胺_NN 的_DEC 方法_NN 。_PU
+取代_NN 和_CC 未_AD 取代_VV 的_DEC 芳乙胺_NN 是_VC 重要_VA 的_DEC 工业_NN 用_VV 化学_NN 中间体_NN 。_PU
+它们_PN 用于_VV 制备_VV 药物_NN 活性_JJ 化合物_NN ，_PU 且_CC 在_P 某些_DT 情况_NN 下_LC 它们_PN 本身_PN 就_AD 是_VC 药物_NN 活性物_NN 。_PU
+例如_AD 苯乙胺_NN 和_CC 对_P －_CD 羟基苯乙胺_NN （_PU 酪胺_NN ）_PU 有拟_JJ 交感_NN （_PU 释放_VV 肾_NN 上腺素_NN ）_PU 作用_NN 。_PU
+酪胺_NN 也_AD 是_VC 麻醉剂_NN 的_DEC 一_CD 个_M 成份_NN ，_PU 可_VV 用作_VV 制备_VV 其它_DT 药物_NN 活性_JJ 化合物_NN 或_CC 组合物_NN 的_DEG 中间体_NN 或_CC 代用_NN 品_NN 。_PU
+酪胺盐酸盐_NN 是_VC 用于_VV 制备_VV 降脂_NN 苯酰_NN ，_PU 一_CD 种_M 抗胆_NN 甾醇剂_NN 的_DEG 重要_VA 的_DEC 药用_NN 中间体_NN 。_PU
+羟基酪胺_NN （_PU ３_CD －_PU 羟_CD 酪胺_NN ）_PU 是_VC 重要_VA 的_DEC 药物_NN 神经_AD 抑制_VV 传递剂_NN 。_PU
+它_PN 是_VC Ｄｏｐａｓｔａｔ_NN 和_CC 盐酸_NN 多_CD 巴胺_NN 中_LC 的_DEG 活性_JJ 成份_NN ，_PU 也_AD 是自_AD 然界_AD 存在_VV 的_DEC 降肾_NN 上_LC 腺素_VA 地_DEV 直接_VV 母体_NN 的_DEG 代表_NN 。_PU
+因为_P 芳乙胺_NN 的_DEG 重要性_NN ，_PU 关于_P 它们_PN 的_DEG 合成_NN 是_VC 众所周知_VV 的_DEC ，_PU 其中_NN 有_VE ：_PU
+美国_NR 专利_NN ５，０４１，６９９_CD （_PU 转让给_VV ）_PU 描述_VV 了_AS 由_P 乙酰苯_NN 合成_VV 芳乙胺_NN 的_DEC 方法_NN 。_PU
+乙酰苯_NN 首先_AD 转化_VV 成_VV α－肟基乙酰苯_NN ，_PU 然后_AD 氢化_VV 成_VV 芳乙胺_NN 。_PU
+待_VV 审批_NR 的_DEC 美国_NR 专利_NN 申请_NN ０７／６３０，１２７_CD （_PU 申请日_NN １９９０年_NT １２月_NT １９日_NT ）_PU 描述_VV 了_AS 在_P 含水_NN 反应_VV 介质_NN 存在_VV 下_LC 通过_P 氢化_NN 还原α－肟基乙酰苯_NN 合成_VV 芳乙胺盐酸盐_NN 的_DEC 方法_NN 。_PU
+人们_NN 对_P 改进_VV 的_DEC 、_PU 低_JJ 成本_NN 地_DEV 制备_VV 芳乙胺_NN 的_DEC 方法_NN ，_PU 最好_AD 从_P 易得_VV 的_DEC 原料_NN 或_CC 可_VV 方便_VA 且_CC 经济_VV 制得_VV 的_DEC 原料_NN 如_P （_PU α－氯－α－肟基_NN ）_PU 乙酰苯_NN 制备_VV 苯乙胺_NN 的_DEC 方法_NN 仍_AD 频感_VV 兴趣_NN 。_PU
+（_PU α－卤代－α－肟基_NN ）_PU 乙酰苯_NN 的_DEG 合成_NN 是_VC 已_AD 知_VV 的_DEC 。_PU
+例如_AD 美国_NR 专利_NN 申请书_NN ０７／８０１，９９９_CD （_PU １９９１年_NT １２月_NT ３日_NT 递交_VV ）_PU 描述_VV 了_AS ４－羟基（α－氯－α－肟基_NN ）_PU 乙酰苯_NN （_PU Ｎ_NN ，_PU ４_CD －_CC 二_CD 羟基－α－氧代苯乙酰亚胺氯_NN ）_PU 。_PU
+类似４－羟基（α－氯－α－肟基_NN ）_PU 乙酰苯_NN 的_DEC 化合物_NN 对_P 用_P 氢化_JJ 铝锂_NN 还_AD 原_VA （_PU 按_P １４_CD （_PU ７_CD ）_PU ，_PU ２６８_CD （_PU １９７４_NT ）_PU ）_PU 生产_VV 芳氨乙醇盐酸盐_NN 是_VC 已_AD 知_VV 的_DEC 。_PU
+本_DT 发明_NN 包括_VV 一_CD 种_M 由_P （_PU α－卤－α－肟基_NN ）_PU 乙酰苯_NN 直接_AD 制备_VV 芳乙胺_NN 及_CC 其_PN 盐酸盐_NN 的_DEC 方法_NN 。_PU
+该_DT 方法_NN 包括_VV ：_PU
+（_PU ｂ_CD ）_PU 将_BA 步骤_NN （_PU ａ_CD ）_PU 中_LC 的_DEG 乙_CD 酰苯_NN 化合物_NN 与_P 氢气_NN 在_P 基本上_AD 无水_VV 的_DEC 有机_JJ 酸溶剂_NN 中_LC ：_PU 在_P 基本_JJ 无水_NN 条件_NN 下_LC 和_CC 在_P 含载_VV 于_P 惰性_JJ 载体_NN 上_LC 的_DEC 过渡_JJ 金属_NN 催化剂_NN 存在_VV 下_LC 进行_VV 反应_NN ，_PU 以_MSP 消耗_VV ５_CD 当量_M 的_DEG 氢气_NN ；_PU
+和_P （_PU ｃ_OD ）_PU 除去_VV 催化剂_NN 并_CC 分离_VV 芳_CD 乙胺_NN 。_PU
+反应_JJ 步骤_NN 最好_AD 是_VC 在_VV 同_DT 一_CD 容器_NN 中_LC 进行_VV 。_PU
+本_DT 发明_NN 在_P 一_CD 实施_NN 方案_NN 中_LC 提供_VV 一_CD 种_M 按_P 方案_NN １_CD 所_MSP 述_VV 的_DEC 直接_JJ 转化_NN （_PU α－卤－α－肟基_NN ）_PU 乙酰苯_NN 成_VV 芳乙胺_NN 的_DEC 方法_NN ：_PU
+Ｘ_NN 和_CC Ａｒ_NN 定义_NN 同_NN 上_LC 。_PU
+作为_P 举例_NN ，_PU 当_P Ｘ_NN 是_VC Ｃｌ_NN 和_CC Ａｒ_NN 是_VC ４－羟苯基_NN 时_LC ，_PU 原料_NN 化合物_NN 是_VC ４－羟基（α－氯－α－肟基_NN ）_PU 乙酰苯_NN （_PU 下述_JJ 的_DEG 式_NN ２_CD ）_PU ，_PU 产品_NN 是_VC 酪胺盐酸盐_NN 。_PU
+方案Ⅰ_NN 的_DEG 反应_NN 是_VC 催化_VV 氢化_JJ 反应_NN 且_CC 在_P 最好_AD 能_VV 溶解式_JJ Ⅰ_NN 化合物_NN 的_DEC 有机酸_NN 溶剂_NN 中_LC 进行_VV 。_PU
+式_NN Ⅰ_NN 化合物_NN 在_P 该_DT 介质_NN 中_LC 的_DEG 浓度_NN 通常_AD 在_P 约_AD ５_CD －_CC ３０%_CD （_PU 重量_NN ）_PU ，_PU 典型_NN 约_AD １０_CD －_PU ２０%_CD （_PU 重量_NN ）_PU ，_PU 优选_VV １２_CD －_PU １５%_CD （_PU 重量_NN ）_PU 。_PU
+该_DT 酸溶剂_NN 是_VC 有机_JJ 酸如乙酸_NN ，_PU 丙酸_NN ，_PU 丁酸_NN ，_PU 戊酸_NN 等_ETC 。_PU
+然而_AD 在_P 上述_JJ 步骤_NN （_PU ｂ）_CD 中_LC 所_MSP 选_VV 的_DEC 酸_AD 必须_VV 是_VC 基本_AD 无水_VA 的_DEC ，_PU 氢化_VV 条件_NN 必须_VV 是_VC 基本_JJ 无水分_JJ 的_DEG 。_PU
+术语_NN “_PU 基本_AD 无_VE 水_NN ”_PU 是_VC 指_VV 在_P 溶剂_NN 中_LC 限制_VV 水_NN 含量_NN 小于_VV １％_CD （_PU 重量_NN ）_PU 这样_VA 的_DEC 无_VE 水酸_NN 可_VV 商购_VV 。_PU
+基本_AD 无_VE 水分_NN 的_DEC 条件_NN 通常_AD 通过_P 维持_VV 惰性_JJ 气氛_NN 来_MSP 达到_VV ，_PU 这_PN 对_P 本_DT 领域_NN 技术_NN 人员_NN 是_VC 公知_VV 的_DEC 。_PU
+维持_VV 惰性_JJ 气氛_NN 也_AD 有助于_VV 安全_AD 操作_VV ，_PU 因为_P 一_CD 些_M 反应_NN 混合物_NN 在_P 空气_NN 或_CC 氧气_NN 存在_VV 下_LC 是_VC 易燃_VV 的_SP 。_PU
+此外_AD ，_PU 氧气_NN 也_AD 可能_VV 使_VV 催化剂_NN 失活_VV 。_PU
+氢化_JJ 反应借_NN 助载_VV 于_P 惰性_JJ 载体_NN 上_LC 的_DEC 过渡_JJ 金属_NN 型_NN 催化剂_NN 催化_NN 。_PU
+这样_PN 的_DEG 催化剂_NN 是_VC 公知_VV 的_DEC 且_CC 可_VV 商购_VV 。_PU
+催化_NN 活性_NN 的_DEC 过渡_JJ 金属_NN 催化剂_NN 包括_VV Ｐｔ．ｐｄ_NN ，_PU 阮_NN 内_LC Ｎｉ_NN ，_PU Ｒｈ_NN ，_PU 及_CC 其_PN 混合物_NN 。_PU
+钯_NN 和_CC 铂_NN 是_VC 优选_VV 的_DEC ，_PU 最好_AD 是_VC 钯_VV 。_PU
+优选_VV 的_DEC 惰性_JJ 载体_NN 是_VC 炭_NN 。_PU
+这样_PN 的_DEG 催化剂_NN 以_P ｐｄ／ｃ_NN ，_PU ｐｔ／ｃ_NN 等_ETC 市售_NN 。_PU
+按_P 式_NN Ⅰ_NN 化合物_NN 计_VV ，_PU 催化剂_NN 的_DEG 浓度_NN 通常_AD 为_VC 约_AD ０．０５_CD ～_PU ２０％_CD （_PU 重量_NN ）_PU 典型_VA 地_DEC 为_VC ０．５_CD －_PU １０%_CD （_PU 重量_NN ）_PU ，_PU 优选_VV ２_CD －_PU ６%_CD （_PU 重量_NN ）_PU 。_PU
+氢化_JJ 反应_NN 通常_AD 在_P 约_AD ３０_CD －_PU １２０_CD ℃_M ，_PU 典型_VA 地_DEV 在_VV ４０_CD －_PU １００_CD ℃_M ，_PU 优选_VV 约_AD ５０_CD －_PU ９５_CD ℃_M 下_LC 进行_VV 。_PU
+氢化_NN 过程_NN 中_LC 氢化_VV 压力_NN 一般_AD 为_VC ０_CD －_PU １０００_CD ｐｓｉ_M ，_PU 典型_VA 地_DEC 为_VC 约_AD ０_CD －_CC ５００_CD ｐｓｉ_M ，_PU 优选_VV ０_CD －_PU ３００_CD ｐｓｉ_M 。_PU
+如_P 上_NN 所_MSP 述_VV ，_PU 用于_VV 步骤_NN （_PU ｂ_CD ）_PU 的_DEG 溶剂_NN 必须_VV 是_VC 基本_AD 无_VE 水_NN 的_SP 。_PU
+这_PN 是_VC 因为_P 式Ⅰ_NN （_PU α－卤－α－肟基_NN ）_PU 乙酰苯_NN 或者_CC 可_VV 能_VV 易于_VV 被_LB 卤酸_NN 结构_NN 相似_VA 的_DEC 水水解_NN （_PU 由于_P 它们_PN 结构_NN 相似_VA ）_PU ，_PU 或者_CC 可_VV 能_VV 离子化成_VV 可_VV 二_CD 聚_VV 或_CC 分解_VV 的_DEC 中间体_NN 。_PU
+这样_AD ，_PU 如果_CS 溶剂_NN 不_AD 是_VC 基本_AD 无_VE 水_NN 的_SP ，_PU 溶剂_NN 中_LC 的_DEG 任何_DT 水_NN 分可_VV 能_VV 导致_VV 除_P 所_MSP 希望_VV 的_DEC 芳乙胺盐_NN 外_LC 还_AD 有_VE 不_AD 希望_VV 的_DEC 付_VV 产品_NN ，_PU 或_CC 完全_AD 是_VC 付_VV 产品_NN ，_PU 这_PN 取决于_VV 反应_NN 中_LC 水_NN 的_DEG 量_NN 。_PU
+但_AD 通过_P 使用_NN 基本_AD 无_VE 水_NN 的_DEC 溶剂_NN 及_CC 在_P 反应_JJ 步骤_NN （_PU ｂ_CD ）_PU 中_LC 基本_AD 无_VE 水分_NN 的_DEC 条件_NN ，_PU 这_DT 类_M 付_VV 产品_NN 的_DEG 形成_NN 可_VV 显著_VV 减少_VV 或_CC 避免_VV 。_PU
+在_P 一_CD 特别_AD 优选_VV 的_DEC 实施_NN 方案_NN 中_LC ，_PU 本_DT 发明_NN 的_DEG 方法_NN 可_VV 通过_P 如下_VV 所_MSP 示_VV 的_DEC 方案_NN Ⅱ_OD 转化_VV ４_CD －_PU 羟_NN 基_NN （_PU α_NN －_PU 氯_NN －_PU α_NN －_PU 肟_NN 基_NN ）_PU 乙_CD 酰苯_NN （_PU 式_NN ２_CD ）_PU 或_CC 酪胺_NN （_PU 式_NN ３_CD ）_PU 来_MSP 说明_VV 。_PU
+这样_AD ，_PU 将_BA ４－羟基（α－氯－α－肟基乙酰_NN ）_PU （_PU ２_CD ）_PU 放_VV 在_P 氢化_NN 装置_NN 如_P 高_JJ 压釜_NN 中_LC ，_PU 然后_AD 将_BA 载_VV 于_P 惰性_JJ 载体_NN 上_LC 的_DEC 过渡_JJ 金属_NN 催化剂_NN 如_P １０％_CD ｐｄ_NN ／_PU ｃ_CD 加到_VV 其中_NN 。_PU
+通过_P 提供_VV 氮气_NN 气氛_NN 的_DEC 方法_NN 使_VV 高_JJ 压釜_NN 中_LC 的_DEG 气氛_NN 基本_AD 无_VE 水分_NN ，_PU 该_DT 气氛_NN 然后_AD 用_P 氢气_NN 来_MSP 置换_VV 。_PU
+加入_VV 基本_JJ 无水_NN 的_DEC 酸溶剂_NN 例如_AD 冰醋酸_NN ，_PU 氢化_NN 反应_NN 进行_VV 到_CC 消耗_VV ５_CD 当量_M 氢气_NN ，_PU 初始_JJ 温度_NN 约_AD ２０_CD ℃_M ，_PU 在_P 反应_NN 期间_NN 上升_VV 到约_VV ７０_CD ℃_M 。_PU
+除去_VV 催化剂_NN ，_PU 生产_NN 产率_NN 高_VA 达_VV ９０%_CD 的_DEG 酪胺_NN 。_PU
+提供_VV 下列_JJ 实施例_NN 来_MSP 进一步_AD 说明_VV 本_DT 发明_NN ，_PU 但_CC 本_DT 发明_NN 决_AD 不_AD 受限_VV 于_P 此_PN 。_PU
+在_P 下列_JJ 实施例_NN 中_LC ：_PU ｇ_CD 指克_NN ，_PU ｍｌ_NN 指_VV 毫升_VV ，_PU ｒｐｍ_NN 表示_VV 每_DT 分钟_M 转数_NN ，_PU ｐｓｉ_NN 表示磅_NN ／_PU 英寸_NN
+实施例_NN １_CD ．_PU 制备_NN ４_CD －_PU 羟_NN 基_NN （_PU α－氯－α－肟基_NN ）_PU 乙_CD 酰苯_NN ：_PU 该_DT 化合物_NN 按_P 美国_NR 专利_NN 申请书_NN ０７／８０１，９９９_CD 所_MSP 述_VV 的_DEC 方法_NN 来_MSP 制备_VV 。_PU
+通过_P 安装_VV 一_CD 个_M １_CD 升_CC 四_CD 颈_NN 烧瓶_NN 组成_VV 亚硝酰氯_NN 发生器_NN ，_PU 该_DT 烧瓶_NN 装有_VV 机械_NN 搅拌器_NN 加_VV 亚硝酸盐_NN 溶液_NN 的_DEG 进口管_NN ，_PU 气体_NN 出口管_NN 和_CC 热电偶_NN 。_PU
+反应_JJ 烧瓶_NN 也_AD 通过_P 安装_VV 一_CD 个_M １_CD 升_CC 四_CD 颈_NN 烧瓶_NN 组成_VV ，_PU 该_DT 烧瓶_NN 装有_VV 一_CD 机械_NN 搅拌器_NN ，_PU 一_CD 个_M 与_P 亚硝酰氯_NN 发生器_NN 气体_NN 出口_NN 相联_VV 的_DEC 气体_NN 喷射器_NN 一_CD 个_M 热电偶_NN 和_CC 装有_VV 干冰_NN ／_PU 异丙醇_NN 的_DEG Ｄｅｗａｒ_NN 冷凝器_NN 。_PU
+反应_JJ 烧瓶_NN 顶部_NN 用_VV 速率_NN 约_AD 为_VC ０．５_CD 标准_JJ 立方_NN 英尺_VA ／_PU 小时_NN 的_DEG 干氮_NN 气冲_NN 扫以_VV 确保_VV 不_AD 形成_VV 溶剂_NN 蒸汽_NN ，_PU Ｎｏ_NN 和_CC Ｎｏ２_NN 的_DEC 爆炸性_NN 混合物_NN 。_PU
+在_P 反应_JJ 烧瓶_NN 中_LC 加入_VV ４－羟基乙酰苯_NN （_PU ５０_CD ｇ_M ，_PU ０．３７_CD ｍｏｌｅｓ_NN ）_PU 和_CC 含_VV 约_AD １_CD ＭHCl_NN 的_DEG 异丙醚_NN （_PU ３７５_CD ｍｌ_M ）_PU 。_PU
+实施例_NN ２_CD ．_PU 在_P 乙酸_NN 中_LC 制备_VV 酪胺盐酸盐_NN ：_PU
+在_P ３００_CD ｍｌ_M 高_JJ 压釜_NN 中_LC 加入_VV １０%_CD ｐｄ／ｃ_M 催化剂_NN （_PU ３．２_CD ｇ_M ）_PU 和_CC ４_CD －_PU 羟_NN 基_NN （_PU α－氯－α－肟基_NN ）_PU 乙酰苯_NN （_PU ８．８_CD ｇ_M ）_PU 。_PU
+然后_AD 用_P 氮气_NN 吹扫_VV ３_CD 次_M ，_PU 然后_AD 用_P 氢气_NN 吹扫_VV ３_CD 次_M 。_PU
+然后_AD 用_P 氢气_NN 加压_VV 到_VV ５０_CD ｐｓｉ_M 以预_JJ 还原_JJ 催化剂_NN 。_PU
+冰醋酸_NN （_PU ７２_CD ｍｌ_M ）_PU 经_P 吹气孔_NN 加到_VV 反应器_NN 中_LC 。_PU
+反应器_NN 用_VV 氢气_NN 再_AD 加压_VV 到_VV ５０_CD ｐｓｉ_M 。_PU
+通过_P 以_P 约_AD １５００_CD ｒｐｍ_M 的_DEG 转速_NN 内_LC 搅拌_VV 在_P 大约_AD 为_VC 环境_NN 温度_NN 下_LC 开始_VV 氢化_VV 反应_NN ，_PU 但_CC 消耗_NN 约_AD ３_CD 当量_NN 氢气_NN 后_LC ，_PU 氢气_NN 消耗_VV 减慢_VV 。_PU
+在_P 约_AD １_CD 小_JJ 时将_NN 温度_NN 增至_VV 约_AD ６０_CD ℃_M 。_PU
+消耗_VV ５_CD 当量_NN 氢气_NN 的_DEC 总_JJ 时间_NN 约_AD 为_VC ７_CD 小时_M 。_PU
+在_P 反应_VV 后_LC ，_PU 催化剂_NN 热_CC 过滤_NN ，_PU 并_CC 冷却_VV 滤液_NN 得_VV 产品_NN 酪胺_NN （_PU ９０％_CD 产率_NN ）_PU 。_PU
+１_CD 、_PU 一_CD 种_M 制_VV 备芳乙胺_NN 氢卤酸盐_NN 的_DEC 方法_NN ，_PU 该_DT 方法_NN 包括_VV ：_PU
+（_PU ａ_OD ）_PU 提供_VV 一_CD 下式_NN 的_DEC 化合物_NN ：_PU
+（_PU ｂ_CD ）_PU 将_BA 步骤_NN （_PU ａ_CD ）_PU 中_LC 的_DEG 化合物_NN 与_P 氢气_NN 在_P 有_VE 机酸_NN 溶剂_NN 中_LC ，_PU 在_P 基本_AD 无_VE 水_NN 条件_NN 下_LC 和_CC 在_P 含载_VV 于_P 惰性_JJ 载体_NN 上_LC 的_DEC 过渡_JJ 金属_NN 催化剂_NN 存在_VV 下_LC 进行_VV 反应_NN ，_PU 以_MSP 消耗_VV ５_CD 当量_M 的_DEG 氢气_NN ；_PU
+和_P （_PU ｃ_OD ）_PU 除去_VV 催化剂_NN 并_CC 分离_VV 芳_CD 乙胺盐_NN 。_PU
+２_CD 、_PU 按_P 权利_NN 要求_NN １_CD 所_MSP 述_VV 的_DEC 方法_NN ，_PU 其中_NN 所_MSP 述_VV 的_DEC 有机_JJ 酸选_NN 自乙酸_NN ，_PU 丙酸_NN ，_PU 丁酸_NN 和_CC 戊酸_NN 。_PU
+３_CD 、_PU 按_P 权利_NN 要求_NN １_CD 所_MSP 述_VV 的_DEC 方法_NN ，_PU 其中_NN 所_MSP 述_VV 的_DEC 有机_JJ 酸是乙酸_NN 。_PU
+４_CD 、_PU 按_P 权利_NN 要求_NN １_CD 所_MSP 述_VV 的_DEC 方法_NN ，_PU 其中_NN 在_P 步骤_NN （_PU ｂ_CD ）_PU 中_LC 在_P 所_MSP 述_VV 有机酸_NN 中_LC 所_MSP 述_VV 的_DEC 化合物_NN 的_DEG 浓度_NN 为_VC 约_AD ５_CD －_CC ２０%_CD （_PU 重量_NN ）_PU 。_PU
+５_CD 、_PU 按_P 权利_NN 要求_NN １_CD 所_MSP 述_VV 的_DEC 方法_NN ，_PU 其中_NN 所_MSP 述_VV 的_DEC 过渡_JJ 金属_NN 选自_VV 铂_NN ，_PU 钯_NN ，_PU 镍_NN ，_PU 铑_NN ，_PU 钌_NN 及_CC 其_PN 混合物_NN 。_PU
+６_CD 、_PU 按_P 权利_NN 要求_NN １_CD 所_MSP 述_VV 的_DEC 方法_NN ，_PU 其中_NN 所_MSP 述_VV 的_DEC 过渡_JJ 金属_NN 包括_VV 钯_VV 。_PU
+７_CD 、_PU 按_P 权利_NN 要求_NN １_CD 所_MSP 述_VV 的_DEC 方法_NN ，_PU 其中_NN 所_MSP 述_VV 的_DEC 过渡_JJ 金属_NN 包括_VV 铂_CD 。_PU
+８_CD 、_PU 按_P 权利_NN 要求_NN １_CD 所_MSP 述_VV 的_DEC 方法_NN ，_PU 其中_NN 所_MSP 述_VV 的_DEC 惰性_JJ 载体_NN 是_VC 碳_NN 。_PU
+９_CD 、_PU 按_P 权利_NN 要求_NN １_CD 所_MSP 述_VV 的_DEC 方法_NN ，_PU 其中_NN Ａｒ_NN 是_VC 用_P 羟基_NN 在_P 对位_NN 上_LC 取代_VV 的_DEC 苯基_NN 。_PU
+１０_CD 、_PU 按_P 权利_NN 要求_NN １_CD 所_MSP 述_VV 的_DEC 方法_NN ，_PU 其中_NN Ｘ_NN 是_VC Ｃｌ_NN 。_PU
+１１_CD 、_PU 按_P 权利_NN 要求_NN １_CD 所_MSP 述_VV 的_DEC 方法_NN ，_PU 其中_NN 所_MSP 述_VV 的_DEC 步骤_NN （_PU ｂ_CD ）_PU 是_VC 在_P 温度_NN 约_AD 为_VC １０_CD －_PU １２０_CD ℃_M 下_LC 进行_VV 。_PU
+１２_CD 、_PU 按_P 权利_NN 要求_NN １１_CD 所_MSP 述_VV 的_DEC 方法_NN ，_PU 其中_NN 步骤_NN （_PU ｂ_CD ）_PU 的_DEG 温度_NN 约_AD 为_VC １５_CD －_PU ９０_CD ℃_M 。_PU
+１３_CD 、_PU 按_P 权利_NN 要求_NN １１_CD 所_MSP 述_VV 的_DEC 方法_NN ，_PU 其中_NN 步骤_NN （_PU ｂ_CD ）_PU 的_DEG 温度_NN 约_AD 为_VC ２０_CD －_PU ８０_CD ℃_M 。_PU
+１４_CD 、_PU 按_P 权利_NN 要求_NN １_CD 所_MSP 述_VV 的_DEC 方法_NN ，_PU 其中_NN 过渡_JJ 金属_NN 的_DEG 量_NN 约_AD 为_VC ０．０５_CD －_PU ２０%_CD （_PU 重量_NN ）_PU 。_PU
+１５_CD 、_PU 按_P 权利_NN 要求_NN １_CD 所_MSP 述_VV 的_DEC 方法_NN ，_PU 其中_NN 过渡_JJ 金属_NN 的_DEG 量_NN 约_AD 为_VC ０．５_CD －_PU １０%_CD （_PU 这样_PN 的_DEG 催化剂_NN 是_VC 公知_VV 的_DEC 且_CC 可_VV 商购_VV 。_PU
+１６_CD 、_PU 按_P 权利_NN 要求_NN １_CD 所_MSP 述_VV 的_DEC 方法_NN ，_PU 其中_NN 过渡_JJ 金属_NN 的_DEG 量_NN 约_AD 为_VC ２_CD －_PU ６%_CD （_PU 重量_NN ）_PU 。_PU
+１７_CD 、_PU 按_P 权利_NN 要求_NN １_CD 所_MSP 述_VV 的_DEC 方法_NN ，_PU 其中_NN 所_MSP 述_VV 的_DEC 芳乙胺卤酸盐_NN 通过_P 碱化_NN 进一步_AD 转化_VV 成_VV 芳乙胺_NN 。_PU
+１８_CD 、_PU 一_CD 种_M 由_P ４－羟基（α－氯－α－肟基_NN ）_PU 乙酰苯_NN 制备_VV 酪胺盐酸盐_NN 的_DEC 方法_NN ，_PU 该_DT 方法_NN 包括_VV ：_PU
+（_PU ａ_OD ）_PU 提供_VV 一_CD 种_M 在_P 基本_AD 无_VE 水_NN 的_DEC 有机酸_NN 溶剂_NN 中_LC 的_DEG 所_MSP 述_VV 乙酰苯_NN 溶液_NN ，_PU 其_PN 浓度_NN 约_AD 为_VC １０%_CD （_PU 重量_NN ）_PU ；_PU
+（_PU ｂ_CD ）_PU 将_BA 所_MSP 述_VV 溶液_NN 与_CC 氢气_NN 在_P 约_AD ２０_CD －_PU ８０_CD ℃_M 下_LC ，_PU 在_P 载于_VV 惰性_JJ 载体_NN 上_LC 的_DEC 过渡_JJ 金属_NN 催化剂_NN 存在_VV 下_LC 进行_VV 反应_NN ，_PU 以_MSP 消耗_VV 约_AD ５_CD 当量_M 氢气_NN ；_PU
+（_PU ｃ_OD ）_PU 除去_VV 所_MSP 述_VV 的_DEC 催化剂_NN 并_CC 分离酪_NN 胺盐酸盐_NN 。_PU
+１９_CD 、_PU 按_P 权利_NN 要求_NN １８_CD 所_MSP 述_VV 的_DEC 方法_NN ，_PU 其中_NN 所_MSP 述_VV 的_DEC 有机_JJ 酸是乙酸_NN 。_PU
+２０_CD 、_PU 按_P 权利_NN 要求_NN １８_CD 所_MSP 述_VV 的_DEC 方法_NN ，_PU 其中_NN 所_MSP 述_VV 的_DEC 催化剂_NN 含钯_VV 。_PU
+２１_CD 、_PU 按_P 权利_NN 要求_NN １８_CD 所_MSP 述_VV 的_DEC 方法_NN ，_PU 其中_NN 所_MSP 述_VV 的_DEC 催化剂_NN 按_P 所_MSP 述_VV 的_DEC 乙酰苯计_NN 约_AD 为_VC ０．０５_CD ～_PU １０%_CD （_PU 重量_NN ）_PU 。_PU
+一_CD 种_M 能_VV 记录_VV 生物体_NN 在_P 正常_VA 的_DEC 生活_NN 状态_NN 下_LC 的_DEG 生物_NN 体电_NN 信号_NN 的_DEG 生物_NN 体电_NN 信号_NN 记录器_NN ，_PU 不仅_CC 在_VV 步行_NN 、_PU 就餐_CC 和_CC 睡眠_NN 过程_NN 中_LC ，_PU 而且_CC 在_P 洗澡_NN 过程_NN 中_LC 都_AD 能_VV 进行_VV 真实_VA 的_DEC 记录_NN 。_PU
+在_P 具有_VV 能_VV 跟_P 随_P 生物体_NN 而_MSP 活动_VV 的_DEC 柔软_NN 的_DEC 基体_NN 上_LC ，_PU 设有_VV 探测_VV 生物体_NN 的_DEC 电信号_NN 的_DEC 电极_NN 和_CC 记录_NN 探测_VV 到_VV 的_DEC 电信_NN 号_NN 的_DEG 记录_NN 元件_NN 。_PU
+在_P 粘贴_VV 在_P 生物体_NN 上_LC 的_DEC 状态_NN 下_LC ，_PU 基体_NN 将_BA 电极_NN 包围_NN ，_PU 具有_VV 水密性_NN 。_PU
+因此_AD ，_PU 即使_CS 生物体_NN 的_DEC 周围_NN 被_SB 水_NN 包围_VV ，_PU 电极_NN 也_AD 不_AD 会_VV 与_P 水_NN 接触_VV ，_PU 可以_VV 照常_AD 探测_VV 生物体_NN 的_DEC 电信号_NN 。_PU
+本_DT 发明_NN 涉及_VV 用于_VV 记录_VV 生物体_NN 的_DEC 电_JJ 信号_NN 例如_AD 记录_VV 心_NN 电_NN 、_PU 脑电_NN 或_CC 肌肉_NN 电等_NN 的_DEG 生物_NN 体电_NN 信号_NN 记录器_NN ，_PU 特别_AD 是_VC 涉及_VV 能_VV 和_P 生物体_NN 一起_AD 移动_VV 、_PU 且_CC 能够_VV 在_P 生物体_NN 正常_VA 的_DEC 生活_NN 状态_NN 下_LC 进行_VV 记录_NN 的_DEG 生物_NN 体电_NN 信号_NN 记录器_NN 。_PU
+作为_P 这_DT 种_M 生物_NN 体电_NN 信号_NN 记录器_NN 的_DEG 一_CD 个_M 例子_NN ，_PU 携带式_JJ 的_DEG 心电仪_NN 就_AD 是_VC 将_BA 探测_VV 心电_NN 用_VV 的_DEC 电极_NN 附着_VV 在_VV 身体_NN 的_DEC 测定点_NN ，_PU 用_P 皮带_NN 把_BA 记录器_NN 固定_VV 在_P 腰_NN 上_LC ，_PU 在_P 上述_JJ 记录器_NN 上_LC 记录_VV 用_P 上述_JJ 电极_NN 探测_VV 到_VV 地_DEC 心电_NN 。_PU
+用_P 这_DT 种_M 生物_NN 体电_NN 信号_NN 记录器_NN ，_PU 可以_VV 在_P 户外_JJ 的_DEG 行走_NN 过程_NN 中_LC 、_PU 在_P 室内_NN 的_DEG 就餐_NN 过程_NN 中_LC 以及_CC 睡眠_NN 过程_NN 中_LC 等_ETC 正常_VA 的_DEC 生活_NN 状态_NN 下_LC 进行_VV 记录_NN 。_PU
+这样_PN 的_DEG 记录_NN 对_P 患者_NN 的_DEG 疾病_NN 的_DEC 诊断_NN 是_VC 非常_AD 有用_VA 的_DEC 。_PU
+但是_AD ，_PU 使用_VV 先_AD 有_VE 的_DEC 生物_NN 体电_NN 信号_NN 记录器_NN ，_PU 洗澡_VV 必须_VV 取下_VV 来_MSP ，_PU 因此_AD ，_PU 不_AD 能_VV 对_P 洗澡_NN 时_LC 身体_NN 内脏_NN 活动_NN 状态_NN 发生_VV 的_DEC 很大_JJ 变化_NN 进行_VV 记录_NN ，_PU 上述_JJ 诊断_NN 中_LC 存在_VV 一部分_CD 欠缺_VV 的_DEC 问题_NN 。_PU
+本_DT 发明_NN 就_AD 是_VC 为了_P 解决_VV 上述_JJ 先有_JJ 技术_NN 中_LC 的_DEG 问题_NN （_PU 技术_NN 性课题_NN ）_PU 而_MSP 进行_VV 研究_NN 的_DEC ，_PU 本_DT 发明_NN 的_DEG 目的_NN 在于_VV 提供_VV 一_CD 种_M 生物_NN 体电_NN 信号_NN 记录器_NN ，_PU 不仅_CC 在_P 上述_JJ 的_DEG 步行_NN 过程_NN 中_LC 、_PU 就餐_NN 过程_NN 中_LC 和_P 睡眠_NN 过程_NN 中_LC ，_PU 而且_CC 在_P 洗澡_NN 过程_NN 中_LC 都_AD 能_VV 进行_VV 非常_AD 真实_VA 的_DEC 记录_NN ，_PU 从而_AD 可以_VV 大大_AD 提高_VV 上述_JJ 诊断_NN 的_DEC 可靠性_NN 。_PU
+为了_P 达到_VV 上述_JJ 目的_NN ，_PU 本_DT 发明_NN 的_DEG 生物_NN 体电_NN 信号_NN 记录器_NN 具有_VV 能_VV 跟_P 随_P 生物体_NN 的_DEC 活动_JJ 而_CC 活动_JJ 的_DEG 柔软性_NN ，_PU 而且_CC 其_PN 一_CD 面_NN 具有_VV 呈片状_NN 的_DEC 基体_NN ，_PU 是_VC 贴附_VV 在_P 生物体_NN 上面_LC ，_PU 在_P 该_DT 基体_NN 的_DEC 一面_NN 上_LC 设有_VV 用于_VV 探测_VV 生物体_NN 的_DEC 电信号_NN 的_DEG １_CD 个_M 或_CC 多_CD 个_M 电极_NN ，_PU 同时_AD ，_PU 在_P 上述_JJ 基体_NN 上_LC 设有_VV 用于_VV 记录_VV 由_P 上述_JJ 电极_NN 探测_VV 到_VV 的_DEC 电信号_NN 的_DEG 记录_NN 元件_NN ，_PU 并且_CC ，_PU 上述_JJ 基体_NN 具有_VV 足够_VA 的_DEC 大小_NN ，_PU 可以_VV 将_BA 上述_JJ 电极_NN 包围_VV 得_DER 不_AD 会_VV 渗_VV 进水_VV 。_PU
+当_P 把_BA 本_DT 发明_NN 的_DEG 生物_NN 体电_NN 信号_NN 记录器_NN 贴附_VV 到_VV 生物体_NN 上_LC 时_LC ，_PU 电极_NN 便_AD 探测_VV 该_DT 生物体_NN 的_DEC 电信号_NN ，_PU 并且_CC 将_BA 探测_VV 到_VV 的_DEC 电信号_NN 记录_VV 到_VV 记录_NN 元件_NN 上_LC 。_PU
+在_P 贴附_VV 在_P 生物体_NN 上_LC 的_DEC 状态_NN 下_LC ，_PU 基体_NN 将_BA 电极_NN 包围_VV 得_DER 不_AD 会_VV 渗_VV 进水_VV 。_PU
+因此_AD ，_PU 即使_CS 生物体_NN 周围_NN 被_SB 水_NN 包围_VV ，_PU 电极_NN 也_AD 不_AD 会_VV 与_P 水_NN 接触_VV ，_PU 照常_AD 能_VV 探测_VV 生物体_NN 的_DEC 电信号_NN 。_PU
+本_DT 发明_NN 的_DEG 记录器_NN 由于_P 在_P 薄片_NN 状_NN 的_DEC 基体_NN 上_LC 设有_VV 用于_VV 探测_VV 生物体_NN 的_DEC 电信号_NN 的_DEC 电极_NN 和_CC 用于_VV 记录_NN 探测_VV 到_VV 的_DEC 信号_NN 的_DEG 记录_NN 元件_NN ，_PU 所以_AD ，_PU 只要_CS 把_BA 它_PN 简单_VA 地_DEV 贴附_VV 在_P 身体_NN 上_LC ，_PU 就_AD 可以_VV 在_P 户外_VV 的_DEC 步行_NN 过程_NN 中_LC 、_PU 在_P 室内_NN 的_DEC 就餐_NN 过程_NN 中_LC 或_CC 睡眠_NN 过程_NN 中_LC 等_ETC 正常_VA 的_DEC 日常_JJ 生活_NN 状态_NN 下_LC 进行_VV 生物_NN 体电_NN 信号_NN 的_DEG 记录_NN 。_PU
+如_P 上_NN 所_MSP 述_VV 进行_VV 记录_NN 时_LC ，_PU 即使_CS 是_VC 在_P 身体_NN 内脏_NN 的_DEC 活动_JJ 状态_NN 变化_NN 非常_AD 大_VA 的_DEC 洗澡_NN 过程_NN 中_LC ，_PU 基体_NN 能防_VV 止水_NN 附着_VV 到_VV 电极_NN 上_LC 仍_AD 能_VV 记录_VV 上述_JJ 信号_NN ，_PU 所以_AD ，_PU 可以_VV 进行_VV 包括_VV 上述_JJ 内脏_NN 的_DEC 活动_JJ 状态_NN 变化_NN 很_AD 大_VA 的_DEC 情况_NN 在内_VV 的_DEC 真实_NN 的_DEG 记录_NN ，_PU 对_P 诊断_NN 十分_AD 有用_VA 。_PU
+另外_AD ，_PU 在_P 本_DT 发明_NN 中_LC ，_PU 如果_CS 把_BA 多_CD 个_M 电极_NN 的_DEG 排列_NN 配置_VV 得_VV 和_P 生物体_NN 上_LC 指定_VV 的_DEC 多_CD 个_M 测定点_NN 的_DEG 排列_NN 相同_VA ，_PU 只要_CS 把_VV 生物_NN 体电_NN 信号_NN 记录器_NN 作为_P １_CD 个_M 单元_NN 贴附_VV 到_VV 身体_NN 的_DEG 指定_NN 的_DEC 地方_NN ，_PU 多_CD 个_M 电极_NN 就_AD 分别_AD 附着_VV 到_VV 了_AS 身体_NN 上_LC 指定_VV 的_DEC 测定点_NN ，_PU 所以_AD ，_PU 即使_CS 是_VC 外行人_NN 通过_P 简单_VA 的_DEV 贴附_VV 操作_NN 也_AD 可以_VV 在_P 正确_VA 的_DEC 测定_NN 点_NN 进行_VV 正确_VA 的_DEC 记录_NN 。_PU
+图_NN １_CD 是_VC 平面图_NN 。_PU
+图_NN ２_CD 是_VC 在_P 图_NN １_CD 中_LC 的_DEG Ⅱ_OD －_M Ⅱ线_NN 位置_NN 上_LC 的_DEG 一_CD 部分_NN 简_LC 略_AD 放大_VV 剖面图_NN 。_PU
+图_NN ３Ａ_OD 、_PU 图_NN ３Ｂ_CD 表示_VV 从_P 贴_VV 附用_NN 的_DEC 平面_NN 一_CD 侧_NN 看到_VV 的_DEV 设置_VV 在_P 基板_NN 上_LC 的_DEG 伸缩_JJ 自由_VA 的_DEC 连接线_NN 的_DEC 状态图_NN 。_PU
+图_NN ４_CD 表示_VV 记录_NN 元件_NN 不同_VA 的_DEC 例子_NN 的_DEC 框图_NN 。_PU
+下面_NN ，_PU 参照_VV 附图_NN 说明_VV 本_DT 发明_NN 的_DEG 实施例_NN 。_PU
+１_CD 是_VC 生物_NN 体电_NN 信号_NN 记录器_NN ，_PU 作为_VV 生物体_NN 的_DEC 电信号_NN 的_DEC 一_CD 个_M 例子_NN ，_PU 表示_VV 用于_VV 记录_VV 心电_NN 的_DEG 心电_NN 记录器_NN 。_PU
+２_CD 是_VC 片状_NN 的_DEC 基体_NN ，_PU 具有_VV 能_VV 跟_P 随_P 生物体_NN 的_DEC 活动_JJ 而_CC 活动_JJ 的_DEG 柔软性_NN 。_PU
+３_CD 是_VC 该_DT 基体_NN ２_NN 上_LC 作为_VV 向_P 生物体_NN 贴附_VV 用_VV 的_DEC 面_NN 的_DEG 内_JJ 表面_NN ，_PU ４_CD 表示_VV 其_PN 外_JJ 表面_NN 。_PU
+该_DT 片状_JJ 基体_NN ２_CD 为了_P 将_BA 后面_NN 所_MSP 述_VV 的_DEC 多_CD 个_M 电极_NN 分别_AD 包围_VV 得_VV 具有_VV 不_AD 透水性_JJ ，_PU 其_PN 大小_NN 不仅_AD 做得_VV 比_P 它们_PN 的_DEG 指定_JJ 排列_NN 图形_NN 的_DEG 大小_NN 大_VA 一_CD 圈_M ，_PU 而且_CC 还_AD 形成_VV 能_VV 确保_VV 用于_VV 保持_VV 记录_NN 元件_NN 、_PU 电池_NN 和_CC 开关_NN 等_ETC 的_DEG 部分_NN 。_PU
+为了_P 提高_VV 和_P 皮肤_NN 的_DEC 一_CD 体感_NN ，_PU 其_PN 厚度_NN 以_P 薄为_P 好_VA ，_PU 例如_AD 约_AD 为_VC ２_CD ｍｍ_M 。_PU
+下面_NN ，_PU 说明_VV 上述_JJ 基体_NN ２_CD 的_DEG 结构_NN 。_PU
+５_CD 是_VC 基板_NN ，_PU 为了_P 对_P 后面_NN 所_MSP 述_VV 的_DEC 电极_NN 、_PU 记录_NN 元件_NN 、_PU 电池_NN 等_ETC 具有_VV 防水_NN 作用_NN ，_PU 例如_AD 可以_VV 使用_VV 具有_VV 防水性_NN 的_DEC 合成_JJ 树脂_NN 薄片_NN 。_PU
+此外_AD ，_PU 也_AD 可以_VV 使用_VV 橡胶_NN 、_PU 经过_VV 防水_NN 加工_NN 处理纸_NN 及_CC 布等_JJ 材料_NN 。_PU
+该_DT 基板_NN ５_CD 具有_VV 将_BA 从_P 上述_JJ 贴_NN 附用_VV 的_DEC 面_NN 的_DEG 对面_NN 一_CD 侧_NN 传_VV 向_P 电极_NN 的_DEC 电噪声_NN 隔断_VV 的_DEC 屏蔽_NN 性能_NN 。_PU
+例如_AD ，_PU 可以_VV 在_P 内部_NN 设置_VV 电屏蔽_NN 用_VV 的_DEC 导电膜_NN 。_PU
+如果_CS 采用_VV 别的_JJ 电屏蔽_NN 措施_NN 或者_CC 没有_VE 必要_JJ 屏蔽_NN 时_LC ，_PU 也_AD 可以_VV 使用_VV 不_AD 具有_VV 屏蔽_NN 性能_NN 的_DEC 基板_NN 。_PU
+６_CD 是_VC 用于_VV 使基体_NN ２_CD 的_DEG 内_JJ 表面_NN ３_CD 对_P 生物体_NN 具有_VV 接触性_NN 的_DEC 粘接剂_NN ，_PU 可以_VV 使用_VV 即使_CS 沾湿_VV 了_AS 也_AD 具有_VV 足够_VA 的_DEC 粘接_NN 强度_NN 的_DEC 粘接剂_NN 。_PU
+而且_AD ，_PU 为了_P 电极_NN 的_DEG 绝缘_NN ，_PU 使用_VV 具有_VV 绝缘性_NN 的_DEC 粘接剂_NN 。_PU
+其次_AD ，_PU ８_CD 是_VC 用来_VV 保护_VV 上述_JJ 内_JJ 表面_NN ３_CD 不_AD 致向_VV 其它_DT 物体_NN 无用_AD 地_DEV 粘接_VV 以及_CC 附着_VV 灰尘_NN 的_DEC 部件_NN ，_PU 举例_VV 来_MSP 说_VV 为_VC 容易_AD 从_P 内_JJ 表面_NN ３_CD 上_LC 剥离_VV 下来_VV 的_DEC 剥离片_NN 。_PU
+该_DT 剥离片_NN ８_CD 具有_VV 能_VV 全面_AD 覆盖_VV 上述_JJ 内_JJ 表面_NN ３_CD 的_DEG 大小_NN 。_PU
+９_CD 是_VC 阻止_VV 通电_NN 的_DEC 部件_NN ，_PU 为了_P 小型化_VV 的_DEC 目的_NN ，_PU 使用_VV 小片状_NN 的_DEC 部件_NN ，_PU 为了_P 能_VV 和_P 剥离片_NN ８_CD 一起_AD 取下来_VV ，_PU 装配_VV 在_P 剥离片_NN ８_CD 上_LC 。_PU
+下面_NN ，_PU 说明_AD 设置_VV 在_P 上述_JJ 基体_NN ２_CD 的_DEG 内_JJ 表面_NN 上_LC 的_DEC 用来_VV 探测_VV 生物体_NN 的_DEC 电信_NN 号_NN 的_DEG 电极_NN １１_OD 。_PU
+图_NN １_CD 所_MSP 示_VV 的_DEC 多_CD 个_M 电极_NN １１_CD 的_DEG 排列_NN 状态_NN 与_CC 生物体_NN 上_LC 指定_VV 的_DEC 多_CD 个_M 测定点_NN 的_DEG 排列_NN 相同_VA 。_PU
+电极_NN １１_OD 的_DEG 结构_NN 和_CC 大家_NN 所_MSP 熟知_VV 的_DEC 电极_NN 一样_VA ，_PU １２_CD 是_VC 圆盘_NN 状_NN 的_DEC 金属_NN 材料_NN 制成_VV 的_DEC 电极_NN 主体_NN ，_PU １３_CD 是_VC 导电_JJ 胶_NN 。_PU
+１５_CD 是_VC 用于_VV 记录_VV 由_P 上述_JJ 电极_NN １１_CD 探测_VV 到_VV 的_DEC 电信号_NN 的_DEG 记录_NN 元件_NN ，_PU 为了_P 减少_VV 该_DT 记录器_NN １_CD 在_P 使用_NN 状态_NN 下_LC 的_DEG 异物_NN 感_VV ，_PU 必须_VV 使用_VV 薄_JJ 而_CC 小型化_JJ 的_DEG 元件_NN ，_PU 例如_AD 可以_VV 使用_VV 集成_JJ 电路_NN 。_PU
+该_DT 记录_NN 元件_NN １５_CD 具有_VV 将_BA 记录_VV 的_DEC 电信号_NN 输出_NN 用_VV 的_DEC 输出_NN 端子_NN 。_PU
+记录_NN 元件_NN １５_CD 设置_VV 在_P 基板_NN ５_CD 的_DEG 内_JJ 表面_NN 一_CD 侧_NN ，_PU 以便_AD 利用_VV 基板_NN ５_CD 进行_VV 防水_NN 和_CC 屏蔽_NN 电噪声_NN ，_PU 但是_AD ，_PU 当_P 记录_NN 元件_NN １５_CD 本身_PN 具有_VV 防水性_NN 和_CC 对_P 电噪声_NN 的_DEC 屏蔽性_NN 时_LC 或者_CC 设有_VV 这些_DT 必要_VA 时_LC ，_PU 也_AD 可以_VV 设置_VV 在_P 基板_NN ５_CD 的_DEG 外_JJ 表面_NN 一_CD 侧_NN 。_PU
+１６_CD 是_VC 用于_VV 连接_VV 电极_NN １１_CD 和_CC 记录_NN 元件_NN １５_CD 的_DEG 电线_NN 。_PU
+１７_CD 是_VC 用来_VV 使_VV 上述_JJ 记录_NN 元件_NN １５_CD 工作_VV 的_DEC 作为_JJ 电源_NN 使用_VV 的_DEC 电池_NN 。_PU
+由于_P 和_P 上述_JJ 记录_NN 元件_NN 同样_VA 的_DEC 理由_NN ，_PU 该_DT 电池_NN １７_CD 最好_AD 使用_VV 称为_VV 纸电池_NN 的_DEC 薄型_JJ 电池_NN 。_PU
+１８_CD 是_VC 使_VV 电池_NN １７_CD 向_P 记录_NN 元件_NN １５_CD 通_NN 、_PU 断电_NN 用_VV 的_DEC 开关_NN 元件_NN ，_PU 在_P 阻止_VV 通电_NN 部件_NN ９_CD 呈_VV 插入_NN 状态_NN 时_LC 能_VV 保持_VV 非_VC 导通_NN 状态_NN 、_PU 去掉_VV 阻止_VV 通电_NN 部件_NN ９_CD 后_LC 成为_VV 导通_NN 状态_NN 。_PU
+下面_NN ，_PU 说明_VV 上述_JJ 结构_NN 的_DEG 生物_NN 体电_NN 信号_NN 记录器_NN 的_DEG 使用_NN 方法_NN 和_CC 使用_NN 状态_NN 。_PU
+首先_AD ，_PU 将_BA 剥离片_NN ８_CD 剥离_VV 下来_VV ，_PU 露出_VV 内_JJ 表面_NN ３_CD 。_PU
+由于_P 取下_VV 剥离片_NN ８_CD ，_PU 阻止_VV 通电_NN 部件_NN ９_CD 也_AD 从_P 开关_NN 部件_NN １８_CD 上_LC 取下来_VV ，_PU 开关_NN 部件_NN １８_CD 导通_VV 后_LC ，_PU 电池_NN １７_CD 就_AD 向_P 记录_NN 元件_NN １５_CD 通电_NN ，_PU 记录_NN 元件_NN １５_CD 开始_VV 记录_NN 动作_VV 。_PU
+然后_AD ，_PU 将_BA 在_P 此_DT 状态_NN 下_LC 的_DEG 记录器_NN １_CD 利用_VV 粘接剂_NN ６_CD 使_VV 内_JJ 表面_NN ３_CD 对向_VV 皮肤_NN 一侧_NN 粘贴_VV 在_P 身体_NN 上_LC 。_PU
+粘贴_VV 时_LC 应_VV 使_VV 内_JJ 表面_NN ３_CD 对_P 不论_AD 多_CD 个_M 电极_NN １１_CD 的_DEG 哪_DT 一_CD 个_M 电极_NN 都_AD 要_VV 完全_AD 被_SB 包围_VV 起来_VV 。_PU
+粘贴_VV 时应_NN 将_BA 记录器_NN １_CD 粘贴_VV 到_VV 身体_NN 上_LC 指定_VV 的_DEC 地方_NN 。_PU
+如前_NT 所_MSP 述_VV ，_PU 各_DT 个_M 电极_NN １１_CD 排列_VV 成_VV 预先_NN 指定_VV 的_DEC 状态_NN ，_PU 所以_AD ，_PU 只要_CS 按_P 上述_JJ 那样_VA 将_BA 记录器_NN １_CD 作为_P １_CD 个_M 单元_NN 把_BA 它_PN 粘贴_VV 在_P 身体_NN 上_LC 指定_VV 的_DEC 地方_NN ，_PU 多_CD 个_M 电极_NN １１_OD 就_AD 分别_AD 附着_VV 到_VV 了_AS 身体_NN 上_LC 指定_VV 的_DEC 测定点_NN 。_PU
+因此_AD ，_PU 外行人_NN 通过_P 简单_VA 的_DEC 操作_NN 也_AD 可以_VV 在_P 正确_VA 的_DEC 测定点_NN 进行_VV 正确_VA 的_DEC 记录_NN 。_PU
+如此_AD 所_MSP 述_VV ，_PU 在_P 粘贴_VV 着_AS 记录器_NN １_CD 的_DEG 状态_NN 下_LC ，_PU 可以_VV 照常_AD 进行_VV 和_CC 平时_AD 一样_VA 的_DEC 生活_NN 活动_NN 。_PU
+在_P 这些_DT 活动_JJ 过程_NN 中_LC ，_PU 可以_VV 利用_VV 各_DT 个_M 电极_NN １１_CD 在_P 上述_JJ 各_DT 个_M 测定点_NN 经常_AD 地_DEV 探测_VV 心电_NN 信号_NN 。_PU
+并_AD 将_AD 探测_VV 到_VV 的_DEC 心电_NN 信号_NN 连续_AD 地_DEV 记录_VV 到_VV 记录_NN 元件_NN １５_CD 上_LC 。_PU
+在_P 上述_JJ 粘贴_VV 着_AS 记录器_NN １_CD 的_DEG 状态_NN 下_LC ，_PU 不仅_AD 可以_VV 行走_VV ，_PU 而且_CC 可以_VV 洗澡_VV 和_CC 游泳_VV 。_PU
+也就是说_AD ，_PU 洗澡_NN 和_CC 游泳_NN 时_LC ，_PU 由于_P 紧密_VA 地_DEV 粘贴_VV 在_P 皮肤_NN 上_LC 的_DEG 基体_NN ２_CD 将_BA 电极_NN １１_OD 严密_VA 地_DEV 包围_VV 着_AS ，_PU 防止_VV 了_AS 水_NN 与_P 它_PN 接触_VV 。_PU
+因此_AD ，_PU 电极_NN １１_CD 探测_VV 上述_JJ 心电_NN 信号_NN 不_AD 会_VV 受任_VV 何_DT 影响_NN ，_PU 上述_JJ 记录_NN 可以_VV 毫无异常_AD 地_DEV 继续_VV 进行_VV 。_PU
+如此_AD 所_MSP 述_VV ，_PU 如果_CS 记录_VV 了_AS 指定_JJ 时间_NN 的_DEG 心电_NN 信号_NN ，_PU 将_BA 记录器_NN １_CD 从_P 身体_NN 上_LC 剥离_VV 下来_VV ，_PU 利用_VV 计算机_NN 及_CC 其它_DT 装置_NN 读取_VV 和_CC 分析_VV 记录_NN 元件_NN １５_CD 的_DEG 记录_NN 信号_NN ，_PU 便_AD 可_VV 用于_VV 诊断_VV 。_PU
+其次_AD ，_PU 当_P 应探_VV 测生物_NN 体电_NN 信号_NN 的_DEC 部位_NN 在_P 生物体_NN 上_LC 的_DEG １_CD 个_M 地方_NN 就_AD 可以_VV 时_LC ，_PU 上述_JJ 记录器_NN 也_AD 可以_VV 只是_AD 图_NN １_CD 中_LC 双_CD 点_M 划线_VV ２１_CD 所_MSP 示_VV 的_DEC 范围_NN 内_LC 的_DEG 结构_NN ，_PU 即_AD 只_AD 设置_VV １_CD 个_M 上述_JJ 电极_NN １１_CD 就_AD 行了_VV 。_PU
+另外_AD ，_PU 该_DT 记录器_NN 用于_VV 记录_VV 脑电_NN 信号_NN 时_LC ，_PU 上述_JJ 基体_NN 不_AD 具有_VV 电屏蔽_NN 性能_NN 时_LC ，_PU 将_BA 记录器_NN 粘贴_VV 到_VV 头部_NN 后_LC ，_PU 再_AD 在_P 其_PN 上_LC 覆盖_NN 上_LC 具有_VV 电屏蔽_NN 性能_NN 的_DEC 罩_NN ，_PU 也_CC 可以_VV 排除_VV 电噪声_NN 的_DEG 影响_NN 。_PU
+在_P 上述_JJ 多_CD 个_M 电极_NN １１_CD 中_LC ，_PU 将_BA 图_NN １_CD 中_LC 符号_NN １１ａ_CD 所_MSP 示_VV 的_DEC 电极_NN 粘贴_VV 到_VV 胸骨_NN 上端_NN 位置_NN 的_DEG 皮肤_NN 上_LC 、_PU 将_BA 符号_NN １１ｂ_CD 所_MSP 示_VV 的_DEC 电极_NN 粘贴_VV 到_VV 左侧_NN 第５_OD 肋_NN 间_LC 的_DEG 皮肤_NN 上_LC 、_PU 以及_CC 将_BA 符号_NN １１ｃ_CD 所_MSP 示_VV 的_DEC 电极_NN 粘贴_VV 到_VV 右侧_NN 第５_OD 肋_NN 间_LC 的_DEG 皮肤_NN 上_LC 探测_VV 心电_NN 信号_NN 时_LC ，_PU 由于_P 身体_NN 大小_NN 的_DEG 差别_NN 和_CC 男女_NN 的_DEG 差别_NN 等_ETC 原因_NN ，_PU 上述_JJ 各_DT 个_M 部位_NN 相互_AD 间_LC 的_DEG 间隔_NN 是_VC 不同_VA 的_DEC 。_PU
+特别_AD 是_VC 左_JJ 右第_NN ５_CD 肋_NN 间_LC 的_DEG 相互_JJ 间隔_NN 差别_AD 很_AD 大_VA （_PU 例如_AD ２５_CD ｃｍ_M －_PU ３０_CD ｃｍ_M ）_PU 。_PU
+这时_NT ，_PU 如果_CS 预先_AD 使_VV 上述_JJ 基体_NN ２_CD 可以_VV 伸缩_VV ，_PU 就_AD 可以_VV 使_VV 上述_JJ 各_DT 个_M 电极_NN １１ａ_CD 、_PU １１ｂ_CD 、_PU １１ｃ_CD 分别_AD 沿_P 箭头_NN 方向_NN 位移_VV 。_PU
+结果_NN ，_PU 不论_AD 对于_P 上述_JJ 各_DT 个_M 部位_NN 间_LC 的_DEG 相互_JJ 间隔_NN 大_VA 的_DEC 人_NN 还_AD 是_VC 小_VA 的_DEC 人_NN ，_PU 都_AD 可以_VV 将_BA 上述_JJ 各_DT 个_M 电极_NN １１ａ_CD 、_PU １１ｂ_CD 、_PU １１ｃ_CD 分别_AD 粘贴_VV 到_VV 正确_VA 的_DEC 位置_NN 。_PU
+因此_AD ，_PU 可以_VV 用_P 可以_VV 伸缩_VV 的_DEC 材料_NN 例如_AD 聚胺酯_NN 薄膜_NN 构成_VV 基板_NN ５_CD ，_PU 并_CC 采用_VV 可以_VV 随_P 基板_NN ５_CD 的_DEG 伸缩_NN 进行_VV 同样_AD 伸缩_VV 的_DEC 材料_NN 例如_AD 疏水性_JJ 聚合物_NN 构成_VV 粘接剂_NN ６_CD 。_PU
+另外_AD ，_PU 使_VV 附着_P 在_P 基板_NN ５_CD 上_LC 的_DEC 连接线_NN １６_CD 可以_VV 自由_AD 伸缩_VV 。_PU
+例如_AD ，_PU 构成_VV 图_NN ３Ａ_CD 所_MSP 示_VV 的_DEC 锯齿状_NN ，_PU 当_P 将_BA 基板_NN ５_CD 例如_AD 沿_P 箭头_NN ２３_CD 所_MSP 示_VV 的_DEC 方向_NN 拉伸_VV 时_LC ，_PU 便_AD 和_P 基板_NN ５_CD 一同_AD 向_VV 同_DT 一_CD 方向_NN 伸展_VV ，_PU 成为_VV 图_NN ３Ｂ_CD 所_MSP 示_VV 的_DEC 状态_NN 。_PU
+对于_P 其它_DT 电极_NN １１_CD ，_PU 同样_AD 也_AD 可以_VV 采用_VV 能_VV 使_VV 其_PN 位移_NN 的_DEC 结构_NN ，_PU 以_MSP 便_AD 能够_VV 适合_VV 应该_VV 粘贴_VV 它们_PN 的_DEG 各_DT 个_M 部位_NN 相互_AD 间_LC 的_DEG 间隔_NN 因_P 人_NN 而_MSP 异_VV 引起_VV 的_DEC 大小_NN 差异_VA 。_PU
+其次_AD ，_PU 在_P 上述_JJ 记录_NN 元件_NN １５_CD 上_LC ，_PU 还_AD 可以_VV 使_VV 之_PN 具有_VV 当_P 电极_NN １１_CD 探测_VV 到_VV 的_DEC 心电_NN 信号_NN 显示_VV 出_VV 异常_NN 时_LC 发出_VV 报警_NN 的_DEC 功能_NN 。_PU
+为此_AD ，_PU 如_P 图_NN ４_CD 所_MSP 示_VV ，_PU 可以_VV 用_VV 在_P 存储器_NN ２５_CD 、_PU 比较_NN 电路_NN ２６_CD 和_CC 报警_NN 元件_NN ２７_CD 构成_VV 记录_NN 元件_NN １５_CD 。_PU
+这样_PN 的_DEG 记录_NN 元件_NN １５_CD 中_LC ，_PU 存储器_NN ２５_CD 用来_VV 存储_VV 上述_JJ 多_CD 个_M 电极_NN 探测_VV 的_DEC 信号_NN 。_PU
+比较_NN 电路_NN ２６_CD 接收_VV 到_VV 上述_JJ 探测_NN 的_DEC 信号_NN 后_LC ，_PU 如果_CS 它_PN 偏离_JJ 基准_NN 信号_NN ，_PU 便_AD 驱动_VV 报警_NN 元件_NN ２７_CD ，_PU 使_VV 之_PN 发生_VV 警报_NN 。_PU
+具有_VV 上述_JJ 记录_NN 元件_NN １５_CD 的_DEG 记录器_NN ，_PU 例如_AD 将_BA 该_DT 记录器_NN 粘贴_VV 在_P 身体_NN 上_LC 的_DEC 被_SB 检查_VV 者_NN 在_P 睡眠_NN 过程_NN 中_LC 发生_VV 停止_NN 呼吸_NN 的_DEC 状态_NN 时_LC ，_PU 就_AD 会_VV 探测_VV 到_VV 伴随_VV 该_DT 状态_NN 的_DEC 心电_NN 信号_NN 的_DEG 异常_NN 现象_NN ，_PU 从而_AD 可以_VV 非常_AD 快_VA 的_DEV 发出_VV 报警_NN 。_PU
+作为_P 上述_JJ 比较_NN 电路_NN ２６_CD 中_LC 的_DEG 基准_NN 信号_NN ，_PU 可以_VV 采用_VV 对_P 多数人_NN 都_AD 适用_VV 的_DEC 标准_NN 信号_NN 。_PU
+此外_AD ，_PU 也_AD 可以_VV 以_P 使用_VV 该_DT 记录器_NN 的_DEC 被_SB 检查_VV 者_NN 正常_VA 时_LC 的_DEG 信号_NN 作为_VV 基准_NN 信号_NN ，_PU 例如_AD 可以_VV 从_P 存储器_NN ２５_CD 经过_P 移位_NN 电路_NN ２８_CD 输入_VV 比较_NN 电路_NN ２６_CD 。_PU
+这样_AD ，_PU 即使_CS 被_SB 检查_VV 者_NN 有_VE 个人_NN 差别_VV ，_PU 都_AD 可以_VV 在_P 最_AD 适合_VV 各_DT 个_M 被_SB 检查_VV 者_NN 的_DEG 状态_NN 下_LC 发出_VV 上述_JJ 报警_NN 。_PU
+１_CD 、_PU 生物_NN 体电_NN 信号_NN 记录器_NN ，_PU 其_PN 特征_NN 在于_VV ：_PU 具有_VV 能_VV 跟_P 随_P 生物体_NN 的_DEC 活动_JJ 而_CC 活动_JJ 的_DEG 柔软性_NN ，_PU 并且_CC 具有_VV 其_PN 一_CD 面_NN 作为_VV 向_P 生物体_NN 粘贴_VV 用_VV 的_DEC 面_NN 的_DEG 薄片_NN 状_NN 的_DEC 基体_NN ，_PU 在_P 该_DT 基体_NN 的_DEC 一面_NN 设置_VV 有_VE 用来_VV 探测_VV 生物体_NN 的_DEC 电信号_NN 的_DEG １_CD 个_M 或_CC 多_CD 个_M 电极_NN ，_PU 同时_AD ，_PU 在_P 上述_JJ 基体_NN 上_LC 设有_VV 用来_VV 记录_VV 由_P 上述_JJ 电极_NN 探测_VV 到_VV 的_DEC 电信号_NN 的_DEG 记录_NN 元件_NN 和_CC 用来_VV 使_VV 该_DT 记录_NN 元件_NN 工作_VV 的_DEC 电池_NN ，_PU 并且_CC ，_PU 上述_JJ 基体_NN 具有_VV 足够_VA 的_DEC 大小_NN ，_PU 能_VV 将_BA 上述_JJ 电极_NN 包围_VV 得_VV 具有_VV 不_AD 透水性_JJ 。_PU
+２_CD 、_PU 按_P 权利_NN 要求_NN １_CD 所_MSP 述_VV 的_DEC 生物_NN 体电_NN 信号_NN 记录器_NN ，_PU 其_PN 特征_NN 是_VC ：_PU 上述_JJ 基体_NN 具有_VV 屏蔽_NN 性能_NN ，_PU 能_VV 将_BA 从_P 与_P 上述_JJ 粘贴_NN 用_VV 的_DEC 面_NN 相反_VV 的_DEC 一_CD 侧_NN 向_P 上述_JJ 电极_NN 传送_VV 的_DEC 电噪声_NN 遮断_NN 。_PU
+３_CD 、_PU 按_P 权利_NN 要求_NN １_CD 所_MSP 述_VV 的_DEC 生物_NN 体电_NN 信号_NN 记录器_NN ，_PU 其_PN 特征_NN 是_VC ：_PU 在_P 上述_JJ 基体_NN 上_LC 粘贴_VV 用_VV 的_DEC 面_NN 上_LC ，_PU 设有_VV 用来_VV 保护_VV 该_DT 面_NN 的_DEC 能够_VV 取下来_VV 的_DEC 剥离片_NN 。_PU
+４_CD 、_PU 按_P 权利_NN 要求_NN ３_CD 所_MSP 述_VV 的_DEC 生物_NN 体电_NN 信号_NN 记录器_NN ，_PU 其_PN 特征_NN 是_VC ：_PU 在_P 上述_JJ 剥离片_NN 上_LC 附设_VV 有_VE 可以_VV 和_P 剥离片_NN 一起_AD 取下_VV 来的_AD 阻止_VV 通电_NN 部件_NN ，_PU 将_BA 它_PN 从_P 使_VV 上述_JJ 电池_NN 向_P 上述_JJ 记录_NN 元件_NN 通电_NN 或_CC 断电_NN 的_DEG 开关_NN 部件_NN 上_LC 除掉_VV 时_LC ，_PU 可_VV 使_VV 该_DT 开关_NN 部件_NN 成为_VV 导通_NN 状态_NN 。_PU
+５_CD 、_PU 按_P 权利_NN 要求_NN １_CD 所_MSP 述_VV 的_DEC 生物_NN 体电_NN 信号_NN 记录器_NN ，_PU 其_PN 特征_NN 是_VC ：_PU 上述_JJ 电极_NN 设有_VV 多_CD 个_M ，_PU 同时_AD ，_PU 这些_DT 电极_NN 的_DEG 排列_NN 和_CC 生物体_NN 上_LC 指定_VV 的_DEC 多_CD 个_M 测定点_NN 的_DEG 排列_NN 相同_VA 。_PU
+６_CD 、_PU 按_P 权利_NN 要求_NN ５_CD 所_MSP 述_VV 的_DEC 生物_NN 体电_NN 信号_NN 记录器_NN ，_PU 其_PN 特征_NN 是_VC ：_PU 是_VC 上述_JJ 基体_NN 具有_VV 屏蔽_NN 性能_NN ，_PU 能_VV 将_BA 从_P 与_P 上述_JJ 粘贴_NN 用_VV 的_DEC 面_NN 相反_VV 的_DEC 一_CD 侧_NN 向_P 上述_JJ 电极_NN 一_CD 侧_NN 传送_VV 的_DEC 电噪声_NN 遮断_NN 。_PU
+一_CD 种_M 便携式_JJ 墨水瓶_NN 在_P 瓶_NN 内_LC 盖①_NN 中_LC 间做_VV 一_CD 个_M 锥型笔_NN 头套_NN 与_CC 之_PN 相_AD 连接_VV 的_DEC 细吸管_NN ③_AD 在_P 插入_VV 钢笔_NN ④_NN 时_LC 使_VV 钢笔_NN 的_DEC 贮笔管_NN 与_CC 墨水瓶_NN 形成_VV 一_CD 个_M 密闭_VV 的_DEC 空间_NN ，_PU 通过_P 外力_NN 作用_NN ，_PU 使_VV 贮墨管_NN 与_CC 墨水瓶_NN 之间_LC 造成_VV 一_CD 个_M 压力_NN 差_VA ，_PU 通过_P 压力_NN 差_AD 作用_VV ，_PU 将_BA 墨水_NN 吸入_VV 笔管_NN 内_LC ，_PU 解决_VV 以往_NT 吸_VV 墨水_NN 时_LC 造成_VV 笔头_NN 及_CC 笔杆_NN 残留_NN 较_AD 多_VA 墨水_NN 和_CC 墨水_NN 易_AD 倒_AD 出来_VV 的_DEC 问题_NN ，_PU 给_P 墨水_NN 的_DEG 使用者_NN 带来_VV 极_AD 大_VA 的_DEC 方便_NN 。_PU
+本_DT 实用_JJ 新型_NN 技术_NN 涉及_VV 吸_VV 墨水_NN 方式_NN 的_DEG 改革_NN 。_PU
+目前_NT 国内_NN 市场_NN 沿用_VV 的_DEC 墨水瓶_NN 大_JJ 部分_NN 采用_VV 大口_NN 径_NN 内盖_NN 玻璃瓶_NN ，_PU 吸_VV 墨水_NN 时_LC 将_BA 钢笔_NN 直_AD 插入_VV 墨水瓶_NN 内_LC 、_PU 吸_VV 墨水_NN 后_LC ，_PU 笔头_NN 、_PU 笔杆_NN 附有_VV 较_AD 多_VA 残留_JJ 墨水_NN ，_PU 影响_VV 书写_NN 工具_NN 干净_NN 和_CC 书写者_NN 的_DEG 卫生_NN 。_PU
+而且_AD 此_DT 种_M 墨水瓶_NN 体积_NN 大_VA 、_PU 重量_NN 重_NN ，_PU 不_AD 便_AD 携带_VV ，_PU 特别是_AD 学生_VV 不_AD 便_AD 携带_VV ，_PU 歪斜_VV 时_LC 墨水_NN 易_AD 倒出_VV 。_PU
+该_DT 产品_NN 改革_VV 以往_NT 的_DEG 吸墨水_NN 方式_NN ，_PU 使_VV 墨水瓶_NN 地_DEG 包装_NN 能够_VV 做成_VV 轻便_JJ 型_NN ，_PU 使_VV 墨水瓶_NN 的_DEG 使用者_NN 更_AD 方便_VA 和_CC 书写_NN 用_P 具清_JJ 洁卫生_NN 。_PU
+该_DT 产品_NN 由_P 弹性_JJ 材料_NN 做成_VV 的_DEC 带有园_JJ 锥型笔_NN 头套_NN 的_DEG 容器_NN 内盖_NN ①_NN 下部_NN 连接_VV 细吸_NN 管③_NN 与_CC 轻便_JJ 瓶体_NN 密闭_AD 配合_VV ，_PU 瓶体_NN 倾倒_VV 时_LC 由于_P 细吸管_NN 管径_NN 小_VA ，_PU 瓶体_NN 内_LC 的_DEG 墨水_NN 不_AD 能_VV 倒出_VV 。_PU
+吸_VV 墨水_VV 时_LC 将_BA 钢笔④_NN 插入_VV 内盖_NN 笔头_NN 套①_NN 后_LC ，_PU 使_VV 容器_NN 与_P 钢笔_NN 贮_NN 墨水管_NN 形成_VV 一_CD 个_M 密团_NN 的_DEC 空腔_NN 。_PU
+此时_NT 用_P 外力_NN 将_BA 钢笔_NN 贮墨管_NN 内_LC 的_DEG 空气_NN 压入_VV 墨水_NN 容器_NN 内_LC ，_PU 解除_VV 对_P 贮墨管_NN 的_DEG 压力_NN ，_PU 笔_NN 的_DEG 贮墨管_NN 内_LC 形成_VV 负压_NN ，_PU 通过_P 压力_NN 差_VA 的_DEC 作用_NN ，_PU 将_BA 墨水_NN 吸入_VV 贮墨管_NN ，_PU 反复_VV 上述_JJ 动作_NN 几_CD 次_M 就_AD 能_VV 达到_VV 将_BA 笔_M 直接_AD 插入_VV 墨水瓶_NN 吸_VV 墨水_NN 的_DEC 效果_NN 。_PU
+此_DT 项_M 实用_JJ 技术_NN 利用_VV 压力_NN 差_VA 的_DEC 原理_NN ，_PU 改革_VV 了_AS 传统_JJ 的_DEG 吸_VV 墨水_NN 方式_NN ，_PU 克服_VV 了_AS 笔头_NN 不_AD 洁净_VA 和_CC 易_AD 倒_AD 墨水_VA 的_DEC 问题_NN ，_PU 促进_VV 了_AS 墨水瓶_NN 外包_NN 装向_NN 轻便_VA 化_DEC 方向_NN 改进_VV ，_PU 给_P 书写_NN 工作者_NN 和_CC 学生_VV 带来_VV 极_AD 大_VA 的_DEC 方便_NN 。_PU
+实施_NN 举例_NN ：_PU
+用_P 掺有_VV 增塑剂_NN 的_DEC 聚氯乙稀_NN 通过_P 注塑机_NN ，_PU 挤压成_VV 一_CD 个_M 带有_VV 园锥型_JJ 笔头套_NN 的_DEG 内盖①_NN ，_PU 下端_NN 连接_VV 一_CD 个_M 细吸管③_NN 。_PU
+用_P 有机_JJ 玻璃_NN 挤压_NN 成园_NN 柱_NN 型_NN 中间_NN 带有_VV 隔板_NN 的_DEC 瓶体②_NN ，_PU 内盖①_NN 与_P 瓶体_NN 用_P 螺纹_NN 方式_NN 旋紧_VV ，_PU 附加_VV 一_CD 个_M 外瓶盖_NN 。_PU
+１_CD 、_PU 一_CD 种_M 便携式_JJ 墨水瓶_NN ，_PU 其_PN 特征_NN 是_VC 由_P 内盖_NN 笔头_NN 套①_NN 中间_NN 的_DEC 锥体_NN 能_VV 与_P 钢笔④_NN 的_DEC 前端_NN 相_AD 吻合_VV ，_PU 锥体_NN 下端_NN 联有_VV 墨水吸管_NN ③瓶_NN 体②_NN 共同_AD 组成_VV 便携式_JJ 墨水瓶_NN 。_PU
+２_CD 、_PU 根据_P 权利_NN 要求_NN １_CD 所_MSP 述_VV 的_DEC 便携式_JJ 墨水瓶_NN ，_PU 其_PN 特征_NN 在于_VV 内盖_NN 由_P 弹性_JJ 材料_NN 制造_VV 。_PU
