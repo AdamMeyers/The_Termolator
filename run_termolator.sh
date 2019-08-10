@@ -52,7 +52,7 @@ $TERMOLATOR/make_io_file.py $2 $4.internal_background_substring_list .substring
 
 
 
-if ["${12}" = "False"]; then
+if [ "${12}" = "False" ]; then
    lemma_dict="$4_lemma.dict"
    web_scores="$4.webscore"
    bk_full_abb_dict=$4_bk.dict_full_to_abbr
@@ -75,7 +75,7 @@ else
     tail -n +2 ${TERMOLATOR}/TERMOLATOR_POS.properties >> temporary_TERMOLATOR_POS.properties
 fi
 
-if ["$5" = "True"]; then
+if [ "$5" = "True" ]; then
 ## Step 2 if not already processed, process the backgound files to find all
 ## inline terms
     echo "Processing background files"
@@ -86,7 +86,7 @@ if ["$5" = "True"]; then
     $TERMOLATOR/make_io_file.py $2 $4.internal_terms_abbr_list .terms .abbr .substring
     $TERMOLATOR/make_termolator_fact_txt_files.py $4.internal_prefix_list $3
 ## generates fact, txt2 and txt3 files from input files
-    if ["${14}" = "False"]; then
+    if [ "${14}" = "False" ]; then
        $TERMOLATOR/make_io_file.py $2 $4.internal_txt_fact_list .txt3 .fact
        $TERMOLATOR/make_io_file.py $2 $4.internal_fact_pos_list .fact .pos
     else
@@ -107,14 +107,14 @@ if ["$5" = "True"]; then
     echo "calling distributional_component.py in term_extration using foreground and background substring list with output to file $4.all_terms"
 fi
 
-if ["${11}" = "False"]; then
+if [ "${11}" = "False" ]; then
     $TERMOLATOR/make_io_file.py $1 $4.internal_prefix_list BARE
     $TERMOLATOR/make_io_file.py $1 $4.internal_pos_list .pos
 ##    $TERMOLATOR/make_io_file.py $1 $4.internal_txt_fact_pos_list .txt2 .fact .pos
     $TERMOLATOR/make_io_file.py $1 $4.internal_terms_abbr_list .terms .abbr .substring
     $TERMOLATOR/make_termolator_fact_txt_files.py $4.internal_prefix_list $3
 ## generates fact, txt2 and txt3 files from input files
-    if ["${14}" = "False"]; then
+    if [ "${14}" = "False" ]; then
        $TERMOLATOR/make_io_file.py $1 $4.internal_txt_fact_list .txt3 .fact
        $TERMOLATOR/make_io_file.py $1 $4.internal_fact_pos_list .fact .pos
     else
@@ -143,7 +143,7 @@ if ["${11}" = "False"]; then
     ## bk_abb_full_dict ${10} ${lemma_dict}
 fi
 
-if ["$5" = "True"]; then
+if [ "$5" = "True" ]; then
     $TERMOLATOR/distributional_component.py NormalRank $4.internal_foreground_substring_list $4.all_terms ${13} $4.internal_background_substring_list 
 else
     echo "calling distributional_component.py in term_extration using foreground and stored background statistics with output to file $4.all_terms"
@@ -151,7 +151,7 @@ else
 fi
 
 
-if ["${12}" = "False"]; then
+if [ "${12}" = "False" ]; then
    echo "calling filter_term_output.py with filter_term_output.py $4 ${web_scores} $6 $7 ${10}"
    $TERMOLATOR/filter_term_output.py $4 ${web_scores} $6 $7 $4.internal_foreground_abbr_list ${10}
 else
