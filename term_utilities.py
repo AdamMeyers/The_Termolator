@@ -186,7 +186,10 @@ def evaluate_roman (string):
         total = total + last
     return(total)
 
-
+def ordinal_pattern(word):
+    if re.search('^([0-9]+)((th)|(nd)|(st)|(rd))$',word,re.I):
+        return(True)
+    
 def return_stray_colons(string):
     return(string.replace('-colon-',':'))
 
@@ -1146,5 +1149,41 @@ def change_parens_to_dots(instring):
         else:
             out+=char
     return(out)
-        
+
+## These next 3 functions are used for programs that create summary descriptions of terms
+
+def get_word_dist_from_paragraph(paragraph):
+    distribution = {}
+    paragraph = paragraph.lower()
+    for word in re.split('[^a-z0-9]',paragraph):
+        if re.search('[a-z0-9]',word):
+            if word in distribution:
+                distribution[word]+=1
+            else:
+                distribution[word]=1
+    return(distribution)
     
+def cosine_similarity (vec1,vec2):
+    numerator = 0
+    factor1 = 0
+    factor2 = 0
+    for num in range(len(vec1)):
+        numerator +=(vec1[num]*vec2[num])
+        factor1 += vec1[num]**2
+        factor2 += vec2[num]**2
+    denominator = (factor1*factor2)**.5
+    if denominator == 0:
+        return(0)
+    else:
+        return(numerator/denominator)
+
+def make_vector(word_list,frequency_counts,idf_counts):
+    output = []
+    for word in word_list:
+        if word in frequency_counts:
+            freq = frequency_counts[word]
+        else:
+            freq = 0
+        idf = idf_counts[word]
+        output.append(freq*idf)
+    return(output)

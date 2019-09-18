@@ -27,6 +27,25 @@ as input; (vii) a version of the Chinese Termolator is incorporated
 that is more closely connected to the English version (the import of
 this feature is not complete as of this writing)
 
+There are some additional features, many experimental that we will be
+adding to this website and will describe in separate READMEs for
+now. These include: 
+
+     README_termolator_add_ons.txt -- This currently describes 2
+     programs: (a) term map creation: a program for producing a "term
+     map", a file that details how each term in termolator output that
+     occurs in the foreground documents with some minimum frequency
+     (default = occurs in at least 3 files).; (b) a summary creation
+     program: a program which takes each term listed in the term map
+     just described and produces a glossary of sorts. The glossary
+     provides first paragraphs of corresponding wikipedia entries,
+     when they exist, as well as a sample of (by default 3) texts
+     containing the term (or variants thereof). These texts are
+     sampled from the foreground documents with an emphasis on finding
+     samples that are both well-formed (according to a language model)
+     and different from each other (distance measured as cosine
+     similarity).
+
 The Termolator takes two sets of documents as input a FOREGROUND set
 and a BACKGROUND set and finds instances of terminology that are more
 characteristic of the FOREGROUND than the BACKGROUND.  Input files can
