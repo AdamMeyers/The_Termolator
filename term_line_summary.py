@@ -418,7 +418,7 @@ def generate_summaries_from_term_file_map(term_map_file,summary_outfile,text_fil
         stages = []
         term_paragraphs = []
         for instance_triple in entry['instances']:
-            term_paragraph = get_term_paragraph_from_term_map(instance_triple,text_file_directory,txt_file_list=txt_file_list,txt_file_type)
+            term_paragraph = get_term_paragraph_from_term_map(instance_triple,text_file_directory,txt_file_list=txt_file_list,txt_file_type=txt_file_type)
             term_paragraphs.append(term_paragraph)                
         ## pairs of the form [file,paragraph]
         if len(term_paragraphs)>0:
