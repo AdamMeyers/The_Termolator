@@ -365,8 +365,9 @@ def get_next_term_map_entry(instream):
         elif re.search('<instance',next_line):
             instance_match = file_start_end_pattern.search(next_line)
             if not instance_match:
+                print('No instances?:')
                 print(next_line)
-                input('pause')
+                ## input('pause')
             instance = [instance_match.group(1),instance_match.group(2),instance_match.group(3)]
             instances.append(instance)
     if term:
@@ -388,6 +389,8 @@ def get_term_dict_from_map_file(term_map_file):
 def generate_summaries_from_term_file_map(term_map_file,summary_outfile,text_file_directory,txt_file_list=False,model_file=language_model_file,profile_file=profile_file,test_on_n_terms=False,cluster_sample_strategy='big_centroid_max',choose_terms_randomly=False,fixed_term_set=False,txt_file_type='.txt3',trace=False):
     global term_dict
     global fixed_term_set_list
+    if not txt_file_type.startswith('.'):
+        txt_file_type = "." + txt_file_type
     print('Loading term dict')
     term_dict = get_term_dict_from_map_file(term_map_file)
     print('completed loading')
@@ -430,7 +433,7 @@ def generate_summaries_from_term_file_map(term_map_file,summary_outfile,text_fil
         if len(selection1) == 0:
             print('No selected paragraphs for',term)
             print('stages:',stages)
-            input('pause')
+            ## input('pause')
         else:
             pass
         if (not ' ' in term) and one_word_filter(term):

@@ -38,7 +38,7 @@ def may_refer_to_entry (title,entry):
     except:
         print('Problem with title:',title)
         print('Problem with entry:',entry)
-        input('pause')
+        ## input('pause')
 
 def replace_spaces_with_underscores(search_term):
     output = search_term.replace(' ','_')
