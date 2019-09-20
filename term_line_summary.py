@@ -64,15 +64,15 @@ def get_following_line_break(text,start,max_distance=False):
             position_plus = position2+(max_distance//2)
     return(start+position_plus)
 
-def get_term_paragraph_from_term_map(instance_triple,text_file_directory,txt_file_list=False):
+def get_term_paragraph_from_term_map(instance_triple,text_file_directory,txt_file_list=False,txt_file_type='.txt3'):
     output = []
     infile,start,end = instance_triple
     start = int(start)
     end = int(end)
     if text_file_directory:
         infile = merge_path(text_file_directory,infile)
-    if not infile.endswith('.txt'):
-        infile = infile+'.txt'
+    if not infile.endswith(txt_file_type):
+        infile = infile+txt_file_type
     with open(infile) as instream:
         all_text = instream.read()
         window_start = get_previous_line_break(all_text,start,max_distance=200)
@@ -385,7 +385,7 @@ def get_term_dict_from_map_file(term_map_file):
                 keep_going = False
     return(term_dict)
     
-def generate_summaries_from_term_file_map(term_map_file,summary_outfile,text_file_directory,txt_file_list=False,model_file=language_model_file,profile_file=profile_file,test_on_n_terms=False,cluster_sample_strategy='big_centroid_max',choose_terms_randomly=False,fixed_term_set=False,trace=False):
+def generate_summaries_from_term_file_map(term_map_file,summary_outfile,text_file_directory,txt_file_list=False,model_file=language_model_file,profile_file=profile_file,test_on_n_terms=False,cluster_sample_strategy='big_centroid_max',choose_terms_randomly=False,fixed_term_set=False,txt_file_type='.txt3',trace=False):
     global term_dict
     global fixed_term_set_list
     print('Loading term dict')
@@ -418,7 +418,7 @@ def generate_summaries_from_term_file_map(term_map_file,summary_outfile,text_fil
         stages = []
         term_paragraphs = []
         for instance_triple in entry['instances']:
-            term_paragraph = get_term_paragraph_from_term_map(instance_triple,text_file_directory,txt_file_list=txt_file_list)
+            term_paragraph = get_term_paragraph_from_term_map(instance_triple,text_file_directory,txt_file_list=txt_file_list,txt_file_type)
             term_paragraphs.append(term_paragraph)                
         ## pairs of the form [file,paragraph]
         if len(term_paragraphs)>0:
