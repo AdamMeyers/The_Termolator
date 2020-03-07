@@ -31,7 +31,7 @@ words - a dict with words as keys and word counts as values."""
             elif filename.endswith('.substring'):
                 self.token_counts = FreqDist()
                 self.counts = FreqDist()
-                with open(filename) as instream:
+                with open(filename,encoding="utf-8-sig") as instream:
                     for term in instream:
                         term = term.strip(os.linesep)
                         self.counts[term] += 1
