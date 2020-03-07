@@ -109,7 +109,7 @@ def __main__(args):
                 else:
                     ranking = metric.rankTerms(measure)
             try:
-                with open(outfile,'w') as outstream:
+                with open(outfile,'w', encoding='utf-8-sig') as outstream:
                     for i in range(len(ranking)):
                         if (len(ranking[i][0]) > MAX_LEN):
                             continue
