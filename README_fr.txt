@@ -3,8 +3,7 @@
 - FRENCH TERMOLATOR: 
 
 	INSTALLATION:
-	- Download all Termolator files (main (English) components AND French folder FR_Termolator) from Github repo.
-	- Put contents of French folder FR_Termolator in main Termolator folder. Keep TreeTaggerLinux/ as a separate folder, but in main folder location.
+	- Download all Termolator files (main (English) components as well) from Github repo.
 	- The necessary TreeTagger files (by Helmut Schmid 1995, https://www.cis.uni-muenchen.de/~schmid/tools/TreeTagger/) are provided in FR_Termolator/TreeTaggerLinux/. After having downloaded the Termolator files, inside TreeTaggerLinux/, run install-tagger.sh
 
 	RUNNING:
