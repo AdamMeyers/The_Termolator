@@ -31,7 +31,7 @@ class Metric:
         elif type(general)== type(str()):
             logging.debug('Loading general documents from '+general)
             # gen = [Document(general+genFile) for genFile in os.listdir(general) if genFile[-4:]=='.txt']
-            gen = map(lambda x: Document(filename=x.strip(),overwrite=overwrite), open(general).readlines())
+            gen = map(lambda x: Document(filename=x.strip(),overwrite=overwrite), open(general,encoding="utf-8-sig").readlines())
             ## note that the iterator only les us calculate this once
             ## this is OK because this is the initialization function
             ## other maps should be cast into lists
@@ -92,7 +92,7 @@ class Metric:
         # Related Document Group -- we need each document separately
         logging.debug('Loading RDG from '+rdgDir+'...')
         #self.rdgDocs = [Document(rdgDir+rdgFile) for rdgFile in os.listdir(rdgDir) if rdgFile[-4:]=='.txt']
-        self.rdgDocs = list (map(lambda x: Document(filename=x.strip(),overwrite=overwrite), open(rdgDir).readlines()))
+        self.rdgDocs = list (map(lambda x: Document(filename=x.strip(),overwrite=overwrite), open(rdgDir,encoding='utf-8-sig').readlines()))
         ## Python 3 compatibility -- rdgDocs needs to be a list and Python3 makes it an iterator
         logging.debug('done')
 
@@ -504,7 +504,7 @@ Keys = 'DC', 'DR', 'DRDC', 'TokenDRDC', 'IDF', 'TFIDF', 'TokenIDF', 'Entropy', '
         """Score a word list stored in a file (one word per line)."""
         ranking = []
         words = []
-        f = open(filename)
+        f = open(filename,encoding="utf-8-sig")
         for line in f:
             w = line.strip()
             if w != '':
