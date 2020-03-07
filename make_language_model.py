@@ -162,10 +162,10 @@ def train_model(infile_list,ngrams,model_name,output_file,verbose=False):
   trigrams.clear()
   fourgrams.clear()
   fivegrams.clear()
-  with open(infile_list) as instream:
+  with open(infile_list,encoding='utf-8-sig') as instream:
     for line in instream:
       filename=line.strip(os.linesep)
-      with open(filename) as textstream:
+      with open(filename,encoding='utf-8',errors="replace") as textstream:
         for text_chunk in textstream.read().split(os.linesep+os.linesep):
           ## assume that two line separators in a row break text into units
           text_chunk = text_chunk.strip() 
@@ -223,7 +223,7 @@ def train_model(infile_list,ngrams,model_name,output_file,verbose=False):
     values = list(table.values())
     minimum = min(values)
     table['Minimum']=minimum
-  with open(output_file,'w') as outstream:
+  with open(output_file,'w',encoding='utf-8-sig') as outstream:
     for name,table in [[1,unigrams],[2,bigrams],[3,trigrams],[4,fourgrams],[5,fivegrams]]:
       outstream.write('<'+str(name)+'>\n')
       for key,value in table.items():
@@ -291,7 +291,7 @@ def get_stats_from_profile(import_file):
   mean_sd = False
   range_v = False
   ## sd_v = False
-  with open(import_file) as instream:
+  with open(import_file,encoding='utf-8-sig') as instream:
     for line in instream:
       sd = distribution.search(line)
       if sd and not mean_sd:
@@ -315,7 +315,7 @@ def get_stats_from_profile(import_file):
         return(mean,maximum,minimum,stand_dev)
       
 def load_model_into_ngrams(model_file):
-  with open(model_file) as instream:
+  with open(model_file,encoding='utf-8-sig') as instream:
     for line in instream:
       line = line.strip(os.linesep)
       if line == '<1>':
@@ -344,12 +344,12 @@ def profile_file(char_model_name,model_file,infile_list,outfile,import_profile=F
   for ngram in ngrams:
     ngram.clear()
   load_model_into_ngrams(model_file) 
-  with open(infile_list) as instream:
+  with open(infile_list,encoding='utf-8-sig') as instream:
     values = []
     chunks = []
     for line in instream:
       text_file = line.strip(os.linesep)
-      with open(text_file) as textstream:
+      with open(text_file,encoding='utf-8-sig',errors='replace') as textstream:
         offset = 0
         start = offset
         for text_chunk in textstream.read().split(os.linesep+os.linesep):
@@ -391,7 +391,7 @@ def profile_file(char_model_name,model_file,infile_list,outfile,import_profile=F
         stand_dev = variance**.5
   else:
     no_profile = False  
-  with open(outfile,'w') as outstream:
+  with open(outfile,'w',encoding='utf-8-sig') as outstream:
     if no_profile:
       pass
     else:
@@ -451,7 +451,7 @@ def get_sample_print_out_from_profile(profile_file,output_file,sample_multiple=1
   mean,maximum,minimum,stand_dev = get_stats_from_profile(profile_file)
   pattern = re.compile('<Segment file="([^"]*)" start="([^"]*)" end="([^"]*)" value="([^"]*)"')
   example_table = {}
-  with open(profile_file) as instream:
+  with open(profile_file,encoding='utf-8-sig') as instream:
     for line in instream:
       match = pattern.search(line)
       if match:
@@ -470,7 +470,7 @@ def get_sample_print_out_from_profile(profile_file,output_file,sample_multiple=1
           example_table[difference].append([infile,start,end,value])
   differences = list(example_table.keys())
   differences.sort()
-  with open(output_file,'w') as outstream:
+  with open(output_file,'w',encoding='utf-8-sig') as outstream:
     for difference in differences:
       if difference in example_table:
         outstream.write('*** Difference at '+str(difference)+' standard deviations from the mean ***\n')
@@ -492,6 +492,11 @@ def train_on_OANC():
   train_model('lang_model1_input.list',ngrams,'generalized_character2','gen2_lang.model')
   profile_file('generalized_character2','gen2_lang.model','lang_model1_input.list','OANC.profile2')
 
+#added for FR to create files for lang model  
+def train_on_FR_leipzig():
+  train_model('modelFRinput-leipzig.list',ngrams,'generalized_character2','lang_model_fr_leipzig.model')
+  profile_file('generalized_character2','lang_model_fr_leipzig.model','modelFRinput-leipzig.list','leipzigFR.profile')
+  
 def print_OANC_demo():
   ## This demo illustrates the sort of text that are different numbers of standard deviations
   ## from the mean probability. This illustrates what different cutoffs could rule out.
@@ -510,7 +515,7 @@ def filter_fact_file(textfile,in_fact_file,out_fact_file,ngrams,model_name,model
   ## Our current hypothesis is that -1 is OK for normal text and that 0 or -0.2 are OK for
   ## text (like patents) that tend to have more unusuable text.
   structure_pattern = re.compile('STRUCTURE *TYPE="TEXT" *START=([0-9]*) *END=([0-9]*)',re.I)
-  txt_stream = open(textfile)
+  txt_stream = open(textfile,encoding='utf-8-sig')
   txt = txt_stream.read()
   txt_stream.close()
   if initialize or (len(unigrams)==0):
@@ -518,7 +523,7 @@ def filter_fact_file(textfile,in_fact_file,out_fact_file,ngrams,model_name,model
     for ngram in ngrams:
       ngram.clear()
     load_model_into_ngrams(model_file)    
-  with open(in_fact_file) as instream,open(out_fact_file,'w') as outstream:
+  with open(in_fact_file,encoding='utf-8-sig') as instream,open(out_fact_file,'w',encoding='utf-8-sig') as outstream:
     for line in instream:
       match = structure_pattern.search(line)
       if match:
@@ -535,7 +540,7 @@ def filter_fact_file(textfile,in_fact_file,out_fact_file,ngrams,model_name,model
   
 def filter_fact_files(file_list,model_name,model_file,profile_file,cutoff=-1):
   global ngrams
-  with open(file_list) as instream:
+  with open(file_list,encoding='utf-8-sig') as instream:
     for line in instream:
       line = line.strip(os.linesep)
       textfile,in_fact_file,out_fact_file = line.split(';')
@@ -545,9 +550,9 @@ def filter_fact_files(file_list,model_name,model_file,profile_file,cutoff=-1):
 
 def make_filter_printout(txt_file,fact_file,good_file,bad_file):
   structure_pattern = re.compile('STRUCTURE *TYPE="TEXT" *START=([0-9]*) *END=([0-9]*)',re.I)
-  with open(txt_file) as instream:
+  with open(txt_file,encoding='utf-8-sig') as instream:
     text = instream.read()
-  with open(fact_file) as instream,open(good_file,'w') as \
+  with open(fact_file,encoding='utf-8-sig') as instream,open(good_file,'w',encoding='utf-8-sig') as \
     goodstream, open(bad_file,'w') as badstream:
     start = 0
     good_number = 0
