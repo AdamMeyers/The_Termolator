@@ -905,9 +905,11 @@ def filter_terms (infile, \
                   numeric_cutoff=30000,\
                   reject_file = False, \
                   penalize_initial_the = True, \
-                  web_score_dict_file=False
+                  web_score_dict_file=False,
+                  web_score_max = 1000
                   ):
     ## it is possible that some people may want to allow NPs as well as noun groups as terms
+    webscore_count = 0
     if abbr_full_file and full_abbr_file:
         if os.path.isfile(abbr_full_file) and os.path.isfile(full_abbr_file):
             read_in_abbrev_dicts_from_files(abbr_full_file,full_abbr_file)
@@ -958,7 +960,8 @@ def filter_terms (infile, \
             rank_score = stat_rank_scores[line_list[-1]]
             confidence = rank_score * well_formedness_score
             output.append([confidence,term,keep,classification,rating,well_formedness_score,rank_score])
-    output.sort()
+            ## output.sort(key=lambda sublist: sublist[::-1]) ## sort based on last score first, thus giving web search more effect
+            output.sort()
     output.reverse()
     confidence_position = min(round(len(output)*percent_cutoff),numeric_cutoff)
     if len(output)>0:
@@ -984,13 +987,26 @@ def filter_terms (infile, \
             else:
                 stream = False
         else:
-            if use_web_score:
-                webscore = webscore_one_term(term,use_web_score_dict=use_web_score_dict) ### fix this
+            ## print('webscore status:',term,webscore_count,web_score_max)
+            ## after 1000 instances assign minimum webscore of .1
+            ## fixing mismatch (2/12/20) -- max of 1000 websearches
+            ## minimum webscore of .1
+            if use_web_score and (webscore_count<web_score_max):
+                webscore,increment = webscore_one_term(term,use_web_score_dict=use_web_score_dict) ### fix this
+                webscore_count += increment
+                webscore = max(webscore,.1) ## actual observed should not go below minimum webscore
+                combined_score = webscore*confidence
+                out.extend([webscore,combined_score])
+                final_output.append([combined_score,out])
+            elif use_web_score:
+                webscore = .1
                 combined_score = webscore*confidence
                 out.extend([webscore,combined_score])
                 final_output.append([combined_score,out])
             else:
                 webscore = False
+                # out.extend([False,out[-1]]) 
+                ## out.extend([False,0]) ## fixing mismatch (2/12/20)
                 final_output.append([confidence,out])
             stream = False
         if stream:

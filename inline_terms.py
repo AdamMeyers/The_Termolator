@@ -354,7 +354,28 @@ def OK_chemical(chem_string):
         return(False)
                     
                 
-            
+def get_next_possible_match(search_object,text,start):
+    space = re.compile(' ')
+    match = space.search(text,start)
+    if match:
+        end = match.start()
+    else:
+        end = len(text)
+    possible_match = search_object.search(text[:end],start)
+    while (not possible_match) and (end < len(text)):
+        start = end
+        if ' ' in text[start+1:]:
+            end = (text[start+1:].index(' '))+start+1
+        else:
+            end = len(text)
+        if len(text[start:end])>100:
+            possible_match = False
+        else:
+            possible_match = search_object.search(text[:end],start)
+    if possible_match:
+        return(start,possible_match)
+    else:
+        return(len(text),False)
     
 def get_next_chemical_match(text,start):
     chemical_formula_piece1 = '(-?((A[glmrstu])|(B[aehikr]?)|(C[adeflmorsu]?)|(D[by])|(E[rsu])|(F[emr]?)|(G[ade])|(H[efgos]?)|(I[nr]?)|(Kr?)|(L[airu])|(M[dgnot])|(N[abdeiop]?)|(Os?)|(P[abdmortu]?)|(R[abefhnu])|(S[bcegimnr]?)|(T[abcehilm])|(U)|(V)|(W)|(Xe)|(Yb?)|(Z[nr]))[0-9]?-?)'
@@ -363,13 +384,14 @@ def get_next_chemical_match(text,start):
     chemical_formula = re.compile('(^| )(('+chemical_piece+'){2,})($| )')
     ## group 2 is chemical
     local_start = start
-    possible_match = chemical_formula.search(text,start)
+    local_start,possible_match = get_next_possible_match(chemical_formula,text,local_start)
     while possible_match:
         if OK_chemical(possible_match.group(2)):
             return(possible_match)
         else:
             local_start = possible_match.end(2)
             possible_match = chemical_formula.search(text,local_start)
+
 
 def OK_url(path_string):
     pivot_match = re.search('(^[^/]*)([:.])([^/]*)',path_string)
@@ -493,6 +515,7 @@ def get_formulaic_term_pieces(text,offset):
             if next_match == path_match:
                 path_match,path_type = get_next_path_match(text,start)
             elif next_match == chemical_match:
+                ## print('chem match',start)
                 chemical_match = get_next_chemical_match(text,start)
             elif next_match == gene_match:
                 gene_match = gene_sequence.search(text,start)
@@ -1446,9 +1469,9 @@ def filter_txt_triples_by_start_end(start_end_filters,txt_strings):
                         start = 'not ready'
                 else:
                     modified_string = string[-1*new_size:]
-                    if len(modified_string) != end-start:
-                        print(1,'end',end,'start',start)
-                        print('length',len(modified_string),modified_string)
+                    # if len(modified_string) != end-start:
+                    #     print(1,'end',end,'start',start)
+                    #     print('length',len(modified_string),modified_string)
                 ### modified_string = **** 57 ****
                     output.append([start,end,modified_string])
                     start = 'not ready'
@@ -1463,9 +1486,6 @@ def filter_txt_triples_by_start_end(start_end_filters,txt_strings):
             new_size = end-start
             ### modified_string = **** 57 ****
             modified_string = string[:new_size]
-            if len(modified_string) != end-start:
-                print(2,'end',end,'start',start)
-                print('length',len(modified_string),modified_string)
             output.append([start,end,modified_string])
             start = 'not ready'
         elif (start < next_block_start) and (end > next_block_end):

@@ -3,7 +3,7 @@ from abbreviate import *
 from inline_terms import *
 from ne_filter import *
 
-def find_inline_terms_for_file_list(file_list,dict_prefix=False,ne_filter_ending=False,fact_suffix='.fact'):
+def find_inline_terms_for_file_list(file_list,dict_prefix=False,ne_filter_ending=False,fact_suffix='.fact',txt_suffix='.txt3',overwrite=True):
     start = True
     with open(file_list) as instream:
         # if dict_prefix:
@@ -12,8 +12,13 @@ def find_inline_terms_for_file_list(file_list,dict_prefix=False,ne_filter_ending
         ## and other instances of "unigram_dict" below
         for line in instream:
             file_prefix = line.strip()
-            lines = get_lines_from_file(file_prefix+'.txt3') ## add feature to remove xml
-            run_abbreviate_on_lines(lines,file_prefix+'.abbr',reset_dictionary=start)
+            if (not overwrite) and os.path.isfile(file_prefix+'.terms'):
+                skip = True
+            else:
+                skip = False
+            if not skip:
+                lines = get_lines_from_file(file_prefix+txt_suffix) ## add feature to remove xml
+                run_abbreviate_on_lines(lines,file_prefix+'.abbr',reset_dictionary=start)
             ## creates abbreviation files and acquires abbreviation --> term
             ## and term --> abbreviation dictionaries
             ## Possibly add alternative which loads existing abbreviation files into
@@ -21,11 +26,14 @@ def find_inline_terms_for_file_list(file_list,dict_prefix=False,ne_filter_ending
             
             # if dict_prefix:
             #     increment_unigram_dict_from_lines(lines)
-            if ne_filter_ending and os.path.isfile(file_prefix+ne_filter_ending):
+            if skip:
+                pass
+            elif ne_filter_ending and os.path.isfile(file_prefix+ne_filter_ending):
                 start_end_filter_positions = read_in_filter_positions(file_prefix+ne_filter_ending)
             else:
                 start_end_filter_positions = False
-            find_inline_terms(lines,file_prefix+fact_suffix,file_prefix+'.pos',file_prefix+'.terms',start_end_filters=start_end_filter_positions)
+            if not skip:
+                find_inline_terms(lines,file_prefix+fact_suffix,file_prefix+'.pos',file_prefix+'.terms',start_end_filters=start_end_filter_positions)
             if start:
                 start = False
         if dict_prefix:

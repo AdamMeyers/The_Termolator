@@ -23,8 +23,6 @@ class Metric:
         self.genDocs = Document(overwrite=overwrite)
         #for numBackDocs # updates by Y Gu 11/2018 for pkl file type compatibility
         self.genDocsNum = 0
-        #filtfname = os.path.join(rdgDir, 'filter.save')
-        #filtfname = os.path.join(working_dir, '.filter.save')
         # General document group is given as files in a directory
         if rank_from_previous:
             pass
@@ -32,7 +30,7 @@ class Metric:
             logging.debug('Loading general documents from '+general)
             # gen = [Document(general+genFile) for genFile in os.listdir(general) if genFile[-4:]=='.txt']
             gen = map(lambda x: Document(filename=x.strip(),overwrite=overwrite), open(general,encoding="utf-8-sig").readlines())
-            ## note that the iterator only les us calculate this once
+            ## note that the iterator only lets us calculate this once
             ## this is OK because this is the initialization function
             ## other maps should be cast into lists
             # we only need the sum for the general class
@@ -42,13 +40,8 @@ class Metric:
             for iterator in gen:
                 self.genDocsNum += 1
                 for w in iterator.counts:
-                    ## print(2,w,iterator.counts[w]) ## 57 OK 
                     self.genDocs.counts[w] += iterator.counts[w]
                     self.genDocs.token_counts[w] += 1 # updates by Y Gu 11/2018 for pkl file type compatibility
-                    ## input('pausing')
-            # for i in range(len(list(gen))):
-            #     for w in gen[i].counts:
-            #         self.genDocs.counts[w] += gen[i].counts[w]
         # General document group is given as a corpus
         else:
             logging.debug('Loading from general corpus...')
@@ -91,7 +84,6 @@ class Metric:
             logging.debug('done')
         # Related Document Group -- we need each document separately
         logging.debug('Loading RDG from '+rdgDir+'...')
-        #self.rdgDocs = [Document(rdgDir+rdgFile) for rdgFile in os.listdir(rdgDir) if rdgFile[-4:]=='.txt']
         self.rdgDocs = list (map(lambda x: Document(filename=x.strip(),overwrite=overwrite), open(rdgDir,encoding='utf-8-sig').readlines()))
         ## Python 3 compatibility -- rdgDocs needs to be a list and Python3 makes it an iterator
         logging.debug('done')
@@ -289,36 +281,6 @@ a proposed term, adjusted for token frquency"""
         #          'Supporting Information':0.1}
         #priors = {'Supplementary Material': 0.001}
         p = 1.0
-        #for section in priors:
-        #    found = False
-        #    for doc in self.rdgDocs:
-        #        for s in doc.sections:
-        #            if s.title == section:
-        #                if word in s.text:
-        #                    found = True
-        #                    break
-        #        if found:
-        #            break
-        #    if found:
-        #        p *= priors[section]
-        #    else:
-        #        p *= (1.0-priors[section])
-        #if p <= 0 or p >= 1:
-        #    print p
-        #
-        #
-        #nominal = 0.4 #Nominal value
-        #p = nominal
-        #for doc in self.rdgDocs:
-        #    for s in doc.sections:
-        #        temp = 0.0
-        #        if s.title in priors:
-        #            if word in s.text:
-        #                temp += priors[s.title]
-        #        p+=temp
-        #p/=len(self.rdgDocs)
-        #if p > nominal:
-        #    print p
         return p
     def setWordlistProbs(self, probs):
         """Input dictionary of probabilities for terms in wordlists.
@@ -381,12 +343,8 @@ Keys = 'DC', 'DR', 'DRDC', 'TokenDRDC', 'IDF', 'TFIDF', 'TokenIDF', 'Entropy', '
     def rankTerms(self, measure='DRDC', save=True):
         """Score the RDG, return list of (word, rank) tuples"""
         ranking = []
-        ranking_map = {} # separate map to not impose
-        #fd = FreqDist()
-        #for d in self.rdgDocs:
-        #    for w in d.counts.keys():
-        #        fd[w] += d.counts[w]            
-        #words = fd.keys()
+        ## ranking_map = {} # separate map to not impose
+        self.ranking_map = {} # AM change May 27
         logging.debug('Entering rankTerms, loading keys...')
         words = set()
         for d in self.rdgDocs:
@@ -404,28 +362,19 @@ Keys = 'DC', 'DR', 'DRDC', 'TokenDRDC', 'IDF', 'TFIDF', 'TokenIDF', 'Entropy', '
                 ranking.append((s, temp))
                 if save:
                     #logging.error("Saving word: " + str(s) + " to ranking.pkl  with measurement: " + measure + " and value: " + str(temp))
-                    ranking_map[(s,measure)]=temp
+                    ## ranking_map[(s,measure)]=temp
+                    self.ranking_map[(s,measure)]=temp # AM change May 27
             #ranking.append((w, temp))
         logging.debug('Done')
-##        # force ranks to be [0,1]
-##        minimum = min(map(lambda x: x[1], ranking)) #to enforce >= 0
-##        if minimum < 0:
-##            minimum = abs(minimum)
-##        else:
-##            minumum = 0.0
-##        # add a placeholder for unknown words
-##        ranking.append(('[UNK]', -minimum - 9e-11)) # smallest value: 1e-11 before normalization
-##        minimum += 1e-10 #to avoid rank of 0
-##        ranking = [(r[0], r[1]+minimum) for r in ranking]
-##        total = sum(map(lambda x: x[1], ranking))
-##        # save log(rank) to avoid floating point precision errors
-##        ranking = [(r[0], math.log(r[1],2)-math.log(total),2) for r in ranking]
         logging.debug('Sorting...')
         ranking.sort(key=lambda x: x[1], reverse=True)
         #pickle.dump(ranking_map, open(bck_cache_file,'w'))
         f = open(bck_cache_file, 'wb')
         #pickle.dump(ranking_map,f,encoding="utf-8")
-        pickle.dump(ranking_map,f)
+        ## pickle.dump(ranking_map,f) ## AM
+        print('loading')
+        stuff_to_save = (self.genDocsNum,self.genDocs)
+        pickle.dump(stuff_to_save,f)
         logging.debug('Done')
         return ranking
     def rankTermsFromPrevious(self, measure='DRDC'):
@@ -433,14 +382,9 @@ Keys = 'DC', 'DR', 'DRDC', 'TokenDRDC', 'IDF', 'TFIDF', 'TokenIDF', 'Entropy', '
         # we only need the sum for the general class
         #self.rankingmap = pickle.load(open(bck_cache_file,'r'))
         f = open(bck_cache_file, 'rb')
-        #self.rankingmap = pickle.load(f, encoding="utf-8")
-        self.rankingmap = pickle.load(f)
+        self.genDocsNum,self.genDocs = pickle.load(f)
         ranking = [] # this ranking is a local array, not the cached
-        #fd = FreqDist()
-        #for d in self.rdgDocs:
-        #    for w in d.counts.keys():
-        #        fd[w] += d.counts[w]            
-        #words = fd.keys()
+        self.ranking_map = {} 
         logging.debug('Entering rankTerms, loading keys...')
         words = set()
         for d in self.rdgDocs:
@@ -459,18 +403,6 @@ Keys = 'DC', 'DR', 'DRDC', 'TokenDRDC', 'IDF', 'TFIDF', 'TokenIDF', 'Entropy', '
             #ranking.append((w, temp))
           #logging.debug('Done')
 ##        # force ranks to be [0,1]
-##        minimum = min(map(lambda x: x[1], ranking)) #to enforce >= 0
-##        if minimum < 0:
-##            minimum = abs(minimum)
-##        else:
-##            minumum = 0.0
-##        # add a placeholder for unknown words
-##        ranking.append(('[UNK]', -minimum - 9e-11)) # smallest value: 1e-11 before normalization
-##        minimum += 1e-10 #to avoid rank of 0
-##        ranking = [(r[0], r[1]+minimum) for r in ranking]
-##        total = sum(map(lambda x: x[1], ranking))
-##        # save log(rank) to avoid floating point precision errors
-##        ranking = [(r[0], math.log(r[1],2)-math.log(total),2) for r in ranking]
         logging.debug('Sorting...')
         ranking.sort(key=lambda x: x[1], reverse=True)
         #self.rankingmap.sort(key=lambda x: x[1], reverse=True)
@@ -486,18 +418,6 @@ Keys = 'DC', 'DR', 'DRDC', 'TokenDRDC', 'IDF', 'TFIDF', 'TokenIDF', 'Entropy', '
                 ## Filter.unstem(w):
                 ranking.append((s, temp))
 ##        # force ranks to be [0,1]
-##        minimum = min(map(lambda x: x[1], ranking)) #to enforce >= 0
-##        if minimum < 0:
-##            minimum = abs(minimum)
-##        else:
-##            minumum = 0.0
-##        # add a placeholder for unknown words
-##        ranking.append(('[UNK]', -minimum - 9e-11)) # smallest value: 1e-11 before normalization
-##        minimum += 1e-10 #to avoid rank of 0
-##        ranking = [(r[0], r[1]+minimum) for r in ranking]
-##        total = sum(map(lambda x: x[1], ranking))
-##        # save log(rank) to avoid floating point precision errors
-##        ranking = [(r[0], math.log(r[1],2)-math.log(total),2) for r in ranking]
         ranking.sort(key=lambda x: x[1], reverse=True)
         return ranking
     def rankWordList(self, filename, measure='DRDC'):
@@ -512,26 +432,8 @@ Keys = 'DC', 'DR', 'DRDC', 'TokenDRDC', 'IDF', 'TFIDF', 'TokenIDF', 'Entropy', '
         f.close()
         ## useStem = 'stem' in Settings.getDocumentFilters() #are words stemmed?
         for w in words:
-            # if useStem:
-            #     temp = self.metrics[measure](Filter.stem(w))
-            #     #for s in Filter.unstem(w):
-            #     #    ranking.append((s, temp))
-            # else:
             temp = self.metrics[measure](w)
             ranking.append((w, temp))
-##        # force ranks to be [0,1]
-##        minimum = min(map(lambda x: x[1], ranking)) #to enforce >= 0
-##        if minimum < 0:
-##            minimum = abs(minimum)
-##        else:
-##            minumum = 0.0
-##        # add a placeholder for unknown words
-##        ranking.append(('[UNK]', -minimum - 9e-11)) # smallest value: 1e-11 before normalization
-##        minimum += 1e-10 #to avoid rank of 0
-##        ranking = [(r[0], r[1]+minimum) for r in ranking]
-##        total = sum(map(lambda x: x[1], ranking))
-##        # save log(rank) to avoid floating point precision errors
-##        ranking = [(r[0], math.log(r[1],2)-math.log(total),2) for r in ranking]
         ranking.sort(key=lambda x: x[1], reverse=True)
         return ranking
     def scoreByRankSum(self, termfiles, measure='DRDC'):

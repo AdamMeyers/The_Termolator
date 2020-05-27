@@ -348,8 +348,9 @@ def do_search_and_classify_top_10(term,provider='yahoo',minimum=5,debug=False,st
         
 def webscore_one_term(term,debug=False,use_web_score_dict=False,provider='yahoo'):
     if use_web_score_dict and (term in webscore_dict):
-        return(webscore_dict[term])
+        return(webscore_dict[term],0)
     search_rating, total_results = do_search_and_classify_top_10(term,debug=False,provider=provider)
+    web_count = 1
     ## search_rating = (academic_count+patent_count)/10
     ## total_results = number of hits
     ## sample call: score_one_term('speech recognition system')
@@ -371,7 +372,7 @@ def webscore_one_term(term,debug=False,use_web_score_dict=False,provider='yahoo'
         print('unscored:',term)
         if use_web_score_dict:
             webscore_supp_dict[term] = 0
-        return(0)
+        return(0,web_count)
     if use_web_score_dict:
         webscore_supp_dict[term] = score
-    return(score)
+    return(score,web_count)
