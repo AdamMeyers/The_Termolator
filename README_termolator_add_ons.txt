@@ -45,16 +45,17 @@ B. The Summary Creation Program -- this program creates glossary-like
 
    A) Get a Wikipedia .xml file:
 
-   I downloaded the enwiki-20190101-pages-articles-multistream.xml
-   file and used this as my main input file, but
-   a more current version (if available) would be advisable.
-   There are a number of sources that you can go to get such files, e.g., see
-   https://dumps.wikimedia.org/enwiki/20190901/
-   for a bz2 file.  I found that
-   "wget https://dumps.wikimedia.org/enwiki/20190901/enwiki-20190101-pages-articles-multistream.xml.bz2"
-   was more effective than downloading using a web browser (which kept stalling).  
-   There are alternatives using torents, e.g.,
-   https://meta.wikimedia.org/wiki/Data_dump_torrents/en#English_Wikipedia
+I suggest downloading the file from:
+
+https://meta.wikimedia.org/wiki/Data_dump_torrents#English_Wikipedia
+
+I have so far tested the program with the following 2 files:
+     enwiki-20190101-pages-articles-multistream.xml
+	and
+     enwiki-20200401-pages-articles-multistream.xml
+In both cases the files were around 16-17gb and I used torrents. There
+seem to be some similarly named files that are much smaller 3-6gb and that
+do not work. They seem to contain different information. So beware     
 
    B) Download the wiki-basic-stream.py from github:
       https://github.com/jeffheaton/article-code/blob/master/python/wikipedia/wiki-basic-stream.py
