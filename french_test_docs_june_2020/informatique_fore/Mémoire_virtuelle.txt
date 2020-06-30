@@ -1,0 +1,112 @@
+﻿Mémoire virtuelle
+
+En informatique, le mécanisme de mémoire virtuelle a été mis au point dans les années 1960. Il repose sur l'utilisation de traduction à la volée des adresses (virtuelles) vues du logiciel, en adresses physiques de mémoire vive.
+La mémoire virtuelle permet :
+
+L'article de référence de James Kilburn, paru en 1962, décrit le premier ordinateur doté d'un système de gestion de mémoire virtuelle paginée et utilisant un tambour comme extension de la mémoire centrale à tores de ferrite : l'Atlas. 
+
+Aujourd'hui, tous les ordinateurs ont un mécanisme de gestion de la mémoire virtuelle, sauf certains supercalculateurs ou systèmes embarqués temps réel.
+
+Le principe est le suivant : 
+
+La table des pages est indexée par le numéro de page. Chaque ligne est appelée « entrée dans la table des pages » (, abrégé PTE), et contient le numéro de cadre. La table des pages pouvant être située n'importe où en mémoire, un registre spécial (PTBR pour ) conserve son adresse.
+
+En pratique, le mécanisme de traduction fait partie d'un circuit électronique appelé MMU () qui contient
+également une partie de la table des pages, stockée dans une mémoire associative formée de registres rapides. Ceci évite d'avoir à consulter la table des pages (en mémoire) pour chaque accès mémoire.
+
+Voici un exemple réel d'une machine dont le processeur génère des adresses virtuelles sur , pouvant ainsi accéder à de mémoire. La taille de la page est de . On en déduit que le champ déplacement occupe les de poids faible, et le champ numéro de page les de poids fort.
+
+On notera la présence d'un champ spécial appartenant à chaque PTE. Pour simplifier, nous avons réduit la largeur de ce champ à un bit : le bit de "validité". Si celui-ci est à 0, cela signifie que le numéro de cadre est invalide. Il faut donc se doter d'une technique permettant de mettre à jour cette PTE pour la rendre valide.
+
+Trois cas peuvent se produire :
+
+
+Dans les deux derniers cas, une interruption – appelée "défaut de page" (ou parfois "faute de page", traduction de l'anglais ) est générée par le matériel et donne la main au système d'exploitation. Celui-ci a la charge de trouver un cadre disponible en mémoire centrale afin de l'allouer au processus responsable de ce défaut de page, et éventuellement de recharger le contenu de cette par le contenu sauvé sur la mémoire de masse (couramment le disque dur, sur une zone appelée "zone d'échange" ou ).
+
+Il se peut qu'il n'y ait plus aucun cadre libre en mémoire centrale : celle-ci est alors occupée à 100 %. Dans ce cas un algorithme de pagination a la responsabilité de choisir une page « victime ». Cette page se verra soit immédiatement réaffectée au processus demandeur, soit elle sera d'abord sauvegardée sur disque dur, et l'entrée de la table des pages qui la référence sera mise à jour. La page victime peut très bien appartenir au processus qui manque de place.
+
+Ci-dessous sont listés quelques exemples d'algorithmes. La première ligne correspond à la "chaîne de références", c’est-à-dire l'ordre dans lequel le processus va accéder aux pages. On suppose que la mémoire centrale est composée de trois . La victime apparaîtra soulignée. Les défauts de page initiaux ne sont pas comptés (ils sont en nombre identique quel que soit l'algorithme choisi).
+
+
+
+
+
+Il peut être relativement facile de trouver des cas pathologiques qui rendent un algorithme inutilisable. Par exemple, pour l'algorithme LRU, il s'agirait d'un programme qui utilise 5 pages dans une boucle sur une machine qui ne compte que 4 cadres'. Il va d'abord utiliser les 4 premiers cadres séquentiellement (1, 2, 3, 4) puis un défaut de page va survenir et c'est la page 1, la plus anciennement chargée, qui sera la victime. Les pages utilisées sont maintenant (5, 2, 3, 4). Puisque le programme boucle, il a besoin de la page 1 (à la suite de la page 5). Cette fois-ci, la page victime est la page 2, remplacée par la 1 : (5, 1, 3, 4), puis (5, 1, 2, 4), (5, 1, 2, 3), etc. Un défaut de page est généré à chaque itération…
+
+Intuitivement, augmenter le nombre de cadres de pages (c'est-à-dire agrandir la mémoire centrale) doit réduire le nombre de défauts de page.
+
+L'anomalie de Belady (1970) est un contre-exemple qui montre que ce n'est pas absolument vrai avec l'algorithme FIFO, en effet le lecteur pourra vérifier par lui-même que la séquence de références (3, 2, 1, 0, 3, 2, 4, 3, 2, 1, 0, 4) conduit à 
+
+Remarque : il ne faut pas exagérer la portée de cette curiosité. Elle montre certes que l'algorithme FIFO n'a pas "en général" une propriété à laquelle on se serait attendu (ajouter de la mémoire réduit les défauts de page) mais elle ne montre pas qu'elle ne l'a pas "en moyenne". Et de toute façon l'algorithme FIFO n'est jamais utilisé pour le remplacement de page.
+
+Par ailleurs, on peut démontrer que certains algorithmes de remplacement de pages (LRU par exemple) ne sont pas sujets à ce type d'anomalie.
+
+Les méthodes de sélection de la page victime évoquées ci-dessus peuvent s'appliquer soit aux pages appartenant à un processus (on parle alors d'« allocation locale »), soit à toutes les pages et donc à toute la mémoire (dans ce cas la technique d'allocation est dite « globale »).
+
+Dans un système d'allocation globale, le temps d'exécution d'un processus peut grandement varier d'une instance à l'autre car le nombre de défauts de page ne dépend pas du processus lui-même. D'un autre côté, ce système permet au nombre de cadres alloués à un processus d'évoluer.
+
+Le schéma suivant montre trois processus en cours d'exécution, par exemple un éditeur de texte nommé Ed. Les trois instances sont toutes situées aux mêmes adresses virtuelles (1, 2, 3, 4, 5). Ce programme utilise deux zones mémoire distinctes : les pages qui contiennent le code, c’est-à-dire les instructions décrivant le programme, et la zone de données, le fichier en cours d'édition. Il suffit de garder les mêmes entrées dans la table des pages pour que les trois instances se partagent la zone de code. Par contre, les entrées correspondantes aux pages de données sont, elles, distinctes.
+Des bits de protections sont ajoutés à chaque entrée de la table des pages. Ainsi on pourra aisément faire la distinction entre les pages allouées au noyau, en lecture seule, etc. Voir l'exemple ci-dessous.
+
+On rencontre trois problèmes majeurs :
+
+Le comportement des programmes n'est pas chaotique : le programme démarre, il fait appel à des fonctions (ou parties de code) qui en appellent d'autres à leur tour, etc. Chacun de ces appels définit une région. Il est probable que le programme puisse passer beaucoup de temps à s'exécuter au sein de quelques régions : c'est le principe de localité. Le même principe peut être appliqué aux pages contenant des données.
+
+Autrement dit, un programme accède fréquemment à un petit ensemble de pages, et cet ensemble de pages évolue lentement avec le temps.
+
+Si l'on est capable de conserver en mémoire ces espaces souvent accédés, on diminue les chances de voir un programme se mettre à "trasher", c’est-à-dire réclamer des pages qu'on vient de lui retirer récemment.
+
+On peut définir un paramètre, Δ, qui est le nombre de références aux pages accédées par le processus durant un certain laps de temps. La figure ci-dessous montre la valeur de l'espace de travail à deux instants différents :
+
+Il faut choisir la valeur de Δ avec soin : trop petite elle ne couvre pas l'espace de travail "nominal" du processus ; trop grande elle inclut des pages inutiles. Si Δ est égal à l'infini, il couvre la totalité du programme, bien sûr.
+
+Pour un unique processus, on peut représenter graphiquement comment la mémoire lui est allouée, et visualiser les espaces de travail :
+
+Les « plateaux » sont des zones où il n'y a pas de défaut de page : l'espace alloué est suffisamment grand pour contenir toutes les dont le processus a besoin pendant un temps relativement long. Les défauts de pages ont lieu dans la partie ascendante de la transition, tandis que de la mémoire est "libérée" quand la courbe retombe vers le prochain espace de travail : zone d'équilibre.
+
+C'est au système d'exploitation de mettre en œuvre les algorithmes pour que la valeur de Δ soit optimum de sorte que le taux de multiprogrammation et l'utilisation de l'unité centrale soient maximisés. En d'autres termes : éviter le . Si la somme des espaces de travail de chacun des processus est supérieur au nombre de disponibles, il y aura forcément effondrement.
+
+Un système paginé a l'inconvénient de générer une fragmentation interne : une page entière est allouée à un processus, alors que seuls quelques octets sont occupés. Par exemple, si l'on suppose une taille de page de , un processus ayant besoin de va se voir allouer 2 pages, soit octets, près de 40 % est « perdu ». 
+
+
+Un des avantages de la mémoire virtuelle est de pouvoir commencer l'exécution d'un programme dès que sa première page de code est chargée en mémoire. La prépagination va non seulement charger la première page, mais les quelques suivantes, dont la probabilité d'être accédée est très élevée.
+
+
+ 3 3 2 2 2 2 2
+
+Les champs M, U, N et NDP ne sont valides que si le bit V est à 1. Quand V est à 0, le champ NDP contient l'adresse sur le disque dur où se trouve la page.
+
+Le bit 24, "N" (on-cachée), signifie que la page n'est pas en cache et que le système doit lire ou écrire directement depuis ou vers la mémoire.
+
+Le bit "M" (odifiée) est modifié par le matériel si le contenu de la page est modifié.
+
+Le bit "U" (tilisée) indique si la page a été lue ou écrite par un processus. Il est utile, en association avec les autres, pour la détermination de l'espace de travail () d'un processus (cf. ci-dessus).
+
+
+La segmentation offre une vue de la mémoire plus cohérente avec celle de l'utilisateur. En effet, celui-ci ne considère pas (ou rarement !) la mémoire comme une suite de pages mais plutôt comme des espaces, ou des régions, destinés à une utilisation particulière par exemple : le code d'un programme, les données, la pile, un ensemble de sous-programmes, des modules, un tableau, etc. La segmentation reflète cette organisation. 
+
+Chaque objet logique sera désigné par un segment. Dans un segment l'adressage se fera à l'aide d'un déplacement. Le couple (segment, déplacement) sera traduit en adresse mémoire par le biais d'une table de segments contenant deux champs, "limite" et "base". La base est l'adresse de début du segment, et limite la dernière adresse du même segment :
+
+Les systèmes paginés rencontrent un problème de fragmentation "interne ": de la place est perdue à la fin d'une page. Les systèmes segmentés connaissent un problème de fragmentation "externe" : des espaces entre des segments sont trop petits pour loger de nouveaux fragments, cet espace est donc perdu. 
+
+Il est possible de le récupérer en compactant la mémoire, c’est-à-dire en déplaçant les segments — tout en reflétant ces modifications dans les tables des segments — de sorte qu'ils soient contigus. Néanmoins cette opération est coûteuse.
+
+Il est possible de partager des segments entre processus, comme illustré sur la figure ci-dessous, où deux processus Ed1 et Ed2 partagent le même segment de code (programme) mais ont des segments pour les données disjoints et de tailles différentes.
+
+Cette protection sera assurée par des bits supplémentaires ajoutés dans la table des segments, de la même façon que pour un système paginé.
+
+L'exemple le plus connu est l'Intel 8086 et ses quatre registres :
+
+Les successeurs du 8086 sont aussi segmentés :
+
+Il est possible de mixer les deux modes précédents :
+
+Il est parfois nécessaire de supprimer "toutes" les pages ou segments d'un processus de la mémoire centrale. Dans ce cas le processus sera dit "swappé", et toutes les données lui appartenant seront stockées en mémoire de masse. Cela peut survenir pour des processus "dormant" depuis longtemps, alors que le système d'exploitation a besoin d'allouer de la mémoire aux processus actifs. Les pages ou segments de code (programme) ne seront jamais "swappés", mais tout simplement réassignés, car on peut les retrouver dans le fichier correspondant au programme (le fichier de "l'exécutable"). Pour cette raison, le système d'exploitation interdit l'accès en écriture à un fichier exécutable en cours d'utilisation ; symétriquement, il est impossible de lancer l'exécution d'un fichier tant qu'il est tenu ouvert pour un accès en écriture par un autre processus.
+
+La compression de mémoire virtuelle permet d'améliorer la performance d'un système de mémoire virtuelle. Cette technique de gestion de mémoire virtuelle utilise la compression de données pour réduire la taille ou le nombre de requêtes de pagination vers et depuis le stockage auxiliaire.
+
+Dans un système de compression de mémoire virtuelle, les pages sont compressées et stockées dans la mémoire physique, généralement une mémoire RAM, ou envoyées compressées vers un stockage auxiliaire, tel qu'un disque dur ou un disque SSD. Dans les deux cas, la plage de mémoire virtuelle dont le contenu a été compressé est inaccessible, de sorte que les tentatives d'accès aux pages compressées déclenchent des erreurs de page et inversent le processus de compression (récupération du stockage auxiliaire et décompression). L'empreinte des données paginées est réduite par le processus de compression et la mémoire RAM libérée est renvoyée dans le pool de mémoire physique disponible. Dans le cas où les pages compressées sont conservées dans la mémoire RAM, les pages compressées utilisent évidemment moins d'espace que les pages originales. Dans le cas où les pages compressées sont conservées dans un stockage auxiliaire, la mémoire RAM est complètement libérée et les opérations d'écriture et de lecture sur la mémoire auxiliaire sont plus rapides que si les pages n'avaient pas été compressées.
+
+
+
+

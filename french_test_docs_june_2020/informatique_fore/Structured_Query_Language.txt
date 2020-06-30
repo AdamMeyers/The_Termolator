@@ -1,0 +1,65 @@
+﻿Structured Query Language
+
+SQL (sigle de ', en français langage de requête structurée"') est un langage informatique normalisé servant à exploiter des bases de données relationnelles. La partie "langage de manipulation des données" de SQL permet de rechercher, d'ajouter, de modifier ou de supprimer des données dans les bases de données relationnelles.
+
+Outre le langage de manipulation des données, la partie "langage de définition des données" permet de créer et de modifier l'organisation des données dans la base de données, la partie "langage de contrôle de transaction" permet de commencer et de terminer des transactions, et la partie "langage de contrôle des données" permet d'autoriser ou d'interdire l'accès à certaines données à certaines personnes.
+
+Créé en 1974, normalisé depuis 1986, le langage est reconnu par la grande majorité des systèmes de gestion de bases de données relationnelles (abrégé SGBDR) du marché.
+SQL fait partie de la même famille que les langages SEQUEL (dont il est le descendant), QUEL (intégré à Ingres) ou QBE (Zloof).
+
+En juin 1970, Edgar Frank Codd publia l'article ' (« Un référentiel de données relationnel pour de grandes banques de données partagées ») dans la revue ' ('). Ce référentiel relationnel fondé sur la logique des prédicats du premier ordre a été rapidement reconnu comme un modèle théorique intéressant, pour l'interrogation des bases de données, et a inspiré le développement du langage ' ("SEQUEL") (« langage d'interrogation structuré en anglais »), renommé ultérieurement SQL pour cause de conflit de marque déposée.
+
+Développée chez IBM en 1970 par Donald Chamberlin et Raymond Boyce, cette première version a été conçue pour manipuler et éditer des données stockées dans la base de données relationnelle à l'aide du système de gestion de base de données IBM System R. Le nom SEQUEL, qui était déposé commercialement par l'avionneur Hawker Siddeley pour un système d'acquisition de données, a été abandonné et contracté en SQL en 1975. SQL était censé alors devenir un élément clé du futur projet FS.
+En 1979, ' (actuellement ') présenta la première version commercialement disponible de SQL, rapidement imité par d'autres fournisseurs.
+
+SQL a été adopté comme recommandation par l'Institut de normalisation américaine (ANSI) en 1986, puis comme norme internationale par l'ISO en 1987 sous le nom de "ISO/CEI 9075 - Technologies de l'information - Langages de base de données - SQL".
+
+La norme internationale SQL est passée par un certain nombre de révisions :
+Comme toute norme internationale publiée par l'ISO, ISO/CEI 9075 est disponible à l'achat sur le site de cette organisation. Le dernier brouillon de la norme est disponible sur wiscorp.com.
+
+Le langage SQL s'utilise principalement de trois manières :
+
+
+Les instructions SQL s'écrivent d'une manière qui ressemble à celle de phrases ordinaires en anglais. Cette ressemblance voulue vise à faciliter l'apprentissage et la lecture.
+
+C'est un langage déclaratif, c'est-à-dire qu'il permet de décrire le résultat escompté, sans décrire la manière de l'obtenir. Les SGBD sont équipés d' - des mécanismes qui déterminent automatiquement la manière optimale d'effectuer les opérations, notamment par une estimation de la complexité algorithmique. Celle-ci est fondée sur des statistiques récoltées à partir des données contenues dans la base de données (nombre d'enregistrements, nombre de valeurs distinctes dans une colonne, etc.).
+
+Les instructions SQL couvrent 4 domaines : Langage de définition de données, Langage de manipulation de données, Langage de contrôle de données, Langage de contrôle des transactions.
+
+Les instructions de manipulation du contenu de la base de données commencent par les mots clés "SELECT", "UPDATE", "INSERT" ou "DELETE" qui correspondent respectivement aux opérations de recherche de contenu, modification, ajout et suppression. Divers mots-clés tels que "FROM", "JOIN" et "GROUP BY" permettent d'indiquer les opérations d'algèbre relationnelle à effectuer en vue d'obtenir le contenu à manipuler.
+
+Les instructions de manipulation des métadonnées - description de la structure, l'organisation et les caractéristiques de la base de données - commencent avec les mots-clés "CREATE", "ALTER", "DROP", "RENAME", "COMMENT" ou "TRUNCATE" qui correspondent aux opérations d'ajouter, modifier, supprimer, renommer, commenter ou vider une métadonnée. Ces mots clés sont immédiatement suivis du type de métadonnée à manipuler - "TABLE", "VIEW", "INDEX"...
+
+Les mots clés "GRANT" et "REVOKE" permettent d'autoriser des opérations à certaines personnes, d'ajouter ou de supprimer des autorisations. Tandis que les mots clés "COMMIT" et "ROLLBACK" permettent de confirmer ou annuler l'exécution de transactions.
+
+La syntaxe de SQL fait l'objet de la norme "ISO 9075". Cette norme laisse la possibilité aux producteurs de SGBD d'y ajouter des instructions spécifiques et non normalisées. La norme a évolué au cours des années en vue de s'adapter aux demandes, et les éditeurs de SGBD ont souvent ajouté des possibilités à leurs produits avant que celles-ci fassent objet de normes, ce qui provoque des variations dans la compréhension et l'interprétation qui est faite d'un code source en SQL par les différents logiciels de SGBD. Ces différences font qu'un code source écrit sans précautions pour un SGBD donné ne fonctionnera pas forcément avec un autre SGBD.
+
+
+Le Langage de manipulation de données LMD, soit Data Manipulation Language, DML, en anglais, est un sous-ensemble du SQL utilisé pour ajouter, modifier, et supprimer des données :
+
+
+INSERT INTO a_table (field1, field2, field3)
+
+
+UPDATE a_table
+WHERE field2 = 'N';
+
+
+DELETE FROM a_table
+
+
+Le mot-clef NULL fut introduit dans SQL pour exprimer les informations manquantes dans le modèle relationnel. L'introduction de NULL, avec TRUE et FALSE est le fondement de la logique ternaire. NULL n'a pas de valeur en SQL (et n'est membre d'aucun type de données), c'est un mot-clé réservé, indiquant qu'une information est manquante. Par conséquent, la comparaison avec NULL, même avec NULL lui-même, ne peut ni être VRAI ni être FAUX, elle est obligatoirement inconnue et ne possède aucune valeur booléenne. En effet, NULL ne peut pas être considéré égal à NULL, puisque les deux informations manquantes, que ces deux NULL distincts représentent, peuvent s'avérer différentes. On dit généralement que NULL est un « marqueur ».
+
+
+Parmi les autres langages de requêtes, citons les ancêtres de SQL comme QUEL (QUery English Language) ou SEQUEL (Structured English QUEry Language) ou encore le langage QBE (Query By Example). Cependant le langage QBE, très différent de SQL, est encore en vigueur dans les SGBDR de type « fichier » que sont Paradox (Ansa Software/Borland/Corel) ou Microsoft Access (base de données) de Microsoft.
+
+À noter que la technique du WITH a été en partie reprise dans la norme SQL:1999 pour réaliser des « "" » (CTE ou "Table d'Expression Partagées" en français), c'est-à-dire des vues non instanciées utilisables par la requête dans laquelle elles figurent, et ce afin de factoriser des expressions ou encore de permettre l'écriture de requêtes récursives de manière à résoudre élégamment des parcours d'arbres ou de graphes.
+
+Parmi les autres candidats, on compte :
+
+"Tous ces systèmes présentent certaines particularités dont certaines ne se retrouvent pas chez d'autres. Il est d'ailleurs toujours intéressant de se référer au manuel de référence du SGBDR, lors de requêtes particulières ou complexes, ainsi que pour leur optimisation."
+
+
+
+
+

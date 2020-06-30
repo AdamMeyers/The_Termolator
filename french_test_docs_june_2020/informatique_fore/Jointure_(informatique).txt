@@ -1,0 +1,21 @@
+﻿Jointure (informatique)
+
+En informatique et plus particulièrement dans les bases de données relationnelles, la jointure ou appariement est l'opération permettant d’associer plusieurs tables ou vues de la base par le biais d’un lien logique de données entre les différentes tables ou vues, le lien étant vérifié par le biais d'un prédicat. Le résultat de l'opération est une nouvelle table.
+
+En SQL, une jointure est définie dans la clause codice_1, en indiquant le mot clef JOIN pour chaque nouvelle table à joindre à l'une des précédentes et en spécifiant comment, dans un prédicat de jointure introduit par le mot clef ON.
+
+Une ancienne syntaxe, remplacée par le JOIN en 1992, consistait à énumérer les tables dans la clause FROM effectuant ainsi un produit cartésien que l'on filtrait par restriction dans la clause WHERE. Cette ancienne syntaxe est aujourd'hui abandonnée du fait de son incapacité à réaliser pleinement les jointures externes.
+
+La syntaxe de la jointure est la suivante :
+
+Une extension de l'opération de jointure a consisté à rajouter le concept de jointure dite "naturelle" opérant automatiquement sur des colonnes de même nom dans chaque table en jeu. 
+
+Syntaxe :
+Cette syntaxe est à éviter car elle peut entraîner de multiples erreurs ou problèmes de performances (jointures circulaires involontaires, jointures non voulues en cas d'évolution du modèle, etc.).
+
+Les jointures peuvent être classées en équijointures (jointures basées exclusivement sur des égalités entre les colonnes des différentes tables) et théta jointure, c'est-à-dire par inégalité, différences... La plupart du temps les équijointures sont le résultat de la décomposition des relations inhérentes à la modélisation relationnelle des données (sauf forme normale domaine clef).
+
+En algèbre relationnelle, une jointure est une composition de relations, tout comme on peut composer des fonctions (par exemple "g"  "f"). En effet, les tables définissent des relations entre les différents champs qui les composent.
+
+
+

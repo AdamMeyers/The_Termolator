@@ -1,0 +1,17 @@
+﻿Déclencheur
+
+En programmation procédurale, un déclencheur (trigger en anglais) est un dispositif logiciel qui provoque un traitement particulier en fonction d'événements prédéfinis. Par extension, c'est l'événement lui-même qui est qualifié de déclencheur.
+
+En programmation objet, tout message à un objet est lui-même un déclencheur. Dans les interfaces graphiques, ces déclencheurs sont nommés en général "callbacks".
+
+En programmation système, la modification d'un fichier peut constituer un déclencheur, soit pour maintenir à jour les informations affichées (contenu d'un répertoire, par exemple), soit pour lancer des opérations de sécurité. En Linux, c'est "Gamin" (anciennement : FAM, "File Access Monitoring") qui est utilisé à cette fin.
+
+Dans les bases de données, avant ou après ("BEFORE"/"AFTER") la création ("INSERT"), la mise à jour ("UPDATE") ou la suppression ("DELETE") d'une donnée, si un déclencheur existe, il peut lancer automatiquement une procédure stockée en tant que telle, ou une instruction SQL spécifique, qui agira en parallèle sur la même donnée dans une ou des tables afférentes. Cela permet d'automatiser certains traitements, souvent dans le but d'assurer la cohérence et l'intégrité des données, mais aussi de pallier d'éventuelles limitations applicatives (côté interfaces).
+
+Le déclencheur est la fonction qui initie une variable affectée à une autre fonction. Ce système s'apparente aux gestionnaires d'événements par exemple en JavaScript.
+
+Les ordres du langage de définition de données (LDD) et de la gestion de transaction ("CREATE", "ALTER", "DROP", "COMMIT", "SAVEPOINT") sont interdits pour les triggers autres que base de données (triggers système).
+
+Trigger déclenché lors d’une insertion ou d’une modification de la table "table_example" en SQL :
+
+

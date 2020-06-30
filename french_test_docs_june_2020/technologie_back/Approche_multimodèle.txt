@@ -1,0 +1,70 @@
+﻿Approche multimodèle
+
+L'approche multimodèle est une approche mathématique visant à représenter du mieux possible le fonctionnement dynamique d'un processus, en utilisant des modèles Linéaires invariants dans le temps (LTI).
+
+Un modèle devrait représenter le mieux possible le fonctionnement dynamique d’un processus. Les lois dynamiques définissant un tel système doivent être les plus complètes possibles et représenter tous les modes de fonctionnement et toutes les interactions entre les différentes grandeurs. Afin de pallier la complexité de cette tâche, la tendance a été d'utiliser des modèles Linéaires Invariants dans le Temps (LTI). Cette approximation permet ainsi d’étudier un système ayant un comportement non linéaire en le représentant par un seul modèle linéaire (linéarisé tangent autour d'un point d'équilibre). L'inconvénient d'une telle approche est son aspect uniquement local; le modèle linéaire n'est qu'une description locale du comportement du système. 
+
+Une approche globale basée sur de multiples modèles LTI (linéaires ou affines) autour de différents points de fonctionnement a été élaborée ces dernières années. L'interpolation de ces modèles locaux à l'aide de fonctions d'activation normalisées permet de modéliser le système global non linéaire. Cette approche, dite "multimodèles", s'inspire des modèles flous de type Takagi-Sugeno (T-S). En effet, un multimodèle réalise une partition floue de l'espace caractéristique Z dit aussi espace de décision (c'est l'espace caractérisé par l'ensemble des variables caractéristiques (de décision) qui peuvent être des variables d'état mesurables et/ou la commande). Les zones de fonctionnement sont définies en termes de propositions sur les variables de prémisse. Cette représentation est connue pour ses propriétés d'approximateur universel.
+
+Dans la littérature, on peut dénombrer de nombreux types de modèles flous. Cependant on peut distinguer deux classes principales de modèles flous : le modèle flou de Mamdani et le modèle flou de Takagi-Sugeno. La principale différence entre ces deux modèles réside dans la partie conséquence. Le modèle flou de Mamdani utilise des sous ensembles flous dans la partie conséquence alors que le modèle flou de Takagi-Sugeno utilise des fonctions (linéaires ou non linéaires) des variables mesurables. Dans le modèle Takagi-Sugeno, la partie conséquence est un modèle linéaire (représentation d'état, modèle autorégressif). Afin d’exploiter la théorie très riche des modèles LTI, le modèle de Takagi-Sugeno dont la partie conséquence est un modèle linéaire en représentation d'état est de loin le plus utilisé en analyse et commande.
+
+Les multimodèles représentent les systèmes non linéaires sous forme d'une interpolation entre des modèles en général linéaires (ou affines) locaux. Chaque modèle local est un système dynamique LTI (Linéaire à Temps Invariant) valide autour d'un point de fonctionnement. De façon pratique, ces modèles sont obtenus par identification, par linéarisation autour de différents points de fonctionnement (dans ce cas il s'agit de modèles locaux affines dus à la présence de la constante de linéarisation) ou par transformation polytopique convexe. Dans la première situation, à partir de données sur les entrées et les sorties, nous pouvons identifier les paramètres du modèle local correspondant aux différents points de fonctionnement. Dans la deuxième et la troisième situation, on suppose disposer d'un modèle mathématique non linéaire.
+
+Trois méthodes distinctes peuvent être employées pour l'obtention d'un multimodèle :
+
+Les modèles "boite noire" sont identifiés à partir des données sur les entrées et sur les sorties autour de différents points de fonctionnement. Indépendamment du type de modèle choisi, cette identification requiert la recherche d'une structure "optimale", l'estimation des paramètres et la validation du modèle final. Les travaux portant sur l'analyse de stabilité des multimodèles adoptent souvent la représentation d'état au lieu d'un modèle sous forme entrée-sortie. De même, la synthèse de lois de commande (ou d’observateurs) des processus modélisés par l'approche multimodèle utilisent la représentation d'état afin d'étendre au cas non linéaire des techniques de commande par retour d'état.
+
+Dans ce cas, nous supposons disposer d'un modèle mathématique non linéaire du processus physique qu'on linéarise autour de différents points de fonctionnement. Considérons le système non linéaire suivant 
+
+avec le vecteur des variables d’état du système et son entrée.
+La fonction est supposée continûment dérivable. La linéarisation de cette fonction autour d’un point de fonctionnement arbitraire est
+
+avec 
+
+En supposant que les modèles locaux (dits aussi sous-modèles) sont issus d'une linéarisation autour de points de fonctionnement , la formulation multimodèle aboutit à 
+
+où sont les fonctions d'activation à déterminer, est le vecteur des "variables de décision" dépendant des variables d'état mesurables et éventuellement de la commande .
+
+Rappelons que pour cette méthode le nombre de modèles dépend de la précision de modélisation souhaitée, de la complexité du système non linéaire et du choix de la structure des fonctions d'activation.
+
+Nous proposons d'étudier cette transformation dans le cas général d'un système non linéaire affine en la commande : 
+
+avec la sortie du système.
+
+La méthode est basée sur une transformation polytopique convexe de fonctions scalaires origine de la non linéarité. L'avantage d’une telle méthode est de ne pas engendrer d'erreur d'approximation et de réduire le nombre de modèles par rapport à la méthode de linéarisation. 
+
+La méthode présentée est basée uniquement sur la bornitude des termes non linéaires. En effet, soit une fonction bornée de vers formula_6 pour tout formula_7 avec formula_8. Alors il existe deux fonctions 
+
+avec
+et
+Une décomposition évidente consiste à considérer sur 
+
+avec
+et
+
+Rappelons que dans le contexte de la synthèse de régulateurs par analyse convexe, le nombre de contraintes LMI (Linear Matrix Inequalities) dépend du nombre de modèles locaux. La réduction de ce nombre, dépendant de la méthode de transformation, est synonyme de moins de conservatisme.
+
+Ces méthodes s'appliquent également au cas continu qu’au cas discret.
+
+Considérons le modèle non linéaire au temps continu
+avec
+
+La méthode de transformation proposée est basée sur la bornitude des termes continus non linéaires.
+
+formula_18 représente le terme non linéaire borné pour tout par
+
+En effet nous pouvons écrire 
+
+Avec
+Ce qui permet d’obtenir
+
+Par conséquent
+
+avec 
+
+En effet, la représentation équivalente au modèle non linéaire, est
+
+L’analyse de la stabilité et la synthèse de loi de commande des multimodèles sont basées essentiellement sur la théorie de Lyapunov et la formulation LMI.
+
+
+

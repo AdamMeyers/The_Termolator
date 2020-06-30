@@ -1,0 +1,73 @@
+﻿Vérification de conformité architecturale
+
+La vérification de conformité architecturale (en anglais, architecture conformance checking) regroupe l'ensemble des vérifications statiques et dynamiques d'une implémentation d'un logiciel à partir de son architecture. Un humain peut détecter visuellement des violations en comparant deux modèles représentant une architecture. Ce procédé n'est pas sans faille puisqu'il peut nécessiter une grande concentration, une certaine difficulté et impliquer des erreurs en fonction de la complexité du modèle. Le modèle peut être constitué de multiples vues augmentant sa complexité. La vérification de conformité automatisée (entendre par là, une vérification informatique) est un choix préférable dans ce genre de cas.
+
+L'architecture logicielle est soumise constamment à des pressions sur les exigences et les technologies utilisées tout en continuant à délivrer un niveau de performance acceptable pour les utilisateurs finaux. L'érosion logicielle est l'écart entre l'architecture prévue et son implémentation finale qui change selon ces différentes pressions. Souvent, les modifications faites durant le développement d'un système provoquent des dommages sur l'intégralité de sa structure et violent ses principes de design.
+
+L'érosion peut survenir à cause de plusieurs facteurs incluant : 
+
+Plusieurs stratégies existent pour tenter de contrôler l'érosion : la minimiser, la prévenir et la réparer. La plus utilisée est la stratégie qui tente de minimiser l'érosion. Elle peut être implémentée par plusieurs techniques incluant la documentation, l'analyse et la surveillance de la conformité de l'architecture. La stratégie pour prévenir l'érosion vise à complètement l'éradiquer. Quant à la réparation, elle est utilisée pour déterminer si une implémentation est conforme à son architecture en réparant les dommages causés par l'érosion et réconciliant l'implémentation avec son architecture.
+
+Pour chaque stratégie, il existe un second niveau de catégories classifiant plus précisément les différentes solutions :
+
+Les vérifications statiques sont effectuées sans exécuter le code. Elles sont faites pendant la compilation d'un système ou pendant sa phase de maintenance où l'application n'est plus connectée à son environnement de production. Elles peuvent être liées à la structure du code et les aspects de l'intégrité de la communication.
+
+Il existe trois approches principales pour les vérifications statiques :
+
+Les vérifications dynamiques ont deux objectifs : vérifier l'exécution et la cohérence entre l'architecture du système et la spécification définie. Elles sont utilisées comme une protection contre les fautes potentielles à l'exécution. Cette protection est implémentée par un moniteur pour pouvoir réagir aux différentes violations. Les vérifications dynamiques sont effectuées pendant que le système s'exécute et nécessitent donc l'accès à l'état d'exécution des opérations. Ces opérations sont validées par des contraintes architecturales dépendantes d'une solution souvent externe.
+
+Ces deux types de vérifications peuvent être utilisés de façon complémentaire pour de la vérification de conformité entre une architecture et son implémentation.
+
+Les vérifications de conformité se base sur un mapping entre l'architecture et son implémentation. Ce rapprochement est nécessaire pour lancer les vérifications. Il en existe différentes catégories qui sont toutes utilisées par différentes solutions :
+
+
+PandArch est un framework de vérifications de conformité entre l'architecture et l'implémentation d'un logiciel. Cette solution est designée pour être connectable, automatisée, personnalisable, non intrusive et extensible. Grâce à ces principes, elle vise à limiter les problèmes connus de vérifications en limitant l'impact sur les performances du logiciel cible, quand les vérifications sont actives. L'objectif principal de ce framework est de rendre la vérification de conformité dynamique d'architectures une option viable pour les développeurs.
+
+La réalisation de PandArch a été motivée par plusieurs principes importants :
+
+Vérifier la conformité des fonctionnalités dynamiques par rapport à une implémentation n'est pas toujours possible quand le système est déployé dans son environnement de production. De plus, les routines de maintenance modifient les pré-requis et les opérations peuvent alors causer une déviation du comportement de l'application en production.
+
+PandArch vient proposer une solution pour la détection de violations à l'exécution d'un programme avec ses motivations sur la minimalisation des impacts sur l'application cible. La conformité des fonctionnalités dynamiques inclut l'instanciation à l'exécution, l'invocation de méthodes réflectives, les liaisons dynamiques, la qualité des services, etc.
+La vérification de conformité entre l'architecture et l'implémentation d'un logiciel nécessite l'utilisation d'un système de surveillance pour reconstruire une vue de l'architecture à l'exécution de l'application cible. L'architecture extraite est utilisée pour les vérifications de conformité.
+
+L'exécution du mécanisme de vérification architecturale de conformité se base sur une spécification de l'architecture. Cette spécification contient les annotations de mapping entre l'architecture et l'implémentation du logiciel cible. Les contraintes architecturales et les informations sur ce mapping sont extraites à partir de la compilation de cette spécification, et elles sont utilisées par le générateur de règles pour créer l'ensemble des règles de conformité.
+
+Parallèlement à cela, le vérificateur de conformité prendra l'ensemble des règles de conformité. Il les validera pendant les évènements d'exécution survenant à l'exécution du programme. Ce processus peut alors produire une série de violations pour notifier l'architecte des dérivations présentes dans l'implémentation à partir de l'architecture.
+
+Card (de l'anglais "Controlling Architectural Degradation") est un outil pour identifier l'érosion de l'architecture d'un programme Java. Cette solution a été développée pour être automatisée et accessible. Elle n'a pas besoin de spécifications, de descriptions architecturales et elle peut se suffire à elle-même, aucune dépendance n'est nécessaire. Elle utilise un langage de modélisation répandue et couramment utilisé par les développeurs, l'UML 2.0.
+
+Il existe quelques fonctionnalités importantes dans Card :
+
+L'érosion architecturale est un problème bien connu et il existe déjà plusieurs approches pour prévenir, minimiser ou réparer ces érosions, principalement basé sur la concept de conformité. Cependant, la plupart de ces approches demande une rigueur stricte sur la spécification de l'architecture du logiciel cible avec l'utilisation d'un ou plusieurs outils. Des interventions manuelles sont aussi nécessaire pour le processus de vérification qui limite sa potentielle utilisation en milieu d'entreprise.
+
+Les objectifs de Card tentent de résoudre tous ces problèmes en proposant un outil pour identifier l'érosion architecturale d'un programme comme solution envisageable par les entreprises.
+Son fonctionnement se base sur l'utilisation de deux catégories de règles de conformité : des règles structurelles et d'interaction. La première catégorie concerne la structure statique d'une architecture, comme de l'héritage entre deux éléments. La seconde catégorie concerne l'interaction entre les éléments comme l'ordre des méthodes d'invocation ou la communication des éléments. Les règles structurelles sont déduites à partir du diagramme de classes de l'architecture de l'application cible alors que les règles d'interaction sont dérivés à partir du diagramme de classes et du diagramme de séquences.
+
+ArchJava est une extension du langage Java qui permet de mêler la spécification de l'architecture d'un logiciel avec son implémentation. L'architecture est décrite dans le même langage que son implémentation ce qui permet d'exprimer efficacement les contraintes architecturales.
+Cette approche qui allie architecture et implémentation a pour principaux objectifs :
+
+Pour permettre aux développeurs de décrire l'architecture du logiciel, ArchJava ajoute au langage Java de nouveaux éléments dédiés à la description de l'architecture.
+Les éléments ajoutés sont :
+Avec ces éléments, le développeur spécifie le comportement de la fonctionnalité sur laquelle il travaille. Les échanges et dépendances sont spécifiés en fonction des contraintes architecturales au sein même du code.
+
+SAVE (Software Architecture Visualization and Evaluation) est un outil qui permet d'extraire l'architecture d'un logiciel à partir de son code source pour ensuite la comparer à l'architecture visée initialement.
+
+SAVE a pour objectif d'aider le développeur en lui fournissant une vision de l'architecture basée sur l'implémentation pour lui exposer les violations des contraintes architecturales. L'outil permet aussi de mettre en évidence les parties de l'application qui ont besoin de plus d'attention de la part du développeur. Elles peuvent réduire de manière significative le nombre de violations architecturales.
+
+Le processus pour appliquer SAVE est constitué de six étapes :
+
+Cette solution propose une méthode semi-automatique et dynamique de vérification de conformité.
+L'approche principale de cette méthode est de pouvoir vérifier la conformité d'un système en retraçant son exécution par rapport à la description de son implémentation. La méthode est basée sur la combinaison de deux techniques. La première est une technique quant au respect d'une implémentation par rapport aux règles initiales de son architecture. Elle fait le lien entre une architecture et son implémentation pour en ressortir les violations. La seconde repose sur le principe d'injection, les règles architecturales sont insérées dans la technologie d'implémentation permettant une approche de développement plus orientée selon son architecture.
+
+L'objectif final de ce procédé est d'aider l'ingénieur logiciel à s'assurer de la fiabilité du système implémenté. D'abord en démontrant que l'architecture de son implémentation a bien les propriétés désirées puis en maintenant la correspondance vis-à-vis de son architecture initiale.
+
+La méthode est constituée de deux étapes :
+
+
+
+La séquence prescriptive est établie par rapport aux spécificités de l'architecture initiale. Par exemple, si le message A apparait avant le message B alors il est prescrit que le message A doit avoir eu lieu avant le message B. 
+
+Cette méthode est donc dynamique car elle manipule des données à l'exécution du système. Elle est aussi semi-automatique car, finalement, c'est l'ingénieur même qui juge si la séquence extraite est conforme ou non à la séquence prescriptive. En effet, même si visualiser les différences entre les deux séquences peuvent être facilitées par un outil, seul un ingénieur peut décider s'il y a une violation par rapport à l'architecture initiale.
+
+
+

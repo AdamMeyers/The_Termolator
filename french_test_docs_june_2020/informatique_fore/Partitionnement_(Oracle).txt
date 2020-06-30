@@ -1,0 +1,24 @@
+﻿Partitionnement (Oracle)
+
+Le partitionnement de la base de données Oracle est un module de division des données d'Oracle, payant et fréquemment utilisé sur des tables de volumétrie importante pour en augmenter les performances.
+
+Le partitionnement permet de découper une table ou un index sur des critères logiques. La table se comporte alors comme plusieurs tables de dimensions plus petites. Les avantages principaux du partitionnement sont :
+
+Il existe trois grands types de partitionnements :
+
+Le mécanisme de découpage logique peut être étendu sur plusieurs champs, ainsi que sur deux niveaux. On parle dans ce cas de sous-partitionnement.
+
+RANGE / HASH (8i)
+
+RANGE / LIST (9i)
+
+RANGE / RANGE (11g)
+
+LIST / RANGE (11g)
+
+LIST / HASH (11g)
+
+Il existe deux façons de partitionner un index sous Oracle :
+
+
+

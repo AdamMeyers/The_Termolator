@@ -1,0 +1,45 @@
+﻿Système invariant
+
+Un "processus" transformant un "signal d’entrée" en un "signal de sortie" (signaux électriques par exemple) est appelé système invariant (ou stationnaire) lorsqu’une translation du temps appliquée à l’entrée se retrouve à la sortie. Dans ce sens, la sortie ne dépend pas explicitement du temps.
+
+Si au signal d'entrée formula_1, un "système invariant" associe une sortie formula_2, alors quel que soit le décalage temporel formula_3 appliqué à l'entrée, le système associe au signal formula_4 la sortie décalée formula_5.
+Définition équivalente :
+
+Un système est invariant s’il y a commutativité entre le "bloc du système" et un "bloc délai" arbitraire.
+Cette propriété peut être satisfaite (mais pas nécessairement) si la fonction de transfert du système n'est pas une fonction du temps (hormis dans les expressions de l'entrée et de la sortie).
+
+Pour savoir comment déterminer si un système est invariant, considérons les deux systèmes :
+
+Comme le système A dépend explicitement du temps "t" en dehors de formula_8 et formula_9, alors le système n'est pas invariant. Le système B, lui, ne dépend pas explicitement du temps "t" et est donc invariant.
+
+Une preuve plus formelle de l'invariance (ou non) des systèmes A et B ci-dessus est présentée ici.
+Pour effectuer cette preuve, la seconde définition va être utilisée.
+
+Système A :
+
+Système B :
+
+Notons l'opérateur retard par formula_24 où formula_25 est la quantité par laquelle le paramètre vectoriel doit être retardé. Par exemple, le système "avance de 1" :
+
+peut être représenté par la notation abstraite :
+
+où formula_28 est la fonction donnée par
+
+le système produisant la sortie décalée
+
+Donc formula_31 est un opérateur qui avance l'entrée vectorielle de 1.
+
+Supposons que nous représentions le système par un opérateur formula_32. Ce système est invariant s'il commute avec l'opérateur retard, c’est-à-dire :
+
+Si l'équation du système est donnée par :
+
+Alors c'est un système invariant si on peut appliquer l'opérateur formula_32 sur formula_28 suivi de l'opérateur retard formula_24, ou appliquer l'opérateur retard formula_24 suivi de l'opérateur du système formula_32, les 2 calculs produisant un résultat équivalent.
+
+Appliquons l'opérateur du système en premier :
+
+Appliquer l'opérateur retard en premier donne:
+
+Si le système est invariant, alors
+
+
+

@@ -1,0 +1,52 @@
+﻿Découplage (automatique)
+
+En automatique, dans la perspective de régler un système dont l'état est caractérisé par plusieurs variables, le but du découplage est de transformer la fonction de transfert ou la représentation d'état afin de pouvoir commander chaque sortie indépendamment des autres.
+
+Soit le système multivariables linéaire caractérisé par les relations temporelles suivantes :
+
+où le vecteur d’état formula_3 est de dimension formula_4 et où les vecteurs d’entrée formula_5 et de sortie formula_6 sont tous deux de dimension formula_7. Les tailles respectives des matrices (à coefficients constants) correspondent naturellement à celles des vecteurs.
+
+Le découplage consiste à trouver un "correcteur" pour l’asservissement tel que, commandé en mode de rétroaction, il permette d’affecter une valeur de consigne propre à chaque sortie.
+
+En boucle ouverte, la fonction de transfert est la matrice carrée formula_8 de taille formula_7 telle que, dans l’espace de Laplace, l’équation du système s’écrive :
+
+Appelée "matrice de transfert", elle est définie par la relation
+Après avoir inséré un bloc "correcteur" en amont de l’entrée, soit un processus à déterminer dont la fonction de transfert est une matrice formula_12 de taille formula_7, le contrôle en boucle fermée conduit à la relation
+
+est la matrice de transfert en boucle fermée et où formula_16 désigne la consigne.
+Le découplage est l’opération consistant à trouver formula_12 de sorte que la forme de formula_18 soit diagonale.
+
+Soit formula_19 une matrice diagonale dont les termes sont les formula_20, formula_21.
+
+Ainsi, le "correcteur" formula_12 devrait vérifier
+
+soit
+
+Notons formula_25 le vecteur de dimension formula_4 dont les composantes correspondent aux éléments de la k ème ligne de formula_27 La relation liant formula_28 à formula_29 s’écrit alors
+
+Considérons la composante formula_31 :
+
+implique
+Si formula_34 alors formula_35
+
+ce qui implique
+Si formula_37 alors formula_38
+
+le processus peut se poursuivre.
+Dans ce même esprit, soit formula_39 le plus petit entier positif ou nul tel que formula_40
+
+Alors formula_41
+Ces égalités permettent de définir formula_42 satisfaisant la relation
+
+qui s’écrit sous la forme synthétique suivante :
+
+formula_45 étant une matrice carrée de taille formula_7.
+
+Si formula_45 est inversible, alors
+
+et le découplage est possible.
+
+Dans ce cas, le système découplé se réduit à des sous-systèmes qui, dans l’espace de Laplace, s’expriment par :
+chacun d’eux correspondant à un processus d’intégrations successives.
+
+

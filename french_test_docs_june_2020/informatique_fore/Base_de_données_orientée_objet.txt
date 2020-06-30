@@ -1,0 +1,64 @@
+﻿Base de données orientée objet
+
+En informatique, une base de données à objets (anglais "object database") est un stock d'informations groupées sous formes de collections d'objets "persistants".
+
+Une base de données est un ensemble d'informations connexes stockées dans un dispositif informatique. Dans une base de données à objets les informations sont regroupées sous forme d'objets : un conteneur logique qui englobe des informations et des traitements relatifs à une chose du monde réel.
+
+Les bases de données à objets sont mises en œuvre par un système de gestion de base de données objet — logiciel qui manipule le contenu de la base de données — et un programme écrit dans un langage de programmation orientée objet.
+
+Les premiers systèmes de gestion de bases de données à objets sont apparus dans les années 1990, en même temps que se sont répandus les langages de programmation orientés objet.
+
+Les langages de programmation orientés objet sont apparus dans les années 1960 et sont devenus populaires dans les années 1980.
+
+Les premiers systèmes de gestion de bases de données (SGBD) objets sont apparus dans les années 1990, en même temps que se sont répandus les langages de programmation orientés objet.
+
+La première idée de base de données orientée objet vient de et George Copeland dans leur article fondateur sur Gemstone.
+
+Le consortium OMG () a été fondé en 1989, dans le but de soutenir et uniformiser les nouvelles technologies basées sur les objets. Les bases de données objet sont une des technologies soutenues et standardisées par ce consortium.
+
+À cette époque, les systèmes de gestion de bases de données (SGBD) "relationnels" étaient déjà bien implantés sur le marché. L'arrivée des SGBD à objets a poussé plusieurs éditeurs de SGBD relationnels à modifier leurs produits en vue de leur permettre de stocker des objets.
+
+En 1997 les parts de marché des SGBD à objets sont d'environ 3 %, le marché est largement dominé par les SGBD relationnels. Depuis l'arrivée cette année de SGBD qui manipulent à la fois des bases de données à objets et relationnelles, il est très peu probable que les SGBD à objets remplacent un jour les SGBD relationnels.
+
+Dans les années 1990, un organisme de standardisation est mis en place par un consortium de vendeurs de bases de données objet : l'ODMG, fondé par Objectstore, Objectivity, Sun, Gemstone, O2 Technology et Versant. Il est présidé par Rick Cattel. Il édite après quelques années un standard.
+
+En programmation informatique un objet est un conteneur logique qui englobe des informations et des mécanismes relatifs à une chose du monde réel. Les objets sont créés et manipulés par des langages de programmation orientée objet.
+
+Les objets sont créés lors de l'exécution de programmes écrits en langage de programmation orienté objet dans lesquels ils disparaissent au plus tard à la fin de l'exécution du programme en question. Les bases de données objet permettent de prolonger la durée de vie des objets au-delà de la durée de l'exécution du programme. Phénomène appelé la persistance.
+
+Chaque objet est créé à partir d'une "classe", qui sert de modèle. Il hérite des caractéristiques de la classe. Une classe peut être dérivée d'une autre classe, dans quel cas elle héritera des caractéristiques de la classe source.
+
+Chaque attribut d'un objet contient une information. Ce peut être un chiffre, un nom, ou une référence à un autre objet. Les objets comportent des méthodes - des traitements propres à cet objet, qui manipulent les valeurs des attributs.
+
+Les systèmes de gestion de base de données objet (SGBDO) permettent de stocker dans les bases de données objet les valeurs des attributs, les relations d'héritage entre les objets, les références d'un objet sur un autre objet. Certains SGBDO permettent également d'exécuter les méthodes des objets dans le cadre des manipulations du contenu de la base de données.
+
+Les SGBDO sont équipés d'interfaces de programmation qui permettent de manipuler les objets dans des programmes écrits en langage de programmation orientée objet en utilisant les mécanismes ordinaires de ce type de langage.
+
+Un système de gestion de base de données (abr. SGBD) est un ensemble de logiciels qui manipule le contenu des bases de données. Il effectue, sur demande, des opérations élémentaires telles que la recherche, l'ajout ou la modification du contenu.
+
+Selon l'architecture Ansi/Sparc, la manière dont les informations sont organisées dans un logiciel qui utilise le SGBD peut différer de la manière dont le SGBD présente les informations par l'intermédiaire de l'interface de programmation. Cette organisation peut différer de celle qui est utilisée par le SGBD pour stocker les informations sur un support informatique.
+
+Un SGBD est dit "objet" lorsque les informations sont présentées sous forme d'objets. Un SGBD "relationnel" présente les informations sous formes de matrices appelées "relations", et un SGBD "objet-relationnel" peut présenter les informations alternativement sous formes de relations ou d'objets.
+
+Les bases de données à objet sont mises en œuvre avec un SGBD objet ou objet-relationnel, qui est directement exploité par un programme écrit en langage de programmation orientée objet. La mise en œuvre peut également se faire par l'utilisation d'un composant logiciel de mapping objet-relationnel avec un SGBD relationnel.
+
+Le consortium ODMG (pour "Object Data Management Group"), une branche de l'Object Management Group (OMG), a été créé en 1991. Il publie divers standards relatifs aux bases de données à objets, notamment une hiérarchie d'objets standard, et le langage de requête OQL. Ce consortium a été dissous en 2001.
+
+Les bases de données à objet peuvent être manipulées avec des SGBD objet ou des SGBD relationnel-objet.
+
+Les SGBD objet sont destinés à étendre les possibilités d'un langage de programmation orientée objet et permettre de créer des objets persistants. Tandis que les SGBD relationnel-objet sont destinés à permettre la manipulation d'objets persistants avec les techniques déjà utilisées pour les bases de données relationnelles, telles que le langage de requêtes SQL.
+
+En 2003 il y a 25 logiciels SGBD objet disponibles sur le marché. De plus, les éditeurs de SGBD pour les bases de données relationnelles les plus courants sur le marché, que sont Oracle Corporation, Microsoft, Informix et IBM ont adapté leurs produits et en ont fait des SGBD relationnel-objet.
+
+Dix ans après leur apparition, certains SGBD objet n'offrent pas toutes les possibilités offertes par les SGBD relationnels et objet-relationnels, ce qui explique en partie la faible percée commerciale de ces produits. Les puristes reprochent souvent aux SGBD object-relationnel d'être "pollués" (sic) par les techniques héritées des SGBD relationnels, d'où l'appellation "pur SGBD objet".
+
+Les objets sont une notion qui permet de représenter des entités complexes, composites et polymorphes. Les bases de données à objet sont utilisées dans des applications qui manipulent des données complexes telles que la conception assistée par ordinateur, la fabrication assistée par ordinateur, la gestion de la connaissance, le génie logiciel, les systèmes d'informations géographiques ou les annuaires.
+
+Au cours des années 70 une génération de startups (essentiellement américaines) se lance à l'assaut du marché des bases de données avec une technologie nouvelle, celle des bases relationnelles. Ces acteurs (Informix, IBM, Oracle, Ingres RTI) réussiront brillamment et deviendront des acteurs industriels majeurs.
+
+Dans les années 80, une nouvelle génération de startups rêve de rééditer l'exploit avec une technologie nouvelle, celle des objets. Versant, Object Design, Gemstone, Objectivity, se lancent dans l'aventure aux États-Unis, cette fois-ci accompagnés par des acteurs français, O2 Technology et Matisse et allemand, Poet. Mais cette nouvelle technologie objet ne remplacera pas les bases de données relationnelle: déjà largement utilisées elles permettent facilement d'écrire des requêtes à partir de langages orientés objets grâce au SQL normalisé.
+
+
+
+
+

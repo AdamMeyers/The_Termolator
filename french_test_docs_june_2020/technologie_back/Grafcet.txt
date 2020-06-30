@@ -1,0 +1,41 @@
+﻿Grafcet
+
+Le Grafcet (Graphe Fonctionnel de Commande des Étapes et Transitions) est un mode de représentation et d'analyse d'un automatisme, particulièrement bien adapté aux systèmes à évolution séquentielle, c'est-à-dire décomposable en étapes. Il est dérivé du modèle mathématique des réseaux de Petri.
+
+Le Grafcet est donc un langage graphique représentant le fonctionnement d'un automatisme par un ensemble :
+
+Son nom est l'acronyme à la fois de « graphe fonctionnel de commande étapes / transitions » et de « graphe du groupe AFCET (Association française pour la cybernétique économique et technique) ».
+
+Le mode de représentation qui est normalisé par l'Union technique de l'électricité (UTE) est le suivant :
+
+
+1. Séquence unique : un automatisme est décrit par un grafcet "à séquence unique" lorsqu'il peut être représenté par un ensemble de plusieurs étapes formant une suite dont le déroulement s'effectue toujours dans le même ordre. (Le grafcet ci-dessus en est un exemple)
+
+2. Séquences multiples simultanées : lorsque le franchissement d'une transition conduit à activer plusieurs étapes, les séquences issues de ces étapes sont dites « séquences simultanées ». Les séquences simultanées débutent toujours sur une "réceptivité unique" et se terminent toujours sur une "réceptivité unique". En effet, les différentes séquences « démarrent » en même temps puis évoluent ensuite indépendamment les unes des autres. Ce n'est donc que lorsque toutes les étapes finales de ces séquences sont actives simultanément (ce qui se produit souvent après attente réciproque) que l'évolution peut se poursuivre par le franchissement simultané d'une même transition. Le début et la fin des séquences simultanées sont représentés par deux traits parallèles (en rouge, fig. ci-contre), qui ne constituent pas des entités spécifiques du grafcet, mais qui doivent être compris comme l'élargissement de l'entrée ou de la sortie de la transition. (On parle parfois de « divergence » et de « convergence en ET » pour cette représentation.)
+
+3. Séquences multiples exclusives : Lorsque, à partir d'une étape, on peut effectuer un choix entre plusieurs séquences possibles conditionnées par plusieurs réceptivités exclusives, c'est une « sélection de séquences » ou « aiguillage ». Pour une meilleure lisibilité, les différentes séquences possibles sont installées sous un trait horizontal (en rouge fig. ci-contre) qui représente l'élargissement de la sortie de l'étape, et se retrouvent par un trait analogue représentant l'entrée de l'étape à nouveau commune. D'une façon analogue au double trait vu ci-dessus, on parle de « divergence » et de « convergence en OU » pour cette représentation.
+Deux cas particuliers de sélection de séquences se rencontrent fréquemment dans la plupart des automatismes séquentiels. Ce sont le saut d'étape et la reprise de séquence :
+
+Si les réceptivités ne sont pas exclusives (par exemple, si c12 et c13 peuvent être vraies au même moment), la suite est indéterminée ; le grafcet est fautif ou pas.
+
+
+Les flèches sont inutiles, elles ne participent pas à la syntaxe mais aident à la lecture.
+
+
+Le critère de classification des actions les plus utilisées est : la durée de l'action comparativement à la durée de l'étape :
+
+Il s'agit toujours du résultat d'une expression booléenne unique pouvant faire intervenir
+
+Une macro-étape est un moyen de représentation d'un ensemble unique de transitions et étapes en une seule étape : la macro-étape. Une macro-étape Mi peut être complètement remplacée par son expansion qui contient une étape d'entrée Ei et une de sortie Si. (voir image ci-contre)
+
+Ce moyen de représentation peut donc être considéré comme un « zoom » qui permet de simplifier la lecture de Grafcet de taille importante. Une expansion ne peut être utilisée qu'une seule fois : son utilisation est unique et elle ne doit pas être confondue avec un sous-programme, à l'instar d'autres langages de programmation.
+
+Si l'on veut utiliser une même expansion, il faut la dupliquer. Cela revient, en fait, à faire une instance de l'expansion par appel, à l'instar des appels de fonctions dans la norme CEI 61131-3.
+
+Le Grafcet est normalisé sous l'indice de classement NF C 03-190. La norme européenne correspondante est EN 60848.
+
+La norme CEI 61131-3 (1993) normalise cinq langages dont le langage (SFC) qui est très proche du Grafcet. Plusieurs différences peuvent néanmoins être notées :
+
+
+
+

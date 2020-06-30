@@ -1,0 +1,11 @@
+﻿Core dump
+
+Un core dump est une copie de la mémoire vive et des registres d'un processeur, permettant d'avoir un "instantané" de l'état d'un système. Il sert généralement à des fins d'analyse, suite à une exception, forcée ou provoquée par une erreur.
+
+Le core dump doit être enregistré dans un fichier qui peut être utilisé ensuite dans un débogueur.
+
+Sur les systèmes suivant la norme POSIX, le signal « Core » permet de déclencher le core dump d'un processus donné, mais il existe également d'autres méthodes permettant d'y aboutir.
+
+Pour que le fichier de core dump soit écrit, il est nécessaire que le processus ait les droits d'écriture dans son répertoire d’exécution, assez de place pour l'écrire en totalité et que la création de ce dump ne dépasse pas les limites autorisées par RLIMIT.
+
+

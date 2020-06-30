@@ -1,0 +1,153 @@
+﻿Calculateur quantique
+
+Un calculateur quantique (anglais ', parfois traduit par ordinateur quantique, ou système informatique quantique), utilise les propriétés quantiques de la matière, telle que la superposition et l'intrication afin d'effectuer des opérations sur des données. À la différence d'un ordinateur classique basé sur des transistors travaillant sur des données binaires (codées sur des bits, valant 0 ou 1), le calculateur quantique travaille sur des qubits dont l'état quantique peut posséder une infinité de valeurs.
+
+De petits calculateurs quantiques ont été construits à partir des . Jusqu'en 2008, la difficulté majeure concerne la réalisation physique de l'élément de base : le qubit. Le phénomène de décohérence (perte des effets quantiques en passant à l'échelle macroscopique) freine le développement des calculateurs quantiques.
+Le premier processeur quantique est créé en 2009 à l'université Yale : il comporte deux qubits composés chacun d'un milliard d'atomes d'aluminium posés sur un support supraconducteur.
+
+Ce domaine est soutenu financièrement par plusieurs organisations, entreprises ou gouvernements en raison de l'importance de l'enjeu : au moins un algorithme conçu pour utiliser un circuit quantique, l'algorithme de Shor, rendrait possible de nombreux calculs combinatoires hors de portée d'un ordinateur classique en l'état actuel des connaissances. La possibilité de casser les méthodes cryptographiques classiques est souvent mise en avant.
+
+L'empirique loi de Moore prédit que la taille des transistors approchera celle de l'atome à l'horizon 2020. Dès 2015, Intel s'est heurté à des difficultés inattendues lui faisant retarder de six mois sa série Skylake gravée en , premier retard constaté sur la célèbre loi. Sous les , des effets quantiques vont perturber le fonctionnement des composants électroniques.
+
+La construction (éventuelle) de grands calculateurs quantiques (plus de ) permettrait selon David Deutsch de faire certains calculs plus vite qu'un ordinateur classique plus grand que l’Univers observable lui-même.
+
+Les calculateurs quantiques demandent des techniques de calcul différentes de la programmation, mais utilisant beaucoup l'algèbre linéaire classique pour conditionner et traiter simultanément des ensembles de données liées.
+
+Que des calculateurs quantiques de taille intéressante soient possibles ou non à terme, leur premier avenir commercial ne sera probablement pas dans le grand public : le calcul quantique exige peu d’entrées et peu de sorties. Il ne se prête donc qu'aux calculs dont la complexité réside dans la combinatoire. On trouve ces problèmes dans l’ordonnancement et les autres calculs de recherche opérationnelle, en bio-informatique, et bien entendu en cryptographie. Le faible volume des entrées-sorties par rapport à celui du traitement rend toutefois plausible leur usage à distance à travers le réseau Internet.
+
+La combinatoire constitue le domaine d'application privilégié des futures cartes de calcul quantique. Ainsi il peut être très difficile de trouver tous les facteurs premiers d’un grand nombre (par exemple de ). Ce problème de factorisation est difficile pour un ordinateur ordinaire à cause de l’explosion combinatoire. Un circuit de calcul quantique pourrait résoudre ce problème en un temps polynomial, c’est-à-dire que pour l’ordinateur quantique, la difficulté augmenterait polynomialement au lieu d’augmenter exponentiellement.
+
+Une analogie possible est de se représenter un calculateur quantique comme un processeur SIMD (carte graphique, par exemple) dont le nombre de pipelines serait formula_1 fois le nombre "N" de qubits. L’analogie s’arrête là, un calculateur quantique ne pouvant fournir qu’un bit de résultat à la fois (l’état quantique étant détruit par l’observation), après quoi le calcul doit être recommencé pour demander le suivant.
+
+Ainsi la cryptanalyse serait bien plus rapide que par un ordinateur classique, car augmentant de façon linéaire (en "N") avec la taille "N" de la clé, et non de façon exponentielle (en 2, par exemple) comme avec des méthodes de force brute, séquentielles ou même massivement parallélisées avec CUDA, voire des calculateurs très spécialisés. En effet, pour casser un chiffrement basé sur l'utilisation des nombres premiers, les ordinateurs actuels, même parallélisés, devront résoudre ce problème dans un temps de calcul qui augmentera exponentiellement avec la longueur de la clef. Ce caractère exponentiel disparaît totalement dès lors que l'on passera de la base binaire (système actuel avec les bits) à une base de taille quasi infinie grâce au qubit.
+
+Les grandes capacités de factorisation permettraient ainsi à un calculateur quantique de casser de nombreux systèmes cryptographiques actuellement utilisés, en particulier la plupart des méthodes de chiffrement asymétriques : RSA, ElGamal ou Diffie-Hellman. Ces algorithmes sont utilisés pour protéger des pages Web, des messages électroniques, et beaucoup d’autres types de données. Parvenir à casser ces protections serait un avantage majeur pour l’organisation ou le pays qui y parviendrait, et une réédition de l’exploit réalisé pour Enigma.
+
+La seule façon de rendre sûr un algorithme tel que RSA est d’augmenter la taille de la clé en fonction de l'évolution des technologies qui permettent de casser des clés toujours de plus en plus longues, ralentissant en même temps le codage des messages sur les réseaux utilisateurs. Cette clé doit être plus grande que le plus grand des circuits de calcul quantique existants. Or la taille des moyens de calcul dont dispose par exemple la ne sera évidemment jamais rendue publique. La conséquence en est que les pays ou organismes voulant se protéger verront augmenter "de plusieurs ordres de grandeur" le coût et le délai de leurs communications, sans même jamais savoir si cela sert à quelque chose, et au prix d’une lourde réorganisation des communications, de leur coût, et de leur commodité.
+
+Des moyens de chiffrement quantique existent déjà dans le commerce. Ils ne demandent pas de calculateur quantique, simplement une mise en place plus complexe qu’un chiffrement standard, mais rendent toute interception de message immédiatement détectable par altération de l'état quantique de celui-ci.
+
+Si les transmissions quantiques se généralisaient dans l’avenir, elles pourraient assurer une confidentialité totale. On ne peut en effet pas réaliser une copie exacte de l'état intriqué d'un qubit : cette règle est connue sous le nom de théorème de non-clonage. Si un nœud intermédiaire essaie de copier une requête quantique, il la perturbera nécessairement. L'émetteur de la requête pourra détecter l'existence éventuelle de cette perturbation. Cette question pose toutefois aussi celle de la faisabilité de répéteurs.
+
+La résolution de tâches telles que la vision par ordinateur avec reconnaissance de formes d'objets complexes a fait un pas de plus en 2016-2017. Des universitaires de Californie ont appris à un ordinateur D-Wave 2X (processeur à ) à apprendre à reconnaître des arbres à partir de centaines d'images satellites de la Californie, avec " des résultats corrects à 90 %, soit un peu plus précis qu'avec un ordinateur classique.
+
+Des circuits quantiques sont déjà utilisés pour des simulations de mécanique quantique et de physique des particules, fonction pour laquelle Richard Feynman les avait imaginés au départ. Ils y sont très utiles, car les calculs quantiques deviennent complexes dès qu’on sort de quelques cas triviaux.
+
+Les calculateurs quantiques sont envisagés pour étudier la nature stochastique des marchés financiers et construire de nouveaux modèles de prévisions. Ces nouveaux outils permettraient d'évaluer la distribution de résultats dans un très grand nombre de scénarios générés au hasard.
+
+Hartmut Neven de Google note que les ordinateurs quantiques pourraient aider à construire de meilleurs modèles climatiques. Le service météorologique national du Royaume-Uni a déjà commencé à investir dans ces nouvelles technologies.
+
+Un autre algorithme, au gain moins spectaculaire, a été découvert par la suite : la recherche quantique rapide dans une base de données (en anglais : ") par l’algorithme de Grover. Au lieu de parcourir tous les éléments d’une liste pour trouver celui qui répond le mieux à un critère (par exemple : recherche d’une personne dans l’annuaire pour trouver son numéro de téléphone), cet algorithme utilise des propriétés de superposition pour que la recherche se fasse de façon globale. Les résultats devraient être en formula_2, "N" étant le nombre de fiches (et O représentant la comparaison asymptotique), soit mieux qu’une base de données classique non optimisée, sous réserve de disposer d’un registre quantique de taille suffisante pour les calculs.
+
+En 2009, Harrow, Hassidim et Lloyd proposent un algorithme de de systèmes linéaires avec un gain exponentiel. En , Google annonce avoir implémenté sur une machine D-Wave l'algorithme du proposé en 1994 par Finilla, Gomez, Sebenik et Doll. L'implémentation faite est cent millions de fois plus rapide qu'une implémentation de recuit simulé standard.
+
+En résumé, des circuits de calcul quantique apporteraient un plus aux ordinateurs classiques dans plusieurs types d’applications :
+
+Dans les années 1970 et 80, les premiers ordinateurs quantiques naissent par retournement dans l’esprit de physiciens tels que Richard Feynman, Paul Benioff, David Deutsch ou Charles H. Bennett. L’idée de Feynman était : « Au lieu de nous plaindre que la simulation des phénomènes quantiques demande des puissances énormes à nos ordinateurs actuels, utilisons la puissance de calcul des phénomènes quantiques pour dépasser nos ordinateurs actuels ».
+
+Longtemps, les physiciens ont douté que des calculateurs quantiques utilisables puissent exister et même qu’on puisse en faire quelque chose de viable s’ils existaient. Mais :
+
+En 2017, les avancées chez Google, Intel et plusieurs autres groupes de recherche suggèrent que la réalisation d’ordinateurs quantiques à grand nombre de qbits sera peut-être accessible d’ici 4 à 5 ans. Ceci est rendu notamment possible par la disponibilité accrue de financement d’entreprises telles que Google, IBM, Intel et Microsoft pour la recherche et le développement de technologies variées nécessaires à la création d’un ordinateur quantique fonctionnel.
+
+D’après Harmut Neven, responsable des recherches en calcul quantique chez Google, son équipe est sur le point de construire un système de 49 qubits d’ici la fin de l’année. Le nombre d'environ 50 qubits correspond au seuil, connu sous le nom de suprématie quantique, au-delà duquel aucun superordinateur classique ne serait capable de gérer la croissance exponentielle de la mémoire et la bande passante de communication nécessaire pour simuler son équivalent quantique. En d'autres termes, les superordinateurs peuvent actuellement donner les mêmes résultats que des ordinateurs quantiques de 5 à 20 qubits, mais à partir de 50 qubits cela devient physiquement impossible.
+
+D’après Neven, des systèmes de 100 000 qubits révolutionneraient les industries des matériaux, de la chimie et des médicaments en rendant possibles des modèles moléculaires extrêmement précis. Un système d'un million de qubits, dont les applications informatiques générales sont encore difficiles à comprendre serait même concevable d’ici 10 ans.
+
+
+
+
+
+De nombreux projets sont en cours à travers le monde pour construire concrètement des qubits viables et les réunir dans un circuit. Ces recherches mettent en œuvre de la physique théorique pointue. Les projets suivants semblent avancer à un rythme intéressant :
+
+
+Plusieurs projets semblent susceptibles d'exploitation industrielle, mais les problèmes de base demeurent. Des recherches sont ainsi entreprises pour réaliser un ordinateur quantique à base solide, comme le sont nos microprocesseurs actuels. Ces recherches ont entre autres mené l’université du Michigan à une puce de calcul quantique capable d’être fabriquée en série, sur les lignes de productions existant actuellement. Cette puce permet en effet d’isoler un ion et de le faire « léviter » dans un espace confiné, à l’intérieur de la puce.
+
+Le prix Nobel de physique 2012 est allé conjointement à Serge Haroche et David Wineland pour leurs travaux conjoints sur le maintien et l'observation des qubits.
+
+Le fonctionnement des calculateurs quantiques est déterministe alors que la mécanique quantique est surtout connue pour son aspect probabiliste.
+
+Un circuit de calcul, ou une position de mémoire, quantique pourrait être implémenté à partir de toute particule pouvant avoir deux états "à la fois excité et non excité au même moment". Ils peuvent être construits à partir de photons "présents" à deux endroits au même moment, ou à partir de protons et de neutrons ayant un spin positif, négatif "ou considérés avoir les deux en même temps" tant qu’ils ne sont pas observés.
+
+Les fonctions d’onde, qui décrivent l'état d'un système, sont issues de calculs "déterministes". La source d’aléa est dans "l’acte d’observation lui-même", c’est-à-dire la "mesure". À la suite d'une mesure, le système quantique se fixe dans un état classique avec une certaine probabilité. On peut éliminer cette incertitude en formulant des expressions ne se traduisant que par oui ou par non (par exemple : « cette combinaison est compatible avec la clé » / « cette combinaison ne peut pas être la clé ». Pour certains algorithmes, il est nécessaire d’effectuer les calculs plusieurs fois jusqu’à ce que la réponse vérifie une certaine propriété.
+
+En mécanique quantique, une particule peut posséder de multiples états simultanément : l'état de la particule est une superposition d'états possibles. Ce principe est illustré par la métaphore du chat de Schrödinger qui est, "avant observation", à la fois mort et/ou vivant.
+
+La mécanique quantique ne rend pas compte de "notre" ignorance du système mais décrit objectivement l'état de celui-ci. Les particules "en puissance" (elles n'en seront qu'après détection) possèdent bien cet état superposé et il en découle quelques propriétés inhabituelles à notre échelle. Une mesure sur un système quantique fixerait le système, avec des probabilités données par la fonction d'onde, dans "un" des états possibles alors constatable par tous les autres observateurs sans aléa. L'interprétation d'Everett propose une signification possible de ce phénomène. Un calcul quantique ne possède d'intérêt pratique que si l'algorithme qui le pilote peut forcer chaque qubit de la réponse cherchée (c'est-à-dire le signal de sortie du calculateur), une clé de chiffrement, par exemple, à une des valeurs 0 ou 1 "avec une probabilité de 1". De tels algorithmes, comme ceux de Grover et de Shor, existent.
+
+La mémoire d’un ordinateur classique est faite de bits. Chaque bit porte soit un 1 soit un 0. La machine calcule en manipulant ces bits. Un circuit de calcul quantique travaille sur un jeu de qubits. Un qubit peut porter soit un un, soit un zéro, soit une superposition d’un un et d’un zéro (ou, plus exactement, il porte une distribution de "phase", angle qui pour 0° lui fait prendre la valeur 1, pour 90° la valeur 0, et entre les deux la superposition d’états dans les proportions du sin et du cos de la phase). L’ordinateur quantique calcule en manipulant ces distributions. On n’a donc pas deux états en tout mais une infinité.
+
+De plus, l’état de plusieurs qubits réunis n’est pas seulement une combinaison des états respectifs des qubits. En effet, si un qubit est dans une quelconque superposition d’états formula_4, deux qubits réunis sont quant à eux dans une superposition d’états formula_5, avec formula_6. Il s’agit cette fois d’employer la superposition des quatre états pour le calcul. C’est pourquoi la puissance de calcul théorique d’un calculateur quantique double à chaque fois qu’on lui adjoint un qubit. Avec dix qubits, on a 1024 états superposables, et avec n qubits, formula_7.
+
+Un ordinateur classique ayant trois bits de mémoire peut stocker uniquement trois chiffres binaires. À un moment donné, il pourrait contenir les bits « 101 » ou une autre combinaison des huit possibles (2). Un circuit de calcul quantique ayant trois qubits peut en fait stocker seize valeurs, assemblées deux par deux pour former huit nombres complexes (combinaison linéaire de huit états). Il pourrait contenir ceci :
+formula_8
+formula_9
+
+La somme des probabilités fait bien 1. S’il y avait eu formula_10 qubits, cette table aurait eu formula_7 lignes. Pour un formula_10 aux alentours de 300, il y aurait eu plus de lignes que d’atomes dans l’univers observable.
+
+La première colonne montre tous les états possibles pour trois bits. Un ordinateur classique peut seulement porter un de ces états à la fois. Un calculateur quantique, lui, peut être dans une superposition de ces huit états à la fois. La deuxième colonne montre l’amplitude pour chacun des huit états. Ces huit nombres complexes sont un instantané du contenu de ce calculateur à un moment donné. Durant le calcul, ces trois nombres changeront et interagiront les uns avec les autres. En ce sens, un circuit de calcul quantique à trois qubits a bien plus de mémoire qu’un circuit de calcul classique à trois bits.
+
+Cependant, il n’est pas possible de voir directement ces trois nombres. Quand l’algorithme est fini, une seule "mesure" est accomplie. La mesure retourne une simple chaîne de trois bits classiques et efface les huit nombres complexes. La chaîne de retour est générée aléatoirement. La troisième colonne donne la probabilité pour chacune des chaînes possibles. Dans cet exemple, il y a 14 % de chance que la chaîne retournée soit « 000 », 4 % que ce soit « 001 », ainsi de suite. Chaque nombre complexe est nommé « ampere » et chaque probabilité une « amplitude carrée », parce qu’elle est égale à formula_13. La somme des huit probabilités est égale à un.
+
+Typiquement, un algorithme utilisant le calcul quantique initialisera tous les nombres complexes à des valeurs égales, donc tous les états auront les mêmes probabilités. La liste des nombres complexes peut être imaginée comme un vecteur à huit éléments. À chaque étape de l’algorithme, le vecteur est modifié par son produit avec une matrice qui correspond à une opération quantique.
+
+On pourrait imaginer utiliser une molécule microscopique, pouvant contenir plusieurs millions de protons et de neutrons, comme ordinateur quantique. Celui-ci contenant plusieurs millions de qubits. Mais le calcul quantique exige du système qui le porte deux contraintes fortes pour être utilisable :
+
+
+Il existe des systèmes quantiques isolés naturellement comme les noyaux de certains atomes. Certains, comme le carbone 13, possèdent un moment cinétique, un spin, et peuvent donner lieu à différents états quantiques. Les cristaux de diamant qui contiennent des isotopes du carbone 12 (les noyaux du diamant sont composés jusqu’à 1 % de noyaux de carbone 13) permettraient théoriquement à température ambiante de stocker et de manipuler de l’information quantique. Une première technique consiste à manipuler par laser le spin des électrons d’un atome d’azote constituant les impuretés du diamant, et ainsi agir sur le couplage entre le spin de ces électrons et celui des noyaux du carbone 13.
+
+Dans un entretien de vulgarisation avec Etienne Klein, Thierry Breton schématise le fonctionnement d'un calcul quantique comme un avis de recherche : si l'on cherche dans une salle de mille personnes quelqu'un mesurant plus de 1,80 m et parlant anglais, il compare l'informatique classique à l'interrogation de chaque participant un par un en posant les questions « Mesurez-vous plus de 1,80 m ? » et « Parlez-vous anglais ? » et en notant les numéros de ceux qui répondent « oui » aux deux questions, ce qui va prendre un certain temps. En calcul quantique, tout se passe comme si on lançait un appel général : « Les personnes mesurant plus de 1,80 m et parlant anglais peuvent-elles lever la main ? » et on a la réponse quasi instantanément. Thierry Breton parle de calcul "holistique" et non plus "séquentiel". Reste à mettre au point des langages traitant globalement un ensemble de valeurs possibles comme une seule. Pour le moment, Atos travaille sur une sorte d'assembleur approprié, nommé "AQAL" (Atos Quantum Assembly Language). Le nom d'"assembleur" peut induire en erreur, puisqu'il s'agit d'un langage de description de traitements qui est au contraire indépendant de la machine utilisée (contrairement à un assembleur au sens classique, donc) à condition qu'elle respecte quelques grandes lignes d'une sorte de machine virtuelle.
+
+On pourra regarder dans l'article APL (langage) la méthode de calcul des nombres premiers qui essaie (du point de vue de l'utilisateur) « tous les diviseurs à la fois ». En cas d'implémentation des opérations primitives dans des circuits quantiques, la simplicité de calcul correspondrait à la simplicité d'écriture en APL.
+
+Les bibliothèques de simulation de calcul quantique sur ordinateur classique se sont multipliées à partir de 2010. En voici quatre approches :
+
+Le , Damian Conway a créé pour le langage Perl un module nommé codice_1 qui permet de simuler (en faisant de l’algorithmique ordinaire en coulisses, bien sûr) le fonctionnement d’un périphérique de calcul quantique. Ce module est utilisable pour écrire et tester, en version maquette à quelques qubits simulés, des programmes écrits pour la logique quantique. Les programmes réalisés seront intégralement utilisables sur un périphérique de calcul quantique (s’il en existe un jour) ou un calculateur quantique distant en remplaçant les appels au module par les appels correspondant à ce périphérique local ou éloigné, "sans toucher en rien au programme Perl lui-même" excepté en ce qui concerne le nombre de qubits spécifié. On pourra alors tirer parti des capacités d’un calculateur quantique et effectuer ainsi des calculs plus complexes à temps égal.
+
+Ce module est aujourd'hui (2018) maintenu par Steven Lembark.
+
+La parallélisation massive de calcul permise par une carte graphique actuelle (2017) est un autre moyen possible de simuler dans des temps acceptables un parallélisme quantique sur un nombre restreint de qubits. Ainsi, une GTX 1080 (2560 processeurs à 1,6 GHz) ou avec d'autres API une "Radeon Vega 64" (4096 processeurs à 1,6 GHz) peuvent simuler pour un millier d'euros et sur les types de problèmes qui s'y prêtent 11 ou 12 « faux » qubits - "log(2560)" - pour mettre au point les programmes.
+Le module munit Perl de deux fonctions testant globalement les tableaux : "any()" et "all()". Dans la simulation, ces fonctions travaillent par itération sur les éléments et donc en un temps O("N"). Dans un calcul quantique, leur temps d’exécution serait indépendant de "N".
+
+L’expression d’un calcul de primalité :
+
+n’est pas sans rappeler l’écriture en langage APL, qui lui aussi traite "globalement" les tableaux, ou d’un langage fonctionnel comme Haskell. Une extension de ce dernier nommé "QHaskell" ("quantum Haskell") existe depuis 2006.
+
+Un autre module propose également des simulations d'opérations quantiques, codice_2.
+
+Le MIT, pour sa part, a placé en Open source un outil d’aide à l’architecture de circuits quantiques (théoriques) simples.
+
+Les dépôts Debian et Ubuntu (Linux) proposent également via le gestionnaire de paquets APT la bibliothèque de sous-programmes C "libquantum", qui implémente la simulation d'un registre quantique. Une interface permet de lui appliquer des opérations simples comme la porte de Hadamard. Les mesures se font soit (comme sur un véritable calculateur quantique) qubit par qubit, soit pour plus de simplicité sur le registre entier.
+
+Les implémentations des algorithmes de Shor et de Grover sont fournies à titre d'exemple, ainsi qu'une interface pour la "correction d'erreur quantique" (QEC) et le support de la décohérence. Les auteurs en sont Bjorn Butscher et Hendrik Weimer.
+
+Le préprocesseur Q# (Q-sharp) fournit un code Python appelant des fonctions de bibliothèque fournies par Microsoft
+
+Ce type de simulation n'est plus exclusivement logiciel, mais utilise le parallélisme des processeurs d'une carte graphique moderne (par exemple en 2017 la GTX 1080, 2560 processeurs) avec CUDA pour simuler directement les calculs simultanés, ce qui permet de simuler jusqu'à 11 qubits supplémentaires pour un coût et en un temps raisonnables.
+
+Par définition du terme, aussi longtemps qu'on reste en dessous du seuil dit de "suprématie quantique", les mêmes calculs peuvent être effectués en calcul quantique et, plus lentement, en simulation numérique. Le groupe français Atos propose à cette fin ce qu'il nomme sa "Quantum Learning Machine" (QLM) simulant jusqu’à 40 qubits. Ajouter un qubit double soit le coût de la machine, soit le temps de calcul ainsi que la mémoire exigée. Cette machine se caractérise par une puissance de traitement pas très supérieure à celle d'un serveur muni de lames Xeon, mais possédant en revanche plusieurs téraoctets de mémoire "vive" (jusqu'à 48) afin de ne pas freiner les calculs (voir article).
+
+Microsoft met à disposition un kit nommé Q# disponible pour Windows et MacOS/Linux, en donne sur son site quelques exemples de programmes et a placé sur YouTube une conférence sur la programmation de calculateurs quantiques à destination des développeurs sur langages classiques.
+
+D'après un rapport de 2005, l'Union européenne, les États-Unis consacraient alors 75 millions d'euros à ces recherches contre 8 millions pour l'Europe. Le Canada aurait dépensé à peu près à la même époque 12 millions d'euros par an, le Japon 25 millions et l'Australie 6 millions.
+
+"IBM Q", la division quantique de IBM, donne quelques exemples d'applications du calcul quantique, dans la médecine, la logistique, la finance, et l'intelligence artificielle.
+
+L'algorithme de Shor, permettant de décoder un chiffrage à clé publique, et celui de Grover, permettant d'effectuer une recherche d'éléments dans un espace de stockage, sont des exemples d'application du calcul quantique. De la même façon, certaines simulations numériques concernées par l’explosion combinatoire, pourraient tirer des bénéfices d'un calculateur quantique.
+
+Dans les années 1970, la SNCF a dédié un appareil électronique classique au calcul fortement combinatoire. Celui-ci servait à optimiser les roulements sous contraintes. Il s'agissait de « l’Optimateur Cybco C100-1024 », qui opérait par exploration câblée de toutes les solutions possibles, en allégeant ses calculs par des considérations d'impossibilité et de symétrie. Depuis, la résolution de problèmes fortement combinatoires par des circuits spécialisés a fait l'objet de brevets.
+
+En novembre 2008, Aram W. Harrow, Avinatan Hassidim et Seth Lloyd ont publié une méthode quantique permettant de résoudre des systèmes d’équations linéaires à matrices creuses en un temps O(log(n)) au lieu de O(n).
+
+En réseaux de neurones, la méthode dite du "greedy learning" a été signalée en 2009 par D-Wave comme une application possible.
+
+Dans le domaine de l'intelligence artificielle, pour le traitement automatique des langues, un traitement de texte pourrait modéliser l’univers associé au sujet et réagir à la sémantique qu’il pourrait en inférer. Ceci serait également possible avec la reconnaissance vocale et la reconnaissance de formes, en association avec la technologie de Deep learning.
+
+JP Morgan Chase a établi un partenariat avec IBM et Samsung pour étudier les applications des ordinateurs quantique pour les opérations financières et la prédiction de leurs risques.
+
+Le calcul quantique apportant un avantage quantitatif en matière combinatoire, sans en apporter au niveau du nombre des entrées-sorties (celles-ci restant séquentielles), il est essentiellement adapté aux problèmes dans lesquels les calculs combinatoires sont importants au regard du nombre de sorties. Cette particularité le rend adapté à un usage à distance, via Internet par exemple, et permet d'utiliser des systèmes encombrants et refroidis par cryogénie.
+
+La question suivante a été soulevée dans la littérature : faut-il construire le modèle sur l’ordinateur « classique » puis le faire évaluer par le calculateur quantique, ou bien faut-il laisser tout le travail au calculateur quantique, au risque d’être moins rapide pour les tâches traditionnelles ? Des émulateurs de modèles quantiques ont été construits pour permettre d'apporter des éléments de réponse à cette question.
+
+
+
+

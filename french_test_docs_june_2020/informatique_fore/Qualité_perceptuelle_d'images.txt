@@ -1,0 +1,39 @@
+﻿Qualité perceptuelle d'images
+
+La qualité perceptuelle d'image est une mesure de la perception de la dégradation des images (souvent par comparaison à une image dite de référence non dégradée). Les systèmes de traitement des signaux introduisent souvent des "artefacts" (ou distorsions) dans le signal. Aussi, la mesure de qualité est devenue importante. On distingue habituellement trois catégories de mesure de qualité d'images :
+
+
+La prise d'images par des appareils photographiques ou par des caméras est la formation sur le plan image de mesures obtenue électroniquement dans le cas d'appareils numériques ou chimiquement dans le cas d'appareils analogiques. Classiquement le modèle projectif dit du Sténopé (ou « trou d'épingle »)
+schématise le fonctionnement de l'appareil de prise de vue par son centre focal et son plan image tel que les rayons lumineux convergent vers le centre focal en impactant le plan image.
+Dans les faits, ce modèle est une approximation de la formation de l'image et la qualité d'images informe sur la valeur de cette approximation.
+
+Un modèle idéal décrivant la mesure de lumière de la caméra lors d'une photographie devrait décrire le taux de lumière qui arrive en chacun des points à un moment donné. Ce type de modèle n'est qu'approximatif et la qualité d'images mesure le taux de dérive entre ce modèle et la réalité. Cette mesure doit répondre à plusieurs questions dont :
+Dans le domaine de la photographie, nous avons des outils tel que le qui détermine la qualité nécessaire d'une image pour la détection de cibles en vision de nuit.
+
+Les causes de perte de qualité dans les images sont diverses et multiples.
+En voici quelques-unes concernant tantôt le domaine de la photographie tantôt celui du multimédia :
+
+Dans certains cas, l'image dont nous souhaitons connaître la qualité n'est pas directement obtenue au format brut (RAW) d'un appareil photographique numérique (APN) mais a subi des déformations dues aux techniques de codage des images, de stockage sur disque et à la transmission sur réseaux. À moins d'avoir utilisé une technique de compression sans perte telles que GIFF ou PNG, l'image décompressée n'est pas identique à l'image capturée initialement. Par exemple, une photographie numérique (obtenue par un APN) qui a été compressée en JPEG et transmise sur un réseau sans-fil puis qui a été décompressée a obligatoirement subi des pertes qui peuvent être ou pas perceptiblement gênante.
+
+La mesure de qualité est alors la "différence perceptible" entre les images originale (format RAW) et décompressée. Les artefacts désignent généralement les détériorations dues aux traitements que subit l'image lors de sa télétransmission ou lors de son passage du format RAW à tout autre format provoquant des pertes tels que JPEG
+et JPEG2000.
+Ces mêmes artefacts se retrouvent évidemment dans les vidéos numériques.
+
+Quand la mesure de qualité d'images est automatisée par algorithme, la mesure est dite "objective". Nous devons alors pouvoir vérifier que l'algorithme utilisé est correct. Autrement dit, la mesure objective doit être en adéquation avec la perception humaine. Pour ce faire, elle est évaluée à l'aide de bases d'images tests munies de mesures "subjectives", des mesures faites par des testeurs soit en aval de l'algorithme, soit en amont.
+
+Il existe plusieurs techniques et mesures de qualité d'images qui peuvent développées sous forme d'algorithme de mesure objective de qualité d'images. Ces algorithmes peuvent être classés entre trois grandes catégories :
+
+
+Parmi les algorithmes FR, nous trouvons "VIF", "IFC", "SSIM", "VSNR" et "MSVD".
+
+Grâce à des modèles de mélange de gaussiennes multiéchelles, VIF et IFC modélisent d'une part la perception qu'à le cerveau de l'image de référence et d'autre part la perception de l'image déformée. VIF et IFC estiment l'information mutuelle entre ces deux modèles à tous les niveaux de résolution. IFC offre la mesure objective actuellement la meilleure, en comparaison avec les mesures subjective faites en amont.
+
+SSIM est indubitablement le plus performant aussi bien en complexité algorithmique qu'en termes d'adéquation d'avec la perception humaine. Son principe général repose sur les statistiques que l'on sait identifier dans les scènes dites naturelles. Le critère de qualité comporte trois mesures suivant les changements de contraste, de luminosité et de structure entre l'image de référence et l'image déformée. Il est à noter que SSIM fournit à la fois une mesure de qualité comprise entre 0 (qualité basse) et 1 (qualité haute) et une carte des déformations associée à l'image déformée observée. Pour chaque pixel, cette carte indique l'intensité de la déformation supposée. Grâce à celle-ci, les détériorations sont localisées ce qui permet d'envisager l’utilisation de SSIM au sein de logiciel de compression/décompression pour en augmenter les performances.
+
+Il existe plusieurs versions de SSIM dont notamment M-SSIM [REF] et IW-SSIM [REF]. M-SSIM utilise une analyse multirésolution (AMR) en ondelettes pour prendre compte le fait que l'information est déformée à plusieurs niveaux d'échelle. À chaque niveau de résolution, SSIM est appliqué. La mesure globale est une somme des SSIM de chaque niveau de résolution pondérée par l'inverse du niveau de résolution. Tout en reprenant le principe de SIIM, IW-SSIM met l'accent sur l'étape de sommation (pooling stage) des valeurs de déformation pixellaires.
+
+VSNR utilise une AMR des deux images de référence et déformée pour mesurer les déformations. MSVD mesure les différences énergétiques des deux images à tous les niveaux de résolutions. Cet algorithme propose une approche fondée sur les gradients d'intensité des images de référence et déformée. Des modules et des phases de ces gradients sont extraits les contours, les zones texturées et uniformes. La distance de Hamming est utilisée pour mesurer les différences au sein de chacune de ces composantes. La mesure finale est la somme des distances obtenues.
+
+
+
+

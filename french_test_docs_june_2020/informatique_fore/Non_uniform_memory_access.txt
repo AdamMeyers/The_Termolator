@@ -1,0 +1,16 @@
+﻿Non uniform memory access
+
+En informatique, un système NUMA (pour ' ou ', signifiant respectivement "accès mémoire non uniforme" et "architecture mémoire non uniforme") est un système multiprocesseur dans lequel les zones mémoire sont séparées et placées en différents endroits (et sur différents bus). Vis-à-vis de chaque processeur, les temps d'accès diffèrent donc suivant la zone mémoire accédée.
+
+Le système NUMA est conçu pour pallier les limites de l'architecture SMP ("symmetric multiprocessing") dans laquelle tout l'espace mémoire est certes accessible par un unique bus, mais rend de ce fait inefficaces, par encombrement, les accès concurrents par les différents processeurs. Une architecture plus adaptée devient donc nécessaire pour les systèmes ayant de nombreux processeurs.
+
+NUMA représente une position médiane entre le SMP et le "clustering" (diverses machines).
+
+ccNUMA est acronyme de « "cache coherent" NUMA ». Par abus de langage et d'usage, les deux sont devenus synonymes.
+
+
+On nomme ainsi le rapport entre temps d'accès à une mémoire distante et à une mémoire locale.
+
+
+
+

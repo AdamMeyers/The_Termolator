@@ -1,0 +1,112 @@
+﻿Norme de sécurité de l'industrie des cartes de paiement
+
+La norme de sécurité de l’industrie des cartes de paiement (Payment Card Industry Data Security Standard ou PCI DSS) est un standard de sécurité des données qui s'applique aux différents acteurs de la chaîne monétique. 
+
+La norme PCI DSS est établie par les cinq principaux réseaux cartes (Visa, MasterCard, American Express, et JCB) et est gérée par le Conseil des normes de sécurité PCI (forum international ouvert pour l'amélioration, la diffusion et la mise en œuvre de normes de sécurité pour la protection des données de comptes). Ce standard a été créé afin d’augmenter le contrôle des informations du titulaire de la carte dans le but de réduire l'utilisation frauduleuse des instruments de paiement.
+
+Le PCI DSS à l’origine, était différent selon le fournisseur, il y avait 5 programmes différents : 
+
+Chaque groupe avait approximativement les mêmes objectifs, c’est-à-dire de créer un niveau supplémentaire de protection pour les émetteurs de cartes qui permettrait aux commerçants d’assurer un niveau minimum de sécurité quand ils stockent, traitent et transmettent les informations du titulaire de la carte. 
+Le conseil des normes de sécurité PCI (PCI SSC) a été créé le 15 décembre 2004. Les groupes précédemment cités ont aligné leur politique respective et ont établi la première version (1.0) du PCI DSS.
+
+En septembre 2006 la version est mise à jour (1.1) intégrant des clarifications et des révisions mineures.
+
+La version 1.2 est paru le octobre 2008, elle ne change pas les prérequis mais améliore la clarté, la flexibilité et distingue les risques ainsi que les menaces. En août 2009, le conseil des normes de sécurité PCI a annoncé le passage à la version 1.2.1 dans le but de réaliser des corrections mineures pour améliorer, encore une fois, la clarté et la cohérence parmi les standards et les documents supports. La version 2.0 est publiée en octobre 2010 mais n’a été promulguée chez les commerçants et les fournisseurs de services qu’à partir du janvier 2011 jusqu’au 31 décembre 2014.
+
+La version 3.0 est paru en novembre 2013 et est active depuis le janvier 2014 jusqu’au 31 décembre 2017.
+
+La version 3.1 a été mise en place en avril 2015.
+
+La version 3.2 a été mise en place en avril 2016.
+
+Le PCI DSS spécifie 12 conditions de conformité, regroupées dans 6 groupes appelés «objectifs de contrôle».
+
+Ces 12 conditions ont été divisées en sous-conditions plus précises mais celles-ci n'ont pas changé depuis la création du standard.
+
+Chaque année est établi un certificat de conformité par une entité externe que l’on appelle l’évaluateur de sécurité qualifié (QSA), qui va ensuite réaliser un rapport de conformité (ROC) pour les organisations qui gèrent un grand nombre de transactions, ou un questionnaire d’auto-évaluation (SAQ) pour les entreprises ayant un plus petit volume de transactions.
+
+Le Conseil des normes de sécurité PCI (PCI SSC) a publié des informations complémentaires pour clarifier certaines des conditions. Ces informations sont incluses dans les documents suivants :
+
+La conformité à la norme PCI DSS permet de vérifier que les points de contrôles sont bien mis en œuvre et qu’ils sont efficaces pour la protection des données de cartes bancaires. 
+
+Bien que la norme de sécurité des données des cartes de paiement (PCI DSS) devrait être utilisée dans toutes les entreprises qui traitent, stockent et transmettent les informations du titulaire de la carte de paiement, la validation formelle de cette norme n’est pas obligatoire dans toutes les organisations. 
+Actuellement, seuls Visa et MasterCard demandent aux commerçants et fournisseurs de services d’être en conformité avec la norme. 
+Les plus petites entités n’en ont pas l'obligation, mais doivent cependant mettre en œuvre tous les contrôles nécessaires afin d'éviter d'engager leur responsabilité dans le cas où une fraude, associée à un vol des données du titulaire de la carte, aurait lieu.
+
+Les banques émettrices ne sont pas obligées de valider la norme PCI DSS, mais elles doivent cependant sécuriser les données sensibles d’une manière conforme à la norme. Les banques d’acquisitions doivent remplir les conditions de la norme et cette conformité doit être validée par un audit.
+
+Dans le cas d’une faille de sécurité, toutes les entités exposées qui ne sont pas en conformité avec la norme PCI DSS au moment de la faille devront s’acquitter d’une amende.
+
+Être conforme avec la norme PCI DSS n’est pas requis par la loi fédérale aux États-Unis. 
+Cependant dans certains États la loi se réfère à la norme directement ou émet des propos similaires.
+
+En 2007, l’État du Minnesota décrète une loi interdisant la conservation des informations contenues dans les cartes de paiement.
+
+En 2009, l’État du Nevada a promulgué la norme, requérant la conformité avec la norme de sécurité pour les commerçants réalisant des affaires dans l’État, elle protège également les entités conformes de toute responsabilité.
+
+En 2012, l’État de Washington a également incorporé la norme dans sa propre loi. Cependant, contrairement à la loi présente au Nevada, les entités ne sont pas obligées d’être en conformité avec la norme mais les entités conformes seront protégées dans le cas d’une faille dans les données.
+
+En juillet 2009, le conseil des normes de sécurité PCI a publié un guide pour expliquer le fonctionnement de la norme PCI DSS dans un réseau sans fil. Ce guide recommande l’utilisation du système de prévention des intrusions dans les réseaux sans fil (WIPS) pour automatiser le scan des réseaux sans fil dans les grandes organisations. 
+Le guide définit clairement comment la sécurité du réseau sans-fil s’applique avec la norme PCI DSS 1.2. 
+
+Ces recommandations s’appliquent au déploiement des réseaux locaux sans fil (WLAN) dans l'environnement des titulaires de cartes de paiement, aussi connu sous le nom de CDE. Un CDE est défini comme un environnement informatique qui possède ou transmet des données de cartes de crédit.
+
+Le guide concernant la norme PCI DSS dans les réseaux sans fil classe le CDE dans 3 scénarios qui dépendent du déploiement du réseau local sans fil.
+
+Les conditions pour un déploiement sécurisé ne s’appliquent qu’aux organisations qui ont un réseau local sans fil connu dans le CDE. Le but de ces conditions est de déployer un réseau avec ses propres protections.
+
+Les conditions clefs de la norme version 1.2 qui sont en rapport avec la sécurité des réseaux sans fil sont classées ci-dessous :
+
+Ces exigences minimales de numérisation s’appliquent à toutes les organisations indépendamment du type de réseau local sans fil dans le CDE. Le but de ces exigences est d’éliminer tous les éléments indésirables ou non autorisés dans le CDE.
+
+Bien que les normes PCI DSS soient très explicites sur les exigences de stockage et d’accès des données personnelles, le Conseil des normes de sécurité PCI dit très peu de choses sur la collecte de ces informations, que ce soit à travers les sites Web, les systèmes de serveur vocal interactif ou des agents de centres d’appels. 
+Cela est surprenant, étant donné le potentiel de menace élevée pour la fraude des cartes de crédit et de la mise en danger des données que les Centres d'appels posent.
+
+Dans un centre d’appel, les clients transmettent leurs informations sur leurs cartes de crédit (Cryptogrammes visuel, numéro de carte, date d’expiration). Ces informations sont réceptionnées avec un appareil d’enregistrement, un ordinateur ou encore un bloc-note.
+Il y a quelques contrôles qui empêchent l’utilisation frauduleuse de ces informations. 
+
+De plus, presque tous les centres d’appels déploient une sorte de "logiciel d’enregistrement d’appels" qui capture et stocke toutes les données sensibles du consommateur. Ces enregistrements sont accessibles par une grande partie du personnel des centres d’appels, ne sont pas chiffrés et ne sont généralement pas sous les normes PCI DSS. Les agents téléphoniques à domicile posent donc un défi supplémentaire. Cela demande aux entreprises de sécuriser le canal de l’agent à domicile à travers le "hub" du centre d’appels.
+
+Pour répondre à certaines de ces préoccupations, le Conseil des normes de sécurité PCI a émis une version mise à jour de FAQ à propos des enregistrements des centres d’appels, le 18 mars 2011. Désormais, les entreprises ne peuvent plus stocker des enregistrements numériques qui incluent des données sensibles de cartes si ces mêmes enregistrements peuvent être demandés.
+
+Des solutions techniques peuvent également prévenir l'utilisation frauduleuse des instruments de paiement par les agents. Au moment de la transaction, où l'agent a besoin de recueillir les informations relatives à la carte de crédit, l'appel peut être transféré à un serveur vocal interactif. 
+Cela protège les informations sensibles mais peut gêner l'interaction avec le client. 
+
+D'autres solutions peuvent être envisagées telles que l'automatisation assistée par un agent qui permet de récupérer les informations relatives à la carte de crédit tout en évitant la gêne précédemment évoquée. L'agent garde son rôle de correspondant téléphonique et les clients entrent directement, avec leur téléphone, les informations de leur carte de crédit dans le logiciel de gestion de la relation client. 
+Les codes DTMF sont ainsi supprimés intégralement ou bien juste converties en monotones, l'agent ne peut donc pas les reconnaître et ne pas les enregistrer. 
+
+Certaines plates-formes de paiement sécurisé permettent de masquer ces codes DTMF, mais celles-ci sont toujours enregistrés par l'enregistreur d'appels.
+Traditionnellement, l'unique façon de supprimer les codes DTMF est d'intercepter l'appel au niveau du tronc en utilisant des serveurs sophistiqués.
+Cette pratique permet de supprimer ou de masquer les codes DTMF auprès de l'enregistreur téléphonique ainsi qu'auprès de l'agent. 
+
+L'entreprise anglo-américaine Semafone a mis au point un brevet concernant une méthode de paiement liée à l'utilisation des codes DTMF qui capture, en direct d'un appel téléphonique, les données de la carte de paiement d'un client depuis le centre de contact pour les transmettre au système de paiement. 
+Les agents du centre de contact maintiennent la communication vocale pendant le processus de paiement, y compris pendant que le client entre les détails de sa carte par le biais de son téléphone.
+
+En juin 2014, nous avons pu voir l'introduction de nouvelles solutions de paiement téléphonique sur ce marché avec le déploiement de techniques telles que l'acheminement des appels vers les plates-formes avant même leur traitement en centre d'appel. 
+Ceci est fait de sorte que le serveur puisse intercepter l'appel et contrôler les codes DTMF afin de sécuriser leur masquage. 
+Au sein du réseau, aucun matériel ou logiciel n'a besoin d'être mis en place par l'organisation elle-même, bien que cela reste un problème de logistique et d'intégration allant à l'encontre des fournisseurs.
+
+Les avantages de l'augmentation de la sécurité autour de la collecte de données personnelles sont d'éviter la fraude de carte de paiement pour aider les commerçants, mais vont également au-delà.
+
+Selon Stephen et Theodora « Cissy » Mccomb, propriétaires du Cisero’s Restaurant et d'une discothèque dans le centre de Park City (Utah) « le système PCI est moins un système de sécurisation des données des cartes des clients, qu'un système pour générer des bénéfices pour les sociétés de cartes, via les amendes et les pénalités. Visa et MasterCard imposent des amendes aux commerçants sans qu'il y ait de fraude, mais simplement parce que les amendes sont rentables pour eux » .
+
+Michael Jones, directeur des magasins "Michaels", témoigne devant un comité du Congrès des États-Unis au sujet de la norme PCI DSS, « [...] les exigences PCI DSS [...] sont très coûteuses à mettre en œuvre, elles sont sources de confusion pour s'y conformer et finalement subjectives, à la fois dans leur interprétation et dans leur application. On dit souvent qu'il n'y a que 12 « exigences » pour la conformité PCI, en fait, il y a plus de 220 sous-exigences ; dont certaines peuvent être un poids pour un commerçant et un grand nombre de ces sous-exigences sont sujettes à interprétation ».
+
+En revanche, d’autres ont suggéré que la norme PCI DSS est une étape vers la prise de conscience que les entreprises sont prêtes à accorder plus d’attention à la sécurité, même si les normes minimales ne sont pas suffisantes pour éradiquer complètement les problèmes de sécurité.
+
+Selon le directeur de la gestion des risques de Visa, Ellen Richey, « … aucune des entités compromises n'étaient en conformité avec la norme de sécurité PCI DSS au moment de la faille ». En 2008, une brèche dans le système de paiement d'Heartland, une organisation certifiée PCI DSS, a compromis 100 millions de numéros de cartes bancaires. Au même moment, Hannaford Brothers et TJX, également certifiés PCI DSS, ont eu des failles similaires, sous l'effet coordonné d'Albert "Segvec" Gonzalez et de deux autres hackers anonymes russes.
+
+Les évaluations ont pour but de vérifier la certification avec la norme de sécurité PCI DSS chez les commerçants et fournisseurs de services, à un instant donné. Ils utilisent fréquemment une méthodologie d'échantillonnage pour démontrer la conformité à travers des processus et systèmes représentatifs. C'est la responsabilité des commerçants et des fournisseurs de services de réaliser, démontrer et de maintenir leur conformité à tout moment par le biais de la validation annuelle ou du cycle d'évaluation de la globalité de leur système. 
+
+Bien que toutes les entités exposées à une faille et non conformes avec la norme PCI DSS au moment de celle-ci doivent s’acquitter d’une amende, Hannaford Bothers a reçu sa certification PCI DSS un jour après qu'elle a été mise au courant de la faille dans son système interne.
+
+Autre exemple avec la chaîne d'hôtel Starwood qui a annoncé le 20 novembre 2015, que 54 de ses hôtels avaient été touchés par des logiciels malveillants conçus pour recueillir les données de carte de crédit tels que des noms, des numéros, des codes de sécurité et les dates d'expiration des cartes des clients. 
+
+Être conforme à la norme PCI DSS doit être un effort continu dans le temps, surtout du point de vue du commerçant. Le directeur général du Conseil des normes de sécurité PCI, Bob Russo, a indiqué que les responsabilités pourraient changer en fonction de l'état de l’organisation au moment où une faille se produit.
+
+Pour la conformité PCI DSS, il est préférable d’améliorer continuellement les processus afin d'assurer le respect permanent du standard, plutôt que de traiter la conformité à un moment "t" du projet.
+
+
+
+
+

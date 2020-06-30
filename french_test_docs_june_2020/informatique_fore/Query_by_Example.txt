@@ -1,0 +1,20 @@
+﻿Query by Example
+
+Query by Example (abrégé QBE, en français "interrogation par l'exemple"), est un type d'interface utilisateur servant à effectuer des recherches dans des bases de données relationnelles. Le principe d'une interface QBE est que l'utilisateur présente un "exemple" du résultat de recherche attendu - sous forme d'une matrice, puis le soumet au SGBD. Celui-ci recherchera alors toutes les données qui correspondent à cet exemple. Les tables de la base de données sont présentées à l'écran, et l'utilisateur peut les manipuler en vue de créer l'exemple.
+
+QBE a été inventé par Moshe Zloof pour le compte de IBM, en 1977.
+
+Avec ce système le résultat prime sur les moyens de mise en œuvre. Avec QBE, il ne s'agit pas, pour l'utilisateur, ni le développeur, d'apprendre un langage de requêtes, mais tout simplement de définir une image de la réponse que l'on veut obtenir, pour voir figurer les données répondant à l'interrogation demandée.
+
+Il a été inventé par Moshe Zloof pour le compte de la compagnie IBM, en 1977. Commercialisé à partir de 1978, il a connu un certain succès grâce à son introduction au sein de la première version de Paradox (1.0 pour DOS) en 1985.
+
+QBE est dès l'origine un langage relationnel complet intégrant la division relationnelle, opération décrite dans l'algèbre relationnelle de Codd qui n'est toujours pas présente de manière simple dans les plus récentes normes SQL (SQL:2003). En revanche QBE ne permet pas la récursivité dans les requêtes, alors que la version normative SQL:1999 le permet.
+
+Voici un exemple de requête QBE et son équivalent SQL :
+
+ == T_CLIENT_CLI ===== CLI_NUM ============= CLI_NOM <nowiki>===</nowiki>
+
+Les systèmes de gestion de base de données suivant mettent à disposition une interface QBE :
+
+
+

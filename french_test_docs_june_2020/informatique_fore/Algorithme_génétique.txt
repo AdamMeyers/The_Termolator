@@ -1,0 +1,103 @@
+﻿Algorithme génétique
+
+Les algorithmes génétiques appartiennent à la famille des algorithmes évolutionnistes. Leur but est d'obtenir une solution approchée à un problème d'optimisation, lorsqu'il n'existe pas de méthode exacte (ou que la solution est inconnue) pour le résoudre en un temps raisonnable. Les algorithmes génétiques utilisent la notion de sélection naturelle et l'appliquent à une population de solutions potentielles au problème donné. La solution est approchée par « bonds » successifs, comme dans une procédure de séparation et évaluation (), à ceci près que ce sont des formules qui sont recherchées et non plus directement des valeurs.
+
+L'utilisation d'algorithmes génétiques, dans la résolution de problèmes, est à l'origine le fruit des recherches de John Holland et de ses collègues et élèves de l'Université du Michigan qui ont, dès 1960, travaillé sur ce sujet.
+La nouveauté introduite par ce groupe de chercheurs a été la prise en compte de l'opérateur d'enjambement () en complément des mutations. Et c'est cet opérateur qui permet le plus souvent de se rapprocher de l'optimum d'une fonction en combinant les gènes contenus dans les différents individus de la population.
+Le premier aboutissement de ces recherches a été la publication en 1975 de "Adaptation in Natural and Artificial System".
+
+La popularisation des algorithmes génétiques sera l'œuvre de David Goldberg à travers son livre "Genetic Algorithms in Search, Optimization, and Machine Learning" (1989). Ce livre est encore édité aujourd'hui. En Europe, la première conférence sur ce type de sujet fut l"'European Conference on Artificial Life" en 1991 (elle a fêté ses 20 ans en 2011), coorganisée par Francisco Varela et Paul Bourgine. Un des premiers ouvrages à présenter en Français les algorithmes génétiques sera le livre "Intelligence Artificielle et Informatique Théorique" qui lui consacrera un chapitre dès 1993. La première conférence francophone avec actes sur le sujet sera organisée en 1994 par Jean-Marc Alliot (IRIT), Evelyne Lutton (INRIA), Marc Schoenauer (INRIA) et Edmund Ronald.
+
+Les algorithmes génétiques étant basés sur des phénomènes biologiques, il convient de rappeler au préalable quelques termes de génétique.
+
+Les organismes vivants sont constitués de cellules, dont les noyaux comportent des chromosomes qui sont des chaînes d'ADN.
+L'élément de base de ces chaînes est un nucléotide, identifié par sa base azotée (A, T, C ou G). Sur chacun de ces chromosomes, une suite de nucléotides constitue une chaîne qui code les fonctionnalités de l'organisme (la couleur des yeux par exemple). Ainsi, un gène est une phrase fonctionnelle le long de la chaîne. La position d'un gène sur le chromosome est son locus. L'ensemble des gènes d'un individu est son génotype et l'ensemble du patrimoine génétique d'une espèce est le génome. Les différentes versions d'un même gène sont appelées allèles.
+
+On utilise aussi, dans les algorithmes génétiques, une analogie avec la théorie de l'évolution qui propose qu'au fil du temps, les gènes conservés au sein d'une population donnée sont ceux qui sont le plus adaptés aux besoins de l'espèce vis-à-vis de son environnement. En effet, certaines variations de gènes confèrent aux individus les possédant un avantage compétitif par rapport au reste de la population. Cet avantage compétitif se traduit alors par une meilleure reproduction de ces individus qui permet de transmettre les allèles à l'ensemble de la population après de nombreuses générations.
+
+La génétique a mis en évidence l'existence de processus importants au sein d'un groupe d'organismes d'une même espèce (ou d'espèces proches chez les bactéries) donnant lieu au brassage génétique. 
+Ces processus interviennent lors de la phase de reproduction lorsque les chromosomes de deux organismes fusionnent en créant un nouvel organisme.
+
+Ces opérations sont « "imitées "» par les algorithmes génétiques afin de faire évoluer les populations de solutions de manière progressive.
+
+
+
+
+Les algorithmes génétiques, afin de permettre la résolution de problèmes, se basent sur les différents principes décrits ci-dessus. Le problème théorique de la convergence a été résolu par Raphaël Cerf, en se basant sur la théorie de et des perturbations stochastiques des systèmes dynamiques. La démonstration de Cerf montre d'ailleurs que le processus de convergence dépend essentiellement de la mutation, le croisement pouvant être éliminé en théorie. Cependant, la preuve théorique de convergence n'a que peu d'utilité dans la pratique, où l'opérateur de croisement fait bien souvent toute la richesse de l'algorithme génétique par rapport à des méthodes de type recuit simulé.
+
+De manière globale, on commence avec une population de base qui se compose le plus souvent de chaînes de caractères correspondant chacune à un chromosome. Nous reviendrons par la suite sur les différentes structures de données possibles (voir Codage) mais nous retiendrons pour le moment l'utilisation du codage binaire (ex. : 0100110).
+
+Le contenu de cette population initiale est généré aléatoirement. On attribue à chacune des solutions une note qui correspond à son adaptation au problème. Ensuite, on effectue une sélection au sein de cette population.
+
+Il existe plusieurs techniques de sélection. Voici les principales utilisées :
+
+
+
+
+
+Lorsque deux chromosomes ont été sélectionnés, on réalise un croisement. On effectue ensuite des mutations sur une faible proportion d'individus, choisis aléatoirement. Ce processus nous fournit une nouvelle population. On réitère le processus un grand nombre de fois de manière à imiter le principe d'évolution, qui ne prend son sens que sur un nombre important de générations. On peut arrêter le processus au bout d'un nombre arbitraire de générations ou lorsqu'une solution possède une note suffisamment satisfaisante.
+
+Considérons par exemple les deux individus suivants dans une population où chaque individu correspond à une chaîne de 8 bits : et . On ajuste la probabilité d'enjambement à 0,7 ( alors on va croiser 6 bits sur les 8 bits des deux mots).
+
+Supposons ici que l'enjambement ait lieu, on choisit alors aléatoirement la place de cet enjambement (toutes les places ayant la même probabilité d'être choisies). En supposant que l'enjambement ait lieu après le deuxième allèle, on obtient A′ et B′ (« : » marquant l'enjambement sur A et B). Ensuite, chacun des gènes des fils (ici, chacun des bits des chaînes) est sujet à la mutation. De la même manière que pour les combinaisons, on définit un taux de mutation (très bas, de l'ordre de 0,001 – ici on peut s'attendre à ce que A′ et B′ restent identiques).
+
+En effectuant ces opérations (sélection de deux individus, enjambement, mutation), un nombre de fois correspondant à la taille de la population divisée par deux, on se retrouve alors avec une nouvelle population (la première génération) ayant la même taille que la population initiale, et qui contient globalement des solutions plus proches de l'optimum. Le principe des algorithmes génétiques est d'effectuer ces opérations un maximum de fois de façon à augmenter la justesse du résultat.
+
+Il existe plusieurs techniques qui permettent éventuellement d'optimiser ces algorithmes, on trouve par exemple des techniques dans lesquelles on insère à chaque génération quelques individus non issus de la descendance de la génération précédente mais générés aléatoirement. Ainsi, on peut espérer éviter une convergence vers un optimum local.
+
+Pour les algorithmes génétiques, un des facteurs les plus importants, si ce n'est le plus important, est la façon dont sont codées les solutions (ce que l'on a nommé ici les chromosomes), c'est-à-dire les structures de données qui coderont les gènes.
+
+Ce type de codage est certainement le plus utilisé car il présente plusieurs avantages. Son principe est de coder la solution selon une chaîne de bits (qui peuvent prendre les valeurs 0 ou 1). Les raisons pour lesquelles ce type de codage est le plus utilisé sont tout d'abord historiques. En effet, lors des premiers travaux de Holland, les théories ont été élaborées en se basant sur ce type de codage. Et même si la plupart de ces théories peuvent être étendues à des données autres que des chaînes de bits, elles n'ont pas été autant étudiées dans ces contextes. Cependant, l'avantage de ce type de codage sur ses concurrents a tendance à être remis en question par les chercheurs actuels qui estiment que les démonstrations de Holland sur les avantages supposés de ce codage ne sont pas révélatrices.
+
+La démonstration de Holland (en 1975) pour prouver la supériorité de ce type de codage est la suivante. Il compara deux types de codage pour le même problème. Le premier était composé de peu de types d'allèles mais avec des chromosomes d'une longueur importante (des chaînes de 100 bits par exemple), l'autre était composé de chaînes plus courtes mais contenant plus d'allèles (en sachant que tout autre codage, pour le même chromosome, aboutira à une chaîne plus courte). Il prouva que le codage sous forme de bits était plus efficace de manière assez simple. En effet, les chaînes de 100 bits permettent d'avoir plus de possibilités d'enjambement. Entre deux chromosomes du premier type, l'enjambement peut avoir lieu à 100 endroits différents contre 30 pour ceux du second
+type. Le brassage génétique sur lequel repose l'efficacité des algorithmes génétiques sera donc plus important dans le premier cas.
+
+Il existe cependant au moins un côté négatif à ce type de codage qui fait que d'autres existent. En effet, ce codage est souvent peu naturel par rapport à un problème donné (l'évolution des poids d'arcs dans un graphe par exemple est difficile à coder sous la forme d'une chaîne de bits).
+
+Une autre manière de coder les chromosomes d'un algorithme génétique est donc le codage à l'aide de caractères multiples (par opposition aux bits). Souvent, ce type de codage est plus naturel que celui énoncé ci-avant. C'est d'ailleurs celui-ci qui est utilisé dans de nombreux cas poussés d'algorithmes génétiques que nous présenterons par la suite.
+
+Ce codage utilise une structure arborescente avec une racine de laquelle peuvent être issus un ou plusieurs fils. Un de leurs avantages est qu'ils peuvent être utilisés dans le cas de problèmes où les solutions n'ont pas une taille finie. En principe, des arbres de taille quelconque peuvent être formés par le biais d'enjambements et de mutations.
+
+Le problème de ce type de codage est que les arbres résultants sont souvent difficiles à analyser et que l'on peut se retrouver avec des arbres « solutions » dont la taille sera importante alors qu'il existe des solutions plus simples et plus structurées à côté desquelles sera passé l'algorithme. De plus, les performances de ce type de codage par rapport à des codages en chaînes n'ont pas encore été comparées ou très peu. En effet, ce type d'expérience ne fait que commencer et les informations sont trop faibles pour se prononcer.
+
+Finalement, le choix du type de codage ne peut pas être effectué de manière sûre dans l'état actuel des connaissances. Selon les chercheurs dans ce domaine, la méthode actuelle à appliquer dans le choix du codage consiste à choisir celui qui semble le plus naturel en fonction du problème à traiter et développer ensuite l'algorithme de traitement.
+
+Comme cela a été dit plus haut, les algorithmes génétiques peuvent être une bonne solution pour résoudre un problème. Néanmoins, leur utilisation doit être conditionnée par certaines caractéristiques du problème.
+
+Les caractéristiques à prendre en compte sont les suivantes :
+
+De par leur nature, les algorithmes génétiques peuvent être utilisés à des fins purement ludiques et répondre à des problématiques sur des jeux qui se jouent en solitaire. En effet, un travail d'apprentissage grâce à un système de scoring est plus qu'approprié au monde du jeu, étant donné que le score est un élément central de n'importe quel jeu pour pouvoir classer les joueurs entre eux. La fonction d'évaluation étant déjà calculée via le jeu, il est d'autant plus facile de développer des algorithmes génétiques.
+
+On peut noter d’ailleurs quelques exemples intéressants d'application à des titres cultes du jeu vidéo :
+
+
+Le problème du voyageur de commerce : ce problème est un classique d'algorithmique. Son sujet concerne les trajets d'un voyageur de commerce. Celui-ci doit s'arrêter en plusieurs points, et le but de l'algorithme est d'optimiser le trajet de façon que celui-ci soit le plus court possible. Dans le cas où huit points d'arrêts existent, cela est encore possible par énumération (2520 possibilités : pour "n" arrêts, "n" supérieur ou égal à 3, il y a chemins possibles) mais ensuite, l'augmentation du nombre d'arrêts fait suivre au nombre de possibilités une croissance exponentielle.
+
+Par le biais d'algorithmes génétiques, il est possible de trouver des chemins relativement corrects. De plus, ce type de problèmes est assez facile à coder sous forme d'algorithme génétique. L'idée de base est de prendre la longueur de chemin comme fonction d'évaluation. Pour effectuer le croisement de deux chemins :
+Soit un itinéraire qui contient 9 clients, on suppose que l'on croise les deux chemins suivants (un chiffre représente un client). On croise ces deux chemins après le locus 4 : on obtient le chemin fils.
+
+En partant de ce principe, de nombreux algorithmes génétiques ont été développés, chacun utilisant différentes variantes afin de se rapprocher le plus possible du maximum dans tous les cas. Il existe d'ailleurs un concours sur internet qui propose de développer un algorithme à même de trouver le meilleur chemin sur un problème de voyageur de commerce de 250 villes.
+
+Un premier exemple est une réalisation effectuée au sein de l'entreprise Motorola. Le problème pour lequel Motorola a utilisé les algorithmes génétiques concerne les tests des applications informatiques. En effet, lors de chaque changement apporté à une application, il convient de retester l'application afin de voir si les modifications apportées n'ont pas eu d'influence négative sur le reste de l'application. Pour cela, la méthode classique est de définir manuellement des plans de test permettant un passage dans toutes les fonctions de l'application. Mais ce type de test nécessite un important travail humain. Le but de Motorola a donc été d'automatiser cette phase de définition de plans de tests. Ils ont pour cela défini un algorithme où chaque individu correspond à un résultat d'exécution d'un programme (l'enchaînement des valeurs passées au programme) et où chaque individu reçoit une valeur qui correspond à son aptitude à passer dans un maximum de parties du code de l'application. Finalement, l'outil développé permet, à l'aide d'un algorithme génétique, de faire évoluer ces programmes de test pour maximiser les zones testées de façon que lors de modifications apportées à l'application on puisse soumettre celle-ci à des tests efficaces.
+D'autres domaines industriels utilisent aujourd'hui les algorithmes génétiques. On peut retenir entre autres l'aérodynamique où des optimisations sont mises au point à l'aide de ces outils, l'optimisation structurelle, qui consiste à minimiser le poids d'une structure en tenant compte des contraintes de tension admissibles pour les différents éléments, et la recherche d'itinéraires : ces algorithmes ont été utilisés par la NASA pour la mission d'exploration de Mars, dans la gestion des déplacements du robot Pathfinder.
+
+La société Sony les a aussi utilisés dans son robot Aibo. En effet, ce robot a « appris » à marcher dans un dispositif expérimental où son système de commande a été soumis à une évolution artificielle. Différents modes de commandes ont été testés, les plus performants ont été croisés et le résultat a été très positif. De génération en génération, le robot s'est redressé, puis a commencé à marcher en chutant souvent et a fini par marcher d'un pas assuré.
+
+Les algorithmes génétiques sont mis en œuvre dans certains outils d'informatique décisionnelle ou de data mining par exemple pour rechercher une solution d'optimum à un problème par "mutation" des attributs (des variables) de la population étudiée.
+
+Ils sont utilisés par exemple dans une étude d'optimisation d'un réseau de points de vente ou d'agences (banque, assurance…) pour tenter de répondre aux questions : 
+
+
+
+Les algorithmes génétiques reprennent la théorie de Darwin : sélection naturelle de variations individuelles : les individus les plus adaptés (the fittest) tendent à survivre plus longtemps et à se reproduire plus aisément.
+
+Amélioration de la population très rapide au début (recherche globale) ; de plus en plus lente à mesure que le temps passe (recherche locale).
+
+Convergence : la valeur moyenne de la fonction d’adaptation a tendance à se rapprocher de celle de l’individu le plus adapté : uniformisation croissante de la population.
+
+Le temps de calcul théorique des algorithmes génétiques croît en formula_1, formula_2 étant le nombre de variables.
+
+
+
+
+

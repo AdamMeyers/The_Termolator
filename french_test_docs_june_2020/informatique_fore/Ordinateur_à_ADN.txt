@@ -1,0 +1,34 @@
+﻿Ordinateur à ADN
+
+L'ordinateur à ADN est une des voies non électroniques actuellement explorées pour résoudre des problèmes combinatoires. Il ne prétend pas à la généralité et à la flexibilité d'un ordinateur général. Il s'agit plutôt d'un dispositif spécialisé comme peut l'être un processeur graphique, une carte son ou un convolveur. Son principe, énoncé par Leonard Adleman en 1994, « consiste à coder une instance du problème avec des brins d'ADN et à les manipuler par les outils classiques de la biologie moléculaire pour simuler les opérations qui isoleront la solution du problème, si celle-ci existe. »
+
+Ce domaine a été initialement développé par Leonard Adleman de l’université de Californie du Sud, en 1984. Adleman a démontré le concept de l’utilisation de l’ADN comme une forme de calcul pour résoudre un problème du chemin hamiltonien à sept points. Depuis les premières expériences d’Adleman, des progrès ont été faits et on a pu prouver que diverses machines de Turing étaient constructibles.
+
+Bien que l'intérêt initial ait été l'utilisation de cette approche pour résoudre les problèmes , on a vite réalisé que certains concepts ne sont pas les plus adaptés pour ce type de calcul, et plusieurs propositions ont été faites pour trouver une "killer application" de cette approche. En 1997, l'informaticien Mitsunori Ogihara qui travaillait avec le biologiste Animesh Ray a suggéré une de ces killer application comme étant l'évaluation des circuits booléens.
+
+En 2002, des chercheurs de l'Institut Weizmann à Rehovot, Israël, ont élaboré une machine informatique moléculaire programmable, composée d'enzymes et de molécules d'ADN au lieu de puces électroniques en silicium. Le 28 avril 2004, , Yaakov Benenson, Binyamin Gil, Uri Ben-Dor, et Rivka Adar de l'Institut Weizmann ont annoncé dans la revue "Nature" qu'ils avaient construit un ordinateur ADN couplé avec un module d'entrée et de sortie, théoriquement capable de diagnostiquer l'activité cancéreuse dans une cellule, et de produire un médicament anti-cancer au moment du diagnostic.
+
+En janvier 2013, les chercheurs ont pu stocker une photo JPEG, un ensemble de sonnets de Shakespeare, et un fichier audio du discours "I have a dream" de Martin Luther King Jr. dans un stockage de données numériques à ADN.
+
+En utilisant des fragments de brins d'ADN, on peut coder les contraintes d'une recherche sous forme d'enzymes. Dans un processus d'assemblage et de duplication de bases désoxyribonucléiques, les fragments ne répondant pas aux contraintes du problème sont éliminés par ces enzymes. En fin de processus, il ne reste plus que des chaînes ADN contenant la solution au problème cherché.
+
+Un système de calcul utilisant de l'ADN s’appuie sur des mécanismes de codage fondamentalement différents de ceux de l’ordinateur conventionnel : dans nos machines classiques, c’est la manipulation de charges électriques portés par des électrons au sein de dispositifs de commutation électroniques (transistors) qui matérialise l’information codée sous une forme binaire. Avec les ordinateurs à base d'ADN, l'information est traduite en termes d'unités chimiques de l'ADN.
+
+Le principe du calcul avec un ordinateur à base d'ADN, consiste à synthétiser des séquences d'ADN particulières et de les laisser réagir dans un tube à essai.
+
+Pour résoudre des problèmes de décision comme le célèbre chemin hamiltonien (existe-t-il un chemin reliant tous les sommets d'un graphe donné ?), on élabore une solution d’ADN dans laquelle les molécules d’ADN encodent par convention chacun des chemins possibles entre deux points. Par un procédé alternant les étapes de séparation et d’amplification, on élimine alors les brins encodant un chemin qui utilise des arêtes absentes du graphe jusqu’à isoler une solution réalisable (n'empruntant que des arêtes existantes).
+
+L'extrême lenteur de ce système (dont les temps de réponse se comptent en minutes, heures ou jours, et non en microsecondes) est compensée par son côté massivement parallèle : ce sont plusieurs millions ou milliards de molécules qui interagissent entre elles. En revanche, les entrées/sorties sont loin d'avoir la commodité de nos interfaces d'ordinateur actuelles.
+
+Des premiers résultats ont été obtenus par Leonard Adleman (NASA, JPL)
+
+
+En 2002, J. Macdonald, D. Stefanovic et M. Stojanovic ont créé un calculateur à ADN capable de jouer au Tic-tac-toe contre un joueur humain. Le calculateur est constitué de neuf bacs correspondant aux neuf cases du jeu. Chaque bac contient un substrat et diverses combinaisons d'ADN enzymatique. Le substrat est lui-même constitué d'un brin d'ADN auquel on a greffé à une extrémité un groupe chimique fluorescent, et à l'autre un groupe répresseur. La fluorescence n'est active que si les molécules du substrat sont coupées en deux. Les ADN enzymatiques simulent des fonctions logiques. Par exemple, tel ADN se dépliera si l'on a introduit deux types particuliers de brin d'ADN, reproduisant la fonction logique ET.
+
+Par défaut, le calculateur est supposé jouer en premier dans la case centrale. Le joueur humain possède en entrée huit différents types de brins d'ADN affectés à chacune des huit cases qu'il est susceptible de jouer. Pour indiquer qu'il coche la case n°i, le joueur humain déverse dans tous les bacs les brins correspondant à l'entrée n°i. Ces brins se lient à certains ADN enzymatiques présents dans les bacs, ce qui entraîne, dans l'un d'entre eux, la déformation de l'ADN enzymatique qui se lie au substrat et le découpe. Le bac correspondant devient alors fluorescent, indiquant quelle case joue le calculateur à ADN. Les divers ADN enzymatiques sont répartis dans les divers bacs de façon à assurer la victoire du calculateur à ADN contre le joueur humain.
+
+En 2009, un partenariat a été conclu entre IBM et le CalTech, visant à produire des « puces à ADN ». Un groupe travaille à la fabrication de ces circuits intégrés à acides nucléiques au sein même du CalTech. Une de ces puces calcule des racines carrées entières. Un compilateur a été écrit en Perl.
+
+
+
+

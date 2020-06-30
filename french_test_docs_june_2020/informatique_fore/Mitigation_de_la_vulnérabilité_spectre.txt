@@ -1,0 +1,75 @@
+﻿Mitigation de la vulnérabilité spectre
+
+La mitigation de la vulnérabilité Spectre est un ensemble de techniques visant à supprimer une faille de sécurité informatique. Cette problématique s'est posée à la découverte et à la popularisation de la vulnérabilité spectre, laissant alors une faille de sécurité sur de nombreux systèmes informatiques.
+
+La recherche permanente sur l'amélioration des performances a poussé les constructeurs à mettre en place une exécution spéculative du code à l’intérieur du processeur, mais cela a un coût en matière de sécurité. La mitigation de la vulnérabilité Spectre vise à rétablir une sécurité qu'on pensait acquise, mais qui a été sacrifiée pour la hausse des performances offerte par l'exécution spéculative des processeurs.
+
+On peut résumer la plupart des défenses face aux attaques spectres en 3 catégories :
+
+Ces trois catégories de mitigation peuvent être appliquées soit par des solutions logicielles, soit par des solutions matérielles.
+
+La solution la plus efficace de mitigation est de désactiver l’exécution spéculative sur les processeurs, qui est nécessaire pour réaliser des attaques de type Spectre. Cette solution n'est pas réaliste car elle conduirait à une perte de performance significative.
+
+Une solution possible de mitigation de Spectre du nom de Safespec est d'utiliser une structure temporaire comme mécanisme de protection des adresses de retour d'une procédure. Cette structure sert à protéger les données sur lesquelles l'exécution spéculative va s'effectuer. Si l'instruction qui cherche les données se termine avec succès (ce qui signifie que l'instruction est autorisée par le processeur et ne donne pas accès à des données sensibles), les données sont déplacées vers les structures dites permanentes (Mémoire cache). Sinon les données sont supprimées de la structure temporaire et ne sont jamais transmises à la mémoire cache. Par conséquent, les données des instructions qui ne retournent pas un succès sont invisibles pour l'attaquant, car elles ne finissent pas dans la mémoire de l'ordinateur. Cette solution demande l'ajout d'un espace mémoire réservé à la structure temporaire qui permettra de se protéger complètement des vulnérabilités de type Spectre. Dans la même idée, des chercheurs de l'université d'Illinois sont en train de développer une solution similaire à Safespec. Cette solution appelée Invispec vise à rendre invisible les chargements liés à l'exécution spéculative dans le cache. Cette dissimulation fonctionne avec une mémoire tampon spéculative dont le fonctionnement est similaire aux structures temporaires de SafeSpec qui stockent les informations chargées à la place du cache. Selon les dires de l'Université, InvisiSpec est capable de gérer la cohérence des données du cache ainsi que la gestion des exécutions Multi-Thread à la différence de SafeSpec et ses structures temporaires.
+
+PoisonIvy est une solution permettant le suivi de l'exécution spéculative et de prévenir l'exposition des données en dehors du circuit intégré. Cette solution cherche à prévenir ou limiter la potentielle écoute d'un tiers sur le bus mémoire. PoisonIvy surveille le flux d'information pour traquer les données générées lors de l'exécution spéculative ou des données qui en dépendent.
+
+L'Université de Cambridge a commencé à développer en 2010 une architecture appelée CHERI (Capability Hardware Enhanced RISC Instructions). Le développement d'un prototype de processeur correspondant à l'architecture CHERI est actuellement en cours. Ce prototype est en cours de développement et vise pour le moment à être utilisé sur un Circuit logique programmable ou FPGA (Field-programmable gate array). De plus, l'université a également créé une implémentation de CHERI fonctionnant sous QEMU. Enfin ce processeur possède sa propre adaptation de FreeBSD qui permet de lancer le processeur mais également d'utiliser ses options de protection de la mémoire. L'université a publié un rapport technique en février 2018 traitant des performances du processeur face aux attaques de type Spectre et Meltdown. Les processeurs de types CHERI sont protégés contre les attaques spectre de type 1 et 3.
+
+Une solution logicielle recommandée est d'utiliser l'instruction assembleur codice_1. Cette instruction permettrait d’empêcher au processeur d’exécuter des opérations en avance, et ainsi contrer la variante 1 de Spectre. Toutefois, elle doit être utilisée de manière judicieuse, sinon les performances peuvent être considérablement compromises.
+
+Dans certaines architectures comme les architectures ARMv8 par exemple il est possible de mettre des conditions sur les codice_2 avec les commandes assembleur codice_3 sans utiliser de branche. De ce fait, il est possible de mitiger une partie des attaques Spectre. Dans certaines implémentations, la spéculation reste possible, dans ce cas il faut coupler les codice_2 conditionnels avec des barrières. Cependant, cette solution seule reste suffisante pour un bon nombre de micro-architecture courantes.
+
+Retpoline (Return Trampoline) est une solution visant à protéger des attaques spectres de type 2. Cette solution se base sur un échange des branches de retour ainsi que la pollution du RSB (Return Stack Buffer). La mise en place de Retpoline demande un accès au code source et l'autorisation d'agir sur la compilation. Le principe original de pollution de la mémoire tampon est de bloquer l’exécution spéculative avec des ajouts de commandes assembleur générant une boucle infinie jusqu'à une détection par le processeur de la prédiction dangereuse. Un attaquant cherche à obtenir des informations à l'aide du return stack buffer, sur lequel sont normalement stockées les adresses de retour des commandes assembleur codice_5. Ces données sont ensuite récupérables à l'aide d'un appel de retour où le processeur va chercher les données directement sur le return stack buffer. Néanmoins, Retpoline offre un moyen de se protéger en modifiant l’adresse de retour de la stack pour créer une différence entre le return stack buffer et le bus mémoire. Enfin, avec cette différence le processeur peut vider le return stack buffer et continuer l'exécution du code avec l'adresse récupérée depuis le bus mémoire.
+
+Les navigateurs web sont aussi touchés par la faille Spectre. Pour la mitiger, la plupart des navigateurs ont décidé de désactiver l'objet Javascript codice_6 qui permettait de créer un tableau en utilisant la mémoire partagée.
+
+Le 3 janvier 2018, des chercheurs du Project Zero publient un article concernant leurs découvertes sur la vulnérabilité Spectre et la vulnérabilité Meltdown. Cet article a eu une grande visibilité, ce qui a permis à des personnes malveillantes de réaliser des attaques dans le but d'avoir des informations cachées dans un système informatique. Étant donné que la faille touche une fonctionnalité des processeurs, il était important pour les fabricants concernés de proposer rapidement une correction afin que l'impact soit le moins important possible.
+
+En décembre 2018, un bon nombre de correctifs ont été mis en place et semblent contrer les attaques Spectre. Toutefois, il reste assez difficile de savoir si la vulnérabilité existe toujours sur son système puisque de nouvelles variantes de Spectre ont été découvertes après les premiers correctifs.
+
+Des moyens sont mis à disposition pour vérifier si son système est vulnérable face à ces failles, ainsi que du code libre d'accès permettant de reproduire une attaque.
+
+On peut mesurer les pertes de performances des techniques de mitigation actuellement mises en place et obtenir un ordre d'idée avec les résultats. Toutefois, il est difficile de donner un résultat précis étant donné que ces derniers peuvent varier en fonction du contexte et des principes de mitigation appliqués.
+
+Des analyses ont été réalisées sur des calculs haute performance parallélisés sur plusieurs nœuds en les comparant à des analyses réalisées sur des calculs à un nœud. Ces analyses ont été réalisées avec CentOS Linux et une version mise à jour de son noyau réglant des failles d’exécution spéculative et de prédiction des branchements indirects utilisées lors d'attaques de type Spectre et Meltdown.
+Ces résultats sont environ 2 à 3% plus lent pour des travaux parallèles à un nœud, et environ 5 à 11% plus lent pour des travaux parallèles à plusieurs nœuds.
+
+Des analyses plus détaillées ont été menées dans les laboratoires du MIT Lincoln pour analyser des techniques de mitigation sur Spectre et Meltdown. Le but est de savoir lesquelles sont les plus impactantes à partir d'une base d'un noyau Linux, en y ajoutant un ou plusieurs paramètres parmi :
+
+Ces différents paramètres sont testés dans trois contextes différents :
+
+Les résultats, exprimés en pourcentage moyen en termes de ralentissement après application des paramètres, sont les suivants :
+On remarque que l'impact est plus important lorsqu'on utilise ces techniques de mitigation avec un pare-feu. En effet, l'utilisation d'un pare-feu ajoute beaucoup de transitions de l'espace utilisateur vers l'espace noyau lors de l'acceptation des connexions TCP. Ces transitions ajoutent un nombre d'appels systèmes, qui sont touchés par les techniques de mitigations.
+Les résultats sur l'accès au disque dur sont flagrants. Lorsqu'il est question d'écriture et lecture sur le disque, le système réalise des appels systèmes qui sont couteux. Il est donc logique que de voir les performances diminuer fortement, surtout dans des tests intensifs. On remarque aussi que l'impact est plus important dans l'environnement local qu'avec Lustre. La raison est que Lustre est globalement plus lent lorsqu'il est utilisé avec des blocs de petites tailles, qui ont été nécessaires lors des tests.
+
+Dans ce dernier contexte, les résultats varient moins. Cela est dû au fait que les tests réalisent peu d'appels système. Toutefois, on peut voir que le ralentissement lorsqu'on applique tous les paramètres de mitigations cités avant coïncide avec les résultats lorsqu'on applique uniquement la mise à jour BIOS. Cela signifie qu'il est difficile de limiter la perte de performance à partir du moment où cette mise à jour est nécessaire.
+
+Le président de Intel a annoncé la mitigation de la variante 1 par des solutions logicielles et les variantes 2 et 3 par des modifications matérielles à partir des processeurs génération visant à augmenter la protection des données.
+
+Des mises à jour logicielles de sécurité ont été mises en place par AMD au cours de l'année 2018 pour mitiger la vulnérabilité spectre.
+
+Le 15 mars 2018, Microsoft publie un article proposant trois solutions pour mitiger les vulnérabilités d’exécution spéculative : prévenir les techniques de spéculation, enlever les données sensibles de la mémoire et enlever les canaux d'observation.
+
+Pour leurs solutions face à la variante 1 de Spectre, ils ont réalisé des modifications sur leur compilateur, en plus d'avoir recompilé des binaires du système Windows. La variante 2 a été contrée en réalisant des appels de nouvelles instructions du processeur pour éliminer la spéculation de branche dans les situations à risque.
+
+Le 5 décembre 2018, Microsoft annonce la décision d'utiliser la solution Retpoline développée par Google pour améliorer les performances de son système d'exploitation face à la variante 2 de spectre.
+
+Dans une note technique, Apple mentionne avoir publié des mises à jour pour iOS et macOS High Sierra visant à améliorer la protection contre Spectre sans détailler les techniques de mitigation utilisées.
+
+Sur Linux, il est possible de savoir si son système est vulnérable aux deux variantes de Spectre dans le dossier codice_9 avec les fichiers codice_10 et codice_11.
+
+Un exemple du contenu des fichiers avec un système mis-à-jour :
+La variante 1 de Spectre a été contrée dans le noyau Linux en améliorant la fonction codice_12 qui était vulnérable, et la variante 2 a été contrée en utilisant la solution Retpoline.
+
+Le navigateur Google Chrome propose une isolation de chaque site web entre différents processus. Cette isolation ne mitige pas entièrement les attaques spectres, à cause de limitations liées au CORB (Cross-Origin Read Blocking) qui ne protègent pas tous les types de contenu web. Il est donc conseillé aux développeurs web de suivre des pratiques de sécurité pour maximiser la mitigation.
+
+L'objet Javascript codice_6 a été désactivé sur la mise à jour de Chrome 63. À partir de Chrome 67, l'objet a été réactivé à condition que l'isolation de site soit activée dans le navigateur.
+
+Pour leur navigateur Firefox, Mozilla a désactivé l'objet Javascript codice_6 par défaut à partir de la version 57. Il est toutefois possible de l'activer en changeant une variable dans les options du navigateur.
+
+De plus, la fonction Javascript codice_15, permettant de créer un horodatage, qui est censée être plus précise que la fonction codice_16, a subi quelques modifications. À partir de la version 60, le résultat retourné par la fonction est arrondi à la milliseconde.
+
+
+
+

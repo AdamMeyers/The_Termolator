@@ -1,0 +1,75 @@
+﻿Overclocking
+
+L', ou parfois sur-cadencement, ou surcadençage est une manipulation ayant pour but d'augmenter la fréquence du signal d'horloge d'un processeur au-delà de la fréquence nominale afin d'augmenter les performances de l'ordinateur.
+
+Le processeur "surcadencé" exécutera davantage d'instructions par seconde, d'où réduction du temps d'exécution des programmes. La production de chaleur étant liée au carré de la fréquence, il chauffera aussi davantage, ce qui peut être source d'erreurs ou d'autobridage du processeur. Si elle est trop faible, sa tension d'alimentation le rendra instable. Si elle est trop forte, le composant peut casser prématurément.
+
+Le terme d' est à l'origine un nom anglais composé d" (plus, au-dessus) et ' dérivé du verbe "to " (chronométrer) que l'on peut comprendre par cadençage. Traduit littéralement, l' est une technique consistant à « aller au-dessus du cadençage » du processeur.
+Des francisations ont été tentées : « Surfréquençage », « sur-cadencement » où comme chez Intel, surcadençage. Cependant le terme original anglophone reste grandement utilisé.
+
+Sur-cadencer un processeur (quel que soit son type : graphique GPU, DSP, processeur principal, etc.) consiste à faire fonctionner ce composant à une vitesse supérieure à la vitesse de fonctionnement normale, vitesse pour laquelle son fabricant garantit un bon fonctionnement. On comprend donc assez rapidement l'intérêt de sur-cadencer le processeur central (CPU) ou celui de la carte graphique (GPU), surtout quand on sait que le gain peut atteindre jusqu'à 10~20 % pour la plupart des processeurs, mais que 5 % à 10 % sont plus raisonnables.
+
+Les Core 2 Duo (et dans une moindre mesure les Core 2 Quad, du fait de leur dissipation thermique élevée), tout comme la majorité des processeurs Intel basés sur l'architecture Core, se distinguent du reste des processeurs par leurs capacités de sur-cadençage considérables : +30 % pour l'immense majorité des Core 2 Duo sans effort (25 % pour les Core 2 Quad), jusqu'à +50 % en prenant le temps de régler correctement tous les paramètres (FSB, coefficient, Vcore ...), et plus encore en utilisant des systèmes de refroidissement plus évolués (radiateurs haut de gamme plus ventilation, refroidissement par circulation de liquide – refroidissement à eau –, ou même azote liquide pour aller jusqu'à doubler la fréquence initiale du processeur, grâce aux propriétés de supraconductivité des matériaux). Le célèbre Q6600 montait facilement à la fréquence de 3,2 Ghz en laissant la tension en automatique, soit 33% de gains mais chauffe beaucoup et un bon ventirad est indispensable.
+
+Augmenter la fréquence du processeur augmente en réalité la vitesse du bus de données principal de la machine (FSB), et donc accélère tous les composants connectés à la carte mère. La fonction PCI-Lock, présente sur toutes les cartes mères récentes, permet d'éviter ce problème et limite l'augmentation de fréquence au processeur et à la mémoire ; toute tentative malheureuse, peut même conduire a une réduction des performances !
+
+Le but est d'obtenir des performances supérieures à moindre coût, en poussant un composant à des limites supérieures à ses spécifications techniques.
+
+La pratique concerne en général le microprocesseur central (CPU) et/ou le processeur graphique (GPU), mais concerne également d'autres composants, tel que la mémoire (sur certains ordinateurs, la fréquence de la mémoire est directement liée à la fréquence du microprocesseur).
+
+Le problème le plus important de l' est le refroidissement du processeur.
+
+Le principal risque est de détruire le processeur par application d'une tension d'alimentation trop importante, d'une température trop élevée au niveau du cœur, ou encore de courant de fuite inter-transistor trop important. Dans le passé, les processeurs risquaient également de brûler si la température devenait trop élevée, mais actuellement absolument tous les processeurs sont équipés d'un système de sonde qui coupe automatiquement le système si la température dépasse les limites fixées par le constructeur (coupure automatique sur les C2D et C2Q à 120/). Le bon fonctionnement de ce coupe circuit est garanti dans le cadre d'une utilisation normale du processeur. Le fait d'utiliser le processeur à une fréquence supérieure a également une influence sur sa durée de vie (20 ans en moyenne), même si on considère en général que la réduction est négligeable comparé au temps de vie d'un processeur (rarement plus de 5 ans).
+
+L' ajoute un risque accru de faute de calcul ou d'apparition d'artefacts durant un traitement, ce qui peut avoir diverses conséquences suivant l'utilisation du processeur au moment de l'apparition de l'artefact, on peut citer :
+
+Un mal réalisé peut altérer le fonctionnement du matériel de manière plus ou moins grave, allant d'une simple surchauffe du composant overclocké (il perd alors en stabilité) à la destruction d'un ou plusieurs éléments de la configuration. Les constructeurs configurent toujours leurs ordinateurs à des fréquences moindres que les fréquences limites (afin de se laisser une marge de sécurité évitant un trop grand nombre de retours sous garantie), ce qui permet une marge d'.
+
+Pour pallier l'augmentation de température provenant des composants overclockés, l'utilisation de système de refroidissement à air avec ou sans caloducs ou de système de refroidissement à eau est préconisée. Dans la pratique extrême de cette discipline, les spécialistes utilisent des refroidissements à l'azote liquide () et/ou des refroidissement à changement de phase (Montage simple étage : Direct on die ou Montage multi-étages : cascade).
+
+L' ne nuit pas à la stabilité du processeur si l'on reste dans des fréquences supportables par les composants. Il est souvent nécessaire de modifier légèrement les tensions de fonctionnement pour aider le processeur à « tenir » la nouvelle cadence sans instabilité.
+
+Le bruit des ventilateurs devenant peu acceptable pour les applications gourmandes, on recourt parfois à l'ajustement inverse (le sous-cadencement ou "underclocking") afin de diminuer les besoins en dissipation thermique, et donc permettre le sous-voltage du ventilateur de refroidissement, ou le passage en refroidissement passif, pour diminuer le bruit.
+
+Un « normal » risque de diminuer la durée de vie du processeur (ou des processeurs), car ce dernier chauffe et risque de fonctionner au-dessus de la température pour laquelle il est conçu. Une ventilation homogène est un des éléments cruciaux de l' et le contrôle de cette température est fortement souhaitée. Certains constructeurs (par exemple ASUS) fournissent un logiciel permettant le contrôle des températures du CPU et de l'alimentation.
+
+Des idées reçues poussent à éviter les systèmes de refroidissement plus poussés (azote liquide), certains utilisateurs tentent de convaincre (ainsi qu'eux-mêmes) que ces méthodes diminuent de manière importante la durée de vie du processeur, ceci étant faux, un processeur, même très overclocké, fonctionnant sous sera toujours moins abîmé qu'un processeur overclocké en permanence à tant que la différence de tension est compensée par la différence de température. Ceci est dû au phénomène d'électromigration.
+
+Le newsgroup interne d'IBM "The Bitbucket" signalait en décembre 1984 un PC/AT fonctionnant expérimentalement de façon prolongée sans souci à 19 MHz (au lieu de 6 MHz), sous réserve de remplacer ses ROM (lentes) par de la RAM, plus rapide.
+
+Cette technique répond à la demande des micro-ordinateurs modernes qui doivent faire face à des programmes de plus en plus gourmands. Elle cherche à obtenir la puissance maximale à partir d'une configuration existante. On peut l'insérer dans une recherche plus générale de la performance des systèmes informatiques.
+
+La plupart des ordinateurs fonctionnent de manière synchronisée en utilisant un signal d'horloge CPU à fréquence constante (la fréquence d'horloge, exprimée en hertz, égale l'inverse de la période – durée d'un cycle d'horloge – exprimée en secondes).
+
+Une instruction d'ordinateur est un ensemble d'opérations élémentaires ou micro-instructions dont le nombre et la complexité dépendent de l'instruction, de l'organisation et de l'implémentation exacte dans le CPU. Une micro-opération est une opération matérielle élémentaire qui peut être exécutée en un cycle d'horloge. Cela correspond à une micro-instruction dans un CPU micro-programmé. Par exemple, les opérations sur les registres, les décalages, les chargements, les incréments, les opérations de l'unité arithmétique et logique : addition, soustraction, etc.
+
+Cependant une instruction machine peut prendre un ou plusieurs cycles pour être entièrement traitée ; c'est le nombre de cycles par instruction ou, en anglais, cycles per instruction (CPI).
+
+Une instruction-machine = 1 ou N micro instructions = 1 ou N CPI.
+
+Voici un extrait de la documentation fournie aux développeurs de compilateurs ou de programmes. On peut y voir une liste d'instructions du micro-processeur AMD A64 avec leur nombre de cycles. AMD définit les latences de ces instructions comme suit :
+La colonne des latences fournit les attentes pour une exécution statique de l'instruction. L'exécution statique est le nombre de cycles que prend le traitement séquentiel, jusqu'à son terme, des micro-opérations composant l'instruction. Ces valeurs sont à titre indicatif.
+On suppose que
+
+Les deux instructions suivantes :
+montrent l'étendue que peut avoir le CPI pour des instructions différentes. Cette documentation est disponible chez AMD sous le titre "software optimization guide for AMD Athlon 64 and AMD Opteron processors".
+
+Certains fabricants de carte mère comme MSI intègrent des logiciels simplifiant l'overclocking sous le Bios de Windows, OC-Génie et Asus qui intègrent des logiciels simplifiant l'overclocking sous Windows, le logiciel AI-suiteII permettant même de contrôler les températures ainsi que le fonctionnement et la vitesse des ventilateurs, en temps réel.
+
+Mesure de température et visualisation de toutes les informations relatives à l'overclocking avec CPU-Z, si la carte mère le permet.
+
+Overclock en général : OCCT, LinX (test de la stabilité, vérification des températures, tensions, etc.)
+
+Le français d'overclocking ouvert au grand public a été le , en décembre 2007. Il a réuni s'affrontant sur une plate-forme identique afin d'en déterminer le meilleur overclockeur du concours.
+
+Depuis l'équipe de l'association loi 1901 Syndrome OC réitérait plusieurs fois l'expérience pour arriver à une qui s'est déroulée à Brest du 29 octobre au .
+
+Dernièrement, Asus, en partenariat avec Intel Cooler Master et Syndrome OC réalisa le Noob Overclocking Challenge destiné aux débutants pour les initier aux rudiments de base de l'overclocking. Au cours de cette compétition, des sites comme OC team, et overclocking PC participèrent à l'animation au sein du magasin Surcouf à Daumesnil.
+
+De leur côté les marques comme MSI et Gigabyte organisent aussi leur propre concours d'overclocking appelé respectivement Master Overclocking Arena (MOA) et Gigabyte Open Overclocking Championship (GOOC).
+
+Le record toutes catégories confondues est actuellement tenu par Andre Yang avec 8794.33 Mhz sur un AMD FX-8350, invaincu depuis 2012.
+
+
+
+

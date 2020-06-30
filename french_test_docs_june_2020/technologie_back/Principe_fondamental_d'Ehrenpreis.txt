@@ -1,0 +1,154 @@
+﻿Principe fondamental d'Ehrenpreis
+
+En mathématiques, le principe fondamental d'Ehrenpreis joue un rôle très important dans la théorie des systèmes d'équations linéaires aux dérivées partielles à coefficients constants. On dit d'un espace fonctionnel formula_1 qu'il vérifie le principe fondamental s'il est un formula_2-module, où formula_2 est l'anneau des opérateurs différentiels, et si les solutions exponentielles-polynômes du "système homogène" forment un sous-ensemble total de l'espace des solutions dans une puissance de formula_1. C'est le cas des fonctions indéfiniment dérivables et des distributions sur un ouvert convexe de formula_5. Ce théorème a d'abord été énoncé par , puis démontré par Victor P. Palamodov et indépendamment par Bernard Malgrange, et enfin par Ehrenpreis lui-même ; on devrait donc l'appeler plus justement (malgré la tradition) « principe fondamental d'Ehrenpreis-Palamodov-Malgrange ».
+
+Ce résultat, qui a son intérêt propre, a des conséquences très importantes : d'une part on en déduit que tout opérateur différentiel scalaire à coefficients constants admet une solution fondamentale (ou « fonction de Green »), résultat dû à Ehrenpreis et Malgrange (indépendamment et avec des méthodes différentes) ; d'autre part, il permet de déterminer de manière algébrique s'il existe des solutions, dans une puissance de formula_1, à un système différentiel linéaire aux dérivées partielles "non homogène" à coefficients constants : il faut et il suffit (lorsque formula_1 vérifie le principe fondamental) que le second membre vérifie des « conditions de compatibilité ». Les espaces formula_1 vérifiant le principe fondamental sont des formula_2-modules injectifs. L'espace des fonctions indéfiniment dérivables et celui des distributions sur un ouvert convexe de formula_5 ont donc cette dernière propriété ; il en va de même de l'espace des hyperfonctions sur un tel ouvert.
+
+Considérons tout d'abord une équation différentielle (ordinaire) linéaire à coefficients constants
+
+où formula_12, formula_13 et où formula_14 avec 
+formula_15. Soit la décomposition en facteur premiers de formula_16 sur formula_17 :
+
+où formula_19 avec formula_20 (formula_21, formula_22). La solution générale de formula_11 est maintenant bien connue, mais en vue de la généralisation qui va suivre nous allons indiquer une méthode algébrique (ou, plus précisément, relevant de l'« analyse algébrique ») pour déterminer cette solution. Posons formula_24 et formula_25. On a
+
+et cette expression est la décomposition primaire de l'idéal "N" de formula_17 (les idéaux primaires étant les formula_28). On a d'après le théorème des restes chinois, puisque les formula_28 sont premiers entre eux pris deux à deux,
+
+D'autre part, l'espace des solutions dans un espace fonctionnel formula_31 (qu'on suppose être un formula_2-module) de l'équation formula_11 s'identifie à
+
+(voir l'article Module injectif). Or, on a d'après ce qui précède
+
+soit donc formula_36.
+
+Prenons formula_37 (où formula_38). Comme il est bien connu, tout élément de formula_39 est de la forme
+
+où formula_41 et formula_42. On obtient donc le résultat classique
+
+Il en irait de même si l'on avait choisi pour formula_31 l'espace des distributions formula_45 ou l'espace des combinaisons linéaires d'exponentielles-polynômes
+
+Soit formula_47 l'idéal premier appartenant à formula_28 (i.e. formula_49) et formula_50 la variété algébrique associée à formula_51 (voir l'article Décomposition primaire). On a évidemment ici formula_52 et on peut écrire
+
+où formula_54 est la mesure sur formula_55 donnée par formula_56. C'est sous cette forme que la solution est généralisée dans ce qui suit.
+
+On appelle variété caractéristique du formula_2-module formula_58 l'ensemble algébrique formula_59. On a
+
+où les formula_61 sont les composantes irréductibles de "V" (voir l'article Décomposition primaire).
+
+Notons encore que les polynômes formula_62 ont la propriété suivante : un polynôme formula_63 appartient à formula_64 si, et seulement si
+
+Les formula_67 (formula_66) sont appelés des opérateurs noethériens attachés à l'idéal primaire formula_64 (terminologie de Palamodov).
+
+La représentation intégrale détaillée des solutions, telle que présentée ci-dessous, a tout d'abord été obtenue par Palamodov, dont la terminologie est réutilisée dans cet article.
+
+Considérons à présent le système multidimentionnel d'équation
+
+où formula_71, formula_72, formula_73, formula_74, formula_15 et formula_76 (voir l'article Opérateur différentiel). Soit alors formula_77. Ce formula_2-module "M" de présentation finie est une représentation intrinsèque du système considéré (voir l'article Système linéaire). L'anneau formula_2 est noethérien d'après le théorème de la base de Hilbert.
+
+Soit formula_31 un espace fonctionnel qui est un formula_2-module. Le formula_82-espace vectoriel des solutions du système défini par "M" dans formula_83 s'identifie à
+
+(voir l'article Module injectif).
+
+La variété caractéristique associée au formula_2-module "M" est par définition l'ensemble algébrique "V" associé au module formula_86 où formula_87. Cet ensemble coïncide avec l'ensemble des formula_88 pour lesquels formula_89. La notion de variété caractéristique rend notamment possible la classification suivante des systèmes différentiels : le système est dit
+
+
+Le cas d'un système sous-déterminé est écarté dans le reste de ce paragraphe. Généralisons les notations de l'introduction ci-dessus, en posant formula_95. Soit
+
+la décomposition primaire de "N", formula_47 l'idéal premier appartenant à formula_28 et formula_50 la variété algébrique associée à formula_51. On a de nouveau
+
+Le lemme de normalisation de Noether entraîne qu'il existe un entier formula_102, tel que (i) formula_103, où formula_104, et (ii) formula_105 est un formula_106-module de type fini. Soit formula_107 le corps des fractions de l'anneau intègre formula_108 et formula_109.
+
+Ce nombre formula_110 est la multiplicité de la variété algébrique formula_111, c'est-à-dire le nombre de points de formula_112 où formula_113 est une variété affine de formula_114 de dimension formula_115, en position générale.
+
+Le formula_116-module formula_117 est de type fini. Soit formula_118 son rang, i.e.
+
+On montre que formula_120 est un entier. Pour tout formula_121, il existe des opérateurs noethériens, dits attachés au formula_17-module formula_64, et notés
+
+où formula_126, ayant la propriété caractéristique suivante :
+
+où formula_129 lorsque formula_130.
+
+Dans la suite, formula_131 est plongé dans formula_132 où formula_133 et on peut donc écrire formula_134. Soit
+
+l'espace des combinaisons linéaires d'exponentielles-polynômes sur formula_5. On a le résultat suivant :
+
+Considérons l'exemple suivant, dû à Palamodov, et détaillé par Hörmander et Björk :
+
+d'où formula_138.
+
+On vérifie que formula_24 est un idéal primaire "Q" ; on peut donc dans ce qui suit omettre l'indice formula_140 puisqu'il ne prend que la valeur 1. La variété caractéristique "V" s'obtient en écrivant formula_89, soit encore formula_142, d'où formula_143 ; il s'agit donc de l'axe formula_144, et sa multiplicité est formula_145. On vérifie aussi que formula_146 est l'idéal formula_147 ; cet idéal est écrit pour plus de simplicité formula_148. Le quotient formula_149 est engendré par les images canoniques formula_150 et formula_151 (ce qu'on écrira formula_152), on a formula_153, et le rang "r" de formula_149 sur formula_155 est égal à 2. Par conséquent, formula_156. On peut choisir comme opérateurs noethériens formula_157 et formula_158 avec formula_159. En effet, on vérifie que
+
+Les solutions exponentielles-polynômes du système différentiel forment donc le formula_82-espace vectoriel engendré par formula_162 où
+
+comme on le vérifie facilement "a posteriori". On notera que formula_164 dépend de formula_165 et cette dépendance est inévitable dans cet exemple. Une méthode systématique pour déterminer des opérateurs noethériens associés à un module primaire a été obtenue par Oberst.
+
+Soit formula_166 un compact convexe. Nous caractérisons ici les solutions dans formula_167, l'espace des (germes de) fonctions formula_168 fois continûment différentiables dans un voisinage ouvert de "K". La fonction support de "K" est
+
+Soit
+
+\left( 1+\left\vert \zeta \right\vert
+d\left\vert \mu _{\sigma ,l}(\zeta)\right\vert <\infty</math>
+
+D'autres conditions fournissent les solutions dans des espaces de distributions ou d'hyperfonctions.
+
+On suppose dans tout ce qui suit que l'anneau formula_2 est muni de la topologie discrète, ce qui en fait un anneau topologique.
+
+Le résultat suivant est clair :
+
+On a d'autre part le résultat suivant :
+
+L'espace formula_190 des hyperfonctions sur un ouvert convexe formula_179 de formula_5 n'est pas un espace vectoriel topologique, néanmoins une représentation intégrale telle que ci-dessus existe pour une hyperfonction formula_193, les intégrales devant être prises au sens des hyperfonctions (ce résultat est dû à Kaneto).
+
+Considérons maintenant le système multidimentionnel d'équation
+
+où l'opérateur "D" est défini comme plus haut ; formula_2 désigne de nouveau l'anneau des opérateurs différentiels et formula_196. Le second membre "v" appartient à formula_197 où formula_31 un espace fonctionnel qui est un formula_2-module. La question qui se pose est de savoir si ce système admet des solutions formula_200.
+
+Puisque l'anneau formula_2 est noethérien, il existe une matrice formula_202, avec formula_203, pour laquelle la suite
+
+est exacte, c'est-à-dire formula_205.
+
+En effet, formula_206 est de type fini, et il suffit donc de choisir une matrice formula_207 dont les lignes forment un ensemble générateur de formula_208 (ce raisonnement resterait valable si formula_2 était seulement un anneau cohérent).
+
+Puisque formula_210, pour que le système ci-dessus ait une solution, il faut évidemment que la condition de compatibilité
+
+soit satisfaite. La question qui se pose est de savoir si cette condition de compatibilité, qui est nécessaire, est suffisante pour que le système différentiel admette une solution, c'est-à-dire si l'on a
+
+^{q_{1}}\overset{R_{2}(D)\bullet }{\longrightarrow }\mathcal{W}^{q_{2}}</math>
+
+est exacte.
+
+(R_{1}(\partial)\bullet)\subset{\rm ker}_\mathcal{W}(R_{2}(\partial)\bullet)</math>.
+
+Il suffit donc de montrer que, si formula_31 vérifie le principe fondamental,
+
+En effet, le principe fondamental dit que formula_215 est un sous-espace fermé de formula_83 et que l'adhérence dans formula_83 de formula_218 est égale à formula_219. Il suffit donc de montrer que
+
+autrement dit que la suite
+
+est exacte. Il suffit que pour tout formula_88 la suite
+
+soit exacte, où formula_224. On se ramène au cas où formula_225 par une translation appropriée des matrices formula_226 et formula_227, et formula_228. Soit formula_229 l'espace des séries formelles en formula_230. Muni de la topologie de convergence simple des coefficients, formula_231 est un espace de Fréchet. Soit la forme bilinéaire formula_232 définie pour
+
+par la relation
+
+Cette forme bilinéaire est séparante, i.e. si formula_235 pour tout formula_236 alors formula_237, et si formula_235 pour tout formula_239 alors formula_240. Elle met donc les espaces vectoriels formula_241 et formula_242 en dualité séparante. On montre facilement que toute forme linéaire continue sur formula_231 est de la forme formula_244 pour un formula_239, par conséquent formula_246 s'identifie au dual de l'espace de Fréchet formula_231 ; par ailleurs formula_248 est limite inductive stricte des espaces de dimension finie formula_249 formés des polynômes de degré inférieur ou égal à "m". L'opérateur formula_250 (multiplication par formula_251 est linéaire et continu, et
+
+i.e. la multiplication par formula_253 est le transposé de l'opérateur formula_254.
+
+Or la suite
+
+est exacte. Puisque formula_242 est le complété de formula_257 pour la topologie formula_258-adique (où formula_258 désigne l'idéal engendré par formula_258), formula_242 est un formula_257-module plat. Par conséquent, la suite
+
+est exacte. Par dualité,
+
+et il reste donc à montrer que formula_265 est un sous-espace vectoriel fermé de formula_266. Or, "E" est limite inductive stricte de la suite strictement croissante des espaces de dimension finie formula_267. Soit formula_268 une suite généralisée de "V" convergeant dans "E" vers un point "x". Il existe un entier "m" tel que formula_269 et formula_268 converge vers "x" dans formula_271. Puisque formula_271 est de dimension finie, formula_273 est fermé dans formula_271, par conséquent "x" appartient à formula_273, d'où il suit que "V" est fermé dans "E". On en déduit que la suite
+
+Oberst a montré que l'espace formula_277 des combinaisons linéaires d'exponentielles-polynômes est le formula_2-module cogénérateur canonique.
+
+En outre, le module des hyperfonctions sur un ouvert convexe de formula_5 est un cogénérateur injectif (d'après un résultat dû à Komatsu). Pour que formula_280 soit un formula_2-module divisible, l'ouvert formula_179 étant connexe, il est nécessaire (et suffisant) que formula_179 soit convexe (résultat dû à Malgrange).
+
+En liaison avec le corollaire ci-dessus, on obtient par dualité le résultat suivant :
+
+On notera qu'un formula_2-module injectif ne vérifie pas nécessairement le principe fondamental au sens précisé ci-dessus. Par exemple, l'espace formula_285 des distributions tempérées sur formula_5 est un formula_2-module injectif, mais ne contient pas les exponentielles-polynômes, et n'est donc pas cogénérateur. (Néanmoins, son dual formula_288, à savoir l'espace de Schwartz des fonctions déclinantes, est un formula_2-module plat, ce qu'on peut conclure aussi d'un résultat général sur la dualité entre injectivité et platitude.)
+
+
+
+

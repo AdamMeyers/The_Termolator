@@ -1,0 +1,43 @@
+﻿Auralisation
+
+L'auralisation est un procédé visant à recréer un environnement acoustique à partir de données mesurées ou simulées.
+
+Ce procédé permet par exemple de se rendre compte du rendu sonore d'un édifice (théâtre, opéra, etc.) en projet ou bien de simuler une salle existante.
+Cette technique peut être utilisée pour rendre un environnement sonore cohérent au sein d'un système d'immersion virtuelle.
+
+Le terme anglais "auralization" a été utilisé pour la première fois par Kleiner et coll. dans un article du journal de l'AES en 1993.
+
+L'augmentation de la puissance de calcul a permis le développement du premier logiciel de simulation acoustique vers la fin des années 60.
+
+Aujourd'hui, on peut notamment citer les travaux réalisés à Aix-La-Chapelle autour de la réalité virtuelle acoustique.
+
+Pour que le rendu puisse effectivement être simulé, il faut tout d'abord que l'environnement à simuler soit un système linéaire invariant (SLI), puisque l'on cherchera à le caractériser via sa réponse impulsionnelle (RI).
+
+Une fois la RI formula_1 obtenue, on procède à la simulation de l'émission d'un son formula_2 dans l'environnement cible par convolution :
+
+formula_3
+
+Le résultat formula_4 est ce qu'aurait rendu le même son directement émis dans la salle.
+
+Dans la perception auditive humaine, la position des deux oreilles est extrêmement importante.
+
+Pour que les RI soient concluantes, il est donc nécessaire de les mesurer au moyen d'une tête artificielle et d'un microphone par oreille.
+
+Il faut noter que des banques de fonctions de transfert liées à la tête (HRTF, de l'anglais head-related transfer function) existent et qu'elles peuvent être utilisés pour simplifier le processus : une RI monorale est mesurée ou simulée, puis convoluée avec le son cible. Ensuite, on applique la fonction de transfert correspondant à l'orientation de la tête (le repérage auditif dans les plans horizontal et vertical est très précis) pour simuler la diffusion correspondante.
+
+La qualité de l'auralisation dépend de plusieurs facteurs. Tout d'abord, si l'environnement à simuler n'est pas un SLI, alors il est impossible de lui trouver une unique réponse impulsionnelle le caractérisant.
+
+De plus, la qualité de la RI est primordiale : en effet, la convolution avec le son cible amplifiera tous les défauts d'une mauvaise réponse. Il faut donc s'assurer que celle-ci soit la moins bruitée possible et la plus fidèle à l'environnement à auraliser.
+
+Pour la capture d'une bonne réponse impulsionnelle, il reste deux moyens :
+
+
+Une réponse impulsionnelle n'étant valable que pour une position de la source et du récepteur données, les mesures doivent être réitérées pour toutes les positions nécessaires. Il est possible dans une certaine mesure d'extrapoler des mesures, mais la qualité s'en trouve nettement moins bonne.
+
+Finalement, on peut pallier ce problème en ne "mesurant" pas la RI mais en la simulant. L'utilisation de la théorie des images-sources ainsi qu'un raytracer acoustique rendent possible de telles techniques.
+
+La retransmission du résultat d'une auralisation binaurale pose le problème que chaque oreille doit être parfaitement isolée de ce qu'entend l'autre pour que le procédé soit efficace et que l'immersion soit bonne.
+
+Si pour des tests un casque suffit à séparer correctement les deux canaux, la retransmission sans casque requiert un dispositif de limitation de diaphonie pour conserver les propriétés immersives.
+
+

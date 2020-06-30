@@ -1,0 +1,84 @@
+﻿Système déterministe
+
+Un système déterministe est un système qui réagit toujours de la même façon à un événement, c'est-à-dire que, quoi qu'il se soit passé auparavant, à partir du moment où le système arrive dans un état donné, son évolution sera toujours identique. En automatique, les systèmes déterministes forment une classe de systèmes qui, à une suite d'événements entrants, produisent une suite d'événements sortants, toujours la même et selon un ordre déterminé par l’ordre des événements entrants. En philosophie, le déterminisme est une vision du monde dans laquelle l'univers est conçu comme un système déterministe.
+
+En physique, un système déterministe est un système qui obéit à des lois d'évolution non-probabilistes.
+
+Si le système est connecté par plusieurs canaux de communication à un environnement, l’ordre dans lequel les événements entrants se produisent "temporellement" sur chaque canal explique l'ordre des événements sortants.
+
+Si l’événement (a) se produit sur l’interface A, puis chronologiquement l’événement (b) sur l’interface B, alors on est en droit de constater – dans la majorité des cas - la conséquence de (a) avant la conséquence de (b).
+
+Un événement particulier du système est le temps. L'échéance d'un événement de type "délai écoulé" peut expliquer et justifier une sortie particulière du système au même titre que les événements entrants.
+
+Un système déterministe est un système multitâche composé :
+
+Les tâches de communication et la tâche centrale sont par essence apériodiques. Elles s'activent sur occurrence d'un événement.
+
+Les tâches algorithmiques sont par essence périodiques ou cycliques. Pour les tâches périodiques, la période de temps entre deux traitements consécutifs conditionne la précision des calculs à effectuer.
+
+Afin d’analyser un comportement du système, chaque tâche du système mémorise dans une zone mémoire les événements entrants reçus et traités ainsi que les données de contexte nécessaires à la compréhension de la sortie générée par chaque tâche. Bien entendu cette mémorisation concerne aussi les événements de temps du type "délai écoulé".
+
+Cette activité de mémorisation des événements doit se dérouler dans un délai très court.
+
+Cette mémoire est contrôlée par un mécanisme de sémaphores. Chaque tâche écrit de façon non interruptible dans la mémoire pendant un délai très court puis remet la ressource "mémoire partagée" à disposition des autres tâches. En cas de défaillance du système, la mémoire peut être transférée hors du système pour analyse.
+
+Cette mémoire est "tournante". Elle est dimensionnée pour accueillir une certaine durée de fonctionnement du système puis passée ce nombre d’enregistrements, les plus anciens enregistrements sont effacés au profit des nouveaux enregistrements.
+
+Une tâche correspond une entité exécutable placée sous le contrôle du système d'exploitation temps réel. Le système d'exploitation va lancer la tâche, la suspendre pour la mettre en attente d'une ressource et finalement l'arrêter.
+
+L'un des principes de conception décrit dans cet article implique qu'une tâche ne fasse jamais appel à une primitive d'attente d'un délai au cours de son traitement. En lieu et place, un état d'attente du délai "nommé" sera créé et la tâche effectuera une demande de réveil à la tâche de gestion du temps.
+
+Une tâche particulière est réservée à la gestion du temps ou des délais d’attente. Cette tâche reçoit des requêtes (demande de service) des autres tâches, et renvoie des événements de délai écoulé aux tâches ayant effectué les demandes.
+
+La tâche de gestion du temps est capable aussi de recevoir des requêtes d’interruption / arrêt d’un délai. Pour ce faire, à chaque demande reçue, la tâche de gestion du temps retourne au demandeur un ticket (un numéro unique) associé à la tâche qui a effectué la demande. La tâche demandeuse peut alors utiliser cette clé (identifiant de la tâche + ticket) pour interrompre sa demande de réveil.
+
+Une tâche peut avoir demandé un arrêt de délai et recevoir tout de même un réveil en provenance de la tâche de gestion du temps. L'automate à états de la tâche devra être capable de gérer cette situation dite de "cisaillement".
+
+Une tâche canal est associée à chaque processus extérieur au système qui communique avec le système (ou le logiciel). La mission de la tâche canal est d’échanger des données avec ce processus externe tout en respectant le protocole d’échanges / communication avec ce processus externe. La mission de la tâche canal n’est pas d’implémenter des fonctionnalités du système. La tâche canal a donc par essence une vocation "opérationnelle" par opposition à une vocation fonctionnelle. Ceci est vrai pour les processus qui fournissent des données en entrée du système comme les processus externes qui reçoivent des données en sortie du système. Il est particulièrement crucial qu’aucune tâche du système ne communique avec un processus externe sans passer par la tâche canal responsable de la cohérence des échanges avec ce processus externe. On peut dire que la tâche de communication encapsule le protocole de communication avec un processus externe.
+
+Une tâche de communication peut ne plus être en mesure d’envoyer un message vers un processus externe. Si le protocole autorise les reprises, la tâche effectue les reprises avec un délai d’attente entre deux reprises. À l’expiration du nombre de reprises, la tâche de communication va envoyer un événement de problème lié à ce canal de communication vers la tâche centrale.
+
+En effet, si un flux de messages entrant est maintenu dans un système sans que l'on puisse garantir le flux sortant, il se produira un engorgement qu'il convient de maitriser. En conséquence, la séquence suivante des événements : tâche de communication sortante constate une impossibilité d'envoyer des messages (après expiration des moyens de répétition du protocole), elle prévient la tâche centrale qui aura pour charge de prévenir les tâches de communication entrantes de cesser d'accepter des messages puisque ceux-ci (ou certains de ceux-ci) ne pourront après traitement être envoyés vers le monde extérieur. 
+
+Dans un système temps réel, il convient de créer de la même façon une tâche de communication pour des accès à un périphérique de stockage de masse, tel qu'un disque ou un enregistreur. En effet, il n'est pas concevable de permettre à une tache fonctionnelle (effectuant une opération d'un automate ou une tâche algorithmique effectuant un calcul itératif - différentiel) d'accéder directement au périphérique et de ce fait se mettre en attente d'une fin d'entrée sortie.
+
+Au démarrage du système, chaque tâche canal a pour responsabilité de fournir l’état de son canal de communication à une tâche centrale qui synthétisera l’ensemble de ces états des canaux pour fournir un état synthétique du système voyant son monde extérieur.
+
+Le système passe en mode opérationnel dès lors que l'ensemble des tâches de communication ont fourni un feu vert correspondant à l'initialisation de leur canal.
+
+La tâche centrale implémente un automate à états finis de premier niveau qui prend en compte les états "connectés" en provenance des tâches de communication. Le système est en mode "nominal" lorsque l’ensemble des tâches de communication ont effectué leur phase de connexion et ont envoyé à la tâche centrale un message de connexion effectuée. Le système passe en mode "dégradé" dès la perte d’une connexion sur l’un de ses canaux de communication.
+
+Il est nécessaire de concevoir la tâche centrale de telle sorte qu'elle n'effectue aucun calcul, aucun traitement en lien avec un périphérique (disque ou d'entrées sorties). Si de tels traitements sont nécessaires, ils seront confiés à une autre tâche qui recevra ses consignes de la tâche centrale.
+
+Les tâches périodiques effectuent un traitement du type algorithmique comme par exemple le calcul de la position d'un système (par exemple un avion), ou le calcul de sa destination ou finalement le calcul des commandes à élaborer pour se rendre à destination.
+
+Les traitements durent un temps T de calcul (inférieur à la période de réveil) puis la tâche se met en attente d'un événement de réveil. La période entre deux réveils aura débuté avant le traitement pour s'achever après la fin du traitement. Une tâche périodique peut recevoir d'autres types d'événements modifiant son comportement ou influençant les calculs effectués. Ces nouvelles données seront prises en compte sur l'événement reçu en provenance de la tâche centrale mais une nouvelle séquence de calcul ne sera déclenchée qu'à l'échéance de la période et donc à la réception d'un événement de délai écoulé. De cette façon, la ressource "temps machine" reste toujours disponible pour les autres tâches même dans des conditions extrêmes de modification de ces calculs cycliques.
+
+Une façon simple de se représenter le traitement d'une tâche cyclique est de construire un automate à états finis. Cet automate prend la forme d'un tableau avec en colonnes les états de la tâche et en ordonnée les événements attendus que la tâche est censée traiter.
+
+À l'intérieur de ce tableau chaque cellule correspond au traitement que la tâche doit effectuer dans l'état donné et pour l'événement reçu dans cet état. Ce traitement ne doit pas comporter de temps de traitement longs (accès disque ou calcul algorithmique) mais uniquement des envois de messages vers une autre tâche.
+
+Il est possible de représenter ce tableau sous la forme d'un réseau de Pétri.
+
+Chaque tâche du système - y compris les tâches de communication et la tâche de gestion du temps - reçoit des événements (message plus données associées) par le biais d’une file d'attente de message. Toutes les files d’attente sont du type "premier arrivé, premier servi". Plusieurs tâches peuvent accéder simultanément à une file d'attente. Chaque file d'attente est donc une ressource partagée placée sous le contrôle du système d'exploitation.
+
+Le nombre maximum de messages qu'une file d'attente peut mémoriser dépend du temps de traitement maximum de la tâche qui doit les traiter.
+
+En associant à chaque tâche du système, une file d'attente qui fournit les événements entrants, on obtient un patron de développement qui permet de répartir et de paralléliser les développements sur les membres d'une équipe de développement. De la même façon, toutes les fins de traitements des tâches se traduisent par une écriture dans la file d'attente d'une autre tâche. Le développement d'une tâche est terminé lorsque toutes les combinaisons d'événements entrants ont été simulées.
+
+Les processus externes interagissent avec le système au travers des tâches de communication. Les tâches de communication ne communiquent pas entre elles. Les tâches de communication communiquent avec la tâche centrale ou la tâche de gestion du temps.
+
+Au schéma ci-dessus, il convient d'ajouter la zone mémoire partagée dans laquelle les différentes tâches enregistrent les événements entrants qui les stimulent. 
+
+Si le système comporte des traitements algorithmiques périodiques, il conviendra de les encapsuler dans un tâche cyclique supplémentaire qui recevra ses ordres de calculs de la tâche centrale et qui recevra ses ordres d'activation périodique de la tâche de gestion du temps.
+Si le système nécessite d'effectuer les trois traitements principaux que constituent la navigation (savoir où l'on est), le guidage (savoir où l'on va) et le pilotage (savoir quelles commandes il y a lieu d'élaborer pour asservir l'engin de sa position connue vers la position cible), alors on recommande de ne pas créer trois tâches cycliques mais plutôt de faire alterner les trois traitements dans une seule tâche cyclique qui se partage ainsi le temps de calcul du processeur (considéré unique).
+
+Plus une tâche effectue un traitement de durée court plus sa priorité peut être élevée. À l'inverse, une tâche effectuant un traitement algorithmique complexe devra avoir une priorité relative faible. Elle sera suspendue le temps qu'un événement soit traité puis reprendra ses calculs. Il convient donc de s'assurer que ses données ne sont pas altérées pendant ces périodes de suspension.
+
+Afin de garantir l'occurrence des commandes en sortie et afin d'éviter un engorgement du système par accumulation d'événements entrants non traités, il y aura lieu de placer les tâches de communication - celles gérant les canaux de sortie - aux niveaux de priorité les plus élevés. 
+
+Le niveau de priorité le plus élevé sera alloué à la tâche de gestion du temps, puis aux tâches gérant les canaux de sortie, puis à la tâche centrale, puis aux tâches recevant les événements externes, puis enfin les tâches effectuant des traitements algorithmiques complexes.
+
+
+
+

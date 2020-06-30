@@ -1,0 +1,31 @@
+﻿Architecture de données
+
+Une architecture de données en Informatique est composée de modèles, de règles ou de standards qui désignent quelles données sont collectées et comment elles sont stockées, triées, intégrées et utilisées dans des systèmes de données. En d’autres termes, elle décrit la structure de données utilisée par une organisation et / ou des applications et inclut les descriptions des données stockées. Elle fournit les critères pour les opérations de traitement des différents types de données et contrôle donc celles qui circulent dans le système.
+
+L’architecte de données est chargé de définir la situation future, l'alignement au cours du développement et le suivi nécessaire pour s'assurer que la conception est faite selon les spécifications architecturales d'origine. Il considère ces systèmes de données comme une ressource stratégique de l'organisation, en les représentant indépendamment des processus des différentes unités qui les utilisent. Son principal but est de concevoir des structures de données d'une manière organisée, fournissant ainsi une base pour la construction de systèmes d'information flexibles et intégrés.
+
+Une architecture de données doit établir des normes de données pour l'ensemble de ses systèmes de données comme une vision ou un modèle d’interactions éventuelles entre ces systèmes. L'intégration des données, par exemple, doit dépendre de normes d'architecture de données. Une architecture de données décrit partiellement les structures entre les données utilisées par une entreprise et celles utilisées par les applications logicielles des différents ordinateurs qu’elle utilise. L’architecture de données permet de créer une cartographie des données, applications et sites d’une entreprise.
+
+Essentielle à la réalisation d’un projet, l'architecture de données décrit comment les données sont traitées, stockées et utilisées dans un système. Elle fournit des critères pour les traitements de données qui permettent de concevoir des flux de données et également de contrôler le flux de données dans le système.
+
+Lors de la conception, l’architecte de données va analyser et séparer chaque élément jusqu’à atteindre le niveau atomique pour ensuite remodeler le système et stocker les données sous la forme désirée.
+
+Approche du Cadre Zachman pour les architectures de données
+Dans ce second sens large, l’architecture de données comprend une analyse complète des relations entre les fonctions de l'organisation, les technologies disponibles et les types de données.
+
+L’architecture de données doit être définie lors de la phase de planification d'un nouveau système de stockage. Les principaux types et sources de données nécessaires pour soutenir une entreprise doit être identifié de manière complète, cohérente et compréhensible.
+
+À ce stade de la conception il est important de définir les entités de données pertinentes et non les technologies informatiques qu’il faudra utiliser par la suite. Une entité de données est une chose réelle ou abstraite sur laquelle une organisation ou individu souhaite stocker des données.
+L’objectif de la création d’une base fédérée est de donner aux utilisateurs une vue unique des données présentes sur plusieurs systèmes a priori hétérogènes. Il s’agit d’une problématique typique lors de la concentration ou de la fusion d’entreprises : faire cohabiter les différents systèmes tout en leur permettant d’inter-opérer d’une manière harmonieuse.
+
+Le principe de l’Architecture Ansi/Sparc est de séparer en trois niveaux distincts afin de pouvoir différencier facilement l’implémentation physique et la représentation logique des données ainsi que la possibilité de créer des schémas externes qui servent à créer des sous-bases virtuelles.
+L’Architecture distribuée est un système gérant une collection de BD logiquement reliées, réparties sur différents sites en fournissant un moyen d ’accès rendant la distribution transparente.
+
+Sur les systèmes classiques d’administration, il y a uniquement un manager (typiquement le NMS) qui interroge les données en provenance de tous les agents qui sont sur le réseau. Cette architecture peut provoquer du trafic générant un ralentissement général de la performance réseau, allant parfois jusqu’à 25/30%.
+
+Avec l’Architecture distribuée, le nombre de managers est étendu, chacun d’entre eux recevant des trams depuis un nombre limité d’agents.
+
+Le principe de cette architecture réside dans le fait de multiplier les sites de traitement des données sur un même réseau. De cette manière en cumulant les ressources (Mémoire, espace disque ...) il est possible de traiter en parallèle une grande quantité d’information.
+
+
+

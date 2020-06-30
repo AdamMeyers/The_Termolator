@@ -1,0 +1,13 @@
+﻿Réplication multi-maîtres
+
+La réplication multi-maîtres est une architecture pour la réplication des bases de données permettant aux données d'être stockées sur un groupe d'ordinateurs et mises à jour par n'importe quel membre du groupe. Tous les membres peuvent répondre aux requêtes des clients. Le système de réplication multi-maître est responsable de propager les modifications de données faite par chaque membre et résoudre les conflits provoqués par des modifications concurrentes faites sur des membres différents.
+
+La réplication multi-maîtres peut être comparée avec la réplication maître-esclave où un unique membre du groupe est désigné comme le maître pour certaines données et est le seul nœud autorisé à modifier ces données. Les autres membres désirant modifier les données doivent d'abord contacter le nœud maître. Autoriser un unique maître permet d'obtenir plus facilement la cohérence des données entre les différents membres du groupe, mais est moins flexible que la réplication multi-maîtres.
+
+La réplication multi-maîtres peut aussi être comparée avec le basculement dans les grappe de serveurs où les serveurs esclaves répliquent les données maître pour préparer la bascule dans le cas où le maître ne fonctionnerait plus. Le maître est le seul serveur actif pour les interactions avec le client.
+
+Le but premier de la réplication multi-maîtres est une disponibilité améliorée et des temps de réponse améliorés.
+
+
+
+

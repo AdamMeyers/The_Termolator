@@ -1,0 +1,10 @@
+﻿Multibases
+
+Une liaison multibases permet à un composant logiciel de se coupler à une ou plusieurs bases de données relationnelles. 
+
+Un serveur multibases est intégré dans le SGBD. Le standard ISO RDA, SQL*NET d'Oracle, NETLIB de MS SQL Server, ESQL/DRDA pour DB2 d'IBM sont des exemples de tels serveurs.
+
+Le composant logiciel peut accéder aux bases de données via un client multibases. La norme ISO RDA, ou un client CLI du SAG comme ODBC de Microsoft ou JDBC de SUN sont des exemples de tels clients.
+Le problème principal est la jointure de deux tables appartenant à des bases de données différentes se trouvant dans des SGBD différents. Le problème réside dans le fait que pour joindre des tables, il faut disposer de celles-ci sur la même machine. La solution consiste donc à «télécharger» les tables puis à effectuer la jointure en local sur le poste client. Cette solution n'est pas problématique si la jointure se fait sur des sous-ensembles des deux tables (sélections préalables) mais est désastreuse en termes de performance si elle nécessite une jointure sur un vaste ensemble de lignes de chaque table, par exemple la totalité de celles-ci.
+
+

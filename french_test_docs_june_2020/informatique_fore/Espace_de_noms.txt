@@ -1,0 +1,44 @@
+﻿Espace de noms
+
+Le terme espace de noms ("") désigne en informatique un lieu abstrait conçu pour accueillir des ensembles de termes appartenant à un même répertoire, comme dans l'exemple suivant où les espaces de noms sont nommés « Jean-Paul » et « Jean-Pierre » :
+
+Un espace de noms peut être vu comme une fonction "F" qui, à un ensemble de symboles "S," associe un ensemble "O" d'objets (à prendre au sens large). Ces objets peuvent être des entiers, des réels, des objets informatiques, des lieux, des personnes, etc.
+
+Selon le contexte, les symboles d'un espace de noms peuvent prendre plusieurs formes.
+
+Dans le cas d'un réseau Ethernet, les symboles sont les adresses MAC qui sont des chaînes d'entiers de 48 bits. Dans un programme informatique, les symboles sont des chaînes de caractères de longueur variables. Dans certains langages, ils peuvent être préfixé par un $ (un sigil) ou d'autres symboles pour indiquer leur nature. Dans le cas d'une base de données, chaque enregistrement est représenté par une ou plusieurs clés apparaissant sous la forme d'entiers (numéro d'enregistrement) ou de chaînes de caractères.
+
+Selon le cas, un espace de noms peut être une fonction injective seulement, surjective seulement, les deux ou ni l'un ni l'autre.
+
+En programmation informatique, les espaces de noms sont généralement des injections seulement car s'il y a deux objets nommés distincts alors leur nom est différent et un objet nommé peut avoir plusieurs noms.
+
+Dans le cas d'un réseau Ethernet, les espaces de noms sont des bijections car chaque carte réseau a une adresse Ethernet unique et, à partir d'une telle carte, il est possible de retrouver l'adresse Ethernet correspondante.
+
+Enfin, s'il y a un ensemble d'écoliers dans une classe et considérons leur prénom comme ensemble de symboles, l'espace de noms est surjectif seulement. En effet, tous les écoliers ont un prénom, mais plusieurs peuvent avoir le même prénom. Ce dernier cas aussi arrive parfois en programmation dans plusieurs situations (ex. : table de hachage), ce qui produit des collisions. Pour distinguer les objets nommés, on peut étendre les noms par des préfixes (dans le cas de la programmation) ou ajouter le nom de la personne ou son adresse (dans le cas des écoliers). Dans ce cas, on parle d'extension de l'espace de noms. On peut aussi remplacer les noms ambigus par des pseudonymes ou des alias. Dans ce cas, on parle de modifier l'espace de noms.
+
+Bien qu'il y ait toujours eu des espaces de noms sans que le concept en soit perçu, celui-ci a pris son autonomie avec la technologie FS et a été implémenté dans des machines comme l'IBM 38 et l'AS/400. Il a également été étudié de façon systématique dans le projet Gémau coordonné par Serge Guibou-Ribaud. La création des bases de données relationnelles représente une façon de gérer des données par des techniques d'espace de noms également.
+
+Plusieurs techniques de performances pour gérer les espaces de noms étaient couvertes par des brevets qui tombèrent dans le domaine public au cours des années 2000, ce qui a permis leur utilisation par ReiserFS et WinFS.
+
+En informatique, un espace de noms est une notion permettant de lever une ambiguïté sur des termes qui pourraient être homonymes sans cela. Il est matérialisé par un préfixe identifiant de manière unique la signification d'un terme. Au sein d'un même espace de noms, il n'y a pas d'homonymes.
+
+La notion d'espace de noms est particulièrement utilisée en programmation (Java, C#, C++), et dans les technologies XML avec en particulier RDF et ses ontologies.
+
+Les espaces de noms aident à la construction de programmes modulaires. Par exemple, le symbole de fonction « sin » pourrait renvoyer au calcul d'une sinusoïde dans un espace de noms regroupant des fonctions mathématiques et au péché en anglais dans un autre espace de noms traitant de problèmes religieux. Cela évite les inévitables conflits entre symboles homographes.
+
+De nombreux langages offrent un espace de noms commun pour les identificateurs de variables, de fonctions et d'opérateurs spéciaux et n'offrent pas la possibilité de manipuler de nouveaux espaces de noms. Des conventions sur les noms des identificateurs doivent alors être adoptées par les programmeurs.
+
+Certains langages offrent les espaces de noms : "namespace" en C++, "packages" en Java ou "modules" en Python. Common Lisp fournit des "packages", qui sont des collections de symboles, en plus de la dizaine d'espaces de noms fournie en standard par le langage. En Ada, le paquetage est un module qui permet de définir un espace de noms assorti d'une encapsulation rigoureuse.
+
+Les technologies XML font un usage intensif des espaces de noms, car les documents XML doivent avoir la capacité de mélanger sans ambiguïté plusieurs ontologies, c’est-à-dire plusieurs vocabulaires distincts qui peuvent contenir des homonymes.
+
+ "Bonjour, how are you?"
+
+Cette phrase n’a de sens que si vous devinez quelle est la langue utilisée pour chacune de ses parties. Si vous ne pouvez déterminer la langue utilisée et donc vers quel dictionnaire vous devez vous diriger, il serait peut-être bon d'offrir plus d'informations :
+
+Nous avons maintenant identifié chacune des entités d'information comme étant différentes ; elles n'appartiennent pas au même espace de noms. Il nous reste maintenant à définir cet espace.
+
+En XML, cela se formalisera par exemple de la manière suivante :
+
+
+

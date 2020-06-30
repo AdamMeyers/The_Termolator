@@ -1,0 +1,98 @@
+﻿Impacts des Contrats Intelligents sur la société
+
+L'Impact des Contrats Intelligents sur la société commence à être discuté et mesuré, au fur et à mesure d'applications tangibles reposant sur ces contrats. Un contrat intelligent (smart contract) est un protocole informatique ayant pour objectif de réaliser des transactions (entre deux parties) via des «tiers de confiance» automatisés. Basés sur la blockchain, ils apportent une transparence, garantie par le caractère distribué de ce protocole, et une intégrité, garantie par la cryptographie. Ces contrats intelligents apportent donc une certaine confiance permettant alors de se passer des tiers de confiance traditionnels.
+
+Les contrats intelligents sont implémentés sur une plateforme de cryptomonnaie sous-jacente. Une cryptomonnaie est une monnaie virtuelle qui s'échange de pair à pair via un réseau décentralisé, en l’occurrence une blockchain. Les contrats intelligents sont donc décentralisés.
+
+Dans le monde des affaires, la blockchain est considérée comme la prochaine grande innovation technologique à la suite d'Internet. En 2014, Marc Andreessen, co-auteur de Mosaic, cofondateur de Netscape et véritable pionnier du Web, confie : « Quand nous serons assis ici dans 20 ans, nous parlerons de Bitcoin et de la technologie blockchain de la même façon dont nous parlons d'Internet aujourd'hui ».
+
+Il est important de spécifier que le terme de contrats intelligents est trompeur, car ils sont dépourvus d'autonomie intellectuelle.
+
+En 1994, l'informaticien américain Nick Szabo en a proposé une définition pour ce qui était encore à cette époque une notion fantaisiste, soit : Un protocole de transactions informatisées qui exécute les termes d'un contrat. Entre autres, ils s'appuient sur des instructions inscrites dans un code informatique pour auto-exécuter les dispositions d'un accord lorsque les conditions pré-déterminées sont réunies. On relève ainsi deux étapes : vérification puis exécution. Ils sont donc déterministes et s'exécutent toujours « correctement » : 
+
+Si l'événement X se produit, alors Y se réalisera.
+
+Point important, ce ne sont pas des contrats légaux, mais plutôt un code permettant aux systèmes d’exécuter un contrat légal. Donc tout type de contrat (tels des contrats-cadre, contrats de société, contrats de royalties, des pactes d’actionnaire, des gages,etc) peut être traduit en contrat intelligent, pourvu que les différentes parties s'entendent sur la définition du contrat.
+
+Vitalik Buterin, développeur et écrivain originaire de Russie, a contribué à la mise en place du Bitcoin en tant qu'écrivain. Vers 2013, les limitations de programmation de la blockchain l'on poussé à se pencher sur l'idée d'une blockchain plus malléable. M. Buterin entreprit de construire la deuxième blockchain publique appelée Ethereum. Comme les autres blockchain, elle permet l'utilisation d'une devise, mais fut la première à être particulièrement apte à gérer des prêts ou des contrats (elle repose sur une machine virtuelle dont le jeu d'instructions est turing-complet).
+
+Un contrat intelligent est identifié par une adresse du réseau Blockchain. Dans Ethereum, ils permettent de valider des transactions sans avoir recours à des tiers de confiance, éliminant ainsi la forte dépendance vis-à-vis de ces intermédiaires traditionnels. Les contrats intelligents peuvent aussi jouer le rôle de certificat numérique, en incluant une liste de différentes formes d'identificateurs associés à la clé publique du propriétaire du contrat.
+
+Ethereum permet aussi la création d'applications distribuées (DApps). Une application distribuée fonctionne de manière distribuée comme son nom l'indique et elle n’a pas besoin d’autorité centrale pour fonctionner, elle rend possibles des interactions directes, de pair à pair, entre utilisateurs, via des contrats intelligents.
+
+Dans cet exemple, deux parties, Alice et Bob, procèdent à un échange financier spéculatif. Les parties déposent chacune un montant égal de la cryptomonnaie désignée avant de faire des paris opposés sur le cours d'une action en bourse à un moment ultérieur. Alice pense que le cours sera supérieur à une estimation fournie, tandis que Bob pense qu'il sera inférieur.
+
+Lorsque la date limite arrive à échéance, le cours de l'action est interrogé par référence à une autorité de tarification externe (par exemple, la bourse concernée elle-même, cette référence étant codée dans le contrat intelligent). Selon le cours de l'action à ce moment-là, Alice ou Bob reçoit la totalité de la somme d'argent misée conjointement.
+
+Voici le code du contrat intelligent:
+data alice,bob
+data deadline, seuil
+
+
+def determine_outcome():
+
+D'une façon générale, le contrat intelligent est une adaptation informatisée, transparente et intègre d'un contrat. On peut donc envisager de l'adapter à n'importe quel type de contrat existant actuellement. Certains domaines ont déjà l'objet d'études d'adaptation de tels contrats intelligents, tels que :
+
+
+
+
+Dans leur forme la plus pure, les contrats intelligents cherchent à tirer parti de la nature immuable et de confiance de la blockchain pour favoriser des accords pair-à-pair désintermédiés qui sont appliqués automatiquement par le code informatique. Certains penseurs comme Marcel Gauchet ou Pierre Rosanvallon du Collège de France avaient souligné la nécessité de redonner plus de pouvoirs aux citoyens. 
+
+C’est un peu l’idée sous-jacente des contrats intelligents, des données sont validées et exécutées en-dehors de tout contrôle extérieur, ainsi nul besoin de se méfier de l'autre partie pour réaliser des transactions. De plus, ce processus de désintermédiation est plus efficace grâce à la blockchain qui gère tous les aspects critiques de la transaction : depuis l'implémentation jusqu'à l'audit, en passant par la supervision et l'archivage. Ils permettent également la réduction des frais de transaction et des frais de justice ainsi que des frais liés à l'important délai pendant lequel un intermédiaire traditionnel traiterait et authentifierait la transaction. De même, le processus de négociation est sensiblement accéléré puisque le système, débarrassé d'une partie de la gestion, se focalise uniquement sur quelques éléments clés.
+
+Ils offrent également, grâce à la blockchain une plus grande transparence et peuvent fournir au besoin un plus grand anonymat. Voici deux cas où la transparence et l’anonymat trouvent leur intérêt :
+
+
+
+Les contrats intelligents sont légitimés par leur fonctionnement exact, automatisé, sans aucune possibilité d'arrêt, de censure ou d'interférence de tiers. L'automatisation, qui implique moins d'interventions humaines nécessaires pour créer et exécuter un contrat, assure également une efficacité accrue. Autre intérêt, la possibilité de se dispenser d’intermédiaires et de l’exécution par un tribunal limite le risque judiciaire.
+
+Dans le cas d’une vente aux enchères en ligne, un intermédiaire centralisé est nécessaire pour faciliter la communication entre enchérisseurs et commissaires-priseurs. Les frais de facturation de cet intermédiaire augmentent le coût de transaction. De plus, dans une enveloppe scellée, les soumissionnaires n’ont pas la possibilité de s’assurer que le soumissionnaire principal ne divulgue jamais le prix de leur offre. Concernant l’intermédiaire, celui-ci peut-être supprimé grâce à la blockchain. En ce qui concerne le problème de divulgation, c’est le contrat intelligent qui permettra la sérénité du soumissionnaire, en effet via certaines règles sont écrites dans le smart deal et ne peuvent être ouvertes avant la date limite.
+
+L’utilisation de contrats intelligents offre des moyens technologiques pour atténuer la complexité de l'utilisation de la blockchain et leurs propriétés auto-exécutoires permet d'établir les responsabilités et de régler les litiges automatiquement.
+
+On peut donc voir les contrats intelligents comme des mécanismes novateurs de sécurité, de responsabilité et de facturation. C'est notamment le cas pour répondre au nouveau besoin de traçabilité et de responsabilité des données lié au RGPD.
+
+Dans les réseaux sociaux, une émulation via un système de crédits permet d'améliorer la société. Ces crédits, basés sur les contrats intelligents, permettent, par la décentralisation, l'inviolabilité, la transparence et l’intégrité de la notation, d'encourager les personnes à participer activement. C'est par exemple le cas de la communauté .
+
+Dans l'Internet des Objets les contrats intelligents ont aussi leur place. Certains permettent d'interagir avec des objets, de la même manière que les pilotes matériels permettent aux applications d'interagir avec des périphériques matériels. Lorsque nous affirmons que les objets interagissent avec une blockchain ou un contrat intelligent, il est toujours sous-entendu que cela se fait via une passerelle de confiance.
+
+Dans cet univers, le contrat intelligent pourra faciliter le partage d'informations entre les périphériques, mais également permettre aux utilisateurs d'automatiser les flux de travail (particulièrement ceux qui sont longs), de manière cryptographique et véridique. Le champ d'application est très large, il serait possible par exemple de mettre en place des véhicules de locations qui s'auto-géreraient, ils se proposeraient en location, réceptionneraient des paiements et pourraient même commander et réceptionner des fournitures ou des réparations. Autre exemple, si un emprunt est contracté pour acheter une voiture et que le propriétaire ne fait pas les paiements, le contrat intelligent peut automatiquement invoquer un privilège, ce qui rend le contrôle des clés de la voiture à la banque. Cela s'applique de la même façon à l'immobilier. Les chaînes d'approvisionnement sont gênées par un système de contrats basé sur du papier (perte, vol, rédaction), les contrats intelligents sont numériques et automatiques.
+
+Jusqu'à présent, les chercheurs ont démontré une capacité et une créativité terrifiantes en matière de violation des périphériques IoT. Ce problème peut être résolu par des protocoles consensuels de la blockchain, protégeant ainsi de la plupart des hackeurs malveillants. Chaque capteur forme son propre nœud sur une chaîne de blocs et enregistre la «possession» de l'appareil pour chaque capteur individuel. L'enregistrement immuable de la blockchain est idéal pour créer des historiques de réseaux fiables.
+
+Il est possible dans le cas de l'IoT d'améliorer la confidentialité des contrats intelligents en utilisant une blockchain publique en parallèle d'une blockchain privée, tout en facilitant la gestion du contrat intelligent en le complétant par un contrôle d'accès basé sur les attributs géré dans la blockchain.
+
+La blockchain est sûre, mais il peut arriver que l'on ait parfois besoin d'informations provenant de ressources externes. Cependant, la fiabilité des informations ne peut être garantie. Même sans malveillance il peut y avoir un risque, par exemple l'utilisation de l’horodatage utilisé comme condition de déclenchement pour effectuer des actions spécifiques, peut mener à des problèmes de sécurité et de fonctionnement à cause des fuseaux horaires.
+
+D'un point de vue logiciel, les contrats intelligents peuvent être faillibles comme tout programme s'ils comportent des erreurs de programmation. Ce fut le cas en 2016. Des organisations, labellisées DAO (Decentralized Autonomous Organizations), sont construites autour de l’utilisation des contrats intelligents. était l’une d'entre elles, elle utilisait un contrat intelligent pour gérer des fonds d’investissement  pour différents projets. The DAO essayait de fournir une sorte de fonds de capital-risque participatif, qui avait été lancé via la blockchain Ethereum et cofinancé via une vente symbolique en . Mais en , des parties inconnues ont exploité une vulnérabilité de code non remarquée et redistribué le tiers des fonds. Des Fuzzers ont été mis en place pour limiter les risques d'erreurs.
+
+Le caractère décentralisé des blockchain les rend presque invulnérables, mais pas totalement, on peut notamment citer l'attaque des 51%, qui consiste à posséder plus de 51% de la capacité de minage, ce qui induit la possibilité de pirater la blockchain. Effectivement, les blocs corrompus seront validés par une majorité.
+
+Les blockchain posent deux problèmes principaux actuellement : la rapidité et la complexité de calcul. Ethereum peut traiter 25 transactions par seconde dans son état actuel. Ces vitesses ne sont pas assez rapides pour être utiles pour les réseaux IoT avec des centaines voire des milliers d'appareils connectés fonctionnant et effectuant des transactions simultanément.
+
+L'adoption progressive des environnements d'exécution de confiance par la communauté de la blockchain, en les combinant avec les contrats intelligents dans un but de se passer des protocoles cryptographiques coûteux pour protéger les données privées dans des registres distribués, se heurte à un risque de perte de confidentialité et à des problématiques de vérifiabilité des exécutions des contrats intelligents dans les environnements d'exécution de confiance.
+
+Les fonctions traditionnelles de nombreux professionnels de la finance et avocats de commerce peuvent désormais être remplies par des contrats intelligents, mettant en péril leurs rôles généralement lucratifs. Mais il est très peu probable que des contrats intelligents éliminent le besoin de conseillers juridiques possédant une expertise des secteurs concernés par le contrat. Effectivement, on n'est pas certain que l'utilisateur a bien saisi tous les termes de son engagement avant de valider.
+
+En cas de catastrophes naturelles, il peut être fort utile que le contrat d'assurance s'exécute automatiquement dès que l'événement survient et que la condition liée à l'indemnité est remplie. Mais il serait difficile d'appliquer ces contrats sans aucune analyse, il n'y aurait pas de lien entre le monde physique et la blockchain.
+
+L'intégrité du consentement de l'utilisateur peut être remise en cause, le contrat intelligent peut ne pas refléter la volonté originale du contractant. La qualité du produit peut être différente de celle attendue. Il peut y avoir erreur sur le produit. L’erreur peut aussi porter sur la personne. De plus, le Code civil précise que le vendeur est tenu d’expliquer clairement ce à quoi il s’oblige. En l’absence d’implication humaine, la manifestation de cette volonté n’est pas aisée à identifier. Si un utilisateur souhaite réaliser un avenant des clauses du contrat, celui-ci sera bloqué par le caractère inaltérable de la blockchain, ce peut être très contraignant.
+
+Les blockchain ont aussi un aspect négatif pour l'environnement, en fonction de la taille et du fonctionnement, l’énergie consommée peut être assez intensive. On dit souvent que la blockchain Bitcoin avait une consommation d'électricité comparable à celle de l'Irlande en 2014, et a continué de croître.
+
+Les contrats intelligents et la valeur croissante des cybermonnaies ont attiré les cybercriminels à voler, blanchir de l'argent, demander des rançons et à effectuer des transactions illicites.
+
+Les contrats intelligents permettent également de lutter contre la corruption, dans les marchés publics, puisqu'ils sont décentralisés et inviolables.
+
+Le problème lorsque l'on réalise des transactions à l'international c'est la loi. Chaque pays dispose de ses propres lois et parfois même, comme aux Etat-Unis, chaque état. La blockchain se veut désintermédiée, mais il y a un risque que des transactions réalisées avec des contrats intelligents soient annulées faute de force exécutoire. Par ailleurs, étant donné que les contrats relèvent du droit privé, en cas de litige, il appartient aux tribunaux de déterminer les droits et obligations de chaque partie. Cependant, si un contrat intelligent devait subir une erreur de codage, les responsabilités et les sanctions à appliqués ne sont pas très claires.
+
+Pour des contrats juridiques, dans la plupart des pays, un mineur non émancipé ou un majeur protégé ne peuvent pas contracter. Or il existe un risque non négligeable que l'un deux puisse contracter sous l'anonymat d'internet avec une deuxième partie. Cela menace donc le caractère exécutoire de l'accord.
+
+Les contrats intelligents offrent des perspectives intéressantes, telles qu'une efficacité accrue due à la désintermédiation et en permettant à la blockchain de traiter tous les aspects critiques des transactions.
+
+La blockchain et les contrats intelligents constituent l'infrastructure de base pour la réalisation d'une société parallèle basée sur le .
+
+Les contrats intelligents peuvent être utilisés dans tous les versements étatiques comme une façon d'augmenter la transparence et d'éviter la surfacturation, puisque les appels d'offres et les contrats sont typiquement les moyens utilisés par la fraude et le détournement de fonds publics
+
+
+

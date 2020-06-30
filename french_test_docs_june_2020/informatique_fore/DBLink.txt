@@ -1,0 +1,42 @@
+﻿DBLink
+
+Dans un système de gestion de base de données (SGBD), tel qu'Oracle Database ou PostgreSQL, un DBLink, ou database link est un objet d'une base de données permettant d'exécuter des requêtes sur une autre base de données, qu'elle se trouve physiquement sur la même machine ou qu'elle soit distante.
+
+Un DBLink est un objet de schéma qui fait qu'Oracle se connecte à une base de données distante pour y accéder. C'est un pointeur local qui permet à l'utilisateur d'accéder aux objets d'une base de données distante.
+
+On distingue trois types de DBLinks :
+
+La syntaxe de visionnement des DBLinks déjà existant dans une base est :
+Une vue interne à Oracle, uniquement accessible à l'utilisateur SYS permet de visualiser la date de création ainsi que le mot de passe sous forme crypté.
+
+La syntaxe SQL de création d'un DBLink se présente comme suit :
+Où :
+
+
+Le nom du lien créé peut ne pas être libre : dans un système distribué de base de données, chaque base devrait avoir un nom global unique, qui l'identifie dans le système. Le nom du lien doit alors être le nom global de la base distante.
+
+Dans ce cas, sur la base de données distante, le paramètre d'initialisation dynamique "global_names", de type booléen, doit être positionné à 'true' (sa valeur par défaut est 'false').
+
+Le nom global de la base distante se trouve dans la vue du dictionnaire de données "GLOBAL_NAME", qui ne contient en général qu'une seule ligne et une seule colonne du même nom. Ce nom global comprend deux composants : le nom de la base et le nom du domaine, déterminés respectivement par les paramètres : 
+
+Note : le paramètre DB_DOMAIN est utilisé seulement lors de la création de la base de données, avec le paramètre DB_NAME. À partir de ce moment le nom global de la base est stocké dans le dictionnaire de données. Après la création, le changement du paramètre d'initialisation DB_DOMAIN n'a aucun effet sur le nom global de la base ou sur la résolution des noms de dblink. C'est pourquoi, pour changer le domaine dans un nom global de base de données, il faut changer le nom global lui-même, avec la commande :
+
+Après un tel changement il est souhaitable de modifier le paramètre DB_DOMAIN pour qu'il reflète le changement du nom de domaine avant le prochain redémarrage de la base.
+
+Pour déterminer si le nommage global est forcé sur une base de données, on peut, soit examiner le fichier de paramètres d'initialisation de la base, soit lancer la commande sql 'show parameter <nom_du_paramètre>', soit interroger la vue de dynamique v$parameter comme indiqué dans la requête qui suit :
+
+Pour visualiser un nom global de base de données, on utilise la vue du dictionnaire de données GLOBAL_NAME avec la requête suivante:
+
+Disposant d'une base locale appelée locale_db et souhaitant pouvoir se connecter, depuis cette base locale, à la base distante distante_db. La définition du nom de service (alias) de la base distante dans le fichier tnsnames.ora de la machine locale se présente comme suit :
+
+Les analyses sur la base distante donnant :
+Pour créer un DBLink dans ce contexte, l'utilisateur pourra utiliser l'une des deux syntaxes suivantes: 
+
+Ou 
+
+Pour ensuite utiliser un lien de base de données, il suffit de préciser le lien utilisé, précédé du symbole '@', avant l'identifiant de l'objet distant.
+
+Par exemple, souhaitant obtenir la liste des codes clients (CLIENT_CODE de schéma MYSCHEMA) de la table CLIENTS se trouvant sur une autre instance (accessible par le lien nommé "MY_DB_LINK"):
+
+
+

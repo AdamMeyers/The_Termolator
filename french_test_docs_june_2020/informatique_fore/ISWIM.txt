@@ -1,0 +1,22 @@
+﻿ISWIM
+
+ISWIM est un langage de programmation abstrait (ou plus précisément une famille de langages de programmation) conçu par Peter J. Landin et décrit dans un article célèbre intitulé "Les 700 prochains langages de programmation" et publié dans les "Communications of the ACM" en 1966. Son acronyme ISWIM signifie "« If you See What I Mean »" (« Si vous voyez ce que je veux dire »).
+
+ISWIM a fortement influencé la conception des langages de programmation qui l'ont suivi, en particulier dans le domaine de la programmation fonctionnelle, de à Haskell, en passant par ML et et leurs successeurs, et dans le domaine de la programmation dataflow comme et Lustre. En fait, dans son article, Landin définit les grands principes de ce que devaient être, en 1965, les langages de programmation du futur. À cette époque, ALGOL 60, Lisp et PL/1 venaient de naître. Fortran et Cobol étaient les seuls langages de programmation largement utilisés.
+
+ISWIM est un langage impératif à noyau fonctionnel (« non procédural » comme on l'appelait à l'époque ou « dénotationnelle » comme l'appelle Landin ou encore « descriptif » ou « déclaratif » comme Strachey appelle les langages de ce type) ; en fait c'est une syntaxe lisible du lambda-calcul à laquelle sont ajoutés des variables mutables et des définitions. Grâce au lambda-calcul, ISWIM comporte des fonctions d'ordre supérieur et une portée lexicale des variables. Le but est de décrire des concepts en fonction d'autres concepts.
+
+La sémantique opérationnelle de ISWIM est définie à l'aide de la machine abstraite SECD et utilise l'appel par valeur. L'un des buts d'ISWIM est de ressembler autant que possible à la notation mathématique, poussant Landin à abandonner les points-virgules d'ALGOL 60 comme séparateurs d'instructions et les begin ... end des blocs et à les remplacer par des indentations.
+
+Au niveau de la notation, une innovation d'ISWIM est son utilisation de clauses where. Un programme de ISWIM est ainsi une expression unique agrémentée de clauses where, qui sont des définitions auxiliaires, notamment des équations entre variables, des expressions conditionnelles et des définitions de fonctions. 
+
+Une autre caractéristique d'ISWIM est la possibilité de définir des types de données éventuellement récursifs en utilisant des sommes de produits. Ceci se fait en utilisant une description dans une syntaxe un peu bavarde proche du langage naturel ; mais hormis cette notation, on se rapproche des types de données algébriques que l'on trouve dans les langages fonctionnels contemporains. D'autre part, les types des variables d'ISWIM ne sont pas déclarés explicitement, quoiqu'il semble sans que ce soit explicitement indiqué dans l'article original que Landin pensait, à la différence d'ALGOL, à un typage dynamique, comme en LISP ; mais on ne doit pas rejeter "a priori" l'idée d'une certaine forme d'inférence de types
+
+Aucune mise en œuvre directe de ISWIM n'a été tentée, mais Art Evan avec PAL et John C. Reynolds avec ont tenté d'inclure la plupart des concepts de Landin en adoptant tous deux un typage dynamique. D'autre part, le langage ML de Robin Milner peut être considéré comme un ISWIM avec inférence de type.
+
+Une autre héritage consiste à dépouiller ISWIM de ses traits impératifs (affectation et opérateur J) et à en faire un langage purement fonctionnel. Il devient alors possible de passer de l'appel par valeur à l'évaluation paresseuse. Cela mène aux langages de programmation SASL, KRC (Kent Calculator récursive), Hope, Miranda, Haskell et .
+
+Dans son article Landin a jeté les bases de trois concepts pour définir proprement des langages de programmation : la syntaxe abstraite, l'axiomatisation et les machines abstraites.
+
+
+

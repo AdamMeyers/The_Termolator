@@ -1,0 +1,22 @@
+﻿Guerre d'éditeurs
+
+Il existe une tradition datant du début des années 1970 (et donc dès les débuts du travail courant sur écran d'ordinateur) chez les programmeurs, qui consiste à défendre son logiciel éditeur de texte favori avec une passion qui n'est pas sans rappeler à certains celle du fanatisme religieux. De nombreuses "flamewars" se sont déroulées entre des groupes qui s'insultaient les uns les autres en soutenant que l'éditeur de texte de leur choix était l'outil parfait pour l'édition.
+
+Les guerres d'éditeurs éclatent habituellement entre les inconditionnels d'Emacs et ceux de vi, les deux éditeurs de texte les plus populaires sur les systèmes UNIX. . Plusieurs sont familiers des deux, en tout cas, suffisamment pour participer au débat .
+
+Cette rivalité entre les deux éditeurs est prise au sérieux par certains, et tournée en dérision par d'autres. Richard Stallman, par exemple, a inventé toute une phraséologie autour d'Emacs, parodiant une religion dont le but serait de célébrer cet éditeur et de décourager les utilisateurs de vi. Il s'est ainsi autoproclamé "Saint IGNUcius", un saint de l' "Église" Emacs. Emacs dispose d'ailleurs de son propre groupe de discussion sur l'arborescence alt.religion : news:alt.religion.emacs.
+
+De leur côté, les adeptes de vi ont créé le "Culte de Vi", que certains utilisateurs d'Emacs appellent « clairement une misérable tentative pour singer leurs maîtres ».
+
+
+
+
+Les guerres d'éditeurs n'ont pas épargné les mainframes, et c'est même sur ces derniers qu'elles ont commencé. Si dans le monde du full-screen un consensus de présentation a été rapidement adopté menant à des éditeurs cousins comme EDGAR ("EDiting Graphically And Recursively", le pionnier), XEDIT ("Xavier's EDITor", sous VM/CMS) et l'éditeur d'ISPF (sous MVS/TSO), une bataille a fait rage pendant dix ans concernant les commandes UP et DOWN sur chaque éditeur : UP devait-il faire monter le pointeur dans le texte, ou au contraire faire monter le texte sur l'écran ? Une remarque finit par privilégier l'un des points de vue : puisque dans tous les éditeurs, TOP plaçait au début du texte et BOTTOM à la fin, était-il plus logique que UP rapproche de TOP ou de BOTTOM ? La réponse devenait dès lors évidente et tous les éditeurs de mainframes IBM s'alignèrent alors sur ce choix.
+
+Les éditeurs pour mainframes étaient conceptuellement très différents des éditeurs interactifs, car il n'était pas question dans le premier contexte de solliciter l'unité centrale à chaque touche pressée. Il fallait se contenter des possibilités d'interaction locales - assez riches toutefois - de l'unité de contrôle associée à l'écran. Pour cette raison, il était aussi difficile de passer de "Vi" à "XEDIT" que de "XEDIT" à "Vi", ce qui créa une nouvelle guerre d'éditeurs entre éditeurs mainframes et éditeurs totalement interactifs. Des clones d'XEDIT furent créées pour le contexte interactif, par exemple "GEDIT" ou "The Hessling Editor". Il était en revanche structurellement impossible de porter "Vi" sur mainframe, sauf à le programmer dans le langage de l'unité de contrôle elle-même : les outils pour le faire n'étaient pas disponibles, et la mémoire de ces unités de contrôle de toute façon trop petite pour y porter tout Vi, a fortiori EMACS.
+
+Note : un éditeur nommé "xedit" fait partie des "samples" livrés avec X Window. Il n'a pas de rapport avec "XEDIT".
+
+
+
+

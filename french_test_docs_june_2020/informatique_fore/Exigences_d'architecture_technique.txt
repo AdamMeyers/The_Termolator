@@ -1,0 +1,44 @@
+﻿Exigences d'architecture technique
+
+Une architecture physique ou architecture technique est conçue de manière à répondre à des exigences.
+
+Ces exigences recouvrent de nombreuses notions :
+
+Il s'agit des fonctionnalités de l'application.
+
+La plage d’ouverture du service précise les périodes de temps durant lesquelles l’application doit être active.
+
+Par exemple : 
+La disponibilité indique le taux de disponibilité cible de l’application durant les plages d’ouverture.
+
+Par exemple :
+Des fortes exigences de disponibilité demandent la mise en œuvre d'architecture de Haute disponibilité.
+
+On distingue l'incident local et le désastre site : l'incident est par exemple la perte d'un serveur, tandis que le désastre site est par exemple l'incendie du centre d'exploitation.
+
+Les exigences doivent s'exprimer en RTO et RPO.
+Le RTO (Recovery Time Objective) est le temps maximum admissible pour reprendre le service.
+Le RPO (Recovery Point Objective) est la perte maximale de données acceptable après redémarrage.
+Les objectifs de RPO et le RTO peuvent être différents selon qu'il s'agit d'un incident ou d'un désastre.
+
+Les exigences de sécurité couvrent plusieurs domaines:
+
+Exigences liées aux éléments suivants
+
+La scalabilité est la capacité qu’a l’architecture pour évoluer en cas de montée en charge si nécessaire.
+
+Une application ne peut pas accumuler des données sans limite. Il faut obligatoirement prévoir des mécanismes de purge ou d’archivage.
+Fixer la durée de l’historique conservé en ligne.
+Quand les anciennes données ne doivent plus être conservées en ligne, quelles sont les exigences ? Purge des données ? Transfert des données dans un système d’archivage ? Archivage sur bande magnétique ? 
+Si les données sont archivées sur bande, quel est le temps souhaité maximal pour pouvoir accéder à ces données ?
+Prendre en compte les exigences légales :
+
+Pour les applications sensibles, on traitera le cas des demandes (installation de version correctives, reparamétrage) qui peuvent devoir être faite sans interruption de service (installation et reparamétrage « à chaud »).
+
+Exigences concernant des fonctions destinées à améliorer les interactions avec les utilisateurs.
+Exemples :
+
+Faculté de pouvoir exploiter et superviser le bon fonctionnement de l'application, d'analyser le bon fonctionnement (et le mauvais).
+
+
+

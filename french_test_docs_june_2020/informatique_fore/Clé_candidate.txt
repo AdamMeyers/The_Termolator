@@ -1,0 +1,10 @@
+﻿Clé candidate
+
+Dans le domaine des bases de données, une clé candidate est un ensemble des données permettant d'indexer chaque ligne d'une table donnée de manière différenciée.
+
+Une même base de données peut posséder plusieurs clés candidates distinctes. La clé primaire appartient nécessairement à l'ensemble des clés candidates. Une table sans lignes en doublon possède nécessairement une ou plusieurs clés candidates. Une table avec des lignes en doublon ne possède aucune clé candidate. Lorsqu'une table ne possède aucune clé candidate, ou que les clés candidates sont peu adaptées (par exemple très longues), le gestionnaire de la base peut être amené à ajouter des données d'indexation arbitraires à la table, créant ainsi une clé artificielle.
+
+Une clé choisie parmi les clés candidates pour indexer une base est appelée une clé naturelle.
+
+
+

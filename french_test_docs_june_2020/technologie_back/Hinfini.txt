@@ -1,0 +1,37 @@
+﻿Hinfini
+
+Dans la théorie de la commande dans le domaine de l'automatique, la synthèse Hinfini ou "H" est une méthode qui sert à la conception de commandes optimales.
+
+La synthèse "H" est une méthode qui sert à la conception de commandes optimales. Il s'agit essentiellement d'une méthode d'optimisation, qui prend en compte une définition mathématique des contraintes en ce qui concerne le comportement attendu en boucle fermée. La commande Hinfini a pour principal avantage la capacité d'inclure dans un même effort de synthétisation les concepts liés à la commande classique et à la commande robuste.
+
+Le mot « optimal » est utilisé dans son sens strictement mathématique car la commande synthétisée est celle qui minimisera l'effet des entrées/sorties du système, ce qui peut être vu comme "non optimal" par les opérateurs (l'optimisation étant relative à l'objectif recherché).
+
+Le « infini » dans Hinfini signifie que ce type de commande est conçu pour imposer des restrictions de type minimax au sens de la théorie de la décision (minimiser la perte maximale possible) dans le domaine fréquentiel. La norme Hinfini d'un système dynamique est l'amplification maximale que le système peut exercer sur l'énergie du signal d'entrée. Dans le cas d'un système MIMO, ceci équivaut à la valeur singulière maximale du système, ce qui, dans le cas SISO, se traduit par la valeur maximale de l'amplitude de sa réponse fréquentielle.
+
+Considérant le système représenté par la forme standard suivante:
+
+Le système "P" possède deux entrées:
+et deux sorties :
+
+Toutes ces données sont d’une façon générale des vecteurs et P et K sont des matrices.
+
+Le système précédent peut s’écrire sous la forme:
+
+Il est alors possible d’exprimer la relation entre "z" et "w" par:
+
+Où formula_4 est appelé la ‘’Transformation Linéaire Fractionnaire’’ (LFT) définie par:
+
+L’objectif de la synthèse formula_6 est de trouver le contrôleur formula_7 tel que la norme formula_6 de formula_9 soit minimum. 
+La norme formula_6 de la matrice de fonctions de transfert formula_9 est définie par:
+
+où formula_13 est la valeur singulière maximale de la matrice formula_14.
+
+Il existe plusieurs méthodes permettant le calcul et l’optimisation de la norme formula_6 :
+
+La synthèse de commande formula_6 est depuis le début des années 2000 utilisée dans le cadre du contrôle de structures flexibles des systèmes spatiaux comme les satellites ou les lanceurs. Ces systèmes possèdent des modes de flexions proches de la bande passante du contrôleur et dont les caractéristiques sont incertaines (fréquence, gain, amortissement). La méthode formula_6 permet de garantir théoriquement une certaine robustesse de la stabilité du système (via la marge de module) tout en assurant les performances de réjection de perturbation.
+
+Sur Ariane 5, le pilotage basé formula_6 a ainsi permis de garantir la stabilité du lanceur tout en optimisant la commande de braquage de la tuyère, faisant économiser plusieurs centaines de kilo sur le liquide hydraulique de commande.
+
+
+
+

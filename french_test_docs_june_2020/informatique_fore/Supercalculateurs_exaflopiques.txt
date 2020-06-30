@@ -1,0 +1,200 @@
+﻿Supercalculateurs exaflopiques
+
+Les supercalculateurs exaflopiques ("Exascale computing" en anglais) sont des ordinateurs de type supercalculateur fonctionnant selon une architecture massivement parallèle et dont la puissance de calcul dépasse 10 flops. La machine décompose les tâches à effectuer en millions de sous-tâches, dont chacune d'entre elles est ensuite réalisée de manière simultanée par un processeur.
+
+Il n'existe pas de machine Exascale en 2020. Une course à la puissance est en cours avec des programmes au États-Unis, en Europe, en Chine et au Japon. Les premières livraisons avec cette capacité de calcul sont annoncées pour 2021 par Cray. 
+
+Pour atteindre le niveau Exascale, les systèmes informatiques auront besoin d'une refonte complète sur la façon de relever les défis dans les domaines de la consommation énergétique, de la puissance, de l'efficacité du calcul, de la résilience et de la tolérance aux pannes, du mouvement des données à travers le réseau et, enfin, des modèles de programmation.
+
+Les supercalculateurs exaflopiques ("Exascale computing") sont des superordinateurs ("High-Performance Computing ou HPC") qui ont une puissance de calcul de l'ordre 10 flops (1 exaflop = 1 milliard de milliards d’opérations en virgule flottante par seconde) .
+Ces machines sont une collection de microprocesseurs fortement connectés entre eux, dont chacun d'eux se caractérise par une fréquence d’horloge élevée et se compose de plusieurs Cores de calcul. Ainsi, pour concevoir des superordinateurs très performants, les constructeurs jouent simultanément sur le nombre de microprocesseurs, le nombre de cœurs, la fréquence d’horloge et l'association des processeurs graphiques.
+L'idée fondamentale derrière le HPC est le calcul en parallèle qui consiste à distribuer plusieurs segments d’une équation complexe sur plusieurs processeurs afin de les calculer simultanément.
+Une capacité ultra élevée de calcul nécessite également une capacité ultra élevée de stockage, qui, atteint plusieurs pétaoctets (10 pétaoctets sur Summit de IBM par exemple). En plus de la vitesse de pointe, ils doivent disposer aussi d'un environnement logiciel qui facilite son utilisation efficace et productive.
+
+Les coûts de recherche et développement pour créer un système informatique exaflopique ont été estimés par de nombreux experts à plus d'un milliard de dollars américains, avec un coût d'exploitation annuel de plusieurs dizaines de millions de dollars. 
+
+Les deux applications principales des supercalculateurs sont le Calcul Haute Performance ("CHP, High Performance Computing" en anglais), et l’analyse des données complexes. Initialement, l'utilisation des supercalculateurs était limitée à certaines applications particulières telles que les simulations simples, l'ingénierie, le pétrole et le gaz en raison du coût énorme des systèmes HPC. Puis elle s'est élargie dans divers domaines tels que l'exploration de données, les recherches sur le climat, la santé, l'automobile, la physique, l'astrophysique, la dynamique des fluides de calcul (CFD) ou encore la nanotechnologie moléculaire. C'est donc un grand potentiel pour réaliser des découvertes à travers un large spectre de domaines scientifiques afin de nous aider à améliorer notre compréhension du monde où nous vivons.
+
+Les progrès dans la compréhension de certains problèmes scientifiques sont souvent associés à des progrès dans les capacités informatiques. Des capacités supérieures, au-delà des systèmes Petascale, aideront les scientifiques à concevoir des modèles et à exécuter des simulations de problèmes plus complexes. La simulation numérique est une démarche essentielle de la recherche scientifique en complément de la théorie et de l’expérimentation mais aussi une partie prenante des cycles de conception et de production dans de nombreuses filières industrielles.
+
+Les grandes puissances dans le domaine comme les États-Unis, la Chine, l'Europe et le Japon rivalisent entre elles pour se doter des machines les plus puissantes. Les enjeux relèvent de la politique de souveraineté et de sécurité individuelle et collective. La politique énergétique, la politique de prévention des risques naturels et la politique de défense s’appuient sur les apports de la simulation et du calcul haute performance.
+
+Ces machines permettent une conception et une optimisation multidisciplinaires, réduisant le temps et les coûts de prototypage.
+
+Le CMOS(Complementary Metal Oxide Semiconductor) a permis aux performances des circuits microélectroniques de croître de façon exponentielle à coût constant.
+La fin d'une croissance exponentielle spectaculaire des performances d'un seul processeur marque la fin de la domination du microprocesseur unique en informatique. L'ère de l'informatique séquentielle doit céder la place à une ère où le parallélisme occupe la première place.
+
+Bien que l'informatique haute performance ait bénéficié des mêmes avancées en matière de semi-conducteurs que l'informatique de base, les performances durables du système se sont améliorées encore plus rapidement en raison de l'augmentation de la taille du système et du parallélisme.
+Les cœurs du système devraient atteindre 100 millions sur les systèmes Exascale.
+
+Dans les années 1980, la superinformatique vectorielle dominait l'informatique haute performance, comme en témoignent les systèmes nommés du même nom conçus par Seymour Cray. Les années 1990 ont vu la montée du traitement massivement parallèle (MPP : Massively Parallel Processing) et des multiprocesseurs à mémoire partagée (SMP : Shared Memory Multiprocessors) construits par Thinking Machines Corporation, Silicon Graphics et d'autres. À leur tour, des grappes de produits (Intel / AMD x86) et de processeurs spécialement conçus (comme BlueGene d'IBM) ont dominé les années 2000. La décennie suivante, ces clusters sont complétés par des accélérateurs de calcul sous la forme de coprocesseurs d'Intel et d'unités de traitement graphique (GPU) de Nvidia; ils comprennent également des interconnexions à haut débit et à faible latence (comme Infiniband). Les réseaux de stockage (SAN) sont utilisés pour le stockage de données persistantes, avec des disques locaux sur chaque nœud utilisé uniquement pour les fichiers temporaires. Cet écosystème matériel est optimisé pour les performances en priorité, plutôt que pour un coût minimal. Au sommet du matériel du cluster, Linux fournit des services systèmes, complétés par des systèmes de fichiers parallèles (tels que Luster) et des planificateurs de lots (tels que PBS et SLURM) pour la gestion des travaux parallèles. MPI et OpenMP sont utilisés pour le parallélisme entre nœuds et internoeuds, augmentés de bibliothèques et d'outils (tels que CUDA et OpenCL) pour une utilisation en coprocesseur. Des bibliothèques numériques (telles que LAPACK et PETSc) et des bibliothèques spécifiques au domaine complètent la pile logicielle. Les applications sont généralement développées en FORTRAN, C ou C++.
+
+Un développement significatif du modèle, une refonte de l'algorithme et une réimplémentation des applications scientifiques, soutenus par un ou des modèles de programmation adaptés à l'exascale, seront nécessaires pour exploiter la puissance des architectures exascales. Il s'agira de systèmes basés sur une architecture homogène ou hétérogène. Par conséquent, nous avons besoin d'un modèle de programmation hybride adaptatif qui peut traiter à la fois des systèmes d'architecture homogènes et hétérogènes.
+
+La course mondiale à la construction de superordinateurs toujours plus grands et plus puissants a conduit au fil des années à la création d'une pléthore d'architectures différentes et a entraîné diverses «révolutions». Cette course a été enregistrée au fil des années dans la liste des supercalculateurs TOP500, où les supercalculateurs les plus puissants construits jusqu'à présent sont classés en fonction des performances maximales en virgule flottante (Site internet TOP500).
+En général, la vitesse des superordinateurs est mesurée et comparée en "FLOPS" (opérations en virgule flottante par seconde), et non en termes de "MIPS" (en millions d'instructions par seconde), comme c'est le cas avec les ordinateurs à usage général.
+Aucun nombre unique ne peut refléter les performances globales d'un système informatique, mais l'objectif du "Linpack benchmark" est d'estimer la vitesse à laquelle l'ordinateur résout les problèmes numériques et il est largement utilisé dans l'industrie.
+La mesure FLOPS est soit citée sur la base des performances théoriques en virgule flottante d'un processeur (dérivées des spécifications du processeur du fabricant et affichées comme "Rpeak" dans les listes TOP500), ce qui est généralement impossible lors de l'exécution de charges de travail réelles, ou du débit réalisable, dérivé de les benchmarks LINPACK et affichés comme "Rmax" dans la liste TOP500.
+Les performances de LINPACK donnent une indication des performances pour certains problèmes du monde réel, mais ne correspondent pas nécessairement aux exigences de traitement de nombreuses autres charges de travail de supercalculateur, qui peuvent par exemple nécessiter plus de bande passante mémoire, ou peuvent nécessiter de meilleures performances informatiques entières, ou peuvent avoir besoin d'un système "I/O" hautes performances pour atteindre des niveaux de performances élevés.
+
+Pour atteindre le niveau Exascale, les systèmes informatiques auront besoin d'une refonte complète sur la façon de relever les défis dans les domaines du coût, de la puissance, de l'efficacité du calcul, de la résilience et de la tolérance aux pannes, du mouvement des données à travers le réseau et, enfin, des modèles de programmation.
+
+Depuis les années 90, la croissance rapide des performances des microprocesseurs a été rendue possible grâce à trois moteurs technologiques clés : la mise à l'échelle de la vitesse des transistors, les techniques de microarchitecture et les mémoires caches.
+Vers 2004, les puces ont cessé de s'accélérer lorsque les limitations thermiques ont mis fin à la mise à l'échelle des fréquences (également appelée mise à l'échelle de Dennard).
+La vitesse ne pouvant plus augmenter, les progrès en miniaturisation ont été mis au service du parallélisme massif. Chaque microprocesseur contient plusieurs cœurs qui sont des unités de traitement capables de travailler de manière autonome et en parallèle.
+Pour augmenter la puissance des supercalculateurs, la tendance est à la multiplication des cœurs de calcul au sein des processeurs.
+
+De nouveaux appareils puissants et écoénergétiques basés sur l'architecture à plusieurs cœurs ont été introduits. Certains privilégient l’utilisation des processeurs graphiques (GPU), qui servent normalement au rendu réaliste des jeux vidéo. La puissance de ces processeurs repose sur l’utilisation de plusieurs centaines de cœurs de calculs organisés selon une architecture simplifiée, l’architecture SIMD (pour Single Instruction Multiple Data), où toutes les unités exécutent en parallèle une même tâche, mais sur des données différentes. D’autres misent plutôt sur le parallélisme d’un grand nombre de cœurs généralistes – une centaine par processeur – dont les performances seront boostées par l’ajout d’unités dites vectorielles qui opèrent sur des registres de 512 bits au lieu de 64 habituellement. On réalise ainsi huit fois plus de calculs par cycle. Cette nouvelle architecture proposée par Intel a été baptisée MIC (Many Integrated Cores). Les ou les MIC jouent ainsi le rôle d’accélérateur de calcul et permettent d’améliorer l’efficacité énergétique.
+
+The National Strategic Computing Initiative (NSCI) propose des axes de recherches stratégiques, le premier étant d'accélérer la livraison d'un système informatique exascale. Cet objectif peut être atteint sur la base de l'évolution continue de la technologie des transistors CMOS et des technologies plus récentes comme la photonique au silicium et l'intégration 3D. L'émergeance d'un dispositif basse tension à haute performance pourrait considérablement assouplir les contraintes de production d'énergie et de chaleur qui limitent le calcul.
+
+Dans le régime de calcul Exascale, le coût énergétique des mouvements de données entre la mémoire et le pipeline FPU devrait dépasser le coût d'une opération en virgule flottante, nécessitant des interconnexions très écoénergétiques, à faible latence et à large bande passante pour les échanges de données entre des centaines de milliers de processeurs. Il faudra pour cela intégrer dans un seul et même de ses composants électroniques plusieurs fonctions comme les mémoires et les liaisons de communication.
+L'un des projets consiste à réduire la distance physique entre les composants et de s'assurer que les éléments de calcul exploitent pleinement la localité physique avec le stockage en mémoire.
+
+L'opération la plus coûteuse est le mouvement des données, du point de vue de la puissance et des performances, le déplacement des données du CPU vers le haut à travers la hiérarchie de la mémoire, y compris vers le stockage persistant et le réseau.
+La minimisation du mouvement des données et la réduction de la consommation d'énergie dépendent également des nouvelles technologies de mémoire, y compris la mémoire du processeur, la mémoire empilée et les approches de mémoire non volatile.
+
+La SRAM peut être intégrée à une logique CMOS hautes performances, permettant une intégration plus rentable de grandes quantités de mémoire logique par rapport à la DRAM et de flash sur la même puce.
+
+Le réseau de communication d'un supercalculateur interconnecte des milliers de nœuds, un nœuds étant la brique de base d’un superordinateur constitué d'un assemblage de plusieurs microprocesseurs. Pour les machines exaflopiques, il faudra cette fois relier entre eux dix fois plus de nœuds que les machines pétaflopiques. La façon dont ces éléments informatiques sont connectés les uns aux autres (topologie du réseau) a un fort impact sur de nombreuses caractéristiques de performance.
+Il existe de nombreuses topologies possibles pour construire des systèmes parallèles, tels que le tore, l'arbre classiques ou encore le Dragonfly.
+Pour être efficace en Exascale, les communications devront s'effectuer de façon complètement autonome sans faire intervenir les cœurs des processeurs dédiés aux calculs. L'enjeu est de développer de nouvelles architectures de réseaux d’interconnexions intimement intégrés aux nœuds de calcul.
+
+L'infrastructure de refroidissement est généralement conçue pour un fonctionnement aux puissances maximales des systèmes HPC déployés, réagissant mal au changement dynamique de la charge de travail des systèmes HPC installés.
+
+L’énergie électrique consommée par un calculateur est transformée en grande partie en chaleur (effet Joule), ce qui nécessite l’installation de systèmes de refroidissement qui sont également gourmands en énergie. Les concepteurs doivent innover pour concevoir des systèmes plus efficaces.
+
+Avec l'augmentation de la complexité et du nombre de nœuds dans les systèmes HPC à grande échelle au fil du temps, la probabilité que les applications connaissent des échecs d'exécution a considérablement augmentée. Les machines exaflopiques, qui contiendront plusieurs millions de cœurs de calcul, seront sujettes à plusieurs pannes par heure.
+La résilience systémique face aux défaillances régulières des composants sera essentielle sur les systèmes Exascale.
+
+Les erreurs matérielles, également appelées erreurs permanentes, dépendent d'une stratégie d'atténuation différente des erreurs logicielles. Les erreurs matérielles peuvent être partiellement corrigées en incorporant des composants redondants ou de rechange. Par exemple, la construction de cœurs supplémentaires dans une puce de processeur qui peut être mise en service pour remplacer tout processeur défaillant sur la puce.
+
+Le taux d'erreur doux (transitoire) fait référence aux erreurs transitoires qui affectent le temps moyen entre les interruptions d'application (MTTI). Le MTTI est tout échec qui nécessite une action corrective de l'application par opposition aux erreurs qui sont cachées à l'application par un mécanisme de résilience dans le matériel ou le logiciel système.
+
+Tous les protocoles basés sur des points de contrôle reposent sur l'enregistrement périodique de l'état d'exécution du système et le redémarrage à partir d'un état sans erreur antérieur après l'occurrence d'une défaillance.
+
+Daniel Dauwe, Sudeep Pasricha, Anthony A. Maciejewski et Howard Jay Siegel proposent une comparaison de quatre protocoles de résilience HPC qui utilisent le point de contrôle du système: «"Checkpointing and Restarting", Multilevel Checkpointing, "Message Logging", et "Redundancy":
+
+"Checkpointing" est la technique de résilience la plus couramment utilisée par les HPC.
+La mise en œuvre la plus générale de la technique de point de contrôle fonctionne en arrêtant l'exécution du système à intervalles réguliers pour enregistrer l'état de toutes les applications en cours d'exécution sur un périphérique de stockage permanent, généralement un système de fichiers parallèle;
+
+Étant donné que différents types de défaillances peuvent affecter un système informatique de différentes manières, toutes les défaillances ne nécessitent pas le redémarrage du système à partir d'un point de contrôle vers le système de fichiers parallèle. "Multilevel Checkpointing" exploite cela en fournissant au système plusieurs niveaux de point de contrôle. Un système utilisant un schéma de points de contrôle à plusieurs niveaux peut permettre des niveaux de compromis plus rapides (mais capables de récupérer de moins de types de défaillances) des points de contrôle vers la RAM ou vers le disque local d'un nœud et moins fréquents (mais capables de récupérer de plus de types de défaillances) points de contrôle vers le système de fichiers parallèles, chaque niveau offrant un compromis entre le temps requis par le système pour vérifier ou redémarrer, et le niveau de gravité de l'échec que le point de contrôle peut récupérer;
+
+"Message Logging" tente de fournir une résilience à un système en enregistrant les messages envoyés entre les processus pour créer des instantanés de l'exécution du système réparti sur la mémoire système. En cas de défaillance, le nœud défaillant est capable d'utiliser les messages stockés dans la mémoire des autres nœuds du système pour réduire la quantité de retouches effectuées par le système lors de la récupération;
+
+"Redundancy" améliore la fiabilité d'un système en exécutant des copies redondantes du même morceau de code. Il est possible d'implémenter une redondance dans le matériel ou le logiciel, mais dans les deux cas, la fiabilité améliorée du système se fait au détriment de l'utilisation de ressources supplémentaires.»
+
+Le parallélisme a provoqué une révolution pour améliorer les performances de l'ordinateur. Le parallélisme a été introduit dans les années 90 et est toujours à l'étude pour traiter les systèmes informatiques Exascale ciblés.
+
+Les calculateurs exaflopiques posséderont un million cœurs de calcul. Il s’agira d’abord de paralléliser à l’extrême les calculs, c’est-à-dire de les diviser en un très grand nombre de sous-calculs exécutés par les cœurs des processeurs. Il faudra répartir les tâches équitablement entre les cœurs pour permettre aux machines d’être performantes. Cela pose des questions en termes de programmation qui nécessite une nouvelle approche de programmation parallèle à faible consommation d'énergie pour atteindre des performances massives.
+Il faut des modèles de programmation plus expressifs capables de gérer ce procédé et de simplifier les efforts du développeur tout en prenant en charge un parallélisme dynamique et à grain fin. La programmation de tels futurs systèmes massivement parallèles et hétérogènes ne sera pas anodine, et les modèles de programmation et les systèmes d'exécution devront être adaptés et repensés en conséquence.
+
+Les chercheurs Usman Ashraf, Fathy Alburaei Eassa, Aiiad Ahmad Albeshri et Abdullah Algarni présente un hybride MPI + OMP + CUDA (MOC), un nouveau modèle de programmation parallèle massif pour les systèmes de cluster hétérogènes à grande échelle. Ils annoncent "une accélération asymptotique allant jusqu'à 30%-40% par rapport aux meilleures implémentations sur des processeurs multiprocesseurs hétérogènes et des NVIDIA accélérés."
+
+Le projet ECOSCALE vise à fournir une approche holistique pour une nouvelle architecture hiérarchique hétérogène à haut rendement énergétique, un environnement de programmation hybride MPI + OpenCL et un système d'exécution pour les machines exascale.
+
+Depuis novembre 2017, tous les 500 superordinateurs les plus rapides au monde exécutent des systèmes d'exploitation basés sur Linux.
+
+Les machines exaflopiques, qui contiendront plusieurs millions de cœurs de calcul, seront sujettes à une panne par heure. Les logiciels devront donc être capables de distribuer au mieux les tâches à effectuer entre tous les cœurs de calcul des machines en réduisant au maximum le mouvement des données. Ils devront également sauvegarder les données au cours de l’exécution des calculs pour que celles-ci ne soient pas perdues si un composant de la machine tombe en panne.
+
+L'informatique exascale exigera plus d'algorithmes dans au moins deux domaines: la nécessité d'augmenter les quantités de données locales pour effectuer des calculs efficacement et la nécessité d'obtenir des niveaux beaucoup plus élevés de parallélisme à grain fin, car les systèmes haut-de-gamme prennent en charge un nombre croissant de calculs fils. En conséquence, les algorithmes parallèles doivent s'adapter à cet environnement, et de nouveaux algorithmes et implémentations doivent être développés pour exploiter les capacités de calcul du nouveau matériel.
+
+Les nouvelles conceptions de logiciels et de systèmes d'exploitation devront prendre en charge la gestion des ressources hétérogènes et des hiérarchies de mémoire non cohérentes avec le cache, fournir aux applications et à l'exécution plus de contrôle sur les politiques de planification des tâches et gérer les espaces de noms globaux. Ils doivent également exposer des mécanismes de mesure, de prévision et de contrôle plus précis de la gestion de l'énergie, permettant aux ordonnanceurs de mapper les calculs aux accélérateurs spécifiques à la fonction et de gérer les enveloppes thermiques et les profils énergétiques des applications.
+
+Une collaboration devrait naître des spécialistes des mathématiques appliquées qui développent des outils de calcul numérique et des informaticiens spécialistes du calcul haute performance qui conçoivent des logiciels permettant d'exploiter au mieux les caractéristiques matérielles de ces nouvelles architectures massivement parallèles.
+
+De nouveaux langages et modèles de programmation au-delà de C et FORTRAN seront utiles. Les fonctionnalités de programmation trouvées dans Chapel et X10 ont déjà eu un effet indirect sur les modèles de programmes existants. Les modèles de programmation existants (tels que OpenMP) ont déjà profité des extensions récentes pour les exemples suivants: le parallélisme des tâches, les accélérateurs et l'affinité des "threads". Les langues spécifiques au domaine (DSL) ("Domain Specific Language") sont des langues qui se spécialisent dans un domaine d'application particulier, représentant un moyen d'étendre la langue de base existante en hébergeant des extensions DSL. Les DSL intégrés sont un moyen pragmatique d'exploiter les capacités sophistiquées d'analyse et de transformation des compilateurs pour les langages standards.
+
+La répartition de charge est un défi à prendre en compte. L'unité d'équilibrage de charge répartit la charge de traitement entre les systèmes informatiques disponibles afin que le travail de traitement soit effectué dans un minimum de temps. La répartition de charge peut être implémenté avec un logiciel, du matériel ou une combinaison des deux.
+
+La consommation d'énergie des superordinateurs pétaflopiques sont de l'ordre des mégawatts. Le supercalculateur Titan introduit en 2012 dans les laboratoires nationaux d'Oak Ridge avec une consommation de 9 mégawatt(MW) et puissance de pointe théorique de 27 pétaFLOPS à généré une facture d'électricité annuelle d'environ 9 millions de dollars.
+Les coûts très élevés incluant l’installation des infrastructures et d’entretien deviennent des facteurs prédominants dans le coût total de possession (TCO) d’un superordinateur.
+Le coût énergétique de ces plates-formes au cours de leur durée de vie utile, généralement de trois à cinq ans, pourrait rivaliser avec leur coût d'acquisition.
+
+Hayk Shoukourian dit : ""Power Usage Effectiveness (PUE)", définie comme une fraction de la quantité totale d'énergie utilisée par un centre de données et de l'énergie consommée par l'équipement informatique, est une mesure simple et pratique pour mesurer l'énergie relative / efficacité énergétique d'un centre de données. Par conséquent, afin de rendre un centre de données plus économe en énergie, et donc de réduire sa valeur PUE1, il faudrait s'attaquer à tous les facteurs influençant la consommation d'énergie: l'infrastructure de refroidissement (Pcooling); les systèmes HPC déployés jusqu'à la gestion des ressources et la planification et l'optimisation des applications (PIT); les pertes de puissance dues à la distribution et à la conversion électrique (PelectricalLosses); et à la consommation d'énergie diverse Pmisc". 
+formula_1
+
+L'évolution vers Exascale avec la technologie disponible sur les machines pétéflopiques entraîneraient des consommations de pointe de plus de 100 MW, avec une conséquence immédiate sur le coût de gestion et d'alimentation.
+La puissance requise par Exascale computing de dizaines de mégawatts rend la gestion de la consommation d'énergie beaucoup plus difficile par rapport aux systèmes qui prennent en charge de nombreux petits travaux.
+
+Pour concevoir des machines exaflopiques, il faut relever le principal défi qui est d’être capable de réduire les importants coûts de consommations énergétiques de ces plates-formes.
+Des pionniers du HPC tels que le Département américain de l'énergie (US DoE), Intel, IBM et AMD ont défini une limite maximale de consommation électrique d'une machine Exascale de l'ordre de 25-30 mégawatts. Avec par exemple une consommation d'énergie cible de 20 MW, nous aurions besoin d'une efficacité énergétique de ∼20 pJ / Op.
+
+Pour atteindre l'objectif de puissance attendue il est nécessaire d'avoir une amélioration significative de l'efficacité énergétique du système informatique global, entraînée par un changement à la fois dans la conception matérielle et le processus d'intégration.
+
+Bien que la concurrence mondiale pour le leadership en informatique avancée et en analyse de données se poursuit avec des programmes au Ėtats-Unis, en Europe, en Chine et au Japon; il existe une collaboration internationale active. Le projet international de logiciel Exascale (IESP) en est un exemple en informatique avancée. Grâce au financement de démarrage des gouvernements du Japon, de l'UE et des États-Unis, ainsi qu'à des contributions supplémentaires des parties prenantes de l'industrie, l'IESP a été créé pour permettre la recherche en science et ingénierie à ultra-haute résolution et gourmande en données jusqu'en 2020. Dans une série de réunions , l'équipe internationale de l'IESP a développé un plan pour un environnement de calcul commun et de haute qualité pour les systèmes pétascale / exascale.
+
+Les États-Unis sont un leader international de longue date dans la recherche, le développement et l'utilisation de l'informatique haute performance (HPC). Une série d'activités est née en 2016 de l’ordre du NSCI (The National Strategic Computing Initiative ), dont la plus importante est l'Initiative de calcul exascale (ECI) dirigée par le Département américain de l'énergie (DOE) qui est un partenariat entre le DOE Office of Science (SC) et le National Nuclear Administration de la sécurité (NNSA) pour accélérer les projets de recherche, de développement, d'acquisition et de déploiement afin de fournir une capacité informatique exascale à ses laboratoires du début au milieu des années 2020.
+
+ECI s'occupe de la préparation des installations informatiques et de l'acquisition de trois systèmes exascale distincts: 
+
+
+
+
+En 2015, selon le classement de TOP500, le supercalculateur chinois Tianhe-2 est le plus rapide au monde. Il contient nœuds. Chaque nœud possède deux processeurs Intel Xeon et trois coprocesseurs Intel Xeon Phi, une interconnexion haute vitesse propriétaire, appelée TH Express-2. Il est conçu par l'Université nationale de technologie de défense (NUDT).
+
+En 2010, Tianhe-1 est entré en service. Il effectue diverses tâches comme l'exploration pétrolière, la fabrication d'équipements haut de gamme, la médecine biologique et la conception d'animations, et sert près de clients.
+
+Selon le plan national pour la prochaine génération d'ordinateurs haute performance, la Chine développera un ordinateur exascale au cours de la période du plan quinquennal (2016-2020). "Le gouvernement de la nouvelle zone de Tianjin Binhai, le NUDT et le Centre national de superordinateurs de Tianjin travaillent sur le projet, et nous prévoyons de l'appeler Tianhe-3", a déclaré Liao Xiangke, le directeur de l'école d'informatique de l'Université nationale de technologie de défense (NUDT). Les nouvelles machines auront une vitesse de calcul 200 fois plus rapide que les modèles actuels et une capacité de stockage 100 fois supérieure à celle du Tianhe-1.
+
+La Commission européenne et 22 pays d'Europe ont déclaré leur intention d'unir leurs efforts dans le développement des technologies et des infrastructures HPC grâce à un projet de recherche européen nommé H2020.
+H2020 soutiendra trois projets traitant des technologies exascale et postexascale :
+
+
+La combinaison de ces trois projets vise à couvrir l'ensemble de l'image d'une machine HPC Exascale d’ici 2020.
+
+En mai 2019, Fujitsu et l'institut de recherche japonais Riken ont annoncé que la conception du supercalculateur post-K, qui sera lancé en 2021, était terminée et qu'ils livreront un design commercial de production fin 2019. Le nouveau système sera doté d'un processeur A64FX basé sur ARMv8-ASVE à 512 bits. Il s'agit d'un processeur haute performance conçu et développé par Fujitsu pour les systèmes exascale. La puce est basée sur un design ARM8. Ce processeur équipe une grande majorité des smartphones et abrite 48 cœurs 
+de traitement complétés par quatre cœurs dédiés aux entrées-sorties et aux interfaces. Il peut gérer jusqu'à 32 Go de mémoire par puce. Le système sera équipé d'un processeur par nœud et de 384 nœuds par rack, soit un pétaflop par rack. Le système au complet sera constitué de plus de 150 milles nœuds. Le Post-K doit succéder, vers 2021, au K-Computer, qui équipe depuis septembre 2012 l’institut de recherche Riken à Kobe.
+
+AMD Research, Advanced Micro Devices, Department of Electrical and Computer Engineering et University of Wisconsin-Madison propose une étude complète d'une architecture qui peut être utilisée pour construire des systèmes exascale :
+"Une architecture conceptuelle de nœud exascale (ENA), qui est le bloc de calcul pour un supercalculateur exascale. L'ENA se compose d'un processeur hétérogène Exascale (EHP) couplé à un système de mémoire avancé. L'EHP fournit une unité de traitement accélérée hautes performances (CPU + ), une mémoire 3D à large bande passante intégrée et une utilisation agressive des technologies d'empilement de matrices et de puces pour répondre aux exigences de l'informatique exascale de manière équilibrée.
+
+Une architecture de nœud Exascale (ENA) en tant que bloc de construction principal pour les machines exascale. L'ENA répond aux exigences de calcul exascale à travers:
+
+
+
+
+
+
+
+
+Les acteurs des télécoms et de l’internet comme les GAFA (Google, Apple, Facebook et Amazon) sont amenés quotidiennement à gérer une quantité gigantesque de données. Fortement en lien avec le Cloud et le Big Data dans leurs grands datacenters, le calcul intensif trouve sa place dans le traitement de ces données massives.
+
+La simulation numérique du fonctionnement d’une arme nucléaire peut être réalisée à l’aide d’un supercalculateur ou encore obtenir des certificats et des évaluations pour garantir que les stocks nucléaires du pays sont sûrs, sécurisés et fiables.
+
+L'informatique exascale accélérera la recherche sur le cancer en aidant les scientifiques à comprendre la base moléculaire des interactions protéiques clés et en automatisant l'analyse des informations provenant de millions de dossiers de patients cancéreux pour déterminer les stratégies de traitement optimales. Il permettra également aux médecins de prédire les bons traitements pour le patient en modélisant les réponses médicamenteuses.
+
+Dans la biologie, il sera possible de simuler dans le détail le fonctionnement des membranes des cellules vivantes pour mieux comprendre comment les médicaments pénètrent dans la cellule et agissent.
+Le séquençage du génome requiert aujourd’hui une exploitation et un stockage de quantités massives de données génétiques.
+L'exascale computing sera un développement nécessaire pour soutenir les efforts de recherche en cours des biologistes computationnels. De suivre le rythme de la génération de données expérimentales à permettre de nouveaux modèles multiphysiques multi-échelles de processus biologiques complexes, la science informatique continuera d'évoluer et, à terme, de transformer la biologie d'une science observationnelle à une science quantitative.
+
+Plus généralement, les défis biologiques et biomédicaux couvrent l'annotation et la comparaison des séquences, la prédiction de la structure des protéines; simulations moléculaires et machines à protéines; voies métaboliques et réseaux de régulation; modèles et organes de cellules entières; et les organismes, les environnements et les écologies.
+
+La cosmologie, la physique des hautes énergies et l'astrophysique font partie des sciences qui cherchent à comprendre l'évolution de l'univers, les lois qui régissent la création et le comportement de la matière. Ils dépendent des modèles informatiques avancés, ainsi le supercalculateur exaflopique sera un accélérateur dans ces différentes recherches.
+
+Les modèles informatiques des phénomènes astrophysiques, à des échelles temporelles et spatiales aussi diverses que la formation du système planétaire, la dynamique stellaire, le comportement des trous noirs, la formation galactique et l'interaction de la matière noire baryonique et putative, ont fourni de nouvelles perspectives sur les théories et complété les données expérimentales.
+
+Les HPCs permettent de reproduire, par la modélisation et la simulation, des expériences qui ne peuvent pas être réalisées en laboratoire quand elles sont dangereuses, coûteuses, de longue durée ou très complexes. La simulation numérique a permis à Cummins de construire de meilleurs moteurs diesel plus rapidement et à moindre coût, Goodyear pour concevoir des pneus plus sûrs beaucoup plus rapidement, Boeing pour construire des avions plus économes en carburant et Procter & Gamble pour créer de meilleurs matériaux pour les produits domestiques.
+
+Faciliter et encourager l’accès des PME au calcul haute performance pour leur permettre de simuler des phénomènes plus globaux, de limiter ou remplacer des expériences, de raccourcir la phase de test ou de traiter des données pléthoriques et hétérogènes. Le recours au calcul intensif sert la compétitivité des PME.
+
+La fusion nucléaire pourrait constituer une source d’énergie majeure à l'avenir. Mais pour enclencher la réaction au sein d’un réacteur nucléaire, l’un des enjeux majeurs sera de confiner la chaleur dégagée par le phénomène bien au centre de la machine. Les phénomènes sont complexes et font appel à un jeu d’équations mathématiques qui génèrent un volume important de données à traiter. Des simulations numériques avec les supercalculateurs exaflopique permettront de faire un pas important dans cette direction.
+
+L'énergie solaire sera également rendue plus rentable grâce à la découverte de matériaux qui convertissent plus efficacement les rayons solaires en électricité.
+
+L'énergie éolienne, grâce à la capacité de simulation prédictive validée pour le cycle de conception, permettant à l'industrie de réduire le temps de développement de moteurs et turbines efficaces. Durcir la conception et l'aménagement de l'éolienne contre la susceptibilité aux pertes d'énergie; pénétration plus élevée de l'énergie éolienne.
+
+La compréhension du climat et de ses variations passées, actuelles et à venir est l’un des enjeux scientifiques majeurs du . Dans cette quête, la simulation est devenue un outil indispensable. Cette démarche permet, en effet, de mieux comprendre les mécanismes qui régulent le climat et ainsi de faire des prévisions sur des échelles de temps allant de la saison à quelques siècles, dans le cas des scénarios de changement climatique.
+
+Les prévisions à cinq jours sont aussi précises que les prévisions à quatre jours dix ans avant. Cette amélioration remarquable est possible avec une puissance de calcul d'environ 5 pétaFLOPS. Ces prévisions permettent aux gouvernements, aux secteurs publics et privés de planifier et de protéger ainsi de réaliser des milliards de dollars d'économies chaque année.
+
+L'Europe occupe la tête des prévisions météorologiques mondiales à moyenne portée depuis les années 80. United Kingdom Meteorological Office et Météo-France possèdent des supercalculateurs qui sont bien classés dans le TOP500.
+Météo-France prévoit fin 2020 un supercalculateur sur la plateforme Sequana XH2000, développée par Bull (filiale du groupe ATOS) d'une puissance de calcul théorique de 20.78 pétaFLOPS.
+
+Les modèles de prévision météorologique exaflopique seront en mesure de prédire avec plus de précision et de rapidité le moment et la trajectoire des événements météorologiques graves tels que les ouragans en utilisant une résolution spatiale beaucoup plus élevée, en incorporant plus d'éléments physiques et en assimilant plus de données d'observation. Ces avancées sont essentielles pour prévoir suffisamment de temps pour les évacuations et les mesures de protection.
+
+L'un des objectifs est de développer une architecture de référence dans les années à venir qui permettront aux modèles météorologiques et climatiques mondiaux de fonctionner à une résolution horizontale de 1 km avec un débit de 1 SYPD (les meilleurs centres de prédiction actuels exécutent des simulations à une résolution spatiale de 10 à 15 km). Mal reproduits, voire absents dans les modèles climatiques existantes, les phénomènes à petite échelle, qui jouent pourtant un rôle important, peuvent ainsi être pris en compte.
+
+
+
+

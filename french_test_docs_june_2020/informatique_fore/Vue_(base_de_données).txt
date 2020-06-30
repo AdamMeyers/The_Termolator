@@ -1,0 +1,18 @@
+﻿Vue (base de données)
+
+Une vue dans une base de données est une synthèse d'une requête d'interrogation de la base. On peut la voir comme une table virtuelle, définie par une requête.
+
+Les avantages des vues sont :
+
+Les vues ne sont pas forcément purement virtuelles. Certains SGBD comme Oracle Database permettent de stocker la vue sur disque, elle devient alors un véritable système de cache.
+
+Les vues se créent avec la commande codice_1. Un exemple, où les employés d'une entreprise sont dans une table, les départements de l'entreprise dans une autre et où on doit faire une jointure pour afficher le nom du département à côté de celui de l'employé :
+
+Si, par contre, on crée une vue :
+
+On pourra alors écrire la requête SELECT ci-dessus bien plus simplement, la jointure ne sera plus visible :
+
+Les vues s'utilisent pratiquement comme des tables (elles peuvent être dans une clause codice_2 d'un codice_3, dans un codice_4, etc) avec quelques restrictions, qui dépendent du SGBD.
+
+
+

@@ -4,7 +4,8 @@
 
 	INSTALLATION:
 	- Download all Termolator files (main (English) components as well) from Github repo.
-	- The necessary TreeTagger files (by Helmut Schmid 1995, https://www.cis.uni-muenchen.de/~schmid/tools/TreeTagger/) are provided in FR_Termolator/TreeTaggerLinux/. After having downloaded the Termolator files, inside TreeTaggerLinux/, run install-tagger.sh
+	- The necessary TreeTagger files (by Helmut Schmid 1995, https://www.cis.uni-muenchen.de/~schmid/tools/TreeTagger/) are provided as TreeTaggerLinux.zip
+	- In order to use the French version of the Termolator, you should you unzip this file, creating a  a TreeTaggerLinux/ subdirectory (under your Termolator directory). FR_Termolator/TreeTaggerLinux/.  Then you should run  install-tagger.sh inside this subdirectory.
 
 	RUNNING:
 	The expected arguments are:
@@ -31,20 +32,42 @@
 
 
 	FR ONLY COMPONENTS:
-	The following scripts contain French-specific elements or have been modified for French:
+	
+	The following scripts and dictionaries contain French-specific
+	elements or have been modified for French:
+		
+		run_termolator_fr.sh run_lang_model_background_fr.sh
+		run_lang_model_foreground_fr.sh
+		tag_back_and_foreground.sh
+		make_file_list.sh
+		getNounChunks.java
 		filter_term_output_fr.py
 		filter_terms_fr.py
-		getNounChunks.java
 		make_filtered_doc_fr.py
-		run_lang_model_background_fr.sh
-		run_lang_model_foreground_fr.sh
 		run_make_filtered_fact_files_FR.py
-		run_termolator_fr.sh
 		stage1_driver.py
-		tag_back_and_foreground.sh
 		term_utilities_fr.py
 		webscore_fr.py
+		english_dict_list.txt
+		person_name_list_simple.dict
+		verb_dict_fr.txt
+		cities_eng.dict
+		leipzigFR.profile
+		modelFRinput-leipzig.list
+		nationality_dict_fr.txt
+		orgs_abbrev_dict_fr.txt
+		dictionary_full_fr.txt
+		french_gazetteer.txt
 
 		(FR function has been added to make_language_model.py)
 		
-	Many of the above rely on non French specific scripts used by the English Termolator.
+	Many of the above rely on non French specific scripts used by
+	the English Termolator.
+
+	TESTING THE PROGRAM:
+
+	There are sets of sample files in the french_test_docs_june_2020
+	subdirectory for testing the French system. There are two
+	shell scripts: run_foret and run_inform which can be run to
+	test the system.  Structuring directories in a similar manner
+	is suggested for running on other data.

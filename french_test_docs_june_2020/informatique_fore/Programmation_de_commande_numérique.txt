@@ -1,0 +1,142 @@
+﻿Programmation de commande numérique
+
+La programmation de commande numérique (CN) permet de définir des séquences d'instructions permettant de piloter des machines-outil à commande numérique. Cette programmation est actuellement fortement automatisée à partir de plans réalisés en CAO.
+
+Dans le cas d'une commande numérique physique, c'est le "directeur de commande numérique" (DCN) qui interprète les instructions contenues dans les séquences, reçoit les informations des capteurs et agit sur les actionneurs.
+
+On trouve aussi des pilotes de commande numériques qui sont des programmes (logiciels) informatiques s'exécutant sur un PC, avec éventuellement une délégation partielle des calculs vers une carte spécialisée.
+
+À l'origine, le langage de programmation était le G-code, développé par l'EIA au début des années 1960, et finalement normalisé par l'ISO en février 1980 sous la référence RS274D/ (ISO 6983).
+
+Compte tenu de l'absence de développements ultérieurs et de la grande variété des configurations de machines-outils, peu de contrôleurs à commande numérique respectent de manière stricte ce standard. Des extensions et variantes ont été ajoutées indépendamment par divers fabricants et concepteurs de programmes, ce qui fait que les opérateurs doivent connaître les différents dialectes et particularités des machines qu'ils utilisent. Les programmes informatiques utilisent des pilotes adaptés à chaque machine et à sa configuration, les pilotes étant personnalisables par les utilisateurs.
+
+Pendant longtemps, les programmes étaient directement écrits par les opérateurs des machines CNC. Depuis le développement des ordinateurs personnels, des programmes de FAO (fabrication assistée par ordinateur, ou en anglais CAM, "Computer Aided Manufacturing") ont été développés afin d'écrire les séquences de code ISO automatiquement à partir de fichiers de dessin et des paramètres des outils finaux. Les interventions directement dans le code sont devenues marginales.
+
+Pour vérifier le bon fonctionnement des séquences d'usinage, il existe des programmes de simulation d'usinage permettant une visualisation de la pièce telle qu'elle sera conçue lors de l'usinage.
+
+La séquence de fabrication complète est donc :
+
+CAO (conception assistée par ordinateur) → FAO (développement des séquences) → Simulation de coupe → Exécution de la fabrication.
+
+À côté de l'ISO, de nouveaux codes sont apparus, différents selon le Directeur de Commande Numérique. Ils intègrent de plus en plus de l'ISO, des langages propres aux constructeurs (symbolique, C, etc.) ainsi que des interfaces de programmation interactives destinées à simplifier la programmation.
+
+Développé à l'origine pour des machines-outils agissant par enlèvement de matière, le code ISO est désormais utilisé dans un domaine très vaste de la fabrication, avec des adaptations :
+
+
+Permet aussi de contrôler des entités externes à la machine proprement dit (magasin auxiliaire, refroidisseur, compteur ETC, embarreur)
+Le numéro de bloc n'est pas obligatoire (l'ordre numérique des numérotations de blocs "N" n'est pas non plus obligatoire) à chaque ligne avec les commandes ISO, il désigne juste un endroit du programme où l'on peut ordonner un saut d'opération ou un départ d'opération, le plus souvent avant un changement d'outil, ou au départ d'une boucle.
+
+(*) Les codes M contrôlent l'ensemble de la machine, permettant son démarrage, son arrêt, la mise en route de l'arrosage, etc. Alors que les autres codes concernent le cheminement de l'outil.
+
+Les fonctions M (de M00 à M09) sont communes à tous les types de CNC, les différents constructeurs de machines CNC proposent leurs propres fonctions M (à partir de M10 jusqu'à M89... ensuite au-dessus de M100).
+
+Des machines différentes peuvent utiliser le même code pour effectuer des fonctions différentes : même les machines qui utilisent le même contrôleur CNC.
+
+Une version standardisée du G-code connue sous la dénomination "BCL" est utilisée, mais sur très peu de machines.
+
+Le G-code est interprété par les traceurs photographiques Gerber, les contrôleurs de machine-outil et certains de leurs opérateurs.
+
+Les fichiers G-code sont produits par des programmes de CFAO tels que GO2cam, ESPRIT, SmartCAM, Gibbscam, SolidCAM, Featurecam, Artcam, Edgecam (S4X), Surfcam, OneCNC, Router-CIM, Alphacam, TopSolid'Cam, e-NC, GPSoftware, Mastercam, EFICN (EFICAD), PowerMill (Delcam), etc. Ces applications utilisent en général des convertisseurs appelés post-processeurs pour optimiser le code en vue de son utilisation sur une machine particulière. Les post-processeurs sont généralement modifiables par l'utilisateur afin d'optimiser leur usage.
+
+Le G-code est aussi produit par certains programmes de CAO spécialisés dans la conception de circuit imprimé. De tels programmes doivent être adaptés pour chaque type de machine outil.
+
+Quelques machines CNC utilisent des programmes "interactifs", qui permettent de programmer avec des "agents" en cachant partiellement ou totalement le G-code. Quelques exemples populaires sont Mazak Mazatrol, Hurco Ultimax et le langage interactif Mori Seiki's CAPS.
+
+Spécifique à certains constructeurs
+
+Suivant le paramétrage du système et la résolution décimale, il est nécessaire (ou pas) de programmer les valeurs avec le "dot" (point)
+
+Par exemple : G00 X40. (la machine se déplacera à la position X 40mm)
+
+G00 X40. (le point derrière la valeur entière est nécessaire)
+
+G43 : Prise en compte de la longueur (fraisage)
+
+M98 : appel de sous programmes
+
+<nowiki>#:</nowiki> (hashtag) déclaration / écriture / lecture / calcul de variables personnalisées
+
+<nowiki>#</nowiki>1 à #33 = variables locales (#1 à #26 correspondent aux lettres de l'alphabet pour les arguments de cycles de macros personnalisées si la machine est équipée de l'option "CUSTOM MACRO")
+
+<nowiki>#</nowiki>100 à #199 = variables utilisateurs (effacement remise à zéro sur RESET)
+
+<nowiki>#</nowiki>500 à #999 = variables système (mémorisées après RESET ou coupure CNC)
+
+Spécifique NUM
+
+
+Il est aussi possible sur certains pupitres de programmation d'utiliser ces deux codes (G2 G3) pour créer une interpolation circulaire, des fonctions d'interpolation à base de courbe NURBS G6.2.
+
+Sur les fraiseuses équipées de tête birotative les codes G17,G18,G19 définissent l'axe des cycles de perçage, taraudage... et le plan dans lequel seront réalisées les interpolations circulaires et activé le correcteur de rayon d'outil.
+
+Les codes de la famille G52, G53, G54, G55...sont utilisés pour :
+
+Certains codes G de la famille G60 G70 peuvent être utilisés par les fabricants de DNC pour :
+
+Les codes G90 G91définissent la programmation absolue ou incrémentale des cotes.
+
+Des cycles préprogrammés sont également accessibles sur la plupart des machines : G 81, 82, 83... pour les cycles de perçage, taraudage, etc. avec l'annulation par G 80. D'autres cycles peuvent être présents selon le type de machine (tour "cycle d'ébauche G71,G72,G73...", fraiseuse, aléseuse, fil...).
+
+
+Les origines mesures appartiennent à l'espace articulaire (espace de la structure cinématique de la machine en robotique). L'espace travail, ou de la tâche est celui où se trouvent les autres éléments de la cellule élémentaire de production. La dimension vectorielle est 3. Il y a donc un endomorphisme d'espaces vectoriels entre l'espace articulaire de la machine et l'espace travail. Il est donc totalement inutile de représenter le zéro mesure comme un point concourant de tous les axes dans l'espace travail. C'est un sophisme.
+
+(POM ou OM) + PREF = OPP 
+OPP + DECALAGE = OP
+
+En synthèse, les définitions des différentes origines sont issues d'un modèle de structure articulaire de machine constitué de liaisons prismatiques cartésiennes. Le modèle géométrique permettant de lier l'espace travail à l'espace articulaire est l'identité, amalgamant les origines mesures de la structure articulaire avec l'origine des solides dans l'espace travail.
+
+Correction de la machine permettant de tenir compte des différentes longueurs et diamètres d'outil.
+
+De plus, la correction d'outils en cours d'usinage appelée "correction dynamique" permet de compenser l'usure de l'outil.
+
+Le sens de rotation positif des axes A, B, C sont comptés en s'imaginant qu'une vis pas à droite, tournant dans le sens des aiguilles d'une montre avance en direction +X, +Y, +Z en se considérant à la place de l'outil. Si c'est un axe déplaçant la pièce au lieu de l'outil, on inverse le sens des axes, le positif devient négatif.
+
+Ceci est un programme typique qui montre l'usage du G-Code pour tourner une pièce de 1 pouce de diamètre et 1 pouce de long. On part de l'hypothèse que la barre de matière est déjà dans la machine et qu'elle dépasse légèrement en longueur et en diamètre. (Attention : Ceci est un programme typique, il pourrait ne pas fonctionner sur une machine réelle ! Soyez particulièrement attentifs au point 5 ci-dessous.)
+
+En principe on ne met pas des numéros qui se suivent pour les lignes. Cela permet d'en intercaler de nouvelles si nécessaire. Plutôt que de faire : N1, N2, N3, etc. On inscrit N10, N20, N30, etc. Comme ça, si l'on doit rajouter des lignes de modification, on peut le faire. N50, N60 peut ainsi devenir N50, N52, N54, N60...
+
+Quelques remarques :
+
+
+Ligne 1, numéro de programme
+
+Ligne 2, appel en broche de l'outil 1 (qui est en réalité un appel du sous-programme pilotant le changeur d'outil (M6) avec le paramètre T1
+
+Ligne 3, - donné en absolu (G90), -travail suivant plan X,Y(G17), -Annulation des cycles perçage-taraudage (G80), annulation tout correcteur en mémoire dans la machine(G40),
+
+-origine pièce Offset (G54), -déplacement rapide (G0) à un point (X0 Y-5) 
+
+Ligne 4, mise en rotation de l'outil à (S2500) et mise en fonction de l'arrosage (M8) (M13 replace les codes M3, sélectionne le sens de rotation, et M8, marche arrosage)
+
+Ligne 5, déplacement rapide a Z-4 (profondeur de coupe) en prenant en compte la longueur d'outil (G43) du correcteur n°1 (H1)
+
+Ligne 6 à 9, déplacements en vitesse de travail (G1), G1 est une fonction modale et est donc valable pour tous les points suivants.
+
+Ligne 10, déplacement rapide (G0) a un point (Z200)
+
+Ligne 10, arrêt de l'arrosage (M9)
+
+Ligne 11, arrêt de la broche (M5)
+
+Ligne 12 à 13, Retour au origine machine (G28), Distance avec relatif (G91), -déplacement rapide (G0) avec le système de coordonnées de la machine (G53) à Z0 Y0 (outil en haut, table au plus près de l'opérateur)
+
+Ligne 14, M30 fin de programme (M30 inclus M5 et M9 ceux-ci ne sont donc pas obligatoires ils sont placés en ligne 10 et 11 pour laisser quelques secondes d'égouttage au système d'arrosage, avant les manipulations de l'opérateur.)
+
+Notez que le programme ne prévoit rien pour le cheminement de l'outil. Si la machine est une fraiseuse et utilise une fraise de rayon 6 mm, la pièce sera en pratique 12 mm plus petite que définie (6 mm par côté). Une commande G-code doit être utilisé pour corriger le cheminement de l'outil.
+
+Un exemple simple peut-être une barre d'une longueur de et d'un diamètre de 20 mm. Le code de base pourrait se lire comme suit :
+
+Il est de bon aloi d'abuser des commentaires entre parenthèses (), afin d'indiquer les opérations, les outils utilisés, afin que n'importe quel utilisateur puisse comprendre le code.
+
+La Programmation Géométrique de Profil (P.G.P.) du fabricant de DNC NUM permet d'utiliser "directement" les cotes du dessin de définition pour écrire le programme.
+
+Principe :
+
+Éléments géométriques :
+
+Le langage PROGET 2' du constructeur SELCA utilise 5 codes G, pouvant être assimilés à 5 instruments du dessinateur industriel.
+
+Commande numérique
+
+
+

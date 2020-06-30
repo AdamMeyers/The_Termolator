@@ -1,0 +1,8 @@
+﻿Mémoire distribuée
+
+La mémoire d'un système informatique multiprocesseur est dite distribuée lorsque la mémoire est répartie en plusieurs nœuds, chaque portion n'étant accessible qu'à certains processeurs. Un réseau de communication relie les différents nœuds, et l'échange de données doit se faire explicitement par « passage de messages ». La mémoire est organisée de cette manière par exemple lorsque l'on utilise des machines indépendantes pour former une grille.
+
+Dans de nombreux cas, la mémoire est physiquement distribuée mais cela est caché au programmeur : on dit que l'espace mémoire est partagé. Toute la mémoire est accessible depuis n'importe lequel des processeurs, même si les temps d'accès varient selon le nœud où se trouve la donnée. On parle alors d'architecture NUMA.
+
+
+

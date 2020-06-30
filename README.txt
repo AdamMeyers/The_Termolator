@@ -46,6 +46,10 @@ now. These include:
      and different from each other (distance measured as cosine
      similarity).
 
+     README_fr.txt -- This describes the French version of Termolator,
+     including installation instructions (which presume first
+     installing the English version), as well as how to run the French system.
+
 The Termolator takes two sets of documents as input a FOREGROUND set
 and a BACKGROUND set and finds instances of terminology that are more
 characteristic of the FOREGROUND than the BACKGROUND.  Input files can

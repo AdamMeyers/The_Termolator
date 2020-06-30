@@ -1,0 +1,76 @@
+﻿Graphe de liaisons
+
+Un graphe de liaisons — également appelé graphe à liens ou bond graph — est une représentation graphique d'un système dynamique physique (mécanique, électrique, hydraulique, pneumatique, etc.) qui représente les transferts d'énergie dans le système. Les graphes de liaisons sont basés sur le principe de la conservation de la puissance. Les liens d'un graphe de liaisons sont des symboles qui représentent soit des flux d'énergie, soit des flux d'information.
+
+Le graphe de liaisons est un outil mathématique utilisé en ingénierie des systèmes. Il permet de modéliser un système piloté afin d'optimiser son dimensionnement et la conception de ses lois de commande.
+
+Comparés à une autre représentation visuelle du système en schéma-bloc, les graphe de liaisons ont plusieurs avantages :
+
+Si la dynamique du système à modéliser opère sur différentes échelles de temps, les comportements rapides en temps réel peuvent être modélisés comme des phénomènes instantanés en utilisant des graphe de liaisons hybrides.
+
+Dans un graphe de liaison :
+
+Les échanges entre nœuds sont décrits par deux paramètres : le flux et l'effort. Le flux représente une quantité par unité de temps : intensité du courant électrique, "i", débit de fluide Q, vitesse d'une pièce "v", … L'effort représente la force avec laquelle le flux est poussé : tension électrique "u", pression du fluide P, force F, … Le produit du flux et de l'effort donne la puissance (en watts).
+
+Les arcs sont des demi-flèches (harpons) dont le crochet est orienté vers le bas ou vers la droite, ⇁, ↽, ↾ ou ⇂. Le sens de la flèche indique le signe positif de la puissance, c'est-à-dire si la puissance est comptée positive en entrée ou en sortie. Dans le cas d'un appareil de mesure (thermomètre, tachymètre, dynamomètre, débitmètre, manomètre, voltmètre, ampèremètre, …), le flux d'énergie est négligeable, on utilise une flèche entière, →, ←, ↑ ou ↓.
+
+Les lois régissant les nœuds relient souvent le flux et l'effort. Par exemple, pour une résistance électrique, la loi d'Ohm impose une relation entre l'intensité et la tension :
+Si la résistance est connectée à une source de tension, alors la source impose "u", et la résistance détermine "i". À l'inverse, s'il s'agit d'une source d'intensité, la source impose "i", et "u" en découle. On a donc une causalité. Pour indiquer cela sur le graphe, on place une barre à l'extrémité de la flèche qui définit le flux. Cela permet de connaître la valeur d'entrée et la valeur de sortie de la loi, c'est-à-dire le sens de la relation de calcul, "e" = ƒ("f" ) ou "f" = ƒ("e" )
+
+Dans les graphes ci-contre, on utilise les abréviations standard (voir ci-après) : Se pour une source d'effort, Sf pour une source de flux, R pour un élément dissipatif.
+
+Un nœud peut aussi représenter une loi physique liée au système et non à un élément particulier. Une loi qui impose une même valeur d'effort "e" à plusieurs autres nœuds est appelée jonction de type 0. Une loi qui impose une même valeur de flux "f" à plusieurs autres nœuds est appelée jonction de type 1.
+
+Si l'on prend l'exemple d'un circuit RLC série, alors le circuit n'a qu'une seule branche. La loi des mailles impose une même valeur de l'intensité à tous les éléments, il s'agit d'une jonction de type 1. Si le circuit est parallèle, alors la loi des nœuds impose une même valeur de la tension à tous les éléments, il s'agit d'une jonction de type 0.
+
+Notons que les sens des flèches dépendent des conventions de signe choisies pour les circuits.
+
+Les graphes de liaisons représentent le transfert de puissance entre éléments, donc ils conviennent parfaitement pour modéliser des systèmes qui relient plusieurs domaines de la physique tels que l'électricité et la mécanique.
+Mais avant de se lancer dans la modélisation, il faut définir une notion de puissance pour chacun des domaines.
+Il est nécessaire de définir certaines notions de physique.
+
+
+
+
+Grâce à ces définitions, nous allons pouvoir définir pour chaque domaine de la physique, la grandeur associée à ces définitions.
+
+Cet élément permet de symboliser les transferts d'énergie entre les différents processeurs. Il est représenté comme suit :
+
+On peut remarquer deux éléments sur cette liaison. La lettre "e" représente la composante effort de la liaison. La lettre "f" représente la composante flux de la liaison. La multiplication de ces deux termes doit donner la puissance qui transite par la liaison.
+Cet élément est orienté dans le sens où la puissance est positive.
+
+Il existe deux types de sources :
+Ces éléments fournissent une valeur constante de flux ou d'effort selon le cas quelle que soit la valeur de l'autre grandeur (effort ou flux) fournie. De plus, ces sources peuvent avoir des discontinuités sur la grandeur qu'elles ne garantissent pas.
+On considère que ces sources sont parfaites, même si cela constitue une approximation par rapport au phénomène réel.
+
+L'élément dissipatif est représenté par un codice_3. C'est un objet qui relie le flux et l'effort par une relation indépendante du temps, une fonction mathématique.
+Physiquement, il correspond à un objet dissipatif. Par exemple une résistance dans le cas électrique, un frottement visqueux dans le cas mécanique.
+
+Le processeur codice_4 fait apparaître entre "e" et "f" une relation temporelle via une intégration ou une dérivée. Celui-ci peut se décrire de cette façon :
+Ce processeur, qui est représenté par un codice_4, peut être soit une inductance dans le cas électrique, soit une inertie dans le cas mécanique.
+
+Le processeur codice_6 fait apparaître entre "e" et "f" une relation temporelle via une intégration ou une dérivée. Celui-ci peut se décrire de cette façon :
+
+Ce processeur peut être un condensateur dans le cas électrique, un ressort dans le cas mécanique.
+
+Il est représenté par un codice_6.
+
+Cet élément permet la transformation des valeurs sans pertes de puissance suivant ces équations avec un rapport "m" :
+Cet élément est représenté par le symbole suivant : codice_8.
+
+Dans le cas électrique, cela peut-être un transformateur, ou bien un réducteur dans le cas mécanique.
+
+Cet élément permet la transformation des valeurs sans pertes de puissance suivant ces équations avec un rapport "g" :
+Cet élément est représenté par le symbole suivant : codice_9.
+
+Dans le cas électrique, cela peut être un gyrateur. Les moteurs sont tous des gyrateurs dans leur liaison entre la partie électrique et mécanique.
+
+Les laboratoires de recherche associés aux principaux centres d'enseignements de la modélisation graphe de liaisons en France sont indiqués ci-dessous :
+
+
+
+
+
+
+
+

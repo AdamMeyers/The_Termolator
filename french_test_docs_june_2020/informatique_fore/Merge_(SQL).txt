@@ -1,0 +1,12 @@
+﻿Merge (SQL)
+
+La commande Merge en SQL est une instruction qui permet de mettre à jour ou insérer un ou plusieurs tuples dans une table (ou vue) d'une base de données relationnelle à partir de données sources, selon des conditions. Cette commande a été rajoutée dans le standard SQL:2003, et étendue dans le standard , et permet d'éviter des combinaisons d’instructions "Insert", "Update" et "Delete" sur la table cible.
+
+Une jointure droite externe ("Right outer join") est effectuée entre la cible et la source. Si plusieurs tuples de la source correspondent à un même tuple de la cible alors une erreur est levée.
+Dans la syntaxe, Conditions1 représente la condition de jointure qui permet de définir si un tuple cible doit être ajouté ou mise à jour (ou supprimée si on est dans le cas de la Conditions2).
+Cela signifie que si un tuple source correspond selon la condition de jointure à un tuple de la table cible alors les instructions dans "WHEN MATCHED THEN" sont effectuées. Si un tuple source ne correspond pas à la condition de jointure alors les instructions dans "WHEN NOT MATCHED THEN" sont effectuées.
+
+Les données sources peuvent provenir d'une table, d'une vue ou d'une sous requête.
+
+
+

@@ -1,0 +1,9 @@
+﻿Protection de la mémoire
+
+En informatique, la protection de la mémoire est un ensemble de systèmes mis en œuvre au niveau matériel et logiciel pour qu'un processus ne puisse pas accéder à la mémoire utilisée par un autre processus.
+
+Les très anciens systèmes d'exploitation n'implémentaient pas de système de protection de la mémoire. Ceci permettait à n'importe quel processus de lire/écrire dans l'espace mémoire réservé pour un autre processus, y compris le système lui-même. La conséquence la plus gênante était qu'un bug d'un logiciel pouvait mener au plantage complet du système et de toutes les applications, ce qui menait non seulement à des pertes de données non sauvegardées mais aussi, éventuellement, à la corruption de la structure des fichiers sur le disque dur.
+
+Par mesure de sécurité, d'autre systèmes de protection ont été mis en œuvre dans les systèmes d'exploitation récents comme le ASLR "(Address Space Layout Randomization)" et le marquage des zones de mémoire comme contenant du code exécutable ou des données (donc non-exécutable).
+
+

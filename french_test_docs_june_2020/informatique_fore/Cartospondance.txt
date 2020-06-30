@@ -1,0 +1,19 @@
+﻿Cartospondance
+
+La cartospondance (ou appariement cartographique, map matching en anglais) est l'exploitation des coordonnées géographiques s'appuyant sur une modélisation logique du monde réel, en utilisant typiquement des coordonnées géolocalisées. L'approche la plus commune consiste à utiliser une série de coordonnées géographiques ( GNSS) et à les rapprocher d'un réseau de type routier ou ferroviaire. Ces coordonnées peuvent provenir soit du parcours théorique prévu, soit du parcours effectivement suivi. Ces algorithmes ont de nombreuses applications dans le domaine de la navigation par satellite et les systèmes de transports.
+
+Les algorithmes de cartospondance peuvent être des algorithmes temps réel ou des algorithmes asynchrones. Les algorithmes temps réel rapprochent les positions du réseau utilisé (routier, ferroviaire…) en temps réel pendant le trajet. Les algorithmes asynchrones sont utilisés avec des données préalablement enregistrées. Les algorithmes temps réel ne peuvent s'appuyer que sur les positions en amont du moment présent, tandis que les algorithmes asynchrones peuvent prendre en compte le trajet complet pour effectuer le rapprochement. Le choix repose sur le compromis entre performance et précision.
+
+Les utilisations de la cartospondance sont très nombreuses, du guidage routier aux analyses statistiques de données géographiques.
+
+L'utilisation la plus courante est le guidage piéton ou automobile à l'aide d'un appareil embarqué à bord du véhicule ou d'un téléphone portable. Afin de fournir des indications justes, l'appareil doit connaître sa position géographique ainsi que le réseau utilisé. Chaque position GNSS ayant un rayon d'incertitude ( pour les puces les plus courantes), l'algorithme repositionne le point sur le segment du réseau le plus proche en prenant en compte la recherche de chemin correspondante.
+
+De nombreuses autres utilisations sont possibles et ce sujet fait l'objet de nombreuses études en recherche et développement.
+
+Les algorithmes de cartospondance ont été implémentés dans de nombreux programmes tels que le logiciel libre GraphHopper et d'autres outils de routage. Ils sont aussi embarqués dans de nombreux programmes propriétaires.
+
+Le mot « cartospondance » pour désigner le concept anglais de "" trouve son origine au sein de l'équipe Cartographie et Géolocalisation de SNCF Mobilités. Il s'agit d'un mot-valise formé à partir des mots "carte" et "correspondance". 
+
+Il peut également être utilisé sous forme de verbe, par exemple en parlant de positions GNSS collectées lors d'un trajet:
+
+

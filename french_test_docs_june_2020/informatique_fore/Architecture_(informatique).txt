@@ -1,0 +1,87 @@
+﻿Architecture (informatique)
+
+En informatique, architecture désigne la structure générale inhérente à un système informatique, l'organisation des différents éléments du système (logiciels et/ou matériels et/ou humains et/ou informations) et des relations entre les éléments. Cette structure fait suite à un ensemble de décisions stratégiques prises durant la conception de tout ou partie du système informatique, par l'exercice d'une discipline technique et industrielle du secteur de l'informatique dénommée elle aussi architecture, et dont le responsable est l'architecte informatique.
+
+La structure d'un système informatique n'est à ce jour assujettie à aucune norme. En matière de logiciels, elle est représentée sous forme de graphiques tels que des organigrammes, des diagrammes de workflow (flux de travaux en français) ou des diagrammes entité-relation. Le diagramme peut concerner un logiciel, une pièce de matériel, un réseau informatique, un groupe de machines, un sous-système, voire l'ensemble des dispositifs informatiques d'une entreprise ou d'une institution.
+
+Un diagramme d'architecture est une perspective qui dépend du point de vue adopté par son auteur, en fonction des éléments qu'il cherche à mettre en évidence. Le diagramme omet volontairement certains détails pour rendre la perspective plus visible. Il peut y avoir plusieurs diagrammes d'architecture pour un même système, tels que : architecture des informations, architecture métier, architecture applicative et architecture technique.
+
+Architecture est un mot qui n'a pas toujours été très populaire en informatique : la preuve en est l'absence d'ouvrages traitant de ce thème avant les années 1990.
+
+Martin Fowler dans son ouvrage ""Patterns of enterprise application architecture" "(datant de 2003) déclare :L'industrie du logiciel brille dans la déformation des mots, les étirant dans toutes les directions jusqu'à leur donner une myriade de sens subtilement contradictoires. Le mot "architecture" est un de ceux qui ont le plus souffert de ce phénomène. Je suis tenté de dire que "architecture" est un de ces mots ronflants utilisé avant tout pour indiquer qu'on est en train de parler de quelque chose d'important. Mais je vais me montrer pragmatique et ne pas laisser mon cynisme nuire à l'intérêt de mon livre :-)
+
+L'effet de mode débute seulement à partir des années 1980-1990, où le terme "architecture" était encore considéré comme un buzzword. Ceci coïncide avec la multiplication des types de langages de programmation, et avec l’essor de la micro-informatique.
+
+À ce jour, le nombre d'ouvrages traitant d'architecture informatique n'a guère augmenté, preuve en est la petite liste d'ouvrages cités en référence. 
+
+Depuis les années 2000, si certains standards ou méthodes de développement ont été adaptés au monde de l'informatique, ce domaine d'activité manque toujours cruellement de normes et de modèles fiables.
+
+C'est dans ce contexte que se sont développés les cours d'architecture des systèmes informatiques au CNAM (Conservatoire National des Arts et Métiers) (voir plusieurs ouvrages récents en référence, tels "Architecture logicielle" ou "Architecture des machines et des systèmes informatiques", datant de 2003 à 2011 pour les éditions les plus récentes).
+
+Actuellement, savoir construire (et reconstruire après dégâts) un système informatique (ou de façon plus large un système d'informations) est devenu un tel enjeu national, que certains pays ne sont pas prêts à communiquer leur savoir-faire... preuve en est le peu de liens relatifs aux méthodes de développement en matière d'architectures informatiques.
+
+À ce jour, l'entreprise ou l'organisme qui maîtrise parfaitement l'architecture de ses systèmes d'informations est parée pour survivre aux risques majeurs du que sont les dégâts, les falsifications ou les vols relatifs aux informations (pertes immatérielles non couvertes par les polices d'assurances) et les pertes de disponibilité des systèmes d'informations (la perte de confiance des clients n'étant couverte par aucune compagnie d'assurance !).
+
+En ce début de , les solutions passent par la SSI et plus particulièrement la résilience.
+
+En théorie des systèmes, un système est une collection de pièces et un ensemble de principes qui une fois mis ensemble forment une unité. Unité qui peut à son tour être un élément d'une collection. La structure d'un système informatique – représentée sous forme de graphiques – est une perspective, et dépend du point de vue adopté et des éléments que le graphique met en évidence. Il peut par conséquent y avoir plusieurs diagrammes d'architecture pour un même système.
+
+
+
+
+
+
+L'architecture métier décrit les applications informatiques, les principales bases de données du système informatique d'une institution ou d'une entreprise, les utilisations faites de ces éléments dans le cadre de l'activité de l'institution et leur alignement à l'organisation générale de l'institution. La vue "métier" fait ressortir les éléments historiques et en fin de vie, les interfaces avec des éléments appartenant à des tiers, ainsi que les possibilités d'ajouter des nouveaux éléments.
+
+Le diagramme d'architecture métier servira à guider la direction de l'institution dans le choix de création de nouveaux éléments, et aidera les ingénieurs à créer des produits informatiques en ligne avec les activités et l'organisation générale de l'institution. Il permettra également d'informer les collaborateurs de l'institution sur son organisation générale, ses buts, sa stratégie, et les flux d'informations au sein de l'institution.
+
+L'architecture des informations concerne la manière dont les informations sont organisées et agrégées : ordre alphabétique, chronologique, taxinomie. Les manières d'accéder à ces informations, la compréhension qu'ont les lecteurs et comment ils manipulent et s'échangent les informations ainsi que l'organisation de la base de données qui contiendra les informations. L'architecture repose sur trois axes clés:
+
+Les sites web contenant de nombreuses informations, tels que les sites de vente en ligne, les médias, les bases de connaissances ou les encyclopédies en ligne sont les premiers concernés par l'architecture des informations.
+
+L'architecture logicielle est une vue tournée sur l'organisation interne et le découpage d'un logiciel en modules. Dans les logiciels les caractéristiques communes concernent les interfaces, c'est-à-dire la connectique qui permet la communication entre les modules, ainsi que les caractéristiques du matériel informatique et du système d'exploitation sur lequel le logiciel s'exécutera et les caractéristiques du réseau informatique qui sera utilisé.
+
+Le diagramme d'architecture logicielle décrit la nature des différents modules d'un logiciel, les responsabilités et les fonctionnalités de chaque module, quelle machine va les exécuter, et quand. Il décrit également la nature des relations entre les modules. Vont-ils s'échanger des informations ? Un module en pilote-t-il un autre, lui envoie-t-il des informations, ou lui fait-il des demandes ? En ingénierie informatique le diagramme d'architecture donne une première série de réponses sur comment sera le futur logiciel, avant le début du travail de programmation.
+
+L'architecture technique est une vue tournée sur l'organisation logique de la plateforme informatique, c'est-à-dire les moyens techniques clés qui seront utilisés par tous les logiciels applicatifs. La vue contient le matériel informatique, les logiciels systèmes, les middlewares, ainsi que les réseaux de télécommunication et les relations entre ces différents éléments.
+
+Pour une entreprise ou une institution, le choix de l'architecture technique vise à maximiser les possibilités d'implantation de logiciels du commerce ainsi que de réalisation de logiciels sur mesure. Il vise également à rentabiliser l'utilisation du matériel et des logiciels déjà acquis par l'institution. 
+
+Pour une entreprise ou une institution qui transforme son architecture technique, le plan d'architecture est accompagné d'un planning et d'un budget des acquisitions, des ventes et des opérations de migration nécessaires pour aligner le système informatique avec le plan.
+
+Le mot "architecture matérielle" est parfois utilisé pour désigner l'architecture du jeu d'instructions d'un processeur. L'architecture matérielle comprend toutes les caractéristiques générales, la conception, le choix et l'organisation des différents dispositifs électroniques des appareils informatiques (ordinateurs personnels, serveurs, assistants personnels, téléphones portables, consoles de jeu...). L'architecture est fonction du type d'appareil, du client cible, de l'espace d'adressage - qui est fonction du nombre de bits utilisés pour les adresses mémoire, du système d'exploitation et du langage de programmation cible.
+
+L'architecture matérielle est un premier élément de réponse sur la manière de concevoir le futur ordinateur, recherchant la performance tout en respectant les contraintes de coût, de consommation électrique et de fiabilité. Le choix de l'architecture est inspiré par le marché, en particulier par les logiciels applicatifs existants et auxquels l'appareil est destiné. La conception d'une architecture matérielle requiert la connaissance d'une large gamme de technologies concernant les compilateurs, les systèmes d'exploitation, les circuits logiques et l'isolation. 
+
+L'architecture du jeu d'instruction est le point de rencontre entre le matériel et le logiciel informatique. Selon son architecture, le jeu d'instruction peut être de type "register-memory" - chaque instruction peut être effectuée sur le contenu d'une adresse mémoire ou d'un registre - ou du type "load-store" - toutes les instructions sont effectuées sur des registres sauf les instructions "load" et "store" qui copient des informations de et vers une certaine adresse mémoire.
+
+L'architecture est une discipline de conception et de résolution théorique d'un problème informatique. Le travail de l'architecte informatique - la personne chargée de créer une architecture - consiste à explorer l'éventail des besoins d'un client ainsi que l'éventail des moyens technologiques à disposition. D'identifier les points clés parmi les besoins du client et d'y apporter une solution théorique, puis de décrire schématiquement la solution en question sous forme de diagrammes.
+
+Pour un problème donné il existe toujours plusieurs solutions. Une des activités de l'architecte informatique est d'anticiper les qualités, les défauts et les coûts des différentes solutions envisageables, et de proposer celle qui est le mieux adaptée aux besoins du client en fonction des points clés que celui-ci a relevés. Pour cela l'architecte informatique se base sur le savoir-faire - tel que les styles et patrons, son expérience et les recommandations en rapport avec les différentes solutions envisageables.
+
+L'architecture demande un important travail de communication avec les clients, les ingénieurs, les fournisseurs et les directeurs. Le principal travail de communication est l'écoute des besoins des clients et des recommandations des ingénieurs. Le résultat du travail de l'architecte informatique sont des diagrammes, des plannings, des recommandations et des exemples qui expliquent le "quoi", le "pourquoi" et le "comment" de la solution.
+
+Les patrons d'architecture (en anglais : "design patterns") sont des modèles de référence de résolution des problèmes courants d'architecture. Ils sont utilisés comme source d'inspiration dans de nombreux produits informatiques. L'héritage d'un patron se reconnait par le style caractéristique du diagramme d'architecture du produit.
+
+Dans le style à "filtres et tubes" une série de programmes sont reliés entre eux par des tubes. Le produit de l'exécution d'un programme est transmis par le tube où il servira de matière première pour le programme suivant, et ainsi de suite. Un programme donné n'a pas besoin d'attendre que le précédent ait terminé le travail, et commence dès lors que des informations lui sont envoyées par le tube. Ce style est utilisé dans l'architecture de nombreuses applications de manipulation du son et de la vidéo.
+
+Dans l'architecture de style "client-serveur", l'application informatique est décomposée en deux sous-systèmes différents prévus pour résider sur des ordinateurs différents. Les deux sous-systèmes communiquent selon des protocoles réseau normalisés.
+
+Le patron "modèle-vue-contrôleur" est un modèle souvent utilisé dans l'architecture de l'interface graphique des logiciels. Il est fait de trois composants : le modèle, la vue et le contrôleur. Le contrôleur prend en charge les opérations effectuées par l'utilisateur à la souris et au clavier, et les transforme en messages destinés au modèle et à la vue. Le modèle stocke les informations à traiter et envoie des messages à la vue lors de modifications. La vue reçoit alors les messages et effectue les modifications nécessaires de l'interface graphique.
+
+Dans une architecture en "couches", les composants sont regroupés en sous-systèmes placés les uns au-dessus des autres. Chaque composant d'un sous-système donné est en relation uniquement avec des composants des sous-systèmes placés immédiatement au-dessus ou en dessous.
+
+Dans le style dit "architecture trois tiers", les composants sont regroupés en trois couches qui concernent respectivement l'affichage sur l'interface graphique, la logique et le stockage en base de données. Chaque couche peut résider sur un ordinateur différent.
+
+L´"architecture orientée services" est souvent considérée comme un patron. Elle est souvent associée au concept du "Enterprise Service Bus" (abrégé ESB), une ligne de communication publique à laquelle se connectent à la demande, différents logiciels fournisseurs et consommateurs de services.
+
+Les "antipatterns" sont des modèles de référence de "mauvaises réponses" à des problèmes d'architecture. Il s'agit de modèles de référence réputés inefficaces et déconseillés. Ils sont souvent utilisés comme exemples pour mettre en évidence les défauts d'organisation d'un système informatique. Le plat de spaghetti et l'usine à gaz sont des exemples d"'antipatterns".
+
+
+Afin de répondre à ces différents besoins de description de la conception informatique, il est apparu vers la fin des années 1980 (cadre Zachman, 1987) qu'il devenait nécessaire de décrire des cadres de conception afin de décrire les concepts selon différentes vues ou différents points de vue.
+
+
+
+
+
+

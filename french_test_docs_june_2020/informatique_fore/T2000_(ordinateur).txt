@@ -1,0 +1,40 @@
+﻿T2000 (ordinateur)
+
+Le T2000 était un mini-ordinateur fabriqué à Echirolles par la société Télémécanique et destiné aux applications temps réel. Introduit en 1968, cet ordinateur avait été conçu par Verjus et Sempé, après le MAT01 de Mors. Il reçut un prix de design industriel. 
+
+Il utilisait un mot de 19 bits, en bloc de 4000 mots, et, pour un accès rapide, un disque à têtes fixes. 
+
+Cet ordinateur eut un certain succès, mais une conception trop centralisée, un code saturé rendait difficile d'en dériver une gamme.
+Le successeur du T2000 fut le T1600, défini sur de nouvelles bases.
+
+La durée du cycle est de 1,5 µs. La mémoire,à tores, de 4 à 32 kilomots (de 20 bits chacun, dont 1 bit de parité) est divisée en blocs
+de 4 kilomots (1 kilomot = 1024 mots). Dans la configuration avec 32 kilomots, les blocs 0 et 1 sont réservés au système d'exploitation RTDMS (Real-Time Disk Monitor System). Cette mémoire est protégée par la technique de la barre de verrouillage : toute tentative par un programme s'exécutant hors de ces blocs d'exécuter une instruction privilégiée, une instruction d'entrée sortie, ou d'exécuter ou modifier du code placé dans la zone protégée génère une exception qui suspend le programme et passe la main au système d'exploitation. 
+
+Le processeur possède 12 registres, dont 8 sont accessibles aux programmeur. Ces registres comprennent: 
+
+
+Les instructions sont de longueur fixe, et tiennent dans un mot de 19 bits. Les bits 0 à 11 (2^12=4096) 
+servent à indiquer une valeur ou une adresse à l'intérieur d'un bloc de 4 kilomots. Le bit 12 indique 
+l'indexation, le bit 13 l'indirection, les bits 14 à 18 le code opération. 
+Les modes d'adressage disponibles sont l'adressage immédiat (la partie adresse est en fait une valeur); direct (la
+partie adresse est une adresse dans le bloc de 4K); indirect; et indexé (par le registre d'index X). 
+Les instructions peuvent être rangées dans un bloc instruction (BI) séparé du bloc contenant les opérandes (BO). Lorsque la fin du bloc instruction BI est atteinte, le compteur ordinal P passe de 4095 à 0 ce qui déclenche
+une exception.
+
+Chaque périphérique possède un coupleur qui doit être placé dans un bac d'E/S. Un bac peut accepter 15 périphériques. Ce bac possède une adresse, et chaque périphérique possède une adresse dans le bac déterminée
+par la position de son coupleur. L'adresse complète du périphérique est formée à partir de l'adresse du 
+bac et l'adresse du coupleur dans le bac. 
+Trois types d'E/S sont possibles: 
+
+Il existe des bacs pour chaque type d'E/S.
+
+
+Robuste et réactif, le T200 fut vendu à environ 700 à 800 exemplaires.
+
+Le T2000 fut utilisé notamment :
+
+Officiellement, les deux derniers calculateurs T2000 en service à la RATP furent arrêtés en octobre 2009. Un de ces calculateurs, ainsi que ses périphériques et une grande quantité de documentation, va rejoindre la collection du Musée des arts et métiers.
+
+ 
+
+

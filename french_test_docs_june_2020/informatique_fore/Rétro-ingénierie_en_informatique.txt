@@ -1,0 +1,129 @@
+﻿Rétro-ingénierie en informatique
+
+La rétro-ingénierie en informatique est un sous-domaine de la rétro-ingénierie appliquée aux systèmes, logiciels ou appareils informatiques. Elle a pour but d'analyser un système pour en créer une représentation à un plus haut niveau d'abstraction. Les objectifs de la rétro-ingénierie sont multiples, certains pouvant être autorisés voire nécessaires, et d'autres plus malveillants sont combattus de différentes méthodes.
+
+La rétro-ingénierie informatique regroupe l'ensemble des techniques et des outils liés à la compréhension d'un système logiciel et/ou matériel existant, sans le bénéfice des spécifications originales. Réalisée généralement en deux phases, elle consiste en l'identification des composants du système et de leurs relations, puis leurs représentations à un niveau d'abstraction plus élevé et plus compréhensible par les humains (spécifications, documentations, plans, schémas). Cela n'implique ni la modification, ni la création d'un nouveau système fondé sur cette rétro-ingénierie. C'est un processus d'analyse, et non d'altération ou de réplication. Le résultat de cette analyse peut être particulièrement bénéfique, ou complètement inexploitable, selon la personne effectuant la rétro-ingénierie, et sa connaissance de l'objet étudié. Ces résultats seront d'autant plus bénéfiques grâce à l'utilisation d'outils dédiés et le futur de la rétro-ingénierie sera fondé sur des preuves d'efficacité de ces méthodes et outils dans un contexte donné.
+
+La rétro-ingénierie est un défi technique pour plusieurs raisons (liste non exhaustive) :
+C'est principalement pour cela que les mainteneurs de logiciel doivent souvent faire des suppositions, telles : « que fait ce module ? », « pourquoi cette opération est-elle réalisée de cette façon » ?».
+Un des autres défis clé de l'analyse de programme est de prendre en compte la haute dynamicité. Les langages de programmation les plus répandus aujourd'hui permettent l'utilisation de ce concept, qui constitue un mécanisme de développement puissant, mais qui rend son analyse plus difficile. Par exemple, les langages comme Java introduisent les concepts de réflexion et la possibilité de charger des classes pendant l’exécution du programme. La rétro-ingénierie est passée d'une analyse à une dimension (statique), à une analyse à deux dimensions (statique et dynamique). Elle tend à en ajouter une troisième, qui consiste en l'étude de l'historique des données extraites des dépôts de logiciels.
+
+La rétro-ingénierie a deux objectifs principaux : la redocumentation et la récupération du modèle de conception. La redocumentation a pour but de produire une vue alternative d'un modèle, au même niveau d'abstraction. La récupération du modèle de conception vise à recréer les modèles d'abstraction à partir du code source, de la documentation existante, de la connaissance des experts ainsi que toutes autres sources d'informations. Le but de la rétro-ingénierie d'un logiciel est d'en améliorer sa compréhension globale, autant pour sa maintenance que pour son développement futur. Son analyse sera menée selon les axes suivants:
+Au-delà de la maintenance logicielle, la rétro-ingénierie peut être utilisée dans d'autres domaines, notamment à des fins de tests ou d'audit de sécurité et de vulnérabilités.
+
+Une quantité significative de litiges légaux impliquant les logiciels informatiques se concentrent autour de la rétro-ingénierie.
+
+La législation est restée longtemps imprécise, avec des concepts mal compris. Là où auparavant le secret commercial se heurtait au manque de textes de loi "(en témoigne le nombre d'articles sur le sujet au début des années 2000)", la législation autour de la rétro-ingénierie trouve aujourd'hui ses réponses notamment autour de la jurisprudence. (cas Sega vs Accolade et " par exemple)
+
+La légalité de la rétro-ingénierie dépend beaucoup de l'intention et du pays :
+
+En Europe, la (Article 5 et 6, ainsi que la révision de 2009) tolère la rétro-ingénierie pour des buts d'interopérabilité, mais interdit toute reproduction commerciale ou la publication d'informations obtenues via rétro-ingénierie.
+
+Aux États-Unis, la publication des brevets permet d'étudier un système sans rétro-ingénierie (mais empêche toujours l'exploitation commerciale). La rétro-ingénierie des logiciels, spécifiquement, est en général prohibée directement dans le CLUF, qui peut prévaloir sur certaines lois (voir ). Mais comme en Europe, le DMCA autorise la rétro-ingénierie pour l'interopérabilité.
+
+Au Japon, la n'interdit pas explicitement la rétro-ingénierie. Elle précise cependant ne pas s'étendre aux langages de programmation, loi ou algorithmes.
+
+Enfin en Australie, autre grand acteur des technologies de l'information, la (notamment par son amendement de 2006), proscrit toute forme de contournement des protections faites pour empêcher la copie ou la reproduction, sauf dans des cas spécifiques tels que : étude/recherche, critique/journalisme, parodie, procédure judiciaire.
+
+"Une étude a été menée à l'université de Missouri-Rolla. Des cours sur les techniques de rétro-ingénierie et l'étude de produits réels ont été ajoutés au cursus. 77 % des étudiants pensent que ces cours ont renforcé les concepts présentés durant les cours magistraux. Et 82 % veulent que les cours futurs suivent également cette approche. Cela rend les cours plus pratiques, intéressants, et fun."
+
+Le premier avantage de l'enseignement de la rétro-ingénierie est une meilleure compréhension des concepts logiciels et du fonctionnement matériel. Effectivement, tous ces concepts sont cachés derrière notre OS et notre IDE préféré mais sont indispensables à tout informaticien. Il est extrêmement bénéfique de se plonger dans un code source inconnu, dans du matériel ou des protocoles qui nous sont étrangers. De plus, lire et analyser du code écrit par des programmeurs plus expérimentés est très formateur.
+
+Ensuite, l'évolution des technologies nous conduit à maintenir et migrer de plus en plus de systèmes hérités. Il faut donc comprendre et pouvoir modifier ces systèmes dont la compréhension n'est pas triviale. La rétro-ingénierie met à disposition un certain nombre d'outils qui permettent de résoudre ces problématiques. C'est pourquoi leur enseignement permet de former des ingénieurs capables de s'adapter à ces problématiques.
+
+Enfin, la rétro-ingénierie est l'art de disséquer, de s'auto-motiver, et de construire ses capacités de réflexion logique.
+
+Commencée avec le besoin de maintenance et modernisation des vieux logiciels, la rétro-ingénierie s'est montrée un outil parfait pour pallier ce problème. Cependant, au-delà de cette nécessité économique, la rétro-ingénierie s'avère aussi indispensable pour plusieurs cas notables. On peut par exemple retrouver des applications sur des systèmes récents tels que iOS, ou sur du matériel comme des circuits ou des semi-conducteurs.
+
+D'autres cas d'applications incluent la documentation d'un programme ou de ses bases de données relationnelles, l'identification d'éléments réutilisables, la restauration d'architecture, celle de patrons de conception, le calcul de l'impact d'un changement, le renouvellement des interfaces graphiques, l'identification des clones, la traduction d'un programme, la réalisation d'une migration...
+
+Il s'est révélé de plus en plus nécessaire, au fur et à mesure que les développeurs d'origine des systèmes déménageaient ou disparaissaient, de pouvoir comprendre et modifier l'existant. Il faut en effet comprendre les intentions du logiciel pour le moderniser et le porter sur des systèmes modernes, notamment avec l'avènement des applications web où d'anciennes applications sont converties vers ce nouveau support.
+Afin d'effectuer ces transitions, les abstractions des systèmes existants vers des langages de modélisation modernes tels que l'UML sont nécessaires Une fois le modèle extrait, il devient possible de l'implémenter sous une autre forme, selon le format de E. J. Byrne.
+
+La rétro-ingénierie occupe une place importante en sécurité informatique. Elle peut être utilisée autant pour l'attaque que pour la défense. Pour un attaquant, elle permettra de connaître les vulnérabilités d'un système. Pour un expert en sécurité, elle sera utilisée pour comprendre comment fonctionnent les programmes malicieux, tels que les virus, les rootkits ou d'autres types de menace.
+
+Dans la lutte contre la cybercriminalité le temps est très souvent un élément important, c'est pourquoi les méthodes de rétro-ingénierie en sécurité sont toujours en évolution pour pouvoir être maîtrisées et appliquées efficacement contre les menaces.
+
+Appliquer une rétro-ingénierie sur un élément ou un système complet reste un excellent moyen d'apprentissage. Mais ces études permettent aussi de réaliser l'interopérabilité de plusieurs autres éléments avec un système tiers. C'est aussi un vaste sujet de recherche dans l'objectif d'améliorer les outils de sécurité, comme cité précédemment.
+
+De nombreux outils et méthodes ont été créés afin d'aider les mainteneurs de logiciels à comprendre la structure et les comportements d'un système. Dans la plupart des cas, il n'est pas surprenant que ces outils soient développés, ou que leur développement soit largement influencé, par une application spécifique. Cela implique une disponibilité d'outils de rétro-ingénierie nombreux et variés, à la fois en termes de fonctionnalités, et de méthodes de visualisation fournies. Cependant, il est difficile de juger de l'efficacité de ces outils de manière objective, surtout lorsqu'il s'agit de prototype de recherche, développé comme des preuves de concept, en appuis de nouvelles méthodes. Comme la plupart des domaines d'application ont des caractéristiques uniques et spécialisées, il est essentiel que ces boîtes à outils doivent être à la fois extensibles et polyvalentes.
+
+Ces dernières années ont vu le développement de plusieurs techniques et outils d'analyse de programme. Certains d'entre eux se base sur l'analyse statique, tandis que les plus récents utilisent de plus en plus souvent l'analyse dynamique en complément. Bien que cette dernière puisse être chère et incomplète, elle est nécessaire pour faire face à de nombreux problème de rétro-ingénierie ou l'analyse statique seule ne suffise pas. Il est important de distinguer les méthodes et techniques d'un côté, et les outils de l'autre. En effet, une méthode ou technique est une solution pour un ou plusieurs problèmes connus (par exemple la récupération du modèle de conception). Un outil est une application qui implémente et supporte l'utilisation d'une ou de plusieurs méthodes. Autrement dit, chaque méthode peut être implémentée de différentes manières par plusieurs outils.
+
+Lors de l'évolution d'un logiciel, des changements sont appliqués au code source pour ajouter des fonctions, corriger des bogues, et en améliorer la qualité. Dans un système peu documenté, le code est la seule source d'information fiable. C'est pour cela que le processus de la rétro-ingénierie se focalise sur la compréhension du code. Cependant, il ne contient pas toutes les informations nécessaires. Typiquement la connaissance de l'architecture, les compromis de conception, les contraintes de développement, et les domaines d'application qui n'existent que dans l'esprit des développeurs. De plus, lorsque l'analyse ne se concentre qu'a un bas niveau d'abstraction, elle fait perdre la vision d'ensemble du système. Les recherches du début des années 1990 étaient axées sur la récupération des architectures de haut-niveau et sur les diagrammes à partir de code procédural. L'utilisation des langages orientés objet et le langage de modélisation unifié UML ont introduit le besoin de rétro-ingénierie des modèles UML à partir du code source. Le développement de ces langages a été accompagné par l'utilisation des patrons de conception. Du point de vue de la rétro-ingénierie, l'identification des patrons de conception dans le code source vise à promouvoir la réutilisation et l'évaluation de la qualité du code.
+
+Les protocoles réseaux régulent la communication entre plusieurs entités par la définition d'une syntaxe et une sémantique des messages, ainsi que l'ordre dans lequel ils doivent être échangés. Récupérer les spécifications d'un protocole peut jouer un rôle important dans certains contextes, comme lors de l'implémentation de mécanismes de défense tel que les pare-feu ou les systèmes de détection d'intrusion. Cependant il est difficile de produire ces spécifications, notamment pour les protocoles fermés ou non documentés, qui nécessitent l'utilisation de la rétro-ingénierie afin de déterminer le sens et la structure des messages.
+
+La sécurité logicielle des cartes à puce est un enjeu important si l'on considère l'usage élargi qu'elles ont depuis leur apparition (cartes bancaires, SIM, passeport...). La rétro-ingénierie est un moyen d'analyse des cartes à puce invasif et destructif. L'attaquant retire les couches de la carte les unes après les autres et les photographie à l'aide d'un microscope électronique. Avec cette technique, il est possible de révéler entièrement la partie logicielle et matérielle des cartes à puce. Le problème principal pour l'attaquant étant de tout replacer dans le bon ordre pour comprendre le fonctionnement de l'ensemble. Les ingénieurs essaient de dissimuler les clés et les opérations en mélangeant par exemple les positions de la mémoire, par exemple le brouillage de bus. Dans certains cas, il est possible d'utiliser une sonde afin de mesurer les voltages tant que la carte est encore opérationnelle. Ici, les ingénieurs utilisent des capteurs afin de détecter et d’empêcher ce type d'attaque. L'attaque par matériel personnalisé des cartes à puce est peu utilisée car elle requiert un gros investissement en termes d'efforts et d'équipements spécialisés, qui ne sont généralement disponibles qu'aux grands fabricants de puces. De plus, le bénéfice de cette attaque est faible de par l'utilisation d'autres techniques de sécurité telle que les shadow accounts.
+
+Même si les moyens de rétro-ingénierie avancée tels que les microscopes électroniques restent inabordables pour le grand public, certains outils sont accessibles à tous. C'est le cas surtout pour les outils de rétro-ingénierie logicielle. Dans ce domaine, plusieurs débogueurs ou désassembleur se sont démocratisés. C'est le cas par exemple d'IDA Pro, qui reste le plus utilisé et le plus connu.
+
+Il est à noter que la plupart des outils se dirigent vers une abstraction à partir de l'implémentation du système, alors qu'il est tout à fait possible, sans outil, d'étudier et d'analyser des fragments d'un système : exigences, design, code, cas de test, pages de manuel, etc... afin de tirer des conclusions sur le système lui-même.
+
+Actuellement, de nombreux logiciels (boîtes à outils) sont disponibles pour aider les rétro-ingénieurs dans leur travail. Par exemple, "the Design Maintenance System" (DMS) développé par Semantic Designs, TXL, theStratego toolkit... mettent à disposition des outils pour parser le code source et effectuer des transformations automatiques basées sur des règles définies.
+
+Les logiciels d'analyse de code source qui ont été le plus développés durant ces dernières années sont les extracteurs d'informations, capables, avec ou sans le parsing du code source, d'extraire des informations intéressantes sur le code source analysé. areMOOSE, SrcML, Columbus, orBauhaus sont autant de logiciels de ce type. La diffusion des différents extracteurs à souligné le besoin d'un schéma commun pour les représenter : GXL or the FAMIX metamodel used byMOOSE.
+
+De nombreux autres outils sont également mis à disposition tels que theRigitool, CodeCrawler, Seesoft, SHriMP, andsv3D :
+
+De nombreux outils sont également mis à disposition des chercheurs pour la rétro-ingénierie matérielle. On peut par exemple citer :
+
+L'informatique étant omniprésente, la protection des données est devenue une priorité. Les données étant manipulées par des logiciels, souvent dans un environnement connecté, si le logiciel est vulnérable, les données le sont également. C'est pourquoi les applications sont devenues également une forme de donnée, qu'il faut protéger du vol et des usages malicieux.
+
+Étant donné l'investissement énorme en argent, temps, et capital intellectuel pour le développement d'un logiciel, la protection contre le piratage est un enjeu majeur de l'industrie du logiciel.
+
+Pour prévenir la distribution illégale de logiciels par des pirates, les développeurs vont essayer de placer certaines protections sur le programme. Un pirate va essayer, par rétroingénierie, d'enlever cette protection, et plus précisément, trouver et enlever le code qui implémente la protection, sans altérer le fonctionnement normal de l'application. Plusieurs méthodes de protection existent :
+
+Les fichiers de licence
+
+Les programmes utilisant cette protection vont vérifier l'existence, et la conformité d'un fichier de licence qui confirme l'authenticité de la copie. Contourner une telle protection nécessite de la rétro-ingénierie de l'application pour identifier le code qui effectue cette vérification et l'éliminer ou le contourner.
+
+Protections matérielles
+
+Il s'agit ici de contrôler la présence d'un composant matériel tel qu'un CD, un périphérique USB... La technique est similaire au fichier de licence, si ce n'est qu'il est possible d'ajouter du contenu indispensable à l'exécution de l'application sur le périphérique matériel. Dès lors, un simple contournement de la protection ne fonctionne pas. Cependant, on peut également effectuer de la rétro-ingénierie sur les périphériques matériels.
+
+Tamperproofing
+
+Il ne s'agit plus ici de vérifier si le logiciel a été acquis correctement ou non, mais plutôt de vérifier qu'il n'a pas été altéré. Que ce soit par un utilisateur malveillant, ou par un logiciel qui viendrait se "greffer" au programme. Dès qu'une modification non désirée est découverte, on va désactiver certaines, ou toutes les fonctionnalités du logiciel. Cette technique peut être implémentée dans le logiciel en soi, ou par un service tiers, comme le système d'exploitation par exemple. Plusieurs méthodes sont possibles pour implémenter cette technique : checksums, des gardes (logiciels) qui se vérifient entre eux, vérification de résultats intermédiaires de l'exécution d'un programme
+
+Souvent, il est indispensable de cacher le code, le rendre difficile à lire. Cependant, rendre du code totalement impossible à lire n'est pas possible. Car avec beaucoup de temps et de ressources, on peut même reconstituer une application complexe sur base du code machine. Le but de l'offuscation est donc de rendre la rétro-ingénierie économiquement non viable, la rendre tellement complexe que cela couterait moins cher en temps et en ressources de réécrire l'application à partir de rien.
+
+Malgré le fait que l'offuscation puisse rendre le code moins efficace, il s'agit d'une technique relativement peu couteuse qui attire de plus en plus l'attention.
+
+Christian Collberg et Clark Thomborson ont classé les techniques d'offuscation en plusieurs catégories :
+
+Lexicale
+
+Il s'agit de modifier les noms de variables, méthodes, classes... pour enlever leur sens.
+
+Contrôle
+
+Lorsque le code est compilé, de nombreux prédicats peuvent être directement évalués et on peut ainsi couper une partie du code qui ne sera jamais exécuté. Il s'agit ici de rendre tous les prédicats non prédictibles à la compilation de sorte que le code soit plus complexe car non "nettoyé" lors de la compilation.
+
+Données
+
+Les données peuvent également être modifiées de sorte qu'elles soient décomposées en plusieurs morceaux. Une variable pourrait par exemple être décomposée en deux variables qu'il faut additionner pour trouver la valeur initiale.
+
+Structurelle
+
+Il s'agit de modifier la structure de l'application, en extrayant des morceaux de code en procédures, divisant les procédures existantes en sous-procédures...
+
+"Logiciels":
+
+"Matériel":
+
+"Protocole":
+
+"Sémantique":
+
+"Description":
+
+"Éducation":
+
+"Légal":
+
+"Offuscation":
+
+"Outils":
+
+

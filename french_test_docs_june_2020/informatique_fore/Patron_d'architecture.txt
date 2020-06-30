@@ -1,0 +1,33 @@
+﻿Patron d'architecture
+
+En informatique, un patron d'architecture est un patron de conception, c'est-à-dire un modèle de référence qui sert de source d'inspiration lors de la conception de l'architecture d'un système ou d'un logiciel informatique en sous-éléments plus simples.
+
+Gère une liste d'objets durant une transaction et permet de gérer l'écriture des changements ainsi que les problèmes de concurrence.
+
+Charge en une seule fois tous les objets dans un map. Les objets sont ensuite retrouvés via la map. Ce pattern permet de créer un cache pour les objets dans la base de données.
+
+Crée un objet qui ne récupère pas toutes les données qui lui sont associées mais qui peut récupérer seulement celles dont il a besoin. Ce pattern est utile lorsqu'il faut faire des appels sur plusieurs base de données.
+
+Sauvegarde l'identifiant d'un champ dans un objet afin de maintenir une unité entre l'objet contenu en mémoire et une ligne dans une base de données. Ce pattern est utile lorsqu'il y a un mapping entre les objets en mémoire et les lignes d'une base de données.
+
+Map un objet avec une clé qui sert de référence entre différentes tables. Ce pattern peut être utilisé pour tous les cas où il n'y a qu'un seul champ qui sert d'identifiant entre les tables.
+
+Sauve l'association de plusieurs lignes d'une table avec plusieurs lignes d'une autre table lorsque cette association est représentée dans la base de données par une troisième table. Ce pattern est très utile pour représenter une relation Many-to-many entre deux tables dans une base de données.
+
+Crée une relation d'héritage dans les objets créés à partir de la base de données. Ce pattern est utile lorsqu'une table comporte plusieurs références vers d'autres tables mais que ces tables ne comportent pas de référence vers la première, on a donc un système de référence dans un sens qui est représenté dans ce pattern sous forme d'héritage.
+
+Sauvegarde dans un gros objet par sérialisation à partir d'un champ d'une base de données un graphe d'objets. Ce pattern est très utile pour les données représentées en XML mais présente des faiblesses lorsqu'il faut utiliser du SQL car il ne permet pas de faire des requêtes SQL.
+
+L'ensemble des classes héritées sont enregistrées dans une seule table. Chaque ligne représente un objet. Une colonne supplémentaire contenant un détrompeur (souvent le nom de la classe fille) doit être ajoutée. 
+
+
+
+Représente en une hiérarchie de classe héritée où chaque table représente une classe. 
+
+
+
+Crée un lien entre le domaine et la couche de donnée en utilisant une collection d'interface afin d'accéder aux objets du domaine. Ce pattern est utile lorsque la complexité du domaine est élevée. Cela permet d'isoler le domaine de la couche de données. Sur de gros systèmes avec beaucoup d'objets et de requêtes, cela réduit le code pour écrire toutes les requêtes. Cela permet de coder le reste de l'application sans penser aux requêtes pour accéder à la base de données.
+
+
+
+

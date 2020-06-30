@@ -1,0 +1,29 @@
+﻿Mise à jour perdue
+
+La mise à jour perdue (en anglais lost update) est un type d'erreur qui peut apparaître en informatique lorsque plusieurs accès en écriture à une information partagée ont lieu en parallèle. Lorsque deux transactions modifient la même information, les modifications de la première peuvent être recouvertes immédiatement par celles de la seconde si aucune précaution n'est prise contre ce problème; on dit que les mises à jour effectuées par la première transaction ont été "perdues".
+
+Ce problème peut se poser indépendamment de la forme que revêtent les informations partagées, qu'elles soient dans un fichier, dans une table de base de données ou en mémoire partagée entre plusieurs threads. Ce problème est également distinct de celui de la corruption des données qui peut intervenir en cas de mauvaise synchronisation des écritures, bien que les solutions aux deux problèmes utilisent souvent les mêmes mécanismes de base.
+
+Le système informatique d'une salle de cinéma (où les places ne sont pas numérotées) stocke le nombre de billets déjà vendus pour la séance. 100 billets ont déjà été vendus, et la caisse n° 2 est en train d'en vendre trois autres. Au même moment, la caisse n° 1 enregistre le remboursement de cinq billets, qui doivent donc être soustraits du total. Le système de la caisse n° 1 soustrait donc 5 au total du nombre de billets (100) et inscrit donc 95 en base de données. Immédiatement après, la caisse n° 2 enregistre sa propre transaction et ajoute 3 "au nombre de billets qu'elle-même a mémorisé", soit 103, et inscrit le résultat en base. La première mise à jour est donc perdue, et le résultat final est faux (103 au lieu de 98 places effectivement occupées).
+
+La solution la plus simple au problème de la mise à jour perdue est de ne pas découper les opérations de lecture et d'écriture comme on l'a fait dans le pseudo-code des caisses de l'exemple précédent; à la place, on utilisera une opération atomique qui effectue la lecture "et" l'écriture, par exemple, dans une base de données SQL :
+
+La solution des modifications atomiques ne s'applique pas lorsque le programme client d'un SGBD a le droit de prendre des décisions complexes en fonction des données qu'il lit avant d'effectuer ses écritures. Pour résoudre le problème de la mise à jour perdue dans ce contexte, il faut employer un mécanisme de verrouillage des données, qui interdira à plus d'un programme à la fois de modifier les données partagées. Les mécanismes primitifs de verrouillage pertinents sont les suivants :
+
+
+Ces mécanismes sont fournis par tous les systèmes de données usuels :
+
+Dans le cas des bases de données transactionnelles, le problème de la mise à jour perdue est plus souvent pris en charge directement par le SGBD, comme on le verra plus loin.
+
+Voici le déroulement des transactions de l'exemple ci-dessus, lorsqu'on utilise un verrou exclusif :
+
+L'inconvénient principal de la méthode des verrous est qu'elle est discrétionnaire : elle repose sur le bon vouloir des transactions participantes pour acquérir et relâcher les verrous au bon moment, faute de quoi des mises à jour perdues, voire des problèmes plus graves comme la corruption des données, risquent de se produire. De plus, le verrou exclusif constitue un goulot d'étranglement potentiel, car il doit être détenu pendant le temps que durent les calculs de la transaction et les communications avec la base. Ce n'est sans doute pas un problème dans un cinéma, mais peut le devenir pour des systèmes plus complexes notamment s'ils sont répartis dans plusieurs sites à travers le monde.
+
+Le standard SQL92 définit une fonctionnalité connue sous le nom de niveaux d'isolation, qui consiste pour la base de données à traiter "du côté serveur" le problème de la mise à jour perdue. Pour l'algorithme des caisses de billetterie évoqué ci-dessus, un niveau d'isolation «lecture répétable» ("repeatable read") suffit. Voici les commandes SQL nécessaires pour PostgreSQL, qui n'a pas de niveau d'isolation «lecture répétable» (on utilise donc «sérialisable» à la place, qui est plus fort) :
+
+Le serveur de base de données peut choisir de traduire la commande codice_2 par l'obtention d'un verrou exclusif sur l'ensemble de la base de données; on se retrouve alors dans la situation du paragraphe précédent. Ce n'est pas ce que fait PostgreSQL; plus habilement, celui-ci laisse les lectures (commandes SELECT) s'effectuer en parallèle, et rejette les écritures (en provoquant un rollback de la transaction) si une situation de mise à jour perdue est détectée. De cette façon, PostgreSQL permet à des transactions portant sur des données différentes de s'effectuer complètement en parallèle, et interdit les mises à jour perdues sans avoir à faire confiance aux clients pour qu'ils gèrent correctement les subtilités du verrouillage; l'inconvénient est qu'il existe un risque de "rollback" arbitraire, et que la caisse doit donc être prête à répéter sa transaction (plusieurs fois si nécessaire) jusqu'à ce qu'elle réussisse.
+
+L'idée de répéter la transaction plusieurs fois n'est typiquement pas acceptable lorsqu'elle implique un utilisateur humain : en effet, celui-ci devrait recommencer tout son travail de saisie à chaque fois. Les solutions sont les suivantes :
+
+
+

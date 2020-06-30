@@ -1,0 +1,16 @@
+﻿Salt (logiciel)
+
+Salt ou SaltStack est un logiciel de gestion de configuration écrit en Python, fonctionnant sur le principe client-serveur. Salt a pour but de rendre la gestion de configuration simple mais flexible. Il s'agit d'une alternative à Puppet, Ansible et Chef. On utilise les langages informatiques YAML, Jinja2 et Python pour configurer Salt.
+
+Pour utiliser Salt il faut installer deux services qui peuvent éventuellement être sur le même serveur :
+
+Le « minion » identifie le « master » par son nom ou par son adresse IP.
+Le « master » identifie le minion par son nom d'hôte.
+La communication entre le serveur et les clients se fait après l'acceptation du « minion » par le « master » et après acceptation d'un échange de clés de chiffrement.
+Les minions peuvent ensuite être commandés par lot à l'aide de critères comme le système d'exploitation, une expression régulière sur le nom d'hôte, le type d'architecture, etc.
+
+Les fichiers d'état, les « states », permettent de décrire une représentation de l'état dans lequel un serveur doit être. Ils sont écrits en YAML et portent l'extension .sls. Les fonctions d'état font fréquemment appel à un ou plusieurs modules d'exécution pour exécuter une tâche donnée.
+
+La machine cliente SaltStack est appelé « minion », le serveur est appelé « master ».
+
+

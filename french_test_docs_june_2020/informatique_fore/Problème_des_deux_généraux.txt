@@ -1,0 +1,27 @@
+﻿Problème des deux généraux
+
+En informatique, le problème des deux généraux, aussi appelé problème des deux armées ou problème de l’attaque coordonnée, est une expérience de pensée censée mettre en évidence les limites d'un médium non fiable et asynchrone pour mettre au point une action coordonnée. Elle est reliée au problème, plus général des généraux byzantins, qui a été énoncé postérieurement. En logique épistémique, le concept crucial mis en œuvre est celui de la connaissance commune. 
+
+Deux corps d'armée W et B sont situés à une certaine distance l'un de l'autre et doivent attaquer une armée N. Ensemble les deux corps d'armée de W et B peuvent vaincre l'armée de N. Isolément chaque corps d'armée W ou B serait défait par l'armée de N : aucun d'eux ne pouvant attaquer seul, les généraux commandant les corps d'armée doivent coordonner leur attaque. Autrement dit, ils doivent se mettre d'accord sur le jour et sur l'heure de leur attaque. Or ils ne communiquent que par des messagers (disons à cheval) qui mettent un certain temps (asynchronisme) pour rejoindre le camp de l'autre général et peuvent être capturés par l'ennemi (absence de fiabilité). Comment doivent-il faire?
+
+Supposons que le général W prenne l'initiative et fixe le jour et l'heure de l'attaque . Il envoie au général B pour lui proposer cette heure pour l'attaque, un messager qui mettra un quart d'heure pour le joindre et risque aussi d'être capturé. Le général W n'attaquera que s'il a l'agrément du général B qui lui parviendra aussi par un messager qui mettra, lui aussi, un quart d'heure pour lui transmettre l'accusé de réception et l'accord de l'heure d'attaque s'il n'est pas fait prisonnier. Mais bien sûr, le général B n'attaquera pas seul et ne le fera que s'il sait, à travers un accusé de réception envoyé par un messager que le général W a bien reçu son accord. Mais alors pour que le général W attaque il faut qu'il sache que le B a bien reçu son accusé de réception. Mais le général B n'attaquera que s'il a reçu l'accusé de réception de l'accusé de réception.
+On voit que d'accusés de réception en accusés de réception, une coordination nécessite un temps infini et n'est donc pas possible. 
+
+On présente cela souvent en disant que pour que l'attaque ait lieu il faut que le général W sache que le général B sait que le général W sait que le général B sait que le général W sait que le général B sait que le général W et ainsi de suite jusqu'à l'infini.
+L'acquisition de ce savoir itéré par W et B s'appelle la "connaissance commune".
+L'impossibilité de l'attaque coordonnée dit que l'acquisition de cette connaissance commune est impossible en employant des messagers ou des messages sur internet, ou encore que la "connaissance commune" ne peut s'acquérir par transmissions "« asynchrones »" et "« non fiables »".
+
+Les situations où le problème des généraux s'appliquent sont nombreuses.
+
+Le problème des deux généraux illustre le fait qu'il est impossible de communiquer avec certitude si les canaux de communications ne sont pas fiables. En pratique, on devra donc se contenter d'atténuer les effets de l'incertitude à des niveaux acceptables. 
+
+Le général W pourra par exemple envoyer 100 messagers dans l'espoir qu'au moins l'un d'entre eux ne soit pas capturé et transmette le message. Dans cette stratégie, le général W attaque dans tous les cas, et le général B attaque si au moins un message est reçu et cette stratégie n'échoue que si les 100 messagers sont capturés.
+
+Une autre possibilité est celle pour W d'envoyer une succession de messages numérotés, et pour B d'envoyer un accusé de réception à chaque message reçu. Si B reçoit au moins un message, il peut alors estimer la fiabilité du canal de communication, et envoyer lui-même un nombre d'accusés de réception en conséquence pour garantir une probabilité de synchronisation élevée (puisqu'il suffit d'un seul message et d'un seul accusé de réception pour que l'attaque soit coordonnée).
+
+Il peut être intéressant de minimiser le nombre de messages envoyés (après tout, chaque messager capturé est une perte pour l'armée des généraux), tout en garantissant une faible probabilité d'échec. Les généraux peuvent par exemple convenir qu'une absence de messagers est une indication que le général qui a initié le protocole a reçu au moins une confirmation et est donc prêt à l'attaque.
+
+Supposons qu'il faille une minute au messager pour traverser les lignes ennemies. En l'absence de réponse pendant 200 minutes, le général ayant envoyé le dernier message fera le raisonnement suivant : ou bien l'autre général a reçu mon dernier message, ou bien 200 messagers ont été capturés en traversant les lignes ennemies. La transmission du message est donc probable.
+
+
+

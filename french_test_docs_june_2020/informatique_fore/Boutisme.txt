@@ -1,0 +1,86 @@
+﻿Boutisme
+
+En informatique, le nombre entier est un type de données qui est généralement représenté sur plusieurs octets. Le boutisme (endianness en anglais) ou plus rarement endianisme désigne l'ordre dans lequel ces octets sont placés. Il existe deux conventions opposées : l'orientation gros-boutiste (ou gros-boutienne) qui démarre avec les octets de poids forts, et l'orientation inverse petit-boutiste (ou petit-boutienne).
+
+L'expression est utilisée de manière plus générale pour désigner l'ordre des chiffres dans un système de numération positionnel (par exemple celui des bits).
+
+Le choix du boutisme est typiquement fixé par l'architecture du processeur, ou par le format de données d'un fichier ou d'un protocole.
+
+Gros-boutiste et petit-boutiste viennent des termes anglais "big-endian" et "little-endian", popularisés dans le domaine informatique par Dany Cohen, en référence aux "Voyages de Gulliver", conte satirique de Jonathan Swift. En 1721, Swift décrit comment de nombreux habitants de Lilliput refusent d'obéir à un décret obligeant à manger les œufs à la coque par le petit bout. La répression pousse les rebelles, dont la cause est appelée "big-endian", à se réfugier dans l'empire rival de Blefuscu ce qui entretient une guerre longue et meurtrière entre les deux empires.
+
+En 1980, Cohen publie « une tentative pour arrêter une guerre », celle qui oppose les partisans "big-endian" et "little-endian" au sein du groupe qui travaille sur les protocoles réseau qui conduiront à Internet. Dans sa note technique, il indique qu'aucune argumentation logique ne peut montrer la supériorité d'une convention sur l'autre ; cependant, dans le domaine informatique, un choix doit être fait pour éviter le désordre.
+
+La première traduction en français du roman de Swift utilise le terme "gros-boutien".
+L'Office québécois de la langue française préconise "gros-boutiste" et "petit-boutiste", ce qui conduit au nom "boutisme" pour traduire "endianness".
+
+En informatique, il n'y a pas vraiment de préférence pour le suffixe "-iste". Le suffixe "-iste" fait référence à un partisan d'une doctrine, alors que "-ien" désigne plutôt un membre d'une communauté (à titre d'exemple, on dit "linuxien" et non "linuxiste"). En l'occurrence gros-boutiste semblerait plus approprié.
+
+Quand certains ordinateurs enregistrent un entier sur 32 bits en mémoire, par exemple codice_1 en notation hexadécimale, ils l'enregistrent dans des octets dans l'ordre qui suit : codice_2, pour une structure de mémoire fondée sur une unité atomique de 1 octet et un incrément d'adresse de 1 octet. Ainsi, l'octet de poids le plus fort (ici codice_3) est enregistré à l'adresse mémoire la plus petite, l'octet de poids inférieur (ici codice_4) est enregistré à l'adresse mémoire suivante et ainsi de suite.
+
+Pour une structure de mémoire ou un protocole de communication fondé sur une unité atomique de 2 octets, avec un incrément d'adresse de 1 octet, l'enregistrement dans des octets sera codice_5. L'unité atomique de poids le plus fort (ici codice_6) est enregistrée à l'adresse mémoire la plus petite.
+
+Les architectures qui respectent cette règle sont dites gros-boutistes, "big-endian" ou « mot de poids fort en tête ». C'est le cas par exemple pour les processeurs Motorola 68000, les SPARC (Sun Microsystems) ou encore les System/370 (IBM).
+
+De plus, tous les protocoles TCP/IP communiquent en gros-boutiste. Il en va de même pour le protocole PCI Express.
+
+Les autres ordinateurs enregistrent codice_1 dans l'ordre suivant : codice_8 (pour une structure de mémoire fondée sur une unité atomique de 1 octet et d'un incrément d'adresse de 1 octet), c'est-à-dire avec l'octet de poids le plus faible en premier. De telles architectures sont dites petit-boutistes, "little-endian" ou « mot de poids faible en tête ». Par exemple, les processeurs x86 ont une architecture petit-boutiste. Celle-ci, au prix d'une moindre lisibilité du code machine par le programmeur, simplifiait la circuiterie de décodage d'adresses courtes et longues en 1975, quand un 8086 avait transistors. Elle est d'influence pratiquement nulle en 2016, aussi bien en temps d'exécution (masqué) que d'encombrement (un Haswell typique comporte 1,4 "milliard" de transistors).
+
+Pour une structure de mémoire ou un protocole de communication fondé sur une unité atomique de 2 octets, avec un incrément d'adresse de 1 octet, l'enregistrement dans des octets sera codice_9. L'unité atomique de poids le plus faible (ici codice_10) est enregistré à l'adresse mémoire la plus petite.
+
+Certaines architectures supportent les deux règles, par exemple les architectures PowerPC (IBM), ARM, DEC Alpha, MIPS, PA-RISC (HP) et IA-64 (Intel). On les appelle "bytesexual" (jargon), "bi-endian" ou bi-boutistes. Le choix du mode peut se faire au niveau logiciel, au niveau matériel ou aux deux.
+
+Certaines autres rares architectures, appelées mi-boutistes ou "middle-endian", ont un ordonnancement plus complexe : les octets composant les unités atomiques subissent une opération d'inversion. Par exemple codice_1 est enregistré dans une mémoire mi-boutiste dont les unités atomiques sont de 2 octets, avec un incrément d'adresse de 1 octet, dans l'ordre : codice_12 ou bien codice_13.
+
+ou alternativement
+
+Il existe une ambiguïté dans la représentation de cette donnée. En effet, l'information de boutisme sur la manière d'ordonner les unités atomiques existe toujours bel et bien. On utilise donc les termes de gros-boutiste ou petit-boutiste associés à une caractéristique de "byte-swap", plutôt que celui de mi-boutiste. L'exemple devient dès lors non ambigu :
+
+1. Dans une mémoire petit-boutiste avec "byte-swap", 2 octets d'unité atomique, 1 octet d'incrément d'adresse, codice_1 est représenté par codice_12, codice_16 étant à l'adresse codice_17.
+2. Dans une mémoire gros-boutiste avec "byte-swap", 2 octets d'unité atomique, 1 octet d'incrément d'adresse, codice_1 est représenté par codice_13, codice_4 étant à l'adresse codice_17.
+Il est plus difficile de travailler avec de tels processeurs, les PDP-11 par exemple.
+
+Dans une architecture gros-boutiste, les bits sont conventionnellement numérotés de la gauche vers la droite. Ainsi le bit de poids le plus fort est le bit 0, et le bit de poids le plus faible est le 7 dans un octet. Dans une architecture petit-boutiste, c'est le contraire.
+
+Si l'octet doit représenter un nombre entier, alors la convention gros-boutiste peut porter à confusion car le poids du bit "n" est alors 2 (au lieu de 2 avec la convention petit-boutiste). En revanche, elle convient mieux pour représenter une fraction binaire, le poids du bit "n" étant alors 2 (contre 2 pour petit-boutiste).
+
+Un moyen mnémotechnique pour ne pas confondre les deux notations consiste à remplacer « boutiste » par « tête ». On a alors :
+
+Sur architecture petit-boutiste :
+
+Sur architecture gros-boutiste :
+
+On appelle cela le problème NUXI, en effet si on veut envoyer la chaîne « UNIX » en regroupant deux octets par
+mot entier de 16 bits sur une machine de convention différente, alors on obtient NUXI. Ce problème a été
+découvert en voulant porter une des premières versions d'Unix d'un PDP-11 "mi-boutiste" sur une architecture IBM gros-boutiste.
+
+Le protocole IP définit un standard, le network byte order (soit ordre des octets du réseau). Dans ce protocole, les informations binaires sont en général codées en paquets, et envoyées sur le réseau, l'octet de poids le plus fort en premier, c'est-à-dire selon le mode gros-boutiste et cela quel que soit le boutisme naturel du processeur hôte.
+
+Les périphériques doivent aussi respecter une convention afin d'assurer la cohérence du système. Tout cela est fixé par le protocole de la couche de liaison du modèle OSI.
+
+Bien que la différence entre les modes gros-boutiste et petit-boutiste semble aujourd'hui minime et se limite à un problème de convention, on peut signaler des avantages liés à chacun :
+
+Le mode petit-boutiste présentait des avantages lorsque les processeurs utilisaient des tailles de registre variables, c’est-à-dire 8, 16 ou 32 bits. À partir d'une adresse mémoire donnée, on pouvait lire le même nombre en lisant 8, 16 ou 32 bits.
+
+Par exemple, le nombre 33 (0x21 en hexadécimal) s'écrit "21 00 00 00" en petit-boutiste sur 32 bits et "21 00" en petit-boutiste sur 16 bits, ce qui se lit toujours "21" quel que soit le nombre d'octets lus. Cela est faux en gros-boutiste car la première adresse change suivant le nombre d'octets à lire.
+
+Pour sa part, le mode gros-boutiste offrait un meilleur confort de lecture pour les êtres humains (de langue indo-européenne) lorsque ceux-ci devaient lire des nombres représentés sur plusieurs octets à l'intérieur de dumps mémoire, puisque cette convention d'écriture correspond à celle utilisée pour écrire les nombres dans les langues européennes (de la gauche vers la droite, on écrit les chiffres de poids décroissant).
+
+Par exemple, le nombre (0x15665 en hexadécimal) s'écrit "00 01 56 65" en gros-boutiste sur 32 bits, ce qui correspond à l'écriture usuelle dans les langues indo-européennes. Ce n'est pas le cas avec le mode petit-boutiste, dans lequel le même nombre s'écrit "65 56 01 00" sur 32 bits : avant de pouvoir le lire, il faut alors mentalement inverser les octets un par un, ce qui n'est pas usuel (pour les êtres humains de langue indo-européenne) et exige un effort cérébral important.
+
+On a bien compris que ces conventions posent des problèmes dans le portage des logiciels. Par exemple, en lisant des données binaires, selon l'architecture, on ne va pas obtenir la même donnée après lecture si on ne se soucie pas de la convention.
+
+Bien sûr le choix de gros-boutiste ou petit-boutiste est toujours arbitraire, ce qui soulève des débats intensifs, car il y a en faveur de l'un et de l'autre. Ainsi, une rupture de communication en cours de transmission favorise le grosboutisme, car on a transmis une valeur approximative (arrondie) de ce qu'on veut transmettre. Les langues par exemple, selon le groupe linguistique germanique, anglais ou autre, n'ont pas la même perception.
+
+Les langues humaines n'ont pas toutes la même convention pour la transcription des nombres.
+
+Le produit de trois par sept a la même valeur en France et en Allemagne. Ce nombre se prononce « vingt-et-un » en français (ce qui correspond à une convention gros-boutiste) ; en allemand, il se dit « einundzwanzig », c'est-à-dire « un et vingt ». Dans chacune de ces langues, la convention d'écriture en toutes lettres reflète la prononciation orale.
+
+En arabe, quand on écrit un nombre en chiffres en suivant le sens habituel d'écriture de l'arabe, on commence par écrire le chiffre des unités, puis celui des dizaines, pour finir avec le chiffre de poids le plus fort : ce qui est analogue à une convention petit-boutiste. Comme l'arabe s'écrit de droite à gauche, le chiffre des unités est à droite de la page.
+À l'opposé, pour écrire un nombre en chiffres dans un texte en français, on commence par le chiffre de poids le plus fort, pour terminer par le chiffre des unités : c'est donc une convention gros-boutiste, par rapport au sens d'écriture usuel du français.
+Néanmoins, comme le français et l'arabe s'opposent à la fois sur le boutisme et sur leur sens d'écriture usuel, dans les deux cas, le chiffre des unités est à droite de la page, et le chiffre de poids le plus fort se trouve à gauche.
+
+Certains pays ont des standards concernant l'écriture des dates. La notion de boutisme y est présente comme le montrent les exemples suivants :
+
+
+
+

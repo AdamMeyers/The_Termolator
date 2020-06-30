@@ -1,0 +1,41 @@
+﻿Gestion de configuration logicielle
+
+La gestion de configuration logicielle est une discipline du génie logiciel ayant pour objet de répondre à la question : "quelqu'un a obtenu un résultat. Comment le reproduire ?" Le plus souvent, il ne s'agit pas de reproduire "à l'identique", mais de reproduire avec des modifications incrémentales. La question est donc de comparer des résultats et d'analyser leurs différences.
+
+La gestion de configuration logicielle se révèle comme un outil de "communication" sophistiqué entre des acteurs indépendants, contribuant à l'édification de systèmes ouverts.
+
+Le rapport exact avec le concept voisin de gestion de configuration est l'objet de désaccords. On peut y voir au choix une relation :
+
+On préfère parfois parler de « "gestion de configuration du logiciel" » plutôt que de « "gestion de configuration logicielle" ». On comprendra qu'un logiciel se trouve toujours dans une configuration donnée (maquette, prototype, livrée, recette, intégration, etc.). Gérer l'ensemble de ces configurations, c'est "gérer en configuration" dudit logiciel. 
+
+Il est nécessaire de ne pas confondre la gestion de configuration avec la partie méthodologique (Merise, Cycle en V, Booch, etc.) ou organisationnelle (Rational Unified Process, Extreme Programming, etc.) d'un projet, même si ces notions sont de plus en plus étroitement liées.
+
+La gestion de configuration est définie par la norme internationale ISO/CEI 10007 (également adoptée par le Comité Européen de Normalisation) et se définit comme les activités d'ordre technique et organisationnel comprenant :
+
+Si la gestion de configuration ne fait mention que de produit nous considérerons dans la suite de cet article l'identité entre produit et logiciel.
+
+Activités destinées à déterminer les constituants du produit, à choisir les articles de configuration, à fixer dans des documents les caractéristiques physiques et fonctionnelles d'un article de configuration, y compris les interfaces et les évolutions ultérieures et à allouer des caractères ou des numéros d'identification aux articles de configuration et à leurs documents.
+
+Activités comprenant la maîtrise des évolutions des articles de configuration après établissement formel de leur document de configuration.
+
+Action d'enregistrer et de présenter sous une forme définie les documents établis pour la configuration, l'état des demandes d'évolution et de la mise en œuvre des évolutions approuvées.
+
+Examen destiné à s'assurer de la conformité d'un article de configuration avec ses documents de configuration.
+
+La gestion de configuration du logiciel se particularise de la gestion de configuration en général essentiellement par la nature (support) des éléments et articles de configuration à gérer et non par ses activités qui, elles, restent toujours les mêmes (identification, maîtrise, enregistrement et audit).
+
+D'un côté il est plus facile de modifier un fichier ou d'altérer un logiciel qu'un plan sur papier ou un objet matériel. De l'autre il est plus facile d'automatiser la gestion d'éléments de type fichier informatique que des éléments matériels tel qu'un composant mécanique (vis, rondelle, etc.) ou électronique (diode, transistor, capacité, etc.) quoi que plus facile dans ce dernier cas.
+
+De même il est plus facile de vérifier visuellement l'intégrité d'un ensemble matériel alors que celle d'un ensemble logiciel n'est possible que via des sommes de contrôle dont la vérification fiable requiert et est permise par l'usage d'un logiciel tiers.
+
+Enfin il est plus facile de marquer ou étiqueter de manière inaltérable un élément matériel qu'un fichier logiciel à moins que le support matériel de ce dernier soit lui-même de nature matérielle stable (exemple : CDROM ou DVD)
+
+La différence essentielle entre un logiciel de gestion de versions et un logiciel de gestion de configuration est que ce dernier propose des outils permettant :
+
+Le logiciel Synergy a été le premier à promouvoir la notion de "tâche" repris par PVCS, Perforce la notion de "jobs" et ClearCase d"'activités" pour désigner ces demandes de modifications. Autant CVS, Bitkeeper, SourceSafe et "Consors" ne sont que des gestionnaires de versions (CVS signifie « Concurrent Versions System ») tandis que les premiers sont des gestionnaires de configuration.
+
+Au début du projet, les tâches sont les spécifications du projet, puis on trouvera les demandes de correction ou d'évolution. Grâce à cette association :
+
+
+
+

@@ -1,0 +1,33 @@
+﻿Commande LQG
+
+En automatique, la Commande linéaire quadratique gaussienne dite commande LQG est une méthode qui permet de calculer le gain d'une commande par retour d'état dans un souci particulier de réduire les bruits blancs.
+
+La commande LQG réunit un contrôleur LQ (Linear Quadratic) et un estimateur de Kalman pouvant être calculé indépendamment suivant le principe de séparation.
+La commande LQ garantit une certaine robustesse de la boucle fermée, ce qui n'est pas le cas de la boucle LQG.
+
+Si on considère le système suivant:
+
+Où formula_3 est le vecteur de variables contrôlées; formula_4 est le vecteur de commande; formula_5 est un bruit blanc gaussien sur l'état et formula_6 un bruit blanc gaussien sur la sortie.
+
+Le critère optimisé standard est de type temporel et permet d'opérer un compromis entre le temps de convergence et la consommation de commande:
+formula_7
+Où: formula_3 est le vecteur de variables contrôlées; formula_4 est le vecteur de commande; 
+formula_10 et formula_11 sont des matrices de pondérations définies positives
+Le contrôleur LQG est la solution des équations:
+
+La matrice formula_14 est appelée gain de Kalman du filtre de Kalman associée à la première équation. Ce filtre estime l'état du système formula_15. Le gain de Kalman formula_14 est calculé à partir des matrices formula_17 et les deux matrices de covariances formula_18, formula_19 des bruits blancs gaussiens formula_20 et formula_21 et de l'état initial formula_22. Le gain de Kalman est calculé par résolution de l'équation différentielle matricielle dite de Riccati,
+
+Soit formula_25 le gain de Kalman est,
+
+La matrice formula_27 est le gain du correcteur LQ. Cette matrice est déterminée par les matrices formula_28 et formula_29 par résolution de l'équation de Riccati,
+
+Soit formula_32 il vient,
+
+On peut observer la similarité entre les deux équations différentielles: la première est dans le sens de la flèche du temps tandis que la deuxième est à rebours. Cela vient de la dualité entre les problèmes de contrôle et d'estimation.
+
+Quand formula_34 et les matrices de covariances formula_18, formula_19 ne dépendent pas du temps, le contrôleur LQG est invariant dans le temps et les équations deviennent des équations de Riccati (équation de Riccati) algébriques.
+La commande LQG est optimale au sens de la norme formula_37. Pour faire le lien avec les techniques fréquentielles de type "H": il est possible de réaliser une optimisation dans le domaine fréquentiel au sens de la norme formula_37 sur le même schéma de synthèse d'une commande "H". La synthèse formula_37 peut être réalisée sur les mêmes entrées-sorties que la synthèse Hinfini, tout juste sera-t-il nécessaire de régler les pondérations fréquentielles.
+
+
+
+

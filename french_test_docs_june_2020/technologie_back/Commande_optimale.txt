@@ -1,0 +1,268 @@
+﻿Commande optimale
+
+La théorie de la commande optimale permet de déterminer la commande d'un système qui minimise (ou maximise) un critère de performance, éventuellement sous des contraintes. Le cas le plus classique (et le plus simple) est celui de contraintes de type inégalité sur la commande, mais on peut aussi envisager des contraintes de même type sur l'état. Cette théorie est une généralisation du calcul des variations. Elle comporte deux volets : le principe du maximum (ou du minimum) dû à Lev Pontriaguine et à ses collaborateurs du Steklov Institute de Moscou, et l'équation de Hamilton-Jacobi-Bellman, généralisation de l'équation de Hamilton-Jacobi, et conséquence directe de la programmation dynamique initiée aux États-Unis par Richard Bellman. La théorie de la commande optimale fait partie de l'automatique et des mathématiques appliquées (optimisation des processus). En tant que cette théorie généralise le calcul des variations, elle a également un champ d'application en physique mathématique, et les développements théoriques actuels rejoignent les mathématiques pures.
+
+Les idées sous-jacentes au principe du maximum et à la programmation dynamique sont fort anciennes et ont été intimement liées dès leur préhistoire. Elles ont été développées de manière indépendante et pratiquement simultanée, vers le milieu des années 1950, et elles continuent aujourd’hui d’avoir de nombreuses connexions.
+
+La programmation dynamique a pour origine le principe de Huygens pour la propagation de la lumière : c’est le fameux principe des « sources intermédiaires » qui interprète les phénomènes de réflexion et de réfraction en supposant la propagation d'ondelettes sphériques secondaires issues d'une onde sphérique principale ; le principe d'Huygens est lui-même fondé sur le principe de Fermat qui postule que la lumière suit le trajet dont le temps de propagation est minimal. 
+
+Le principe du maximum est une généralisation des équations d' Hamilton du calcul des variations. L’invention de celui-ci remonte à la résolution du problème de la courbe brachistochrone, posé par Jean Bernoulli en 1696 ; il s’agit également d’un problème de temps minimal (comme l’indique la racine grecque : « βραχιστος (brachistos) », « le plus court » ; « χρονος (chronos) », « temps »). Ce problème fut résolu tout d’abord par Jean Bernoulli lui-même (ainsi que d'autres savants, dont son frère Jacques Bernoulli, Leibniz et Newton) grâce à une analogie avec le problème de propagation de la lumière et l'application du principe de Huygens ; c’était en quelque sorte utiliser la programmation dynamique avant la lettre. Puis Euler, élève de Jean Bernoulli, a posé les premières bases du Calcul des variations, en réponse à la demande de son maître de systématiser sa solution ; Euler, à cette occasion, a ébauché à partir de considérations géométriques la méthode des « petites variations », méthode à laquelle Lagrange a donné, un peu plus tard, une forme analytique plus élégante. Il revenait à Weierstrass, au milieu du dix-neuvième siècle, soit un siècle plus tard, de définir la notion d'extremum fort et d'établir une condition nécessaire ainsi qu'une condition suffisante pour qu'il y ait un tel extremum. Le principe du maximum est une généralisation de la condition nécessaire d'extremum fort de Weierstrass, obtenue en remplaçant l'hamiltonien par un "pseudo-hamiltonien" (voir "infra"). Ce principe avait déjà été entrevu par Constantin Carathéodory dès 1935 et plus précisément encore par Magnus Hestenes en 1950. Mais c'est sur la base des intuitions de Pontriaguine et sous sa direction que le principe du maximum, tel que nous l'entendons aujourd'hui, a été démontré tout d'abord pour les problèmes de temps minimal, puis dans le cas général par V. G. Boltyanskii, R. V. Gamkrelidze et L. I. Rozonoer entre 1955 et 1959. La mise en œuvre de la technique des « variations en aiguille », déjà utilisée par James McShane en 1939, est néanmoins due à Boltyanskii, qui a également montré que le principe du maximum n'était qu'une condition "nécessaire" d'optimalité, et qui a donné au principe du maximum la forme qu'il a prise dans le célèbre livre de Pontriaguine et ses collaborateurs, paru en russe en 1961 (le quatrième auteur de ce livre, E. F. Michtchenko, a quant à lui résolu un problème statistique de commande optimale). [C'est à la suite de la contribution de Pontriaguine et ses collaborateurs que la variable de commande d'un système a été notée "u", управление ("upravlenie") signifiant "commande" en russe].
+
+Les travaux récents ont permis de généraliser ces deux approches sans les modifier profondément ; ils se sont pour une bonne part tournés vers l'affaiblissement des conditions de différentiabilité dans le cadre de l'« analyse non lisse » initiée par Frank H. Clarke, en utilisant les « gradients généralisés » (ou « différentielles généralisées ») introduits par cet auteur . Cela a conduit à envisager des commandes de nature plus générale que les fonctions continues par morceaux du théorème originel de Pontriaguine et ses collaborateurs : notamment des fonctions mesurables au sens de Lebesgue. Un autre type d'extension porte sur les systèmes à retard et plus généralement de dimension infinie. D'autre part, Boltyanskii a donné une « version faible » du principe du maximum pour les systèmes à temps discret après avoir développé à cette fin des techniques mathématiques spécifiques, mais on peut démontrer sans difficulté son résultat à partir des conditions de Karush, Kuhn et Tucker. Sous certaines conditions de convexité, on retrouve toutefois un véritable principe du maximum pour ce type de systèmes.
+
+Par nature, le principe du maximum de Pontriaguine est une condition nécessaire d’optimalité, tandis que la programmation dynamique fournit une condition suffisante. D’autre part, le principe du maximum donne comme solution une commande en boucle ouverte (fonction du temps) alors que la programmation dynamique conduit à une commande en boucle fermée (fonction de l’état du système).
+
+Toutefois, la commande solution du principe du maximum peut, dans les cas favorables, être mise sous forme d’une commande en boucle fermée. Un des grands avantages du principe du maximum sur la programmation dynamique est une plus grande facilité de mise en œuvre, celle-ci, quand elle est appliquée aux systèmes à temps continu, impliquant la résolution d’une équation aux dérivées partielles (l’équation d'Hamilton-Jacobi-Bellman), tandis que celui-là se ramène à la résolution d’équations différentielles ordinaires (résolution qui est toutefois sérieusement compliquée par le fait que le problème est « aux deux bouts »).
+
+La programmation dynamique s'applique aussi bien aux systèmes déterministes qu'aux systèmes stochastiques, tandis que le principe du maximum ne s'applique (avec quelques exceptions) qu'aux systèmes déterministes.
+
+Néanmoins, une étape commune à ces approches est le maximisation du pseudo-hamiltonien sur l'ensemble des commandes admissibles. Comme Pontriaguine et ses collaborateurs l'ont eux-mêmes noté, le principe du maximum peut se déduire du théorème de Bellman, dont la démonstration est fort simple, si l'on fait des hypothèses de régularité suffisantes sur la « fonction de Bellman ». Ces hypothèses ne sont toutefois pas vérifiées dans les cas où le principe du maximum a tout son intérêt, et pour lesquels il a été conçu, par exemple dans celui de la « commande Bang-Bang ».
+
+Nous considérons le problème de commande optimale sans contrainte sur l'état avec les hypothèses de différentiabilité habituelles (le problème, ou plutôt sa solution, se complique considérablement en cas de contrainte sur l'état, car un des multiplicateurs de Lagrange est alors une mesure qui n'est pas absolument continue par rapport à la mesure de Lebesgue). Pour simplifier les notations, nous considérons le cas où l'instant initial et l'état initial sont fixés. Soit le système : 
+
+où formula_3 est un intervalle compact de la droite réelle contenant formula_4 et où formula_5 est une fonction continue de formula_6 dans formula_7, formula_7 étant un espace de Banach (le lecteur peut supposer que formula_9), formula_10 un ouvert de formula_7, et formula_12 un espace topologique (le plus souvent, un sous-ensemble de formula_13). La variable formula_14 est l'état et formula_15 est la commande (voir l'article Représentation d'état). La fonction formula_16 est supposée continûment différentiable pour tout formula_17.
+
+Soit le critère de performance
+
+où le lagrangien formula_19 vérifie les mêmes conditions que formula_5 et formula_21 est continûment différentiable sur formula_22.
+
+Soit formula_22 une sous-variété différentiable de formula_24, appelée "variété finale". Nous dirons qu'une fonction formula_25 est "admissible" si elle est continue par morceaux et transfère le couple formula_26 de la condition initiale formula_27 à une condition finale formula_28 (avec formula_29 et formula_30, formula_31). L'ensemble des commandes admissibles est noté formula_32. Les hypothèses impliquent que formula_5 est localement lipschitzienne, donc si formula_15 est admissible, formula_14 est absolument continue, et la notion de solution est donc classique (l'égalité formula_36 étant vérifiée presque partout au sens de Lebesgue).
+
+Soit formula_37, et désignons par formula_38 et formula_39 l'état et l'instant final correspondants. Soit formula_40 et formula_41 le sous-ensemble de formula_32 formé des commandes formula_43 vérifiant la condition suivante : l'état formula_14 et l'instant final formula_45 correspondants sont tels que
+
+La commande formula_48 est dite "optimale localement" s'il existe formula_40 tel que formula_50, et "optimale globalement" si formula_51.
+
+Pour formula_52 petit, on peut considérer formula_41 comme un « petit voisinage » de formula_48. On notera que dans un tel voisinage, formula_55 n'est pas nécessairement proche de formula_56 à chaque instant "t". Si formula_12 est un sous-ensemble d'un espace vectoriel, une « petite variation » de "u" peut notamment être une variation formula_58 de grande amplitude mais de faible durée, de sorte qu'elle entraîne une « petite variation » de la fonction formula_59. Cette formulation est identique à celle de Weierstrass, et indique que l'on recherche un « extremum fort » (un « extremum faible » serait obtenu avec uniquement des variations de "u" qui seraient de faible amplitude).
+
+On appelle pseudo-hamiltonien la fonction
+
+(où formula_61 est le dual de formula_7) définie par
+
+(où formula_64 est le crochet de dualité).
+
+
+
+
+Le dual de formula_88 est identifié avec formula_89. On note formula_90 l'espace vectoriel des fonctions continues par morceaux de formula_3 dans formula_92. Soit d'autre part les deux équations canoniques
+
+Notons formula_95 l'espace tangent à la variété formula_22 au point formula_97 et formula_98 l'orthogonal de formula_95 dans formula_89, c'est-à-dire l'ensemble des formes linéaires continues formula_101 telles que formula_102. On appelle condition de transversalité la relation
+
+Enfin, nous appellerons condition de non trivialité l'inégalité
+
+On montre le résultat suivant :
+
+La démonstration de ce théorème (avec formula_7 de dimension finie) occupe près de 40 pages dans l'ouvrage de Pontriaguine et ses collaborateurs. Lorsque l'état final est astreint à appartenir à une sous-variété de formula_7 de codimension infinie, des variations en aiguille de la commande ne suffisent plus (elles ne donnent pas suffisamment de degrés de liberté) et un contre-exemple construit par Yu Vladimirovich Egorov en 1963 montre que le Principe du maximum est inexact. Il existe une extension du principe du maximum pour les systèmes semi-linéaires dont l'état est à valeurs dans un espace de Banach quelconque ; ce résultat est obtenu en utilisant des « variations diffuses » (« diffuse variations » ou « patch variations ») de la commande.
+
+Une "justification" du théorème de Pontriaguine-Boltyansky est donnée plus loin, à partir du théorème de Bellman. Voir également l'utilisation du Lemme de Du Bois-Reymond généralisé lorsque formula_12 est un ouvert de formula_13 et qu'on ne fait que des « variations faibles » de la commande.
+
+Supposons que l'instant initial formula_109 et l'état initial formula_110 ne soient plus fixés, et qu'on ait seulement une condition initiale formula_111 où formula_112 est une sous-variété différentiable de formula_24 ("variété initiale"). On doit alors ajouter la condition de transversalité
+
+Nous supposons maintenant que la variété formula_22 est de la forme formula_116 où formula_117 et formula_118 sont des sous-variétés de formula_119 et de formula_7, respectivement. L'équation de transversalité s'écrit donc
+
+Dans le cas d'un instant final libre, on a formula_123, par conséquent formula_124 et (a) devient
+
+alors que dans le cas d'un instant final fixé, formula_126 et formula_127, donc (a) est trivialement vérifiée. Dans les deux cas on a "une" équation: (a') dans le premier, formula_128 dans le second.
+
+Dans le cas d'un état final libre, on a formula_129, par conséquent formula_130 et (b) devient
+
+et la condition de non trivialité entraîne formula_132. Dans le cas d'un état final fixé, formula_133 et formula_134, donc (b) est trivialement vérifiée. Dans les deux cas on a "n" "équations", si formula_7 est de dimension "n" : (b') dans le premier, formula_136 dans le second.
+
+Considérons maintenant le problème de commande en temps minimal. L'espace topologique formula_12 est le sous-ensemble de formula_138 défini par formula_139. Le critère est formula_140, ce qui est un cas particulier de l'expression donnée plus haut avec formula_141 et formula_142. Le problème est évidemment à instant final libre, et il est à état final fixé: formula_143. On suppose que formula_144, formula_145 est un point d'équilibre et que le système est affine en la commande, donc de la forme indiquée avec formula_146 où formula_147. Représentons formula_148 par la ligne d'éléments formula_149 et formula_150 par la matrice d'éléments formula_151. Il vient
+
+Si formula_153, on a également formula_154 d'après (b'), ce qui contredit la condition de non trivialité; donc, formula_132. Le Principe du maximum implique que
+
+Cette commande toujours égale (dans le cas où elle a une seule composante) à sa valeur minimale ou à sa valeur maximale, avec des commutations. Dans le cas de systèmes linéaires d'ordre 2, on peut trouver des solutions explicites fondées sur le portrait de phase. D'autre part, supposons le système linéaire stationnaire d'ordre formula_159 et commandable. Si les valeurs propres de la matrice d'état sont toutes réelles, le nombre de commutations est au plus égal à formula_160. Si ces valeurs propres sont toutes dans le demi-plan gauche et 0 appartient à l'intérieur de formula_12, la commande optimale existe et est unique.
+
+Supposons que le système soit "linéaire" et de dimension finie, soit
+
+où les fonctions formula_163 et formula_164 sont continues, et que les fonctions "K" et "l" du critère soient continûment différentiables. Supposons également que la variété formula_165 soit "affine" et que l'instant final formula_166 soit "fixé". Supposons enfin que l'ensemble "U" et la fonction formula_167 soient "convexes", ainsi que la fonction formula_168 pour tout formula_169. Dans ce cas, les conditions de Pontriaguine avec formula_170 sont "suffisantes" pour que commande formula_171 soit optimale "globalement". Si de plus la fonction formula_168 est "convexe", strictement par rapport à "u", alors il y a "unicité de la commande optimale".
+
+Reprenons le problème de commande optimale, tel qu'il a été posé plus haut.
+
+D'après le principe général de la programmation dynamique, la commande optimale minimise sur formula_32, pour tout formula_174, le critère
+
+avec 
+
+Désignons par formula_177 la valeur optimale de ce critère. En plus des hypothèses précédentes, nous supposons maintenant que les fonctions formula_178 et formula_179 sont continûment différentiables. Nous supposons également que formula_132 et supprimons cette variable des arguments de formula_181, qui est donc maintenant une fonction
+
+L'équation de Hamilton-Jacobi-Bellman est l'équation aux dérivées partielles
+
+(HJB)::formula_183
+
+avec pour condition aux limites 
+
+(CL):: formula_184. 
+
+On dit que le pseudo-hamiltonien formula_185 est régulier si la fonction formula_186 admet un maximum unique sur U, atteint pour une valeur formula_187 de "u". Dans ce cas, soit la "commande en boucle fermée" formula_188. On a le résultat suivant:
+\left\{ \int_{\tau
+}^{\tau +\Delta \tau }\mathcal L\left( t,x\left( t\right) ,u(t)\right) dt+\int_{\tau
++\Delta \tau }^{t_{f}}\mathcal L\left( t,x\left( t\right) ,u(t)\right)
+dt+K(t_{f},x_{f})\right\} \\ 
+& =\min\limits_{u\in \mathrm{U}}\left\{ \mathcal L\left( \tau ,\xi ,u\right) \Delta
+\tau +\omega (\tau +\Delta \tau ,\xi +\Delta \xi )+K(t_{f},x_{f})+o\left(
+\Delta \tau \right) \right\} \\ 
+& =\min\limits_{u\in \mathrm{U}}\left\{ \mathcal L\left( \tau ,\xi ,u\right) \Delta
+\tau +\omega (\tau ,\xi )+\frac{\partial \omega }{\partial t}\left( \tau
+,\xi \right) \Delta t+\frac{\partial \omega }{\partial \xi }(\tau ,\xi )\Delta \xi
++o\left( \Delta \tau \right) \right\} 
+\end{array}</math>
+
+avec formula_189. Par conséquent, en soustrayant formula_190 des deux membres, en divisant par formula_191 et en faisant tendre formula_191 vers 0, on obtient
+
+ce qui équivaut à l'équation de Hamilton-Jacobi-Bellman. La condition aux limites et la valeur optimale du critère découlent de la définition de formula_190.
+
+Démonstration de la condition suffisante d'optimalité :
+
+Supposons que formula_195 minimise par rapport à formula_196 la quantité formula_197 ci-dessous :
+
+Soit "u" une commande admissible et formula_199 l'état déterminé par l'équation différentielle formula_200 et la condition initiale formula_201. On a alors
+
+et en conséquence
+
+compte tenu de la condition aux limites. Puisque formula_110 et formula_109 sont fixés, formula_206 l'est aussi. La commande formula_207 est admissible et pour formula_208, la quantité ci-dessus est nulle. Par conséquent, la commande formula_209 est optimale et formula_210.
+
+On déduit dans ce qui suit le théorème de Pontriaguine-Boltyansky du théorème de Bellman en supposant la fonction formula_211 deux fois continûment différentiable, bien que cette seconde hypothèse ne soit malheureusement pas satisfaite dans les cas les plus courants tels que celui de la commande Bang-Bang, où formula_212 n'est pas même différentiable sur les trajectoires optimales (cette hypothèse est satisfaite, néanmoins, dans le cas du Calcul des variations, lorsque le lagrangien formula_19 et la fonction "K" sont analytiques, le temps final est fixé et l'état final est libre, comme on le verra plus loin).
+
+Supposons donc l'équation de Hamilton-Jacobi-Bellman vérifiée avec formula_212 de classe formula_215. On sait alors qu'une commande optimale existe ; soit formula_216 et formula_217 l'état optimal et la commande optimale à l'instant "t", respectivement, et posons
+
+Il vient alors nécessairement
+
+avec formula_220, ce qui équivaut à la première équation canonique
+
+L'équation de Hamilton-Jacobi-Bellman implique le Principe du maximum
+
+ainsi que l'égalité
+
+On tire de cette dernière
+
+En plongeant formula_7 dans son bidual, on a
+
+et on obtient finalement la seconde équation canonique
+
+car avec le plongement ci-dessus, et compte tenu du fait que la forme bilinéaire continue formula_228 est symétrique, 
+
+sont deux écritures différentes de la même forme linéaire continue.
+
+Pour démontrer l'égalité formula_243 (en notation abrégée) sur les trajectoires optimales, supposons pour simplifier que formula_12 soit un ouvert d'un espace de Banach. Le Principe du maximum implique alors la condition d'Euler formula_245 à l'optimum. Par conséquent,
+
+Le même type de raisonnement que plus haut montre que formula_247, d'où le résultat.
+
+Il reste à obtenir la condition de transversalité. Sur formula_248 on doit avoir formula_249. Par conséquent, pour tout accroissement admissible infiniment petit formula_250,
+
+Or, on a 
+
+La condition de transversalité est donc démontrée.
+
+Le problème du Calcul des variations consiste à minimiser un critère de la forme
+
+avec une condition finale du même type que celle qui a été considérée dans la position du problème de commande optimale. Ce n'est donc rien d'autre que le problème de commande optimale avec pour « équation du système » formula_255, et formula_256, espace qu'on suppose de dimension finie. Il vient, en éliminant formula_15,
+
+La fonction formula_19 est supposée continûment différentiable ainsi que sa différentielle partielle formula_260. Le Principe du maximum est, de par sa formulation, une condition nécessaire d'« optimum fort ». Il implique
+
+La condition de non trivialité implique formula_132, et nous supprimons donc désormais formula_263 des arguments de formula_185. Les équations canoniques se réduisent maintenant aux équations d'Hamilton habituelles. En remplaçant l'expression obtenue plus haut pour formula_265 dans la seconde équation canonique, on obtient la "condition d'Euler-Lagrange" :
+
+D'autre part, en supposant que formula_19 admet une différentielle partielle seconde par rapport à formula_268 et que cette différentielle partielle seconde est une fonction continue, le Principe du maximum implique, au second ordre, la "condition faible de Legendre"
+
+qui signifie que la forme bilinéaire continue symétrique formula_270 doit être semi-définie positive. Pour qu'en plus l'hamiltonien soit régulier, il faut que soit satisfaite la "condition forte de Legendre"
+
+qui signifie que cette forme bilinéaire symétrique doit être définie positive.
+
+Soit la fonction de Weierstrass, encore appelée l'« excessus »
+
+Le Principe du maximum implique la "condition de Weierstrass" formula_273 (obtenue avec des « variations fortes », analogues aux « variations en aiguille » introduites par Boltyanskii pour la démonstration du Principe du maximum). On écrit également la fonction de Weierstrass sous la forme
+
+Enfin, la continuité de formula_265 et celle de la fonction formula_276 est la "condition d'arrondissement des angles" de .
+
+La différence essentielle entre le Principe du maximum et la condition de Weierstrass est que, dans cette dernière, on a dès le début l'égalité formula_277, laquelle égalité, qui détermine formula_278 comme fonction implicite de formula_265, paraît essentielle dans le Calcul des variations classique (elle conduit à raisonner avec un hamiltonien plutôt qu'avec un pseudo-hamiltonien, comme on le verra plus loin). En s'affranchissant de cette condition, Weierstrass, ou d'autres avant lui, auraient pu formuler le Principe du maximum.
+
+La condition de Carathéodory peut s'exprimer sous la forme suivante : supposons qu'il existe une fonction continûment différentiable formula_280 telle que, en posant, comme on l'a déjà fait plus haut,
+
+(à supposer que le maximum existe et soit strict), formula_282 soit solution de l'équation aux dérivées partielles « de Carathéodory »
+
+Alors la fonction optimale formula_284 est solution de l'équation différentielle
+
+L'équation d'Hamilton-Jacobi-Bellman n'est qu'une reformulation de cette condition avec formula_286. Cette différence de notation vient du fait qu'en Calcul des variations, l'« action » "S" est minimisée entre l'instant initial formula_109 et l'instant "t" courant, tandis que, suivant le Principe d'optimalité de Bellman, la fonction de Bellman formula_212 est minimisée entre l'instant "t" courant et l'instant final formula_166.
+
+La maximisation de formula_181 par rapport à "u" est effectuée sur un ouvert. La maximisation du pseudo-hamiltonien implique donc la condition d'Euler
+
+On peut écrire cette équation sous la forme formula_292 avec formula_293 et formula_294. Le théorème des fonctions implicites implique que si le pseudo-hamiltonien est régulier et formula_295 est de classe formula_296, "u" est une fonction implicite de classe formula_296 de "z", qu'on peut écrire formula_298.
+
+Soit alors l'hamiltonien
+
+On obtient à partir de l'équation de Carathéodory l'équation d'Hamilton-Jacobi habituelle
+
+On a vu plus haut comment déduire le principe de Pontriaguine de l'équation d'Hamilton-Jacobi-Bellman en supposant formula_212 de classe formula_215. On déduit exactement de la même manière toutes les conditions nécessaires de minimum fort du Calcul des variations de la condition de Carathéodory en supposant "S" de classe formula_215. 
+
+En particulier, les conditions nécessaires d'Euler-Lagrange, de Legendre et de Weierstrass sont des conséquences de la condition de Carathéodory si formula_181 est régulier et analytique, "K" est analytique, l'instant final est fixé et l'état final est libre. En effet, le théorème des fonctions implicites entraîne alors que formula_305 est analytique ; donc formula_306 l'est aussi, et le théorème de Cauchy-Kowalevski entraîne l'existence, dans un ouvert suffisamment petit, d'une solution unique "S" vérifiant, pour "c" fixé, la condition formula_307, et cette solution est analytique. Cela n'est qu'un résultat local, mais il est de grande importance, puisqu'en physique notamment, le « Principe de moindre action » correct est local lui aussi, comme on le verra plus loin.
+
+Depuis l'article publié par Kalman en 1960, la « commande linéaire quadratique » a fait l'objet de nombreuses investigations. Supposons que le système soit linéaire et de dimension finie, ayant pour équation d'état
+
+où formula_309 et formula_310 sont des fonctions réglées de formula_311 dans formula_312 et formula_313 respectivement. Le critère est supposé quadratique, de la forme
+
+où formula_315 (resp. formula_316) est une fonction réglée (resp. continue) de formula_311 dans formula_312 (resp. formula_319); formula_320 désigne la transposée de la matrice formula_321. Les matrices formula_322 et formula_323 sont supposées symétriques réelles et formula_323 est supposée définie positive (en abrégé : formula_325) pour tout formula_326. La matrice formula_327 est supposée symétrique réelle semi-définie positive. L'instant final formula_45 est fixé tandis que l'état final formula_329 est libre.
+
+Appliquons maintenant la méthode de la programmation dynamique, de manière à obtenir une condition suffisante d'optimalité (qui, dans le cas considéré, sera également nécessaire ; et l'on pourrait également appliquer le Principe du maximum, qui conduirait au même résultat). Pour cela, choisissons une « fonction de Bellman » de la forme
+
+On a
+
+La fonction formula_332 est strictement concave sur formula_138 (autrement dit, le pseudo-hamiltonien est régulier), par conséquent elle admet un maximum global unique déterminé par l'« égalité d'Euler »
+
+ce qui donne formula_335 L'équation d'Hamilton-Jacobi-Bellman s'écrit donc (en omettant la dépendance des différentes matrices par rapport au temps pour alléger les notations)
+
+ce qui conduit à choisir la fonction formula_337 solution de l'équation de Riccati matricielle
+
+avec la "condition finale"
+
+Sous les hypothèses considérées, le second membre de l'équation différentielle est une fonction localement lipschitzienne en "P". Elle admet donc, avec la condition finale ci-dessus, une solution maximale unique formula_340 sur un intervalle formula_341 (ouvert ou fermé en formula_342). On voit facilement que pour tout "t" dans cet intervalle, formula_340 est symétrique réelle. La théorie des équations différentielles implique que si formula_344 ou si formula_345 mais l'intervalle formula_341 est ouvert en formula_342, alors formula_348. L'instant formula_342 est alors dit conjugué de l'instant formula_166. (Souvent, en Calcul des variations, la notion de point conjugué est introduite plutôt pour un problème d'optimisation à état final fixé.) Le résultat suivant est maintenant clair :
+
+On notera que les deux conditions suivantes sont équivalentes :
+
+(1) La condition forte de Jacobi est satisfaite ;
+
+(2) formula_351 est uniformément bornée (par rapport à "t").
+
+\xi ^{T}\Phi
+^{T}\left( \tau ;t\right) Q\left( t\right) \Phi \left( \tau ;t\right) \xi
+d\tau </math>.
+
+Par conséquent, si formula_352,
+
+où formula_354, et finalement
+
+Supposons formula_356. La commande optimale est donc bien définie ; elle est linéaire et en boucle fermée, et donnée par
+
+Notons que la valeur optimale du critère est formula_359
+
+Pour les systèmes linéaires stationnaires (dont les matrices "A" et "B" ne dépendent pas du temps), on prend habituellement formula_360, on choisit pour "Q" et "R" des matrices constantes, et on choisit un « horizon infini », à savoir que l'on prend formula_361. Écrivons "Q" sous la forme: formula_362. Soit les conditions suivantes:
+
+(a): Le système (ou, en abrégé, la paire formula_363) est stabilisable.
+
+(b): La paire formula_364 est détectable.
+
+On a le résultat suivant:
+
+On considère parfois un critère quadratique plus général, comprenant un terme croisé, de la forme
+
+où les fonctions formula_315, formula_316, formula_368 sont continues. Or on a l'identité
+
+par conséquent on se ramène au cas précédent en faisant le changement de variable formula_370 et en posant formula_371.
+
+Soit un point matériel de masse au repos formula_372, placé dans un champ de force formula_373. Dans le cadre de la relativité restreinte, dans lequel on se place ici, l'action est donnée par
+
+où formula_375 et formula_376 est la vitesse de la lumière dans le milieu considéré. Le pseudo-hamiltonien est donné par
+
+La première équation canonique de Hamilton redonne formula_375
+
+La maximisation du pseudo-hamiltonien se fait sur l'ensemble formula_379.
+
+1) Envisageons tout d'abord le cas classique où formula_380. Si la vitesse "c" est constante, la seconde équation canonique de Hamilton donne
+Le principe du maximum implique formula_245, d'où la relation bien connue
+où le vecteur colonne "p" est le transposé du vecteur ligne formula_69.
+2) Considérons maintenant le cas où formula_385.
+Contrairement au précédent, ce cas ne relève pas du calcul des variations habituel. Le pseudo-hamiltonien est maximum lorsque
+et l'équation de Hamilton-Jacobi-Bellman devient l'équation eikonale
+classique lorsque formula_388.
+
+
+
+

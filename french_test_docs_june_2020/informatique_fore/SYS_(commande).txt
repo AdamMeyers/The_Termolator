@@ -1,0 +1,13 @@
+﻿SYS (commande)
+
+SYS est une commande dans Microsoft BASE utilisée pour exécuter une machine de la langue du programme en mémoire. La commande a pris la forme codice_1 où "n" est un emplacement de mémoire où le code exécutable démarre.
+
+SYS est une commande externe de DOS et Microsoft Windows 9x systèmes d'exploitation qui est utilisé pour faire un support amorçable déjà formaté. Il va donc installer un secteur de démarrage capable de démarrer le système d'exploitation dans le premier secteur logique du volume. En outre, il faudra copier le principal DOS des fichiers système, qui est, le DOS du BIOS (IO.SYS ou IBMBIO.COM) et le DOS du noyau (MS-dos.SYS ou IBMDOS.COM) dans le répertoire racine de la cible. En raison des restrictions dans la mise en œuvre des chargeurs de démarrage dans le secteur de démarrage et DOS' IO système, ces deux fichiers doivent être dans les deux premières entrées de répertoire et stockés au début de la zone de données sous MS-DOS et ms-DOS de PC. Selon la version, l'ensemble des fichiers ou seulement un nombre variable de secteurs sous DOS du BIOS devront être stockés ailleurs. SYS va essayer de réaménager les autres fichiers sur le support afin de faire de la place pour ces fichiers dans leurs emplacements. C'est pourquoi SYS a besoin de contourner le système de fichiers de pilote dans l'exécution du système d'exploitation. D'autres DOS tels que le DR-DOS n'ont pas de telles restrictions imposées par la conception de chargeurs de démarrage.
+
+Ainsi dans ces systèmes, SYS va installer un DR-DOS secteur de démarrage, qui est capable de monter le système de fichiers, puis il suffit de copier les deux fichiers dans le répertoire racine de la cible.
+SYS sera également copier la ligne de commande shell (COMMANDE.COM) dans le répertoire racine. La commande peut être appliquée à des disques durs et des disquettes de réparation ou de créer un secteur de démarrage.
+
+Bien qu'un article sur le site de Microsoft affirme que le codice_2 commande a été introduit dans MS-DOS version 2.0, ceci est incorrect. SYS réellement existé dans 86-DOS de 0,3 déjà. Selon "L'Encyclopédie de MS-DOS", la commande a été autorisé à IBM dans le cadre de la première version de MS-DOS, et en tant que tel, il a été une partie de MS-DOS/ms-DOS de PC depuis le début (IBM PC DOS 1.0 et MS-DOS de 1,25).
+
+
+

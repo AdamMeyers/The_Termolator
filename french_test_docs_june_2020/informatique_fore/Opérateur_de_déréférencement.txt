@@ -1,0 +1,14 @@
+﻿Opérateur de déréférencement
+
+L'opérateur de déréférencement, désigné par " codice_1 " (c'est-à-dire un astérisque), est un opérateur unaire (c'est-à-dire avec un seul opérande) que l'on trouve dans les langages C et C++ (qui incluent des pointeurs). Il fonctionne sur un pointeur et renvoie la valeur stockée à l'adresse contenue dans le pointeur. On dit pour cela que l'on "déréférence" le pointeur. 
+
+Par exemple, le code C suivant : affecte 42 à la variable codice_2 à l'aide de l'opérateur de déréférencement et d'un pointeur sur la variable codice_2 . 
+
+L'opérateur unaire *, tel que défini en C et C ++, peut être utilisé dans le cas de pointeur multiple, où plusieurs déréférencements sont requis. Les pointeurs peuvent bien sûr référencer d'autres pointeurs et, dans de tels cas, plusieurs utilisations de l'opérateur de déréférencement sont nécessaires. 
+
+L'argument argv de la fonction "main" en C (et C ++), qui est donné dans le prototype sous la forme codice_4, est un exemple simple de pointeur multiple. Le nom de l'exécutable du programme appelé, ainsi que tous les arguments de ligne de commande suivants, sont stockés sous forme de chaînes de caractères indépendantes. Un tableau de pointeurs sur codice_5 contient des pointeurs sur le premier caractère de chacune de ces chaînes et ce tableau de pointeurs est transmis à la fonction codice_6 tant qu'argument codice_7. La variable codice_7 est en fait un pointeur sur un pointeur sur codice_5, et représente un tableau de pointeurs sur codice_5. L'autre paramètre de la fonction codice_6, codice_12, est un codice_13 représentant la taille du tableau (c’est-à-dire le nombre de pointeurs sur codice_5 jusqu’au pointeur NULL, qui délimite le tableau de pointeurs). 
+
+En C, l'adresse d'une structure (ou d'une union) codice_15 est désignée par codice_16 . L'adresse de l'opérateur codice_17 est l'inverse de l'opérateur de déréférencement codice_1, donc codice_19 est équivalent à codice_15 . L'adresse d'une structure (ou de l' union) codice_15 peut être attribué à un pointeur codice_22 : La valeur d'un membre codice_23 d'une structure codice_15 est notée codice_25 . Considérons le pointeur codice_22 sur codice_15 (c'est-à-dire codice_28 ), codice_25 est équivalent à codice_30, ainsi qu'à la syntaxe codice_31 qui est un sucre syntaxique pour accéder aux membres d'une structure (ou d'une union) via un pointeur: L'opérateur codice_32 peut être chaîné. Par exemple, dans une liste chaînée, on peut se référer à codice_33 pour le deuxième nœud suivant (en supposant que codice_34 n'est pas NULL). 
+
+
+

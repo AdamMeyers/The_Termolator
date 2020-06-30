@@ -1,0 +1,28 @@
+﻿Séquenceur pneumatique
+
+Un séquenceur pneumatique est un composant permettant le fonctionnement automatique d'une machine.
+
+Il permet la réalisation d'un circuit de commande élaboré à partir d'un grafcet.
+
+Chaque étape du grafcet préalablement établi, et qui résulte de l'étude du cycle de la machine à automatiser, est matérialisée par un boitier mémoire : le module de phase ou registre séquenceur.
+
+Un module de phase est un boitier renfermant une pièce mobile (tiroir cylindrique ou clapet) possédant deux positions stables. Ces deux positions établissent des connexions d'air particulières et définissent ainsi deux états logiques différents. L'ensemble constitue ce qu'il est convenu d'appeler une mémoire pneumatique.
+
+Les modules du séquenceur sont interconnectables entre eux sans câblage pour former un circuit pneumatique de commande compact et modulaire. L'ensemble des modules est placé entre deux plaques d'extrémité permettant une alimentation en air comprimé du séquenceur ainsi qu'un dispositif d'effacement général des mémoires.
+
+Chaque module possède un orifice d'entrée et un orifice de sortie d'air comprimé. L'orifice d'entrée reçoit une information provenant d'un capteur de la machine. L'orifice de sortie est relié à une commande d'actionneur de la machine.
+
+On considère le cas d'un séquenceur linéaire, c'est-à-dire matérialisant un grafcet sans convergence ni divergence.
+
+Une seule entrée est réceptive parmi toutes ; elle appartient au module de phase ou registre séquenceur dont la sortie est active(sous pression). L'arrivée d'une information (mise en pression) sur cette entrée provoque deux événements : l'effacement de la mémoire du module actif et l'écriture de la mémoire du module suivant. Il résulte de ceci : l'activation de la sortie du module suivant et la réceptivité de l'entrée de ce même module.
+
+De la logique pneumatique peut être nécessaire pour associer des conditions particulières provenant par exemple de plusieurs capteurs devant aboutir à une entrée de module.
+
+Il convient de dire que les termes "réceptive" et "active" sont à associer complètement aux termes "réceptivité" et "actions associées" citées dans la page grafcet.
+
+Les séquenceurs ont eu une période d'utilisation importante dans les années 1980. Aujourd'hui, leur utilisation est réduite à des applications particulières. De nombreux constructeurs d'équipement d'automatisme ont proposé des séquenceurs : Crouzet, Climax et Télémécanique. Ce dernier a proposé aussi une version électronique. C'est sans doute l'avènement des automates programmables qui a causé leur déclin.
+
+
+Ces ouvrages de constructeurs sont devenus rares. Il faut consulter leurs archives lorsqu'elles existent encore.
+
+

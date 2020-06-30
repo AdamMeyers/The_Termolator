@@ -1,0 +1,13 @@
+﻿Epoch
+
+L'epoch (de l'anglais "époque" ou "ère") représente la date initiale à partir de laquelle est mesuré le temps par les systèmes d'exploitation. Certains logiciels utilisent une epoch différente de leur système d'exploitation, ce qui peut conduire à des bogues.
+
+Cette date varie selon les systèmes d'exploitation et/ou les logiciels, par exemple :
+
+Le temps est mesuré en nombre d'unités de temps depuis cette date. L'unité de temps la plus courante est la seconde. Il arrive que l'unité ne soit pas spécifiée et que l'on parle de "tick", qui est la plus petite unité de temps gérée par le système d'exploitation.
+
+Des problèmes sont susceptibles d'arriver lorsque la date dépasse la valeur maximale autorisée pour le type de donnée utilisée pour la stocker. Par exemple, sous UNIX, les dates sont exprimées en nombre de secondes depuis l'epoch et stockées dans des entiers. Quand ceux-ci sont stockés dans des entiers signés de 32 bits, des problèmes risquent donc de survenir à partir du 19 janvier 2038. Il existe le même problème sous Windows à partir de la date du 6 février 2036.
+
+La plupart des ordinateurs peuvent actuellement stocker les entiers non-signés sur 64 bits (et non plus 32 bits), donc chaque développeur (à condition de reprogrammer la mise à jour du principe de stockage de la date dans chaque logiciel) peut reculer la date du dépassement de l'epoch bien au-delà de 2038 : le nombre stockable maximum de ticks devient 2⁶⁴ = 18 unités de temps du système d'exploitation : la nouvelle date butoir se situe à l'an (soit environ 21 fois l'âge de l'univers) : le problème sera ainsi résolu pour notre ère.
+
+

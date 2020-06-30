@@ -1,0 +1,134 @@
+﻿Logique floue
+
+La logique floue ("fuzzy logic", en anglais) est une logique polyvalente où les valeurs de vérité des variables - au lieu d'être vrai ou faux - sont des réels entre 0 et 1. En ce sens, elle étend la logique booléenne classique avec des valeurs de vérités partielles. Elle consiste à tenir compte de divers facteurs numériques pour aboutir à une décision qu'on souhaite acceptable.
+
+Par ses aspects numériques, 
+
+Formalisée par Lotfi Zadeh en 1965, outil de l'intelligence artificielle, elle est utilisée dans des domaines aussi variés que :
+
+Elle est formalisée par une "théorie mathématique des ensembles flous" de Lotfi Zadeh qui présente une extension de la théorie des ensembles classiques aux "ensembles définis de façon imprécise".
+
+Partant d'un concept de fonction d'appartenance à valeur dans [0, 1], Lotfi Zadeh :
+
+Assouplissant l'algèbre de Boole, la logique floue remplace la valeur de vérité d'une proposition à choisir dans {"vrai","faux"} par un degré de vérité, à choisir par exemple dans [0, 1]. En logique floue, il y a donc des degrés dans la satisfaction d'une condition.
+
+Un exemple simple et ancien est la docimologie, c'est-à-dire l'évaluation des élèves d'une classe : dans chaque discipline, celui-ci est évalué par une note entre 0 (mauvais) et 20 (exceptionnel) et on estime le niveau de l'élève pour telle ou telle orientation par une pondération de ces notes avec divers coefficients selon l'orientation considérée.
+Prenons l'exemple de la vitesse d'un véhicule sur une route ou la vitesse normale est de . La vitesse est considérée élevée au-dessus de et réglementaire en dessous de . On souhaite caractériser la vitesse du véhicule en répondant par exemple à la question « La vitesse est-elle élevée ? ».
+
+Dans ce modèle de réglementation routière, en logique booléenne, la réponse à la question s'énonce de la manière suivante (voir "fig. 1") :
+
+En logique floue, on autorise différents degrés d'énoncés de réponse à la question « La vitesse est-elle élevée ? » (voir "fig. 2") :
+
+
+De même, on peut définir une fonction correspondant à la question « La vitesse est-elle peu élevée ? » de la manière suivante (voir "fig. 3") :
+
+
+On peut aussi définir une fonction correspondant à la question « La vitesse est-elle moyenne ? » (voir fig. 4) :
+
+
+Il n'est pas obligatoire que la transition soit linéaire. Des transitions hyperboliques (comme une sigmoïde ou une tangente hyperbolique), exponentielle, gaussienne (dans le cas d'un état moyen) ou de toute autre nature sont utilisables (voir "fig. 5").
+Le degré de vérité d'une relation floue entre deux ou t objets est le degré d'appartenance de la paire ou du t-uple à l'ensemble flou associé à la relation.
+
+Soit la relation "est1" (est-un/est-une). Pour dire que toute chaise est un meuble et que 30 % des meubles sont des chaises, on accordera un degré de vérité de 1 à "est1(chaise, meuble)" et un degré 0,3 à "est1(meuble, chaise)".
+
+La connaissance topographique qu'un agent possède d'un monde clos pourra s'appuyer sur l'attribution de degrés de vérité à une relation du style "x est_plus_près_de y que_de z", construite et/ou affinée par apprentissage.
+
+De façon générale, les relations floues permettront de coder des connaissances graduées, empiriques ou typiques, acquises directement ou par des heuristiques, des inductions...
+
+Dans le cas d'une combinaison d'énoncés (pour exemple : « Si "le ciel est bleu" et si "j'ai le temps" »), trois cas se présentent :
+
+
+En définissant les opérateurs logiques de base de la façon suivante :
+
+il devient possible de représenter toutes les opérations logiques de base en logique floue :
+
+Par ailleurs, la dimension numérique des variables de la logique floue permet d'utiliser d'autres opérations :
+
+
+Pour combattre certains problèmes d'inférence, on peut vouloir un opérateur "ET" plus dur, associant à l'opération A ET B, le degré formula_16.
+
+On peut même changer l'espace de vérité, en préférant par exemple [-1 +1] pour certaines propriétés bipolaires.
+
+Les opérateurs flous peuvent être définis de diverses manières, dès lors qu'ils dotent, selon Goguen, l'espace de vérité choisi d'une structure de treillis, souhaitable pour le "ET" et le "OU", treillis de préférence complémenté pour un "NON" involutif.
+
+Les familles paramétriques d'opérateurs flous permettront à un même moteur d'inférence d'incarner des logiques plus ou moins strictes. Une même application pourra ainsi faire appel à des implémentations différentes judicieusement choisies selon le contexte.
+
+L'exemple ci-dessous montre à travers 3 modes de résolution l'influence du choix des opérateurs, au-delà d'une approche naïve d'un problème.
+
+Cet exemple montre comment combiner des opérateurs flous de divers types à travers le problème "confirmer l'appartenance d'une personne à un groupe"
+
+
+ fzMembre = Zadeh_OR(fzDejaMembre, Multiply_AND(fzConnaitOrchidees, fzOrchideesAmis))
+
+
+Une solution qui n'utiliserait que les opérateurs de Zadeh serait :
+
+
+Une solution qui n'utiliserait que les opérateurs représentables par des paraboloïdes hyperboliques serait :
+
+
+Les trois méthodes exposées ci-dessus convergent lorsque les valeurs d'entrée sont booléennes :
+
+Pour l'exemple "à l'orchidée" ci-dessus, une situation normale est que la connaissance des orchidées implique l'appartenance au groupe. C’est-à-dire, plus précisément, qu'on ne peut pas connaître les orchidées et, simultanément, ne pas être membre du groupe des "amis des fleurs".
+
+De même qu'on a vu ci-dessus plusieurs manières d'implémenter les opérateurs OR et AND, il y a aussi plusieurs manières d'implémenter la notion d'implication.
+
+Les opérateurs ci-dessus s'implémenteront respectivement comme ceci :
+
+dans un cas extrême mais , avec fzConnaitOrchidees=0.8 et fzMembre=0.995,
+les valeurs trouvées seront respectivement
+
+dans un cas considéré comme , avec fzConnaitOrchidees=0.8 et fzMembre=0.72,
+les valeurs trouvées seront respectivement
+
+dans un autre cas qui reste , la personne pouvant aussi être membre des "amis des fleurs"
+à cause de son amour des tulipes, avec fzConnaitOrchidees=0.66 et fzMembre=0.72,
+les valeurs trouvées seront respectivement
+
+dans un cas assez , avec fzConnaitOrchidees=0.5 et fzMembre=0.5,
+les valeurs trouvées seront respectivement
+
+dans un cas , avec fzConnaitOrchidees=0.8 et fzMembre=0.3,
+les valeurs trouvées seront respectivement
+
+dans un cas et extrême, avec fzConnaitOrchidees=0.8 et fzMembre=0.005,
+les valeurs trouvées seront respectivement
+
+Une application informatique qui viserait à proposer à un opérateur humain de traiter les cas anormaux en commençant par les plus "suspects" utiliserait les valeurs indiquées ci-dessus en gras et obtenues par la méthode identifiée "Hyperbolic Paraboloid", particulièrement discriminante.
+
+Il n'est pas sûr que cette application intéresse les "amis des fleurs". Par contre, l'intérêt pour un service de médecine préventive (ou même pour un fleuriste) est compréhensible.
+Lorsque le nombre d'examens des cas "suspects" doit être plafonné (par exemple pour des raisons
+de temps, de coût, de dangerosité, etc), un pré-classement "intelligent", fondé -sinon sur une "théorie" incontestée- du moins sur une "technologie" opérationnelle, peut s'avérer utile.
+
+L'article fournit de nombreuses représentations graphiques de quelques implémentations possibles des opérateurs fuzzy. On trouvera ci-dessous, à titre d'exemple, la représentation de huit implémentations différentes d'une opération qui viserait à apprécier la simultanéité de deux faits (jugés de poids équivalents dans les six images à gauche mais de poids différents dans les deux images de droite).
+
+Soit v(x est chaud) = 0,8. On pourra poser v(x est "très" chaud) = 0,8² = 0,64 et a contrario v(x est "assez" chaud)= rac2(0,8) = 0,89, ce qui facilite le codage des connaissances empiriques.
+
+Une fois la valeur de l'entrée (« La vitesse est-elle élevée ? ») évaluée, une valeur peut être déterminée pour une fonction de sortie. Considérons la règle « Si la fièvre est forte, alors administrer de l'aspirine ». Une telle règle est appelée "commande floue". Elle est composée de deux parties :
+
+
+Ces deux parties sont liées. On peut les représenter ensemble comme sur la fig. 6.
+Il existe plusieurs techniques pour déterminer la valeur de la sortie (dans l'exemple : la quantité d'aspirine à administrer) :
+
+
+En fait, la logique floue et un théorème (élémentaire, cependant) montre que dans le cas particulier où les propositions traitées ne sont pas floues, la logique floue se réduit à la logique classique.
+
+Dans son ouvrage "Décisions rationnelles dans l'incertain", Myron Tribus rappelle que le théorème de Cox-Jaynes montre d'une part que l'on peut représenter un état de connaissance incertaine par une probabilité, et d'autre part que tout moyen utilisé pour prendre des décisions sera soit isomorphe à la théorie des probabilités, soit incohérent". Les connaissances "floues" ne sont pas à proprement parler des connaissances "incertaines" : on peut par exemple savoir avec précision qu'un homme mesure 1,74 m. Néanmoins, ce qui est flou est de savoir s'il sera considéré comme "grand" ou "petit".
+
+"A contrario", dire : « l'âge de cette personne est voisin de 30 ans » représente une estimation floue de l'âge effectif de la personne, qui est pour sa part très précis. L'imprécision concerne l'estimation elle-même et non l'âge réel.
+
+On pourrait dire aussi : « l'âge de cette personne est entre 27 et 33 ans, avec une probabilité de 0.8 ». Là encore, la probabilité mesure un état de connaissance de l'observateur et non une caractéristique de ce qui est observé.
+
+Jim Bezdek distingue pour sa part probabilité et imprécision : « On se trouve dans un désert, après des jours d'errance… Presque mort de soif, on trouve alors 2 bouteilles remplies d'un liquide. Sur la bouteille A, une étiquette annonce "potable avec un "degré" 0.9", et sur la bouteille B, l'étiquette dit "potable avec une "probabilité" 0.9". Laquelle de ces 2 bouteilles doit-on choisir ? ».
+Si l'on traduit les indications des étiquettes, on en retire qu'en buvant la bouteille A, on pourra s'en tirer avec comme seuls risques, quelques problèmes intestinaux non mortels… Par contre, en buvant la bouteille B, il y a une probabilité non négligeable (10 % de chance) que le liquide puisse être très nocif (acide…) et absolument pas buvable.
+
+Une théorie des possibilités a été introduite (aussi par Lotfi Zadeh en 1978) afin de permettre la prise en compte "combinée" à la fois de l'imprécision et de l'incertitude dans des connaissances.
+
+La logique modale a été introduite par Aristote, puis continuée par Leibniz et des chercheurs contemporains pour prendre en compte des affaiblissements ou des renforcements d'affirmations présents dans les langues naturelles, en s'intéressant par exemple aux rapports du vrai, du faux, du nécessaire et du possible.
+
+La théorie de la complexité algorithmique (ou complexité de Kolmogorov) est aussi une méthode plus ou moins rigoureuse pour envisager la difficulté de donner la description précise d'une chose (X peut apparaître plus complexe que Y pour une machine A et moins complexe que Y pour une machine B, par exemple un calculateur quantique. Il s'agit donc d'une complexité "relative à une machine de référence donnée".
+
+Enfin, les probabilités bayésiennes utilisées en avenir incertain utilisent des approches voisines de celles de la logique floue, mais cette fois-ci sans aucun arbitraire : les distributions de probabilité "a priori" doivent y être celle d'entropie maximale…
+
+
+

@@ -1,4 +1,4 @@
-These prgrams were developed on some linux machines, but tested on a
+These programs were developed on some linux machines, but tested on a
 few linux machines and one MacBook Air. For the current version of the
 program, the MAC (1.7 Core i7, 8 RAM), turned out not to have enough
 memory to create shelve (slv) files from a Wikipedia dump, although
@@ -98,7 +98,7 @@ do not work. They seem to contain different information. So beware
 2) To run the Summary program, first run Termolator and the term map
 program descried above. The output of the term map program will be
 input to this program. Then use the script run_summary.sh with the
-following two arguments:
+following arguments:
 
    -- The first argument is a prefix 
       -- there should be a .term_instance_map file with that prefix to use as input

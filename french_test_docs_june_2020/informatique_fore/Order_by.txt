@@ -1,0 +1,13 @@
+﻿Order by
+
+Une clause codice_1 en SQL indique qu'une instruction SQL codice_2 retourne un jeu de résultats ayant des lignes triées suivant les valeurs d'une ou plusieurs colonnes. Le critère de tri n'a pas besoin d'être inclus dans le jeu de résultats. Les critères de tri peuvent être des expressions incluant – mais non limitées à – des noms de colonnes, des fonctions définies par l'utilisateur, des opérations arithmétiques, or des expressions codice_3. Les expressions sont évaluées et leurs résultats sont utilisés pour le tri, c'est-à-dire que les valeurs stockées dans la colonne ou les résultats de l'appel de la fonction sont utilisés.
+
+codice_1 est la "seule" façon de trier les lignes dans le jeu de résultats. Sans cette clause, le système de base de données relationnel peut retourner les lignes dans un ordre quelconque. Si un ordonnancement est requis, la clause codice_1 doit être fournie dans l'instruction codice_2 émise par l'application. Bien que certains systèmes de base de données permettent la spécification d'une clause codice_1 dans des sous-requêtes ou des définitions de vues, leur présence y sera sans effet. Une vue est une table relationnelle logique, et le modèle relationnel requiert  qu'une table soit un ensemble de lignes, ce qui implique qu'il n'y a pas d'ordre de tri quel qu'il soit. Les seules exceptions sont les constructions telles que codice_8 (non standardisé en SQL:2003), qui permettent la propagation du critère de tri à travers les sous-requêtes imbriquées.
+
+La fonctionnalité de base du standard SQL ne définit pas explicitement un ordre de  tri par défaut pour les Nulls. Avec l'extension T611 du SQL:2003, "Opérations OLAP élémentaires", les nuls peuvent être triés avant ou après toutes les valeurs des données en utilisant les clauses codice_9 ou codice_10 de la liste codice_1 respectivement. Les vendeurs de SGBD n'implémentent pas tous cette fonctionnalité cependant. Les vendeurs qui ne l'implémentent pas peuvent spécifier différents traitements pour le tri des Nulls dans le SGBD.
+
+La syntaxe codice_12codice_13codice_14 triera suivant  l'ordre descendant, sinon l'ordre ascendant sera utilisé (ce dernier peut être spécifié explicitement en utilisant codice_15).
+
+Cette instruction trie sur le champ LastName, ensuite sur le champ FirstName si LastName est le même.
+
+

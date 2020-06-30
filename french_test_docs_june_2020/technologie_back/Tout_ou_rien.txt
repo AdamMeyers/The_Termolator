@@ -1,0 +1,36 @@
+﻿Tout ou rien
+
+En automatique, le concept TOR (tout ou rien) se ramène au binaire : 0 ou 1. Cela signifie que l'information à traiter ne peut prendre que deux états (marche-arrêt). Seuls ces deux niveaux logiques sont possibles, d'où l'appellation commande tout ou rien (en anglais : bang–bang-control ou on–off-control).
+
+On trouve par exemple des capteurs de "type TOR" (tout ou rien) dans l'industrie pour la détection de présence d'objets, ces capteurs ne renverront que deux niveaux logiques :
+
+Un interrupteur électrique, un thermostat constituent des dispositifs tout ou rien.
+
+Considérons un système possédant une entrée E , et une sortie S telles que :
+
+Cahier des charges : on désire que la grandeur S reste comprise entre deux valeurs S et S
+
+Solution : constituons un régulateur TOR fonctionnant selon l'algorithme suivant :
+
+Algorithme TOR (qui est exécuté périodiquement avec une période égale à P secondes) :
+On constate que pour Smin < S < Smax, la valeur de E est inchangée (E garde sa valeur précédente qui était soit 1, soit 0). S varie ainsi dans la plage [Smin, Smax].
+
+Pour la température d'une pièce, on peut choisir
+
+La période P d’exécution de l'algorithme sera choisie en fonction de la dynamique du système à réguler (pour réguler la température d'une pièce ou d'un four, on peut choisir P > 10 secondes).
+
+On suppose :
+
+L'interrupteur électronique K du hacheur est commandé ainsi (pour 0 < t < T) :
+Il est fréquent de choisir une période T < 0,001 seconde, donc une fréquence f > , ce qui explique que l'interrupteur K ne soit pas mécanique, mais électronique (transistor ou "thyristor").
+
+On peut ainsi démontrer que, durant la période T, la valeur moyenne de u(t) vaut u_moyen = a.U.
+
+En modifiant la valeur du rapport cyclique a, on peut faire varier la luminosité d'une lampe, la vitesse d'un moteur à courant continu, le fonctionnement d'un four à micro-ondes etc.
+
+Au plan énergétique, ce genre de dispositif remplace avantageusement les "rhéostats".
+
+Dans certains cas, comme en matière de ventilation, une commande 1 signifiera une sortie S, la commande 0 signifiant une sortie réduite, par exemple S/10.
+
+
+

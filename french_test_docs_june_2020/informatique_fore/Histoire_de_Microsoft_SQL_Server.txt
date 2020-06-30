@@ -1,0 +1,30 @@
+﻿Histoire de Microsoft SQL Server
+
+Le , Microsoft s'associe à Ashton-Tate et Sybase pour créer un fork de Sybase SQL Server Invixium pour IBM OS/2, qui sera commercialisé l'année suivante. Cela a été la première version de Microsoft SQL Server, et a permis à Microsoft d'entrer sur le marché des logiciels d'entreprise, en compétition avec Oracle, IBM, et plus tard Sybase.
+
+SQL Server 4.2 a été commercialisé en 1992, compilé pour OS/2 version 1.3, suivi par la version 4.21 pour Windows NT.
+
+Publié en parallèle avec Windows NT 3.1, SQL Server 6.0 a été la première version conçue pour NT, sans intervention de Sybase.
+
+Au moment de la publication de Windows NT, en , Sybase et Microsoft mettent fin à leur collaboration, chacun continuant son propre développement selon ses propres choix commerciaux. Microsoft a alors négocié les droits exclusifs sur toutes les versions de SQL Server écrite pour les systèmes d'exploitation Microsoft. En 1996, Sybase a renommé son produit Adaptative Server Entreprise afin d'éviter la confusion avec Microsoft SQL Server.
+
+Jusqu'en 1994, Microsoft SQL Server affichait Sybase comme origine de copyright.
+
+La version 7.0 est une réécriture majeure en C++ de l'ancien moteur Sybase qui était lui écrit en C. La taille des datapage a été augmentée, passant de 2ko à 8ko. Les extensions augmentent donc de 16 à 64 Ko. le « User Mode Scheduling (UMS) » a été créé afin de gérer les threads de SQL Server, mieux que le multi-threading préemptif de Windows. SQL Server 7.0 introduit de même une base de données multidimensionnelle nommée « SQL OLAP Services ». Cette version sera la dernière à fonctionner sur la plateforme DEC Alpha (même s'il y a eu une pré-version de SQL Server 2000 sur DEC Alpha, celle-ci ne fût jamais commercialisée).
+
+SQL Server 2000 introduit plus de modifications et d’extensions au code Sybase d'origine, dont le support de l'architecture IA-64 (compatibilité qui n'est désormais plus supportée).
+
+De même, la version 2000 introduit de nombreuses améliorations au langage T-SQL, comme les variables table, les fonctions utilisateur, les vues indexées, les triggers INSTEAD OF, les cascading referencial constraints et un support basique du XML.
+
+SQL Server nom de code « Yukon » devient SQL Server 2005 lors de sa sortie en .
+
+Il inclut le support des données au format XML, en sus des types de données relationnels. Pour cela, est défini le Type de donnée codice_1 qui peut être utilisé soit comme un type de données dans les colonnes des tables, soit comme un littéral dans les requêtes SQL. les colonnes XML peuvent être associées à des schémas XSD; le XML est alors vérifié par le schéma avant stockage. Le XML est converti dans un format interne binaire avant d'être stocké en base. Des méthodes d'indexation spéciales sont disponibles pour ce nouveau type de données. Les données du XML peuvent être extraites par XQuery; Cette version de SQL Server fournit des extensions permettant d'encapsuler XQuery dans le T-SQL.
+
+Common Language Runtime (CLR) est intégré dans cette version du moteur, permettant d'écrire du code SQL comme du code géré par CLR.
+
+Dans la cadre de la manipulation des données relationnelles, SQL Server introduit codice_2 afin de gérer les erreurs. dans le T-SQL, ainsi que les requêtes récursives.
+
+La version 2017 du moteur de bases de données relationnelles s'exécute désormais sur Windows et sur Linux. L'éditeur a documenté l'installation de SQL Server 2017 sur les distributions Linux Red Hat / CentOS, SUSE et Ubuntu.
+
+
+

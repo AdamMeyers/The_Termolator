@@ -1,0 +1,60 @@
+﻿Base de données relationnelle
+
+En informatique, une base de données relationnelle est une base de données où l'information est organisée dans des tableaux à deux dimensions appelés des "relations" ou "tables", selon le modèle introduit par Edgar F. Codd en 1970. Selon ce modèle "relationnel", une base de données consiste en une ou plusieurs relations. Les lignes de ces relations sont appelées des "nuplets" ou enregistrements. Les colonnes sont appelées des "attributs".
+
+Les logiciels qui permettent de créer, utiliser et maintenir des bases de données relationnelles sont des systèmes de gestion de base de données relationnels (SGBDR).
+
+Pratiquement tous les systèmes relationnels utilisent le langage SQL pour interroger les bases de données. Ce langage permet de demander des opérations d'algèbre relationnelle telles que l'intersection, la sélection et la jointure.
+
+Les progrès de la technologie des processeurs mais surtout des mémoires, des disques et des réseaux ont permis de développer de manière considérable les performances des systèmes de gestion de base de données. L'évolution du domaine a suivi l'évolution des modèles de données utilisés. On peut considérer trois grandes classes de modèles : navigationnels, déclaratifs/relationnels, et post-relationnels.
+
+Les deux modèles principaux de cette période sont le modèle hiérarchique d'IBM et le modèle réseau, CODASYL, (rien à voir avec TCP/IP ou Internet) implémenté dans des produits comme IDMS. Dans ces modèles, on "navigue" dans les données en manipulant des pointeurs logiques. La distance entre la représentation logique des données et leur représentation physique est faible.
+
+Entre 1965 et 1975, avec le développement de l'informatique dans les grands comptes, le besoin d'organiser les données selon un modèle qui permettrait d'établir une séparation plus claire entre la représentation logique des données et leur organisation physique s'est fait de plus en plus sentir. Le modèle de données relationnel a été défini en 1970 par l'informaticien britannique d'IBM Edgar F. Codd, et publié dans son article "A Relational Model of Data for Large Shared Data Banks". Depuis les années 1990, le modèle de données relationnel est utilisé dans la grande majorité des bases de données. Il reste toujours dominant en 2019.
+
+Plusieurs directions ont été suivies pour dépasser le modèle relationnel.
+
+Dans une direction complètement différente, une approche a consisté à introduire dans les bases de données des capacités de déduction empruntées aux systèmes experts, capables de grandes capacités déductives mais pas très performants sur la gestion de gros volumes de données. Cette approche, avec des systèmes fondés sur le langage Datalog, n'a jusqu'à présent eu que peu de succès dans l'industrie même si on a pu assister à un certain retour de cette approche depuis 2010.
+
+Depuis 2010 également, le mouvement NoSQL vise à développer des applications de gestion de données massives en utilisant des modèles N1NF. Les modèles utilisés peuvent être : orienté clé-valeur (associant une valeur à chaque clé), orienté colonnes, orienté documents ou encore graph.
+
+Le modèle de données relationnel est fondé sur la notion de "relation" : un tableau à deux dimensions qui contient un ensemble de "n-uplets" (les lignes). Quand on se focalise plus sur le stockage, les relations sont souvent appelées des "tables" et les n-uplets des "enregistrements". Les entrées dans les tables sont appelées des "valeurs".
+
+Selon le modèle relationnel, il peut y avoir plusieurs relations connectées implicitement par les valeurs qu'elles contiennent. Dans une base de données relationnelle, chaque enregistrement d'une table contient un groupe d'informations relatives à un sujet et les différents sujets sont connexes. Les liens existants entre les informations sont stockés dans les champs des enregistrements (composants des n-uplets) sous forme de clé primaire et clé étrangère.
+
+Les opérations d'algèbre relationnelle telles que l'intersection, la jointure ou le produit cartésien sont utilisées pour faire des rapprochements entre les enregistrements et créer de nouvelles relations à partir des relations enregistrées dans la base de données.
+
+Une composante "N" d'un n-uplet est une clé primaire lorsque par nature la valeur de cette composante est différente pour chaque n-uplet d'une relation, et que, pour une valeur donnée, il n'existe qu'un seul n-uplet dans toute la relation dont la composante a cette valeur (absence de redondance).
+
+Une composante "N" d'un n-uplet est une clé étrangère lorsque les valeurs de cette composante sont des références à une clé primaire. Il y a une situation d'intégrité référentielle lorsqu'à chaque valeur de la clé étrangère A correspond une valeur de la clé primaire référencée B.
+
+Le schéma, c'est-à-dire le plan des relations, des clés et des références est créé par un ingénieur. Il vise à minimiser la redondance, et maximiser la cohérence. Les formes normales sont des modèles d'organisation du contenu des bases de données relationnelles.
+
+L'algèbre relationnelle consiste en un ensemble d'opérations qui prennent en entrée une ou deux relations et retourne une relation. L'ensemble de ces opérations forme une structure algébrique au sens mathématique du terme.
+
+En algèbre relationnelle, une relation est un ensemble de n-uplets sur un ensemble d'attributs donnés. On ne considère jamais d'autres structures, et en particulier, jamais de table qui contiendrait des n-uplets sur des ensembles différents d'attributs. En combinant ces opérations, on obtient un langage très riche pour exprimer des requêtes et qui permet notamment d'exprimer le cœur des requêtes SQL.
+
+Il existe six opérateurs d'algèbre relationnelle (Sélection, Projection, Renommage, Union, Différence et Produit cartésien). À partir de ces opérateurs, des opérateurs dérivés peuvent être conçus comme la jointure, l'intersection ou la division.
+
+Opérateurs unaires (un seul argument) :
+Opérateurs binaires (deux arguments) : 
+Opérateurs dérivés :
+
+
+Un système de gestion de base de données (SGBD) "relationnel" est un logiciel qui permet de manipuler le contenu des bases de données relationnelles. Il permet en particulier de synthétiser n'importe quel lot d'informations en exploitant le contenu des différentes tables de la base de données par application des opérations de l'algèbre relationnelle telles que la jointure, la sélection et la projection.
+
+Ces SGBD résolvent sur demande (anglais "query") des requêtes utilisant des opérateurs d'algèbre relationnelle. SQL (sigle de "Structured Query Language") est le langage informatique le plus répandu utilisé pour formuler des requêtes d'algèbre relationnelle. En plus de l'algèbre relationnelle, SQL permet l'expression de fonctions (comme le minimum, maximum, comptage…) que n'offre pas l'algèbre relationnelle, la notion de tri (compte tenu du fait que le support théorique est la notion d'ensemble et donc sans ordre), ainsi que la notion de récursion (non disponible dans l'algèbre relationnelle car le nombre de jointure est "a priori" non connu à l'avance — comme pour gérer un arbre généalogique et rechercher les ancêtres).
+Le langage SQL est également utilisé pour ajouter ou supprimer du contenu dans la base de données. Lors de la définition de l'organisation des données (partie langage de définition de données de SQL) des contraintes d'intégrité permettent de définir les règles à suivre pour garantir la cohérence de la base lors de manipulation autres que la consultation : comme vérifier que le nouveau contenu ne casse pas l'intégrité référentielle entre les clés, ou crée de la redondance.
+
+Les SGBD relationnels peuvent être exploités à partir d'autres logiciels par l'intermédiaire d'interface de programmation telles que ODBC ou JDBC. Ces interfaces permettent d'envoyer des requêtes sous forme de phrases d'interrogation et récupérer le résultat.
+
+Selon l'architecture Ansi/Sparc, la manière dont les informations sont organisées dans un logiciel qui utilise le SGBD peut différer de la manière dont le SGBD présente les informations par l'intermédiaire de l'interface de programmation. Cette organisation peut différer de celle qui est utilisée par le SGBD pour stocker les informations sur un support informatique.
+
+Un SGBD est dit "relationnel" lorsque les informations sont présentées selon le modèle relationnel. Un SGBD est dit "orienté objet" lorsque les informations sont présentées sous forme d'objets, et un SGBD objet-relationnel peut présenter les informations alternativement sous formes de relations ou d'objets.
+
+Les logiciels écrits en langage de programmation orientée objet utilisent parfois des composants logiciels de mapping objet-relationnel pour présenter le contenu d'une base de données relationnelle sous forme d'objets.
+
+Le calcul relationnel de Michel Barès 
+
+
+

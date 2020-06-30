@@ -1,0 +1,34 @@
+﻿UART
+
+Un UART, pour , est un émetteur-récepteur asynchrone universel. 
+Il a aussi été parfois désigné sous le nom de ACIA, pour Asynchronous Communication Interface Adapter (ce nom étant à présent tombé en désuétude).
+
+En langage courant, c'est le composant utilisé pour faire la liaison entre l'ordinateur et le port série. L'ordinateur envoie les données en parallèle (autant de fils que de bits de données). Il faut donc transformer ces données pour les faire passer à travers une liaison série qui utilise un seul fil pour faire passer tous les bits de données.
+
+Un DUART () combine deux UART dans une seule puce. Un USART () peut communiquer de façon synchrone.
+
+Aujourd'hui, les UART sont généralement intégrés dans des composants comme des microcontrôleurs. Ils ne sont dans ce cas plus un composant à proprement parler, mais une fonction périphérique du composant.
+
+Une trame UART est constituée des bits suivants :
+
+Le niveau logique de repos est le 1.
+
+Les niveaux de tension sont de type TTL soit 0 V pour le niveau logique bas et +5V pour le niveau logique haut.
+
+Afin de faciliter l'interopérabilité entre périphériques (PC, microcontrôleur, modem…) des vitesses de transmission sont normalisées par multiples et sous-multiples de 9600 baud, l'unité baud correspondant à un symbole par seconde :
+
+Pour pouvoir communiquer, les deux entités connectées doivent partager les mêmes paramètres de transmission.
+
+Les paramètres sont parfois décrits sous forme condensée :
+
+USART est une abréviation signifiant .
+C'est un circuit électronique qui permet de mettre en série (sérialiser) les octets à transmettre par un modem. Cela signifie que les bits constituant l'octet sont transmis les uns après les autres grâce à deux fils (les bits résultent de la différence de potentiel entre le fil de données et le fil de la masse) et non simultanément sur 9 fils (8 fils de données et le fil de la masse).
+Beaucoup de circuits intégrés disposent désormais d'UART qui peuvent communiquer de manière synchrone ; de tels périphériques portent le nom d'USART.
+
+
+<br>
+"NB : À présent les systèmes étant plus "performants" les VCO ont remplacé les quartz (Clock)"<br>
+"Les liaisons séries "actuelles" n'ont plus la contrainte de multiplicité (Ex: Raspberry)... et la "contrainte" disparaît des PC de par l'emploi généralisé de la liaison USB (et autres... et aussi sans fil)"
+
+
+

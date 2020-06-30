@@ -1,0 +1,69 @@
+﻿Ensemble flou
+
+La théorie des sous-ensembles flous est une théorie mathématique du domaine de l’algèbre abstraite. Elle a été développée par Lotfi Zadeh en 1965 afin de représenter mathématiquement l'imprécision relative à certaines classes d'objets et sert de fondement à la logique floue.
+Les sous-ensembles flous (ou parties floues) ont été introduits afin de modéliser la représentation humaine des connaissances, et ainsi améliorer les performances des systèmes de décision qui utilisent cette modélisation.
+
+Les sous-ensembles flous sont utilisés soit pour modéliser l'incertitude et l'imprécision, soit pour représenter des informations précises sous forme lexicale assimilable par un système expert.
+
+Une partie formula_1 d'un ensemble formula_2 est usuellement associée à sa fonction caractéristique. Celle-ci s'applique sur les éléments "x" de formula_2. Elle prend la valeur 0 si "x" n'appartient pas à formula_1 et 1 si "x" appartient à formula_1.
+
+On souhaite définir une partie formula_1 floue de formula_2 en attribuant aux éléments "x" de formula_2 un degré d'appartenance, d'autant plus élevé qu'on souhaite exprimer avec certitude le fait que "x" est élément de formula_1. Cette valeur vaudra 0 si on souhaite exprimer que "x" de façon certaine n'est pas élément de formula_1, elle vaudra 1 si on souhaite exprimer que "x" appartient à formula_1 de façon certaine, et elle prendra une valeur comprise entre 0 et 1 suivant qu'on estime plus ou moins certain l'appartenance de "x" à formula_1. On est donc amené à définir une partie floue de la façon suivante :
+
+Une partie floue (ou sous-ensemble flou) d'un ensemble formula_2 est une application de formula_2 dans [0,1].
+
+Plus généralement, si formula_15 est un treillis complet, distributif et complémenté, on définit une partie L-floue comme étant une application de formula_2 dans formula_15. Si formula_18, on retrouve la définition précédente de partie floue, et si formula_19, on retrouve la notion usuelle de partie de E.
+
+
+
+
+
+
+
+
+En observant comment les opérations usuelles se comportent vis-à-vis des fonctions caractéristiques de parties, on étend ces opérations aux fonctions d'appartenance des parties floues.
+
+Soient formula_53 une famille de parties floues d'un ensemble formula_2 indexées selon un ensemble formula_55, données par leur fonction d'appartenance formula_56. On définit la réunion formula_57 de ces parties au moyen de la fonction d'appartenance suivante :
+
+De même, on définit l'intersection de ces parties au moyen de la fonction d'appartenance suivante :
+
+Réunion et intersection restent distributives l'une par rapport à l'autre.
+
+Le complémentaire d'une partie floue donnée par sa fonction d'appartenance formula_57 est la partie floue dont la fonction d'appartenance est formula_63.
+
+Le complémentaire d'une intersection reste égal à la réunion des complémentaires, et le complémentaire d'une réunion est l'intersection des complémentaires. Le complémentaire du complémentaire redonne la partie initiale.
+
+Cependant, la réunion d'une partie floue et de son complémentaire ne donne pas toujours l'ensemble formula_2, et l'intersection d'une partie floue et de son complémentaire ne donne pas l'ensemble vide.
+
+En effet, considérons, par exemple, la partie floue formula_65 de formula_2 donnée par la fonction d'appartenance:
+formula_67
+
+Cette partie floue est égale à son complémentaire car sa fonction d'appartenance vérifie formula_68.
+
+On déduit alors de formula_69 que formula_70
+
+Soient formula_2 et formula_65 deux ensembles et formula_73 une application de formula_2 dans formula_65. Considérons une partie floue de formula_65 donnée par sa fonction d'appartenance formula_57. On appelle image réciproque de cette partie floue par formula_73 la partie floue de formula_2 donnée par la fonction d'appartenance suivante, notée formula_80 :
+
+Soient formula_2 et formula_65 deux ensembles et formula_73 une application de formula_2 dans formula_65. Considérons une partie floue de formula_2 donnée par sa fonction d'appartenance formula_57. On appelle image directe de cette partie floue par formula_73 la partie floue de formula_65 donnée par la fonction d'appartenance suivante, notée formula_91 :
+
+Cette opération a été introduite en 2017 par Javier Perez-Capdevila comme suit: Étant donné les ensembles flous, W1 = {(w11, f (w11)), (w12, f (w12),…, (w1i, f (w1i)}, W2 = {(w21, f (w21)), (w22, f (w22),…, (w2j, f (w2j)}, ..., Wm = {(wm1, f (wm1)), (wm2, f (wm2),…, (w2k, f (w2k)} si on obtient à partir de ces ensembles un ensemble M = {(m1, f (m1)), (m2, f (m2),…, (mn, f (mn)}, tel que chaque mi, i = 1, 2,…, n, est une combinaison d'éléments appartenant à chaque Wk, k = 1, 2,…, m, chaque élément de chaque Wk fait partie d'au moins un mi, et les valeurs de f (mi) sont la moyenne arithmétique des valeurs de fonction des éléments qui forment chaque mi, l'ensemble M est appelé "ensemble complet flou complet".
+
+Dès 1968, Chang a appliqué la théorie des ensembles flous à la topologie, donnant naissance à la topologie floue.
+
+Soit formula_2 un ensemble. Une topologie floue est donnée par une collection formula_94 de fonctions d'appartenance vérifiant les propriétés suivantes :
+
+Les éléments de formula_94 sont les ouverts flous. Leurs complémentaires sont les fermés flous. La propriété (i) exprime que l'ensemble formula_2 et l'ensemble vide sont des ouverts flous, la propriété (ii) qu'une intersection finie d'ouverts flous est un ouvert flou et la propriété (iii) qu'une réunion quelconque d'ouverts flous est un ouvert flou.
+
+Par exemple, étant donné un espace formula_2 muni d'une topologie formula_103 au sens usuel, on peut lui associer une topologie floue naturelle formula_104 en prenant pour formula_94 la collection des fonctions semi-continues inférieurement à valeurs dans [0,1]. La topologie floue ainsi définie est dite engendrée par la topologie initiale formula_103 de formula_2. Réciproquement, si formula_94 est une topologie floue définie sur formula_2, on peut lui associer une topologie formula_110 au sens usuel, à savoir la topologie la moins fine rendant toutes les fonctions de formula_94 semi-continues inférieurement.
+
+On peut alors introduire des notions plus complexes de topologie floue.
+
+Ainsi une fonction est continue floue si et seulement si l'image réciproque d'un ouvert flou de l'ensemble d'arrivée est un ouvert flou de l'ensemble de départ. Les fonctions constantes sont continues floues si et seulement si la topologie floue de l'espace de départ contient tous les ouverts flous définis par des fonctions d'appartenance constantes.
+
+Par analogie à la notion topologique usuelle, un espace topologique flou est compact si, de tout recouvrement par des ouverts flous, on peut extraire un recouvrement fini. Si l'image d'un compact par une application continue floue est compacte, en revanche, le théorème de Tychonoff n'admet qu'une version limitée : seul le produit fini de compacts en topologie floue est compact. Plus généralement, soit formula_15 un treillis complet, distributif et complémenté d'élément maximum 1, soit formula_113 un nombre cardinal et soit formula_114 une famille de compacts en topologie L-floue, où formula_55 est de cardinal formula_113. Alors le produit des formula_117 est compact pour la topologie produit L-floue si et seulement si 1 vérifie la propriété suivante : pour toute famille formula_118 d'éléments de formula_15 strictement inférieurs à 1, formula_120 est strictement inférieur à 1 (théorème de Tychonoff pour la topologie L-floue). Dans le cas où formula_19, donnant la topologie usuelle, cette propriété est vérifiée pour tout cardinal formula_113 et un produit quelconque de compacts est compact. Mais si formula_123, donnant la topologie floue, la propriété n'est vérifiée que pour les cardinaux finis.
+
+Lowen a proposé une autre définition des compacts en topologie floue. En effet, si la topologie floue comprend toutes les fonctions d'appartenance constantes, il n'existe pas de compact au sens précédent : les fonctions formula_124 sont telles que formula_125 donc ces fonctions définissent un recouvrement de l'espace mais il n'en existe pas de sous-recouvrement fini. Un espace formula_2 est compact pour la topologie floue au sens de Lowen si, pour toute fonction d'appartenance constante formula_127, tout formula_128 et toute famille d'ouverts flous formula_129 telle que formula_130, il existe une sous-famille finie formula_131 telle que formula_132. Avec cette définition, un espace muni d'une topologie formula_103 usuelle est compact si et seulement s'il est compact muni de la topologie floue formula_104 engendrée par formula_103, et un produit quelconque d'espaces compacts est compact (théorème de Tychonoff pour la topologie floue au sens de Lowen).
+
+Enfin, on montre que le théorème de Tychonoff pour la topologie L-floue et le théorème de Tychonoff pour la topologie floue au sens de Lowen sont, comme le théorème de Tychonoff usuel, équivalents à l'axiome du choix.
+
+
+

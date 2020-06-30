@@ -1,0 +1,27 @@
+﻿Objet d'accès aux données
+
+Un objet d'accès aux données (en anglais "data access object" ou "DAO") est un patron de conception (c'est-à-dire un modèle pour concevoir une solution) utilisé dans les architectures logicielles objet. 
+
+Les objets en mémoire vive sont souvent liés à des données persistantes (stockées en base de données, dans des fichiers, dans des annuaires…). Le modèle DAO propose de regrouper les accès aux données persistantes dans des classes à part, plutôt que de les disperser. Il s'agit surtout de ne pas écrire ces accès dans les classes "métier", qui ne seront modifiées que si les règles de gestion métier changent.
+
+Ce modèle complète le modèle MVC (modèle-vue-contrôleur), qui préconise de séparer dans des classes les différentes problématiques :
+
+
+L'utilisation de DAO permet de s'abstraire de la façon dont les données sont stockées au niveau des objets métier. Ainsi, le changement du mode de stockage ne remet pas en cause le reste de l'application. En effet, seules ces classes dites "techniques" seront à modifier (et donc à re-tester). Cette souplesse implique cependant un coût additionnel, dû à une plus grande complexité de mise en œuvre.
+
+Une classe métier :
+
+Une classe technique :
+
+Il est important que cette classe cache complètement d'où viennent les données : elle doit donc renvoyer des objets métier (et non un curseur, un enregistrement, …).
+
+Une classe contrôleur :
+
+Il peut exister autant de types de DAO que de moyens de persistance des données. 
+
+
+Des bibliothèques logicielles sont d'ailleurs conçues spécifiquement pour prendre en charge ces aspects.
+
+
+
+

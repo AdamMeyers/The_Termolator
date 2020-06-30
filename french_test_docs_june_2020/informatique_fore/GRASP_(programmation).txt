@@ -1,0 +1,38 @@
+﻿GRASP (programmation)
+
+General responsibility assignment software patterns (ou principles), abrégé en GRASP, se composent de lignes directrices pour l'attribution de la responsabilité des classes et des objets en conception orientée objet.
+
+Les différents modèles et principes utilisés par les GRASP sont : le contrôleur, le créateur, l'indirection, le spécialiste de l'information, la cohésion forte, le couplage faible, le polymorphisme, les variations protégées, et l'invention pure. Tous ces modèles répondent à certains problèmes récurrents du développement logiciel. Ils n'ont pas été conçus pour créer une nouvelle façon de travailler, mais pour mieux documenter et normaliser l'existant à l'aide de principes de programmation éprouvés en conception orientée objet.
+
+D'après Craig Larman, . Ainsi, GRASP est surtout une boîte à outils mentale, une aide à la conception de logiciels orientés objets.
+
+Le contrôleur de schéma attribue la responsabilité de traiter les événements du système à une classe non-UI qui représente l'ensemble du système ou d'un scénario cas d'utilisation. Un objet contrôleur est un non-objet de l'interface utilisateur responsable de la réception ou de la manipulation d'un système d'événements.
+
+Le contrôleur doit être utilisé pour faire face à "tous" les événements du système d'un cas d'utilisation, et peut être utilisé pour plus d'un cas d'utilisation (par exemple, pour les cas d'utilisation "Créer un Utilisateur" et "Supprimer l'Utilisateur", on peut avoir un seul "UserController", au lieu de deux cas d'utilisation des contrôleurs).
+
+Il est défini comme le premier objet, au-delà de la couche d'interface utilisateur, qui reçoit et coordonne ("témoins"), un système d'exploitation. Le contrôleur doit déléguer le travail qui doit être fait à d'autres objets; il coordonne ou contrôle l'activité. Il ne devrait pas faire beaucoup de travail lui-même. La portée du Contrôleur peut être considérée comme étant une partie de l'application/de la couche de service (en supposant que la demande ait fait une distinction explicite entre les applications/services et la couche de la couche domaine) dans un système orienté objet avec l'ensemble de couches dans un système d'informations.
+
+La création d'objets est l'une des activités les plus courantes dans un système orientée objet. Choisir la bonne classe qui aura la responsabilité de créer des objets est un des principes fondamentaux en orienté objet.
+
+En général, une classe codice_1 doit être responsable de la création des instances de la classe codice_2 si l'un, ou de préférence plusieurs, des critères suivants s'appliquent :
+
+"Une forte cohésion" est un modèle d'évaluation qui tente de garder les objets orientés correctement, faciles à utiliser et compréhensibles. Une forte cohésion est généralement utilisée avec un couplage faible. Une cohésion élevée signifie que les responsabilités d'un élément donné sont fortement liées et très ciblées. La séparation des programmes dans les classes et les sous-systèmes est un exemple des activités qui augmentent la cohésion des propriétés d'un système. Sinon, la faible cohésion est une situation dans laquelle un élément donné a trop d'activités sans rapport avec ses responsabilités. Les éléments avec une faible cohésion souffrent souvent d'être difficile à comprendre, difficile à réutiliser, difficile à maintenir et réfractaire au changement.
+
+L'indirection prend en charge le couplage faible (et la réutilisation potentielle) entre deux éléments, en attribuant la responsabilité de la médiation entre eux à un objet intermédiaire. Un exemple de ceci est l'introduction d'un composant contrôleur de médiation entre les données (le modèle) et sa représentation (vue) dans le schéma modèle-vue-contrôleur.
+
+"Spécialiste de l'Information" (également "expert" "en information") est un principe qui est utilisé pour déterminer où déléguer des responsabilités. Ces responsabilités comprennent des méthodes, des champs calculés, et ainsi de suite.
+
+En utilisant le principe de spécialiste de l'information, une approche générale pour l'attribution de responsabilités, c'est de regarder une responsabilité donnée, de déterminer les informations nécessaires pour le remplir, puis de déterminer où cette information est conservée.
+
+Spécialiste de l'Information va conduire à placer la responsabilité sur la classe avec le plus de renseignements nécessaires pour l'accomplir.
+
+Le "couplage faible" est une mesure de la force d'un élément est connecté, a la connaissance de, ou s'appuie sur d'autres éléments. Le couplage faible est un modèle d'évaluation qui dicte la façon d'attribuer des responsabilités à l'appui :
+
+Selon le principe du "polymorphisme", la responsabilité de définir la variation des comportements basés sur le type est attribuée au type pour lequel cette variation se produit. L'utilisateur du type doit utiliser des opérations de polymorphisme à la place d'effectuer des branchements explicites basés sur le type.
+
+Le motif de "variations" "protégées" protège les éléments de variations sur d'autres éléments (objets, de systèmes, sous-systèmes) en enveloppant le focus de l'instabilité avec une interface et en utilisant le polymorphisme pour créer les différentes implémentations de cette interface.
+
+Une "pure invention" est une classe qui ne représente pas un concept dans le domaine du problème, spécialement composé pour réaliser un couplage faible, une forte cohésion, et la réutilisation potentielle de celle-ci dérivés (lorsqu'une solution présentée par le "spécialiste de l'information" de modèle qui ne fonctionne pas). Ce type de classe est appelé un "service" dans le domain-driven design.
+
+
+

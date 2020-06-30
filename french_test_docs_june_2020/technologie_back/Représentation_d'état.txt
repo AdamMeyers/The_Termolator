@@ -1,0 +1,239 @@
+﻿Représentation d'état
+
+En automatique, une représentation d'état permet de modéliser un système dynamique en utilisant des variables d'état. Cette représentation, qui peut être linéaire ou non, continue ou discrète, permet de déterminer l'état du système à n'importe quel instant futur si l'on connaît l'état à l'instant initial et le comportement des variables exogènes qui influent sur le système. 
+La représentation d'état du système permet de connaître son comportement "interne" et pas seulement son comportement "externe" comme c'est le cas avec sa fonction de transfert. 
+Pour un bref historique de la représentation d'état, voir Histoire de l'automatique.
+
+Un système peut être entièrement décrit à l'aide d'un ensemble de variables. Les variables d'état sont des grandeurs, qui le plus souvent ont une signification physique, et qui sont rassemblées dans un vecteur . La connaissance de toutes les variables d'état à un instant quelconque ainsi que de l'entrée sur un intervalle , où est arbitraire, permet de connaître la valeur de toutes les variables du système à l'instant formula_1. Le nombre de variables d'état, désigné par la lettre "n", est l'ordre du système.
+
+Dans la première partie de cet article nous ne considèrerons que des systèmes linéaires invariants (ou stationnaires).
+
+La représentation d'état de ces systèmes, quand ils sont à temps continu, s'écrit de la manière suivante : 
+formula_2 
+
+Les colonnes , et représentent des vecteurs formula_10 et formula_11 dans des bases des espaces vectoriels formula_12 et formula_13, appelés espace d'état, espace des commandes et espace des sorties, et isomorphes à formula_14 et formula_15 respectivement.
+
+De même les matrices , , et représentent des applications linéaires 
+formula_16,
+formula_17,
+formula_18 et 
+formula_19, respectivement, dans les bases considérées.
+
+Les vecteurs , et vérifient les équations
+
+formula_20
+
+Dans certains cas, la représentation d'état matricielle introduite en premier lieu sera la plus commode ; dans d'autres, celle mettant en jeu des vecteurs et des applications linéaires, et appelée représentation d'état intrinsèque (elle est également dite "géométrique") sera plus appropriée.
+
+L'état du système est un résumé exhaustif du passé du système. En effet, connaissant l'état formula_21, et la commande formula_22 sur l'intervalle fini formula_23, on peut exprimer l'état formula_24, grâce aux calculs sur l'exponentielle d'une matrice :
+formula_25
+
+Considérons le changement de variable formula_26, avec formula_27 et inversible. Ce changement de variable correspond à un changement de base dans l'espace d'état. Le système se récrit donc comme suit :
+formula_28
+
+On voit donc qu'il existe une infinité de représentations matricielles d'un système d'état. En revanche, la représentation intrinsèque est unique.
+
+Les valeurs propres de la matrice d'état formula_29 (ou, de manière équivalente, de l'endomorphisme formula_30 représenté par cette matrice) sont les pôles du système. Soit "p" un pôle ; son ordre "q" est défini comme étant le degré maximal des diviseurs élémentaires de la matrice polynômiale formula_31 multiples du polynôme formula_32, ou encore l'ordre de multiplicité de "p" en tant que racine du polynôme minimal de "A", soit encore l'ordre maximal des blocs de Jordan de "A" ayant pour valeur propre "p".
+
+Cette dernière caractérisation et l'application de la réduction de Jordan à la théorie de systèmes différentiels montre que les conditions suivantes sont équivalentes :
+
+De ce qui précède, il résulte les propositions suivantes: 
+
+
+
+La commandabilité et l'observabilité sont des propriétés structurelles du système qui n'apparaissent pas dans la représentation par fonction de transfert.
+
+Un système est dit commandable si pour tout intervalle de temps formula_35, et tous points formula_36, avec formula_37, il existe une commande appliquée sur formula_35, telle que formula_39.
+
+La condition nécessaire et suffisante de commandabilité ci-après est appelée le critère de Kalman pour la commandabilité. Le système considéré est commandable si et seulement si :
+La matrice ci-dessus, notée formula_41, est communément appelée "matrice de commandabilité", et ses colonnes se calculent de façon itérative : formula_42.
+En termes "intrinsèques" on définit le "sous-espace commandable" formula_43 de l'espace d'état formula_44 suivant
+où formula_46 est l'image de formula_47,
+et le système est donc commandable si, et seulement si formula_48. On dit alors, par abus de langage, que (ou, de manière équivalente, ) est commandable.
+Quand ce n'est pas le cas, soit formula_49 le rang de la matrice formula_41, c'est-à-dire la dimension de l'espace commandable formula_43, formula_52 une base de formula_43 et formula_54 une base d'un sous-espace supplémentaire de formula_43 dans formula_44. En choisissant dans formula_44 la base formula_58, quelle que soit la base choisie dans formula_59, les applications linéaires formula_30 et formula_47 sont représentées par des matrices de la forme
+
+où formula_63 est commandable et où l'astérisque est une sous-matrice dont les éléments sont quelconques. Les valeurs propres de formula_64 sont les pôles (ou modes) non commandables du système, également appelés ses zéros de découplage en entrée (z.d.e.). L'ordre de la matrice formula_65 est formula_49 et celui de la matrice formula_64 est formula_68. 
+
+Le système est dit stabilisable si ses pôles non commandables appartiennent tous au demi-plan gauche ouvert. Un système commandable est donc stabilisable.
+
+Un critère commode pour étudier la commandabilité et la stabilisabilité d'un système est le test de Popov-Belevich-Hautus (PBH): le système est commandable (resp. stabilisable) si, et seulement si le rang de la matrice formula_69 est égal à pour tout formula_70 (resp. pour tout formula_71 dans le demi-plan droit fermé).
+
+Les pôles non commandables sont également les valeurs de formula_70 pour lesquelles le rang de la matrice formula_73 est formula_74, autrement dit ce sont les racines des facteurs invariants de cette matrice. Soit "p" un pôle non commandable. Son ordre "q" est par définition le degré maximal des diviseurs élémentaires de formula_69 multiples du polynôme formula_76 (c'est aussi l'ordre de multiplicité de "p" en tant que racine du polynôme minimal de formula_64, soit encore l'ordre maximal des blocs de Jordan de formula_64 ayant pour valeur propre "p".).
+
+Cette dernière caractérisation montre (comme, plus haut, à propos des pôles du système) que les conditions suivantes sont équivalentes :
+
+Un système est dit observable si l'observation de ses entrées et sorties pendant un intervalle de temps fini formula_23 permet de déterminer l'état initial formula_21, et donc, par intégration de l'équation d'état, de connaître formula_83 à tout instant appartenant à l'intervalle formula_23.
+La condition nécessaire et suffisante d'observabilité ci-après est appelé le Critère de Kalman pour l'observabilité. Le système considéré est observable si et seulement si :
+Cette matrice notée formula_86 est communément appelée "matrice d'observabilité" et ses lignes se calculent de façon itérative : formula_87.
+En termes intrinsèques, on définit le "sous-espace non observable" formula_88 suivant
+et le système (ou, par abus de langage, , ou ) est donc observable si, et seulement si formula_90 (où 0 désigne le sous-espace vectoriel de formula_44 réduit au seul élément nul). Quand ce n'est pas le cas, soit formula_92 la dimension de formula_88 (formula_94 étant donc le rang de formula_86), formula_96 une base d'un sous-espace supplémentaire de formula_88, et formula_98 une base de formula_88. En choisissant dans formula_44 la base formula_101, quelle que soit la base choisie dans formula_102, les applications linéaires formula_103 et formula_30 sont représentées par des matrices de la forme
+
+où formula_106 est observable.
+
+Les valeurs propres de formula_107 sont les pôles (ou modes) non observables du système, également appelés des zéros de découplage en sortie (z.d.s.). L'ordre de la matrice formula_108 est formula_109 et celui de la matrice formula_107 est formula_111.
+
+Le système est dit détectable si ses pôles non observables appartiennent tous au demi-plan gauche ouvert. Un système observable est donc détectable.
+
+Il existe également le test de Popov-Belevich-Hautus (PBH) pour caractériser l'observabilité et la détectabilité: le système est observable (resp. détectable) si, et seulement si le rang de la matrice 
+
+est égal à pour tout formula_70 (resp. pour tout dans le demi-plan droit fermé).
+
+Les pôles non observables sont également les valeurs de formula_70 pour lesquelles le rang de la matrice ci-dessus est formula_74, autrement dit ce sont les racines des facteurs invariants de cette matrice. L'ordre d'un pôle non observable se définit comme celui d'un pôle non commandable, "mutatis mutandis".
+
+Les conditions suivantes sont équivalentes :
+
+Écrivons maintenant formula_119 où formula_120, formula_121 est un supplémentaire de formula_122 dans formula_43, formula_124 est un supplémentaire de formula_122 dans formula_88 et formula_127 est un supplémentaire de formula_128 dans formula_44. En choisissant dans formula_44 une base formée de la concaténation de bases des sous-espaces ci-dessous, les applications linéaires formula_30, formula_47 et formula_103 sont représentées (quelles que soient les bases choisies dans formula_59 et formula_102) par des matrices de la forme,
+
+où
+
+est commandable et
+
+est observable. On vérifie sans difficulté que la matrice de transfert du système est
+
+où formula_141 est la dimension de l'espace vectoriel formula_142. Par conséquent, la matrice de transfert ne dépend que de la partie commandable et observable du système.
+
+Considérons de nouveau le système linéaire donné par la représentation d'état ci-dessus. Les propriétés suivantes sont équivalentes:
+
+
+Le système est dit minimal quand ces propriétés équivalentes sont satisfaites.
+
+Considérons la décomposition de Kalman de ce système. On a, puisque les valeurs propres d'une matrices restent inchangées par changement de base, 
+
+où formula_144 désigne le spectre de la matrice entre parenthèses, c'est-à-dire l'ensemble de ses valeurs propres (répétées un nombre de fois égal à leur multiplicité) et où formula_145 est la réunion disjointe. D'autre part, avec les notations qui précèdent,
+
+par conséquent, formula_147 où formula_148 (formula_149 désignant le complémentaire de dans lorsque formula_150).
+
+tandis que la précédente s'écrit, en désignant par formula_154 (resp. formula_155) les pôles du système (resp. ses pôles de transmission)
+
+On peut montrer que ces deux dernières relations sont "intrinsèques".
+
+Considérons la matrice , appelée matrice de Rosenbrock ou matrice-système
+
+Les racines dans le plan complexe des facteurs invariants de (multiplicités prises en compte) sont appelés les zéros invariants (z.i.) du système. Ce sont des objets intrinsèques qui sont invariants par retour d'état, d'où leur nom.
+
+Soit "z" un zéro invariant. Son ordre "q" se définit comme étant le degré maximal des diviseurs élémentaires de multiples du polynôme formula_158. 
+
+Les conditions suivantes sont équivalentes :
+
+Les zéros du système (z.s.) sont définis par la relation
+
+où formula_163 est l'ensemble des "zéros de transmission" (contrairement aux zéros invariants, ces derniers ne sont pas invariants par retour d'état). On montre que, 
+
+la première (resp. la seconde) inclusion devenant une égalité dans le cas d'un système minimal (resp. ayant une matrice de transfert carrée et régulière).
+
+Les propriétés de "commandabilité" et dobservabilité" sont duales"', de même que les propriétés de "stabilisabilité" et de "détectabilité", dans le sens suivant : est "observable" (resp. "détectable") si, et seulement si est "commandable" (resp. "stabilisable").
+
+Comme il est dit ci-dessus, les parties non commandables et/ou non observables disparaissent dans les représentations par fonction de transfert (c'est en cela que les pôles et zéros correspondants sont des "modes cachés"). Voici un exemple illustratif.
+
+Considérons les systèmes formula_165 et formula_166 correspondants aux équations différentielles suivantes :
+formula_167
+formula_168
+
+Le système formula_165 possède la forme d'état suivante :
+formula_170
+Ce système est minimal.
+
+Le système formula_166 peut se mettre sous forme d'état comme suit :
+formula_172
+
+Le calcul de la matrice de commandabilité formula_41 conduit au résultat suivant:
+formula_174
+Le rang de cette matrice est égal à 1. Puisque le système est d'ordre formula_175, il n'est pas commandable.
+
+Néanmoins, les deux systèmes, bien que différents, ont la même fonction de transfert (avec formula_71 la variable de Laplace):
+formula_177
+formula_178
+Ce sont les simplifications des pôles non commandables par des zéros (de découplage en entrée) qui fait que la représentation par fonction de transfert ne permet pas de refléter toutes les propriétés structurelles du système.
+
+On peut discrétiser à une période d'échantillonnage un système linéaire stationnaire à temps continu formula_179 tel que celui ci-dessus, de manière à former un système linéaire stationnaire à temps discret formula_180. L'état formula_181 et la sortie formula_182 de formula_183 sont les suites définies par les relations formula_184 , formula_185. La commande discrète formula_186 de formula_183 est une suite de nombres calculés par un calculateur numérique fonctionnant en temps réel. Ces valeurs font l'objet d'un blocage formula_188 tel que formula_189 est une commande à temps continu vérifiant formula_190 La commande bloquée formula_191 est l'entrée de formula_179. Le type de bloqueur le plus simple, et aussi le plus répandu, est le bloqueur d'ordre zéro : il consiste à définir par formula_193 pour formula_194. La commande qui en résulte est donc une fonction en escalier. Pour obtenir l'équation d'état de formula_183, il suffit d'intégrer celle de formula_179 entre et formula_197 et on montre que
+
+avec
+
+ou sous une forme plus compacte
+
+Pour que formula_183 soit commandable (resp. observable) il faut que formula_179 le soit, et si cette condition est satisfaite, il suffit que, de plus, la matrice d'état formula_29 de formula_179 n'ait pas de valeurs propres formula_205, formula_206 telles que formula_207. On en déduit un théorème analogue au théorème de l'échantillonnage, mais s'appliquant aux systèmes.
+
+Les valeurs propres de la matrices d'état formula_208 sont les pôles du système formula_183. Une condition nécessaire et suffisante pour que ce système soit asymptotiquement stable (ou, de manière équivalente, exponentiellement stable) est que ces pôles aient tous un module strictement inférieur à 1. Cette condition est satisfaite si, et seulement si formula_179 est exponentiellement stable.
+
+Les différentes sortes de pôles et de zéros d'un système linéaire stationnaire se définissent dans le cas du temps discret d'une manière analogue, "mutatis mutandis", à ce qui a été indiqué plus haut pour les systèmes à temps continu.
+
+Nous ne traiterons, très brièvement, que le cas des systèmes linéaires instationnaires à temps continu. Un tel système a une équation d'état et une équation d'observation qui ont la même forme qu'un système linéaire stationnaire, mais avec des matrices formula_29, formula_212, formula_213 et formula_214 qui appartiennent cette fois à un anneau ou un corps différentiel formula_215. Un tel système admet également une fonction de transfert. Cet anneau (supposé intègre et commutatif) ou ce corps (supposé commutatif) est muni de la dérivation usuelle formula_216 (deux exemples classiques sont ceux où formula_217 et formula_218). Soit formula_219, avec formula_220, l'anneau des "polynômes gauches" en formula_221 à coefficients dans formula_215. Si est une variable, on a d'après la règle de Leibniz formula_223, et puisque ceci est vrai quelle que soit on a sur formula_224 la règle de commutation
+
+formula_225
+
+L'anneau formula_224, muni de cette règle, est un anneau d'Ore non commutatif, qui est simple et principal lorsque formula_215 est un corps .
+
+La commandabilité d'un tel système se définit comme dans le cas stationnaire. Un critère de commandabilité, analogue à celui de Kalman, a été donné par Silverman et Meadows lorsque formula_228, l'anneau des fonctions analytiques réelles sur un intervalle ouvert non vide formula_229 de la droite réelle: soit
+
+avec
+
+Une condition nécessaire et suffisante pour que le système soit commandable est qu'il existe un sous-ensemble discret formula_232 de formula_229 tel que le rang sur formula_234 de formula_41 soit égal à la dimension formula_236 de l'espace d'état pour tout formula_237.
+
+Considérons par exemple le système dont les matrices d'état et de commande sont, respectivement,
+
+Si formula_239 est un paramètre constant quelconque, la matrice de commandabilité est
+
+son déterminant vaut formula_241 et le système (stationnaire) est donc commandable. En revanche, si , la matrice de commandabilité est
+
+et le système (instationnaire) est non commandable.
+
+L'observabilité se définit comme dans le cas stationnaire. On obtient une condition nécessaire et suffisante d'observabilité en passant au système dual. Il est défini par les équations
+
+Un système linéaire coïncide donc avec son "bidual", et il est observable si, et seulement si son dual est commandable.
+
+La stabilité d'un système linéaire instationnaire peut s'étudier par des méthodes purement analytiques qui fournissent des conditions suffisantes ou nécessaires de stabilité exponentielle. On peut aussi, par des méthodes issues de l’analyse algébrique et de l' () définir les pôles d'un système instationnaire (sous certaines conditions portant sur le corps différentiel auquel appartiennent les coefficients des matrices de ce système) qui fournissent une condition nécessaire et suffisante de stabilité exponentielle analogue à celle indiquée plus haut pour les systèmes linéaires stationnaires.
+
+Commençons par les représentations classiques. Une représentation d'état d'un système non linéaire est de la forme
+
+formula_244
+
+où comme précédemment est le vecteur d'état, le vecteur de sortie et le vecteur d'entrée. Ces variables sont définies sur un intervalle ouvert non vide formula_229 de la droite réelle. Nous supposerons que formula_246, formula_247 où formula_248 et formula_249 sont des ouverts non vides de formula_250 et formula_15, respectivement.
+
+La première équation représente l'équation d'évolution et la seconde l'équation d'observation. La représentation d'état linéaire décrite précédemment est un cas particulier de cette forme, obtenu lorsque les fonctions et sont linéaires par rapport à .
+
+La représentation d'état ci-dessus n'est pas unique, car elle n'est pas intrinsèque. En effet, considérons le changement de variable formula_252 où est un difféomorphisme de formula_253 dans l'ouvert formula_254 de formula_255
+
+On obtient :
+
+formula_258
+
+On peut alors récrire notre système en tenant compte du changement de variable :
+formula_259
+
+Pour obtenir une représentation intrinsèque, nous supposerons que formula_260 où formula_261 est une carte d'une variété différentielle connexe formula_44 de dimension (avec formula_263) et, pour simplifier les écritures, nous poserons formula_264 en considérant formula_265 et formula_249 en tant que variétés différentielles. Alors les deux premières équations se mettent sous la forme 
+
+Les deux équations obtenues après le changement de variable formula_252 se mettent également sous cette forme, car celui-ci n'est rien d'autre qu'un changement de carte. On a donc bien obtenu l'unicité de la représentation.
+
+L'exemple classique de système non linéaire est un pendule libre (il n'y a pas d'entrées, le pendule est livré à lui-même). L'équation différentielle régissant le pendule est la suivante :
+
+où:
+
+Les équations d'état sont :
+
+oùn:
+
+L'équation d'état peut être écrite ainsi :
+
+Les points d'équilibre stationnaires d'un système sont définis par les points où formula_277. Dans ce cas, les points qui satisfont ce critère pour le pendule sont :
+
+pour tout "n" entier.
+
+La commandabilité et l'observabilité d'un système non linéaire se définissent de la manière habituelle, déjà explicitée ci-dessus. La commandabilité s'étudie, dans le cas de systèmes affines en la commande, c'est-à-dire régis par une équation d'état de la forme
+
+(où et sont indéfiniment différentiables et ) grâce à outils mathématiques empruntés à la géométrie différentielle. Soit formula_281 deux champs de vecteurs indéfiniment différentiables sur formula_282 leur crochet de Lie, et définissons
+
+Soit les distributions
+
+où formula_285 désigne l'espace vectoriel engendré par les vecteurs entre accolades. Il existe un voisinage ouvert de l'origine dans lequel le système est commandable si, et seulement si la distribution formula_286 est de dimension . Dans le cas où le système est linéaire, on retrouve le critère de Kalman. On peut du reste préciser que l'ensemble des états appartenant à accessibles dans à partir de l'origine est formula_287.
+
+D'autre part, il existe un "bouclage linéarisant" de la forme formula_288 (c'est-à-dire qu'il existe un difféomorphisme formula_289 tel que le système d'entrée et d'état formula_252 est "linéaire") si, et seulement si (1) la condition ci-dessus est satisfaite et (2) la distribution formula_291 est involutive (i.e., pour tous champs de vecteurs formula_292, le crochet de Lie formula_293 appartient à formula_291). Ce résultat est fondé, notamment, sur le théorème de Frobenius.
+
+Il existe une condition nécessaire et suffisante d'observabilité locale pour le système ci-dessus lorsqu'il a une équation d'observation de la forme 
+
+Les systèmes plats (au sens de la ) sont des systèmes commandables, et observables vus de la sortie plate.
+
+La stabilité des systèmes non linéaires s'étudie grâce à des fonctions de Lyapunov. Des stabilités de différents types existent: au sens de Lyapunov, asymptotique, exponentielle ; elles peuvent être locales ou globales, uniformes ou non, etc.
+
+
+
+

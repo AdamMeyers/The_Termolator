@@ -1,0 +1,109 @@
+﻿L-Système
+
+En informatique théorique, un L-système ou système de Lindenmayer est un système de réécriture ou grammaire formelle, inventé en 1968 par le biologiste hongrois Aristid Lindenmayer. Un L-système modélise le processus de développement et de prolifération de plantes ou de bactéries.
+
+C'est une forme de grammaire générative. Ces grammaires ont été mises en œuvre graphiquement par de nombreux auteurs, menant à de spectaculaires images. Une étude systématique d'une certaine formulation a été entreprise par dans les années 1980. Une étude mathématique, débutée dès l'introduction des systèmes par Lindenmayer, a débouché sur une théorie élaborée dont une première synthèse a été faite, en 1980 déjà, par Rozenberg et Salomaa.
+
+Au départ, Lindenmayer conçoit sa formalisation comme un modèle de langages formels qui permet de décrire le développement d'organismes multicellulaires simples. À cette époque il travaille sur les levures, les champignons et des algues. Mais sous l'influence des théoriciens et des praticiens de l'informatique, ce système a conduit à des familles de langages formels et aussi à des méthodes pour générer graphiquement des plantes idéalisées très complexes.
+
+Formellement, un L-système est un ensemble de règles et de symboles qui modélisent un processus de croissance d'êtres vivants comme des plantes ou des cellules. Le concept central des L-systèmes est la notion de réécriture. La réécriture est une technique pour construire des objets complexes en remplaçant des parties d'un objet initial simple en utilisant des règles de réécriture.
+
+Dans l'interprétation biologique, les cellules sont modélisées à l'aide de symboles. À chaque génération, les cellules se divisent, ce qui est modélisé par l'opération consistant à remplacer un symbole par un ou plusieurs autres symboles consécutifs.
+
+Un L-système est un système de réécriture qui comprend :
+
+
+Un L-système est noté formula_10. La différence avec une grammaire formelle est dans l'application des règles : dans un L-système, à chaque étape toutes les variables sont substituées, alors que dans une grammaire, une seule variable est remplacée.
+
+Voici « l'algue de Lindenmayer », un L-système d'Aristid Lindenmayer qui servait à décrire le développement d'une algue :
+
+Notation abrégée : codice_1
+
+Une équation comme codice_2 est à comprendre comme : tout symbole A devient un « mot » AB à la génération suivante.
+
+Voici le résultat sur six générations :
+
+Si on compte le nombre de symboles à chaque itération, on obtient la suite de Fibonacci, aux deux premiers termes près.
+
+La chaîne de caractères obtenue a une interprétation graphique, en deux ou trois dimensions.
+En deux dimensions, on imagine qu'une main tient un crayon qui se déplace sur la feuille selon des instructions :
+« monte d’un cran, puis tourne de 20° à gauche, déplace-toi deux fois de un cran, mémorise ta position et avance encore d’un cran, lève-toi puis repose-toi sur la position mémorisée » et ainsi de suite…
+On introduit donc des symboles variants ∈ V, ou constants ∈ S, pour permettre de guider la main.
+Plusieurs d'entre eux ont été normalisés, ils font partie de ce qu'on appelle en anglais la « "" ».
+Ce nom vient de la « tortue » du langage de programmation Logo qui fonctionne sur le même principe.
+En fait, c'est cette tortue qui est la main qui tient le crayon.
+Les signes couramment utilisés sont les suivants :
+
+Pour être plus concret, les symboles appartenant à V sont des parties d'une plante, comme une branche ou une portion de branche tout simplement. Les symboles appartenant à S sont des ordres que l'on donne à notre main virtuelle qui dessine la plante, ils servent à déterminer une direction à prendre, tandis que les symboles de V dessinent dans cette direction.
+
+Remarque : les deux derniers symboles rappellent les fonctions "pushMatrix()" et "popMatrix()" d'OpenGl, ainsi on devine que c'est un environnement graphique qui se prêtera très bien au L-système. De plus la programmation orientée objet avec les pointeurs, tel que dans le langage C++, semble indiquée pour la modélisation d'une "chaîne cellulaire" qui évolue.
+
+
+codice_3
+
+codice_4 détermine que l'on tourne de avec les symboles + et -.
+
+Voici le résultat sur trois générations :
+
+
+
+
+Cette « turtle interpretation » peut être exploitée en trois dimensions grâce aux idées de Harold Abeson et Andrea diSessa dans leur ouvrage commun, « Turtle geometry : the computer as a medium for exploring mathematic ». Trois vecteurs liés à la tortue permettent de spécifier son prochain changement d'orientation :
+
+formula_11, formula_12, formula_13 tels que formula_14 (produit vectoriel)
+
+La rotation de la tortue se note alors :
+
+formula_18
+où R est une matrice 3×3. 
+
+Les rotations d'un angle α autour des axes formula_13, formula_12 ou formula_11 sont respectivement représentées par les matrices :
+
+formula_22
+
+formula_23
+
+formula_24
+
+Les symboles prennent maintenant la signification suivante :
+
+Les abréviations « D » pour « déterministe » et « 0 » pour « indépendant du contexte » servent à désigner une catégorie particulière de -système. Un système est déterministe lorsqu'il n'offre qu'une seule évolution possible depuis l'axiome à chaque génération. Une cause engendre un effet, ce qui se traduit par : une variable ne peut subir qu'un seul type de transformation, toujours identique, donc une seule règle par variable. De plus, cette évolution est indépendante du contexte. L'exemple initial est un D0L-système, il s'agit de la forme la plus simple de L-système.
+
+
+Notation symbolique : codice_5
+
+codice_6 détermine de quel angle on tourne avec les symboles + et -. Voici le résultat sur deux générations :
+
+Un tel système fait appel aux probabilités. Contrairement au D0L-système, un choix peut être opéré entre plusieurs transformations pour un symbole. Chaque choix est pondéré par une certaine probabilité.
+
+Les règles X → F[++X]F[−X]+X et X → F[+X]F[−X]+X sont appliquées avec une probabilité 0,2 et 0,8 respectivement.
+
+Voici un résultat possible sur deux générations :
+
+Voici un autre résultat possible sur deux générations :
+
+Il y a 2² = 4 possibilités possibles sur deux générations, avec des probabilités différentes.
+
+Les deux systèmes précédents (des 0L-systèmes) ne peuvent simuler l'effet de l'interaction de parties d'une plante car ils sont non contextuels (), i.e. chaque partie se développe indépendamment des autres parties. Un L-système "sensible au contexte" ( en anglais) prend en compte ce qui précède ou succède au symbole à remplacer. Un tel système est aussi appelé IL-système ou encore ("k", "l")-système, lorsque le contexte de gauche est un mot de longueur "k" et celui de droite un mot de longueur "l". Lorsque le contexte est favorable, la substitution se fait selon la règle, dans le cas contraire il n'y pas de substitution. Voici deux exemples :
+
+Ce L-système simule la propagation d'un signal acropète dans une structure de branches qui ne se développe pas.
+Le symbole < de la règle s'interprète comme suit : si un symbole A est précédé d'un symbole B, alors ce A devient un B à la génération suivante, sinon il reste inchangé. Dans cette évaluation, les constantes sont ignorées.
+
+Voici la propagation du signal sur trois générations; les signes + et - sont ignorés dans la prise en compte des règles :
+
+On constate que chaque branche est progressivement atteinte par le signal acropète qui permet aux fleurs les plus hautes de s'ouvrir. À chaque génération, deux nouvelles branches reçoivent le signal, en effet, puisque l'on sauvegarde la position, que l'on dessine A puis qu'on restitue la position et que l'on redessine un A, cela signifie que ces deux A ont la même base, donc la même branche précède les deux.
+
+Ce L-système simule la propagation d'un signal basipète dans une structure de branches qui ne se développe pas.
+
+A est une branche qui n'a pas encore reçu le signal, et B en est une qui l'a reçu. La règle se comprend ainsi : si un symbole A est suivi d'un symbole B, alors ce A devient un B à la génération suivante.
+
+Voici la propagation du signal sur trois générations, sachant que les signes + et - seront ignorés dans la prise en compte des règles :
+
+On constate que chaque branche est progressivement atteinte par le signal basipète qui permet aux fleurs à l'inflorescence en ombrelle ou en capitule de fleurir de manière centrifuge.
+
+L'écriture éventuelle d'une règle de la forme (B < A < B → B) signifie que si une branche A est entourée par des branches B alors elle deviendra une branche B à la prochaine génération. Il est aussi possible d'écrire plusieurs règles, pour plusieurs situations.
+
+
+
+
+

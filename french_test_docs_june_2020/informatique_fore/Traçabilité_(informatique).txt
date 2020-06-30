@@ -1,0 +1,71 @@
+﻿Traçabilité (informatique)
+
+En développement de logiciel, l’exigence de traçabilité est définie comme .
+Les liens de traçabilité entre les exigences d'un système et son code source sont utiles pour réduire l’effort de compréhension et de maintenance. Ils sont également essentiels pour assurer la conformité et la mise en œuvre des exigences spécifiées.
+
+Très souvent, au cours de la maintenance et de l'évolution d’un logiciel, les développeurs se concentrent seulement sur la correction des défauts ou des bogues. Le code source évolue mais l'architecture, la conception et la documentation ne sont pas mises à jour. Les liens de traçabilité deviennent alors obsolètes car les développeurs n'ont pas de temps ou ne peuvent pas en consacrer à la mise à jour de ces liens. La récupération des liens de traçabilité devient alors par la suite une tâche ardue et coûteuse.
+
+Afin de pallier la détérioration des liens de traçabilité, de nombreux chercheurs ont utilisé des techniques de recherche d’information pour récupérer les liens existants entre des documents de « haut niveau » (exigences du logiciel, documentation ou documents de conception) et des documents de plus « bas niveau » (code source ou diagramme UML).
+
+Ces techniques convertissent tous les documents sous forme textuelle et comparent la similarité entre les artefacts (e.g. code source d’une classe et exigences) de niveaux différents. Un haut taux de similitude signifie que ces deux artefacts partagent les mêmes concepts et sont très probablement liés l’un à l’autre.
+
+Plusieurs métriques sont utilisées afin de mesurer l'efficacité des différentes techniques de récupération des liens de traçabilité. Les plus courantes sont le rappel et la précision. Il existe également une formule appelée F-mesure qui est semblable à une moyenne et qui combine les deux métriques précédentes.
+
+Le rappel correspond au rapport du nombre de liens pertinents retrouvés sur l’ensemble des liens pertinents existant. Il permet de mesurer si l'algorithme récupère bien les liens existants.
+
+La précision correspond au rapport du nombre de liens pertinents retrouvés sur l’ensemble des liens retrouvé. Elle mesure l'exactitude des liens retrouvés.
+
+La F-mesure combine la précision et le rappel. Elle est définie comme :
+
+Les méthodes historiquement utilisées pour la récupération des liens de traçabilité sont basées sur des techniques de recherche d'information. Parmi toutes ces techniques on trouve notamment des solutions reposant sur les modèles vectoriels ou d’autres utilisant des modèles de .
+
+Cependant, ces méthodes produisent des résultats approximatifs qui demandent bien souvent d’intervenir manuellement pour évaluer et filtrer les données récupérées. Elles sont le plus souvent composées de matrices de correspondance entre les différents types d’artefacts. Ces matrices doivent cependant être manuellement corrigées lors de leur création et tout au long du processus de développement du logiciel.
+
+Des solutions ont été proposées afin d’améliorer la qualité des résultats produits par les méthodes de recherche d’information. Parmi celles-ci on trouve notamment l’utilisation de phrases ou de termes plutôt qu’une correspondance mot à mot. Dans le même esprit, on peut également utiliser un glossaire pour extraire les termes ou les phrases significatives dans le projet afin de leur donner un poids plus important lors de l’identification des liens de traçabilité.
+
+Certaines solutions ont été mises au point dans le but d’aider le développeur à maintenir ces liens de traçabilité.
+
+COCONUT (pour “COde Comprehension Nurturant Using Traceability”) se présente sous la forme d’un plug-in pour l'environnement de développement Eclipse. Il permet d’aider les développeurs à utiliser des identifiants (e.g. noms de variables) et/ou à rédiger des commentaires ayant une correspondance forte avec les exigences du système.
+
+Dans le cas de développements pilotés par modèle UML il est possible d’analyser les changements effectués sur le diagramme de structure pour mettre à jour automatiquement les liens de traçabilité.
+
+La solution proposée se décompose en trois étapes :
+
+TraceM est un système de gestion de la traçabilité qui utilise les concepts de systèmes hypermédia et d’. Il se présente sous la forme d’un framework qui permet de découvrir les liens de traçabilité implicites grâce aux liens explicitement connus.
+TraceM repose sur les concepts suivants :
+
+TraceM supporte la création automatique de liens de traçabilité et permet également d’effectuer des relations entre plusieurs relations existantes.
+
+D’autres approches s’orientent plutôt sur la manière de trouver de l’information parmi les données récupérées. Il existe par exemple un langage dédié à recherche dans un ensemble de liens de traçabilité. TQL (pour “”) permet d’effectuer des requêtes du type :
+
+Question: Est-ce que toutes les exigences sont couvertes par un jeu de tests ?
+
+Certaines approches basées sur l’heuristique permettent de récupérer/créer des liens de traçabilité entre différents éléments d’un logiciel. Ceci est effectué via l'examen du/des gestionnaire(s) de versions utilisé(s) lors du développement. Ce type d’approche met en œuvre des méthodes d'. L'extraction de ces motifs est effectué sur les commits issus du gestionnaire de versions afin de détecter les changements simultanés entre différents fichiers (par exemple entre le code source et la documentation). Si plusieurs fichiers sont très régulièrement modifiés durant les mêmes commits, alors la probabilité d’avoir un lien de traçabilité entre ceux-ci est très forte.
+
+Certaines techniques de récupération de liens de traçabilité peuvent produire des résultats complémentaires. Par exemple, des solutions basées sur les modèles vectoriels sont capables de récupérer un plus grand nombre de liens que les techniques empiriques mais possèdent une précision beaucoup plus faible. En se basant sur ce constat certaines méthodes combinent les résultats, dits “orthogonaux”, de différentes techniques pour améliorer le résultat final.
+
+Sans parler de récupération de liens de traçabilité, il existe des techniques dites de récupération d'information. Cette pratique peut être vue comme un problème de prise de décision en présence d’incertitude.
+
+Une des solutions à ce type de problèmes est l’utilisation de plusieurs systèmes experts. Dans le cas de l’analyse de codes sources il est par exemple possible de combiner deux types d’analyses : statique et dynamique. Alors que l’analyse statique étudie directement le code source de l’application, l’analyse dynamique, quant à elle, effectue des relevés (aussi appelés : traces) lors de l’exécution du programme et analyse ces données.
+
+Trustace est une solution de récupération de liens de traçabilité entre le code source et les exigences du logiciel. C’est une technique qui utilise plusieurs sources d’information hétérogènes pour dynamiquement réévaluer les liens de traçabilité issus des techniques de récupération d’information standards.
+
+Dans un premier temps Trustrace utilise Histrace pour effectuer le forage de données sur les dépôts de code source. Puis, grâce aux données minées il crée de nouveaux liens de traçabilité entre les exigences logicielles et les données annexes du dépôt (e.g. Commits, Bugs, etc.). Ces ensembles de liens sont appelés des experts.
+
+Une fois les ensembles experts construits. Trustrace utilise Trumo et DynWing pour réévaluer les liens de traçabilité issus des systèmes classiques. Des poids sont dynamiquement alloués à chacun des liens. Ces poids sont déterminés en comparant les similitudes entre les liens initiaux avec les liens fournis par les experts et selon sur la fréquence d’apparition de ces liens dans chacun des ensembles d’experts.
+
+Histrace permet de créer des liens, entre un ensemble d’exigences et le code source, en utilisant les informations issues d’un dépôt de logiciel (CVS/SVN). Pour cela Histrace considère les descriptions textuelles des exigences, les messages de commits, les rapports de bogues, et les classes comme des documents distincts qu’il utilise pour produire deux ensembles experts. L’un utilise les messages de commit pour établir les liens de traçabilité et le deuxième utilise les rapports de bogues.
+
+Trumo est similaire à un modèle de confiance d’utilisateurs : Plus des utilisateurs achètent sur un site Internet plus la confiance des utilisateurs envers celui-ci augmente.
+
+Dans cet esprit Trumo va assigner un poids à chaque liens de traçabilité en se basant sur les similitudes des liens issus des ensembles experts et des résultats des techniques de bases. Pour cela Trumo effectue un premier tri en écartant tous les liens qui ne sont pas à la fois dans les résultats de bases et dans un des ensembles experts. Ensuite un poids est affecté à chaque lien en fonction de ces similitudes au sein des différents ensembles. Finalement, Trumo assigne un poids à chaque expert qui est déterminé par DynWing.
+
+Afin de déterminer le poids à affecter à chaque expert, DynWing prend le parti de résoudre cela sous la forme d’un problème de maximisation.
+
+Typiquement, chaque expert à une certaine confiance en chacun des liens qu’il produit. Trumo détermine le poids de chaque lien en fonction de ça similarité et du poids de chaque expert. Pour calculer le poids de chaque expert DynWing va maximiser le poids final de chaque lien (déterminé par Trumo).
+
+Ainsi Trumo et DynWing sont en réalité deux modules très liés qui permettent de réviser la confiance de chaque lien de traçabilité initiaux grâce aux nouveaux liens issus de Histrace.
+
+Dans l’état actuel des choses l’ensemble des techniques proposées pour la récupération des liens de traçabilité manque d’exactitude. Il semble actuellement difficile d’obtenir un très bon taux de rappel avec un taux de précision correct et inversement proportionnel. Certaines techniques plus récentes, comme Trustrace, utilisant de nouvelles sources d’informations, améliorent considérablement le taux de précision et de rappel. Ainsi, on peut actuellement obtenir de résultats allant de 60 % à 80 % de précision pour 40 % à 60 % de rappel.
+
+

@@ -1,0 +1,13 @@
+﻿Clé naturelle
+
+Dans le domaine des bases de données, une clé naturelle est une clé (en général clé primaire) choisie parmi les clés candidates pour indexer une base.
+
+Les clés naturelles sont basées sur les données réelles comprises dans la base de donnée. Les clés naturelles sont la plupart du temps intuitives, par exemple pour indexer une table de données relative à des personnes, une clé naturelle pourrait être composée des champs nom/prénom.
+
+La clé naturelle est dépendante des données réelles ce qui peut poser plusieurs problème.
+Le fait que ces modifications soit dépendantes du monde concret les rend très difficiles à anticiper. Chaque modification affecte l'index de la table et les jointures sur celui-ci.
+
+Compte tenu des inconvénients et de l'incertitude sur l'évolution des clés, les clés naturelles sont peu utilisées et/ou pour l'essentiel réservées à des projets très simples ou à des exemples pédagogiques.
+De fait pour les projets d'envergure plus importante sont préférées des clés artificielles.
+
+

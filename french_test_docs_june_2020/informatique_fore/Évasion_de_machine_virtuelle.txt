@@ -1,0 +1,9 @@
+﻿Évasion de machine virtuelle
+
+Une évasion de machine virtuelle (ou "sortie de machine virtuelle") est un mécanisme par lequel un processus informatique théoriquement isolé à l'intérieur d'une machine virtuelle peut accéder à des ressources normalement interdites, comme la mémoire volatile d'une autre machine virtuelle. Les conséquences peuvent être désastreuses, car un attaquant exploitant une faille conduisant à une évasion de machine virtuelle pourrait lire en mémoire les données d'autres utilisateurs de l'infrastructure touchée, réussir à contrôler des machines virtuelles tierces, voire accéder à l'hyperviseur et le contrôler. 
+
+Ce risque est inhérent à l'utilisation d'infrastructures virtualisées qui sont basées sur des hyperviseurs lesquels, comme tout objet informatique, sont susceptibles d'être affectés par des vulnérabilités. La dangerosité d'une évasion de machine virtuelle est liée au fait que le périmètre de la menace peut concerner l'ensemble des machines virtuelles gérées par l'hyperviseur qui serait touché par une telle faille. Par ailleurs, s'il s’avérait possible de lire la mémoire volatile d'autres machines virtuelles ou toute ressource partagée entre machines, un attaquant serait en mesure de lire en clair des données très sensibles comme des clés de chiffrement protégeant au repos ou en transit des données traitées dans l'infrastructure. Ce type de vulnérabilité est donc souvent considérée comme une des menaces principales pesant sur les environnements virtualisés tel que le cloud et, bien qu'extrêmement complexe à maîtriser, a été prouvée et vérifiée en pratique.
+
+L'évaluation du risque lié à cette menace est problématique car la probabilité d'occurrence est difficile à établir, puisque la mise en œuvre d'une attaque nécessiterait l'exploitation de plusieurs failles, alors que l'impact en cas de survenance pourrait être d'un niveau catastrophique.
+
+

@@ -1,0 +1,35 @@
+﻿Select (SQL)
+
+Une commande peut obtenir zéro ou plusieurs tuples provenant de tables et de vues. Dû à la nature déclarative du langage SQL, une commande décrit un jeu de résultat voulus, et non la manière de les obtenir. La base de données transforme donc la requête en un plan d’exécution de requête, qui peut varier dans le temps, en fonction de la version du serveur, ou du serveur utilisé.
+
+La commande a, classiquement, la syntaxe suivante :
+Chaque implémentation de base de données relationnelle ajoute des fonctionnalités et variations spécifiques, cette syntaxe est donc particulièrement incomplète. Il est nécessaire de se référer à la documentation de l'implémentation utilisée afin d'obtenir une syntaxe détaillée.
+Exemples de requête utilisant la table contenant :
+
+La première partie de la syntaxe d'une requête permet de définir quelles colonnes doivent être extraites des tables, et éventuellement comment les valeurs de ces colonnes doivent être agrégées. Il est possible d'appliquer des opérateurs mathématiques à cette sélection, ou encore des fonctions proposées par le moteur de base de donnée tel que, par exemple, SUM, ou AVG. Enfin, lors d'un select, il est possible d'utiliser le joker '*' permettant de sélectionner toutes les colonnes d'une table. Lors d'une requête effectuée sur plusieurs table, il est possible de préciser sur quelles tables le joker s'applique, en préfixant le joker d'un nom de la table, par exemple : .
+
+Le mot-clé permet de définir quelles tables, vues, ou sous requêtes serviront de sources de données. C'est aussi dans la clause qu'il est possible de définir des jointures entre tables.
+
+Exemples :
+
+Cette requête renvoie toutes les combinaisons possibles des tuples des tables table1 et table2, c'est-à-dire que si table1 contient 1000 tuples et que table2 en contient 2000, le résultat sera de tuples. Il est donc plus commun de joindre les tables grâce au mot-clé JOIN, permettant d'appliquer des conditions à la jointure entre les deux tables.
+
+Avec cette requête, seuls les tuples respectant la condition table1.a = table2.a seront sélectionnés.
+
+Le mot-clé permet de définir les conditions de sélection des tuples. Différentes conditions peuvent être exprimées, et une équation peut ainsi être créée en reliant les différentes conditions par les mots clefs AND ou OR. Des parenthèses sont utilisables afin de déterminer l'ordre d'application des différentes conditions.
+
+Exemple :
+Le mot-clé permet de définir, via des noms de colonnes ou des expressions, comment les résultats doivent être groupés. La présence d'un GROUP BY dans une requête implique généralement la présence de fonctions d’agrégation, tel que , ou dans le .
+
+Exemple en utilisant la table my_table contenant :
+
+Le mot-clé permet de définir des conditions sur les résultats, agrégés, d'un . Il se différencie donc du par le fait que le est utilisé à la sélection des tuples avant le et que le est utilisé pour la sélection des tuples après agrégation par le .
+
+Exemple en utilisant la table my_table contenant :
+
+Le mot-clé permet de trier les résultats. Le tri est par défaut croissant, mais peut être décroissant en utilisant le mot-clé DESC. Il est possible de tirer sur plusieurs champs, en cas d'égalité sur le premier champ, le second est utilisé et ainsi de suite.
+
+Exemple :
+La manière de limiter le nombre de résultats d'une requête est dépendante du moteur utilisé, cependant la norme définit la syntaxe suivante :
+
+

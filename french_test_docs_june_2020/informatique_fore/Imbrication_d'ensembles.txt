@@ -1,0 +1,27 @@
+﻿Imbrication d'ensembles
+
+En informatique, l'imbrication d'ensembles, "nested sets" en anglais, est une technique pour représenter des données hiérarchisées dans une base de données relationnelle. En substance, elle consiste à attribuer à chaque nœud deux bornes, dite gauche et droite, qui permettent de statuer sur les liens de parentés entre les différents nœuds.
+
+L'implémentation la plus simple utilise des entiers naturels pour définir les bornes. Cette méthode présente entre autres inconvénients la nécessité de modifier une grande partie de l'arbre à chaque ajout d'un enregistrement.
+
+Une méthode beaucoup plus efficace utilise des nombres rationnels. Cette deuxième méthode est cependant peu connue, beaucoup plus difficile à appréhender, et comporte des développements assez poussés sur le plan mathématique. Elle comporte notamment des liens avec les fractions continues et un usage possible du calcul matriciel, qui sont autant de fonctionnalités souvent difficiles à implémenter directement en SQL.
+
+Lorsque les données ont une structure de graphe orienté, chaque enregistrement représente un nœud et est susceptible de faire partie d'un "couple" dans lequel il joue un rôle soit ascendant, soit descendant (ou encore père ou fils).
+La problématique consiste alors par exemple à trouver, de façon efficace, tous les fils consécutifs d'un nœud donné. Une approche naïve consiste à placer une référence vers le nœud père dans l'enregistrement correspondant à un nœud fils. Cette approche simpliste est suffisante pour de petites bases de données, mais s'avère très inefficace pour des bases plus grandes, car elle requiert l'exécution d'une nouvelle requête pour chaque lien de filiation.
+
+L'imbrication d'ensembles est une technique visant à surmonter cette difficulté. On choisit un ensemble doté d'une relation d'ordre (par exemple les entiers naturels), et on attribue à chaque nœud deux bornes, dite gauche et droite.
+L'objectif consiste alors à choisir ces bornes de telle sorte que pour un nœud parent P, de bornes gauche et droite Gp et Dp, et pour un nœud F fils de P de bornes Gf et Df, on ait :
+
+et
+
+Il est alors possible, avec une seule requête, d'obtenir toute la descendance d'un nœud donné grâce à une requête SQL telle que :
+
+SELECT * FROM tree WHERE gauche > 1 AND droite < 1000
+
+Où ici les bornes gauche et droite du nœud père sont 1 et .
+
+Dans cet exemple, on a choisi l'ensemble des entiers naturels pour définir les bornes. Il est alors facile de comprendre qu'on ne peut placer qu'un nombre limité de descendant pour un nœud donné, à moins de redéfinir les bornes pour tous les nœuds ascendants, y compris intermédiaire. Une telle réécriture de la base est extrêmement pénalisante en termes de performance.
+
+Une méthode plus raffinée consiste donc à choisir un ensemble dense, et l'ensemble des rationnels s'impose alors comme un candidat naturel.
+
+

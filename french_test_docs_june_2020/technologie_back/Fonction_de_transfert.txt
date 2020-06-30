@@ -1,0 +1,100 @@
+﻿Fonction de transfert
+
+En traitement du signal, une fonction de transfert est un modèle mathématique de la relation entre l'entrée et la sortie d'un système linéaire, le plus souvent invariant. Elle est utilisée notamment en théorie des communications, en automatique, et dans toutes les sciences de l'ingénieur qui font appel à cette discipline (électronique, mécanique, mécatronique). Les signaux d'entrée et de sortie ci-dessus peuvent avoir plusieurs composantes, auquel cas on précise souvent (sans que ce soit une obligation) que la fonction de transfert est une matrice de transfert. D'autre part, ces signaux peuvent ne dépendre que du temps (c'est le cas le plus classique), ou des variables d'espace, ou des deux : c'est le cas des systèmes multidimensionnels); certains auteurs modélisent de cette façon les systèmes définis par des équations aux dérivées partielles. Dans le domaine du traitement d'images, les signaux d'entrée et de sortie sont des fonctions des variables d'espace qui sont le plus souvent considérées comme des variables discrètes, et sont alors des familles (ou suites) indicées. La fonction de transfert d'un système permet d'en réaliser "l'analyse fréquentielle", de manière par exemple à concevoir par la suite un régulateur dans ce qu'il est convenu d'appeler le domaine fréquentiel (voir l'article Automatique). L'entrée d'un système linéaire n'est pas nécessairement une variable de commande et sa sortie n'est pas toujours une variable dont on souhaite gérer le comportement ; par exemple, un bruit coloré peut se modéliser comme la sortie d'un système linéaire ayant pour entrée un bruit blanc et dont la fonction de transfert est déterminée par la méthode de factorisation spectrale causale directe et inverse.
+
+La relation évoquée plus haut entre l'entrée et la sortie d'un système est un opérateur de convolution dont le noyau est la réponse impulsionnelle du système. Sauf dans le cas d'un système stable ou marginalement stable, celle-ci n'est pas une distribution tempérée (dans le cas de variables continues) ou une suite à croissance lente (dans le cas de variables discrètes), et n'admet donc pas de transformée de Fourier. Il est donc nécessaire d'en considérer la transformée de Laplace ou la transformée en Z, selon que les variables sont continues ou discrètes. C'est cette transformée qui est appelée la fonction de transfert du système. Celle-ci ne représente le système que partiellement, puisqu'elle ne prend pas en compte les conditions initiales (ou aux limites). Plus exactement, elle est obtenue en supposant que ces conditions initiales (ou aux limites) sont nulles. Il en résulte une perte d'information, qui fait que la fonction de transfert ne représente que la partie commandable et observable du système. Néanmoins, elle est très importante pour l'analyse des propriétés de ce système et, historiquement, c'est cette représentation qui est apparue la première (voir Histoire de l'automatique). Il importe de bien connaître les possibilités qu'offre le formalisme des fonctions de transfert, ainsi que ses limites.
+
+La notion de fonction de transfert n'a longtemps été définie que pour les systèmes linéaires invariants. La question s'est naturellement posée de savoir si cette notion pouvait s'étendre au cas des systèmes linéaires à coefficients variables. Ce n'est que récemment, par une méthode algébrique, que cette extension a été réalisée avec des conséquences pratiques tangibles.
+
+Considérons un système d'équation : 
+
+où et sont respectivement l'entrée et la sortie, et où et sont des polynômes à coefficients réels en de degré et respectivement. L'ensemble de ces polynômes est un anneau euclidien, donc principal, noté formula_2.
+
+Le polynôme est supposé non nul. Supposons que et soient des « fonctions généralisées à support positif » admettant des transformées de Laplace notées respectivement formula_3 et formula_4.
+
+Supposons que les conditions initiales soient nulles. Alors l'équation différentielle ci-dessus implique, par la transformée de Laplace, formula_5.
+
+Par conséquent : formula_6
+
+où est la fraction rationnelle . Cette fraction rationnelle est appelée la fonction de transfert du système.
+
+Les raisonnements mettant en jeu cette fraction rationnelle doivent se faire sur sa représentation irréductible où , , désignant un pgcd de et , par exemple celui pour lequel est un polynôme unitaire (à savoir, dont le coefficient du terme de plus haut degré est égal à 1).
+
+Le système considéré est toujours observable, et il est commandable (resp. stabilisable) si, et seulement si est une unité de l'anneau formula_7, c'est-à-dire un réel non nul (resp. un polynôme de Hurwitz). Les racines dans le plan complexe du polynôme sont les pôles non commandables du système.
+
+Le degré d'une fraction rationnelle est défini par : .
+Faisons la division euclidienne de par . Il vient où est le quotient et le reste, tel que . En posant , soit encore
+
+on obtient
+
+Supposons que soit une fonction continue par morceaux, présentant une discontinuité à l'origine. Alors est une fonction continue. Pour , trois cas sont possibles :
+
+Le cas (3) ne se rencontre jamais en pratique, car une entrée discontinue provoquerait la destruction du système. Le cas (2) est exceptionnel : il correspond à un système « sans inertie ». Un régulateur peut néanmoins avoir une fonction de transfert bipropre (le cas le plus simple étant celui d'un régulateur proportionnel).
+
+On suppose dans ce qui suit que l'on se trouve dans le cas (1) ou (2).
+
+On appelle pôles (resp. zéros) de transmission du système les pôles (resp. les zéros) de la fonction de transfert , à savoir les racines de (resp. ).
+
+Le système est stable EBSB si, et seulement si ses pôles de transmission appartiennent tous au demi-plan gauche (dont, par convention, l'axe imaginaire est exclu). Il est exponentiellement stable si, et seulement si le polynôme est de Hurwitz. D'après ce qui précède, le système est exponentiellement stable si, et seulement s'il est stable EBSB et stabilisable. (On ne saurait trop insister sur le fait que ceci n'est vrai que parce que le système considéré est observable, et que ses seuls modes cachés possibles sont donc ses pôles non commandables.)
+
+Le système est dit à minimum de phase si ses pôles et ses zéros de transmission appartiennent tous au demi-plan gauche.
+
+La réponse fréquentielle du système considéré ci-dessus est la fonction formula_10. Elle est définie sur le complémentaire de formula_11 dans formula_12 où formula_11 est l'ensemble (éventuellement vide) des pôles de transmission situés sur l'axe imaginaire. Le principe du prolongement analytique montre que la réponse fréquentielle détermine complètement la fonction de transfert.
+
+L'interprétation de la réponse fréquentielle est la suivante : supposons que l'entrée du système soit sinusoïdale, de pulsation (cette pulsation n'appartenant pas à l'ensemble formula_11 ci-dessus). Il est commode, au plan mathématique, d'écrire ce signal d'entrée sous la forme complexe formula_15
+
+Les pôles de transmission sont donc -1 et -2, et ils ont tous deux pour unique indice structurel 2. Le seul zéro de transmission est -2 avec pour unique indice structurel 1. On note sur cet exemple qu'un même nombre complexe (en l'occurrence, -2) peut être à la fois un pôle de transmission et un zéro de transmission, ce qui est évidemment impossible dans le cas des systèmes monovariables.
+
+Soit (resp. ) la matrice de transfert d'un système à temps continu (resp. à temps discret) et supposons que cette matrice de transfert soit propre. Alors le système considéré est stable EBSB si, et seulement si ses pôles de transmission sont tous situés dans le demi-plan gauche (resp. à l'intérieur du cercle unité).
+
+Pour une interprétation plus aisée des zéros de transmission, nous supposerons que (cas auquel on peut d'ailleurs toujours se ramener). Alors le nombre complexe est un zéro de transmission si, et seulement si, à conditions initiales nulles, il existe une entrée non nulle de la forme formula_16 (resp. formula_17), formula_18, ainsi qu'une forme linéaire formula_19
+non nulle telles que la combinaison linéaire formula_20
+soit identiquement nulle.
+
+La notion de système de dimension infinie ne peut se définir que par une négation: il s'agit d'un système qui n'est pas de dimension finie. Aussi la variété de ces systèmes est-elle immense. La "dimension" dont il est question ici est celle de l'espace d'état, et le fait qu'elle soit infinie se traduit par le fait que la fonction de transfert est irrationnelle. Il n'est pas question ici d'être exhaustif, et la brève présentation qui suit est limitée au cas des systèmes linéaires, à temps continu et à retards commensurables (distribués ou non).
+
+Considérons tout d'abord un système de la forme
+
+où les et les sont des coefficients réels (les étant non tous nuls) et où est le retard. En posant
+
+la fonction de transfert du système s'écrit avec et . Cette fonction de transfert appartient donc au corps de fractions de l'anneau formula_24, anneau qui est isomorphe à formula_25. Cet anneau est factoriel d'après un théorème dû à Gauss (voir Anneaux des polynômes), par conséquent et ont un pgcd . Les éléments et sont donc premiers entre eux dans formula_25, et on a avec et .
+
+Les pôles (resp. les zéros) de transmission du système sont définis comme étant les zéros dans le plan complexe de (resp. ).
+
+Supposons que
+
+Alors, le système est stable EBSB s'il existe un réel tel que ses pôles de transmission (qui sont en général en nombre infini) aient tous une partie réelle inférieure à .
+
+Ce système est observable. Étant donné que l'anneau formula_25 n'est pas un anneau de Bézout, il existe différentes sortes de commandabilité. Enfin, l'analyse ci-dessus ne peut se généraliser au cas des systèmes multivariables. C'est pourquoi il est nécessaire de procéder à un changement de l'anneau des opérateurs, ce qui conduit à considérer des systèmes à retards distribués.
+
+Considérons par exemple l'opérateur de retard distribué formula_29 défini par
+
+Sa fonction de transfert est formula_31 qui peut être considéré comme un élément de formula_32 où formula_33 désigne l'anneau des fonctions entières dans le plan complexe. L'anneau formula_34 ainsi défini est très approprié pour l'étude des systèmes à retards commensurables distribués. Bien que n'étant pas principal, il s'agit en effet d'un anneau à diviseurs élémentaires. Par conséquent, une matrice à éléments dans cet anneau admet une forme de Smith, et une matrice à éléments dans le corps de fractions de cet anneau admet une forme de Smith-MacMillan. La théorie des systèmes définis sur cet anneau est donc tout à fait semblable (au plan algébrique) à celle des systèmes définis sur l'anneau classique des opérateurs différentiels formula_35. Néanmoins, le nombre de pôles et de zéros de transmission est cette fois infini en général.
+
+En supposant que les éléments de la matrice de transfert soient tous tels que
+
+le système est stable EBSB s'il existe un réel tel que les pôles de transmission (en général en nombre infini) aient tous une partie réelle inférieure à .
+
+Soit un corps différentiel muni de la dérivation usuelle formula_37 (un exemple classique est celui où formula_38), et soit , avec formula_39, l'anneau des "polynômes gauches" en à coefficients dans . Si est une variable, on a d'après la règle de Leibniz formula_40, et puisque ceci est vrai quelle que soit on a sur la règle de commutation
+
+formula_41
+
+L'anneau , muni de cette règle, est un anneau principal non commutatif et simple. De plus, il s'agit d'un anneau d'Ore qui admet un corps de fractions à gauche et à droite. Chaque élément de se met sous la forme où appartiennent à et sont non nuls. D'un point de vue algébrique, un système différentiel linéaire à coefficient dans est un module de type fini sur . Soit (resp. ) une colonne de (resp. ) éléments (resp. ). Alors peut être choisie comme entrée du système si le -module engendré par les est libre de rang et tel que le quotient est de torsion.
+
+Considérons le foncteur
+
+formula_42
+
+appelé foncteur de Laplace. Ce qui précède revient à dire que les images canoniques formula_43 dans formula_44 forment une base du -espace vectoriel formula_45. Par conséquent, en notant formula_46 les images canoniques des dans formula_45, il existe une matrice unique telle que
+
+formula_48
+
+Cette matrice est la matrice de transfert du système à coefficients variables.
+
+Le cas des systèmes à temps discret peut être traité comme suit: on considère cette fois un corps aux différences formula_49, muni de l'opérateur d'avance avance formula_50. Soit formula_51 l'anneau des "polynômes gauches de Laurent" en l'indéterminée (opérateur d'avance qui est une extension de formula_52) muni de la loi de commutation formula_53. Cet anneau est, comme précédemment, un anneau principal non commutatif et simple (cette dernière propriété fait l'avantage de sur l'anneau des "polynômes gauches" formula_54, qui est principal mais n'est pas simple) et admet un corps de fractions à gauche et à droite. Un système linéaire à temps discret s'identifie à un module de type fini sur . La construction du paragraphe précédent peut alors être répétée sans changement, grâce au foncteur transformée en Z
+
+formula_55.
+
+
+
+

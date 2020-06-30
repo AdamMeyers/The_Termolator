@@ -1,0 +1,86 @@
+﻿Diagramme de Bode
+
+Un diagramme de Bode est un moyen de représenter le comportement fréquentiel d'un système. Il permet une résolution graphique simplifiée, en particulier pour l'étude de la fonction de transfert d'un système asservi.
+
+Il est utilisé afin de visualiser rapidement la marge de gain, la marge de phase, le gain continu, la bande passante, le rejet des perturbations et la stabilité des systèmes. Son nom vient de l'inventeur de ce diagramme, Hendrik Wade Bode.
+
+Le diagramme de Bode d'un système de réponse fréquentielle formula_1 est ainsi une représentation graphique composée de deux tracés : 
+
+L'échelle des pulsations est logarithmique et est exprimée en rad/s (radian par seconde). 
+L'échelle logarithmique permet un tracé très lisible, car composé majoritairement de tronçons linéaires.
+
+Prenons une fonction de transfert quelconque qui s'écrit de la façon suivante :
+
+formula_4
+
+où formula_5
+
+Bien qu'une fonction de transfert puisse s'écrire de plusieurs façons, c'est de la façon décrite ci-dessus qu'il faut les écrire :
+
+On remarque que le module de formula_9 est égal à la somme des modules des termes élémentaires en raison du logarithme. Il en va de même pour la phase, cette fois en raison de la fonction argument. C'est pourquoi on va dans un premier temps s'intéresser aux diagrammes de Bode des termes élémentaires.
+
+Soit la fonction de transfert :
+
+La pulsation formula_11 est appelée pulsation de coupure.
+
+Pour formula_12 donc formula_13 et formula_14.
+
+Pour formula_15 donc formula_16 et formula_17.
+
+Dans un repère logarithmique, formula_18 se traduit par une pente de -20 dB/décade ou encore -6 dB/octave. On parle également de pente -1. Le diagramme de Bode asymptotique du module se résume donc à deux tronçons linéaires.
+
+en formula_11, formula_20 soit formula_21 : la courbe passe 3 dB en dessous du point de coupure.
+
+Soit la fonction de transfert :
+
+Le tracé s'obtient en prenant l'opposé du module en dB et de la phase du passe-bas.
+
+Un système du second ordre de type passe bas est caractérisé par une fonction de transfert du type :
+
+formula_24 est le gain statique. La pulsation formula_11 est appelée pulsation propre et formula_26 est l'amortissement.
+
+Dans cette partie on prend le gain statique formula_24 est égal à 1.
+Le tracé asymptotique dépend de la valeur de l'amortissement. On distingue trois cas :
+
+Les pôles de la fonction de transfert sont réels (et négatifs pour assurer la stabilité), et le système se décompose en un produit de deux fonctions de transfert du .Soit formula_29 et formula_30 les pôles réels de la fonction de transfert :
+
+Les pôles sont réels, négatifs et égaux (pôle double). Si formula_33 est un pôle double de la fonction de transfert, on obtient :
+
+Pour formula_35 donc formula_13 et formula_14.
+
+Pour formula_38 donc formula_39 et formula_40.
+
+Dans un repère logarithmique, formula_18 se traduit par une pente de -40 dB/décade ou encore -12 dB/octave. On parle également de pente -2. Le diagramme de Bode asymptotique du module se résume donc à deux tronçons linéaires.
+Le diagramme asymptotique est le même que dans le cas précédent. Les pôles de la fonction de transfert sont complexes et conjugués, à partie réelle négative. Lorsque formula_43, le système présente une résonance. Le maximum du module de la fonction de transfert est alors formula_44 en formula_45. La pulsation formula_46 correspondant au maximum est donc toujours inférieure à formula_47.
+
+Le tracé s'obtient en prenant l'opposé du module en dB et de la phase du passe-bas.
+
+Comme nous l'avons fait remarquer plus haut, on pourrait additionner tous les diagrammes de Bode des termes élémentaires pour obtenir le diagramme de la fonction de transfert formula_9.
+
+Cependant, lorsque cette fonction de transfert est compliquée, il est plus facile de prendre en compte les contributions de chaque terme au fur et à mesure en faisant croître la pulsation formula_50.
+
+Au début, lorsque formula_51, l'asymptote du module est une droite de pente q (q*20 dB/Décade) et la phase est constante à formula_52.
+Par la suite, à chaque fois que l'on rencontre une pulsation, on modifie le tracé selon la procédure suivante :
+
+Nous disposons cette fois d'une fonction de transfert formula_61 d'un système discret.
+
+Pour obtenir son diagramme de Bode, il faut évaluer la fonction sur le cercle unité.
+
+Autrement dit, formula_62 avec formula_63 (on obtient le cercle complet par symétrie).
+
+Si le système discret a été obtenu à partir de l'échantillonnage à la période T d'un système continu, alors formula_64 avec formula_65.
+
+De plus, les relations formula_66 et formula_67 ne sont pas rationnelles en formula_68. Par conséquent, l'étude du tracé est compliquée et nécessite des moyens informatiques.
+
+Cependant, il existe une application permettant de se ramener au cas continu :
+
+ou la fonction réciproque formula_70
+
+Il s'agit d'une transformation de Möbius.
+
+Cette transformation fait correspondre l'axe imaginaire formula_71 du domaine continu avec le cercle unité formula_72 du domaine discret avec formula_73.
+
+Or, lorsque formula_74, on a formula_75, auquel cas on se retrouve dans le cas continu d'une fraction rationnelle à étudier. On peut alors se ramener à une étude classique des systèmes analogiques sur formula_65 en sachant que les valeurs du diagramme près de formula_77 sont entachées d'une erreur.
+
+
+

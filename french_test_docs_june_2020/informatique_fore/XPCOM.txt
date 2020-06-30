@@ -1,0 +1,17 @@
+﻿XPCOM
+
+XPCOM ("Cross-Platform Component Object Model") est un modèle libre de composants développé par la Fondation Mozilla.
+
+Il s'agit d'une bibliothèque logicielle qui, schématiquement, permet de concevoir une application comme un ensemble de plugins. Ces composants peuvent être développés dans des langages distincts, auquel cas les communications entre ces composants sont assurées par la technologie XPCONNECT. Cette bibliothèque a servi, notamment, à développer Mozilla (Mozilla Firefox, Mozilla Thunderbird, Mozilla Composer), Nvu, Komodo…
+
+XPCOM est inspiré des technologies CORBA ou Microsoft COM, qui elles-mêmes apportent à des langages statiques une partie des bénéfices (et inconvénients) de langages dynamiques comme Objective-C ou Python. Comme CORBA et COM, XPCOM permet de développer des architectures de composants. 
+
+L'architecture est alors :
+
+De plus, les composants XPCOM ont accès aux bibliothèques de Mozilla, ce qui permet notamment d'accéder au moteur de rendu Gecko, le cœur de l'affichage des pages web par Mozilla et au moteur de réseau Necko, ainsi que de développer des interfaces graphiques en XUL.
+
+Une initiative de Mozilla, XULRunner, vise à séparer les bibliothèques XPCOM de Mozilla des logiciels construits à l'aide de ces bibliothèques. L'objectif est de faire de Mozilla une plate-forme de développement multiplate-forme comparable à la Java ou à l'environnement .Net.
+
+
+
+

@@ -1,0 +1,341 @@
+﻿Stabilité de Liapounov
+
+En mathématiques et en automatique, la notion de stabilité de Liapounov (ou, plus correctement, de "stabilité au sens de Liapounov") apparaît dans l'étude des systèmes dynamiques. De manière générale, la notion de stabilité joue également un rôle en mécanique, dans les modèles économiques, les algorithmes numériques, la mécanique quantique, la physique nucléaire, etc.
+
+Un exemple typique de système stable au sens de Liapounov est celui constitué d'une bille roulant sans frottement au fond d'une coupelle ayant la forme d'une demi-sphère creuse : après avoir été écartée de sa position d'équilibre (qui est le fond de la coupelle), la bille oscille autour de cette position, sans s'éloigner davantage : la composante tangentielle de la force de gravité ramène constamment la bille vers sa position d'équilibre. En présence d'un frottement visqueux (si l'on ajoute par exemple un peu d'huile au fond de la coupelle), les oscillations de la bille sont amorties et celle-ci revient à sa position d'équilibre au bout d'un certain temps (théoriquement infiniment long) : cet amortissement est dû à la dissipation d'énergie sous forme de chaleur. Le système est alors asymptotiquement stable. Si maintenant on retourne la coupelle, le sommet de celle-ci (ayant toujours la forme d'une demi-sphère) est encore une position d'équilibre pour la bille. Mais à présent, si l'on écarte la bille d'une quantité infinitésimale en absence de frottement, cette bille se met à rouler sur la paroi de la coupelle en tombant ; elle s'écarte sans retour de sa position d'équilibre, car la composante tangentielle de la force de gravité éloigne constamment la bille de sa position d'équilibre. Un tel système est dit instable.
+
+De manière moins imagée, si tout mouvement d'un système issu d'un voisinage suffisamment petit d'un point d'équilibre formula_1 demeure au voisinage de ce point, alors formula_1 est dit "stable au sens de Liapounov". Le théorème central d'Alexandre Liapounov dit qu'un système dynamique (décrit par une équation différentielle du type formula_3) est stable (au sens de Liapounov) en un point d'équilibre formula_1 si et seulement s'il existe une fonction vérifiant certaines conditions précises et liées à la fonction formula_5 de l'équation différentielle et à formula_1. Le problème de la stabilité se ramène donc à chercher une telle fonction (dite fonction de Liapounov), souvent par tâtonnement. Les conditions que doit vérifier une "fonction de Liapounov" du problème dynamique (purement mathématique) rappellent les conditions que doit vérifier l'énergie potentielle pour qu'il y ait stabilité d'un système physique (voir, "infra", le premier et le troisième paragraphe de l'introduction historique : "Stabilité au sens de Lagrange-Dirichlet" et "L’œuvre de Liapounov").
+
+D'autres notions de stabilité peuvent être traitées de manière similaire. Par exemple:
+
+
+
+Les cas d'instabilité peuvent donner lieu à des comportements chaotiques.
+
+Dans le cas de systèmes linéaires aux paramètres incertains, la recherche d'une fonction de Liapounov peut se formaliser en un problème d'optimisation et, lorsque celui-ci est convexe, il existe des algorithmes de résolution efficaces. Il existe également des méthodes permettant de réaliser un bouclage de manière qu'une fonction de Liapounov, choisie à l'avance, garantisse la stabilité.
+
+Les exemples qui suivent sont traités grâce aux théorèmes énoncés et démontrés dans la suite de cet article. Ces exemples ont pour rôle de motiver ces théorèmes et les définitions, parfois un peu techniques, qui sont également nécessaires. Les systèmes considérés ont des coefficients qui ne dépendent pas du temps (ils sont régis par des équations différentielles autonomes). Pour de tels systèmes, les notions délicates d'uniformité sont inutiles, ce qui simplifie considérablement les concepts.
+
+Considérons le système dynamique défini par l'équation différentielle du premier ordre
+
+Pour déterminer les points d'équilibre "réels", on écrit formula_10, d'où formula_11, ce qui équivaut à formula_12 : c'est l'unique point d'équilibre. Le but est de déterminer si ce point d'équilibre est stable "sans avoir à résoudre l'équation différentielle".
+
+Soit alors la fonction formula_13 ; on peut l'assimiler à une énergie puisque cette fonction est strictement positive sauf au point d'équilibre formula_12 (on dit qu'elle est "définie positive") et elle est « globalement propre », c'est-à-dire que formula_15 lorsque formula_16. Calculons maintenant la dérivée de cette fonction le long des trajectoires du système. Elle s'écrit formula_17 pour formula_9, soit donc formula_19. Par conséquent, formula_20 pour tout formula_21 (on dit par conséquent que la fonction formula_22 est définie positive, ou encore que formula_23 est définie négative). Cette énergie est donc toujours strictement décroissante. Le théorème de Liapounov, explicité plus bas, montre que cette énergie devra nécessairement s'annuler, c'est-à-dire que l'état "x" du système va nécessairement converger vers 0 quelle que soit la condition initiale. On dit que "V" est une fonction de Liapounov et que le point d'équilibre 0 est globalement asymptotiquement stable.
+
+Envisageons maintenant un système plus compliqué, pour lequel la fonction de Liapounov ne sera pas aussi simple: soit le système
+
+L'origine formula_12 est de nouveau un point d'équilibre. Soit cette fois formula_26. On peut écrire cette quantité sous la forme
+
+Elle est donc définie positive (au sens précisé plus haut, et bien qu'il ne s'agisse pas d'une forme quadratique) et globalement propre, et peut de nouveau être considérée comme une énergie, dans un sens généralisé. Un calcul semblable au précédent donne
+
+où formula_29 et formula_30 sont les quantités définies plus haut en fonction de formula_31 et formula_32. On vérifie que
+
+et formula_23 est donc définie négative. Par le même raisonnement que dans le premier exemple, "V" est une fonction de Liapounov, et le théorème de Liapounov permet de conclure que le point d'équilibre formula_12 est globalement asymptotiquement stable.
+
+Soit maintenant le système
+
+avec formula_37. Étudions de nouveau la stabilité du point d'équilibre formula_12. Pour "x" voisin de 0, on peut considérer ce système comme « quasi-linéaire » (voir "infra") et on peut l'approcher par le système linéaire (en négligeant les termes du second ordre)
+
+soit encore formula_40 avec formula_41. On vérifie facilement que les valeurs propres de "A" sont formula_42. La condition nécessaire et suffisante de stabilité d'un système linéaire à coefficients constants (voir "infra") montre alors que 0 est asymptotiquement stable pour ce système linéaire, puisque ces valeurs propres appartiennent toutes deux au demi-plan gauche ouvert du plan complexe. Par conséquent, d'après le théorème de Perron, donné plus bas, l'origine est asymptotiquement stable pour le système non linéaire envisagé.
+
+La question se pose maintenant de savoir si cette stabilité asymptotique est globale ou non. D'après le Critère de Liapounov (voir "infra"), il existe une unique solution symétrique réelle définie positive "P" à l'équation algébrique dite "de Liapounov"
+
+En résolvant cette équation, on obtient en effet formula_44. Par conséquent, la fonction formula_45 est une fonction de Liapounov "pour l'approximation linéaire". Voyons maintenant ce qu'il en est pour le système non linéaire initial. On obtient
+
+soit encore
+
+Par conséquent,
+
+
+et le point d'équilibre 0 est dit globalement exponentiellement stable.
+
+
+Considérons enfin le système
+
+et envisageons comme « candidate » pour être fonction de Liapounov
+
+On a formula_64, c'est donc une fonction définie positive et strictement propre. Un calcul simple montre que formula_65. La fonction formula_22 est donc seulement "semi-définie positive", puisqu'elle s'annule sur la droite formula_67. Le théorème de Liapounov permet de conclure que l'origine est stable (c'est-à-dire que si la condition initiale est voisine de 0, l'état restera proche de 0), mais ne permet pas de conclure qu'elle est asymptotiquement stable. Mais si formula_67, alors formula_69, donc formula_70. De plus, formula_71, donc formula_32 ne peut rester nul que si formula_73. On exprime ceci en disant que le plus grand ensemble invariant inclus dans l'ensemble des "x" tels que formula_74 se réduit à l'origine. Le théorème de Krasovsky-LaSalle (voir "infra") permet alors de conclure que l'origine est globalement asymptotiquement stable.
+
+Ces quatre exemples montrent les points suivants :
+
+Recadrer ces exemples dans un contexte général demande des développements non triviaux.
+
+On tente ci-dessous de retracer les grandes étapes de l'évolution de la théorie de la stabilité. Les contributions depuis plus d'un siècle sont innombrables et l'exposé qui suit n'est bien évidemment pas exhaustif.
+
+C'est tout d'abord les systèmes mécaniques dont la stabilité a été étudiée. Soit un système conservatif (c'est-à-dire soumis à des forces qui dérivent toutes d'un potentiel) à "n" degrés de libertés et formula_75 le vecteur de ses coordonnées généralisées. Le mouvement vérifie l'équation de Lagrange
+
+où formula_77, formula_78 étant l'énergie cinétique, supposée être une forme quadratique semi-définie positive en formula_79, et formula_80 étant l'énergie potentielle. L'équation de Lagrange s'écrit de manière équivalente
+
+Les équilibres formula_82 sont donc solutions de formula_83. Joseph-Louis Lagrange, généralisant le principe de Evangelista Torricelli (1644) suivant lequel un corps pesant a tendance à aller vers la position d'équilibre où son centre de gravité est le plus bas, a énoncé en 1788 le principe suivant : si l'énergie potentielle formula_80 possède un minimum relatif strict (« condition de Lagrange »), l'équilibre en ce point est stable. La démonstration de Lagrange était toutefois incorrecte, sauf dans le cas où l'énergie potentielle est une forme quadratique. C'est Johann Peter Gustav Lejeune Dirichlet qui, le premier, a pu donner du principe de Lagrange une démonstration générale et rigoureuse en 1846. Il a montré que, si la condition de Lagrange est vérifiée au point formula_85, si le système est à l'équilibre en ce point, et si on l'en écarte suffisamment peu et suffisamment lentement, le vecteur "q" reste aussi proche que l'on veut de ce point : c'est ce qu'on appelle la "stabilité au sens de Lagrange-Dirichlet" (si Dirichlet avait supposé que l'énergie cinétique est une forme quadratique définie positive en formula_79, il aurait obtenu la stabilité au sens de Liapounov, à savoir que formula_79 également serait resté aussi proche que l'on veut de 0 ; cela sera détaillé plus loin, en application du théorème de stabilité de Liapounov).
+
+Siméon Denis Poisson, quant à lui, a défini la stabilité d'un système comme étant la propriété suivante : tout mouvement de celui-ci retourne un nombre infini de fois dans un voisinage arbitrairement petit de son état initial. Poincaré, qui s'est durablement intéressé à la stabilité des orbites des planètes du système solaire, est allé plus loin : tout d'abord dans son fameux mémoire "Sur le problème des trois corps et les équations de la dynamique" (1889) ; puis, celui-ci comportant une erreur, dans ses "Méthodes Nouvelles de la mécanique céleste ", parues entre 1892 et 1899. Au cours de ces travaux, Poincaré a été amené à définir la "stabilité orbitale", encore appelée aujourd'hui "stabilité au sens de Poincaré". Il a ajouté à la définition de Poisson la condition que la « propriété de récurrence » des mouvements du système doit être satisfaite avec une probabilité égale à 1 ; il a appelé la propriété obtenue la "stabilité au sens de Poisson" et a établi ce qu'on appelle aujourd'hui le « théorème de récurrence de Poincaré ». Ces résultats, complétés en 1901 par ceux d'Ivar Bendixson (voir le théorème de Poincaré-Bendixson), conduiront George David Birkhoff à établir le « théorème de Poincaré-Birkhoff » (1912), à définir la notion d' (1927), dont il sera question plus loin, puis à démontrer son théorème ergodique (1931).
+
+Joseph Liouville a appliqué le principe de Lagrange aux mouvements d'un fluide en rotation en 1842, puis en 1855. Ses résultats ont été peu convaincants, et le problème a intéressé Pafnouti Tchebychev en 1882 ; il l'a confié à Alexandre Liapounov dans le cadre de sa maîtrise.
+
+Liapounov a tout d'abord repris la méthode de Liouville, puis s'est vivement intéressé à la démonstration de Dirichlet. Aux yeux de Liapounov, le point essentiel était que l'énergie totale formula_88 est une « fonction définie positive » en formula_89, qui reste constante tandis que système bouge. Cette énergie totale allait devenir en 1892, dans sa thèse de doctorat intitulée "Le problème général de la stabilité du mouvement", ce que nous appelons aujourd'hui une « Fonction de Liapounov ». Cette thèse est d'abord parue en russe, puis traduite en français en 1908, et en anglais pour son centenaire, en 1992. Dans ce travail, Liapounov, influencé d'autre part par les travaux d'Edward Routh avec son "Treatise on the Stability of a Given State of Motion" (1877), de William Thomson (Lord Kelvin) et Peter Guthrie Tait avec leur "Treatise of Natural Philosophy" (1879), de Nikolaï Iegorovitch Joukovski qui avait fait sa thèse sur la stabilité du mouvement en 1882, et de Poincaré avec son mémoire de 1889 déjà mentionné, a également introduit les notions de stabilité (au sens que nous appelons aujourd'hui « de Liapounov ») et de stabilité asymptotique. Liapounov a d'autre part étudié la stabilité de l'origine pour les systèmes « quasi-linéaires »
+
+et est parvenu à la conclusion que, lorsque la matrice "A" est constante, et que 0 est asymptotiquement stable pour ce système lorsqu'il est linéaire (formula_91), alors il est également stable pour le système non linéaire lorsque formula_92 pour formula_93. Durant les années qui ont suivi, Liapounov a continué d'étudier la stabilité de ces systèmes quasi-linéaires dans le cas où la matrice constante "A" du système linéaire a ses valeurs propres sur l'axe imaginaire. Ces travaux ont été retrouvés dans les papiers de Liapounov et publiés une dizaine d'années après qu'il se fut donné la mort en 1918.
+
+La stabilité dans le cas des systèmes linéaires à coefficients constants (stabilité asymptotique ou, de manière équivalente, exponentielle) a fait l'objet de critères algébriques. Un premier résultat a été obtenu par le mathématicien français Charles Hermite en 1856. Liapounov a lui-même établi deux critères en 1892, dans sa célèbre thèse de doctorat déjà mentionnée: celui qu'il est convenu d'appeler le « critère de Liapounov », détaillé plus bas, et un autre, s'appliquant spécifiquement au cas d'une seule équation différentielle scalaire. Mais dans ce cas, c'est le mathématicien anglais Edward Routh qui a franchi le pas décisif en 1875, en proposant son fameux critère. Celui-ci a été établi sous une forme différente, et de manière indépendante, par Adolf Hurwitz en 1895, à partir du travail d'Hermite. Il en est résulté le critère appelé depuis « de Routh-Hurwitz ». Celui-ci a été amélioré par les mathématiciens français Liénard et Chipart en 1914 (pour tous ces résultats, voir l'article Polynôme de Hurwitz).
+
+La question s'est ensuite posée de la stabilité de 0 pour le système quasi-linéaire ci-dessus lorsque cette fois, la matrice "A" dépend du temps : formula_94. Le résultat obtenu par Liapounov a tout d'abord paru généralisable tel quel à ce cas. Mais Oskar Perron en a exhibé en 1930 un exemple de système quasi-linéaire pour lequel 0 est asymptotiquement stable lorsque formula_91, et est instable avec formula_96 vérifiant la condition indiquée.
+
+Les progrès de l'analyse, grâce notamment aux travaux de Maurice René Fréchet, ont alors permis à Ioėlʹ Guilievitch Malkine d'affiner les définitions de Liapounov et d'introduire la notion de stabilité uniforme dans les années 1940. Konstantin Petrovitch Persidski, dans son article (1946) a établi pour le système quasi-linéaire ci-dessus, que si 0 est uniformément asymptotiquement stable lorsque formula_91, 0 est encore uniformément asymptotiquement stable lorsque formula_96 vérifie la condition indiquée.
+
+Il n'était pas suffisant de définir clairement la stabilité uniforme ; il convenait d'étudier de plus près la stabilité asymptotique. La notion de stabilité exponentielle a été introduite par Malkine en 1935.
+
+R. E. Vinograd a montré sur un exemple, en 1957, que l'attractivité d'un point d'équilibre n'entraîne pas sa stabilité asymptotique, même pour un système autonome.
+
+Nikolaï Tchetaïev a énoncé en 1934 un important critère d'instabilité de l'origine, généralisant un autre critère obtenu par Liapounov en 1892 (le théorème de Tchetaïev a lui-même été généralisé par plusieurs auteurs, dont José Luis Massera en 1956 et en 1968). Les livres de Malkine ("Theory of Stability of Motion", 1952), Nikolaï N. Krasovskii ("Stability of Motion", 1959) et l'article de Massera déjà mentionné, ont contribué à donner à ces résultats leur forme définitive. Une addition importante est celle faite par Evgeny Alekseïevitch Barbachine et Krasvossky en 1952 en Russie, et indépendamment par Joseph P. LaSalle en 1960 aux États-Unis, du « de Krasovsky-LaSalle ». Ce principe a tout d'abord été obtenu pour les systèmes autonomes ; sa généralisation au cas des systèmes non autonomes, qui est non triviale, a été réalisée par Jack K. Hale et LaSalle en 1967.
+
+La méthode des fonctions de Liapounov a été étendue sans grande difficulté au cas des systèmes à temps discret grâce aux contributions de Ta Li (qui a donné en 1934 un exemple correspondant, pour le cas des systèmes à temps discret, à celui de Perron) et (1958) notamment. Rudolf Kalman et J. E. Bertram ont fait une synthèse d'une partie de ces résultats en 1960 dans un article qui est resté classique.
+
+L'approche inaugurée par Liapounov pour les systèmes définis par une équation différentielle a été étendue au cas des systèmes définis par une équation différentielle retardée vers la fin des années 1950 et le début des années 1960 par Krasvosky et Boris Sergueïevitch Razoumikhine ; le principe d'invariance de Krasovsky-LaSalle a été étendu à ces systèmes par Hale en 1965, et on doit à cet auteur une synthèse, plusieurs fois rééditée et à chaque fois augmentée, de l'ensemble de ces résultats.
+
+La théorie qualitative des équations différentielles, initiée par Poincaré et Birkhoff, a continué d'être développée par et V. V. Stepanov dans leur livre "Qualitative Theory of Differential Equations", paru en 1947 ; ce travail, complété par celui de Nemytsky en 1949, a conduit et Gustav A. Hedlund en 1955, Solomon Lefschetz en 1958, Vladimir Ivanovitch Zoubov en 1961 (voir la ), J. Auslander et P. Seibert en 1964, A. Strauss et (de manière indépendante) Nam Parshad Bhatia en 1966, à considérer un système dynamique comme étant défini par un semi-groupe (un système défini par une équation différentielle en étant un cas particulier), et à étudier la stabilité (ou la stabilité asymptotique) d'un ensemble compact pour un tel système au moyen d'une « fonction de Liapounov généralisée », continue mais non différentiable.
+
+Pour établir certains résultats d'attractivité, un lemme classique établi par le mathématicien roumain Barbălat en 1959 est parfois utile.
+
+Les théorèmes de Liapounov et ses compléments divers disent essentiellement que si, pour un point d'équilibre donné, par exemple l'origine, on peut trouver une fonction de Liapounov, alors ce point d'équilibre est stable (ou asymptotiquement stable, uniformément asymptotiquement stable, etc., suivant la nature exacte de cette fonction de Liapounov). La réciproque a également été étudiée. K. P. Persidsky a montré en 1933 que, si 0 est un point d'équilibre stable d'un système non linéaire, il existe une fonction de Liapounov dont la dérivée le long du champ de vecteurs de l'équation est semi-définie négative. Malkine a démontré en 1954 que, si 0 est un point d’équilibre uniformément asymptotiquement stable, il existe une fonction de Liapounov dont cette même dérivée est définie négative. Ces résultats, et quelques autres, ont été rassemblés en 1962 par Massera (à qui on doit le « », qui joue un rôle important pour ces questions) dans un article. L'exposé systématique de tous ces travaux a été réalisé par Hahn en 1967 et (dans une perspective un peu différente) par Bhatia et Giorgio P. Szegö en 1970, dans des livres qui font encore autorité.
+
+Poincaré, au volume III de son mémoire "Méthodes Nouvelles de la Mécanique Céleste", avait découvert les orbites homoclines et hétéroclines (voir "infra"), au voisinage desquelles se manifeste une dépendance sensitive des conditions initiales (dans la terminologie actuelle). Balthasar van der Pol avec son oscillateur en 1928, puis Aleksandr Andronov et Lev Pontriaguine en 1937, ont développé les idées de Poincaré sur la stabilité orbitale jusqu'à parvenir à la notion de "stabilité structurelle" d'un système. Andronov et Pontriaguine ont appelé « système grossier » un système structurellement stable, et démontré ce qu'on appelle aujourd'hui le « ». Ces résultats ont été généralisés par en 1959, puis par Vladimir Arnold, Dmitri Anossov, Yakov G. Sinai, Stephen Smale et René Thom notamment, dans les années 1960. Ces travaux ont conduit à la théorie du chaos qui s'est développée dans les années 1970.
+
+Les fonctions de Liapounov ont été utilisées pour étudier la stabilité des systèmes bouclés par M. A. Aizerman (1947) (dont la conjecture s'est révélée fausse mais a été à l'origine de nombreux travaux sur la ), A. Lur'e (1957), V. N. Postnikov et Aleksandr Mikhailovitch Letov (1961) ; (théorie de l'hyperstabilité et critère de Popov, 1961-1962), Rudolf Kalman (1963) et (1964 : ). Alors que les résultats de Liapounov sur la stabilité de 0 pour un système « presque linéaire » incitaient à rechercher assez systématiquement des fonctions de Liapounov quadratiques, ces travaux ont montré qu'il fallait dans de nombreux cas envisager une classe de fonctions de Liapounov beaucoup plus large, en l'occurrence comprenant un terme quadratique et un terme dépendant du temps, sous forme d'une intégrale fonction de sa borne supérieure. Par ailleurs, Kalman a montré en 1960 que pour un système linéaire stationnaire, la théorie de commande optimale pouvait fournir des fonctions de Liapounov. La théorie de la passivité ou de la dissipativité, d'abord apparue dans le cadre des circuits électriques, puis placée dans un cadre général à partir du milieu des années 1960, peut également être établie grâce l'emploi de fonctions de Liapounov. Bruce A. Francis et ont introduit en 1975 la notion de « synthèse structurellement stable », c'est-à-dire un asservissement qui confère au système bouclé une stabilité structurelle en présence de perturbations dont la dynamique est connue. Avec le passage du qualitatif au quantitatif, dans les années qui ont suivi, est née la problématique de la commande robuste, dont une des approches, datant du milieu des années 1990, est la recherche d'une fonction de Liapounov quadratique optimale au moyen d'un algorithme d'optimisation convexe, sur la base d'inégalités matricielles linéaires. Le mathématicien russe V. L. Kharitonov a montré en 1978 que pour étudier la stabilité d'un système régi par une équation différentielle scalaire à coefficients constants mais incertains et compris entre des bornes données, il est suffisant de tester si quatre polynômes seulement (les polynômes que l'on appelle maintenant « de Kharitonov ») sont de Hurwitz (voir l'article ) ; le résultat de Kharitonov n'a été connu en Occident qu'en 1988. Vers le milieu des années 1990 est apparue, sous l'impulsion d'Eduardo Sontag, une méthode de conception de régulateurs pour des systèmes non linéaires, fondée sur la notion de (« input-to-state stability ») et l'utilisation d'une fonction de Liapounov.
+
+Ainsi qu'il ressort de l'historique ci-dessus, il existe de nombreux types de stabilité : au sens de Lagrange-Dirichlet, Joukovski, Poisson, Poincaré, Liapounov, etc. Nous envisagerons ci-dessous les plus importants. Puis nous donnerons les principaux théorèmes de stabilité et d'instabilité. On est amené à distinguer le cas d'un système autonome (c'est-à-dire dont les coefficients ne dépendent pas explicitement de la variable "t", qu'on peut considérer comme désignant le temps) et le cas d'un système non autonome. Dans ce dernier cas apparaît la notion délicate d'uniformité, qui rend les définitions (et les résultats) beaucoup plus complexes. Il est donc vivement conseillé de se contenter, dans une première lecture, de ne considérer que le cas des systèmes autonomes.
+
+Soit un système autonome
+
+(A)::formula_99
+
+où formula_100 est une application supposée localement lipschitzienne sur l'ouvert formula_101 contenant l'origine formula_12. On suppose que 0 est un point d'équilibre du système, c'est-à-dire que formula_103. Soit formula_104 l'unique solution maximale de l'équation différentielle (A), vérifiant la condition initiale formula_105.
+
+Les définitions qui suivent seraient incompréhensibles sans l'emploi de quantificateurs (et n'ont pu être rendues précises que grâce à cet emploi).
+
+Le point d'équilibre 0 du système (A) est :
+
+
+
+
+
+
+
+Considérons maintenant un système non autonome
+
+(E) : formula_135
+
+où formula_136 est localement lipschitzienne par rapport à la première variable sur l'ouvert formula_101, et où formula_138.
+
+Pour un tel système, on distingue la "stabilité uniforme" de la "stabilité", la "stabilité asymptotique uniforme" de la "stabilité asymptotique", etc., alors que pour un système autonome, ces notions coïncident.
+
+Soit formula_139 un point d'équilibre du système, c'est-à-dire vérifiant formula_140. Soit formula_141 et formula_142 l'unique solution maximale de l'équation différentielle (E) vérifiant la condition initiale formula_51.
+
+Le point d'équilibre formula_1 est :
+
+
+
+
+
+
+
+
+
+
+
+formula_162 ;
+
+
+
+
+On précise parfois que la stabilité exponentielle, telle que définie ci-dessus, est uniforme, par opposition à une stabilité exponentielle non uniforme qui serait une condition moins stricte.
+
+Soit formula_168 un mouvement du système (E), c'est-à-dire une solution maximale de l'équation différentielle (E) sur formula_169. En remplaçant dans ce qui précède formula_1 par formula_171, on définira comme ci-dessus un mouvement stable, attractif, asymptotiquement stable, etc.
+
+Soit "M" un sous-ensemble de "D". Cet ensemble est dit positivement invariant si pour tout mouvement formula_168 tel que formula_173 pour un instant formula_174, on a formula_175. On peut de même définir un ensemble positivement invariant stable, attractif, asymptotiquement stable, etc., en remplaçant ci-dessus formula_176 par formula_177 où formula_178 (le plus souvent, "M" est compact, et dans ce cas on peut remplacer formula_179 par formula_180).
+
+Soit formula_181 un mouvement. Son orbite (ou "trajectoire") est son image
+
+Si formula_151 est l'instant initial, la "semi-orbite positive" de formula_168 est formula_185.
+
+Les ensembles formula_186 et formula_187 sont connexes (en tant qu'images d'un ensemble connexe par une application continue).
+
+Il est clair qu'une semi-orbite positive est un ensemble positivement invariant. On peut donc parler d'une semi-orbite positive stable, asymptotiquement stable, etc. On dit parfois d'un mouvement dont la semi-orbite positive est stable (resp. asymptotiquement stable, ...) qu'il est orbitalement stable (resp. orbitalement asymptotiquement stable, ...). La stabilité orbitale est également appelée stabilité au sens de Poincaré. C'est une notion plus faible que la stabilité au sens de Liapounov.
+
+La notion de stabilité structurelle est liée à la stabilité au sens de Poincaré. L'équation d'un système est toujours connue avec une certaine imprécision. Le système est dit "structurellement stable" si cette imprécision, à condition qu'elle soit suffisamment faible, n'entraîne pas une trop grande variation de ses orbites. Par exemple, un oscillateur pur (sans frottement) a des orbites circulaires. Dès qu'on rajoute un frottement visqueux, aussi faible soit-il, ces orbites deviennent des spirales tendant vers l'origine : l'oscillateur pur n'est donc pas structurellement stable, contrairement à l'oscillateur avec frottement visqueux.
+
+Au plan mathématique, soit le système défini par l'équation différentielle (A) où "f" est de classe formula_188. Le champ de vecteurs "f" étant impossible à connaître exactement, on peut supposer qu'on en connaît une approximation "g", ce second de champ de vecteurs, lui aussi de classe formula_188, étant « proche » de "f". On conviendra que sera le cas si la quantité formula_190 est suffisamment petite, où formula_191 est la norme définie sur l'espace des (germes de) champs de vecteurs continûment différentiables sur un voisinage ouvert de formula_192, formula_193 étant un ouvert connexe et formula_194 son adhérence, supposée compacte, par
+
+où formula_196 est la différentielle de "X" au point "x". Soit formula_197 un homéomorphisme. On dit que "h" est un formula_198-homéomorphisme si formula_199.
+
+Par abus de langage, on appellera orbites de "f" les orbites du système (A), et on parlera de même des orbites de "g".
+
+La problématique de la robustesse d'un système ressemble celle de la stabilité structurelle : un système est robuste si son comportement est peu sensible aux erreurs de modèle. Ce n'est pas ici le lieu de développer cette notion très importante. Disons simplement que, dans la théorie de la robustesse, le modèle du système peut être sujet à des erreurs plus grandes que dans celle de la stabilité structurelle. Ces erreurs comportent en général des dynamiques négligées. La notion de robustesse ne s'applique raisonnablement qu'à un système bouclé.
+
+Considérons un système autonome (pour simplifier la présentation). Le point d'équilibre formula_1 de ce système est instable s'il n'est pas stable, autrement dit
+
+La dépendance sensitive des conditions initiales du flot formula_203 est une condition légèrement différente. L'instant initial est fixé et égal à formula_151. Soit formula_205 un sous-ensemble compact et invariant de "D". Le flot "g" est dit "dépendant de manière sensitive des conditions initiales" sur formula_205 si :
+
+où "y" et "t" dépendent tous deux de formula_198, formula_210 et formula_211.
+
+Supposons que formula_212. Soit formula_213 tel que la fonction formula_214 est définie sur formula_215, et soit formula_216 l'orbite de "x". Supposons qu'il existe deux points d'équilibre "a" et "b" tels que formula_217 et formula_218. Cette orbite est dite "homocline" si formula_219 et "hétérocline" sinon.
+
+Soit formula_220 un ensemble positivement invariant fermé. Cet ensemble est dit topologiquement transitif si pour tous ouverts "U" et "V" inclus dans formula_205, il existe un instant formula_222 (dépendant de "U" et "V") tel que formula_223. Cela signifie donc intuitivement que tout point de formula_205 devient arbitrairement proche de n'importe quel autre point de cet ensemble sous l'effet du flot.
+
+Un attracteur est un ensemble attractif et topologiquement transitif.
+
+Soit formula_220 un ensemble "compact" et positivement invariant. Cet ensemble est dit chaotique si le flot "g" dépend de manière sensitive des conditions initiales sur formula_205 et cet ensemble est topologiquement transitif.
+
+Un attracteur est dit étrange s'il est chaotique.
+
+Montrons tout d'abord que l'étude de la stabilité d'un mouvement se ramène à celle de la stabilité d'un point d'équilibre.
+
+Considérons le système défini par l'équation différentielle non linéaire (E). Soit formula_227 un mouvement de ce système. Par définition, formula_168 est une solution de (E), par conséquent formula_229. En posant formula_230, on obtient donc
+
+où formula_232. L'étude de la stabilité du mouvement formula_168 est donc ramené à celle du point d'équilibre 0 pour cette nouvelle équation différentielle ; on a formula_234.
+
+Dans ce qui suit, on considère le système défini par (E), où formula_235 pour tout formula_236, et on étudie la stabilité (ou l'instabilité) du point d'équilibre 0. On envisage également brièvement le cas où l'on s'intéresse à la stabilité (ou l'instabilité) d'un ensemble positivement invariant compact "M".
+
+Avec les notations qui précèdent, on a d'après la formule des accroissements finis
+
+(QL):: formula_237
+
+avec formula_238 et formula_239 où
+
+En supposant formula_241 continue, formula_242 tend vers 0 lorsque "y" tendant vers 0. Si cette limite est uniforme par rapport à "t" pour, on dit que le système considéré est "quasi-linéaire". Par définition, en effet, le système (QL) est quasi-linéaire si
+
+uniformément par rapport à "t".
+
+Par exemple, supposons l'orbite formula_244 compacte et "f" ne dépendant pas explicitement de "t". Posons formula_245 et formula_246 où formula_247. Alors, d'après un théorème classique d'analyse, pour tout formula_248, il existe formula_249 tel que formula_250 entraîne formula_251. Le système (QL) est donc quasi-linéaire.
+
+Il est nécessaire de donner tout d'abord quelques définitions concernant les fonctions qui vont fournir des généralisations de la notion d'énergie. On peut supposer sans perte de généralité, moyennant une translation dans formula_252, que le point d'équilibre auquel on s'intéresse est formula_253, "D" étant donc un voisinage ouvert de 0.
+
+Le plus souvent, l'« énergie généralisée » est une fonction de "x" uniquement. Soit formula_254 une fonction continue telle que formula_255. Elle est dite définie positive (resp. semi-définie positive) si formula_256 (resp. formula_257) pour formula_258. On définit de même une fonction définie négative et semi-définie négative.
+
+Dans certains cas, néanmoins, il s'avère nécessaire de considérer une fonction de "x" et de "t". Soit formula_259 une fonction continue telle que pour tout formula_236, formula_261. Elle est dite définie positive s'il existe une fonction définie positive formula_262 (au sens déjà précisé) telle que formula_263. Elle est dite semi-définie positive si formula_264. On définit de même une fonction définie négative et semi-définie négative.
+
+On appelle fonction de classe formula_265 une fonction continue strictement croissante formula_266 telle que formula_267. On montre qu'une fonction continue formula_259 est définie positive si, et seulement s'il existe une fonction formula_269 de classe formula_265 telle que formula_271.
+
+Si la fonction "V" ne dépend que de "x", elle est dite propre s'il existe un réel formula_248 tel que l'ensemble
+
+est compact ; elle est dite globalement propre (ou "radialement non bornée", ou "uniformément non bornée") si formula_119 et formula_275 est compact pour tout formula_248. On montre qu'une fonction définie positive formula_277 est propre. Une fonction formula_278 est dite globalement propre s'il existe une fonction globalement propre formula_279 (au sens qui vient d'être défini) telle que formula_280.
+
+Enfin, une fonction formula_259 est dite une fonction de Liapounov pour (E) si elle permet de façon générale de tester la stabilité ou l'instabilité de son point d'équilibre 0.
+
+Supposons "V" continûment différentiable, et soit formula_282 sa différentielle au point formula_283. A l'équation différentielle (E) il convient d'adjoindre l'équation formula_284 où formula_285. La "dérivée de Lie" de "V" suivant le champ de vecteurs formula_286 au point formula_287 est la quantité
+
+Lorsque "V" ne dépend que de "x", la définition ci-dessus se réduit évidemment à
+
+Si formula_290 est un mouvement du système, c'est-à-dire une solution de son équation différentielle, et si l'on pose formula_291 et formula_292, les deux membres des deux expressions ci-dessus deviennent formula_293. Néanmoins, on se gardera de croire que "v" soit une fonction de Liapounov. Des abus d'écriture malencontreux conduisent parfois à cette conception erronée. Les démonstrations données plus bas devraient éclaircir ce point.
+
+\left( 0,\varepsilon \right) =\left\{ x\in \mathbb{R}^{n}:\left\Vert x\right\Vert \leq \varepsilon \right\}</math>, soit incluse dans "D", et formula_294 la sphère de centre 0 et de rayon formula_198, i.e. formula_296. Puisque formula_297 est un ensemble compact et que "V" est continue, "V" admet un minimum formula_298 sur cet ensemble ; on a alors formula_299. D'autre part, "V" étant continue, il existe formula_300 tel que formula_301. Soit formula_302 la boule ouverte de centre 0 et de rayon formula_198, et soit formula_304. Puisque la fonction formula_305 est décroissante, on a donc formula_306 pour tout formula_52 tel que formula_308 est défini. Par conséquent formula_309 pour toutes ces valeurs de "t". Par suite, formula_308 ne peut pas tendre vers la frontière de "D" et est donc prolongeable sur formula_311, ce qui montre la stabilité de 0.
+
+Pour le théorème ci-dessous, on supposera que le système considéré est autonome, donc défini par l'équation différentielle (A) (il existe diverses généralisations, non triviales, de ce théorème au cas des systèmes non autonomes ; elles sont apparentées des résultats dus à V.M. Matrosov).
+
+Voir comme application l'exemple 4.
+
+On obtient la condition suffisante d'attractivité de 0 du théorème ci-dessous (et donc de stabilité asymptotique de 0 puisque sa stabilité résulte alors du théorème de Liapounov démontré plus haut) pour un système autonome (A) en appliquant le Principe d'invariance de Krasovsky-LaSalle avec formula_323.
+
+Remarque: Ce théorème peut se démontrer directement pour le système non autonome (E) ; une condition suffisante de stabilité asymptotique de 0 s'obtient alors avec une fonction de Liapounov continûment différentiable formula_324 telle que formula_23 est définie négative. Cette stabilité asymptotique est uniforme si formula_326 uniformément par rapport à "t" quand formula_327, et elle est globale si "V" est globalement propre. Pour la réciproque, on obtient une fonction de Liapounov formula_324 pour (E) non autonome mais 0 "uniformément" asymptotiquement stable (Massera, 1956) ; l'importance de l'uniformité a été reconnue par Malkine (1954). Si les coefficients de (E) sont périodiques, ceux de formula_329 le sont également.
+
+Voir comme applications les exemples 1, 2 et 3.
+
+Terminons ce paragraphe par la stabilité exponentielle :
+
+et donc formula_330. D'autre part,
+
+Puisque "f" est localement lipschitzienne, il existe formula_332 tel que formula_333 pour formula_334, formula_335 ;
+quitte à redéfinir "r" et à le rendre suffisamment petit pour que formula_336, ce qui implique alors formula_337 pour formula_338, on obtient donc
+
+Pour formula_340 on a donc formula_341, par conséquent
+
+Les conditions sont donc remplies avec formula_343. L'extension au cas global est triviale.
+
+La solution formula_344 du système autonome (A) vérifiant la condition initiale formula_345 a les propriétés suivantes (l'instant initial formula_151 étant supposé nul, ce qui n'induit pas de perte de généralité dans le cas d'un système autonome, cette quantité est omise dans les arguments de formula_347) :
+
+Si l'on suppose que ces quantités sont définies pour tous formula_350, on exprime ces propriétés en disant que le flot
+
+définit le "semi-groupe" de difféomorphismes formula_352 (puisque chaque formula_353 est un difféomorphisme et que formula_354 pour tous formula_350 ; il s'agit d'un "groupe" si les quantités ci-dessus sont également définies pour tous formula_356, mais cette hypothèse est inutile pour ce qui suit).
+
+Au lieu de se donner le système par l'équation différentielle autonome (A), on peut le faire, plus généralement, par le flot formula_357 (formula_358) en supposant simplement formula_347 continue (et non plus continûment différentiable) ; le semi-groupe formula_357 est alors dit continu.
+
+Il s'agit bien d'une généralisation, car si formula_347 est continûment différentiable, on caractérise le semi-groupe formula_357 par son « générateur infinitésimal » formula_363 défini par
+
+par conséquent l'opérateur "A" est la fonction "f", ou encore l'« opérateur » (en général non linéaire) formula_365. On est donc effectivement ramené à la formulation où le système est donné par l'équation différentielle autonome (A).
+
+On étend alors le principe d'invariance de Krasovsky-LaSalle à ce cas avec une fonction formula_366 continue (et non plus continûment différentiable) en remplaçant la condition formula_367 par la condition : la fonction formula_368 est décroissante, formula_369 (la démonstration restant par ailleurs inchangée).
+
+Soit alors formula_370 un ensemble compact positivement invariant. On déduit comme plus haut de ce principe de Krasovsky-LaSalle « généralisé » la condition suffisante du théorème ci-dessous (la démonstration de la condition nécessaire étant nettement plus complexe) :
+
+Si le système est défini par l'équation différentielle autonome (A), avec "f" localement lipschitzienne, donc continue, et "V" est continûment différentiable, on voit facilement que la condition (C2) est satisfaite si, et seulement si formula_60 pour formula_372.
+
+Considérons, comme dans l'historique, un système mécanique holonome à "n" degrés de liberté, à liaisons scléronomes. Soit formula_373 le vecteur de ses coordonnées généralisées. On suppose que
+
+(F):: formula_382
+
+(c'est le cas des forces de frottement visqueux). On a le résultat suivant qui, comme on va le voir, se démontre grâce au théorème de stabilité de Liapounov et au Principe d'invariance de Krasvossky-LaSalle :
+
+-\frac{\partial \mathcal L}{\partial q}=Q</math>
+
+et on obtient donc d'après (F) formula_383. Par conséquent, d'après le théorème de Liapounov, l'origine est stable. Si de plus le membre de gauche de (F) ne s'annule qu'en formula_85, l'égalité formula_385 implique formula_386, et l'ensemble "E" du Principe d'invariance de LaSalle est donc : formula_387. De plus, on a nécessairement formula_388 pour formula_85 car il existerait sinon des points infiniment voisins de l'origine pour lesquels on aurait formula_390, contrairement à l'hypothèse (c). L'équation de Lagrange s'écrit encore
+
+ou, de manière plus explicite,
+
+Sur "E", on a donc
+
+Considérons de nouveau le système (E). Le théorème d'instabilité qu'on peut considérer comme étant le plus important (même s'il n'est pas le plus général), car le plus facilement utilisable en pratique, est le suivant :
+
+Considérons de nouveau un système holonome en supposant que U(q) admet un "maximum" relatif strict en formula_85. Plus précisément, en posant formula_400, supposons que l'énergie cinétique et l'énergie potentielle s'écrivent respectivement formula_401 et formula_402 où les fonctions formula_403 et formula_404 sont continûment différentiables et les matrices formula_405 et formula_406 sont définies positives. Supposons également que les forces qui ne dérivent pas du potentiel s'écrivent formula_407 où formula_408 est continûment différentiable. On obtient le résultat suivant à l'aide du théorème de Chetaev :
+
+Ce résultat montre par exemple qu'un pendule inversé est, en présence d'un frottement visqueux suffisamment faible, en équilibre instable à la verticale.
+
+Considérons un système linéaire
+
+(L) :: formula_409
+
+où la fonction formula_410 est localement intégrable et bornée. Étudions le point d'équilibre 0 de (L).
+
+Les conditions suivantes sont équivalentes :
+
+(i) 0 est uniformément asymptotiquement stable ;
+
+(ii) 0 est globalement uniformément asymptotiquement stable ;
+
+(iii) 0 est exponentiellement stable ;
+
+(iv) 0 est globalement exponentiellement stable.
+
+Seul le fait que (ii) entraîne (iii) n'est pas trivial, et ce résultat est dû à Hahn (1966). D'autre part, si la matrice "A" est constante, la stabilité de 0 équivaut à sa stabilité uniforme, sa stabilité asymptotique équivaut à sa stabilité asymptotique uniforme, et toutes ces conditions équivalent à (voir Stabilité d'une représentation d'état)
+
+(v) les valeurs propres formula_411 de "A" (formula_412) vérifient toutes la condition formula_413.
+
+On dit parfois qu'une matrice "A" vérifiant la condition (v) est une « matrice de stabilité » ; c'est par erreur que certains auteurs parlent de « matrice de Hurwitz » : le polynôme caractéristique d'une matrice de stabilité est un polynôme de Hurwitz.
+
+D'autre part, le point d'équilibre 0 est stable (au sens de Liapounov) si, et seulement si les valeurs propres de "A" sont toutes situées dans le demi-plan gauche fermé (c'est-à-dire ont toutes une partie réelle négative ou nulle), celles situées sur l'axe imaginaire (s'il en existe) étant simples (c'est-à-dire d'ordre 1) (voir de nouveau Stabilité d'une représentation d'état).
+
+Pe^{tA}\right) =-e^{tA^{T}}\left(
+A^{T}P+PA\right) e^{tA}=e^{tA^{T}}Qe^{tA}</math>.
+
+Intégrons cette expression entre 0 et formula_414 (en supposant que formula_415) ; l'intégrale converge et on obtient 
+On note que :
+On remarque qu'une matrice de type est toujours positive.
+
+On obtient donc :
+Ceci démontre le résultat que si formula_421 (respectivement formula_422) alors formula_423 (respectivement formula_424).
+On montre qu'on peut affaiblir comme suit la condition suffisante de ce critère :
+
+Considérons maintenant le système non linéaire (E), écrit sous la forme
+
+(QL) :: formula_430
+
+où "A" est comme ci-dessus et formula_431 est fonction localement lipschitzienne au voisinage de formula_12, telle que formula_433, et qu'on peut considérer comme une « petite perturbation » du système (L). Le système (QL) est supposé quasi-linéaire à savoir que pour formula_93, formula_435 dans le sens où
+
+uniformément par rapport à "t". Sous ces hypothèses, on a le
+
+Ce théorème a été étendu par Hahn au cas des systèmes à temps discret. En revanche, dans le cas où la matrice formula_437 n'est pas constante, la stabilité asymptotique (non uniforme) de 0 pour (L) n'entraîne pas, sous les hypothèses considérées, la stabilité de 0 pour (QL) en général (exemple de Perron).
+
+Des compléments à ces théorèmes peuvent être trouvé à l'article Exposant de Liapounov.
+
+
+
+
+

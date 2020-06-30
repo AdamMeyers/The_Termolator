@@ -1,0 +1,40 @@
+﻿DRBD
+
+DRBD (Distributed Replicated Block Device en anglais, ou périphérique en mode bloc répliqué et distribué en français) est une architecture de stockage distribuée pour GNU/Linux, permettant la réplication de périphériques de bloc (disques, partitions, volumes logiques etc.) entre des serveurs.
+DRBD est un logiciel libre, mais un support existe. DRBD est composé d'un module noyau, d'outils d'administration en espace utilisateur ainsi que de scripts shell.
+
+La réplication des données se fait :
+
+À ce jour, DRBD ne permet que la réplication entre deux nœuds, mais la feuille de route nous indique qu'il est prévu pour la version 9 de corriger cela.
+
+DRBD ajoute une couche logique de périphériques de bloc (conventionnellement nommée /dev/drbdX, ou X est le numéro de périphérique mineur) au-dessus de la couche logique locale des périphériques de bloc existante sur les nœuds du cluster participants. Les écritures sur le nœud primaire sont transférées sur le périphérique de bloc de bas niveau et sont simultanément propagées au nœud secondaire. Le nœud secondaire transfère ensuite les données à son périphérique de bloc de bas niveau correspondant. Toutes les lectures sont effectuées localement.
+
+En cas de défaillance du nœud primaire, un processus de gestion de cluster promeut le nœud secondaire dans un état primaire. Cette transition peut requérir une vérification subséquente de l'intégrité du système de fichier, empilé au sommet de DRBD, par le biais d'une vérification du système de fichiers ou d'un rejeu de journal. Quand l'ancien nœud primaire défaillant revient, le système peut (ou peut ne pas) l'élever à nouveau à un niveau primaire, après une synchronisation des données du périphérique. L'algorithme de synchronisation de DRBD est efficace dans le sens où seuls les blocs qui ont changé durant la panne doivent être resynchronisés, plutôt que le périphérique dans son entièreté.
+
+DRBD peut être utilisé aussi bien en dessous qu'au-dessus de la pile de Linux LVM.
+
+La version 8 de DRBD, livrée en , a introduit le support des configurations de répartition de charge, permettant aux différents nœuds d'accéder à un DRBD en particulier en mode lecture/écriture avec des sémantiques de stockage partagé. Une telle configuration requiert l'usage d'un gestionnaire de verrou distribué.
+
+DRBD peut être utilisé comme une base pour de nombreux systèmes comme, notamment :
+
+Il peut être aussi intégré au sein de certains gestionnaires de "grappes" ("clusters", en anglais) tels que Pacemaker, Heartbeat ou Red Hat Cluster Suite.
+
+DRBD peut, finalement, être utilisé en association avec Xen. Cela permet, par exemple, de faire de la réplication non seulement sur des serveurs Linux (ce qui est l'utilisation de base de DRBD) mais aussi sur d'autres systèmes d'exploitation qui peuvent être virtualisés sous Xen (ce qui comprend, en principe, n'importe quel système d'exploitation d'architecture Intel 32 ou 64 bits).
+
+Il est à noter que DRBD est intégré au projet linux-ha.
+Les systèmes de cluster informatiques conventionnels utilisent, typiquement, une sorte de stockage partagé pour que les données puissent être utilisées par les ressources des clusters. Cette approche a un certain nombre d'inconvénients, que DRBD peut aider à compenser :
+
+DRBD se décompose en deux parties: le module noyau d'une part, et les outils d'administration et autres scripts d'autre part.
+
+La fonctionnalité principale de DRBD est implémentée par un module noyau. Plus précisément, DRBD est un driver pour un périphérique virtuel de type bloc ; de fait, DRBD se situe plutôt bas dans la pile d'entrée/sortie du système, ce qui le rend très flexible et transparent.
+
+Les auteurs de DRBD ont soumis leur contribution au projet du noyau Linux en , en vue d'une intégration au noyau "vanilla". Il fut intégré en pour la version 2.6.33 du noyau.
+
+La communication avec le module noyau de DRBD se fait via des outils en espace utilisateur. Ces outils sont les suivants:
+
+
+
+
+
+
+

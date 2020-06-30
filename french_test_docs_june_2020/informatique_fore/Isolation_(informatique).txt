@@ -1,0 +1,31 @@
+﻿Isolation (informatique)
+
+Dans les systèmes de gestion de base de données (SGBD), l'isolation est la capacité d'un système d'isoler les modifications dans une transaction en cours de celles faites dans les autres transactions conduites simultanément, jusqu'à ce qu'elle soit complétée. C'est l'une des quatre propriétés ACID d'une base de données.
+
+L'isolation des transactions d'une base données est assurée par son moteur de stockage, par un contrôle de concurrence entre elles.
+
+Le système le plus commun de contrôle de concurrence est le verrouillage à deux phases, ou 2PL (dans l'anglais "), qui est composé de deux phases consécutives : la pose de verrous et leurs retraits.
+
+Une mauvaise isolation des transactions peut essentiellement causer quatre problèmes :
+
+
+Certains SGDB définissent plusieurs niveaux d'isolation de façon à pouvoir paramétrer le nombre de verrouillages des transactions, et ainsi influer sur leur performance et leur fiabilité. En effet, plus il y aura de verrouillages, et plus le risque d'interblocage sera élevé.
+
+La norme ANSI/ISO SQL reconnait les quatre niveaux suivants :
+
+Niveau d'isolation le plus élevé.
+
+Il impose aux verrous de lecture et d'écriture d'être levés à la fin de la transaction, avec en plus un verrouillage d'étendues de clés (range-lock).
+Niveau d'isolation par défaut avec InnoDB (un des moteurs MySQL).
+
+Il impose aux verrous de lecture et d'écriture d'être levés à la fin de la transaction, mais sans verrouillage d'étendues de clés.
+Niveau d'isolation par défaut sur Oracle Database, SQL Server et PostgreSQL.
+
+Il impose juste aux verrous d'écriture d'être levés à la fin de la transaction.
+Niveau d'isolation le plus bas.
+
+Il n'impose pas de lever les verrous à la fin de la transaction.
+Par ailleurs, sur Oracle Database, il existe un cinquième niveau intitulé ".
+
+
+

@@ -1,0 +1,131 @@
+﻿Base de données
+
+Une base de données (en anglais database), permet de stocker et de retrouver l'intégralité de données brutes ou d'informations en rapport avec un thème ou une activité ; celles-ci peuvent être de natures différentes et plus ou moins reliées entre elles. En effet, leurs données peuvent y être très structurées (base de données relationnelles par exemple), ou bien hébergées sous la forme de données brutes déstructurées (base de données NoSQL Redis par exemple) qui, dans ce cas, seront ensuite parcourues de manière organisée au moment de la lecture via des moteurs spécifiques (comme Elasticsearch). Une base de données peut être localisée dans un même lieu et sur un même support informatisé, ou réparties sur plusieurs machines à plusieurs endroits (base de données NoSQL par exemple). 
+
+La base de données est au centre des dispositifs informatiques de collecte, mise en forme, stockage et utilisation d'informations. Le dispositif comporte un système de gestion de base de données (abréviation : SGBD) : un logiciel moteur qui manipule la base de données et dirige l'accès à son contenu. De tels dispositifs comportent également des logiciels applicatifs, et un ensemble de règles relatives à l'accès et l'utilisation des informations.
+
+La manipulation de données est une des utilisations les plus courantes des ordinateurs. Les bases de données sont par exemple utilisées dans les secteurs de la finance, des assurances, des écoles, de l'épidémiologie, de l'administration publique (notamment les statistiques) et des médias.
+
+Lorsque plusieurs objets nommés « bases de données » sont constitués sous forme de collection, on parle alors d'une banque de données.
+
+Une base de données est un « conteneur » stockant des "données" telles que des chiffres, des dates ou des mots, pouvant être retraités par des moyens informatiques pour produire une information ; par exemple, des chiffres et des noms assemblés et triés pour former un annuaire. Les retraitements sont typiquement une combinaison d'opérations de recherches, de choix, de tri, de regroupement, et de concaténation.
+
+C'est la pièce centrale d'un système d'information ou d'un "système de base de données" (ou "base de données" tout court), qui régit la collecte, le stockage, le retraitement et l'utilisation de données. Ce dispositif comporte souvent un logiciel moteur (cf. paragraphe suivant), des logiciels applicatifs, et un ensemble de règles relatives à l'accès et l'utilisation des informations.
+
+Le système de gestion de base de données est une suite de programmes qui manipule la structure de la base de données et dirige l'accès aux données qui y sont stockées. Une base de données est composée d'une collection de fichiers ; on y accède par le SGBD qui reçoit des demandes de manipulation du contenu et effectue les opérations nécessaires sur les fichiers. Il cache la complexité des opérations et offre une vue synthétique sur le contenu. Le SGBD permet à plusieurs usagers de manipuler simultanément le contenu, et peut offrir différentes vues sur un même ensemble de données.
+
+Le recours aux bases de données est une alternative au procédé classique de stockage de données, par lequel une application place des données dans des fichiers manipulés par l'application. Il facilite le partage des informations, permet le contrôle automatique de la cohérence et de la redondance des informations, la limitation de l'accès aux informations et la production plus aisée des informations synthétiques à partir des renseignements bruts. La base de données a de plus un effet fédérateur : dans une collectivité utilisant une base de données, une personne unique organise le contenu de la base d'une manière bénéfique à l'ensemble de la collectivité, ce qui peut éviter des conflits dus à des intérêts divergents entre les membres de la collectivité.
+
+Une base de données nécessite généralement plus d'espace disque, le large éventail de fonctions offertes par les SGBD rend les manipulations plus complexes, et les pannes ont un impact plus large et sont plus difficiles à rattraper.
+
+
+L'usage qui est fait des données diffère d'une base de données à l'autre. Les bases de données peuvent être classifiées en fonction du nombre d'usagers, du type de contenu, notamment s'il est faiblement ou fortement structuré, ainsi que selon l'usage qui est fait de la base de données, notamment l'utilisation "opérationnelle" ou à des fins d"'analyse" :
+
+Les bases de données peuvent être classifiées en fonction du nombre d'usagers . Une base de données "de bureau" est installée sur un ordinateur personnel au service d'un seul usager. Tandis qu'une base de données d´"entreprise" est installée sur un ordinateur puissant au service de centaines d'utilisateurs. Une base de données "centralisée" est installée dans un emplacement unique, tandis qu'une « base de données distribuée » est répartie entre plusieurs emplacements.
+
+La manière la plus populaire de classer les bases de données est selon l'usage qui en est fait, et l'aspect temporel du contenu : 
+
+
+Les bases de données sont également parfois classifiées selon les caractéristiques du contenu : 
+
+Les disques durs, mémoire de masse de grande capacité, ont été inventés en 1956. L'invention du disque dur a permis d'utiliser les ordinateurs pour collecter, classer et stocker de grandes quantités d'informations de façon plus souple et plus performante que le support antérieur : la bande magnétique. 
+
+Le terme "" (base de données) est apparu en 1964 pour désigner une collection d'informations partagées par différents utilisateurs d'un système d'informations militaire.
+
+Les premières bases de données hiérarchiques sont apparues au début des années 1960. Les informations étaient découpées en deux niveaux de hiérarchie : un niveau contenait les informations qui sont identiques sur plusieurs enregistrements de la base de données. Le découpage a ensuite été étendu pour prendre la forme d'un diagramme en arbre.
+
+En 1965, Charles Bachman conçoit l'architecture Ansi/Sparc encore utilisée de nos jours. En 1969, il créa le modèle de données réseau au sein du consortium CODASYL pour des applications informatiques pour lesquelles le modèle hiérarchique ne convient pas. Charles Bachman a reçu le prix Turing en 1973 pour ses « contributions exceptionnelles à la technologie des bases de données ».
+
+En 1968, Dick Pick crée Pick, un système d'exploitation contenant un système de gestion de base de données « multivaluée » (SGBDR MV).
+
+En 1970, Edgar F. Codd note dans sa thèse mathématiques sur l'algèbre relationnelle qu'un ensemble d'entités est comparable à une famille définissant une relation en mathématiques et que les jointures sont des produits cartésiens. Cette thèse est à l'origine des bases de données relationnelles. Edgar F. Codd a reçu le prix Turing en 1981. 
+
+Le modèle entité-association a été inventé par Peter Chen en 1975 ; il est destiné à clarifier l'organisation des données dans les bases de données relationnelles.
+
+En 1990, la banque de données juridique LEADERS, avec mises à jour mensuelles sur ordinateur des clients, par disquettes dans un premier temps, CD-ROM par la suite (responsable René Janray), a été lancée en Belgique. Elle a été cédée en 2000 à la société Kluwer. Entretemps elle avait rassemblé près de 1000 clients dont les commerces et entreprises les plus importants. Un mémoire de fin d'étude à l'ISAT portait essentiellement sur ce produit et était intitulé "La banque de données Leaders : une percée dans le monde des éditions juridiques électroniques." En 1998, dans un ouvrage consacré aux banques de données, l'éditeur MARABOUT a consacré tout un chapitre à la banque de données LEADERS.
+
+Dans le modèle relationnel, la relation désigne l'ensemble des informations d'une table, tandis que l'association, du modèle entité-association, désigne le lien logique qui existe entre deux tables contenant des informations connexes.
+
+Les premières bases de données étaient calquées sur la présentation des cartes perforées : réparties en lignes et colonnes de largeur fixe. Une telle répartition permet difficilement de stocker des objets de programmation ; en particulier, elles ne permettent pas l'héritage entre les entités, caractéristique de la programmation orientée objet. 
+
+Apparues dans les années 1990, les bases de données objet-relationnel utilisent un modèle de données relationnel tout en permettant le stockage des objets. Dans ces bases de données les associations d'héritage des objets s'ajoutent aux associations entre les entités du modèle relationnel.
+
+Les étapes clefs du cycle de vie d'une base de données sont la conception et la mise en service.
+
+Avant la conception, les utilisateurs et les producteurs des informations sont interviewés en vue de prendre connaissance des caractéristiques des informations, des relations entre les informations, ainsi que les caractéristiques du système informatique qui accueillera la base de données. L'objectif de cette étape est de recueillir les caractéristiques des informations dans la pratique, et les besoins des usagers, et de les formuler d'une manière simple, compréhensible autant par les usagers que les administrateurs de base de données.
+
+Puis, sera créé un "schéma" d'ensemble du réseau d'informations et de relations, sous forme de diagramme comportant des entités, des attributs et des relations. Il existe différentes méthodes de modélisation des données, la plus connue étant le MCD (modèle conceptuel des données). Celui-ci permet notamment d'établir un "schéma" structuré de l'ensemble des données d'un système d'informations, compréhensible par tous ses acteurs (chef de produit, développeur, client s'il est averti...). 
+
+Ce plan est ensuite transformé en instructions formulées dans le langage de commande du SGBD et les instructions sont exécutées en vue de créer la structure de la base de données et la rendre opérationnelle.
+
+La définition de l'organisation interne d'une base de données est l'étape finale de sa construction. Cette opération consiste tout d'abord à définir des "enregistrements" correspondant au modèle de données logique. Les enregistrements sont stockés dans des fichiers, et chaque fichier contient typiquement un lot d'enregistrements similaires. Lors de cette étape diverses techniques sont utilisées en vue d'obtenir un modèle qui aboutit à une vitesse adéquate de manipulation de données, tout en garantissant l'intégrité des données.
+
+La qualité du "modèle de données physique" a un impact majeur sur la vitesse des opérations sur la base de données. Une simple amélioration peut rendre les opérations sur les données 50 fois plus rapides, différence d'autant plus sensible qu'il y a une grande quantité de données. Au début des années 2000, il existe des bases de données contenant plusieurs téraoctets (10) de données et des ingénieurs indépendants dont l'activité consiste uniquement à aider des clients à accélérer leurs bases de données.
+
+Une fois opérationnelle, des opérations de surveillance permettent de déceler des problèmes susceptibles de nécessiter des modifications du schéma. Des modifications peuvent également être apportées en cas de changement des besoins des utilisateurs.
+
+L'organisation interne d'une base de données comporte des "enregistrements" correspondant au modèle de données logique, des pointeurs et des balises utilisées par le SGBD pour retrouver et manipuler les données. Les enregistrements sont stockés dans des fichiers, et chaque fichier contient typiquement un lot d'enregistrements similaires. L'organisation interne utilise diverses techniques visant à obtenir une vitesse adéquate de manipulation de données, tout en garantissant l'intégrité des données.
+
+L'organisation logique des données est indépendante de leur organisation physique. Ce qui signifie que la position des données dans les fichiers peut être entièrement modifiée sans que leur organisation sous forme d'enregistrements dans des tables ne soit touchée. Le SGBD organise les fichiers d'une manière qui accélère les opérations et qui diffère selon le matériel et le système d'exploitation pour lequel le système de gestion de base de données est conçu. Les enregistrements sont typiquement regroupés en grappes (anglais "cluster"), dont la taille est alignée sur une taille optimale pour le matériel (disques durs).
+Les principales techniques utilisées dans le modèle de données physique sont les index, les vues matérialisées et le partitionnement. Le stockage des données se fait souvent par des dispositifs RAID et le SGBD utilise des techniques telles que les tables de hachage, les arbres B, les bitmaps ou les fichiers ISAM :
+
+
+
+
+
+
+
+
+
+
+Un système de gestion de base de données est un ensemble de logiciels qui manipulent le contenu des bases de données. Il sert à effectuer les opérations ordinaires telles que rechercher, ajouter ou supprimer des enregistrements (', ', ', ' abrégé ""), manipuler les index, créer ou copier des bases de données).
+
+Les mécanismes du système de gestion de base de données visent à assurer la cohérence, la confidentialité et la pérennité du contenu des bases de données. Le logiciel refusera qu'un usager modifie ou supprime une information s'il n'y a pas été préalablement autorisé ; il refusera qu'un usager ajoute une information si celle-ci existe dans la base de données et fait l'objet d'une règle d'unicité ; il refusera également de stocker une information qui n'est pas conforme aux règles de cohérence telles que les règles d'intégrité référentielle dans les bases de données relationnelles.
+
+Le système de gestion de base de données adapte automatiquement les index lors de chaque changement effectué sur une base de données et chaque opération est inscrite dans un journal contenu dans la base de données, ce qui permet d'annuler ou de terminer l'opération même en cas de crash informatique et ainsi garantir la cohérence du contenu de la base de données.
+
+En 2009, IBM DB2, Oracle Database, MySQL, PostgreSQL et Microsoft SQL Server sont les principaux systèmes de gestion de base de données sur le marché.
+
+Les bases de données sont de plus en plus souvent mises à disposition de leurs utilisateurs sur des serveurs, via l'internet ou sur des serveurs locaux pour une sécurité plus optimale. Les accès y sont plus ou moins sécurisés.
+
+Certains producteurs de données (collectivités surtout) mettent certaines de leurs bases de données à disposition de tous et chacun, de manière libre. Les données dont ils sont légalement propriétaires ou dépositaires avec autorisation de diffusion (des photos par exemple) peuvent être dans ce cas accessibles en licence libre (ex CC-BY-SA), ou parfois l'ensemble de la base elle-même peut être accessible en licence libre (ODBL par exemple). Ces licences permettent de conserver la propriété intellectuelle sur les contenus, tout en autorisant le ré-usage et la transformation, en citant la source. De nombreuses autres licences différentes, plus ou moins contraignantes existent.
+
+La manipulation de données est une des utilisations les plus courantes des ordinateurs. Les secteurs de la finance, des assurances, des écoles, de l'administration publique et les médias, secteurs majeurs de la société de l'information, qui offrent des services fondés sur des informations, utilisent des bases de données. Parmi les domaines d'utilisation pratiques, il y a les inventaires (stocks, magasins, bibliothèques), les outils de réservation (vols en avion, cinéma…), l'octroi de permis (de conduire, de chasse, de propriétaire de chien…), les ressources humaines, les salaires, la production industrielle (les machines de production sont souvent informatiques), ainsi que la comptabilité et la facturation.
+
+Les applications informatiques de collecte de renseignements administratifs tels que dossiers médicaux, fiscaux, ou des permis de port d'arme font usage des bases de données.
+
+Dans une application informatique de billetterie informatisée, les billets de voyage ou de concert sont enregistrés dans une base de données. 
+
+Dans un logiciel de comptabilité ou de trésorerie, les écritures ainsi que le plan comptable sont enregistrés dans une base de données ; le bilan est un rapport obtenu par synthèse automatique du contenu de la base de données. De même, dans une application informatique de gestion de la production assistée par ordinateur (abr. GPAO), l'état des stocks, les disponibilités du personnel et les délais sont enregistrés dans une base de données, et servent de base pour un rapport de planification. 
+
+Dans un logiciel d'aide au diagnostic médical, un ensemble de pathologies et de diagnostics est enregistré dans une base de données. Un moteur de recherche extrait les diagnostics qui correspondent le mieux aux pathologies choisies par l'utilisateur.
+
+Le Système d'information Schengen est une application de base de données utilisée par les services de police et des douanes de l'Espace Schengen, en Europe pour collecter et s'échanger des renseignements judiciaires (mandat d'arrêts, empreintes digitales, interdictions de séjour…).
+
+ITIS est une application informatique qui contient un catalogue de taxinomie des espèces vivantes (végétaux, animaux, champignons, microorganismes…). 
+
+La CIA, agence de renseignements aux États-Unis possède une des plus grandes banques de données au monde.
+
+Le catalogue de la librairie en ligne amazon.com est une des plus grandes bases de données au monde avec plus de 250 millions d'ouvrages catalogués. La société Amazon.com est également propriétaire de la banque de données filmographique IMDb.
+
+Les bibliothèques, notamment universitaires, mettent à disposition de leurs publics des accès à des bases de données. Il s'agit en général de bases de données contenant des livres numériques et/ou des articles de la presse généraliste ou spécialisée, fournies par des prestataires extérieurs. Par exemple, la bibliothèque de l'École nationale supérieure des sciences de l'information et des bibliothèques (enssib) propose un accès à 76 bases de données à ses usagers, dont A to Z (presse), Cairn (presse et e-books), Dawsonera (e-books), Électre (base de données bibliographique), etc. Certaines sont en accès libre et gratuit, d'autres en accès sur place uniquement, et d'autres en accès réservé sur place et à distance. Par ailleurs l'école (enssib) produit et met en ligne ses propres bases de données pour mieux desservir la communauté des professionnels des sciences de l'information et des bibliothèques : base de constructions de bibliothèques françaises depuis 1992, Service offres de stages et emplois de l'enssib, Base Maguelone : base de données d’ornements typographiques.
+
+Dans les systèmes d'information géographique les informations de cartographie sont enregistrées dans une base de données. Des informations de cartographie du ciel sont disponibles dans les catalogues d'étoiles.
+
+Dans les logiciels de forums ou de messagerie électronique, les messages sont souvent enregistrés dans une base de données.
+
+Les logiciels antivirus utilisent souvent une base de données dans laquelle sont enregistrées les empreintes laissées par les virus informatiques.
+
+La base de registre est une base de données qui contient les paramètres de configuration des systèmes d'exploitation Windows. Le Object Data Manager est une base de données similaire des systèmes d'exploitation AIX.
+
+Dans un logiciel de gestion électronique de documents, des documents électroniques sont enregistrés dans une base de données. Dans un système de gestion de contenu ce sont des morceaux de page web qui sont enregistrés dans une base de données et dans un logiciel de commerce en ligne ce sont les annonces, ainsi que les annonceurs.
+
+Dans une plate-forme d'apprentissage en ligne, les exercices, les examens, les cursus, ainsi que l'annuaire des enseignants et des apprenants sont enregistrés dans une base de données.
+
+Un progiciel de gestion intégré tel que SAP ERP (de la société SAP AG) comporte un ensemble de logiciels qui utilisent tous la même base de données. Les différents logiciels de ce type de produit concernent des activités ordinaires des entreprises telles que la facturation, la comptabilité, les salaires, le suivi des commandes et des stocks.
+
+
+
+
+
+

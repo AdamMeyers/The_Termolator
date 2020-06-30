@@ -1,0 +1,10 @@
+﻿Problème d'Halloween
+
+En informatique, le Problème d'Halloween fait référence à un phénomène dans les bases de données, lorsqu'une opération de mise à jour provoque un changement dans l'emplacement physique d'une ligne, permettant potentiellement à cette ligne d'être parcourue plus d'une fois durant l'opération. Ceci peut même provoquer une boucle infinie dans certains cas où les mises à jour placent continuellement l'enregistrement modifié après le curseur réalisant l'opération de mise à jour.
+
+La possibilité de cette erreur dans une base de données a été découverte pour la première fois par Don Chamberlin, Pat Selinger et Morton Astrahan en 1976, le jour d'Halloween, en travaillant sur une requête qui était supposée donner une augmentation de 10 % à chaque employé qui gagnait moins de . Cette requête s'exécuta apparemment avec succès, sans déclencher d'erreur, mais une fois achevée tous les employés dans la base de données gagnaient au moins , parce que la requête continua de leur donner des augmentations jusqu'à ce qu'ils aient atteint ce seuil. Le comportement attendu était que la requête devait parcourir chaque employé avec un salaire inférieur à exactement une seule fois. En fait, parce que même les enregistrements mis à jour étaient visibles par le moteur d'exécution de la requête et continuaient donc à correspondre au critère de recherche, les enregistrements de salaires étaient traités plusieurs fois, et recevaient des augmentations de 10 % jusqu'à ce qu'ils aient tous atteint .
+
+Le nom de ce problème n'est pas représentatif de sa nature, mais lui a été donné en raison du jour de sa découverte. Selon les propos de Don Chamberlin :
+
+
+

@@ -1,0 +1,44 @@
+﻿Identification de système
+
+L'identification de système ou identification paramétrique est une technique de l'automatique consistant à obtenir un modèle mathématique d'un système à partir de mesures.
+
+L'identification consiste à appliquer ou observer des signaux de perturbation à l'entrée d'un système (par exemple pour un système électronique, ceux-ci peuvent être de type binaire aléatoire ou pseudo-aléatoire, galois, sinus à fréquences multiples...) et en analyser la sortie dans le but d'obtenir un modèle purement mathématique. Les différents paramètres du modèle ne correspondent à aucune réalité physique dans ce cas. L'identification peut se faire soit dans le temps (espace temporel), soit en fréquence (espace de Laplace).
+Éviter les modèles purement théoriques à partir des équations physiques (en général des équations différentielles), qui sont longs à obtenir et souvent trop complexes pour le temps de développement donné, est donc possible avec cette technique.
+
+Le principe d'une identification paramétrique est d'extraire un modèle mathématique à partir d'observations. Le modèle doit permettre de calculer la sortie du procédé "y" à n'importe quel instant "t" si les conditions initiales du système sont connues. Pour cela on peut se servir des valeurs des entrées aux instants présent et précédents ("u(t), u(t-1), ...") et des valeurs précédentes de la sortie ("y(t-1), y(t-2), ...") dans le cas d'un modèle régressif.
+
+Il est tout de même important d'avoir des connaissances basiques du système pour choisir un type de modèle adapté 
+
+
+En général, le modèle est représenté sous forme de fonction de transfert utilisant la Transformée en Z. L'identification nécessite une structure de modèle connu a priori pour venir identifier dans cette structure différents paramètres. Voici les 3 structures de modèle les plus utilisés : 
+
+Le modèle ARX ("Auto Regressive model with eXternal inputs") est un modèle auto régressif qui inclut des entrées "u(t)" et un bruit blanc formula_1 de moyenne nulle. De plus, le modèle inclut un retard pur de "k" coups d'horloge. Si le système est échantillonné à une période d'échantillonnage "T", alors le retard sera de "k*T".
+
+Sous forme temporelle : 
+
+formula_2
+
+Dans un espace discret utilisant la Transformée en Z :
+formula_3
+
+Le modèle ARMAX ("Auto Regressive Moving Average with eXternal inputs") reprend les attributs du modèle ARX mais inclut une fonction de transfert avec une moyenne ajustable sur le bruit blanc. En général le bruit blanc permet de modéliser des perturbations non mesurables dans le modèle. Or, ces perturbations non mesurables (fluctuations thermiques, vibrations du sol…) sont rarement de moyenne nulle et peuvent aussi répondre à un modèle. 
+
+formula_4
+
+Dans le modèle ARIMAX ("Auto Regressive Integrated Moving Average with eXternal inputs") le modèle du bruit est directement intégré :
+
+formula_5
+
+Pour obtenir un modèle consistant, il est important d'exciter le processus avec toutes les fréquences de sa plage de fonctionnement. Le signal d'entrée appliqué doit donc être riche en fréquences (posséder un large spectre). En général on applique un signal périodique pseudo-aléatoire (PRBS).
+
+Lorsque le système possède plusieurs entrées/plusieurs sorties, il est important d'appliquer des signaux décorrélés pour ne pas introduire de biais d'identification. Une idée commune consistant à exciter l'une après l'autre les entrées est une mauvaise méthode car elle introduit un biais d'identification et ne rend pas compte du fonctionnement normal du système. Il est important de respecter une procédure rigoureuse pour identifier un procédé :
+
+
+D'autres approches sont également possibles, notamment en regardant les matrices de sous-espace d'un système (mais moins efficace que ci-dessus pour les systèmes non linéaires).
+
+Ceci peut ainsi facilement donner un modèle moins « théorique » et aider à l'amélioration du rendement, du contrôle ou de la prédiction (pour des valeurs d'action dans un système économique par exemple).
+
+Des "toolbox" Matlab et Scilab existent pour la résolution des algorithmes (de type ARMAX par exemple). Ceux pour Octave sont à créer.
+
+
+

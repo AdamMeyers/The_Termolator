@@ -1,0 +1,23 @@
+﻿Théorie du contrôle
+
+En mathématiques et en ingénierie, la théorie du contrôle a comme objet l'étude du comportement de systèmes dynamiques paramétrés en fonction des trajectoires de leurs paramètres.
+
+On se place dans un ensemble, l'espace d'état formula_1 sur lequel on définit une . Le déroulement du temps est modélisé par un entier formula_2. La dynamique de l'état du système formula_3 ne dépend que de l'état du système à l'état précédent et de la valeur d'un paramètre a priori exogène (le paramètre de contrôle) noté formula_4 et qui prend ses valeurs dans un ensemble formula_5.
+
+La dynamique du système est alors totalement définie par une fonction formula_6 et un point de départ formula_7 ; elle s'écrit:
+
+formula_8
+
+La question principale de la théorie du contrôle est: "quel est le comportement de formula_9 en fonction de celui de formula_4?", par exemple "peut-on choisir une suite de contrôles formula_11 de telle sorte que formula_12 vaille formula_13, une valeur cible choisie par ailleurs?".
+
+Le système (D1) qui est discret (le temps ne prend que des valeurs entières) a un équivalent continu (le temps s'écoule continuement), que l'on peut écrire:
+
+formula_14
+
+Dans ce contexte formula_15 est la dérivée temporelle de formula_9, il est donc nécessaire de munir formula_1 d'une structure donnant accès à la dérivation (par exemple une structure d'espace vectoriel normé).
+
+
+Ces exemples montrent que l'objectif du contrôle est qualitativement assez naturel. Par exemple pour une voiture, il s'agit de rester sur la route ou de gagner une course, pour le tennis de renvoyer la balle sur le court, et pour la torpille de couler un navire qui se déplace.
+
+
+

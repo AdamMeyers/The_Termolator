@@ -1,0 +1,12 @@
+﻿Triplestore
+
+Un triplestore est une base de données spécialement conçue pour le stockage et la récupération de données RDF (Resource Description Framework).
+Tout comme une base de données relationnelle, un triplestore stocke des données et il les récupère via un langage de requête. Mais contrairement à une base de données relationnelle, un triplestore ne stocke qu'un seul type de données : le triplet. Elle n'a donc pas besoin de phase d'initialisation pour enregistrer de nouvelles données. C'est-à-dire qu'elle n'a pas besoin de créer des tables comme dans une base de données relationnelle. De plus, un triplestore est optimisé pour le stockage d'un grand nombre de triplets et pour la récupération de ces triplets à l'aide du langage de requête SPARQL.
+
+Certains triplestores peuvent stocker des milliards de triplets RDF et demain des téras. La performance d'un triplestore peut être mesurée avec le Benchmark Lehigh University (LUBM), ou avec des données réelles provenant d'UniProt.
+
+Certains triplestores ont été construits comme les premières bases de données à partir de rien, tandis que d'autres ont été construits au-dessus de base de données commerciale existante les bases de données relationnelle (c'est-à-dire basé sur SQL) En s'appuyant sur l'expérience des bases de données OLAP, cela a permis avec peu d'effort d'obtenir des capacités de stockage importantes et des temps de réponse faibles. Mais à long terme, il semble probable que les triplestores natifs auront l'avantage sur des critères de performance. La difficulté avec la mise en œuvre d'un triplestore sur une base SQL est que bien que «triplets» peuvent être «stockés», l'interrogation via SPARQL d'un graphe basé sur RDF après conversion en SQL est complexe.
+
+
+
+

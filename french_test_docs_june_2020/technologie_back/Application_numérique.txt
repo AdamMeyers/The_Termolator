@@ -1,0 +1,40 @@
+﻿Application numérique
+
+En sciences, particulièrement en physique, l'application numérique (souvent abrégé en a.n.) est l'obtention de la valeur numérique d'une grandeur physique à partir de celles d'autre grandeurs lorsque l'on connaît une formule analytique reliant ces grandeurs.
+
+En d'autres termes, il s'agit d'obtenir formula_1 à partir des valeurs numériques de formula_2 et formula_3, et de la fonction formula_4. En sciences expérimentales, deux difficultés s'ajoutent :
+
+Une application numérique se fait en plusieurs étapes :
+
+Exemple
+
+La distance parcourue par un objet en chute libre formula_7 est relié au temps de chute formula_8 et à l'accélération de la pesanteur formula_9 par la formule :
+On considère un objet chutant pendant 500 millisecondes, sachant que sur terre formula_11.
+Mais quelle précision doit-on donner à ce résultat ? Il est nécessaire de compter les chiffres significatifs des données présentes dans le problème : 500 soit trois chiffres, et 9,81 soit trois chiffres, le résultat ne doit comporter que trois chiffres : une hauteur de chute de 1,23 mètre.
+
+Faire une application numérique, c'est aussi connaître la précision du résultat que l'on prétend obtenir.
+
+De manière rigoureuse, il faut également veiller :
+
+Le choix de la méthode de calcul a souvent peu d'importance pour les calculs à la main ou avec une calculatrice. En revanche, lorsque des calculs complexes sont menés avec un ordinateur, l'enchaînement de nombreuses étapes, ou bien l'itération d'étapes, peut rendre ce choix crucial en termes de précision du résultat et de rapidité du calcul. Par exemple, lorsque l'on calcule la valeur d'un polynôme "p"("x") = "a" + "a""x" + "a""x" + … + "ax", on a intérêt à utiliser la Méthode de Ruffini-Horner :
+Il faut également veiller aux limitations de la représentation en virgule flottante, et en particulier aux erreurs de dépassement (la valeur absolue est trop grande pour être représentée et le résultat est considéré comme infini), de soupassement (la valeur absolue est trop petite et donc la représentation est 0) et d'approximation (deux valeurs très proches sont représentées de la même manière, donc égales dans la pratique). Par exemple, pour résoudre une équation du second degré "ax" + "bx" + "c" = 0 ("a" ≠ 0), on a intérêt à utiliser la forme de Fagnano
+car si "b" est très grand devant 4"ac", alors le discriminant Δ est proche de "b", donc formula_18 est proche de 0 et l'erreur relative risque d'être très importante. Pour aller plus loin, du fait de la représentation binaire des nombres, la division par 2 est une opération exacte pour l'ordinateur, et ainsi, l'écriture suivante est encore plus efficace :
+
+Le choix de la manière de mener les calculs dépend également de la manière dont les opérations sont programmées informatiquement. Ainsi, la division demande plus de ressources que la multiplication, et au lieu de calculer
+on a intérêt, pour de gros volumes de données, à écrire à la place :
+en effet, le fait de remplacer deux divisions par une division et cinq multiplications est favorable.
+
+De manière générale, en calcul numérique, il y a une notion de « conditionnement ». Lorsque l'on choisit une méthode, il faut vérifier que le système est bien conditionné.
+
+Exemple
+
+Reprenons l'exemple ci-dessus.
+
+Pour être un peu plus rigoureux, il faut connaître les incertitudes :
+Si l'on applique la méthode de la dérivée :
+et donc
+Si l'on choisit de reporter les extrêmes :
+et donc on prend la valeur moyenne
+que l'on exprime
+
+

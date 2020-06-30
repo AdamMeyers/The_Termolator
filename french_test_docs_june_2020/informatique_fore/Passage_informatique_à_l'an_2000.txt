@@ -1,0 +1,141 @@
+﻿Passage informatique à l'an 2000
+
+Le passage informatique à l'an 2000 (couramment appelé bug de l'an 2000) a suscité de sérieuses inquiétudes à cause de problèmes de conception et donc de programmation portant sur le format de la date dans les mémoires des ordinateurs et, par conséquent dans les matériels informatiques, ainsi que dans les logiciels. Dans de nombreux programmes et beaucoup de bases de données, il manquait les deux chiffres 19 correspondant au siècle, de sorte qu'au passage de 99 à 100, en réalité 00, de nombreux dysfonctionnements devaient se produire dans ces traitements informatiques, 00 correspondant à l'année 1900 au lieu de 2000. Somme toute, un certain nombre d'ordinateurs n'étaient pas programmés pour passer à l'an 2000 et ils affichaient donc 1900 à la place de l'année en cours.
+
+Contrairement à ce que laisse entendre l'appellation commune de « bug de l'an 2000 », le problème de l'an 2000 n'était pas à proprement parler un bug, comme l'ont bien souligné des experts américains, mais une erreur de conception systémique. Cette erreur a nécessité dans bien des cas de revoir en profondeur l'architecture des systèmes d'information selon une approche systémique, en particulier lorsque certains composants critiques du système d'information ne pouvaient pas être réparés parce qu'ils étaient trop anciens et n'étaient plus maintenus. Il a donc souvent fallu remplacer complètement des systèmes d'information, généralement spécifiques, par des progiciels du marché compatibles avec l'an 2000. Les systèmes plus récents ont pu être réparés par conversion.
+
+Finalement, aucun problème critique ne s'est produit. Cependant, des sommes considérables, se chiffrant en centaines de milliards de dollars dans le monde, ont dû être dépensées pour prévenir tout incident lors du passage.
+
+"Y2K" ("Y" pour "year", "2K" pour "2000") fut le sigle américain le plus couramment employé pour désigner le problème. Par extension, "Y2K" a désigné le projet mondial de conversion des systèmes informatiques occasionné par le passage à l'an 2000. Le terme ' (« bug du millénaire ») a aussi été utilisé aux États-Unis, même si "stricto sensu", le nouveau millénaire commençait le . Les Américains ont aussi parlé de ' et de "".
+
+Le problème de programmation qui faisait craindre le bug de l'an 2000 était avéré. Dans les années 1960, la mémoire et l'entreposage des données en informatique étaient coûteux et rares, la plupart des traitements étaient faits sur des cartes perforées représentant le texte sur des lignes de 80 colonnes seulement. Les langages de programmation de cette époque, comme le COBOL et le RPG, traitaient les nombres à partir de leur représentation ASCII ou EBCDIC. Ils utilisaient parfois un bit supplémentaire appelé « zone de perforation » pour garder un caractère pour les nombres négatifs, ou compressaient parfois deux chiffres sous une forme appelée décimal codé binaire, mais sinon, ils traitaient les nombres comme du texte ordinaire.
+
+Cette pénurie de place en mémoire et dans les fichiers a incité les programmeurs à coder les années sur deux chiffres seulement. 
+
+Les systèmes du Web, Internet / extranet / intranet, plus récents que les applications informatiques de gestion classiques, étaient très peu affectées par les erreurs de format de date. Ceci pour la simple et bonne raison que bon nombre de ces applications utilisent comme base de stockage pour les dates le timestamp UNIX. Les systèmes UNIX en général n'étaient donc pas touchés par ce bug, mais ils sont en revanche sujets à un autre bug : le bug de l'an 2038.
+
+En réalité, Y2K n'était pas à proprement parler un bug, mais un choix de conception des matériels informatiques, des logiciels et des bases de données.
+
+Il s'agissait donc essentiellement d'un problème de normalisation et de conception.
+
+Peter de Jaeger, ingénieur canadien entré chez IBM en 1980, ne cessait d'alerter sur le problème. C'est en 1995 qu'il a quitté son entreprise pour fonder un centre d'information sur le passage à l'an 2000 ("year 2000 information center"). Son site internet, www.year2000.com, était à l'époque le plus interconnecté au monde avec liens. Aux États-Unis, dans les années 1996-1999, il existait plusieurs sites internet du même type qui ont informé sur le problème. Le problème a suscité un véritable phénomène de société, de nombreux « "Y2K speakers" » prenant la parole ou s'exprimant sur des sites internet pour alerter le grand public.
+
+Internet a joué un rôle clé dans la prise de conscience de l'ampleur du problème de l'an 2000 et dans sa résolution. Il a permis une mobilisation de la communauté mondiale. Pour le dixième anniversaire du passage à l'an 2000, Peter de Jaeger a été reconnu pour ses efforts de mobilisation mondiale.
+
+Le pilotage de l'opération passage à l'an 2000 (Y2K) s'est mis en place progressivement entre 1995, date à laquelle IBM a reconnu le problème, et 1998.
+
+Les services de renseignement américains se sont penchés sur la question dès 1996. Pour le DoD "()", c'est le cabinet Mitre qui a effectué les adaptations des systèmes. Le gouvernement américain a mis en place une cellule sous la responsabilité du vice-président Al Gore, et a installé une salle de commandement qui fournissait une visibilité mondiale sur l'avancement du projet. Les Américains étaient en mesure de connaître l'avancement de chaque pays dans la résolution du problème. 
+
+En France, le pilotage gouvernemental s'est mis en place en 1998. Il a porté sur cinq secteurs de services essentiels, dont l'électricité et l'eau. Le CIGREF (Club Informatique des Grandes Entreprises Françaises) s'est saisi du problème en 1995. Il a mis en place un premier groupe de travail constitué d'une dizaine de grandes entreprises. En Europe, la charge de travail pour les informaticiens était telle que, dans la plupart des cas, il a été nécessaire de repousser au-delà du les conversions à l'euro qui ne concernaient pas directement les marchés financiers.
+
+La période transitoire de passage à l'euro a donc dû se dérouler en deux phases :
+
+Le gouvernement français a lancé une politique d'intelligence économique vers 1995. Elle a été arrêtée peu de temps plus tard.
+Pour comprendre les stratégies des grandes entreprises, il est important de garder en tête les différents types d'informatique :
+Les principaux impacts se trouvaient dans ce type de systèmes, tant dans le matériel informatique "(hardware)" que dans le logiciel "(software)". Pour traiter ces non-conformités, il fallait soit migrer vers de nouvelles plateformes matérielles et applications logicielles, soit réparer les anciennes plateformes et applications.
+Les impacts sur ce type de systèmes étaient moindres, en raison du plus faible nombre de systèmes de pilotage industriels employant l'année. La plupart des systèmes embarqués ou de pilotage dans l'aéronautique, le spatial, l'armement, les transports, le nucléaire, n'utilisent en effet que le jour, l'heure, la minute ou la seconde.
+Pour ces systèmes, les impacts étaient quasi nuls, le temps n'étant qu'un paramètre d'intégration des calculs scientifiques, pour la résolution des équations différentielles discrétisées. 
+
+Revenons aux deux types de stratégies adoptées par les grandes entreprises dans la décennie 1990, pour en analyser les forces et les faiblesses :
+Très souvent des progiciels de gestion intégrés (PGI), sous Unix (dans l'industrie principalement). En Europe, ce type de stratégie a présenté l'avantage de coupler le passage à l'an 2000 et à l'euro, donc de réduire globalement les coûts. En effet, le passage à l'euro consistait alors en une mise à jour vers une version euro, puis en une bascule à l'euro selon les spécifications du fournisseur de PGI. L'autre avantage réside dans le passage à des systèmes complètement rénovés, avec des architectures informatiques mieux normées. Environ 60 % des grandes entreprises françaises ont adopté ce type de stratégie selon un expert du CIGREF.
+Ce deuxième type de stratégie a concerné les entreprises moins prévoyantes, ou dont la complexité des systèmes ne permettait pas de mieux anticiper le problème. En Europe, il comportait l'inconvénient de nécessiter une double conversion pour le passage à l'an 2000 et à l'euro, donc d'augmenter les coûts. D'autre part, ces entreprises sont restées avec d'anciennes architectures d'applications informatiques moins normées. Environ 40 % des grandes entreprises françaises ont opté pour cette stratégie selon le même expert du CIGREF.
+
+Les plus petites entreprises avaient des problèmes beaucoup plus légers, dans la mesure où elles étaient déjà équipées de progiciels, qu'il suffisait de mettre à jour vers des versions conformes an 2000 et euro.
+
+De nombreuses estimations ont été avancées sur le coût de la correction du bug, surtout aux États-Unis. Les plus sérieuses sont celles du cabinet d'analyse stratégique Gartner Group, qui a estimé en 1995 que le projet Y2K coûterait environ 300 à 600 milliards de $ dans le monde, sur la base de 300 à 600 milliards de lignes de programme existant dans le monde, et par ligne de programme à convertir.
+
+Le coût est extrêmement variable selon la restriction aux conversions de code proprement dites, ou bien si le coût de mise en œuvre de tous les progiciels qu'il a fallu déployer au cours de la décennie 1990 pour remplacer d'anciennes applications devenues obsolètes est inclus. Il est estimé que ce coût s'est réparti à peu près à parts égales en Amérique, en Europe, et en Asie. Le projet a donc coûté entre 100 et 200 milliards de $ en Europe.
+
+Le traitement du passage informatique à l'an 2000 a créé un important appel d'air sur le marché de l'emploi informatique, d'autant plus qu'en Europe cette échéance était quasi simultanée avec le passage à l'euro. Même si les systèmes internet étaient peu concernés, la bulle internet a aussi encore accru cet appel d'air. Les sociétés d'informatique (constructeurs informatiques et sociétés de services en informatique) ont alors fortement augmenté leurs effectifs. La surcharge de travail autour de l'an 2000, aggravée encore par le passage à l'euro, a aussi entraîné une dépression sur le marché informatique à partir de 2002.
+
+Le bug de l'an 2000 posait des questions juridiques sur les responsabilités respectives des utilisateurs d'informatique, et des fournisseurs de matériels informatiques et de logiciels. Ces questions se sont posées à partir de 1996 en France.
+
+Ces aspects étaient rendus complexes par le nombre important de fournisseurs engagés dans les grands contrats d'intégration :
+
+Les sociétés de conseil en management ont aussi joué un grand rôle, pour la planification des projets de mise en conformité à partir des estimations des analystes (Gartner Group…).
+
+Lorsque le problème a commencé à être sérieusement identifié, c'est-à-dire vers 1995 (en France, constitution d'un premier groupe de travail au CIGREF), le CIGREF (Club Informatique des Grandes Entreprises Françaises) s'est appuyé sur la directive européenne sur la responsabilité des produits défectueux de 1985, non encore transposée. Selon cette directive, le fournisseur d'un produit est responsable des défauts d'un produit pendant une période de dix ans après sa mise en service ou sa commercialisation. Ainsi, tout matériel ou logiciel commercialisé à partir du était concerné.
+
+Le SYNTEC, qui représente les SSII, n'a pas été d'accord avec cette position, et a adopté une position plus favorable aux fournisseurs, prenant comme référence la date du . Un grand fournisseur de logiciel a retenu la date du . Les juristes ont commencé à s'exprimer sur le sujet en 1996.
+
+En France, le ministère de l'Économie et des Finances a donné une première position sur le sujet en , en réponse à une lettre envoyée par un cabinet de juristes spécialisés en droit de l'informatique. La directive sur les produits défectueux n'a été transposée en droit français que le . Certains fournisseurs se sont donc appuyés sur cette date !
+
+Les enjeux incluent les responsabilités respectives des utilisateurs et des fournisseurs, la façon dont les fournisseurs ont exercé leur devoir d'information et la façon dont les fournisseurs ont exercé leur devoir de conseil. À travers la date de référence (1990, 1995…), la transposition de la directive sur les produits défectueux de 1985, et l'applicabilité effective en droit national de cette directive non transposée. Un délai de 13 ans a été nécessaire pour transposer la directive de 1985. En moyenne, une directive européenne est transposée en droit national en deux ans.
+
+Du fait que de nombreux logiciels non conformes an 2000 ont été conçus à une époque où toute l’industrie informatique utilisait la programmation à deux chiffres pour économiser la mémoire des ordinateurs, c’est-à-dire pour un motif à la fois technique et économique, certains juristes ont estimé que la non-conformité d’anciennes programmations à l'an 2000 ne relevait pas d'un vice caché, mais résultait en fait de l’absence d’une spécification par suite d’un choix délibéré. C'est ainsi que, en France, la garantie légale contre les vices cachés n'a généralement pas pu être invoquée par les clients. 
+
+Aux États-Unis, le projet "Y2K" a été l'une des raisons qui ont poussé le gouvernement fédéral à définir une loi () de mise en conformité des systèmes d'information par rapport aux directives gouvernementales. Le cadre d'architecture DoDAF du département de la défense a été défini pour se conformer à cette loi.
+
+Le cabinet MITRE a assisté les armées des États-Unis et les agences dépendant du département de la Défense (, DISA…) pour la résolution de ce problème, dès 1993 pour l'US Air Force.
+
+La grande majorité des mises en conformité a été faite grâce au remplacement des applications spécifiques par des progiciels de gestion intégrés, ou bien par des conversions des lignes de code, à 80 % en utilisant la technique du fenêtrage.
+
+Les systèmes critiques du gouvernement fédéral des États-Unis ont été identifiés en définissant des profils d'application dans le (GILS), en employant des jeux de données signifiantes (Dublin Core).
+
+Cependant, aux États-Unis, certaines données spécifiques () ont dû être traitées par du langage XML.
+
+En 1998, à l'approche de l'échéance (le président Bill Clinton était informé depuis le début de 1996), et confrontée à un problème de plus en plus urgent, l'administration américaine a fait voter une loi permettant un échange de bonnes pratiques entre les fournisseurs d'équipements informatiques et de logiciels : (), également surnommée en référence à la parabole du Bon Samaritain dans la Bible. Cette loi limitait la responsabilité des fournisseurs en cas d'erreur ou d'imprécision dans les informations échangées.
+
+La presse américaine a été beaucoup plus communicative que la presse française, et de façon plus générale que la presse européenne, sur le problème de passage informatique à l'an 2000.
+
+Un journaliste américain avait qualifié ce problème de la façon suivante : , dans la mesure où ce problème était universel.
+
+Internet a joué un grand rôle dans la communication sur le problème de l'an 2000, surtout aux États-Unis. Plusieurs sites spécialisés ont été créés pour communiquer sur le problème (systèmes impactés, informations sur les fournisseurs, outils et méthodes, bonnes pratiques...). Pour donner une idée de l'importance de la communication sur le sujet, le site year2000.com du consultant canadien Peter de Jaeger, créé en 1995, était à l'époque le site le plus interconnecté au monde avec liens.
+
+En France, la communication institutionnelle par Internet n'est apparue qu'à partir de mars 1998, avec la création du site gouvernemental urgence2000.fr.
+
+Il était nécessaire de faire une veille pour se tenir informé de l'avancement des méthodes de résolution du problème auprès des fournisseurs notamment. Ainsi, le passage informatique à l'an 2000 comportait certains aspects d'intelligence économique.
+
+Un aspect important du problème était le fait que les entreprises dépendaient à la fois de leurs fournisseurs et de leurs clients. Le problème pouvait affecter l'ensemble des chaînes d'approvisionnement par effet domino. Les programmes an 2000 comportaient donc systématiquement des actions d'information et de questionnement sur les programmes an 2000 de leurs partenaires. C'est sans doute une des raisons pour lesquelles pratiquement aucune entreprise n'a échappé à la sensibilisation au problème, et que le problème a été finalement résolu.
+
+Les pratiques sont actuellement semblables avec le développement durable. La durabilité des activités d'une entreprise dépend en grande partie de la durabilité de ses fournisseurs. Dès lors, il est question d'achats durables.
+
+Il était pensé à raison que les programmes informatiques utilisés pour la gestion risquaient de s'arrêter de fonctionner ou produiraient des résultats erronés. Cela parce que la date système du matériel informatique "(hardware)" ne comportait que deux chiffres pour l'année, sans le siècle, et que les logiciels et bases de données présentaient le même problème, avec seulement les deux derniers chiffres pour l'année. Ainsi, l'année 2000 serait représentée par "00" et ne suivrait pas 1999 ("99") dans une séquence numérique. Ceci risquait de créer des "calcul"s et des comparaisons de données avec des résultats incorrects.
+
+Les systèmes embarqués, dans la mesure où ils obéissaient à une logique similaire, risquaient de ne plus fonctionner, entraînant le dysfonctionnement d'outils et d'autres infrastructures cruciales dans les systèmes industriels.
+
+Dans les années précédant 2000, quelques entreprises et gouvernements, lorsqu'ils ont fait des tests pour déterminer les impacts potentiels, ont rapporté que des systèmes critiques auraient besoin de grandes réparations ou risqueraient des problèmes sérieux. De 1997 à 1998, des estimations incertaines et alarmistes rapportaient à propos d'entreprises et d'industries une faible préparation de l'évènement. L'imprécision de ces rapports et l'incertitude des possibilités que le bug de l'an 2000 se produise ainsi --que des centaines de milliards de dollars soient dépensés dans la correction du problème, -- furent une raison majeure de la peur du public. Des comités spéciaux furent établis par les gouvernements pour analyser les travaux nécessaires pour éviter le bug, particulièrement pour les infrastructures cruciales comme les télécommunications, afin d'assurer que la plupart des services critiques soient prêts au janvier. 
+
+Aux États-Unis surtout, la presse a beaucoup communiqué dès 1996, notamment sous l'influence de Peter de Jaeger, avec comme corollaire des craintes millénaristes.
+
+Certains estiment que cette psychose aurait été volontairement alimentée par des entreprises informatiques dans le but de pousser les consommateurs et les professionnels à s'équiper de matériel informatique plus récent. Dans la plupart des cas, les modifications étaient en réalité justifiées. Il faut dire que si le problème avait été anticipé plus tôt, il aurait coûté beaucoup moins cher.
+
+Un label « compatible an 2000 » fut créé et attribué aux matériels informatiques censés ne pas souffrir du passage à l'an 2000.
+
+Ce n'est que le passage sans problèmes à l'année 2000 qui a complètement écarté les craintes du public.
+
+Quelques fabricants du circuit faisant fonction d'horloge électronique dans les ordinateurs avaient fabriqué des composants incapables de stocker ou d'exploiter les deux chiffres du siècle. Ceux-ci valaient 19 par défaut, comme pour les programmes extrapolés. Évidemment, de tels circuits, et par conséquent les ordinateurs et leurs logiciels, pouvaient difficilement passer avec succès le 01/01/2000 sans commettre une erreur d'interprétation de date.
+
+Ceux-ci se retrouvaient dans nombre d'ordinateurs vétustes, mais pas seulement ceux-là. Certains constructeurs peu scrupuleux ou ignorants avaient continué à utiliser des composants connus comme bugués mais beaucoup moins chers. Des patches furent distribués à l'envoi pour être mis en place avant le jour fatidique.
+
+Au fil du temps, les cartes à perforer furent remplacées par des rubans magnétiques, des fichiers sur disque, puis des bases de données simples comme ISAM, mais la structure des programmes ne changeait habituellement pas beaucoup.
+Des logiciels populaires ont continué la pratique de stocker les dates comme du texte. Rares étaient les logiciels utilisant les bases de données qui stockaient ou même prenaient en compte les deux chiffres du siècle, ceux-ci étaient presque systématiquement extrapolés.
+
+Économiser deux caractères pour chaque champ de date était jusqu'au milieu des années 1970 une économie vitale pour certains systèmes. 
+Cette logique a persisté dans les années 80 en raison d'un coût élevé de l'octet. 
+La plupart des programmes informatiques ayant une durée de vie d'environ 10 ans, la majorité des programmeurs de l'époque ne s'attendaient pas à ce que leurs travaux demeurent en utilisation durant plusieurs décennies, et ne considéraient donc pas cela comme un problème important.
+Le problème a été reconnu pour la première fois en 1958 par Bob Bemer par le résultat d'un travail sur un logiciel de généalogie. Il passa les 20 années suivantes à essayer de sensibiliser les programmeurs, IBM, le gouvernement des États-Unis et l'ISO au problème, avec peu de résultats. Ceci incluait la recommandation d'utiliser quatre chiffres dans les clauses PICTURE de COBOL pour les années. Cela aurait pu être fait par les programmeurs à n'importe quel moment à partir de la version initiale du premier compilateur COBOL en 1961. Toutefois, l'indifférence et le manque de vision à long terme ont empêché ce conseil d'être suivi. 
+Malgré des articles de magazines sur le sujet à partir de 1970, la majorité des programmeurs ont seulement commencé à reconnaître l'année 2000 comme un problème dans les années 1990, mais même alors, il a été grandement ignoré jusqu'aux toutes dernières années de la décennie.
+
+En pratique, le codage des dates sur deux chiffres est toujours utilisé sans grand problèmes en 2003, dans de nombreux systèmes, les programmeurs utilisant alors des techniques de fenêtrage pour déduire le siècle, souvent par un système de date pivot (>=50 est traduit 19xx, <50 est traduit 20xx). Cette logique ne fait que repousser le problème à 2050 sans le résoudre.
+
+L'une des raisons pour lesquelles les informaticiens ont tant tardé à s'attaquer au problème venait de ce que les dates n'étaient pas normalisées. Différentes formes de stockage des dates existent dans les mémoires, les programmes, et les bases de données des systèmes d'information selon le format de date français, américain ou anglais adopté. Les systèmes Unix de leur côté décomptent les secondes pour calculer les dates.
+
+Selon certains experts américains, le problème de l'an 2000 ne s'apparentait pas exactement à un bug, mais plutôt à un choix de conception. En effet, dans les spécifications fonctionnelles détaillées et les études techniques, on prévoyait un format de date inadéquat excluant le siècle. Ce défaut était systémique, puisqu'il était quasi général dans les systèmes d'information.
+
+D'un point de vue , le problème informatique de l'an 2000 a constitué une négligence lors de la conception (voir également dans ce sens l'étymologie du mot acédie). Les millions d'objets dans le monde, exploités dans les environnements Mainframe d'IBM (programmes, clause copy, bases de données) auraient pu être corrigés au fil des nouveaux projets ou des "Tierces Maintenances Applicatives", dans les années 1990. Et la programmation structurée dans les années 1970 et 1980 n'était pas de mise (pas de notion de sous programmes exclusivement dédiés, programmation procédurale en Cobol calquée sur les enchainements de sources écrits en assembleur, abondance de « GO TO ») . Par conséquent les changements à effectuer sur l'ajout des deux chiffres du siècle fut d'une très grande complexité, de surcroit sur les calculs effectués sur ces dates (échéanciers ou majorations de retard). Pour parfaire le tout, dans de rares cas, certains "load modules" (exécutables après compilation des sources écrits en Cobol, langage informatique le plus fréquent) n'avaient plus leur source pour y porter les modifications. Une décompilation était nécessaire, et de par l'extrême complexité de cette tâche, son coût fut démesuré.
+
+Le passage informatique à l'an 2000 n'a entraîné aucun dommage sur l'économie, contrairement à ce que l'on craignait.
+
+En revanche, le passage à l'an 2000 ainsi que, en Europe, le passage à l'euro, ont entraîné des investissements très lourds dans les années 1990. Les entreprises ont dû amortir ces investissements au début des années 2000. Il y a donc eu une baisse d'activité très significative entre 2002 et 2005 environ. Les plus grandes entreprises du secteur ont dû licencier du personnel pour s'adapter au changement de conjoncture.
+
+Afin de gagner en efficacité, en 2017, le président des États-Unis, Donald Trump, dans une logique de déréglementation, a supprimé des règlements relatifs au passage de l'an 2000.
+
+Le bug de l'an 2038 devrait affecter les systèmes Unix en 2038. En effet ces systèmes utilisent le nombre de secondes écoulées depuis le (cette date « 0 » est appelée Epoch) pour exprimer les dates. Or le à , le nombre de secondes écoulées devrait dépasser les capacités de stockage des nombres signés sur quatre octets. Sur les variantes d'Unix représentant ce nombre de secondes avec des entiers non signés (ce qui, pour des raisons techniques, est peu fréquent), le problème se posera en 2106 (le à en temps universel). Pour éviter ce problème, il faut stocker la date sur un plus grand nombre de bits. Avec l'arrivée de systèmes , il sera possible de stocker des dates à plus de 250 milliards d'années dans le futur. Or, d'après les scientifiques, notre planète disparaîtra dans environ 4,5 milliards d'années, en même temps que le Soleil, ce qui résout donc largement le problème du stockage des dates en cette norme.
+
+Le problème de stockage provient plutôt maintenant d'une gestion anarchique des hyperdonnées.
+
+
+
+
+

@@ -1,0 +1,43 @@
+﻿Multiversion Concurrency Control
+
+Multiversion concurrency control (abrégé en MCC ou MVCC) est une méthode informatique de contrôle des accès concurrents fréquemment utilisée dans les systèmes de gestion de base de données et les langages de programmation concernant la gestion des caches en mémoire.
+
+Le principe de MVCC repose sur un verrouillage dit optimiste contrairement au verrouillage pessimiste qui consiste à bloquer préalablement les objets a des garanties de bonne fin. L'inconvénient logique est qu'une mise à jour peut être annulée du fait d'un "blocage" en fin de traitement.
+
+À cet effet, une base de données ne mettra pas en œuvre des mises à jour par écrasement des anciennes données par les nouvelles, mais plutôt en indiquant que les anciennes données sont obsolètes et en ajoutant une nouvelle "version". Ainsi, plusieurs versions sont stockées, dont une seule est la plus récente. Cela évite en outre à la base de données d'avoir à gérer le remplissage des "trous" en mémoire ou sur le disque mais nécessite (généralement) une purge régulière des données obsolètes. Dans le cas des bases de données orientées document comme CouchDB, cela a aussi pour incidence de réécrire une version complète du document à chaque mise à jour, plutôt que de gérer des mises à jour incrémentales constituées de petits morceaux de document liés entre eux et rangés de manière non contigüe.
+
+MVCC autorise aussi la création de prise de vue "à un instant donné" (cliché ou snapshot en anglais). En réalité, les transactions avec MVCC utilisent une estampille ("timestamp" en anglais) qui n'a pas de relation avec le temps, mais consiste en une valeur monotone, unique et incrémentée, valuée à chaque transaction pour déterminer l'état de la base à lire. Ce mécanisme permet d'éviter l'usage de verrous pessimiste dans les transactions car les écritures peuvent être virtuellement isolées des opérations de lecture qui s'effectuent sur les anciennes versions dans la base et qui ont été générées par copie et maintenues tant que la transaction est vivante. Ainsi, considérant une requête en lecture ayant un identifiant de transaction donné, toutes ses valeurs sont consistantes car les opérations d'écriture en cours, mais non encore validées, disposent d'un identifiant de transaction plus élevé.
+
+En d'autres termes, MVCC permet à chaque utilisateur connecté de voir une capture de la base. Les modifications apportées ne seront pas visibles par les autres utilisateurs avant que la transaction ne soit validée (commit).
+
+En cas de mise à jour concurrente, la transaction qui est la première à valider les modifications, gagne. Les autres perdent (une annulation est forcée) au moment de reporter les mises à jour de la copie dans la base vivante.
+
+MVCC utilise des marqueurs temporels (timestamp - estampille) ou incrémente des identifiants de transaction pour mettre en œuvre des transactions consistantes. MVCC assure qu'une transaction n'aura jamais à attendre la disponibilité d'un objet en gérant plusieurs versions de chaque objet.
+
+Chaque version de ligne dispose d'une estampille et laissera une transaction (T) lire la plus récente version d'un objet qui précède l'estampille de la transaction en cours (TS(T)).
+
+Si une transaction (T) nécessite d'écrire un objet, et qu'une autre transaction (T) fait de même, l'estampille de T devra précéder celle de T (c'est-à-dire TS(T) < TS(T)) pour que l'opération d'écriture soit un succès. Cela revient à dire qu'une opération d'écriture ne peut pas être effectuée s'il existe une transaction pour le même objet avec une estampille de valeur inférieure.
+
+Chaque objet dispose d'une estampille en lecture, et si une transaction T nécessite d'écrire un objet P, et que l'estampille de cette transaction est plus ancien que celle de l'objet en lecture (TS(T) < RTS(P)), la transaction T est abandonnée et ré exécutée. Dans le cas contraire, T crée une nouvelle version de P et définit l'estampille en lecture et écriture de P à la valeur de l'estampille de TS(T).
+
+L'avantage est que les lectures ne sont jamais bloquées, et que les écritures ne se bloquent pas entre elles. Il y a donc globalement peu de temps d'attente, donc moins de contention et par conséquent une meilleure concurrence d'accès à la base.
+
+Les inconvénients de ce système sont :
+
+Au moment = "t1", l'état de la base pourrait être:
+
+Cela indique que le jeu de données actuel dans cette base est Objet 1="Hello", Objet 2="Bar". Auparavant, l'objet 1 était « Foo » mais cette valeur a été surchargée. Elle n'a pas été supprimée car la base contient plusieurs versions, mais finira par l'être.
+
+Si une transaction longue commence une opération en lecture, elle travaillera avec la transaction « t1 » et ne verra que cet état. Si une mise à jour concurrente est effectuée (durant la longue transaction en lecture) qui supprime Objet 2 et ajoute Objet 3="Foo-Bar", l'état de la base de données ressemblera à :
+
+À présent, il y a une nouvelle version avec un identifiant de transaction "t2". À noter que la transaction "t1" continue d'avoir accès à une prise de vue cohérente du système, même si la transaction "t2" a ajouté des données. La transaction "t1" a donc effectué une lecture de donnée isolée de l'écriture de la transaction "t2". C'est ainsi que MVCC gère des accès ACID isolés, sans mettre en œuvre de mécanisme de verrou [la gestion des dépendances entre transactions permet d'éviter les verrous en modification].
+
+Multiversion concurrency control est décrit en détail dans le document de 1981 "Concurrency Control in Distributed Database Systems"
+
+de Philip Bernstein et Nathan Goodman alors employés de la société Computer Corporation of America. Le document de Bernstein et Goodman cite une dissertation de 1978 de David P. Reed qui décrit clairement le mécanisme MVCC et qui proclame être l'auteur original de ce travail.
+
+
+
+
+
+

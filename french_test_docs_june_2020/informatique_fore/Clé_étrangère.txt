@@ -1,0 +1,17 @@
+﻿Clé étrangère
+
+Une clé étrangère, dans une base de données relationnelle, est une contrainte qui garantit l'intégrité référentielle entre deux tables. 
+
+Une clé étrangère identifie une colonne ou un ensemble de colonnes d'une table comme référençant une colonne ou un ensemble de colonnes d'une autre table (la table référencée). Les colonnes de la table référencée doivent faire partie d'une contrainte de clé primaire ou d'une contrainte d'unicité. La contrainte de clé étrangère garantit que les valeurs de chaque ligne de la table référençant existent dans la table référencée : ainsi une ligne de la table référençant ne peut pas contenir un ensemble de valeurs qui n'existe pas dans la table référencée.
+
+Une contrainte de clé étrangère permet ainsi d'établir des liens entre plusieurs tables : il s'agit d'un des principes fondamentaux des bases de données relationnelles.
+
+Soit une base de données, composée de deux tables : la table "objet" qui contient une liste d'objets d'un inventaire, et la table "categorie", qui contient les catégories d'objet :
+En définissant des clés primaires sur les colonnes id_objet de la table objet et id_categorie de la table categorie et une clé étrangère sur la colonne id_categorie sur la table objet référençant la colonne id_categorie de la table categorie :
+
+La contrainte de clé étrangère est gérée par la plupart des bases de données : Oracle, Microsoft SQL Server, PostgreSQL, MariaDB, etc.
+
+Sur MySQL, il faut utiliser le moteur InnoDB pour obtenir cette fonctionnalité. Actuellement le moteur MyISAM ne gère pas les clés étrangères.
+
+
+

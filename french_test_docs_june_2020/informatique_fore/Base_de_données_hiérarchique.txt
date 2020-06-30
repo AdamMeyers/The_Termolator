@@ -1,0 +1,16 @@
+﻿Base de données hiérarchique
+
+Une base de données hiérarchique est une base de données dont le système de gestion lie les enregistrements dans une structure arborescente où chaque enregistrement n'a qu'un seul possesseur.
+
+Par exemple, le "canard" appartient à la famille des "anatidés" qui elle-même appartient à l'ordre des" ansériformes" qui lui-même appartient à la classe des "oiseaux" qui elle-même appartient au sous-embranchement des "vertébrés" qui lui-même appartient au règne "animal".
+
+Les structures de données hiérarchiques ont été largement utilisées dans les premiers systèmes de gestion de base de données de type "mainframe". Elles ont toutefois montré des limites pour décrire des structures complexes, répondre aux besoins réels et suivre l'évolution des systèmes d'information.
+
+Comme on le voit dans l'exemple cité plus haut, l'organisation hiérarchique des bases de données est particulièrement adaptée à la modélisation de "nomenclatures", mais si le principe de relation « 1 vers N » n'est pas respecté (le "canard" n'appartient bien qu'à une seule "famille" mais, par exemple, un "malade" peut être en relation avec plusieurs "médecins"), alors la hiérarchie doit être transformée en un réseau.
+
+Cette évolution nécessaire donnera naissance aux bases de données relationnelles.
+
+
+
+
+

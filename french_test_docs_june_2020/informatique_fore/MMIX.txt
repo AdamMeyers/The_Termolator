@@ -1,0 +1,37 @@
+﻿MMIX
+
+MMIX, prononcé et usuellement typographié dans une police à chasse fixe (), est à la fois un jeu d'instructions 64-bit RISC et une architecture informatique conçus par Donald Knuth, avec une aide importante de John LeRoy Hennessy, un des concepteurs de l'architecture MIPS, et de Richard L. Sites, un des concepteurs de l’architecture Alpha. Knuth lui-même présente ce projet en ces mots :
+
+En termes d’architecture informatique est un ordinateur RISC 64 bits, avec 256 registres 64 bits généraux et 32 registres 64 bits à usage spécifique. est une machine gros-boutiste avec des instructions 32 bits et un espace d’adressage virtuel 64 bits. Son jeu d'instructions comprend 256 codes opérations, dont un est réservé pour un potentiel usage futur. Les nombres à virgule flottante sont implémentés conformément au standard IEEE 754.
+
+Les instructions de sont toutes définies et utilisables à partir de leur code opération, qui est un nombre d’un octet, généralement noté sous forme hexadécimale. Cependant pour améliorer la lisibilité du code assembleur, une étiquette mnémotechnique unique est associé à chacun des codes. Ainsi l’étiquette est équivalente à l’instruction numéro , qui est le code opérateur de l’addition.
+La plupart des instructions sont de la forme "opérateur X Y Z", où "opérateur" spécifie l’instruction, X est un registre servant d’accumulateur, c’est-à-dire utilisé pour stoker le résultat de l’instruction, et Y et Z désignent les registres servant d’opérandes à l’instruction. Par exemple signifie "affecter à la Somme (arithmétique) du nombre stocké dans le registre et du nombre ".
+
+La plupart des instructions peuvent prendre soit des valeurs immédiates, soit utiliser le contenu d’un registre ; ainsi un seul mnémonique peut correspondre à un ou deux codes opérations.
+
+Typiquement, les programmes sont construits en utilisant le langage Assembleur . L’exemple ci-dessous est un programme écrit en qui affiche Hello world :
+
+Dans une puce d'architecture il y a 256 registres généraux,
+auxquels on accède par leurs références notées de à et 32 registres spéciaux. Deux des registres spéciaux, et , déterminent quels sont les registres locaux et lesquels sont globaux. Tous les registres, de à sont des registres locaux. Les registres de [rL] à [rG]-1 sont des "registres marginaux" qui retournent toujours 0 s'ils sont utilisés comme source dans une opération. Utiliser un registre marginal en tant que destination d’une opération déclenchera une incrémentation automatique de pour inclure ce registre. Tous les registres de [rG] à sont appelés registres globaux et ne sont pas sauvegardés sur la pile de registre.
+
+La pile de registre local fournit à chaque procédure ses propres registres locaux , notés de à . Si une procédure est appelée, les registres locaux sont ajoutés sur la pile. Les arguments de la procédure sont placés dans les registres locaux restants. Quand une procédure se termine, elle retire les registres précédemment ajoutés. Comme il n’y a que 256 registres physiques, il peut être nécessaire de stocker une partie de la pile en mémoire. Cette action est implémentée avec les registres spéciaux et qui enregistrent quelle partie de la pile de registre local est en mémoire et quelle partie est toujours dans les registres physiques locaux. Le registre de pile assure également la .
+
+Les 32 registres spéciaux de l'architecture physique sont définis comme suit :
+
+Il n’existe actuellement aucune implémentation matérielle de l’architecture à jeu d’instruction . Cependant, le projet fpgammix fournie implémente une implémentation Verilog, ce qui ouvre la possibilité de l’utiliser dans un circuit logique programmable.
+
+L’architecture de jeu d’instruction est utilisable à travers tout une panoplie d’outils logiciels pour la recherche en développement logiciel et en architecture d’ordinateur.
+
+Knuth a développé un ensemble de logiciels nommé comprenant un simulateur comportemental simple de la machine, et , un logiciel d’assemblage, une suite de tests, des programmes d’exemples, une documentation complète, et un simulateur de pipeline de l’architecture .
+
+Andrew Pochinsky, membre de l’équipe du centre de recherche théorique en physique du a développé un paquet implémentant un serveur graphique basé sur X11. Elle peut être combiné avec la machine virtuelle de pour fournir un affichage de 640×480 pixels en vraie couleur pour Linux et Unix.
+
+Le projet ' (GCC) comprend une partie envers de pour ses compilateurs C/C++, initialement développé par Hans-Peter Nilsson, et qui fait partie de la distribution standard du projet depuis la fin 2001. Il continue d’être activement développé et maintenu par des volontaires.
+
+L’ensemble des outils existant devraient théoriquement permettre de compiler, construire et amorcer un noyau de système d’exploitation comme Linux sur un processeur si une implémentation matériel venait à exister.
+
+
+
+
+
+

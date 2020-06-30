@@ -1,0 +1,27 @@
+﻿Quine (informatique)
+
+Un quine (ou programme autoreproducteur, "self-reproducing" en anglais) est un programme informatique (non vide) qui imprime son propre code source. L'opération qui consiste à ouvrir le fichier source et à l'afficher est considérée comme une tricherie. Plus généralement, un programme qui utilise une quelconque entrée de données ne peut être considéré comme un quine valide. Dans beaucoup de langages de programmation, un quine est une variante de la commande suivante :
+À titre de défi ou d'amusement, certains programmeurs essaient d'écrire le plus court quine dans un langage de programmation donné. Donald Knuth (Prix Turing 1974) et Ken Thompson (prix Turing 1983) expliquent dans leurs conférences Turing le rôle que ces programmes autoreproducteurs minimaux ont joué dans leurs formations et le pourquoi de ce rôle.
+
+Les quines tirent leur nom du philosophe et logicien américain W. V. Quine (1908 – 2000), qui a étudié en profondeur l'autoréférence indirecte : il a entre autres forgé l'expression paradoxale :
+
+c'est-à-dire : « 'est faux lorsque précédé par son propre énoncé' est faux lorsque précédé par son propre énoncé ».
+
+Dans cette section, nous allons esquisser la démonstration de l'existence d'une machine de Turing QUINE qui écrit sa propre description. Une machine de Turing est un modèle de calcul abstrait. Elle lit et écrit des caractères sur un ruban. Tout d'abord, pour tout mot w, on construit la machine print qui ne tient pas compte de son entrée, efface son ruban et y écrit le mot w. Pour toute machine M, la description de M est notée <M>. Ensuite, on considère la machine descrPrint, qui, pour toute entrée w, retourne <print>, la description de la machine de Turing print Maintenant, on construit QUINE :
+où B est la machine suivante :
+En exécutant, QUINE(u), l'étape 1 écrit <nowiki> sur le ruban. L'étape 2 lance B(). L'étape 2a lance descrPrint() et écrit <print</nowiki» sur le ruban. L'étape 2b finit avec <printB> sur le ruban. Il s'agit de la description de QUINE.
+
+On démontre le théorème de récursion de Kleene en remplaçant l'instruction 2b par <MR> où R la suite du programme. D'autre part, le théorème de récursion de Kleene implique l'existence d'un quine pour tout langage de programmation Turing-complet.
+
+Remarque : des sauts de ligne et des espaces ont été ajoutés pour faciliter la lecture.
+ 10 C=": PRINT CHR(49)+CHR(48)+CHR(32)+CHR(67)+CHR(61)+CHR(34)+C+CHR(34)+C":
+
+Remarque : il devrait s'agir d'une ligne de code continue, mais des retours à la ligne ont été ajoutés pour "faciliter" la lecture.
+
+Remarque : des sauts de ligne ont été ajoutés pour faciliter la lecture. Tout ce qui se trouve en dessous de codice_1 s'écrit en une seule ligne.
+Fonctionnement :
+
+<syntaxhighlight lang="rust">
+fn main() {
+
+

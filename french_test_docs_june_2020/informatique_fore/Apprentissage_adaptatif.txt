@@ -1,0 +1,62 @@
+﻿Apprentissage adaptatif
+
+L’apprentissage adaptatif est une méthode éducative qui utilise les ordinateurs comme des outils d’enseignement chargés d’organiser les ressources humaines et les supports d’apprentissage en fonction des besoins uniques de chaque apprenant. 
+
+L’ordinateur adapte la présentation du contenu d’apprentissage en fonction des besoins pédagogiques de l’apprenant, ainsi que son niveau de compréhension du sujet traité, et sa façon d’apprendre. Ceci peut se comprendre grâce aux traces laissées sur le système lorsque l’apprenant répond à des questions, réalise des tâches ou des expériences. Cette technologie regroupe plusieurs champs d’études parmi lesquels : l’informatique, l’éducation, la psychologie et les sciences cognitives. 
+
+L’apprentissage adaptatif découle du constat que les résultats de l’apprentissage sur-mesure ne peuvent pas être obtenus en utilisant des approches traditionnelles et non-adaptatives. L’apprentissage adaptatif s’efforce de transporter l’apprenant d’un état de récepteur d’information passif à un collaborateur du processus d’apprentissage. Le premier champ d’application des systèmes d’apprentissage adaptatif est l’éducation, mais un autre champ classique est la formation continue. Ces systèmes ont d’abord été conçus comme des applications (sur ordinateur), puis des applications web, et sont maintenant utilisés dans les programmes pédagogiques à tout âge. 
+
+L’apprentissage adaptatif a été implémenté dans différents systèmes éducatifs comme l’ « adaptive hypermedia » (hypermedia adaptatif), les systèmes d’enseignement adaptatifs, et les tests adaptatifs informatisés.
+
+L’apprentissage adaptatif (ou l’enseignement intelligent) prend ses origines dans le mouvement d’intelligence artificielle et a commencé à gagner en popularité dans les années 1970. Ce courant de pensée estime que les ordinateurs finiront par surpasser l’humain en termes de capacités d’adaptation. Dans l’apprentissage adaptatif, l’hypothèse principale est que l’outil ou le système va être capable de s’ajuster à la méthode d’apprentissage de l’utilisateur, ce qui aura comme conséquence un apprentissage plus efficace et une amélioration de l’expérience utilisateur.
+
+Dans les années 1970, le verrou technologique principal était le coût et la capacité de calcul des ordinateurs qui rendaient la généralisation du système impossible. Un autre obstacle à l’adoption des premiers systèmes intelligents était l’ergonomie de l’interface utilisateur qui n’encourageaient pas leur utilisation.
+
+Le début des travaux sur les systèmes d’apprentissage adaptatifs et intelligent est habituellement situé au système « SCHOLAR » qui offrait un cours adaptatif sur le thème de la géographie en Amérique du Sud. Un certain nombre de système novateurs sont apparus dans les cinq dernières années. On peut citer entre autres Knewton aux États-Unis, Smart Sparrow en Australie, Domoscio ou Lalilo en France"."
+
+Une bonne revue des premiers travaux sur l’apprentissage adaptatif et les systèmes d’enseignement intelligent peut se trouver dans le livre « Intelligent Tutoring Systems ».
+
+Les systèmes d’apprentissage adaptatif sont généralement divisés en différentes composantes ou « modèles ». Différents groupements de modèles ont été présentés, et la plupart des systèmes incluent une partie ou l’ensemble des modèles suivants (parfois avec des dénominations différentes) :
+
+Le modèle expert contient l’information sur les éléments qui doivent être enseignés. Cela peut être aussi simple que l’ensemble des questions disponibles avec les bonnes réponses associées, mais cela peut également inclure d’autres contenus pédagogiques (comme des vidéos, des livres ou des images), et dans les systèmes les plus sophistiqués on peut y trouver des éléments de didactique par rapport aux questions ou bien une structuration ontologique des contenus.
+
+Les systèmes d’apprentissage adaptatifs qui n’incluent pas de modèle expert transfèrent généralement ces informations au modèle d’instruction.
+
+La méthode la plus simple pour déterminer le niveau de maîtrise d’un apprenant est la méthode employée dans les tests adaptatifs informatisés (TAI). Dans les TAI, des questions sélectionnées sur la base de leur difficulté par rapport au niveau estimé de l’apprenant lui sont proposées. Au fur et à mesure que le test se déroule, l’algorithme ajuste son estimation en fonction des données, afin d’affiner continuellement le niveau des questions à présenter. Cela permet de trouver plus rapidement et plus précisément le niveau de l’apprenant qu’un test classique.
+
+Un algorithme d’évaluation de type TAI est relativement simple à implémenter. Il est nécessaire d’avoir un grand nombre de questions auxquelles sont associées des niveaux de difficulté, que ce soit grâce à l’analyse d’experts, d’expérimentation, ou bien la combinaison des deux. On pourrait résumer cet algorithme par une recherche binaire, en donnant toujours la question qui est au milieu de la zone d’incertitude, entre la meilleure et la moins bonne estimation du niveau de l’apprenant.
+
+À chaque nouvelle réponse, l’estimation du niveau de l’apprenant est ajustée en fonction de sa dernière réponse. Ce système est complété par la construction d’une marge d’erreur pour permettre des scenarios où il n’existe pas de question au niveau de l’apprenant (par exemple, la base de questions ne contient que des questions très faciles et très difficiles).
+
+Les Tests Adaptatifs Informatisés peuvent être complété par une analyse des erreurs afin de comprendre les idées fausses dans l’esprit de l’apprenant. C’est particulièrement faisable dans le cas de questions à choix multiples. En voici un exemple :
+
+Question : Simplifier 2x + x
+
+Réponses :
+
+
+Un apprenant qui choisirait la réponse b additionne les exposants, et ne comprend pas bien les termes. Dans ce cas, cette réponse incorrecte fournit un aperçu supplémentaire sur le degré de compréhension de l’apprenant, au-delà de la simple réponse incorrecte.
+
+Le modèle d’instruction cherche généralement à utiliser les meilleurs outils pédagogiques que les technologies peuvent offrir (comme des présentations multimédia) avec des conseils d’enseignants experts pour les méthodes de présentation. La complexité du modèle d'enseignement dépend beaucoup du niveau de complexité du modèle des apprenants. Dans un modèle apprenant de style TAI, le modèle d’instruction se contentera de classer les leçons en correspondance avec les niveaux de difficulté du groupe de questions. Lorsque le niveau de l’apprenant a été déterminé de façon satisfaisante, le modèle d’instruction fournit la leçon appropriée. Les modèles d’apprenant plus avancés qui évaluent sur la base de concepts ont besoin d'un modèle d’instruction qui organise ses leçons par concept aussi. Le modèle d’instruction peut être conçu pour analyser les faiblesses de l’apprenant et proposer un chemin d’apprentissage en conséquence.
+
+Lorsque les réponses incorrectes sont évaluées par le modèle de l'étudiant, certains systèmes cherchent à fournir un retour sur celles-ci sous la forme « d’indices ». Au fur et à mesure que l'élève commet des erreurs, des suggestions utiles apparaissent comme « regardez attentivement le signe du nombre ». Cette tâche peut aussi incomber au modèle d’instruction, avec des indices génériques sur les concepts qui répondent aux incompréhensions classiques, ou bien les indices peuvent être spécifiques à la question, auquel cas les modèles apprenant, d’instruction et expert se chevauchent.
+
+Les systèmes d'apprentissage adaptatif peuvent être implémentés sur Internet pour l'apprentissage à distance et la collaboration de groupe.
+
+Le domaine de l'apprentissage à distance intègre maintenant des aspects de l'apprentissage adaptatif. Les premiers systèmes sans apprentissage adaptatif ont été en mesure de fournir des commentaires automatiques aux apprenants qui répondent à des questions présélectionnées d'une banque de questions. Il manque toutefois à cette approche les conseils personnalisés que les enseignants peuvent fournir à leurs apprenants. L'apprentissage à distance se dirige aujourd’hui vers l'utilisation de l'apprentissage adaptatif pour mettre en œuvre un comportement dynamique intelligent dans l'environnement d'apprentissage.
+
+Pendant le processus d’apprentissage d'un nouveau concept, les étudiants sont testés sur leur degré de compréhension et les bases de données enregistrent leurs progrès en utilisant l'un des modèles. La dernière génération de systèmes d'apprentissage à distance prend en compte les réponses des apprenants et s'adapte aux capacités cognitives de ceux-ci en utilisant un concept appelé « échafaudage cognitif ». L'échafaudage cognitif est la capacité d'un système d'apprentissage automatisé à créer une voie cognitive d'évaluation du plus bas au plus élevé en fonction des capacités cognitives démontrées.
+
+L’apprentissage adaptatif peut être ajouté afin de faciliter le travail en groupe dans des environnements d’apprentissage à distance, comme les forums ou les services de partage de ressources. Quelques exemples de la façon dont l'apprentissage adaptatif peut aider à la collaboration comprennent le regroupement automatisé des utilisateurs ayant les mêmes intérêts et la personnalisation des liens vers les sources d'information en fonction des intérêts déclarés de l'utilisateur ou ses habitudes de navigation.
+
+En 2014, un chercheur en éducation a conclu une étude pluriannuelle sur l'apprentissage adaptatif pour la conception de jeux éducatifs. Cette étude a développé et validé le modèle ALGAE (Adaptive Learning Game dEsign), un modèle d'apprentissage adaptatif complet basé sur les théories et pratiques de conception de jeux, les stratégies d'enseignement et les modèles adaptatifs. L’étude a étendu les recherches précédentes dans la conception de jeux, les stratégies d'enseignement et l'apprentissage adaptatif, en combinant ces trois composantes en un seul modèle complexe. 
+
+L'étude a abouti à l'élaboration d'un modèle de conception de jeux éducatifs adaptatifs qui servira de guide aux concepteurs de jeux, aux concepteurs pédagogiques et aux éducateurs dans le but d'accroître les résultats d'apprentissage. Les participants à l'enquête ont validé la valeur du modèle ALGAE et fourni des renseignements précis sur la construction, l'utilisation, les avantages et les défis du modèle. Le modèle ALGAE actuel est basé sur ces idées. Le modèle sert maintenant de guide pour la conception et le développement de jeux informatiques éducatifs.
+
+L’applicabilité de ce modèle est évaluée par le gouvernement, des agences militaires, l’industrie du jeu, et le monde de la recherche. La réelle valeur ajoutée et la méthode d’implémentation appropriée (ciblée ou non ciblée) seront clairement comprises quand l’utilisation du modèle ALGAE deviendra généralisée.
+
+Bien que les caractéristiques d'apprentissage adaptatif soient souvent mentionnées dans les annonces marketing des systèmes, cela n’est pas toujours vrai, et la gamme d'adaptabilité peut être radicalement différente. Les systèmes d'entrée de gamme tendent à se concentrer sur la détermination de la voie de l'apprenant basée sur des critères simplistes tels que la réponse de l'apprenant à une question à choix multiple. Une réponse correcte peut amener l'apprenant au chemin A, alors qu'une réponse incorrecte peut les amener au chemin B : tout est pré-déterminé. Bien que ces outils fournissent une méthode adéquate pour la ramification de base, ils sont souvent basés sur un modèle linéaire sous-jacent par lequel l'apprenant est simplement redirigé vers un point quelque part le long d'une ligne prédéfinie. De ce fait, ces systèmes ne présentent pas une véritable . À l'autre extrémité du spectre, il existe des outils avancés permettent la création de systèmes adaptatifs très puissants basés sur un certain nombre de paramètres complexes. Ces paramètres peuvent être ce que l'apprenant est actuellement en train de faire, ses décisions antérieures, le suivi du comportement, interactifs et activités externes pour n’en citer que quelques-uns. Ces outils haut de gamme n’ont pas de navigation sous-jacente générale car ils ont tendance à utiliser des méthodes AI comme un moteur d'inférence. En raison de la conception de base des outils avancés sont la différence fiable pour fournir de riches capacités d'évaluation.
+
+
+
+

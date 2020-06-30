@@ -1,0 +1,98 @@
+﻿Commande par retour d'état
+
+En automatique, la commande par retour d'état est un moyen de modifier le comportement en boucle fermée d'un système dynamique donné par une représentation d'état. Cette approche suppose l'état connu. Quand ce n'est pas le cas, on peut utiliser un observateur d'état de manière à reconstruire l'état à partir des mesures disponibles. Une finalité de la commande par retour d'état peut être de minimiser (ou maximiser) un indice de performance (Commande optimale, Commande LQ). Ce peut être aussi d'obtenir un système en boucle fermée dont les pôles, c'est-à-dire les valeurs propres de la matrice d'état, soient placés de manière appropriée. Ces pôles, en effet, déterminent le comportement du système, mais uniquement si celui-ci est monovariable : dans le cas multivariable, il est indispensable de considérer également les valeurs propres. Dans la plupart des cas, la commande doit réaliser d'autres fonctions essentielles pour tout asservissement, telles que suivi par la sortie d'un signal de référence, et rejet de perturbations. Il est alors nécessaire de faire en premier lieu les augmentations d'état nécessaires.
+
+La notion de commande par retour d'état remonte aux travaux de Pontryagin (en Russie) et de Bellman (aux États-Unis) sur la commande optimale. La commande en temps minimal sous contraintes sur la commande, notamment (commande « Bang-Bang »), est une commande (non linéaire) à retour d'état. Les commandes "linéaires" à retour d'état, dont il est question dans cet article, sont apparues avec les travaux de Kalman, d'une part sur la théorie algébrique des systèmes d'état, d'autre part sur la commande « linéaire quadratique ». Cet auteur a montré peu après que les commandes linéaires quadratiques jouissent de propriétés très utiles, qui ont pu ensuite être exprimées en termes de marge de gain et de marge de phase garanties, tout d'abord dans le cas monovariable, puis dans le cas multivariable. Entre-temps se développaient des approches algébriques ayant pour finalité le placement de pôles. Il a été montré par Wonham qu'il existe une commande à retour d'état plaçant les pôles du système bouclé à des valeurs arbitraires du plan complexe (vérifiant toutefois une condition de symétrie par rapport à l'axe réel) si, et seulement si le système est commandable. Cette commande n'est unique que pour un système monovariable. Dans le cas multivariable, il existe une infinité de solutions qui peuvent avoir des propriétés de robustesse très différentes. Davison, ainsi que Francis et Wonham, considérant qu'un asservissement n'a pas pour unique finalité la stabilisation ou l'augmentation de la rapidité d'un système, mais aussi et surtout le rôle d'assurer le rejet des perturbations et le suivi par la sortie d'un signal de référence en présence d'une erreur de modèle, ont proposé, de manière semble-t-il indépendante, et dans un formalisme différent mais au fond équivalent, de réaliser une augmentation d'état appelée « principe du modèle interne » (à ne pas confondre avec la ). Dans le cas de perturbations et d'un signal de référence constants, ce Principe revient à rajouter une action intégrale à la commande. Ce dernier type de commande "linéaire" (qui devient alors "instationnaire") est très utilisé pour l'asservissement des systèmes "non linéaires" grâce à la technique des « gains préprogrammés ».
+
+La commande par retour d'état est une méthode employée en asservissement pour placer les pôles du système en boucle fermée dans le cas où toutes les variables d'état sont mesurées.
+
+Soit le "système d'état"
+
+formula_3 : colonne qui représente les "n" variables d'état
+formula_4 : colonne qui représente les "m" commandes
+formula_5 : colonne qui représente les "p" sorties
+
+formula_6 : matrice d'état
+formula_7 : matrice de commande
+formula_8 : matrice d'observation
+formula_9 : matrice d'action directe.
+
+Les pôles du système sont les racines de l'équation : 
+
+Puisque les systèmes sont à coefficients réels, l'ensemble formula_11 est un "ensemble symétrique" du plan complexe, (symétrie étant par rapport à l'axe réel).
+
+Une commande par retour d'état est de la forme
+
+où formula_13 est une variable auxiliaire, calculée à partir du signal de référence.
+
+Les équations du système bouclé sont alors
+
+Les pôles du système bouclé sont les racines de formula_16. Les conditions suivantes sont équivalentes :
+
+(i) Pour tout ensemble symétrique formula_17 de formula_18 nombres complexes, il existe une commande à retour d'état pour laquelle les pôles du système bouclé sont les éléments de formula_17.
+
+(ii) Le système est commandable.
+
+De plus, la matrice de gain formula_20 réalisant ce « placement de pôles » est unique si, et seulement si formula_21.
+
+D'autre part, les conditions suivantes sont équivalentes :
+
+(iii) Il existe un ensemble symétrique formula_17 de formula_18 nombres complexes inclus dans le demi-plan gauche (ouvert) et une commande à retour d'état pour laquelle les pôles du système bouclé sont les éléments de formula_17.
+
+(iv) Le système est stabilisable.
+
+On considère un système décrit de la façon suivante :
+
+Ce système est commandable et a pour pôles formula_27 et formula_28. On suppose que l'on souhaite que le système asservi ait ses pôles en formula_29 et formula_30. Le polynôme caractéristique est alorsformula_31Déterminons maintenant formula_32 de telle sorte que
+
+Sur cet exemple, mais aussi dans le cas général, on obtient un système linéaire dont les inconnues sont les coefficients de la matrice de gains formula_20. On a en effet
+
+et il reste à égaler ce polynôme avec formula_36. La résolution donne
+et la commande à retour d'état s'écrit donc
+
+Il s'agit d'une commande de type proportionnel et dérivé (PD). Cet exemple montre donc que la commande à retour d'état « élémentaire », telle que celle qui a fait l'objet de cette section, souffre d'une grave lacune. On aurait en effet souhaité obtenir une commande de type PID. Nous verrons dans la section suivante comment pallier cette carence.
+
+Comme on l'a déjà mentionné, dans le cas des systèmes à plusieurs entrées le problème du placement de pôles n'admet pas une solution formula_20 unique, et certaines de ces solutions peuvent être mauvaises, car non robustes, tandis que d'autres sont bonnes. Une possibilité est de déterminer une solution issue de la théorie de la commande linéaire quadratique.
+
+Nous supposons maintenant que le système est régi par les équations
+
+où formula_41 et formula_42 sont des perturbations constantes, inconnues. On désigne par formula_43 un signal de référence constant, et le but de l'asservissement est de faire tendre vers formula_44 l'erreur de consigne formula_45, malgré les perturbations, et même lorsque les coefficients des matrices formula_46 et formula_47 sont entachés d'une erreur à condition que celle-ci soit suffisamment petite.
+
+Les conventions pour les dimensions sont les mêmes que précédemment. On supposera sans perte de généralité que les matrices formula_48 et formula_47 sont de rang formula_50 et formula_51, respectivement.
+
+Le système ci-dessus n'a pas une représentation d'état linéaire du fait des signaux formula_52 et formula_43. Une manière de les éliminer consiste à dériver les deux équations, et à choisir comme nouvel état et comme nouvelle entrée.
+
+On obtient alors en effet le système d'état
+
+formula_57
+
+On montre alors facilement, grâce au test de Popov-Belevich-Hautus que
+
+(1) formula_58 est commandable (resp. stabilisable) si, et seulement si (i) formula_59 est commandable (resp. stabilisable), (ii) formula_60 et (iii) formula_61 n'est pas un zéro invariant du système formula_62.
+
+(2) formula_63 est observable (resp. détectable) si, et seulement si formula_64 est observable (resp. détectable).
+
+L'interprétation de la condition (i) est évidente. La condition (ii) signifie que le nombre de degrés de liberté de la commande doit être suffisant pour réaliser les objectifs de l'asservissement. La condition (iii), enfin, signifie qu'on ne doit pas imposer à la sortie d'un système dérivateur de suivre un signal de référence.
+
+Supposons formula_58 commandable. On peut alors choisir un ensemble symétrique formula_66 de formula_67 valeurs propres dans le demi-plan gauche et déterminer une matrice de gains formula_68 telle que le spectre de formula_69 coïncide avec formula_66. La commande formula_71 réalise alors le placement de pôles. D'après la définition de formula_72 et de formula_73 on a, en posant formula_74 où formula_75 et formula_76 ont formula_50 lignes et, respectivement, formula_18 et formula_51 colonnes:
+
+Puisque les matrices de gains formula_75 et formula_76 sont à coefficients constants, on obtient, à une constante additive près,
+
+Reprenons l'exemple précédent. On a
+
+La commande formula_72 qui place les pôles en formula_87 est donnée par
+formula_71 avec formula_89. On en déduit (à une constante additive près)
+
+et on a donc un régulateur PID dont la fonction de transfert formula_91 peut être mise sous la forme standard
+
+avec formula_93 et (en supposant que l'unité de temps choisie est la seconde) formula_94 s et formula_95 s.
+Les pôles de la boucle fermée n'ont pas été choisis au hasard: ceux du système en boucle ouverte sont 1, -5 et 0 (en prenant en compte le pôle de l'intégrateur: on considère ici toutes les valeurs propres de la matrice formula_96). On a commencé par prendre le symétrique par rapport à l'axe imaginaire des « pôles instables » du système : ici le pôle valant 1. Puis on a décalé vers la gauche (à partie imaginaire constante) les pôles trop « lents » (ayant un module ou un coefficient d'amortissement trop petits): ici le pôle à l'origine. Cette méthode, qui a une justification théorique, permet d'assurer une bonne robustesse du système bouclé.
+
+Supposons maintenant que les matrices formula_97, formula_48 et formula_47 dépendent d'un paramètre formula_100, lui-même variable en fonction du temps (θ : "t"↦θ("t")). Dans ce cas, la matrice formula_68 telle que définie ci-dessus dépend elle-même de formula_100, par conséquent la commande formula_103 définie (à une constante additive près) par
+ne s'exprime plus comme indiqué plus haut. Seule l'expression
+
+(à une constante additive près) est correcte, et de nombreux exemples montrent l'avantage de cette formulation sur celle qui précède. Cette remarque, et sa généralisation au cas où un observateur est également utilisé pour reconstruire l'état, ont donné lieu à de nombreuses publications.
+
+
+
+

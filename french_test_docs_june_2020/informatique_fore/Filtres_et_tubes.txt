@@ -1,0 +1,37 @@
+﻿Filtres et tubes
+
+En architecture informatique, un système en style à filtres et tubes (anglais "pipes and filters") est composé d'un réseau d'unités autonomes (les filtres) qui effectuent des transformations sur des informations transmises par un réseau de connexions (les tubes).
+
+Dans cette construction, qui imite celle d'une usine chimique, chaque filtre comporte des entrées et des sorties auxquelles sont branchés les tubes. Le filtre lit les informations en entrée, effectue une transformation, puis envoie le résultat en sortie. Le traitement est effectué petit à petit, et le filtre produit des résultats en sortie avant d'avoir consommé toutes les informations en entrée. Les filtres communiquent entre eux uniquement à travers les tubes, et aucun filtre ne connait l'identité du filtre qui est branché à l'autre bout du tube. 
+
+La mise en œuvre la plus connue est celle du système d'exploitation Unix: L'interpréteur de commandes ("Unix shell") comporte une notation qui permet de relier plusieurs commandes sous forme d'un réseau de filtres et de tubes. La construction à filtre et tubes est également utilisée pour les compilateurs, le outils de traitement numérique du signal, et de calcul parallèle.
+
+Le style à filtres et tubes fait analogie à une usine chimique. Dans laquelle des filtres provoquent des réactions chimiques sur des matières transportées par des tubes. Dans le style à filtres et tubes, un réseau de tubes transporte des informations qui sont traitées par des filtres. 
+
+Le réseau de filtres peut être linéaire (pipeline), il peut également comporter des boucles ou des embranchements. Les filtres travaillent de façon asynchrone et ont peu ou pas d'informations partagées. Ce sont les échanges d'informations à travers les tubes qui synchronisent les opérations. Les informations peuvent être poussées dans les tubes ou aspirées: dans le premier cas (poussé) le filtre source dépose une information et ceci provoque un traitement par le filtre collecteur; dans le second cas (aspiré) le filtre collecteur demande l'information et ceci provoque le traitement par le filtre source.
+
+Le style à filtres et tubes est bien adapté au traitement de flux de données, type d'utilisation pour lequel le style classique "question-réponse" est typiquement inapplicable. Le flux de données doit être conçu de manière à pouvoir être lu, traité et écrit par petits blocs, plutôt qu'en une opération ou que bit par bit, de manière à augmenter le débit.
+
+L'opération à effectuer est divisée en plusieurs traitements réalisés par des unités autonomes connectés ensemble à un réseau de tubes. Chaque filtre consomme et produit incrémentalement des informations, et le résultat produit par un filtre est consommé par le filtre suivant. Les filtres sont découplés par l'usage de mémoire tampon qui retiennent les informations échangées.
+
+L'architecture à filtre et tubes est facile à décrire, à comprendre, et à mettre en œuvre. Il est possible de créer une interface graphique qui permet de manipuler de manière interactive les filtres et les tubes. Les filtres étant indépendants, cette construction permet le parallélisme et le calcul distribué. 
+
+Les désavantages de cette architecture sont qu'il est difficile de mettre en œuvre des itérations: les informations envoyées dans les tubes ne permettent pas de savoir le nombre de fois que l'opération a été effectuée. Et du fait que chaque information sortante doit être transmise à l'entrée d'un autre filtre, les copies fréquentes de grande quantité d'informations peuvent entraîner des pertes de temps. De plus les filtres sont conçus en vue d'être des unités strictement indépendantes qui ne se partagent pas d'information d'état et l'architecture à filtres et tubes n'offre pas de mécanisme pour reconfigurer le flux durant les traitements.
+
+Les avantages de cette construction du point de vue des performances est qu'elle permet facilement d'effectuer les traitements de façon parallèle, ce qui améliore généralement la performance. Les tubes seuls assurent les communications entre les filtres, les dépendances entre les filtres sont ainsi réduites, ce qui diminue le nombre d'opérations de synchronisation. La subdivision par des filtres peut cependant être un désavantage: si les traitements des filtres sont effectués sur des petites quantités de données, ceci augmente le nombre de commutation de contexte, ce qui a un impact négatif sur la performance.
+
+Du point de vue de la maintenabilité il y a également des avantages et des inconvénients: La transformation du réseau de filtres et de tubes est aisée et il est possible de modifier ce réseau durant les traitements. De nouvelles fonctionnalités peuvent être apportées en ajoutant de nouveaux filtres et en modifiant le réseau. Cependant un changement d'une fonctionnalité nécessite souvent la modification de plusieurs filtres. En pratique les systèmes s'échangent typiquement des objets qui représentent des entités du monde réel, et la prise en charge d'une modification de l'objet nécessite souvent la modification de plusieurs filtres travaillant sur cet objet.
+
+La fiabilité d'une construction à filtres et tubes dépend de la topologie du réseau de tubes. La réussite d'une opération dépend de la réussite des tous les filtres impliqués dans cette opération. Contrairement à d'autres constructions ou le composant primaire peut donner un résultat même si les composants secondaires ont échoué.
+
+La mise en œuvre la plus connue de ce style est dans le système d'exploitation Unix, en particulier son interpréteur de commandes. Des commandes telles que "cat", "grep", "sed" et "awk" peuvent être interconnectées par des tubes.
+
+Un autre exemple est la construction standard d'un compilateur: typiquement celui-ci est composé de différents filtres qui effectuent de l'analyse lexicale, de l'analyse syntaxique puis de l'analyse sémantique et les tubes transportent un flux de lettres, de mots et de symboles.
+
+"Jitter" est une bibliothèque logicielle en architecture à filtres et tubes qui traite des images matricielles, de l'audio, des images 3D. 
+
+DirectShow, de Microsoft, est une bibliothèque de lecture de médias en architecture à filtres et tubes.
+
+"Khoros" est une bibliothèque de traitement numérique du signal en architecture à filtres et tubes.
+
+

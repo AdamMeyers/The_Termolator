@@ -1,0 +1,62 @@
+﻿Vagrant
+
+Vagrant est un logiciel libre et open-source pour la création et la configuration des environnements de développement virtuel. Il peut être considéré comme un wrapper autour de logiciels de virtualisation comme VirtualBox. 
+
+Depuis la version 1.1, Vagrant n'impose plus VirtualBox, mais fonctionne également avec d'autres logiciels de virtualisation tels que VMware, et prend en charge les environnements de serveurs comme Amazon EC2, à condition d'utiliser une "box" prévue pour le système de virtualisation choisi. Bien qu'écrit en Ruby, il est utilisable dans des projets écrits dans d'autres langages de programmation tels que PHP, Python, Java, C# et JavaScript.
+
+Depuis la version 1.6, Vagrant fournit un support natif des conteneurs Docker à l'exécution, au lieu d'un système d'exploitation entièrement virtualisé. Cela permet de réduire la charge en ressources puisque Docker utilise des conteneurs Linux légers.
+
+Vagrant s'utilise via une interface en ligne de commande. Voici une liste des commandes et des concepts importants de Vagrant.
+
+Pour initialiser un dossier, vous devez sélectionner le dossier et exécuter la commande codice_1. Un fichier nommé "Vagrantfile" est généré et placé dans le dossier des exemples et des explications. En ajoutant codice_2 une version minimale des Vagrantfiles est générée sans exemple, ni explication.
+
+La commande codice_1 prend deux paramètres optionnels codice_4. En spécifiant un "box-name" on génère un Vagrantfile depuis un modèle approprié ("Box"). L'option "box-url" est l'URL indiquée où la "Box" peut être téléchargée. Ces informations peuvent également être configurées dans le Vagrantfile.
+
+Ce fichier peut ensuite être modifié avec n'importe quel éditeur de texte. 
+
+Les Box sont des machines virtuelles préconfigurées (templates). Cela devrait accélérer le processus de développement et la distribution de logiciels. Chaque box, qui a été utilisée par l'utilisateur est stockée sur l'ordinateur et ne doit donc pas être re-téléchargée sur Internet. Les boîtes peuvent être ajoutées via les commandes codice_5 et codice_6. On supprime une boîte à l'aide de la commande codice_7. Un "box-name" est, par convention comme suit : "développeur / Box", par exemple "hashicorp/precise32". Vagrant Cloud sert de plateforme d'échange pour trouver des boîtes et y déposer ses propres boîtes.
+
+Exemple de démarrage rapide
+
+Toute la configuration se fait dans un Vagrantfile. La syntaxe est similaire à Ruby.
+
+Un exemple de syntaxe
+Avec Vagrant il est possible d'utiliser les outils de Provisioning suivants : File, Shell, Ansible, CFEngine, Solo, Chef Client, Docker, Puppet Apply, Puppet Agent et Salt.
+
+Exemple de syntaxe
+
+Ceci résulte du script shell "script.sh".
+
+Une variété d'approvisionneur peut être exécutée dans un fichier. Exemple de syntaxe utilisant plusieurs approvisionneurs : 
+
+Depuis la version 1.7 de décembre 2014 le déploiement en utilisant la commande codice_8 par Heroku, et FTP, en écrivant vos propres scripts de ligne de commande „Atlas“est possible.
+
+Exemple de syntaxe d'une poussée de FTP
+Cette section montre un exemple utilisant le protocole FTP sur le serveur avec l'adresse "ftp.test.com" avec l'utilisateur "user1" et le mot de passe "password1". codice_9 indique si le protocole SFTP doit être utilisé, par défaut il est a codice_10 . codice_11 contient le chemin de destination (sur le serveur), où les fichiers doivent être envoyés, codice_12 contient le chemin local pour les fichiers à télécharger. Tous les chemins sont liés au Vagrantfile. Des fichiers et des dossiers peuvent être exclus de l'aide codice_13 ou inclus avec codice_14 .
+
+Pour démarrer la machine virtuelle on utilise la commande codice_15. Puis une session SSH peut être démarrée avec codice_16.
+
+La machine virtuelle peut être terminée de différente manière. La machine peut-être intégralement supprimée avec toutes ses dépendances via la commandecodice_17. On peut également l’arrêter via la commande codice_18 ou la suspendre avec codice_19. Il est aussi possible de la redémarrer avec codice_20.
+
+Avec Vagrant, plusieurs machines virtuelles peuvent fonctionner simultanément, leurs statuts peuvent être consultés avec la commande codice_21.
+
+Depuis la version 1.1, d'autres applications de virtualisation que VirtualBox sont pris en charge : VMware Player et les environnements de serveurs tels qu'Amazon EC2.
+
+La version 1.5 apporte un dossier de synchronisation avec rsync et SMB ainsi que le support d'Hyper-V.
+
+Avec la version 1.6, Docker est également supporté nativement à l'exécution, ce qui permet de réduire la charge, puisque Docker fonctionne avec LXC.
+
+Avec la Version 1.7 publiée le 9 décembre 2014, le déploiement est facilité en utilisant la commande codice_8 à travers Heroku, SFTP et FTP, en écrivant ses propres scripts, ainsi que la commande interne "Atlas" .
+
+La Version 1.8 est sortie le 21 décembre 2015. Cette version utilise maintenant autant que possible les "linked images", des images disques qui ne doivent plus être dupliquées, mais peuvent être spécifiées comme des références. En outre, des sauvegardes d'états (snapshots) peuvent maintenant être créés.
+
+Vagrant dispose de plugins facilitant l'utilisation de certains composants, par exemple l'installation de docker-compose peut se faire directement depuis le vagrantfile.
+
+Pour accompagner le développement du projet Mitchell Hashimoto et Armon Dadgar fondent en 2012 Hashicorp, Inc.
+
+Un plugin appelé codice_23 permet le support de Libvirt dans Vagrant.
+
+Avec la version 1.5. sort également "Vagrant cloud". Ce service en ligne permet à une équipe de travailler simultanément sur une machine virtuelle.
+
+
+

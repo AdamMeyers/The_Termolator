@@ -1,0 +1,70 @@
+﻿Coefficient de sécurité
+
+Les coefficients de sécurité sont des paramètres permettant de dimensionner des dispositifs.
+
+Lorsque l'on conçoit un dispositif, il faut s'assurer qu'il remplisse ses fonctions en toute sécurité pour l'utilisateur. Il faut pour cela connaître la charge à laquelle il sera soumis. Le terme « charge » est utilisé de manière générale : puissance électrique pour un circuit électrique, force pour un dispositif mécanique, … Cela mène au dimensionnement du dispositif : choix de la section du fil débitant le courant, section de la poutre supportant la structure, …
+
+Mais la connaissance des charges normales en utilisation ne sont pas suffisantes : il faut prévoir la possibilité d'une utilisation inadaptée : imprudence de l'utilisateur, surcharge accidentelle ou prévue, défaillance d'une pièce, événement extérieur imprévu, … On utilise pour cela un coefficient de sécurité, noté habituellement "s" :
+
+Si l'on note R la résistance du système et S "(stress)" les sollicitations auxquelles il est soumis, la condition de validation dit « à l'état limite ultime » (ELU) s'écrit :
+ou bien
+
+Les coefficients de sécurité sont définis par les « règles de l'art » pour chaque domaine, éventuellement codifié dans des normes. S'il sert à diviser la résistance théorique, il est supérieur ou égal à 1, et est d'autant plus élevé que le système est mal défini, que l'environnement est mal maîtrisé.
+
+On utilise aussi parfois la marge de sécurité qui vaut "s" - 1.
+
+On utilise parfois le coefficient inverse, "k" = 1/"s", la validation s'écrivant alors :
+
+Exemple
+
+Si l'on décide de dimensionner une pièce à 60 % de sa résistance, on a :
+Si l'on dimensionne un système avec un coefficient de sécurité de 5, alors on a
+
+Le coefficient de sécurité est une méthode de "conception". Cela signifie qu'il n'a de sens qu'à l'étape du projet, avant la phase de production. Ainsi, si l'on s'aperçoit qu'un produit existant n'est pas conforme ou présente une défaillance, on ne "peut pas" s'appuyer sur la notion de coefficient de sécurité pour valider son utilisation ; une phrase du type « on a une défaillance mais on a encore une marge » n'a pas de sens. Si l'on constate un défaut ou une défaillance, c'est que l'on est en dehors de la marge de sécurité que l'on s'est fixé, que l'on est dans une situation où malgré l'application du coefficient de sécurité lors de la conception, les erreurs ou situations exceptionnelles ont fait que la contrainte réelle soit supérieure à la résistance réelle (S > R).
+
+Une démarche dérogatoire peut alors être entreprise, par exemple en menant une nouvelle étude sur le produit « tel que fabriqué » (TQF) pour valider la poursuite de son utilisation, ou au contraire le retrait du produit — par exemple pour un produit mécanique, calcul par éléments finis avec un modèle numérique intégrant le défaut constaté. En l'absence d'une telle démarche, le produit doit être considéré comme non conforme et retiré, ou bien être remis en conformité.
+
+Les charges auxquelles le système est soumis est donné par le cahier des charges. Elles sont déterminées à partir de l'utilisation normale prévue du système, en prenant en compte le cas le plus défavorable (sollicitation maximale). On parle de « valeurs nominales ».
+
+À partir de ces valeurs nominales, le concepteur doit estimer les valeurs maximales. En effet, lors des phases de transition du système — changement de régime et de direction, et particulièrement lors du démarrage et de l'arrêt —, la charge fluctue. Il faut également ajouter des effets environnementaux : température, humidité, vent, poids de la neige, séisme, … Les paramètres dynamiques peuvent être donnés par le cahier des charges — par exemple en spécifiant une durée de démarrage ou d'arrêt —, ou bien par des normes ou règlements.
+
+Il en résulte des charges complémentaires ainsi qu'un coefficient de majoration des charges, qui est similaire au coefficient de sécurité, à ceci près qu'il vise à prendre en compte des effets normaux prévus (mais non permanents), alors que les coefficients de sécurité sont là pour prévoir l'imprévu.
+
+Par ailleurs, il faut aussi déterminer la résistance du matériau utilisé. Cette résistance peut être donnée par des normes ou bien par le fournisseur de matériel ou de matière première, ou encore être déterminé par des essais effectués en interne. Il convient de bien évaluer cette résistance : si le matériau est mal caractérisé ou si la fabrication est mal maîtrisée, cela induit une majoration du coefficient de sécurité. Notons par ailleurs que la résistance dépend du type de sollicitation, par exemple en mécanique :
+
+Le cahier des charges définit qu'un système doit supporter une charge spécifiée C "(specified load)". Le terme charge peut désigner une intensité de courant pour un conducteur électrique, un poids que doit supporter une structure ou lever une grue, une cadence de production d'une machine, la température ou la pression à laquelle doit résister un réservoir, une tuyauterie, …
+
+Le système est conçu pour recevoir une charge C, dite « charge de conception » "(design load)", qui est nécessairement supérieure ou égale à la charge spécifiée dans le cahier des charges C. Le coefficient de sécurité de conception "(design factor)" est défini par :
+La marge de sécurité désigne quant à elle la proportion de charge de conception qui excède la charge spécifiée :
+La charge de conception doit être inférieure ou égale à la charge ultime C, qui est la charge provoquant une dégradation du système. Entre la charge de conception et la charge ultime, le système n'est plus fonctionnel (ses performances ne sont plus garanties) mais il n'y a pas encore d'accident. On peut ainsi définir le coefficient de sécurité effectif, ou facteur ultime "(factor of safety)" :
+ainsi que la marge ultime "(margin of safety)" :
+Facteur et marge ultimes mesurent la prudence de la conception — on prend volontairement une exigence excessive (C < C < C). Une conception avec un coefficient de sécurité de conception élevé est qualifiée de « conservative », c'est-à-dire prudente ; cet excès de prudence peut mener à du surdimensionnement, c'est-à-dire à des pièces ayant un coût et une masse excessif par rapport à ce qui est requis.
+
+À l'inverse, un coefficient de sécurité de conception faible implique une maîtrise plus exigeante des processus, puisque l'on travaille avec peu de marge :
+
+Les systèmes sensibles — dont la défaillance serait catastrophique — sont souvent soumis à une épreuve avant livraison ; par exemple, un réservoir est mis sous pression et l'on vérifie qu'il résiste bien. La charge d'essai C doit évidemment être supérieure ou égale à la charge de conception, mais inférieure à la charge ultime puisque l'essai ne doit pas dégrader le système. ON a ainsi
+La mise à l'épreuve ajoute une « couche » qui éloigne encore la charge de conception de la charge ultime ; de fait, on peut réduire le coefficient de sécurité utilisé.
+
+En mécanique — au sens large : chaudronnerie, structures métalliques, génie mécanique (conception de mécanismes), automobile, … —, on utilise typiquement les coefficients indiqués dans le tableau suivant.
+
+Par exemple,
+
+Le dimensionnement des structures se fait en trois parties :
+Prenons l'exemple d'une sollicitation en traction. L'effort interne que subit la matière est représenté par la contrainte σ "(sigma)", et l'effort maximal que peut subir le matériau sans se déformer de manière irréversible est la limite élastique R. La condition de résistance est :
+On définit la « limite pratique à l'extension » R comme étant :
+R intègre le coefficient de sécurité. La condition de résistance est donc :
+Dans le cas d'une sollicitation en cisaillement, l'effort interne que subit la matière est représenté par la cission τ "(tau)", et l'effort maximal que peut subir le matériau sans se déformer de manière irréversible est la limite élastique au cisaillement R. La condition de résistance est :
+On définit la « limite pratique au glissement » R comme étant :
+R intègre le coefficient de sécurité. La condition de résistance est donc :
+Les limites élastiques R et R sont des données du matériau, établies par des essais mécaniques. La valeur de R est tabulée pour les matériaux les plus courants, et pour les métaux, la valeur R vaut
+(voir l'article "Cercle de Mohr"). Le coefficient de sécurité "s" dépend du domaine, comme explicité précédemment.
+
+Pour les états de contrainte plus complexes, on calcule une contrainte équivalente σ à partir du tenseur des contraintes, et l'on vérifie que
+
+Il existe trois manières de gérer l'imprévisible :
+
+L'approche statistique est gourmande en temps et en moyens : il faut collecter les données et les traiter. Mais elle conduit à des systèmes dimensionnés « au plus juste » donc moins chers "(design to cost)" et moins lourds.
+
+L'approche adaptative nécessite des moyens de mesure et une démarche pour corriger l'action. Selon Christian Morel, cette démarche, qu'il qualifie de « rationalité substantielle », peut être dans certains cas illusoire et mener à des décisions absurdes, en raison de la complexité des phénomènes réels. L'application de coefficients de sécurité, dite « rationalité procédurale », sont des « règles simples, mais rigoureuses, qui n'élimineraient certes pas totalement le risque, mais le réduirait à un niveau plus bas que celui qui résulterait de la rationalité substantielle. »
+
+

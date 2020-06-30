@@ -1,0 +1,60 @@
+﻿Démarrage d'un ordinateur
+
+Le démarrage d'un ordinateur (boot en anglais) est la procédure de démarrage d’un ordinateur et comporte notamment le chargement du programme initial (l’amorçage ou "bootstrap" en anglais). 
+
+On distingue :
+
+Le terme « amorçage » est dérivé du verbe amorcer ; le terme « boot » est une apocope du mot anglais « », nom qui désigne la languette des chaussures pour pouvoir les enfiler plus facilement (voir la section Historique).
+
+L’origine du mot « boot » viendrait de la plaisanterie suivante :
+la gageure posée par le programme boot est de faire démarrer un ordinateur et lui faire charger un programme alors que, "a priori", il ne possède encore aucun programme dans sa mémoire.
+
+Ce terme vient de l’expression, « », qui trouve son origine dans le livre de Erich Raspe publié en 1785 : "Les aventures du Baron de Münchhausen". Au cours de l’une de ses innombrables aventures, le Baron se sauve par ses propres moyens de la noyade à laquelle il était promis en s’agrippant à ses lacets, se halant ainsi progressivement vers le bord.
+
+L’ordinateur exploite un programme réduit, le chargeur d'amorçage, permettant d’extraire un programme accessible via un périphérique de stockage permanent ou amovible. Ce dernier est typiquement le noyau du système d’exploitation, qui s’installera en RAM (la mémoire vive) et appellera lui-même des programmes applicatifs.
+
+Sur PC, le BIOS se chargeait de 1981 à 2010 environ de lire le master boot record (ou MBR), d’une taille de , à partir d'un espace de stockage (un disque dur, une disquette, un CD-ROM, une clé USB…) et le place en RAM à l'adresse 0x7C00 puis passe la main à ce code machine pour la suite.
+
+Les réservations d'espace prévues pour stocker les tailles se révélant insuffisantes pour gérer des disques de plus de 2 téraoctets, on en profita pour introduire un successeur du BIOS nommé l'UEFI, présentant par ailleurs les avantages d'une interface plus ou moins graphique et, 
+
+Les machines totalement autonomes (calculatrices programmables, petits ordinateurs portatifs sans disques durs, PDA, machines de contrôle industriel…), disposent en général de programmes applicatifs écrits en permanence en ROM ou en mémoire flash. Dans ce cas, le boot peut consister à lancer directement l’initialisation du système d’exploitation.
+
+Les tout premiers ordinateurs ne possédant pas de ROM, les chargeurs d'amorçage étaient entrés de la façon suivante : le processeur était mis en état d’attente. Un opérateur positionnait un certain nombre de clés (interrupteurs) pour écrire en binaire le contenu de la première instruction. Puis, il déclenchait une opération électrique provoquant l’écriture dans la première case mémoire (en RAM). Ensuite, il repositionnait les clés pour l’écriture de la deuxième instruction, et ainsi de suite. Une fois le programme codé, le processeur était « lâché » et exécutait le code ainsi écrit qui lui permettait d’accéder aux périphériques
+
+Sur des machines des années 1960 comme l'IBM 1130, le boot était un programme binaire contenu sur une carte perforée dite "Cold Start". Ces cartes comportant 80 colonnes de 12 perforations chacune, le programme (chargé par un bouton spécial au pupitre) devait donc tenir en (80 x 12 bits, 120 octets). Son rôle était de lire un secteur disque ou même simplement les cartes suivantes.
+
+Les micro-ordinateurs comme le T1600 de "Télémécanique Électrique" dans les années 1970-75 avaient un bootstrap sur ruban perforé lu sur une télétype ASR33. Ceux de "Data General" dans les années 1975-1980 disposaient d'une petite ROM déclenchant la lecture d'une zone réservée du disque. Le boot s'effectuait par simple appui d'un bouton sur le pupitre sans usage de quelque lecteur que ce soit.
+
+En 1975, sur un ordinateur pour contrôle d'un commutateur téléphonique italien ("Gruppi speciali"), SIP (Telecom Italia) mit en œuvre l'un des premiers "bootstraps" initiés par une ROM qui est constituée de semi-conducteurs et initié par un seul bouton. 
+
+Sur les premiers micro-ordinateurs, qui n’avaient pas encore de disque dur, le boot demandait l’usage d’une disquette. Par la suite, des supports plus commodes devinrent utilisables, comme un CD, un DVD, une clef USB, ou encore un accès réseau, ce dernier permettant d'amorcer (booter) plusieurs machines simultanément grâce au multicast.
+
+Un démarrage standard de PC s’effectue normalement par les étapes suivantes.
+
+Après sa mise sous tension, l’alimentation délivre un signal «Power-good» (PG) parfois appelé «Power-OK» (PW-OK) à la carte mère qui provoque l’initialisation du CPU. La montée du signal Power-OK a exactement le même effet que lorsqu’on agit sur le bouton reset du PC. Le processeur reprend la séquence de démarrage dès la première adresse du BIOS. Le bloc d’alimentation met le signal PG (ou PW-OK) à 0V dès qu’il constate qu’il ne pourra continuer à fournir des tensions correctes. Ce peut être à cause d’une surconsommation ou d’un court-circuit sur l’une de ses sorties ou la disparition de la source de tension VAC.
+
+Le Power Good n'est pas une étape réelle de l’amorçage, mais plutôt une vérification vitale pour la machine, celle-ci est faite par le bloc d'alimentation. 
+
+Le POST ou est effectué. Il y a une vérification de tous les composants matériels pour s'assurer qu’ils fonctionnent correctement.
+
+Une ROM d'extension est un exécutable embarqué pour des périphériques qui demandent une initialisation particulière (par ex. un contrôleur de bus qui doit énumérer ses périphériques, ou un contrôleur de stockage qui doit vérifier et initialiser une grappe RAID).
+
+Pour les périphériques PCI/PCI express, l'adresse de la ROM d'extension associée au périphérique est stockée dans les registres de configuration du périphérique.
+
+Le processus d'exécution d'une ROM d'extension est décrit ci-dessous pour un périphérique PCI :
+
+Le BIOS envoie vers l’écran les informations qu’il est programmé pour afficher. Il s'agit habituellement de l’état du système et d'informations sommaires sur les périphériques amorcés, ainsi que d'instructions permettant de communiquer avec le BIOS lui-même (par exemple « press DEL to enter setup »). Le BIOS affiche également des informations matérielles comme le modèle du disque dur, la tension du processeur, la température de la carte-mère… Il sert aussi à paramétrer certains composants comme le processeur afin qu'il puisse accélérer sa fréquence.
+
+Le BIOS lance la zone amorce ( ou MBR, équipant la quasi-totalité des PC, mais qui commence à être remplacée par la GPT), qui elle-même lance le chargeur d’amorçage (les plus utilisés étant NTLDR, LILO et GRUB), ce dernier lançant le système d’exploitation en usage sur l’ordinateur. Ce dernier prend le relais des opérations de gestion de mémoire de cache et autres.
+
+L'inconvénient majeur de l'architecture PC x86 est le temps que prend le BIOS à s'exécuter. De plus, le temps d'exécution dépend majoritairement de la configuration matérielle.
+
+La procédure de démarrage rapide « » a été créée pour que l'architecture x86 soit plus adaptée à des systèmes embarqués où la configuration matérielle est prédéfinie et figée (pc industriels, tablettes, netbook, etc.)
+
+Sur ce type de systèmes, sont inutiles :
+
+Le développeur peut également accélérer le processus d'amorçage :
+
+
+
+

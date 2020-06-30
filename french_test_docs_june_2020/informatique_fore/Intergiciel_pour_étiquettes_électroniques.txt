@@ -1,0 +1,165 @@
+﻿Intergiciel pour étiquettes électroniques
+
+Un intergiciel pour étiquettes électroniques est un logiciel tiers destiné à simplifier l'accès et l'exploitation des informations stockées dans des étiquettes RFID issues de l'industrie électronique. Les étiquettes électroniques sont le plus souvent utilisées pour des besoins de marquage et de traçabilité d'objets (suivi de palettes, de livres, de chaînes de montage de voitures, sous la forme d'étiquettes électroniques de gondole dans les grandes surfaces...) aussi bien que d'êtres vivants (élevage, suivi d'animaux sauvages, ou encore suivi de la chaine du froid). La conception et le développement de nouveaux logiciels pour ces applications et pour bien d'autres (monétique, authentification...) s'avère néanmoins souvent délicat. L'intégration, au sein des systèmes d'information, des informations stockée dans la mémoire des étiquettes électroniques est entravé par des difficultés techniques liées à l'organisation de leurs collecte mais aussi de leur filtrage. C'est à cette fin que sont conçus les intergiciels pour étiquettes électroniques. Ils ont pour ambitions de :
+Il existe aujourd'hui différents intergiciels assumant tout ou partie de ces fonctions, dont certains sont des logiciels libres.
+
+Le déploiement de la technologie RFID est de plus en plus vaste, pour des applications allant des antivols, aux péages auto-routiers.
+Les raisons sont multiples : ouverture à la technologie, amélioration des techniques de lecture pour plusieurs étiquettes, prise de conscience de l'industrie des bénéfices d'une diffusion "communautaire" (comprendre que chaque maillon de la chaîne de production peut utiliser), adoption par les architectes des concepts d'arrangement entre les données et les bases, déploiement de méthodologies de traitement de données efficaces dans les réseaux de communication, prise en compte du besoin de réduction de coût lié aux étiquettes, et développement de nouvelles techniques de productions permettant des économies d'échelles, rendant les étiquettes financièrement accessibles.
+
+La plupart des applications pour étiquettes électroniques pour l'identification et le suivi des produits ont été conçues pour une utilisation limitée à une seule entreprise.
+Par exemple, certains distributeurs utilisent la technologie RFID à l'intérieur de leur infrastructure de distribution (du centre de distribution aux magasins). D'autres pour suivre leur marchandise de l'usine à la distribution. Mais la plupart des applications actuelles ne gèrent pas le challenge du suivi de marchandise tout au long du cycle de vie du produit entre les partenaires de la chaîne de vente.
+
+Pour favoriser le déploiement de la technologie RFID, il faut donc faire baisser les coûts d'exploitations (lecteur, étiquettes, logiciel) et rationaliser l'accès aux données.
+Des normes ont été développés par l'ISO, des groupes de travail ont été formés, produisant des standards, et des briques logicielles permettant d'abstraire l'utilisation de la technologie en vue d'en augmenter la facilité d'utilisation, et donc à fortiori, de faire baisser les coûts matériels.
+
+Une étiquette électronique est constituée d'une puce et d'une antenne. La puce contient un espace mémoire, permettant de stocker différentes informations (en fonction du type d'étiquette) dont un identifiant unique (un code produit électronique) qui permet d’identifier l'objet ou la personne sur lesquels est collée l'étiquette électronique. Il existe trois familles d'étiquettes électroniques :
+
+Le choix de ce l'étiquette se fait en fonction des propriétés souhaitées, du coût, et de l'environnement; chaque puce ayant des caractéristiques physiques différentes.
+
+Les codes-barres permettent d'identifier une famille de produits. Les étiquettes électroniques viennent rajouter un identifiant unique à cet identifiant de lot. Deux exemplaires d'un même produit ont le même code-barres, mais pas le même code produit électronique.
+
+Il existe différents codes produits électroniques (EPC en anglais pour Electronic Product Code) associés au type d'objet associé à l'étiquette : SGTIN (de l'anglais "Serialized Global Trade Item Number") pour un objet, SSCC (pour "Serial Shipping Container Code") pour des conteneurs, SGLN (pour "Serialized Global Location Number") pour une localisation.
+
+Ces étiquettes sont appelées étiquettes RFID pour "Radio Frequency IDentification", c'est-à-dire identification par radio fréquence.
+
+L'Organisation internationale de normalisation (ISO) a produit plus d'une cinquantaine de normes pour les étiquettes électroniques.
+Le matériel d'une part, comme la norme ISO/CEI 18000, (nommée « information technologique »), qui définit l'architecture et les paramètres à standardiser. Elle est subdivisée en 6 sous-parties qui caractérisent chacune les spécifications en fonction des fréquences de fonctionnement des étiquettes.
+Et les usages d'autre part, comme les normes ISO 11784, 11785 et 14223 qui régissent l'identification d'animaux utilisant des étiquettes électroniques.
+
+Les principales normes sont reprises dans les annexes.
+
+Le consortium EPCGlobal est né de la coopération de l'Auto-ID labs du MIT et de GS1 (connu pour la création du format EAN).
+Il s'intéresse au développement et à l'établissement de standards pour les étiquettes électroniques, les codes produits électroniques et l'architecture EPCGlobal. Il a été créé dans le but de développer l'utilisation d'étiquettes électroniques au niveau mondial, et les intégrer dans un système global.
+Plusieurs axes ont été développés dans ce sens
+Ces deux derniers points mettent en avant le besoin d'interopérabilité (voir problèmes), et sont pour cela fondés sur des standards ouverts.
+
+Le réseau EPC est une architecture d'interfaces standardisées et ouvertes, pensé pour supporter une meilleure visibilité de la localisation et des 
+mouvements des objets dans les chaînes de production, avec une granularité jusqu'à l'identifiant unique EPC de chacun.
+
+Contrairement à l'ISO, le consortium est composé d'acteurs industriels (Cisco Systems, Sony Corporation, DHL Solutions & Innovations entre autres), académiques (MIT), ou d'organisation à but non lucratif (GS1).
+
+Le standard EPCglobal se compose:
+
+On trouve déjà de ces étiquettes pour reconnaître ou identifier à plus ou moins grande distance et dans un minimum de temps, un objet, un animal ou une personne porteuse d’une étiquette capable d’émettre des données en utilisant des ondes radio.
+
+Citons parmi les applications actuelles : la carte d'accès sans contact, la carte d'étudiant, les passeports biométriques, certains forfaits dans certaines stations de sport d'hiver...
+
+Le tableau ci-dessous met en valeur les principales différences entre les étiquettes électroniques et les codes-barres.
+
+La capacité de lecture des étiquettes sans visée directe les amène dans le processus de traçabilité et de gestion de biens, ce qui soulève de nouveaux usages et de nouvelles problématiques, comme par exemple la mise à disposition des informations lues sur les étiquettes sur internet. C’est ce que l’on appelle l’internet des objets.
+
+Une entreprise produit des biens dans une usine (U). Ces produits sont marqués d’une étiquette RFID et son acheminés chez un transporteur (T). Ce transporteur regroupe les produits par palette, et appose une étiquette électronique sur chaque palette. Enfin, ces produits sont livrés chez un distributeur (D) qui les stocke à l’arrière de la boutique.
+Chacun des intermédiaires U, T et D possède un système d’information qui lui est propre.
+L’usine possède donc les informations sur les familles de produits, le transporteur les associations palettes/produits, et le distributeur l’association entre un identifiant et une famille de produit. Il peut ainsi faire l’inventaire de ses stocks quasi-instantanément.
+Il faut donc rendre communes et accessibles aux 3 entités les données locales de chacune afin de rendre efficace le système d’information.
+
+Voir le schéma
+
+Un des problèmes peut être l’hétérogénéité des lecteurs, qui rend dépendant le code de l’application métier au lecteur particulier. Ainsi, en cas de défaillance du lecteur (imposant un remplacement), il faut modifier l’application métier. Les lecteurs doivent donc être abstraits.
+
+Ensuite, chaque application s’intéresse à différents types d’événements. Ainsi l’application métier du distributeur n’a nullement besoin de se voir remonter les informations des palettes du transporteur par exemple. Les informations doivent donc être filtrées.
+
+Dans le cas de gros entrepôts, il peut y avoir plusieurs lecteurs RFID, ce qui soulève des problèmes physiques liés à la technologie RFID, et des problèmes liés à la multiplication de lecteurs :
+
+En outre, une application veut pouvoir avoir accès aux informations d’une étiquette, qu’elle soit présente ou non dans le champ d’un lecteur. Les informations doivent donc être stockées et localisée de façon à pouvoir être retrouvées facilement.
+
+Enfin, un frein à l’échange d’informations entre les entités est le manque d’interopérabilité. Il est donc nécessaire d’utiliser des standards.
+
+Un intergiciel est un logiciel intermédiaire entre les applications et le réseaux qui autorise les dialogue entre des applications hétérogènes. Il permet d’accomplir des tâches techniques pour les applications telles que les connexions et les échanges de données.
+
+Dans les cas d'un intergiciel pour étiquettes électronique, cet outil doit donc pouvoir gérer les problèmes cités ci-dessus, soit :
+
+L'idée est donc d'abstraire les lecteurs pour faciliter leur interrogation.
+
+Le réseau EPC est une architecture d'interfaces standardisées et ouvertes, pensé pour supporter une meilleure visibilité de la localisation et des mouvements des objets dans les chaînes de production, avec une granularité jusqu'à l'identifiant unique EPC de chacun. Le réseau autorise une large distribution du contrôle et de la gestion des données.
+
+Le réseau EPCGlobal fonctionne par couches:
+
+Un schéma illustrant l'architecture globale est disponible sur le site d'EPCGlobal.
+
+Cette couche regroupe deux standards de données.
+Les paragraphes qui suivent sont issus des documents produits par EPCGlobal.
+
+Extrait de la rubique TDS d'epcglobal:
+Le standard pour les étiquettes EPCGlobal définit le code produit électronique, et spécifie l'organisation en mémoire des étiquettes de seconde génération (GEN2 RFID tags). De façon plus précise:
+
+Extrait de la rubrique TDT d'epcglobal:
+Un code produit électronique peut-être exprimé dans plusieurs représentations, par exemple en binaire, en "tag-encoding URI", ou "pure-identity URI" etc ... Cette brique permet de faciliter la traduction (encodage / décodage) d'une représentation à l'autre d'un code produit électronique.
+
+Exemple:
+
+Le standard prévoit 4 briques logiques pour régir la capture de données.
+
+Extrait de la rubrique LLRP d'epcglobal:
+Ce protocole définit une interface entre les lecteurs RFID et les clients. Il est appelé "low level" car il spécifie le contrôle des opérations d'accès au protocole .
+
+Extrait de la rubrique LLRP d'epcglobal:
+Ce standard est utilisé par les logiciels de gestion pour reporter le statut des opérations et l'état de lecteurs RFID compatibles avec la norme EPCGlobal.
+
+Extrait de la rubrique DCI d'epcglobal: 
+Ce standard permet de découvrir, configurer et initialiser des lecteurs RFID. Il a été créé par le même groupe que LLRP, et spécifie un nouveau périphérique appelé "Contrôleur d'Accès" qui effectue les fonctions de DCI. Il fournit des méthodes standardisées permettant:
+
+Extrait de la rubrique ALE d'epcglobal:
+Le rôle de l'ALE au sein du réseau EPCGlobal est de fournir une indépendance entre les composants de l'infrastructure qui acquièrent l'information EPC "brute", les composants de l'architecture qui filtrent et comptent les données, et les applications qui utilisent ces données.
+Cela permet de changer un de ces composants sans avoir à changer les autres, facilitant le travail des fournisseurs de technologies et des utilisateurs finaux. C'est une des pièces maîtresse de l'intergiciel. Pour cela, l'ALE doit:
+
+De façon plus synthétique : l'ALE sert à réduire le volume de donnée le plus tôt possible (filtrage), apporte le concept de lecteur logique, rend les données intelligibles par le système d'information, et reporte les productions de rapports et communication (accumulation, filtrage, comptage).
+
+Cette couche vise à rendre disponibles les informations issues des étiquettes à un cadre plus large, comme internet.
+
+Le service standard d'information d'EPC (EPCIS) définit une interface standard permettant aux entreprises d'échanger des informations granulaires à travers un protocol commun d'interrogation et de rapport. Il est découpé en 2 parties:
+
+L'EPCGlobal Object Naming Service (ONS) est fait pour fournir un mécanisme de recherche de sorte que tout
+le monde puisse trouver l'adresse des services (EPCIS par exemple) qui sont désignés par l'organisation qui a produit l'EPC d'un objet particulier.
+
+Dans le scénario, chaque intermédiaire (Usine, Transporteur, Magasin) possède sa propre EPCIS. Les informations stockées sont complémentaires. Aussi, il faut pouvoir retrouver la base (EPCIS) où sont stockées les informations que l'on souhaite. C'est le rôle de l'ONS, et du format "ONS HOSTNAME" de l'EPC (code produit électronique).
+
+Le standard CBV spécifie des éléments de vocabulaire et leurs valeurs à utiliser en corrélation avec le standard EPCIS.
+Les identificateurs du vocabulaire, et les définitions de ce standard vont permettre à tous les participants qui échangent des informations via EPCIS d'avoir une sémantique commune, donc un niveau de compréhension uniforme. En particulier, ce standard est fait pour définir des vocabulaires qui seront inclus dans les modèles abstraits d'EPCIS et qui seront applicables aux scénarios commun aux entreprises qui désirent partager des informations (partenariats). Son but est donc de fournir un ensemble de valeurs et de définitions compréhensibles par tous dans la chaîne d'approvisionnement.
+
+Ce standard permet d'identifier les lecteurs en utilisant des certificats numériques.
+
+Spécifie une architecture pour la maintenance et l'échange d'information .
+
+ est de permettre de découvrir les informations auquel un participant P1 à le droit d'accéder, alors que ces informations sont détenues par un autre participant P2 avec lequel P1 n'a pas de partenariat.
+Les bénéfices visés sont les suivants :
+
+WinRFID est un intergiciel développés en Microsoft .NET
+WinRFID a cinq couches principales :
+
+
+La couche matériel traite l'abstraction de trois éléments de l'infrastructure de RFID - lecteurs, étiquettes et interfaces d'entrée-sortie. L'abstraction rend très simple de dériver n'importe quel lecteur ou d'étiquette.
+
+Le composant protocole permet d'envelopper la syntaxe de commande et la sémantique d'une série de protocoles édités tels qu'ISO 15693, ISO 14443, A/B d' ISO 18000 - 6, ICode, EPC classe 0 et EPC classe 1.
+
+La couche présentation des données facilite la visualisation de données pour la prise de décision.
+
+La page du projet WinRFID
+
+Le middleware RFID IBM Websphere est composé de trois éléments :
+
+Le projet d'AspireRFID vise à développer et promouvoir un middleware open-source, léger, conforme aux standards, évolutif et intégré avec plusieurs outils pour faciliter le développement, le déploiement et la gestion des applications basées sur RFID et sur les capteurs.
+Il met en œuvre plusieurs spécifications des consortiums comme EPC Global, NFC Forum, JCP et OSGi Alliance.
+AspireRFID, fournit aussi un ensemble d'outils permettant aux consultants RFID de déployer des solutions RFID sans avoir besoin de la programmation ennuyeuse à bas niveau.
+AspireRFID permet les spécifications des processus permis par RFID. 
+En conséquence, les outils produisent tous les objets RFID exigés pour déployer ces solutions sur l'AspireRfid middleware.
+
+L'architecture d'Aspire RFID se compose :
+
+
+Fosstrak est une plate-forme logicielle open-source RFID qui met en application les caractéristiques de réseau de EPC. En outre, AspireRFID utilise Fosstrak. Fosstrak possède :
+
+Tous les modules de Fosstrak implémentent la spécification EPCglobal.
+
+RFID Gateway est une solution qui respecte les standard EPC
+
+RFID Gateway possède une architecture modulaire pour une mise en œuvre progressive et possédant une capacité d’extension. Il est basé sur une architecture JAVA et ainsi compatible avec tout environnement JAVA sous Windows / Unix.
+
+RFID GateWay permet également une intégration rapide avec les applications d’entreprise.
+
+
+
+
+
+
+

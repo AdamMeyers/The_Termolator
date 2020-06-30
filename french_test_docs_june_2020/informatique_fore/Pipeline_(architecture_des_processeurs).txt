@@ -1,0 +1,69 @@
+﻿Pipeline (architecture des processeurs)
+
+En microarchitecture, un (ou chaîne de traitement), est l'élément d'un processeur dans lequel l'exécution des instructions est découpée en plusieurs étapes. Le premier ordinateur à utiliser cette technique est l'IBM Stretch, conçu en 1961. Avec un pipeline, le processeur peut commencer à exécuter une nouvelle instruction sans attendre que la précédente soit terminée. Chacune des étapes d’un pipeline est appelé "étage". Le nombre d'étages d'un pipeline est appelé sa "profondeur".
+
+Le est un concept s'inspirant du fonctionnement d'une ligne de montage. Considérons que l'assemblage d'un véhicule se compose de trois étapes (avec éventuellement des étapes intermédiaires) : 1. Installation du moteur. 2. Installation du capot. 3. Pose des pneus. 
+
+Un véhicule dans cette ligne de montage ne peut se trouver que dans une seule position à la fois. Une fois le moteur installé, le véhicule Y continue pour une installation du capot, laissant le poste « installation moteur » disponible pour un prochain véhicule X. Le véhicule Z se fait installer ses pneumatiques (roues) tandis que le second (Y) est à l'étape d'installation du capot. Dans le même temps un véhicule X commence l'étape d'installation du moteur. 
+
+Si l'installation du moteur, du capot et des roues prennent respectivement 20, 5 et 10 minutes, la réalisation de trois véhicules prendra, s'ils occupent un à un toute la chaîne de production, 105 minutes = (20 + 5 + 10) × 3. Si on place un véhicule dans la chaîne de production dès que l'étage auquel le véhicule doit accéder est libre (principe du ), le temps total pour réaliser les trois véhicules est de 75 minutes.
+
+Pour donner un exemple de pipeline, nous allons aborder un pipeline parmi les plus connus. Celui-ci s'appelle le Classic RISC pipeline. Il s'agit du pipeline créé par David Patterson, inventeur des processeurs RISC et du concept de pipeline. Ce pipeline est utilisé dans de nombreux documents (cours de David Patterson, notamment) comme une introduction au concept de pipeline.
+
+Avec ce pipeline, 5 étapes sont nécessaires pour traiter une instruction :
+
+En supposant que chaque étape met 1 cycle d'horloge pour s'exécuter, il faut normalement 5 cycles pour exécuter une instruction, 15 pour 3 instructions :
+
+En utilisant la technique du pipeline, notre processeur peut alors contenir plusieurs instructions, chacune à une étape différente.
+
+Les 5 instructions s'exécuteront en 9 cycles, et le processeur sera capable de terminer une instruction par cycle à partir de la cinquième, bien que chacune d'entre elles nécessite 5 cycles pour s'exécuter complètement. Au , tous les étages sont en cours d'exécution.
+
+Une organisation alternative au pipeline RISC classique serait de découper nos instructions en seulement deux étapes : 
+
+Ce type de pipeline est notamment utilisé sur certains microcontrôleurs Atmel AVR et PIC.
+
+Autre exemple de pipeline : celui de l'IBM Stretch project composé des trois étapes suivantes :
+
+On pourrait aussi créer un pipeline à 7 étages :
+
+etc
+
+Il faut noter que certaines fonctionnalités de la microarchitecture d'un processeur nécessitent l'ajout d'étages de pipelines supplémentaires. Par exemple, un processeur implémentant le renommage de registres demandera une étape supplémentaire pour renommer les registres. En pratique, les processeurs les plus performants utilisent des pipelines extrêmement longs (de l'ordre d'une vingtaine d'étages) pour ajouter de nombreuses étapes augmentant les performances (exécution dans le désordre) et augmenter la fréquence d'horloge (moins de travail à chaque étage).
+
+Aujourd'hui tous les microprocesseurs sont pipelinés :
+
+Certaines architectures ont largement augmenté le nombre d'étages, celui-ci pouvant aller jusqu'à 31 pour la microarchitecture Prescott d'Intel. Une telle architecture sera appelée superpipelinée.
+
+Dans un processeur doté de pipeline, chaque étape d'une instruction doit être effectuée dans un circuit séparé des autres. Cela n'est pas toujours possible, et il arrive que certains circuits communs doivent malgré tout être partagés, comme les ports d'accès au cache, et qu'il soit possible de bloquer le pipeline pour attendre un résultat précédent. Mais, en principe, un pipeline dispose d'un circuit pour traiter chaque étape.
+
+En électronique, les pipelines sont une classe de circuit bien plus importante que ce que l'on appelle « pipeline » dans un processeur : il s'agit de tout type de circuit où des données progressent. Tous les circuits électroniques comportent donc des pipelines, avec des structures parfois complexes (des boucles et des embranchements par exemple).
+
+Le pipeline traitant les instructions d'un processeur est plus complexe qu'un pipeline où les instructions avanceraient d'étage en étage : il comporte des étapes d'interaction avec les registres, la mémoire et les unités de calcul, et souvent la possibilité de bloquer la progression des données pour attendre la résolution d'une instruction.
+
+Reste que les données doivent passer d'un étage à un autre. Pour ce faire, il existe trois grands types d'implémentations :
+
+Les différents étages sont séparés par des registres tampons, qui sont tous reliés au signal d'horloge du processeur. À chaque cycle d'horloge, les registres deviennent accessibles en écritures, ce qui fait que les données passent à l'étage suivant. C'est de loin la technique la plus utilisée.
+
+Les différents étages sont séparés par des registres tampons, et les transferts entre registres sont décidés par un protocole asynchrone.
+
+Il n'y a pas de registres entre les étages : en contrôlant leur vitesse de propagation, les données envoyées une par une dans le pipeline sont récupérées dans l'ordre à l'autre bout sans nécessiter de mémorisation temporaire.
+
+Les pipelines provoquent de nouveaux problèmes, en particulier d'interdépendance, ils ne sont pas tous listés ci-dessous, juste deux cas simples sont abordés.
+
+Il arrive que dans certains cas bien précis, plusieurs étages du pipeline aient besoin d’accéder à la même ressource matérielle. Cette ressource peut être la mémoire, un registre, une unité de calcul, ou tout autre chose encore. Si celle-ci n'est pas conçue pour cela, deux instructions entrent en concurrence pour l'accès à cette ressource. Une des deux doit passer avant l'autre, et l'autre instruction doit être mise en attente. Dans ce cas, il peut être nécessaire de bloquer tous les étages du pipeline qui précédent l'instruction bloquée. Idéalement, ce genre de dépendance se règle souvent en dupliquant la ressource à partager. Il suffit de dupliquer la ressource fautive en autant d'exemplaires qu'il peut en avoir besoin simultanément dans le pipeline. Cela dit, ce n'est pas toujours possible, notamment pour les accès mémoires.
+
+Deux instructions ont une dépendance de donnée si elles veulent lire ou écrire dans le même registre ou la même adresse mémoire. Différents cas se présentent alors, suivant que les deux instructions écrivent ou lisent cette donnée.
+Ces dépendances imposent un certain ordre d’exécution pour nos instructions. L'ordre d’exécution des lectures et des écritures ne doit pas changer, sous peine de se retrouver avec des résultats faux. Or, sur les processeurs dotés de pipeline, il se peut que les lectures et écritures changent d'ordre : les lectures et écritures dans les registres ne se font pas aux mêmes étages, et une instruction peut donc lire une donnée pas encore écrite, etc.
+
+Respecter l'ordre des lecture/écriture en mémoire et dans les registres peut être très complexe et nécessite la présence de circuits capables de maintenir cet ordre. Diverses optimisations existent pour rendre la situation plus supportable. Certaines dépendances peuvent être éliminée via renommage de registres, ou par des mécanismes de memory disambiguation. D'autres techniques comme le Forwarding/Bypassing permettent de diminuer l'impact de ces dépendances sur les performances.
+
+Les branchements, les exceptions matérielles et les interruptions posent quelques problèmes. Lorsqu'un branchement entre dans le pipeline, l'adresse à laquelle brancher n'est connue que quelques cycles plus tard, vers la fin de l'étage de Decode dans le meilleur des cas. La même chose arrive lors de la levée d'une exception ou d'une interruption. 
+
+Pourtant, entre le moment où le branchement entre dans le pipeline et celui où l'adresse est connue, le processeur aura continué de charger des instructions dans son pipeline. Des instructions sont ainsi chargées par erreur dans le pipeline. Sur le schéma de droite, ce sont les instructions en jaune. Pour réduire ce genre de problèmes, les processeurs peuvent fournir diverses fonctionnalités, comme des "branch ", ou des mécanismes de prédiction de branchement.
+
+Une architecture superscalaire contient plusieurs pipelines en parallèle. Il est possible d'exécuter plusieurs instructions simultanément. Sur un processeur superscalaire de degré 2, deux instructions sont chargées depuis la mémoire simultanément. C'est le cas des processeurs récents conçus pour maximiser la puissance de calcul. Notons toutefois qu'en général, chaque pipeline est spécialisé dans le traitement d'un certain type d'instruction : aussi seules des instructions de types compatibles peuvent être exécutées simultanément.
+
+Sur de tels processeurs, une instruction va s'appliquer à un ensemble de données, appelé vecteur. Une seule instruction va donc exécuter la même opération de façon parallèle sur tout le vecteur. Ce genre d'architecture est efficace pour les applications de calcul scientifique et s'est notamment trouvée dans les superordinateurs comme les Cray.
+
+
+

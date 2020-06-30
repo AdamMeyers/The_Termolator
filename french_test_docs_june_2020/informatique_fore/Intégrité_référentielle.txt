@@ -1,0 +1,10 @@
+﻿Intégrité référentielle
+
+En informatique, et plus particulièrement dans les bases de données relationnelles, l´intégrité référentielle est une situation dans laquelle pour chaque information d'une table A qui fait référence à une information d'une table B, l'information référencée existe dans la table B. L'intégrité référentielle est un gage de cohérence du contenu de la base de données.
+
+Les systèmes de gestion de base de données (SGBD) permettent de déclarer des règles de maintien de l'intégrité référentielle ("contrainte"). Une fois la contrainte déclarée, le SGBD refusera toute modification du contenu de la base de données qui violerait la règle en question et casserait l'intégrité référentielle.
+
+"Par exemple" : on définira qu'un livre a un ou plusieurs auteurs. Une contrainte d'intégrité référentielle interdira l'effacement d'un auteur, tant que dans la base de données il existera au moins un livre se référant à cet auteur. Cette contrainte interdira également d'ajouter un livre si l'auteur n'est pas préalablement inscrit dans la base de données.
+
+
+

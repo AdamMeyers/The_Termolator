@@ -1,0 +1,22 @@
+﻿Organisation séquentielle indexée
+
+L'organisation séquentielle indexée, aussi appelée ISAM, est une manière d'organiser le contenu des fichiers de données qui permet un accès séquentiel et un accès direct aux enregistrements. Ces fichiers comportent un index qui permet l'accès direct aux enregistrements, lors d'opérations de recherche. 
+
+Cette technique a été popularisée par le service "ISAM" des ordinateurs IBM en 1966. Les fichiers manipulés par ce service doivent d'abord être remplis avec des données triées. Une zone de "débordement" sert aux ajouts ultérieurs; ils comportent plusieurs index. Des fichiers séquentiel-indexés ayant une organisation différente sont aussi parfois dénommés ISAM.
+
+Séquentiel-indexé est une organisation de fichier de données qui permet aussi bien d'accéder aux données l'une après l'autre - séquentiel, que d'accéder directement à un enregistrement dont la clé a une certaine valeur via un index - accès indexé. L'index permet de rapidement localiser l'enregistrement.
+
+Les trois types d'organisation des fichiers de données sont : séquentiel, indexé-séquentiel et direct.
+
+ISAM est le nom d'un service de manipulation de fichiers séquentiel-indexé lancé par IBM en 1966. Il était populaire dans les années 1970. Les fichiers en organisation séquentielle indexée sont couramment appelés "ISAM" - ils ont cependant souvent une organisation différente de celle de IBM et utilisent les arbres B.
+
+Un fichier ISAM est divisé en trois sections : données, index et zone de débordement - pour permettre l'ajout d'enregistrements. La zone de données est l'endroit où sont enregistrées les données lorsque le fichier est créé, le contenu initial est ajouté dans l'ordre de la clé primaire. La zone de débordement sert pour les enregistrements ajoutés ultérieurement, l'enregistrement ajouté est accompagné de pointeur qui permet de retrouver l'enregistrement suivant dans l'ordre de la clé primaire.
+
+Il y a plusieurs niveaux d'index, qui reflètent la mécanique des disques durs : un index par piste, puis chaque piste est classée dans un index de cylindre et chaque cylindre est classé dans un index maître. Dans l'index maître est indiquée la valeur maximale de la clé pour chaque cylindre. Puis les indexes de chaque cylindre indiquent la valeur maximale de la clé pour chaque piste. 
+
+ISAM utilise deux algorithmes d'ajout de données. Tout d'abord le contenu initial est ajouté trié, puis un autre algorithme est utilisé pour les ajouts ultérieurs, contrairement aux fichiers à arbre B où les ajouts initiaux se font selon les mêmes algorithmes que les ajouts ultérieurs.
+
+À mesure des ajouts, les opérations de manipulation du fichiers deviennent de plus en plus complexes et longues, raison pour laquelle les fichiers doivent être régulièrement réorganisés. Les organisations de fichiers plus récentes utilisent des structures en arbre B, une structure qui se réorganise continuellement.
+
+
+

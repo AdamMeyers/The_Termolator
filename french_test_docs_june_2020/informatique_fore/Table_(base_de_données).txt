@@ -1,0 +1,38 @@
+﻿Table (base de données)
+
+Dans les bases de données relationnelles, une table est un ensemble de données organisées sous forme d'un tableau où les colonnes correspondent à des catégories d'information (une colonne peut stocker des numéros de téléphone, une autre des noms...) et les lignes à des enregistrements, également appelés entrées.
+
+Chaque table est l'implémentation physique d'une "relation" entre les différentes colonnes. Chaque correspondance est définie par une ligne de la table.
+
+La notion de table est apparue dans les années 1970 chez IBM avec l'algèbre relationnelle qui est une théorie mathématique en relation avec la théorie des ensembles. Cette théorie a pour but d'éclaircir et de faciliter l'utilisation d'une base de données.
+
+Lors de la conception d'une Base de données relationnelle, il est important de clairement définir toutes les tables qui la composeront et les différentes associations qui les lient, de manière à pouvoir dresser le schéma conceptuel qui permettra de décrire l'organisation des données dans la base de données avant de la mettre informatiquement en place.
+
+On distinguera les tables courantes qui caractérisent des entités (Tables "Personne", "Projet", "Commande", "Facture"...) contenant des informations, et les tables associatives qui assureront la liaison entre au moins deux tables courantes.
+
+Il est également indispensable de nommer rigoureusement les différentes tables, en utilisant des normes techniques. Par exemple, cela permet d'éviter les incohérences dans la base et permet son évolutivité.
+
+On peut par exemple se fixer comme norme :
+
+
+Cela donnera par exemple pour une table "personne" et une table "voiture", on définit la table de liaison "I_personne_voiture".
+
+Par nature, chaque colonne d'une table, parfois improprement appelée "champ", doit contenir des données d'un même type et porter un nom, de préférence significatif par rapport aux données contenues dans la colonne. Il y a certaines règles à respecter notamment le fait qu'il faille mettre un identifiant pour chaque enregistrement dans la table.
+
+Pour les différentes colonnes de la table, il faut également respecter des normes pour les noms, par exemple, imposer le nom des colonnes au singulier.
+
+Il y a deux possibilités : 
+
+
+
+Cela permet donc d'avoir une table bien indexée, et cela facilite alors parfaitement les recherches.
+
+Il y a deux niveaux de travail sur une table :
+
+
+Actuellement, le langage standardisé pour travailler sur les tables est le SQL, il est utilisé avec certaines variantes sur la plupart des systèmes de gestions de bases de données.
+
+
+
+
+

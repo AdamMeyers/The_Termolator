@@ -1,0 +1,21 @@
+﻿Langage de définition de données
+
+Un langage de définition de données (LDD ; en anglais "data definition language", DDL) est un langage de programmation et un sous-ensemble de SQL pour manipuler les structures de données d'une base de données, et non les données elles-mêmes.
+
+Il permet de définir le domaine des données, c'est-à-dire l'ensemble des valeurs que peut prendre une donnée : nombre, chaîne de caractères, date, booléen. Il permet aussi de regrouper les données ayant un lien conceptuel au sein d'une même entité. Il permet également de définir les liens entre plusieurs entités de nature différente. Il permet enfin d'ajouter des contraintes de valeur sur les données.
+
+On distingue typiquement quatre types de commandes SQL de définition de données :
+Ces commandes peuvent porter sur les structures de données de type suivantes :
+
+
+
+
+Lors de la création d'une table, il faut en particulier décider du "type" des champs qui sera approprié aux données et à leur manipulation. Si par exemple on décide de stocker des données définissant des individus dans une base de données, on pourra définir les données de l'entité individu dans une table codice_11 comportant les champs :
+La date de naissance doit être forcément antérieure à la date du jour.
+
+Maintenant, considérons l'entité voiture définie dans une table codice_16 comportant les champs :
+À ce stade, nous aurons deux tables : codice_11 et codice_16. Supposons que nous voulions stocker les informations sur les voitures des individus, en supposant pour simplifier qu'un individu ne possède qu'une seule voiture. On pourra alors ajouter la colonne suivante à la table codice_11 :
+Grâce à cette donnée complémentaire, on a lié l'entité individu à l'entité voiture à l'aide du numéro d'immatriculation, ce qui permettra de retrouver toutes les caractéristiques de la voiture.
+
+
+

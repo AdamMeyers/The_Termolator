@@ -1,0 +1,170 @@
+﻿Indicateurs de volume et de déplacement d'une structure architecturale
+
+L’indicateur de volume (W) et l’indicateur de déplacement (Δ) sont deux concepts numériques associés découverts par Philippe Samyn en 1997 pour l'optimisation de la géométrie des structures architecturales.
+
+On entend par structure résistante toute chose, amorphe ou vivante, supportant sans se rompre les forces auxquelles elle peut normalement être soumise.
+
+Caractérisée par sa forme et ses matériaux constitutifs, et tridimensionnelle par essence, la structure amorphe présente généralement une géométrie à deux dimensions, à laquelle on donne une épaisseur, ou une géométrie à trois dimensions (la structure tridimensionnelle). Cette dernière est formée de deux structures bidimensionnelles situées dans des plans non parallèles ou de volumes courbes tridimensionnels comme aussi pour toutes les choses vivantes dont une famille particulière concerne les coques (une surface tridimensionnelle avec une épaisseur), comme, par exemple, la structure des voitures, bateaux ou avions, ou encore des crânes humains, coquillages ou tiges de pissenlit.
+
+La géométrie de la majorité des structures dites « architecturales » (telle que celles des bâtiments ou des ponts) est bidimensionnelle et son étude revêt une grande importance qu’il s’agisse d’esthétique, de commodité ou d’économie. De nombreux critères entrent donc en ligne de compte dans sa définition.
+
+Ce travail se limite à la recherche de la géométrie conduisant à la structure de volume minimum.
+
+Le coût d’une structure dépend de la nature et de la quantité des matériaux utilisés ainsi que des outils et des ressources humaines nécessaires à sa fabrication.
+
+Si les progrès techniques permettent de réduire tant le coût des outils que l’importance des ressources humaines nécessaires, et si les outils de calcul informatique permettent maintenant de dimensionner une structure de manière qu’elle y soit sollicitée en tout point à la contrainte admissible de ses matériaux constitutifs, il faut aussi que sa géométrie soit optimale. La recherche de cet optimum est cependant loin d’être évidente, tant le choix est vaste.
+
+En outre, la résistance de la structure n’est pas le seul critère à prendre en compte, il faut aussi dans de nombreux cas s’assurer du fait qu’elle ne se déforme pas de manière excessive sous charges statiques ou qu’elle ne se mette pas à vibrer de manière désagréable ou dangereuse sous charges dynamiques.
+
+Cette approche ne tient pas compte des phénomènes d’instabilité élastique. Il peut en effet être démontré qu’il est toujours possible de dessiner la structure de manière à en rendre l’influence négligeable.
+
+Il s’agit de dessiner la morphologie optimale pour une structure bidimensionnelle d’épaisseur constante :
+
+À chaque forme choisie correspond un volume de matière V (en mètres cubes) et une déformation maximale δ (en mètres).
+
+Leur calcul dépend des facteurs L, H, E, σ, et F. Ces calculs sont longs et fastidieux, ils  brouillent la recherche de la forme optimale.
+
+Il est cependant possible de s’affranchir de ces facteurs en les portant à l’unité, toute autre caractéristique restant égale. La longueur L est ainsi ramenée à , H à H/L, E et σ à , et F à 1N.
+
+À cette structure « réduite » correspond un volume de matière W= σV/ FL (l’indicateur de volume) et une déformation maximale Δ = Eδ / σL (l’indicateur de déplacement).
+
+Ils ont pour principale caractéristique d’être des nombres sans dimensions physiques (adimensionnels) et dont la valeur, pour chaque morphologie considérée, ne dépend que du rapport L/H, c’est-à-dire de l’élancement géométrique de la forme.
+
+La méthode s’étend aisément aux structures tridimensionnelles comme illustré dans les exemples qui suivent.
+
+La théorie relative aux indicateurs est enseignée depuis 2000, entre autres, au département du génie civil et d’architecture de la Vrije Universiteit Brussel (VUB : service de mécanique des matériaux et des constructions), et y a fait l’objet de recherches et contributions régulières sous la direction de Ir Philippe Samyn (de 2000 à 2006), de Ir Willy Patrick De Wilde (de 2000 à 2011) et de Ir Lincy Pyl maintenant.
+
+L’ouvrage de référence, depuis la thèse en référence, rend compte du développement de la théorie chez Samyn and Partners et à la VUB jusqu’en 2004.
+
+La théorie est ouverte à qui veut contribuer car W et Δ peut se calculer pour n’importe quelle structure résistante telle que définie ci-dessus.
+
+Les progrès en sciences des matériaux, en robotique et en impression tridimensionnelle permettent de créer de nouvelles formes structurelles plus légères que les plus légères connues à ce jour. C’est ainsi, et par exemple, que la géométrie des surfaces minimales en un matériau homogène d’épaisseur constant est fortement modifiée par la variation tant de l’épaisseur que de la résistance locale du matériau.
+
+Les "macrostructures" étudiées ici peuvent être composées « d’éléments structurels » dont le matériau présente une « microstructure ».
+
+Que l'on cherche à limiter la contrainte ou la déformation, macrostructure, élément structurel et microstructure ont chacun un poids "Vρ", où "ρ" est le poids volumique des matériaux, en N/m³, qui est fonction des sollicitations {"F"} (pour « force » en général) qui leur sont appliquées, de leur taille {"L"} (pour « taille » en général) , de leur forme {"G"} (pour « forme » en général), de la matière qui les constituent {"M"} (pour « matière » en général).
+
+formula_1
+
+Ou encore, forme et matière ({"G"}{"M"}) définissent le poids ("Vρ") de la structure répondant aux sollicitations et aux portées voulues ({"F"}{"L"}).
+
+formula_2
+
+En mécanique des matériaux et au niveau de l’élément structurel, le paramètre {"G"} correspond, pour un type de sollicitations considéré, au «facteur de forme» pour les structures de section continue en matériau ne comportant pas de vides.
+
+Le matériau constitutif de l’élément structurel peut cependant posséder une microstructure telle qu’il comprend des vides. Il a alors une structure cellulaire qui améliore dans tous les cas de charge le facteur de forme.
+
+Le paramètre {"M"} caractérise le matériau et permet d’en comparer l’efficacité par rapport à un autre pour un type de sollicitations donné, et ce indépendamment du «facteur de forme» de la structure, caractérisé par {"G"}.
+
+Les indicateurs "W" = "σV/FL" et Δ = "δE/σL" qui viennent d’être définis caractérisent les macrostructures, alors que les mêmes notations et symboles en minuscule renverront toujours à l’élément structurel. Ainsi, "w" = "σv/fl" et Δ = "δE/σl" sont les indicateurs de volume et de déplacement de l’élément structurel.
+
+La figure 1 reprend, au niveau de l’élément structurel, les formulations de "Vρ" ainsi que de "W" et Δ pour la traction, la compression, la flexion et le cisaillement simple. La colonne de gauche concerne la limitation des contraintes, celle de droite la limitation des déformations.
+
+L’indicateur "W" est, comme on peut l’observer, en relation directe avec {"G"}{"M"}. En effet :
+
+formula_3, d'où formula_4<br>
+ou: formula_5.<br>
+ou encore: formula_6 pour un état de sollicitation et une dimension donnés.<br>
+Dans ce cas, comme W et Δ ne dépendent que de formula_7 :<br>
+formula_8 et donc : formula_9
+
+Pour un type de sollicitation considéré, il s’agit donc du poids spécifique d’une macrostructure par unité de force et de longueur, qui ne dépend de la géométrie que par l’intermédiaire de "L/H", et des matériaux que par l’intermédiaire de "σ/ρ" .
+
+"Wρ/σ" intègre donc, sans les révéler, l’indice {"M"} d’efficience des matériaux ("ρ/σ" et "ρ/E" pour la traction et la compression hors flambage, "ρ/" pour la compression limitée par le flambage, "ρ/" et "ρ/" pour la flexion simple, "ρ" "/σ" et "ρ/G" pour le cisaillement) et l’indice d’efficience {"G"} de la forme.
+
+Toutes autres choses restant égales, une grappe de tubes de diamètre "H" et d’épaisseur de paroi "e" remplaçant une barre pleine de même volume en un matériau aux caractéristiques physiques "ρ" , "σ" , "E" et "G" , présente une densité apparente "ρ" = "4k(1-k)ρ" où "k=e/H" , une contrainte admissible apparente "σ" = "4k(1-k)σ", un module d’élasticité apparent "E" = "4k(1-k)E" et un module de glissement apparent "G" = "4k(1-k)G". Il en découle que
+
+formula_10 et formula_11
+
+Ceci explique les meilleures performances des matériaux allégés pour les éléments structurels en compression et sujets à flambement, ainsi que pour les éléments fléchis.
+
+Cet indicateur permet donc de comparer l’efficience de macrostructures ou de systèmes intégrés différents comprenant "géométrie" et "matériau".
+
+La présente approche morphologique fait écho aux travaux de M.F. Ashby qui s'attache, dans son ouvrage "Materials Selection in Mechanical Design" (1992), à définir une méthode de sélection de matériaux. {"G"} et {"M"} y sont analysés séparément car, pour ses études, {"M"} doit couvrir un grand nombre de caractéristiques physiques des matériaux.
+
+Différente et complémentaire, elle peut également être mise en parallèle avec les travaux menés à partir de 1969 par l'Institut für leichte flächentragwerke à Stuttgart sous la direction de Frei Otto puis de Werner Sobek, qui font référence à des indices nommés "Tra" et "Bic". Le "Tra" est défini comme le produit de la longueur de la trajectoire de la force "F", (menant la structure à la ruine) vers les appuis par l'intensité de cette force, et le "Bic" est le rapport de la masse de la structure au "Tra".
+
+"ρ*" étant la masse volumique du matériau (en kg/m³), et "α" étant, comme "W", une constante dépendant du type de structure et du cas de charge :
+
+formula_12 et formula_13 ; donc, avec la contrainte à la rupture formula_14 atteinte sous formula_15<br>
+formula_16 ; et comme formula_17.
+
+Contrairement à "W", qui est sans dimensions, "Bic" s'exprime en "kg/Nm". Dépendant donc du matériau, il ne permet pas une comparaison indépendante de différentes morphologies.
+
+Il semble que seuls V. Quintas Ripoll et W. Zalewski et St. Kus aient approché l’indicateur de volume "W" sans toutefois approfondir la question.
+
+Les effets de second ordre n'ont en général que très peu d'influence sur "W", alors qu'ils peuvent sensiblement influencer Δ. "W" et Δ dépendent alors aussi de "E/σ".
+
+L'effort tranchant "T" peut être déterminant dans le cas de pièces fléchies, courtes et continues, soumises à flexion de telle sorte que "W" ne descende plus en-dessous d'une certaine valeur, quelle que soit la réduction de l'élancement "L/H". Cette limitation est cependant très théorique car il est toujours possible de la supprimer en transférant de la matière des ailes vers la (ou les) âme(s) près des appuis.
+
+La contrainte "σ" à laquelle la structure peut être sollicitée dépend de la nature, de la géométrie interne, du mode de production et de mise en œuvre des matériaux, ainsi que de nombreux autres facteurs tels que la précision dimensionnelle de la construction réelle, la nature des assemblages des éléments ou la résistance au feu, mais également de l'habileté avec laquelle la géométrie de la structure est définie pour se prémunir des phénomènes d'instabilité élastique. Pierre Latteur, qui a découvert l’indicateur de flambement a étudié l’influence des phénomènes d’instabilité élastique sur "W" et Δ. Il est à ce sujet important de noter que les contingences d'ancrage d'un élément en traction peuvent en réduire la contrainte admissible apparente au même niveau que la réduction nécessaire pour tenir compte d'une instabilité élastique modérée. L’influence sur "W" du flambage des pièces comprimées d’une part et des ancrages aux extrémités de pièces tendues d’autre part, est analysée pp. 30 à 58 dans l'"ouvrage de référence".
+
+La contrainte de travail "σ" est aussi souvent réduite par la nécessité de limiter le déplacement "δ" de la structure puisqu'il n'est pas possible de beaucoup faire varier "E" pour un matériau donné.
+
+Les considérations relatives à la fatigue, à la ductilité et aux efforts dynamiques viennent également limiter la contrainte de travail admissible.
+
+Il n'est pas toujours aisé de fixer la nature et l'intensité maximale totale des forces "F" (y compris le poids propre) à laquelle la structure est soumise, ce qui influence à nouveau directement les contraintes de travail.
+
+Les assemblages des éléments comprimés ou tendus sont considérés comme articulés. Tout encastrement, même partiel, induit un moment parasite qui a pour conséquence d'alourdir la structure.
+
+Le volume des assemblages vient finalement, pour certains types de structures, s'ajouter au volume net défini par "W". Son importance dépend de la nature du matériau et du contexte ; elle est à déterminer dans chaque cas.
+
+Il s'ensuit que n'entrent principalement en ligne de compte que "W" et Δ pour la conception morphologique d'une structure, en acceptant qu'elle soit hyperamortie (c'est-à-dire que son amortissement interne soit supérieur à l'amortissement critique), ce qui la rend insensible aux sollicitations dynamiques.
+
+Le volume "V" d'une structure est donc directement proportionnel à l'intensité totale de la force "F" qui y est appliquée, à sa longueur "L" et au facteur morphologique "W"; il est inversement proportionnel à la contrainte "σ" à laquelle il peut être sollicité. Le poids d'une structure est en outre proportionnel à la densité "ρ" de son matériau constitutif. Par contre, son déplacement maximum "δ" reste proportionnel à la portée "L" et au facteur morphologique Δ, ainsi qu'au rapport de sa contrainte de travail "σ" au module d'élasticité "E".
+
+S'il consiste à limiter le poids (ou le volume) et la déformation d'une structure pour un état de sollicitation "F" et une portée "L" donnés, toutes autres considérations restant égales, l'art de l'ingénieur en structures consiste donc à minimaliser "W" et "ρ/σ" d'une part et Δ et "σ/E" d'autre part.
+
+Il est possible, pour la grande majorité des éléments comprimés, de limiter à 25 % la réduction de la contrainte de travail due à la prise en compte de l'instabilité élastique, pour autant que l'auteur de projet se préoccupe d'un tracé géométrique efficient, et ce dès ses premières esquisses. Cela signifie que l'augmentation de leur indicateur de volume peut également être limitée à 25 %.
+
+Le volume des éléments soumis à traction pure n'est également que très rarement limité au produit de la distance nette à faire parcourir à la force par une section sollicitée à la contrainte admissible. En d'autres termes, leur indicateur de volume réel est donc aussi supérieur à celui qui découle du calcul de "W".
+
+Une barre tendue peut être soudée en ses extrémités ; aucune matière supplémentaire à part celle, négligeable, des soudures n'est nécessaire, mais les liaisons rigides introduisent des moments parasites absorbant une partie de la contrainte admissible.
+
+La barre peut être articulée à ses extrémités et travailler à sa contrainte admissible, mais cela y requiert des œillets ou mécanismes d'articulation dont le volume est loin d'être négligeable et ce d'autant moins que la barre est courte ou fortement sollicitée.
+Ainsi que L.H. COX l'a démontré, il y a d'ailleurs dans ce cas intérêt à prévoir "n" barres de section "Ω/n" chacune, tendues par une force "F/n" avec "2n" œillets, en lieu et place d'une barre de section "Ω" tendue par une force "F" avec "2" œillets, le volume total des "2n" œillets dans le premier cas étant bien moindre que celui des "2" œillets dans le second.
+
+L'ancrage des extrémités d'une barre en traction peut aussi se faire par adhérence, comme c'est la plupart du temps le cas des armatures d'éléments en béton armé. Il faut dans ce cas particulier une longueur d'ancrage de minimum trente fois le diamètre de la barre.
+La barre présente dès lors une longueur "L+60H" pour un transfert utile sur une longueur "L"; son indicateur de volume théorique "W" = "1" devient "W" = "1+60H/L". Il faut donc que "L/H" soit supérieur à 240 (ce qui est toujours théoriquement possible) pour que "W" n'augmente pas de plus de 25 %. Cette remarque permet aussi de montrer d'une autre manière l'intérêt qu'il y a de prévoir "n" barres de section "Ω/n" en lieu et place d'une barre de section "Ω".
+
+Finalement, les assemblages à boulons, goujons, goupilles ou clous, en particulier lorsqu'il s'agit de pièces en bois, réduisent aussi sensiblement les sections utiles.
+
+Pour les éléments tendus, une réduction de 25 % de la contrainte admissible ou une augmentation de 25 % de volume s'impose donc également dans la plupart des cas.
+
+La détermination du volume et du déplacement d'une structure à l'aide des indicateurs "W" et Δ est donc fiable au niveau théorique de la conception à condition :
+
+La proportion d'ensemble d'une structure optimisée sans tenir compte du flambage se modifie sensiblement lorsque les barres comprimées doivent être raccourcies pour tenir compte de l'instabilité élastique. Elle devient sensible à l'effet d'échelle et il s'ensuit une élongation de la proportion d'ensemble et un alourdissement de la structure. À l'inverse, un raccourcissement de la proportion d'ensemble s'impose lorsque le volume des assemblages est à prendre en considération, puisque l'influence de ce dernier diminue avec l'allongement de barres. Ceci montre tout l'intérêt qu'il y a à dessiner de manière appropriée non seulement les éléments comprimés, mais aussi les assemblages, pour éviter ces écueils.
+
+Une légère nana de Niki de Saint-Phalle est donc à préférer aux lourds émincés de Giacometti.
+
+Le volume de matière de la structure, tel que déterminé à l’aide de "W", ne peut être obtenu précisément que si les valeurs théoriques de la caractéristique relevante des sections sollicitées à "σ" peuvent être réalisées pratiquement.
+Comme illustré à la figure 1 ci-avant, cette caractéristique est :
+
+Il est toujours possible d’obtenir la valeur précise de ces caractéristiques lorsque les éléments sont en matériaux moulés, tels que le béton armé, ou équarris, tels que le bois ou la pierre. Ce n’est par contre pas le cas des éléments en matériaux laminés ou extrudés, produits en séries industrielles, tels que l’acier ou l’aluminium.
+
+Il s’agit alors de produire des séries dont l’écart relatif des valeurs soit le plus petit possible, de manière à éviter une dépense inutile de matière. Cette dépense est homogène lorsque cet écart relatif "c" entre deux valeurs "k" et "k" successives est constant, soit ("k" - "k") / "k" = "c" ou "k" = "(c+1)" "k" ou encore "k" = "" "k".
+
+C’est le principe des séries géométriques dites Séries Renard (du nom du Colonel Renard qui, le premier, les a utilisées dans le calcul des diamètres des câbles d’aéronefs) reprises dans la norme française NF X01-002. Lorsque toutes les valeurs nécessaires sont à peine et juste plus importante qu’une valeur de la série, "c" représente alors l’augmentation maximale et "c/2" l’augmentation moyenne de "W". D’emploi universel, la situation des profils métalliques industriels mérite à ce sujet un examen approfondi (voir l'"ouvrage de référence"; pp. 26 à 28). Il en découle que l’emploi de profilés industriels induits automatiquement une augmentation importante de "W" :
+
+Cette situation s’aggrave lorsque le nombre des profilés disponibles est restreint, ce qui peut expliquer le recours à des formes qui ne sont pas théoriquement optimales mais qui tendent à solliciter les profils disponibles à la contrainte admissible "σ" (comme par exemple les pylônes de lignes électriques à haute tension ou les ponts en treillis de hauteur variable).
+
+Pour les structures en flexion pure, ceci peut aussi expliquer le recours aux plats de longueurs variables ajoutés sur les ailes des profils en "I" pour obtenir avec plus de précision l’inertie ou le moment résistant souhaité. À l’opposé, la grande variété des tubes disponibles permet un écart relatif de valeur "c" simultanément plus faible et plus constant. Ils couvrent aussi une plage beaucoup plus importante tant dans les petites que dans les grandes valeurs caractéristiques. Leurs performances géométriques étant en outre pratiquement identiques à celles des profils, les tubes présentent la réponse industrielle la plus appropriée pour pratiquement supprimer toute augmentation de l’indicateur de volume "W". Les questions pratiques de disponibilité, et celles liées à la corrosion peuvent cependant en limiter l’emploi.
+
+Les figures suivantes précisent les valeurs des indicateurs en fonction de L/H pour quelques types de structures.
+
+Figure 2 et 3 : W et Δ pour une portée horizontale isostatique sous une charge verticale uniformément répartie réalisée en :
+
+Figure 4 : W pour le transfert vers deux appuis équidistants sur l’horizontale d’une charge verticale F=1, ponctuelle (dans ce cas Δ= W) ou uniformément répartie.
+
+Figure 5 et 6 : W pour un mât vertical, de largeur constante, soumis à une charge horizontale uniformément répartie sur sa hauteur ou concentrée en tête.
+
+Figure 7 : W pour une coupole de révolution à axe vertical en membrane, d’épaisseur constante ou variable, sous charge uniformément répartie verticale. Il est étonnant de constater que la valeur minimale est atteinte pour une coupole cônique d’épaisseur variable avec un angle d’ouverture de 90° (L/H= 2 ; W= 0,5 !).
+
+
+"W" peut aisément être déterminé pour optimiser des structures composées de plusieurs éléments constructifs différents (voir l'"ouvrage de référence";) tel que par exemple pour le mât d’éolienne illustré en figure 8.
+
+ou une couverture en arc parabolique couplée avec de larges tympans vitrés soumis au vent telle que celle de la gare de Leuven en Belgique illustré en figure 9 (voir référence pour analyse détaillée).
+
+L'optimisation de la structure en trellis de la façade du bâtiment Europa à Bruxelles (voir référence pp. 93-101 pour l'analyse détaillée) est un autre exemple.
+
+

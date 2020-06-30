@@ -1,0 +1,9 @@
+﻿Journal des transactions
+
+En informatique, le journal des transactions (en anglais, transaction log, transaction journal, database log, binary log ou audit trail) est la liste des transactions informatiques exécutées sur une base de données. Cette liste de transactions est utilisée pour rétablir l'intégrité de la base de données dans les cas de problèmes logiciels ou matériels du système qui gère la base de données.
+
+Physiquement, le journal des transactions est un fichier contenant une copie des modifications apportées à la base de données. Ce fichier est conservé sur un support non volatil pour être accessible même dans un cas de mauvais fonctionnement de l'ordinateur qui le gère.
+
+Lors du démarrage d'une base de données, le système de gestion de la base de données s'assure que la base de données a été fermée correctement et que la base de données est dans un état cohérent. Si ce n'est pas le cas, le système de gestion de la banque de données utilise le journal des transactions pour "faire un retour en arrière" ("rollback") sur les transactions qui ne sont pas validées ("committed"). De plus, toujours en utilisant le journal des transactions, il réapplique les transactions validées dont les changements n'apparaissent pas dans la base de données. Ces corrections sont faites pour assurer l'atomicité et la durabilité des transactions.
+
+

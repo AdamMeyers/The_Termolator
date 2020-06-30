@@ -1,0 +1,11 @@
+﻿Espace utilisateur
+
+Quand le processeur d'un système informatique possède au moins deux modes de fonctionnement, dont un mode dit "superviseur" ou mode noyau qui n'impose pas de restrictions sur les instructions exécutées, et un mode dit utilisateur qui limite ce que peuvent faire les instructions, et quand le système d'exploitation met en œuvre cette distinction en faisant fonctionner les autres programmes en mode utilisateur et en se réservant le mode superviseur, on dit que les programmes ainsi restreints font partie de l'espace utilisateur (en anglais, ).
+
+Cette partition entre espace utilisateur et espace noyau est l'élément de base du contrôle d'accès : les applications de l'espace utilisateur ne peuvent, par accident ou intentionnellement, accéder à une zone mémoire ne leur appartenant pas car une telle action déclenche immédiatement une trappe du noyau, qui doit envoyer un signal particulier au programme et, généralement, y mettre fin.
+
+Pour que ce mécanisme fonctionne, il faut que les processeurs disposent d'une unité de gestion mémoire (MMU) exploitable par le noyau. La trappe est en effet déclenchée par une interruption matérielle. Le mécanisme de protection mémoire ne peut être implémenté efficacement de façon logicielle.
+
+Le noyau lui-même opère sans restrictions, c'est pourquoi il doit être construit avec le plus grand soin.
+
+

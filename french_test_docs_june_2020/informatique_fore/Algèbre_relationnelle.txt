@@ -1,0 +1,40 @@
+﻿Algèbre relationnelle
+
+L'algèbre relationnelle est un langage de requêtes dans des bases de données relationnelles. L'algèbre relationnelle a été inventée en 1970 par Edgar Frank Codd, le directeur de recherche du centre IBM de San José. Il s'agit de la théorie sous-jacente aux langages de requête des SGBD, comme SQL. Le théorème de Codd dit que l'algèbre relationnelle est équivalente au calcul relationnel (logique du premier ordre sans symbole de fonction). Elle est aussi équivalente à Datalog (Datalog avec la négation) non récursif.
+
+Selon Abiteboul et al., l'algèbre relationnelle est conceptuellement un langage "procédural" : en effet, les requêtes sont des suites d'opérations qui construisent la réponse. Cela s'oppose aux langage conceptuellement "déclaratif" comme le calcul relationnel et Datalog.
+
+Dans le modèle relationnel, les données sont stockées dans des tables, aussi appelées relations. Voici un exemple de relation :
+
+Plus précisément, une relation (au sens du modèle de Codd) est constituée :
+
+
+Le langage procédural contient les opérations ensemblistes de la théorie des ensembles sur les relations ainsi que des opérations pour fusionner/projeter des relations.
+
+Les opérateurs ensemblistes sont l'union, l'intersection, la différence et le produit cartésien.
+
+L'union de deux relations sur le même schéma est la relation sur ce schéma contenant exactement l'union des enregistrements de ces deux relations. Formellement, formula_1.
+
+L'intersection de deux relations sur le même schéma est la relation sur ce schéma contenant exactement les enregistrements qui apparaissent dans les deux relations. Formellement, formula_2.
+
+La différence de deux relations sur le même schéma est la relation sur ce schéma contenant exactement les enregistrements qui apparaissent dans la première relation mais pas dans la deuxième. Formellement, formula_3. Par exemple, on peut calculer les personnes inscrits en football mais qui ne sont pas inscrits en cours de piano :
+
+Avec le produit cartésien de deux relations, on recopie chaque tuple de la première relation pour chacun des tuples de la deuxième. Formellement, formula_4.
+
+La "sélection" (ou restriction) consiste à ne retenir que les enregistrements vérifiant une condition donnée. Dans l'exemple plus bas, on ne garde que les touristes dont la ville est Paris.
+
+
+
+
+
+L'algèbre SPC (sélection, projection et produit cartésien) correspond au calcul conjonctif (calcul relationnel sans disjonction et sans négation) : c'est une des versions du théorème de Codd. L'algèbre SPCU- (l'algèbre SPC avec en plus l'union et la différence) correspond au calcul relationnel en entier : c'est une autre version du théorème de Codd. L'équijointure peut être exprimée avec un produit cartésien, suivi d'une sélection, puis une projection.
+
+Voici des règles de réécriture pour transformer une expression de l'algèbre relationnelle en une autre expression équivalente.
+
+Cependant, les bases de données relationnelles ne fonctionnent pas tout à fait selon les règles ensemblistes de l'algèbre relationnelle. En effet, si l'on ne définit pas de clé primaire, il est possible d'insérer plusieurs lignes identiques dans une table, ce qui d'un point de vue ensembliste n'a pas de sens : un élément fait partie ou ne fait pas partie d'un ensemble. Si l'on veut appliquer strictement les règles des ensembles, il faut vérifier à chaque ajout dans une table que les lignes introduites ne sont pas déjà présentes.
+
+Il s'agit ici de déterminer des Domaines (i.e., type atomique) :
+
+
+
+

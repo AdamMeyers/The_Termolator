@@ -1,0 +1,67 @@
+﻿Base de données orientée graphe
+
+Une base de données orientée graphe est une base de données orientée objet utilisant la théorie des graphes, donc avec des nœuds et des arcs, permettant de représenter et stocker les données.
+
+Par définition, une base de données orientée graphe correspond à un système de stockage capable de fournir une adjacence entre éléments voisins : chaque voisin d'une entité est accessible grâce à un pointeur physique.
+
+C'est une base de données orientée objet adaptée à l'exploitation des structures de données de type graphe ou dérivée, comme des arbres.
+
+Exemple d'illustration :
+
+En base de données relationnelle traditionnelle :
+
+Table Client contient un identifiant, un nom, un prénom, une adresse, un numéro client, correspondant aux noms des colonnes respectives. Considérons le client "id01 Dupont Jean 96 rue des lilas 010203"
+
+Cette table client est rattachée à une table entreprise, avec un numéro de SIRET, un nom, et un domaine d'activité par exemple. Considérons l'entreprise "1221 EntrepriseD automobile".
+
+La relation entre les tables se nomme a_pour_client, et bien évidemment EntrepriseD a pour client Jean.
+
+En base de données orientée graphe, la table client sera représentée par un ensemble de nœuds pour chaque instance, donc le même client sera représenté par un nœud suivant :
+L'entreprise sera représentée de la même manière par un nœud :
+Et la relation entre les deux sera matérialisée par un arc partant du nœud Entreprise EntrepriseD vers le nœud Dupont Jean, nommée "a_pour_client".
+
+Aussi, l'entreprise aura autant de pointeurs que de clients (chaque arc partant de l'entreprise vers le nœud correspondant avec comme nom a_pour_client).
+
+De la même manière, le nœud client pourra pointer vers un nœud véhicule, lequel véhicule pourra pointer vers un nœud typePneu, par exemple.
+
+Intérêt : il sera ainsi beaucoup plus facile d'accéder au type de pneu du client id01 par le biais du graphe puisqu'en parcourant les arcs on retrouvera directement le client, puis son véhicule, et enfin son type de pneus.
+En base de données relationnelle traditionnelle, en revanche, il aurait fallu faire des jointures entre la table Client, la table Véhicule, et la table Pneus ce qui aurait été très couteux.
+
+L'intérêt de cette structure devient donc évident dans le cas de données complexes.
+C'est ainsi une structure idéale pour des recherches du type "partir d'un nœud et parcourir le graphe" plutôt que "trouver toutes les entités du type X", plus adaptées aux bases de données relationnelles traditionnelles.
+Il est cependant possible en base de données orientées graphes d'effectuer des recherches de ce dernier type, en utilisant un système d'indexation qui pourra selon les cas être interne au graphe (super-nœuds servant à l'indexation) ou au-dessus du graphe (via Apache Lucene par exemple).
+
+Elle est particulièrement appropriée lorsqu'il s'agit d'exploiter les relations entre les données (par exemple des connaissances entre des personnes, la description de l'ensemble des pièces d'une machine industrielle et de la manière dont elles sont liées entre elles).
+
+Les bases de données orientées graphes sont utilisées aujourd'hui dans la modélisation des réseaux sociaux :
+LinkedIn utilise par exemple ce système avec un graphe représentant les personnes et leur relations, et parvient ainsi facilement à afficher le degré de séparation entre chaque contact, qui n'est finalement que la distance entre les nœuds.
+
+Elles sont de même utilisées dans le stockage de masse de données ou Big data, avec ainsi un enjeu important à l'heure actuelle dans l'exploitation des données par leur structure adaptée.
+
+Il existe différents types de graphes permettant le stockage des données tels que :
+
+Une telle base de données se caractérise donc par les critères suivants :
+
+Les bases de données orientées graphes apportent des avantages non négligeables :
+
+Performances accrues :
+Développements simples :
+Modélisation facile :
+
+Les bases de données relationnelles sont plus adaptées à des requêtes de type "trouver toutes les entités de type X" grâce aux structures internes des tables.
+Cela est d'autant plus vrai lorsqu'il s'agit de réaliser des opérations d’agrégation sur toutes les lignes d'une table.
+
+En revanche, elles sont moins efficaces sur l'exploitation des relations, car ceci nécessite une mise en place d'index. Comme cela a été dit plus tôt, les bases de données orientées graphes permettent de parcourir les relations grâce à des pointeurs physiques, ce qui n'est pas le cas des clefs étrangères (des bases relationnelles) qui offrent uniquement des pointeurs logiques.
+
+Les bases de données graphes sont donc plus adaptées en termes de performance lorsqu'il s'agit de manipuler des volumes de données importants et une profondeur de graphe élevée.
+
+Certaines bases de données relationnelles incorporent des tables de graphes et une extensions du langage SQL pour en piloter le parcours. C'est le cas notamment de Microsoft SQL Server en version 2017.
+
+On distingue habituellement les triplestore des bases de données orientées graphe. Les bases de données graphe fonctionnent avec différents types de graphe (ex: pondérés, clusters, graphe et tables mixtes) et offrent souvent de meilleures performances pour les traversées de graphes. Les triplestore gèrent exclusivement des graphes binaires (non pondérés) de triplets RDF (donc centrés sur les relations, ou "edges"). Ils proposent des inférences.
+
+Les langages de requête dépendent des bases. Les triplestore, qui sont une forme particulière de base de données graphe, fonctionnent exclusivement avec le langage SPARQL.
+
+
+
+
+

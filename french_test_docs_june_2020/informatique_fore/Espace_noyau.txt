@@ -1,0 +1,17 @@
+﻿Espace noyau
+
+En informatique, l'utilisation d'un noyau, permet de distinguer deux types d'accès à la mémoire informatique :
+
+L'espace noyau se définit par son opposition à l'espace utilisateur, et réciproquement.
+
+Sur des noyaux modernes, tout processus utilisateur (par opposition au noyau) croit manipuler une mémoire qui a les propriétés suivantes :
+
+Pour que les processus utilisateurs aient l'illusion que la mémoire qu'ils manipulent a effectivement ces propriétés, le noyau dispose d'un gestionnaire de mémoire.
+
+Ce gestionnaire de mémoire a :
+
+Ainsi, du point de vue du gestionnaire de mémoire, la mémoire n'a aucune des propriétés de l'espace utilisateur. La mémoire, utilisée sans ces propriétés, s'appelle l'espace noyau. L'ensemble des fonctions et processus s'exécutant dans le noyau travaillent sur de la mémoire de l'espace noyau. Par extension, ces fonctions et processus sont dits de l'espace noyau.
+
+Les processeurs modernes tels que les i386 disposent de fonctions spécialisées dans la gestion de la mémoire (MMU). Pour pouvoir activer/désactiver ces fonctions, les gestionnaires de mémoires s'appuient sur l'activation/désactivation, au niveau processeur du mode noyau.
+
+

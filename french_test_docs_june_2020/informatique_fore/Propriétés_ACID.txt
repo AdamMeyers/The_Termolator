@@ -1,0 +1,41 @@
+﻿Propriétés ACID
+
+En informatique, les propriétés ACID (atomicité, cohérence, isolation et durabilité) sont un ensemble de propriétés qui garantissent qu'une transaction informatique est exécutée de façon fiable.
+
+Dans le domaine des bases de données, une opération sur les données est appelée une transaction ou transaction informatique. Par exemple, un transfert de fonds d'un compte de banque à un autre, même s'il implique plusieurs actions comme le débit d'un compte et le crédit d'un autre, est une seule transaction.
+
+Jim Gray a défini les propriétés qui garantissent des transactions fiables à la fin des années 1970 et a développé des technologies pour les mettre en œuvre automatiquement.
+
+En 1983, Andreas Reuter et Theo Härder ont créé l'acronyme "ACID" pour désigner ces propriétés.
+
+La propriété d'atomicité assure qu'une transaction se fait au complet ou pas du tout : si une partie d'une transaction ne peut être faite, il faut effacer toute trace de la transaction et remettre les données dans l'état où elles étaient avant la transaction. L'atomicité doit être respectée dans toutes situations, comme une panne d'électricité, une défaillance de l'ordinateur, ou une panne d'un disque magnétique.
+
+La propriété de cohérence assure que chaque transaction amènera le système d'un état valide à un autre état valide. Tout changement à la base de données doit être valide selon toutes les règles définies, incluant mais non limitées aux contraintes d'intégrité, aux rollbacks en cascade, aux déclencheurs de base de données, et à toutes combinaisons d'événements.
+
+Toute transaction doit s'exécuter comme si elle était la seule sur le système. Aucune dépendance possible entre les transactions. La propriété d'isolation assure que l'exécution simultanée de transactions produit le même état que celui qui serait obtenu par l'exécution en série des transactions. Chaque transaction doit s'exécuter en isolation totale : si T1 et T2 s'exécutent simultanément, alors chacune doit demeurer indépendante de l'autre. 
+
+La propriété de durabilité assure que lorsqu'une transaction a été confirmée, elle demeure enregistrée même à la suite d'une panne d'électricité, d'une panne de l'ordinateur ou d'un autre problème. Par exemple, dans une base de données relationnelle, lorsqu'un groupe d'énoncés SQL a été exécuté, les résultats doivent être enregistrés de façon permanente, même dans le cas d'une panne immédiatement après l'exécution des énoncés.
+
+Les sections suivantes expliquent les propriétés ACID en décrivant un exemple d'échec inacceptable pour chacune des propriétés.
+
+Dans ces exemples, une base de données contient deux champs A et B dans deux enregistrements. Une contrainte d'intégrité stipule que la somme de A et B doit toujours être 100. L'énoncé SQL suivant décrit cette contrainte : 
+
+CREATE TABLE acidtest (A INTEGER, B INTEGER CHECK (A + B = 100));
+
+Supposons qu'une transaction tente de soustraire 10 à A et d'ajouter 10 à B. C'est une transaction valide étant donné que la somme de A et B est 100 après la transaction. Si, après avoir soustrait 10 à A, la transaction est interrompue par un problème quelconque sans pouvoir ajouter 10 à B, alors la propriété d'atomicité serait violée si la base de données restait dans cet état. Pour que la propriété d'atomicité soit respectée, il faut que la transaction se complète ou qu'elle ne se fasse pas du tout. Dans le cas présent, il faut que A soit remis dans son état initial pour que l'atomicité soit respectée.
+
+La cohérence est le respect de toutes les règles spécifiées dans les contraintes d'intégrité. Dans notre exemple, la seule règle est que la somme de A et B doit être 100. Il pourrait y avoir d'autres règles, par exemple, une règle pourrait spécifier que la valeur de A doit être plus grande que 5.
+
+Supposons qu'une transaction T1 tente de soustraire 10 de A sans modifier B. Comme la cohérence a été vérifiée après la transaction qui a précédé la transaction T1, nous savons que la somme de A et B est égale à 100 avant la transaction T1. Si la transaction T1 s'exécute jusqu'au bout, elle retranchera 10 de A et l'atomicité sera respectée. Par contre, une validation de cohérence montrera que la somme de A et B est égale à 90 et non à 100. Comme la cohérence n'est pas respectée, la transaction sera annulée et la valeur de A sera augmentée de 10 pour reprendre la valeur qu'elle avait avant la transaction T1.
+
+Supposons les deux transactions suivantes : T1 transfère 10 de A à B, T2 transfère 5 de B à A. Si les transactions s'exécutent en séquence, nous avons les actions suivantes :
+
+Si les quatre opérations sont exécutées dans l'ordre ci-dessus, l'isolation est assurée. Si la transaction T1 est interrompue après sa première action, le système effacera l'effet partiel de T1 avant le début de T2 et T2 s'exécutera sur des données valides.
+
+Par contre, si les transactions tentent de s'exécuter simultanément et que la transaction T2 commence avant la fin de T1, on peut obtenir la suite d'actions suivante :
+
+Si la transaction T1 est interrompue avant sa deuxième partie, mais après la complétion de la transaction T2, le rétablissement de A à sa valeur d'avant la transaction T1 annulera l'augmentation valide de A faite par la transaction T2 et laissera la base de données dans un état corrompu parce que A sera revenu à sa valeur initiale, mais B aura été réduit de 5. Ce serait un échec d'isolation. Notez que la propriété d'isolation n'interdit pas la séquence d'actions précédente. Par contre, le système doit être muni de contrôles et de rollbacks qui assurent que, dans tous les cas, le résultat de l'exécution simultanée des transactions donne le même résultat que leur exécution en séquence.
+
+Supposons qu'une transaction transfère 10 de A à B. Supposons qu'une confirmation de la transaction est envoyée à l'utilisateur après l'instruction d'écriture sur disque des nouvelles valeurs de A et B, mais avant que le contenu du tampon du disque soit transféré au disque. Supposons aussi qu'une panne d'électricité se produise entre la confirmation et le transfert du tampon au disque et supposons aussi que le système n'a aucune façon de recréer les valeurs de A et B. Nous avons alors un échec de durabilité parce que l'utilisateur a reçu une confirmation, mais que l'effet de la transaction est perdu.
+
+

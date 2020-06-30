@@ -1,0 +1,26 @@
+﻿SoftPLC
+
+Un SoftPLC est un logiciel permettant d'utiliser un ordinateur (le plus souvent un PC) en tant qu'automate programmable industriel (en anglais, "Programmable Logic Controller" ou "PLC"). Ce terme générique a été ultérieurement repris directement dans le nom d'un produit.
+
+Le SoftPLC se distingue des systèmes de développement classiques sur PC par son utilisation de langages propres au monde de l'automatisme (généralement il s'agit des langages définis par la norme CEI 61131-3, mais il peut s'agir d'autres langages propriétaires plus ou moins adaptés), et son type de fonctionnement en boucle, comme sur les automates. Il est donc conçu de manière à ne pas nécessiter de connaissance approfondie en programmation sur PC, et à simplement transposer le fonctionnement de l'automate vers le PC lui-même.
+
+L'intérêt de ce genre de solution est principalement d'utiliser les possibilités et performances du PC, généralement bien supérieures à celles d'un automate, ainsi qu'une offre de matériels compatibles (cartes d'extension) très étendue. Le caractère standard et multisources du PC favorise un large choix et un coût réduit.
+
+Le SoftPLC permet aussi de simplifier l'architecture traditionnelle automate+PC de supervision en concentrant toutes les fonctions sur le PC. Il est d'ailleurs souvent accompagné de fonctions de type SCADA intégrées. Le logiciel automate fonctionne alors en tâche de fond ; l'interface d'utilisation (interface homme-machine) affichée à l'écran permettant de contrôler l'exécution, les paramètres, etc.
+
+Les inconvénients sont liés à la sécurité d'exécution du système, le caractère ouvert et complexe du système d'exploitation d'un PC le rendant potentiellement vulnérable, et nécessitant donc des précautions. La fiabilité du matériel a été un temps également mise en cause par les détracteurs du PC, mais la possibilité d'opter pour une offre de PC industriels très fiables rend aujourd'hui ce type d'argument caduc.
+
+Autres inconvénients :
+
+- l'absence générale de mémoire de stockage rapide non volatile sur les PC. Les automates disposent d'une zone de RAM dans laquelle les variables sont stockées et qui est maintenue lors de la coupure de l'alimentation par une pile (cette mémoire est cependant souvent de faible capacité). Sur PC, la mémorisation de données rémanentes doit se faire par sauvegarde cyclique sur disque ou sur mémoire flash.
+
+- temps de démarrage plus long avec un PC qu'avec un automate.
+
+- Un SoftPLC nécessite un fonctionnement temps réel. Selon le système d'exploitation, cette maîtrise est plus ou moins facile, mais la plupart des systèmes sur PC permettent aujourd'hui d'obtenir de telles performances, au besoin par adjonction d'un noyau temps réel.
+
+Les applications du SoftPLC recouvrent celles des automates traditionnels de moyenne et haute gamme et/ou couplés à une supervision. On retrouve des SoftPLC dans l'industrie (pilotages de procédés, de machines spéciales), dans le milieu scientifique (grande importance de l'interface d'utilisation), en GTB pour le pilotage et la supervision des moyens techniques.
+
+Une application industrielle de ce concept est, par exemple, un système de plus de 400 automates logiciels sous Linux, Proview, installé depuis 1976 dans l'usine sidérurgique d'Oxelösund en Suède, qui réalise les fonctions d'automate programmable industriel, de SNCC et de supervision HMI.
+
+
+

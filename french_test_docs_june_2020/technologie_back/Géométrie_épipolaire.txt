@@ -1,0 +1,134 @@
+﻿Géométrie épipolaire
+
+La géométrie épipolaire est un modèle mathématique de géométrie, qui décrit les relations géométriques de différentes photos du même objet, prises de différents points d'observation. Elle permet de décrire les dépendances entre les pixels en correspondance – c'est-à-dire ceux formés par un seul point de l’objet observé sur chacune des images. Bien que les bases en aient été posées dès 1883 par Guido Hauck, et explorées en 1908 par , la géométrie épipolaire n'a pris quelque importance qu'avec l'exploitation des images numériques, avant tout dans le domaine de la vision artificielle.
+
+En tout premier plan, la géométrie épipolaire sert à restituer l'information tridimensionnelle à partir d'images. Elle sert là de soutien à l'analyse des correspondances, à savoir la détection des pixels en correspondance, et elle permet d'y réduire considérablement le temps de recherche.
+
+Un appareil photo, ou une caméra, peut être modélisé géométriquement par une chambre à sténopé. Dans celle-ci, pendant la prise de vue, le centre du trou, chaque point de l'objet visé et le point en correspondance dans l’image sont alignés. Si un point objet a été vu par deux caméras différentes, on peut en fonction des positions des trous dans l’espace, et par rapport aux images, reconstituer les deux droites, et leur intersection, qui est le point objet, que l'on peut donc calculer ultérieurement. On a ainsi la reconstruction à trois dimensions d'un point objet dont on peut identifier les points en correspondance sur deux images. La géométrie épipolaire sert à faciliter cette reconstruction : si le point est donné sur une image, la connaissance de la situation en géométrie épipolaire limite la recherche du point en correspondance sur l'autre image à une ligne.
+Dans le schéma ci-contre à gauche, on présente les êtres géométriques suivants : point objet et points image, centres de projection et des deux caméras, ainsi que leurs plans image, replacés en avant des centres de projection par symétrie (ce qui ne change rien à l'alignement, mais facilite la représentation). Le point objet se projette sur l'image de gauche en . À partir de ce point image, le point objet ne peut se trouver que sur le rayon rectiligne : en ou , qui ont tous la même image à gauche. Tous ces points se projettent à droite sur une même droite (« droite épipolaire », en rouge), sur laquelle on peut se borner à rechercher le point en correspondance avec .
+
+La géométrie épipolaire permet de trouver une relation simple entre points en correspondance, sans connaissance de la position des caméras. Bien sûr, pour une géométrie épipolaire donnée, on peut trouver des informations sur les positions relatives des caméras, mais on n'a pas besoin de connaître explicitement les positions des caméras pour cela. La géométrie épipolaire ne dépend que des paramètres des caméras, et est indépendante de la structure de la scène photographiée.
+
+Pour décrire la géométrie épipolaire et ses éléments, on utilise une terminologie donnée. Le plan qui contient les deux centres de projection et le point objet s'appelle "plan épipolaire". Celui-ci coupe chacune des deux images selon une droite, la "droite épipolaire". Pour un point donné sur une image, le point en correspondance se trouve sur la droite épipolaire de l’autre image. La droite qui joint les deux centres de projection intersecte chaque "plan image" en un point, l"'épipôle". Les épipôles restent fixes tant que la position relative des caméras reste fixe. L'épipôle d'une image est en même temps l'image du centre de projection de l’autre caméra. Toutes les droites épipolaires d'une image passent par l’épipôle, qui peut d'ailleurs, selon la position relative des caméras, se trouver hors du champ de l'image.
+
+La géométrie épipolaire est essentiellement utilisée en géométrie projective, en photogrammétrie, et en vision artificielle. Son but principal y est l'analyse des correspondances : si l'on recherche, pour un point remarquable d'une image, le point en correspondance sur l'autre image, il faut, en l'absence d'information sur la géométrie épipolaire, explorer l'ensemble de l'autre image. Si l'on connaît la géométrie épipolaire, il suffit de le rechercher sur la droite épipolaire. Ceci amène à une diminution importante de l'espace d'exploration. Pour cela, on utilise la géométrie épipolaire avant tout là où il faut analyser en trois dimensions une scène ou un objet avec des caméras. Les domaines importants sont la mesure de pièces pour le contrôle de qualité, le relevé de bâtiments en photogrammétrie architecturale, la photogrammétrie aérienne pour l'établissement de cartes géographiques ou encore la vision dans l'espace pour des automates autonomes.
+
+La géométrie épipolaire limite le domaine de recherche des points en correspondance dans l'identification d'objets aux lignes épipolaires, et permet par là une énorme économie de temps de calcul. Simultanément, elle diminue le nombre de fausses correspondances en raison de la diminution du domaine de recherche. Les deux sont d'un grand intérêt dans la vision artificielle. En particulier dans le domaine des robots autonomes, il est nécessaire de simplifier les calculs pour atteindre de hautes performances, d'une part en raison des limitations sur le volume des circuits, et d'autre part pour atteindre les réactions rapides nécessaires pour éviter les collisions. C'est ainsi que l'un des participants au "DARPA Grand Challenge", concours entre véhicules autonomes, a utilisé la bibliothèque de programmes OpenCV, qui contient des routines de calcul rapide de géométrie épipolaire et d'analyse de correspondance.
+
+La reconstruction en relief (3D) d'une scène sur des photographies peut être faite si la calibration et la position des caméras est connue. Comme la géométrie épipolaire décrit la relation projective entre deux images, elle est soumise à l'autocalibration, c'est-à-dire à un calcul automatique des paramètres des caméras. Dans ce cas, la géométrie épipolaire n'est pas utilisée à la recherche des correspondances, mais elle fait l'inverse : à partir de correspondances connues, elle reconstitue une grande partie de la calibration et de la position des caméras.
+
+L'histoire de la géométrie épipolaire est étroitement liée avec celle de la photogrammétrie. Le premier à analyser les relations géométriques à sa base a été le mathématicien Guido Hauck. En 1883, il publie un article dans le Journal für die reine und angewandte Mathematik, où le concept de « point central » est utilisé pour la première fois. Sans souci des anachronismes, et pour garder une terminologie uniforme, nous allons utiliser la nomenclature de la géométrie épipolaire, où le point central est clairement l'épipôle. Soient (Fig. 1a) et deux plans de projection, et les centres de projection correspondants. La droite d'intersection sera la "section de base". La droite coupe les plans de projection en et , que nous appellerons épipôles des deux plans.
+Horst von Sanden en a fait une présentation plus vaste en 1908 dans le cadre de sa thèse « Détermination des épipôles en photogrammétrie. » Il y décrit des méthodes pour déterminer les épipôles de manière plus simple et plus exacte.
+
+Avant l'introduction de la technique digitale, pour la photogrammétrie prédominante appelée analogique, fondée sur la photographie et son exploitation mécano-optique, l'analyse des correspondances était effectuée de façon manuelle. Comme un opérateur humain peut effectuer sans problème la correspondance entre points d'une scène suffisamment structurée, ces découvertes restèrent sans beaucoup d'applications. Ce n'est que la survenue de la photogrammétrie digitale, avec des photographies digitales et l'exploitation hors-ligne sur ordinateurs, à partir des années 1980, ainsi que le besoin croissant d'une exploitation automatisée des images dans le domaine de la vision artificielle qui a fait revivre de façon plus intensive l'étude de la géométrie épipolaire et de ses applications. Un premier travail, qui témoigne de la redécouverte de cette thématique a été la publication de Hugh Christopher Longuet-Higgins dans la revue Nature. Depuis, de nombreux scientifiques s'intéressent à la géométrie épipolaire, parmi lesquels Huang et Olivier Faugeras, Horn ou Vieville et Lingrand.
+
+La géométrie épipolaire établit une relation entre les coordonnées des points en correspondance dans les plans image. Ces coordonnées sont souvent des coordonnées cartésiennes orthonormées, mais ce peuvent être des coordonnées affines quelconques. L'origine du système de coordonnées d'une image est souvent au milieu ou dans un coin de l'image. Pour des images numériques (images CCD ou scannées), on peut prendre par exemple la ligne et la colonne des pixels comme coordonnées. Quand les définitions de ligne et de colonne sont différentes, ou que les axes ne sont pas perpendiculaires, on a des coordonnées affines.
+
+Les relations entre les coordonnées image de points en correspondance sont décrites par une "matrice fondamentale". Elle permet de définir pour chaque point de la première image la droite épipolaire correspondante sur la deuxième, droite sur laquelle se trouve le point en correspondance.
+
+L'application des points objets sur le plan image peut être décrite avec les coordonnées homogènes utilisées en géométrie projective. Les coordonnées homogènes sont les coordonnées cartésiennes ou affines, augmentées d'une coordonnée, mais ne sont définies qu'à un facteur d'échelle près. Elles permettent de représenter de façon cohérente les "points à l'infini" ou "points de fuite" des amateurs de perspective. 
+
+En coordonnées homogènes, l'application d'un point objet de l’espace à trois dimensions sur le plan bidimensionnel du plan image peut être décrite par une application linéaire :
+
+Les coordonnées homogènes d'un point dans un plan forment un tableau 3×1, que l'on peut traiter avec les règles du calcul matriciel. Nous désignerons ainsi des points comme des matrices.
+
+On obtient les coordonnées cartésiennes à partir de et . La "matrice de projection" décrit la projection en perspective des points objets sur le plan image. Elle contient des données d'orientation et de position de la caméra. Comme dans cette projection, il se perd une dimension (la distance de l’objet à la caméra), elle n'est pas inversible sans ambiguïté.
+
+Le calcul de la matrice fondamentale repose sur l’idée de choisir un point sur la première image, puis de déterminer un point objet se projetant sur ce point image, et finalement de calculer l'image de sur la deuxième image. Ce point et l’épipôle de la deuxième image se trouvent sur la droite épipolaire et la déterminent donc de façon unique.
+
+Étant donné un point sur la première image, le rayon sur lequel se trouve le point objet correspondant est défini par la matrice de projection . Le point lui-même ne peut pas être défini, puisque sa distance à la caméra est inconnue. Un point du rayon peut être calculé au moyen du pseudo-inverse :
+Ce point peut être appliqué par la matrice de projection de la deuxième caméra sur la deuxième image :
+Ceci permet de connaître un point sur la droite épipolaire de la deuxième image en correspondance avec . Un autre point est l’épipôle , image du centre de projection de la caméra 1 :
+En coordonnées homogènes, l'équation d'une droite de points passant par deux points donnés de coordonnées et consiste à écrire que le déterminant du tableau 3×3 des coordonnées s'annule.
+
+La droite épipolaire est décrite en coordonnées homogènes par son équation :
+Développant le déterminant sous forme de produit mixte :
+Le coefficient de est , avec :
+Comme est une fonction linéaire homogène de , il existe une matrice 
+telle que , et que l'on appelle matrice fondamentale. La relation entre les points en correspondance peut s'écrire :
+
+ou encore :
+
+Cette équation est appelée équation épipolaire. Elle s'interprète bien comme l'équation d'une droite sur l'image 1, étant donné un point sur l'image 2, ou inversement.
+
+Un cas particulier de la matrice fondamentale est la "matrice essentielle". Celle-ci apparaît quand on utilise des coordonnées image orthonormées, dont l’origine est la projection perpendiculaire du centre de projection sur le plan image. Comme cette condition n'est pas nécessaire pour la matrice fondamentale, la définition de cette dernière est plus générale que celle de la matrice essentielle.
+
+La matrice fondamentale (aussi appelée « tenseur bifocal ») contient toute l'information nécessaire sur la géométrie épipolaire. On peut aussi la déterminer sans connaissance sur les matrices de projection et , ni sur les centres de projection et , à partir de coordonnées images de points en correspondance.
+
+On ne peut déterminer la matrice fondamentale qu'à un facteur multiplicatif près, puisque le produit de la matrice fondamentale par n'importe quel nombre différent de 0 ne change rien à la validité de l'équation épipolaire . Donc seuls 8 éléments de la matrice sont indépendants. Comme la matrice antisymétrique 3×3 : comme toute matrice antisymétrique est singulière pour impair, est singulière, et son déterminant est donc nul. Cette condition supplémentaire diminue le nombre de degrés de liberté de la matrice fondamentale à 7.
+
+Au moyen de la matrice fondamentale, on peut calculer pour tout point la droite épipolaire correspondante dans la deuxième image : 
+et évidemment inversement à un point sur la deuxième image, la droite épipolaire :
+
+À partir d'une droite épipolaire sur une image, on ne peut pas calculer le point correspondant sur l’autre image. Pour cela, il faudrait pouvoir inverser la matrice fondamentale, ce qui est impossible, puisqu'elle est singulière. Comme l'épipôle est sur toutes les droites épipolaires , il faut que 
+pour tous les , si bien que l'épipôle , et de même satisfont aux équations :
+De ces équations, on voit que le déterminant de la matrice fondamentale doit être nul, sinon, les équations n'auraient que les solutions , ce qui est interdit en coordonnées homogènes.
+
+Le calcul de la matrice fondamentale peut être effectué, en supposant les caméras calibrées, à partir des deux matrices de projection et d'un centre de projection . Mais comme le calcul de la matrice fondamentale doit intervenir en général avant celle des matrices de projection, ce cas est relativement rare. Dans la suite, il sera montré comment calculer avec la seule connaissance de points en correspondance.
+
+Pour calculer la matrice fondamentale d'un ensemble de points en correspondance, développons l'équation épipolaire :
+ou, de manière vectorielle :
+avec :
+
+À partir de points, on établit le système d'équations linéaires homogènes (l'indice supérieur désigne le point considéré) :
+
+Comme les coordonnées de points en correspondance satisfont l'équation épipolaire, les colonnes de sont linéairement dépendantes. La matrice a donc au plus le rang 8. Pour plus de 8 lignes, ceci n'est valable s'il n'y a aucune erreur de mesure sur les coordonnées, et aucune paire de points faussement mis en correspondance. Si n'a pas un rang égal à son nombre de colonnes, il existe pour   (hors le cas trivial ) un ensemble de solutions qui forment le noyau de .
+
+En général, il se produit lors de la définition des correspondances de petites erreurs de mesure, puisque les points image ne peuvent être caractérisés qu'avec une résolution finie. La matrice fondamentale exprimée par le vecteur n'a alors pas le rang 2 et n'est pas singulière. Ceci conduit à ce que les droites épipolaires d'une image ne se coupent pas toutes en un même point.
+
+Pratiquement, on utilise deux méthodes pour calculer la matrice fondamentale, qui conduisent à la condition de singularité : l'algorithme à 7 points et l'algorithme à 8 points. Dans les deux méthodes, on n'utilise en général pas directement les coordonnées mesurées des points image, mais des coordonnées normalisées au préalable : on déplace l’origine des coordonnées vers le centre de gravité des points image, et on normalise les coordonnées de manière qu'elles soient de l’ordre de grandeur de 1. Avec cette normalisation, on obtient une amélioration significative des résultats.
+
+Ce procédé utilise 7 correspondances de points pour le calcul de la matrice . Comme n'est définie qu'à un facteur près, 7 points, ainsi que la condition suffisent pour déterminer les 9 éléments de . Pour les 7 correspondances de points, le système d'équations ne contient que 7 équations. Il possède donc deux solutions linéairement indépendantes et du noyau de . La matrice fondamentale est construite comme combinaison linéaire des matrices et construites à partir de et :
+Pour choisir dans l'ensemble des solutions celle qui a le rang 2, on utilise le fait que :
+Cette équation cubique en a au moins une solution réelle, et au plus trois, si le coefficient de , qui est est non nul. Sinon, il peut n'y avoir aucune solution pour fini. Cependant, comme a un déterminant nul, c'est une bonne solution pour le problème.
+
+On peut calculer une matrice fondamentale avec chacune des trois. Dans le cas où il existe plus d'une solution, on prend d'autres points, afin de déterminer quelle est la bonne. On choisit celle qui satisfait l'équation épipolaire pour ces points supplémentaires, aux erreurs de mesure près.
+
+En général, on a plus de 7 correspondances de points. L'algorithme décrit ci-après nécessite au moins 8 correspondances, d'où son nom, mais peut en utiliser plus. L'idée de cet algorithme est due à Longuet-Higgins. 
+
+Dans une première étape, on ne considère que le système , sans s'occuper de la condition . Dans le cas idéal, la matrice a le rang 8 ; dans la pratique, comme il y a plus de 8 points, ce n'est pas le cas, ce qui fait que la solution est réduite à 0. À la place, on va déterminer la solution par la méthode des moindres carrés, ou par la recherche des valeurs propres.
+
+Dans la méthode des moindres carrés, on détermine de manière que soit minimal. Comme n'est défini qu'à un facteur près, il faut introduire une condition de normalisation, par exemple qu'un certain élément de soit égal à l'unité. Le problème ici est le choix de l’élément : il ne faut pas que c'en soit un d'un ordre de grandeur bien plus petit que les autres, ce que l'on ne connaît pas "a priori". On peut essayer diverses possibilités. 
+
+L'autre méthode consiste précisément à minimiser , tout en satisfaisant à la condition . Ceci conduit au résultat que la solution est le vecteur propre de la matrice avec la plus petite valeur propre. 
+
+Mais la solution ainsi obtenue ne conduit pas en général à une matrice singulière. Cette condition doit être satisfaite dans une deuxième étape. À cette fin, la matrice est diagonalisée sous la forme :
+où est une matrice diagonale dont les éléments diagonaux sont les valeurs propres de . On met à 0 la plus petite de ces valeurs propres, et on recalcule à partir des matrices , ainsi rendue singulière, et .
+Le produit est donc lui-même singulier.
+
+L'algorithme à 8 points est un processus simple pour déterminer la matrice fondamentale, mais il est instable vis-à-vis des erreurs de mesure. Ceci est dû au fait que la condition de singularité de la matrice fondamentale est introduite "a posteriori", et que la grandeur minimisée ne possède aucune signification physique. Il existe d'autres processus qui ne présentent aucun de ces inconvénients. Mais ces procédés sont plus lourds et rarement utilisés en pratique.
+
+En vision artificielle, il est nécessaire d'avoir un calcul automatique de la géométrie épipolaire, puisque des robots, par exemple, doivent être capables d'agir sans intervention humaine. Donc la première étape est d'obtenir un ensemble de points en correspondance. Ceci s'obtient au moyen d'un outil logiciel de recherche de points en correspondance, avec lequel les points les plus significatifs d'une image peuvent être localisés. Lorsqu'ils sont trouvés, ils sont mis en correspondance par leur ressemblance : une analyse des correspondances donne une mesure pour leur ressemblance. L'ensemble des points ainsi obtenus en correspondance contient, en raison du bruit d'image et des perspectives différentes obtenues par les deux caméras, une proportion élevée de fausses correspondances, et ne peut donc pas être utilisé directement pour le calcul de la matrice fondamentale.
+
+Dans les présentations qui suivent, on va montrer des points marquants, ainsi que des résultats d'analyse des correspondances. Sur la fig. 8, on reconnaît clairement que toutes les correspondances n'ont pas été correctement établies. Comme la caméra a été déplacée à peu près horizontalement entre les deux vues fig. 6 et fig. 7, les traits verts, représentant les écarts entre points en correspondance devraient être à peu près horizontaux. Dans la région de l’arbre, ceci est loin d'être le cas, car les feuilles ont toutes une forme et une intensité lumineuse semblables, et conduisent ainsi l’analyse des correspondances à de faux résultats.
+
+Les fausses correspondances doivent être éliminées avant le calcul avec des procédés de séparation et d'élimination des cas aberrants. On utilise pour cela très largement l'algorithme dit RANSAC. Cet algorithme peut repérer les erreurs de correspondances de paires de points. Pour le calcul de , il comporte les étapes suivantes :
+
+
+La matrice fondamentale est alors calculée au moyen de l’algorithme à 8 points sur la base du plus grand ensemble noté au pas 2.
+
+Ensuite, on peut faire encore une fois une analyse de correspondances, en tenant compte de la matrice fondamentale calculée (comme expliqué précédemment, le domaine de recherche pour les correspondances de points se rétrécit à la droite épipolaire), et une valeur plus stricte pour la mesure de ressemblance est utilisée pour accepter les correspondances. Ces deux derniers pas peuvent être recommencés itérativement, jusqu'à ce que le nombre de correspondances se stabilise.
+
+Les deux dernières figures illustrent les étapes du processus : le filtrage par RANSAC est à peu près convenable. Il permet de voir que l'épipôle de la vue de droite est pratiquement à l'infini, au-dessous de la ligne d'horizon à gauche. Les droites épipolaires calculées à partir du final montrent que l’épipôle de la vue de gauche est à droite, à distance finie, à peu près sur l'horizon. Ceci illustre le fait qu'il n'y a en général pas de relation "a priori" entre les deux épipôles. On n'est pas ici dans le cas stéréo normal, parce que la caméra n'a pas seulement été déplacée, mais elle a été légèrement tournée : le plan de la vue de gauche n'est pas parallèle à la direction du déplacement. Cette action augmente la distance entre points en correspondance. 
+
+Dans certaines positions des caméras l'une par rapport à l'autre, on peut arriver à des cas particuliers. Parmi ceux-ci, deux configurations sont de quelque intérêt en vision artificielle. 
+
+Dans ces cas particuliers, la recherche des correspondances se simplifie, puisqu'on connaît la géométrie épipolaire à l’avance. Dans des configurations qui s'en rapprochent, on peut s'en inspirer, moyennant des corrections ultérieures.
+
+La géométrie trifocale est la généralisation de la géométrie épipolaire au cas de trois images. Si l'on connaît la position d'un point sur deux images, alors les deux droites épipolaires sont connues par intersection du plan image avec les plans épipolaires, et leur intersection donne la position du point sur la troisième image. Ainsi, contrairement au cas de deux images, on obtient un résultat univoque, dans la mesure où le point objet n'est pas dans le plan trifocal (plan des trois centres de projection), auquel cas tous les plans sont confondus, ou encore qu'il existe un plan trifocal, c'est-à-dire que les centres de projection ne soient pas alignés. La configuration où le point objet est dans le plan trifocal est aussi désignée comme "cas particulier".
+
+On peut généraliser ce genre de considérations à plus de trois images. Pratiquement, cela n'a d'intérêt qu'avec quatre vues, où l'on peut éviter les inconvénients du point objet dans le plan trifocal, puisqu'à ce moment, il sera hors des autres plans trifocaux. On peut définir un "tenseur quadrifocal", qui décrit les relations entre points images et droites focales entre ces images. Mais pour plus de quatre vues, on n'a pas exploré les relations mathématiques, parce que la modélisation et le calcul deviennent substantiellement plus complexes, et pour la plupart des applications, le supplément d'information apporté par la cinquième caméra est très faible.
+
+La relation entre les points images en correspondance décrite précédemment, et que l'on formalise complètement par la matrice fondamentale n'est valable que pour des photos que l'on peut modéliser par un sténopé. Mais s'il survient des aberrations géométriques (distorsions) dans la projection sur le plan image, ou encore si la surface image n'est pas plane, il faut prendre en compte ces déviations de la géométrie épipolaire. En particulier, les droites épipolaires sur lesquelles il faut chercher les points en correspondance avec un point d'une image ne sont plus des droites.
+
+Ce n'est qu'avec des objectifs de haute qualité que l'on peut négliger la distorsion. Avec des objectifs de moindre qualité, il faut considérer la distorsion pour aboutir à une bonne précision de la reconstitution. La distorsion peut souvent être modélisée comme une distorsion radiale, c'est-à-dire qu'un point qui aurait pour coordonnées polaires par rapport au centre de l'image en l'absence de distorsion a, à cause des distorsions, des coordonnées polaires , où pour petit, mais s'en écarte progressivement de quelques pourcents vers les bords de l’image pour des objectifs très quelconques.
+
+Si une caméra est soigneusement calibrée, et si la distorsion est connue, les images peuvent être corrigées. On peut alors travailler avec les images corrigées comme sur des images sans distorsion.
+
+Dans certaines conditions, la distorsion peut être prise en compte par une matrice fondamentale généralisée. On suppose pour chaque image une distorsion caractérisée par un paramètre inconnu, et qui correspond au remplacement du plan image par une surface quadratique dans l'espace projectif à trois dimensions (à 4 coordonnées homogènes). La relation entre deux points en correspondance s'exprime alors par une matrice à 9 degrés de liberté.
+
+Pour les caméras à grand angle, qui permettent des prises de vue à grand champ, on ne peut plus modéliser la géométrie de prise de vue par un sténopé avec une image plane. La description de la géométrie épipolaire dépend du type de caméra. Par exemple, pour une caméra consistant en un sténopé avec un miroir hyperbolique, les lignes épipolaires sont des coniques.
+
+
+
+

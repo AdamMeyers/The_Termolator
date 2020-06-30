@@ -1,0 +1,20 @@
+﻿Procédure stockée
+
+En informatique, dans la technologie des bases de données, une procédure stockée (ou stored procedure en anglais) est un ensemble d'instructions SQL précompilées, stockées dans une base de données et exécutées sur demande par le SGBD qui manipule la base de données.
+
+Les procédures stockées peuvent être lancées par un utilisateur, un administrateur DBA ou encore de façon automatique par un événement déclencheur (de l'anglais "trigger").
+
+Il existe des procédures stockées pour ce qui est de la manipulation de données comme pour le 'tuning de base'.
+
+Les requêtes envoyées à un serveur SQL font l'objet d'une 'analyse syntaxique' puis d'une "interprétation" avant d'être "exécutées". Ces étapes sont très lourdes si l'on envoie plusieurs requêtes complexes.
+
+Les procédures stockées répondent à ce problème : une requête n'est envoyée qu'une unique fois sur le réseau puis analysée, interprétée et stockée sur le serveur sous forme exécutable (précompilée). Pour qu'elle soit exécutée, le client n'a qu'à envoyer une requête comportant le nom de la procédure stockée.
+
+On peut ainsi passer des paramètres à une procédure stockée lors de son appel, et recevoir le résultat de ses opérations comme celui de toute requête SQL.
+
+
+Code PL/pgSQL (PostgreSQL) pour la création d'une procédure stockée générant un identifiant pour un nouvel utilisateur : ERREUR: les fonctions PL/pgsql ne peuvent pas renvoyer le type opaque (psql (PostgreSQL) 8.4.4)
+Code pour appeler la procédure stockée :
+
+
+

@@ -1,0 +1,31 @@
+﻿Index (base de données)
+
+En informatique, dans les bases de données, un index est une structure de données utilisée et entretenue par le système de gestion de base de données (SGBD) pour lui permettre de retrouver rapidement les données. L'utilisation d'un index simplifie et accélère les opérations de recherche, de tri, de jointure ou d'agrégation effectuées par le SGBD.
+
+L’index placé sur une table va permettre au SGBD d'accéder très rapidement aux enregistrements, selon la valeur d'un ou plusieurs champs.
+
+Un index est une structure entretenue automatiquement, qui permet de localiser facilement des enregistrements dans un fichier. L'utilisation des index est basée sur l'observation suivante: pour trouver un livre dans une bibliothèque, au lieu d'examiner un par un chaque livre (ce qui correspond à une recherche séquentielle), il est plus rapide de consulter le catalogue où ils sont classés par thème, auteur et titre. Chaque entrée d'un index comporte une valeur extraite des données et un pointeur sur son emplacement d'origine. Un enregistrement peut être ainsi facilement retrouvé en recherchant sa localisation dans l'index.
+
+Un index peut être ordonné, haché, dense ou épars:
+
+L'index "primaire" d'une table est le premier qui est utilisé pour localiser les enregistrements. Une table peut également contenir des index "secondaires" en complément de l'index primaire. Chaque table peut comporter un ou plusieurs index. Un index peut être issu d'un seul champ ou peut combiner plusieurs champs.
+
+Les index sont utilisés par les SGBD pour de nombreuses opérations. Les index facilitent les opérations de tri, de recherche, de regroupement et de jointure. La structure la plus courante des index est l'arbre B. D'autres structures existent mais sont rarement utilisées - ISAM, les tables de hachage ou les bitmaps.
+
+Pour accélérer les opérations, les arbres d'index sont enregistrés en un bloc comportant un très grand nombre de ramifications: Les disques durs, sur lesquels sont enregistrés les index, lisent les données par bloc de plusieurs kilooctets et le temps nécessaire pour lire un bloc est généralement très inférieur au temps nécessaire pour le localiser. Avec cette construction, la recherche d'un enregistrement dans un lot de plusieurs millions nécessite alors seulement 2 ou 3 opérations.
+
+Les index peuvent être ajoutés par une commande SQL. L'existence d'index est cruciale pour accélérer les opérations de manipulation de données. L'utilisation inadéquate des index est la principale cause de déception. Le système de gestion de base de données (abr. SGBD) ne trouvera pas les index qui sont nécessaires pour effectuer efficacement les opérations qui lui sont demandées. Les raisons de l'utilisation inadéquate sont que la documentation des SGBD concernant l'utilisation des index est souvent vague et succincte, et met en avant leurs inconvénients plus que leurs avantages.
+
+Les index sont en particulier exploités par l´"optimiseur de requêtes":
+
+
+Lors de l'insertion ou de la mise à jour d'un enregistrement de la base, il y a une légère dégradation des performances : le SGBD doit en effet mettre à jour les index pour qu'ils continuent à refléter l'état des enregistrements.
+Pour cette raison, on s'attachera, lors de la conception d'une base de données, à définir uniquement les index qui seront utilisés par le système. Ceux-ci ne seront d'ailleurs bien repérés que par une analyse du système (et notamment des mécanismes d'interrogation de la base) en vue de son optimisation.
+
+D'autres types de structures offrent des fonctionnalités d'indexation :
+
+Dans le cas d'un index multi-colonnes, le SGBD peut "décider" de l'utiliser partiellement, dans l'ordre des colonnes de l'index. En d'autres termes, un index sur des colonnes (c1,c2,c3,c4) peut être utilisé comme un index (c1,c2,c3), (c1,c2) ou (c1).
+
+
+
+

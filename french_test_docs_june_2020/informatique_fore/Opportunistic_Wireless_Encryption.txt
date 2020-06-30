@@ -1,0 +1,32 @@
+﻿Opportunistic Wireless Encryption
+
+L'Opportunistic Wireless Encryption, ou OWE, est un mécanisme de sécurisation des communications Wifi qui n'apparait qu'à partir de la nouvelle norme de sécurité WPA3 dont la disponibilité n'a pas été encore annoncée officiellement et qui fait suite aux mécanismes existant du Wifi Protected Access (WPA et WPA2).
+
+L'OWE a pour but spécifique d'apporter une couche de sécurité pour les échanges Wifi correspondant aux services dits "publics" du type Hotspot ou Invité.
+
+Jusqu'alors, les services Wifi publics que l'on retrouve dans les environnements ouverts d'accès au public (musées, gares, aéroports, cafés, hôtels, etc.) sont principalement configurés en mode "open" soit avec un mot de passe partagé, soit plus communément sans mot de passe. L'usage est alors de mettre en place une page spécifique limitant l'accès à Internet dans un premier temps afin de forcer les utilisateurs à s'enregistrer et/ou à valider les Conditions Générales d'Utilisation de l'accès fourni par l'entreprise ou la collectivité.
+
+Les deux risques principaux sur ce type d'accès sont les suivants :
+
+
+Ainsi, l'ensemble des communications sur des services Wifi de ce type ne sont pas sécurisées.
+
+L'OWE est un protocole s'appliquant au Wifi définit par une RFC éditée en mars 2017 : la .
+
+L'objectif de ce protocole est de mettre en place une session chiffrée pour chaque périphérique Wifi grâce à la méthode cryptographique d'établissement des clés de Diffie-Hellman.Deux possibilités suite à l'établissement des clés de sessions pour chiffrer les données : soit via la cryptographie des courbes elliptiques (ECC), soit via la cryptographie des champs finis (FFC).
+
+Le fait d'utiliser un tel mécanisme d'établissement des clés permet de rester transparent pour l'utilisateur : celui-ci n'aura toujours aucun mot de passe à entrer manuellement, la génération de clés de sessions Wifi (PMK et PTK) se feront automatiquement et seront uniques pour chaque session générée.
+
+Dans la pratique, les trames d'associations 802.11 se voient ajouter un paramètre OWE Discovery au sein du groupe de paramètres des éléments du Robust Security Network (RSN, OUI 00-0F-AC, code 18).
+
+À la suite du processus d'association OWE, une PMK valide est créée et permet la génération de PTK pour les sessions de communication à l'issue d'échange de type 4-way Handshake classique en Wifi.
+
+Le fonctionnement du roaming sécurisé grâce au PMK-Caching (802.11r) n'est pas impacté par les mécanismes ajoutés par l'OWE.
+
+Afin de mettre en place un tel mécanisme, il est nécessaire que les périphériques et l'infrastructure Wifi soient compatibles.
+
+La bonne pratique lorsque l'OWE sera disponible pourra être de mettre en place un SSID de type "open" spécifique pour l'OWE distinct du SSID "open" historique à titre de transition.
+
+Attention, l'OWE permet uniquement de mettre en place un chiffrement des communications entre un périphérique et une infrastructure, il n'est en rien capable de réaliser l'authentification du client auprès de l'infrastructure ou l'inverse. Ainsi, une attaque de l"'Homme du Milieu" reste envisageable avec l'utilisation de ce seul mécanisme.
+
+

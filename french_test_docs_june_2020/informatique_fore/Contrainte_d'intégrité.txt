@@ -1,0 +1,10 @@
+﻿Contrainte d'intégrité
+
+Dans une base de données, une contrainte d'intégrité permet de garantir la cohérence des données lors des mises à jour de la base. En effet, les données d'une base ne sont pas indépendantes, mais obéissant à des règles sémantiques, après chaque mise à jour, le SGBD contrôle qu'aucune contrainte d'intégrité n'est violée.
+
+Sous Oracle, les clés primaires sont systématiquement accompagnées d'un index défini de la même manière. Il existe pour ce SGBD différents types d'index qui autorisent la conservation de l'intégrité de la table.
+
+Voici un ajout de contrainte en SQL reliant un ID à une clé étrangère :
+
+
+

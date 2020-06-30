@@ -1,0 +1,54 @@
+﻿Système linéaire
+
+Un système linéaire (le terme "système" étant pris au sens de l'automatique, à savoir un système dynamique) est un objet du monde matériel qui peut être décrit par des équations linéaires (équations linéaires différentielles ou aux différences), ou encore qui obéit au "principe de superposition" : toute combinaison linéaire des variables de ce système est encore une variable de ce système.
+
+Les systèmes non linéaires sont plus difficiles à étudier que les systèmes linéaires. Néanmoins, en linéarisant (quand c'est possible) un système non linéaire autour d'un point d'équilibre ou d'une trajectoire, on obtient un système linéaire qui représente correctement le système non linéaire au voisinage de ce point d'équilibre ou de cette trajectoire . La linéarisation d'un système non linéaire autour d'une trajectoire non réduite à un point d'équilibre engendre un système linéaire à coefficients variables (en fonction de temps), d'où l'importance qu'a pris ce type de systèmes et les études récentes qui lui ont été consacrées.
+
+Souvent (mais pas toujours), on distingue parmi les variables d'un système S les variables d'entrée, rassemblées dans une colonne "u", et les variables de sortie, rassemblées dans une colonne "y" ; le triplet formula_1 est alors appelé un "système commandé" ou encore une "dynamique".
+
+Les systèmes linéaires n'ont tout d'abord été étudiés que dans le cas stationnaire (également appelé « invariant ») dans le formalisme des fonctions de transfert. Cette approche est parvenue à sa pleine maturité avec la publication du célèbre livre de Bode à la fin de la seconde guerre mondiale (réédité depuis). Les travaux de Bellman, Pontryagin et ses collaborateurs et surtout de Kalman ont conduit nombre d'automaticiens à privilégier la représentation d'état à partir des années 1960.
+
+Kalman a fait une théorie complète des systèmes linéaires stationnaires sous forme d'état et a mis en évidence la perte d'information induite par le formalisme de transfert, à savoir les « modes cachés ». Sous l'impulsion de , les automaticiens se sont attachés à obtenir des représentations plus intrinsèques des systèmes linéaires que dans la formulation kalmanienne : c'est ainsi que s'est développée à partir de la seconde moitié des années 1970 l"approche géométrique" qui conserve néanmoins la structure de la représentation d'état.
+
+Vers le milieu des années 1980, Jan Willems a mis l'accent sur le fait qu'un système linéaire stationnaire général devait se définir comme étant le noyau, dans une puissance d'un espace fonctionnel approprié, d'une matrice à éléments dans un anneau d'opérateurs différentiels à coefficients constant "s" : c'est l'approche dite « comportementale » ().
+
+En 1990, à partir de ses travaux sur les systèmes non linéaires, Fliess a proposé une approche alternative suivant laquelle un système est un module de présentation finie sur un anneau d'opérateurs différentiels. Au même moment, et de manière indépendante, Oberst établissait le lien entre les deux approches (la première qui met l'accent sur les solutions, la seconde sur les équations) grâce à des notions d'algèbre homologique. Ceci faisait disparaître la séparation qui existait encore entre la théorie des systèmes linéaires au sens de l'automatique, qui nous préoccupe ici, et la théorie des systèmes différentiels linéaires, telle que développée par Malgrange à partir des idées de Grothendieck en géométrie algébrique. Ces idées ont donné naissance par la suite à la théorie des D-modules sous l’impulsion de Satō (et de l'« école de Kyoto » qu'il a fondée, dont Masaki Kashiwara est aujourd'hui un représentant de premier plan).
+
+La conception moderne des systèmes linéaires a fait récemment l'objet d'une présentation systématique ; l'étude des systèmes linéaires à coefficients variables en fonction du temps y occupe une place importante, et notamment la notion de "pôle" d'un tel système, avec la propriété de stabilité qui résulte de la position de ces pôles dans le plan complexe. Cette généralisation ne pouvait être réalisée sans une utilisation des outils de l'analyse algébrique.
+
+Soit formula_2 un anneau d'opérateurs différentiels, supposé intègre et admettant un corps de fractions, c'est-à-dire vérifiant la ) à gauche et à droite (tout anneau intègre noethérien à gauche et à droite vérifie cette condition). On supposera que formula_3 où formula_4 où formula_5 est un anneau différentiel et que formula_5 est une formula_7
+-algèbre. Si formula_8 et ƒ est un élément d'un formula_2-module formula_10 (module des fonctions indéfiniment dérivables, ou des distributions, ou des hyperfonctions, ou des germes de fonctions analytiques au voisinage de +∞, etc., suivant la nature des éléments de formula_5), on a d'après la règle de Leibniz
+où formula_13 est la dérivation de formula_5, dont formula_15 est une extension. Comme ceci est vrai pour tout formula_16 on a la relation de commutation
+
+Un exemple typique est celui où formula_18. L'anneau formula_2 est alors (isomorphe à) la première algèbre de Weyl formula_20 qui est un anneau de Dedekind non commutatif et simple.
+
+Un système linéaire défini sur formula_2 est défini par une équation de la forme
+où formula_23 et où formula_24 est une colonne de formula_25 éléments qui engendrent un formula_2 - module à gauche de présentation finie formula_27 (ce qu'on écrira formula_28). De manière précise, on peut considérer la multiplication à droite par formula_29, notée formula_30, comme un opérateur de formula_31 dans formula_32. Si formula_33 est l'image de cet opérateur, formula_27 est le quotient de formula_32 annulé par les éléments de formula_33, à savoir le conoyau
+
+On notera que toute combinaison linéaire d'un nombre fini de variables de formula_27 et de leurs dérivées d'ordre quelconque (mais fini) est encore un élément de formula_27, ce qu'on peut prendre pour définition même de la linéarité. D'autre part, contrairement à l'équation qui le définit « par générateurs et relations », formula_27 est un objet intrinsèque, dans le sens où il ne dépend pas de l'ordre dans lequel sont écrites les équations scalaires, ni de l'ordre dans lequel sont prises les variables, et plus généralement du choix des générateurs. On peut donc, au plan mathématique, identifier le système linéaire avec le module formula_27.
+
+Le système formula_27 est commandable s'il ne contient pas de variable sur laquelle aucune action n'est possible. Une telle variable se caractérise par le fait qu'elle satisfait une équation différentielle autonome, c'est-à-dire qu'elle n'est pas libre (ou qu'elle est liée). Un module qui ne contient aucune variable liée est (par définition) un module sans torsion. Cette observation a conduit Oberst à poser qu'un système est commandable s'il est un module sans torsion. Pour Fliess, qui suppose que formula_5 est un corps différentiel, formula_2 se trouve être un anneau principal. Dans ce cas, un module de type fini est sans torsion si, et seulement si, il est libre, et il a donc défini un système commandable comme étant un module libre.
+
+Dans le cas considéré par Fliess, tout système admet une représentation d'état, et la définition de la commandabilité comme étant la liberté du module équivaut à la définition kalmanienne classique (voir l'article "Représentation d'état").
+
+On notera que la commandabilité est définie ci-dessus sans qu'il ait été besoin de spécifier un choix des variables de commandes. Cette indépendance de la notion de commandabilité par rapport à celle de variable de commande a été observée en premier lieu par Willems.
+
+Soit formula_2 un anneau d'opérateurs différentiels vérifiant les mêmes conditions que ci-dessus, par exemple la première algèbre de Weyl formula_46 pour fixer les idées. Soit formula_10 un formula_2-module à gauche, par exemple l'espace des distributions sur la droite réelle. Notons
+
+Dans son « approche comportementale », Willems définit le système associé à la matrice formula_29 comme étant ce noyau. Il nous reste à établir la connexion qui existe entre celui-ci et le conoyau ci-dessus.
+
+On peut identifier les éléments de formula_51 avec les homomorphismes de formula_32 dans formula_10. Alors l'ensemble des homomorphismes de formula_54 s'identifient avec les homomorphismes de formula_32 dans formula_10 qui s'annulent sur formula_33 (voir l'article "Module injectif"). Par conséquent, on passe du conoyau formula_27 au noyau ci-dessus par le foncteur contravariant représentable formula_59.
+
+Ce foncteur est additif et exact à gauche de la catégorie des formula_2-modules à gauche dans celle des formula_7-espaces vectoriels. Ce foncteur est injectif (et permet donc de remonter du noyau au conoyau, ou par abus de langage des solutions aux équations) si, et seulement si formula_10 est un « cogénérateur » (notion qui est classique en algèbre homologique). Il est bijectif et dualisant entre la catégorie des formula_2-modules à gauche et la catégorie image si, et seulement si formula_10 est un « cogénérateur injectif ». C'est la situation la plus favorable.
+
+Lorsque formula_65, les formula_2-modules suivants sont des cogénérateurs injectifs :
+
+Lorsque formula_68, l'espace formula_69 des germes des fonctions analytiques dans un intervalle de la forme formula_70 de la droite réelle est un cogénérateur injectif.
+
+Lorsque formula_71, on ne connaît pas de cogénérateur injectif qui soit un espace rencontré en analyse. La situation est différente lorsque formula_72 où formula_73 désigne l'espace des fonctions analytiques sur la droite réelle. Dans ce cas, l'espace des hyperfonctions est un cogénérateur injectif. Cet exemple montre que pour un type de système linéaire donné, on doit mettre en jeu à la fois l'anneau formula_2 et l'espace formula_10 appropriés. C'est le principe même de l’analyse algébrique.
+
+Dans les exemples ci-dessus l'approche par conoyaux (« équations ») et celle par noyaux (« solutions ») sont équivalentes.
+
+
+
+

@@ -1,0 +1,55 @@
+﻿Ajax (informatique)
+
+L'architecture informatique ajax (acronyme d'asynchronous JavaScript and XML : "JavaScript et XML asynchrones") permet de construire des applications Web et des sites web dynamiques interactifs sur le poste client en se servant de différentes technologies ajoutées aux navigateurs web entre 1995 et 2005.
+
+Ajax combine JavaScript, les requêtes de type XMLHttpRequest, les manipulations du DOM, ainsi qu'un format de données (XML ou JSON), afin d'améliorer maniabilité et confort d'utilisation des applications internet riches :
+
+L'usage d'Ajax fonctionne sur tous les navigateurs Web courants : Google Chrome, Safari, Mozilla Firefox, Internet Explorer, Microsoft Edge, Opera, etc.
+
+Dans une application Web, la méthode classique de dialogue entre un navigateur et un serveur est la suivante : lors de chaque manipulation faite par l'utilisateur, le navigateur envoie une requête contenant une référence à une page Web, puis le serveur Web effectue des calculs, et envoie le résultat sous forme d'une page Web à destination du navigateur. Celui-ci affichera alors la page qu'il vient de recevoir. Chaque manipulation entraîne la transmission et l'affichage d'une nouvelle page. L'utilisateur doit attendre l'arrivée de la réponse pour effectuer d'autres manipulations.
+
+En utilisant A"jax", le dialogue entre le navigateur et le serveur se déroule la plupart du temps de la manière suivante : un programme écrit en langage de programmation JavaScript, incorporé dans une page web, est exécuté par le navigateur. Celui-ci envoie en arrière-plan des demandes au serveur Web, puis modifie le contenu de la page actuellement affichée par le navigateur Web en fonction du résultat reçu du serveur, évitant ainsi la transmission et l'affichage d'une nouvelle page complète.
+
+La méthode classique de dialogue utilise des mécanismes propres au World Wide Web, qui sont incorporés dans tous les navigateurs ainsi que les robots d'indexation, et ne nécessite pas de programmation. Au contraire, le fonctionnement d'Ajax nécessite de programmer en JavaScript les échanges entre le navigateur et le serveur Web. Il nécessite également de programmer les modifications à effectuer dans la page Web à la réception des réponses, sans quoi les dialogues se font à l'insu de l'utilisateur.
+
+En ajax, comme le nom l'indique, les demandes sont effectuées de manière asynchrone : le navigateur Web continue d'exécuter le programme JavaScript alors que la demande est partie, il n'attend pas la réponse envoyée par le serveur Web et l'utilisateur peut continuer à effectuer des manipulations pendant ce temps.
+
+Le langage de programmation JavaScript est apparu pour la première fois en 1996, dans le navigateur Web Netscape Navigator.
+
+Le langage XML et l'interface de programmation "Document Object Model" (DOM) ont été normalisés par le World Wide Web Consortium en 1998.
+
+Ajax est en fait introduit par XMLHttpRequest, initialement un composant ActiveX créé en 1998 par Microsoft pour leur application web Outlook Web Access, puis il a été ajouté à la norme ECMAScript relative au langage JavaScript et mis en œuvre sur la plupart des navigateurs du marché entre 2002 et 2005.
+
+Le terme Ajax a été introduit par Jesse James Garrett (informaticien américain), le , dans un article sur le site Web "Adaptive Path". Depuis, il a rapidement gagné en popularité.
+
+La méthode ajax consiste à utiliser de manière conjointe diverses technologies normalisées ouvertes et disponibles sur la plupart des navigateurs du marché.
+
+
+Les applications Web classiques permettent aux utilisateurs d'effectuer des choix (suivre un lien, remplir et valider un formulaire) à la suite de quoi une requête est envoyée au serveur Web. Le serveur répondra à la requête en envoyant une page Web. Une page web est envoyée en réponse à chaque manipulation, et la transmission de la page web entre le serveur et le navigateur provoque un temps de latence d'autant plus grand que la page est riche en contenu et en présentation (tableaux, couleurs, polices de caractères…).
+
+Dans les applications Web en Ajax, une page Web est envoyée une seule fois. La page envoyée contiendra un programme écrit en langage JavaScript. Lors des manipulations effectuées sur la page par l'utilisateur, le programme en JavaScript envoie des requêtes au serveur Web, le serveur répondra aux requêtes en envoyant un document au format XML, ce document ne contient pas d'information de présentation et le nombre d'informations qu'il contient est souvent réduit, d'où des temps de latence plus réduits que ceux d'une application Web classique.
+
+L'utilisation de JavaScript permet de provoquer des requêtes lors de manipulation qui autrement n'en provoqueraient pas (du fait des mécanismes utilisés). Ce qui permet de mettre en œuvre des fonctionnalités qui se rencontrent uniquement dans les "Rich Internet Applications".
+
+Les feuilles de style CSS sont en outre utilisées dans les différentes pages d'une application Web Ajax, dans le but de diminuer le temps de latence lors de l'envoi initial de la page. Les informations de présentation sont extraites des différentes pages Web de l'application, et placées dans une feuille de style unique, utilisée pour les différentes pages de l'application.
+
+D'autres systèmes existent pour afficher du contenu dynamique au sein d'une page Web :
+
+Ajax vise à :
+Les applications Web qui possèdent ces qualités sont appelées "rich Internet applications" (RIA).
+
+Les robots d'indexation, utilisés par les moteurs de recherche, exploitent les mécanismes intégrés du World wide web et n'exécutent pas tous les programmes en JavaScript. Par conséquent, le contenu des pages créées par un programme JavaScript ne sera pas ajouté à l'index du moteur de recherche. Le même problème se pose avec les produits concurrents comme Adobe Flex et Microsoft Silverlight.
+
+Pour faciliter l’utilisation de ces technologies, de nombreux frameworks ont été mis en place. Il s’agit en général d’un ensemble de bibliothèques JavaScript permettant de réaliser les traitements asynchrones et d’offrir une ergonomie avancée grâce à une palette d’objets graphiques aboutis.
+
+Dans un souci d’industrialisation, nombre de ces frameworks ont été couplés à des frameworks de conception web.
+
+On estime à plus de cinq cents le nombre de frameworks JavaScript actuels. 
+Les principaux sont dans l'article Frameworks Ajax.
+
+IBM a créé "Open Ajax Initiative", un groupe de promotion de cette technologie avec des partenaires tels que , Adobe Systems, BEA Systems, Borland, the Dojo Foundation, Fondation Eclipse, Google, Ilog, Yahoo!, Laszlo Systems, Mozilla Corporation, Novell, Openwave Systems, SAP, Oracle, Red Hat, Tibco, Zend Technologies et Zimbra.
+
+Le premier résultat de cette initiative est l"'Ajax Toolkit Framework" (ATF), un projet qui vise à proposer des outils pour le développement d'applications Ajax dans l'outil de développement Eclipse. Ce projet s'appuie entre autres sur la contribution initiale d'IBM et divers frameworks AJAX open source (tels que Dojo ou Rico).
+
+
+

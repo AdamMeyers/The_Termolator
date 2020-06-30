@@ -1,0 +1,69 @@
+﻿Transformation bilatérale de Laplace
+
+En analyse, la transformation bilatérale de Laplace est la forme la plus générale de la transformation de Laplace, dans laquelle l'intégration se fait à partir de moins l'infini plutôt qu'à partir de zéro.
+La transformée bilatérale de Laplace d'une fonction formula_1 de la variable réelle est la fonction formula_2 de la variable complexe définie par :
+
+Cette intégrale converge pour formula_4, c'est-à-dire pour formula_5 appartenant à une bande de convergence dans le plan complexe (au lieu de formula_6, formula_7 désignant alors l'abscisse de convergence, dans le cas de la transformation monolatérale). De façon précise, dans le cadre de la théorie des distributions, cette transformée « converge » pour toutes les valeurs de formula_5 pour lesquelles formula_9 (en notation abusive) est une distribution tempérée et admet donc une transformation de Fourier.
+
+Les propriétés élémentaires (injectivité, linéarité, etc.) sont identiques à celles de la transformation monolatérale de Laplace.
+
+Il est essentiel, quand on utilise la transformation bilatérale de Laplace, de préciser la bande de convergence. Soit par exemple formula_10.
+
+Si la bande de convergence est formula_11, l'« antécédent » de cette transformation de Laplace est la fonction de Heaviside formula_12. En revanche, si la bande de convergence est formula_13, cet antécédent est formula_14.
+
+Soit formula_15 et formula_16 deux distributions convolables, par exemple ayant chacune un support limité à gauche, ou l'une d'entre elles étant à support compact. Alors (comme dans le cas de la transformation monolatérale),
+
+En particulier, formula_18 et formula_19, donc
+
+On peut étendre la transformation de Laplace au cas de certaines hyperfonctions, dites « hyperfonctions de Laplace » ou « hyperfonctions de type exponentiel ». Pour une hyperfonction définie par une distribution, on retrouve la théorie qui précède. Mais par exemple
+
+bien que n'étant pas une distribution (car elle est d'ordre infini localement, à savoir en 0), est une hyperfonction dont le support est formula_22 et qui
+admet pour transformée de Laplace
+
+où formula_24 désigne la fonction de Bessel de première espèce habituelle, à savoir la fonction entière
+
+On obtient en effet en substituant cette expression dans la précédente
+
+ce qui est bien cohérent avec la définition de formula_27 puisque formula_28.
+
+Soit formula_1 une fonction définie dans un voisinage ouvert de formula_30, continue en 0, et admettant une transformée de Laplace bilatérale formula_31. Sa transformée monolatérale de Laplace, que nous noterons ici formula_32, est donnée par
+
+où formula_34 est la fonction de Heaviside. On a
+
+par conséquent
+
+d'où la formule classique
+
+Soit formula_15 une distribution à support positif, formula_39 une fonction indéfiniment dérivable dans un intervalle ouvert contenant formula_30, et formula_41. En posant formula_42, formula_43 est une distribution à support positif, dont la transformée de Laplace est (en notation abusive)
+
+où formula_45 est l'abscisse de convergence. Les distributions formula_1 et formula_39 ont même restriction à tout intervalle ouvert de la forme formula_48 dès que formula_49 est suffisamment petit. On peut donc écrire formula_50 pour tout entier formula_51. D'autre part,
+
+avec formula_53 et, d'après la « théorie élémentaire » ci-dessus, formula_54. Finalement,
+
+En procédant par récurrence, on obtient les formules générales de l'article Transformation de Laplace.
+
+Définissons maintenant la relation d'équivalence suivante : formula_56 et formula_57 désignant deux distributions telles que ci-dessus, nous écrirons formula_58 si formula_56 et formula_57 ont même restriction à l'intervalle formula_61 dès que formula_49 est suffisamment petit. Alors formula_63 ne dépend que de la classe d'équivalence formula_1 de formula_56 et qui est appelée un « germe » de fonction généralisée définie dans un voisinage de formula_66, et, par abus de langage, une « fonction généralisée à support positif » (voir l'article Transformation de Laplace). On écrira formula_67. Notons enfin que formula_68 si, et seulement si formula_69.
+
+La transformation de Laplace bilatérale est utilisée notamment pour la conception de filtres analogiques classiques (Butterworth, Tchebychev, Cauer, etc.), pour le filtre optimal de Wiener, en statistiques où elle définit la fonction génératrice des moments d'une distribution, elle joue un rôle essentiel dans la formulation à temps continu de la factorisation spectrale causale directe et inverse, elle est très utilisée enfin pour résoudre les équations intégrales (voir l'article Opérateur intégral).
+
+La transformation bilatérale de Laplace se généralise au cas de fonctions ou de distributions à plusieurs variables, et Laurent Schwartz en a fait la théorie complète.
+Soit formula_70 une distribution définie sur formula_71. L'ensemble des formula_5 appartenant à formula_73 pour lesquels formula_74 (en notation abusive) est une distribution tempérée sur formula_71, est cette fois un cylindre de la forme formula_76 où formula_77 est un sous-ensemble convexe de formula_71 (dans le cas d'une variable, formula_77 n'est autre que la bande de convergence évoquée plus haut). Soit alors pour formula_80 dans formula_77 la distribution formula_82 (de nouveau en notation abusive). Cette distribution est tempérée. Notons formula_83 sa transformation de Fourier. La fonction formula_84 est appelée la transformée de Laplace de formula_70 (notée formula_86) et, avec formula_87, formula_88 est notée formula_89.
+Ces remarques préliminaires étant faites, la théorie devient assez semblable à celle correspondant aux distributions d'une variable.
+
+Le théorème de Paley-Wiener et sa généralisation due à Schwartz sont couramment énoncés à partir de la transformation de Fourier-Laplace (voir "infra"). Il peut tout aussi bien s'exprimer à partir de la transformation de Laplace, et on obtient alors l'énoncé suivant:
+
+(1) Théorème de Paley-Wiener :
+
+où formula_100 désigne le produit scalaire usuel dans formula_71 de formula_102 et de formula_103.
+
+(2) Théorème de Paley-Wiener-Schwartz :
+
+Un théorème dû à Jacques-Louis Lions donne d'autres informations sur le support d'une distribution à partir de sa transformée de Laplace. Dans le cas d'une seule variable, il prend la forme suivante (voir Inversion):
+
+Ce théorème montre par exemple que l'hyperfonction considérée au paragraphe « Transformées de Laplace des hyperfonctions » n'est pas une distribution ayant son support en 0.
+
+En posant formula_119, on obtient la transformée de Fourier-Laplace. Considérons, pour simplifier, la transformée de Fourier-Laplace d'une fonction d'une variable réelle. On a alors formula_120, par conséquent si la bande de convergence de la transformée de Laplace est formula_121, celle de la transformée de Fourier-Laplace est formula_122.
+
+
+
+

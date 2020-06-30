@@ -1,0 +1,41 @@
+﻿Transport Management System
+
+Un Transport Management System (TMS ou système de gestion des transports) désigne une catégorie de progiciels destinés à gérer les opérations de transport. 
+
+Il existe de nombreuses TMS qui recouvrent en fait une grande variété d'activités ou d'étapes dans la chaine logistique. On distingue deux types principaux : Les TMS chargeurs et les TMS transporteurs. 
+
+Les principales fonctionnalités que l'on peut retrouver dans un TMS chargeur sont : 
+
+Certains TMS sont qualifiés comme tels alors qu'ils n'offrent qu'une seule de ces fonctionnalités. Par ailleurs, les TMS sont très majoritairement spécialisés pour le transport routier, puisque c'est le mode le plus utilisé. 
+
+Les transporteurs proposent plusieurs services de transport (express, rapide, normal, messagerie, etc.) qui sont disponibles selon les zones géographiques d'origine et de destination, avec différents tarifs. Ces informations sont mises à jour régulièrement par les transporteurs et doivent être intégrées dans le TMS. 
+
+Le plan de transport est une codification en un numéro unique de ces différentes informations ainsi que d'un numéro incrémental permettant d'identifier les colis. Si ce code est imprimé sur une étiquette sous format d'un code-barres, un transporteur peut alors le scanner afin de connaitre les informations de base de l'envoi de la marchandise. 
+
+C'est ce plan de transport qui sert de base à la gestion des opérations de transport chez le transporteur. 
+
+Elles peuvent être de deux types : les interfaces "bornes" et les interfaces standards. 
+
+Les informations sont envoyées à un ordinateur du transporteur présent chez le chargeur. Elles sont intégrées au logiciel du transporteur installé sur cette borne. C'est ensuite ce logiciel qui se charge de calculer le plan de transport et d’imprimer les étiquettes. Le plus souvent, il faut procéder à une opération de "fin de journée" pour transmettre les informations des chargements du jour au système central du transporteur.
+
+Les informations sont envoyés en temps réel au système central du transporteur, au format EDIFACT. Ce type d'interface permet de transférer des informations plus complètes sur les chargements, de planifier au mieux les capacités de transports et d'éliminer le coût de la borne et de son entretien.
+
+Le choix du transporteur par le TMS peut se faire selon trois critères principaux : 
+
+Ces trois critères se combinent différemment selon le transporteur, la zone d'origine et de destination. Par exemple, un transporteur qui sera bon sur la liaison Nantes-Paris ne le sera pas forcément sur une liaison Nantes-Bordeaux. 
+
+Le cout du transport n'est pas nécessairement linéaire en fonction du nombre de kilomètres. Le plus souvent dégressif, il peut intégrer des notions de seuils : 5€ du kilomètres pour un trajet de 100 km ou moins, 4€ entre 100 et 200 km. La tarification en fonction de quotas est aussi répandue : un tarif préférentiel est appliqué si le chargeur fait passer au moins une certaine quantité de son trafic par un transporteur (en nombre de palettes transportées par mois, par exemple). 
+
+Une difficulté peut se poser : les unités d’œuvre. Selon les cas et les transporteurs, on peut parler en nombre de : 
+
+Dans ces trois derniers cas, la notion d'unité payante est à prendre en compte. 
+
+Chaque transporteur a sa propre mise en page d'étiquette, bien que le format des étiquettes soit généralement de 10*15 (A6) ou A5. 
+
+On retrouve toujours les codes-barres permettant l'identification des colis, ainsi que l'adresse de livraison. 
+
+Comme évoqué précédemment, la tarification des transporteurs peut être complexe et le contrôle de ces factures peut être une tâche extrêmement fastidieuse. La pré-facturation permet d'anticiper la facture du transporteur. Si le montant anticipé est proche du montant effectif de la facture (différence de 5 % par exemple) alors le chargeur peut considérer la facture du transporteur comme fiable et la payer sans plus de contrôle. 
+
+Les principales fonctionnalités que l'on peut retrouver dans un TMS transporteur sont : 
+
+

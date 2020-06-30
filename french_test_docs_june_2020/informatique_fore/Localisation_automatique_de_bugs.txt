@@ -1,0 +1,76 @@
+﻿Localisation automatique de bugs
+
+La localisation automatisée de bug dans les logiciels informatiques est une activité du génie logiciel consistant à détecter des défauts pouvant provoquer des dysfonctionnements dans un programme. Son objectif est la réduction de l'effort du développeur lors de la phase de correction.
+Cette recherche peut être menée à bien par une analyse statique ou dynamique. En ce qui concerne l'analyse dynamique, elle porte sur l'étude de traces d'exécution du programme. 
+
+Cette étude consiste à collecter des données lors de l'exécution du programme afin de déterminer la localisation probable du bug.
+
+La localisation automatique de bug s'intègre au processus de corrections de bug comportant les étapes suivantes:
+
+Les données peuvent être collectées à différents niveaux de granularité tels que: la ligne, le bloc, la fonction, la classe, voir le paquet.
+
+Dans l'exemple ci-dessus, La ligne 1 est exécutée par les Tests 1, 3 et 4, deux de ces tests ont échoué (formula_1) et un a réussi (formula_2), tous les tests échoués ont exécuté cette ligne (formula_3) et un test réussi n'exécute pas cette ligne (formula_4). La ligne 2 est exécutée par les Tests 1, 2 et 4, un de ces tests a échoué (formula_1) et deux ont réussi (formula_2), un test échoué n'exécute pas cette ligne (formula_3) et tous les tests réussis exécutent cette ligne (formula_4).
+
+Les métriques permettent de calculer une distance entre une entité du code (la ligne, le bloc, la fonction, la classe) et un bug. Il existe différentes métriques. Les entités peuvent alors être triées en fonction de ces distance, celles les plus proches du bug contiennent plus probablement du bug, celles les plus éloignées ne sont probablement pas la cause du bug. Sur base de ce tri, le développeur peut ensuite parcourir les différentes entités en commençant par les plus proches jusqu'à ce que l'entité fautive soit trouvée. Ainsi, si la métrique est efficace, le développeur trouvera plus rapidement la source de l'erreur que par une recherche manuelle. 
+La plus vieille des métriques communément utilisées est Jaccard (1901) qui, destinée à l'origine au domaine de la botanique, est à présent utilisée dans des domaines variés. La botanique a également inspiré de nombreuses métriques telles que Ochiai (1957), Russel and Rao (1940), Sørensen and Dice (1945), Rogers and Tanimoto (1960), Anderberg (1973) et Simple-Matching (2004). La métrique Hamming (1950) a, quant à elle, été créée pour la détection et la correction d'erreur de code et la métrique Goodman and Kruskal dans le domaine de la biométrie. Le domaine des cartes auto adaptatives a introduit les métriques Kulczynski1, Kulczynski2, Hamann et Sokal. Par ailleurs, plusieurs métriques ont été directement créées pour la localisation automatique de bug: Tarantula, Ample, Zoltar et Wong1-3.
+Le tableau ci-après reprend les principales métriques qui utilisent les données présentées ci-dessus pour la localisation de bug.
+Une approche alternative à la collecte des entités exécutées est proposée par Libit et al., elle consiste à analyser les prédicats à la place des entités exécutées (lignes, blocs, classes, ...). Un prédicat intéressant peut être une condition, un retour de valeur, ... Lors de l'exécution des tests sont collectés les prédicats exécutés ainsi que ceux qui ont une valeur vraie. Ces données sont ensuite utilisées dans des métriques qui permettent de trier les prédicats en fonction de leur implication dans les tests échoués.
+Voici une des métriques introduites par Libit et al. : 
+formula_13 où
+formula_14 et
+formula_15.
+Des études empiriques ont montré qu'aucune métrique n'est parfaite. Une solution possible pour améliorer l'efficacité de la localisation automatique de bug est de combiner les métriques. Wang et al. proposent une approche , Jifeng Xuan et al. proposent une combinaison de métriques générées par apprentissage automatique.
+
+Naish et al. proposent un classement de métriques sur des données standardisées, les comparant sur les performances et la fiabilité. Il en ressort que les algorithmes proposés par Naish et al. sont un meilleur compromis entre les performances et la fiabilité tel que Wong3, Zoltar, M2 et Ochiai.
+
+Les résultats expérimentaux de Jifeng Xuan et al. réalisés sur 10 projets open-source montrent que la combinaison des métriques peut améliorer jusqu'à 50% l'efficacité de la localisation des bugs. Cependant ils montrent également que les résultats obtenus grâce à Ochiai et Ample sont bons. Ces résultats contrastent avec ceux de Naish et al. car selon Jifeng Xuan et al. les suppositions de Naish et al. sur les données ne s'appliquent pas aux cas réels.
+
+Les outils permettant la localisation de bug sont disponibles sous forme de logiciel en standalone ou de plugins pour IDE.
+
+Pinpoint est un framework Java EE pour la localisation de bug dans les systèmes distribués.
+
+Son utilisation est destinée à la localisation de bug dans les applications complexes où divers composants, sains ou fautifs, interagissent pour répondre à la requête d'un client. Ce framework a été développé à l'origine pour pallier les faiblesses des systèmes de localisation de bug par analyse statique.
+
+En effet, les besoins de dynamisme dans les applications complexes (équilibrage de charge, passage à l'échelle, ...) sont difficiles à prévoir lors d'une analyse statique.
+
+Son fonctionnement se déroule en deux phases :
+
+L'analyse permet de mettre en lumière le composant ou les combinaisons de composants susceptibles d'être à l'origine des comportements erronés du système.
+
+Plusieurs limitations peuvent compliquer la localisation des bugs :
+
+Tarantula est à la fois une métrique et un outil proposé pour la première fois en 2001 par des chercheurs de Georgia Institute of Technology. Il a été développé dans le but de fournir un programme standalone de visualisation des lignes de code de l'ensemble d'un programme.
+
+Les lignes de codes du programme étudié y sont colorées en suivant une formule indiquant leur degré de soupçons. En plus de la couleur, variant du vert pour les lignes non suspectes au rouge pour les plus suspectes, une teinte renseigne le nombre de fois où la ligne a effectivement été exécutée par la suite de tests.
+
+Ces deux informations sont combinées pour produire un affichage renseignant sur le degré de soupçon associé à chaque ligne.
+
+AMPLE (pour Analyzing Method Patterns to Locate Errors) est un outil pour la localisation de bug dans les logiciels écrits en Java développé par des chercheurs de l'Université de la Sarre en 2005. Son approche se veut orientée objet avec la classe comme unité d'étude.
+
+Implémenté sous la forme d'un plugin pour Eclipse, il s'intègre avec des frameworks tels que JUnit pour collecter les résultats d'exécution d'une suite de tests.
+
+Son fonctionnement se base sur l'étude des séquences d'appels entre les méthodes exécutées pendant les tests. En comparant les séquences entre l'exécution d'un test réussi et d'un test échoué, AMPLE oriente le développeur vers la source probable du problème. En effet, les séquences ou morceaux de séquences présents dans les 2 exécutions sont moins susceptibles de porter des erreurs que les méthodes appelées uniquement dans l'exécution fautive.
+
+Les séquences sont comparées sur une longueur "k", choisie en fonction du niveau de granularité souhaité. Pour chaque séquence trouvée dans l'exécution échouée et absente dans l'exécution réussie, on extrait la classe matrice de l'objet sur lequel les appels manquants sont faits.
+À la fin de la comparaison, les classes sont ordonnées par nombre moyen d'apparition unique dans les exécutions échouées.
+
+GZoltar est un framework de localisation de bug initialement créé en 2010 et disponible sous la forme d'un plugin Eclipse.
+
+Cet outil apporte une option de visualisation et une meilleure intégration à l'environnement du développeur à Zoltar, un framework initialement développé par des chercheurs de l'Université de technologie de Delft.
+
+Le développement avait alors débouché sur un logiciel produisant une sortie textuelle ainsi qu'une interface non intégrée sous la forme de XZoltar. Le code de GZoltar se veut ré-utilisable par les autres développeurs sous la forme d'une bibliothèque.
+Comme d'autres plugins comme AMPLE, il s'intègre à Eclipse pour exploiter les résultats produits par des frameworks de tests tels que JUnit.
+
+Il se sert principalement de la métrique Ochiai pour évaluer la suspicion des lignes de code et produit ensuite un rendu graphique du résultat.
+Les calculs de suspicion sont faits par Zoltar en utilisant la métrique Ochiai et le résultat est rendu en 3D à l'aide d'OpenGL.
+
+EzUnit est un framework pour la localisation de bug initialement développé en 2007 sous la forme d'un plugin Eclipse.
+
+Il s'intègre à l'environnement du développeur en proposant le lancement des tests écrits à l'aide d'un framework de test tel que JUnit.
+EzUnit4, la version la plus récente offre une option de visualisation des graphes d'appels.
+
+Les nœuds du graphe produit sont alors colorés en fonction du degré du suspicion sur les appels de méthode. La coloration varie du vert au rouge pour indiquer la localisation probable du bug.
+
+
+
+

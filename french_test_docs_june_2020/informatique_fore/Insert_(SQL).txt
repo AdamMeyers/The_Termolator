@@ -1,0 +1,42 @@
+﻿Insert (SQL)
+
+La commande INSERT a la syntaxe suivante :
+Le nombre de colonnes doit être identique au nombre de valeurs. Si une colonne n'est pas spécifiée, sa valeur par défaut lui sera affectée. Les valeurs insérées doivent respecter toutes les contraintes tel que les clés étrangères, clés primaires, et les colonnes NOT NULL. Si la commande contient une erreur de syntaxe, ou si une contrainte n'est pas respectée, les valeurs ne sont pas insérées et une erreur est rapportée.
+
+Exemple :
+
+Une écriture plus concise existe, sans nommer les colonnes, insérant les valeurs dans le même ordre que les colonnes de la table. Il n'est pas nécessaire de préciser toutes les colonnes, les colonnes restantes prendront leurs valeurs par défaut.
+
+Syntaxe :
+
+L'exemple précédent peut donc être réecrit, si et seulement si les deux premières colonnes de la table film_cast sont firstname et lastname:
+
+Depuis SQL-92 il est possible d'insérer plusieurs tuples en une seule requête :
+
+Cette fonctionnalité est supportée par DB2, SQL Server (Depuis la version 10.0), PostgreSQL (depuis la version 8.2), MySQL, SQLite (depuis la version 3.7.11) et H2.
+
+Exemple (considérant que 'firstname' et 'lastname' sont les deux seules colonnes de la table 'film_cast'):
+Les insertions multiples sont particulièrement intéressantes en termes de performance. Il est donc conseillé pour une application qui doit insérer beaucoup lignes par seconde d'utiliser des requêtes multiples pour réduire le nombre de requêtes effectuées et la charge du serveur. L'utilisation de requête multiples permet d'insérer plus de tuples qu'une série d'insertions simples pour un temps donné.
+
+Afin d'insérer plusieurs tuples en utilisant MS SQL, la construction suivante est utilisable :
+
+Cependant ce n'est pas une requête SQL valide selon le standard dû à la sous requête SELECT incomplète.
+
+Il est aussi possible de le faire sous Oracle en utilisant la table DUAL:
+Une implémentation respectant les standards SQL:
+Oracle PL/SQL supporte la syntaxe "INSERT ALL", dans laquelle les requêtes d'insertions multiples sont terminés par un SELECT:
+Avec la base de données Firebird, l'insertion multiple est possible grâce à la syntaxe :
+
+Cependant, Firebird restreint le nombre de tuples qui peuvent être insérés par cette syntaxe dû à la limite du nombre de contextes utilisables en une seule requête.
+
+Une seule requête INSERT peut aussi être utilisée pour récupérer des données depuis une autre table, les modifier si nécessaire, puis les insérer directement dans une table. Dans ce cas, une sous-requête est utilisée à la place de la clause VALUES :
+Il est souvent nécessaire d'obtenir la cle primaire artificielle qui a été auto-générée par le moteur de base de données lors d'une insertion afin de l'utiliser dans des requêtes suivantes. Il existe, en fonction du moteur utilisé, différentes méthodes pour l'obtenir :
+
+
+
+
+Firebird utilise la même syntaxe, cependant la requête ne pourra insérer qu'un seul tuple.
+
+Si des déclencheurs (triggers en anglais) sont définis sur la table dans laquelle la requête insère, ils seront exécutés dans le contexte de la requête. BEFORE INSERT permet la modification des valeurs qui devront être insérées, AFTER INSERT ne peut plus modifier les données mais peut être utilisé pour initier des actions sur d'autres tables.
+
+

@@ -1,0 +1,31 @@
+﻿Théorème de Codd
+
+En théorie des bases de données, le théorème de Codd affirme l'équivalence entre l'algèbre relationnelle et le calcul relationnel (restreint aux requêtes indépendantes du domaine). Ce théorème est important pour les bases de données relationnelle, car il assure que toute requête « naturelle » (i.e. du calcul relationnel) peut se traduire en algèbre relationnelle, et donc en un langage de requêtes intelligible par un ordinateur (en particulier le SQL). Ce théorème a été démontré par Edgar Frank Codd en 1971.
+
+Dans le modèle de la base de données relationnelle, une table (ou relation) contient plusieurs attributs ou champs (les colonnes) et plusieurs lignes, appelées tuples. Une table est vue comme un ensemble (ou multi-ensemble dans la plupart des implémentations) de tuples. Par exemple, une table avec deux champs (Titre et Réalisateur) et trois tuples.
+
+Il existe deux modélisations mathématiques de requêtes.
+
+
+Le calcul relationnel correspond à la "logique du premier ordre sans symbole de fonction", mais avec des adaptations propres aux bases de données relationnelles. Selon Serge Abiteboul et al., son introduction remonte à un rapport technique de J.L. Kuhns de 1969 où il utilise des formules logiques pour faire des requêtes. Mais l'importance du calcul relationnel s'est développé avec Codd.
+
+Certaines requêtes dépendent du domaine. Par exemple, "donner l'ensemble des titres des films qui ne sont pas dans la relation Films" est une requête pour laquelle il faut spécifier le domaine. Par exemple, avec le domaine {Whiplash, Lalaland, Didier, Damien Chazelle, Alain, Chabat}, la réponse est vide. Mais, avec le domaine {Whiplash, Lalaland, Didier, Damien Chazelle, Alain, Chabat, Star Wars}, la réponse est {Star Wars}. On étend la sémantique d'une formule en explicitant précisément le domaine dans lequel on travaille. On parle d’interprétation relativisé : une requête est évaluée dans une base de données muni d'un domaine.
+
+Le domaine actif d'une base de données est l'ensemble des éléments qui apparaissent dans la base de données. Dans l'exemple, ci-dessus, il s'agit de {Whiplash, Lalaland, Didier, Damien Chazelle, Alain, Chabat}.
+
+Une requête est indépendante du domaine si sa solution ne dépend pas du domaine et dépend uniquement de la base de données. Par exemple, "Donner l'ensemble des titres de films qui sont réalisés par Damien Chazelle" est indépendante du domaine. Par contre, "donner l'ensemble des titres des films qui ne sont pas dans la relation Films", elle, dépend du domaine.
+
+Pour les requêtes indépendantes du domaine, il suffit alors de réaliser la requête sur une base de données en utilisant le domaine actif.
+
+L'algèbre relationnelle décrit des opérations sur des relations. Dans cet article, on s'intéresse aux opérations suivantes :
+
+
+Une première version du théorème de Codd énonce l'équivalence entre le calcul conjonctif (on n'utilise que des conjonctions dans les requêtes du calcul relationnel) et l'algèbre SPC (prendre une relation R, prendre m tuples, sélections, projections, produits cartésien) satisfiable.
+
+Une seconde version du théorème de Codd énonce l'équivalence entre l'algèbre relationnelle (entière) et le calcul relationnel restreint aux requêtes indépendantes du domaine.
+
+La table ci-dessous montre comment transformer une requête de l'algèbre relationnelle non nommé en une requête équivalente du calcul relationnel, qui est indépendante du domaine. La construction se fait par induction sur la requête de l'algèbre relationnelle. On rappelle que le symbole ∨ désigne la disjonction (ou), le symbole ∧ désigne la conjonction (et), le symbole ¬ désigne la négation (non).
+
+Toute requête en calcul relationnel, il existe une requête en algèbre relationnelle qui est lui est équivalente sous domaine actif (et donc en particulier toute requête du calcul relationnel qui est indépendante au domaine s'écrit en algèbre relationnelle). 
+
+

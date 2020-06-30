@@ -1,0 +1,51 @@
+﻿Moteur de base de données
+
+En informatique, un moteur de base de données (anglais "database engine" ou "storage engine") est un composant logiciel qui contrôle, lit, enregistre et trie des informations dans une ou plusieurs bases de données.
+
+Le moteur de base de données est le composant central d'un système de gestion de base de données. C'est un composant essentiel des systèmes d'informations, ainsi que de nombreux logiciels qui manipulent des grandes quantités de données (voir Informatique de gestion).
+
+La majorité des moteurs de base de données sont prévus pour manipuler les bases de données relationnelles. Le système de fichier est une forme primitive de base de données hiérarchique. Un composant moteur inclus dans le système d'exploitation, manipule le système de fichiers.
+
+Une base de données est un ensemble organisé d'informations. Un moteur de base de données est un composant logiciel utilisé par d'autres logiciels pour manipuler le contenu des bases de données. Le composant peut être incorporé dans le logiciel, ou séparé. Un serveur de base de données est un logiciel qui permet d'exploiter un moteur de base de données via un réseau informatique.
+
+Les traitements du moteur de base de données visent à assurer la sécurité de la base de données, à garantir la confidentialité, l'intégrité et la disponibilité des informations stockées. Les traitements visent également à assurer l'atomicité, la cohérence, l'isolation et la durabilité des opérations effectuées sur le contenu de la base de données (voir propriétés ACID).
+
+Les bases de données relationnelles ont été inventées par Edgar F. Codd (1923-2003) durant les années 1960, alors qu'il était chercheur chez IBM. Son employeur, qui travaillait alors sur un autre type de base de données, y portait néanmoins peu d'intérêt. En 1978, le concept intéresse Lawrence Ellison qui fonde une startup qui sera à l'origine de Oracle Corporation. dbm, publié en 1979, développe lui aussi le concept.
+
+Le langage SQL a été introduit par IBM en 1981 sur leur premier système de gestion de base de données relationnelles System R — le prédécesseur de IBM DB2.
+
+La technologie des bases de données n'a évolué que très lentement entre 1970 et 2000.
+
+Un moteur de base de données enregistre et puise les données dans un ou plusieurs fichiers en suivant un ensemble de règles pré-définies enregistrées dans la base de données. Ces règles déterminent le schéma conceptuel de la base de données, les règles de cohérence et de confidentialité. Le moteur de base de données refusera toute opération qui n'est pas conforme aux règles.
+
+Un moteur de base de données comporte souvent un mécanisme d'antémémoire, pour accélérer les opérations sur la base de données. Chaque opération effectuée sur la base de données est contrôlée par le moteur de base de données, si l'opération n'est pas conforme aux règles de cohérence, l'opération sera alors refusée. Plusieurs opérations inter-dépendantes peuvent être regroupées dans une transaction, en cas d'échec la totalité des opérations de la transaction sont annulées.
+
+Le moteur de base de données peut être équipé d'un mécanisme de journalisation : toutes les opérations à effectuer sur la base de données sont inscrites au préalable dans un fichier — le journal (anglais "log"). Ce qui permet de terminer les opérations en cas d'arrêt inattendu de l'appareil informatique. Le mécanisme est également utilisé pour annuler les transactions.
+
+Dans une base de données relationnelle, les informations sont groupées en entités, avec des relations entre les entités. Le moteur de base de données effectue les opérations nécessaires pour retrouver un ensemble d'entités et les réunir dans une même collection. La collection contient typiquement certaines entités A ainsi que des entités connexes B, C, D…
+
+Dans une base de données relationnelle, une entité A de la base de données peut être en relation avec une entité B. Il y a intégrité référentielle lorsque l'entité B — à laquelle A fait référence — se trouve dans la base de données. Si l'integrité référentielle est une règle de cohérence, le moteur de base de données refusera de créer une entité A qui fait référence à une entité B inexistante.
+
+Parfois une suite d'opérations doivent être exécutées par le moteur de base de données. La suite d'opération aboutit à un résultat (contenu de la base de données) conforme aux règles de cohérence, or chaque opération exécutée de manière isolée donne un résultat non conforme. Les opérations peuvent alors être regroupées dans une transaction et exécutées d'un seul tenant par le moteur de base de données, le moteur n'effectue aucun autre traitement en même temps, ce qui garantit l'atomicité de la transaction.
+
+Des règles de confidentialité permettent de limiter voire d'interdire la manipulation de certaines données à certains utilisateurs. Avant toute opération le moteur de base de données vérifiera que la demande est conforme aux règles de confidentialité, en particulier que l'utilisateur qui demande une opération de manipulation est autorisé à cette opération. Le moteur de base de données refusera l'opération si ce n'est pas le cas. voir Contrôle d'accès logique.
+
+Lors des opérations, des verrous évitent qu'une information en cours de modification par un utilisateur soit recouverte par une autre opération effectuée en même temps par un autre utilisateur. En cas d'interblocage le moteur de base de données annulera les modifications d'un des deux utilisateurs.
+
+Avec certains moteurs de bases de données il est possible de créer des programmes contenant des suites d'opérations sur les données, et de les enregistrer dans la base de données. voir procédure stockée. Ces procédures peuvent être exécutées automatiquement par le moteur de base de données lors de certaines modifications de la base de données (selon des règles pré-définies enregistrées dans la base de données).
+
+Un système de gestion de base de données (abrégé "SGBD") est un ensemble de logiciels qui servent à la manipulation des bases de données. 
+
+Le SGBD comporte divers outils qui permettent à un utilisateur de manipuler des bases de données, comme un outil qui permet d'envoyer des demandes au moteur de base de données, demandes qui sont souvent formulées en langage SQL.
+
+Les outils du SGBD permettent d'introduire le schéma conceptuel, de modifier les règles de cohérence et de confidentialité, de rechercher, d'ajouter ou de supprimer des données, ainsi que d'effectuer des sauvegardes des bases de données. Ils permettent parfois également de contrôler l'activité du moteur, en particulier les transactions et les verrous créés par les utilisateurs qui exploitent le moteur de base de données.
+
+Une interface de programmation (bibliothèque logicielle) permet la manipulation de base de données à partir d'un autre logiciel, par l'intermédiaire du moteur de base de données.
+
+"ISAM" (acronyme de l'anglais "Indexed Sequential Access Method") est un format de fichier dans lequel les informations sont stockées associées à une structure de données en arbre — l'index — qui permet de retrouver facilement (en termes de complexité algorithmique) n'importe quelle information stockée. L'index permet aussi de lire les informations dans un ordre déterminé. C'est un format de fichier courant des bases de données.
+
+"SQL" (acronyme de l'anglais "Structured Query Language") est un langage informatique utilisé par les logiciels pour formuler des demandes d'opérations sur les bases de données. Opérations qui seront exécutées par le moteur de base de données. Le langage SQL permet de demander des opérations sur les données enregistrées dans la base de données, mais aussi sur le schéma conceptuel, les règles de cohérence et de confidentialité.
+
+
+
+

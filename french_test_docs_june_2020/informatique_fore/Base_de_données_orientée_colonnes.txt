@@ -1,0 +1,24 @@
+﻿Base de données orientée colonnes
+
+Une base de données orientée colonnes est une base de données qui stocke les données par colonne et non par ligne.
+
+L'orientation colonne permet d'ajouter des colonnes plus facilement aux tables (les lignes n'ont pas besoin d'être redimensionnées).
+
+Elle permet de plus une compression par colonne, efficace lorsque les données de la colonne se ressemblent.
+
+Un système de base de données relationnelle doit présenter ses données sous une forme de table à deux dimensions, en lignes et colonnes, mais ne peut être stockée que sous une forme à une seule dimension.
+
+Par exemple, une base de données pourrait contenir cette table :
+
+Cette table simple inclut un identifiant d'employé (EmpId), des colonnes Nom et Prénom, et un salaire.
+
+Cette table peut être présente dans la mémoire de l'ordinateur (RAM) ou sur son disque dur. Bien que la mémoire RAM et les disques durs fonctionnent différemment, le système d'exploitation les abstrait. Ainsi, la table à deux dimensions vue par l'utilisateur est représentée par le système de gestion de la base de données comme une suite d'octets pour que le système d'exploitation puisse l'écrire en mémoire ou sur le disque.
+
+Une table de données orientée lignes sérialise toutes les valeurs d'une ligne ensemble, puis les valeurs de la ligne suivante
+
+Une base de données orientée colonne sérialise les valeurs d'une colonne ensemble, puis les valeurs de la colonne suivante
+
+Ceci est une simplification. Le partitionnement, l'indexation, les caches, les vues, les cubes OLAP et les systèmes transactionnels tel que le write ahead logging ou le Multiversion Concurrency Control changent tous drastiquement l'organisation physique des données. 
+
+
+

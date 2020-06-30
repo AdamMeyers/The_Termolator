@@ -1,0 +1,72 @@
+﻿Son numérique (musique)
+
+L'arrivée de l'informatique et du stockage d'information sous forme numérique a entraîné une véritable révolution dans le domaine musical. Cette révolution a commencé avec le CD audio, puis avec la compression des fichiers audios, puis les lecteurs dits MP3 et continue de nos jours avec l'intégration de la composante numérique dans le monde de la Hi-Fi et dans les lecteurs multimédias.
+
+Il y a pour le grand public plusieurs sources possibles pour obtenir de la musique sous forme numérique.
+
+
+Le passage d'un signal analogique à un signal numérique se fait via une conversion analogique - numérique, par échantillonnage (prises des valeurs du signal analogique à intervalles de temps constants) et par quantification de chacune des valeurs échantillonnées. Dit autrement : à chaque top d'horloge (selon une fréquence choisie), on mesure la valeur du signal analogique (par exemple les volts issus d'un micro ou d'une tête de lecture de disque vinyle) et on lui donne une valeur numérique.
+
+Par exemple pour les CD (disques compacts audio), la fréquence est fixée à 44,1 kilohertz, la valeur numérique est codée sur 16 bits et prend donc une valeur entière entre - et +.
+
+Pour connaître la qualité numérique d'un enregistrement, il faut connaître ces deux valeurs : la fréquence d'échantillonnage et le nombre de bits. Une fréquence trop faible coupera tous les aigus, un codage sur trop peu de bits diminuera la « finesse » de l'enregistrement. Tout dépend de l'utilisation "a posteriori" du signal (musique, dictaphone, radio). On peut faire un parallèle avec les images numériques, la fréquence s'approchant de la résolution et le nombre de bits du nombre de couleurs possibles ; la taille de l'image en pixel se rapprochant de la longueur du morceau enregistré.
+
+Notons quelques points importants :
+
+
+Une fois les caractéristiques numériques déterminées (fréquence, nombre de bits), il convient de s'intéresser à la façon dont ce signal sera stocké dans un fichier. C'est ce qu'on appellera dans la suite de l'article : l'encodage.
+
+L'encodage va consister à transférer la musique depuis la source vers le disque dur. Dans le cas des sources analogiques, il faudra passer par un convertisseur analogique-numérique. Dans le cas des sources numériques, il faudra utiliser un logiciel de recopie et évitant de repasser par un signal analogique pour ne pas générer de pertes.
+
+Tout encodage d'un signal analogique vers un signal numérique entraîne une perte d'information (puisqu'on passe de données continues à des données discrètes). La difficulté sera d'enregistrer l'information de façon aussi fidèle que nécessaire tout en ayant un objectif de taille de fichier.
+
+Les participants au forum audiophile recommandent, sous Windows, l'utilisation de Exact Audio Copy.
+
+Les équipements informatiques classiques (ordinateur et carte son) sont capables de traiter la musique numérisée. Il existe aussi des appareils spécialisés (dont les cartes son font partie) qui sont les convertisseurs analogique-numérique.
+
+La qualité de la carte son a bien sûr un rôle important à jouer s'il s'agit de numériser un son analogique ou pour l'opération inverse (convertir un signal numérique en signal analogique).
+
+Il s'agit ici d'envoyer au convertisseur numérique les données issues du fichier numérique.
+
+À partir du fichier de base (quel que soit son type), l'ordinateur va élaborer les données audio pour les délivrer au convertisseur sous forme d'un flux PCM (à confirmer). À moins que le convertisseur accepte par exemple une clé USB avec des fichiers compressés qu'il décompressera alors lui-même.
+
+Le microprocesseur traitera les données numériques sans problèmes, par contre, c'est au niveau du traitement général dans l'ordinateur que les choses se compliquent et qu'il s'agit de faire attention. Ceci d'autant plus que souvent les avis varient sans toutefois être fondés.
+
+Le transport du signal vers le convertisseur dépend du protocole utilisé. Classiquement sur un ordinateur, les types suivants sont disponibles :
+
+
+Il y a deux types de transfert du signal : le transfert synchrone et le transfert asynchrone. Le type de transfert dépend de la source et du convertisseur. Par exemple, si le convertisseur est vu par l'ordinateur comme une carte son externe branchée sur un port USB, le transport sera synchrone.
+Si par contre on branche une clé USB sur un convertisseur et que celui-ci est capable de lire le fichier sur la clé USB le transport sera alors asynchrone.
+Un élément important dans le transport de données numérique est la correction d'erreur.
+
+Les données doivent être reçues à intervalle régulier par le convertisseur. Si cela n'est pas le cas, alors le convertisseur aura du mal à recréer le signal analogique. Il s'ensuit une dégradation de l'écoute.
+
+Un des problèmes principaux de la transmission de données de façon synchrone consiste en la synchronisation des horloges et dans la difficulté de faire de la correction d'erreur. La façon dont ces problèmes sont traités dépend du protocole utilisé. Bien qu'il existe dans l'industrie de nombreux protocoles synchrone qui fonctionnent, ils ne sont pas disponible au particulier pour son installation privée.
+
+Notons qu'à l'intérieur d'un ordinateur, c'est la même horloge qui servira à la carte son et à la carte mère, il n'y a normalement pas de problème d'horloge. Si les éléments sont distincts alors les problèmes d'horloge (gigue ou jitter en anglais) apparaissent.
+
+Le convertisseur peut recevoir les données sans contrainte temporelle (à part celui de recevoir les données à temps). Une mise en œuvre consiste par exemple à créer une zone tampon au niveau du convertisseur. Dans cette zone tampon, les données numériques sont stockées temporairement et y restent jusqu'à leur conversion. Il est ainsi possible d'envoyer des données à l'avance et de permettre le traitement des erreurs au cas où.
+
+Le transfert des données de façon asynchrone est bien plus fiable, mais complique l'architecture des convertisseurs (rajout d'une CPU par exemple pour gérer le tampon), d'où le prix plus élevé. De plus les fabricants de convertisseurs sont plus des électroniciens que des informaticiens, c'est ce qui explique la présence sur le marché de nombreux convertisseurs synchrones.
+
+Il est à noter que les capacités de transfert actuelles en asynchrones sont de plusieurs ordres de grandeur supérieures à ce qui est nécessaire pour faire transiter un signal audio : les équipements actuels classiques (ethernet) sont à , contre pour la musique issue d'un CD. Si on considère qu'un réseau TCP ne doit pas être chargé à plus de 20 % pour rester efficace (assurer le transfert rapide des données dans le cas d'un réseau utilisé par de nombreuses machines), le débit reste quand même à , soit ramené en octets soit 142 fois supérieur.
+
+La norme de définition de l'USB 2.0précise 4 modes :
+
+
+Comme écrit dans la norme au chapitre 5.12 : "Transférer des données de façon fiable en mode isochrone par USB requiert qu'un soin particulier soit porté aux détails". Figure 5-17 de la même norme (70) montre entre autres les nombreuses étapes d'un signal entre un micro et des haut-parleurs en mode isochrone.
+
+Une étude faite pour les besoins de la musique numérisée précise trois modes de transmission USB :
+
+
+
+
+C'est le DAC qui est maître et demande à l'ordinateur d'accélérer ou de freiner la transmission. C'est un mode difficile à mettre en œuvre car il demande un gros investissement de la part du constructeur.
+
+Il existe des périphériques USB dédiés qui se chargent d'améliorer la transmission des données audio vers le convertisseur (par exemple M2tech hiface).
+
+Les deux principaux protocoles de serveurs de contenu multimédia supportés par la majorité des systèmes audiovisuels sont :
+
+
+
+

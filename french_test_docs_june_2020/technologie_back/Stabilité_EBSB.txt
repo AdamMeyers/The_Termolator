@@ -1,0 +1,55 @@
+﻿Stabilité EBSB
+
+La stabilité EBSB est une forme particulière de stabilité des systèmes dynamiques étudiés en automatique, en traitement du signal et plus spécifiquement en électrotechnique. EBSB signifie Entrée Bornée/Sortie Bornée : si un système est stable EBSB, alors pour toute "entrée bornée", la "sortie" du système l’est également.
+
+Un système linéaire invariant et à temps continu dont la fonction transfert est rationnelle et strictement propre est stable EBSB si et seulement si sa réponse impulsionnelle est absolument intégrable, i.e. si sa norme formula_1 existe :
+
+En temps discret, un système est stable EBSB si et seulement si sa réponse impulsionnelle est absolument sommable, i.e. si sa norme formula_3 existe :
+
+Elle est proposée en temps discret, mais les mêmes arguments s’appliquent en temps continu.
+
+À l’entrée bornée formula_5 correspond la sortie formula_6 satisfaisant
+
+où formula_8 est le produit de convolution, c'est-à-dire :
+
+En particulier formula_10
+
+Ainsi formula_11 puisque formula_12 est borné.
+
+Considérons une entrée bornée, c'est-à-dire formula_13, et supposons formula_11. Alors la sortie formula_6 satisfait
+
+Ainsi formula_18 est également borné.
+
+Soit un système linéaire invariant et à temps continu dont la fonction de transfert formula_19 est supposée être rationnelle. En notant formula_20 les pôles (racines complexes du dénominateur) et formula_21 l’abscisse de convergence définie par formula_22, on montre que le système est stable EBSB si et seulement si formula_23.
+
+Puisque formula_19 est la transformée de Laplace de la réponse impulsionnelle formula_25,
+
+et le domaine de convergence est le demi-plan formula_27.
+Si le système est stable EBSB, alors formula_25 est dans formula_1 et il y a convergence en formula_30 puisque
+
+qui, par hypothèse, est une quantité finie. Par conséquent formula_32
+Supposons formula_23. Puisque, par l’hypothèse de rationalité, formula_19 est de la forme
+
+en supposant, pour simplifier, que les pôles de formula_19 sont simples. La transformée inverse de Laplace donne
+
+qui est dans formula_1 et le système est stable EBSB.
+
+Soit un système linéaire invariant et à temps discret dont la fonction de transfert formula_39 est supposée être rationnelle. En notant formula_40 les pôles et formula_41 "le module de convergence" défini comme le maximum des modules des pôles, on montre que le système est stable EBSB si et seulement si formula_42.
+
+Puisque formula_39 est la transformée en Z de la réponse impulsionnelle formula_44,
+
+et le domaine de convergence est l’extérieur d’un cercle, soit formula_46.
+Si le système est stable EBSB, alors formula_44 est dans formula_3 et il y a convergence en formula_49 puisque
+
+qui, par hypothèse, est une quantité finie. Par conséquent formula_51
+Supposons formula_52. Puisque, par l’hypothèse de rationalité, formula_39 est de la forme
+
+en supposant, pour simplifier, que les pôles de formula_39 sont simples. L’inverse de la transformée en z donne
+
+qui est dans formula_3 et le système est stable EBSB.
+
+Pour déterminer si un système physique représenté par un schéma-bloc est stable ou non, on peut utiliser plusieurs méthodes ou plusieurs critères. Il existe 2 types de critères :
+Ces critères permettent uniquement de déterminer si le système est stable ou non, mais ils n'indiquent pas le degré de stabilité, c'est-à-dire si le système est plus ou moins stable. Pour apprécier ce fameux degré de stabilité, on est amené à utiliser d'autres outils tels que les marges de phase et les marges de gain ou le facteur de qualité par exemple.
+
+
+

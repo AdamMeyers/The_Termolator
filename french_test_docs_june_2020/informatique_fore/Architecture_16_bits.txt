@@ -1,0 +1,39 @@
+﻿Architecture 16 bits
+
+En informatique, l’architecture est un type de structure d'ordinateur exploitant des mots (processeur, mémoire, bus) d'une taille de (soit deux octets).
+
+Un mot de peut stocker 2 valeurs différentes, soit . Un processeur peut donc adresser "directement" de mémoire.
+
+Au milieu des années 1960, les premiers ordinateurs commercialisés incluent le HP-2116 de HP, le PDP-11 de DEC et le Nova de Data General. Ils sont conçus et fabriqués à base de composants « discrets » et de ce fait relativement complexes et volumineux.
+
+Un entier de permet de stocker 2 (ou ) valeurs différentes. Dans une représentation non signée, ces valeurs sont des entiers compris entre 0 et . Dans une représentation en complément à deux, ces valeurs sont comprises entre et . Par conséquent, un processeur gérant des adresses mémoire de peut accéder directement à de mémoire.
+
+Les processeurs ont été presque entièrement supplantés dans l'industrie par des ordinateurs personnels, mais ils restent en service dans une grande variété d'applications embarquées. Par exemple, le processeur est utilisé dans de nombreux circuits ASIC.
+
+Tout comme il existe plusieurs modèles de données pour les architectures 64 bits, tout processeur permet d'acceder à ) emplacements particulier de la mémoire.
+
+Le choix d'un modèle de mémoire spécifique va dépendre de la quantité d'instructions assembleurs ou du stockage requis pour les pointeurs.
+
+Les compilateurs de l'ère ont généralement, pour la largeur selon le type, les caractéristiques suivantes :
+
+"Tiny" : code et données seront dans le même segment (notamment les registres CS, DS, ES, SS pointeront vers le même segment). Les pointeurs "" sont toujours utilisés. Code, données et pile ensemble ne peuvent pas excéder .
+
+"<nowiki>Small</nowiki>" : code et données seront dans des segments différents, et les pointeurs "" sont toujours utilisés. Il y aura d'espace disponible pour le code et pour les données et la pile.
+
+"Medium" : le code utilisera des pointeurs "far", permettant l'accès à . Les pointeurs de données resteront du type "".
+
+"Compact" : les données utiliseront des pointeurs "far" et le code utilisera des pointeurs "".
+
+"Large/huge" : les pointeurs du code et des données seront "far".
+
+Le Motorola 68000 est parfois qualifié de parce que son bus de données est de de large, mais on peut aussi le considérer comme un processeur d'architecture 32 bits dans la mesure où ses registres généraux ont une capacité de et que la plupart des instructions arithmétiques supportent des entiers de , avec jusqu'à de RAM adressable. Les programmes écrits pour le Motorola 68000 sont donc aisément compatibles au niveau du code source avec d'autres processeurs possédant le mème jeu d’instructions.
+
+Le processeur 68000 de la Sega Mega Drive fut très mis en avant dans les publicités, la console ayant même une inscription « 16-bit » sur le dessus de sa coque, ce qui conduisit cette période de l'histoire des consoles de jeux vidéo à être qualifiée d'« ère ».
+
+De nombreuses machines familiales de l'époque utilisèrent le microprocesseur 68000 : le Macintosh, l'Amiga 500, l'Atari ST, le Sharp X68000 mais également la Neo-Geo qui était alors pourtant présentée comme une console uniquement . Le 68000 fut utilisé dans la console Jaguar d'Atari, présentée à l'époque comme la première du marché (alors que seule une partie de son architecture était effectivement ).
+
+La même analyse s'applique à l'Intel 80386SX, microprocesseur bas de gamme, qui est également un processeur associé à un bus .
+
+Un format de fichier est un format de fichier binaire pour lequel chaque élément de données est défini sur (ou ), comme l'encodage UTF-16 ou le format .
+
+

@@ -1,0 +1,71 @@
+﻿Multimodal Architecture and Interfaces
+
+La recommandation "" se concentre sur la proposition d'un cadre général pour permettre aux modules requis dans un système multimodal, de communiquer les uns avec les autres.
+
+Cette spécification propose une architecture orientée évènement dont le principal objet est le flux de données de contrôle car en tant que cadre général de référence, elle sert à déterminer les infrastructures de base utiles pour le contrôle de l'application et des services multimodaux.
+
+L'architecture est aussi proposée pour faciliter la tâche d'implémentation à plusieurs types de dispositifs fournisseurs de services multimodaux, comme les dispositifs mobiles et portables, les appareils électroménagers, l'internet des objets, la télévision et les réseaux domestiques, les applications d'entreprise, les applications web, les ou comme les applications médicales.
+
+"" est la description spécifiée d'une infrastructure de services plus large appelée The Runtime Framework dans laquelle sont fournies les principales fonctions dont un système multimodal a besoin et qui se trouve a un niveau d'abstraction plus haut que l'architecture MMI. Ce framework est le "support d'exécution" et de communication des modules du système multimodal tandis que l'architecture MMI est la description et la spécification de ses principaux modules, ses interfaces et son mode de communication.
+La recommandation "" s'inspire du patron de conception d'architecture applicative MVC qui organise la structure des interfaces utilisateur en trois parties : le "Modèle", la "Vue" et le "Contrôleur".
+
+Une particularité de cette architecture c'est que bien que la couche de présentation représentée par la "Vue" a été traditionnellement appliquée aux interfaces graphiques; cette recommandation généralise l'abstraction au contexte plus large de l'interaction multimodale où l'utilisateur peut utiliser une combinaison de modalités visuelles, auditives, biométriques et/ou tactiles.
+
+L'architecture MMI fait donc la distinction entre le contrôleur d'interaction (Interaction Manager - IM), le composant de données (Data Component - DC) et les composants modalité (Modality Components - MC). Cette distinction est similaire à la distinction entre le "Contrôleur", le "Modèle" et les documents de présentation de la "Vue" dans le patron MVC.
+
+Une autre particularité est l'imbrication. Les modules étant des boîtes noires, il est possible d'encapsuler plusieurs composants dans un composant plus complexe, qui communiquerait avec un contrôleur de plus haut niveau. De cette manière l'architecture suit le principe des poupées russes.
+
+La recommandation propose aussi une mise en œuvre de façon distribuée sur plusieurs supports matériels en réseau ou de façon centralisée, avec tous les modules sur un même support matériel. L'échange d'information entre les différents modules se fait avec un couplage lâche qui favorise la faible dépendance entre les modules, la réduction de l'impact des changements dans un module et la réutilisation des modules. De cette manière les modules ont peu ou aucune connaissance du fonctionnement des autres modules et la communication entre les modules se fait grâce à l'échange de messages selon un protocole de communication précis à travers les interfaces de programmation fournies par l'architecture MMI.
+
+Le contrôleur d'Interaction est un composant logique, chargé de tous les échanges de messages entre les composants de modalité du système et l'infrastructure multimodale (le Runtime Framework). Il est un bus de communication et un .
+
+Chaque application peut configurer au moins un contrôleur d'interaction ("Interaction Manager") pour définir la logique d'interaction souhaitée. Ce contrôleur est au cœur de l'interaction multimodale: 
+
+Les composants de modalité sont responsables de tâches spécifiques, notamment la manipulation des entrées et des sorties dans les diverses modalités, comme la parole, l'écriture, la vidéo, etc. Ce sont des entités logiques responsables du contrôle des entrées et des sorties des différents dispositifs matériels (microphone, tablette graphique, clavier) et logiciels (détection de mouvement, changements biométriques) associés au système multimodal. Par exemple (voir diagramme ci-dessous), un composant de modalité A peut se charger de la reconnaissance de la parole avec la gestion des entrées audio. Un autre composant de modalité B peut gérer plutôt les entrées complémentaires provenant de deux dispositifs différents : une tablette graphique et un microphone. Deux composants de modalité C, peuvent gérer séparément deux entrées complémentaires fournies par un même dispositif: une caméra vidéo. Un dernier composant de modelité D, peut utiliser un service externe de reconnaissance et ne contenir que le contrôle des échanges nécessaires à la reconnaissance.
+
+Dans les quatre cas le système possède un composant de modalité pour la détection des commandes vocales en entrée, malgré les différences d'implémentation: le composant de modalité étant une abstraction d'un type d'entrée qui est gérée et implémentée de manière différente à chaque cas. Tout composant de modalité peut éventuellement envelopper de multiples fonctionnalités fournies par plusieurs périphériques physiques, mais aussi plusieurs composants de modalité pourraient être inclus dans un seul appareil. Pour cette raison, la recommandation du W3C dans son état actuel ne décrit pas en détail la structure ou l'implémentation des composants de modalité. Elle porte seulement sur la nécessité de prévoir une interface de communication avec le contrôleur d'interaction et une implémentation qui respecte un protocole de communication précis: les Life-Cycle Events.
+Le composant de données a pour rôle de sauvegarder les données publiques de l'application qui peuvent être requises par plusieurs composants de modalité ou par d'autre modules (par exemple, le module de session du framework MMI).
+
+Le composant de données peut être un module interne A au contrôleur d'interaction ou externe B (voir diagramme). Ceci dépend de l'implémentation choisie par chaque application. Toutefois le contrôleur d'interaction est le seul à avoir un accès direct au composant de données et lui seul peut consulter et modifier ses données et même communiquer avec des serveurs externes si besoin. En conséquence, les composants de modalité doivent se servir du contrôleur comme intermédiaire pour accéder aux données publiques de l'application multimodale.
+
+En revanche, pour le stockage des données privées, chaque composant de modalité peut implémenter son propre composant de données qui lui-même peut accéder aussi à des serveurs externes B et garder les données dont le composant de modalité peut avoir besoin, par exemple, pour la tâche de reconnaissance de la parole. Ceci peut être un cas d'implémentation du principe des poupées russes de l'architecture MMI.
+Dans l'architecture MMI le protocole de communication est asynchrone, bi-directionnel et il est basé sur l'échange de notifications d'événements qui sont levés par le système à la suite d'une action de l’utilisateur ou par une activité interne.
+
+Ce protocole définit le mode de communication et la façon d'établir et de terminer la communication. Dans le cas de cette recommandation, il est reflété dans les Life-Cycle Events. Ce sont des événements de contrôle de base qui sont proposés pour la commande des dispositifs et services matériels (par exemple un lecteur vidéo ou un appareil de reproduction sonore) et des notifications pour le monitoring de l'état du système multimodal.
+La spécification propose huit Life-Cycle Events de base qui sont spécifiés sous la forme des paires d'échanges Request > Response:
+
+
+
+
+
+
+
+
+La spécification propose aussi deux types de notifications dont une, l"'Extension Notification", peut contenir des données de contrôle ou de commande des dispositifs ou services matériaux et pour cette raison cette notification est considérée comme un évènement de base qui exceptionnellement n'est pas décrit comme une paire Request > Response (dans des versions précédentes il était appelé l'évènement data). Ces deux notifications sont:
+
+
+MMIF: Multimodal Interaction Framework par James A. Larson, T.V. Raman and Dave Raggett, Ed., W3C, 2003. Cette note du W3C propose un framework qui identifie de manière abstraite les principaux composants d'un système multimodal. Ce framework est une base pour développer des applications multimodales en termes de langage de description à utiliser, les scripts, les styles et d'autres ressources utiles.
+
+SCXML: State Chart XML. A State Machine Notation for Control Abstraction par Jim Barnett et al. Ed. W3C, 2006. C'est un langage de machine à états à usage général basé sur des événements. Il peut être utilisé : comme un langage de contrôle de dialogue invoquant différents types de reconnaissance ; comme un métalangage d'application vocale qui peut également contrôler l'accès à des bases de données et des modules de logique métier; comme un langage de contrôle multimodal combinant les dialogues VoiceXML avec des dialogues dans d'autres modalités, y compris le clavier, la souris, l'encre, la vision, les dispositifs haptiques, etc; comme un langage de gestion de centre d'appels étendu et finalement comme langue de contrôle de processus généraux dans d'autres contextes ne comportant pas de traitement de la parole.
+
+CCXML: Voice Browser Call Control Version 1.0 par R.J. Auburn Ed., W3C, 2005. CCXML permet de contrôler les appels vocaux dans des systèmes de dialogue capables de gèrer divers médias comme c'est le cas des systèmes utilisant VoiceXML.
+
+EMMA: Extensible Multimodal Annotation markup language par Michael Johnson et al. Ed., W3C, 2005. Format XML pour annoter l'interprétation des entrées utilisateur avec des informations spécifiques à chaque application telles que le taux de confiance, l'horodatage, la modalité d'entrée et les hypothèses utiles pour la reconnaissance des données saisies.
+
+MMIUse: Multimodal Interaction Use Cases par Emily Candell et Dave Raggett, Ed., W3C, 2002. Cette Note du W3C décrit plusieurs cas d'utilisation pour l'interaction multimodale et les présente en termes de capacités de l'appareil variables et les événements nécessaires à chaque cas d'utilisation de coupler les différentes composantes d'une application multimodale dans laquelle il est possible d'interagir avec de multiples modalités, par exemple, en utilisant la parole, l'écriture, des raccourcis, des commandes vocales et avoir une sortie sonore et visuelle en retour.
+
+SMIL: Synchronized Multimedia Integration Language Version 2.1 par Dick Bulterman et al. Ed. W3C, 2005. Langage qui permet d'écrire des présentations multimédias interactives en décrivant le comportement temporel de la présentation, en associant des liens hypertextes aux médias et en décrivant la disposition de la présentation sur l'écran. Il apporte aussi de la temporisation et de la synchronisation à d'autres langages qui en ont besoin.
+
+VoiceXML: Voice Extensible Markup Language Version 2.0 par Scott McGlashan et al. Ed., W3C, 2004. Il permet de créer des pages avec lesquelles on interagit avec la voix et le son. Il permet la création de dialogues entre l'utilisateur et la page web avec une voix synthétisée, un signal sonore numérisé, une entrée vocale ou une tonalité DTMF.
+
+HTML: HyperText Markup Language Version 4.01 par Raggett et al. Ed., W3C, 1999. Il permet de décrire la présentation et le texte des pages web et d'inclure dans les pages des liens vers des textes complémentaires; des ressources média (images, vidéo, sons) et des ressources média interactifs (formulaires, animations interactives, univers 3D). Cette description est faite avec des balises écrites selon un code structuré et peut être complétée par des informations de style graphique (CSS) ou par une programmation de l'interaction par script (ECMAScript)
+
+SVG: Scalable Vector Graphics 1.1 par Jon Ferraiolo et al. Ed., W3C, 1995. SVG est un format de fichier qui permet de décrire des ensembles de graphiques vectoriels adaptables.
+
+XMLSig: XML-SignatureSyntax and Processing par Eastlake et al. Ed., W3C, 2001. Permet d'authentifier l'auteur de la page et de garantir son intégrité grâce à la signature numérique des documents XML.
+
+
+
+
+
+

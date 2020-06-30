@@ -1,0 +1,31 @@
+﻿Partage généralisé du processeur
+
+Le partage généralisé du processeur ou PGP (en anglais : "Generalized processor sharing", abrégé "GPS") est un algorithme d'ordonnancement idéal pour les ordonnanceurs de paquets.
+
+Il est en rapport avec le principe de file d'attente équitable, qui consiste à grouper les paquets dans des classes, et à partager les capacités du serveur entre elles. Le PGP distribue cette capacité "en fonction de certains coefficients de pondération fixés".
+
+En ordonnancement, le partage généralisé du processeur est « un algorithme  d'ordonnancement idéalisé qui permet d'obtenir une équité parfaite. Tous les ordonnanceurs, en pratique, approximent un PGP et l'utilise comme référence pour mesurer l'équité. »<ref name="doi10.1145/1594835.1504188">Li, T. Baumberger, D.; Hahn, S. (2009).</ref> Le partage généralisé du processeur suppose que le trafic est fluide (que la taille des paquets est infinitésimale) et donc peut être arbitrairement divisé. Il existe plusieurs techniques qui permettent de quasiment atteindre les performances du PGP, comme la théorie des files d'attente pondérées équitables ("weighted fair queueing, WFQ"), également connu comme le partage généralisé paquet par paquet du processeur ("packet-by-packet generalized processor sharing, PGPS").
+
+Dans un réseau comme l'internet, des applications de types différents ont besoin de différents niveaux de performance. Par exemple, une application de courrier électronique se contente en définitive de stocker et de transférer des données : ce n'est pas aussi simple pour une application de vidéoconférence, puisque celle-ci a en outre besoin d'avoir une faible latence.
+
+Lorsque les paquets sont mis en file d'attente à une extrémité d'une chaîne de traitement congestionnée, le point nodal recevant l'information (en anglais, "node") dispose généralement d'une certaine marge de manœuvre pour décider de l'ordre dans lequel il doit envoyer les paquets ordonnancés. Un exemple d'ordre de renvoi est simplement le principe du "premier arrivé, premier servi". Celui-ci fonctionne très bien pour de petites files d'attente, mais peut entraîner des problèmes si des paquets sensibles aux temps de latence sont obstrués par des paquets d'applications plus vivaces, c'est-à-dire disposant d'une plus grande largeur de bande.
+
+Dans le PGP, un ordonnanceur gérant flux ("flow" en anglais, aussi appelé "classes" ou "sessions") se détermine en définissant un coefficient de pondération formula_1 pour chaque flux. Considérons un flux formula_2, et un certain intervalle de temps formula_3, de telle sorte que, au cours de cet intervalle, les instructions s'accumulent en permanence dans le flux formula_2 (c'est-à-dire que sa file d'attente ne soit jamais vide). Alors, le PGP s'assure que pour tout autre flux formula_5, on ait la relation suivante :
+où formula_7 est la quantité de bits du flux formula_8 traités au cours de l'intervalle formula_3.
+
+Il peut alors être déterminé que chaque flux formula_2 recevra au moins un taux de calcul (en anglais, "rate") formula_11 de
+où formula_13 est le taux de calcul du serveur.
+
+Il s'agit d'un taux minimal. Si un certain flux n'utilise pas sa bande passante au cours d'une période, cette capacité disponible est distribuée au reste des flux conformément à leur pondération respective. Par exemple, considérons un serveur avec un PGP de type formula_14. Le premier flux recevra au moins la moitié de la capacité du processeur, là où les deux autres n'en recevront que le quart. Néanmoins, si sur un certain intervalle de temps formula_3 il n'y a que les deux derniers flux qui sont actifs, alors ils recevront chacun la moitié de la capacité de calcul du processeur.
+Dans le PGP, et tous les protocoles dérivés du PGP, le choix des coefficients de pondération est laissé à l'administrateur du réseau.
+
+Le partage généralisé du processeur suppose que le trafic est fluide, c'est-à-dire divisible à l'infini, de sorte que lorsqu'un certain type d'application a des paquets dans la file d'attente, le serveur consacrera exactement la proportion adéquate (donné par la formule de la partie ci-dessus) de ses capacités à son exécution.
+
+Cependant, le trafic n'est en réalité pas fluide et se compose de paquets aux tailles potentiellement variables. Par conséquent, le PGP est avant tout un principe théorique. Plusieurs algorithmes d'ordonnancement ont été développés afin d'approcher du PGP idéal. L'implémentation la plus connue est PPGP (en anglais PGPS), ou ordonnancement pondéré équitable, bien qu'elle ne soit pas parfaite. D'autres implémentations ont été proposées, comme le déficit accumulé au tour par tour ("Deficit round robin") ou WF2Q.
+
+Le PGP est considéré comme un idéal d'équité, et toutes ses approximations pratiques "l'utilisent comme une référence pour mesurer l'équité."
+Néanmoins, d'autres mesures de l'équité existent aussi.
+
+Le PGP ne dépend pas de la taille des paquets, puisqu'il suppose un trafic fluide.
+
+

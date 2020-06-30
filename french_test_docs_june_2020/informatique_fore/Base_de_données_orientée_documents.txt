@@ -1,0 +1,25 @@
+﻿Base de données orientée documents
+
+Une base de données orientée documents est une base de données destinée aux applications qui gèrent des documents.
+
+Ce type de bases de données peut être une sur-couche d'une base de données relationnelle ou non.
+
+Deux langages sont maintenant principalement utilisés pour représenter les documents structurés : XML et JSON.
+
+L'avantage des bases de données orientées documents est l'unité d'information et l'adaptation à la distribution. En effet, d'une part, comme tout est compris dans la structure cela évite de faire des jointures pour reconstituer l'information car elle n'est plus dispersée dans plusieurs tables. Il n'y a plus besoin de transaction car l'écriture est suffisante pour créer des données sur un document pour modifier un objet. Une seule lecture est suffisante pour reconstituer un document. D'autre part, les documents étant autonomes, on peut les déplacer facilement, ils sont indépendants les uns des autres.
+
+Il existe plusieurs inconvénients : la hiérarchisation d'accès, l'absence de perspective dans la base de données et la perte d'autonomie des entités.
+
+L'objectif d'une base de données orientée documents est la représentation des informations plus ou moins complexes en satisfaisant les besoins suivants :
+
+Un document est représenté comme :
+Les documents structurés sont des graphes dont chaque partie est auto-décrite.
+
+Il existe deux représentations d’un document :
+
+La forme des requêtes est dépendante du langage de représentation des documents.
+
+Il existe deux langages de requêtes XML : XPath et XQuery.
+
+
+

@@ -1,0 +1,41 @@
+﻿User-Managed Access
+
+User-Managed Access (UMA) est un protocole standard de gestion d'accès basé sur OAuth. La version 1.0 de ce standard a été approuvée par l' le 23 mars 2015. 
+
+Comme cela est décrit par la charte du groupe qui a développé UMA, l'objet des spécifications du protocole est de « permettre à un propriétaire de ressources de contrôler l'autorisation en ligne d'accès à ces ressources protégées lorsque la requête est faite par un demandeur autonome ». 
+
+Cette initiative a des implications quant à la vie privée, le consentement des applications Web et l'internet des objets (IoT), comme le montre l'ensemble des études de cas décrit par les participants du "standards group" de l'.
+
+Le groupe de travail UMA de l' a tenu sa première réunion le 6 août 2009.
+
+Les principes à l'origine d'UMA proviennent d'un projet de protocole antérieur commencé en mars 2008 à l'initiative d'employés de Sun Microsystems intitulé ProtectServe. ProtectServe a lui-même été influencé par le mouvement Vendor Relationship Management et un projet associé appelé "feeds-based VRM".
+
+Les premières versions de ProtectServe et de UMA se sont inspirées du protocole OAuth 1.0. Comme OAuth a subi des changements significatifs lors de la publication de la spécification Web Resource Authorization Protocol (WRAP), et par la suite des modifications associées à OAuth 2.0, UMA utilise désormais les spécifications OAuth 2.0 pour plusieurs protocoles clés de flux.
+
+UMA n'utilise pas ou ne dépend pas d'OpenID 2.0 comme moyen d'identification de l'utilisateur. Cependant, UMA utilise de façon optionnelle le protocole OpenID Connect comme moyen de recueillir les requêtes d'identité lorsqu'il s'agit de satisfaire les politiques d'accès des utilisateurs.
+
+UMA n'utilise pas non plus ou ne dépend pas de XACML (eXtensible Access Control Markup Language) comme moyen d'encoder le contrôle d'accès et les décisions associées à la politique de sécurité. UMA ne dicte pas le format du contrôle d'accès puisque l'évaluation de l'accès est effectuée en interne par le serveur d'accès (AS). Toutefois, les flux du protocole UMA pour demander l'autorisation d'accès partagent certaines caractéristiques en commun avec le protocole XACML.
+
+Le groupe de travail UMA fait partie de l'initiative Kantara et a également contribué à une série de spécifications pour IETF (Internet Engineering Task Force) comme un cadre éventuel pour les travaux de normalisation. À cette fin, le groupe de travail a contribué et soumis plusieurs propositions à IETF. L'un d'elles est une spécification pour l'enregistrement dynamique d'un client OAuth qui a servi d'introduction pour un mécanisme plus général finalement développé pour OAuth .
+
+Le protocole de base d'UMA a plusieurs implémentations y compris certaines open source. Les sources d'implémentations open-source disponibles comprennent , Gluu, MITREid Connect, Atricore, Node-UMA and Roland Hedberg.
+
+Une initiative du groupe travaille sur le développement de “free and open-source software" (FOSS) dans plusieurs langages de programmation qui permet aux développeurs d'intégrer la protection de UMA et son API d'autorisation dans les applications, les services et les appareils connectés.
+
+Des produits logiciels utilisant UMA sont offerts Gluu, Jericho Systems et .
+
+Le diagramme (voir à droite) met en évidence des ajouts clés qu'UMA apporte à OAuth 2.0.
+
+Dans un flux de OAuth typique, un propriétaire de ressources ou "Resource Owner" (RO) qui opère une application cliente est redirigé vers un serveur d'autorisation ou "Authorization Server"(AS) 
+pour se connecter et consentir à la délivrance d'un jeton d'accès afin que l'application cliente gagne accès au serveur de ressource ou "Resource Server" (RS) au nom du propriétaire de ressources (RO) et ceci d'une façon limitée. Le serveur de ressource (RS) et le serveur d'autorisation opèrent généralement dans le même domaine de sécurité, de plus, aucune des communications entre ces deux serveurs ne sont standardisées par les principales spécifications OAuth.
+
+UMA ajoute trois concepts principaux, structures et flux spécifiques:
+
+L'architecture UMA peut servir une grande variété de scénarios à la fois pour les consommateurs, mais aussi dans le domaine de l'entreprise. Le groupe UMA rassemble de nombreuses études de cas sur son wiki. 
+
+Un ensemble d'exemples d'utilisation se situe dans le domaine de l'informatique médicale et du bien être des consommateurs. Faisant partie de l'organisation OpenID Foundation, un groupe de travail appelé "Health Relationship Trust" (HEART) travaille à harmoniser et développer un ensemble de spécifications de la vie privée et de sécurité qui permettent à un individu de contrôler l'autorisation d'accès aux données relatives à la santé grâce à des APIs de type RESTful, et qui est construit à partir de plusieurs standards dont UMA.
+
+Un autre ensemble d'exemples de cas d'utilisation, qui ont influencé l'origine du développement de l'UMA, se situe dans le domaine des « bases de données personnelles » du type « vendor relationship management » (gestion des relations fournisseurs) qui est capable d'accepter des demandes de connexions à partir d'une variété d'hôtes de ressources numériques et offre un tableau de bord avec des capacités de gestion du partage des ressources.
+
+
+

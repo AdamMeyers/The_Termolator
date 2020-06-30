@@ -1,0 +1,28 @@
+﻿ClickHouse
+
+ClickHouse est un logiciel libre de Base de données (DBMS) orientée colonnes pour le Traitement analytique en ligne (OLAP).
+
+ClickHouse a été développé par la société russe Yandex pour le service d'analyse web Yandex.Metrica. ClickHouse permet l'analyse de données mises à jour en temps réel. Ce système est développé pour la haute performance.
+
+Le projet a été publié sous forme de logiciel libre sous les termes de la Licence Apache en .
+
+ClickHouse est utilisé par la suite de test Yandex.Tank. Yandex.Market utilise ClickHouse pour surveiller l’accessibilité de sites et KPIs. ClickHouse a aussi été déployé au CERN LHCb pour stocker et traiter les métadonnées de 10 milliards d’événements contenant chacun, et Tinkoff Bank utilise ClickHouse comme stockage de données pour l'un de ces projets.
+ClickHouse est également utilisé par Cloudflare pour stocker et traiter les logs provenant de ses serveurs DNS.
+
+Yandex.Metrica utilisait précédemment une approche plus classique lorsque les données brutes étaient stockées dans une forme agrégée. Cette approche permet de réduire la quantité de données stockée. Cependant, elle possède plusieurs désavantages et limitations :
+Une approche différente consiste dans le stockage de données non agrégées. Traiter des données brutes requiert un système haute-performance, car tous les calculs sont faits en temps réel. Pour résoudre ce problème, une base de données orientée colonnes est requise afin de pouvoir évoluer à l’échelle d'Internet. Yandex commença donc à développer sa propre solution.
+Le premier prototype de ClickHouse est apparu en 2009. À la fin de l’année 2014, Yandex.Metrica version 2.0 est publié. La nouvelle version possède une interface pour créer des rapports personnalisés et utilise ClickHouse pour le stockage et le traitement des données.
+
+Les principales caractéristiques de ClickHouse sont :
+
+ClickHouse possède plusieurs caractéristiques pouvant être considérées comme des désavantages :
+
+ClickHouse est également conçu pour les requêtes OLAP.
+Un des cas courants de ClickHouse serveur est l'analyse de logs. Après avoir peuplé des données dans ClickHouse (il est recommandé d’insérer des données avec un relativement gros batch contenant plus de ), il est possible d'analyser les incidents avec des requêtes instantanées ou de surveiller les métriques du service, comme le taux d'erreurs, les temps de réponses, etc.
+
+ClickHouse peut aussi être utilisé comme entrepôt de données pour de l'analyse en interne. ClickHouse peut stocker des données de différents systèmes (par exemple Hadoop ou certain logs) et les analystes peuvent construire des tableaux de visualisations avec les données ou réaliser des analyses temps réels à des fins commerciales.
+
+Selon les tests de performance conduit par les développeurs, pour les requetes OLAP, ClickHouse est plus de 100 fois plus rapide que Hive (une BDD basé sur la technologie Hadoop) ou MySQL (RDBMS).
+
+
+

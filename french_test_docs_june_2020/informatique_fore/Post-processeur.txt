@@ -1,0 +1,28 @@
+﻿Post-processeur
+
+Le post-processeur est un outil informatique utilisé en fabrication assistée par ordinateur.
+Un post-processeur permet de traduire le langage d'une FAO (programme, logiciel de fabrication assistée par ordinateur), le processeur, vers une MOCN (machine-outil à commande numérique).
+
+En effet, un logiciel de FAO crée un fichier qui n'est pas directement assimilable par la MOCN. Il faut traduire ce fichier pour créer un nouveau fichier exploitable par la MOCN. Ce fichier peut être par exemple au format ISO, dit aussi G-code, qui est supporté par la plupart des machines.
+
+Chaque constructeur de MOCN a ses spécificités qui nécessitent des adaptations de post-processeurs.
+
+Chaque logiciel de FAO a lui aussi ses propriétés qui font que le post-processeur d'un logiciel A ne sera pas le même que le post-processeur d'un logiciel B pour la même machine outil.
+
+On peut dire aussi qu'un post-processeur est un programme conçu pour traiter des données lues à partir d’un fichier source (APT par exemple) comprenant des informations, des trajectoires d’outil et les paramètres d’usinage pour les adapter à une machine spécifique sous forme d’un programme conforme aux standards ISO (par exemple) qui sera sauvegardé dans un fichier NCC ("Numerical Control Code").
+
+Etant donné que chaque post-processeur est unique, il existe des logiciels d'aide à sa programmation : ce sont les générateurs de post-processeurs.
+
+Leurs utilisations permet de créer un post-processeur basique en quelques minutes mais leur intérêt réside dans la personnalisation de ces post-processeurs. Cette personnalisation est un processus lent et complexe car il faut prendre en compte tous les paramètres de la machine et les besoins de l'entreprise ou de l'atelier.
+
+Le générateur de post-processeur fait par exemple automatiquement la traduction cinématique des mouvements de l'outil suivant les degrés de libertés de la machine-outil.
+
+Un post-processeur mal conçu peut générer des bris machines très coûteux.
+
+Pour les machines à plateaux rotatifs, des mots APT spécifiques (donnés par le programmeur) permettent au post-processeur soit de déplacer l'outil au dessus de la pièce, soit de faire tourner le plateau avec un outil restant fixe (pratique pour des pièces de révolution).
+
+Le post-processeur calcule généralement l'usinage d'une poche en avance, et détermine la meilleure position de tête à adopter pour éviter d'être en hors-course en cours d'usinage, ce qui générerait de grands mouvements marquant la pièce.
+
+La programmation de post-processeurs peut être compliquée. Dans les années 1990, avant la généralisation de l'UGV (usinage grande vitesse), c'est le post-processeur qui devait calculer l'accélération et le ralentissement de la tête, et rajoutait des points intermédiaires pour gérer l'avance.
+
+

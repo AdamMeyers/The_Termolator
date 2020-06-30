@@ -1,0 +1,12 @@
+﻿Vue matérialisée
+
+En informatique, dans les systèmes de gestion de base de données de type relationnel, une vue est une table virtuelle représentant le résultat d’une requête sur la base. Comme son nom l'indique et à la différence d'une vue standard, dans une vue matérialisée les données sont dupliquées. On l’utilise essentiellement à des fins d'optimisation et de performance dans le cas où la requête associée est particulièrement complexe ou lourde, ou pour faire des réplications de table.
+
+La "fraîcheur" des données de la vue matérialisée dépend des options choisies lors de sa création. Le décalage entre les données de la table maître et la vue matérialisée peut être nul (rafraîchissement synchrone) ou d'une durée planifiée : heure, jour, etc.
+Suivant le contexte il existe différents types de vue matérialisée possibles : sur clé primaire, rowid (identifiant unique des tuples), et plus ou moins complexes : avec fonctions d'agrégation, sous-requêtes, jointures, etc.
+
+
+
+
+
+

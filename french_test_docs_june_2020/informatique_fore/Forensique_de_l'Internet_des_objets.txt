@@ -1,0 +1,74 @@
+﻿Forensique de l'Internet des objets
+
+La forensique de l'internet des objets (IoT) est une branche de la forensique numérique consistant en l'analyse d'éléments présents dans un ou plusieurs appareils numériques. La différence entre la forensique numérique classique et la forensique de l'IoT réside majoritairement dans les sources de preuves.
+
+Le développement de cette branche de la forensique numérique rencontre un certain nombre de challenges liés aux spécificités de l'IoT, et soulève des questionnements sur les limites de cette pratique concernant à la fois le domaine juridique et celui de la vie privée.
+
+La criminalité informatique s'est étendue à l'IoT alors même que celui-ci se développait. La criminalité IoT représente toute activité malveillante impliquant le paradigme IoT, en ce sens que les dispositifs, services ou canaux de communication IoT peuvent être un sujet, un objet ou un outil liés aux crimes. En dépit des nombreuses mesures de sécurité en place, les cyberattaques liées à l'IoT continuent d'augmenter. Selon une étude datant de 2015 de HP, 84% des utilisateurs de l'IoT ont déjà subi une violation de leur sécurité.
+
+Il existe un grand nombre de périphériques IoT mais peu d'identifiants par défaut (ex: admin/admin, user/password, root/toor), ce qui permet d'ailleurs à des malwares d'exploiter cette . Par ailleurs, les utilisateurs laissent parfois les identifiants par défaut. De plus, les communications entre les périphériques et le routeur local ne sont pas tout le temps chiffrées. La possibilité d'accéder à ceux-ci via des applications mobiles n'augmente en rien leur sécurité. Parmi les appareils les plus populaires analysés, on retrouve des téléviseurs intelligents, des webcams, des serrures de porte connectées et des télécommandes de garage et de concentrateurs permettant de contrôler plusieurs appareils. Tous ces appareils présentent, s'ils sont utilisés par un tiers, un réel danger pour l'utilisateur.
+
+La forensique de l'IoT présente plusieurs avantages par rapport à la forensique classique, découlant chacun de la différence majeure entre elles : les sources. Celles-ci différent par leur nature, par leur nombre, par le format des preuves et par les protocoles utilisés. Classiquement, les preuves pourraient être des ordinateurs, des appareils mobiles, des serveurs, etc. Pour la forensique de l'IoT, les preuves peuvent être extraites des appareils ménagers, des voitures, des lecteurs RFID, nœud-capteurs, implants médicaux chez l'homme ou l'animal, etc.
+
+Afin de pointer les différences entre forensique numérique classique et forensique de l'IoT, celui-ci est divisé en domaines tels que les services de Cloud Computing, les appareils mobiles, l'informatique fixe, les capteurs RFID ou l'Intelligence Artificielle (IA). Ainsi, ces différences ont pu être mises en évidence en fonction des domaines ciblés. Par conséquent, un modèle composé de trois zones a vu le jour. Ces zones aident les enquêteurs à choisir leur point de départ pour travailler. La zone 1 est composée du réseau interne, c'est-à-dire tout le matériel et le logiciel directement lié au lieu de l'enquête (ex : périphériques Bluetooth ou Wi-Fi). La zone 2 comprend tous les périphériques et logiciels autour du réseau, ceux qui font la liaison entre réseau interne et externe. On retrouve par exemple les IPS/IDS et les pare-feux. La zone 3 contient tout ce qui se trouve en dehors du réseau interne, comme les données des FAI, celles des opérateurs de réseau mobile, etc. Cette conceptualisation de zone aide les praticiens à élaborer un plan d'enquête organisé.
+
+La forensique numérique sert à comprendre et à reconstruire la séquence d'événements qui ont dû se produire lors de la génération desdits éléments. Cette investigation est commune à la forensique numérique classique et à celle de l'IoT. Elle concerne l'acquisition, l'examen, l'analyse et la présentation de ces éléments et de la séquence d'événements reconstruite comme preuve devant un tribunal.
+C'est McKemmish en 1999 qui décrit ce modèle à quatre étapes repris par la suite dans de nombreux articles. Ces quatre étapes sont décrites ainsi :
+
+
+Le volume d'affaires judiciaires concernant la criminalité numérique grandit également. Depuis 2010, l' a mis en place une solution "DFaaS" (nom inspiré par la solution "Software as a service") basée sur XIRAF afin de lutter contre le volume d'affaires en attente de traitement. Cette solution prend en charge une grande partie des questions de stockage lors d'une enquête, permettant ainsi aux enquêteurs une automatisation du traitement des données plus efficace. Pour garantir l'intégrité judiciaire, comme dans le processus traditionnel, la première tâche consiste à créer des copies légitimes des appareils numériques. La grande différence est que les images sont copiées dans un stockage central et traitées à l'aide d'un ensemble d'outils standards. Ceux-ci vont des outils d'extraction de systèmes de fichiers et des espaces non alloués aux outils d'analyse des logs et de l'historique Internet. Les résultats obtenus via ces outils sont stockés dans une base de données centralisée et peuvent être interrogés et analysés à tout moment au cours de l'enquête.
+
+Début 2012, Hansken, le successeur de XIRAF, voit le jour dans le but d'être une version de production qui remplacera son prédécesseur en tant que solution DFaaS. Celui-ci se compose de plusieurs modules qui servent tous un objectif spécifique, communiquant ensemble via une technologie RPC.
+
+Oriwoh propose un scénario hypothétique dans lequel un certain M. X a utilisé divers périphériques IoT pour commettre des infractions. Cette illustration aide à souligner les questions que les enquêteurs numériques peuvent se poser dans le cadre d'enquêtes liées à l'IoT.
+
+Des milliards d’appareils interconnectés attirent les cyber-criminels et offrent ainsi une très grande surface d’attaque. C’est pourquoi il est nécessaire de disposer de moyens pour sécuriser les données de l'IoT, mais également d'être capable de mener des investigations efficaces en cas de crime.
+
+Néanmoins, le développement de la forensique de l'IoT se heurte à divers challenges.
+
+Dans l'IoT, il est très difficile de savoir exactement d’où proviennent les données qui sont utilisées comme preuves à cause de l’interconnectivité qui existe entre les différents appareils qui le composent. L'énorme quantité de données échangées ralentit grandement le déroulement des étapes de la forensique numérique et peut même induire en erreur les enquêteurs. Il est donc compliqué pour ces enquêteurs de déterminer par qui un crime a été commis. Plus l'environnement dans lequel ce crime a été commis est interconnecté, plus il est difficile d'identifier un coupable.
+
+C'est à cause des raisons citées précédemment que le modèle de Harbawi "et al." se concentrent sur l’utilisation de . Dans ce modèle, la preuve numérique est considérée comme l’élément central de la forensique numérique, et par extension, de celle de l'IoT . Il se base sur l’utilisation de l’algorithme "" (LoS), qui permet de retrouver l’appareil dont est originaire une preuve afin de définir les outils et les techniques les plus à même de mener à bien une enquête. Il propose également aux enquêteurs de mettre en commun leur travail en mettant le résultat de leurs efforts sur une plateforme en ligne.
+
+Le nombre d'appareils connectés est actuellement très élevé, et ne cesse d'augmenter. Des statistiques réalisées par l'entreprise américaine Gartner et par le site internet de statistiques Statista témoignent de la place de plus en plus importante que prennent les appareils de l'IoT dans notre société.
+
+De plus, les machines qui constituent l'IoT sont équipées de protocoles de communication différents selon le constructeur. On peut citer, de manière non exhaustive, le protocole Weave pour les appareils Nest Labs, le protocole Z-Wave, ou encore le protocole ZigBee, conçus notamment pour la domotique. Il n'existe donc pas de protocole standard au sein de l'IoT.
+
+Dans ce contexte, un des challenges de la forensique de l’IoT est de pouvoir gérer un énorme parc de machines très différentes les unes des autres. Il n’existe que peu de standardisation dans ce domaine. À l'heure actuelle, les outils et procédures proposés par la forensique numérique ne suffisent pas dans le cadre de l'IoT. De plus, il n'existe aucun framework générique disponible capable de mener à bien une enquête dans ce type d'environnement numérique.
+
+La localisation des données correspond à la phase d'identification de la forensique numérique. Dans leur article, Bouchaud "et al." se concentrent sur l’adaptation de cette phase d'identification à la forensique de l'IoT. En effet, dans le domaine de la forensique de l’IoT, il est d’importance cruciale de pouvoir identifier d’où proviennent les preuves avancées devant une cour.
+
+Il est donc nécessaire d’identifier si les données proviennent du Cloud, d’appareils intermédiaires, de téléphones portables, etc. À noter également que certaines données peuvent être acquises depuis différents pays. Cela peut alors faire entrer plusieurs juridictions différentes en ligne de compte, en fonction des pays impliqués.
+
+Dans la forensique de l'IoT, il est également important de prendre en compte le fait selon lequel les données de l'IoT sont volatiles. Un grand nombre d'appareils de l'IoT utilise des systèmes d'exploitation temps réel, qui ne gèrent pas la persistance des données. De plus, lorsque les données sont transférées via un réseau ad hoc de l'IoT, il ne s'agit que d'un transfert éphémère. On peut également ajouter qu'il n'existe ici encore aucun framework unifié capable de gérer la volatilité des données. Les données de l'IoT peuvent donc facilement être supprimées, ce qui pose problème quand on veut les présenter devant une autorité juridique.
+
+De plus, il ne faut pas que ces données soient modifiées. Pour un enquêteur de la forensique de l'IoT, il est important de s'assurer que les données présentées en tant que preuves soient les mêmes que celles qui ont été récupérées durant l'enquête initiale. Il se doit donc de maintenir la chaîne de traçabilité des preuves acquises, c'est-à-dire maintenir la liste des éléments qui prouvent d'où viennent ces preuves. Tout ceci est nécessaire car une affaire juridique se base sur des faits. Il ne faut donc pas que ces faits soient altérés, auquel cas ils perdraient toute crédibilité.
+
+Les méthodologies employées par la forensique de l'IoT ressemblent fortement à celles employées par la forensique numérique classique. Elles consistent en une version hybride de ces dernières, basées sur le schéma classique de préparation, analyse, présentation et stockage des données.
+
+Cependant, les éléments extraits par ces différentes méthodes d'investigation peuvent avoir plus ou moins de valeur devant la loi selon la façon dont ces investigations ont été conduites. Ils peuvent également soulever des questionnements au niveau de la vie privée des utilisateurs.
+
+Les données de l'IoT sont de nature complexe. Selon les constructeurs, les normes peuvent changer du tout au tout. Un des challenges de la forensique de l'IoT est donc de proposer une méthode universelle de traitement de ces données afin d'en extraire des preuves juridiques valides.
+
+Les particularités de l'IoT rendent impossible l'utilisation des modèles de la forensique numérique préexistants, tels que le modèle de McKemmish (1999) ou celui de NIST (Kent, Chevalier, Grance, Dang, & Kent, 2006).
+
+Aux Etats-Unis, par exemple, les données acquises lors d'une enquête classique doivent être associées à une solide chaîne de traçabilité pour être validées par une cour. Mais à l'heure actuelle, cette chaîne de traçabilité est insuffisante dans le domaine de la forensique numérique. En effet, rien ne permet de prouver la qualité des données récoltées, ni que ces dernières soient accessibles uniquement par les personnes autorisées. Pour améliorer la chaîne de traçabilité, il faudrait alors améliorer à la fois la phase de pré-investigation de la forensique de l'IoT, ainsi que la phase d'analyse en temps réel.
+
+Pour répondre à cette problématique, Victor R. Kebande et Indrakshi Ray ont quant à eux proposé le prototype d'un modèle générique de traitement des données de l'IoT appelé DFIF-IoT. Leur modèle, proactif et réactif à la fois, est constitué de trois étapes. La première étape, proactive, tente d'anticiper la perpétration d'un crime. La deuxième étape concerne la récupération des données à proprement parler depuis le Cloud, différents réseaux, ou alors directement depuis les objets qui constituent l'IoT. Enfin, la troisième et dernière étape, réactive, présente la marche à suivre une fois qu'un crime a été commis. L'avantage de ce modèle est de proposer une approche holistique et standardisée de la forensique de l'IoT à même de fournir des preuves valables devant la loi.
+
+Pour améliorer la façon dont sont conduites les investigations de la forensique de l’IoT, il doit également être possible, a minima, de savoir qui a perpétré un crime, quelle est la nature de ce crime, quand a-t-il été commis, comment le criminel s’y est pris et, enfin, dans quel but a-t-il été commis. Ceci dans le but de permettre aux appareils de l’IoT de répondre aux exigences de la Common Criteria for Information Technology et donc de renforcer la valeur juridique des preuves obtenues.
+
+La plupart des solutions d'investigation informatique ont jusqu'ici négligé la nécessité de protéger la vie privée lors des enquêtes numériques. Les mécanismes et outils traditionnels de la forensique numérique ne requièrent pas la participation volontaire des citoyens. Pourtant, dans des scénarios tels que ceux envisagés par l'IoT, l'acquisition de preuves numériques peut devenir impossible sans l'aide de citoyens. Sans approche coopérative, il est très difficile de comprendre le contexte dans son ensemble. C'est ici qu'intervient le concept de témoin numérique. C'est une solution innovante pour obtenir des dans des scénarios IoT. Cependant, cette solution présente de sérieuses limitations en matière de confidentialité. Il est nécessaire d'établir les principes de confidentialité qui devraient être appliqués à chacune des phases de l'approche du témoin numérique afin de rendre cette solution viable.
+
+Afin d'intégrer les propriétés de confidentialité (et conformément à la norme ISO 29100:2011), le modèle PRoFIT a été défini. Il correspond parfaitement au concept de témoin numérique. Celui-ci définit six phases : préparation (planification et configuration de l’environnement), collecte basée sur le contexte, analyse des données et corrélation, partage de l’information, présentation et examen. Nieto "et al." le définissent comme suit.
+
+
+
+
+
+
+
+Nurul Huda Nik Zulkipli ; Ahmed Alenezi and Gary B. Wills
+
+
+

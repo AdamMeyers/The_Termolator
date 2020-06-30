@@ -1,0 +1,8 @@
+﻿INT 10H
+
+INT 10H ou INT 16 est une interruption logicielle fournie par le BIOS, le vecteur d'interruption d'un ordinateur à base d'un processeur x86, utilisée pour la gestion de l'affichage et des modes vidéo. 
+Pour appeler une fonction de cette interruption, il faut mettre le numéro de la fonction désirée dans le registre AH, éventuellement charger les arguments dans les autres registres et invoquer l'interruption.
+
+Bien que cette routine soit utile, voire indispensable, pour certains réglages peu fréquents (par exemple, changer de mode vidéo), elle est relativement lente, et la plupart des programmes préfèrent accéder à la mémoire vidéo directement plutôt que d'appeler l'interruption pour chaque pixel à afficher.
+
+

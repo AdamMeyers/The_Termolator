@@ -1,0 +1,30 @@
+﻿SD-WAN
+
+SD-WAN est le sigle de "Software-Defined Wide Area Network", soit réseau étendu à définition logicielle, et est présenté comme la nouvelle évolution majeure des télécommunications. Un SD-WAN facilite la gestion du réseau en séparant la partie management de la partie réseau. 
+
+Le SD-WAN est une technologie de transport de paquets IP conçue pour :
+
+Le principal critère d'adoption du SD-WAN dans les réseaux d'entreprise est le gain économique résultant du remplacement d'un lien MPLS (pour Multiprotocol Label Switching) par un lien internet. 
+
+Ils s’adressent aux grossistes et distributeurs dans chaque pays afin de livrer en masse leurs logiciels. À l’exception de clients grands-comptes, les clients finaux achètent leurs solutions par l’intermédiaire de revendeurs ou d’intégrateurs.
+
+Il existe de nombreux éditeurs aujourd'hui proposant une solution de Sd-Wan (ex : Forcepoint...)
+
+Ils s’adressent directement aux entreprises ou à des intégrateurs en proposant un service « clef en main » SD-WAN grâce à un support clients sur leurs solutions.
+
+Ils s’adressent à des clients finaux en intégrant des solutions d’un ou plusieurs éditeurs dont ils assurent la commercialisation et la maintenance. Les opérateurs télécoms traditionnels ou alternatifs sont des intégrateurs de solutions tierces.
+
+Ils s’adressent à des clients finaux ou partenaires en assurant l’infogérance des solutions SD-WAN ainsi que la gestion de toutes les liaisons de télécommunications filaires et sans fils. Ils ont la particularité d’être des acteurs exclusifs (« Pure Players ») SD-WAN.
+
+SD-WAN gère des liens virtuels (overlays) créés au-dessus de réseaux IP existants. De cette manière, les réseaux SD-WAN sont indépendants du réseau physique, qui peuvent mêler plusieurs technologies, en général L3VPN (MPLS) et Internet. Cette combinaison permet de disposer d'une grande fiabilité, d'un bon niveau de gestion de la bande passante (QoS) grâce au lien L3VPN et d'un débit important pour un coût modéré grâce au lien Internet.
+
+Les flux peuvent être classés par application grâce à un moteur DPI ("deep packet inspection"), plus évolué qu'un classement effectué sur les critères standardisés par l'ISO (ports UDP et TCP de la couche 4 du modèle OSI).
+Par exemple, un flux "peer to peer" pourra être séparé d'une consultation du site web wikipedia, même si les deux flux utilisent le même canal de communication de la couche 7 (HTTP).
+
+Une fois cette classification effectuée, chaque flux applicatif va être routé dans un lien virtuel en fonction de critères dynamiques (bande passante disponible, latence maximale, taux de pertes de paquets…). Le SD-WAN permet d'attribuer la bande passante aux applications en ayant le plus besoin, selon des critères choisis en amont.
+
+Les sites possédant un accès Internet peuvent accéder par un tunnel sécurisé directement à des environnements Cloud (AWS, Azure...), de plus en plus présents dans les réseaux d’entreprise, sans passer par un site passerelle.
+
+La supervision du réseau et le management des tunnels et du routage sont centralisés sur un orchestrateur. L’administrateur réseau y accède depuis une interface sans avoir à configurer les équipements réseau un par un. En outre l'interface peut proposer des services additionnels (service chaining, sécurité...).
+
+

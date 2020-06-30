@@ -1,0 +1,35 @@
+﻿Little man computer
+
+Le Little Man Computer (LMC) est un ordinateur à vocation éducative, créé par le Dr. Stuart Madnick en 1965. Le LMC est généralement utilisé pour enseigner aux étudiants, car il modélise un ordinateur simple avec une architecture de von Neumann - qui possède toutes les fonctionnalités élémentaires d'un ordinateur moderne. Il peut être programmé en code machine (bien que sous forme décimale plutôt que binaire) ou en assembleur.
+
+Le modèle du LMC est basé sur le concept d'un petit homme enfermé dans une petite pièce ou un ordinateur. Au bout de la pièce, il y a 100 boîtes aux lettres (la mémoire), numérotées de 0 à 99, qui peuvent chacune contenir une instruction ou donnée de 3 chiffres (allant ainsi de 000 à 999). De plus, il y a deux boîtes aux lettres à l'autre bout marquées INBOX (boîte de réception) et OUTBOX (boîte d'envoi) qui sont utilisées pour recevoir et envoyer des données. Au centre de la pièce, il y a une zone de travail contenant une calculatrice simple à deux fonctions (addition et soustraction) appelée Accumulateur et un compteur qu'il est possible de remettre à zéro appelé Compteur de Programme. Le Compteur de Programme contient l'adresse de la prochaine instruction que le Petit Homme va effectuer. Le Compteur de Programme est normalement incrémenté de 1 après chaque instruction exécutée, permettant au Petit Homme d'exécuter le programme séquentiellement. Les instructions de section permettent aux itérations (boucles) et structures conditionnelles d'être incorporées dans un programme. La dernière en assignant au Compteur de Programme une adresse de mémoire non séquentielle si une condition particulière est satisfaite (habituellement si la valeur mémorisée dans l'accumulateur est positive ou nulle). Comme indiqué par l'architecture de von Neumann, la mémoire contient à la fois les instructions et les données. Il est par conséquent nécessaire de faire attention à bien empêcher le Compteur de Programme d'atteindre une adresse mémoire contenant des données autrement le Petit Homme tentera de la traiter comme une instruction. Afin d'utiliser le LMC l'utilisateur charge des données dans les boîtes aux lettres et fait signe au Petit Homme de commencer l'exécution, en commençant par l'instruction mémorisée à l'adresse mémoire zéro. Remettre à zéro le Compteur de Programme relance le programme.
+
+Afin d'exécuter un programme, le Petit Homme effectue ces étapes:
+
+Même si le LMC reflète le véritable fonctionnement des processeurs binaires, la simplicité des nombres décimaux a été choisie afin de minimiser la complexité pour les étudiants qui ne seraient pas habitués à travailler en binaire ou en hexadécimal.
+
+Certains simulateurs de LMC sont programmés en utilisant directement les instructions numériques à 3 chiffres et d'autres utilisent des codes mnémoniques à 3 lettres et étiquettes. Dans un cas comme dans l'autre, l'ensemble des instructions est délibérément très limité ("avec habituellement environ dix instructions") afin de simplifier la compréhension. Si le LMC utilise des codes mnémoniques et des étiquettes alors ils sont convertis en instructions numériques à 3 chiffres quand le programme est assemblé. Le premier chiffre d'une instruction numérique représente la commande à effectuer et les deux derniers chiffres représentent l'adresse mémoire de la boîte aux lettres concernée par cette commande.
+
+Le tableau ci-dessous montre un ensemble d'instructions habituel et les codes mnémoniques correspondants.
+
+Ce programme (instruction 901 jusqu'à 000) est écrit uniquement en utilisant les codes numériques. Le programme prend deux nombres en entrée et retourne la différence. Remarquons que l'exécution commence à la Boîte aux Lettres 00 et finit à la Boîte aux Lettres 07. Les inconvénients de programmer le LMC en utilisant des codes d'instructions numériques sont expliquées ci-dessous.
+Le langage d'Assemblage est un langage de programmation de bas niveau qui utilise des mnémoniques et des labels au lieu de codes d'instruction numériques. Même si le LMC n'utilise qu'un ensemble limité de ces mnémoniques, le confort d'utiliser une mnémonique pour chaque instruction est rendu apparent par le langage d'assemblage du même programme montré ci-dessous - le programmer n'a plus besoin de mémoriser un ensemble de codes numériques anonymes et peut maintenant programmer avec un ensemble de codes mnémoniques plus facile à se souvenir. Si la mnémonique est une instruction qui concerne une adresse mémoire ("soit une instruction de section ou un chargement/enregistrement de données") alors l'étiquette est utilisée afin de nommer l'adresse mémoire.
+
+Sans les étiquettes le programmeur devrait manuellement calculer les adresses des Boîtes aux Lettres (mémoire). Dans le code numérique d'exemple, si de nouvelles instructions devaient être insérées avant l'instruction HLT finale alors cette instruction HLT serait déplacée depuis l'adresse 07 vers l'adresse 08 (l’étiquetage des adresses commence à la position 00). Supposons que l'utilisateur a entré 600 à la première entrée. L'instruction 308 signifierait que cette valeur serait stockée à l'adresse 08 et effacerait l'instruction 000 (HLT). Étant donné que 600 signifie "bifurque vers l'adresse de boîte aux lettres 00" le programme, au lieu de s'arrêter, se bloquerait dans une boucle infinie.
+
+Afin de contourner cette difficulté, la plupart des langages d'assemblages ("en incluant celui du LMC") combinent les mnémoniques avec les étiquettes. Une étiquette est simplement un mot qui est utilisé pour nommer une adresse mémoire où une instruction ou des données sont stockées, ou pour se référer à cette adresse dans une instruction.
+
+Quand un programme est assemblé:
+Dans l'exemple en langage d'assemblage qui utilise des mnémoniques et des étiquettes, si une nouvelle instruction est insérées avant l'instruction HLT finale alors la position de l'adresse est étiquetée TERME1 serait maintenant à l'emplacement mémoire 09 au lieu de 08 et l'instruction STA TERME1 serait convertie en 309 (STA 09) plutôt que 308 (STA 08) quand le programme est assemblé.
+
+Les étiquettes sont ainsi utilisées pour:
+Exemple
+
+Ce programme prend une entrée utilisateur et décompte jusqu'à zéro.
+Ce programme prend une entrée utilisateur, l'élève au carré, retourne la réponse et recommence. Entrer la valeur zéro termine le programme.
+"(Note: une entrée qui résulte en une sortie plus grande 999 causera une erreur due à la limite des nombres de 3 chiffres du LMC)."
+"Note: Si aucune valeur n'est donnée après une déclaration DAT alors la valeur par défaut 0 est stockée à l'emplacement mémoire."
+__FORCERSOMMAIRE__
+
+
+

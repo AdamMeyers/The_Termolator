@@ -1,0 +1,68 @@
+﻿Commande LQ
+
+En automatique, la Commande linéaire quadratique, dite Commande LQ, est une méthode qui permet de calculer la matrice de gains d'une commande par retour d'état. L'initiateur de cette approche est Kalman, auteur de trois articles fondamentaux entre 1960 et 1964. Les résultats de Kalman ont été complétés par de nombreux auteurs. Nous ne traiterons ici que de la commande linéaire quadratique à horizon infini dans le cas d'un système linéaire stationnaire (ou « invariant »), renvoyant à l'article Commande optimale pour le cas d'un horizon fini et d'un système linéaire dont les matrices varient en fonction du temps. 
+
+L'idée consiste à minimiser un critère de performance formula_1, quadratique en l'état "x" et la commande "u", et qui est une somme pondérée de l'énergie de "x" et de celle de "u". Le but de la commande consiste, à la suite d'une perturbation, à ramener, de préférence aussi rapidement que possible, l'état à sa valeur d'équilibre "0", compte tenu des contraintes liées à un cahier des charges. Si, dans formula_1, on privilégie l'énergie de "x", c'est celle-ci qui va être essentiellement minimisée, au détriment de l'énergie de la commande, qui pourra donc être très grande: c'est l'adage « qui veut la fin veut les moyens »; dans ce cas la commande sera très nerveuse (à grands gains). Si au contraire on privilégie dans formula_1 l'énergie de "u", on met l'accent sur l'économie des moyens; on obtiendra donc une commande de faible énergie, molle, pour laquelle la dynamique de la boucle fermée sera lente. Le rôle du concepteur consiste à choisir habilement les matrices de pondérations qui interviennent dans le critère, de manière à obtenir "in fine", après un certain nombre d'essais-erreurs, le comportement souhaité du système en boucle fermée. Notons que, quelle que soit la méthode employée pour la conception d'un régulateur, des essais-erreurs sont inévitables. Dans le cas de la commande linéaire quadratique, avec un minimum d'expérience, les essais-erreurs convergent très rapidement. La commande linéaire quadratique, comparée à la méthode de placement de pôles, est très précieuse dans le cas d'un système ayant plusieurs entrées, car il n y a pas alors de solution unique au problème de placement de pôles : pour les mêmes pôles en boucle fermée, certaines lois de commandes peuvent être très robustes, et d'autres pas du tout. La commande linéaire quadratique possède quant à elle, intrinsèquement, de très bonnes propriétés de robustesse.
+
+Considérons le système linéaire stationnaire ayant pour équation d'état
+
+où formula_5 est l'état, formula_6 est la commande, et "A" et "B" sont des matrices constantes appartenant à formula_7 et formula_8 respectivement. Considérons d'autre part le critère
+
+où formula_10 et formula_11 sont des matrices symétriques réelles, semi-définie positive et définie positive respectivement.
+
+Il peut être utile de considérer un critère un peu plus général, de la forme
+
+où formula_13. On se ramène au cas précédent en posant formula_14, formula_15. L'équation d'état devient
+
+où formula_17.
+
+Notons d'abord que si une commande optimale existe, elle est unique, car l'intégrande du critère est strictement convexe en "u".
+
+Considérons la "matrice hamiltonienne" de dimension formula_18
+
+et la condition 
+
+On montre facilement que si formula_20 est une valeur propre de "H", formula_21 l'est aussi. Par conséquent, "si la condition (a) est satisfaite", il existe une matrice de changement de base formula_22 telle que formula_23 soit sous forme de Jordan, les "n" premiers (resp. derniers) blocs étant associés à des valeurs propres formula_24 telles que formula_25 (resp. formula_26). Soit alors
+
+"Si la matrice formula_32 est inversible", formula_33 est une solution de l'« équation algébrique de Riccati »
+
+Soit les conditions 
+
+On a le résultat suivant:
+
+On notera que, du point de vue numérique, il est préférable, pour résoudre l'équation algébrique de Riccati, d'utiliser la "forme de Schur" de "H" plutôt que sa forme de Jordan.
+
+Dans tout ce qui suit on suppose les conditions (a) et (b) satisfaites. Le nombre de composantes du vecteur d'état (resp. de commande) est "n" (resp. "m").
+
+Soit formula_42 la matrice de transfert de la boucle ouverte, quand l'ouverture a lieu à l'entrée du système. Soit également, pour simplifier les écritures, 
+formula_43, formula_44, et formula_45. Kalman a montré l'égalité suivante:
+
+En remplaçant "s" par formula_47 on en conclut que pour tout formula_48
+
+où formula_50 désigne la plus grande valeur singulière, formula_51 est la « matrice de sensibilité » en entrée du système, à savoir formula_52, et formula_53 désigne la racine carrée symétrique de la matrice symétrique réelle (semi-)définie positive formula_54. En utilisant la « norme Hinfini » on en déduit par le principe du module maximum que
+
+d'où encore
+
+où formula_57 (resp. formula_58) désigne la plus petite (resp. la plus grande) valeur propre de formula_54. La quantité formula_60 est la marge de module (en entrée du système) et est notée formula_61. On a donc obtenu
+
+Dans le cas formula_63 (une seule entrée), la marge de module s'interprète géométriquement comme étant la distance entre le lieu de Nyquist de la fonction de transfert de la boucle ouverte et le point critique -1. Par un raisonnement géométrique élémentaire, on en déduit que, pour un système bouclé ayant une marge de module formula_61, la marge de gain inclut l'intervalle formula_65 et que la marge de phase est d'au moins formula_66 rad. Le minorant donné ci-dessus pour formula_61 dans le cas de la commande LQ (avec formula_63) est égal à 1, d'où on déduit que la commande LQ "monovariable" produit une marge de gain d'au moins formula_69 et une marge de phase d'au moins 60°.
+
+Dans le cas formula_70, l'interprétation géométrique ci-dessus n'est plus valide; en revanche, on peut encore donner un sens à la marge de gain et à la marge de phase, dont un minorant fonction de la marge de module est encore donné par les relations ci-dessus. En particulier, si "R" est une « matrice scalaire » (i.e. formula_71, où "r" est un réel strictement positif), la marge de gain est de nouveau d'au moins formula_69 et la marge de phase d'au moins 60°. Ces propriétés de robustesse font l'un des intérêts majeurs de la commande linéaire quadratique.
+
+Le concepteur d'une commande linéaire quadratique doit choisir de manière habile les paramètres de synthèse formula_73, "Q" et "R". Tout d'abord, le concepteur aura soin de raisonner sur des "variables réduites", sans unité, qu'il s'agisse des composantes de l'état "x", de la commande "u", ou même de la variable temporelle "t".
+
+Une fois la réduction ci-dessus réalisée, la méthode la plus simple consiste à prendre formula_74, formula_75, et à prendre pour formula_73 un réel strictement positif qui ne soit la partie réelle d'aucune des valeurs propres de formula_77. En effet, la matrice hamiltonienne s'écrit alors
+
+et elle n'a pas de valeurs propres imaginaires si, et seulement si formula_79 n'a pas de valeurs propres imaginaires. Soit alors formula_80 les valeurs propres distinctes de "A" (c'est-à-dire les pôles du système en boucle ouverte). Alors les pôles du système en boucle fermée sont formula_81 où
+
+On peut donc adopter une démarche assez analogue au placement de pôles (avec, toutefois, la différence que les pôles du système bouclé ne sont pas "arbitrairement" placés), en ajustant, par quelques essais-erreurs, la valeur du paramètre formula_73 de manière que le comportement du système bouclé soit conforme au cahier des charges.
+
+Si, par la méthode précédente, on ne peut pas aboutir à un résultat satisfaisant, on prendra formula_84 et on choisira
+
+où les formula_86 et formula_87 sont des réels strictement positifs. Plus la pondération formula_86 (resp. formula_87) sera grande, plus on contraindra la variable formula_90 (resp. formula_91) à ne prendre que des petites valeurs dans le régime transitoire. Il est à noter que si l'on multiplie "Q" et "R" par le même réel formula_92, le critère est multiplié par formula_93 et la commande optimale est donc inchangée (en effet, formula_94 est minimal si, et seulement si formula_95 est minimal). Il faut tenir compte de ce phénomène pour ne pas « tourner en rond » dans le processus de choix des pondérations.
+
+Comme pour toute commande par retour d'état, le concepteur aura pris soin, dès le début, de faire les augmentations d'état nécessaires si le problème à résoudre est un problème d’asservissement (et non pas seulement de stabilisation ou d'amortissement de pôles oscillants).
+
+
+
+

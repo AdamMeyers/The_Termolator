@@ -1,0 +1,25 @@
+﻿Liberty Alliance
+
+Liberty Alliance, aussi connu sous le nom de Project Liberty, est un projet qui réunit des acteurs des mondes industriel, informatique, bancaire et gouvernemental sous la forme d'un consortium. L'objectif est de définir des ensembles de spécifications de protocoles de fédération d'identité et de communication entre services web. Ces protocoles sont conçus pour être mis en œuvre aussi bien dans le cadre de déploiements intra-entreprise qu'inter-entreprise.
+
+Les spécifications initiales du projet Liberty concernaient l'authentification unique (ou SSO) fédérée et étaient basées sur la norme SAML (elle-même définie par l'organisme de standardisation OASIS). Ces spécifications ne reposent aujourd'hui plus seulement sur SAML : elles s'appuient également sur un ensemble plus large de protocoles et de normes standards du W3C tels que HTTP et SSL.
+
+Dans le contexte de Liberty Alliance, l'authentification unique correspond à la possibilité pour l'utilisateur d'accéder, après s'être identifié à l'aide d'un compte unique, à des services proposés par différents fournisseurs appartenant à un même « cercle de confiance » (« "" »). Ces spécifications techniques et fonctionnelles décrivent donc les mécanismes qui devraient d'une part simplifier l'usage d'Internet (mise en œuvre du principe de signature unique) et d'autre part permettre à un individu de maîtriser la diffusion de ses données personnelles (nom, prénom, adresse électronique, etc., qui définissent en réalité son identité numérique dès lors qu'il fait usage d'Internet) en décidant lesquelles il désire partager.
+
+Une caractéristique spécifique de Liberty Alliance est la notion de fédération. Au lieu que ce soit un fournisseur de service qui décide si un utilisateur a le droit d'accéder à son service sans se ré-identifier, c'est l'utilisateur qui décide s'il veut accéder à ce service sans se ré-identifier. Cette possibilité ne peut être laissée à l'utilisateur que s'il doit au préalable s'identifier auprès d'un fournisseur d'identité reconnu par le fournisseur du service demandé. Cette caractéristique fait de Liberty Alliance un cadre pour la gestion d'identité, qui est utilisable dans un contexte d'applications d'entreprise étendue, où les utilisateurs délèguent la gestion des données personnelles à l'entreprise.
+
+Cependant, d'autre approches émergentes de la gestion de l'identité numérique, comme la technologie de chiffrement de données de Credentica, semblent apporter des améliorations concernant la protection de la vie privée centrée sur l'utilisateur allant au-delà des standards actuels de Liberty Alliance. En particulier, dans cette dernière approche, l'utilisateur a la possibilité de masquer ses données personnelles au fournisseur d'identité central, ainsi qu'aux fournisseurs de services dans chaque "cercle de confiance".
+
+Il reste à voir où se situera le point d'équilibre entre, d'un côté, la tendance des entreprises à enfermer l'utilisateur-client dans un système (l'utilisateur est tenu de faire confiance au fournisseur d'identité) et de l'autre, la valeur ajoutée que constitue la complète maîtrise de ses données privées pour l'utilisateur. Cet équilibre déterminera comment et quand Liberty Alliance inclura cette approche plus radicale de la gestion individuelle de ses données personnelles. Autre point intéressant, les problèmes de propriété intellectuelle, comme les brevets déposés sur les outils (dont celui de Credentica), qui pourraient s'avérer pénalisants pour leur mise en œuvre dans le cadre des architectures normalisées.
+
+Le protocole défini par Liberty Alliance prévoit une architecture fédérative, où chaque service gère une partie des données d'un utilisateur (l'utilisateur peut donc disposer de plusieurs comptes, à raison d'un par service), mais partage les informations dont il dispose sur l'utilisateur avec les services partenaires.
+
+Cette approche a été développée pour répondre à un besoin de gestion décentralisée des utilisateurs, où chaque service partenaire désire conserver la maîtrise de sa propre politique de sécurité, comme un ensemble de sites marchands indépendants commercialement et organisationnellement les uns des autres.
+
+La spécification Liberty Alliance a donné lieu à des réalisations par différentes organisations, par exemple :
+
+Le projet Liberty Alliance a été initié par la société Sun Microsystems en septembre 2001. Les membres initiaux étaient entre autres : ActivCard, American Airlines, Apache Software Foundation, Bank of America, Bell Canada Enterprises, Cingular Wireless, Cisco Systems, CollabNet, Dun and Bradstreet, eBay, Entrust, Fidelity Investments, France Telecom, Gemplus, GM, Global Crossing, i2, Intuit, Liberate Technologies, Nokia, NTT DoCoMo, Openwave, O'Reilly and Associates, RealNetworks, RSA Security, Sabre, Schlumberger, Sony Corporation, Sprint, Sun Microsystems, Travelocity, United Airlines, Verisign et Vodafone.
+
+
+
+

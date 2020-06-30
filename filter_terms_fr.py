@@ -136,7 +136,8 @@ def filter_terms_fr (infile, \
                   numeric_cutoff=30000,\
                   reject_file = False, \
                   penalize_initial_the = True, \
-                  web_score_dict_file=False
+                  web_score_dict_file=False,
+                  webscore_max = 1000
                   ):
 
       
@@ -151,6 +152,7 @@ def filter_terms_fr (infile, \
     '''
 	
     #loads web dict file
+
     if use_web_score and web_score_dict_file:
         load_web_score_dict_file(web_score_dict_file)
         use_web_score_dict = True
@@ -266,7 +268,7 @@ def filter_terms_fr (infile, \
                 stream = False
         else:
             
-            if use_web_score:
+            if use_web_score and (count < webscore_max):
                 
                 ##wait a random amount of seconds every 3 requests
 		##makes webscore part slow but avoids getting blocked after about 1000
@@ -280,16 +282,21 @@ def filter_terms_fr (infile, \
                 '''
 
                 print("Term ", count, ":", term)
-                webscore = webscore_one_term(term,use_web_score_dict=use_web_score_dict) ### fix this
-                
+                webscore,increment = webscore_one_term(term,use_web_score_dict=use_web_score_dict) ### fix this
+                webscore += increment
+                webscore = max(webscore,.1)                
                 combined_score = webscore*confidence
                 out.extend([webscore,combined_score])
                 final_output.append([combined_score,out])
+            elif use_web_score:
+               webscore = .1
+               combined_score = webscore*confidence
+               out.extend([webscore,combined_score])
+               final_output.append([combined_score,out])
             else:
                 webscore = False
                 final_output.append([confidence,out])
-            stream = False
-            
+            stream = False            
         if stream:
             rating = str(rating)
             well_formedness_score = str(well_formedness_score)

@@ -1,0 +1,16 @@
+﻿System Management Bus
+
+Le System Management Bus (en abrégé SMBus ou SMB) est un bus de communication développé en 1995 par Intel sur la base du bus I²C avec lequel il est partiellement compatible.
+
+Il est principalement utilisé pour la communication à faible bande passante entre périphériques de cartes mères d’ordinateurs, particulièrement les périphériques liés à la gestion de l’énergie, comme les alimentations et les systèmes de recharge de batteries, mais également avec les ventilateurs, les capteurs de température, les capteurs de tension électrique, les contacts de détection de fermeture de l’écran des ordinateurs portables et les horloges intégrées.
+
+Un périphérique SMB peut fournir des informations sur son fabricant, son modèle, son numéro de série, enregistrer son état avant sa mise en veille, annoncer différents types d’erreurs et diagnostics et peut accepter des paramètres de contrôle. Le bus SMB n’est pas prévu pour être contrôlé directement par l’utilisateur final. Les périphériques ne peuvent pas identifier leurs fonctionnalités, mais une nouvelle coalition PMBus a étendu la spécification de base pour permettre cela.
+
+Bien que SMBus soit un dérivé d’I²C, les deux spécifications présentent des différences majeures du point de vue électrique, des horloges, des protocoles ainsi que des modes d’opération.
+
+SMBus est pris en charge par FreeBSD, OpenBSD, NetBSD, DragonFly BSD, Linux, Windows 2000 et les versions plus récentes de Windows ainsi que Windows CE.
+
+
+
+
+

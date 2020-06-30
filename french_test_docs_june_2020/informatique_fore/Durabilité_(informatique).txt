@@ -1,0 +1,11 @@
+﻿Durabilité (informatique)
+
+Dans le contexte des bases de données, la durabilité est la propriété qui garantit qu'une transaction informatique qui a été confirmée survit de façon permanente, quels que soient les problèmes rencontrés par la base de données ou le système informatique où cette transaction a été traitée. Par exemple, dans un système de réservation de sièges d'avion, la durabilité assure qu'une réservation confirmée restera enregistrée quels que soient les problèmes rencontrés par l'ordinateur qui gère le système de réservation (panne d'électricité, écrasement de la tête sur le disque dur, etc.).
+
+La durabilité est l'une des quatre propriétés ACID qui garantissent qu'une transaction informatique est exécutée de façon fiable.
+
+Plusieurs système de gestion de base de données implémentent la durabilité en écrivant les transactions sur un journal des transactions qui peut être utilisé pour recréer la base de données dans l'état où elle était immédiatement avant une panne. Une transaction est confirmée seulement après son enregistrement dans le journal des transactions.
+
+Dans le cas de transactions distribuées, tous les serveurs impliqués doivent se coordonner pour émettre une confirmation uniquement lorsque la transaction est enregistrée de façon permanente sur tous les serveurs. Cela est habituellement fait au moyen d'un .
+
+

@@ -1,0 +1,143 @@
+﻿Forme normale (bases de données relationnelles)
+
+Dans une base de données relationnelle, une forme normale désigne un type de relation particulier entre les entités.
+
+Le but essentiel de la normalisation est d’éviter les anomalies transactionnelles pouvant découler d’une mauvaise modélisation des données et ainsi éviter un certain nombre de problèmes potentiels tels que les anomalies de lecture, les anomalies d’écriture, la redondance des données et la contre-performance.
+
+La normalisation des modèles de données permet de vérifier la robustesse de leur conception pour améliorer la modélisation (et donc obtenir une meilleure représentation) et faciliter la mémorisation des données en évitant la redondance et les problèmes sous-jacents de mise à jour ou de cohérence. La normalisation s’applique à toutes les entités et aux relations porteuses de propriétés.
+
+Les formes normales s’emboîtent les unes dans les autres, tant et si bien que le respect d’une forme normale de niveau supérieur implique le respect des formes normales des niveaux inférieurs. Dans le modèle relationnel de type OLTP, il existe huit formes normales, les trois premières étant les plus connues et utilisées : 
+
+
+La forme normale vient après la simple validité d’un modèle relationnel, c’est-à-dire que les valeurs des différents attributs soient bien en dépendance fonctionnelle avec la clé primaire (complètement déterminés par la clé primaire).
+
+En pratique, la première et la deuxième forme normale sont nécessaires pour avoir un modèle relationnel juste. L’usage est de modéliser au moins en 3 forme normale. Les formes normales supplémentaires ont leurs avantages et leurs inconvénients. 
+
+Les principaux avantages sont :
+
+L’inconvénient essentiel tient aux temps d’accès potentiellement plus longs si les requêtes sont très complexes (nombreuses jointures). Mais aujourd’hui, cela est largement compensé par la qualité des optimiseurs et la mise en place d’index pertinents adéquats.
+
+Pour des petites bases de données, se limiter à la troisième forme normale est généralement une bonne solution d’un point de vue architecture de base de données, mais pour des bases de données plus importantes, il est nécessaire d’aller plus loin, voire - après normalisation et étalonnage - d’effectuer une dénormalisation intelligente dont un benchmark prouve globalement les gains. Sans modifier l’usage des formes normales, une dénormalisation intelligente est basée sur cinq principes de base :
+
+Le principe de normalisation est valable pour les bases de données dites "OLTP" (OnLine Transaction Processing) c’est-à-dire des bases effectuant de nombreuses mises à jour tout au long de leur vie. Mais ce principe n’est pas valable pour les bases de données dites "OLAP" (OnLine Analytical Process aussi appelé "décisionnelle") dont l’utilisation procède de lectures pour l’essentiel avec une alimentation globale par lot. Il est d’ailleurs à noter que les principaux éditeurs de SGBD disposent de moteurs distincts au niveau notamment du stockage pour chacun de ces types de bases. En effet, les moteurs relationnels (bases OLTP) stockent des octets mêmes si les données sont inconnues (codice_1) tandis que les moteurs OLAP compressent les données. 
+
+En d’autres mots, il ressort que la normalisation s’applique aux bases OLTP et non aux bases OLAP. Et même au sein des bases OLTP il est possible qu’un arbitrage doive être effectué sur le niveau de normalisation selon que les tables de la base de données sont plus sollicitées en lecture ou plus en écriture. Si une table est notablement très intensivement écrite et peu lue, il sera préférable de normaliser le plus possible. À contrario, si une table très intensivement lue et peu écrite, il pourra être judicieux d’être moins strict sur le respect de la normalisation pour permettre d’améliorer les performances d’accès aux données Mais même dans ces principes généraux, l’inverse peut s’avérer intéressant. C’est le cas par exemple des tables de "log" dans lesquelles généralement la structure est souvent dénormalisée afin d’effectuer l’insertion de ligne en une seule passe, alors qu’elles sont fortement écrites et généralement peu lues ! Notons qu’il arrive fréquemment, au sein d’une base OLTP, que des tables soient en lecture seulement, comme ce peut être le cas d’une table servant de calendrier... Dans ce dernier cas, la dénormalisation pourrait être extrême.
+
+Il convient d’être prudent lorsqu’on renonce à la forme normale. Il n’est pas garanti qu’une forme dénormalisée améliore les temps d’accès. En effet, la redondance peut entraîner une explosion des volumes de données qui peuvent écrouler les performances ou saturer les disques durs. Il est donc nécessaire de commencer par une normalisation, étalonner les métriques de temps de réponse sur des volumes réels puis dénormaliser, entreprendre une nouvelle campagne de mesure, comparer, et si le gain est globalement avéré, alors conserver la dénormalisation. Il est important de comprendre que les gains de dénormalisation entraînent systématiquement des pertes sur d’autres objets, ce pourquoi il ne faut pas se contenter de regarder l’arbre qui masque la forêt et donc effectuer des mesures sur l’ensemble des objets de la base et non se consacrer à mesurer uniquement les objets cibles de la dénormalisation !
+
+La normalisation des modèles de données a été popularisée principalement par la méthode Merise. La principale limite de la normalisation est que les données doivent se trouver dans une même base de données, même si les objets sont répartis dans différents schémas SQL.
+
+Les formes normales sont construites selon le principe des dépendances fonctionnelles. On dit qu’un ensemble d’attributs détermine un autre ensemble d’attributs si : pour deux tuples distincts toute projection des deux tuples sur le premier attribut donnant les mêmes valeurs, induit obligatoirement que les valeurs projetées sur les tuples pour le deuxième attribut soient identiques. Soient deux tuples t1 et t2, soient deux ensembles d’attributs X, Y (à intersection vide) si la projection de t1 sur X est égale à la projection de t2 sur X alors la projection de t1 sur Y doit être égale à la projection de t2 sur Y. Dans ce cas X détermine Y ou Y dépend fonctionnellement de X (X → Y). On dit aussi que X est le déterminant et Y le déterminé et plus généralement on parle de partie gauche et de partie droite. La partie gauche (déterminant) compose la clé de la relation, tandis que la partie droite compose les informations dépendantes de la connaissance des valeurs des attributs d’une clé.
+
+Ceci se note généralement : "partie gauche (ou déterminant)" → "partie droite (ou déterminé)"
+
+Dans les articles qui suivent, nous prendrons comme exemple théorique, une relation notée R ayant les attributs A1, A2, A3, A4, A5, A6 dont les trois premiers sont le déterminant et les trois derniers le déterminé.
+Est en première forme normale, une relation (ayant par définition une clé) dont les attributs possèdent tous une valeur sémantiquement atomique ;
+
+Une autre définition serait : un attribut est dit « atomique » si aucune subdivision de la donnée initiale n’apporte une information supplémentaire ou complémentaire.
+
+Remarque :
+
+Violent l’atomicité, les attributs :
+Certains attributs apparaissent posséder plusieurs éléments, mais ne sont pas toujours pour autant, "non atomique". 
+
+Le viol de la première forme normale constitue une des plaies les plus importantes en matière de bases de données relationnelles et a des conséquences catastrophiques en termes de performances.
+
+La modélisation des attributs dans une base relationnelle ne doit pas prendre en compte les traitements spécifiques au métier, mais doit tout simplement correspondre à la nature intrinsèque de l’information, ceci afin de permettre l’évolution des bases dans toutes les circonstances de leur utilisation présente ou future.
+
+Respecte la deuxième forme normale, la relation respectant la première forme normale et respectant le principe suivant :
+
+Les attributs d’une relation sont divisés en deux groupes : le premier groupe est composé de la clé (un ou plusieurs attributs). Le deuxième groupe est composé des autres attributs (éventuellement vide). La deuxième forme normale stipule que tout attribut du deuxième groupe ne peut pas dépendre d’un sous-ensemble (strict) d’attribut(s) du premier groupe. En d’autres termes : « Un attribut non clé ne dépend pas d’une partie de la clé mais de toute la clé. »
+
+Corollaire : Une relation ayant une clé formée d’un seul attribut est donc en deuxième forme normale.
+
+"Le non-respect de la 2FN entraîne une redondance des données qui encombrent alors inutilement la mémoire et l’espace disque."
+
+Respecte la troisième forme normale, la relation respectant la deuxième forme normale et respectant le principe suivant :
+
+Les attributs d’une relation sont divisés en deux groupes : le premier groupe est composé de la clé (un ou plusieurs attributs). Le deuxième groupe est composé des autres attributs (éventuellement vide). La troisième forme normale stipule que tout attribut du deuxième groupe ne peut pas dépendre d’un sous-ensemble (strict et excluant l’attribut considéré) d’autres attribut(s) du second groupe. En d’autres termes : « Un attribut non clé ne dépend pas d’un ou plusieurs attributs ne participant pas à la clé ». Dit encore autrement : « Tous les attributs non clé doivent dépendre "directement" de la clé, au sens où il n’y a aucun attribut non clé dépendant de la clé par dépendances "transitives" par l’intermédiaire d’autres attributs non clé ».
+
+Corollaire : Une relation déjà en deuxième forme normale ayant au plus un attribut n’appartenant pas à la clé est donc en troisième forme normale.
+
+"Le respect de la 3FN ne garantit pas une absence de redondance des données d’où la FNBC."
+
+Respecte la forme normale de -Codd, la relation respectant la troisième forme normale et dont tous les attributs non-clé (hormis les clés candidates qui sont neutres et ne doivent pas être considérées) ne sont pas source de dépendance fonctionnelle (DF) vers une partie de la clé.
+
+"Le non-respect de la 2FN, 3FN et la FNBC entraîne de la redondance, une même donnée étant répétée un nombre considérable de fois."
+
+Pour être en 4FN, il faut respecter la 3FN (et non nécessairement la FNBC).
+
+Pour toute relation de dimension "n (avec n supérieur à 1)" en forme normale de Boyce-Codd, les relations de dimension "n − 1" construites sur sa collection doivent avoir un sens. Il ne doit pas être possible de reconstituer les occurrences de la relation de dimension "n" par jointure de deux relations de dimension "n − 1". Cette normalisation conduit parfois à décomposer une relation complexe en deux relations plus simples.
+
+Pour toute relation de dimension "n" (avec "n" supérieur à 2) en quatrième forme normale, il ne doit pas être possible de retrouver l’ensemble de ses occurrences par jointure sur les occurrences des relations partielles prises deux à deux. Cette normalisation conduit parfois à décomposer une relation complexe en plusieurs relations plus simples.
+
+"Le non-respect de la 4FN et 5FN entraîne de la perte de données et les données manquent de précision."
+
+Une relation est en FNDC si et seulement si toutes les contraintes sont la conséquence logique des contraintes de domaines et des contraintes de clés qui s’appliquent à la relation.
+
+Pour se souvenir de l’ordre et des caractéristiques des trois premières formes normales, il suffit de se rappeler le serment que tous les témoins doivent prêter devant la justice :
+"Je jure de dire la vérité, toute la vérité, rien d’autre que la vérité."
+
+Ce qui donne : 1FN = La clé. 2FN = Toute la clé. 3FN = Rien que la clé.
+
+La phrase originale étant : (Chris Date). Elle est empruntée à l’œuvre de Shakespeare.
+
+Selon les trois principaux types de formes normales :
+
+"Exemple :"
+
+Dans ce cas les valeurs du fournisseur sont multivaluées et ne sont pas atomiques.
+Pour que cette relation soit en première forme normale, il faut décomposer les attributs de la colonne fournisseur comme suit 
+
+"Solution :"
+
+"Exemple :"
+Admettons que la clé de cette table soit une clé composite (produit - fournisseur).
+Dans le cas d’un changement d’adresse d’un fournisseur, il faudra faire preuve de beaucoup d’attention pour n’oublier aucun endroit où l’adresse est mentionnée. En effet, on constate que le champ adresse ne dépend que d’une partie de la clé : le champ fournisseur, ce qui induit la possibilité d’une redondance au sein de la table. Il convient donc de scinder la table en deux:
+
+"Solution en seconde forme normale :"
+De cette manière, un changement d’adresse ne donne lieu qu’à une seule modification dans la table des fournisseurs.
+
+
+"Exemple :"
+Le pays de l’adresse n’est pas dépendant de la clé de la table, à savoir le nom du fournisseur, mais est fonction de la ville de l’adresse.
+De nouveau, il est préférable de scinder la table en deux:
+
+"Solution normalisée :"
+
+De cette manière, une modification de l’orthographe pour un pays (par exemple : ENGLAND en GREAT BRITAIN) ne donnera lieu qu’à une seule modification.
+
+Dans la pratique, l’identification soignée de tous les objets élémentaires de l’application concernée (pays, ville, client, fournisseur, produit, commande, facture, etc) est la première étape avant de leur créer chacun leur table. Chaque table peut alors être soumise au test de respect/non de telle ou telle forme normale. En général, toute valeur de données agrégées et toute répétition d’une valeur de donnée, dans une colonne peuplée, sont potentiellement des violations de forme normale.
+
+1FN — première forme normale :
+
+
+
+
+2FN — deuxième forme normale
+
+
+3FN — troisième forme normale 
+
+
+FNBC — forme normale de Boyce-Codd 
+
+
+FNDC — forme normale domaine clé 
+
+
+Soit la relation VEHICULE, avec les attributs suivants :
+"On remarque que le type VL (véhicule léger) ou PL (poids lourd) est déterminé par la valeur du PTAC. Ainsi, au-dessus de 3,5 tonnes le véhicule est un PL. En dessous c’est un VL… Il y a redondance des données de type qui peut être déduite de la lecture de la valeur du PTAC. En cas de changement de la réglementation (barre des 3,5 tonnes qui pourrait être amenée à changer) alors il faut mettre à jour plusieurs n-uplets !"
+- Pour résoudre cette anomalie de mise à jour, il faut décomposer la relation en deux comme suit :
+
+1° VEHICULE, avec les attributs suivants :
+
+"Le type de véhicule ne figure plus. Il sera déduit de la valeur du PTAC : au-dessus de 3,5 tonnes le véhicule est un PL. En dessous c’est un VL."
+
+2° TYPE VEHICULE, avec les attributs suivants :
+
+"Une inéqui-jointure sera nécessaire à reconstituer la relation originale."
+
+
+
+

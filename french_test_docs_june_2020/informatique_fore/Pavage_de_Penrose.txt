@@ -1,0 +1,87 @@
+﻿Pavage de Penrose
+
+Les pavages de Penrose sont, en géométrie, des pavages du plan découverts par le mathématicien et physicien britannique Roger Penrose dans les années 1970. En 1984, ils ont été utilisés comme un modèle intéressant de la structure des quasi-cristaux.
+
+Les pavages de Penrose sont des pavages non périodiques caractérisables par des règles locales : s'ils ne sont historiquement pas les premiers à vérifier cette propriété, ils sont parmi les plus simples, et à ce titre largement étudiés (le premier tel pavage, construit par Robert Berger en 1966, comportait tuiles).
+
+Les 17 pavages périodiques du plan étaient connus de longue date quand Roger Penrose s'est intéressé aux pavages non périodiques. Son intention n'était pas d'ouvrir un nouveau champ des mathématiques et de la physique mais seulement de créer un divertissement mathématique. En 1974, il publia un article présentant un pavage du plan à l'aide de pentagones, de losanges, de pentagrammes et de portions de pentagrammes.
+
+Certains pavages de Penrose présentent une symétrie d'ordre 5 (invariance par rotation d'angle 2π/5 radian, soit 72 degrés), mais aucun n'est périodique, c'est-à-dire qu'on ne peut le décrire comme un motif répété sur une grille régulière. Ils sont cependant tous quasi périodiques, c'est-à-dire que tout motif apparaissant dans le pavage réapparaît régulièrement. Plus généralement toute portion finie du pavage, aussi grande soit-elle, se répète infiniment dans le pavage.
+
+Les pavages de Penrose ne seraient restés qu'un joli divertissement mathématique si n'avaient été découverts, en 1984, des matériaux présentant une structure fortement ordonnée comme celle des cristaux mais non périodique : les quasi-cristaux. Les pavages non périodiques, en particulier ceux de Penrose, s'avérèrent alors un modèle plausible de ces étranges matériaux.
+
+Cette découverte illustra à nouveau ce que Roger Penrose lui-même avait déjà remarqué en 1973, à propos d’un sujet de relativité générale : « On ne sait jamais vraiment quand on perd son temps ».
+
+Il existe trois types de pavages de Penrose, chacun comportant une infinité de variantes :
+
+On s'est aperçu que fléchettes, cerfs-volants et losanges peuvent tous être construits à partir d'une paire de triangles d'or. Les pièces de P2, « cerfs-volants » et « fléchettes », sont obtenues respectivement par le collage de deux triangles d'or aigus de côtés proportionnels à [1;φ;φ] et par le collage de deux triangles d'or obtus de côtés proportionnels à [1;1;φ]. Celles de P3, les losanges fins et gros, par le collage de deux triangles d'or aigus de côtés proportionnels à [1;φ;φ] et par le collage de deux triangles d'or obtus de côtés proportionnels à [φ;φ;φ²]. Cette série de simplifications permet de considérer les triangles d'or comme prototypes des autres pièces et de dire qu'un type « zéro » précède les autres.
+
+Il existe de nombreuses façons de définir un triangle d'or. L'une des plus simples est la suivante :
+
+« Un triangle d'or est un triangle isocèle dont les côtés ont des longueurs proportionnelles à [1;φ;φ] ou [1;1;φ] où φ est le nombre d'or.»
+
+
+On peut démontrer que ce sont les seuls triangles isocèles vérifiant la propriété formula_1 suivante : "pouvoir être découpé en 2 triangles isocèles inégaux et possédant à leur tour la propriété formula_1".
+
+Ces deux types de triangles d'or peuvent s'obtenir en découpant un pentagone régulier :
+
+Chacun de ces types possède un angle formula_3 de 36 ° (soit formula_4radians), les deux autres angles étant (comme le montre la figure ci-dessus), soit égaux à formula_3, soit multiples de formula_3 (d'un facteur 2 ou 3).
+
+L'angle formula_3 est lié au nombre d'or φ par de nombreuses propriétés ; en effet :
+
+Ils possèdent en outre les propriétés suivantes :
+
+Ces propriétés peuvent être utilisées pour construire un pavage de Penrose de type 0. Voici comment :
+
+En découpant un premier triangle d'or (aigu ou obtus, peu importe) et en opérant un agrandissement d'un facteur φ, puis en recommençant l'opération précédente une infinité de fois, on constitue un pavage complet du plan à l'aide des deux types de triangles d'or. Si, à l'étape "n", on appelle formula_10 le nombre de triangles aigus et formula_11 le nombre de triangle obtus, on observe les formules de récurrence :
+En considérant la suite formula_14 définie par
+on s'aperçoit que cette suite vérifie la relation de récurrence de la suite de Fibonacci
+suite dont on sait que le rapport de deux termes consécutifs tend vers le nombre d'or φ. Ainsi la valeur limite du rapport du nombre de triangles obtus et du nombre de triangles aigus est un nombre irrationnel, ce qui entraîne que le pavage obtenu de cette façon ne peut pas être périodique.
+
+Le pavage précédent a l'avantage de la simplicité mais sa construction n'est pas unique : en effet, chaque découpage d'un triangle peut s'effectuer d'au moins deux façons différentes (symétriques). En outre, ces découpages ne donnent pas une impression de régularité et conduisent donc à des pavages assez peu élégants.
+
+Mais on peut concevoir un autre type de pavage.
+On peut alors paver le plan avec ces deux nouveaux « pavés ». En effet, si on prend bien soin de ne jamais accoler une flèchette et un cerf-volant en formant un parallélogramme, on peut construire ainsi un pavage non périodique. Il suffit pour cela de nommer les sommets comme indiqué sur la figure ci-dessus et de se fixer pour règle de n'accoler deux sommets que s'ils portent le même nom. Il existe une infinité de pavages du plan de ce type.
+
+Mais on peut également, comme pour le pavage à l'aide des triangles d'or, définir un algorithme de « construction par découpage » consistant à chaque étape à découper chaque cerf-volant en deux cerfs-volants et deux demi fléchettes et une fléchette en un cerf-volant et deux demi-fléchettes, et en agrandissant d'un facteur φ le résultat obtenu (remarquer que les sommets changent de nom à chaque étape, A devenant B et B devenant A).
+
+La cohérence du procédé est assurée par le fait que les demi-fléchettes ainsi générées s'associent toujours avec leur voisine pour reconstituer une fléchette complète (ce qui assure la disparition des lignes en pointillé visibles sur la figure précédente).
+
+La figure obtenue au bout de plusieurs itérations laisse déceler une quasi-symétrie d'ordre 5. Il est facile de prouver que, comme pour les triangles d'or, la proportion entre le nombre de cerfs-volants et celui de fléchettes tend vers le nombre d'or φ, ce qui assure que le pavage ainsi construit n'est pas périodique.
+
+À la différence du premier type de pavage, ici la construction par découpage génère un seul type de pavage de type 2 puisque le découpage des cerfs-volants et des fléchettes ne peut être réalisé que d'une seule façon !
+
+Voici des exemples de générations successives en partant d'une forme de base. Dans les figures « Soleil » et « Étoile », on retrouve la figure de départ réduite à la deuxième génération. Le « Soleil » apparaît même dans la génération 3.
+
+Il est aussi possible de paver le plan à l'aide de deux figures géométriques simples comme les deux losanges suivants. À condition de les assembler en respectant la couleur et le sens des vecteurs. Ces contraintes d'assemblage assurent que le pavage obtenu ne sera pas périodique. Comme précédemment, il existe une infinité de pavages du plan non périodiques à l'aide de ces deux pièces.
+
+Respecter les règles d'assemblage dans la construction manuelle d'un large pavage est difficile : il s'avère que pratiquement toutes les configurations finies, aussi grandes soient-elles, ne peuvent être étendues à l'infini. Une personne cherchant à paver une grande surface, à la manière d'un puzzle, sera donc fréquemment conduite à une impasse, comme un trou impossible à paver suivant les règles, et devra défaire en partie son assemblage pour retenter un autre pavage.
+
+De plus il n'existe aucun algorithme de croissance locale du pavage qui garantisse que le pavage soit extensible à l'infini. Autrement dit, toutes les méthodes de construction, par ajout de tuiles une à une et qui évitent de conduire à une impasse, prennent nécessairement en compte l'ensemble des tuiles déjà placées.
+
+Comme pour les autres types de pavage de Penrose, on peut définir aussi un algorithme de « construction par découpage » : il suffit de découper chaque gros losange en un gros losange, deux demi-losanges fins et deux demi-losange gros, et chaque losange fin en deux demi-losange fins et deux demi-losanges gros. La cohérence du procédé est assurée par le fait que les demi-losanges ainsi générés s'associent toujours avec leur voisin pour reconstituer un losange complet (ce qui assure la disparition des lignes en pointillé visibles sur la figure ci-contre).
+
+La figure obtenue au bout de plusieurs itérations laisse déceler une quasi-symétrie d'ordre 5. Il est facile de prouver que, comme pour les triangles d'or, la proportion entre le nombre de gros losanges et celui de losanges fins tend vers le nombre d'or φ. Ce qui assure que le pavage ainsi construit n'est pas périodique.
+
+Le pavage construit autour de pentagones, P1, est en fait le premier
+découvert par Penrose, qui s'est inspiré d'abord des recherches de
+Johannes Kepler. Il est bien connu qu'on ne peut couvrir le plan avec des pentagones réguliers, mais trois autres pièces suffisent pour combler les
+interstices, tout en imposant l'ordre apériodique. Ces pièces sont un
+losange fin, un pentagramme et un « bateau », qui représente à peu près les 3/5 d'un pentagramme. Pour la construction directe du pavage
+apériodique il faut aussi distinguer trois sortes de pentagones. Une
+solution bien plus simple consiste à esquisser des pentagones sur les
+losanges fins et gros qu'on arrange en pavage de type 3.
+
+On peut retrouver directement le pavage par triangles d'or dans le pavage pentagonal, sans utiliser les losanges. Si l'on assigne aux pointes des pentagones successivement les nombres "1, 3, 5, 2, 4", tous les points qui définissent le pavage P3 seront numérotés. Cela peut être fait d'une manière consistante et non équivoque en tournant à gauche ou à droite selon les cas. Choisissant les points qui
+portent un même numéro, on obtient un pavage de type « zéro ». Le sous-ensemble des points numérotés avec "3" et "4" donne une autre variante de pavage de Penrose, obtenue avec deux pièces connues comme « papillon » et « navette ».
+
+La mathématicienne allemande Petra Gummelt a prouvé en 1996 qu'un pavage de Penrose pouvait être obtenu en recouvrant le plan uniquement avec des décagones, à condition toutefois que deux types discrets d'empiètement soient permis. Le décagone proposé est décoré avec cinq cerf volants et l'empiètement permis ne change pas la configuration de ces parties coloriées.
+Il est possible de décomposer le décagone en fléchettes et cerfs volants, réduisant le tableau obtenu en un pavage de Penrose. Le pavage avec des losanges peut être retrouvé directement en gravant un gros losange dans le décagone; les parties laissées en creux seront celles que remplissent les losanges fins.
+Cette nouvelle façon de procéder a eu un impact considérable sur les conceptions à propos de la formation des quasicristaux.
+
+On peut rapporter les occurrences du pavage de Penrose à trois grandes catégories :
+
+
+
+
+

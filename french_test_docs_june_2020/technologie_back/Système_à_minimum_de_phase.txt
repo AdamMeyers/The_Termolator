@@ -1,0 +1,26 @@
+﻿Système à minimum de phase
+
+En traitement du signal et en théorie du contrôle, un système linéaire ne dépendant pas du temps est dit à minimum de phase si ce système et son inverse sont stables et causaux. On parle aussi de filtre à minimum de phase.
+
+Pour un système discret, en supposant que la fonction de transfert formula_1 est rationnelle, ce système est à minimum de phase si et seulement si tous les pôles et zéros de formula_1 sont à l'intérieur du disque unité.
+
+Pour un système continu, la condition pour que ce système soit à minimum de phase est que les pôles et zéros de transmission appartiennent au demi-plan gauche du plan complexe.
+
+On considère dans ce qui suit un système discret, bien que l'interprétation se généralise pour un système continu.
+
+Un système à minimum de phase a la propriété d'être le système qui, à une réponse en gain fixée, minimise le temps de propagation de groupe sur l'ensemble des fréquences.
+
+Le déphasage à une pulsation formula_3 est - à l'ajout d'une constante près - la somme des contributions de chaque zéro de formula_1. Soit formula_5 un de ces zéros de module différent de 1, regardons de plus près sa contribution au temps de propagation de groupe. On note 
+
+formula_5 apparaît dans la fonction de transfert par le facteur formula_8, dont la phase est
+
+En dérivant l'arc tangente, on obtient que formula_11 contribue au temps de propagation de groupe par :
+
+Le dénominateur et formula_15 restent inchangés par réflexion, c'est-à-dire en remplaçant formula_5 par formula_17 (les réflexions des zéros de formula_1 permettent d'obtenir les autres fonctions de transfert ayant la même réponse en gain). Il y a deux possibilités selon que formula_5 se trouve à l'intérieur ou à l'extérieur du disque unité : le choix formula_20 permet de minimiser le temps de propagation de groupe.
+
+Un système à minimum de phase répond à une impulsion en concentrant l'énergie près de 0. Pour une réponse en gain fixée, le système à minimum de phase est celui qui minimise :
+
+pour n'importe quel formula_22 (formula_23 est la réponse impulsionnelle).
+
+
+

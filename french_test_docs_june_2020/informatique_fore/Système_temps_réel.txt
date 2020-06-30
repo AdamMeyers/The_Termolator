@@ -1,0 +1,37 @@
+﻿Système temps réel
+
+En informatique, on parle d'un système temps réel lorsque ce système est capable de contrôler (ou piloter) un procédé physique à une vitesse adaptée à l'évolution du procédé contrôlé.
+
+Les systèmes informatiques temps réel se différencient des autres systèmes informatiques par la prise en compte de contraintes temporelles dont le respect est aussi important que l'exactitude du résultat, autrement dit le système ne doit pas simplement délivrer des résultats exacts, il doit les délivrer dans des délais imposés.
+
+Les systèmes informatiques temps réel sont aujourd'hui présents dans de nombreux secteurs d'activités :
+et dans le secteur de la nouvelle économie au travers du besoin, toujours croissant, du traitement et de l'acheminement de l'information (vidéo, données, pilotage à distance, réalité virtuelle).
+
+Le développement de systèmes temps réel nécessite donc que "chacun" des éléments du système soit lui-même temps réel, c’est-à-dire permettre de prendre en compte des contraintes temporelles et la priorité de chacune des tâches. Un système d'exploitation conçu pour prendre en compte ces contraintes est appelé système d'exploitation temps réel.
+
+Pour garantir le respect de limites ou contraintes temporelles, il est nécessaire que :
+
+Une tâche est généralement caractérisée par un temps de calcul (), une échéance () qui est la date à laquelle la tâche doit avoir terminé son exécution, et dans le cas des tâches périodiques, par une période () qui représente la durée séparant ses instants d'activation. Une exécution de la tâche est appelée une instance.
+
+On distingue le "temps réel strict" ou "dur" (de l'anglais ') et le "temps réel souple" ou "mou" (en anglais ') suivant l'importance accordée aux contraintes temporelles :
+
+Théoriquement, le concepteur d'un système temps réel prétendu strict devrait être capable de prouver que les limites temporelles ne seront jamais dépassées quelle que soit la situation. Cette vérification est appelée « test d'acceptabilité », « analyse de faisabilité » ou encore « contrôle d'admission » ; elle fait appel à la théorie de l'ordonnancement. Elle dépend de l'ordonnanceur utilisé et des caractéristiques des tâches du système.
+
+Pour un système souple, on pourra se contenter de mesures statistiques obtenues sur un prototype.
+
+Pour tout système de formula_1 tâches, la condition suivante est nécessaire mais pas suffisante à sa faisabilité :
+
+Avec :
+Une valeur supérieure à signifierait que le système nécessite plus de temps d'exécution que le processeur ne peut en fournir.
+
+Le temps de réponse dans le cas le plus défavorable d'une tâche est, parmi tous les scénarios possibles d'exécution du système, la plus longue durée entre l'activation de cette tâche et son instant de terminaison.
+
+Une tâche est faisable si son temps de réponse dans le pire des cas est inférieur ou égal à son échéance. Un système est faisable si toutes les tâches qui le composent sont faisables.
+Le coût est exponentiel.
+
+Une liste non exhaustive est disponible ici.
+
+Jane W. S. Liu, « Real-time Systems », Prentice Hall, 2000.
+
+
+

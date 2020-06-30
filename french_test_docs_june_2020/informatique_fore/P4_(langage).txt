@@ -1,0 +1,35 @@
+﻿P4 (langage)
+
+P4 est un langage de programmation permettant d'exprimer la logique de traitement des paquets au sein d'un élément de communication de réseau informatique tel qu'un commutateur, une carte réseau, un routeur ou une appliance afin d'y exécuter des actions.
+Le langage de programmation P4 a été proposé par certaines universités aux entreprises en 2014 et est décrit à l'origine dans un document du SIGCOMM CCR intitulé "Programming Protocol-Independent Packet Processors". La dénomination commune se raccourcit à l'acronyme "P4".<br>
+
+Le premier atelier sur le langage P4 a eu lieu le 4 juin 2015 à l'Université de Stanford, il était présidé par Nick McKeown de cette même université et Jennifer Rexford, de l'Université de Princeton. 
+Le consortium P4.org a publié la spécification finale de la nouvelle version du langage dénommée P4, en mai 2017, remplaçant la première version du langage, appelée P4.
+
+Considéré comme une évolution du Software Defined Networking "(SDN)", P4 permet de programmer la façon dont le flux est traité par l’acheminement de paquets sur du matériel de transmission de paquets réseaux tels que des routeurs, des commutateurs ou des pare-feux, qu'ils soient matériels ou logiciels. Comme son nom « Programmation de processeurs indépendants des protocoles » l’indique, le langage ne tient pas compte du format d’un paquet. En effet, les développeurs déclarent le traitement d’un paquet dans un programme utilisant le langage P4, et le compilateur le met par la suite au format souhaité selon le matériel cible. La programmation en langage P4 est notamment utilisée pour mettre en œuvre les fonctions de transfert de niveau 3 et les fonctions INT.<br>
+Il existe deux versions de ce langage : P4 et P4. P4 apporte des changements importants et n'est pas rétrocompatible avec P4. Ainsi, de nombreuses fonctionnalités ont été supprimées du langage de base P4 et sont déjà ou sont destinées à être implémentées dans des bibliothèques externes.
+
+P4 vise la programmation complète du traitement des données sur un équipement réseau. Ce langage est capable de réellement programmer le comportement d’un équipement réseau. Un algorithme de traitement d’un paquet IPv4 pourra être simplement construit. Le format même des paquets est simplement défini dans le programme. L’exemple ci-dessous montre comment analyser (parser) une trame Ethernet.
+
+Une fois l'analyse des paquets entrants effectuée, les en-têtes sont extraites et envoyées dans des tables de type "Match+Actions".
+Ces tables contiennent les informations des paquets correspondants ainsi que les protocoles pris en compte pour leur acheminement.
+Il ne reste plus qu'à spécifier les actions à exécuter pour les paquets correspondants.
+Une fois le programme créé, il suffit de le compiler pour qu’il puisse fonctionner sur le matériel désiré.
+
+Un programme de type P4 contient les attributs des composants clés suivants :<br>
+
+Afin d'être implémenté sur le matériel cible, qui peut être de type matériel ou logiciel, le programme écrit en P4 doit être compilé, c'est-à-dire transformé par le compilateur, en un code objet. À l'origine, le compilateur utilisé pour P4 est écrit en Python. Depuis la version P4-16, le "P4 Language Consortium", le groupe de développeurs P4, fournit un compilateur nommé P4C, utilisé pour les deux versions du langage : P4 et P4. Ce dernier est implémenté en C++11, sous licence open-source Apache 2. Le compilateur dispose de deux analyseurs, pour chacun des deux langages. L'analyseur de programme P4 convertit le programme en P4.<br><br>
+P4C effectue un traitement en trois parties :<br>
+
+Le compilateur supporte plusieurs types de backend :<br> 
+
+Le langage P4 a été conçu pour répondre à trois objectifs : <br>
+
+L'implémentation de P4 sur un commutateur de type logiciel montre que le langage peut être utilisé pour de la détection d'attaques, comme les attaques SYN. P4 permet une flexibilité de la mémoire allouée à un dispositif, à la différence d'un matériel réseau standard qui peut avoir une mémoire d'une taille fixe. Sur un matériel implémenté avec P4, il est possible de modifier la taille de la mémoire au besoin, et donc d'enregistrer le trafic réseau. Ainsi, P4 peut aider à la sécurisation de réseau via une connaissance complète du trafic de données au sein du réseau. Cependant, selon les circonstances de l'attaque, l'expérimentation montre que la détection d'attaque est plus difficile.
+
+P4 permet de surveiller et visualiser les informations sur l'état du réseau à moindre coût. En effet, à la différence de SDN qui apporte des coûts élevés pour la surveillance du réseau, P4 récupère des informations sur l'état du réseau (identification du commutateur, perte de paquets et occupation de la file d'attente, etc.) sans ajouter de paquets de détection supplémentaires. Une fois ces informations récoltées, le trafic est contrôlé en temps réel en fonction de l'état du réseau, ce qui permet notamment d'éliminer le phénomène de congestion.
+
+
+
+
+

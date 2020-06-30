@@ -1,0 +1,45 @@
+﻿Vecteur (structure de données)
+
+En informatique, un vecteur désigne un conteneur d'éléments ordonnés et accessibles par des indices, dont la taille est dynamique : elle est mise à jour automatiquement lors d'ajouts ou de suppressions d'éléments.
+On retrouve les vecteurs dans de nombreux langages de programmation, notamment le C++ et le Java. Ils sont alors inclus dans des bibliothèques et l'utilisateur n'a pas besoin d'en programmer un.
+
+En langage objet, la classe vecteur est généralement polymorphe, c'est-à-dire qu'il est possible de l'utiliser avec n'importe quel type d'objet.
+
+Exemple de manipulation d'un vecteur en C++:
+Le vecteur utilisé ici est . Le codice_1 est un modèle. On peut donc l'utiliser avec n'importe quel type. Par exemple, pour faire un vecteur de codice_2, il faut écrire codice_3.
+
+L'allocation de mémoire d'un vecteur se fait généralement en doublant sa capacité lorsque sa taille (le nombre d’éléments) égale sa capacité (le nombre d'octets allouées). Pour voir évoluer sa capacité, le codice_1 dispose des méthodes codice_5 et codice_6:
+
+Le graphique ci-dessous représentant la capacité en fonction de la taille permet de voir qu'avec le codice_1, la capacité augmente de 50% environ à chaque fois que la taille et la capacité sont égaux. Si ce nombre est trop faible, il y aura trop de ré-allocations. S'il est trop élevé, il prendra trop de mémoire. Dans les deux cas, cela pourra occasionner une perte des performances.
+
+Le vecteur possède de nombreux avantages par rapport à un simple tableau, du fait de l'allocation mémoire dynamique principalement :
+
+Dans certains cas, les tableaux sont néanmoins plus simples à utiliser, en particulier lorsqu'il faut créer des matrices. En effet, il faut créer un vecteur de vecteurs. La conséquence est que l'on est pas assuré d'obtenir la même taille de colonnes. Pour y remédier, il faut créer des classes complexes manuellement. De plus, dans les langages ne disposant pas de pointeurs, le développeur devra se contenter des vecteurs proposés par défaut. Pour finir, la taille et la capacité d'un vecteur ne sont pas forcément égaux. De la mémoire peut donc être utilisée inutilement.
+
+Le vecteur est surtout utilisé lorsque l'on ne connaît pas à l'avance le nombre de données qu'il va devoir contenir. Il est aussi utile pour ne pas redéfinir de tableau afin d'être réutilisé directement. Si l'on considère l'exemple du tri fusion, une fonction reçoit en argument deux tableaux de deux entiers chacun. Avec un tableau, la fonction devra créer un nouveau tableau, alors qu'avec deux vecteurs, il suffira juste de recopier les données du premier dans le second puis de supprimer le premier vecteur.
+
+Une autre application est lorsque l'on veut copier facilement des données en les empilant. Avec un tableau classique, il faut utiliser un entier qui est incrémenté de 1 à chaque ajout. En C++ cela donne :
+
+Pour finir, le vecteur est généralement très polyvalent. Il est capable de servir de pile, de liste ou de file. Néanmoins, les conteneurs spécialisés sont plus optimisés pour ces tâches.
+
+Un vecteur peut généralement recevoir les instructions suivantes :
+Ils peuvent aussi retourner des adresses ou des indices:
+De plus, certaines implémentations supportent d'autres fonctions pour trier le vecteur ou le formater par exemple. Il existe aussi des instructions conditionnelles qui permettent de raccourcir le code en enlevant une instruction codice_8(l'instruction codice_9 avec le codice_1 en C++, remplace un élément si un prédicat est vérifié).
+
+Il est facile de créer son propre vecteur avec des pointeurs. Voici un exemple en C++ où le vecteur manipule des entiers. La classe vecteur non présentée ici en intégralité est constituée de deux champs : un pointeur codice_11 sur des entiers, qui pointe sur le début du bloc de mémoire qui a été alloué, et un entier codice_12 qui enregistre le nombre de données contenues dans le vecteur. Dans cet exemple, la mémoire est allouée de nouveau à chaque suppression ou ajout. Seules les méthodes de cette classe vont être exposées. 
+
+Il n'est pas obligatoire de créer une classe pour créer son propre vecteur. Il est par contre nécessaire d'avoir accès à des pointeurs ou des références. D'autres langages, comme le C ou le Pascal peuvent donc convenir.
+
+Le constructeur qui est exécuté quand le vecteur sera créé initialise le pointeur sur une adresse, et met le nombre de données à 0. Le destructeur qui est exécuté quand le vecteur est détruit libère le bloc mémoire qui est alloué au vecteur pour éviter des fuites de mémoire. Le constructeur alloue seulement un octet de mémoire afin d'avoir un bloc mémoire de référence que le pointeur p peut adresser. Ce bloc pourra ensuite être agrandi avec la méthode « réallouer » pour contenir plus de nombres. Il faut également ajouter une ligne afin d'utiliser "stdlib.h", qui donne accès à codice_13, codice_14, et codice_15(non présente ici).
+
+La méthode « réallouer » se charge d'allouer le nombre d'octets nécessaires au vecteur pour contenir ses données avec la fonction codice_13 qui agrandit ou réduit le bloc mémoire alloué. La taille d'un entier étant fixe, il est possible de déclarer une constante codice_17 pour ne pas avoir à écrire codice_18.
+
+La méthode « ajouter » peut empiler un entier très simplement : il suffit d'augmenter le nombre de données, ce qui va agrandir le vecteur. Il suffit ensuite d'écrire à ce nouvel emplacement. Une autre méthode similaire peut dépiler un entier, en réduisant le nombre d'octets qui seront réalloués, ce qui permet de libérer (détruire) le dernier élément du vecteur. 
+Pour lire et modifier une valeur à partir d'un index, il suffit d'utiliser la syntaxe classique des pointeurs. Dans cet exemple l'index doit être compris entre 0 et le nombre de données moins un (comme dans un tableau classique en C++). Pour éviter les erreurs de dépassement, une fonction codice_19 vérifie que l'index est de bonne taille. 
+Il est possible de créer les méthodes codice_20 et codice_21 qui retournent l'index du premier et de l'élément suivant le dernier afin de créer des boucles codice_22 facilement pour afficher le vecteur. La fonction codice_21 peut être utilisée pour connaître la taille du vecteur. En général les termes "begin" et "end" sont plus utilisés. Il existe des variantes pour obtenir le dernier élément afin de créer des boucles dans le sens inverse.
+
+Cette méthode est simple à mettre en œuvre; elle est souvent appelée "swap" en anglais. Pour ne pas perdre de donnés, une variable tampon (appelée "c" dans ce cas) est nécessaire.
+
+
+
+

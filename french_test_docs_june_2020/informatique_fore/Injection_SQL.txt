@@ -1,0 +1,59 @@
+﻿Injection SQL
+
+La faille SQLi, abréviation de "SQL Injection", soit injection SQL en français, est un groupe de méthodes d'exploitation de faille de sécurité d'une application interagissant avec une base de données. Elle permet d'injecter dans la requête SQL en cours un morceau de requête non prévu par le système et pouvant en compromettre la sécurité.
+
+Il existe plusieurs types d'injection SQL :
+
+Considérons un site web dynamique (programmé en PHP dans cet exemple) qui dispose d'un système permettant aux utilisateurs possédant un nom d'utilisateur et un mot de passe valides de se connecter. Ce site utilise la requête SQL suivante pour identifier un utilisateur :
+
+L'utilisateur Dupont souhaite se connecter avec son mot de passe « truc » hashé en MD5. La requête suivante est exécutée :
+
+Imaginons à présent que le script PHP exécutant cette requête ne vérifie pas les données entrantes pour garantir sa sécurité. Un hacker pourrait alors fournir les informations suivantes :
+
+
+La requête devient :
+
+Les caractères codice_2 marquent le début d'un commentaire en SQL. La requête est donc équivalente à :
+
+L'attaquant peut alors se connecter sous l'utilisateur Dupont avec n'importe quel mot de passe. Il s'agit d'une injection de SQL réussie, car l'attaquant est parvenu à injecter les caractères qu'il voulait pour modifier le comportement de la requête.
+
+Supposons maintenant que l'attaquant veuille non pas tromper le script SQL sur le nom d'utilisateur, mais sur le mot de passe. Il pourra alors injecter le code suivant :
+
+
+L'apostrophe indique la fin de la zone de frappe de l'utilisateur, le code « codice_4 » demande au script si 1 est vrai, or c'est toujours le cas, et -- indique le début d'un commentaire.
+
+La requête devient alors :
+
+Ainsi, le script programmé pour vérifier si ce que l'utilisateur tape est vrai, il verra que 1 est vrai, et l'attaquant sera connecté sous la session Dupont.
+
+La première solution consiste à échapper les caractères spéciaux contenus dans les chaînes de caractères entrées par l'utilisateur.
+
+En PHP on peut utiliser pour cela la fonction codice_5, qui transformera la chaîne codice_6 en codice_7. La requête deviendrait alors :
+L'apostrophe de fin de chaîne ayant été correctement dé-spécialisée en la faisant précéder d'un caractère « \ ».
+
+L'échappement peut aussi se faire (suivant le SGBD utilisé) en doublant les apostrophes.
+
+La marque de commentaire fera alors partie de la chaîne, et finalement le serveur SQL répondra qu'il n'y a aucune entrée dans la base de données correspondant à un utilisateur codice_8 avec ce mot de passe.
+
+La fonction codice_9 ne suffit pas pour empêcher les injections via les variables numériques, qui ne sont pas encadrées d'apostrophes ou de guillemets dans les requêtes SQL. Exemple avec la requête :
+
+qui réussit lorsque la variable codice_10 contient codice_11. Une précaution est d'utiliser la fonction codice_12 pour vérifier les variables numériques des requêtes. On peut aussi forcer la transformation de la variable en nombre en la faisant précéder d'un "transtypeur", comme codice_13 si on attend un entier (la chaîne codice_11 sera alors transformée en l'entier codice_15 et l'injection SQL échouera).
+
+La fonction codice_9 possède elle-même quelques failles sur certaines versions de PHP qui datent. De plus, elle échappe uniquement les caractères « \ », « NULL », « ' » et « " ». Il serait plus approprié d'utiliser la fonction codice_5 qui échappe justement les caractères spéciaux d'une commande SQL (NULL, \x1a, \n
+, \r
+, \, ', " et \x00).
+
+La seconde solution consiste à utiliser des requêtes préparées : dans ce cas, une compilation de la requête est réalisée avant d'y insérer les paramètres et de l'exécuter, ce qui empêche un éventuel code inséré dans les paramètres d'être interprété.
+
+De nombreux cadriciels sont équipés d'un ORM qui se charge entre autres de préparer les requêtes.
+
+Ces attaques peuvent être évitées de plusieurs façons :
+
+Les « " » étaient utilisées par défaut dans la configuration de PHP. Elles permettaient qu'un caractère d’échappement soit automatiquement placé devant les apostrophes et guillemets dangereux.
+
+Certaines failles de sécurité et la disparition de codice_18 dans PHP5.4 incitent à remplacer cette option par les solutions ci-dessus : la fonction codice_5, les classes 
+
+
+
+
+

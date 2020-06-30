@@ -1,0 +1,57 @@
+﻿Utilisation du barycentre en physique
+
+La notion de barycentre est utilisée en physique, et en particulier en mécanique et en astronomie, pour simplifier l'étude d'un système.
+
+Le barycentre de "barus" (poids) et "centre" est initialement le centre des poids. C'est donc une notion physique et mécanique. Le premier à avoir étudié le barycentre en tant que centre des poids (ce qu'on appelle de nos jours le centre de gravité) est le mathématicien et physicien Archimède. Il est un des premiers à comprendre et expliciter le principe des moments, le principe des leviers et le principe du barycentre. Il écrit dans son traité "Sur le centre de gravité de surface plane" :
+Tout corps pesant a un centre de gravité bien défini en lequel tout le poids du corps peut être considéré comme concentré.
+Son principe des moments et des leviers lui permet de construire assez simplement le barycentre "O" de deux points de masses "m" et "m" différentes.
+D'après le théorème du moment dynamique, pour que la balance soit en équilibre, il faut que les moments "m"⋅OA⋅g et "m"⋅OB⋅g soient égaux dans le champ de pesanteur g. Si par exemple la masse "m" est 4 fois plus importante que la masse "m", il faudra que la longueur OA soit 4 fois plus petite que la longueur OB. Cette condition se traduit de nos jours par l'égalité vectorielle
+Il est le premier à avoir cherché des centres de gravité de surfaces comme des demi-disques, des paraboles. Il procède par approximations successives, et a pu prouver que la recherche d'un centre de gravité utilise des méthodes analogues à celle du calcul d'aire. Son travail est prolongé par celui de Paul Guldin (1635/1640) dans son traité "Centrobaryca" et celui de Leibniz à qui l'on doit la fonction vectorielle de Leibniz.
+
+La notion de centre d'inertie G pour un système non solide est une notion dégagée par Christiaan Huygens (1654), lors de l'établissement de sa théorie des chocs : même s'il sait que P = P, il n'est pas évident pour lui que G ira à vitesse constante. En particulier au moment de la percussion, où des forces quasi-infinies entrent en jeu, avec éventuellement bris de la cible, G n'en continue pas moins imperturbé dans son mouvement : cela paraît "mirifique" à Huygens, qui ne connaît pas encore le calcul différentiel. C'est alors qu'il énonce le principe de mécanique :
+
+Le barycentre d'un système matériel se meut comme si toute la masse du système y était transportée, les forces extérieures du système agissant toutes sur ce barycentre.
+
+On peut remarquer le glissement subtil entre barycentre, centre des poids (= centre de gravité) comme le voyait Archimède et barycentre, centre des masses (= centre d'inertie).
+
+Les mathématiques généralisent la construction d'Archimède du point d'équilibre de deux points affectés de deux masses positives progressivement à des ensembles plus complexes.
+Les coefficients peuvent être négatifs :
+Le barycentre des points A et B affectés des masses "a" et "b" ("a" + "b" non nul) est l'unique point G tel que
+Les coordonnées de G sont alors
+Le nombre de points peut passer à trois points, quatre points et se généraliser à "n" points.
+Si la somme des masses "a" est non nulle, le barycentre du système est le point G tel que :
+
+Les coordonnées sont données par les formules, pour j variant de 1 à la dimension de l'espace : 
+C'est sous cette forme qu'il devient un outil puissant en géométrie affine.
+
+Le nombre de points peut même devenir infini, permettant de trouver le barycentre d'une courbe ou d'une surface.
+
+Si l'ensemble constitue un domaine D continu, à chaque point M du domaine on affecte une densité "g"(M) où "g" est une fonction continue (un champ scalaire).
+Le barycentre est alors le point G tel que
+Si les points M ont pour coordonnées ("x", "x", "x" ), la fonction de densité s'écrit "g"("x", "x", "x" ) et les coordonnées de G s'écrivent
+Si l'on se ramène à une dimension, ou bien si l'on considère chaque coordonnée séparément, on retrouve la formule de la moyenne pondérée :
+
+En mécanique, le centre d'inertie d'un corps correspond au barycentre des particules qui composent le corps en question ; chaque particule étant pondérée par sa masse propre. C'est donc le point par rapport auquel la masse est uniformément répartie.
+
+Dans le cas d'un corps continu formula_10, on emploie comme fonction de pondération la masse volumique "ρ" du corps. Dans ce cas, la position du centre d'inertie G est définie par la relation suivante (O étant un point quelconque de l'espace) :
+
+Si la masse volumique est uniforme, alors on peut sortir le terme de l'intégrale et il vient :
+Le centre d'inertie ne dépend alors pas de la masse volumique mais de la forme du corps. C'est une caractéristique intrinsèque.
+
+Une propriété étonnante du centre d'inertie est que son mouvement est parfaitement déterminé par les lois du mouvement, quoi qu'il arrive à ses composants aussi longtemps que ceux-ci ne subissent pas eux-mêmes de force nouvelle. Ainsi par exemple si un obus éclate en vol, le centre d'inertie de ses fragments continue à suivre imperturbablement une parabole comme si de rien n'était (aux effets de résistance de l'air près) avant, pendant et après l'explosion.
+"Attention" : ceci ne s'applique évidemment pas à un obus balistique ou un astéroïde, précisément parce que la force sur chaque éclat d'obus varie.
+
+Le centre de gravité d'un corps correspond au "barycentre" des particules qui composent le corps en question ; chaque particule étant pondérée par son poids propre.
+
+La position du centre de gravité G est défini par la relation suivante (formula_15 étant le champ de gravité au point M) :
+
+Le centre de gravité est fondamentalement lié au champ de gravité dans lequel le corps est plongé. Dans une situation théorique où le champ de gravité serait absent, on ne pourrait donc pas le définir ; il faudrait pour cela considérer une situation où toute masse est absente de l'Univers… Quoi qu'il en soit, la notion de centre de gravité ne présente d'intérêt que si l'on considère le poids ; dans un cas où le poids serait négligeable devant d'autre forces, la notion de centre de gravité n'est pas pertinente.
+
+Très souvent en mécanique, la dimension des corps étant faible devant la rotondité de la terre, on considère un champ de gravité uniforme. Sous cette hypothèse, le centre de gravité et le centre d'inertie sont confondus.
+
+On parle de barycentre en ce qui concerne le couple formé par un corps stellaire possédant un satellite. Le barycentre est le point autour duquel l'objet secondaire gravite.
+Si la plupart des couples connus possèdent leur barycentre à l'intérieur de l'objet principal, il existe des exceptions notables :
+
+
+
+

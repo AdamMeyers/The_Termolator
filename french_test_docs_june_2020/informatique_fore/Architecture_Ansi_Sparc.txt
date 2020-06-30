@@ -1,0 +1,9 @@
+﻿Architecture Ansi/Sparc
+
+L'architecture Ansi/Sparc est une architecture fondamentale sur laquelle reposent les SGBD modernes, elle fut proposée en 1975 par Charles Bachman qui reçut le prix Turing pour ses travaux. L’architecture Ansi-Sparc est divisée en trois niveaux, celui du schéma interne (SI), celui du schéma conceptuel (SC) et celui des schémas externes (SE).
+
+La première innovation de l’architecture Ansi-Sparc est la distinction claire entre la représentation interne des données au niveau physique (structure de données) et la représentation logique de celles-ci. Une base de données est définie et manipulée via le niveau conceptuel (SC) sans avoir à se soucier des détails de l’implémentation physique (SI). Par exemple, il est possible de définir un index sur un ensemble de données, mais comment celui-ci est réalisé au niveau physique n’a pas besoin d’être spécifié. Sur le même principe, lors d’une requête, l’usager n’a pas besoin d’indiquer comment utiliser l’index pour maximiser l’efficacité de la recherche.
+
+La deuxième grande innovation de ce modèle est la possibilité de créer des schémas externes qui sont en fait des portions de la base de données (sous-bases virtuelles) destinées à différents usagers. Un usager particulier ne peut manipuler que les données appartenant à son propre schéma externe. De nos jours, le terme schéma externe est remplacé par celui de « vue ». 
+
+

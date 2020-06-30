@@ -1,0 +1,40 @@
+﻿Gestion de configuration
+
+La gestion de configuration consiste à gérer la description technique d'un système (et de ses divers composants), ainsi qu'à gérer l'ensemble des modifications apportées au cours de l'évolution du système. En d'autres termes, il s'agit de l'ensemble des processus permettant d'assurer la conformité d'un produit aux exigences, tout au long de son cycle de vie.
+La gestion de configuration est utilisée pour la configuration de systèmes complexes :
+
+En informatique, la gestion de configuration peut être utilisée à plusieurs fins :
+
+Ceci est réalisé à l'aide de logiciels de gestion de versions, propriétaires ou libres.
+
+Utilisée dans le suivi de versions de logiciels, la gestion de configuration permet par exemple de gérer les codes sources. Utilisée dans le suivi de versions de documents, elle permet de tracer toutes les modifications qui sont intervenues sur les informations contenues dans les documents.
+
+La gestion de configuration est avant tout un "ensemble de pratiques".
+Ces pratiques sont au nombre de quatre.
+
+Cette activité d'inventaire recouvre notamment :
+Autrement dit l'identification fixe le périmètre que l'on veut gérer.
+
+Les activités correspondantes portent sur :
+
+
+Activité consistant à confirmer pour chaque demande d'évolution, pour chaque demande de déviation (dérogation demandée avant l'entrée en production d'un produit) ou dérogation après production que le produit répond à l'ensemble des exigences fonctionnelles.
+Autrement dit, activité confirmant la cohérence de l'ensemble des données de configurations pendant toute la vie du produit.
+
+Le comité ou bureau de maîtrise de la configuration ("change control board" ou "CCB" en anglais), a pour principe de mettre en présence les partenaires (relation client-fournisseur) avec pour objet de statuer sur la gravité et la priorité des différentes demandes de modifications ou demandes de dérogations qui lui sont soumises.
+
+Pour gérer une configuration il faut pouvoir maîtriser son évolution dans le temps :
+
+
+À savoir un audit physique et fonctionnel recouvrant :
+
+Parmi les fonctionnalités dont peuvent disposer les gestionnaires de configuration, on trouve le regroupement de modifications.
+En général, une modification concerne une tâche, et il est rare qu'une tâche n'affecte qu'un seul document.
+
+Aussi, pour éviter de rechercher dans l'intégralité des documents les modifications apportées à l'occasion de la résolution d'une tâche, l'outil va regrouper lesdits documents au sein d'une liste des modifications.
+
+Ces regroupements permettent une atomicité dans l'évolution du système et réalisent des points d'arrêts cohérents pouvant servir de point de reprise ou de bifurcation (branches) pour les évolutions de la configuration.
+
+
+
+

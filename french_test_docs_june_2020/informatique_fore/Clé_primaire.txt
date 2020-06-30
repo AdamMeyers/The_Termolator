@@ -1,0 +1,12 @@
+﻿Clé primaire
+
+Dans une base de données relationnelle, une clé primaire est la donnée qui permet d'identifier de manière unique un enregistrement dans une table. Une clé primaire peut être composée d'une ou de plusieurs colonnes de la table. Deux lignes distinctes de la table ne peuvent pas avoir les mêmes valeurs dans les colonnes définies comme clé primaire. Il est possible de définir pour une même table plusieurs contraintes d'unicité, mais au plus une seule clé primaire. Une clé primaire est choisie parmi les clés candidates. Suivant les cas il peut être nécessaire ou préférable d'utiliser une clé artificielle ajoutée aux données comme clé primaire.
+
+La clé primaire d'une table doit se placer sur des colonnes qui permettent d'identifier chaque ligne de la table. Il peut donc sembler intéressant de placer une clé primaire sur un numéro de sécurité sociale par exemple, mais on préférera utiliser une clé primaire complètement indépendante des données métier, afin de s'assurer que le champ est toujours rempli (un étranger ou un enfant peuvent ne pas avoir de numéro de sécurité sociale) et n'évolue pas dans le temps. Toutes les bases de données proposent des mécanismes prenant en charge une numérotation utilisable pour les clés primaires.
+
+Il n'est pas nécessaire de définir un index sur les colonnes définissant la clé primaire, car un index implicite est associé à la clé primaire.
+
+L'ensemble constitué d'une clé primaire et d'une clé étrangère sert à établir des relations entre tables.
+
+
+

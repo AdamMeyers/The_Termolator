@@ -1,0 +1,21 @@
+﻿Architecture de von Neumann
+
+L’architecture dite architecture de von Neumann est un modèle pour un ordinateur qui utilise une structure de stockage unique pour conserver à la fois les instructions et les données demandées ou produites par le calcul. De telles machines sont aussi connues sous le nom d’ordinateur à programme enregistré. La séparation entre le stockage et le processeur est implicite dans ce modèle.
+
+Cette architecture est appelée ainsi en référence au mathématicien John von Neumann qui a élaboré en juin 1945 dans le cadre du projet EDVAC la première description d’un ordinateur dont le programme est stocké dans sa mémoire. 
+
+Alan Turing , John von Neumann ainsi que John William Mauchly et John Eckert (pendant leurs travaux sur l’ENIAC), ont utilisé ce concept indépendamment.
+
+Herman Goldstine (un collègue de John von Neumann) fit circuler une description inachevé intitulée «"Première ébauche d'un rapport sur EDVAC»" basée sur les travaux d'Eckert et Mauchly. sous le seul nom de von Neumann. 
+
+Le document a été lu par des dizaines de collègues de von Neumann en Amérique et en Europe et a inspiré plusieurs machines en construction . 
+
+L’architecture de von Neumann décompose l’ordinateur en distinctes :
+
+En traitant les instructions de la même façon que les données, un ordinateur qui a un programme stocké en mémoire peut facilement modifier les instructions. Une raison importante ayant induit une telle possibilité était le besoin pour un programme d’incrémenter ou modifier le champ adresse des instructions (pour faire des boucles par exemple). Cette raison est devenue moins importante avec l'apparition de l’utilisation de registres d’index et de l’adressage indirect en tant que caractéristique standard des processeurs.
+
+L’architecture actuelle des ordinateurs rend inutile la modification à faible échelle des instructions du programme — son « code » — car cela rendrait inefficaces les techniques de gestion de l’antémémoire et du pipeline dans le processeur. Cette pratique est donc à ce jour obsolète. Bien sûr, à une plus grande échelle, la possibilité de traiter des instructions de la même manière que des données est ce qui permet l’écriture de compilateurs. C’est aussi une caractéristique exploitée par les virus lorsqu’ils ajoutent une copie de leur propre code dans un programme existant. Le problème de la copie de code non autorisée peut être évité par l’utilisation d’un système de protection de la mémoire et, en particulier, par le gestionnaire de la mémoire virtuelle.
+
+
+
+

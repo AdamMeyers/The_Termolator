@@ -1,0 +1,9 @@
+﻿Mémoire partagée (communication inter-processus)
+
+Dans un contexte de la programmation concurrente, le partage de mémoire est un moyen de partager des données entre différents processus : une même zone de la mémoire vive est accédée par plusieurs processus. C'est le comportement de la mémoire de threads issus d'un même processus.
+
+Pour cela, dans un système utilisant la pagination, la table de page de chaque processus contient les pages mémoires communes, mais chaque processus ne les voit pas nécessairement à la même adresse.
+
+
+
+

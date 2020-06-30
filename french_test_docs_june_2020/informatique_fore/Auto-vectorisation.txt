@@ -1,0 +1,10 @@
+﻿Auto-vectorisation
+
+L'auto-vectorisation est une technique de compilation de langage de programmation, permettant d'adapter automatiquement des boucles de fonctions traitant des vecteurs, ou, plus généralement, des matrices, à un processeur vectoriel (SIMD). On appelle plus généralement, le fait d'adapter des traitements à des processeurs vectoriels, de façon manuelle ou automatique, une vectorisation.
+
+Le compilateur Gnu GCC utilise des techniques d'auto-vectorisation pour la majorité des SIMD (3DNow!, SSE (et SSE2, SSE3), ARM VFP, SIMD et ARM NEON, etc.
+
+Le compilateur LLVM, supportant les mêmes SIMD, utilise également ce type de technique donnant des résultats meilleurs ou moins bon selon les cas.
+
+
+

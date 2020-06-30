@@ -1,0 +1,10 @@
+﻿Association un-à-un
+
+En gestion de base de données, une association de un-à-un détermine que pour chaque enregistrement d'une table, il ne peut y avoir que zéro ou un enregistrement d'une autre table qui lui soit lié. Il est intéressant d'utiliser ce type de relation pour cacher certaines données, pour utiliser des paramètres différents sur ces deux tables (par exemple un moteur de stockage différent dans MySQL), ...
+
+Ce type de relation peut toutefois être évitée. En effet, une relation de un à un peut souvent être éliminée et remplacée par la fusion des deux tables en relation.
+
+Dans une table principale contenant les clients, et une table secondaire contenant l'adresse de ces clients, une seule adresse pourra correspondre à un seul client et un seul client pourra correspondre à aucune ou une seule adresse.
+
+
+

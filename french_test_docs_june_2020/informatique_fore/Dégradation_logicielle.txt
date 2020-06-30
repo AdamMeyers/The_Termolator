@@ -1,0 +1,94 @@
+﻿Dégradation logicielle
+
+La dégradation logicielle, nommée également érosion logicielle, est le déséquilibre entre l'architecture logicielle et son implémentation. Le vieillissement logiciel est également utilisé comme terme pour faire allusion aux défaillances rencontrées dans un logiciel au fil du temps.
+Il semble impossible d'empêcher ce dit vieillissement mais il existe des moyens pour le ralentir, d'où l'intérêt des architectures logicielles.
+
+L'architecture logicielle permet de décrire comment doit être conçu le logiciel pour répondre aux spécifications de celui-ci. L'implémentation logicielle doit correspondre au modèle d'architecture produit lors de la phase de conception. Dans la pratique, il n'est pas toujours évident de respecter cette règle. Les origines des décalages sont multiples, les principaux sont : l'évolution logicielle, les erreurs d'implémentations et les contradictions dans l'architecture envisagée qui ne pouvaient être prévues avant le développement. Il est possible de faire face à cette problématique en appliquant des concepts du génie logiciel.
+
+Pour comprendre l'importance de l'architecture, il est nécessaire de connaître les différentes étapes à suivre lors de la réalisation d'un projet.
+Tout projet est issu d'un besoin. Pour satisfaire les futurs utilisateurs, il est nécessaire d'étudier leurs besoins avant de développer une solution. 
+Grâce à cela, il sera possible de définir une architecture logicielle adaptée afin d'obtenir un résultat proche de celui escompté. 
+Avec une architecture bien définie, l'implémentation de la solution sera facilitée et correspondra mieux aux attentes du client s'il n'y a pas de divergences entre les deux.
+
+L'architecture logicielle permet de réaliser entièrement le logiciel sous une forme théorique avant de le réaliser de manière pratique. Ceci permet de prévoir les contraintes techniques, d'envisager les évolutions de manière adaptée et de garantir la qualité du logiciel. Par conséquent, les coûts sont réduits et les logiciels sont sensiblement de meilleures qualités.
+L'architecture logicielle joue un rôle important dans les six aspects, ci-dessous, du développement logiciel :
+
+Pour faire la liaison entre l'architecture et l'implémentation, il est nécessaire de définir un ensemble de règles. Celles-ci permettront de détecter lorsque l'implémentation sera en train de dévier de l'architecture. 
+
+Il est possible de distinguer deux types de règles: les règles structurelles et les règles d’interactions. Les règles structurelles concernent l'existence des mêmes entités et les relations qui les unissent tandis que les règles d’interactions concernent essentiellement la présence des appels de méthode dans le même ordre.
+
+Avec cet ensemble de règles, lors de l'analyse il y a trois types de résultats possibles :
+
+Il suffit maintenant de traiter chaque divergence et absence une par une. La pratique la plus courante est de modifier le code pour qu'il corresponde à l'architecture. Néanmoins, il est possible de devoir modifier l'architecture du projet à cause de difficultés techniques lors du développement.
+
+Les principales causes des dégradations logicielles sont les modifications apportées au code, à la documentation dans le non-respect des règles architecturales.
+Ces changements sont nécessaires pour suivantes raisons.
+
+L'une des principales causes des dégradations dans les architectures est l'évolution du besoin client. 
+Le client n'est pas toujours conscient de ce qu'il attend jusqu'à ce qu'il ait une première version du produit. Il essaye alors d'apporter des modifications aux spécifications. Ce problème est également constaté lorsque les spécifications ne sont pas assez précises.
+Ces deux points définissent les deux principaux types de vieillissement logiciels : les défaillances causées par les modifications des propriétaires du produit à la suite des évolutions du besoin, et le résultat des modifications effectuées à la suite d'incompréhensions des deux parties (client/concepteur du logiciel) lors de la conception et du développement du produit.
+
+Une autre cause de dégradations de logicielles est le matériel auquel se rattache le logiciel.
+Les architectures logicielles sont conçues dans le respect du matériel dont le logiciel dépend. 
+Au fil du temps, le matériel est susceptible de changer et cela peut provoquer une instabilité et compromettre l'architecture prévue.
+
+Les modifications apportées au logiciel durant sa durée de vie entraînent un problème d'allocation mémoire.
+En effet, plus il y a des changements dans le code, plus la taille du programme grandit, et plus la taille du programme grandit plus la mémoire demandée au système est conséquente.
+Il est difficile de prédéfinir la mémoire à allouer.
+
+Pour faire face aux dégradations logicielles, il existe plusieurs solutions permettant de ralentir le vieillissement mais également de garantir la qualité tout en essayant de garder un équilibre entre l'architecture et l'implémentation.
+Certaines technologies (citées plus bas) permettent de faire face aux dégradations. Cependant il existe des éléments pratiques à mettre en place pour conserver la qualité des logiciels.
+
+Le but de la phase de conception est de créer un design capable d'accepter des
+demandes de changements futurs. 
+
+Ceci est en contradiction avec l'itérative nature de nombreuses méthodes de développement (extrême pro-
+programming, le prototypage rapide, etc.) car ces méthodologies incorporent généralement de nouvelles exigences qui peuvent avoir un impact architectural, au cours du développement alors qu'une bonne conception nécessite des connaissances au sujet de ces exigences à l'avance.
+
+Il reste donc important de prévoir des architectures s'adaptant aux changements mais également compatibles avec les méthodologies de développement utilisées.
+Ainsi, il semble possible de parler d'architectures agiles pour des développements agiles et l'appliquer pour mieux garantir la durée de vie du logiciel.
+
+Lorsqu'il y a des modifications à apporter au logiciel, il semble plus simple (moins cher) d'appliquer ces modifications dans le code. Pour pouvoir retarder le vieillissement, il est primordial de maintenir l'architecture et la documentation. En effet, il faut garantir à chaque changement dans le code que les règles d'architectures sont respectées et la documentation mise à jour. Ceci permet d'éviter les décalages pouvant subvenir entre l'implémentation et l'architecture logicielle.
+
+Une bonne maintenance logicielle permet d'allonger la durée de vie du logiciel.
+Les processus de maintenances se basent généralement sur l'amélioration itérative ou encore sur le modèle de réutilisation complète.
+La réutilisation permet de gagner du temps, réduire le coût mais peut s'avérer dangereux. Il est donc important de :
+
+Il est important lors de la maintenance, de respecter les règles architecturales, surtout, lors de l'intégration de nouveaux composants.
+
+Il existe des éléments pratiques, ci-dessous, permettant de garantir un équilibre entre l'architecture logicielle et son implémentation. 
+
+
+Card a été développé par 
+Claire Dimech et Dharini Balasubramaniam de l'École d'informatique de l'Université de St Andrews.
+
+Card est un outil de vérification de conformité entre architecture et implémentation, il est intégré sous forme de plugin dans Eclipse. Le vérification se fait statiquement entre une description d'architecture en UML et son implémentation en Java.
+Ce framework contient deux modules de prétraitement : l'un pour les diagrammes UML 2.0 et l'autre pour le code source Java.
+Card se charge de rechercher les fichiers UML et Java dans l'arborescence du projet Eclipse, ensuite utilise ses préprocesseurs pour l'extraction des propriétés architecturales. Ces propriétés sont stockées dans des structures de données adaptées pour l'analyse de conformité à effectuer.
+
+Card se base sur le concept "Maître Esclave", architecture prescriptive (Maître) et architecture descriptive (Esclave), sur lesquelles se réfèrent les règles.
+Card permet un paramétrage par utilisateur sur trois niveaux d'exigences (High, Medium, Low), procède à une vérification des structures de données et affiche les violations en les renvoyant vers l'esclave. Les développeurs peuvent vérifier la conformité entre leur code et le model en mode static (offline) ou dynamiquement (ils peuvent le choisir dans les préférences).
+
+Card a été testé sur de nombreux projets et n'a jamais fait ressortir de fausses violations ni d'oublis. 
+Cependant, il n'y a pas de preuves formelles.
+
+SAVE a été développé conjointement par Fraunhofer IESE (Institute for Experimental Software
+Engineering, Institut de recherche en ingénierie logicielle en Français) à Kaiserslautern en Allemagne et Fraunhofer Center Maryland (Center for Experimental
+Software Engineering, Centre de recherche en ingénierie logicielle en Français) à Maryland aux États-Unis.
+
+SAVE est un outil de développement qui montre les convergences et divergences entre deux entités d'un projet de manière schématique. Cet outil est disponible sous la forme de plugin Eclipse et est donc complètement intégré à celui-ci. Il est utilisable sur les projets développés en Java, C/C++, et Delphi.
+
+La version statique a été testé dans l'entreprise TESTO pendant une période de trois ans pour développer une douzaine de produits, et l'étude présente des résultats concluants.
+
+Il existe également un plugin (LiFe) permettant d'effectuer la vérification au fur et à mesure que le code de l'application est écrit. Ce plugin a également été testé sur une promo d'étudiants où certains groupes avaient le plugin SAVE Life et le reste ne disposaient d'aucun outil de vérification. L'étude montre qu'après quelques semaines, les groupes d'étudiants qui développaient avec le plugin faisaient beaucoup moins d'erreurs d'implémentations. Finalement, le projet était plus proche du résultat attendu que celui des autres groupes.
+
+ArchJava est l'une des premières solutions développés afin de contrôler la cohésion entre l'architecture et l'implémentation. Cette solution a vu le jour en 2002 aux États-Unis.
+
+ArchJava est un langage étendu de Java permettant la mise en place de contraintes architecturales lors de l'implémentation. Ces contraintes sont spécifiées explicitement dans le code en ajoutant des entités nommées port dans les classes. Ces ports permettent de définir quels objets peuvent communiquer entre eux et quelles sont les méthodes autorisées sur ce port.
+
+Une étude a été menée pour vérifier les points suivants :
+
+L'ensemble des points ont été vérifiés avec succès, et la compréhension du code du projet testé a été fortement améliorée car les communications ont été simplifiées.
+
+
+

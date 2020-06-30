@@ -1,0 +1,25 @@
+﻿Base de données temporelle
+
+Une base de données temporelle est une base de données avec des aspects de temps intégrés, c'est-à-dire un modèle de données temporel et une version temporelle du langage structuré de requêtes (Structured Query Language - SQL).
+
+Plus spécifiquement, les aspects temporels contiennent habituellement le temps-valide et le temps-transaction. Ces attributs marchent ensemble pour former une donnée bitemporelle.
+
+
+À noter que ces deux périodes n'ont pas à être égales pour un fait unique. Imaginez que nous ayons une base de données temporelle stockant des données relatives au . Le temps-valide de ces faits se situe quelque part entre 1701 et 1800, tandis que le temps-transaction débute quand on insère le fait dans la base de données, par exemple le .
+
+Il est possible d'avoir dans la base de données des échelles de temps autres que le temps-valide et le temps-transaction, comme le temps-décision. Dans ce cas, la base de données est nommée base de données multitemporelle par opposition à base de données bitemporelle. Cependant, cette approche introduit des complexités additionnelles comme la gestion de la validité des clés (étrangères).
+
+L'histoire des bases de données temporelles est parallèle à celle des bases de données elle-même. Avec le développement de SQL et sa large utilisation dans des applications de la vie réelle, on a commencé à réaliser que, quand on ajoute des colonnes de date à des champs clé, quelques problèmes se posent. Le problème de base est celui-ci : si vous avez une clé primaire et quelques attributs dans une table, et vous ajoutez une date dans la clé primaire pour suivre les changements dans le temps, vous allez émettre des clés encore et encore. Les suppressions prennent alors des sens différents, etc. En 1992, ce problème a été reconnu mais la théorie classique des bases de données n'était pas prête à résoudre ce problème, et le nouveau standard SQL92 non plus.
+
+Richard Snodgrass proposa en 1992 que des extensions à SQL soient développées par la communauté des bases temporelles. En réponse à cette proposition, un comité virtuel fut créé pour concevoir des extensions à l'édition de 1992 du standard SQL (ANSI X3.135.-1992 et ISO/IEC 9075:1992). Ces extensions, connues sous le nom de TSQL2 furent développées en 1993 par ce comité, se rencontrant uniquement par email. Fin 1993, Snodgrass présenta en premier son travail au groupe responsable du standard national américain pour le langage de base de données SQL, ANSI Technical Committee X3H2 (maintenant connu sous le nom NCITS H2). La spécification préliminaire du langage parue dans ACM SIGMOD Record en . Basé sur les réponses à cette spécification, des changements furent apportés au langage et la version définitive des Spécifications du Langage TSQL2 fut publiée en .
+
+Une tentative essaya d'incorporer des parties de TSQL2 dans le nouveau standard SQL , appelé SQL3. Des parties de TSQL2 furent incluses dans un sous-standard de SQL3, ISO/IEC 9075-7, appelé SQL/Temporal. Cependant, le projet ISO responsable du support des notions temporelles fut annulé vers la fin de 2001.
+
+Les idées et concepts décrits dans la spécification TSQL2, comme le temps-valide, le temps-transaction et les tables bitemporelles, ont tous trouvé leur voie dans la littérature générale sur les bases de données temporelle depuis lors. En 2002, Christopher Date, Hugh Darwen et Nikos Lorentzos présentèrent dans leur livre "Temporal Data and the Relational Model" un traitement du sujet incluant beaucoup des termes introduits par TSQL2 mais ils introduisirent la Sixième forme normale pour résoudre certains de ces problèmes.
+
+La norme SQL:2011 (ISO/IEC TR 19075-2:2015 - Part 2: SQL Support for Time-Related Information) a introduit les mécanismes de gestion des tables temporelles et ajouté des opérateurs pour naviguer dans le temps ou l'historique des données. Certaines bases de données relationnelles comme DB2 (IBM) ou SQL Server (Microsoft) ont directement implémenté la norme SQL.
+
+
+
+
+

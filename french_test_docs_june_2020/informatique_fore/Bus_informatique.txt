@@ -1,0 +1,96 @@
+﻿Bus informatique
+
+Un bus informatique est un dispositif de transmission de données partagé entre plusieurs composants d'un système numérique. Le terme dérive du latin "omnibus" (à tous) ; c'est le sens, d'un usage plus ancien, du terme" bus" en électronique. Le bus informatique est la réunion des parties matérielles et immatérielles qui permet la transmission de données entre les composants participants.
+
+On distingue généralement un bus d'une part d'une liaison point à point, qui ne concerne que deux composants qui en ont l'usage exclusif, et d'autre part, d'un réseau, qui implique des participants indépendants entre eux, c'est-à-dire pouvant fonctionner de manière autonome, et qui comprend plusieurs canaux permettant des communications simultanées.
+
+Un bus est un système de transfert de données entre plusieurs unités fonctionnelles de traitement de données par l'intermédiaire d'une voie de transmission commune, dans lequel les composants ne prennent aucune part à la transmission des données entre les autres participants.
+
+Cette définition implique que les données doivent s'accompagner d'une identification du composant auquel elles sont destinées, qu'on appelle par métaphore l’"adresse" de destination, et d'une commande indiquant le type du transfert, notamment pour indiquer si ce composant doit recevoir les données ou les transmettre. On peut ainsi décomposer le bus en trois sous-ensembles logiques :
+Ces trois groupes sont communément appelés "bus" (bus d'adresse, bus de données, bus de contrôle). Physiquement, ils peuvent être des bus au sens électronique du terme, c'est-à-dire être portés par des conducteurs indépendants, ou être réalisés d'une autre manière, par exemple par multiplexage temporel sur un seul conducteur ; un bus informatique les combine en un seul dispositif pour transférer des données entre plusieurs composants.
+
+En plus de l'aspect physique permettant de faire transiter les informations, un bus informatique est constitué des circuits d'interface, et du protocole qui définit la manière dont les signaux doivent se comporter pour réaliser ce transfert. Les caractéristiques du matériel conditionnent en partie le type de communication et le protocole peut parfois imposer le type de matériel.
+
+Le débit binaire maximal, exprimé en bits par seconde, décrit la capacité du bus informatique à transférer plus ou moins rapidement des informations.
+
+Lorsque deux composants seulement sont impliqués, le problème de l'adresse ne se pose pas. On parle plutôt de liaison point à point. Un système de transfert de donnée prévu pour plusieurs composants peut effectuer le transfert, mais le traitement inutile de l'information d'adresse pèse sur sa performance.
+
+Lorsque le dispositif de communication comprend plus d'une voie de transmission, permettant plusieurs communications simultanées, la notion de réseau informatique est plus appropriée.
+
+Les trois approches, liaison de point à point, bus informatique, réseau informatique, partagent la même fonction de communication, avec une complexité croissante. Elles correspondent à des optimisations particulières à chacun de leurs domaines.
+
+Les bus informatiques peuvent se construire avec plusieurs variantes.
+
+Un bus logiciel est un logiciel d'interface qui permet à un poste d'accéder à des données d'autres composants aussi simplement que s'ils lui étaient reliés par un bus. Ce logiciel décharge les programmes de la sélection des voies et des protocoles de communication. Du point de vue du programme appelant, il n'y a qu'un bus. Du point de vue de l'analyse des systèmes, l'ensemble des voies de communication plus les bus logiciels qui assurent l'interface forme le bus informatique.
+
+L'implémentation d'un bus peut suivre différentes topologies selon l'usage qui en est fait et la stratégie d'optimisation : performance, quantité de ressources utilisées, consommation La topologie influe sur ces facteurs sans affecter les composants connectés. Ceux-ci utilisent en général un protocole générique, et des adaptateurs entre le composant et les ressources de communication permettent la traduction des requêtes en transferts effectifs. Ainsi certaines définitions de bus, comme l'AXI, ne donnent aucune contrainte sur la topologie. Elles indiquent seulement le protocole que les composants doivent utiliser pour accéder au bus, laissant l'implémentation des lignes de communication à la discrétion de l'architecte.
+
+Dans l'architecture d'un système informatique, les bus transmettent les données entre composants. Les caractéristiques de ces composants déterminent celles du bus. Il est très différent de transmettre des bytes des millions de fois par seconde entre des millions ou milliards de composants très proches les uns des autres, comme c'est le cas entre le microprocesseur et la mémoire d'un ordinateur personnel, des paquets de milliers de bytes en quelques millièmes de seconde entre quelques dizaines de composants éloignés de quelques mètres, comme c'est le cas dans un bus USB, et des codes de quelques dizaines de bits quelques dizaines de fois par seconde, entre des composants dispersés sur un site industriel, comme dans un bus de terrain.
+
+Un bus peut utiliser différents supports pour la communication : fils ou nappes pour relier des périphériques à la carte mère d'un ordinateur (par exemple les bus SCSI ou USB), circuits imprimés sur une même carte ou sur un fond de panier (par exemple dans le cas d'un bus PCI Express), routage logique dans un FPGA (par exemple un bus AXI), fibre optique
+
+Les circuits d'interface, comprenant la conversion parallèle-série et vice-versa, la mémoire tampon et les gestionnaires de communication, ainsi que les répartiteurs et nœuds de communication comme les hubs USB font partie du bus informatique.
+
+La construction matérielle du bus peut répercuter la représentation logique en trois sous-systèmes physiques, avec des faisceaux de conducteurs distincts pour transmettre les signaux d'adresse, de données et de contrôle, associés à un arbre d'horloge pour la synchronisation. Un bus peut aussi transmettre ces différents signaux l'un après l'autre à travers un seul canal d'une ou plusieurs paires de conducteurs comme c'est le cas de l'USB.
+
+Quand le dispositif est un bus au sens électronique du terme, c'est-à-dire que tous les composants participants sont reliés aux mêmes conducteurs électriques, pour permettre à un composant, que les lignes ou commandes d'adresse et de contrôle désignent parmi plusieurs, de fixer l'état des lignes de données avec des transitions rapides, aussi bien montantes que descendantes, les composants participants utilisent des sorties soit à 3 états, soit à collecteur ouvert. La fréquence maximale de la communication limite la longueur de ce type de bus. Quand la longueur du conducteur dépasse le quart d'onde de la fréquence maximale dans le conducteur, les phénomènes de réflexions sur les ruptures d'impédance mènent à préférer des lignes de transmission avec répétiteur à chaque node (comme dans l'USB).
+
+Les voies de communication électroniques peuvent être asymétriques, avec le retour du courant par la masse, ou symétriques, avec deux conducteurs d'égale impédance par rapport à la masse. La différence de potentiel, positive ou négative, entre les deux conducteurs constitue le signal. Les canaux symétriques, particulièrement sur paire torsadées, sont moins sensibles aux perturbations, qui agissent à peu près également sur les deux conducteurs, et n'influent pas leur différence.
+
+En général, les systèmes distinguent deux signaux correspondant l'un à 1 et l'autre à 0. Ces signaux peuvent être, dans un bref intervalle de temps déterminé par le signal d'horloge, des niveaux électriques, des transitions entre niveaux ou bien une transition ou un maintien. L’"élément de signal" de la transmission est un bit. Néanmoins, des systèmes peuvent transmettre en distinguant plus de niveaux. Dans ce cas, chaque élément numérique à "n" niveaux contient formula_1 bits. Lorsqu'on doit tirer le meilleur parti de lignes de qualité médiocre, on utilise des modulateurs-démodulateurs ("modems"). Le débit peut alors également s'exprimer en bauds, c'est-à-dire en nombre de signaux échangés par seconde.
+
+Le protocole régit la manière dont les échanges sur le bus sont effectués au niveau logique. Par exemple, une première phase peut consister à demander l'accès au bus, suivie d'une deuxième phase consistant à indiquer l'adresse à laquelle on souhaite effectuer une opération de lecture ou d'écriture, puis enfin à transférer ces données. Le protocole détaille l'ordre dans lequel les valeurs doivent être placées sur les différents signaux du bus. Généralement, il peut s'exprimer par un chronogramme représentant les valeurs à donner à différents signaux pour réaliser une opération.
+
+Dans certains types de bus, seul le protocole est défini, et non la nature du médium de transmission, laissée à l'appréciation du concepteur du bus. Par exemple, le protocole AXI définit les interfaces du bus sans se prononcer sur la topologie de celui-ci, qui peut prendre plusieurs formes selon les besoins du système. Ainsi, si le besoin en termes de nombre de communications simultanées est faible, on choisira une topologie de type bus pour économiser des fils, tandis que si certains couples de composants communiquent fréquemment entre eux de manière simultanée, on choisira une topologie pour éviter les files d'attente. Ce type de bus est particulièrement adapté aux FPGA, pour lesquels la topologie peut être changée en un clic, la mise en œuvre étant laissée au logiciel réalisant la synthèse du circuit.
+
+Deux grandes catégories de bus peuvent être distinguées selon la manière dont sont transmises les données : tous les bits simultanément, ou un à un.
+
+Un bus parallèle transmet simultanément les éléments numériques d'un signal numérique sur un nombre approprié de trajets parallèles entre les composants participants.
+
+D'un point de vue matériel, ce type de bus se décompose en trois sous-ensembles :
+
+Le bus sert à transmettre un code binaire d'un nombre de bits égal à la taille du bus. Par exemple pour un bus quatre bits on peut transmettre 16 codes différents (2 = 16).
+
+L'émetteur positionne au même instant tous les bits du bus. Au moment adéquat le composant lecteur copiera tous les bits simultanément. Cet instant adéquat peut être déterminé par un des signaux de contrôle qui changera de valeur pour signaler au dispositif lecteur qu'il est temps de lire les données sur le bus.
+
+
+Un bus série transmet les éléments numériques d'un signal numérique successivement par un seul trajet entre deux points.
+
+Un bus série peut comporter deux lignes distinctes permettant à ces bus d'être bidirectionnels et de permettre la transmission d'information dans les deux directions simultanément, plus des lignes auxiliaires pour d'éventuels signaux de contrôle.
+
+Le bus série transmettant les données élément par élément, l'émetteur doit sérialiser l'information pour sa transmission. Le récepteur devra effectuer l'opération inverse.
+Le câble de bus série comporte beaucoup moins de conducteurs qu'un bus parallèle, ce qui simplifie le câblage et entrave moins la circulation de l'air dans les appareils informatiques grâce à la réduction de la taille du câble, et à sa souplesse. Un bus série emploie nécessairement des composants électroniques pour la sérialisation.
+
+Certains bus série, tel que le FireWire, utilisent un multiplexage temporel pour transmettre les différentes informations (adresse, contrôle et données). On peut aussi les caractériser comme "jonction multiplex".
+
+
+La nature des bus utilisés est différente selon le type de système, chacun ayant des besoins et des contraintes propres.
+
+Les bus situés à l'intérieur d'un même ordinateur relient ses différentes parties fonctionnelles.
+
+Le débit binaire d'un bus est le produit de la "fréquence" maximale à laquelle un transfert peut avoir lieu par le nombre de bits d'information qu'il peut transmettre simultanément.
+
+Ce calcul vaut pour les bus parallèles. Les bus série doivent transmettre, en plus de la donnée, des signaux qui indiquent le début d'une séquence, et le plus souvent des informations d'adresse et de contrôle. S'ils sont asynchrones, il faut ajouter encore des informations de synchronisation. Ils peuvent comprendre en outre des informations redondantes, Somme de contrôle ou Contrôle de redondance cyclique, pour permettre la détection d'erreur. On les caractérise uniquement par le débit binaire.
+
+Les bus internes, également connus sous le nom de bus de données, bus mémoire, système de bus ou de "front-side-bus", relient les composants internes principaux d'un ordinateur, tels que le processeur et la mémoire, sur la carte mère. Le bus de données interne est également considéré comme un bus local, parce qu'il est destiné à se connecter à des périphériques locaux. Ce bus est généralement assez rapide et est indépendant du reste des opérations informatiques.
+
+Habituellement les bus internes en lien avec l’extérieur d'un microprocesseur d'ordinateur personnel sont au nombre de deux :
+
+Les dispositifs électroniques qui relient l'ordinateur (la carte mère) à différents dispositifs externes, tels que l'imprimante, disque dur, scanner constituent les « bus externes » ou « bus d'expansion ». Ce sont :
+
+Les systèmes embarqués nécessitent des bus avec peu de conducteurs afin de minimiser les entrées/sorties nécessaires à leur définition. C'est dans ce cadre que différents standards ont émergé, basés sur une communication série avec un minimum de signaux nécessaires.
+
+Le Serial Peripheral Interface (SPI) propose un bus basé sur quatre fils : un fil d'horloge pour le cadencement, deux fils de données pour les deux sens lecture et écriture, et un fil de sélection du périphérique jouant le rôle de l'adresse. Chaque périphérique disposant de son propre fil de sélection, le maître devra disposer d'autant de fil de sélection qu'il y a de périphériques.
+
+l'I2C est un bus permettant de faire transiter des données en utilisant uniquement deux fils : un pour l'horloge et un pour les données. L'adresse est transmise par le même fil que les données.
+
+Ce type de bus est très facile à mettre en œuvre sur des entrées/sorties généralistes (", GPIO), ce qui a permis leur généralisation sur des systèmes de type Arduino, accessibles à tous de par leur faible cout et utilisés pour de nombreuses application de contrôle-commande, par exemple en domotique. De nombreux capteurs sont notamment interfacés en utilisant l'une de ces normes.
+
+Le développement des systèmes sur une puce (" ou SoC an anglais) a conduit à l'apparition de nouveaux types de bus. Ces systèmes rassemblent au sein d'une même puce différents calculateurs et périphériques qui doivent être interconnectés et communiquer. La nature intégrée et physiquement très rapprochée de ces systèmes annule certaines limitations (notamment liées à la longueur des conducteurs) et, dans certains cas, en développe de nouvelles (comme la surface disponible pour les composants d'interface).
+
+Ces bus n'ayant pas besoin d'être interfacés en dehors de la carte, il devient possible de créer un bus sur mesure pour les besoins du système. Néanmoins, avec la notion de réutilisation des composants, la standardisation de ces bus reste d'actualité. En effet, le développement de composants étant une tâche complexe et couteuse, il s'agit de pouvoir réutiliser de différentes manières la structure d'un composant créé afin de limiter les couts afférents au développement de ceux-ci. On parle d""', ou IP, pour ces composants réutilisables, parfois distibués sous licence (commerciale ou gratuite). Ces composants disposent donc généralement d'une interface standardisée capable de s'interfacer avec un type particulier de bus, afin de ne pas avoir à redévelopper une interface pour chaque utilisation du composant.
+
+Dans ce contexte, la définition de bus standards pour les SoC est devenue centrale pour permettre la réutilisation. Différents standards ont émergé, tels Advanced Microcontroller Bus Architecture développé par ARM et qui spécifie plusieurs bus destinés à différentes applications, Avalon, développé par Altera, ou encore le bus libre Wishbone. Ces types de bus standardent les interfaces, permettant de faciliter la réutilisation d'IP dans un SoC, tout en laissant à l'architecte système une certaine marge de manœuvre quant à la mise en œuvre de la partie transmission. Ainsi, l'architecte peut dans certains cas choisir la topologie du bus, choisir le type d'arbitrage pour les bus multi-maîtres
+
+
+

@@ -1,0 +1,44 @@
+﻿Transact-SQL
+
+Le Transact-SQL (T-SQL) est une extension propriétaire de Sybase et Microsoft au langage SQL. Transact-SQL a été développé à l'origine par la société Sybase, dès les premières versions de son moteur de base de données du même nom. De manière similaire au PL/SQL d'Oracle, Transact-SQL fournissait le moyen d'étendre les fonctionnalités de base du SGBD, via des programmes appelés "procédures stockées". Le code source comme compilé, est en effet stocké dans la base de données, par opposition aux programmes écrits en langage de programmation classique, dont le code source d'une part, le code compilé d'autre part, sont stockés dans des fichiers du système de fichiers.
+
+Lorsque Microsoft a souhaité étendre son offre logicielle pour inclure un SGBD relationnel, il a passé des accords avec l'un des acteurs de l'époque, le challenger derrière principalement Oracle, RTI Ingres, Informix : Sybase. Le SGBD Sybase a été porté sur Windows. Microsoft a peu à peu acquis le savoir-faire en matière de SGBD relationnel, et développé son propre moteur de base de données, Microsoft SQL Server, à partir de la souche Sybase. Sybase de son côté a fait évoluer son SGBD, devenu depuis Adaptive Server Enterprise. Transact-SQL est ainsi aujourd'hui le langage de programmation associé à la fois aux SGBD Microsoft SQL Server et Sybase Adaptive Server Enterprise.
+
+Par rapport au SQL, le T-SQL ajoute les fonctionnalités suivantes :
+
+Les principaux mots clefs permettant des instructions de programmation procédurale en Transact-SQL sont codice_1 et codice_2, codice_3, codice_4, codice_5, codice_6 et codice_7, codice_8, codice_9, et codice_10.
+
+codice_6 et codice_7 permettent des exécutions conditionnelles. L'exemple ci-dessous va afficher "Nous sommes en week-end" si le jour J appartient au week-end, "Nous sommes en semaine" pour un jour de la semaine.
+
+codice_1 et codice_2 délimitent un bloc d'instruction. Si plus d'une instruction est nécessaire dans un bloc conditionnel, il faut utiliser BEGIN et END :
+
+codice_9 va permettre de temporiser la procédure, en attendant un certain temps ou un moment précis de la journée.
+
+codice_8 est utilisé pour terminer immédiatement l'exécution d'une procédure stockée ou bien renvoyer le résultat d'une fonction.
+
+codice_3 va terminer le bloc d'une boucle codice_10, tandis que codice_4 force l'exécution d'une nouvelle itération de la boucle.
+
+Transact-SQL permet l'utilisation des opérateurs arithmétiques classiques.
+
+
+Les variables locales sont souvent utilisées comme compteurs dans des boucles codice_10 ou des blocs de types codice_21. Elles peuvent être utilisées dans des commandes ou dans des procédures stockées. La procédure utilise ces variables de manière "automatique" et "non-interactive" lorsqu'elle est exécutée. Les variables locales peuvent être utilisées partout où la syntaxe de Transact-SQL exige l'utilisation d'une expression.
+
+La déclaration de variables locales est similaire à celle de langages impératifs classiques. Elle suit la syntaxe suivante : 
+
+Exemples :
+
+OU 
+La deuxième syntaxe est plus efficace en termes de mémoire et de performance.
+
+Une sous-routine assignant une valeur à une variable locale ne doit retourner qu'une seule valeur.
+
+Exemples :
+
+Les variables locales ont initialement pour valeur NULL lorsqu'elles sont déclarées. Elles peuvent également recevoir la valeur NULL d'une commande SELECT. NULL étant une valeur spéciale, la comparaison entre des variables de valeur NULL et d'autres valeurs NULL doit suivre des règles particulières qui sont résumées dans le tableau ci-dessous.
+Une expression peut être une variable, une constante, ou une combinaison des deux contenant des opérateurs arithmétiques.
+Le Transact-SQL permet d'ajouter une clause codice_22 aux opérations codice_23 et codice_24, permettant la jointure de tables.
+
+L'exemple ci-dessous va effacer de la table codice_25 ceux qui ont le drapeau "En attente".
+
+
+

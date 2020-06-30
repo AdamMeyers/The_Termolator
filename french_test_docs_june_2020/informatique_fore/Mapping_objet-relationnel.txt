@@ -1,0 +1,50 @@
+﻿Mapping objet-relationnel
+
+Un mapping objet-relationnel (en anglais object-relational mapping ou ORM) est un type de programme informatique qui se place en interface entre un programme applicatif et une base de données relationnelle pour simuler une base de données orientée objet. Ce programme définit des correspondances entre les schémas de la base de données et les classes du programme applicatif. On pourrait le désigner par là, « comme une couche d'abstraction entre le monde objet et monde relationnel ». Du fait de sa fonction, on retrouve ce type de programme dans un grand nombre de frameworks sous la forme de composant ORM qui a été soit développé, soit intégré depuis une solution externe.
+
+L'utilisation de la programmation orientée objet avec une base de données relationnelle nécessite de convertir les données relationnelles en objets et vice-versa. Ceci conduit à programmer cette conversion pour chaque objet et donc à dupliquer énormément de code similaire.
+
+Illustration de code Java qui utilise l'API JDBC sans ORM pour récupérer les données relationnelles d'un client ("customer" en anglais) afin de les transformer en un objet Java :
+Un code source très similaire sera à saisir pour récupérer les informations des autres tables et les transformer en objets. Les parties du code qui changent sont : le SQL, l'affectation des paramètres sur l'objet PreparedStatement et la récupération des résultats et leur affectation sur l'objet. La structure générale du code reste toujours la même.
+
+En fait, le code permettant de réaliser toutes les opérations de CRUD (création, lecture, mise à jour, suppression) se ressemble énormément d'une table à l'autre et d'un objet à l'autre.
+
+Les frameworks de mapping objet-relationnel permettent d'éliminer la duplication de code dans les opérations CRUD.
+
+Le mapping objet-relationnel consiste à déclarer une association entre une (ou plusieurs) classes et une table, et chaque attribut de la classe avec un champ de la table associée. Par exemple, la classe Customer sera associée à la table CUSTOMER, et les attributs associés comme suit :
+
+
+Un fichier texte peut alors être créé pour déclarer et décrire en bloc de telles mises en correspondance sur un ensemble de classes et tables du modèle. Lorsque le langage le permet (Java par exemple), il est même possible d'utiliser l'introspection pour récupérer les informations sur les attributs lors de l'exécution (type, valeur, etc.) et pouvoir construire dynamiquement les requêtes SQL de type CRUD. Des mécanismes similaires existent pour les autres langages disposant de frameworks de mapping objet-relationnel.
+
+Le résultat finit par simuler une base de données "objet" "virtuelle", qui peut être utilisée au sein du langage de programmation sans référencer directement le SGBD sous-jacent.
+
+Habituellement les tâches de gestion des données dans un programme incluant un ORM sont exécutées en contrôlant des objets qui sont généralement des valeurs non scalaires.
+Par exemple, considérons une entrée d'agenda qui d'une part répertorie une personne seule avec des anniversaires, et liste d'autre part zéro ou plusieurs anniversaires.
+Cela pourrait alors être modélisé sous la forme d'un objet "Personne" comprenant lui-même des objets correspondants aux données qui constituent l'entrée d'agenda. 
+Par exemple, l'objet "Personne" inclurait un ou plusieurs objets "Anniversaire", eux-mêmes pouvant d'ailleurs contenir à leur tour des objets "Personne".
+Les anniversaires peuvent alors être traités comme des valeurs/entités individuelles par le langage de programmation, différenciés des entrées "personnes".
+De plus, différentes méthodes peuvent être liées aux objets.
+
+Cependant un problème se pose : alors qu'un langage de programmation va permettre typiquement d'imbriquer des listes d'objets dans un objet, de nombreux SGBD populaires sont conçus quant à eux pour stocker et manipuler des valeurs scalaires, tels que les entiers et les chaînes structurées dans des tableaux normalisés. Un exemple typique d'un tel produit système serait un SGBD "Structured Query Language" (SQL).
+
+Le programmeur doit alors faire un choix :
+
+
+Les ORM sont utilisés pour mettre en œuvre la première solution.
+
+Il y a des avantages et des inconvénients à l'utilisation d'ORM. 
+
+L'un des avantages est que cela réduit la quantité de code qui doit être écrit et permet une homogénéité avec le reste du code pour les langages orientés objets.
+
+Cependant, les ORM induisent une couche logicielle supplémentaire, ce qui peut nuire aux performances, et bien entendu à la maintenabilité. Par ailleurs certains outils ORM ont historiquement montré des limites lors de la suppression de données en bloc.
+
+En outre, une base de données mal conçue peut induire une forte dépendance à un système ORM, et réciproquement.
+
+Le mapping objet-relationnel est toutefois considéré en 2018 comme une méthode de programmation viable pour la traduction des données entre les systèmes de bases de données relationnelles et des langages de programmation orientés objet.
+
+Il existe de nombreux outils d'ORM payants, gratuits ou même en licence libre.
+
+Voici quelques frameworks de mapping objet-relationnel :
+
+
+

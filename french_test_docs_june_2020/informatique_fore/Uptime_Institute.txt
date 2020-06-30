@@ -1,0 +1,77 @@
+﻿Uptime Institute
+
+Uptime Institute est un consortium d'entreprises créé en 1993 dont l'objectif est de maximiser l'efficacité des centres de traitement de données.
+
+Uptime Institute est connu en particulier pour avoir défini la notion de « Tier » pour les centres de données, largement adopté dans le monde.
+
+Uptime Institute a été racheté par The 451 Group (un des concurrents du Gartner) en 2009.
+
+La classification comporte les niveaux Tier I, Tier II, Tier III et Tier IV. Un centre de données doit être certifié par l’Uptime Institute pour revendiquer un niveau de Tier. La classification d’un site est fixée par son sous-système de plus bas niveau.
+
+Les notions intermédiaires de type Tier III+ n’existe pas bien qu'elles soient parfois mentionnées pour désigner une conformité incomplète au niveau supérieur.
+
+En 2015, Uptime Institute est le seul organisme à délivrer des certifications de centre de données. Les autres organismes proposant des classifications de centre de données (BICSI 002, TIA 942, Syska Hennessy) ne proposent pas de certification.
+
+Chaque niveau reprend les caractéristiques des niveaux précédents, en y ajoutant certaines améliorations.
+
+Site basique sans redondance (capacité N). Il doit cependant disposer au minimum de salles informatiques dédiées, d’un groupe électrogène disposant d’une réserve de fioul de 12 heures, et d’un onduleur.
+
+Un centre de données Tier I nécessite au moins un arrêt annuel pour maintenance. Une grande partie des maintenances et pannes génèrent un arrêt du site.
+
+Le Tier II est caractérisé par la redondance de sa production (capacité N+R). L’ensemble des composants dispose de redondance : Groupes électrogènes, cuves à fioul, onduleurs, production de froids (groupes froids, pompes, unités de froid en sales, … Les distributions (électricité et froid) n’ont pas besoin d’être redondées.
+
+Un centre de données Tier II nécessite au moins un arrêt annuel pour maintenance. Certaines maintenances et pannes génèrent un arrêt du site, notamment sur les circuits de distribution.
+
+Tous et chacun des composants d’un centre de données Tier III sont maintenables sans arrêt de l’informatique. Le corollaire est que tous les composants et circuits de distribution sont redondants. De plus les groupes électrogènes doivent pouvoir fonctionner à charge nominale (N) sans limitation de durée. Cela implique que les valeurs de groupe à retenir est la « Continuous Power » (CP) selon la norme ISO8528.1. Un déclassement de 30 % de la PRP (Prime Rating Power) est à appliquer aux groupes ne déposant de classification « CP ».
+
+Aucune maintenance ne doit provoquer un arrêt de l’informatique.
+
+Certaines pannes, incidents ou erreurs humaines peuvent interrompre l’informatique
+
+Le centre de données Tier IV présente les grandes caractéristiques suivantes :
+
+Le corollaire est l’absence de point unique de défaillance (SPOF, ).
+
+Le Tier IV est tolérant aux maintenances, pannes (uniques), et incidents même graves (incendie par exemple).
+
+Il est souvent associé à chaque Tier un niveau de disponibilité statistique. Ainsi les centres de données Tier IV ont un taux de disponibilité annoncé de 99,995 %. Cette valeur qui correspond à 26 minutes de coupure par an doit être correctement interprétée. Cette durée peut se traduire par 30 secondes de coupure par semaine (ne correspondant pas à l'objectif de disponibilité), ou une demi-journée tous les 10 ans, correspond à l'objectif recherché.
+
+Il convient donc d’être très prudent dans l’interprétation des valeurs ci-dessous :
+Dans les process de certification Tier III et IV, l’Uptime Institute considère que l’électricité est intégralement produite par les groupes électrogènes. L’alimentation par un fournisseur externe n’est considérée que comme une source d’économie (non de résilience). Il n’y a donc aucune contrainte sur le nombre de fournisseurs externes ni, plus surprenant, sur le nombre d’adductions électriques du site. Le sujet n’est même pas étudié lors de la certification. 
+
+La certification Uptime Institute n’impose aucune contrainte d’architecture et ne juge que de la capacité du site à répondre aux évènements endogènes (pannes, incident, maintenance).
+
+Par conséquent le niveau de redondance n’induit en rien le niveau de "tiering". Par exemple, un centre de données qui aurai une redondance très élevée 2(N+1) avec une vanne de jonction entre les deux réseaux d’eau glacée relève au maximum du Tier II. En effet, la maintenance de cette vanne commune impose l’arrêt des deux boucles, donc l’arrêt du centre de données.
+
+En revanche, il est (dans la théorie) possible d’atteindre le niveau Tier IV en redondance N+1, même si dans les faits cela conduirait à une architecture très compliquée et difficilement exploitable. En règle générale, les centres de données Tier III ou IV ont un niveau de redondance allant de 2N à 2(N+1).
+
+La certification repose sur les résultats et n’impose pas de contraintes d’architecture telles que la présence de faux-plancher, la méthode climatisation, les tensions d’alimentation, etc. La certification ne formule aucune exigence sur la localisation du site.
+
+La notion de Tier III+ peut être rencontrée, mais ne correspond pas à un niveau existant chez Uptime Institute.
+
+Le "tiering" couvre l’intégralité des composants du centre de données. Une seule non-conformité entraine le déclassement. Il est donc impropre de faire mention par exemple de centre de données Tier IV pour l’électricité et Tier III pour la climatisation.
+
+Dans les faits, une grande partie des centre de données relève d’un niveau Tier II.
+
+Seul l’Uptime Institute peut délivrer une certification. Aucun autre organisme n’est habilité à se prononcer sur le niveau de "Tiering" d’un centre de données, même avec une approche d'auto-évaluation.
+
+La certification repose sur la réponse à l’exhaustivité des critères. Si un seul critère n’est pas rempli le site est déclassé au niveau correspondant. 
+
+Le champ couvert par la certification est très large : 
+
+Les domaines non couverts par la certification sont : les systèmes de détection incendie et extinction, la sécurité physique d’accès au site et salles.
+
+L’absence de maintenance régulière accroît très significativement le risque d’incidents bloquants et fait perdre les bénéfices d’un Tier III ou IV. L’obtention de la certification n’est donc pas une fin en soi. Il est important de maintenir le niveau de qualité tout au long de la vie du centre de données par une maintenance régulière et exhaustive ainsi que des tests de bon fonctionnement.
+
+Dans les faits une grande partie des centres de données, selon la méthode de certification de l’Uptime Institute relèveraient d’un niveau Tier II.
+
+Il n'y avait aucun centre de données "certifié Tier" en France jusqu'au début 2014. 
+
+Au troisième trimestre 2015, il n’y a en France que trois centres de données certifiés :
+
+En 2018 XEFI obtient la certification Uptime Institute Tier III « Constructed Facility » pour son datacenter de Civrieux, conçu par les équipes de Schneider Electric.
+
+
+
+
+

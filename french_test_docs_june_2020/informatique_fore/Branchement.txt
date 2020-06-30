@@ -1,0 +1,13 @@
+﻿Branchement
+
+En informatique, un branchement est une opération consistant à se déplacer au sein d'un code exécuté par un processeur, en « sautant » à une adresse identifiée au lieu de poursuivre l'exécution du code séquentiellement.
+
+Un processeur est une unité de traitement séquentielle, ce qui signifie qu'il exécute un ensemble d'instructions en effectuant celles-ci les unes après les autres. Pour cela, le processeur dispose en interne d'un compteur, indiquant l'adresse mémoire de la prochaine instruction à exécuter, compteur qui est normalement incrémenté à chaque cycle pour pointer sur l'instruction suivant immédiatement l'instruction courante.
+
+Une opération de branchement vient interrompre ce fonctionnement séquentiel en modifiant la valeur du compteur par une adresse arbitraire afin de faire en sorte que le processeur charge et exécute une partie du code se situant dans une section de la mémoire différente de celle attendue par le comportement linéaire. Ceci permet notamment de sauter vers une sous-routine, ou encore d'exécuter différentes instructions en fonction du résultat d'un test conditionnel. Ainsi, l'exécution ou non d'un branchement repose souvent sur le test de la valeur du registre d'état du processeur, registre indiquant le résultat d'un calcul antérieur.
+
+Un processeur est généralement formé d'un pipeline contenant à la fois l'instruction actuellement exécutée, mais également les prochaines instructions, chacune à un état d'exécution différent, afin d'augmenter la vitesse de traitement. Or, l'exécution d'un branchement vient interrompre le fonctionnement linéaire du programme, ce qui signifie que les instructions chargées par avance dans le pipeline ne doivent en réalité pas être exécutées, au profit de celles se situant à la nouvelle adresse mémoire. Le pipeline doit donc être vidé, et rempli à nouveau par les instructions correctes.
+
+Les processeurs actuels intègrent donc souvent des mécanismes de prédiction de branchement, qui tentent de prédire le résultat d'un branchement avant l'exécution du calcul permettant de décider de l'exécution du saut ou non, afin de charger par avance les instructions correctes dans le pipeline. Si une prédiction incorrecte résulte dans le vidage du pipeline, en revanche, une prédiction correcte permettra de poursuivre l'exécution du code sans interruption.
+
+

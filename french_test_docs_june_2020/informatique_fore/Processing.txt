@@ -1,0 +1,40 @@
+﻿Processing
+
+Processing (autrefois typographié Proce55ing) est un environnement de développement libre (sous licence GNU GPL), créé par Benjamin Fry et Casey Reas, deux artistes américains. Processing est le prolongement « multimédia » de Design by numbers, l'environnement de programmation graphique développé par John Maeda au Media Lab du Massachusetts Institute of Technology. 
+
+Processing est tout particulièrement adapté à la création plastique et graphique interactive et au graphisme de données, mais sa simplicité d'utilisation en fait aussi aussi un bon support pour l'apprentissage de la logique de la programmation pour les non-programmeurs. Le logiciel fonctionne sur Macintosh, Windows, Linux, BSD et Android. Il est basé sur la plate-forme Java — il permet d'ailleurs de programmer directement en langage Java.
+
+Plusieurs langages peuvent désormais être utilisés au sein de l'environnement Processing : Javascript, avec Processing.js, et p5.js, exécutables dans un environnement HTML 5 ou via node.js., REPL, Python ou encore R. 
+
+Les programmes réalisés avec Processing en mode Java peuvent être exportés sous forme d'applications indépendantes pour Windows, Linux ou Mac OS X (en réalité n'importe quelle machine disposant d'une machine virtuelle Java).
+Le principe majeur de Processing est de simplifier au maximum la mise en œuvre des programmes. Le langage Processing, bien que très proche de langages tels que Java ou C++, se veut lui aussi assez simple. Adapté à la création graphique, Processing réclame moins d'efforts que Java pour effectuer des tâches simples telles que la modification d'une animation à intervalle régulier (qui permet des créations animées). Ses fonctionnalités sont limitées aux besoins des créateurs d'images 2D et 3D générées par programmation mais peuvent être étendues, par le biais de modules externes, à la capture d'un flux vidéo, à la génération et à la manipulation de son, à l'interfaçage des ports d'entrées-sorties, etc.
+
+Processing s'adresse aux artistes en « arts numériques » et aux graphistes, notamment dans le domaine du graphisme d'information et dans celui du graphisme génératif. 
+
+On peut écrire le traditionnel Hello world de cette manière :
+et même ainsi, sans la moindre déclaration préliminaire :
+
+Cependant, la méthode suivante est sans doute plus typique du fonctionnement de Processing : 
+
+Les gestionnaires "setup()" et "draw()" sont deux fonctions pré-définies très importantes dans processing. La première, "setup()", est exécutée une seule fois au lancement du programme. La seconde, "draw()" est lancée à intervalle régulier, par défaut 60 fois par seconde.
+
+Processing emploie un typage rigoureux et est sensible à la casse. La structure de ses fonctions de base (comparaisons, conditions, boucles, etc.) est familière pour les utilisateurs du C++ ou de Java.
+
+Par exemple, une condition s'évalue ainsi :
+
+et une boucle se construit de cette façon :
+
+L'ancien nom de Processing, « Proce55ing », a été forgé ainsi car le nom de domaine "Processing.org" était pris et le site officiel a d'abord dû exister à l'adresse "Proce55ing.org". À présent, les auteurs de Processing disposent du nom de domaine "Processing.org", ils n'utilisent plus l'ancienne forme du nom et en déconseillent l'usage. Cependant, de nombreuses personnes abrègent le nom en p5.
+
+Le projet Arduino, qui se base sur Processing, comme son « ancêtre », Wiring, permet la manipulation de circuits électroniques extérieurs pour interfacer des capteurs ou des appareils électroniques divers (servomoteurs, leds…). Un autre environnement logiciel, Fritzing, a été conçu pour aider les utilisateurs au prototypage de matériel destiné à être utilisé avec Arduino et Processing. Le projet Mobile Processing, comme son nom l'indique, a l'ambition de porter Processing sur téléphones portables. Enfin, Processing.js est une implémentation JavaScript de Processing.
+
+Depuis sa version 1.5.1, Processing peut produire des applications pour plate-forme Android et accéder aux capteurs spécifiques aux dispositifs mobiles (accéléromètre, GPS, etc.). Depuis sa version 2.0, on peut aussi exporter directement du contenu au format HTML5/Javascript. Un projet voisin, P5.js, permet d'implémenter le langage directement à des pages web et de maîtriser le DOM.
+
+Il existe, enfin, une version Python de Processing : Processing.py.
+
+De nombreuses bibliothèques externes peuvent être ajoutées à Processing pour accéder à des ressources telles que la vidéo, le son, la reconnaissance faciale, la caméra Kinect, les moteurs physiques, etc.
+
+
+
+
+

@@ -1,0 +1,20 @@
+﻿Espace d'échange
+
+L'espace d'échange, en anglais , est une partie de la mémoire de masse d'un ordinateur utilisée par le système d'exploitation pour stocker des données qui, du point de vue des applications, se trouvent en mémoire vive. L'espace d'échange peut prendre la forme d'une partition dédiée (la partition d'échange, courante sous les systèmes Unix) ou d'un simple fichier (le fichier d'échange, codice_1 sous Windows par exemple), ou de plusieurs partitions et/ou fichiers. La mémoire vive et l'espace d'échange constituent ensemble la mémoire virtuelle du système.
+
+Sur certains systèmes tels que GNU/Linux, la partition d'échange est aussi utilisée pour la mise en hibernation, ou veille sur disque, du système.
+
+La mémoire vive d'un système informatique, qui stocke notamment les données volatiles des programmes en cours d'exécution, est généralement bien plus rapide, mais bien plus chère par octet, et donc de plus faible capacité, que la mémoire de masse. L'intérêt de l'espace d'échange est de simuler sans coût une mémoire vive plus grande, avec une perte de vitesse limitée. Cela se fait en déchargeant des données de la mémoire vive dans l'espace d'échange. C'est utile lorsque la mémoire vive est pleine, ou lorsqu'il est plus efficace d'y stocker d'autre données, et notamment de mettre en cache des données du système de fichiers.
+
+Au cours du fonctionnement d'un système, en dehors de toute saturation de la mémoire vive, le système d'exploitation peut choisir de déplacer dans l'espace d'échange des données peu utilisées des programmes en cours d'exécution, et d'utiliser l'espace libéré comme cache du système de fichiers. La tendance du système à utiliser plus ou moins ce mécanisme a des avantages et des inconvénients en termes de performances : une utilisation agressive de l'espace d'échange favorise les programmes en cours d'utilisation au détriment de la réactivité des programmes ouverts peu utilisés.
+
+Prenons l'exemple d'une application de bureautique sur un ordinateur personnel. Supposons que cette application est ouverte en permanence mais que l'utilisateur y accède rarement. Le système d'exploitation pourra détecter ce fait et déplacer ses données dans l'espace d'échange. L'espace libéré servira de cache, ce qui améliorera les performances des applications actuellement utilisées. Cependant, lorsque l'utilisateur consultera à nouveau l'application de bureautique, celle-ci ne sera pas réactive pendant le temps de rapatriement de ses données dans la mémoire vive.
+
+Le noyau Linux (utilisé dans Android, GNU/Linux, etc.) offre un paramètre codice_2 qui permet d'indiquer au noyau d'utiliser plus ou moins agressivement l'espace d'échange ; le choix d'une valeur optimale pour ce paramètre est très controversé y compris parmi les développeurs du noyau.
+
+Les systèmes Windows ne permettent pas de configurer directement l'utilisation de l'espace d'échange, seulement de choisir sa taille ou de le désactiver complètement.
+
+La swappiness est un paramètre accessible par sysctl (codice_3) et procfs (codice_4). La swappiness peut être réglée à des valeurs entre 0 et 100 inclusivement. Le noyau va éviter d'utiliser le swap si la valeur est basse et va maximiser son utilisation si la valeur est haute. La valeur par défaut est 60.
+
+
+

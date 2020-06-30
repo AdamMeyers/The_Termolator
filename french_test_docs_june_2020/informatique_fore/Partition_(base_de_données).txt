@@ -1,0 +1,20 @@
+﻿Partition (base de données)
+
+Dans une base de données, une partition est une division logique d'une table stockée en plusieurs parties indépendantes. Le partitionnement de tables est généralement effectué pour améliorer la gestion, la performance ou la disponibilité. Chaque partition se retrouve sur des serveurs ou des disques différents. Cela permet également d'obtenir une capacité de base de données supérieure à la taille maximum des disques durs ou d'effectuer des requêtes en parallèle sur plusieurs partitions.
+
+Les systèmes de gestion de base de données récents proposent le fractionnement d'une table selon plusieurs critères. Ils prennent une "clef de partitionnement" et partitionnent suivant le critère.
+
+Les critères principaux :
+
+Le partitionnement composite permet de combiner plusieurs de ces schémas de partitionnement, par exemple en appliquant d'abord un partitionnement en gammes puis un partitionnement en hashage. Un hashage consistent (où rajouter des données ne change pas les précédents résultats de la fonction de hashage) peut être considéré comme un partitionnement composite de hash et de liste où les hash réduisent l'espace des clefs tel qu'elles puissent être listées.
+
+Le partitionnement horizontal d'une table divise les données en blocs de lignes, généralement en fonction de la clef primaire.
+
+Le partitionnement vertical d'une table divise les données en blocs de colonnes.
+
+Le partitionnement de la base de données Oracle est un module de division des données d'Oracle, payant et fréquemment utilisé sur des tables de volumétrie importante.
+
+Le partitionnement permet de découper une table ou un index sur des critères logiques. La table se comporte alors comme plusieurs tables de dimensions plus petites. Les avantages principaux du partitionnement sont :
+
+
+

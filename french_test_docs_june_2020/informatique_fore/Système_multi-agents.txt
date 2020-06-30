@@ -1,0 +1,60 @@
+﻿Système multi-agents
+
+En informatique, un système multi-agent (SMA) est un système composé d'un ensemble d'agents (un processus, un robot, un être humain, etc.), situés dans un certain environnement et interagissant selon certaines relations. Un agent est une entité caractérisée par le fait qu'elle est, au moins partiellement, autonome. 
+
+Objet de longue date de recherches en intelligence artificielle distribuée, les systèmes multi-agents forment un type intéressant de modélisation de sociétés, et ont à ce titre des champs d'application larges, allant jusqu'aux sciences humaines.
+
+L'une des grandes sources d'inspiration pour les systèmes multi-agents a été l'étude des comportements sociaux de certaines familles d'insectes. Dans ce domaine, on se référera utilement aux articles Intelligence collective et Intelligence distribuée.
+
+Les SMA peuvent être vus comme la rencontre de divers domaines :
+
+On peut représenter un SMA par une de ces communautés virtuelles que l'on trouve de plus en plus dans les jeux vidéo actuels. Prenons l'exemple d'un jeu qui simulerait la vie d'une famille. Le SMA se décompose selon plusieurs dimensions. Tout d'abord, un environnement disposant d'une métrique. On peut considérer qu'il s'agit de la maison et du jardin où vit notre petite famille. Ensuite le SMA peut disposer d'un ensemble d'objets passifs sur lesquels peuvent intervenir nos agents. Il s'agira de tous les objets qui équipent la maison, mais également de la nourriture. Un SMA se compose d'agents. Ceux-ci, actifs et autonomes, interagissent avec leur entourage (environnement, objets et autres agents). On identifie ces agents aux membres de la famille. Ensuite, on ajoute un ensemble de relations entre les objets et les agents, ce qui définit une organisation. On pourra par exemple exprimer les liens familiaux entre les différents individus, mais également traiter des notions de propriétés (quel objet appartient à qui ?). Enfin, on intègre un ensemble d'opérateurs qui permettent aux agents d'agir sur les objets ou sur les autres agents (le fils peut manger un yaourt, promener son chien ou parler à sa sœur), et de capteurs qui permettent aux agents de connaître les changements de l'environnement et des autres agents (le yaourt est tombé par terre, papa m'a demandé de sortir le chien). Voici donc ce que l'on peut appeler un SMA. En informatique, l'agent est un programme autonome possédant un ensemble de connaissances et agissant selon des règles qui lui sont propres.
+
+On peut relever cinq problématiques principales lors de la création de systèmes multi-agents:
+
+
+En reprenant les cinq problématiques précédentes, on peut décrire quelques éléments de l'architecture d'un système multi-agent.
+
+
+
+
+
+Ces éléments d'architectures s'appliquent plutôt à un système composé d'agents cognitifs.
+
+On peut établir une classification des agents selon deux critères : agents cognitifs ou réactifs d'une part ; comportement téléonomique ou réflexe d'autre part.
+
+La distinction que l'on peut faire entre cognitif et réactif tient essentiellement de la représentation du monde dont dispose l'agent. Si l'individu est doté d'une "représentation symbolique" du monde à partir de laquelle il est capable de formuler des raisonnements, on parlera d'agent cognitif tandis que s'il ne dispose que d'une "représentation sub-symbolique", c’est-à-dire limitée à ses perceptions, on parlera d'agent réactif. Cette distinction cognitif/réactif correspond à deux écoles de pensée des systèmes multi-agents. La première soutient une approche de famille d'agents "intelligents" devant collaborer, avec une perspective plus sociologique. La deuxième étudie la possibilité de l'émergence d'un comportement "intelligent" d'un ensemble d'agents non-intelligents (type fourmis).
+
+La seconde distinction entre comportement téléonomique ou réflexe sépare les comportements intentionnels (poursuite de buts explicites) des comportements liés à des perceptions. Les tendances des agents peuvent ainsi être exprimées explicitement dans les agents ou au contraire provenir de l'environnement.
+On peut construire un tableau regroupant les différents types d'agents :
+
+Les agents cognitifs sont la plupart du temps intentionnels, c'est-à-dire qu'ils ont des buts fixés qu'ils tentent d'accomplir. On peut cependant trouver parfois des agents dits modules qui, s'ils ont une représentation de leur univers, n'ont pas de buts précis. Ils pourraient servir par exemple à répondre à des interrogations d'autres agents sur l'univers.
+Les agents réactifs peuvent être séparés en agents pulsionnels et tropiques. Un agent pulsionnel aura une mission fixée (par exemple, s'assurer qu'un réservoir reste toujours suffisamment rempli) et déclenchera un comportement s'il perçoit que l'environnement ne répond plus au but qui lui était affecté (le niveau du réservoir est trop bas). L'agent tropique, lui, ne réagit qu'à l'état local de l'environnement (il y a de la lumière, je fuis). La source de motivation est dans un cas interne (agents pulsionnels qui ont une "mission"), dans l'autre cas liée uniquement à l'environnement.
+
+Avec le développement des systèmes multi-agents, différents paradigmes organisationnels ont été développés. Ces organisations établissent un cadre pour les relations et interactions entre les agents. Nous allons présenter ici les principales :
+
+On distingue généralement trois types d'utilisation : la simulation de phénomènes complexes, la résolution de problèmes, et la conception de programmes.
+
+On utilise les systèmes multi-agents pour simuler des interactions existant entre agents autonomes. On cherche à déterminer l'évolution de ce système afin de prévoir l'organisation qui en résulte. Par exemple, en sociologie, on peut paramétrer les différents agents composant une communauté. En ajoutant des contraintes, on peut essayer de comprendre quelle sera la composante la plus efficace pour parvenir à un résultat attendu (construction d'un pont). Ils permettent même d'expérimenter des scénarios qui ne seraient pas réalisables sur des populations réelles, que ce soit pour des raisons techniques ou éthiques. Ce qui importe c'est le comportement d'ensemble et non pas le comportement individuel. Des applications existent en physique des particules (agent = particule élémentaire), en chimie (agent = molécule), en robotique (agent = robot, dans le cas d'une implémentation sur robot réel, on parlera de système multi-robots), en biologie cellulaire (agent = cellule), en éthologie (agent = animal), en sociologie et en ethnologie (agent = être humain). L'autonomie permet ici de simuler le comportement exact d'une entité.
+
+Comme exemples concrets, nous pouvons citer par exemple "EpiSIM", logiciel qui permet de simuler la propagation de maladies dans un espace géographique paramétrable, ou encore DS, qui simule l'évolution de la population de l'île de La Réunion et permet d'anticiper son urbanisation. On trouve également des simulations de trafic routier ou d'évacuation de foule paniquée dans un bâtiment, qui permettent d'étudier l'origine des problèmes (embouteillages, bousculades…) afin
+de réfléchir à des solutions pour les restreindre.
+
+L'intelligence artificielle distribuée est née pour résoudre les problèmes de complexité des gros programmes monolithiques de l'intelligence artificielle : l'exécution est alors distribuée, mais le contrôle reste centralisé. Au contraire, dans les SMA, chaque agent possède un contrôle total sur son comportement. Pour résoudre un problème complexe, il est en effet parfois plus simple de concevoir des programmes relativement petits (les agents) en interaction qu'un seul gros programme monolithique. L'autonomie permet au système de s'adapter dynamiquement aux changements imprévus qui interviennent dans l'environnement.
+
+Dans le même temps, le génie logiciel a évolué vers des composants de plus en plus autonomes. Les SMA peuvent être vus comme la rencontre du génie logiciel et de l'intelligence artificielle distribuée, avec un apport très important des systèmes distribués. Par rapport à un objet, un agent peut prendre des initiatives, peut refuser d'obéir à une requête, peut se déplacer… L'autonomie permet au concepteur de se concentrer sur une partie "humainement appréhendable" du logiciel.
+
+Les utilisations de systèmes multi-agents dans l'industrie sont nombreuses et variées. On en trouve dans les jeux vidéo et dans l'animation, avec notamment le logiciel MASSIVE, permettant de simuler des foules, qui a été développé à l'occasion de la trilogie cinématographique du Seigneur des Anneaux. Ils peuvent également être utilisés par des entreprises pour, par exemple, suivre les comportements des clients naviguant sur un site web.
+
+Les systèmes multi-agents sont également utilisés dans le monde de la finance. Par exemple, la plateforme permet d'utiliser des agents experts en trading automatique qui suivent les cours du Forex.
+
+
+Un comparatif des plates-formes et d'outils de modélisation orientés-agent est disponible : .
+
+Les concepts des systèmes multi-agents ont été repris dans différentes œuvres de fiction. Le plus souvent on retrouve la peur classique de l'invention qui échappe à son concepteur (référence à la notion d'émergence), mais le phénomène est amplifié par le nombre et l'intelligence collective des agents.
+
+
+
+
+
+
