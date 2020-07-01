@@ -49,6 +49,7 @@ now. These include:
      README_fr.txt -- This describes the French version of Termolator,
      including installation instructions (which presume first
      installing the English version), as well as how to run the French system.
+     The French version was created by Sandra Burlaud.
 
 The Termolator takes two sets of documents as input a FOREGROUND set
 and a BACKGROUND set and finds instances of terminology that are more

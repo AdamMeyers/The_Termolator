@@ -1,3 +1,6 @@
+This is the README for the French version of Termolator, created by
+Sandra Burlaud in 2019 and 2020.
+
 - ENGLISH TERMOLATOR: more information can be found in the file README.txt
 
 - FRENCH TERMOLATOR: 
