@@ -51,6 +51,17 @@ now. These include:
      installing the English version), as well as how to run the French system.
      The French version was created by Sandra Burlaud.
 
+     README-chinese.txt -- This describes the Chinese version of
+     Termolator, including installation instructions (which presume
+     first installing the English version), as well as how to run the
+     Chinese system. The original Chinese system has a separate code
+     base (https://github.com/ivanhe/termolator/) and was created by
+     Yifan He. The current system, that is more closely integrated
+     with the English system is based on Yifan He's system, but
+     includes the work of Yuling Gu, Leizhen Shi and Echo Hong.
+
+This document is primarily about the English version of Termolator.
+
 The Termolator takes two sets of documents as input a FOREGROUND set
 and a BACKGROUND set and finds instances of terminology that are more
 characteristic of the FOREGROUND than the BACKGROUND.  Input files can

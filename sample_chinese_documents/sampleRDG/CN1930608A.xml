@@ -1,0 +1,2396 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright ©2011 LexisNexis Univentio, The Netherlands. -->
+<lexisnexis-patent-document schema-version="1.08" date-produced="20111004" file="CN1930608A.xml" produced-by="LexisNexis-Univentio" lang="eng" date-changed="20110505" time-changed="030128">
+  <bibliographic-data lang="chi">
+    <publication-reference publ-type="Application" publ-desc="Unexamined application for a patent for invention">
+      <document-id>
+        <country>CN</country>
+        <doc-number>1930608</doc-number>
+        <kind>A</kind>
+        <date>20070314</date>
+      </document-id>
+    </publication-reference>
+    <application-reference>
+      <document-id>
+        <country>CN</country>
+        <doc-number>200580007351</doc-number>
+        <date>20050412</date>
+      </document-id>
+    </application-reference>
+    <language-of-filing>eng</language-of-filing>
+    <language-of-publication>chi</language-of-publication>
+    <priority-claims date-changed="20090305">
+      <priority-claim sequence="1" kind="national">
+        <country>SE</country>
+        <doc-number>200400998</doc-number>
+        <kind>A</kind>
+        <date>20040416</date>
+      </priority-claim>
+      <priority-claim sequence="1" data-format="original">
+        <doc-number>0400998-1</doc-number>
+      </priority-claim>
+      <priority-claim sequence="1" data-format="epodoc">
+        <doc-number>SE20040000998</doc-number>
+      </priority-claim>
+    </priority-claims>
+    <dates-of-public-availability date-changed="20091225">
+      <gazette-reference>
+        <date>20070314</date>
+      </gazette-reference>
+      <unexamined-printed-without-grant>
+        <date>20070314</date>
+      </unexamined-printed-without-grant>
+    </dates-of-public-availability>
+    <kind-of-official-gazette lang="eng">23-11</kind-of-official-gazette>
+    <classification-ipc date-changed="20091227">
+      <main-classification>
+        <text>  G 10L  19/00   A</text>
+        <section>G</section>
+        <class>10</class>
+        <subclass>L</subclass>
+        <main-group>19</main-group>
+        <subgroup>00</subgroup>
+        <qualifying-character>A</qualifying-character>
+      </main-classification>
+    </classification-ipc>
+    <classifications-ipcr date-changed="20091227">
+      <classification-ipcr sequence="1">
+        <text>G10L  19/00        20060101CFI20070314BHCN        </text>
+        <ipc-version-indicator>
+          <date>20060101</date>
+        </ipc-version-indicator>
+        <classification-level>C</classification-level>
+        <section>G</section>
+        <class>10</class>
+        <subclass>L</subclass>
+        <main-group>19</main-group>
+        <subgroup>00</subgroup>
+        <symbol-position>F</symbol-position>
+        <classification-value>I</classification-value>
+        <action-date>
+          <date>20070314</date>
+        </action-date>
+        <generating-office>
+          <country>CN</country>
+        </generating-office>
+        <classification-status>B</classification-status>
+        <classification-data-source>H</classification-data-source>
+      </classification-ipcr>
+      <classification-ipcr sequence="2">
+        <text>G10L  19/00        20060101AFI20070314BHCN        </text>
+        <ipc-version-indicator>
+          <date>20060101</date>
+        </ipc-version-indicator>
+        <classification-level>A</classification-level>
+        <section>G</section>
+        <class>10</class>
+        <subclass>L</subclass>
+        <main-group>19</main-group>
+        <subgroup>00</subgroup>
+        <symbol-position>F</symbol-position>
+        <classification-value>I</classification-value>
+        <action-date>
+          <date>20070314</date>
+        </action-date>
+        <generating-office>
+          <country>CN</country>
+        </generating-office>
+        <classification-status>B</classification-status>
+        <classification-data-source>H</classification-data-source>
+      </classification-ipcr>
+    </classifications-ipcr>
+    <classifications-ecla date-changed="20091227">
+      <classification-ecla sequence="1" classification-scheme="EC" country="EP">
+        <text>G10L 19/00M</text>
+        <section>G</section>
+        <class>10</class>
+        <subclass>L</subclass>
+        <main-group>19</main-group>
+        <subgroup>00</subgroup>
+        <additional-subgroups>
+          <additional-subgroup sequence="1">M  </additional-subgroup>
+        </additional-subgroups>
+      </classification-ecla>
+    </classifications-ecla>
+    <number-of-claims calculated="yes">13</number-of-claims>
+    <invention-title id="title_chi" date-changed="20091229" lang="chi" format="original">生成等级参数的设备和方法及生成多通道表示的设备和方法</invention-title>
+    <invention-title id="title_eng" date-changed="20091229" lang="eng" format="original">Apparatus and method for generating a level parameter and apparatus and method for generating a multi-channel representation</invention-title>
+    <parties date-changed="20091225">
+      <applicants>
+        <applicant sequence="1" app-type="applicant">
+          <addressbook lang="chi">
+            <orgname>科丁技术公司</orgname>
+            <address>
+              <address-1>瑞典斯德哥尔摩</address-1>
+            </address>
+          </addressbook>
+          <addressbook lang="eng">
+            <orgname>CODING TECHNOLOGIES AB</orgname>
+            <address>
+              <country>SE</country>
+            </address>
+          </addressbook>
+        </applicant>
+        <applicant sequence="1" app-type="applicant" data-format="original">
+          <addressbook lang="chi">
+            <orgname>科丁技术公司</orgname>
+            <address>
+              <address-1>瑞典斯德哥尔摩</address-1>
+            </address>
+          </addressbook>
+        </applicant>
+        <applicant sequence="1" app-type="applicant" data-format="docdb">
+          <addressbook lang="eng">
+            <orgname>CODING TECH AB</orgname>
+            <address>
+              <country>SE</country>
+            </address>
+          </addressbook>
+        </applicant>
+        <applicant sequence="1" app-type="applicant" data-format="docdba">
+          <addressbook lang="eng">
+            <orgname>CODING TECHNOLOGIES AB</orgname>
+            <address>
+              <country>SE</country>
+            </address>
+          </addressbook>
+        </applicant>
+      </applicants>
+      <inventors>
+        <inventor sequence="1">
+          <addressbook lang="chi">
+            <name>海科·普尔哈根</name>
+          </addressbook>
+          <addressbook lang="eng">
+            <name>PURNHAGEN HEIKO,VILLEMOES LARS,ENGDEGARD JONAS,ROEDEN JONAS,KJOERLING KRISTOFER</name>
+            <address>
+              <country>SE</country>
+            </address>
+          </addressbook>
+        </inventor>
+        <inventor sequence="2">
+          <addressbook lang="chi">
+            <name>拉尔斯·维尔莫斯</name>
+          </addressbook>
+        </inventor>
+        <inventor sequence="3">
+          <addressbook lang="chi">
+            <name>约纳斯·恩德格拉德</name>
+          </addressbook>
+        </inventor>
+        <inventor sequence="4">
+          <addressbook lang="chi">
+            <name>约纳斯·勒登</name>
+          </addressbook>
+        </inventor>
+        <inventor sequence="5">
+          <addressbook lang="chi">
+            <name>克里斯托弗·薛林</name>
+          </addressbook>
+        </inventor>
+        <inventor sequence="1" data-format="original">
+          <addressbook lang="chi">
+            <name>海科·普尔哈根</name>
+          </addressbook>
+        </inventor>
+        <inventor sequence="1" data-format="docdb">
+          <addressbook lang="eng">
+            <name>KRISTOFER PURNHAGEN HEIKO VILL</name>
+            <address>
+              <country>SE</country>
+            </address>
+          </addressbook>
+        </inventor>
+        <inventor sequence="1" data-format="docdba">
+          <addressbook lang="eng">
+            <name>PURNHAGEN HEIKO,VILLEMOES LARS,ENGDEGARD JONAS,ROEDEN JONAS,KJOERLING KRISTOFER</name>
+            <address>
+              <country>SE</country>
+            </address>
+          </addressbook>
+        </inventor>
+        <inventor sequence="2" data-format="original">
+          <addressbook lang="chi">
+            <name>拉尔斯·维尔莫斯</name>
+          </addressbook>
+        </inventor>
+        <inventor sequence="3" data-format="original">
+          <addressbook lang="chi">
+            <name>约纳斯·恩德格拉德</name>
+          </addressbook>
+        </inventor>
+        <inventor sequence="4" data-format="original">
+          <addressbook lang="chi">
+            <name>约纳斯·勒登</name>
+          </addressbook>
+        </inventor>
+        <inventor sequence="5" data-format="original">
+          <addressbook lang="chi">
+            <name>克里斯托弗·薛林</name>
+          </addressbook>
+        </inventor>
+      </inventors>
+      <agents>
+        <agent sequence="1" rep-type="attorney">
+          <addressbook lang="chi">
+            <name>中科专利商标代理有限责任公司 (王玮)</name>
+          </addressbook>
+        </agent>
+        <agent sequence="1" rep-type="attorney" data-format="original">
+          <addressbook lang="chi">
+            <name>中科专利商标代理有限责任公司 (王玮)</name>
+          </addressbook>
+        </agent>
+      </agents>
+    </parties>
+    <pct-or-regional-filing-data>
+      <document-id>
+        <country>WO</country>
+        <doc-number>EP05003848</doc-number>
+        <date>20050412</date>
+      </document-id>
+    </pct-or-regional-filing-data>
+    <pct-or-regional-publishing-data>
+      <document-id>
+        <country>WO</country>
+        <doc-number>2005/101370</doc-number>
+        <date>20051027</date>
+      </document-id>
+    </pct-or-regional-publishing-data>
+    <patent-family date-changed="20110822">
+      <main-family family-id="3935782">
+        <family-member>
+          <document-id>
+            <country>EP</country>
+            <doc-number>1735775</doc-number>
+            <kind>B8</kind>
+            <date>20081119</date>
+          </document-id>
+          <application-date>
+            <date>20050412</date>
+          </application-date>
+        </family-member>
+        <family-member>
+          <document-id>
+            <country>US</country>
+            <doc-number>20110002470</doc-number>
+            <kind>A1</kind>
+            <date>20110106</date>
+          </document-id>
+          <application-date>
+            <date>20100915</date>
+          </application-date>
+        </family-member>
+        <family-member>
+          <document-id>
+            <country>CN</country>
+            <doc-number>1965351</doc-number>
+            <kind>A</kind>
+            <date>20070516</date>
+          </document-id>
+          <application-date>
+            <date>20050412</date>
+          </application-date>
+        </family-member>
+        <family-member>
+          <document-id>
+            <country>DE</country>
+            <doc-number>602005002451</doc-number>
+            <kind>T2</kind>
+            <date>20080612</date>
+          </document-id>
+          <application-date>
+            <date>20050412</date>
+          </application-date>
+        </family-member>
+        <family-member>
+          <document-id>
+            <country>IN</country>
+            <doc-number>1774KOLNP2006</doc-number>
+            <kind>A</kind>
+            <date>20070511</date>
+          </document-id>
+          <application-date>
+            <date>20060626</date>
+          </application-date>
+        </family-member>
+        <family-member>
+          <document-id>
+            <country>CN</country>
+            <doc-number>1930608</doc-number>
+            <kind>B</kind>
+            <date>20100505</date>
+          </document-id>
+          <application-date>
+            <date>20050412</date>
+          </application-date>
+        </family-member>
+        <family-member>
+          <document-id>
+            <country>EP</country>
+            <doc-number>1735775</doc-number>
+            <kind>A1</kind>
+            <date>20061227</date>
+          </document-id>
+          <application-date>
+            <date>20050412</date>
+          </application-date>
+        </family-member>
+        <family-member>
+          <document-id>
+            <country>CN</country>
+            <doc-number>1930608</doc-number>
+            <kind>A</kind>
+            <date>20070314</date>
+          </document-id>
+          <application-date>
+            <date>20050412</date>
+          </application-date>
+        </family-member>
+        <family-member>
+          <document-id>
+            <country>AT</country>
+            <doc-number>373301</doc-number>
+            <kind>T</kind>
+            <date>20070915</date>
+          </document-id>
+          <application-date>
+            <date>20050412</date>
+          </application-date>
+        </family-member>
+        <family-member>
+          <document-id>
+            <country>DE</country>
+            <doc-number>602005002942</doc-number>
+            <kind>T2</kind>
+            <date>20080724</date>
+          </document-id>
+          <application-date>
+            <date>20050412</date>
+          </application-date>
+        </family-member>
+        <family-member>
+          <document-id>
+            <country>CN</country>
+            <doc-number>101860784</doc-number>
+            <kind>A</kind>
+            <date>20101013</date>
+          </document-id>
+          <application-date>
+            <date>20050412</date>
+          </application-date>
+        </family-member>
+        <family-member>
+          <document-id>
+            <country>JP</country>
+            <doc-number>4589962</doc-number>
+            <kind>B2</kind>
+            <date>20101201</date>
+          </document-id>
+          <application-date>
+            <date>20050412</date>
+          </application-date>
+        </family-member>
+        <family-member>
+          <document-id>
+            <country>JP</country>
+            <doc-number>4603037</doc-number>
+            <kind>B2</kind>
+            <date>20101222</date>
+          </document-id>
+          <application-date>
+            <date>20050412</date>
+          </application-date>
+        </family-member>
+        <family-member>
+          <document-id>
+            <country>US</country>
+            <doc-number>20110075848</doc-number>
+            <kind>A1</kind>
+            <date>20110331</date>
+          </document-id>
+          <application-date>
+            <date>20100831</date>
+          </application-date>
+        </family-member>
+        <family-member>
+          <document-id>
+            <country>WO</country>
+            <doc-number>2005101370</doc-number>
+            <kind>A1</kind>
+            <date>20051027</date>
+          </document-id>
+          <application-date>
+            <date>20050412</date>
+          </application-date>
+        </family-member>
+        <family-member>
+          <document-id>
+            <country>WO</country>
+            <doc-number>2005101371</doc-number>
+            <kind>A1</kind>
+            <date>20051027</date>
+          </document-id>
+          <application-date>
+            <date>20050412</date>
+          </application-date>
+        </family-member>
+        <family-member>
+          <document-id>
+            <country>SE</country>
+            <doc-number>400998</doc-number>
+            <kind>D0</kind>
+            <date>20040416</date>
+          </document-id>
+          <application-date>
+            <date>20040416</date>
+          </application-date>
+        </family-member>
+        <family-member>
+          <document-id>
+            <country>EP</country>
+            <doc-number>1695338</doc-number>
+            <kind>B1</kind>
+            <date>20070912</date>
+          </document-id>
+          <application-date>
+            <date>20050412</date>
+          </application-date>
+        </family-member>
+        <family-member>
+          <document-id>
+            <country>EP</country>
+            <doc-number>1735775</doc-number>
+            <kind>B1</kind>
+            <date>20071017</date>
+          </document-id>
+          <application-date>
+            <date>20050412</date>
+          </application-date>
+        </family-member>
+        <family-member>
+          <document-id>
+            <country>DE</country>
+            <doc-number>602005002942</doc-number>
+            <kind>D1</kind>
+            <date>20071129</date>
+          </document-id>
+          <application-date>
+            <date>20050412</date>
+          </application-date>
+        </family-member>
+        <family-member>
+          <document-id>
+            <country>AT</country>
+            <doc-number>376240</doc-number>
+            <kind>T</kind>
+            <date>20071115</date>
+          </document-id>
+          <application-date>
+            <date>20050412</date>
+          </application-date>
+        </family-member>
+        <family-member>
+          <document-id>
+            <country>ES</country>
+            <doc-number>2293578</doc-number>
+            <kind>T3</kind>
+            <date>20080316</date>
+          </document-id>
+          <application-date>
+            <date>20050412</date>
+          </application-date>
+        </family-member>
+        <family-member>
+          <document-id>
+            <country>ES</country>
+            <doc-number>2294703</doc-number>
+            <kind>T3</kind>
+            <date>20080401</date>
+          </document-id>
+          <application-date>
+            <date>20050412</date>
+          </application-date>
+        </family-member>
+        <family-member>
+          <document-id>
+            <country>IN</country>
+            <doc-number>3004KOLNP2006</doc-number>
+            <kind>A</kind>
+            <date>20070608</date>
+          </document-id>
+          <application-date>
+            <date>20061018</date>
+          </application-date>
+        </family-member>
+        <family-member>
+          <document-id>
+            <country>KR</country>
+            <doc-number>100848365</doc-number>
+            <kind>B1</kind>
+            <date>20080724</date>
+          </document-id>
+          <application-date>
+            <date>20061012</date>
+          </application-date>
+        </family-member>
+        <family-member>
+          <document-id>
+            <country>KR</country>
+            <doc-number>100848367</doc-number>
+            <kind>B1</kind>
+            <date>20080724</date>
+          </document-id>
+          <application-date>
+            <date>20060830</date>
+          </application-date>
+        </family-member>
+        <family-member>
+          <document-id>
+            <country>JP</country>
+            <doc-number>2011018060</doc-number>
+            <kind>A</kind>
+            <date>20110127</date>
+          </document-id>
+          <application-date>
+            <date>20100819</date>
+          </application-date>
+        </family-member>
+        <family-member>
+          <document-id>
+            <country>CN</country>
+            <doc-number>1965351</doc-number>
+            <kind>B</kind>
+            <date>20110511</date>
+          </document-id>
+          <application-date>
+            <date>20050412</date>
+          </application-date>
+        </family-member>
+        <family-member>
+          <document-id>
+            <country>TW</country>
+            <doc-number>I334736</doc-number>
+            <kind>B</kind>
+            <date>20101211</date>
+          </document-id>
+          <application-date>
+            <date>20050809</date>
+          </application-date>
+        </family-member>
+        <family-member>
+          <document-id>
+            <country>CN</country>
+            <doc-number>102157155</doc-number>
+            <kind>A</kind>
+            <date>20110817</date>
+          </document-id>
+          <application-date>
+            <date>20050412</date>
+          </application-date>
+        </family-member>
+        <family-member>
+          <document-id>
+            <country>US</country>
+            <doc-number>20070002971</doc-number>
+            <kind>A1</kind>
+            <date>20070104</date>
+          </document-id>
+          <application-date>
+            <date>20060908</date>
+          </application-date>
+        </family-member>
+        <family-member>
+          <document-id>
+            <country>EP</country>
+            <doc-number>1695338</doc-number>
+            <kind>A1</kind>
+            <date>20060830</date>
+          </document-id>
+          <application-date>
+            <date>20050412</date>
+          </application-date>
+        </family-member>
+        <family-member>
+          <document-id>
+            <country>DE</country>
+            <doc-number>602005002451</doc-number>
+            <kind>D1</kind>
+            <date>20071025</date>
+          </document-id>
+          <application-date>
+            <date>20050412</date>
+          </application-date>
+        </family-member>
+        <family-member>
+          <document-id>
+            <country>US</country>
+            <doc-number>20070258607</doc-number>
+            <kind>A1</kind>
+            <date>20071108</date>
+          </document-id>
+          <application-date>
+            <date>20061016</date>
+          </application-date>
+        </family-member>
+        <family-member>
+          <document-id>
+            <country>JP</country>
+            <doc-number>2007531027</doc-number>
+            <kind>T</kind>
+            <date>20071101</date>
+          </document-id>
+          <application-date>
+            <date>20050412</date>
+          </application-date>
+        </family-member>
+        <family-member>
+          <document-id>
+            <country>JP</country>
+            <doc-number>2007532960</doc-number>
+            <kind>T</kind>
+            <date>20071115</date>
+          </document-id>
+          <application-date>
+            <date>20050412</date>
+          </application-date>
+        </family-member>
+        <family-member>
+          <document-id>
+            <country>HK</country>
+            <doc-number>1093594</doc-number>
+            <kind>A1</kind>
+            <date>20071207</date>
+          </document-id>
+          <application-date>
+            <date>20050412</date>
+          </application-date>
+        </family-member>
+        <family-member>
+          <document-id>
+            <country>KR</country>
+            <doc-number>1020070001162</doc-number>
+            <kind>A</kind>
+            <date>20070103</date>
+          </document-id>
+          <application-date>
+            <date>20060830</date>
+          </application-date>
+        </family-member>
+        <family-member>
+          <document-id>
+            <country>KR</country>
+            <doc-number>1020070001226</doc-number>
+            <kind>A</kind>
+            <date>20070103</date>
+          </document-id>
+          <application-date>
+            <date>20061012</date>
+          </application-date>
+        </family-member>
+        <family-member>
+          <document-id>
+            <country>JP</country>
+            <doc-number>2011030228</doc-number>
+            <kind>A</kind>
+            <date>20110210</date>
+          </document-id>
+          <application-date>
+            <date>20100809</date>
+          </application-date>
+        </family-member>
+        <family-member>
+          <document-id>
+            <country>US</country>
+            <doc-number>7986789</doc-number>
+            <kind>B2</kind>
+            <date>20110726</date>
+          </document-id>
+          <application-date>
+            <date>20061016</date>
+          </application-date>
+        </family-member>
+      </main-family>
+      <complete-family family-id="52964395">
+        <family-member>
+          <document-id>
+            <country>US</country>
+            <doc-number>20110002470</doc-number>
+            <kind>A1</kind>
+            <date>20110106</date>
+          </document-id>
+          <application-date>
+            <date>20100915</date>
+          </application-date>
+        </family-member>
+        <family-member>
+          <document-id>
+            <country>IN</country>
+            <doc-number>1774KOLNP2006</doc-number>
+            <kind>A</kind>
+            <date>20070511</date>
+          </document-id>
+          <application-date>
+            <date>20060626</date>
+          </application-date>
+        </family-member>
+        <family-member>
+          <document-id>
+            <country>EP</country>
+            <doc-number>1735775</doc-number>
+            <kind>B1</kind>
+            <date>20071017</date>
+          </document-id>
+          <application-date>
+            <date>20050412</date>
+          </application-date>
+        </family-member>
+        <family-member>
+          <document-id>
+            <country>CN</country>
+            <doc-number>1930608</doc-number>
+            <kind>B</kind>
+            <date>20100505</date>
+          </document-id>
+          <application-date>
+            <date>20050412</date>
+          </application-date>
+        </family-member>
+        <family-member>
+          <document-id>
+            <country>JP</country>
+            <doc-number>4589962</doc-number>
+            <kind>B2</kind>
+            <date>20101201</date>
+          </document-id>
+          <application-date>
+            <date>20050412</date>
+          </application-date>
+        </family-member>
+        <family-member>
+          <document-id>
+            <country>JP</country>
+            <doc-number>4603037</doc-number>
+            <kind>B2</kind>
+            <date>20101222</date>
+          </document-id>
+          <application-date>
+            <date>20050412</date>
+          </application-date>
+        </family-member>
+        <family-member>
+          <document-id>
+            <country>CN</country>
+            <doc-number>1965351</doc-number>
+            <kind>A</kind>
+            <date>20070516</date>
+          </document-id>
+          <application-date>
+            <date>20050412</date>
+          </application-date>
+        </family-member>
+        <family-member>
+          <document-id>
+            <country>DE</country>
+            <doc-number>602005002451</doc-number>
+            <kind>D1</kind>
+            <date>20071025</date>
+          </document-id>
+          <application-date>
+            <date>20050412</date>
+          </application-date>
+        </family-member>
+        <family-member>
+          <document-id>
+            <country>ES</country>
+            <doc-number>2293578</doc-number>
+            <kind>T3</kind>
+            <date>20080316</date>
+          </document-id>
+          <application-date>
+            <date>20050412</date>
+          </application-date>
+        </family-member>
+        <family-member>
+          <document-id>
+            <country>ES</country>
+            <doc-number>2294703</doc-number>
+            <kind>T3</kind>
+            <date>20080401</date>
+          </document-id>
+          <application-date>
+            <date>20050412</date>
+          </application-date>
+        </family-member>
+        <family-member>
+          <document-id>
+            <country>KR</country>
+            <doc-number>100848365</doc-number>
+            <kind>B1</kind>
+            <date>20080724</date>
+          </document-id>
+          <application-date>
+            <date>20061012</date>
+          </application-date>
+        </family-member>
+        <family-member>
+          <document-id>
+            <country>KR</country>
+            <doc-number>100848367</doc-number>
+            <kind>B1</kind>
+            <date>20080724</date>
+          </document-id>
+          <application-date>
+            <date>20060830</date>
+          </application-date>
+        </family-member>
+        <family-member>
+          <document-id>
+            <country>CN</country>
+            <doc-number>101860784</doc-number>
+            <kind>A</kind>
+            <date>20101013</date>
+          </document-id>
+          <application-date>
+            <date>20050412</date>
+          </application-date>
+        </family-member>
+        <family-member>
+          <document-id>
+            <country>CN</country>
+            <doc-number>102157155</doc-number>
+            <kind>A</kind>
+            <date>20110817</date>
+          </document-id>
+          <application-date>
+            <date>20050412</date>
+          </application-date>
+        </family-member>
+        <family-member>
+          <document-id>
+            <country>WO</country>
+            <doc-number>2005101370</doc-number>
+            <kind>A1</kind>
+            <date>20051027</date>
+          </document-id>
+          <application-date>
+            <date>20050412</date>
+          </application-date>
+        </family-member>
+        <family-member>
+          <document-id>
+            <country>WO</country>
+            <doc-number>2005101371</doc-number>
+            <kind>A1</kind>
+            <date>20051027</date>
+          </document-id>
+          <application-date>
+            <date>20050412</date>
+          </application-date>
+        </family-member>
+        <family-member>
+          <document-id>
+            <country>EP</country>
+            <doc-number>1695338</doc-number>
+            <kind>A1</kind>
+            <date>20060830</date>
+          </document-id>
+          <application-date>
+            <date>20050412</date>
+          </application-date>
+        </family-member>
+        <family-member>
+          <document-id>
+            <country>EP</country>
+            <doc-number>1735775</doc-number>
+            <kind>A1</kind>
+            <date>20061227</date>
+          </document-id>
+          <application-date>
+            <date>20050412</date>
+          </application-date>
+        </family-member>
+        <family-member>
+          <document-id>
+            <country>CN</country>
+            <doc-number>1930608</doc-number>
+            <kind>A</kind>
+            <date>20070314</date>
+          </document-id>
+          <application-date>
+            <date>20050412</date>
+          </application-date>
+        </family-member>
+        <family-member>
+          <document-id>
+            <country>EP</country>
+            <doc-number>1695338</doc-number>
+            <kind>B1</kind>
+            <date>20070912</date>
+          </document-id>
+          <application-date>
+            <date>20050412</date>
+          </application-date>
+        </family-member>
+        <family-member>
+          <document-id>
+            <country>AT</country>
+            <doc-number>376240</doc-number>
+            <kind>T</kind>
+            <date>20071115</date>
+          </document-id>
+          <application-date>
+            <date>20050412</date>
+          </application-date>
+        </family-member>
+        <family-member>
+          <document-id>
+            <country>JP</country>
+            <doc-number>2007531027</doc-number>
+            <kind>T</kind>
+            <date>20071101</date>
+          </document-id>
+          <application-date>
+            <date>20050412</date>
+          </application-date>
+        </family-member>
+        <family-member>
+          <document-id>
+            <country>JP</country>
+            <doc-number>2007532960</doc-number>
+            <kind>T</kind>
+            <date>20071115</date>
+          </document-id>
+          <application-date>
+            <date>20050412</date>
+          </application-date>
+        </family-member>
+        <family-member>
+          <document-id>
+            <country>DE</country>
+            <doc-number>602005002451</doc-number>
+            <kind>T2</kind>
+            <date>20080612</date>
+          </document-id>
+          <application-date>
+            <date>20050412</date>
+          </application-date>
+        </family-member>
+        <family-member>
+          <document-id>
+            <country>DE</country>
+            <doc-number>602005002942</doc-number>
+            <kind>T2</kind>
+            <date>20080724</date>
+          </document-id>
+          <application-date>
+            <date>20050412</date>
+          </application-date>
+        </family-member>
+        <family-member>
+          <document-id>
+            <country>EP</country>
+            <doc-number>1735775</doc-number>
+            <kind>B8</kind>
+            <date>20081119</date>
+          </document-id>
+          <application-date>
+            <date>20050412</date>
+          </application-date>
+        </family-member>
+        <family-member>
+          <document-id>
+            <country>IN</country>
+            <doc-number>3004KOLNP2006</doc-number>
+            <kind>A</kind>
+            <date>20070608</date>
+          </document-id>
+          <application-date>
+            <date>20061018</date>
+          </application-date>
+        </family-member>
+        <family-member>
+          <document-id>
+            <country>JP</country>
+            <doc-number>2011018060</doc-number>
+            <kind>A</kind>
+            <date>20110127</date>
+          </document-id>
+          <application-date>
+            <date>20100819</date>
+          </application-date>
+        </family-member>
+        <family-member>
+          <document-id>
+            <country>CN</country>
+            <doc-number>1965351</doc-number>
+            <kind>B</kind>
+            <date>20110511</date>
+          </document-id>
+          <application-date>
+            <date>20050412</date>
+          </application-date>
+        </family-member>
+        <family-member>
+          <document-id>
+            <country>TW</country>
+            <doc-number>I334736</doc-number>
+            <kind>B</kind>
+            <date>20101211</date>
+          </document-id>
+          <application-date>
+            <date>20050809</date>
+          </application-date>
+        </family-member>
+        <family-member>
+          <document-id>
+            <country>US</country>
+            <doc-number>20070002971</doc-number>
+            <kind>A1</kind>
+            <date>20070104</date>
+          </document-id>
+          <application-date>
+            <date>20060908</date>
+          </application-date>
+        </family-member>
+        <family-member>
+          <document-id>
+            <country>SE</country>
+            <doc-number>400998</doc-number>
+            <kind>D0</kind>
+            <date>20040416</date>
+          </document-id>
+          <application-date>
+            <date>20040416</date>
+          </application-date>
+        </family-member>
+        <family-member>
+          <document-id>
+            <country>AT</country>
+            <doc-number>373301</doc-number>
+            <kind>T</kind>
+            <date>20070915</date>
+          </document-id>
+          <application-date>
+            <date>20050412</date>
+          </application-date>
+        </family-member>
+        <family-member>
+          <document-id>
+            <country>US</country>
+            <doc-number>20070258607</doc-number>
+            <kind>A1</kind>
+            <date>20071108</date>
+          </document-id>
+          <application-date>
+            <date>20061016</date>
+          </application-date>
+        </family-member>
+        <family-member>
+          <document-id>
+            <country>DE</country>
+            <doc-number>602005002942</doc-number>
+            <kind>D1</kind>
+            <date>20071129</date>
+          </document-id>
+          <application-date>
+            <date>20050412</date>
+          </application-date>
+        </family-member>
+        <family-member>
+          <document-id>
+            <country>HK</country>
+            <doc-number>1093594</doc-number>
+            <kind>A1</kind>
+            <date>20071207</date>
+          </document-id>
+          <application-date>
+            <date>20050412</date>
+          </application-date>
+        </family-member>
+        <family-member>
+          <document-id>
+            <country>KR</country>
+            <doc-number>1020070001162</doc-number>
+            <kind>A</kind>
+            <date>20070103</date>
+          </document-id>
+          <application-date>
+            <date>20060830</date>
+          </application-date>
+        </family-member>
+        <family-member>
+          <document-id>
+            <country>KR</country>
+            <doc-number>1020070001226</doc-number>
+            <kind>A</kind>
+            <date>20070103</date>
+          </document-id>
+          <application-date>
+            <date>20061012</date>
+          </application-date>
+        </family-member>
+        <family-member>
+          <document-id>
+            <country>JP</country>
+            <doc-number>2011030228</doc-number>
+            <kind>A</kind>
+            <date>20110210</date>
+          </document-id>
+          <application-date>
+            <date>20100809</date>
+          </application-date>
+        </family-member>
+        <family-member>
+          <document-id>
+            <country>US</country>
+            <doc-number>20110075848</doc-number>
+            <kind>A1</kind>
+            <date>20110331</date>
+          </document-id>
+          <application-date>
+            <date>20100831</date>
+          </application-date>
+        </family-member>
+        <family-member>
+          <document-id>
+            <country>US</country>
+            <doc-number>7986789</doc-number>
+            <kind>B2</kind>
+            <date>20110726</date>
+          </document-id>
+          <application-date>
+            <date>20061016</date>
+          </application-date>
+        </family-member>
+      </complete-family>
+    </patent-family>
+  </bibliographic-data>
+  <abstract id="abstr_chi" date-changed="20091227" lang="chi" format="original">
+    <p num="1">具有多个原始通道的多通道信号的参数表示包括参数集，当参数集与至少一个下混通道一起使用时，允许多通道重构。计算额外的等级参数(r<sub>M</sub>)，使得由等级参数加权的至少一个下混通道的能量等于原始通道的能量之和。将额外的等级参数与参数集或者与下混通道一起发送到多通道重构器。用于生成多通道表示的设备在将下混信号输入到上混频器或者上混处理内之前，使用等级参数来校正(902)至少一个所传输的下混通道的能量。</p>
+  </abstract>
+  <abstract id="abstr_eng" date-changed="20091227" lang="eng" format="original">
+    <p>The patent refers to the field of 'speech analysis or synthesis and speech recognition'. A parameter representation of a multi-channel signal having several original channels includes a parameter set, which, when used together with at least one down-mix channel al-lows a multi-channel reconstruction. An additional level parameter (rM) is calculated such that an energy of the at least one downmix channel weighted by the level parameter is equal to a sum of energies of the original channels. The additional level parameter is transmitted to a multi-channel reconstructor together with the parameter set or together with a down-mix channel. An apparatus for generat-ing a multi-channel representation uses the level parameter to correct (902) the energy of the at least one transmitted down-mix channel before entering the down-mix signal into an up-mixer or within the up-mixing process.</p>
+  </abstract>
+  <legal-data date-changed="20100813">
+    <legal-event sequence="1">
+      <publication-date>
+        <date>20070314</date>
+      </publication-date>
+      <event-code-1>C06</event-code-1>
+      <effect>+</effect>
+      <legal-description>PUBLICATION</legal-description>
+      <status-identifier>N</status-identifier>
+      <docdb-publication-number> CN     1930608A</docdb-publication-number>
+    </legal-event>
+    <legal-event sequence="2">
+      <publication-date>
+        <date>20070516</date>
+      </publication-date>
+      <event-code-1>C10</event-code-1>
+      <legal-description>REQUEST OF EXAMINATION AS TO SUBSTANCE</legal-description>
+      <status-identifier>N</status-identifier>
+      <docdb-publication-number> CN     1930608A</docdb-publication-number>
+    </legal-event>
+    <legal-event sequence="3">
+      <publication-date>
+        <date>20100505</date>
+      </publication-date>
+      <event-code-1>C14</event-code-1>
+      <effect>+</effect>
+      <legal-description>GRANTED</legal-description>
+      <status-identifier>N</status-identifier>
+      <docdb-publication-number> CN     1930608A</docdb-publication-number>
+    </legal-event>
+  </legal-data>
+  <description id="descr_chi" lang="chi" format="original" date-changed="20091225">
+    <technical-field>
+      <p id="p-d0-zh" num="001">技术领域 		 	 	 
+            <br /></p>
+      <p id="p-d1-zh" num="002">本发明涉及使用空间参数对音频信号多通道表示进行编码。本发 	    	 
+            <br />明公开了用于根据少于输出通道数的多个通道来估计和定义用来重建 		 	 	 
+            <br />多通道信号的新方法。具体地讲，本发明旨在最小化多通道表示的比  		  	 
+            <br />特率，并提供多通道信号的编码表示，使得能够对所有可能地通道配	 	 	 	 
+            <br />置容易地编码和解码数据。 	    	 
+            <br /></p>
+    </technical-field>
+    <background-art>
+      <p id="p-d2-zh" num="003">背景技术 		 	 	 
+            <br /></p>
+      <p id="p-d3-zh" num="004">在PCT/SE02/01372“Efficient and scalable Parametric Stereo coding 	    	 
+            <br />for Low Bit rate Audio Coding Applications”中已经表明，可以根据给 		 	 	 
+            <br />出立体声像的非常紧凑表示的单声道信号，来重建逼近原始立体声像  		  	 
+            <br />的立体声像。基本原理是将输入信号划分为频带和时间段，估计通道	 	 	 	 
+            <br />间强度差(IID)和通道间相干性(ICC)。第一参数是特定频带中两 	    	 
+            <br />个通道之间功率分布的测量，第二参数是特定频带中两个通道之间相 		 	 	 
+            <br />关性的估计。在解码器一侧，通过根据IID数据在两个输出通道之间  		  	 
+            <br />分配单声道信号，并且添加去相关信号以保留原始立体声通道的通道	 	 	 	 
+            <br />相关性，来根据单声道信号重建立体声像。 	    	 
+            <br /></p>
+      <p id="p-d4-zh" num="005">对于多通道(在此环境中，多通道意味着多于两个输出通道)的	 	 	 	 
+            <br />情况，必须考虑几个其他问题。存在数种多通道配置。最常见的是5.1 	    	 
+            <br />配置(中央通道、正面左/右通道、环绕左/右通道、和LFE通道)。然 		 	 	 
+            <br />而，还存在许多其他配置。根据完整的编码器/解码器系统的观点，希  		  	 
+            <br />望系统对所有通道配置可以使用相同的参数集(例如，IID和ICC)	 	 	 	 
+            <br />或其子集。ITU-R BS.775定义了数种下混方案，能够根据给定的通道 	    	 
+            <br />配置获得包括较少通道的通道配置。而不是总是要对所有通道解码和 		 	 	 
+            <br />依赖下混，可能希望具有一种多通道表示，使得接收机能够在解码通  		  	 
+            <br />道之前立即提取通道配置有关的参数。另外，根据可扩展或嵌入式编 	    	 
+            <br />码的观点，希望固有地可扩展的参数集，其中，例如可以在位流中的 		 	 	 
+            <br />增强层中存储与环绕通道相对应的数据。  		  	 
+            <br /></p>
+      <p id="p-d5-zh" num="006">与上面不同，还可能希望能够根据所处理的信号特性使用不同的 		 	 	 
+            <br />参数定义，以便在参数化之间切换，这导致针对当前所处理信号段的  		  	 
+            <br />最小比特率开销。	 	 	 	 
+            <br /></p>
+      <p id="p-d6-zh" num="007">在本领域中，已知另一种使用和信号或下混信号以及额外参数侧  		  	 
+            <br />面信息的多通道信号表示，称作双耳提示编码(binaural cue coding，	 	 	 	 
+            <br />BCC)。在“Binaural Cue Coding-Part 1：Psycho-Acoustic Fundamentals 	    	 
+            <br />and Design Principles”，IEEE Transactions on Speech and Audio 		 	 	 
+            <br />Processing，vol.11，No.6，November 2003，F.Baumgarte，C.Faller和  		  	 
+            <br />“Binaural Cue Coding.Part 2：Schemes and Applications”，IEEE	 	 	 	 
+            <br />Transactions on Speech and Audio Processing，vol.11，No.6，November 	    	 
+            <br />2003，C.Faller&amp;F.Baumgarte中描述了这种技术。 		 	 	 
+            <br /></p>
+      <p id="p-d7-zh" num="008">一般而言，双耳提示编码是一种根据一个下混音频通道和侧面信 	    	 
+            <br />息进行多通道空间呈现的方法。BCC编码器要计算的且BCC解码器 		 	 	 
+            <br />用于音频重构或音频呈现的数个参数包括通道间等级差、通道间时间  		  	 
+            <br />差和通道间相干性参数。这些通道间提示是对空间像的感觉的确定因	 	 	 	 
+            <br />素。这些参数是针对原始多通道信号的时间样本块所给出的，并且还 	    	 
+            <br />是频率选择性的，从而每个多通道信号样本块具有针对数个频带的数 		 	 	 
+            <br />个提示。在一般的C播放通道情况下，在每个子带中考虑通道对，即，  		  	 
+            <br />每个通道相对于参考通道之间的通道间等级差和通道间时间差。对于	 	 	 	 
+            <br />每个通道间等级差，将一个通道定义为参考通道。利用通道间等级差 	    	 
+            <br />和通道间时间差，可以向所使用的播放设置的扬声器对中一对之间的 		 	 	 
+            <br />任意方向呈现源。为了确定所呈现的源的宽度或扩散，对于所有音频  		  	 
+            <br />通道，每个子带考虑一个参数就足够了。该参数是通道间相干性参数。	 	 	 	 
+            <br />通过修改子带信号使所有可能的通道对具有相同的通道间相干性参 	    	 
+            <br />数，来控制所呈现的源的宽度。 		 	 	 
+            <br /></p>
+      <p id="p-d8-zh" num="009">在BCC编码中，确定参考通道1和任何其他通道之间的所有通 	    	 
+            <br />道间等级差。例如，当确定中央通道为参考通道时，计算左通道和中 		 	 	 
+            <br />央通道之间的第一通道间等级差、右通道和中央通道之间的第二通道	 	 	 	 
+            <br />间等级差、左环绕通道和中央通道之间的第三通道间等级差、和右环 	    	 
+            <br />绕通道和中央通道之间的第四通道间等级差。这种情况描述了五通道 		 	 	 
+            <br />方案。当五通道方案另外包括低频增强通道(也称作“重低音”通道)  		  	 
+            <br />时，计算低频增强通道和作为信号参考通道的中央通道之间的第五通	 	 	 	 
+            <br />道间等级差。 	    	 
+            <br /></p>
+      <p id="p-d9-zh" num="010">当使用信号下混通道(也称作“单声道”通道)和诸如ICLD(通	 	 	 	 
+            <br />道间等级差)、ICTD(通道间时间差)和ICC(通道间相干性)之类 	    	 
+            <br />所传送的提示重构原始多通道时，使用这些提示修改单声道信号的频 		 	 	 
+            <br />谱系数。使用正实数执行等级修改，其中正实数确定每个频谱系数的  		  	 
+            <br />等级修改。使用复数生成通道间时间差，其中复数的大小确定每个频	 	 	 	 
+            <br />谱系数的相位修改。另一函数确定相干性影响。通过首先计算参考通 	    	 
+            <br />道的因子，来计算每个通道的等级修改的因子。计算参考通道的因子， 		 	 	 
+            <br />使得对每个频率分区，所有通道的功率之和与和信号的功率相同。然  		  	 
+            <br />后，根据参考通道的等级修改因子，使用各自的ICLD参数，计算其	 	 	 	 
+            <br />他通道的等级修改因子。 	    	 
+            <br /></p>
+      <p id="p-d10-zh" num="011">于是，为了执行BCC合成，要计算参考通道的等级修改因子。	 	 	 	 
+            <br />为了该计算，一个频带的所有ICLD参数都是必须的。然后，根据该 	    	 
+            <br />信号通道的此等级修改，可以计算非参考通道的其他通道的等级修改 		 	 	 
+            <br />因子。  		  	 
+            <br /></p>
+      <p id="p-d11-zh" num="012">这种方法的缺点在于，为了完美的重构，需要每一个通道间等级 		 	 	 
+            <br />差。当存在易出错的传输通道时，这种要求甚至更成问题。所传输的  		  	 
+            <br />通道间等级差之中的每个错误将导致重构多通道信号中的错误，因为	 	 	 	 
+            <br />需要用每个通道间等级差来计算多通道输出信号中的每一个。另外， 	    	 
+            <br />当在传输期间丢失了通道间等级差时，不能进行重构，尽管这种通道 		 	 	 
+            <br />间等级差例如仅仅对于左环绕通道或右环绕通道是必要的，但这些通  		  	 
+            <br />道对于多通道重构没有那么重要，因为大部分信息包括在正面左通道	 	 	 	 
+            <br />(后文称作左通道)、正面右通道(后文称作右通道)或中央通道中。 	    	 
+            <br />当在传输期间丢失了低频增强通道的通道间等级差时，情况变得更恶 		 	 	 
+            <br />劣。在这种情况下，不可能进行多通道重构，或者只可能进行错误的  		  	 
+            <br />多通道重构，尽管低频增强通道对于听众的收听舒适性不是决定性的。 	    	 
+            <br />于是，单个通道间等级差中的错误蔓延为每个重构输出通道内的错误。 		 	 	 
+            <br /></p>
+      <p id="p-d12-zh" num="013">参数多通道表示的问题在于，通常，给出通道间等级差，例如， 	    	 
+            <br />BCC编码中的ICLD，或者其他参数多通道表示中的平衡值，作为相 		 	 	 
+            <br />对值，而不是绝对值。在BCC中，ICLD参数描述通道和参考通道之  		  	 
+            <br />间的等级差。也可以给出平衡值，作为通道对中两个通道之间的比例。	 	 	 	 
+            <br />当重构多通道信号时，将这种等级差或平衡参数应用于基础通道，可 	    	 
+            <br />以是单声道基础通道或具有两个基础通道的立体声基础通道信号。于 		 	 	 
+            <br />是，例如在五或六个重构输出通道之间分配至少一个基础通道中所包  		  	 
+            <br />括的能量。于是，重构输出通道中的绝对能量由通道间等级差或平衡	 	 	 	 
+            <br />参数以及接收机输入处的下混信号能量确定。 	    	 
+            <br /></p>
+      <p id="p-d13-zh" num="014">当接收机输入处的下混信号能量相对于编码器输出的下混信号	 	 	 	 
+            <br />变化时，将出现等级改变。在这种情况下，要强调的是，取决于所使 	    	 
+            <br />用的参数化方案，当参数是频率选择性的时，这种等级变化不仅会导 		 	 	 
+            <br />致重构信号的一般音量变化，而且还会导致严重的假象。因为输出通  		  	 
+            <br />道在该特定频带中的频率分量具有太低或太高的等级，例如，当对下	 	 	 	 
+            <br />混信号的特定频带的操作多于频率刻度上别处的频带时，这种操作在 	    	 
+            <br />重构输出信号中容易显现。 		 	 	 
+            <br /></p>
+      <p id="p-d14-zh" num="015">另外，时变等级操作也会导致重构输出信号的整体等级随时间变 	    	 
+            <br />化，因此感觉到讨厌的假象。 		 	 	 
+            <br /></p>
+      <p id="p-d15-zh" num="016">虽然上面的情况集中在编码、传输和解码下混信号所导致的等级 	    	 
+            <br />操作，但也可能出现其他等级偏差。由于被下混为一个或两个通道的 		 	 	 
+            <br />不同通道之间的相位依赖性，可能出现这样的情况：单声道信号具有  		  	 
+            <br />的能量不等于原始信号的能量和。因为通常在样本方面	 	 	 	 
+            <br />(sample-wise)，即通过添加时间波形，执行下混，所以左信号和右 	    	 
+            <br />信号之间例如180度的相位差将导致下混信号中两个通道的完全抵 		 	 	 
+            <br />消，这将导致零能量，尽管两个信号肯定都具有一定的信号能量。虽  		  	 
+            <br />然在通常情况下这种极端情况不太可能发生，但是仍将出现能量变化，	 	 	 	 
+            <br />因为所有信号当然并非完全不相关。这种变化也可以导致重构输出信 	    	 
+            <br />号的音量波动，并且还将导致假象，因为重构输出信号的能量将不同 		 	 	 
+            <br />于原始多通道信号的能量。	 	 	 	 
+            <br /></p>
+    </background-art>
+    <disclosure>
+      <p id="p-d16-zh" num="017">发明内容 	    	 
+            <br /></p>
+      <p id="p-d17-zh" num="018">本发明的目的是提供一种参数化概念，这导致具有改进输出质量	 	 	 	 
+            <br />的多通道重构。 	    	 
+            <br /></p>
+      <p id="p-d18-zh" num="019">该目的通过根据权利要求1所述的用于生成等级参数的设备、根	 	 	 	 
+            <br />据权利要求7所述的用于生成重构多通道表示的设备、根据权利要求 	    	 
+            <br />9所述的用于生成等级参数的方法、根据权利要求10所述的用于生成 		 	 	 
+            <br />重构多通道表示的方法、根据权利要求11所述的计算机程序或者根据  		  	 
+            <br />权利要求12所述的参数表示来实现。	 	 	 	 
+            <br /></p>
+      <p id="p-d19-zh" num="020">本发明基于如下发现：为了高质量重构，以及由于灵活的编码/  		  	 
+            <br />传输和解码方案，与下混信号或多通道信号的参数表示一起发送额外	 	 	 	 
+            <br />的等级参数，从而多通道重构器可以使用该等级参数和等级差参数以 	    	 
+            <br />及下混信号一起来重新生成多通道输出信号，该输出信号不会出现等 		 	 	 
+            <br />级变化或频率选择性的、等级导致的假象。  		  	 
+            <br /></p>
+      <p id="p-d20-zh" num="021">根据本发明，如此计算等级参数，使得由等级参数加权(例如， 		 	 	 
+            <br />相乘或相除)的至少一个下混通道的能量等于原始通道的能量和。  		  	 
+            <br /></p>
+      <p id="p-d21-zh" num="022">在一个实施例中，根据下混通道的能量和原始通道的能量和之比 		 	 	 
+            <br />得到等级参数。在该实施例中，在编码器一侧计算下混通道和原始多  		  	 
+            <br />通道信号之间的等级差，并且输入到数据流中作为等级校正因子，将	 	 	 	 
+            <br />等级校正因子视为额外的参数，这也是对于下混通道的样本块以及特 	    	 
+            <br />定频带给出的。于是，对于存在通道间等级差和平衡参数的每个块和 		 	 	 
+            <br />频带，加入了新的等级参数。  		  	 
+            <br /></p>
+      <p id="p-d22-zh" num="023">本发明还提供了灵活性，因为允许传输多通道信号的下混，这不 		 	 	 
+            <br />同于参数所基于的下混。例如，当广播台不希望广播由多通道编码器  		  	 
+            <br />所生成的下混信号，而是希望广播由音响工程师在音响工作室中生成	 	 	 	 
+            <br />的下混信号(这是基于人类的主观和创造性印象的下混)时，可能出 	    	 
+            <br />现这种情况。尽管如此，广播台可能希望与此“主下混”结合还发送 		 	 	 
+            <br />多通道参数。根据本发明，参数集和主下混之间的适配由等级参数提  		  	 
+            <br />供，在这种情况下，等级参数是主下混和参数集所基于的参数下混之	 	 	 	 
+            <br />间的等级差。 		 	 	 
+            <br /></p>
+      <p id="p-d23-zh" num="024">本发明的优点在于：额外的等级参数提供了改进的输出质量和改 	    	 
+            <br />进的灵活性，因为与一个下混信号有关的参数集也可以适配于不是在 		 	 	 
+            <br />参数计算期间生成的另一下混。  		  	 
+            <br /></p>
+      <p id="p-d24-zh" num="025">为了比特率减小的目的，优选的是，应用新等级参数的Δ编码以 		 	 	 
+            <br />及量化和熵编码。具体地讲，Δ编码将导致高编码增益，因为带与带  		  	 
+            <br />之间或者时间块与时间块之间的变化将不会如此之高，从而获得相对	 	 	 	 
+            <br />小的差值，这在与随后的诸如Huffman编码器之类的熵编码结合使用 	    	 
+            <br />时允许良好的编码增益。 		 	 	 
+            <br /></p>
+      <p id="p-d25-zh" num="026">在本发明的优选实施例中，使用多通道信号参数表示，其包括至 	    	 
+            <br />少两个不同的平衡参数，平衡参数指示两个不同通道对之间的平衡。 		 	 	 
+            <br />具体地讲，灵活性、可扩展性、错误鲁棒性、甚至比特率效率是由于  		  	 
+            <br />作为第一平衡参数基础的第一通道对不同于作为第二平衡参数的第二	 	 	 	 
+            <br />通道对的结果，其中形成这些通道对的四个通道彼此都不同。 	    	 
+            <br /></p>
+      <p id="p-d26-zh" num="027">于是，优选的概念偏离了单个参考通道的概念，并且使用多平衡	 	 	 	 
+            <br />或超平衡的概念，这对于人类的声音印象更为直观和自然。具体地讲， 	    	 
+            <br />第一和第二平衡参数之下的参数对可以包括原始通道、下混通道，或 		 	 	 
+            <br />者优选地，输入通道之间的特定组合。  		  	 
+            <br /></p>
+      <p id="p-d27-zh" num="028">已经发现，根据作为第一通道的中央通道以及作为通道对的第二 		 	 	 
+            <br />通道的左原始通道和右原始通道之和得到的平衡参数对于提供中央通  		  	 
+            <br />道和左右通道之间的确切能量分配尤其有用。应该注意，在此环境中，	 	 	 	 
+            <br />这三个通道通常包括音频场景的大部分信息，其中特别是左右立体声 	    	 
+            <br />定位不仅受到左和右之间平衡的影响，而且还受到中央与左和右之和 		 	 	 
+            <br />之间平衡的影响。根据本发明的优选实施例，使用此平衡参数，来反  		  	 
+            <br />映这种观察。	 	 	 	 
+            <br /></p>
+      <p id="p-d28-zh" num="029">优选的是，当发送单个单声道下混信号时，已经发现，除了中央  		  	 
+            <br />/左加上右平衡参数之外，左/右平衡参数、背面-左/背面-右平衡参数	 	 	 	 
+            <br />以及正面/背面平衡参数是比特率高效参数表示的最佳解，该最佳解是 	    	 
+            <br />灵活的，具有错误鲁棒性，并且在较大程度无假象的。 		 	 	 
+            <br /></p>
+      <p id="p-d29-zh" num="030">在接收机一侧，与其中仅由所发送的信息来计算每个通道的BCC 	    	 
+            <br />合成不同，优选的多通道表示还利用有关用来生成下混通道的下混方  		  	 
+            <br />案的信息。于是，除了平衡参数之外，还使用现有技术系统中不使用	 	 	 	 
+            <br />的关于下混方案的信息来进行上混。因此，执行上混操作，使得形成 	    	 
+            <br />针对平衡参数的通道对的重构多通道信号内的通道之间的平衡由平衡 		 	 	 
+            <br />参数确定。  		  	 
+            <br /></p>
+      <p id="p-d30-zh" num="031">这一概念，即对不同平衡参数使用不同通道对，使得可以生成一 		 	 	 
+            <br />些通道，而不需要每个所传输平衡参数的知识。特别是，不需要关于  		  	 
+            <br />任何背面-左/背面-右平衡或者正面/背面平衡的任何知识，可以重构	 	 	 	 
+            <br />左、右和中央通道。从位流提取额外参数或者线接收器发送额外平衡 	    	 
+            <br />参数允许重构一个或多个额外通道，这种效果允许非常精调的可扩展 		 	 	 
+            <br />性。这与现有技术的单参考系统不同，在现有技术的单参考系统中，  		  	 
+            <br />需要每个通道间电平差来重构所有重构输出通道的全部或仅仅其子	 	 	 	 
+            <br />组。 	    	 
+            <br /></p>
+      <p id="p-d31-zh" num="032">优选概念的灵活性还在于，平衡参数的选择能够适于特定的重构	 	 	 	 
+            <br />环境。例如，当五通道设置形成原始多通道信号设置，以及四通道设 	    	 
+            <br />置形成重构多通道设置，即，仅具有单个环绕扬声器，例如位于听众 		 	 	 
+            <br />身后时，正面-背面平衡参数允许计算组合环绕通道，而不需要关于左  		  	 
+            <br />环绕通道和右环绕通道的任何知识。这与单参考通道系统不同，在单	 	 	 	 
+            <br />参考通道系统中，必须从数据流中提取针对左环绕通道的通道间等级 	    	 
+            <br />差以及针对右环绕通道的通道间等级差。然后，必须计算左环绕通道 		 	 	 
+            <br />和右环绕通道。最后，必须加上两个通道，以获得四通道再现配置的  		  	 
+            <br />单个环绕扬声器通道。在更直观和更加面向用户的平衡参数表示中，	 	 	 	 
+            <br />不需要执行所有这些步骤，因为这种表示自动给予组合环绕通道，因 	    	 
+            <br />为平衡参数表示不依赖单个参考通道，而是还允许使用原始通道的组 		 	 	 
+            <br />合作为平衡参数通道对的通道。  		  	 
+            <br /></p>
+      <p id="p-d32-zh" num="033">本发明涉及音频信号的参数化多通道表示的问题。本发明提供了 		 	 	 
+            <br />对多通道表示定义适当参数的有效方式，并且还提供了不必对所有通  		  	 
+            <br />道解码就能提取代表所希望的通道配置的参数的能力。本发明还解决	 	 	 	 
+            <br />了对给定信号段选择最优参数配置以最小化编码给定信号段的空间参 	    	 
+            <br />数所需比特率的问题。本发明还提出了在一般的多通道环境中如何应 		 	 	 
+            <br />用先前仅适用于双通道情况的去相关方法。	 	 	 	 
+            <br /></p>
+      <p id="p-d33-zh" num="034">在优选实施例中，本发明包括如下特征：  		  	 
+            <br /></p>
+      <p id="p-d34-zh" num="035">-在编码器一侧，将多通道信号下混为一个或两个通道表示； 		 	 	 
+            <br /></p>
+      <p id="p-d35-zh" num="036">-给定多通道信号，或者以灵活的方式或者以每帧为基础，定义 	    	 
+            <br />表示多通道信号的参数，以便最小化比特率，或者以便使解码 		 	 	 
+            <br />器能够提取位流等级上的通道配置；  		  	 
+            <br /></p>
+      <p id="p-d36-zh" num="037">-在解码器一侧，给定解码器当前所支持的通道配置，提取相关 		 	 	 
+            <br />参数集；  		  	 
+            <br /></p>
+      <p id="p-d37-zh" num="038">-给定当前通道配置，创建所需数目的彼此去相关信号； 		 	 	 
+            <br /></p>
+      <p id="p-d38-zh" num="039">-给定从位流数据解码的参数集以及去相关信号，重建输出信 	    	 
+            <br />号。 		 	 	 
+            <br /></p>
+      <p id="p-d39-zh" num="040">-多通道音频信号的参数化定义，从而无论通道配置如何，可以 	    	 
+            <br />使用相同的参数或参数子集。 		 	 	 
+            <br /></p>
+      <p id="p-d40-zh" num="041">-多通道音频信号的参数化定义，从而可以在可扩展编码方案中 	    	 
+            <br />使用参数，其中在可扩展流的不同层中传输参数集的子集。 		 	 	 
+            <br /></p>
+      <p id="p-d41-zh" num="042">-多通道音频信号的参数化定义，从而解码器输出信号的能量重 	    	 
+            <br />构不受用来编码下混信号的底层音频编解码器的影响。 		 	 	 
+            <br /></p>
+      <p id="p-d42-zh" num="043">-在多通道音频信号的不同参数化之间切换，从而最小化编码参 	    	 
+            <br />数化的比特率开销。 		 	 	 
+            <br /></p>
+      <p id="p-d43-zh" num="044">-多通道音频信号的参数化定义，其中包括表示下混信号的能量 	    	 
+            <br />校正因子的参数。 		 	 	 
+            <br /></p>
+      <p id="p-d44-zh" num="045">-使用数个彼此去相关的去相关器来重建多通道信号。 	    	 
+            <br /></p>
+      <p id="p-d45-zh" num="046">-根据上混矩阵H重建多通道信号，上混矩阵H是根据所传输	 	 	 	 
+            <br />的参数集计算的。 	    	 
+            <br /></p>
+    </disclosure>
+    <description-of-drawings>
+      <p id="p-d46-zh" num="047">附图说明 		 	 	 
+            <br /></p>
+      <p id="p-d47-zh" num="048">现在将参考附图描述本发明，这些描述仅作为示例而不是限制本 	    	 
+            <br />发明的范围或精神，在附图中： 		 	 	 
+            <br /></p>
+      <p id="p-d48-zh" num="049">图1示出了本发明中使用的用于5.1通道配置的命名法； 	    	 
+            <br /></p>
+      <p id="p-d49-zh" num="050">图2示出了本发明优选实施例的可能编码器实施方式；	 	 	 	 
+            <br /></p>
+      <p id="p-d50-zh" num="051">图3示出了本发明优选实施例的可能解码器实施方式；	 	 	 	 
+            <br /></p>
+      <p id="p-d51-zh" num="052">图4示出了根据本发明的多通道信号的一种优选参数化；  		  	 
+            <br /></p>
+      <p id="p-d52-zh" num="053">图5示出了根据本发明的多通道信号的一种优选参数化； 		 	 	 
+            <br /></p>
+      <p id="p-d53-zh" num="054">图6示出了根据本发明的多通道信号的一种优选参数化； 	    	 
+            <br /></p>
+      <p id="p-d54-zh" num="055">图7示出了生成单个基础通道或两个基础通道的下混方案的示意	 	 	 	 
+            <br />设置； 	    	 
+            <br /></p>
+      <p id="p-d55-zh" num="056">图8示出了上混方案的示意表示，上混方案基于本发明的平衡参	 	 	 	 
+            <br />数和关于下混方案的信息； 	    	 
+            <br /></p>
+      <p id="p-d56-zh" num="057">图9a示意性地示出了根据本发明的编码器侧等级参数的确定；	 	 	 	 
+            <br /></p>
+      <p id="p-d57-zh" num="058">图9b示意性地示出了根据本发明的解码器侧等级参数的使用；  		  	 
+            <br /></p>
+      <p id="p-d58-zh" num="059">图10a示出了可扩展位流，在该位流的不同层中，具有多通道参 		 	 	 
+            <br />数化的不同部分；  		  	 
+            <br /></p>
+      <p id="p-d59-zh" num="060">图10b示出了可扩展性表，指示使用哪些平衡参数可以构建哪些 		 	 	 
+            <br />通道，以及没有使用或计算哪些平衡参数和通道；以及  		  	 
+            <br /></p>
+      <p id="p-d60-zh" num="061">图11示出了根据本发明的上混矩阵的应用。 		 	 	 
+            <br /></p>
+    </description-of-drawings>
+    <mode-for-invention>
+      <p id="p-d61-zh" num="062">具体实施方式 	    	 
+            <br /></p>
+      <p id="p-d62-zh" num="063">下述实施例仅仅是对本发明的原理应用在音频信号的多通道表	 	 	 	 
+            <br />示方面的说明。应该理解，下面所述的布置和细节的修改和改变对本 	    	 
+            <br />领域技术人员而言是显而易见的。因此，本发明仅由所附权利要求的 		 	 	 
+            <br />范围限制，而非由此处作为对实施例的说明和解释而提出的具体细节  		  	 
+            <br />来限制。	 	 	 	 
+            <br /></p>
+      <p id="p-d63-zh" num="064">在下面概述如何参数化IID和ICC参数以及如何应用它们以重建  		  	 
+            <br />音频信号多通道表示的本发明描述中，假设所有引用的信号都是滤波	 	 	 	 
+            <br />器组中的子带信号，或者相应通道的全部频率范围中一部分的某些其 	    	 
+            <br />他频率选择性表示。因此，应该理解，本发明不限于具体滤波器组， 		 	 	 
+            <br />并且在下面针对信号的子带表示的一个频带概述了本发明，并且相同  		  	 
+            <br />操作适用于所有子带信号。	 	 	 	 
+            <br /></p>
+      <p id="p-d64-zh" num="065">虽然平衡参数也称作“通道间强度差(IID)”参数，要强调的是，  		  	 
+            <br />通道对之间的平衡参数不必是通道对的第一通道中的能量或强度与通	 	 	 	 
+            <br />道对中第二通道的能量或强度之比。一般而言，平衡参数指示通道对 		 	 	 
+            <br />的两个通道之间声音源的定位。虽然这种定位通常由能量/等级/强度  		  	 
+            <br />差给出，但是可以使用信号的其他特性，例如两个通道的功率测量或	 	 	 	 
+            <br />者通道的时间或频率包络等。 	    	 
+            <br /></p>
+      <p id="p-d65-zh" num="066">在图1中，示出了5.1通道配置的不同通道，其中a(t)101表示	 	 	 	 
+            <br />左环绕通道，b(t)102表示左前通道，c(t)103表示中央通道，d(t)104 	    	 
+            <br />表示右前通道，e(t)105表示右环绕通道，f(t)106表示LFE(低频效 		 	 	 
+            <br />果)通道。  		  	 
+            <br /></p>
+      <p id="p-d66-zh" num="067">假设将期望算符定义为： 		 	 	 
+            <br /></p>
+      <p id="p-d67-zh" num="068">
+        <br />
+      </p>
+      <p id="p-d68-zh" num="069">于是，上述通道的能量可以根据如下等式定义(这里以左环绕通 	    	 
+            <br />道为示例)： 		 	 	 
+            <br /></p>
+      <p id="p-d69-zh" num="070">A＝E[a<sup>2</sup>(t)] 	    	 
+            <br /></p>
+      <p id="p-d70-zh" num="071">五个通道在编码器一侧下混为双通道表示或单通道表示。这可以	 	 	 	 
+            <br />以多种方式来进行，并且一种常用方式是根据如下等式定义的ITU下 	    	 
+            <br />混： 		 	 	 
+            <br /></p>
+      <p id="p-d71-zh" num="072">5.1到双通道下混： 	    	 
+            <br /></p>
+      <p id="p-d72-zh" num="073">l<sub>d</sub>(t)＝αb(t)+βa(t)+γc(t)+δf(t)	 	 	 	 
+            <br /></p>
+      <p id="p-d73-zh" num="074">r<sub>d</sub>(t)＝αd(t)+βe(t)+γc(t)+δf(t)  		  	 
+            <br /></p>
+      <p id="p-d74-zh" num="075">和5.1到单通道下混： 		 	 	 
+            <br /></p>
+      <p id="p-d75-zh" num="076">
+        <br />
+      </p>
+      <p id="p-d76-zh" num="077">常数α、β、γ和δ的常用值是 	    	 
+            <br /></p>
+      <p id="p-d77-zh" num="078">α＝1，	 	 	 	 
+            及δ＝0。 	    	 
+            <br /></p>
+      <p id="p-d78-zh" num="079">IDD参数定义为两个任意选择的通道或者通道加权组的能量比。	 	 	 	 
+            <br />给定5.1通道配置的上述通道的能量，可以定义多个IDD参数集合。 	    	 
+            <br /></p>
+      <p id="p-d79-zh" num="080">图7示出了使用上述等式来计算基于单个的通道m或优选的两个	 	 	 	 
+            <br />基于立体声的通道l<sub>d</sub>和r<sub>d</sub>的一般下混频器700。一般而言，下混频器 	    	 
+            <br />使用特定的下混信息。在线性下混的优选实施例中，该下混信息包括  		  	 
+            <br />加权因子α、β、γ和δ。在本领域中已知，可以使用更多或更少的常数	 	 	 	 
+            <br />或非常数加权因子。 	    	 
+            <br /></p>
+      <p id="p-d80-zh" num="081">在ITU推荐的下混中，将α设置为1，β和γ设置为相等，并且等	 	 	 	 
+            <br />于0.5的平方根，并且将δ设置为0。一般而言，因子α可以在1.5和 	    	 
+            <br />0.5之间变化。另外，因子β和γ可以彼此不同，并且在0和1之间变化。 		 	 	 
+            <br />对低频增强通道f(t)同样如此。该通道的因子δ可以在0和1之间变化。  		  	 
+            <br />另外，左下混和右下混的因子不必彼此相等。当考虑非自动下混(例	 	 	 	 
+            <br />如，由音响工程师执行)时，这是显而易见。音响工程师更注重执行 	    	 
+            <br />创造性下混而非由任何数学规则所指导的下混。实际上，音响工程师 		 	 	 
+            <br />由其自身的创造性感觉来引导。当这种“创造性”下混由特定参数集  		  	 
+            <br />来记录时，根据本发明将由图8所示的本发明上混频器来使用，该上	 	 	 	 
+            <br />混频器不仅由参数来指导，而且还由关于下混方案的额外信息来指导。 	    	 
+            <br /></p>
+      <p id="p-d81-zh" num="082">当如图7所示执行了线性下混时，加权参数是上混频器要使用的	 	 	 	 
+            <br />关于下混方案的优选信息。然而，当存在信号方案中所使用的其他信 	    	 
+            <br />息时，上混频器也可以使用该其他信息作为关于下混方案的信息。例 		 	 	 
+            <br />如，这种其他信息可以是特定的矩阵元素或特定因子或上混矩阵的矩  		  	 
+            <br />阵元素内的函数，例如如图11所示。	 	 	 	 
+            <br /></p>
+      <p id="p-d82-zh" num="083">给定图1所示的5.1通道配置并观察其他通道配置如何涉及5.1  		  	 
+            <br />通道配置：对于三通道的情况，其中环绕通道不可用，即，根据上面	 	 	 	 
+            <br />的标记，B、C和D可用。对于四通道配置，B、C和D可用，并且 	    	 
+            <br />表示单个环绕通道的A和E的组合也可用，或者在此环境中更一般地 		 	 	 
+            <br />称作背面通道。  		  	 
+            <br /></p>
+      <p id="p-d83-zh" num="084">本发明使用适用于所有这些通道的IID参数，即5.1通道配置的 		 	 	 
+            <br />四通道子集具有描述5.1通道的IID参数集内的相应子集。  		  	 
+            <br /></p>
+      <p id="p-d84-zh" num="085">下面的IID参数集解决此问题： 		 	 	 
+            <br /></p>
+      <p id="p-d85-zh" num="086">
+        <br />
+      </p>
+      <p id="p-d86-zh" num="087">
+        <br />
+      </p>
+      <p id="p-d87-zh" num="088">
+        <br />
+      </p>
+      <p id="p-d88-zh" num="089">
+        <br />
+      </p>
+      <p id="p-d89-zh" num="090">
+        <br />
+      </p>
+      <p id="p-d90-zh" num="091">显而易见，r<sub>1</sub>参数对应于左下混通道和右通道下混之间的能量比。 		 	 	 
+            <br />r<sub>2</sub>参数对应于中央通道和左右前通道之间的能量比。r<sub>3</sub>参数对应于三  		  	 
+            <br />个正面通道和两个环绕通道之间的能量比。r<sub>4</sub>参数对应于两个环绕通	 	 	 	 
+            <br />道之间的能量比。r<sub>5</sub>参数对应于LFE通道和所有其他通道之间的能量 	    	 
+            <br />比。 		 	 	 
+            <br /></p>
+      <p id="p-d91-zh" num="092">在图4中，示出了上述能量比。不同的输出通道由101至105表 	    	 
+            <br />示，并且与图1中相同，因此这里不再赘述。扬声器设置分为左半部 		 	 	 
+            <br />和右半部，其中中央通道103是两个半部的一部分。左半边和右半边  		  	 
+            <br />之间的能量比就是称作r<sub>1</sub>的参数。这在图4中由r<sub>1</sub>下的实线表示。另	 	 	 	 
+            <br />外，中央通道103与左右前通道102和103之间的能量分配由r<sub>2</sub>表示。 	    	 
+            <br />最后，整个前面通道设置(102、103和104)与背面通道(101和105) 		 	 	 
+            <br />之间的能量分配在图5中由r<sub>3</sub>参数旁的箭头表示。  		  	 
+            <br /></p>
+      <p id="p-d92-zh" num="093">给定上面的参数化以及所传送的单个下混通道的能量： 		 	 	 
+            <br /></p>
+      <p id="p-d93-zh" num="094">
+        <br />
+      </p>
+      <p id="p-d94-zh" num="095">重构通道的能量可以表示为： 	    	 
+            <br /></p>
+      <p id="p-d95-zh" num="096">
+        <br />
+      </p>
+      <p id="p-d96-zh" num="097">
+        <br />
+      </p>
+      <p id="p-d97-zh" num="098">
+        <br />
+      </p>
+      <p id="p-d98-zh" num="099">
+        <br />
+      </p>
+      <p id="p-d99-zh" num="100">
+        <br />
+      </p>
+      <p id="p-d100-zh" num="101">
+        <br />
+      </p>
+      <p id="p-d101-zh" num="102">因此，M信号的能量可以分配到重构通道中，导致重构通道具有 	    	 
+            <br />与原始通道相同的能量。 		 	 	 
+            <br /></p>
+      <p id="p-d102-zh" num="103">图8中示出了上面优选的上混方案。根据F、A、E、C、B和D 	    	 
+            <br />的等式，显而易见，上混频器要使用的关于下混方案的信息是加权因 		 	 	 
+            <br />子α、β、γ和δ，它们用于在如此加权或未加权的通道加在一起或者彼  		  	 
+            <br />此相减以达到一定数目的下混通道(少于原始通道数)之前对原始通	 	 	 	 
+            <br />道进行加权。于是，根据图8可知，根据本发明，重构通道的能量不 	    	 
+            <br />仅由从编码器侧向解码器侧发送的平衡参数确定，而且还由下混因子 		 	 	 
+            <br />α、β、γ和δ确定。  		  	 
+            <br /></p>
+      <p id="p-d103-zh" num="104">在考虑图8时可知，为了计算左和右能量B和D，在等式内使用 		 	 	 
+            <br />已经计算的通道能量F、A、E、C。然而，这并不一定意味着顺序上  		  	 
+            <br />混方案。实际上，为了获得完全并行的上混方案(例如使用具有特定	 	 	 	 
+            <br />上混矩阵元素的特定上混矩阵来执行)，将A、C、E和F的等式插入 	    	 
+            <br />到B和D的等式中。于是，可知重构通道能量仅由平衡参数、下混通 		 	 	 
+            <br />道以及关于下混方案的信息(例如，下混因子)确定。  		  	 
+            <br /></p>
+      <p id="p-d104-zh" num="105">给定上述IID参数，可知定义可以用于多种通道配置的IID参数 		 	 	 
+            <br />的参数集的问题已经解决，这在下面是显而易见。作为示例，观察三  		  	 
+            <br />通道配置(即，根据一个可用通道重建三个前面的通道)，可知，r<sub>3</sub>、	 	 	 	 
+            <br />r<sub>4</sub>和r<sub>5</sub>参数是无用的，因为A、E和F通道不存在。还可知，参数r<sub>1</sub><br />和r<sub>2</sub>足以根据下混的单个通道来重建三个通道，因为r<sub>1</sub>描述左和右前 		 	 	 
+            <br />通道之间的能量比，r<sub>2</sub>描述中央通道与左和右前通道之间的能量比。  		  	 
+            <br /></p>
+      <p id="p-d105-zh" num="106">在更一般的情况下，容易得知，如上定义的IID参数(r<sub>1</sub>...r<sub>5</sub>)适 		 	 	 
+            <br />用于根据m个通道重建n个通道的所有子集，其中m＜n≤6。观察图4，  		  	 
+            <br />可知：	 	 	 	 
+            <br /></p>
+      <p id="p-d106-zh" num="107">-对于根据1个通道重建2个通道的系统，根据r<sub>1</sub>参数，获得  		  	 
+            <br />了保留通道之间正确的能量比的足够信息；	 	 	 	 
+            <br /></p>
+      <p id="p-d107-zh" num="108">-对于根据1个通道重建3个通道的系统，根据r<sub>1</sub>和r<sub>2</sub>参数，	 	 	 	 
+            <br />获得了保留通道之间正确的能量比的足够信息； 	    	 
+            <br /></p>
+      <p id="p-d108-zh" num="109">-对于根据1个通道重建4个通道的系统，根据r<sub>1</sub>、r<sub>2</sub>和r<sub>3</sub>参数，	 	 	 	 
+            <br />获得了保留通道之间正确的能量比的足够信息； 	    	 
+            <br /></p>
+      <p id="p-d109-zh" num="110">-对于根据1个通道重建5个通道的系统，根据r<sub>1</sub>、r<sub>2</sub>、r<sub>3</sub>和r<sub>4</sub><br />参数，获得了保留通道之间正确的能量比的足够信息； 	    	 
+            <br /></p>
+      <p id="p-d110-zh" num="111">-对于根据1个通道重建5.1通道的系统，根据r<sub>1</sub>、r<sub>2</sub>、r<sub>3</sub>、r<sub>4</sub><br />和r<sub>5</sub>参数，获得了保留通道之间正确的能量比的足够信息； 	    	 
+            <br /></p>
+      <p id="p-d111-zh" num="112">-对于根据2个通道重建5.1通道的系统，根据r<sub>2</sub>、r<sub>3</sub>、r<sub>4</sub>和r<sub>5</sub><br />参数，获得了保留通道之间正确的能量比的足够信息。 	    	 
+            <br /></p>
+      <p id="p-d112-zh" num="113">图10b中的表示出了上述可扩展性特征。图10a中所示出的、稍	 	 	 	 
+            <br />后将解释的可扩展位流还可以适用于图10b中的表，以获得比图10a 	    	 
+            <br />所示出的好得多的可扩展性。 		 	 	 
+            <br /></p>
+      <p id="p-d113-zh" num="114">特别是，优选的概念有利之处在于，可以根据单个平衡参数r<sub>1</sub>， 	    	 
+            <br />容易地重构左右通道，而不需要任何其他平衡参数的知识或提取。为 		 	 	 
+            <br />此，在图8中的B、D的等式中，简单地将通道A、C、F和E设置为  		  	 
+            <br />零。	 	 	 	 
+            <br /></p>
+      <p id="p-d114-zh" num="115">作为另一种选择，当仅考虑平衡参数r<sub>2</sub>时，重构通道一方面是中  		  	 
+            <br />央通道和低频通道(当该通道没有设置为零时)之间的和，另一方面	 	 	 	 
+            <br />是左右通道之间的和。于是，仅使用单个参数，一方面可以重构中央 	    	 
+            <br />通道，另一方面可以重构单声道信号。该特征可能已经对简单的3通 		 	 	 
+            <br />道表示有用，其中例如通过均分根据左和右之和得到左和右信号，并  		  	 
+            <br />且中央与左和右之和之间的能量就是由平衡参数r<sub>2</sub>确定。	 	 	 	 
+            <br /></p>
+      <p id="p-d115-zh" num="116">在这种环境中，平衡参数r<sub>1</sub>或r<sub>2</sub>处于较低的扩展(scaling)层。  		  	 
+            <br /></p>
+      <p id="p-d116-zh" num="117">至于图10b的表中的第二项，这一项指示如何仅使用两个平衡参 		 	 	 
+            <br />数而不是所有5个平衡参数来生成3个通道B、D及C和F之和，这  		  	 
+            <br />些参数r<sub>1</sub>和r<sub>2</sub>之一可能已经处于比位于较低扩展层中的参数r<sub>1</sub>或r<sub>2</sub><br />高的扩展层中。 	    	 
+            <br /></p>
+      <p id="p-d117-zh" num="118">当考虑图8中的等式时可知，为计算C，将非提取参数r<sub>5</sub>和另一	 	 	 	 
+            <br />非提取参数r<sub>3</sub>设置为0。另外，将未使用的通道A、E、F也设置为0， 	    	 
+            <br />从而可以计算3个通道B、D以及中央通道C和低频增强通道F之间  		  	 
+            <br />的组合。	 	 	 	 
+            <br /></p>
+      <p id="p-d118-zh" num="119">当要上混4通道表示时，仅从参数数据流中提取参数r<sub>1</sub>、r<sub>2</sub>和r<sub>3</sub><br />就足够了。在这种环境中，r<sub>3</sub>可以处于其他参数r<sub>1</sub>或r<sub>2</sub>的下一较高扩	 	 	 	 
+            <br />展层中。4通道配置尤其适用于与本发明的超级平衡参数表示相结合， 	    	 
+            <br />因为如稍后参考图6所述，一方面根据正面通道的组合，另一方面根 		 	 	 
+            <br />据背面通道，已经得到第三平衡参数r<sub>3</sub>。这是由于参数r<sub>3</sub>是正面-背面  		  	 
+            <br />平衡参数，它是根据具有背面通道A和E的组合作为第一通道以及左	 	 	 	 
+            <br />通道B、右通道E和中央通道C的组合作为正面通道的通道对得到的。 	    	 
+            <br /></p>
+      <p id="p-d119-zh" num="120">于是，自动获得两个环绕通道的组合通道能量，而不需要任何进	 	 	 	 
+            <br />一步的单独计算和后继组合，与单个参考通道设置中的情况一样。 	    	 
+            <br /></p>
+      <p id="p-d120-zh" num="121">当要从单个通道重建5个通道时，进一步的平衡参数r<sub>4</sub>是必要的。	 	 	 	 
+            <br />该参数r<sub>4</sub>可以处于下一较高扩展层中。 	    	 
+            <br /></p>
+      <p id="p-d121-zh" num="122">当要执行5.1重构时，需要每个平衡参数。于是，必须将包括下	 	 	 	 
+            <br />一平衡参数r<sub>5</sub>的下一较高扩展层发送到接收机，并且由接收机评估。 	    	 
+            <br /></p>
+      <p id="p-d122-zh" num="123">然而，使用根据通道扩展数来扩展IID参数的相同方法，上述IID	 	 	 	 
+            <br />参数可以扩展为覆盖通道数大于5.1配置的通道配置s。因此，本发明 	    	 
+            <br />不限于上述示例。 		 	 	 
+            <br /></p>
+      <p id="p-d123-zh" num="124">现在观察通道配置为5.1通道配置的情况，这是最常用的情况。 	    	 
+            <br />另外，假设根据两个通道重建5.1通道。针对该情况，可以通过以如 		 	 	 
+            <br />下参数替换参数r<sub>3</sub>和r<sub>4</sub>来定义不同的参数集：  		  	 
+            <br /></p>
+      <p id="p-d124-zh" num="125">
+        <br />
+      </p>
+      <p id="p-d125-zh" num="126">
+        <br />
+      </p>
+      <p id="p-d126-zh" num="127">参数q<sub>3</sub>和q<sub>4</sub>表示正面和背面左通道之间的能量比、以及正面和 		 	 	 
+            <br />背面右通道之间的能量比。可以设想数种其他参数化。  		  	 
+            <br /></p>
+      <p id="p-d127-zh" num="128">在图5中使修改的参数化形象化。不是用一个参数描述正面和背 		 	 	 
+            <br />面通道之间的能量分配(如图4中r<sub>3</sub>所示)以及用参数描述左环绕通  		  	 
+            <br />道和右环绕通道之间的能量分配(如图4中r<sub>4</sub>所示)，而是使用参数	 	 	 	 
+            <br />q<sub>3</sub>和q<sub>4</sub>描述左前通道102和左环绕通道101之间的能量比、以及右前 		 	 	 
+            <br />通道104和右环绕通道105之间的能量比。  		  	 
+            <br /></p>
+      <p id="p-d128-zh" num="129">本发明优选的是可以使用多个参数集来表示多通道信号。本发明 		 	 	 
+            <br />的附加特征在于，可以根据所使用的参数的量化类型，选择不同的参  		  	 
+            <br />数化。	 	 	 	 
+            <br /></p>
+      <p id="p-d129-zh" num="130">例如，由于高比特率的约束而使用参数化的粗量化的系统，应该  		  	 
+            <br />使用在上混处理期间不会使错误加大的参数化。	 	 	 	 
+            <br /></p>
+      <p id="p-d130-zh" num="131">观察在根据一个通道重建5.1通道的系统中针对重构能量的上述  		  	 
+            <br />表达式中两个：	 	 	 	 
+            <br /></p>
+      <p id="p-d131-zh" num="132">
+        <br />
+      </p>
+      <p id="p-d132-zh" num="133">
+        <br />
+      </p>
+      <p id="p-d133-zh" num="134">很显然，由于M、A、C和F参数的极小的量化效果，相减可以  		  	 
+            <br />导致B和D能量的大变化。	 	 	 	 
+            <br /></p>
+      <p id="p-d134-zh" num="135">根据本发明，应该使用对参数的量化不那么敏感的不同参数化。  		  	 
+            <br />因此，如果使用粗量化，则如上定义的r<sub>1</sub>参数：	 	 	 	 
+            <br /></p>
+      <p id="p-d135-zh" num="136">
+        <br />
+      </p>
+      <p id="p-d136-zh" num="137">可以由根据如下等式定义的替代定义来代替：  		  	 
+            <br /></p>
+      <p id="p-d137-zh" num="138">
+        <br />
+      </p>
+      <p id="p-d138-zh" num="139">这样，能够得到如下的重构能量等式： 		 	 	 
+            <br /></p>
+      <p id="p-d139-zh" num="140">
+        <br />
+      </p>
+      <p id="p-d140-zh" num="141">
+        <br />
+      </p>
+      <p id="p-d141-zh" num="142">而A、E、C和F的重构能量等式仍然与上面相同。很显然，根据量 	    	 
+            <br />化的观点，这种参数化代表了更好地调节的系统。 		 	 	 
+            <br /></p>
+      <p id="p-d142-zh" num="143">在图6中示出了如上面说明的能量比。不同的输出通道由101至 	    	 
+            <br />105表示，并且与图1中相同，因此这里不再赘述。扬声器设置分为  		  	 
+            <br />正面部分和背面部分。整个正面通道设置(102、103和104)与背面	 	 	 	 
+            <br />通道(101和105)之间的能量分配由图6中r<sub>3</sub>参数所指示的箭头表 	    	 
+            <br />示。 		 	 	 
+            <br /></p>
+      <p id="p-d143-zh" num="144">本发明的另一显著的重要特征是当观察如下参数化时 	    	 
+            <br /></p>
+      <p id="p-d144-zh" num="145">
+        <br />
+      </p>
+      <p id="p-d145-zh" num="146">
+        <br />
+      </p>
+      <p id="p-d146-zh" num="147">根据量化的观点，这不仅是更好地调节的系统。上述参数化还具有这	 	 	 	 
+            <br />样的优点：得到用来重构三个正面通道的参数，而不会影响环绕通道。 	    	 
+            <br />可以设想描述中央通道和所有其他通道之间的关系的参数r<sub>2</sub>。然而， 		 	 	 
+            <br />这也具有缺点：环绕通道将包括在描述正面通道的参数的估计中。  		  	 
+            <br /></p>
+      <p id="p-d147-zh" num="148">应该记住，在本发明中，所描述的参数化也可以应用于通道之间 		 	 	 
+            <br />相关性或相干性的测量，显而易见，在r<sub>2</sub>的计算中包括背面通道可以  		  	 
+            <br />对成功地准确重建正面通道产生重大的负面影响。	 	 	 	 
+            <br /></p>
+      <p id="p-d148-zh" num="149">例如，可以想象在所有正面通道中具有相同信号，并且在背面通  		  	 
+            <br />道中具有完全非相关信号的情况。如果频繁使用背面通道来重建原始	 	 	 	 
+            <br />声音的环境信息，这是不常见的。 	    	 
+            <br /></p>
+      <p id="p-d149-zh" num="150">如果相对于所有其他通道来描述中央通道，中央通道和所有其他	 	 	 	 
+            <br />通道之和之间的相关性测量将非常低，因为背面通道完全不相关。对 	    	 
+            <br />于估计正面左/右通道与背面左/右通道之间的相关性的参数同样如 		 	 	 
+            <br />此。  		  	 
+            <br /></p>
+      <p id="p-d150-zh" num="151">因此，得到了可以正确重构能量的参数化，但是不包括所有正面 		 	 	 
+            <br />通道相同(即，强相关)的信息。该参数化不包括左和右前通道与背  		  	 
+            <br />面通道去相关以及中央通道也与背面通道去相关的信息。然而，所有	 	 	 	 
+            <br />正面通道相同的事实不是从这种参数化得到的。 	    	 
+            <br /></p>
+      <p id="p-d151-zh" num="152">利用本发明所教导的如下参数化克服此问题	 	 	 	 
+            <br /></p>
+      <p id="p-d152-zh" num="153">
+        <br />
+      </p>
+      <p id="p-d153-zh" num="154">
+        <br />
+      </p>
+      <p id="p-d154-zh" num="155">因为背面通道不包括在解码器侧用来重建正面通道的参数的估计中。	 	 	 	 
+            <br /></p>
+      <p id="p-d155-zh" num="156">根据本发明，中央通道103与左前通道102和右前通道103之间  		  	 
+            <br />的能量分配由r<sub>2</sub>指示。左环绕通道101和右环绕通道105之间的能量	 	 	 	 
+            <br />分配由r<sub>4</sub>指示。最后，左前通道102和右前通道104之间的能量分配 	    	 
+            <br />由r1给出。很显然，除了r1之外所有参数与图4所示相同，此处r1 		 	 	 
+            <br />对应于左前扬声器和右前扬声器之间的能量分配，而非整个左侧与整  		  	 
+            <br />个右侧之间的能量分配。为了完整起见，还给出了描述中央通道103	 	 	 	 
+            <br />和lfe通道106之间的能量分配的参数r5。 	    	 
+            <br /></p>
+      <p id="p-d156-zh" num="157">图6示出了本发明的优选参数化实施例的概述。第一平衡参数r<sub>1</sub><br />(由实线指示)构成前左/前右平衡参数。第二平衡参数r<sub>2</sub>是中左-右 	    	 
+            <br />平衡参数。第三平衡参数r<sub>3</sub>构成正面/背面平衡参数。第四平衡参数r<sub>4</sub><br />构成左后/右后平衡参数。最后，第五平衡参数r<sub>5</sub>构成中央/lfe平衡参  		  	 
+            <br />数。	 	 	 	 
+            <br /></p>
+      <p id="p-d157-zh" num="158">图4示出了相关情形。图4中实线所示出的下混左/右平衡情况下  		  	 
+            <br />的第一平衡参数r<sub>1</sub>可以由原始前左/前右平衡参数代替，其中原始前左	 	 	 	 
+            <br />/前右平衡参数在作为底层通道对的通道B和D之间定义。在图4中 	    	 
+            <br />由虚线r<sub>1</sub>示出了这一情况，并且对应于图5和图6中的实线r<sub>1</sub>。 		 	 	 
+            <br /></p>
+      <p id="p-d158-zh" num="159">在双基础通道的情况下，参数r<sub>3</sub>和r<sub>4</sub>，即正面/背面平衡参数和背 	    	 
+            <br />面左/右平衡参数右两个单侧正面/背面参数代替。第一单侧正面/背面 		 	 	 
+            <br />参数q<sub>3</sub>也可以视为第一平衡参数，它是根据由左环绕通道A和左通道  		  	 
+            <br />B构成的通道对得到的。第二单侧正面/背面参数是参数q<sub>4</sub>，它也可以	 	 	 	 
+            <br />视为第二参数，它基于由右通道D和右环绕通道E构成的第二通道对。 	    	 
+            <br />此外，两个通道对彼此独立。对于中央/左-右平衡参数r<sub>2</sub>也是如此， 		 	 	 
+            <br />中央/左-右平衡参数r<sub>2</sub>具有中央通道C作为第一通道以及左和右通道  		  	 
+            <br />B和D之和作为第二通道。	 	 	 	 
+            <br /></p>
+      <p id="p-d159-zh" num="160">根据本发明，下面定义另一种非常适用于根据一个或两个通道重  		  	 
+            <br />建5.1通道的系统的粗量化的参数化。	 	 	 	 
+            <br /></p>
+      <p id="p-d160-zh" num="161">对于一到5.1通道：  		  	 
+            <br /></p>
+      <p id="p-d161-zh" num="162">及	 	 	 	 
+            <br /></p>
+      <p id="p-d162-zh" num="163">对于二到5.1通道：	 	 	 	 
+            <br /></p>
+      <p id="p-d163-zh" num="164">及	 	 	 	 
+            <br /></p>
+      <p id="p-d164-zh" num="165">很显然，上述参数化包括的参数多于根据严格的理论观点来正确	 	 	 	 
+            <br />重新分配所传输信号的能量以重构信号所需的参数。然而，这种参数 	    	 
+            <br />化对于量化误差非常不敏感。 		 	 	 
+            <br /></p>
+      <p id="p-d165-zh" num="166">针对双基通道设置的上述参数集利用多个参考通道。然而，与图 	    	 
+            <br />6中的参数配置不同，图7中的参数集仅仅依赖于下混通道而非原始 		 	 	 
+            <br />通道作为参考通道。根据完全不同的通道对得到平衡参数q<sub>1</sub>、q<sub>3</sub>和q<sub>4</sub>。  		  	 
+            <br /></p>
+      <p id="p-d166-zh" num="167">虽然已经描述了多个本发明的实施例，其中用于得到平衡参数的 		 	 	 
+            <br />通道对仅包括原始通道(图4、图5、图6)或包括原始通道以及下混  		  	 
+            <br />通道(图4、图5)或者仅依赖于下混通道作为参考通道(如图7中下	 	 	 	 
+            <br />部所示)，优选的是，图2的环绕数据编码器206中包括的参数生成器 	    	 
+            <br />可操作来仅使用原始通道或原始通道的组合，而针对非平衡参数所基 		 	 	 
+            <br />于的通道对中通道的基础通道或基础通道的组合。这是由于不能完全  		  	 
+            <br />保证单个基础通道或两个立体声基础通道在它们从环绕编码器发送到	 	 	 	 
+            <br />环绕解码器期间不出现能量改变。这种下混通道或单个下混通道的能 	    	 
+            <br />量变化可以是由在低比特率条件下工作的音频编码器205(图2)或音 		 	 	 
+            <br />频解码器302(图3)引起的。这种情况可以导致对单声道下混通道或  		  	 
+            <br />立体声下混通道的能量的操作，这种操作可能在左和右立体声下混通	 	 	 	 
+            <br />道之间不同，或者甚至可以是频率选择性和时间选择性的。 	    	 
+            <br /></p>
+      <p id="p-d167-zh" num="168">为了确保针对这种能量变化的完全安全，根据本发明，对每个下	 	 	 	 
+            <br />混通道的每一块和频带发送额外的等级信息。当平衡参数基于原始信 	    	 
+            <br />号而非下混信号时，对于每个频带单个校正因子就足够了，因为任何 		 	 	 
+            <br />能量校正将不会影响原始通道之间的平衡情况。即使当不传送额外的  		  	 
+            <br />等级信息时，任何下混通道能量变化也不会导致声音源在音频像中的	 	 	 	 
+            <br />定位失真，而是只会导致一般的音量变化，这不像由于平衡条件改变 	    	 
+            <br />而引起的声音源迁移那样使人烦恼。 		 	 	 
+            <br /></p>
+      <p id="p-d168-zh" num="169">重要的是要注意，如上所述，需要小心使(信号通道的)能量M 		 	 	 
+            <br />是能量B、D、A、E、C和F之和。并不总是这样的，因为下混到一  		  	 
+            <br />个通道中的不同通道间存在相位依赖。能量校正因子可以作为额外参	 	 	 	 
+            <br />数r<sub>M</sub>发送，并且解码器侧接收到的下混信号能量如此定义： 	    	 
+            <br /></p>
+      <p id="p-d169-zh" num="170">
+        <br />
+      </p>
+      <p id="p-d170-zh" num="171">在图9中示出了根据本发明的额外参数r<sub>M</sub>的应用。在901中，在	 	 	 	 
+            <br />将下混输入信号发送到701～705的上混模块之前，利用r<sub>M</sub>参数修改 	    	 
+            <br />下混输入信号。这与图7中相同，因此不再赘述。本领域技术人员可 		 	 	 
+            <br />知，上面单通道下混示例的参数r<sub>M</sub>可以扩展为每个下混通道一个参  		  	 
+            <br />数，因此不限于单个下混通道。	 	 	 	 
+            <br /></p>
+      <p id="p-d171-zh" num="172">图9a示出了本发明的等级参数计算器900，而图9b示出了本发  		  	 
+            <br />明的等级校正器902。图9a示出了编码器侧的情况，图9b示出了相	 	 	 	 
+            <br />应的解码器侧情况。等级参数或“额外”参数r<sub>M</sub>是给出特定能量比的 	    	 
+            <br />校正因子。为了对此进行解释，假设如下的示例性场景。对于特定的 		 	 	 
+            <br />原始多通道信号，一方面存在“主下混”，另一方面存在“参数下混”。  		  	 
+            <br />例如，音响工程师已经在音响工作室中根据主观质量印象生成了主下	 	 	 	 
+            <br />混。另外，特定的音频存储介质也包括参数下混，参数下混例如由图 	    	 
+            <br />2的环绕编码器203执行。参数下混包括一个基础通道或两个基础通 		 	 	 
+            <br />道，这些基础通道形成了使用平衡参数集或者原始多通道信号的任何  		  	 
+            <br />其他参数表示来进行多通道重构的基础。	 	 	 	 
+            <br /></p>
+      <p id="p-d172-zh" num="173">例如，可以是这样的情况，广播台不希望从发射机向接收机发送  		  	 
+            <br />参数下混而是发送主下混。另外，为了将主下混升级为多通道表示，	 	 	 	 
+            <br />广播台还发送原始多通道信号的参数表示。因为(一个块和一个频带 	    	 
+            <br />中的)能量可以(并且通常会)在主下混和参数下混之间改变，在块 		 	 	 
+            <br />900中生成相对等级参数r<sub>M</sub>，并且发送到接收机作为附加参数。根据  		  	 
+            <br />主下混和参数下混得到等级参数，并且优选的是，等级参数是主下混	 	 	 	 
+            <br />和参数下混的一个块和一个频带内的能量之比。 	    	 
+            <br /></p>
+      <p id="p-d173-zh" num="174">通常，等级参数计算为原始通道的能量(E<sub>orig</sub>)和与下混通道的	 	 	 	 
+            <br />能量之比，其中该下混通道可以是参数下混(E<sub>PD</sub>)或主下混(E<sub>MD</sub>) 	    	 
+            <br />或者任何其他下混信号。通常，使用从编码器向解码器发送的具体下  		  	 
+            <br />混信号的能量。	 	 	 	 
+            <br /></p>
+      <p id="p-d174-zh" num="175">图9b示出了在解码器侧的等级参数使用的实施方式。等级参数  		  	 
+            <br />以及下混信号输入到等级校正器模块902中。等级校正器根据等级参	 	 	 	 
+            <br />数，校正单基通道或多基通道。因为附加参数r<sub>M</sub>是相对值，所以将此 	    	 
+            <br />相对值乘以相应基础通道的能量。 		 	 	 
+            <br /></p>
+      <p id="p-d175-zh" num="176">虽然图9a和9b示出了将等级校正应用于下混通道的情况，但是 	    	 
+            <br />等级参数也可以集成在上混矩阵中。为此，图8中的等式中每次出现 		 	 	 
+            <br />的M由项“r<sub>M</sub>M”代替。  		  	 
+            <br /></p>
+      <p id="p-d176-zh" num="177">研究根据2个通道重建5.1通道的情况，进行如下观察。 		 	 	 
+            <br /></p>
+      <p id="p-d177-zh" num="178">如果本发明与图2和图3中205和302所示的底层编解码器一起 	    	 
+            <br />使用，需要做出更多的考虑。观察前面定义的IID参数，其中r1如下 		 	 	 
+            <br />定义  		  	 
+            <br /></p>
+      <p id="p-d178-zh" num="179">
+        <br />
+      </p>
+      <p id="p-d179-zh" num="180">该参数在解码器侧是隐式可用的，因为系统是根据2个通道重建5.1 		 	 	 
+            <br />通道，假如所传输的两个通道是环绕通道的立体声下混。  		  	 
+            <br /></p>
+      <p id="p-d180-zh" num="181">然而，在比特率约束下工作的音频编解码器可以修改频谱分布， 		 	 	 
+            <br />从而解码器侧测量的L和R能量不同于它们在编码器侧的值。根据本  		  	 
+            <br />发明，同样对于根据两个通道重构5.1通道的情况，对重构通道能量	 	 	 	 
+            <br />分布的这种影响通过传输如下参数而消失 	    	 
+            <br /></p>
+      <p id="p-d181-zh" num="182">
+        <br />
+      </p>
+      <p id="p-d182-zh" num="183">如果提供信令装置，编码器可以使用不同参数集来编码当前信号	 	 	 	 
+            <br />段，并且选择对于所处理的特定信号段给出最低开销的IID参数集。 	    	 
+            <br />右前通道和背面通道之间的能量等级类似，正面和背面左通道之间的 		 	 	 
+            <br />能量等级类似，但是可能与右前和背面通道中的等级明显不同。给定  		  	 
+            <br />参数的Δ编码和随后的熵编码，使用参数q<sub>3</sub>和q<sub>4</sub>而非r<sub>3</sub>和r<sub>4</sub>可以更有	 	 	 	 
+            <br />效。对于具有不同特性的另一个信号段，不同的参数集可以给出较低 	    	 
+            <br />的比特率开销。给定信号段的特性，本发明允许在不同参数表示之间 		 	 	 
+            <br />自由切换，以便最小化当前编码信号段的比特率开销。在IID参数的	 	 	 	 
+            <br />不同参数化之间切换，以便获得最低的可能比特率开销，以及提供信 	    	 
+            <br />令装置以指示当前使用何种参数化的能力是本发明的本质特征。 		 	 	 
+            <br /></p>
+      <p id="p-d183-zh" num="184">另外，参数的Δ编码可以在频率方向或者时间方向中进行，并进 	    	 
+            <br />行不同参数之间的Δ编码。根据本发明，如果提供指示所使用的特定Δ 		 	 	 
+            <br />编码的信令装置，参数可以相对于任何其他参数来进行Δ编码。  		  	 
+            <br /></p>
+      <p id="p-d184-zh" num="185">对任何编码方案感兴趣的特征是进行可扩展编码的能力。这意味 		 	 	 
+            <br />着可以将编码位流分为多个不同的层。核心层是可自解码的，并且可  		  	 
+            <br />以解码较高层以增强解码核心层信号。对于不同的环境，可用层的数	 	 	 	 
+            <br />目可以改变，但是只要核心层可用，解码器可以产生输出样本。如上 	    	 
+            <br />所述，使用r<sub>1</sub>至r<sub>5</sub>参数对多通道编码进行参数化，使它们自身非常适 		 	 	 
+            <br />于可扩展编码。因此，可以在增强层中存储例如两个环绕通道(A和  		  	 
+            <br />E)的数据(即参数r<sub>3</sub>和r<sub>4</sub>)，并且在核心层中存储与正面通道相对应	 	 	 	 
+            <br />的参数，由参数r<sub>1</sub>和r<sub>2</sub>表示。 	    	 
+            <br /></p>
+      <p id="p-d185-zh" num="186">在图10中示出了根据本发明的可扩展位流实施方式。位流层由	 	 	 	 
+            <br />1001和1002表示，其中1001是保持波形编码下混信号和重建正面通 	    	 
+            <br />道(102、103和104)所需的参数r<sub>1</sub>和r<sub>2</sub>的核心层。1002所表示的增 		 	 	 
+            <br />强层保持用于重建背面通道(101和105)的参数。  		  	 
+            <br /></p>
+      <p id="p-d186-zh" num="187">本发明的另一个重要方面是在多通道配置中使用去相关器。在文 		 	 	 
+            <br />献PCT/SE02/01372中针对一到二通道的情况描述了使用去相关器的  		  	 
+            <br />概念。然而，当将此理论扩展到两个以上的通道时，出现了多个问题，	 	 	 	 
+            <br />本发明解决了这些问题。 	    	 
+            <br /></p>
+      <p id="p-d187-zh" num="188">初等数学表明，为了从N个信号得到M个彼此去相关的信号，	 	 	 	 
+            <br />需要M-N个去相关器，其中所有不同的去相关器是根据公共输入信号 	    	 
+            <br />创建彼此正交的输出信号的函数。去相关器通常是全通或近全通滤波 		 	 	 
+            <br />器，给定输入x(t)，产生输出y(t)，其中E[|y|<sup>2</sup>]＝E[|x|<sup>2</sup>]，并且几乎消除  		  	 
+            <br />了互相关E[yx<sup>*</sup>]。好的去相关器设计还涉及到进一步的感觉标准，设	 	 	 	 
+            <br />计方法的一些示例可以是当向去相关信号加入原始信号时，最小化梳 	    	 
+            <br />状滤波器特性，以及最小化在瞬态信号处有时太长的冲激响应的效果。 		 	 	 
+            <br />某些现有技术的去相关器利用人工混响器来去相关。现有技术还包括	 	 	 	 
+            <br />例如通过修改复子带样本的相位来进行分数延迟，以获得较高的回响 	    	 
+            <br />密度，因此获得更大的时间扩散。 		 	 	 
+            <br /></p>
+      <p id="p-d188-zh" num="189">本发明提出了如下方法：修改基于混响的去相关器，以便实现根 	    	 
+            <br />据公共输入信号创建彼此去相关的输出信号的多个去相关器。如果两 		 	 	 
+            <br />个去相关器在相同输入的情况下的输出y<sub>1</sub>(t)和y<sub>2</sub>(t)消除或几乎消除了  		  	 
+            <br />互相关，则这两个去相关器彼此去相关。假设输入是平稳白噪声，那	 	 	 	 
+            <br />么冲激响应h<sub>1</sub>和h<sub>2</sub>必须正交，因为E[h<sub>1</sub>h<sub>2</sub><sup>*</sup>]消除或几乎消除。可以以多 		 	 	 
+            <br />种方式构建对集彼此去相关的去相关器。进行这种修改的一种有效方  		  	 
+            <br />式是改变相位旋转因子q，这是分数延迟的一部分。	 	 	 	 
+            <br /></p>
+      <p id="p-d189-zh" num="190">本发明规定相位旋转因子可以是全通滤波器中延迟线的一部分，  		  	 
+            <br />或者就是整个分数延迟。在后一种情况下，该方法不限于全通或混响	 	 	 	 
+            <br />之类的滤波器，而是也可以应用于例如包括分数延迟部分的简单延迟。 	    	 
+            <br />去相关器中的全通滤波器链路在Z域中可以如下描述： 		 	 	 
+            <br /></p>
+      <p id="p-d190-zh" num="191">
+        <br />
+      </p>
+      <p id="p-d191-zh" num="192">其中，q是复值相位旋转因子(|q|＝1)，m是样本中延迟线长度，并且 	    	 
+            <br />a是滤波器系数。由于稳定性原因，滤波器吸收的大小应该限制于 		 	 	 
+            <br />|a|＜1。然而，通过使用可选的滤波器系数a′＝-a，定义了新的混响器，  		  	 
+            <br />其具有相同的混响衰落特性，但是输出与未修改的混响器的输出显著	 	 	 	 
+            <br />不相关。另外，相位旋转因子q的修改可以通过例如添加恒定相位偏 	    	 
+            <br />移 		 	 	 
+            来进行。常数C可以用作恒定相位偏移，或者可以进行缩放，  		  	 
+            <br />使其对应于其所应用的所有频带的恒定时间偏移。相位偏移常数C也	 	 	 	 
+            <br />可以是对所有频带不同的随机值。 	    	 
+            <br /></p>
+      <p id="p-d192-zh" num="193">根据本发明，通过向如下大小为(m+p)×1个信号的列向量应用大	 	 	 	 
+            <br />小为n×(m+p)的上混矩阵H，来执行从m个通道生成n个通道的操 	    	 
+            <br />作 		 	 	 
+            <br /></p>
+      <p id="p-d193-zh" num="194">
+        <br />
+      </p>
+      <p id="p-d194-zh" num="195">其中，m是m个被下混且编码的信号，并且s中的p个信号被两两彼 	    	 
+            <br />此去相关，并且与m中的所有信号去相关。这些去相关信号是由去相  		  	 
+            <br />关器根据m中的信号产生的。然后n个重构信号a′、b′...包含在如下	 	 	 	 
+            <br />列向量中 	    	 
+            <br /></p>
+      <p id="p-d195-zh" num="196">x′＝Hy	 	 	 	 
+            <br /></p>
+      <p id="p-d196-zh" num="197">图11中示出了上述操作，其中去相关信号由去相关器1102、1103和  		  	 
+            <br />1104创建。上混矩阵H由1101给出，其对向量y进行操作，给出输	 	 	 	 
+            <br />出信号x′。 	    	 
+            <br /></p>
+      <p id="p-d197-zh" num="198">设R＝E[xx<sup>*</sup>]是原始信号向量的相关矩阵，R′＝E[x′x′<sup>*</sup>]是重构信号	 	 	 	 
+            <br />的相关矩阵。此处以及下文中，对于具有复数项的矩阵或向量X，X<sup>*</sup><br />表示X的伴随矩阵、复共轭转置。 		 	 	 
+            <br /></p>
+      <p id="p-d198-zh" num="199">R的对角线包含能量值A、B、C...，并且可以根据如上定义的能 	    	 
+            <br />量配额，解码为总能量等级。因为R<sup>*</sup>＝R，所以只有n(n-1)/2个不同的 		 	 	 
+            <br />离对角线互相关值，包含要通过调整上混矩阵H来全部或部分重构的  		  	 
+            <br />信息。全相关结构的重构对应于R′＝R的情况。正确的能量等级的重	 	 	 	 
+            <br />构仅对应于R′和R在它们的对角线上相同的情况。 	    	 
+            <br /></p>
+      <p id="p-d199-zh" num="200">在从m＝1个通道得到n个通道的情况下，全相关结构的重构通过	 	 	 	 
+            <br />使用p＝n-1个彼此去相关的去相关器、满足如下条件的上混矩阵H来 	    	 
+            <br />实现： 		 	 	 
+            <br /></p>
+      <p id="p-d200-zh" num="201">
+        <br />
+      </p>
+      <p id="p-d201-zh" num="202">其中M是单个所传输信号的能量。因为R是半正定的，这种解的存 	    	 
+            <br />在是公知的。此外，对于H的设计留下了n(n-1)/2的自由度，它们在 		 	 	 
+            <br />本发明中用来获得上混矩阵的进一步希望的特性。中心设计标准是H  		  	 
+            <br />对所传输的相关性数据的依赖性应该是平滑的。	 	 	 	 
+            <br /></p>
+      <p id="p-d202-zh" num="203">参数化上混矩阵的一种方便方式是H＝UDV，其中U和V是正交  		  	 
+            <br />矩阵，并且D是对角矩阵。可以选择D的绝对值的平方等于R/M的	 	 	 	 
+            <br />特征值。忽略V并对特征值进行排序，使最大的值应用于第一坐标， 	    	 
+            <br />将使输出中去相关信号的总体能量最小化。正交矩阵U处于由n(n-1)/2 		 	 	 
+            <br />个旋转角度来参数化的实状态。以这些角度和D的n个对角线值的形  		  	 
+            <br />式发送相关性数据，将立即给出所希望的H的平滑依赖性。然而，因	 	 	 	 
+            <br />为必须将能量数据变换为特征值，所以这种方法牺牲了可扩展性。 		 	 	 
+            <br /></p>
+      <p id="p-d203-zh" num="204">本发明所教导的第二方法包括：通过根据R＝GR<sub>0</sub>G定义归一化相 	    	 
+            <br />关矩阵R<sub>0</sub>，来从R中的相关性部分分离能量部分，其中G是对角矩 		 	 	 
+            <br />阵，对角线值等于R的对角线项的平方根，即，  		  	 
+            <img he="20" wi="84" file="a20058000735100291.tif" img-format="png" />并且R<sub>0</sub><br />在对角线上为1。设H<sub>0</sub>是正交上混矩阵，其定义在等能量的完全非相 	    	 
+            <br />关信号情况下优选的归一化上混。这种优选上混矩阵的示例有 		 	 	 
+            <br /></p>
+      <p id="p-d204-zh" num="205">
+        <br />
+      </p>
+      <p id="p-d205-zh" num="206">然后由 	    	 
+            定义上混，其中矩阵S是SS<sup>*</sup>＝R<sub>0</sub>的解。选择 		 	 	 
+            <br />此解对R<sub>0</sub>中归一化的互相关值的依赖性是连续的，从而S在R<sub>0</sub>＝I情  		  	 
+            <br />况下等于单位矩阵I。	 	 	 	 
+            <br /></p>
+      <p id="p-d206-zh" num="207">将n个通道分为较少通道的组，这是一种重构局部互相关结构的  		  	 
+            <br />方便方式。根据本发明，对于从1个通道重构5.1通道的情况，尤其	 	 	 	 
+            <br />有利的分组方式是{a，e}，{c}，{b，d}，{f}，其中对组{c}，{f}不应用去相关， 	    	 
+            <br />并且通过对相同的下混/去相关对进行上混来产生组{a，e}，{b，d}。对于 		 	 	 
+            <br />这两个子系统，在完全不相关情况下优选的归一化上混可以分别选择  		  	 
+            <br />为	 	 	 	 
+            <br /></p>
+      <p id="p-d207-zh" num="208">
+        <br />
+      </p>
+      <p id="p-d208-zh" num="209">于是，将只发送和重构总共15个互相关中的两个，即，通道{a，e}和{b，d}  		  	 
+            <br />之间的互相关。在上面使用的术语中，这是针对n＝6，m＝1且p＝1情	 	 	 	 
+            <br />况的设计示例。上混矩阵H大小为6×2，在第3行和第6行的第二 	    	 
+            <br />列中的两项为零，对应于输出c′和f′。 		 	 	 
+            <br /></p>
+      <p id="p-d209-zh" num="210">本发明所教导的用于合并去相关信号的第三种方法是更为简单 	    	 
+            <br />的观点：每个输出通道具有不同的去相关器，导致去相关信号s<sub>a</sub>，s<sub>b</sub>，...。 		 	 	 
+            <br />然后，形成重构信号如下：  		  	 
+            <br /></p>
+      <p id="p-d210-zh" num="211">
+        <img he="24" wi="240" file="a20058000735100301.tif" img-format="png" />
+        <br />
+      </p>
+      <p id="p-d211-zh" num="212">
+        <img he="24" wi="237" file="a20058000735100302.tif" img-format="png" />
+        <br />
+      </p>
+      <p id="p-d212-zh" num="213">etc...  		  	 
+            <br /></p>
+      <p id="p-d213-zh" num="214">参数<sub>a</sub>，<sub>b</sub>，...控制输出通道a′，b′，...中出现的去相关信号的数量。以这些 		 	 	 
+            <br />角度的形式发送相关性数据。容易计算所得到的例如通道a′和b′之间  		  	 
+            <br />的归一化互相关等于乘积cos<sub>a</sub>cos<sub>b</sub>。因为成对的互相关的数目为	 	 	 	 
+            <br />n(n-1)/2，并且存在n个去相关器，所以如果n＞3，一般不能用这种 	    	 
+            <br />方法来匹配给定的相关性结果，但是其优点是这是一种非常简单且稳 		 	 	 
+            <br />定的解码方法，并且直接控制每个输出通道中去相关信号的产生量。  		  	 
+            <br />这使得去相关信号的混合能够基于结合了例如通道对的能量等级差的	 	 	 	 
+            <br />感觉标准。 	    	 
+            <br /></p>
+      <p id="p-d214-zh" num="215">对于从m＞1个通道重构n个通道的情况，不再假设相关矩阵	 	 	 	 
+            <br />R<sub>y</sub>＝E[yy<sup>*</sup>]是对角矩阵，并且在将R′＝HR<sub>y</sub>H<sup>*</sup>匹配到目标R时必须考虑 	    	 
+            <br />这一点。因为R<sub>y</sub>具有块矩阵结构，所以可以简化， 		 	 	 
+            <br /></p>
+      <p id="p-d215-zh" num="216">
+        <br />
+      </p>
+      <p id="p-d216-zh" num="217">其中，R<sub>m</sub>＝E[mm<sup>*</sup>]且R<sub>s</sub>＝E[ss<sup>*</sup>]。另外，假设彼此去相关的去相关器， 	    	 
+            <br />矩阵R<sub>s</sub>是对角矩阵。应该指出，这还在重构正确能量方面影响上混设 		 	 	 
+            <br />计。在解码器中计算解，或者从编码器发送关于下混信号的相关性结  		  	 
+            <br />构R<sub>m</sub>的信息。	 	 	 	 
+            <br /></p>
+      <p id="p-d217-zh" num="218">对于从2个通道重构5.1通道的情况，上混的优选方法是：  		  	 
+            <br /></p>
+      <p id="p-d218-zh" num="219">
+        <br />
+      </p>
+      <p id="p-d219-zh" num="220">其中，s<sub>1</sub>是根据m<sub>1</sub>＝l<sub>d</sub>的去相关得到的，s<sub>2</sub>是根据m<sub>2</sub>＝r<sub>d</sub>的去相关得到 		 	 	 
+            <br />的。  		  	 
+            <br /></p>
+      <p id="p-d220-zh" num="221">此处，将组{a，b}和{d，e}视为分离的1→2通道系统，其中考虑对 		 	 	 
+            <br />的互相关。对于通道c和f，如下调整权重  		  	 
+            <br /></p>
+      <p id="p-d221-zh" num="222">
+        <br />
+      </p>
+      <p id="p-d222-zh" num="223">
+        <br />
+      </p>
+      <p id="p-d223-zh" num="224">本发明可以以硬件芯片和DSP的形式实现，对于各种系统，对于  		  	 
+            <br />模拟或数字信号的存储或传输，可以使用任意编解码器。图2和图3	 	 	 	 
+            <br />示出了本发明的可能实施方式。在该示例中，示出了以六个输入信号 	    	 
+            <br />工作的系统(5.1通道配置)。在图2中，在编码器侧，将各个通道的 		 	 	 
+            <br />模拟输入信号转换为数字信号201，并且对每个通道使用滤波器组进  		  	 
+            <br />行分析202。滤波器组的输出送入环绕编码器203，环绕编码器203	 	 	 	 
+            <br />包括参数生成器，其执行下混，创建一个或两个有音频编码器205编 	    	 
+            <br />码的通道。另外，根据本发明，提取诸如IID和ICC参数之类的环绕 		 	 	 
+            <br />参数，并且根据本发明，提取204描述时间频率网格以及使用了哪种  		  	 
+            <br />参数化的控制数据。根据本发明，对所提取的参数206进行编码，或	 	 	 	 
+            <br />者在不同的参数化之间进行切换，或者以可扩展方式安排参数。环绕 	    	 
+            <br />参数207、控制信号和编码下混信号208复用209为串行位流。 		 	 	 
+            <br /></p>
+      <p id="p-d224-zh" num="225">在图3中示出了一种典型的解码器实施方式，即，用于生成多通 	    	 
+            <br />道重构的设备。在此，假设音频解码器输出频域表示的信号，例如， 		 	 	 
+            <br />来自QMF合成滤波器组之前的MPEG-4高效AAC解码器的输出。对  		  	 
+            <br />串行位流进行解复用301，并且将编码环绕数据送入环绕数据解码器	 	 	 	 
+            <br />303，并且将下混编码通道送入音频解码器302，在该示例中，音频解 	    	 
+            <br />码器302是MPEG-4高效AAC解码器。环绕数据解码器对环绕数据 		 	 	 
+            <br />进行解码，并且将其送入环绕解码器305，环绕解码器305包括上混  		  	 
+            <br />频器，上混频器根据解码的下混通道和环绕数据及控制信号，重建六	 	 	 	 
+            <br />个通道。将来自环绕解码器的输出合成306到时域信号，随后DAC 307 	    	 
+            <br />将时域信号转换为模拟信号。 		 	 	 
+            <br /></p>
+      <p id="p-d225-zh" num="226">虽然主要参考平衡参数的生成和使用描述了本发明，但是应该强 	    	 
+            <br />调，优选的是，为得到平衡参数，对通道对的相同分组也可以用来计 		 	 	 
+            <br />算通道间相干性参数或者这些双通道对之间的“宽度”参数。另外，  		  	 
+            <br />使用与平衡参数计算相同的通道对，也可以得到通道间时间差或一种	 	 	 	 
+            <br />“相位提示”。在接收机一侧，这些参数可以用作平衡参数的补充或者 	    	 
+            <br />替代，以生成多通道重构。作为另一种选择，除了由其他参考通道所  		  	 
+            <br />确定的其他通道间等级差之外，还可以使用通道间相干性参数或者甚	 	 	 	 
+            <br />至通道间时间差。然而，由于结合图10a和图10b所讨论的本发明的 	    	 
+            <br />可扩展性特征，优选的是，对所有参数使用相同的通道对，从而在可 		 	 	 
+            <br />扩展位流中，每个扩展层包括用于重构输出通道的子组的所有参数，  		  	 
+            <br />它们可以由相应扩展层生成，如图10b的表中倒数第二列所示。当仅	 	 	 	 
+            <br />计算并向解码器发送了各个通道对之间的相干性参数或时间差参数 	    	 
+            <br />时，本发明是有用的。在这种情况下，当执行多通道重构时，等级参 		 	 	 
+            <br />数已经在解码器处以供使用。  		  	 
+            <br /></p>
+      <p id="p-d226-zh" num="227">依据本发明方法的特定实施要求，本发明的方法可以通过硬件或 		 	 	 
+            <br />软件来实现。可以使用数字存储介质，具体地讲，存储有电子可读控  		  	 
+            <br />制信号的盘或CD来实施，其与可编程计算机系统协作，从而执行本	 	 	 	 
+            <br />发明的方法。因此，一般而言，本发明是计算机程序产品，在机器可 	    	 
+            <br />读载体上存储了程序代码，当该计算机程序产品在计算机上运行时， 		 	 	 
+            <br />所述程序代码可操作来执行本发明的方法。因此，换句话说，本发明  		  	 
+            <br />的方法是具有程序代码的计算机程序，在该计算机程序在计算机上运	 	 	 	 
+            <br />行时，程序代码执行本发明中的至少一种方法。 	    	 
+            <br /></p>
+    </mode-for-invention>
+  </description>
+  <claims id="claims_chi" lang="chi" format="original" date-changed="20091225">
+    <claim num="1">
+      <claim-text>
+        <claim-text>1.一种设备，用于生成多通道信号的参数表示中的等级参数，其 	    	 
+                <br />中多通道信号具有多个原始通道，所述参数表示包括参数集，当所述 		 	 	 
+                <br />参数集与至少一个下混通道一起使用时，允许多通道重构，所述设备  		  	 
+                <br />包括：	 	 	 	 
+                <br /></claim-text>
+        <claim-text>等级参数计算器(900)，用于计算等级参数(r<sub>M</sub>)，以使由所述等  		  	 
+                <br />级参数加权的所述至少一个下混通道的能量等于原始通道的能量之和	 	 	 	 
+                <br />的方式计算所述等级参数；和 	    	 
+                <br /></claim-text>
+        <claim-text>输出接口，用于生成输出数据，所述输出数据包括所述等级参数	 	 	 	 
+                <br />和所述参数集，或者所述等级参数和所述至少一个下混通道。 	    	 
+                <br /></claim-text>
+      </claim-text>
+    </claim>
+    <claim num="2">
+      <claim-text>
+        <claim-text>2.根据权利要求1所述的设备，其中所述等级参数计算器(900) 		 	 	 
+                <br />计算原始通道的能量之和与所述至少一个下混通道的能量之比的量度  		  	 
+                <br />作为所述等级参数。	 	 	 	 
+                <br /></claim-text>
+      </claim-text>
+    </claim>
+    <claim num="3">
+      <claim-text>
+        <claim-text>3.根据前述任何一项权利要求所述的设备，其中所述参数表示包 	    	 
+                <br />括所述至少一个下混通道的多个频带中每一个频带的参数集， 		 	 	 
+                <br /></claim-text>
+        <claim-text>其中所述等级参数计算器(900)计算每个频带的等级参数。 	    	 
+                <br /></claim-text>
+      </claim-text>
+    </claim>
+    <claim num="4">
+      <claim-text>
+        <claim-text>4.根据前述任何一项权利要求所述的设备，其中所述参数表述包 		 	 	 
+                <br />括所述至少一个下混通道的时间段序列中时间段的参数集，和  		  	 
+                <br /></claim-text>
+        <claim-text>其中所述等级参数计算器(900)计算所述至少一个下混通道的 		 	 	 
+                <br />时间段序列中每个时间段的等级参数。  		  	 
+                <br /></claim-text>
+      </claim-text>
+    </claim>
+    <claim num="5">
+      <claim-text>
+        <claim-text>5.根据前述任何一项权利要求所述的设备，其中所述输出接口生	 	 	 	 
+                <br />成可扩展数据流，所述可扩展数据流在较低扩展层中包括所述参数集 	    	 
+                <br />的第一参数子组，所述第一参数子组允许重构输出通道的第一子组。 		 	 	 
+                <br /></claim-text>
+        <claim-text>所述可扩展数据流在较高扩展层中包括所述参数集的第二参数 	    	 
+                <br />子组，所述第二参数子组与所述第一子组一起允许重构输出通道的第 		 	 	 
+                <br />二子组，和  		  	 
+                <br /></claim-text>
+        <claim-text>其中所述输出接口将所述等级参数输入到所述较低扩展层。 		 	 	 
+                <br /></claim-text>
+      </claim-text>
+    </claim>
+    <claim num="6">
+      <claim-text>
+        <claim-text>6.根据前述任何一项权利要求所述的设备，还包括参数生成器，  		  	 
+                <br />所述参数生成器生成左/右平衡参数作为第一平衡参数，生成中央平衡 	    	 
+                <br />参数作为第二平衡参数，生成正面/背面平衡参数作为第三参数，生成 		 	 	 
+                <br />左后/右后平衡参数作为第四平衡参数，生成低频增强平衡参数作为第  		  	 
+                <br />五平衡参数。	 	 	 	 
+                <br /></claim-text>
+      </claim-text>
+    </claim>
+    <claim num="7">
+      <claim-text>
+        <claim-text>7.一种设备，用于使用具有参数集的参数表示，生成原始多通道 	    	 
+                <br />信号的重构多通道表示，所述原始多通道信号具有至少三个原始通道， 		 	 	 
+                <br />所述参数集当与至少一个下混通道一起使用时，允许多通道重构，所  		  	 
+                <br />述参数表示包括等级参数，对所述等级参数进行计算，使得由所述等	 	 	 	 
+                <br />级参数加权的所述至少一个下混通道的能量等于原始通道的能量之 	    	 
+                <br />和，所述设备包括： 		 	 	 
+                <br /></claim-text>
+        <claim-text>等级校正器(902)，用于使用所述等级参数对所述至少一个下混 	    	 
+                <br />通道应用等级校正，从而通过使用参数集中的参数进行上混来得到校 		 	 	 
+                <br />正的多通道重构。  		  	 
+                <br /></claim-text>
+      </claim-text>
+    </claim>
+    <claim num="8">
+      <claim-text>
+        <claim-text>8.根据权利要求7所述的设备，其中所述等级参数是通道的能量	 	 	 	 
+                <br />之比，其中所述等级校正器(902)使用所述等级参数对所述至少一个 	    	 
+                <br />下混通道加权。 		 	 	 
+                <br /></claim-text>
+      </claim-text>
+    </claim>
+    <claim num="9">
+      <claim-text>
+        <claim-text>9.一种方法，用于生成多通道信号的参数表示中的等级参数，所  		  	 
+                <br />述多通道信号具有多个原始通道，所述参数表示包括参数集，当所述	 	 	 	 
+                <br />参数集与至少一个下混通道一起使用时，允许多通道重构，所述方法 	    	 
+                <br />包括： 		 	 	 
+                <br /></claim-text>
+        <claim-text>计算(900)等级参数(r<sub>M</sub>)，对以使由所述等级参数加权的所述 	    	 
+                <br />至少一个下混通道的能量等于所述原始通道的能量之和的方式计算所 		 	 	 
+                <br />述等级参数；和  		  	 
+                <br /></claim-text>
+        <claim-text>生成输出数据，所述输出数据包括所述等级参数和所述参数集， 		 	 	 
+                <br />或者所述等级参数和所述至少一个下混通道。  		  	 
+                <br /></claim-text>
+      </claim-text>
+    </claim>
+    <claim num="10">
+      <claim-text>
+        <claim-text>10.一种方法，用于使用具有参数集的参数表示，生成原始多通道	 	 	 	 
+                <br />信号的重构多通道表示，所述原始多通道信号具有至少三个原始通道， 	    	 
+                <br />所述参数集当与至少一个下混通道一起使用时，允许多通道重构，所 		 	 	 
+                <br />述参数表示包括等级参数，以使由所述等级参数加权的所述至少一个  		  	 
+                <br />下混通道的能量等于所述原始通道的能量之和的方式计算所述等级参	 	 	 	 
+                <br />数，所述方法包括： 		 	 	 
+                <br /></claim-text>
+        <claim-text>使用所述等级参数对所述至少一个下混通道应用等级校正，从而 	    	 
+                <br />通过使用所述参数集中的参数进行上混来得到校正的多通道重构。 		 	 	 
+                <br /></claim-text>
+      </claim-text>
+    </claim>
+    <claim num="11">
+      <claim-text>
+        <claim-text>11.一种计算机程序，具有机器可读指令，用于在计算机上运行时  		  	 
+                <br />执行根据权利要求9或10所述的方法。	 	 	 	 
+                <br /></claim-text>
+      </claim-text>
+    </claim>
+    <claim num="12">
+      <claim-text>
+        <claim-text>12.一种具有参数集的参数表示，当所述参数集与至少一个下混通 	    	 
+                <br />道一起使用时，允许多通道重构，所述参数表示包括等级参数，以使 		 	 	 
+                <br />由所述等级参数加权的所述至少一个下混通道的能量等于原始通道的  		  	 
+                <br />能量之和的方式计算等级参数。	 	 	 	 
+                <br /></claim-text>
+      </claim-text>
+    </claim>
+    <claim num="13">
+      <claim-text>
+        <claim-text>13.根据权利要求12所述的参数表示，用于在输入到根据权利要 	    	 
+                <br />求7所述的设备时控制多通道重构。 		 	 	 
+                <br /></claim-text>
+      </claim-text>
+    </claim>
+  </claims>
+</lexisnexis-patent-document>

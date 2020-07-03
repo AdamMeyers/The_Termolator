@@ -1,4 +1,0 @@
-# Run Chinese word segmenter and part-of-speech tagger
-# java -Xmx25000m -cp "./WS_POS_brandeis.jar" brandeis.transition.wordseg.WordSegmentToolkit -mode test -model model/train_brandeis.model.gz -test INPUT_DIR -out OUTPUT_DIR
-java -Xmx25000m -cp "./WS_POS_brandeis.jar" brandeis.transition.wordseg.WordSegmentToolkit -mode test -model model/train_brandeis.model.gz -test chinese-samples/sampleRDG -out POS-samples/sampleRDG
-java -Xmx25000m -cp "./WS_POS_brandeis.jar" brandeis.transition.wordseg.WordSegmentToolkit -mode test -model model/train_brandeis.model.gz -test chinese-samples/sampleBackground -out POS-samples/sampleBackground

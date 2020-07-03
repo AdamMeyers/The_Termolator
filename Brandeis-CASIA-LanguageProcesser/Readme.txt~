@@ -1,0 +1,23 @@
+This README file explains how to use the tool for Chinese word segmentation and POS tagging which is developed by the Chinese Language Processing Group, Brandeis University.
+
+Contributors: Zhiguo Wang, Si Li, Nianwen Xue
+
+Requirements
+=============
+Java version 1.8 or above
+
+
+
+Usage
+======
+
+Use the following command:
+java -Xmx25000m -cp "./WS_POS_brandeis.jar" brandeis.transition.wordseg.WordSegmentToolkit -mode test -model model/train_brandeis.model.gz -test INPUT_DIR -out OUTPUT_DIR
+
+Example:
+java -Xmx25000m -cp "./WS_POS_brandeis.jar" brandeis.transition.wordseg.WordSegmentToolkit -mode test -model model/train_brandeis.model.gz -test data -out output
+
+If only test single file, the command is using ¡®ftest¡¯ as follows:
+java -Xmx25000m -cp "./WS_POS_brandeis.jar" brandeis.transition.wordseg.WordSegmentToolkit -mode ftest -model model/train_brandeis.model.gz -ftest INPUT_File_DIR -out OUTPUT_File_DIR
+
+
