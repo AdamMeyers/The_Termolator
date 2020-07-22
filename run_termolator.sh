@@ -64,10 +64,9 @@ else
    bk_abb_full_dict=${12}_bk.dict_abbr_to_full
 fi
 
-
-
 ## not sure if this really is necessary
 ## $TERMOLATOR/possibly_create_abbreviate_dicts.py $4.internal_abbr_list $4.dict_full_to_abbr $4.dict_abbr_to_full
+
 if test -f temporary_TERMOLATOR_POS.properties; then 
     echo "Using Existing temporary_TERMOLATOR_POS.properties file"
 else
@@ -153,10 +152,10 @@ fi
 
 if [ "${12}" = "False" ]; then
    echo "calling filter_term_output.py with filter_term_output.py $4 ${web_scores} $6 $7 ${10}"
-   $TERMOLATOR/filter_term_output.py $4 ${web_scores} $6 $7 $4.internal_foreground_abbr_list ${10}
+   python3 $TERMOLATOR/filter_term_output.py $4 ${web_scores} $6 $7 $4.internal_foreground_abbr_list ${10}
 else
    echo "calling filter_term_output.py with filter_term_output.py $4 ${web_scores} $6 $7 ${10}"
-   $TERMOLATOR/filter_term_output.py $4 ${web_scores} $6 $7 $4.internal_foreground_abbr_list ${10}
+   python3 $TERMOLATOR/filter_term_output.py $4 ${web_scores} $6 $7 $4.internal_foreground_abbr_list ${10}
 fi
 
 echo "Final terms can be found in $4.out_term_list from the scored file in $4.scored_output"

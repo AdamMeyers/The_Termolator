@@ -1,4 +1,5 @@
 from term_utilities import *
+from abbreviation_error_detector import *
 
 global abbr_to_full_dict
 global full_to_abbr_dict
@@ -876,7 +877,7 @@ def get_next_abbreviate_relations(previous_line,line,position):
 def record_abbreviate_dictionary(fulltext,abbreviation):
     global abbr_to_full_dict
     global full_to_abbr_dict
-    key = abbreviation ## use naturally occuring form of abbreviations (otherwise causes problems, e.g., if abbreviation is OR
+    key = abbreviation.upper() ## use naturally occuring form of abbreviations (otherwise causes problems, e.g., if abbreviation is OR
     value = regularize_match_string1(fulltext)
     ## put dictionary items at front of lists
     ## this ensures that the most recently encountered
@@ -988,6 +989,12 @@ def run_abbreviate_on_lines(lines,abbr_file,reset_dictionary=False):
     return(output)
 
 def save_abbrev_dicts(abbr_to_full_file,full_to_abbr_file):
+    global abbr_to_full_dict
+    global full_to_abbr_dict
+    ## filter_both_abbr_dicts(abbr_to_full_dict,  full_to_abbr_dict)
+    ## remove cases that will cause incorrect lemma matches due to
+    ## abbreviation ambiguity, e.g., abc --> already been chewed, archetype benfits club, alphabet
+    ## removed -- only removing problem cases at the level of the lemma dictionary
     with open(abbr_to_full_file,'w') as abbr_full_stream,open(full_to_abbr_file,'w') as full_abbr_stream:
         for key in abbr_to_full_dict:
             abbr_full_stream.write(interior_white_space_trim(key))

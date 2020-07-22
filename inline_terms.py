@@ -2548,6 +2548,10 @@ def make_top_terms_with_lemma_output_file(scored_output_file,lemma_dictionary_fi
     
 def record_lemma_dict(lemma_dict_file):
     global lemma_dict
+    global abbr_to_full_dict
+    filter_lemma_dictionary_for_abbreviation_conflicts(lemma_dict,abbr_to_full_dict)
+    ## print(1,(len(lemma_dict)),2,(len(abbr_to_full_dict)),3,len(full_to_abbr_dict))
+    ## input('pause')    
     ## print('final_lemma_dict_length',len(lemma_dict))
     if len(lemma_dict) == 0:
         return(False)
