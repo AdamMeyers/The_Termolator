@@ -21,6 +21,12 @@ count = 0
 
 initialize_utilities()
 
+def ends_with_non_terminal_punctuation(text):
+    if re.search('[,:();] *$',text):
+        return(True)
+    else:
+        return(False)
+
 def may_refer_to_entry (title,entry):
     global count
     try:
@@ -50,7 +56,7 @@ def look_up_wikipedia_page_from_internet(search_term):
     response = requests.get(url).text
     return(response)
 
-def get_first_paragraph_from_wikipedia_entry(entry):
+def get_first_paragraph_from_wikipedia_entry(entry,min_length=500):
     paragraph_start = re.compile('<p[^>]*>')
     paragraph_end = re.compile('</p>')
     done = False
@@ -63,6 +69,12 @@ def get_first_paragraph_from_wikipedia_entry(entry):
             if next_paragraph_end:
                 end = next_paragraph_end.start()
                 text = remove_xml(entry[start:end])
+                if (len(text) < min_length) or (ends_with_non_terminal_punctuation(text)):
+                    new_next_p_end = paragraph_end.search(entry,end+10)
+                    if new_next_p_end:
+                        next_paragraph_end = new_next_p_end
+                        end = next_paragraph_end.start()                        
+                        text = remove_xml(entry[start:end])
                 if re.search('[a-z]{3}',text):
                    return(text)
                 else:
@@ -114,7 +126,7 @@ def get_first_paragraph_from_wikipedia_online(search_term):
     return(get_first_paragraph_from_wikipedia_entry(full_page))
 
 
-def get_next_id_paragraph_title(instream,infile=False):
+def get_next_id_paragraph_title(instream,infile=False,minimum_length=500):
     doc_id_pattern = re.compile('<doc id="([0-9]+)".*title="([^"]*)".*>')
     doc_end_pattern = re.compile('</doc>')
     stop = False
@@ -126,7 +138,7 @@ def get_next_id_paragraph_title(instream,infile=False):
         if next_line == '':
             stop = True
         elif doc_end_pattern.search(next_line):
-            if title and doc_id and paragraph:
+            if title and doc_id and paragraph:                
                 return(paragraph,doc_id,title)
             else:
                 paragraph,doc_id,title = False, False, False
@@ -136,6 +148,10 @@ def get_next_id_paragraph_title(instream,infile=False):
                 pass
             else:
                 paragraph = next_line ## paragraphs seem to be on single lines
+        elif doc_id and title and (not doc_id_pattern.search(next_line)) and paragraph and ((len(paragraph) < minimum_length)  \
+                                                                                                or (ends_with_non_terminal_punctuation(paragraph))):
+            next_line = next_line.strip(os.linesep)
+            paragraph = paragraph + ' ' + next_line
         else:
             match = doc_id_pattern.search(next_line)
             if match:

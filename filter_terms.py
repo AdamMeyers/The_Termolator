@@ -268,7 +268,7 @@ def get_noun_nom_map(word):
 def normal_word(word):
     if (word in pos_dict) and (not word in jargon_words):
         pos = pos_dict[word][:]
-        if 'PERSON_NAME' in pos:
+        if 'PERLOC_NAME' in pos:
             if len(pos)>1:
                 return(True)
             else:

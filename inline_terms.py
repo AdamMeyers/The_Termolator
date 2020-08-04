@@ -83,7 +83,7 @@ def topic_term_ok(word_list,pos_list,term_string):
                     return(False,False)
     if signif_term > 0:
         pass
-    elif pos_list[-1]=='PERSON_NAME':
+    elif pos_list[-1]=='PERLOC_NAME':
         return(False,False)
     elif (len(word_list)==1) and (len(word_list[0])==1):
         return(False,False)
@@ -940,7 +940,7 @@ def get_topic_terms(text,offset,filter_off=False):
                                 latin_pp = False
                         pre_np = False
                         first_piece=False
-                    elif pos in ['NOUN','POSSESS_OOV','AMBIG_NOUN','PERSON_NAME','NOUN_OOV']:
+                    elif pos in ['NOUN','POSSESS_OOV','AMBIG_NOUN','PERLOC_NAME','NOUN_OOV']:
                         ## out of vocab possessive
                     ## evaluate piece by POS
                     ## looking for sequences of pieces that either: 
@@ -1027,7 +1027,7 @@ def get_topic_terms(text,offset,filter_off=False):
                             latin_pp = False
                             pre_np = False
                             first_piece=False
-                            if (len(piece3)>1) and pos in ['NOUN','POSSESS_OOV','AMBIG_NOUN','PERSON_NAME','NOUN_OOV']:
+                            if (len(piece3)>1) and pos in ['NOUN','POSSESS_OOV','AMBIG_NOUN','PERLOC_NAME','NOUN_OOV']:
                                 if piece3.endswith("'s"):
                                     piece3a = piece3[:-2]
                                     piece3b = piece3[-2:]
@@ -1061,7 +1061,7 @@ def get_topic_terms(text,offset,filter_off=False):
                                 pre_np = False
                                 first_piece=False
                             last_pos = pos
-                        elif (len(piece3)>1) and pos in ['NOUN','POSSESS_OOV','AMBIG_NOUN','PERSON_NAME','NOUN_OOV']:
+                        elif (len(piece3)>1) and pos in ['NOUN','POSSESS_OOV','AMBIG_NOUN','PERLOC_NAME','NOUN_OOV']:
                             if piece3.endswith("'s"):
                                 piece3a = piece3[:-2]
                                 piece3b = piece3[-2:]
@@ -1174,20 +1174,20 @@ def get_compound_lemma(compound_term,first_term,second_term):
 
 def term_is_org(term):
     words = divide_sentence_into_words_and_start_positions(term)
-    person_names = 0
+    perloc_names = 0
     Fail = False
     for position,word in words:
         lower = word.lower()
         is_capital = re.search('^[A-Z][a-z]',word)
-        if is_capital and (lower in pos_dict) and ('PERSON_NAME' in pos_dict[lower]):
-            person_names = person_names+1
+        if is_capital and (lower in pos_dict) and ('PERLOC_NAME' in pos_dict[lower]):
+            perloc_names = perloc_names+1
         if is_capital or closed_class_check2.search(word):
             pass
         else:
             Fail = True
-    if len(words) <= 1 or (person_names == 0):
+    if len(words) <= 1 or (perloc_names == 0):
         return(False)
-    elif ((len(words) == 2) and (person_names == 2)):
+    elif ((len(words) == 2) and (perloc_names == 2)):
         ## all words of an organization except for closed class words should
         ## be capitalized.
         ## However, 2 word capitalized phrases can be person names, particularly if
@@ -1203,9 +1203,9 @@ def term_is_org_tester(term):
     if not re.search('[A-Z]',term[0]):
         return(False)
     words = divide_sentence_into_words_and_start_positions(term)
-    person_names = 0
+    perloc_names = 0
     Fail = False
-    ambiguous_person_names = 0
+    ambiguous_perloc_names = 0
     word_pattern = []
     if re.search('^[A-Z][a-z]',words[-1][1]):
         if last_word_organization.search(words[-1][1]):
@@ -1221,10 +1221,10 @@ def term_is_org_tester(term):
     for position,word in words:
         lower = word.lower()
         is_capital = re.search('^[A-Z][a-z]',word)
-        if is_capital and (lower in pos_dict) and ('PERSON_NAME' in pos_dict[lower]):
-            person_names = person_names+1
+        if is_capital and (lower in pos_dict) and ('PERLOC_NAME' in pos_dict[lower]):
+            perloc_names = perloc_names+1
             if len(pos_dict[lower])>1:
-                ambiguous_person_names = ambiguous_person_names+1
+                ambiguous_perloc_names = ambiguous_perloc_names+1
                 word_pattern.append('ambig_name')
             else:
                 word_pattern.append('name')
@@ -1237,7 +1237,7 @@ def term_is_org_tester(term):
     if not ambig_last_word_org.search(words[-1][1]):
         length_name_criterion = True
     elif (len(words)<4) or \
-      ((person_names>1) and (person_names>ambiguous_person_names)):
+      ((perloc_names>1) and (perloc_names>ambiguous_perloc_names)):
         length_name_criterion = True
     else:
         length_name_criterion = False
@@ -1249,9 +1249,9 @@ def term_is_org_tester(term):
         ne_class = 'GPE'
     elif ends_in == 'LOC' and length_name_criterion:
         ne_class = 'LOCATION'
-    elif person_names == 0:
+    elif perloc_names == 0:
         return(False)
-    elif (len(words) == 2) and (person_names == 2) and (person_names>ambiguous_person_names) and (' ' in term) \
+    elif (len(words) == 2) and (perloc_names == 2) and (perloc_names>ambiguous_perloc_names) and (' ' in term) \
       and (word_pattern[-1] == 'name'):
         ## all words of an organization except for closed class words should
         ## be capitalized.
@@ -1273,9 +1273,9 @@ def term_is_org_with_write(outstream,term,instances):
     if not re.search('[A-Z]',term[0]):
         return(False)
     words = divide_sentence_into_words_and_start_positions(term)
-    person_names = 0
+    perloc_names = 0
     Fail = False
-    ambiguous_person_names = 0
+    ambiguous_perloc_names = 0
     word_pattern = []
     if re.search('^[A-Z][a-z]',words[-1][1]):
         if last_word_organization.search(words[-1][1]):
@@ -1291,10 +1291,10 @@ def term_is_org_with_write(outstream,term,instances):
     for position,word in words:
         lower = word.lower()
         is_capital = re.search('^[A-Z][a-z]',word)
-        if is_capital and (lower in pos_dict) and ('PERSON_NAME' in pos_dict[lower]):
-            person_names = person_names+1
+        if is_capital and (lower in pos_dict) and ('PERLOC_NAME' in pos_dict[lower]):
+            perloc_names = perloc_names+1
             if len(pos_dict[lower])>1:
-                ambiguous_person_names = ambiguous_person_names+1
+                ambiguous_perloc_names = ambiguous_perloc_names+1
                 word_pattern.append('ambig_name')
             else:
                 word_pattern.append('name')
@@ -1307,7 +1307,7 @@ def term_is_org_with_write(outstream,term,instances):
     if not ambig_last_word_org.search(words[-1][1]):
         length_name_criterion = True
     elif (len(words)<4) or \
-      ((person_names>1) and (person_names>ambiguous_person_names)):
+      ((perloc_names>1) and (perloc_names>ambiguous_perloc_names)):
         length_name_criterion = True
     else:
         length_name_criterion = False
@@ -1319,9 +1319,9 @@ def term_is_org_with_write(outstream,term,instances):
         ne_class = 'GPE'
     elif (ends_in == 'LOC') and length_name_criterion:
         ne_class = 'LOCATION'
-    elif person_names == 0:
+    elif perloc_names == 0:
         return(False)
-    elif (len(words) == 2) and (person_names == 2) and (person_names>ambiguous_person_names) and (' ' in term) \
+    elif (len(words) == 2) and (perloc_names == 2) and (perloc_names>ambiguous_perloc_names) and (' ' in term) \
       and (word_pattern[-1] == 'name'):
         ## all words of an organization except for closed class words should
         ## be capitalized.
@@ -1754,7 +1754,7 @@ def guess_limited_ptb_pos(word):
     ## of several biases based on this situation.
     ## COMLEX POS: ADJECTIVE ADVERB ADVPART AUX CARDINAL CCONJ DET NOUN ORDINAL
     ## PREP PRONOUN QUANT SCONJ SCOPE TITLE VERB WORD
-    ## Added POS: PERSON_NAME NATIONALITY
+    ## Added POS: PERLOC_NAME NATIONALITY
     ## others
     if (word in noun_base_form_dict) and word.endswith('s'):
         return('NNS')        
@@ -1788,7 +1788,7 @@ def guess_limited_ptb_pos(word):
     elif ('NATIONALITY' in entry) or ('ORDINAL' in entry):
         return('JJ')
     else:
-        for CPOS, PPOS in [['PERSON_NAME','NNP'], ['ADVPART','RP'],['ADVERB','RB']]:
+        for CPOS, PPOS in [['PERLOC_NAME','NNP'], ['ADVPART','RP'],['ADVERB','RB']]:
             ## CPOS = COMLEX POS
             ## PPOS = Penn Treebank POS
             if CPOS in entry:

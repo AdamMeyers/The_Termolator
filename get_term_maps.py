@@ -203,8 +203,6 @@ def get_term_maps(term_list,file_list,outfile,input_path_prefix,remove_mismatche
                 for line in instream:
                     line = line.strip(os.linesep).lower()
                     entry = read_in_term_line(line)
-                    if not 'string' in entry:
-                        print(line)
                     string = entry['string']
                     if string in lemma_dict:
                         lemma = lemma_dict[string]
@@ -224,6 +222,9 @@ def get_term_maps(term_list,file_list,outfile,input_path_prefix,remove_mismatche
                         lemma = lemma_dict[string]
                     elif lemma in lemma_dict:
                         lemma = lemma_dict[lemma]
+                    else:
+                        ## AM debug 8/3/2020
+                        lemma = string
                     update_term_dict(short_file_name,term_dict,string,lemma,start,end,head_term,merge_super_string=remove_mismatches)
         for infile in infile_list:
             with open(infile) as instream:
@@ -263,16 +264,24 @@ def get_term_maps(term_list,file_list,outfile,input_path_prefix,remove_mismatche
             rank = rank+1
             if key in term_dict:
                 entry = term_dict[key]
-            elif key in lemma_dict:
+            elif (key in lemma_dict)  and (key != lemma_dict[key]):
+                ## never happens ??
                 new_key = lemma_dict[key]
                 if new_key in keys:
                     pass
                 else:
                     print('key not found:',key)
-            start_string = '<term string="'+key+'" rank='+str(rank)
-            if key in done:
+            else:
+                done.add(key)
+                entry = []
+                start_string = ''
+                ## skip to rest of loop
+            if not key in done:
+                start_string = '<term string="'+key+'" rank='+str(rank)
+            else:
+                start_string = ''
                 skip = True
-            elif (not 'variants' in entry) and (not 'substring_of' in entry):
+            if (not 'variants' in entry) and (not 'substring_of' in entry):
                 if remove_mismatches:
                     pass
                 else:
@@ -286,7 +295,7 @@ def get_term_maps(term_list,file_list,outfile,input_path_prefix,remove_mismatche
             else:
                 number_of_files = 0
                 skip = True
-                print('Warning:',key,'has no instances. Outfile:',outfile)
+                ## print('Warning:',key,'has no instances. Outfile:',outfile)
             if not skip:                
                 start_string += ' number_of_files_containing_term='+str(number_of_files)
                 length = len(entry['instances'])

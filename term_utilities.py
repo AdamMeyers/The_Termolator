@@ -801,10 +801,25 @@ def term_dict_check(term,test_dict):
         pat = re.search('-([^-]+)$',term)
         if pat and pat.group(1) in test_dict:
             return(True)
-        
+
+def ordinal_profile(word):
+    if (len(word) > 2) and re.search('^[0-9]+((st)|(nd)|(rd)|(th))$',word):
+        return(True)
+    else:
+        return(False)
+
+def reliable_location_entry(word):
+    entry = location_dictionary[word]
+    if 'ABBREVIATION-OF' in entry:
+        return(False)
+    else:
+        return(True)
+    
 def guess_pos(word,is_capital,offset=False,case_neutral=False):
     pos = []
     plural = False
+    if (word.lower() in location_dictionary) and is_capital and  reliable_location_entry(word.lower()):
+        return('PERLOC_NAME')
     if offset and (offset in pos_offset_table):
         tagger_pos = pos_offset_table[offset]            
         ## Most conservative move is to use for disambiguation,
@@ -850,8 +865,8 @@ def guess_pos(word,is_capital,offset=False,case_neutral=False):
         pos = pos_dict[word][:]
         if not possessive:
             pos = resolve_differences_with_pos_tagger(word,offset,pos,tagger_pos)
-        if ('PERSON_NAME' in pos) and (not is_capital):
-            pos.remove('PERSON_NAME')
+        if ('PERLOC_NAME' in pos) and (not is_capital):
+            pos.remove('PERLOC_NAME')
             if len(pos) == 0:
                 pos.append('NOUN_OOV')
         ## initially set pos based on dictionary
@@ -899,11 +914,11 @@ def guess_pos(word,is_capital,offset=False,case_neutral=False):
                     return('NOUN_OOV')
                 else:
                     return('NOUN')
-            elif ('PERSON_NAME' in pos):
+            elif ('PERLOC_NAME' in pos):
                 if possessive:
                     return('POSSESS')
                 else:
-                    return('PERSON_NAME')
+                    return('PERLOC_NAME')
             elif 'VERB' in pos:
                 return('VERB')
             elif 'DET' in pos:
@@ -917,10 +932,12 @@ def guess_pos(word,is_capital,offset=False,case_neutral=False):
                     return('TECH_ADJECTIVE')
                 else:
                     return('ADJECTIVE')
-            elif 'PERSON_NAME' in pos:
-                return('PERSON_NAME')
+            elif 'PERLOC_NAME' in pos:
+                return('PERLOC_NAME')
             else:
                 return('OTHER')
+    elif  ordinal_profile(word.lower()):
+        return('SKIPABLE_ADJ')
     elif (not possessive) and ('-' in word) and re.search('[a-zA-Z]',word):
         little_words = word.split('-')
         if len(little_words)>2:
@@ -947,7 +964,7 @@ def guess_pos(word,is_capital,offset=False,case_neutral=False):
                     ## treat like adjective, like PTB, also to rule out
                 else:
                     return('NOUN')
-            elif 'PERSON_NAME' in last_pos:
+            elif 'PERLOC_NAME' in last_pos:
                 return('NOUN')
             elif 'SKIPABLE_ADJ' in pos:
                 if term_dict_check(word.lower(),stat_adj_dict):
