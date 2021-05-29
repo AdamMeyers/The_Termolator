@@ -44,7 +44,10 @@ now. These include:
      sampled from the foreground documents with an emphasis on finding
      samples that are both well-formed (according to a language model)
      and different from each other (distance measured as cosine
-     similarity).
+     similarity). c) A Question-based front-end to termolator and the
+     summary program that gets foreground and background documents
+     automatically from wikipedia. d) A command line based program for
+     extracting text files from Wikipedia for use in Termolator.
 
      README_fr.txt -- This describes the French version of Termolator,
      including installation instructions (which presume first

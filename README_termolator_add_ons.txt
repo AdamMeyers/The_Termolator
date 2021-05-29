@@ -6,7 +6,13 @@ this was possible on the linux machines, including one 3.2 i5 machine
 with 8gb RAM. My current theory is that the key factor is that the
 linux machine had more swap space.
 
-A. Creating term map and edited edited term list file.
+The following sections are below: A) Creating term map and term list
+file; B) The Summary Creation Program; C) The Question-based system
+for generating a summary from wikipedia (this last program requires
+the beautiful soup Python package); D) A program for extracting text
+categories about a topic from Wikipedia.
+
+A. Creating term map and edited term list file.
 
 1) use script run_term_map.sh with 5 arguments
    -- Argument 1: list of foreground files
@@ -180,3 +186,56 @@ following arguments:
 4) The program calls the following python packages:
        requests, re, math, time, csv, shelve
   
+C) The Question-based system for generating a summary from wikipedia.
+This program requires the beautiful soup python library. This will
+generate a summary (a glossary) for a topic found in Wikipedia,
+provided that there are sufficient articles about that topic and
+superclasses of that topic.  
+
+1) To run the system from the "summary" subdirectory, do the following
+command and answer all the questions.
+
+   python3 auto_summary.py
+
+2) The first question is to choose the foreground topic.  You are then
+     given a numbered set of choices to clarify which meaning of the
+     term you prefer or to choose some similar term.  You should then
+     make a choice by number.
+
+3) You are then asked to pick one or more choices of backgrounds, each
+     background is a more general topic that includes your foreground.
+     For example, given choices 1 to 5, where 5 represents all of 1,2,3 and 4,
+     you can choose: "1" or "2" or "3" or "4" or "5" or "1,2" or "1,3"
+     or "1,4" or "2,3" or "2,4" or "1,2,3", or "1,2,4" or "1,3,4" or "2,3,4".
+
+4) You are given one chance to redo foregroundand background (steps
+1-3) if the result is not what you want.
+
+5) You can choose a number of articles (foreground and background) to
+use for Termolator and glossary creation -- I suggest 500.
+
+6) You are invited to provide a file format for the summary. I suggest .txt
+
+7) The system generates all intermediate files, and eventually a
+summary. This typically takes anywhere from 20 minutes to an hour.
+
+8) We currently have theories about what the appropriate background
+for a given foreground may be. This system provides a testbed for
+making these theories more precise.  We currently believe that the
+foreground should be a subclass of the background and that the closer
+the foreground is to the background, the more precise the terminology
+will be.  Clearly a lot of details are missing and a more precise
+understanding would be helpful to future research.
+
+D) A program for extracting text categories about a topic from
+Wikipedia.  This program is found in the wikipedia_extraction_utility
+subdirectory and includes a README.  To use this program, you must
+find a category in wikipedia and spell that category name the same as
+wikipedia does and then execute a command such as:
+
+	  get_wiki_corpus_recurs.sh English electricity electricity TRUE 3  500
+
+This would extract approximately 500 files about "electricity" and put
+them in a directory called "electricity".  See the README in that
+directory for details.
+
