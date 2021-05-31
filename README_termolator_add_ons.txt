@@ -227,6 +227,13 @@ the foreground is to the background, the more precise the terminology
 will be.  Clearly a lot of details are missing and a more precise
 understanding would be helpful to future research.
 
+9) Note that if you choose a topic with very few wikipedia files, it is
+likely that the system will produce very little output (or no output)
+in the resulting summary.  This is because a term is assumed to be
+valid if it appears in at least 3 documents.  If there are very few
+documents to begin with, there may be no term that reaches this
+threshold.
+
 D) A program for extracting text categories about a topic from
 Wikipedia.  This program is found in the wikipedia_extraction_utility
 subdirectory and includes a README.  To use this program, you must

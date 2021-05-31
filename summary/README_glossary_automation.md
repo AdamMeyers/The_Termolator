@@ -26,5 +26,9 @@ python3 auto_summary.py
 test-summaries/README.txt for more detailed instructions, with
 examples.
 
-
-
+Note: If you choose a topic with very few wikipedia files, it is
+likely that the system will produce very little output (or no output)
+in the resulting summary.  This is because a term is assumed to be
+valid if it appears in at least 3 documents.  If there are very few
+documents to begin with, there may be no term that reaches this
+threshold.

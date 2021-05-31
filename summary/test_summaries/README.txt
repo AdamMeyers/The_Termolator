@@ -33,3 +33,13 @@ choosing 2 different possible backgrounds.
      For the background, I chose a combination of all the chosen
      backgrounds.  The resulting file is
      "Search_for_extraterrestrial_intelligence.summary"
+
+6) Note that if you choose a topic with very few wikipedia files, it
+is likely that the system will produce very little output (or no
+output) in the resulting summary.  This is because a term is assumed
+to be valid if it appears in at least 3 documents.  If there are very
+few documents to begin with, there may be no term that reaches this
+threshold.  For example, if you choose "Ergodic theory" as foreground
+and "Dynamical systems" as background, you will get an empty .summary
+file as the result. You will also get an .out_term_list file
+containing terms that occurred in a single file.
