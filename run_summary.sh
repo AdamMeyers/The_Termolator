@@ -8,7 +8,8 @@
 ## There are several other possible variations that are possible by altering the code or adding
 ## key word arguments. We will leave these out for now.
 ##
-## $4 = the file type of the text files:  txt3 is typical for Termolator files,
-## but txt2 or txt is also possible
+## $4 = the file type of the text files:  .txt3 is typical for Termolator files,
+## but .txt2 or .txt is also possible
 
-python3 $3/run_summary.py $1 $2 $4
+python3 $3/run_summary.py $1 $2 $4 False
+
