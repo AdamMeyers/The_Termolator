@@ -34,7 +34,11 @@ choosing 2 different possible backgrounds.
      backgrounds.  The resulting file is
      "Search_for_extraterrestrial_intelligence.summary"
 
-6) Note that if you choose a topic with very few wikipedia files, it
+6) For the foreground I chose "Antioxidants" and for background I
+     chose "Biomolecules by physiological function". The result are in
+     Antioxidants.summary
+
+7) Note that if you choose a topic with very few wikipedia files, it
 is likely that the system will produce very little output (or no
 output) in the resulting summary.  This is because a term is assumed
 to be valid if it appears in at least 3 documents.  If there are very
