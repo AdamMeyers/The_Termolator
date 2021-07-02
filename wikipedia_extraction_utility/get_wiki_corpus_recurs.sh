@@ -21,7 +21,7 @@ catnamefile=${2// /$rep2}
 catnamefile="${catnamefile//'/'/_}"
 catnamefile="${catnamefile//'&'/_}"
 catnamefile="${catnamefile//'('/_}"
-catnamefile="${catnamefile//')'/_}" 
+catnamefile="${catnamefile\//')'/_}"
 depth=${5,,}
 max=${6,,}
 
@@ -131,17 +131,17 @@ while IFS= read -r line; do
 	##ns=$( echo "$line" | cut -d $'\t' -f2 )4
 	line="$(echo -e "${line}" | sed -e 's/[[:space:]]*$//')" ##remove trailing whitespace
 
-	if [[ $count -lt 49 ]]; then
-		#echo "action: added to query"
-		#id=$( echo "$line" | cut -d $'\t' -f1 )
-		
+	 if [[ $count -lt 49 ]]; then
 		#echo "id: $id"
 		if [[ -n "$line" ]]; then
-			getarticles2="${getarticles2}|$line"
+			if [ "${getarticles2}" = "" ]; then
+				getarticles2="$line"
+			else
+				getarticles2="${getarticles2}|$line"
+			fi
 		fi
-		##echo "getart2 so far: $getarticles2"
 		((count++))
-	
+
 	else
 		getarticlesfull="$wiki_url$getarticles1$getarticles2$getarticles3"
 		arr+=("$getarticlesfull")

@@ -19,7 +19,7 @@ catnamefile=${2// /$rep2}
 catnamefile="${catnamefile//'/'/_}"
 catnamefile="${catnamefile//'&'/_}"
 catnamefile="${catnamefile//'('/_}"
-catnamefile="${catnamefile//')'/_}" 
+catnamefile="${catnamefile\//')'/_}"
 #depth=${5,,}
 max=${5,,}
 
@@ -46,7 +46,7 @@ if [ "$max" != "false" ]; then
 #	use_depth=true
 #	max=0
 fi
-	
+
 
 ##final output file
 final_outdir=$3
@@ -81,7 +81,7 @@ echo
 echo "$2" >> "$subcat_list"
 
 ##dict of languages & their Wikipedia code
-declare -A lang_codes_dict=(["english"]="en" ["german"]="de" ["french"]="fr" ["spanish"]="es" ["russian"]="ru" ["japanese"]="ja" ["dutch"]="nl" ["italian"]="it" ["swedish"]="sv" ["polish"]="pl" ["vietnamese"]="vi" ["portuguese"]="pt" ["arabic"]="ar" ["chinese"]="zh" ["ukrainian"]="uk" ["catalan"]="ca" ["norwegian"]="no" ["finnish"]="fi" ["czech"]="cs") 
+declare -A lang_codes_dict=(["english"]="en" ["german"]="de" ["french"]="fr" ["spanish"]="es" ["russian"]="ru" ["japanese"]="ja" ["dutch"]="nl" ["italian"]="it" ["swedish"]="sv" ["polish"]="pl" ["vietnamese"]="vi" ["portuguese"]="pt" ["arabic"]="ar" ["chinese"]="zh" ["ukrainian"]="uk" ["catalan"]="ca" ["norwegian"]="no" ["finnish"]="fi" ["czech"]="cs")
 ##TODO: add more languages later
 
 ##retrieve lang code from dict
@@ -101,7 +101,7 @@ $6/get_wiki_corpus_part_1.sh "$wiki_url" "$2" "$final_outdir" "$article_list" "$
 if [[ "$use_max" == "true" ]]; then
 	touch "${catnamefile}_maxids.txt"
 	shuf -n $max "$article_list" >> "${catnamefile}_maxids.txt"
-else 
+else
 	cp "$article_list" "${catnamefile}_maxids.txt"
 fi
 
@@ -121,16 +121,20 @@ while IFS= read -r line; do
 
 	line="$(echo -e "${line}" | sed -e 's/[[:space:]]*$//')" ##remove trailing whitespace
 
-	if [[ $count -lt 49 ]]; then		
+	if [[ $count -lt 49 ]]; then
 		#echo "id: $id"
 		if [[ -n "$line" ]]; then
-			getarticles2="${getarticles2}|$line"
+			if [ "${getarticles2}" = "" ]; then
+				getarticles2="$line"
+			else
+				getarticles2="${getarticles2}|$line"
+			fi
 		fi
 		((count++))
-	
+
 	else
 		getarticlesfull="$wiki_url$getarticles1$getarticles2$getarticles3"
-		arr+=("$getarticlesfull")		
+		arr+=("$getarticlesfull")
 		getarticles2="$line"
 		count=0
 	fi
@@ -141,12 +145,12 @@ getarticlesfull="$wiki_url$getarticles1$getarticles2$getarticles3"
 arr+=("$getarticlesfull")
 
 
-## --------- get articles 
+## --------- get articles
 
 outf="${catnamefile}_xml_all.txt"
 if [ ! -e "$outf" ]; then
         touch "$outf"
-else 
+else
 	echo "${catnamefile}_xml_all.txt already exists. Appending to end of file."
 fi
 
@@ -155,7 +159,7 @@ for query in "${arr[@]}"; do
 	#echo "GETTING QUERY: $query"
 	#	echo "query $count"
 
-	wget -a "wget_logfile" -O - $query >> "$outf" 
+	wget -a "wget_logfile" -O - $query >> "$outf"
 	((count++))
 done
 
@@ -179,7 +183,7 @@ echo
 echo "Final stage: separating docs"
 echo
 
-python3 $6/separate-wikidocs2.py "${catnamefile}_wikiextractor_output/" "$final_outdir" 
+python3 $6/separate-wikidocs2.py "${catnamefile}_wikiextractor_output/" "$final_outdir"
 
 
 ## ------------ cleanup unwanted files
@@ -192,8 +196,3 @@ echo "Done"
 #comment out if want to keep file containing wikiextractor output
 rm -r "${catnamefile}_wikiextractor_output/"
 exit
-
-
-
-
-

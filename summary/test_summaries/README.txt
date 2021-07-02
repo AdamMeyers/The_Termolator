@@ -12,13 +12,13 @@ runs are the choices of foreground and background.
 chose "diseases and disorders".  The script did not find enough
 articles about "osteopenia" so it expanded the result to include terms
 for all "aging associated diseases".  The resulting file is:
-"Aging-associated_diseases.summary"
+"Aging-associated_diseases.summary"  ** running **
 
 2) For foreground, I chose "chocolate" and for background I chose "sugar confectionery".  The resulting output is "Chocolate.summary"
 
 3) I generated two different results for COVID-19 as foreground, but
 choosing 2 different possible backgrounds.
-	 a) "COVID-19-vs-airborne.summary" is the rsult of using
+	 a) "COVID-19-vs-airborne.summary" is the result of using
 	 "airborne diseases" as background.
 	 b)  "COVID-19-vs-all.summary" is the result of using "all" of the proposed
 	     	backgrounds
@@ -34,16 +34,12 @@ choosing 2 different possible backgrounds.
      backgrounds.  The resulting file is
      "Search_for_extraterrestrial_intelligence.summary"
 
-6) For the foreground I chose "Antioxidants" and for background I
+6) For the foreground I chose "Antioxidant" and for background I
      chose "Biomolecules by physiological function". The result are in
      Antioxidants.summary
 
-7) Note that if you choose a topic with very few wikipedia files, it
-is likely that the system will produce very little output (or no
-output) in the resulting summary.  This is because a term is assumed
-to be valid if it appears in at least 3 documents.  If there are very
-few documents to begin with, there may be no term that reaches this
-threshold.  For example, if you choose "Ergodic theory" as foreground
-and "Dynamical systems" as background, you will get an empty .summary
-file as the result. You will also get an .out_term_list file
-containing terms that occurred in a single file.
+7) For the foreground I chose "Category Theory" and for the background
+I chose "all. The results are in Category_theory.summary
+
+8) For the oreground, I chose "Ergodic theory" and for the background,
+I chose "Dynamical systems." The results are in Ergodic_theory.summary

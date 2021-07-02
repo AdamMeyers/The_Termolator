@@ -190,7 +190,9 @@ C) The Question-based system for generating a summary from wikipedia.
 This program requires the beautiful soup python library. This will
 generate a summary (a glossary) for a topic found in Wikipedia,
 provided that there are sufficient articles about that topic and
-superclasses of that topic.  
+superclasses of that topic.  To run this system, you need to install
+the "wikipedia" python package if it is not already installed (pip
+install wikipedia or conda install wikipedia).
 
 1) To run the system from the "summary" subdirectory, do the following
 command and answer all the questions.
@@ -235,10 +237,14 @@ documents to begin with, there may be no term that reaches this
 threshold.
 
 D) A program for extracting text categories about a topic from
-Wikipedia.  This program is found in the wikipedia_extraction_utility
-subdirectory and includes a README.  To use this program, you must
-find a category in wikipedia and spell that category name the same as
-wikipedia does and then execute a command such as:
+Wikipedia.  To run this system, you need to install
+the "wikipedia" python package if it is not already installed (pip
+install wikipedia or conda install wikipedia).
+
+This program is found in the wikipedia_extraction_utility subdirectory
+and includes a README.  To use this program, you must find a category
+in wikipedia and spell that category name the same as wikipedia does
+and then execute a command such as:
 
 	  get_wiki_corpus_recurs.sh English electricity electricity TRUE 3  500
 
