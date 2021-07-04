@@ -93,11 +93,13 @@ def get_file_type(): #file type
 
 def no_input_files(file_list):
     import re
+    import os
     file_found = False
-    with open(file_list) as instream:
-        for line in instream:
-            if re.search('[a-zA-Z]',line):
-                file_found = True
+    if os.path.isfile(file_list):
+        with open(file_list) as instream:
+            for line in instream:
+                if re.search('[a-zA-Z]',line):
+                    file_found = True
     if file_found:
         return(False)
     else:
@@ -124,6 +126,7 @@ def run_summary(superclasses, subclass): #runs the bash script for generating th
     os.system('touch '+ intermediate_file_path + '/'+ subclass + '_all_background_files.file_list')
     os.system('python3 '+ termolator_dir + '/mod_make_glossary_part1.py '+  foreground_file_list+' '+ subclass +' .txt '+ termolator_dir)
     if no_input_files(foreground_file_list):
+        print(foreground_file_list)
         print('Search ended because there are not enough foreground files. Try again with another query.')
         return(False)
     for i, super in enumerate(superclasses): #for each of the superclasses.
@@ -180,5 +183,9 @@ else:
             redo = True
 for i in range(len(superclasses)):
     superclasses[i] = superclasses[i].replace(" ", "_")
+    superclasses[i] = superclasses[i].replace("(", "_")
+    superclasses[i] = superclasses[i].replace(")", "_")
 subclass = subclass.replace(" ", "_")
+subclass = subclass.replace("(", "\(")
+subclass = subclass.replace(")", "\)")
 run_summary(superclasses, subclass)
