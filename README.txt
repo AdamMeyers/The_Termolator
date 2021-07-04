@@ -31,7 +31,7 @@ There are some additional features, many experimental that we will be
 adding to this website and will describe in separate READMEs for
 now. These include: 
 
-     README_termolator_add_ons.txt -- This currently describes 2
+     README_termolator_add_ons.txt -- This currently describes 4
      programs: (a) term map creation: a program for producing a "term
      map", a file that details how each term in termolator output that
      occurs in the foreground documents with some minimum frequency
@@ -62,6 +62,12 @@ now. These include:
      Yifan He. The current system, that is more closely integrated
      with the English system is based on Yifan He's system, but
      includes the work of Yuling Gu, Leizhen Shi and Echo Hong.
+
+     README_legal.txt -- describes some extra steps required to
+     process court decision documents using the Python textacy module
+     (https://github.com/chartbeat-labs/textacy), which encodes of
+     some Supreme court decisions that have been manually classified
+     at the University of Washington (http://scdb.wustl.edu/).
 
 This document is primarily about the English version of Termolator.
 
