@@ -1,0 +1,713 @@
+Algorithme
+Les algorithmes génétiques
+la famille
+algorithmes
+Leur but
+une solution
+un problème d' optimisation
+de méthode exacte
+la solution
+un temps
+Les algorithmes génétiques
+la notion
+sélection
+une population de solutions
+problème
+La solution
+bonds
+une procédure
+<NP> séparation
+évaluation
+ceci
+des formules qui
+valeurs
+L' utilisation
+algorithmes
+la résolution
+problèmes
+le fruit
+recherches
+John Holland
+<NP> ses collègues
+élèves
+l' Université
+Michigan
+qui
+1960
+La nouveauté
+ce groupe
+chercheurs
+l' opérateur
+enjambement
+complément
+mutations
+cet opérateur qui
+le
+l' optimum
+une fonction
+les gènes
+les différents individus
+la population
+Le premier aboutissement
+ces recherches
+la publication
+1975
+Adaptation
+Artificial System
+La popularisation
+algorithmes
+l' œuvre
+David Goldberg
+son livre
+Genetic Algorithms in Search Optimization and Machine Learning 1989
+Ce livre
+édité
+Europe
+la première conférence
+ce type de sujet
+l"'European Conference on Artificial Life
+1991
+ses 20 ans
+2011
+<NP> Francisco Varela
+Paul Bourgine
+Un
+premiers ouvrages
+Français
+les algorithmes génétiques
+le livre Intelligence Artificielle
+qui
+un chapitre
+1993
+La première conférence francophone
+actes
+le sujet
+1994
+Jean-Marc Alliot IRIT
+Evelyne Lutton INRIA <NP> Marc Schoenauer INRIA
+Edmund Ronald
+Les algorithmes génétiques
+des phénomènes
+quelques termes
+génétique
+Les organismes vivants
+cellules
+les noyaux
+des chromosomes qui
+des chaînes
+ADN
+L' élément
+base
+ces chaînes
+un nucléotide
+sa base azotée  A T
+ C
+chacun
+ces chromosomes
+une suite
+nucléotides
+une chaîne qui
+les fonctionnalités
+l' organisme
+la couleur
+yeux
+exemple
+un gène
+une phrase fonctionnelle
+le long
+la chaîne
+La position
+un gène
+le chromosome
+son locus
+L' ensemble
+gènes
+un individu
+<NP> son génotype
+l' ensemble
+patrimoine
+une espèce
+le génome
+Les différentes versions
+un même gène
+allèles
+les algorithmes
+une analogie
+la théorie
+l' évolution
+qui
+temps
+les gènes
+une population
+ceux qui
+le plus adaptés
+besoins
+l' espèce
+son environnement
+certaines variations
+gènes
+individus
+un avantage compétitif
+reste
+la population
+Cet avantage compétitif
+une meilleure reproduction
+ces individus
+qui
+les allèles
+l' ensemble
+la population
+de nombreuses générations
+La génétique
+l' existence
+processus
+un groupe
+organismes
+une même espèce
+espèces
+les bactéries
+brassage
+Ces processus
+la phase
+reproduction
+les chromosomes
+deux organismes
+un nouvel organisme
+Ces opérations
+les algorithmes
+les populations de solutions
+manière
+Les algorithmes génétiques
+la résolution
+problèmes
+les différents principes
+Le problème théorique
+la convergence
+Raphaël Cerf
+la théorie
+perturbations
+systèmes
+La démonstration
+Cerf
+le processus
+convergence
+la mutation
+le croisement
+éliminé
+théorie
+la preuve théorique
+convergence
+que peu d' utilité
+la pratique
+où l' opérateur
+croisement
+toute la richesse
+l' algorithme
+des méthodes
+type
+une population de base
+qui
+chaînes
+caractères
+chacune
+un chromosome
+les différentes structures
+données
+Codage
+l' utilisation
+codage binaire ex
+0100110
+Le contenu
+cette population
+chacune
+solutions
+une note qui
+son adaptation
+problème
+une sélection
+cette population
+plusieurs techniques
+sélection
+les principales utilisées
+deux chromosomes
+un croisement
+des mutations
+une faible proportion
+individus
+Ce processus
+une nouvelle population
+le processus un grand nombre de fois
+le principe d' évolution qui
+son sens
+un nombre
+générations
+le processus
+un nombre
+générations
+une solution
+une note suffisamment satisfaisante
+les deux individus suivants
+une population
+où chaque individu
+une chaîne
+bits et
+la probabilité
+enjambement
+0,7
+bits
+les bits
+deux mots
+l' enjambement
+la place
+cet enjambement
+toutes les places
+la même probabilité
+choisies
+l' enjambement
+le deuxième allèle
+<NP> A′
+B′
+l' enjambement
+<NP>  A
+ B
+chacun
+gènes
+fils ici
+chacun
+bits
+chaînes
+la mutation
+la même manière
+les combinaisons
+un taux
+mutation
+0,001 ici
+ce
+<NP> A′
+B′
+ces opérations sélection
+deux individus
+enjambement mutation un nombre de fois
+la taille
+la population
+deux
+une nouvelle population
+la première génération
+la même taille
+la population initiale
+qui
+des solutions plus proches
+l' optimum
+Le principe
+algorithmes
+ces opérations un maximum de fois
+façon
+la justesse
+résultat
+plusieurs techniques qui
+ces algorithmes
+des techniques
+lesquelles
+chaque génération
+quelques individus non issus
+la descendance
+la génération
+une convergence
+un optimum
+les algorithmes
+un
+facteurs
+les plus importants
+ce
+le plus important
+la façon
+les solutions ce que
+les chromosomes c'est-à-dire les structures
+données
+qui
+les gènes
+Ce type
+codage
+plusieurs avantages
+Son principe
+la solution
+une chaîne
+bits
+qui
+<NP> les valeurs
+Les raisons
+lesquelles
+ce type
+codage
+premiers travaux
+Holland
+les théories
+ce type
+codage
+la plupart
+ces théories
+des données autres
+des chaînes
+bits
+ces contextes
+l' avantage
+ce type
+codage
+ses concurrents
+les chercheurs
+qui
+les démonstrations
+Holland
+les avantages
+ce codage
+La démonstration
+Holland
+1975
+la supériorité
+ce type
+codage
+la suivante
+deux types
+codage
+le même problème
+Le premier
+composé
+peu de types
+allèles
+des chromosomes
+une longueur
+des chaînes
+100 bits
+exemple
+l' autre
+composé de chaînes plus courtes
+plus d' allèles
+tout autre codage
+le même chromosome
+une chaîne
+le codage
+bits
+manière
+les chaînes
+100 bits
+plus de possibilités
+enjambement
+deux chromosomes
+premier type
+l' enjambement
+100 endroits
+30
+ceux
+second type
+Le brassage génétique
+lequel
+l' efficacité
+algorithmes
+le premier cas
+un côté négatif
+ce type
+codage
+qui
+d' autres
+ce codage
+un problème
+l' évolution
+poids d' arcs
+un graphe
+exemple
+une chaîne
+bits
+Une autre manière
+les chromosomes
+un algorithme
+le codage
+l' aide
+caractères
+bits
+ce type
+codage
+celui énoncé ci-avant
+celui
+qui
+de nombreux cas
+algorithmes
+Ce codage
+une structure arborescente
+une racine
+laquelle
+<NP> issus un
+plusieurs fils
+Un
+leurs avantages
+problèmes
+les solutions
+une taille finie
+des arbres
+taille
+le biais
+enjambements
+mutations
+Le problème
+ce type
+codage
+les arbres résultants
+<NP> des arbres
+solutions
+la taille
+des solutions plus simples
+desquelles
+l' algorithme
+les performances
+ce type
+codage
+des codages en chaînes
+ce type d' expérience
+les informations
+le choix
+type de codage
+manière
+l' état
+connaissances
+les chercheurs
+ce domaine
+la méthode actuelle
+le choix
+codage
+celui qui
+le plus naturel
+problème
+l' algorithme
+traitement
+cela
+les algorithmes génétiques
+une bonne solution
+un problème
+leur utilisation
+certaines caractéristiques
+problème
+Les caractéristiques
+les suivantes
+leur nature
+les algorithmes génétiques
+des fins
+des problématiques
+des jeux
+qui
+un travail
+apprentissage
+un système
+scoring
+monde
+jeu
+le score
+un élément central
+n' importe quel jeu
+les joueurs
+eux
+La fonction d' évaluation
+le jeu
+des algorithmes génétiques
+quelques exemples intéressants
+application
+des titres
+jeu
+Le problème
+voyageur
+commerce
+ce problème
+un classique
+algorithmique
+Son sujet
+les trajets
+un voyageur
+commerce
+Celui
+<NP> plusieurs points
+le but
+l' algorithme
+le trajet
+façon
+celui
+le plus court possible
+huit points
+arrêts
+cela
+énumération
+2520 possibilités
+ n
+arrêts  nsupérieur
+chemins
+l' augmentation
+nombre d' arrêts
+nombre de possibilités
+une croissance exponentielle
+le biais
+algorithmes
+des chemins relativement corrects
+ce type de problèmes
+algorithme
+L' idée de base
+la longueur
+chemin
+fonction d' évaluation
+le croisement
+deux chemins
+un itinéraire qui
+clients
+les deux chemins suivants
+un chiffre
+un client
+ces deux chemins
+le locus
+le chemin fils
+ce principe
+de nombreux algorithmes génétiques
+chacun
+différentes variantes
+le plus possible
+maximum
+tous les cas
+un concours
+internet
+qui
+un algorithme
+le meilleur chemin
+un problème
+voyageur
+commerce
+250 villes
+Un premier exemple
+une réalisation
+l' entreprise Motorola
+Le problème
+lequel
+Motorola
+les algorithmes génétiques
+les tests
+applications
+chaque changement
+une application
+l' application
+les modifications apportées
+influence
+le reste
+l' application
+cela
+la méthode classique
+des plans
+test
+un passage
+toutes les fonctions
+l' application
+ce type
+test
+un important travail humain
+Le but
+Motorola
+cette phase de définition
+plans
+tests
+cela défini
+un algorithme où chaque individu
+un résultat d' exécution
+un programme
+l' enchaînement
+valeurs
+<NP> programme
+où
+chaque individu
+une valeur qui
+son aptitude
+un maximum de parties
+code
+l' application
+l' outil développé
+un algorithme
+ces programmes
+test
+les zones
+façon
+modifications
+l' application
+celle
+des tests
+D' autres domaines industriels
+les algorithmes génétiques
+autres l' aérodynamique où
+optimisations
+ces outils
+l' optimisation structurelle
+qui
+le poids
+une structure
+tenant
+des contraintes de tension admissibles
+<NP> les différents éléments
+la recherche
+itinéraires
+ces algorithmes
+la NASA
+la mission
+exploration
+Mars
+la gestion
+déplacements
+robot Pathfinder
+La société Sony
+son robot Aibo
+ce robot
+un dispositif expérimental
+où son système
+commande
+une évolution
+Différents modes
+commandes
+les plus performants
+le résultat
+génération en génération le robot
+redressé
+Les algorithmes génétiques
+certains outils
+informatique
+data mining
+exemple
+une solution
+optimum
+un problème
+mutation
+attributs
+variables
+la population
+une étude
+optimisation
+un réseau de points
+vente
+agences banque
+assurance
+questions
+Les algorithmes génétiques
+la théorie
+Darwin
+sélection naturelle
+variations
+les individus les plus adaptés
+the fittest
+Amélioration
+la population
+début
+recherche globale
+le temps passe
+recherche locale
+Convergence la valeur moyenne
+la fonction
+adaptation
+celle
+l’ individu
+uniformisation croissante
+la population
+Le temps
+calcul
+algorithmes
+formula_2
+le nombre
+variables

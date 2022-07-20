@@ -1,0 +1,822 @@
+<s>
+<NP>
+Isolation	NOM	isolation
+(	PUN	(
+</NP>
+<NP>
+informatique	ADJ	informatique
+)	PUN	)
+</NP>
+<PP>
+Dans	PRP	dans
+<NP>
+les	DET:ART	le
+systèmes	NOM	système
+</NP>
+</PP>
+<PP>
+de	PRP	de
+<NP>
+gestion	NOM	gestion
+</NP>
+</PP>
+<PP>
+de	PRP	de
+<NP>
+base	NOM	base
+</NP>
+</PP>
+<PP>
+de	PRP	de
+<NP>
+données	NOM	donnée
+(	PUN	(
+</NP>
+</PP>
+<NP>
+SGBD	NAM	<unknown>
+)	PUN	)
+,	PUN	,
+</NP>
+<NP>
+l'	DET:ART	le
+isolation	NOM	isolation
+</NP>
+<VN>
+est	VER:pres	être
+</VN>
+<NP>
+la	DET:ART	le
+capacité	NOM	capacité
+</NP>
+<PP>
+d'	PRP	de
+<NP>
+un	DET:ART	un
+système	NOM	système
+</NP>
+</PP>
+<VPinf>
+d'	PRP	de
+</VPinf>
+<VN>
+isoler	VER:infi	isoler
+</VN>
+<NP>
+les	DET:ART	le
+modifications	NOM	modification
+</NP>
+<PP>
+dans	PRP	dans
+<NP>
+une	DET:ART	un
+transaction	NOM	transaction
+</NP>
+</PP>
+<PP>
+en	PRP	en
+<PP>
+cours	NOM	cour|cours
+<PP>
+de	PRP	de
+<NP>
+celles	PRO:DEM	celui
+</NP>
+</PP>
+</PP>
+</PP>
+<VPpart>
+faites	VER:pres	faire
+</VPpart>
+<PP>
+dans	PRP	dans
+<NP>
+les	DET:ART	le
+autres	ADJ	autre
+transactions	NOM	transaction
+</NP>
+</PP>
+<VPpart>
+conduites	VER:pper	conduire
+simultanément	ADV	simultanément
+,	PUN	,
+jusqu'	PRP	jusque
+</VPpart>
+<PP>
+à	PRP	à
+<NP>
+ce	PRO:DEM	ce
+</NP>
+</PP>
+<Ssub>
+qu'	PRO:REL	que
+</Ssub>
+<NP>
+elle	PRO:PER	elle
+soit	VER:subp	être
+</NP>
+<VPpart>
+complétée	VER:pper	compléter
+</VPpart>
+.	SENT	.
+</s>
+<s>
+<VN>
+C'	PRO:DEM	ce
+est	VER:pres	être
+</VN>
+<NP>
+l'	DET:ART	le
+une	NUM	un
+</NP>
+<PP>
+des	PRP:det	du
+<NP>
+quatre	NUM	quatre
+propriétés	NOM	propriété
+ACID	NAM	<unknown>
+</NP>
+</PP>
+<PP>
+d'	PRP	de
+<NP>
+une	DET:ART	un
+base	NOM	base
+</NP>
+</PP>
+<PP>
+de	PRP	de
+<NP>
+données	NOM	donnée
+</NP>
+</PP>
+.	SENT	.
+</s>
+<s>
+<NP>
+L'	DET:ART	le
+isolation	NOM	isolation
+</NP>
+<PP>
+des	PRP:det	du
+<NP>
+transactions	NOM	transaction
+</NP>
+</PP>
+<PP>
+d'	PRP	de
+<NP>
+une	DET:ART	un
+base	NOM	base
+</NP>
+</PP>
+<AP>
+données	ADJ	donné
+</AP>
+<VN>
+est	VER:pres	être
+</VN>
+<AP>
+assurée	VER:pper	assurer
+</AP>
+<PP>
+par	PRP	par
+<NP>
+son	DET:POS	son
+moteur	NOM	moteur
+</NP>
+</PP>
+<PP>
+de	PRP	de
+<NP>
+stockage	NOM	stockage
+,	PUN	,
+</NP>
+</PP>
+<PP>
+par	PRP	par
+<NP>
+un	DET:ART	un
+contrôle	NOM	contrôle
+de	PRP	de
+concurrence	NOM	concurrence
+</NP>
+</PP>
+<PP>
+entre	PRP	entre
+<NP>
+elles	PRO:PER	elle
+</NP>
+</PP>
+.	SENT	.
+</s>
+<s>
+<NP>
+Le	DET:ART	le
+système	NOM	système
+</NP>
+<NP>
+le	DET:ART	le
+plus	ADV	plus
+commun	ADJ	commun
+</NP>
+<PP>
+de	PRP	de
+<NP>
+contrôle	NOM	contrôle
+de	PRP	de
+concurrence	NOM	concurrence
+</NP>
+</PP>
+<VN>
+est	VER:pres	être
+</VN>
+<NP>
+le	DET:ART	le
+verrouillage	NOM	verrouillage
+</NP>
+<PP>
+à	PRP	à
+<NP>
+<NP>
+deux	NUM	deux
+phases	NOM	phase
+,	PUN	,
+</NP>
+<COORD>
+ou	KON	ou
+</COORD>
+<NP>
+2PL	NOM	<unknown>
+(	PUN	(
+</NP>
+</NP>
+</PP>
+<PP>
+dans	PRP	dans
+<NP>
+l'	DET:ART	le
+anglais	ADJ	anglais
+"	PUN:cit	"
+)	PUN	)
+,	PUN	,
+</NP>
+</PP>
+<NP>
+qui	PRO:REL	qui
+</NP>
+<VN>
+est	VER:pres	être
+</VN>
+<VPpart>
+composé	VER:pper	composer
+</VPpart>
+<PP>
+de	PRP	de
+<NP>
+deux	NUM	deux
+phases	NOM	phase
+</NP>
+</PP>
+<AP>
+consécutives	ADJ	consécutif
+:	PUN	:
+</AP>
+<NP>
+<NP>
+la	DET:ART	le
+pose	NOM	pose
+de	PRP	de
+verrous	NOM	verrou
+</NP>
+<COORD>
+et	KON	et
+</COORD>
+<NP>
+leurs	DET:POS	leur
+retraits	NOM	retrait
+</NP>
+</NP>
+.	SENT	.
+</s>
+<s>
+<NP>
+Une	DET:ART	un
+mauvaise	ADJ	mauvais
+isolation	NOM	isolation
+</NP>
+<PP>
+des	PRP:det	du
+<NP>
+transactions	NOM	transaction
+</NP>
+</PP>
+<VN>
+peut	VER:pres	pouvoir
+essentiellement	ADV	essentiellement
+</VN>
+<VN>
+causer	VER:infi	causer
+</VN>
+<NP>
+quatre	NUM	quatre
+problèmes	NOM	problème
+:	PUN	:
+</NP>
+<NP>
+Certains	PRO:IND	certain
+SGDB	NAM	<unknown>
+</NP>
+<VN>
+définissent	VER:pres	définir
+</VN>
+<NP>
+plusieurs	PRO:IND	plusieurs
+niveaux	NOM	niveau
+</NP>
+<PP>
+d'	PRP	de
+<NP>
+isolation	NOM	isolation
+</NP>
+</PP>
+<PP>
+de	PRP	de
+<NP>
+façon	NOM	façon
+</NP>
+</PP>
+<VPinf>
+à	PRP	à
+</VPinf>
+<VN>
+pouvoir	VER:infi	pouvoir
+paramétrer	VER:infi	<unknown>
+</VN>
+<NP>
+le	DET:ART	le
+nombre	NOM	nombre
+</NP>
+<PP>
+de	PRP	de
+<NP>
+verrouillages	NOM	verrouillage
+</NP>
+</PP>
+<PP>
+des	PRP:det	du
+<NP>
+transactions	NOM	transaction
+,	PUN	,
+</NP>
+</PP>
+<COORD>
+et	KON	et
+ainsi	ADV	ainsi
+</COORD>
+<VN>
+influer	VER:infi	influer
+</VN>
+<PP>
+sur	PRP	sur
+<NP>
+<NP>
+leur	DET:POS	leur
+performance	NOM	performance
+</NP>
+<COORD>
+et	KON	et
+</COORD>
+<NP>
+leur	DET:POS	leur
+fiabilité	NOM	fiabilité
+</NP>
+</NP>
+</PP>
+.	SENT	.
+</s>
+<s>
+<PONCT:S>
+En	PRP	en
+effet	NOM	effet
+,	PUN	,
+plus	ADV	plus
+</PONCT:S>
+<VN>
+il	PRO:PER	il
+y	PRO:PER	y
+aura	VER:futu	avoir
+</VN>
+<PP>
+de	PRP	de
+<NP>
+<NP>
+verrouillages	NOM	verrouillage
+,	PUN	,
+</NP>
+<COORD>
+et	KON	et
+plus	ADV	plus
+</COORD>
+<NP>
+le	DET:ART	le
+risque	NOM	risque
+</NP>
+</NP>
+</PP>
+<PP>
+d'	PRP	de
+<NP>
+interblocage	NOM	<unknown>
+</NP>
+</PP>
+<VN>
+sera	VER:futu	être
+</VN>
+<AP>
+élevé	VER:pper	élever
+</AP>
+.	SENT	.
+</s>
+<s>
+<NP>
+La	DET:ART	le
+norme	NOM	norme
+</NP>
+<NP>
+ANSI/ISO	NAM	<unknown>
+SQL	NAM	<unknown>
+</NP>
+<VN>
+reconnait	VER:pres	reconnaître
+</VN>
+<NP>
+les	DET:ART	le
+quatre	NUM	quatre
+niveaux	NOM	niveau
+</NP>
+<AP>
+suivants	ADJ	suivant
+:	PUN	:
+</AP>
+<NP>
+Niveau	NOM	niveau
+d'	PRP	de
+isolation	NOM	isolation
+</NP>
+<AP>
+le	DET:ART	le
+plus	ADV	plus
+élevé	VER:pper	élever
+</AP>
+.	SENT	.
+</s>
+<s>
+<VN>
+Il	PRO:PER	il
+impose	VER:pres	imposer
+</VN>
+<PP>
+aux	PRP:det	au
+<NP>
+verrous	NOM	verrou
+</NP>
+</PP>
+<PP>
+de	PRP	de
+<NP>
+lecture	NOM	lecture
+</NP>
+</PP>
+<COORD>
+et	KON	et
+</COORD>
+<PP>
+d'	PRP	de
+<NP>
+écriture	NOM	écriture
+</NP>
+</PP>
+<VPinf>
+d'	PRP	de
+</VPinf>
+<VN>
+être	VER:infi	être
+</VN>
+<AP>
+levés	VER:pper	lever
+</AP>
+<PP>
+à	PRP	à
+<PP>
+la	DET:ART	le
+<PP>
+fin	NOM	fin
+<PP>
+de	PRP	de
+<NP>
+la	DET:ART	le
+transaction	NOM	transaction
+,	PUN	,
+</NP>
+</PP>
+</PP>
+</PP>
+</PP>
+<PP>
+avec	PRP	avec
+<PP>
+en	PRP	en
+<PP>
+plus	ADV	plus
+<NP>
+un	DET:ART	un
+verrouillage	NOM	verrouillage
+d'	PRP	de
+étendues	NOM	étendue
+</NP>
+</PP>
+</PP>
+</PP>
+<PP>
+de	PRP	de
+<NP>
+clés	NOM	clé
+(	PUN	(
+</NP>
+</PP>
+<NP>
+range-lock	NOM	<unknown>
+)	PUN	)
+</NP>
+.	SENT	.
+</s>
+<s>
+<NP>
+Niveau	NOM	niveau
+</NP>
+<PP>
+d'	PRP	de
+<NP>
+isolation	NOM	isolation
+</NP>
+</PP>
+<PP>
+par	PRP	par
+<NP>
+défaut	NOM	défaut
+</NP>
+</PP>
+<PP>
+avec	PRP	avec
+<NP>
+InnoDB	NAM	<unknown>
+(	PUN	(
+</NP>
+</PP>
+<NP>
+un	NUM	un
+</NP>
+<PP>
+des	PRP:det	du
+<NP>
+moteurs	NOM	moteur
+</NP>
+</PP>
+<NP>
+MySQL	NAM	<unknown>
+)	PUN	)
+</NP>
+.	SENT	.
+</s>
+<s>
+<VN>
+Il	PRO:PER	il
+impose	VER:pres	imposer
+</VN>
+<PP>
+aux	PRP:det	au
+<NP>
+verrous	NOM	verrou
+</NP>
+</PP>
+<PP>
+de	PRP	de
+<NP>
+lecture	NOM	lecture
+</NP>
+</PP>
+<COORD>
+et	KON	et
+</COORD>
+<PP>
+d'	PRP	de
+<NP>
+écriture	NOM	écriture
+</NP>
+</PP>
+<VPinf>
+d'	PRP	de
+</VPinf>
+<VN>
+être	VER:infi	être
+</VN>
+<AP>
+levés	VER:pper	lever
+</AP>
+<PP>
+à	PRP	à
+<PP>
+la	DET:ART	le
+<PP>
+fin	NOM	fin
+<PP>
+de	PRP	de
+<NP>
+la	DET:ART	le
+transaction	NOM	transaction
+,	PUN	,
+</NP>
+</PP>
+</PP>
+</PP>
+</PP>
+<COORD>
+mais	KON	mais
+</COORD>
+<PP>
+sans	PRP	sans
+<NP>
+verrouillage	NOM	verrouillage
+</NP>
+</PP>
+<PP>
+d'	PRP	de
+<NP>
+étendues	NOM	étendue
+</NP>
+</PP>
+<PP>
+de	PRP	de
+<NP>
+clés	NOM	clé
+</NP>
+</PP>
+.	SENT	.
+</s>
+<s>
+<NP>
+Niveau	NOM	niveau
+</NP>
+<PP>
+d'	PRP	de
+<NP>
+isolation	NOM	isolation
+</NP>
+</PP>
+<PP>
+par	PRP	par
+<NP>
+défaut	NOM	défaut
+</NP>
+</PP>
+<PP>
+sur	PRP	sur
+<NP>
+Oracle	NOM	oracle
+Database	NAM	<unknown>
+,	PUN	,
+</NP>
+</PP>
+<NP>
+<NP>
+SQL	NAM	<unknown>
+Server	NAM	<unknown>
+</NP>
+<COORD>
+et	KON	et
+</COORD>
+<NP>
+PostgreSQL	NAM	<unknown>
+</NP>
+</NP>
+.	SENT	.
+</s>
+<s>
+<VN>
+Il	PRO:PER	il
+impose	VER:pres	imposer
+juste	ADJ	juste
+</VN>
+<PP>
+aux	PRP:det	au
+<NP>
+verrous	NOM	verrou
+d'	PRP	de
+écriture	NOM	écriture
+</NP>
+</PP>
+<VPinf>
+d'	PRP	de
+</VPinf>
+<VN>
+être	VER:infi	être
+</VN>
+<AP>
+levés	VER:pper	lever
+</AP>
+<PP>
+à	PRP	à
+<PP>
+la	DET:ART	le
+<PP>
+fin	NOM	fin
+<PP>
+de	PRP	de
+<NP>
+la	DET:ART	le
+transaction	NOM	transaction
+</NP>
+</PP>
+</PP>
+</PP>
+</PP>
+.	SENT	.
+</s>
+<s>
+<NP>
+Niveau	NOM	niveau
+d'	PRP	de
+isolation	NOM	isolation
+</NP>
+<AP>
+le	DET:ART	le
+plus	ADV	plus
+bas	ADJ	bas
+</AP>
+.	SENT	.
+</s>
+<s>
+<VN>
+Il	PRO:PER	il
+n'	ADV	ne
+impose	VER:pres	imposer
+pas	ADV	pas
+</VN>
+<VPinf>
+de	PRP	de
+</VPinf>
+<VN>
+lever	VER:infi	lever
+</VN>
+<NP>
+les	DET:ART	le
+verrous	NOM	verrou
+</NP>
+<PP>
+à	PRP	à
+<PP>
+la	DET:ART	le
+<PP>
+fin	NOM	fin
+<PP>
+de	PRP	de
+<NP>
+la	DET:ART	le
+transaction	NOM	transaction
+</NP>
+</PP>
+</PP>
+</PP>
+</PP>
+.	SENT	.
+</s>
+<s>
+<PONCT:S>
+Par	PRP	par
+ailleurs	ADV	ailleurs
+,	PUN	,
+</PONCT:S>
+<PP>
+sur	PRP	sur
+<NP>
+Oracle	NOM	oracle
+Database	NAM	<unknown>
+,	PUN	,
+</NP>
+</PP>
+<VN>
+il	PRO:PER	il
+existe	VER:pres	exister
+</VN>
+<NP>
+un	DET:ART	un
+cinquième	ADJ	cinquième
+niveau	NOM	niveau
+</NP>
+<VPpart>
+intitulé	VER:pper	intituler
+"	PUN:cit	"
+</VPpart>
+.	SENT	.
+</s>

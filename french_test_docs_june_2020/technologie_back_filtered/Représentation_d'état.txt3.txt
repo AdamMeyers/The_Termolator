@@ -1,0 +1,59 @@
+
+Un système peut être entièrement décrit à l'aide d'un ensemble de variables. Les variables d'état sont des grandeurs, qui le plus souvent ont une signification physique, et qui sont rassemblées dans un vecteur . La connaissance de toutes les variables d'état à un instant quelconque ainsi que de l'entrée sur un intervalle , où est arbitraire, permet de connaître la valeur de toutes les variables du système à l'instant formula_1. Le nombre de variables d'état, désigné par la lettre "n", est l'ordre du système. 
+Dans la première partie de cet article nous ne considèrerons que des systèmes linéaires invariants (ou stationnaires). 
+Les vecteurs , et vérifient les équations 
+Dans certains cas, la représentation d'état matricielle introduite en premier lieu sera la plus commode ; dans d'autres, celle mettant en jeu des vecteurs et des applications linéaires, et appelée représentation d'état intrinsèque (elle est également dite "géométrique") sera plus appropriée. 
+Considérons le changement de variable formula_26, avec formula_27 et inversible. Ce changement de variable correspond à un changement de base dans l'espace d'état. Le système se récrit donc comme suit :
+formula_28 
+On voit donc qu'il existe une infinité de représentations matricielles d'un système d'état. En revanche, la représentation intrinsèque est unique. 
+Cette dernière caractérisation et l'application de la réduction de Jordan à la théorie de systèmes différentiels montre que les conditions suivantes sont équivalentes : 
+De ce qui précède, il résulte les propositions suivantes:  
+La commandabilité et l'observabilité sont des propriétés structurelles du système qui n'apparaissent pas dans la représentation par fonction de transfert. 
+La condition nécessaire et suffisante de commandabilité ci-après est appelée le critère de Kalman pour la commandabilité. Le système considéré est commandable si et seulement si : 
+Le système est dit stabilisable si ses pôles non commandables appartiennent tous au demi-plan gauche ouvert. Un système commandable est donc stabilisable. 
+Cette dernière caractérisation montre (comme, plus haut, à propos des pôles du système) que les conditions suivantes sont équivalentes : 
+La condition nécessaire et suffisante d'observabilité ci-après est appelé le Critère de Kalman pour l'observabilité. Le système considéré est observable si et seulement si : 
+Le système est dit détectable si ses pôles non observables appartiennent tous au demi-plan gauche ouvert. Un système observable est donc détectable. 
+Les pôles non observables sont également les valeurs de formula_70 pour lesquelles le rang de la matrice ci-dessus est formula_74, autrement dit ce sont les racines des facteurs invariants de cette matrice. L'ordre d'un pôle non observable se définit comme celui d'un pôle non commandable, "mutatis mutandis". 
+Les conditions suivantes sont équivalentes : 
+où 
+est commandable et 
+est observable. On vérifie sans difficulté que la matrice de transfert du système est 
+où formula_141 est la dimension de l'espace vectoriel formula_142. Par conséquent, la matrice de transfert ne dépend que de la partie commandable et observable du système. 
+
+Le système est dit minimal quand ces propriétés équivalentes sont satisfaites. 
+Considérons la décomposition de Kalman de ce système. On a, puisque les valeurs propres d'une matrices restent inchangées par changement de base,  
+On peut montrer que ces deux dernières relations sont "intrinsèques". 
+Considérons la matrice , appelée matrice de Rosenbrock ou matrice-système 
+Les racines dans le plan complexe des facteurs invariants de (multiplicités prises en compte) sont appelés les zéros invariants (z.i.) du système. Ce sont des objets intrinsèques qui sont invariants par retour d'état, d'où leur nom. 
+Les conditions suivantes sont équivalentes : 
+Comme il est dit ci-dessus, les parties non commandables et/ou non observables disparaissent dans les représentations par fonction de transfert (c'est en cela que les pôles et zéros correspondants sont des "modes cachés"). Voici un exemple illustratif. 
+Néanmoins, les deux systèmes, bien que différents, ont la même fonction de transfert (avec formula_71 la variable de Laplace):
+formula_177
+formula_178
+Ce sont les simplifications des pôles non commandables par des zéros (de découplage en entrée) qui fait que la représentation par fonction de transfert ne permet pas de refléter toutes les propriétés structurelles du système. 
+avec 
+ou sous une forme plus compacte 
+Les valeurs propres de la matrices d'état formula_208 sont les pôles du système formula_183. Une condition nécessaire et suffisante pour que ce système soit asymptotiquement stable (ou, de manière équivalente, exponentiellement stable) est que ces pôles aient tous un module strictement inférieur à 1. Cette condition est satisfaite si, et seulement si formula_179 est exponentiellement stable. 
+L'anneau formula_224, muni de cette règle, est un anneau d'Ore non commutatif, qui est simple et principal lorsque formula_215 est un corps . 
+La commandabilité d'un tel système se définit comme dans le cas stationnaire. Un critère de commandabilité, analogue à celui de Kalman, a été donné par Silverman et Meadows lorsque formula_228, l'anneau des fonctions analytiques réelles sur un intervalle ouvert non vide formula_229 de la droite réelle: soit 
+avec 
+Considérons par exemple le système dont les matrices d'état et de commande sont, respectivement, 
+Si formula_239 est un paramètre constant quelconque, la matrice de commandabilité est 
+son déterminant vaut formula_241 et le système (stationnaire) est donc commandable. En revanche, si , la matrice de commandabilité est 
+et le système (instationnaire) est non commandable. 
+L'observabilité se définit comme dans le cas stationnaire. On obtient une condition nécessaire et suffisante d'observabilité en passant au système dual. Il est défini par les équations 
+Un système linéaire coïncide donc avec son "bidual", et il est observable si, et seulement si son dual est commandable. 
+La stabilité d'un système linéaire instationnaire peut s'étudier par des méthodes purement analytiques qui fournissent des conditions suffisantes ou nécessaires de stabilité exponentielle. On peut aussi, par des méthodes issues de l’analyse algébrique et de l' () définir les pôles d'un système instationnaire (sous certaines conditions portant sur le corps différentiel auquel appartiennent les coefficients des matrices de ce système) qui fournissent une condition nécessaire et suffisante de stabilité exponentielle analogue à celle indiquée plus haut pour les systèmes linéaires stationnaires. 
+Commençons par les représentations classiques. Une représentation d'état d'un système non linéaire est de la forme 
+La première équation représente l'équation d'évolution et la seconde l'équation d'observation. La représentation d'état linéaire décrite précédemment est un cas particulier de cette forme, obtenu lorsque les fonctions et sont linéaires par rapport à . 
+On obtient : 
+On peut alors récrire notre système en tenant compte du changement de variable :
+formula_259 
+Les deux équations obtenues après le changement de variable formula_252 se mettent également sous cette forme, car celui-ci n'est rien d'autre qu'un changement de carte. On a donc bien obtenu l'unicité de la représentation. 
+Les points d'équilibre stationnaires d'un système sont définis par les points où formula_277. Dans ce cas, les points qui satisfont ce critère pour le pendule sont : 
+Soit les distributions 
+où formula_285 désigne l'espace vectoriel engendré par les vecteurs entre accolades. Il existe un voisinage ouvert de l'origine dans lequel le système est commandable si, et seulement si la distribution formula_286 est de dimension . Dans le cas où le système est linéaire, on retrouve le critère de Kalman. On peut du reste préciser que l'ensemble des états appartenant à accessibles dans à partir de l'origine est formula_287. 
+Il existe une condition nécessaire et suffisante d'observabilité locale pour le système ci-dessus lorsqu'il a une équation d'observation de la forme  
+Les systèmes plats (au sens de la ) sont des systèmes commandables, et observables vus de la sortie plate. 
+La stabilité des systèmes non linéaires s'étudie grâce à des fonctions de Lyapunov. Des stabilités de différents types existent: au sens de Lyapunov, asymptotique, exponentielle ; elles peuvent être locales ou globales, uniformes ou non, etc. 

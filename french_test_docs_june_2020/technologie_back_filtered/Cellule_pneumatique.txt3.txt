@@ -1,0 +1,16 @@
+﻿Cellule pneumatique 
+Les cellules pneumatiques sont de petits éléments mécaniques, fonctionnant à l’air comprimé, qui exécutent des fonctions logiques dans les automatismes programmés en logique pneumatique. 
+Sur les schémas qui suivent, les petits boutons rouges sont des témoins de pression. 
+Un des deux signaux possibles d’entrée se transforme en signal de sortie.
+Si le signal de pression a est présent, le clapet libre I se plaque sur le siège inférieur II mettant ainsi l’orifice de sortie 3 en pression. 
+Si le signal de pression b est présent, le clapet libre I se plaque sur le siège supérieur III mettant l’orifice de sortie 3 en pression. 
+Pour obtenir un signal de sortie il faut deux signaux d’entrée.
+Si le signal de pression a est présent en l’absence du signal de pression b, le clapet libre I se plaque sur le siège supérieur III obturant ainsi l’orifice de sortie 3. 
+Si le signal de pression b est présent en l’absence du signal de pression a, le clapet libre I se plaque sur le siège inférieur II obturant l’orifice de sortie 3. 
+Si les signaux de pression a "ET" b sont présents, le clapet libre I met l’orifice de sortie en communication ave la pression provenant du signal le plus faible. 
+Un signal étant donné, il pilote une vanne à effet positif et retour ressort (c’est la fonction égalité).
+Si le signal de pression a est présent, la membrane IV plaque le clapet I sur son siège supérieur III mettant ainsi l’orifice de sortie 3 en pression. 
+En l ‘absence de signal de pression a la membrane laisse libre le clapet I qui, sous l’influence de la pression P, se plaque sur le siège inférieur II obturant ainsi l’orifice d ‘entrée de la pression et mettant l’orifice de sortie à l’échappement. 
+En l’absence du signal de pression a, la membrane IV laisse libre le clapet I qui, sous l’influence de la pression P, se plaque sur le siège III mettant ainsi l’orifice de sortie 3 en pression. 
+C’est l’inverse de la fonction OU ; pour obtenir un signal de sortie, il ne faut pas de signaux d’entrée. 
+C’est l’inverse de la fonction ET ; pour obtenir un signal de sortie, il ne faut pas deux signaux d’entrée simultanément. 

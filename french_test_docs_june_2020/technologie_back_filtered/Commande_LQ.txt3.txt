@@ -1,0 +1,11 @@
+﻿Commande LQ 
+En automatique, la Commande linéaire quadratique, dite Commande LQ, est une méthode qui permet de calculer la matrice de gains d'une commande par retour d'état. L'initiateur de cette approche est Kalman, auteur de trois articles fondamentaux entre 1960 et 1964. Les résultats de Kalman ont été complétés par de nombreux auteurs. Nous ne traiterons ici que de la commande linéaire quadratique à horizon infini dans le cas d'un système linéaire stationnaire (ou « invariant »), renvoyant à l'article Commande optimale pour le cas d'un horizon fini et d'un système linéaire dont les matrices varient en fonction du temps.  
+Considérons le système linéaire stationnaire ayant pour équation d'état 
+Il peut être utile de considérer un critère un peu plus général, de la forme 
+Notons d'abord que si une commande optimale existe, elle est unique, car l'intégrande du critère est strictement convexe en "u". 
+Considérons la "matrice hamiltonienne" de dimension formula_18 
+et la condition  
+Soit les conditions  
+On a le résultat suivant: 
+On peut donc adopter une démarche assez analogue au placement de pôles (avec, toutefois, la différence que les pôles du système bouclé ne sont pas "arbitrairement" placés), en ajustant, par quelques essais-erreurs, la valeur du paramètre formula_73 de manière que le comportement du système bouclé soit conforme au cahier des charges. 
+Comme pour toute commande par retour d'état, le concepteur aura pris soin, dès le début, de faire les augmentations d'état nécessaires si le problème à résoudre est un problème d’asservissement (et non pas seulement de stabilisation ou d'amortissement de pôles oscillants). 

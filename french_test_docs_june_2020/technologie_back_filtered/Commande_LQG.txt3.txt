@@ -1,0 +1,7 @@
+﻿Commande LQG 
+En automatique, la Commande linéaire quadratique gaussienne dite commande LQG est une méthode qui permet de calculer le gain d'une commande par retour d'état dans un souci particulier de réduire les bruits blancs. 
+La commande LQG réunit un contrôleur LQ (Linear Quadratic) et un estimateur de Kalman pouvant être calculé indépendamment suivant le principe de séparation.
+La commande LQ garantit une certaine robustesse de la boucle fermée, ce qui n'est pas le cas de la boucle LQG. 
+Si on considère le système suivant: 
+Soit formula_25 le gain de Kalman est, 
+On peut observer la similarité entre les deux équations différentielles: la première est dans le sens de la flèche du temps tandis que la deuxième est à rebours. Cela vient de la dualité entre les problèmes de contrôle et d'estimation. 

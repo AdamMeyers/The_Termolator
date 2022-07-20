@@ -1,0 +1,282 @@
+<s>
+<NP>
+Auto-vectorisation	NAM	<unknown>
+</NP>
+<NP>
+L'	DET:ART	le
+auto-vectorisation	NOM	<unknown>
+</NP>
+<VN>
+est	VER:pres	être
+</VN>
+<NP>
+une	DET:ART	un
+technique	NOM	technique
+</NP>
+<PP>
+de	PRP	de
+<NP>
+compilation	NOM	compilation
+</NP>
+</PP>
+<PP>
+de	PRP	de
+<NP>
+langage	NOM	langage
+</NP>
+</PP>
+<PP>
+de	PRP	de
+<NP>
+programmation	NOM	programmation
+,	PUN	,
+</NP>
+</PP>
+<VN>
+permettant	VER:ppre	permettre
+</VN>
+<VPinf>
+d'	PRP	de
+</VPinf>
+<VN>
+adapter	VER:infi	adapter
+automatiquement	ADV	automatiquement
+</VN>
+<NP>
+des	PRP:det	du
+boucles	NOM	boucle
+de	PRP	de
+fonctions	NOM	fonction
+</NP>
+<VN>
+traitant	VER:ppre	traiter
+</VN>
+<PP>
+des	PRP:det	du
+<NP>
+vecteurs	NOM	vecteur
+,	PUN	,
+</NP>
+</PP>
+<COORD>
+ou	KON	ou
+,	PUN	,
+</COORD>
+<AdP>
+plus	ADV	plus
+généralement	ADV	généralement
+,	PUN	,
+</AdP>
+<PP>
+des	PRP:det	du
+<NP>
+matrices	NOM	matrice
+,	PUN	,
+</NP>
+</PP>
+<PP>
+à	PRP	à
+<NP>
+un	DET:ART	un
+processeur	NOM	processeur
+</NP>
+</PP>
+<AP>
+vectoriel	ADJ	vectoriel
+(	PUN	(
+</AP>
+<NP>
+SIMD	NAM	<unknown>
+)	PUN	)
+</NP>
+.	SENT	.
+</s>
+<s>
+<VN>
+On	PRO:PER	on
+appelle	VER:pres	appeler
+</VN>
+<AdP>
+plus	ADV	plus
+généralement	ADV	généralement
+,	PUN	,
+</AdP>
+<NP>
+le	DET:ART	le
+fait	NOM	fait
+</NP>
+<VPinf>
+d'	PRP	de
+</VPinf>
+<VN>
+adapter	VER:infi	adapter
+</VN>
+<NP>
+des	PRP:det	du
+traitements	NOM	traitement
+</NP>
+<PP>
+à	PRP	à
+<NP>
+des	PRP:det	du
+processeurs	NOM	processeur
+</NP>
+</PP>
+<AP>
+vectoriels	ADJ	vectoriel
+,	PUN	,
+</AP>
+<PP>
+de	PRP	de
+<NP>
+façon	NOM	façon
+</NP>
+</PP>
+<AP>
+manuelle	ADJ	manuel
+</AP>
+<COORD>
+ou	KON	ou
+</COORD>
+<AP>
+automatique	ADJ	automatique
+,	PUN	,
+</AP>
+<NP>
+une	DET:ART	un
+vectorisation	NOM	<unknown>
+</NP>
+.	SENT	.
+</s>
+<s>
+<NP>
+Le	DET:ART	le
+compilateur	NOM	compilateur
+</NP>
+<NP>
+Gnu	NAM	<unknown>
+GCC	NAM	<unknown>
+</NP>
+<VN>
+utilise	VER:pres	utiliser
+</VN>
+<NP>
+des	PRP:det	du
+techniques	NOM	technique
+</NP>
+<PP>
+d'	PRP	de
+<NP>
+auto-vectorisation	NOM	<unknown>
+</NP>
+</PP>
+<PP>
+pour	PRP	pour
+<NP>
+la	DET:ART	le
+majorité	NOM	majorité
+</NP>
+</PP>
+<PP>
+des	PRP:det	du
+<NP>
+SIMD	NAM	<unknown>
+(	PUN	(
+3DNow	NOM	<unknown>
+</NP>
+</PP>
+!	SENT	!
+</s>
+<s>
+<NP>
+<NP>
+,	PUN	,
+SSE	NAM	<unknown>
+(	PUN	(
+</NP>
+<COORD>
+et	KON	et
+</COORD>
+<NP>
+SSE2	NAM	<unknown>
+,	PUN	,
+</NP>
+</NP>
+<NP>
+SSE3	ABR	<unknown>
+)	PUN	)
+,	PUN	,
+</NP>
+<NP>
+<NP>
+ARM	NAM	<unknown>
+VFP	NAM	<unknown>
+,	PUN	,
+SIMD	NAM	<unknown>
+</NP>
+<COORD>
+et	KON	et
+</COORD>
+<NP>
+ARM	NAM	<unknown>
+NEON	NAM	<unknown>
+,	PUN	,
+</NP>
+</NP>
+<NP>
+etc	ABR	etc
+</NP>
+.	SENT	.
+</s>
+<s>
+<NP>
+Le	DET:ART	le
+compilateur	NOM	compilateur
+LLVM	NAM	<unknown>
+,	PUN	,
+</NP>
+<VN>
+supportant	VER:ppre	supporter
+</VN>
+<NP>
+les	DET:ART	le
+mêmes	ADJ	même
+SIMD	NAM	<unknown>
+,	PUN	,
+</NP>
+<VN>
+utilise	VER:pres	utiliser
+également	ADV	également
+</VN>
+<NP>
+ce	PRO:DEM	ce
+type	NOM	type
+de	PRP	de
+technique	NOM	technique
+</NP>
+<VN>
+donnant	VER:ppre	donner
+</VN>
+<NP>
+des	PRP:det	du
+résultats	NOM	résultat
+</NP>
+<AP>
+meilleurs	ADJ	meilleur
+</AP>
+<COORD>
+ou	KON	ou
+</COORD>
+<AP>
+moins	ADV	moins
+bon	ADJ	bon
+</AP>
+<PP>
+selon	PRP	selon
+<NP>
+les	DET:ART	le
+cas	NOM	cas
+</NP>
+</PP>
+.	SENT	.
+</s>

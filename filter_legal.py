@@ -2,17 +2,18 @@ import os
 path = "" ##os.getenv('TERMOLATOR')
 
 SET_OF_EXCLUDING_TERMS = set()
-LEGISLATION = "/legal_feature/legal_terms_exclusion/unique_legislation_names.txt"
-CASE = "/legal_feature/legal_terms_exclusion/unique_case_names.txt"
+## LEGISLATION = "/legal_feature/legal_terms_exclusion/unique_legislation_names.txt"
+## CASE = "/legal_feature/legal_terms_exclusion/unique_case_names.txt"
+CASE = path + "/legal_feature/unique_case_names.txt"
 
 def legal_filter_setup(path):
     global SET_OF_EXCLUDING_TERMS
-    global LEGISLATION
+    ## global LEGISLATION
     global CASE
-    LEGISLATION = path + LEGISLATION
-    with open(LEGISLATION) as f1:
-        for line in f1:
-            SET_OF_EXCLUDING_TERMS.add(line.rstrip())
+    # LEGISLATION = path + LEGISLATION
+    # with open(LEGISLATION) as f1:
+    #     for line in f1:
+    #         SET_OF_EXCLUDING_TERMS.add(line.rstrip())
     CASE = path + CASE
     with open(CASE) as f2:
         for line in f2:

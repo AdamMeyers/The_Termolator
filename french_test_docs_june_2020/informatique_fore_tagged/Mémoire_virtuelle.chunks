@@ -1,0 +1,582 @@
+Mémoire virtuelle
+informatique
+le mécanisme de mémoire virtuelle
+les années 1960
+l' utilisation
+traduction
+la volée
+adresses
+virtuelles
+logiciel
+adresses
+La mémoire virtuelle
+L' article
+référence
+James Kilburn
+1962
+le premier ordinateur
+un système
+gestion
+mémoire
+un tambour
+extension
+la mémoire
+tores
+ferrite
+l' Atlas
+tous les ordinateurs
+un mécanisme
+gestion
+la mémoire
+<NP> certains supercalculateurs
+systèmes
+temps réel
+Le principe
+le suivant La table
+pages
+le numéro
+page
+Chaque ligne
+la table
+pages
+abrégé PTE
+le numéro
+cadre
+La table
+pages
+où en mémoire un registre spécial PTBR
+son adresse
+le mécanisme de traduction
+un circuit électronique appelé MMU
+qui
+une partie
+la table
+pages
+une mémoire
+registres
+Ceci
+la table
+pages
+mémoire
+chaque accès mémoire
+un exemple réel
+une machine
+le processeur
+des adresses virtuelles
+de mémoire
+La taille
+la page
+le champ déplacement
+poids
+le champ numéro
+page
+poids
+la présence
+un champ
+chaque PTE
+la largeur
+ce champ
+un bit
+le bit
+validité
+celui
+cela
+le numéro de cadre
+une technique
+cette PTE
+Trois cas
+les
+une interruption
+défaut
+page
+page
+traduction
+l' anglais est
+le matériel
+la main
+système d' exploitation
+Celui
+un cadre disponible
+mémoire
+processus
+ce défaut
+page
+le contenu
+cette
+le contenu
+la mémoire
+masse couramment
+le disque dur
+une zone
+zone d' échange
+aucun cadre libre
+mémoire centrale
+celle
+un algorithme
+pagination
+la responsabilité
+une page victime
+Cette page
+processus demandeur
+<NP> disque dur
+l' entrée
+la table
+pages
+qui la référence
+La page victime
+processus
+qui
+quelques exemples
+algorithmes
+La première ligne
+la chaîne
+références
+l' ordre
+lequel
+le processus
+pages
+la mémoire centrale
+trois
+La victime
+Les défauts
+page
+nombre
+quel <NP> que
+l' algorithme
+des cas pathologiques
+qui
+un algorithme inutilisable
+l' algorithme
+LRU
+un programme
+qui
+pages
+une boucle
+une machine
+qui
+cadres
+les premiers cadres séquentiellement <NP>
+un défaut
+page
+la page
+qui
+la victime
+Les pages
+le programme boucle
+la page
+la page
+Cette fois -ci la page victime
+la page
+la
+<NP>
+etc
+Un défaut
+page
+chaque itération
+le nombre
+cadres
+pages c'est-à-dire
+la mémoire centrale
+le nombre
+défauts
+page
+L' anomalie
+Belady
+1970
+un contre-exemple qui
+ce
+l' algorithme
+le lecteur
+lui-même
+la séquence
+références
+Remarque
+la portée
+cette curiosité
+l' algorithme FIFO
+une propriété
+laquelle
+la mémoire
+les défauts
+page
+moyenne
+toute façon
+l' algorithme FIFO
+le remplacement
+page
+certains algorithmes
+remplacement
+pages LRU
+exemple
+ce type
+anomalie
+Les méthodes
+sélection
+la page
+pages
+un processus
+allocation locale
+toutes les pages
+toute la mémoire
+ce cas
+la technique d' allocation
+un système d' allocation
+le temps d' exécution
+un processus
+une instance
+<NP> l' autre
+le nombre
+défauts
+page
+processus
+lui-même
+ce système
+nombre
+cadres
+un processus
+Le schéma
+montre trois processus
+exécution
+un éditeur de texte
+Ed
+Les trois instances
+toutes situées
+mêmes adresses
+Ce programme
+deux zones mémoire distinctes
+les pages qui
+le code
+les instructions
+<NP> le programme
+la zone
+données
+le fichier
+édition
+les mêmes entrées
+la table
+pages
+les trois instances
+la zone
+code
+les entrées
+pages
+données
+elles distinctes
+Des bits
+protections
+chaque entrée
+la table
+pages
+la distinction
+les pages
+noyau
+lecture seule
+etc
+trois problèmes majeurs
+Le comportement
+programmes
+le programme
+des fonctions
+code
+qui
+autres
+leur tour etc
+Chacun
+ces appels
+une région
+le programme
+beaucoup de temps
+quelques régions
+le principe
+localité
+Le même principe
+appliqué
+pages
+données
+un programme
+un petit ensemble
+<NP> pages
+cet ensemble de pages
+le temps
+mémoire
+ces espaces
+les chances
+un programme
+trasher
+des pages qu'
+un paramètre  Δqui
+le nombre
+références
+pages
+le processus
+un certain laps
+temps
+la valeur
+l' espace
+travail
+deux instants
+la valeur
+ Δ
+soin
+l' espace
+travail
+processus
+des pages inutiles
+ Δ
+l' infini
+la totalité
+programme
+un unique processus
+la mémoire
+les espaces
+travail
+Les plateaux
+des zones où
+page
+l' espace alloué
+toutes les
+le processus
+un temps
+Les défauts de pages
+la partie
+la transition
+la mémoire
+la courbe retombe
+le prochain espace
+travail zone d' équilibre
+système d' exploitation
+les algorithmes
+la valeur
+<NP>  Δ
+optimum de sorte
+le taux
+<NP> multiprogrammation
+l' utilisation
+l' unité centrale
+d' autres termes
+le
+la somme
+espaces
+travail
+chacun
+processus
+nombre
+effondrement
+Un système
+l' inconvénient
+une fragmentation interne
+une page entière
+un processus
+quelques octets
+une taille
+page
+un processus
+besoin
+<NP> pages
+octets près de 40
+Un
+avantages
+la mémoire
+l' exécution
+un programme
+sa première page
+code
+mémoire
+La prépagination
+<NP> la première page
+les quelques suivantes
+la probabilité
+accédée
+Les champs  M
+<NP>  U N
+NDP
+le bit  V
+ V
+le champ NDP
+l' adresse
+le disque dur
+où
+la page
+Le bit 24  Non-cachée
+la page
+cache
+le système
+la mémoire
+Le bit  M
+le matériel
+le contenu
+la page
+Le bit  U
+la page
+un processus
+les autres
+la détermination
+l' espace
+travail
+un processus
+cf
+La segmentation
+une vue
+la mémoire
+celle
+l' utilisateur
+celui
+la mémoire
+une suite
+pages
+espaces
+régions
+une utilisation
+le code
+un programme
+les données la pile un ensemble
+sous-programmes
+modules
+un tableau etc
+La segmentation
+cette organisation
+Chaque objet logique
+un segment
+un segment
+l' adressage
+un déplacement
+Le couple segment déplacement
+adresse mémoire
+le biais
+une table
+segments
+<NP> deux champs limite
+base
+La base
+l' adresse
+début
+segment
+la dernière adresse
+même segment
+Les systèmes
+un problème
+fragmentation
+la place
+une page
+Les systèmes
+un problème
+fragmentation
+des espaces
+des segments
+de nouveaux fragments cet espace
+la mémoire
+les segments
+ces modifications
+les tables
+segments
+cette opération
+des segments
+processus
+<NP> deux processus Ed1
+Ed2
+le même segment
+code
+programme
+des segments
+les données
+tailles
+Cette protection
+des bits
+la table
+segments
+la même façon
+un système
+L' exemple le plus connu
+<NP> l' Intel 8086
+ses quatre registres Les successeurs
+8086
+les deux modes précédents
+toutes <NP> les pages
+segments
+un processus
+la mémoire
+le processus
+toutes les données
+masse
+Cela
+des processus
+le système d' exploitation
+la mémoire
+processus actifs
+<NP> Les pages
+segments
+code
+programme
+le fichier
+programme
+le fichier
+l' exécutable
+cette raison
+le système d' exploitation
+l' accès
+écriture
+un fichier
+utilisation
+l' exécution
+un fichier
+un accès
+écriture
+un autre processus
+La compression de mémoire virtuelle
+la performance
+un système
+mémoire
+Cette technique
+gestion
+mémoire
+la compression
+données
+<NP> la taille
+le nombre
+requêtes
+pagination
+le stockage
+un système
+compression
+mémoire
+les pages
+la mémoire
+une mémoire RAM
+un stockage
+<NP> un disque dur
+un disque SSD
+les deux cas
+la plage
+mémoire
+le contenu
+les tentatives d' accès
+pages
+des erreurs
+page
+le processus
+compression
+récupération
+<NP> stockage auxiliaire
+décompression
+L' empreinte
+données
+le processus
+<NP> compression
+la mémoire RAM
+le pool
+mémoire
+le cas
+où les pages
+la mémoire RAM
+les pages
+moins d' espace
+les pages originales
+le cas
+où les pages
+un stockage
+la mémoire RAM
+les opérations
+écriture
+lecture
+la mémoire
+les pages

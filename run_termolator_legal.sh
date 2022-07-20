@@ -3,7 +3,7 @@
 ## $1 = foreground_infiles -- file listing one txt file per line
 ## $2 = background_infiles -- file listing one text file per line
 ## $3 = file type of input files (.htm .html or .txt)
-## $4 = output_file_name 
+## $4 = output_file_name
 ## $5 = True or False (do background files need to be processed)
 ##      If False, stored background cache file will be loaded (see $13).
 ##      If True, background information will be stored as a cache file (see Argument 13).
@@ -19,7 +19,7 @@
 ##       be False if not used
 ## refer to as ${10}
 ## $11 = If True, means skip preprocessing of Foreground
-##       This comes in useful if you want to run the same Foreground 
+##       This comes in useful if you want to run the same Foreground
 ##       with different backgrounds or if for any reason, you have
 ##	 already preprocessed the foreground file. So usually, this field should just
 ##	 contain "False".
@@ -30,6 +30,7 @@
 ##       If False, no filtering is assumed; if "good", a cutoff of -1 (standard deviations)
 ##       is assumed to be the cutoff; if "bad", a cutoff of -.2 is assumed.
 ##       Further details about the "bad text" filter is in the README
+## $15 = the pathname to the case names for exclusion
 
 
 echo "The Output File is: $4"
@@ -64,10 +65,7 @@ else
    bk_abb_full_dict=${12}_bk.dict_abbr_to_full
 fi
 
-## not sure if this really is necessary
-## $TERMOLATOR/possibly_create_abbreviate_dicts.py $4.internal_abbr_list $4.dict_full_to_abbr $4.dict_abbr_to_full
-
-if test -f temporary_TERMOLATOR_POS.properties; then 
+if test -f temporary_TERMOLATOR_POS.properties; then
     echo "Using Existing temporary_TERMOLATOR_POS.properties file"
 else
     echo "FuseJet.path1 = ${TERMOLATOR}/models" > temporary_TERMOLATOR_POS.properties
@@ -80,7 +78,7 @@ if [ "$5" = "True" ]; then
     echo "Processing background files"
     $TERMOLATOR/make_io_file.py $2 $4.internal_prefix_list BARE
     $TERMOLATOR/make_io_file.py $2 $4.internal_pos_list .pos
-    
+
 ##    $TERMOLATOR/make_io_file.py $2 $4.internal_txt_fact_pos_list .txt2 .fact .pos
     $TERMOLATOR/make_io_file.py $2 $4.internal_terms_abbr_list .terms .abbr .substring
     $TERMOLATOR/make_termolator_fact_txt_files.py $4.internal_prefix_list $3
@@ -143,7 +141,7 @@ if [ "${11}" = "False" ]; then
 fi
 
 if [ "$5" = "True" ]; then
-    $TERMOLATOR/distributional_component.py NormalRank $4.internal_foreground_substring_list $4.all_terms ${13} $4.internal_background_substring_list 
+    $TERMOLATOR/distributional_component.py NormalRank $4.internal_foreground_substring_list $4.all_terms ${13} $4.internal_background_substring_list
 else
     echo "calling distributional_component.py in term_extration using foreground and stored background statistics with output to file $4.all_terms"
    $TERMOLATOR/distributional_component.py RankFromPrevious $4.internal_foreground_substring_list $4.all_terms ${13} $4.internal_background_substring_list
@@ -151,11 +149,8 @@ fi
 
 
 if [ "${12}" = "False" ]; then
-   echo "calling filter_term_output_legal.py with filter_term_output_legal.py $4 ${web_scores} $6 $7 $8 $4.internal_foreground_abbr_list ${10} $TERMOLATOR"
-   python3 $TERMOLATOR/filter_term_output_legal.py $4 ${web_scores} $6 $7 $8 $4.internal_foreground_abbr_list ${10} $TERMOLATOR
-else
-   echo "calling filter_term_output.py with filter_term_output.py $4 ${web_scores} $6 $7 $8 $4.internal_foreground_abbr_list ${10} $TERMOLATOR"
-   python3 $TERMOLATOR/filter_term_output_legal.py $4 ${web_scores} $6 $7 $8 $4.internal_foreground_abbr_list ${10} $TERMOLATOR
+   echo "calling filter_term_output_legal.py with filter_term_output_legal.py $4 ${web_scores} $6 $7 $8 $4.internal_foreground_abbr_list ${10} $TERMOLATOR $15"
+   python3 $TERMOLATOR/filter_term_output_legal.py $4 ${web_scores} $6 $7 $8 $4.internal_foreground_abbr_list ${10} $TERMOLATOR $15
 fi
 
 echo "Final terms can be found in $4.out_term_list from the scored file in $4.scored_output"
@@ -170,7 +165,3 @@ rm -f $4.internal_background_substring_list $4.internal_foreground_abbr_list $4.
 ## rm -f legal_terms_exclusion/case_names.txt legal_terms_exclusion/legislation_names.txt
 ## rm -f legal_terms_exclusion/unique_case_names.txt legal_terms_exclusion/unique_legislation_names.txt
 ## rm -rf cases
-
-
-
-

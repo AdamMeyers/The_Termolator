@@ -1,0 +1,41 @@
+﻿Logique floue 
+La logique floue ("fuzzy logic", en anglais) est une logique polyvalente où les valeurs de vérité des variables - au lieu d'être vrai ou faux - sont des réels entre 0 et 1. En ce sens, elle étend la logique booléenne classique avec des valeurs de vérités partielles. Elle consiste à tenir compte de divers facteurs numériques pour aboutir à une décision qu'on souhaite acceptable. 
+Par ses aspects numériques,  
+Formalisée par Lotfi Zadeh en 1965, outil de l'intelligence artificielle, elle est utilisée dans des domaines aussi variés que : 
+Elle est formalisée par une "théorie mathématique des ensembles flous" de Lotfi Zadeh qui présente une extension de la théorie des ensembles classiques aux "ensembles définis de façon imprécise". 
+
+Il n'est pas obligatoire que la transition soit linéaire. Des transitions hyperboliques (comme une sigmoïde ou une tangente hyperbolique), exponentielle, gaussienne (dans le cas d'un état moyen) ou de toute autre nature sont utilisables (voir "fig. 5").
+Le degré de vérité d'une relation floue entre deux ou t objets est le degré d'appartenance de la paire ou du t-uple à l'ensemble flou associé à la relation. 
+De façon générale, les relations floues permettront de coder des connaissances graduées, empiriques ou typiques, acquises directement ou par des heuristiques, des inductions... 
+
+En définissant les opérateurs logiques de base de la façon suivante : 
+il devient possible de représenter toutes les opérations logiques de base en logique floue : 
+Par ailleurs, la dimension numérique des variables de la logique floue permet d'utiliser d'autres opérations : 
+Les familles paramétriques d'opérateurs flous permettront à un même moteur d'inférence d'incarner des logiques plus ou moins strictes. Une même application pourra ainsi faire appel à des implémentations différentes judicieusement choisies selon le contexte. 
+Cet exemple montre comment combiner des opérateurs flous de divers types à travers le problème "confirmer l'appartenance d'une personne à un groupe" 
+
+Une solution qui n'utiliserait que les opérateurs de Zadeh serait : 
+
+Une solution qui n'utiliserait que les opérateurs représentables par des paraboloïdes hyperboliques serait : 
+
+Les trois méthodes exposées ci-dessus convergent lorsque les valeurs d'entrée sont booléennes : 
+Les opérateurs ci-dessus s'implémenteront respectivement comme ceci : 
+dans un autre cas qui reste , la personne pouvant aussi être membre des "amis des fleurs"
+à cause de son amour des tulipes, avec fzConnaitOrchidees=0.66 et fzMembre=0.72,
+les valeurs trouvées seront respectivement 
+dans un cas assez , avec fzConnaitOrchidees=0.5 et fzMembre=0.5,
+les valeurs trouvées seront respectivement 
+dans un cas et extrême, avec fzConnaitOrchidees=0.8 et fzMembre=0.005,
+les valeurs trouvées seront respectivement 
+Une application informatique qui viserait à proposer à un opérateur humain de traiter les cas anormaux en commençant par les plus "suspects" utiliserait les valeurs indiquées ci-dessus en gras et obtenues par la méthode identifiée "Hyperbolic Paraboloid", particulièrement discriminante. 
+L'article fournit de nombreuses représentations graphiques de quelques implémentations possibles des opérateurs fuzzy. On trouvera ci-dessous, à titre d'exemple, la représentation de huit implémentations différentes d'une opération qui viserait à apprécier la simultanéité de deux faits (jugés de poids équivalents dans les six images à gauche mais de poids différents dans les deux images de droite). 
+
+Ces deux parties sont liées. On peut les représenter ensemble comme sur la fig. 6.
+Il existe plusieurs techniques pour déterminer la valeur de la sortie (dans l'exemple : la quantité d'aspirine à administrer) : 
+
+En fait, la logique floue et un théorème (élémentaire, cependant) montre que dans le cas particulier où les propositions traitées ne sont pas floues, la logique floue se réduit à la logique classique. 
+Dans son ouvrage "Décisions rationnelles dans l'incertain", Myron Tribus rappelle que le théorème de Cox-Jaynes montre d'une part que l'on peut représenter un état de connaissance incertaine par une probabilité, et d'autre part que tout moyen utilisé pour prendre des décisions sera soit isomorphe à la théorie des probabilités, soit incohérent". Les connaissances "floues" ne sont pas à proprement parler des connaissances "incertaines" : on peut par exemple savoir avec précision qu'un homme mesure 1,74 m. Néanmoins, ce qui est flou est de savoir s'il sera considéré comme "grand" ou "petit". 
+Une théorie des possibilités a été introduite (aussi par Lotfi Zadeh en 1978) afin de permettre la prise en compte "combinée" à la fois de l'imprécision et de l'incertitude dans des connaissances. 
+La logique modale a été introduite par Aristote, puis continuée par Leibniz et des chercheurs contemporains pour prendre en compte des affaiblissements ou des renforcements d'affirmations présents dans les langues naturelles, en s'intéressant par exemple aux rapports du vrai, du faux, du nécessaire et du possible. 
+La théorie de la complexité algorithmique (ou complexité de Kolmogorov) est aussi une méthode plus ou moins rigoureuse pour envisager la difficulté de donner la description précise d'une chose (X peut apparaître plus complexe que Y pour une machine A et moins complexe que Y pour une machine B, par exemple un calculateur quantique. Il s'agit donc d'une complexité "relative à une machine de référence donnée". 
+Enfin, les probabilités bayésiennes utilisées en avenir incertain utilisent des approches voisines de celles de la logique floue, mais cette fois-ci sans aucun arbitraire : les distributions de probabilité "a priori" doivent y être celle d'entropie maximale… 

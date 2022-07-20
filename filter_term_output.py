@@ -1,12 +1,12 @@
 #!/usr/bin/env python3
 import os
 import sys
-
+from term_utilities import *
 from filter_terms import *
-
 
 def main(args):
     global special_domains
+    special_domains = []
     file_prefix = args[1]
     web_score_dict_file = args[2]
     if args[3].lower() in ['true','t']:

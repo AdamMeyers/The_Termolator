@@ -1,0 +1,23 @@
+﻿Diagramme de Bode 
+Un diagramme de Bode est un moyen de représenter le comportement fréquentiel d'un système. Il permet une résolution graphique simplifiée, en particulier pour l'étude de la fonction de transfert d'un système asservi. 
+Il est utilisé afin de visualiser rapidement la marge de gain, la marge de phase, le gain continu, la bande passante, le rejet des perturbations et la stabilité des systèmes. Son nom vient de l'inventeur de ce diagramme, Hendrik Wade Bode. 
+Le diagramme de Bode d'un système de réponse fréquentielle formula_1 est ainsi une représentation graphique composée de deux tracés :  
+Prenons une fonction de transfert quelconque qui s'écrit de la façon suivante : 
+formula_4 
+On remarque que le module de formula_9 est égal à la somme des modules des termes élémentaires en raison du logarithme. Il en va de même pour la phase, cette fois en raison de la fonction argument. C'est pourquoi on va dans un premier temps s'intéresser aux diagrammes de Bode des termes élémentaires. 
+Soit la fonction de transfert : 
+La pulsation formula_11 est appelée pulsation de coupure. 
+Soit la fonction de transfert : 
+Le tracé s'obtient en prenant l'opposé du module en dB et de la phase du passe-bas. 
+Un système du second ordre de type passe bas est caractérisé par une fonction de transfert du type : 
+Dans cette partie on prend le gain statique formula_24 est égal à 1.
+Le tracé asymptotique dépend de la valeur de l'amortissement. On distingue trois cas : 
+Les pôles de la fonction de transfert sont réels (et négatifs pour assurer la stabilité), et le système se décompose en un produit de deux fonctions de transfert du .Soit formula_29 et formula_30 les pôles réels de la fonction de transfert : 
+Le tracé s'obtient en prenant l'opposé du module en dB et de la phase du passe-bas. 
+Comme nous l'avons fait remarquer plus haut, on pourrait additionner tous les diagrammes de Bode des termes élémentaires pour obtenir le diagramme de la fonction de transfert formula_9. 
+Cependant, lorsque cette fonction de transfert est compliquée, il est plus facile de prendre en compte les contributions de chaque terme au fur et à mesure en faisant croître la pulsation formula_50. 
+Nous disposons cette fois d'une fonction de transfert formula_61 d'un système discret. 
+Pour obtenir son diagramme de Bode, il faut évaluer la fonction sur le cercle unité. 
+Cependant, il existe une application permettant de se ramener au cas continu : 
+Il s'agit d'une transformation de Möbius. 
+Cette transformation fait correspondre l'axe imaginaire formula_71 du domaine continu avec le cercle unité formula_72 du domaine discret avec formula_73. 

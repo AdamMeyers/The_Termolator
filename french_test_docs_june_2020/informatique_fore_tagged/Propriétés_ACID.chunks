@@ -1,0 +1,297 @@
+Propriétés ACID
+informatique
+les propriétés ACID <NP> atomicité
+cohérence
+<NP> isolation
+durabilité
+un ensemble
+propriétés
+qui
+une transaction informatique
+façon
+bases
+données
+une opération
+les données
+une transaction ou transaction informatique
+un transfert
+fonds
+un compte de banque
+un autre
+plusieurs actions
+le débit
+<NP> un compte
+le crédit
+un autre
+une seule transaction
+Jim Gray
+les propriétés qui
+des transactions fiables
+années 1970
+technologies
+1983
+<NP> Andreas Reuter
+Theo Härder
+l' acronyme ACID
+ces propriétés
+La propriété d' atomicité
+une transaction
+une partie
+une transaction
+toute trace
+la transaction
+les données
+l' état
+où
+la transaction
+L' atomicité
+toutes situations
+une panne
+électricité
+une défaillance
+<NP> l' ordinateur
+une panne
+un disque
+La propriété
+cohérence
+chaque transaction
+le système
+un état
+un autre état
+Tout changement
+la base
+données
+toutes les règles
+contraintes
+intégrité
+rollbacks
+cascade
+déclencheurs de base
+données
+toutes combinaisons d' événements
+Toute transaction
+la seule
+le système
+Aucune dépendance possible
+les transactions
+La propriété d' isolation
+l' exécution simultanée
+transactions
+le même état
+celui qui
+l' exécution en série
+transactions
+Chaque transaction
+isolation
+<NP> T1
+T2
+chacune
+l' autre
+La propriété
+durabilité
+une transaction
+demeure
+une panne
+électricité
+une panne
+l' ordinateur
+un autre problème
+une base
+données
+un groupe
+énoncés SQL
+les résultats
+enregistrés
+façon
+une panne immédiatement
+l' exécution
+énoncés
+Les sections suivantes
+les propriétés ACID
+un exemple d' échec inacceptable
+chacune
+propriétés
+ces exemples
+une base
+données
+deux champs <NP>  A
+ B
+deux enregistrements
+Une contrainte
+intégrité
+la somme
+<NP>  A
+ B
+100
+L' énoncé SQL
+cette contrainte CREATE TABLE acidtest
+INTEGER
+ BINTEGER CHECK
+ B100
+une transaction
+10
+ A
+10
+B.
+une transaction valide
+la somme
+<NP>  A
+ B
+100
+la transaction
+soustrait 10
+ A
+la transaction
+un problème
+10
+ B
+la propriété
+atomicité
+la base
+données
+cet état
+la propriété
+atomicité soit
+la transaction
+son état
+l' atomicité soit
+La cohérence
+le respect
+toutes les règles
+les contraintes
+intégrité
+notre exemple
+la seule règle
+la somme
+<NP>  A
+ B
+100
+d' autres règles
+exemple
+une règle
+la valeur
+ A
+une transaction T1
+10
+ A
+B.
+la cohérence
+la transaction
+qui
+la transaction T1
+la somme
+<NP>  A
+ B
+100
+la transaction T1
+la transaction T1
+10
+<NP>  A
+l' atomicité
+une validation
+cohérence
+la somme
+<NP>  A
+ B
+90
+100
+la cohérence
+la transaction
+la valeur
+ A
+10
+la valeur
+la transaction T1
+les deux transactions suivantes
+T1
+10
+ A
+ BT2
+ B
+A.
+les transactions
+les actions suivantes
+les quatre opérations
+l' isolation
+la transaction T1 est
+sa première action
+le système
+l' effet partiel
+T1
+le début
+<NP> T2
+T2
+des données
+les transactions
+la transaction T2
+T1
+la suite
+actions
+la transaction T1 est
+sa deuxième partie
+la complétion
+la transaction T2
+le rétablissement
+ A
+sa valeur
+la transaction T1
+l' augmentation valide
+ Afaite
+la transaction T2
+la base
+données
+un état
+ A
+sa valeur
+ B
+Ce
+un échec
+isolation
+la propriété d' isolation
+la séquence
+actions
+le système
+muni
+contrôles
+rollbacks
+qui
+tous les cas
+le résultat
+l' exécution
+transactions
+le même résultat
+leur exécution
+séquence
+une transaction
+10
+ A
+B.
+une confirmation
+la transaction
+l' utilisateur
+l' instruction d' écriture
+disque
+nouvelles valeurs
+<NP>  A
+ B
+le contenu
+tampon
+disque soit
+disque
+une panne
+électricité
+<NP> la confirmation
+le transfert
+tampon
+disque
+le système
+aucune façon
+les valeurs
+<NP>  A
+B.
+un échec
+durabilité
+l' utilisateur
+une confirmation
+l' effet
+la transaction

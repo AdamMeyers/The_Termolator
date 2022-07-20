@@ -1,0 +1,15 @@
+﻿Transformation bilatérale de Laplace 
+En analyse, la transformation bilatérale de Laplace est la forme la plus générale de la transformation de Laplace, dans laquelle l'intégration se fait à partir de moins l'infini plutôt qu'à partir de zéro.
+La transformée bilatérale de Laplace d'une fonction formula_1 de la variable réelle est la fonction formula_2 de la variable complexe définie par : 
+Il est essentiel, quand on utilise la transformation bilatérale de Laplace, de préciser la bande de convergence. Soit par exemple formula_10. 
+Soit formula_15 et formula_16 deux distributions convolables, par exemple ayant chacune un support limité à gauche, ou l'une d'entre elles étant à support compact. Alors (comme dans le cas de la transformation monolatérale), 
+On peut étendre la transformation de Laplace au cas de certaines hyperfonctions, dites « hyperfonctions de Laplace » ou « hyperfonctions de type exponentiel ». Pour une hyperfonction définie par une distribution, on retrouve la théorie qui précède. Mais par exemple 
+bien que n'étant pas une distribution (car elle est d'ordre infini localement, à savoir en 0), est une hyperfonction dont le support est formula_22 et qui
+admet pour transformée de Laplace 
+On obtient en effet en substituant cette expression dans la précédente 
+par conséquent 
+d'où la formule classique 
+En procédant par récurrence, on obtient les formules générales de l'article Transformation de Laplace. 
+La transformation de Laplace bilatérale est utilisée notamment pour la conception de filtres analogiques classiques (Butterworth, Tchebychev, Cauer, etc.), pour le filtre optimal de Wiener, en statistiques où elle définit la fonction génératrice des moments d'une distribution, elle joue un rôle essentiel dans la formulation à temps continu de la factorisation spectrale causale directe et inverse, elle est très utilisée enfin pour résoudre les équations intégrales (voir l'article Opérateur intégral). 
+Le théorème de Paley-Wiener et sa généralisation due à Schwartz sont couramment énoncés à partir de la transformation de Fourier-Laplace (voir "infra"). Il peut tout aussi bien s'exprimer à partir de la transformation de Laplace, et on obtient alors l'énoncé suivant: 
+Un théorème dû à Jacques-Louis Lions donne d'autres informations sur le support d'une distribution à partir de sa transformée de Laplace. Dans le cas d'une seule variable, il prend la forme suivante (voir Inversion): 

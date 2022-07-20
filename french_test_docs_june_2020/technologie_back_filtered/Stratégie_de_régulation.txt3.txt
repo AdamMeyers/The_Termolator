@@ -1,0 +1,26 @@
+﻿Stratégie de régulation 
+Une stratégie (ou topologie) de régulation est, pour un procédé industriel, l'organisation du système de contrôle-commande en vue de maintenir une grandeur physique dans une plage de tolérance donnée. Le choix de stratégie est très important dans les industries de transformation (par exemple les industries chimiques, papetières, agroalimentaires) en raison de la variabilité d'un nombre élevé de grandeurs physiques incidentes (dites « perturbations ») qui y sont présentes. 
+Les stratégies visent à maîtriser les grandeurs physiques les plus importantes qui sont impliquées dans le processus. 
+La consigne interne (Wi ou Ci) représente la valeur de température souhaitée en sortie du préchauffeur, elle est rentrée manuellement par l'opérateur. 
+Si la température est inférieure à la consigne, le régulateur augmente la valeur du signal de commande envoyé à TV200, donc la puissance de chauffe. Si la température est supérieure à la consigne, le régulateur diminue la valeur du signal de commande envoyé à TV200. Si les paramètres du régulateur sont corrects, on a au bout d'un certain temps Mesure=Consigne (soit valeur réelle=valeur souhaitée). 
+La boucle simple se contente du nombre minimum d'éléments : 
+Si les variations de débit sont trop brusques, il se peut que la régulation soit mise en défaut et que l'on sorte du cahier des charges. Il faut alors envisager un schéma de régulation plus complexe. Dans ce cas, comme la perturbation n'est pas sur la grandeur réglante (qui est la puissance de chauffe), on peut mettre en place une stratégie mixte combinant la régulation en « boucle fermée » avec une régulation en « boucle ouverte ». 
+La régulation cascade se base sur l'utilisation de deux régulateurs. 
+Elle est mise en place principalement pour réduire les effets des perturbations sur la grandeur réglante.
+Dans notre exemple, nous supposerons que la pression d'alimentation de l'eau chaude (En amont de la vanne de régulation TV01) peut varier assez brutalement (ouverture d'un autre circuit sur le procédé). 
+La liaison avec des petits cercles représente le partage d'une variable informatique interne au SNCC. 
+La grandeur qui est fixée par le cahier des charges du procédé est la grandeur réglée maître ; ici, c'est la consigne interne du régulateur de température repéré TIC03 associée au capteur transmetteur TT01.
+La sortie de ce premier régulateur ne commande pas l'organe de réglage TV01 mais pilote la consigne externe du second régulateur.  
+On est en présence de deux boucles de régulation imbriquées :
+Pour que le fonctionnement soit assuré, il faut que la vitesse de réponse de la boucle esclave soit plus grande que celle de la boucle maître. 
+Les avantages sont nombreux : 
+
+La topologie cascade de type 1 est très répandue dans l'industrie en vertu de ses nombreux avantages qui compensent largement le peu d'inconvénients qu'elle génère. 
+La grandeur réglée esclave n'est pas la grandeur réglante mais une grandeur intermédiaire entre la grandeur réglante et la grandeur réglée principale (maître), ici on utilise la température de sortie du double enveloppe.
+Le principe reste cependant le même que celui de la cascade de type 1. 
+La boucle mixte rejette l'effet des grandeurs perturbatrices : 
+En cas de variation du débit de la charge (grandeur perturbatrice principale de ce procédé), le régulateur réagit instantanément, la température varie beaucoup moins (3 à 10 fois) que dans le cas d'une boucle simple. 
+La boucle mixte nécessite un plus grand nombre d'éléments : 
+
+La topologie mixte est choisie lorsque la perturbation dont on veut compenser les effets néfastes sur la grandeur réglée n'affecte pas directement la grandeur réglante (sinon on utilise une topologie cascade qui est plus efficace). 
+D'autres stratégies de régulation existent, notamment : 

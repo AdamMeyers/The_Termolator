@@ -1,0 +1,704 @@
+<s>
+<NP>
+Apache	NOM	apache
+ZooKeeper	NAM	<unknown>
+Apache	ADJ	apache
+ZooKeeper	NAM	<unknown>
+</NP>
+<VN>
+est	VER:pres	être
+</VN>
+<NP>
+un	DET:ART	un
+logiciel	NOM	logiciel
+open	ADJ	open
+source	NOM	source
+</NP>
+<PP>
+de	PRP	de
+<NP>
+la	DET:ART	le
+Apache	ADJ	apache
+Software	NOM	software
+Foundation	NAM	<unknown>
+</NP>
+</PP>
+.	SENT	.
+</s>
+<s>
+<VN>
+Il	PRO:PER	il
+s'	PRO:PER	se
+agit	VER:pres	agir
+</VN>
+<PP>
+d'	PRP	de
+<NP>
+un	DET:ART	un
+logiciel	NOM	logiciel
+</NP>
+</PP>
+<PP>
+de	PRP	de
+<NP>
+gestion	NOM	gestion
+</NP>
+</PP>
+<PP>
+de	PRP	de
+<NP>
+configuration	NOM	configuration
+</NP>
+</PP>
+<PP>
+pour	PRP	pour
+<NP>
+systèmes	NOM	système
+</NP>
+</PP>
+<VPpart>
+distribués	VER:pper	distribuer
+</VPpart>
+.	SENT	.
+</s>
+<s>
+<NP>
+ZooKeeper	NAM	<unknown>
+</NP>
+<VN>
+est	VER:pres	être
+</VN>
+<NP>
+un	NOM	un
+</NP>
+<PP>
+sous	PRP	sous
+<NP>
+projet	NOM	projet
+</NP>
+</PP>
+<PP>
+de	PRP	de
+<NP>
+Hadoop	NAM	<unknown>
+</NP>
+</PP>
+<COORD>
+mais	KON	mais
+</COORD>
+<VN>
+il	PRO:PER	il
+est	VER:pres	être
+</VN>
+<NP>
+un	DET:ART	un
+projet	NOM	projet
+</NP>
+<AP>
+top-level	NOM	<unknown>
+à	PRP	à
+part	NOM	part
+entière	ADJ	entier
+</AP>
+.	SENT	.
+</s>
+<s>
+<NP>
+L'	DET:ART	le
+architecture	NOM	architecture
+</NP>
+<PP>
+de	PRP	de
+<NP>
+ZooKeeper	NAM	<unknown>
+</NP>
+</PP>
+<VN>
+supporte	VER:pres	supporter
+</VN>
+<NP>
+une	DET:ART	un
+haute	ADJ	haut
+disponibilité	NOM	disponibilité
+</NP>
+<AP>
+grâce	NOM	grâce
+</AP>
+<PP>
+à	PRP	à
+<NP>
+des	PRP:det	du
+services	NOM	service
+</NP>
+</PP>
+<AP>
+redondants	ADJ	redondant
+</AP>
+.	SENT	.
+</s>
+<s>
+<NP>
+Les	DET:ART	le
+clients	NOM	client
+</NP>
+<VN>
+peuvent	VER:pres	pouvoir
+ainsi	ADV	ainsi
+</VN>
+<VN>
+interroger	VER:infi	interroger
+</VN>
+<NP>
+un	DET:ART	un
+autre	ADJ	autre
+</NP>
+<AP>
+leader	NOM	leader
+ZooKeeper	NAM	<unknown>
+</AP>
+<Ssub>
+si	KON	si
+</Ssub>
+<NP>
+le	DET:ART	le
+premier	NOM	premier
+</NP>
+<VN>
+ne	ADV	ne
+répond	VER:pres	répondre
+pas	ADV	pas
+</VN>
+.	SENT	.
+</s>
+<s>
+<NP>
+Les	DET:ART	le
+nœuds	NOM	<unknown>
+</NP>
+<PP>
+de	PRP	de
+<NP>
+ZooKeeper	NAM	<unknown>
+</NP>
+</PP>
+<VN>
+stockent	VER:pres	stocker
+</VN>
+<NP>
+leurs	DET:POS	leur
+données	NOM	donnée
+</NP>
+<PP>
+dans	PRP	dans
+<NP>
+un	DET:ART	un
+espace	NOM	espace
+</NP>
+</PP>
+<PP>
+de	PRP	de
+<NP>
+noms	NOM	nom
+</NP>
+</PP>
+<AP>
+hiérarchique	ADJ	hiérarchique
+,	PUN	,
+tout	ADV	tout
+</AP>
+<PP>
+comme	ADV	comme
+<NP>
+un	DET:ART	un
+système	NOM	système
+</NP>
+</PP>
+<PP>
+de	PRP	de
+<NP>
+<NP>
+fichiers	NOM	fichier
+</NP>
+<COORD>
+ou	KON	ou
+</COORD>
+<NP>
+une	DET:ART	un
+structure	NOM	structure
+</NP>
+</NP>
+</PP>
+<PP>
+de	PRP	de
+<NP>
+données	NOM	donnée
+</NP>
+</PP>
+<AP>
+arborescente	ADJ	arborescent
+</AP>
+.	SENT	.
+</s>
+<s>
+<NP>
+Les	DET:ART	le
+clients	NOM	client
+</NP>
+<VN>
+peuvent	VER:pres	pouvoir
+</VN>
+<VN>
+lire	VER:infi	lire
+</VN>
+<COORD>
+et	KON	et
+</COORD>
+<VN>
+écrire	VER:infi	écrire
+</VN>
+<PP>
+dans	PRP	dans
+<NP>
+les	DET:ART	le
+nœuds	NOM	<unknown>
+</NP>
+</PP>
+<COORD>
+et	KON	et
+ainsi	ADV	ainsi
+</COORD>
+<VN>
+avoir	VER:infi	avoir
+</VN>
+<NP>
+un	DET:ART	un
+service	NOM	service
+</NP>
+<PP>
+de	PRP	de
+<NP>
+configuration	NOM	configuration
+</NP>
+</PP>
+<AP>
+partagée	ADJ	partagé
+</AP>
+.	SENT	.
+</s>
+<s>
+<NP>
+Les	DET:ART	le
+mises	NOM	mise
+</NP>
+<PP>
+à	PRP	à
+<NP>
+jour	NOM	jour
+</NP>
+</PP>
+<VN>
+sont	VER:pres	être
+</VN>
+<AP>
+totalement	ADV	totalement
+ordonnées	VER:pper	ordonner
+</AP>
+.	SENT	.
+</s>
+<s>
+<NP>
+ZooKeeper	NAM	<unknown>
+</NP>
+<VN>
+est	VER:pres	être
+utilisé	VER:pper	utiliser
+</VN>
+<PP>
+par	PRP	par
+<NP>
+des	PRP:det	du
+sociétés	NOM	société
+</NP>
+</PP>
+<PP>
+comme	KON	comme
+<NP>
+Rackspace	NOM	<unknown>
+,	PUN	,
+Yahoo	NAM	<unknown>
+</NP>
+</PP>
+!	SENT	!
+</s>
+<s>
+<NP>
+<NP>
+,	PUN	,
+Odnoklassniki	NAM	<unknown>
+</NP>
+<COORD>
+et	KON	et
+</COORD>
+<NP>
+eBay	NOM	<unknown>
+</NP>
+</NP>
+<COORD>
+ainsi	KON	ainsi
+que	KON	que
+</COORD>
+<NP>
+des	PRP:det	du
+systèmes	NOM	système
+</NP>
+<PP>
+de	PRP	de
+<NP>
+recherche	NOM	recherche
+open	ADJ	open
+source	NOM	source
+</NP>
+</PP>
+<PP>
+comme	KON	comme
+<NP>
+Solr	NAM	<unknown>
+</NP>
+</PP>
+.	SENT	.
+</s>
+<s>
+<PONCT:S>
+Voici	ADV	voici
+</PONCT:S>
+<NP>
+quelques	PRO:IND	quelque
+termes	NOM	terme
+</NP>
+<VN>
+courant	VER:ppre	courir
+</VN>
+<PP>
+dans	PRP	dans
+<NP>
+l'	DET:ART	le
+architecture	NOM	architecture
+</NP>
+</PP>
+<NP>
+Zookeeper	NAM	<unknown>
+:	PUN	:
+</NP>
+<NP>
+Les	DET:ART	le
+services	NOM	service
+</NP>
+<PP>
+du	PRP:det	du
+<NP>
+cluster	NOM	<unknown>
+</NP>
+</PP>
+<VN>
+sont	VER:pres	être
+</VN>
+<VPpart>
+répliqués	VER:pper	répliquer
+</VPpart>
+<COORD>
+et	KON	et
+</COORD>
+<VPpart>
+stockés	VER:pper	stocker
+</VPpart>
+<PP>
+sur	PRP	sur
+<NP>
+un	DET:ART	un
+ensemble	NOM	ensemble
+</NP>
+</PP>
+<PP>
+de	PRP	de
+<NP>
+serveurs	NOM	serveur
+(	PUN	(
+</NP>
+</PP>
+<VPpart>
+appelés	VER:pper	appeler
+</VPpart>
+<NP>
+"	PUN:cit	"
+ensemble	NOM	ensemble
+"	PUN:cit	"
+)	PUN	)
+,	PUN	,
+</NP>
+<NP>
+chacun	PRO:IND	chacun
+</NP>
+<PP>
+d'	PRP	de
+<PP>
+entre	PRP	entre
+</PP>
+<NP>
+eux	PRO:PER	eux
+</NP>
+</PP>
+<VN>
+maintiennent	VER:pres	maintenir
+</VN>
+<NP>
+une	DET:ART	un
+base	NOM	base
+</NP>
+<PP>
+de	PRP	de
+<NP>
+données	NOM	donnée
+en	PRP	en
+mémoire	NOM	mémoire
+</NP>
+</PP>
+<VN>
+contenant	VER:ppre	contenir
+</VN>
+<NP>
+l'	DET:ART	le
+arbre	NOM	arbre
+d'	PRP	de
+état	NOM	état
+</NP>
+<AP>
+complet	ADJ	complet
+</AP>
+<PP>
+des	PRP:det	du
+<NP>
+données	NOM	donnée
+</NP>
+</PP>
+<COORD>
+ainsi	KON	ainsi
+</COORD>
+<Ssub>
+qu'	KON	que
+</Ssub>
+<NP>
+un	DET:ART	un
+journal	NOM	journal
+</NP>
+<PP>
+des	PRP:det	du
+<NP>
+transactions	NOM	transaction
+</NP>
+</PP>
+<COORD>
+et	KON	et
+</COORD>
+<PP>
+des	PRP:det	du
+<NP>
+snapshots	NOM	<unknown>
+</NP>
+</PP>
+<VPpart>
+stockés	VER:pper	stocker
+</VPpart>
+<PP>
+en	PRP	en
+<NP>
+permanence	NOM	permanence
+</NP>
+</PP>
+.	SENT	.
+</s>
+<s>
+<NP>
+Plusieurs	PRO:IND	plusieurs
+</NP>
+<NP>
+applications	NOM	application
+client	NOM	client
+</NP>
+<VN>
+peuvent	VER:pres	pouvoir
+</VN>
+<VN>
+se	PRO:PER	se
+connecter	VER:infi	connecter
+</VN>
+<PP>
+à	PRP	à
+<NP>
+<NP>
+un	DET:ART	un
+serveur	NOM	serveur
+,	PUN	,
+</NP>
+<COORD>
+et	KON	et
+</COORD>
+<NP>
+chaque	PRO:IND	chaque
+client	NOM	client
+</NP>
+</NP>
+</PP>
+<VN>
+maintient	VER:pres	maintenir
+</VN>
+<NP>
+une	DET:ART	un
+connexion	NOM	connexion
+TCP	NAM	<unknown>
+</NP>
+<PP>
+par	PRP	par
+<NP>
+laquelle	PRO:REL	lequel
+</NP>
+</PP>
+<VN>
+il	PRO:PER	il
+envoie	VER:pres	envoyer
+</VN>
+<PP>
+des	PRP:det	du
+<NP>
+requêtes	NOM	requête
+</NP>
+</PP>
+<COORD>
+et	KON	et
+</COORD>
+<PP>
+des	PRP:det	du
+<NP>
+TIC	NOM	tic
+</NP>
+</PP>
+<COORD>
+et	KON	et
+</COORD>
+<VN>
+reçoit	VER:pres	recevoir
+</VN>
+<NP>
+des	PRP:det	du
+réponses	NOM	réponse
+</NP>
+<COORD>
+et	KON	et
+</COORD>
+<VN>
+surveille	VER:pres	surveiller
+</VN>
+<NP>
+les	DET:ART	le
+événements	NOM	événement
+</NP>
+.	SENT	.
+</s>
+<s>
+<PONCT:S>
+En	PRP	en
+plus	ADV	plus
+</PONCT:S>
+<PP>
+des	PRP:det	du
+<NP>
+bibliothèques	NOM	bibliothèque
+</NP>
+</PP>
+<AP>
+clientes	NOM	client
+incluses	ADJ	inclus
+</AP>
+<PP>
+dans	PRP	dans
+<NP>
+la	DET:ART	le
+distribution	NOM	distribution
+</NP>
+</PP>
+<NP>
+ZooKeeper	NAM	<unknown>
+,	PUN	,
+</NP>
+<NP>
+un	DET:ART	un
+certain	PRO:IND	certain
+nombre	NOM	nombre
+</NP>
+<PP>
+de	PRP	de
+<NP>
+bibliothèques	NOM	bibliothèque
+</NP>
+</PP>
+<AP>
+tierces	ADJ	tierce
+</AP>
+<AP>
+telles	PRO:DEM	tel
+</AP>
+<Ssub>
+que	PRO:REL	que
+</Ssub>
+<NP>
+<NP>
+Apache	ADJ	apache
+Curator	NAM	<unknown>
+</NP>
+<COORD>
+et	KON	et
+</COORD>
+<NP>
+Kazoo	NAM	<unknown>
+</NP>
+</NP>
+<VN>
+sont	VER:pres	être
+</VN>
+<AP>
+disponibles	ADJ	disponible
+</AP>
+<NP>
+qui	PRO:REL	qui
+</NP>
+<VN>
+facilitent	VER:pres	faciliter
+</VN>
+<NP>
+l'	DET:ART	le
+utilisation	NOM	utilisation
+</NP>
+<PP>
+de	PRP	de
+<NP>
+ZooKeeper	NAM	<unknown>
+,	PUN	,
+</NP>
+</PP>
+<VN>
+ajoutent	VER:pres	ajouter
+</VN>
+<NP>
+des	PRP:det	du
+fonctionnalités	NOM	fonctionnalité
+</NP>
+<AP>
+supplémentaires	ADJ	supplémentaire
+</AP>
+.	SENT	.
+</s>
+<s>
+<NP>
+etc	ABR	etc
+</NP>
+.	SENT	.
+</s>

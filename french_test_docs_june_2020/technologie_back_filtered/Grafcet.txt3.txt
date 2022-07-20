@@ -1,0 +1,12 @@
+﻿Grafcet 
+Le Grafcet est donc un langage graphique représentant le fonctionnement d'un automatisme par un ensemble : 
+Son nom est l'acronyme à la fois de « graphe fonctionnel de commande étapes / transitions » et de « graphe du groupe AFCET (Association française pour la cybernétique économique et technique) ». 
+Le mode de représentation qui est normalisé par l'Union technique de l'électricité (UTE) est le suivant : 
+
+Les flèches sont inutiles, elles ne participent pas à la syntaxe mais aident à la lecture. 
+
+Le critère de classification des actions les plus utilisées est : la durée de l'action comparativement à la durée de l'étape : 
+Il s'agit toujours du résultat d'une expression booléenne unique pouvant faire intervenir 
+Ce moyen de représentation peut donc être considéré comme un « zoom » qui permet de simplifier la lecture de Grafcet de taille importante. Une expansion ne peut être utilisée qu'une seule fois : son utilisation est unique et elle ne doit pas être confondue avec un sous-programme, à l'instar d'autres langages de programmation. 
+Si l'on veut utiliser une même expansion, il faut la dupliquer. Cela revient, en fait, à faire une instance de l'expansion par appel, à l'instar des appels de fonctions dans la norme CEI 61131-3. 
+Le Grafcet est normalisé sous l'indice de classement NF C 03-190. La norme européenne correspondante est EN 60848. 

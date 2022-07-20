@@ -1,0 +1,258 @@
+Multiversion Concurrency Control Multiversion concurrency control
+<NP> MCC
+MVCC
+une méthode informatique
+contrôle
+accès
+les systèmes
+gestion
+base
+<NP> données
+les langages
+programmation
+la gestion
+caches en mémoire
+Le principe
+MVCC
+un verrouillage
+verrouillage
+qui
+les objets
+des garanties
+bonne fin
+L' inconvénient logique
+une mise
+jour
+un blocage
+traitement
+une base
+données
+œuvre
+mises
+jour
+écrasement
+anciennes données
+les nouvelles
+les anciennes données
+une nouvelle version
+plusieurs versions
+une seule
+la plus récente
+Cela
+la base
+données
+le remplissage
+trous
+mémoire
+le disque
+une purge régulière
+données
+bases
+données orientées document
+CouchDB
+cela
+une version complète du document
+chaque mise
+jour
+des mises
+jour
+petits morceaux de document
+eux
+manière
+MVCC
+la création
+prise de vue
+un instant
+<NP> cliché
+snapshot
+anglais
+les transactions
+MVCC
+une estampille timestamp
+anglais
+qui
+le temps
+une valeur
+chaque transaction
+l' état
+la base
+Ce mécanisme
+l' usage
+verrous
+<NP> les transactions
+les écritures
+opérations de lecture
+qui
+les anciennes versions
+<NP> la base
+qui
+<NP> copie
+maintenues
+la transaction
+une requête en lecture
+un identifiant de transaction
+toutes ses valeurs
+les opérations d' écriture
+cours
+de transaction plus élevé
+d' autres termes
+MVCC
+chaque utilisateur
+une capture
+la base
+Les modifications
+les autres
+la transaction
+commit
+mise
+jour
+la transaction qui
+la première
+les modifications gagne
+Les autres perdent une annulation
+moment
+les mises
+jour
+la copie
+la base
+MVCC
+des marqueurs temporels
+timestamp estampille
+des identifiants de transaction
+œuvre
+transactions
+MVCC
+une transaction
+la disponibilité
+un objet
+plusieurs versions
+chaque objet
+Chaque version de ligne
+une estampille
+une transaction  T
+la plus récente version
+un objet
+qui
+l' estampille
+la transaction
+cours
+TS(T)
+une transaction  T
+une autre transaction  Tfait
+l' estampille de  T
+celle
+ T
+TS(T))
+<NP> l' opération d' écriture
+un succès
+Cela
+une opération d' écriture
+une transaction
+le même objet
+une estampille
+valeur
+Chaque objet
+une estampille
+lecture
+une transaction  T
+un objet  P
+l' estampille
+cette transaction
+celle
+l' objet
+lecture
+TS(T) RTS(P)) la transaction  T
+ré exécutée
+le cas
+ T
+une nouvelle version
+ P
+l' estampille
+<NP> lecture
+écriture
+ P
+la valeur
+l' estampille
+TS(T
+L' avantage
+les lectures
+les écritures
+elles
+temps
+attente
+contention
+conséquent
+une meilleure concurrence
+accès
+la base
+Les inconvénients
+ce système
+moment t1
+l' état
+la base
+Cela
+le jeu
+données
+cette base
+Objet 1="Hello Objet 2="Bar
+l' objet
+Foo
+cette valeur
+la base
+plusieurs versions
+une transaction longue
+une opération
+lecture
+la transaction
+cet état
+une mise
+jour
+la longue transaction
+lecture
+qui
+Objet
+Objet 3="Foo-Bar l' état
+la base
+données
+une nouvelle version
+un identifiant de transaction
+la transaction t1
+accès
+une prise de vue
+système
+la transaction t2
+données
+La transaction t1
+une lecture
+donnée
+l' écriture
+la transaction
+MVCC
+accès ACID isolés
+œuvre
+mécanisme
+verrou
+la gestion
+dépendances
+transactions
+les verrous en modification
+Multiversion concurrency control
+détail
+le document
+1981
+Concurrency Control in Distributed
+Database Systems
+<NP> Philip Bernstein
+Nathan Goodman alors
+la société Computer Corporation of America
+Le document
+<NP> Bernstein
+Goodman
+une dissertation
+1978
+David P. Reed
+qui
+le mécanisme <NP> MVCC
+qui
+l' auteur original
+ce travail

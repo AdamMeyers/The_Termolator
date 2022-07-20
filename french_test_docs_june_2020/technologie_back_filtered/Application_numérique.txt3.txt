@@ -1,0 +1,17 @@
+﻿Application numérique 
+En sciences, particulièrement en physique, l'application numérique (souvent abrégé en a.n.) est l'obtention de la valeur numérique d'une grandeur physique à partir de celles d'autre grandeurs lorsque l'on connaît une formule analytique reliant ces grandeurs. 
+Une application numérique se fait en plusieurs étapes : 
+Exemple 
+Faire une application numérique, c'est aussi connaître la précision du résultat que l'on prétend obtenir. 
+De manière rigoureuse, il faut également veiller : 
+Le choix de la manière de mener les calculs dépend également de la manière dont les opérations sont programmées informatiquement. Ainsi, la division demande plus de ressources que la multiplication, et au lieu de calculer
+on a intérêt, pour de gros volumes de données, à écrire à la place :
+en effet, le fait de remplacer deux divisions par une division et cinq multiplications est favorable. 
+Exemple 
+Reprenons l'exemple ci-dessus. 
+Pour être un peu plus rigoureux, il faut connaître les incertitudes :
+Si l'on applique la méthode de la dérivée :
+et donc
+Si l'on choisit de reporter les extrêmes :
+et donc on prend la valeur moyenne
+que l'on exprime 

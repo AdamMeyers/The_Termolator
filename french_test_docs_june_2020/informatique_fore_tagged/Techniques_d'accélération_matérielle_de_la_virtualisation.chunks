@@ -1,0 +1,605 @@
+accélération
+la virtualisation
+La performance
+l’ un
+problèmes
+la virtualisation
+Plusieurs solutions d’ améliorations logicielles
+Les techniques d’ accélération matérielle
+la virtualisation
+cet article
+Les solutions matérielles
+les performances
+la virtualisation
+des supports
+lesquels
+des fonctions spécifiques
+Les solutions logicielles
+la virtualisation
+problèmes
+performances
+scalabilité
+L’ accélération matérielle
+la virtualisation
+la mise
+œuvre
+les performances
+la virtualisation
+Les principaux objectifs
+la virtualisation
+les suivants
+un environnement
+lequel
+les applications
+exécutées
+manière
+cet environnement d’
+exécution
+l' application
+<NP> l’ accès
+l' utilisation
+ressources
+les techniques
+isolement
+La virtualisation
+le redimensionnement
+l’ environnement
+le système physique
+nouvelles capacités
+le même système
+les E/S
+l' unité
+gestion
+la mémoire
+IOMMU
+<NP> un
+plusieurs espaces
+adressages
+qui
+une opération DMA accès direct
+la mémoire
+la mémoire
+un périphérique
+Cette fonctionnalité
+un mécanisme
+lequel
+les accès
+périphériques
+La MMU
+le tableau
+correspondance
+les adresses
+les adresses linéaires
+le système
+exploitation
+La technologie
+virtualisation Intel
+une architecture d’
+qui
+la liaison DMA accès direct
+la mémoire
+matériels
+qui
+le support
+des accès
+périphériques
+la mémoire
+la translation
+fonctionnalités
+La liaison matérielle
+DMA
+le périphérique qui
+la mémoire système ensuite
+une table
+pages d’ E/S
+l' accès
+son emplacement
+La structure de traduction
+une fonction
+un périphérique bus PCI <NP> périphérique
+fonction
+une table
+pages
+plusieurs niveaux
+Chaque périphérique
+E/S
+l' espace d' adressage virtuel
+l' espace
+adressage
+un espace d' adressage purement virtuel
+le logiciel
+La liaison matérielle
+DMA
+une table
+bus PCI
+<NP> périphérique
+fonction
+la racine
+la table
+traduction
+l’ adresse
+Le matériel
+cette
+les traductions efficaces
+IOTLB d' E/S
+la table
+les coûts généraux
+l’ extraction
+cette table
+la mémoire
+Les erreurs qui
+la liaison
+le matériel
+qui
+les erreurs
+l’ application
+l' événement
+panne
+interruption
+L' assistance
+la virtualisation
+AMD pacifica AMD-V
+la proposition
+AMD
+la gestion
+la virtualisation
+E/S
+un périphérique DEV qui
+l’ accès direct
+la mémoire
+des pages mémoires
+AMD-V
+l’ équivalent
+Vt-d
+Intel
+Les puces PCI-X
+IBM
+la fonctionnalité matérielle
+les accès directes
+la mémoire
+Les traductions
+un ensemble d' entrées
+contrôle
+traduction
+TCE
+une table
+la mémoire système
+La table
+un tableau
+où l' index
+le numéro
+page
+l' espace d' adressage
+<NP> bus
+le TCE
+cet index
+le numéro
+page
+la mémoire système
+Le TCE
+des informations supplémentaires
+les droits d' accès
+direction DMA
+dispositifs
+groupes
+périphériques
+chaque traduction
+la virtualisation les processeurs ARM
+un troisième niveau
+privilèges
+EL2
+niveaux
+<NP> EL0
+EL1 déjà présents
+l' espace
+l' espace kernel
+Ce niveau
+privilège
+le processeur
+qu'
+les VMs
+les accès
+matériel
+les différentes
+l' architecture
+une nouvelle fonctionnalité d' accélération
+la virtualisation
+processeurs ARM
+le VHE
+Son but principal
+les
+système hôte
+le niveau
+privilège
+le coût
+transition
+<NP> la VM
+le système hôte
+cet objectif VHE
+trois choses
+le nombre
+registres
+mode EL2
+le même nombre
+mode EL1
+un mécanisme
+traduction
+<NP> instructions
+les instructions d' accès
+registres EL1
+registres EL2
+le code
+le coût
+sauvegarde
+registres
+la transition
+<NP> le système hôte
+l' hyperviseur
+<NP> La troisième
+dernière fonctionnalité
+VHE
+le format
+pages
+<NP> EL1
+EL2
+les accès mémoire identique
+les deux modes
+privilèges
+La technique Pause
+Boucle PLE
+l' assistance matérielle
+le spinlock
+Le CPU
+l' instruction
+indice
+boucle
+verrouillage
+processeur
+l' instruction PAUSE
+le noyau
+système d' exploitation
+d' autres fins
+une boucle de délai
+La technologie
+VMM
+le verrouillage
+spin
+l' exécution
+instructions
+valeurs
+<NP> PLE_Gap
+PLE_Window
+PLE_Gap
+le nombre maximum
+cycles
+deux exécutions
+PAUSE
+une boucle
+Le CPU
+un spin-lock
+une série
+exécutions d' instructions
+la latence
+deux exécutions
+la valeur PLE_Gap
+PLE_Window
+le temps maximum
+que
+un VCPU
+une boucle
+spin
+le temps d' exécution
+boucle
+spin
+la valeur PLE_Window le CPU
+une sortie VM
+l' hyperviseur
+Le gestionnaire
+la pause
+la sortie de boucle
+la définition
+valeurs
+<NP> PLE_Gap
+Cette technique
+les contenus excessifs
+sortie VM
+verrouillage
+la Table
+pages
+ombre
+la prise
+l' EPT
+la Table
+pages d' invité
+GPT
+le mappage
+l' adresse mémoire
+GLA
+l' adresse
+GPA
+l' EPT
+le mappage
+l' adresse
+l' invité
+l' adresse
+l' hôte
+Le gestionnaire
+l' EPT
+XEN
+un tableau
+l' EPT
+la traduction
+GPA
+HPA
+L' invité
+l' EPT
+la propriété
+ses tables
+pages
+conséquent
+l' EPT
+la nécessité
+une protection
+l' écriture
+les accès
+Table
+pages
+les excès
+<NP> contenus VM-exit
+lock
+l' EPT
+le matériel
+la table
+<NP> pages d' invités
+l' EPT
+Le SR-IOV
+une méthode
+virtualisation
+périphériques
+PCI Express qui
+plusieurs machines
+la VMM
+Un périphérique compatible SR-IOV
+<NP> une seule
+plusieurs fonctions physiques
+PF
+Chaque PF
+de multiples instances
+entités
+fonction PCI
+appelées fonctions virtuelles
+VF qui
+les fonctions
+Chaque fonction virtuelle
+un invité
+un accès
+les ressources principales
+périphérique
+partage
+ressources
+performances
+Intel
+le support matériel
+un simple moniteur
+machines
+<NP> la simplicité
+la performance
+objectifs concurrents
+Le matériel
+moniteur de machine
+<NP> certaines expériences
+le logiciel moniteur
+machine
+une meilleure solution
+virtualisation
+les problèmes de performance
+l' environnement
+virtualisation
+nouvelles boîtes
+outils
+les performances
+moniteur
+la machine
+<NP> VMM
+son architecture
+systèmes
+exploitations
+applications
+lesquelles
+la plupart
+outils
+Xen
+VT Xentrace
+les performances
+l' environnement
+la paravirtualisation.Il
+les principaux goulets
+étranglement
+performance
+les performances d’
+une architecture exemple Xen VT tout d'abord
+des outils de performance
+des outils
+référence
+données
+les principaux coût généraux
+hyperviseurs
+des solutions
+les problèmes potentiels
+la performance
+un aperçu
+la charge
+logiciel
+tous les types d' événements Exit
+la machine
+une étude
+l’ outil
+qui
+tous les événements Exit
+qui
+la charge
+<NP> travail CPU2000
+la compilation
+noyaux
+Les résultats
+le tableau
+Table Mesure
+coûts
+l' événement
+CPU2000
+Cette étude
+l' émulation E/S
+le problème
+performance
+cette section
+expériences
+les cycles
+CPU
+un accès
+E/S
+une machine invitée
+plusieurs sondes
+l' horodatage d' échantillon
+chaque point
+l' impact
+temps d' émulation
+port
+le modèle d' appareil
+un port
+E/S
+la mesure
+cette étude
+le port d' E/S 0x22e
+qui
+la plate-forme
+une application simple
+HVM
+qui
+ce port
+une manière circulaire
+la virtualisation TSC
+l' invité HVM
+les horodateurs TSC
+<NP> dom0 hyperviseur
+HVM invité
+la même source
+temps
+le résultat expérimental
+Le résultat
+cette expérience
+le modèle
+dispositif
+lui-même
+que près d' un sixième
+temps total
+<NP> 51.4K
+l' interrupteur
+processus
+cycles
+l' un
+principaux problèmes
+une incidence
+les performances
+le temps passé
+le domaine
+domaine
+HVM c'est-à-dire dom0 renonce
+processeur quantum
+l' achèvement
+l' émulation
+E/S
+commutateur de processus
+dom0
+modèle
+périphérique
+processus
+l' hypercall
+le processus
+end_8259A_irq
+le port 0x20
+mask_and_ack_8259A
+EOI
+l' arrivée
+support
+64 bits
+l' architecture ARMv8
+des processeurs ARM
+des serveurs
+Les serveurs
+la virtualisation
+les performances
+ces processeurs
+la virtualisation
+la latence
+la virtualisation
+les chercheurs
+une série
+microbenchmarks
+des opérations basiques
+Xen
+10 fois
+KVM
+des performances comparables
+Xen
+architecture
+opérations
+type E/S
+un second temps
+les chercheurs
+benchmarks
+l' aide
+applications
+des conditions réelles
+utilisation
+serveurs
+les performances
+deux architectures
+les mêmes
+les deux types
+hyperviseurs
+des performances
+les
+L' architecture ARMv8
+l' architecture x86-64
+ce
+qui
+ses performances décevantes
+les problèmes de performances
+E/S
+les tout
+les performances
+10
+20
+Les résultats expérimentaux
+une amélioration
+77
+ces accélérations
+49
+la table
+page
+<NP> EPT
+28 supplémentaires
+la racine
+E/S
+la virtualisation
+SR-IOV
+Les machines virtuelles
+1960
+IBM
+des systèmes
+calculateurs
+les Mainframes coûteux
+une compatibilité
+les clients
+1974
+les pré-requis
+la virtualisation
+<NP> 1999 VMware ESX
+Workstation 2003 Xen 2005 Intel VT-x 2006 AMD-v 2007 virtualBox
+Inno Tech
+acquisition
+Sun
+2008)et
+2008 KVM
+acquisition
+Redhat

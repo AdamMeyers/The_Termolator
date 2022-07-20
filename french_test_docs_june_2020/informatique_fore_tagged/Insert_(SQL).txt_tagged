@@ -1,0 +1,1375 @@
+<s>
+<NP>
+Insert	NOM	insert
+(	PUN	(
+</NP>
+<NP>
+SQL	NAM	<unknown>
+)	PUN	)
+</NP>
+<NP>
+La	DET:ART	le
+commande	NOM	commande
+INSERT	NOM	insert
+</NP>
+<VN>
+a	VER:pres	avoir
+</VN>
+<NP>
+la	DET:ART	le
+syntaxe	NOM	syntaxe
+</NP>
+<AP>
+suivante	ADJ	suivant
+:	PUN	:
+</AP>
+<NP>
+Le	DET:ART	le
+nombre	NOM	nombre
+</NP>
+<PP>
+de	PRP	de
+<NP>
+colonnes	NOM	colonne
+</NP>
+</PP>
+<VN>
+doit	VER:pres	devoir
+</VN>
+<VN>
+être	VER:infi	être
+</VN>
+<AP>
+identique	ADJ	identique
+</AP>
+<PP>
+au	PRP:det	au
+<NP>
+nombre	NOM	nombre
+</NP>
+</PP>
+<PP>
+de	PRP	de
+<NP>
+valeurs	NOM	valeur
+</NP>
+</PP>
+.	SENT	.
+</s>
+<s>
+<Ssub>
+Si	KON	si
+</Ssub>
+<NP>
+une	DET:ART	un
+colonne	NOM	colonne
+</NP>
+<VN>
+n'	ADV	ne
+est	VER:pres	être
+pas	ADV	pas
+spécifiée	VER:pper	spécifier
+,	PUN	,
+</VN>
+<NP>
+sa	DET:POS	son
+valeur	NOM	valeur
+</NP>
+<PP>
+par	PRP	par
+<NP>
+défaut	NOM	défaut
+</NP>
+</PP>
+<VN>
+lui	PRO:PER	lui
+sera	VER:futu	être
+</VN>
+<VPpart>
+affectée	VER:pper	affecter
+</VPpart>
+.	SENT	.
+</s>
+<s>
+<NP>
+Les	DET:ART	le
+valeurs	NOM	valeur
+</NP>
+<VPpart>
+insérées	VER:pper	insérer
+</VPpart>
+<VN>
+doivent	VER:pres	devoir
+</VN>
+<VN>
+respecter	VER:infi	respecter
+</VN>
+<NP>
+toutes	PRO:IND	tout
+les	DET:ART	le
+contraintes	NOM	contrainte
+</NP>
+<AP>
+tel	PRO:DEM	tel
+</AP>
+<Ssub>
+que	PRO:REL	que
+</Ssub>
+<NP>
+les	DET:ART	le
+clés	NOM	clé
+</NP>
+<AP>
+étrangères	ADJ	étranger
+,	PUN	,
+</AP>
+<NP>
+clés	NOM	clé
+</NP>
+<AP>
+primaires	ADJ	primaire
+,	PUN	,
+</AP>
+<COORD>
+et	KON	et
+</COORD>
+<NP>
+les	DET:ART	le
+colonnes	NOM	colonne
+</NP>
+<NP>
+NOT	NAM	<unknown>
+NULL	NAM	<unknown>
+</NP>
+.	SENT	.
+</s>
+<s>
+<Ssub>
+Si	KON	si
+</Ssub>
+<NP>
+la	DET:ART	le
+commande	NOM	commande
+</NP>
+<VN>
+contient	VER:pres	contenir
+</VN>
+<NP>
+une	DET:ART	un
+erreur	NOM	erreur
+</NP>
+<PP>
+de	PRP	de
+<NP>
+syntaxe	NOM	syntaxe
+,	PUN	,
+</NP>
+</PP>
+<COORD>
+ou	KON	ou
+</COORD>
+<Ssub>
+si	KON	si
+</Ssub>
+<NP>
+une	DET:ART	un
+contrainte	NOM	contrainte
+</NP>
+<VN>
+n'	ADV	ne
+est	VER:pres	être
+pas	ADV	pas
+respectée	VER:pper	respecter
+,	PUN	,
+</VN>
+<NP>
+les	DET:ART	le
+valeurs	NOM	valeur
+</NP>
+<VN>
+ne	ADV	ne
+sont	VER:pres	être
+pas	ADV	pas
+insérées	VER:pper	insérer
+</VN>
+<COORD>
+et	KON	et
+</COORD>
+<NP>
+une	DET:ART	un
+erreur	NOM	erreur
+</NP>
+<VN>
+est	VER:pres	être
+</VN>
+<VPpart>
+rapportée	VER:pper	rapporter
+</VPpart>
+.	SENT	.
+</s>
+<s>
+<NP>
+Exemple	NOM	exemple
+:	PUN	:
+</NP>
+<NP>
+Une	DET:ART	un
+écriture	NOM	écriture
+</NP>
+<AP>
+plus	ADV	plus
+concise	ADJ	concis
+</AP>
+<VN>
+existe	VER:pres	exister
+,	PUN	,
+</VN>
+<VPinf>
+sans	PRP	sans
+</VPinf>
+<VN>
+nommer	VER:infi	nommer
+</VN>
+<NP>
+les	DET:ART	le
+colonnes	NOM	colonne
+,	PUN	,
+</NP>
+<VN>
+insérant	VER:ppre	insérer
+</VN>
+<NP>
+les	DET:ART	le
+valeurs	NOM	valeur
+</NP>
+<PP>
+dans	PRP	dans
+<NP>
+le	DET:ART	le
+même	ADJ	même
+ordre	NOM	ordre
+</NP>
+</PP>
+<Ssub>
+que	KON	que
+</Ssub>
+<NP>
+les	DET:ART	le
+colonnes	NOM	colonne
+</NP>
+<PP>
+de	PRP	de
+<NP>
+la	DET:ART	le
+table	NOM	table
+</NP>
+</PP>
+.	SENT	.
+</s>
+<s>
+<VN>
+Il	PRO:PER	il
+n'	ADV	ne
+est	VER:pres	être
+pas	ADV	pas
+</VN>
+<AP>
+nécessaire	ADJ	nécessaire
+</AP>
+<VPinf>
+de	PRP	de
+</VPinf>
+<VN>
+préciser	VER:infi	préciser
+</VN>
+<NP>
+toutes	PRO:IND	tout
+les	DET:ART	le
+colonnes	NOM	colonne
+,	PUN	,
+</NP>
+<NP>
+les	DET:ART	le
+colonnes	NOM	colonne
+</NP>
+<AP>
+restantes	ADJ	restant
+</AP>
+<VN>
+prendront	VER:futu	prendre
+</VN>
+<NP>
+leurs	DET:POS	leur
+valeurs	NOM	valeur
+</NP>
+<PP>
+par	PRP	par
+<NP>
+défaut	NOM	défaut
+</NP>
+</PP>
+.	SENT	.
+</s>
+<s>
+<NP>
+Syntaxe	NOM	syntaxe
+:	PUN	:
+</NP>
+<NP>
+L'	DET:ART	le
+exemple	NOM	exemple
+</NP>
+<AP>
+précédent	ADJ	précédent
+</AP>
+<VN>
+peut	VER:pres	pouvoir
+donc	ADV	donc
+</VN>
+<VN>
+être	VER:infi	être
+</VN>
+<AP>
+réecrit	VER:pper	<unknown>
+</AP>
+<Ssub>
+,	PUN	,
+si	KON	si
+</Ssub>
+<COORD>
+et	KON	et
+seulement	ADV	seulement
+</COORD>
+<Ssub>
+si	KON	si
+</Ssub>
+<NP>
+les	DET:ART	le
+deux	NUM	deux
+premières	NUM	premier
+colonnes	NOM	colonne
+</NP>
+<PP>
+de	PRP	de
+<NP>
+la	DET:ART	le
+table	NOM	table
+film_cast	NOM	<unknown>
+</NP>
+</PP>
+<VN>
+sont	VER:pres	être
+</VN>
+<NP>
+<NP>
+firstname	NOM	<unknown>
+</NP>
+<COORD>
+et	KON	et
+</COORD>
+<NP>
+lastname	NOM	<unknown>
+:	PUN	:
+</NP>
+</NP>
+<PP>
+Depuis	PRP	depuis
+<NP>
+SQL-92	NAM	<unknown>
+</NP>
+</PP>
+<VN>
+il	PRO:PER	il
+est	VER:pres	être
+</VN>
+<AP>
+possible	ADJ	possible
+</AP>
+<VPinf>
+d'	PRP	de
+</VPinf>
+<VN>
+insérer	VER:infi	insérer
+</VN>
+<NP>
+plusieurs	PRO:IND	plusieurs
+tuples	NOM	<unknown>
+</NP>
+<PP>
+en	PRP	en
+<NP>
+une	DET:ART	un
+seule	ADJ	seul
+requête	NOM	requête
+:	PUN	:
+</NP>
+</PP>
+<NP>
+Cette	PRO:DEM	ce
+fonctionnalité	NOM	fonctionnalité
+</NP>
+<VN>
+est	VER:pres	être
+</VN>
+<VPpart>
+supportée	VER:pper	supporter
+</VPpart>
+<PP>
+par	PRP	par
+<NP>
+DB2	NAM	<unknown>
+,	PUN	,
+</NP>
+</PP>
+<NP>
+SQL	NAM	<unknown>
+Server	NAM	<unknown>
+(	PUN	(
+</NP>
+<PP>
+Depuis	PRP	depuis
+<NP>
+la	DET:ART	le
+version	NOM	version
+10.0	NUM	@card@
+)	PUN	)
+,	PUN	,
+</NP>
+</PP>
+<NP>
+PostgreSQL	NOM	<unknown>
+(	PUN	(
+</NP>
+<PP>
+depuis	PRP	depuis
+<NP>
+la	DET:ART	le
+version	NOM	version
+8.2	NUM	@card@
+)	PUN	)
+,	PUN	,
+</NP>
+</PP>
+<NP>
+MySQL	NAM	<unknown>
+,	PUN	,
+SQLite	NAM	<unknown>
+(	PUN	(
+</NP>
+<PP>
+depuis	PRP	depuis
+<NP>
+<NP>
+la	DET:ART	le
+version	NOM	version
+3.7.11	NUM	@card@
+)	PUN	)
+</NP>
+<COORD>
+et	KON	et
+</COORD>
+<NP>
+H2	NAM	<unknown>
+</NP>
+</NP>
+</PP>
+.	SENT	.
+</s>
+<s>
+<NP>
+Exemple	NOM	exemple
+(	PUN	(
+</NP>
+<VN>
+considérant	VER:ppre	considérer
+</VN>
+<Ssub>
+que	KON	que
+'	PUN	'
+</Ssub>
+<NP>
+firstname	NOM	<unknown>
+'	PUN	'
+</NP>
+<COORD>
+et	KON	et
+'	PUN	'
+</COORD>
+<Ssub>
+lastname	NOM	<unknown>
+</Ssub>
+<Sint>
+'	PUN	'
+</Sint>
+<VN>
+sont	VER:pres	être
+</VN>
+<NP>
+les	DET:ART	le
+deux	NUM	deux
+seules	ADJ	seul
+colonnes	NOM	colonne
+</NP>
+<PP>
+de	PRP	de
+<NP>
+la	DET:ART	le
+table	NOM	table
+'	PUN	'
+</NP>
+</PP>
+<NP>
+film_cast	NOM	<unknown>
+'	PUN	'
+)	PUN	)
+:	PUN	:
+</NP>
+<NP>
+Les	DET:ART	le
+insertions	NOM	insertion
+multiples	ADJ	multiple
+</NP>
+<VN>
+sont	VER:pres	être
+</VN>
+<AP>
+particulièrement	ADV	particulièrement
+intéressantes	ADJ	intéressant
+</AP>
+<PP>
+en	PRP	en
+<PP>
+termes	NOM	terme
+<PP>
+de	PRP	de
+<NP>
+performance	NOM	performance
+</NP>
+</PP>
+</PP>
+</PP>
+.	SENT	.
+</s>
+<s>
+<VN>
+Il	PRO:PER	il
+est	VER:pres	être
+donc	ADV	donc
+conseillé	VER:pper	conseiller
+</VN>
+<PP>
+pour	PRP	pour
+<NP>
+une	DET:ART	un
+application	NOM	application
+</NP>
+</PP>
+<NP>
+qui	PRO:REL	qui
+</NP>
+<VN>
+doit	VER:pres	devoir
+</VN>
+<VN>
+insérer	VER:infi	insérer
+</VN>
+<NP>
+beaucoup	ADV	beaucoup
+lignes	NOM	ligne
+</NP>
+<PP>
+par	PRP	par
+<NP>
+seconde	NUM	second
+</NP>
+</PP>
+<VPinf>
+d'	PRP	de
+</VPinf>
+<VN>
+utiliser	VER:infi	utiliser
+</VN>
+<NP>
+des	PRP:det	du
+requêtes	NOM	requête
+</NP>
+<AP>
+multiples	ADJ	multiple
+</AP>
+<VPinf>
+pour	PRP	pour
+</VPinf>
+<VN>
+réduire	VER:infi	réduire
+</VN>
+<NP>
+le	DET:ART	le
+nombre	NOM	nombre
+</NP>
+<PP>
+de	PRP	de
+<NP>
+requêtes	NOM	requête
+</NP>
+</PP>
+<VPpart>
+effectuées	VER:pper	effectuer
+</VPpart>
+<COORD>
+et	KON	et
+</COORD>
+<NP>
+la	DET:ART	le
+charge	NOM	charge
+</NP>
+<PP>
+du	PRP:det	du
+<NP>
+serveur	NOM	serveur
+</NP>
+</PP>
+.	SENT	.
+</s>
+<s>
+<NP>
+L'	DET:ART	le
+utilisation	NOM	utilisation
+</NP>
+<PP>
+de	PRP	de
+<NP>
+requête	NOM	requête
+multiples	ADJ	multiple
+</NP>
+</PP>
+<VN>
+permet	VER:pres	permettre
+</VN>
+<VPinf>
+d'	PRP	de
+</VPinf>
+<VN>
+insérer	VER:infi	insérer
+</VN>
+<NP>
+plus	ADV	plus
+de	PRP	de
+tuples	NOM	<unknown>
+</NP>
+<Ssub>
+qu'	KON	que
+</Ssub>
+<NP>
+une	DET:ART	un
+série	NOM	série
+</NP>
+<PP>
+d'	PRP	de
+<NP>
+insertions	NOM	insertion
+</NP>
+</PP>
+<AP>
+simples	ADJ	simple
+</AP>
+<PP>
+pour	PRP	pour
+<NP>
+un	DET:ART	un
+temps	NOM	temps
+</NP>
+</PP>
+<VPpart>
+donné	VER:pper	donner
+</VPpart>
+.	SENT	.
+</s>
+<s>
+<VPinf>
+Afin	KON	afin
+d'	PRP	de
+</VPinf>
+<VN>
+insérer	VER:infi	insérer
+</VN>
+<NP>
+plusieurs	PRO:IND	plusieurs
+tuples	NOM	<unknown>
+</NP>
+<VN>
+en	PRP	en
+utilisant	VER:ppre	utiliser
+</VN>
+<NP>
+MS	NAM	<unknown>
+SQL	NAM	<unknown>
+,	PUN	,
+</NP>
+<NP>
+la	DET:ART	le
+construction	NOM	construction
+</NP>
+<AP>
+suivante	ADJ	suivant
+</AP>
+<VN>
+est	VER:pres	être
+</VN>
+<AP>
+utilisable	ADJ	utilisable
+</AP>
+:	PUN	:
+<PONCT:S>
+Cependant	ADV	cependant
+</PONCT:S>
+<NP>
+ce	PRO:DEM	ce
+</NP>
+<VN>
+n'	ADV	ne
+est	VER:pres	être
+pas	ADV	pas
+</VN>
+<NP>
+une	DET:ART	un
+requête	NOM	requête
+SQL	NAM	<unknown>
+</NP>
+<VN>
+valide	VER:pres	valider
+</VN>
+<PP>
+selon	PRP	selon
+<NP>
+le	DET:ART	le
+standard	NOM	standard
+</NP>
+</PP>
+<VPpart>
+dû	VER:pper	devoir
+à	PRP	à
+la	DET:ART	le
+</VPpart>
+<PP>
+sous	PRP	sous
+<NP>
+requête	NOM	requête
+</NP>
+</PP>
+<AP>
+SELECT	ADJ	select
+</AP>
+<AP>
+incomplète	ADJ	incomplet
+</AP>
+.	SENT	.
+</s>
+<s>
+<VN>
+Il	PRO:PER	il
+est	VER:pres	être
+aussi	ADV	aussi
+</VN>
+<AP>
+possible	ADJ	possible
+</AP>
+<VPinf>
+de	PRP	de
+</VPinf>
+<VN>
+le	PRO:PER	le
+faire	VER:infi	faire
+</VN>
+<PP>
+sous	PRP	sous
+<NP>
+Oracle	NOM	oracle
+</NP>
+</PP>
+<VPpart>
+en	PRP	en
+</VPpart>
+<VN>
+utilisant	VER:ppre	utiliser
+</VN>
+<NP>
+la	DET:ART	le
+table	NOM	table
+</NP>
+<AP>
+DUAL	ADJ	dual
+:	PUN	:
+</AP>
+<NP>
+Une	DET:ART	un
+implémentation	NOM	<unknown>
+</NP>
+<VN>
+respectant	VER:ppre	respecter
+</VN>
+<NP>
+les	DET:ART	le
+standards	NOM	standard
+SQL	NAM	<unknown>
+:	PUN	:
+</NP>
+<NP>
+Oracle	NOM	oracle
+PL/SQL	NAM	<unknown>
+</NP>
+<VN>
+supporte	VER:pres	supporter
+</VN>
+<NP>
+la	DET:ART	le
+syntaxe	NOM	syntaxe
+"	PUN:cit	"
+INSERT	NOM	insert
+</NP>
+<NP>
+ALL	NAM	<unknown>
+"	PUN:cit	"
+,	PUN	,
+</NP>
+<PP>
+dans	PRP	dans
+<NP>
+laquelle	PRO:REL	lequel
+</NP>
+</PP>
+<NP>
+les	DET:ART	le
+requêtes	NOM	requête
+</NP>
+<PP>
+d'	PRP	de
+<NP>
+insertions	NOM	insertion
+multiples	ADJ	multiple
+</NP>
+</PP>
+<VN>
+sont	VER:pres	être
+</VN>
+<AP>
+terminés	VER:pper	terminer
+</AP>
+<PP>
+par	PRP	par
+<NP>
+un	DET:ART	un
+SELECT	ADJ	select
+:	PUN	:
+</NP>
+</PP>
+<PP>
+Avec	PRP	avec
+<NP>
+la	DET:ART	le
+base	NOM	base
+</NP>
+</PP>
+<PP>
+de	PRP	de
+<NP>
+données	NOM	donnée
+</NP>
+</PP>
+<AP>
+Firebird	ADJ	<unknown>
+,	PUN	,
+</AP>
+<NP>
+l'	DET:ART	le
+insertion	NOM	insertion
+</NP>
+<AP>
+multiple	ADJ	multiple
+</AP>
+<VN>
+est	VER:pres	être
+</VN>
+<AP>
+possible	ADJ	possible
+</AP>
+<PP>
+grâce	NOM	grâce
+<PP>
+à	PRP	à
+<NP>
+la	DET:ART	le
+syntaxe	NOM	syntaxe
+</NP>
+</PP>
+</PP>
+:	PUN	:
+<PONCT:S>
+Cependant	ADV	cependant
+,	PUN	,
+</PONCT:S>
+<NP>
+Firebird	VER:pres	<unknown>
+</NP>
+<VPpart>
+restreint	VER:pper	restreindre
+</VPpart>
+<NP>
+le	DET:ART	le
+nombre	NOM	nombre
+</NP>
+<PP>
+de	PRP	de
+<NP>
+tuples	NOM	<unknown>
+</NP>
+</PP>
+<NP>
+qui	PRO:REL	qui
+</NP>
+<VN>
+peuvent	VER:pres	pouvoir
+</VN>
+<VN>
+être	VER:infi	être
+</VN>
+<AP>
+insérés	VER:pper	insérer
+</AP>
+<PP>
+par	PRP	par
+<NP>
+cette	PRO:DEM	ce
+syntaxe	NOM	syntaxe
+</NP>
+</PP>
+<VPpart>
+dû	VER:pper	devoir
+</VPpart>
+<PP>
+à	PRP	à
+<PP>
+la	DET:ART	le
+<PP>
+limite	NOM	limite
+<PP>
+du	PRP:det	du
+<NP>
+nombre	NOM	nombre
+</NP>
+</PP>
+</PP>
+</PP>
+</PP>
+<PP>
+de	PRP	de
+<NP>
+contextes	NOM	contexte
+</NP>
+</PP>
+<AP>
+utilisables	ADJ	utilisable
+</AP>
+<PP>
+en	PRP	en
+<NP>
+une	DET:ART	un
+seule	ADJ	seul
+requête	NOM	requête
+</NP>
+</PP>
+.	SENT	.
+</s>
+<s>
+<NP>
+Une	DET:ART	un
+seule	ADJ	seul
+requête	NOM	requête
+INSERT	NOM	insert
+</NP>
+<VN>
+peut	VER:pres	pouvoir
+aussi	ADV	aussi
+</VN>
+<VN>
+être	VER:infi	être
+utilisée	VER:pper	utiliser
+</VN>
+<VPinf>
+pour	PRP	pour
+</VPinf>
+<VN>
+récupérer	VER:infi	récupérer
+</VN>
+<NP>
+des	PRP:det	du
+données	NOM	donnée
+</NP>
+<PP>
+depuis	PRP	depuis
+<NP>
+une	DET:ART	un
+autre	ADJ	autre
+</NP>
+</PP>
+<VN>
+table	NOM	table
+,	PUN	,
+</VN>
+<VN>
+les	PRO:PER	la|le
+modifier	VER:infi	modifier
+</VN>
+<AP>
+si	ADV	si
+nécessaire	ADJ	nécessaire
+,	PUN	,
+</AP>
+<COORD>
+puis	ADV	puis
+</COORD>
+<VN>
+les	PRO:PER	la|le
+insérer	VER:infi	insérer
+directement	ADV	directement
+</VN>
+<PP>
+dans	PRP	dans
+<NP>
+une	DET:ART	un
+table	NOM	table
+</NP>
+</PP>
+.	SENT	.
+</s>
+<s>
+<PONCT:S>
+Dans	PRP	dans
+ce	PRO:DEM	ce
+cas	NOM	cas
+,	PUN	,
+</PONCT:S>
+<NP>
+une	DET:ART	un
+sous-requête	NOM	<unknown>
+</NP>
+<VN>
+est	VER:pres	être
+</VN>
+<VPpart>
+utilisée	VER:pper	utiliser
+</VPpart>
+<PP>
+à	PRP	à
+<NP>
+la	DET:ART	le
+place	NOM	place
+</NP>
+</PP>
+<PP>
+de	PRP	de
+<NP>
+la	DET:ART	le
+clause	NOM	clause
+</NP>
+</PP>
+<AP>
+VALUES	VER:pper	valoir
+:	PUN	:
+</AP>
+<VN>
+Il	PRO:PER	il
+est	VER:pres	être
+souvent	ADV	souvent
+</VN>
+<AP>
+nécessaire	ADJ	nécessaire
+</AP>
+<VPinf>
+d'	PRP	de
+</VPinf>
+<VN>
+obtenir	VER:infi	obtenir
+</VN>
+<NP>
+la	DET:ART	le
+cle	NOM	<unknown>
+</NP>
+<AP>
+primaire	ADJ	primaire
+</AP>
+<AP>
+artificielle	ADJ	artificiel
+</AP>
+<NP>
+qui	PRO:REL	qui
+</NP>
+<VN>
+a	VER:pres	avoir
+été	VER:pper	être
+auto-générée	VER:pper	<unknown>
+</VN>
+<PP>
+par	PRP	par
+<NP>
+le	DET:ART	le
+moteur	NOM	moteur
+</NP>
+</PP>
+<PP>
+de	PRP	de
+<NP>
+base	NOM	base
+</NP>
+</PP>
+<PP>
+de	PRP	de
+<NP>
+données	NOM	donnée
+</NP>
+</PP>
+<PP>
+lors	ADV	lors
+<PP>
+d'	PRP	de
+<NP>
+une	DET:ART	un
+insertion	NOM	insertion
+</NP>
+</PP>
+</PP>
+<VPinf>
+afin	KON	afin
+de	PRP	de
+</VPinf>
+<VN>
+l'	PRO:PER	la|le
+utiliser	VER:infi	utiliser
+</VN>
+<PP>
+dans	PRP	dans
+<NP>
+des	PRP:det	du
+requêtes	NOM	requête
+</NP>
+</PP>
+<AP>
+suivantes	ADJ	suivant
+</AP>
+.	SENT	.
+</s>
+<s>
+<VN>
+Il	PRO:PER	il
+existe	VER:pres	exister
+,	PUN	,
+</VN>
+<PP>
+en	PRP	en
+<PP>
+fonction	NOM	fonction
+<PP>
+du	PRP:det	du
+<NP>
+moteur	NOM	moteur
+</NP>
+</PP>
+</PP>
+</PP>
+<VPpart>
+utilisé	VER:pper	utiliser
+,	PUN	,
+</VPpart>
+<NP>
+différentes	ADJ	différent
+méthodes	NOM	méthode
+</NP>
+<VPinf>
+pour	PRP	pour
+</VPinf>
+<VN>
+l'	PRO:PER	la|le
+</VN>
+<VN>
+obtenir	VER:infi	obtenir
+:	PUN	:
+</VN>
+<NP>
+Firebird	NAM	<unknown>
+</NP>
+<VN>
+utilise	VER:pres	utiliser
+</VN>
+<NP>
+la	DET:ART	le
+même	ADJ	même
+syntaxe	NOM	syntaxe
+,	PUN	,
+cependant	ADV	cependant
+</NP>
+<NP>
+la	DET:ART	le
+requête	NOM	requête
+</NP>
+<VN>
+ne	ADV	ne
+pourra	VER:futu	pouvoir
+</VN>
+<VN>
+insérer	VER:infi	insérer
+</VN>
+<Ssub>
+qu'	KON	que
+</Ssub>
+<NP>
+un	DET:ART	un
+seul	ADJ	seul
+tuple	NOM	<unknown>
+</NP>
+.	SENT	.
+</s>
+<s>
+<Ssub>
+Si	KON	si
+</Ssub>
+<NP>
+des	PRP:det	du
+déclencheurs	NOM	déclencheur
+(	PUN	(
+</NP>
+<NP>
+triggers	NOM	trigger
+</NP>
+<PP>
+en	PRP	en
+<NP>
+anglais	ADJ	anglais
+)	PUN	)
+</NP>
+</PP>
+<VN>
+sont	VER:pres	être
+</VN>
+<VPpart>
+définis	VER:pper	définir
+</VPpart>
+<PP>
+sur	PRP	sur
+<NP>
+la	DET:ART	le
+table	NOM	table
+</NP>
+</PP>
+<PP>
+dans	PRP	dans
+<NP>
+laquelle	PRO:REL	lequel
+</NP>
+</PP>
+<NP>
+la	DET:ART	le
+requête	NOM	requête
+</NP>
+<VN>
+insère	VER:pres	insérer
+,	PUN	,
+</VN>
+<VN>
+ils	PRO:PER	il
+seront	VER:futu	être
+</VN>
+<VPpart>
+exécutés	VER:pper	exécuter
+</VPpart>
+<PP>
+dans	PRP	dans
+<NP>
+le	DET:ART	le
+contexte	NOM	contexte
+</NP>
+</PP>
+<PP>
+de	PRP	de
+<NP>
+la	DET:ART	le
+requête	NOM	requête
+</NP>
+</PP>
+.	SENT	.
+</s>
+<s>
+<NP>
+BEFORE	NAM	<unknown>
+INSERT	NOM	insert
+</NP>
+<VN>
+permet	VER:pres	permettre
+</VN>
+<NP>
+la	DET:ART	le
+modification	NOM	modification
+</NP>
+<PP>
+des	PRP:det	du
+<NP>
+valeurs	NOM	valeur
+</NP>
+</PP>
+<NP>
+qui	PRO:REL	qui
+</NP>
+<VN>
+devront	VER:futu	devoir
+</VN>
+<VN>
+être	VER:infi	être
+</VN>
+<NP>
+insérées	VER:pper	insérer
+,	PUN	,
+AFTER	VER:infi	<unknown>
+</NP>
+<NP>
+INSERT	NOM	insert
+</NP>
+<VN>
+ne	ADV	ne
+peut	VER:pres	pouvoir
+plus	ADV	plus
+</VN>
+<VN>
+modifier	VER:infi	modifier
+</VN>
+<NP>
+les	DET:ART	le
+données	NOM	donnée
+</NP>
+<COORD>
+mais	KON	mais
+</COORD>
+<VN>
+peut	VER:pres	pouvoir
+</VN>
+<VN>
+être	VER:infi	être
+utilisé	VER:pper	utiliser
+</VN>
+<VPinf>
+pour	PRP	pour
+</VPinf>
+<VN>
+initier	VER:infi	initier
+</VN>
+<NP>
+des	PRP:det	du
+actions	NOM	action
+</NP>
+<PP>
+sur	PRP	sur
+<NP>
+d'	DET:ART	de
+autres	ADJ	autre
+tables	NOM	table
+</NP>
+</PP>
+.	SENT	.
+</s>

@@ -1,0 +1,16 @@
+﻿Commande par retour d'état 
+En automatique, la commande par retour d'état est un moyen de modifier le comportement en boucle fermée d'un système dynamique donné par une représentation d'état. Cette approche suppose l'état connu. Quand ce n'est pas le cas, on peut utiliser un observateur d'état de manière à reconstruire l'état à partir des mesures disponibles. Une finalité de la commande par retour d'état peut être de minimiser (ou maximiser) un indice de performance (Commande optimale, Commande LQ). Ce peut être aussi d'obtenir un système en boucle fermée dont les pôles, c'est-à-dire les valeurs propres de la matrice d'état, soient placés de manière appropriée. Ces pôles, en effet, déterminent le comportement du système, mais uniquement si celui-ci est monovariable : dans le cas multivariable, il est indispensable de considérer également les valeurs propres. Dans la plupart des cas, la commande doit réaliser d'autres fonctions essentielles pour tout asservissement, telles que suivi par la sortie d'un signal de référence, et rejet de perturbations. Il est alors nécessaire de faire en premier lieu les augmentations d'état nécessaires. 
+La commande par retour d'état est une méthode employée en asservissement pour placer les pôles du système en boucle fermée dans le cas où toutes les variables d'état sont mesurées. 
+Les pôles du système sont les racines de l'équation :  
+Une commande par retour d'état est de la forme 
+Les pôles du système bouclé sont les racines de formula_16. Les conditions suivantes sont équivalentes : 
+D'autre part, les conditions suivantes sont équivalentes : 
+Sur cet exemple, mais aussi dans le cas général, on obtient un système linéaire dont les inconnues sont les coefficients de la matrice de gains formula_20. On a en effet 
+Il s'agit d'une commande de type proportionnel et dérivé (PD). Cet exemple montre donc que la commande à retour d'état « élémentaire », telle que celle qui a fait l'objet de cette section, souffre d'une grave lacune. On aurait en effet souhaité obtenir une commande de type PID. Nous verrons dans la section suivante comment pallier cette carence. 
+Comme on l'a déjà mentionné, dans le cas des systèmes à plusieurs entrées le problème du placement de pôles n'admet pas une solution formula_20 unique, et certaines de ces solutions peuvent être mauvaises, car non robustes, tandis que d'autres sont bonnes. Une possibilité est de déterminer une solution issue de la théorie de la commande linéaire quadratique. 
+Nous supposons maintenant que le système est régi par les équations 
+On obtient alors en effet le système d'état 
+On montre alors facilement, grâce au test de Popov-Belevich-Hautus que 
+L'interprétation de la condition (i) est évidente. La condition (ii) signifie que le nombre de degrés de liberté de la commande doit être suffisant pour réaliser les objectifs de l'asservissement. La condition (iii), enfin, signifie qu'on ne doit pas imposer à la sortie d'un système dérivateur de suivre un signal de référence. 
+Puisque les matrices de gains formula_75 et formula_76 sont à coefficients constants, on obtient, à une constante additive près, 
+et on a donc un régulateur PID dont la fonction de transfert formula_91 peut être mise sous la forme standard 

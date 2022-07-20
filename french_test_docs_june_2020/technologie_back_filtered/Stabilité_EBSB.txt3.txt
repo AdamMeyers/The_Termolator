@@ -1,0 +1,9 @@
+﻿Stabilité EBSB 
+Un système linéaire invariant et à temps continu dont la fonction transfert est rationnelle et strictement propre est stable EBSB si et seulement si sa réponse impulsionnelle est absolument intégrable, i.e. si sa norme formula_1 existe : 
+En temps discret, un système est stable EBSB si et seulement si sa réponse impulsionnelle est absolument sommable, i.e. si sa norme formula_3 existe : 
+Elle est proposée en temps discret, mais les mêmes arguments s’appliquent en temps continu. 
+en supposant, pour simplifier, que les pôles de formula_19 sont simples. La transformée inverse de Laplace donne 
+Soit un système linéaire invariant et à temps discret dont la fonction de transfert formula_39 est supposée être rationnelle. En notant formula_40 les pôles et formula_41 "le module de convergence" défini comme le maximum des modules des pôles, on montre que le système est stable EBSB si et seulement si formula_42. 
+en supposant, pour simplifier, que les pôles de formula_39 sont simples. L’inverse de la transformée en z donne 
+Pour déterminer si un système physique représenté par un schéma-bloc est stable ou non, on peut utiliser plusieurs méthodes ou plusieurs critères. Il existe 2 types de critères :
+Ces critères permettent uniquement de déterminer si le système est stable ou non, mais ils n'indiquent pas le degré de stabilité, c'est-à-dire si le système est plus ou moins stable. Pour apprécier ce fameux degré de stabilité, on est amené à utiliser d'autres outils tels que les marges de phase et les marges de gain ou le facteur de qualité par exemple. 

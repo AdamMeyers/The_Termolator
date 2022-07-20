@@ -1,0 +1,270 @@
+<s>
+<VPpart>
+Contrainte	VER:pper	contraindre
+</VPpart>
+<PP>
+d'	PRP	de
+<NP>
+intégrité	NOM	intégrité
+</NP>
+</PP>
+<PP>
+Dans	PRP	dans
+<NP>
+une	DET:ART	un
+base	NOM	base
+</NP>
+</PP>
+<PP>
+de	PRP	de
+<NP>
+données	NOM	donnée
+,	PUN	,
+</NP>
+</PP>
+<NP>
+une	DET:ART	un
+contrainte	NOM	contrainte
+d'	PRP	de
+intégrité	NOM	intégrité
+</NP>
+<VN>
+permet	VER:pres	permettre
+</VN>
+<VPinf>
+de	PRP	de
+</VPinf>
+<VN>
+garantir	VER:infi	garantir
+</VN>
+<NP>
+la	DET:ART	le
+cohérence	NOM	cohérence
+</NP>
+<PP>
+des	PRP:det	du
+<NP>
+données	NOM	donnée
+</NP>
+</PP>
+<PP>
+lors	ADV	lors
+<PP>
+des	PRP:det	du
+<NP>
+mises	NOM	mise
+</NP>
+</PP>
+</PP>
+<PP>
+à	PRP	à
+<NP>
+jour	NOM	jour
+</NP>
+</PP>
+<PP>
+de	PRP	de
+<NP>
+la	DET:ART	le
+base	NOM	base
+</NP>
+</PP>
+.	SENT	.
+</s>
+<s>
+<PONCT:S>
+En	PRP	en
+effet	NOM	effet
+,	PUN	,
+</PONCT:S>
+<NP>
+les	DET:ART	le
+données	NOM	donnée
+</NP>
+<PP>
+d'	PRP	de
+<NP>
+une	DET:ART	un
+base	NOM	base
+</NP>
+</PP>
+<VN>
+ne	ADV	ne
+sont	VER:pres	être
+pas	ADV	pas
+</VN>
+<AP>
+indépendantes	ADJ	indépendant
+,	PUN	,
+</AP>
+<COORD>
+mais	KON	mais
+</COORD>
+<VN>
+obéissant	VER:ppre	obéir
+</VN>
+<PP>
+à	PRP	à
+<NP>
+des	PRP:det	du
+règles	NOM	règle|règles
+</NP>
+</PP>
+<AP>
+sémantiques	ADJ	sémantique
+,	PUN	,
+</AP>
+<PP>
+après	PRP	après
+<NP>
+chaque	PRO:IND	chaque
+mise	NOM	mise
+</NP>
+</PP>
+<PP>
+à	PRP	à
+<NP>
+jour	NOM	jour
+,	PUN	,
+</NP>
+</PP>
+<NP>
+le	DET:ART	le
+SGBD	ADJ	<unknown>
+contrôle	NOM	contrôle
+</NP>
+<Ssub>
+qu'	KON	que
+</Ssub>
+<NP>
+aucune	PRO:IND	aucun
+contrainte	NOM	contrainte
+d'	PRP	de
+intégrité	NOM	intégrité
+</NP>
+<VN>
+n'	ADV	ne
+est	VER:pres	être
+violée	VER:pper	violer
+</VN>
+.	SENT	.
+</s>
+<s>
+<PP>
+Sous	PRP	sous
+<NP>
+Oracle	NOM	oracle
+,	PUN	,
+</NP>
+</PP>
+<NP>
+les	DET:ART	le
+clés	NOM	clé
+</NP>
+<AP>
+primaires	ADJ	primaire
+</AP>
+<VN>
+sont	VER:pres	être
+systématiquement	ADV	systématiquement
+accompagnées	VER:pper	accompagner
+</VN>
+<PP>
+d'	PRP	de
+<NP>
+un	DET:ART	un
+index	NOM	index
+</NP>
+</PP>
+<VPpart>
+défini	VER:pper	définir
+</VPpart>
+<PP>
+de	PRP	de
+<NP>
+la	DET:ART	le
+même	ADJ	même
+manière	NOM	manière
+</NP>
+</PP>
+.	SENT	.
+</s>
+<s>
+<VN>
+Il	PRO:PER	il
+existe	VER:pres	exister
+</VN>
+<PP>
+pour	PRP	pour
+<NP>
+ce	PRO:DEM	ce
+SGBD	NOM	<unknown>
+</NP>
+</PP>
+<NP>
+différents	ADJ	différent
+types	NOM	type
+d'	PRP	de
+index	NOM	index
+</NP>
+<NP>
+qui	PRO:REL	qui
+</NP>
+<VN>
+autorisent	VER:pres	autoriser
+</VN>
+<NP>
+la	DET:ART	le
+conservation	NOM	conservation
+</NP>
+<PP>
+de	PRP	de
+<NP>
+l'	DET:ART	le
+intégrité	NOM	intégrité
+</NP>
+</PP>
+<PP>
+de	PRP	de
+<NP>
+la	DET:ART	le
+table	NOM	table
+</NP>
+</PP>
+.	SENT	.
+</s>
+<s>
+<PONCT:S>
+Voici	ADV	voici
+</PONCT:S>
+<NP>
+un	DET:ART	un
+ajout	NOM	ajout
+de	PRP	de
+contrainte	NOM	contrainte
+</NP>
+<PP>
+en	PRP	en
+<NP>
+SQL	NAM	<unknown>
+</NP>
+</PP>
+<VN>
+reliant	VER:ppre	relier
+</VN>
+<NP>
+un	DET:ART	un
+ID	NOM	<unknown>
+</NP>
+<PP>
+à	PRP	à
+<NP>
+une	DET:ART	un
+clé	NOM	clé
+</NP>
+</PP>
+<AP>
+étrangère	ADJ	étranger
+:	PUN	:
+</AP>
+</s>

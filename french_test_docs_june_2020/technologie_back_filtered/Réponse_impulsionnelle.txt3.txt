@@ -1,0 +1,21 @@
+﻿Réponse impulsionnelle 
+En traitement du signal, la réponse impulsionnelle d'un processus est le signal de sortie qui est obtenu lorsque l'entrée est une impulsion, c'est-à-dire une variation soudaine et brève du signal. En effet, lorsqu'une impulsion est fournie à l'entrée d'un système linéaire, la sortie n'est en général plus une impulsion, mais un signal ayant une certaine durée (parfois infinie comme dans le cas d’un filtre à réponse impulsionnelle infinie (RII)). La réponse impulsionnelle permet la représentation d'un système en fonction de son entrée et de sa sortie uniquement, par opposition à une représentation d'état. 
+Pour un système à temps continu, le modèle mathématique d’une impulsion est une distribution de Dirac. 
+Dans les deux cas, la "réponse impulsionnelle" est la sortie du système en réponse à cette impulsion. 
+Soit la représentation mathématique d’un système à temps discret ; à une entrée correspond une sortie satisfaisant la relation : 
+Supposons de plus que soit linéaire et invariant par translation temporelle. Dans ce cas, la "réponse impulsionnelle" 
+caractérise entièrement le système, la sortie pouvant être calculée à partir de n’importe quelle entrée en appliquant la relation suivante dans le cas discret :  
+Dans le cas continu, cette relation s’écrit, similairement : 
+Ces opérations correspondent à un produit de convolution entre l'entrée et la réponse impulsionnelle , que l'on note . On a donc la relation . 
+On remarque ainsi qu'une entrée est une suite d'impulsions discrètes décalées dans le temps. Puisque le système est invariant, le décalage des impulsions produit simplement une sortie elle aussi décalée (voir système invariant). La linéarité du système permet ensuite d’exprimer la sortie par la somme des réponses spécifiques à chacune de ses impulsions.  
+La réponse totale s'obtient ainsi en sommant les contributions de toutes les impulsions décalées, soit : 
+un produit de convolution qui, par commutativité, conduit à : 
+Un raisonnement similaire permet de généraliser ce résultat au cas continu. Les sommes seront remplacées par des intégrales. 
+Pour le démontrer, il suffit d'appliquer les transformées à la relation formula_12 en utilisant le fait qu'un produit de convolution devient un produit dans le domaine fréquentiel. 
+Le temps de réponse d'un SLI est lié à la durée de sa réponse impulsionnelle . Il s'agit là d'une conséquence directe de la représentation convolutionnelle. 
+Le temps de réponse sera donc donné par . 
+Les systèmes à grandes constantes de temps sont idéaux pour modéliser les filtres passe-bas. Ces systèmes sont en effet capables de réagir au signaux variant lentement (basses fréquences), mais ne seront que très peu influencés par les signaux rapides (hautes fréquences). 
+Il est à noter que la constante de temps de la réponse impulsionnelle n'est pas toujours bien définie. Dans grand nombre de cas, la réponse impulsionnelle a une allure d’exponentielle décroissante. Sa durée est donc infinie. Bien entendu, cette réponse finit par devenir très petite, ce qui signifie que la réponse du système après un temps fini sera négligeable. 
+Il existe des conventions pour déterminer le temps à partir duquel la réponse est négligeable. 
+Une de ces conventions est :
+où désigne le maximum atteint par la réponse impulsionnelle. 

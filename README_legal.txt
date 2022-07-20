@@ -6,6 +6,39 @@ This is the README for legal terminology extraction, created by Nhi Pham and Lac
 
 To run this program, there is a preprocessing step (to obtain the files) and a running step (to run Termolator).
 
+A sample of running the program is provided as $TERMOLATOR/legal_feature/sample_run
+
+
+*************************************************************************
+
+NOTE: THE CURRENT PREPROCESSING STEP ASSUMES that you are running
+experiments using only court decisions provided in Python's textacy
+package (manually classified by the University of Washington. Minor
+modifications in the preprocessing step could be put into effect to
+process other court decisions (in .txt format)).
+
+The script "sample_run" will run a sample instance of the program. If
+you run this, the program provide a terminology list for topic 8 and
+also many intermediate files that can be reused for other terminology
+lists based on the U of W dataset.
+
+To run additional datasets efficiently, you should modify the
+preprocessing.sh.  It will be unneccessary to rerun: supreme_court.py
+and run_citations_from_dir.py -- this is still the alpha version of
+this extension to Termolator, so you may have to adjust this slightly.
+Basically, you should be able to reuse all the files created in the
+"cases" subdirectory.
+
+For runs with different court decisions, you may have to make further
+ changes.  A starting point would be to have all the .txt files in a
+ single directory (like "cases/*.txt") and to run
+ run_citations_from_dir.py to produce the requisite ".references"
+ file.  You would also need a way to put the .txt files into
+ categories (and thus have a program roughly equivalent to
+ classify_fbground.py
+
+**************************************************************************
+
 ## System Requirements
 
 You must install the Python textacy package before running this program.
@@ -20,6 +53,10 @@ This will handle the following tasks:
 - Generate json files, grouping the cases into their respective broad and narrow issues
 - Generate legal terms to be excluded from the result, namely case names and legislation names
 - Create the foreground and background sets of the input issue ID and issue type
+
+Note: The preprocessing script obtains classified Supreme Court
+document text files from the University of Washington annotation
+project (discussed below and in our paper).  
 
 In order to fully understand the collection of documents for
 Termolator, it is necessary to understand the categories.  Note that
@@ -58,13 +95,9 @@ Directories:
 		- sample_run ## if made executable, this shell command
 		                           ## will do all preprocessing and run Termolator
 					   ## on the Broad Class 8 (economic activity)
-	The_Termolator/legal_feature/legal_terms_exclusion:
 		- legal_terms_extraction.py    ## This program extracts case names and legislation names
 		- lower_unique_terms.py         ## This program extract unique names + make terms lowercase
-		-UWash_scotus_output   ## contains some files with named entity markup
-				       ## (citations to court decisions and to pieces of legislation)
-				       ## In future versions, we will include the programs for generating this annotation
-				       ## rather than the markup
+
 Python files:
 	The_Termolator/filter_legal.py
 	The_Termolator/filter_term_output_legal.py

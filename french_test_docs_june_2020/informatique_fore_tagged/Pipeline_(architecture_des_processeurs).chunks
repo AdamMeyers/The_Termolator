@@ -1,0 +1,393 @@
+Pipeline architecture
+processeurs
+microarchitecture
+<NP> un
+chaîne
+traitement
+l' élément
+un processeur
+lequel
+l' exécution
+instructions
+plusieurs étapes
+Le premier ordinateur
+cette technique
+l' IBM
+1961
+un pipeline
+le processeur
+une nouvelle instruction
+la précédente
+Chacune
+étapes
+un pipeline
+étage
+Le nombre
+étages
+un pipeline
+sa profondeur
+Le
+un concept
+fonctionnement
+une ligne
+montage
+l' assemblage
+un véhicule
+trois étapes
+éventuellement des étapes intermédiaires
+Installation
+moteur
+Installation
+capot
+Pose
+pneus
+Un véhicule
+cette ligne
+montage
+une seule position
+la fois
+Une fois le moteur
+le véhicule  Ycontinue
+une installation
+capot
+le poste installation
+un prochain véhicule
+Le véhicule  Z
+ses pneumatiques roues
+le second  Y
+l' étape d' installation
+capot
+un véhicule  X
+l' étape d' installation
+moteur
+l' installation
+moteur
+capot
+roues
+<NP> 20
+10 minutes la réalisation
+trois véhicules
+un
+un toute
+la chaîne
+production
+105 minutes
+20 10
+un véhicule
+la chaîne de production
+l' étage auquel le véhicule
+principe
+le temps total
+les trois véhicules
+75 minutes
+un exemple
+pipeline
+un pipeline
+les
+Celui
+le Classic RISC pipeline
+pipeline
+David Patterson
+inventeur
+processeurs RISC
+concept
+pipeline
+Ce pipeline
+de nombreux documents
+cours
+David Patterson notamment
+une introduction
+concept
+pipeline
+ce pipeline
+étapes
+une instruction
+chaque étape
+cycle
+horloge
+cycles
+une instruction 15 pour instructions
+la technique
+pipeline
+notre processeur
+plusieurs instructions chacune
+une étape
+Les instructions
+<NP> cycles
+le processeur
+une instruction
+cycle
+la cinquième
+chacune
+cycles
+tous les étages
+exécution
+Une organisation alternative
+pipeline RISC classique
+nos instructions
+deux étapes
+Ce type
+pipeline
+certains microcontrôleurs
+Atmel AVR
+Autre exemple
+pipeline
+celui
+l' IBM Stretch project
+trois étapes
+un pipeline
+étages etc
+certaines fonctionnalités
+la microarchitecture
+un processeur
+l' ajout d' étages
+pipelines
+un processeur
+le renommage de registres
+une étape supplémentaire
+les registres
+les processeurs les plus performants
+des pipelines extrêmement longs
+une vingtaine
+étages
+de nombreuses étapes
+les performances exécution
+le désordre
+la fréquence
+horloge
+moins de travail
+chaque étage
+tous les microprocesseurs
+Certaines architectures
+le nombre
+étages
+celui
+31
+la microarchitecture Prescott
+Intel
+Une telle architecture
+un processeur
+pipeline
+chaque étape
+une instruction
+un circuit
+autres
+Cela
+certains circuits communs
+les ports d' accès
+cache
+le pipeline
+un résultat précédent
+principe
+un pipeline
+un circuit
+chaque étape
+électronique les pipelines
+une classe
+circuit
+ce que
+un processeur
+tout type
+circuit
+données
+Tous les circuits électroniques
+des pipelines
+des structures
+boucles
+embranchements
+exemple
+Le pipeline
+les instructions
+un processeur
+un pipeline où les instructions
+étage
+étage
+des étapes
+interaction
+les registres
+<NP> la mémoire
+les unités
+<NP> calcul
+la possibilité
+la progression
+données
+la résolution
+une instruction
+les données
+un étage
+un autre
+trois grands types
+implémentations
+Les différents étages
+des registres
+qui
+tous reliés
+signal d' horloge
+processeur
+chaque cycle
+horloge
+les registres
+ce qui
+les données
+l' étage
+la technique
+la plus
+Les différents étages
+des registres
+les transferts
+registres
+un protocole
+de registres
+les étages
+leur vitesse
+propagation
+les données
+une
+une
+le pipeline
+l' autre bout
+mémorisation
+Les pipelines
+de nouveaux problèmes
+interdépendance
+tous
+juste deux cas simples
+certains cas
+plusieurs étages
+pipeline
+la même ressource
+Cette ressource
+la mémoire un registre une unité
+<NP> calcul
+tout autre chose encore
+celle
+cela deux instructions
+concurrence
+l' accès
+cette ressource
+Une
+deux
+l' autre instruction
+mise
+attente
+tous les étages
+pipeline
+qui précédent l' instruction
+ce genre
+dépendance
+la ressource
+la ressource fautive
+autant d' exemplaires
+qu'
+le pipeline
+ce
+les accès mémoires
+Deux instructions
+une dépendance
+donnée
+<NP> le même registre
+la même adresse mémoire
+Différents cas
+les deux instructions
+cette donnée
+Ces dépendances
+un certain ordre d’ exécution
+nos instructions
+L' ordre d’ exécution
+lectures
+écritures
+des résultats
+les processeurs
+pipeline
+<NP> les lectures
+écritures
+<NP> les lectures
+écritures
+les registres
+<NP> mêmes étages
+une instruction
+une donnée pas encore écrite etc
+l' ordre
+lecture/écriture
+mémoire
+les registres
+la présence
+circuits
+cet ordre
+Diverses optimisations
+la situation plus supportable
+Certaines dépendances
+éliminée
+renommage
+registres
+des mécanismes
+memory disambiguation
+D' autres techniques
+le Forwarding/Bypassing
+l' impact
+ces dépendances
+les performances
+Les branchements les exceptions matérielles
+les interruptions
+quelques problèmes
+un branchement
+le pipeline
+l' adresse  àlaquelle
+quelques cycles
+l' étage
+Decode
+le meilleur des cas
+La même chose
+la levée
+une exception
+une interruption
+le moment
+où le branchement
+<NP> le pipeline
+celui
+où l' adresse
+le processeur
+des instructions
+son pipeline
+Des instructions
+le pipeline
+le schéma de droite
+les instructions
+jaune
+ce genre
+problèmes
+les processeurs
+diverses fonctionnalités
+branch
+mécanismes
+prédiction
+branchement
+Une architecture superscalaire
+plusieurs pipelines
+parallèle
+plusieurs instructions simultanément
+un processeur superscalaire
+degré deux instructions
+la mémoire simultanément
+le cas
+processeurs
+la puissance
+calcul
+chaque pipeline
+le traitement
+un certain type
+instruction aussi seules
+instructions de types
+de tels processeurs
+une instruction
+un ensemble
+données
+Une seule instruction
+la même opération
+façon
+tout le vecteur
+Ce genre d' architecture
+les applications
+calcul
+les superordinateurs
+les Cray

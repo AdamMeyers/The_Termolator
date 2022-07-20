@@ -1,0 +1,586 @@
+Forme normale bases
+données
+une base
+données
+une forme normale
+un type
+relation
+les entités
+Le but essentiel
+la normalisation
+les anomalies transactionnelles
+une mauvaise modélisation
+données
+un certain nombre
+problèmes
+les anomalies de lecture les anomalies d’ écriture
+la redondance
+<NP> données
+la contre-performance
+La normalisation
+modèles
+données
+la robustesse
+leur conception
+la modélisation
+une meilleure représentation
+la mémorisation
+données
+<NP> la redondance
+les problèmes sous-jacents
+mise
+jour
+cohérence
+La normalisation s’
+toutes les entités
+relations
+propriétés
+Les formes normales
+les unes
+les autres
+le respect d’
+une forme normale de niveau supérieur
+le respect
+formes
+niveaux
+le modèle
+type OLTP
+huit formes normales
+les trois premières
+les plus connues
+La forme normale
+la simple validité
+un modèle relationnel
+les valeurs
+différents attributs
+dépendance
+la clé
+la clé
+<NP> la première
+la deuxième forme normale
+un modèle relationnel
+L’ usage
+moins en forme
+Les formes normales
+<NP> leurs avantages
+leurs inconvénients
+Les principaux avantages
+L’ inconvénient
+temps d’ accès
+les requêtes
+nombreuses jointures
+cela est
+la qualité
+<NP> optimiseurs
+la mise
+place d’ index
+petites bases
+données
+la troisième forme
+une bonne solution d’
+un point de vue
+données
+des bases
+données
+<NP> normalisation
+étalonnage d’
+une dénormalisation intelligente
+un benchmark
+les gains
+l’ usage
+formes
+une dénormalisation intelligente
+cinq principes
+base
+Le principe
+normalisation
+les bases
+données
+OLTP OnLine Transaction Processing
+des bases
+de nombreuses
+leur vie
+ce principe n’
+les bases
+données
+OLAP OnLine Analytical Process aussi appelé décisionnelle
+l’ utilisation
+lectures
+l’
+une alimentation
+lot
+les principaux éditeurs
+SGBD
+moteurs
+niveau
+stockage
+chacun
+ces types
+bases
+les moteurs relationnels
+bases OLTP
+des octets mêmes
+les données
+codice_1
+les moteurs OLAP
+les données
+d’ autres mots
+la normalisation s’
+bases
+OLTP
+bases OLAP
+bases
+OLTP
+un arbitrage
+le niveau
+normalisation
+que
+les tables
+la base
+données
+<NP> lecture
+plus en écriture
+une table
+le plus possible
+une table
+le respect
+la normalisation
+les performances d’ accès
+données
+ces principes
+l’ inverse
+s’ avérer intéressant
+C’
+le cas
+exemple
+tables
+log
+lesquelles généralement
+la structure
+l’ insertion de ligne
+une seule passe
+Notons qu’
+sein
+une base OLTP que des tables
+lecture seulement
+le cas d’
+une table servant
+de calendrier
+ce dernier cas
+la dénormalisation
+prudent lorsqu’
+la forme
+n’
+une forme
+les temps d’ accès
+la redondance
+une explosion
+volumes
+données
+qui
+les performances
+les disques durs
+une normalisation
+les métriques
+temps
+réponse
+des volumes
+une nouvelle campagne de mesure
+le gain
+la dénormalisation
+les gains
+dénormalisation
+des pertes
+d’ autres objets
+ce
+l’ arbre qui
+la forêt
+des mesures
+l’ ensemble
+objets
+la base
+les objets cibles
+la dénormalisation
+La normalisation
+modèles
+données
+la méthode Merise
+La principale limite
+la normalisation
+les données
+une même base
+données
+les objets
+différents schémas
+Les formes normales
+le principe
+dépendances
+qu’ un ensemble d’ attributs
+un autre ensemble d’
+deux tuples
+toute projection
+deux tuples
+le premier attribut
+les mêmes valeurs
+les valeurs
+les tuples
+le deuxième attribut
+deux tuples t1
+deux ensembles d’
+attributs  X Y
+intersection vide
+la projection
+t1
+ X
+la projection
+t2
+ X
+la projection
+t1
+ Y
+la projection
+t2
+Y.
+ce cas  X
+ Y
+ X X Y
+ X
+le déterminant
+partie gauche
+partie
+La partie gauche déterminant
+la clé
+la relation
+la partie droite
+les informations dépendantes
+la connaissance
+valeurs
+attributs
+une clé
+partie gauche
+partie droite
+les articles
+qui
+exemple
+une relation
+les attributs A1 A2 A3 A4 A5 A6
+les trois premiers
+<NP> le déterminant
+les trois derniers le déterminé
+une relation
+une clé
+les attributs
+tous une valeur sémantiquement atomique
+Une autre définition
+un attribut
+aucune subdivision
+la donnée
+n’
+une information supplémentaire
+Remarque Violent l’ atomicité les attributs Certains attributs
+plusieurs éléments
+Le viol
+la première forme
+une
+plaies
+les plus importantes
+bases
+données
+des conséquences catastrophiques
+performances
+La modélisation
+attributs
+une base
+les traitements spécifiques
+métier
+la nature
+l’ information
+l’ évolution
+bases
+toutes les circonstances
+leur utilisation
+la deuxième forme normale
+la relation
+la première forme normale
+le principe suivant
+Les attributs d’
+une relation
+deux groupes
+le premier groupe est
+la clé
+plusieurs attributs
+Le deuxième groupe est
+autres attributs
+La deuxième forme normale
+tout attribut
+deuxième groupe
+un sous-ensemble strict d’ attribut(s)
+premier groupe
+d’ autres termes
+Un attribut
+clé
+une partie
+la clé
+toute la clé
+Corollaire Une relation
+une clé formée d’
+un seul attribut
+deuxième forme
+Le non-respect
+la 2FN
+une redondance
+données
+qui
+<NP> la mémoire
+l’ espace disque
+la troisième forme normale
+la relation
+la deuxième forme normale
+le principe suivant
+Les attributs d’
+une relation
+deux groupes
+le premier groupe est
+la clé
+plusieurs attributs
+Le deuxième groupe est
+autres attributs
+La troisième forme normale
+tout attribut
+deuxième groupe
+un sous-ensemble strict
+l’ attribut
+d’ autres attribut(s)
+second groupe
+d’ autres termes
+Un attribut
+clé
+<NP> d’ un
+plusieurs attributs
+la clé
+Tous les attributs non clé
+la clé
+sens
+où
+aucun attribut non clé
+la clé
+dépendances
+l’
+d’ autres attributs non clé
+Corollaire Une relation déjà en deuxième forme normale
+un attribut n’
+la clé
+troisième forme
+Le respect
+la 3FN
+une absence
+redondance
+données
+où la FNBC
+la forme normale
+-Codd
+la relation
+la troisième forme normale
+tous les attributs
+les clés
+qui
+considérées
+source
+dépendance
+DF
+une partie
+la clé
+Le non-respect
+<NP> la 2FN 3FN
+la FNBC
+la redondance
+une même donnée
+un nombre considérable de fois
+la 3FN
+la FNBC
+toute relation de dimension  n
+ n
+forme normale
+Boyce-Codd
+les relations de dimension
+sa collection
+un sens
+les occurrences
+la relation de dimension
+jointure
+deux relations
+dimension
+Cette normalisation
+une relation complexe
+deux relations
+toute relation de dimension
+ n
+quatrième forme
+l’ ensemble
+ses occurrences
+jointure
+les occurrences
+relations
+prises deux
+deux
+Cette normalisation
+une relation complexe
+plusieurs relations plus simples
+Le non-respect
+<NP> la 4FN
+5FN
+la perte
+<NP> données
+les données
+précision
+Une relation
+FNDC
+toutes les contraintes
+la conséquence logique
+contraintes de domaines
+contraintes
+clés
+qui
+la relation
+l’ ordre
+caractéristiques
+trois premières formes
+le serment
+tous les témoins
+la justice
+la vérité toute la vérité rien d’ autre
+la vérité
+Ce qui
+1FN
+La clé
+2FN Toute la clé
+3FN
+la clé
+La phrase originale
+Chris Date
+l’
+Shakespeare
+les trois principaux types
+formes
+ce cas
+les valeurs
+fournisseur
+cette relation
+les attributs
+la colonne fournisseur
+Exemple
+la clé
+cette table
+une clé composite
+fournisseur
+le cas
+un changement d’
+un fournisseur
+beaucoup d’ attention
+aucun endroit
+l’ adresse
+le champ
+une partie
+la clé
+le champ fournisseur ce qui
+la possibilité d’
+une redondance
+la table
+la table
+deux
+Solution
+seconde forme
+cette manière
+un changement d’
+adresse
+une seule modification
+la table
+fournisseurs
+Exemple Le pays
+l’ adresse n’
+la clé
+la table
+le nom
+fournisseur
+la ville
+l’ adresse
+la table
+deux
+Solution normalisée
+cette manière
+une modification
+l’ orthographe
+un pays
+exemple
+ENGLAND
+GREAT BRITAIN
+une seule modification
+l’ identification
+tous les objets
+l’ application
+<NP> pays
+ville
+<NP> client
+fournisseur
+facture etc
+la première étape
+chacun leur table
+Chaque table
+soumise
+test
+respect/non
+telle
+général toute valeur
+données
+toute répétition d’
+une valeur
+donnée
+une colonne
+des violations
+forme
+1FN première forme normale
+deuxième forme normale
+troisième forme normale
+FNBC forme normale
+Boyce-Codd FNDC
+normale domaine clé
+la relation VEHICULE
+les attributs
+le type VL <NP> véhicule léger
+PL poids lourd est
+la valeur
+PTAC
+3,5 tonnes
+le véhicule
+un PL
+c’
+un VL
+redondance
+données de type
+qui
+la lecture
+la valeur
+PTAC
+changement
+la réglementation barre
+3,5 tonnes
+qui
+plusieurs n-uplets
+cette anomalie de mise
+jour
+la relation
+deux
+1° VEHICULE
+les attributs
+Le type de véhicule
+la valeur
+PTAC au-dessus
+3,5 tonnes
+le véhicule
+un PL
+c’
+un VL
+TYPE VEHICULE
+les attributs
+Une inéqui-jointure
+la relation originale

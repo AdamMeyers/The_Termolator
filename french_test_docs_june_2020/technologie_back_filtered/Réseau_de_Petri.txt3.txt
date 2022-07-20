@@ -1,0 +1,22 @@
+﻿Réseau de Petri 
+Un réseau de Petri (aussi connu comme un réseau de Place/Transition ou réseau de P/T) est un modèle mathématique servant à représenter divers systèmes (informatiques, industriels…) travaillant sur des variables discrètes. 
+Les réseaux de Petri sont apparus en 1962, dans la thèse de doctorat de Carl Adam Petri.
+Les réseaux de Petri sont des outils graphiques et mathématiques permettant de modéliser et de vérifier le comportement dynamique des systèmes à événements discrets comme les systèmes manufacturiers, les systèmes de télécommunications, les réseaux de transport. 
+Le diagramme d'activité UML et le Grafcet sont des dérivés simplifiés de réseau de Petri, mis à part qu'à un modèle basé sur un réseau de Petri est associée une représentation mathématique de matrices de transitions d'état permettant d'assurer des preuves formelles de théorie des graphes, d'algèbre temporelle et de processus stochastiques markoviens. 
+Un arc ne peut pas connecter deux places ni deux transitions, il ne peut connecter que des paires place-transition ; plus formellement : formula_5. 
+La distribution des jetons dans les places est appelée le "marquage" du réseau de Petri.  
+Les entrées d'une transition sont les places desquelles part une flèche pointant vers cette transition, et les sorties d'une transition sont les places pointées par une flèche ayant pour origine cette transition. 
+La définition matricielle introduit les matrices formula_15 et formula_16. 
+
+Ces matrices de même dimension représentent en ligne les places, et en colonne les transitions. formula_19 contient les valuations des arcs qui vont des places vers les transitions, formula_20 concerne les arcs des transitions vers les places. Une valeur nulle dans une des matrices indique l'inexistence d'un arc dans un sens ou dans l'autre. 
+Un réseau de Petri évolue lorsqu'on exécute une transition : des jetons sont retirés dans les places en entrée de cette transition et des jetons sont déposés dans les places en sortie de cette transition. 
+L'exécution d'un réseau de Petri n'est pas déterministe, car il peut y avoir plusieurs possibilités d'évolution à un instant donné (ex: pour une place en amont de deux transitions concurrentes). 
+Si chaque transition dans un réseau de Petri a exactement une entrée et une sortie alors ce réseau est un automate fini. 
+Une séquence de transitions est une séquence formée sur l'alphabet des transitions (voir Langage formel). Elle décrit une suite de transitions à activer. 
+Le graphe des marquages d'un réseau formula_54 est un graphe orienté dont les nœuds sont les marquages de formula_55, et chaque arc relie un marquage à un autre qui est immédiatement accessible par une transition : si formula_56, un arc est tracé de formula_57 à formula_58 et il est marqué avec formula_23.
+Ce type de graphe donne une vue simple de l'évolution d'un réseau, néanmoins le graphe des marquages n'est pertinent que pour les réseaux bornés : un réseau non borné a une infinité de marquages et ne pourrait être représenté.
+L'algorithme de construction du graphe se définit récursivement, partant de l'état initial, on détermine de proche en proche les marquages accessibles. 
+Un graphe de couverture est presque la même chose qu'un graphe de marquage. La différence se situe lors d'un graphe qui implique une infinité de jetons. Si une transition « crée » un jeton à chaque fois qu'elle est traversée et qu'on peut répéter cette transition, nous allons donc faire un graphe de couverture pour représenter la progression du graphe. 
+Un réseau de Petri de haut niveau est un réseau coloré et hiérarchique. 
+Pour un réseau de Petri de base, on ne distingue pas les différents jetons. Dans un réseau de Petri coloré, on associe une valeur à chaque jeton. 
+Les réseaux de Petri stochastiques ajoutent de l'indéterminisme. 

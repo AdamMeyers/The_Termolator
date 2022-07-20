@@ -1,0 +1,856 @@
+CertiKOS CertiKOS
+un projet
+Zhong Shao
+professeur
+l' Université
+Yale
+le Connecticut
+la participation
+une équipe
+autres chercheurs
+CertiKOS Certified Kit Operating System
+un outil méthodologique
+conception
+développement
+systèmes d’ exploitations
+Son approche
+<NP> la définition
+la Certification
+couches
+abstractions
+elles-mêmes basées
+la sémantique
+spécification riches(spécifications profondes
+Ces procédés
+ce
+qui
+une loi
+un raffinement contextuel
+Cette méthodologie
+toute la sémantique
+l' assistant
+preuve
+Coq
+la compilation grâce
+l' utilisation
+CompCertX
+CertiKOS
+<NP> un hyperviseur
+plusieurs noyaux
+mC2
+Ce dernier
+des processeurs multi-cœurs
+l' exécution
+modules noyau
+utilisateur
+couches
+abstraction
+la simultanéité
+Les noyaux systèmes d’ exploitations hyperviseurs etc
+des logiciels/programmes une succession de lignes
+code
+qui une fois
+la machine
+un service
+l’
+nos smartphones
+voitures drones ordinateurs
+systèmes bancaires domotiques
+le rapport 2017
+The Linux Foundation
+le système d’
+exploitation Linux
+près de 90
+travail
+cloud
+62
+marché
+la technologie
+celle
+superordinateurs
+82
+smartphones
+International Data Corporation IDC
+355.2 millions
+smartphones
+<NP> le monde au trimestre 2018
+près de 45 smartphones
+seconde
+L' impact
+l' enjeu financier
+exemple
+The Transparency Market Research TMR
+le marché
+systèmes
+le monde
+qui
+153 milliard
+dollars
+2014
+près de 223 milliard
+dollars
+2021
+<NP> L’ omniprésence
+la dépendance croissante
+nos sociétés
+ces différents systèmes
+l' élaboration
+logiciels
+Les systèmes
+exploitations
+l' épine dorsale
+systèmes
+des éléments particulièrement critiques
+la sécurité
+le monde
+ces systèmes
+la machine
+le service
+lequel
+Cela
+des défauts
+le code
+des défauts
+conception
+des interactions
+d’ autres logiciels
+Ces défauts
+des bugs
+L' exploitation
+certains
+ces défauts
+des tiers
+les usages
+données
+fonctionnement
+systèmes
+Ces défauts
+des failles
+sécurités
+liens externes
+Bulletins
+informations
+failles
+sécurités
+Ces défauts
+exergue
+une vérification
+code
+leurs corrections
+l' intermédiaire
+patchs
+Cette solution triviale
+chaque ligne
+code
+tous les scénarios possibles
+cette solution
+fil
+l’ accumulation des lignes de codes
+exemple
+le noyau
+Version 4.13
+24.766.703 de lignes
+codes
+Edsger W. Dijkstra
+Les tests
+programme
+la présence
+bugs
+leur absence
+L’ alternative
+une vérification par méthode
+déductive
+les contributeurs
+seL4
+Une vérification formelle
+le seul moyen
+un système
+exempt d' erreur
+programmation
+Ces derniers
+les premiers
+une preuve
+correction
+un micro-noyau
+CertiKOS
+cette optique
+un système
+exploitation
+une vérification triviale
+cet unique objectif
+la meilleure méthodologie
+des systèmes
+exploitations
+CertiKOS
+un noyau certifié
+<NP> la simultanéité
+des machines multi-cœurs
+Le système d’
+<NP> exploitation
+OS Operating System
+un ensemble
+programmes
+l' interface
+le matériel
+<NP> l' ordinateur
+les programmes
+la colonne vertébrale
+un système
+Ce système
+la base
+un noyau
+Kernel
+Anglais
+qui
+les ressources matérielles
+Ce dernier offre
+mécanismes d' abstractions
+<NP> les logiciels
+les matériels
+La certification d’
+un programme
+la base
+une méthode formelle
+le programme
+tous les cas
+la tâche qui
+Cette méthode
+une analyse
+programme
+la validité d’
+un programme
+ses spécifications
+Le raisonnement
+la sémantique
+programme
+CertiKOS
+un système
+exploitation
+Cette notion
+la prouvabilité
+la vérification
+machine
+manière
+Cet effort
+preuve
+regard
+la qualité
+la preuve
+risque
+la controverse
+L' équipe
+seL4
+la première
+une preuve
+correction
+un micro-noyau
+CertiKOS
+l' aide
+l' assistant
+preuve
+Coq
+la définition
+un raffinement
+La méthodologie
+CertiKOS
+l' étape
+conceptualisation
+système
+des spécifications précises
+des comportements
+Ces spécifications
+formules
+manière
+ces formules
+le programme
+L' utilisation
+Certikos
+des spécifications riches
+la notion
+spécifications
+une superposition
+différentes couches
+abstractions
+Le raffinement contextuel
+CertiKOS
+chaque
+noyau
+sa spécification
+toute interaction
+<NP> le noyau
+le programme
+contexte utilisateur
+le noyau
+le programme
+la spécification
+noyau
+la combinaison
+codes
+<NP>  K
+ Paffine
+P. CertiKOS
+la vérification
+l' OS
+plusieurs
+taches
+elles-mêmes contrôlables
+leurs spécifications
+C’
+la Certification
+ces différentes couches
+qui
+l’ OS
+La définition
+raffinement
+CertiKOS
+la façon
+<NP> L0
+L1
+deux interfaces
+<NP> couches d’ abstractions
+ P
+un programme
+L0
+contextuellement L1
+ P P
+L1 peu
+la configuration
+Le raffinement contextuel
+ P
+L1 peu
+la configuration
+tout comportement observable
+ P
+L0
+certaines configurations
+L1 peu
+la configuration
+Les systèmes
+exploitations
+une multitude
+superposition
+couches
+abstraction
+noyaux Kernel pilotes Drivers Hyperviseurs etc.
+Chacune
+ces couches
+une interface qui
+les détails de mise
+œuvre
+un ensemble
+fonctionnalités
+la couche
+Les programmes clients
+chaque couche
+leurs interfaces
+l' implémentation
+la couche
+leur importance
+les couches
+abstraction
+un concept
+système
+Cela
+l' établissement
+propriétés
+corrections
+la mise
+l' échelle
+la vérification
+programmes
+plusieurs couches
+L’ importance
+les spécifications fonctionnelles
+différentes
+la Certification
+ces dernières
+s’
+un ensemble
+les relations
+les couches
+C’
+CertiKOS
+des spécifications plus riches
+les spécifications profondes
+Ces spécifications
+implémentation sous-jacente
+les fonctionnalités précises
+les effets éventuels
+l’ implémentation
+ses contextes clients
+le concept
+spécification
+les exemples
+Cet exemple
+manière simple
+l’ aspect
+la spécification
+L’ objectif
+la richesse
+détails
+la spécification
+les comportements observables
+le contexte
+implémentation
+celui -ci
+Prenons deux implémentations
+exemple
+<NP> M1
+M2
+la même spécification
+ L
+des comportements contextuellement équivalents
+Cette propriété d' indépendance
+implémentation
+spécifications
+la vérification modulaire
+propriétés
+corrections
+l' instar
+spécifications
+type
+programmation
+contrat
+Indépendance
+implémentation
+la Spécification Profonde tentative
+vulgarisation
+le système
+freinage
+pédale
+freins
+d’ une voiture
+une interface
+L1
+le conducteur
+<NP>  P
+les plaquettes
+freins(Interface L0
+ R
+la relation contextuelle
+<NP> L1
+M(1
+est
+la pédale
+La spécification profonde
+l’
+L1
+l’ ABS M1 module noyau qui
+l’ interface L1
+la base
+sa spécification
+une voiture Citroen C1
+M2 module noyau qui
+l’ interface L1
+la base
+sa spécification
+une voiture Citroen C3
+<NP> M1
+M2
+la pression
+ P
+le frein
+la possibilité
+déclenchement
+l’ ABS
+CertiKOS s’
+<NP> des micronoyaux
+leurs vérifications
+essence
+Les noyaux
+systèmes
+exploitations
+des programmes informatiques
+un langage
+programmation  Cet/ou
+langage
+programmation assembleur
+Tout langage
+programmation
+soi
+une couche d’ abstraction
+n’
+la machine
+cette nouvelle couche d’ abstraction
+le bon fonctionnement
+un
+noyau
+les lignes
+codes
+aucun bug
+C’
+ce but
+CertiKOS
+CompCertX CompCert
+<NP> Gu
+al
+CompCert
+L' utilisation de CompCert
+l' exactitude
+la compilation
+couches
+modules
+CertiKOS
+Ce dernier
+des programmes
+C’
+CompCertX implémente ClightX une variante
+langage source
+<NP> CompCert Clight
+un langage assembleur
+LAsm
+La sémantique opérationnelle
+CompCertX
+CompCert est
+des relations
+transition
+petites étapes
+états
+s’
+couches
+modules
+programmes
+la définition
+ces états
+CompCertX
+la mémoire initiale
+la liste
+<NP> arguments
+le pointeur
+la fonction
+paramètres
+c’
+la valeur
+<NP> retour
+l' état
+la mémoire
+la fonction qui
+paramètres
+L’ état final
+la mémoire
+l’ appelant
+CompCertX
+les diagrammes
+simulation
+les transformations
+la mémoire
+la mise
+états
+La Certification
+couches d’ abstractions
+CertiKOS est
+CompCertX
+code source
+l’ assemblage
+l' assembleur CompCertX
+un assemblage
+code machine
+L’ exactitude
+vérificateur
+épreuve Coq
+son mécanisme d’ extraction
+code
+supposée
+le développement
+solutions
+stockage
+hébergement
+type Cloud Amazon EC2 Salesforce CRM Rackspace
+ces données
+les clients
+confiance
+ces solutions
+un hyperviseur
+100
+<NP> sa complexité
+sa taille
+son fonctionnement
+L' une
+premières faille
+sécurité
+un environnement
+le logiciel
+management
+lui-même
+ce logiciel
+l' allocation
+la révocation
+ressources
+les serveurs
+<NP> les données
+celui
+accès
+informations
+que
+les serveurs
+Le logiciel
+gestion
+fournisseur
+les interfaces de délégation
+noyau
+des ressources
+la politique
+fournisseur
+son tour
+le noyau
+ses enregistrements
+propriété
+l' accès
+ressources
+chaque domaine non
+l' aide
+techniques
+protection
+virtualisation
+Allocation <NP> Gestion
+Révocation
+ressources
+l' Hyperviseur
+CertiKOS CertiKOS
+les ressources
+la CPU
+manière
+la granularité
+base
+la première ébauche
+CertiKOS
+un Cœur
+CPU
+un invité
+l' hyperviseur CertiKOS
+l' allocation CPU
+CertiKOS
+des interfaces
+le logiciel de gestion
+des cœurs
+processeur
+clients
+CertiKOS
+<NP> la RAM
+les disques
+espace mémoire
+les logiciels
+gestion
+les invités
+Le noyau
+aucun système
+fichiers
+cette fonctionnalité
+logiciel
+CertiKOS
+les interfaces
+<NP> la délégation
+l’ accès
+la mémoire
+stockage
+disque
+CertiKOS
+des interfaces
+logiciel de gestion
+fournisseur
+clients
+un accès
+l’ infrastructure
+réseau
+fournisseur
+La conception actuelle
+le matériel
+serveur
+cartes réseau physiques
+cartes réseau
+une carte réseau
+chaque client
+multiplexage logiciel
+CertiKOS
+l’ avenir
+son propre multiplexage dynamique
+<NP> interfaces réseau
+ce n’
+une priorité absolue
+la virtualisation
+la carte réseau
+le matériel
+l' exécution
+CertiKOS utilise ses enregistrements de propriété
+l' autorisation
+toutes les demandes
+accès
+des mécanismes
+protection
+le matériel
+<NP> le matériel MMU
+IOMMU
+cette manière
+CertiKOS
+l' isolation
+ressources
+les applications
+les fuites
+informations
+Une fois l' Hyperviseur développé
+les chercheurs
+quelques difficultés
+leur hyperviseur
+un noyau
+l' utilisation
+l' hyperviseur
+un noyau Kernel
+façon
+un noyau Linux
+le bon fonctionnement
+leur hyperviseur
+ce noyau
+les méthodes
+Certification
+le noyau
+l' hyperviseur
+le meilleur rendement
+sa sémantique
+compositions
+couches
+CertiKOS  a
+plusieurs noyaux
+les plus aboutis
+<NP> mCertikos
+mC2
+Mc2
+des machines multi-cœurs
+<NP> la simultanéité
+l’ entrelacement d’
+modules
+différentes couches
+abstraction
+Le noyau mC2
+une évolution
+mCertikos
+le cadre
+un vaste projet
+recherche
+la DARPA
+des véhicules
+pilote
+Ce dernier est
+manière
+modules
+28 couches d’ abstractions
+sa version
+modules
+37 couches d’ abstractions
+sa version
+hyperviseur
+Chaque couche
+CompCertX
+Ce noyau
+3000 lignes
+code
+un système Linux
+mCertikos
+différentes fonctionnalités modules telles
+la gestion
+la mémoire
+la prise
+charge
+conteneurs
+le contrôle
+la consommation
+ressources
+la prise
+la virtualisation
+matériel Intel
+la mémoire partagée
+IPC verrous IPC <NP> ticket
+MCS synchrones
+un spinlock
+exclusion
+Certikos
+mC2
+Le noyau mC2
+lui
+une version plus évoluée
+qui
+lignes
+<NP> assemblage  C
+x86
+l' exactitude fonctionnelle
+un noyau
+système
+exploitation simultané complet
+un verrouillage
+grain fin
+MCS
+Le noyau mC2
+un socle fondamental
+spécifications
+le processus
+révision
+les erreurs
+Ce socle
+près de 1400 lignes
+943 lignes
+les couches
+les plus basses constituants
+la théorie axiomatique
+la machine
+450 lignes
+les interfaces
+appel système abstraites
+ce socle
+des spécifications supplémentaires
+5246 lignes
+les différentes fonctions
+<NP> noyau
+près de lignes
+différents théorèmes lemmes
+CertiKOS
+la propriété
+raffinement
+son noyau
+une spécification
+haut niveau
+Ce raffinement
+la façon
+tout programme
+ Pl’ interaction
+noyau
+ K
+ P
+la sémantique
+la machine
+le même comportement
+la sémantique
+la machine
+∀P P⋉K ]x86
+ P]mC2
+La propriété d’ équivalence
+comportement
+ P
+<NP> Toutes les interruptions
+les appels système
+les spécifications
+hauts niveaux
+toute sécurité
+cette propriété
+correction
+de dépassement
+mémoire tampon
+pas d' attaque
+injection
+code
+dépassement d' entier
+accès
+pointeur
+etc
+Le noyau mC2
+un système Linux
+un système
+stockage
+appui
+un chargeur
+démarrage
+qui
+<NP> les CPU
+les périphériques qui
+Bulletin
+information
+Failles informatiques
+https://www.us-cert.gov/ https://www.cert.ssi.gouv.fr

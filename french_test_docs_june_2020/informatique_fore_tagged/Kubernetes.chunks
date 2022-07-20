@@ -1,0 +1,421 @@
+Kubernetes Kubernetes communément
+K8s
+un système open source qui
+une plate-forme
+le déploiement la montée
+<NP> charge
+la mise
+œuvre
+conteneurs d' application
+des clusters
+serveurs
+toute une série
+technologies
+conteneurisation
+Docker
+l' origine
+Google
+la Cloud Native Computing Foundation
+Kubernetes
+κυβερνήτης
+grec
+<NP> timonier
+pilote
+Joe Beda
+<NP> Brendan Burns
+Craig McLuckie rapidement
+d' autres ingénieurs
+Google
+<NP> Brian Grant
+Tim Hockin
+Google
+la mi-2014
+<NP> Son développement
+son architecture
+le système Borg
+Google d'ailleurs
+la plupart
+contributeurs principaux
+projet Borg
+Le nom original
+Kubernetes
+interne
+Project Seven
+référence
+personnage
+Star Trek
+qui
+un Borg
+Les sept rayons
+la barre
+logo de Kubernetes
+un clin d' œil
+nom
+Kubernetes version 1.0 est
+le 21 juillet 2015
+la sortie
+la première version
+Kubernetes Google
+un partenariat
+la Fondation
+la Cloud Native Computing Foundation CNCF
+Kubernetes
+technologie
+départ
+Kubernetes
+RedHat
+son produit OpenShift
+CoreOS
+son produit Tectonic
+Rancher
+sa plateforme
+gestion
+conteneurs Rancher
+Kubernetes
+un jeu d' outils primitives
+qui ensemble
+des mécanismes
+l’ échelle
+applications
+Ces éléments qui
+Kubernetes
+une grande variété
+charge
+travail
+Cette extensibilité
+l' API
+Kubernetes
+qui
+les composants internes aussi bien
+<NP> les extensions
+les conteneurs
+Kubernetes
+L’ unité
+base
+l' ordonnancement
+Kubernetes
+une vue
+composants
+Un pod
+plusieurs conteneurs qui
+la garantie d' être
+une machine hôte
+les ressources
+Chaque pod
+Kubernetes
+une adresse IP unique
+cluster
+qui
+applications
+les ports
+la machine
+risque
+conflit
+Un pod
+un volume
+un répertoire
+un disque
+le réseau
+conteneurs
+ce pod
+Les Pods
+l' API
+Kubernetes
+Leur gestion
+un contrôleur
+Kubernetes
+des clients
+<NP> utilisateurs
+composants internes
+paires clés-valeurs
+n' importe quel
+API
+le système
+<NP> les pods
+les nodes
+les label selectors
+des interrogations
+les labels
+lien
+des objets
+<NP> Labels
+selectors
+le premier mécanisme
+groupement
+Kubernetes
+les composants
+lesquels
+une opération
+les Pods
+une application
+des labels
+un système codice_1
+codice_2 codice_3
+<NP> exemple
+une codice_4
+codice_5 codice_6
+exemple
+une opération
+<NP> tous les nodes codice_3
+codice_5
+un label selector
+Un contrôleur
+une boucle d' arbitrage qui
+l' état
+un cluster
+son état
+cette action
+un ensemble
+pods
+Un
+types de contrôleur
+contrôleur
+réplication
+<NP> la réplication
+la mise
+l' échelle
+un nombre spécifique
+copies
+un pod
+un cluster
+la création
+pods
+remplacement
+le nœud sous-jacent
+Deux
+contrôleurs
+qui
+cœur
+système
+Kubernetes
+le DaemonSet Controller
+un seul pod
+<NP> chaque machine
+un sous-ensemble
+machine
+le Job Controller
+des pods qui
+une fin déterminée
+scripts
+L' ensemble
+pods
+un contrôleur
+des labels
+qui
+la définition
+contrôleur
+Un service Kubernetes
+un groupe
+pods
+une couche
+une application
+L' ensemble
+pods
+qui
+un service
+un label
+Kubernetes
+un service
+découverte
+routage
+<NP> une adresse IP
+un nom
+un service
+la charge
+trafic
+le round-robin
+connexions réseaux
+cette adresse
+l' ensemble
+pods
+sélecteur
+défaut
+les pods
+machines
+un service
+un cluster ex
+les pods
+backend
+un service
+les requêtes
+pods
+frontend load
+<NP> les backend
+un service
+un cluster
+exemple
+les clients
+les pods
+frontend
+Kubernetes
+l' architecture maitre/esclave
+Les composants
+Kubernetes
+ceux
+qui
+un nœud individuel
+ceux qui
+plan
+contrôle
+Le maître Kubernetes
+l' unité
+contrôle principale
+qui
+la charge
+travail
+les communications
+le système
+Le plan
+contrôle
+Kubernetes
+plusieurs composants
+chacun
+son propre processus qui
+un seul node maître
+plusieurs maîtres
+clusters
+haute disponibilité
+Les différents composants
+plan
+contrôle
+Kubernetes
+etcd
+une unité
+stockage
+données clé-valeur
+CoreOS
+qui
+manière
+les données
+configuration
+cluster
+l' état
+cluster
+n' importe quel instant
+D' autres composants
+les changements
+ce stockage
+eux-mêmes
+l' état
+Le serveur d' API
+un élément clé
+l' API Kubernetes grâce
+JSON
+HTTP
+l' interface interne
+Kubernetes
+Le serveur d' API
+requêtes
+REST
+l' état
+objets
+l' API
+etcd
+clients
+la charge
+<NP> travail
+les containers
+les nœuds
+travail
+L' ordonnanceur
+un composant additionnel
+quel node
+un pod
+la disponibilité
+ressources
+L' ordonnanceur
+l' utilisation
+ressources
+chaque node
+la charge
+travail
+ressources
+cet objectif l' ordonnanceur
+les ressources disponibles
+celles actuellement
+les serveurs
+Le gestionnaire
+contrôle
+manager
+le processus
+lequel
+les contrôleurs principaux
+Kubernetes
+tels que <NP> DaemonSet Controller
+le Replication Controller
+Les contrôleurs
+le serveur
+API
+les ressources qu'
+pods service endpoints etc
+<NP> Le Node aussi appelé Worker
+Minion
+une machine unique
+une machine virtuelle
+conteneurs
+charges
+travail
+Chaque node
+cluster
+le programme
+conteneurisation
+Docker
+les composants mentionnés ci-dessous
+le maître
+la partie réseau
+ces conteneurs
+Kubelet
+l' état d' exécution
+chaque nœud c'est-à-dire
+tous les conteneurs
+un nœud
+bonne santé
+le démarrage <NP> l' arrêt
+la maintenance
+conteneurs d' applications
+pods
+le plan
+contrôle
+Kubelet
+l' état
+un pod
+l' état
+le pod
+le même node
+Le statut
+node
+intervalle
+quelques secondes
+messages d’ état
+le maître
+le maître
+un node
+le Replication Controller
+ce changement d' état
+les pods
+d' autres hôtes
+bonne santé
+Le kube-proxy
+un proxy réseau
+un répartiteur
+charge
+le service d' abstraction
+d' autres opérations réseaux
+le routage
+trafic
+le conteneur
+<NP> l' adresse IP
+le numéro
+port
+la requête
+cAdvisor
+un agent qui surveille
+les données de consommation
+<NP> ressources
+des performances
+le processeur
+la mémoire
+l' utilisation <NP> disque
+réseau
+conteneurs
+chaque node

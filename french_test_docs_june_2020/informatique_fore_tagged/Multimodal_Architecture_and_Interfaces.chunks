@@ -1,0 +1,549 @@
+Multimodal Architecture and
+la proposition
+un cadre
+modules
+un système
+les uns
+les autres
+Cette spécification
+une architecture
+évènement
+le principal objet
+le flux
+données
+contrôle
+cadre général
+référence
+les infrastructures
+base
+le contrôle
+l' application
+services
+L' architecture
+la tâche d' implémentation
+plusieurs types
+dispositifs fournisseurs
+services
+les dispositifs
+les appareils électroménagers l' internet
+objets
+<NP> la télévision
+les réseaux domestiques
+les applications d' entreprise <NP> les applications web
+les
+les applications médicales
+la description
+une infrastructure
+services
+appelée The Runtime Framework
+laquelle
+les principales fonctions
+un système
+qui
+un niveau d' abstraction plus haut
+l' architecture MMI
+Ce framework
+le support d' exécution
+communication
+modules
+système multimodal
+l' architecture MMI
+<NP> la description
+la spécification
+ses principaux modules
+<NP> ses interfaces
+son mode
+communication
+patron
+conception
+architecture
+qui
+la structure
+interfaces
+trois parties
+le Modèle <NP> la Vue
+le Contrôleur
+Une particularité
+cette
+la couche
+présentation
+la Vue
+interfaces
+cette recommandation
+l' abstraction
+contexte
+l' interaction
+où l' utilisateur
+une combinaison
+modalités
+auditives biométriques et/ou tactiles
+L' architecture MMI
+la distinction
+le contrôleur
+interaction
+Interaction Manager IM le composant
+données Data
+Component <NP> DC
+les composants modalité Modality Components MC
+Cette distinction
+la distinction
+le Contrôleur
+<NP> le Modèle
+les documents
+présentation
+la Vue
+le patron MVC
+Une autre particularité
+l' imbrication
+Les modules
+des boîtes noires
+plusieurs composants
+un composant
+qui
+un contrôleur
+cette manière
+l' architecture
+le principe
+poupées
+La recommandation
+une mise
+œuvre
+façon
+plusieurs supports
+réseau
+façon
+tous les modules
+un même support matériel
+L' échange
+information
+les différents modules
+un couplage
+qui
+la faible dépendance
+les modules
+la réduction
+l' impact
+changements
+<NP> un module
+la réutilisation
+modules
+cette manière
+les modules
+aucune connaissance
+fonctionnement
+<NP> autres modules
+la communication
+les modules
+grâce
+l' échange
+messages
+un protocole
+communication
+les interfaces
+programmation
+l' architecture MMI
+Le contrôleur d' Interaction
+un composant logique
+tous les échanges
+messages
+les composants
+modalité
+<NP> système
+l' infrastructure
+le Runtime Framework
+un bus
+<NP> communication
+un
+Chaque application
+un contrôleur
+interaction Interaction
+la logique
+interaction
+Ce contrôleur
+cœur
+l' interaction
+Les composants de modalité
+tâches
+la manipulation
+entrées
+sorties
+les diverses modalités
+la parole
+l' écriture la vidéo etc
+des entités logiques
+contrôle
+entrées
+sorties
+différents dispositifs
+microphone tablette graphique <NP> clavier
+logiciels détection
+mouvement
+changements biométriques associés
+système
+un composant
+modalité
+la reconnaissance
+la parole
+la gestion
+entrées
+Un autre composant
+modalité  B
+les entrées complémentaires
+deux dispositifs
+une tablette graphique
+un microphone
+Deux composants
+modalité  C
+deux entrées complémentaires
+un même dispositif
+une caméra vidéo
+Un dernier composant
+modelité  D
+un service externe
+reconnaissance
+le contrôle
+échanges
+la reconnaissance
+les quatre cas
+le système
+un composant
+modalité
+la détection
+commandes vocales en entrée
+les différences
+implémentation
+le composant
+modalité
+une abstraction
+un type d' entrée
+qui
+manière
+chaque cas
+Tout composant
+modalité
+de multiples fonctionnalités
+plusieurs périphériques
+plusieurs composants
+modalité
+un seul appareil
+cette raison
+la recommandation
+W3C
+son état
+<NP> la structure
+l' implémentation
+composants
+modalité
+la nécessité
+une interface
+communication
+<NP> le contrôleur d' interaction
+une implémentation
+qui
+un protocole
+communication
+les Life-Cycle Events
+Le composant
+données
+rôle
+les données publiques
+l' application
+qui
+plusieurs composants
+modalité
+d' autre modules
+exemple
+le module de session
+framework
+MMI
+Le composant
+données
+un module interne
+au contrôleur
+<NP> interaction
+externe
+diagramme
+Ceci
+l' implémentation
+chaque application
+le contrôleur d' interaction
+le seul
+un accès direct
+<NP> composant de données
+lui seul
+ses données
+des serveurs
+besoin
+les composants
+modalité
+contrôleur
+données
+l' application
+le stockage
+données
+chaque composant
+modalité
+son propre composant
+données
+qui
+des serveurs
+ B
+les données
+le composant
+modalité
+la tâche
+reconnaissance
+la parole
+Ceci
+un cas d' implémentation
+principe
+poupées
+l' architecture MMI
+l' architecture
+le protocole de communication
+notifications d' événements
+qui
+le système
+une action
+l’
+une activité
+Ce protocole
+le mode
+<NP> communication
+la façon
+la communication
+cette recommandation
+les Life-Cycle Events
+des événements
+contrôle
+base
+qui
+la commande
+<NP> dispositifs
+services
+un lecteur
+un appareil
+reproduction
+notifications
+le monitoring
+l' état
+système
+La spécification
+huit Life-Cycle Events
+base
+qui
+paires
+échanges Request Response
+La spécification
+deux types
+notifications
+une
+l"'Extension Notification
+des données
+contrôle
+commande
+<NP> dispositifs
+services matériaux
+cette
+cette notification
+un évènement de base
+qui exceptionnellement
+une paire Request Response
+des versions
+l' évènement data
+Ces deux notifications
+MMIF Multimodal Interaction Framework
+James A.
+Larson T.V. Raman
+Dave Raggett Ed
+W3C 2003
+Cette note
+W3C
+un framework qui
+les principaux composants
+un système
+Ce framework
+une base
+des applications multimodales
+langage
+description
+les scripts <NP> les styles
+d' autres ressources utiles
+SCXML State Chart XML
+State
+Notation for Control Abstraction
+<NP> Jim Barnett
+al
+Ed
+W3C 2006
+un langage de machine
+états
+usage
+des événements
+un langage
+contrôle
+dialogue
+différents types
+reconnaissance
+un métalangage
+application
+qui
+l' accès
+des bases
+données
+modules
+logique métier
+un langage
+contrôle
+les dialogues VoiceXML
+des dialogues
+d' autres modalités
+le clavier
+la souris l' encre la vision les dispositifs haptiques
+etc
+un langage
+gestion
+centre
+appels
+langue
+contrôle
+processus
+d' autres contextes
+de traitement
+la parole
+CCXML Voice
+Call Control Version 1.0
+R.J.
+Ed
+W3C 2005
+CCXML
+les appels vocaux
+des systèmes
+dialogue
+divers médias
+le cas
+systèmes
+VoiceXML
+EMMA Extensible Multimodal Annotation markup language
+<NP> Michael Johnson
+al
+Ed
+W3C 2005
+Format XML
+l' interprétation
+entrées
+des informations
+chaque application
+le taux
+confiance
+l' horodatage <NP> la modalité d' entrée
+les hypothèses utiles
+la reconnaissance
+données
+MMIUse Multimodal Interaction
+Cases
+<NP> Emily Candell
+Dave Raggett
+Ed
+W3C 2002
+Cette Note
+W3C
+plusieurs cas d' utilisation
+l' interaction
+les présente
+capacités
+l' appareil
+les événements nécessaires
+chaque cas d' utilisation
+les différentes composantes
+une application
+laquelle
+de multiples modalités
+exemple
+la parole l' écriture
+raccourcis
+commandes
+une sortie sonore
+SMIL Synchronized
+Integration Language Version 2.1
+<NP> Dick Bulterman
+al
+Ed
+W3C 2005
+Langage qui
+des présentations multimédias
+le comportement temporel
+la présentation
+des liens hypertextes
+médias
+la disposition
+la présentation
+l' écran
+la temporisation
+la synchronisation
+d' autres langages
+qui
+VoiceXML Voice Extensible
+Markup Language Version 2.0
+<NP> Scott McGlashan
+al
+Ed
+W3C 2004
+des pages
+lesquelles
+<NP> la voix
+le son
+la création
+dialogues
+<NP> l' utilisateur
+la page
+une voix
+un signal sonore
+une entrée vocale
+une tonalité DTMF
+HTML HyperText Markup Language Version 4.01
+<NP> Raggett
+al
+Ed
+W3C 1999
+<NP> la présentation
+le texte
+pages web
+les pages
+liens
+des textes
+ressources
+images vidéo sons
+ressources
+formulaires animations interactives univers 3D
+Cette description
+des balises
+un code
+des informations
+style
+CSS
+une programmation
+l' interaction
+script
+ECMAScript SVG Scalable Vector Graphics 1.1
+<NP> Jon Ferraiolo
+al
+Ed
+W3C 1995
+SVG
+un format
+fichier
+qui
+des ensembles
+graphiques
+XMLSig XML-SignatureSyntax
+Processing
+<NP> Eastlake
+al
+Ed
+W3C 2001
+l' auteur
+la page
+son intégrité grâce
+la signature
+documents

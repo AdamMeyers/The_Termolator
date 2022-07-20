@@ -1055,12 +1055,13 @@ def main(args):
     ## print(args) ## for debugging
     global special_domains
     global TERMOLATOR
-    global LEGISLATION
+    ## global LEGISLATION
     global CASE
     special_domains = []
     TERMOLATOR = args[8]
-    LEGISLATION = TERMOLATOR + "/legal_feature/legal_terms_exclusion/unique_legislation_names.txt"
-    CASE = TERMOLATOR + "/legal_feature/legal_terms_exclusion/unique_case_names.txt"
+    ## LEGISLATION = TERMOLATOR + "/legal_feature/legal_terms_exclusion/unique_legislation_names.txt"
+    ## CASE = TERMOLATOR + "/legal_feature/legal_terms_exclusion/unique_case_names.txt"
+    CASE = TERMOLATOR + "/legal_feature/unique_case_names.txt"
     legal_filter_setup(TERMOLATOR)
     file_prefix = args[1]
     web_score_dict_file = args[2]

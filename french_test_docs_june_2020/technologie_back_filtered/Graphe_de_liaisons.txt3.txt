@@ -1,0 +1,24 @@
+﻿Graphe de liaisons 
+Un graphe de liaisons — également appelé graphe à liens ou bond graph — est une représentation graphique d'un système dynamique physique (mécanique, électrique, hydraulique, pneumatique, etc.) qui représente les transferts d'énergie dans le système. Les graphes de liaisons sont basés sur le principe de la conservation de la puissance. Les liens d'un graphe de liaisons sont des symboles qui représentent soit des flux d'énergie, soit des flux d'information. 
+Le graphe de liaisons est un outil mathématique utilisé en ingénierie des systèmes. Il permet de modéliser un système piloté afin d'optimiser son dimensionnement et la conception de ses lois de commande. 
+Comparés à une autre représentation visuelle du système en schéma-bloc, les graphe de liaisons ont plusieurs avantages : 
+Si la dynamique du système à modéliser opère sur différentes échelles de temps, les comportements rapides en temps réel peuvent être modélisés comme des phénomènes instantanés en utilisant des graphe de liaisons hybrides. 
+Dans un graphe de liaison : 
+Notons que les sens des flèches dépendent des conventions de signe choisies pour les circuits. 
+Les graphes de liaisons représentent le transfert de puissance entre éléments, donc ils conviennent parfaitement pour modéliser des systèmes qui relient plusieurs domaines de la physique tels que l'électricité et la mécanique.
+Mais avant de se lancer dans la modélisation, il faut définir une notion de puissance pour chacun des domaines.
+Il est nécessaire de définir certaines notions de physique. 
+
+Grâce à ces définitions, nous allons pouvoir définir pour chaque domaine de la physique, la grandeur associée à ces définitions. 
+Cet élément permet de symboliser les transferts d'énergie entre les différents processeurs. Il est représenté comme suit : 
+On peut remarquer deux éléments sur cette liaison. La lettre "e" représente la composante effort de la liaison. La lettre "f" représente la composante flux de la liaison. La multiplication de ces deux termes doit donner la puissance qui transite par la liaison.
+Cet élément est orienté dans le sens où la puissance est positive. 
+Il existe deux types de sources :
+Ces éléments fournissent une valeur constante de flux ou d'effort selon le cas quelle que soit la valeur de l'autre grandeur (effort ou flux) fournie. De plus, ces sources peuvent avoir des discontinuités sur la grandeur qu'elles ne garantissent pas.
+On considère que ces sources sont parfaites, même si cela constitue une approximation par rapport au phénomène réel. 
+L'élément dissipatif est représenté par un codice_3. C'est un objet qui relie le flux et l'effort par une relation indépendante du temps, une fonction mathématique.
+Physiquement, il correspond à un objet dissipatif. Par exemple une résistance dans le cas électrique, un frottement visqueux dans le cas mécanique. 
+Ce processeur peut être un condensateur dans le cas électrique, un ressort dans le cas mécanique. 
+Dans le cas électrique, cela peut-être un transformateur, ou bien un réducteur dans le cas mécanique. 
+Dans le cas électrique, cela peut être un gyrateur. Les moteurs sont tous des gyrateurs dans leur liaison entre la partie électrique et mécanique. 
+Les laboratoires de recherche associés aux principaux centres d'enseignements de la modélisation graphe de liaisons en France sont indiqués ci-dessous : 
