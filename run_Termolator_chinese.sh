@@ -1,16 +1,17 @@
+#!/usr/bin/env bash
+
 # Author: Yuling Gu
 # Date: Jun 21, 2020
-# Description: Bash script with the current implementations of the 
-# Chinese Termolator organized. 
+# Description: Bash script with the current implementations of the
+# Chinese Termolator organized.
 # Usage format : run_Termolator_chinese.sh $1 $2 $3 $4 $5
 # $1 = True or False (do we want to use the chinese dictionary?)
-# $2 = desired_output_name
+# $2 = The prefix of desired_output_name
 # $3 = foreground directory
 # $4 = background directory
 # $5 = Termolator directory
+# $6 = True or False (Are foreground/background files in plain text format?)
 # Usage example: bash run_Termolator_chinese.sh True desired_output_name foreground directory, background directory Termolator directory
-
-#!/usr/bin/env bash
 
 # Using the xml files in "sample_chinese_documents" folder (sampleBackground, sampleRDG) as test cases,
 # steps for running the updated Chinese termolator from  scratch:
@@ -18,30 +19,45 @@
 ## see test_sample/run_sample
 
 echo -e "Step 0 : Preparation work\nCleaning up foreground and foreground text input..."
-# Note: Makes use of term_utilities.py
 
-# Generate foreground and background filelists
-ls -1 $3 | sed -e "s/^/$3\//" > foregroundList.txt
-ls -1 $4 | sed -e "s/^/$4\//" > backgroundList.txt
+if [ ${6^^} = "FALSE" ]; then
+  # Note: Makes use of term_utilities.py
 
-# Remove xml tags and clean up the file of unwanted tags non-characters
-python3 $5/remove_xml_chinese.py backgroundList.txt cleaned
-python3 $5/remove_xml_chinese.py foregroundList.txt cleaned
+  # Generate foreground and background filelists
+  ls -1 $3 | sed -e "s/^/$3\//" > foregroundList.txt
+  ls -1 $4 | sed -e "s/^/$4\//" > backgroundList.txt
 
-# Create directories to organize cleaned xml files
-DIR=test_cleaned
-if [ -d "$DIR" ]; then
-    rm -r $DIR
-    echo "Old $DIR removed!"
+  # Remove xml tags and clean up the file of unwanted tags non-characters
+  python3 $5/remove_xml_chinese.py backgroundList.txt cleaned
+  python3 $5/remove_xml_chinese.py foregroundList.txt cleaned
+
+  # Create directories to organize cleaned xml files
+  DIR=test_cleaned
+  if [ -d "$DIR" ]; then
+      rm -r $DIR
+      echo "Old $DIR removed!"
+  fi
+  mkdir $2_cleaned
+  mkdir $2_cleaned/background/
+  mkdir $2_cleaned/foreground/
+
+  for file in "$3/*cleaned.xml"; do
+    mv "$file" "$2_cleaned/foreground/$(basename "$file" .xml).txt"
+  done
+  for file in "$4/*cleaned.xml"; do
+    mv "$file" "$2_cleaned/background/$(basename "$file" .xml).txt"
+  done
+
+  ls -1 $2_cleaned/background/ | sed -e "s/^/$2_cleaned\/background\//" > cleaned_backgroundList.txt
+  ls -1 $2_cleaned/foreground/ | sed -e "s/^/$2_cleaned\/foreground\//" >  cleaned_foregroundList.txt
+else
+  mkdir $2_cleaned
+  mkdir $2_cleaned/background/
+  mkdir $2_cleaned/foreground/
+  mv $3/* $2_cleaned/foreground/
+  mv $4/* $2_cleaned/background/
 fi
-mkdir $2_cleaned
-mkdir $2_cleaned/background/
-mkdir $2_cleaned/foreground/
-mv $4/*cleaned.xml $2_cleaned/background/
-mv $3/*cleaned.xml $2_cleaned/foreground/
 
-ls -1 $2_cleaned/background/ | sed -e "s/^/$2_cleaned\/background\//" > cleaned_backgroundList.txt
-ls -1 $2_cleaned/foreground/ | sed -e "s/^/$2_cleaned\/foreground\//" >  cleaned_foregroundList.txt    
 echo
 echo -e "Step 1 : Tagging using Brandeis tagger\nRunning Brandeis Chinese word segmenter and part-of-speech tagger..."
 # create directories for POS tagged files
