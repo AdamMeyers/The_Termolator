@@ -31,7 +31,7 @@ def main(args):
         ##print("this subdir:", subdir)
         for filename in os.listdir(alldocs+"/"+subdir):
 
-                with open(alldocs+"/"+subdir+"/"+filename, "r", encoding="utf-8-sig") as mainfile:
+                with open(alldocs+"/"+subdir+"/"+filename, "r", errors='replace',encoding="utf-8-sig") as mainfile:
 
                     for l in mainfile:
                         if l[0:4] == "<doc":
@@ -43,7 +43,7 @@ def main(args):
                             if "/" in doctitle:
                                 doctitle = doctitle.replace("/","_")
 
-                            docfile = open(directory+"/"+doctitle+".txt", "w+", encoding="utf-8-sig")
+                            docfile = open(directory+"/"+doctitle+".txt", "w+", errors='replace',encoding="utf-8-sig")
 
                         else:
                                 if l[0:6] != "</doc>":

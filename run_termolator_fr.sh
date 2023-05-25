@@ -38,14 +38,22 @@ if [ "${4,,}" = "true" ]; then
 	#tag documents
 	bash $termolator_location/tag_back_and_foreground.sh "$background_location" "$treetagger_location/"
 	#this creates [BACK]_tagged/, containing docs w title format [og_title]_tagged
+	echo "$termolator_location/make_file_list.sh"
+
 	bash $termolator_location/make_file_list.sh "${background_location}_tagged/"
 	#this creates BACK_tagged_list.txt 
+	python3 $termolator_location/file_list_error_fudge.py "${background_location}_tagged_list.txt"
 	
 	echo
 	echo "Retrieving noun chunks from background documents."
 	echo
 
 	#get noun chunks
+	echo "$termolator_location/getNounChunks ${background_location}_tagged_list.txt"
+	
+	## java $termolator_location/getNounChunks.java "${background_location}_tagged_list.txt"
+	## ran javac getNounChunks.java
+	## before making this change
 	java $termolator_location/getNounChunks.java "${background_location}_tagged_list.txt"
 
 	#this creates BACK_tagged_list.chunklist files and puts all docs.chunks back into BACK/
@@ -73,8 +81,10 @@ if [ "${5,,}" = "true" ]; then
 	#tag documents
 	bash $termolator_location/tag_back_and_foreground.sh "$foreground_location" "$treetagger_location"
 	#this creates [FORE]_tagged/, containing docs w title format [og_title]_tagged 
-	
+
+	echo "$termolator_location/make_file_list.sh"	
 	bash $termolator_location/make_file_list.sh "${foreground_location}_tagged/"
+	python3 $termolator_location/file_list_error_fudge.py "${foreground_location}_tagged_list.txt"
 	#this creates FORE_tagged_list.txt
 	
 	echo
@@ -82,7 +92,8 @@ if [ "${5,,}" = "true" ]; then
 	echo
 
 	#get noun chunks
-	java $termolator_location/getNounChunks.java "${foreground_location}_tagged_list.txt"	
+	java $termolator_location/getNounChunks.java "${foreground_location}_tagged_list.txt"
+	## java $termolator_location/getNounChunks "${foreground_location}_tagged_list.txt"	
 	
 	#this creates FORE_tagged_list.chunklist files and puts all docs.chunks back into FORE/
 

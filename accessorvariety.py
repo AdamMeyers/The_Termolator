@@ -48,7 +48,8 @@ def main(args):
     				if current_term[0] == word2_tag_BIO[0]:
 	    				left = conll[token-1].split("\t")[0]
 	    				# if target word length 1
-    					if len(current_term_vec) == 1:
+                                        # AM 9/11/22
+    					if (len(current_term_vec) == 1) and (len(conll) > (token+1)):
     						right = conll[token+1].split("\t")[0]
     					else:
     						right = conll[token + len(current_term_vec) -1].split("\t")[0]

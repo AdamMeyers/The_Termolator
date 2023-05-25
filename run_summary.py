@@ -7,7 +7,11 @@ def main(args):
     prefix = args[1]
     directory = args[2]
     txt_type = args[3]
-    confidence_order = args[4].lower()
+    if len(args)> 4:
+        confidence_order = args[4].lower()
+    else:
+        confidence_order = 'false'
+    ## possibly implement confidence_order later
     input_file = prefix+'.term_instance_map'
     output_file = prefix+'.summary'
     cluster_strategy='big_centroid_max'

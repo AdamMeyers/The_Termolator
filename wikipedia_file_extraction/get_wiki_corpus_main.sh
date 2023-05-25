@@ -19,7 +19,8 @@ catnamefile=${2// /$rep2}
 catnamefile="${catnamefile//'/'/_}"
 catnamefile="${catnamefile//'&'/_}"
 catnamefile="${catnamefile//'('/_}"
-catnamefile="${catnamefile\//')'/_}"
+##catnamefile="${catnamefile\//')'/_}"
+catnamefile="${catnamefile/\//')'/_}"
 #depth=${5,,}
 max=${5,,}
 

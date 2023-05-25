@@ -25,7 +25,7 @@ def get_subclass(topic, lang_acronym):  # Gets a valid subclass
         urllib.parse.quote(topic_url_fmt))
     page = urllib.request.urlopen(url)
 
-    soup = BeautifulSoup(page, "html")
+    soup = BeautifulSoup(page, "lxml")
     ## soup = BeautifulSoup(page, "html5lib")
 
     cat_section = soup.find(id='mw-normal-catlinks')
@@ -77,7 +77,7 @@ def get_superclass(subclass, lang_acronym): #gets a valid superclass
     print(url)
     page = urllib.request.urlopen(url)
 
-    soup = BeautifulSoup(page, "html")
+    soup = BeautifulSoup(page, "lxml")
     ## soup = BeautifulSoup(page, "html5lib")
 
     cat_section = soup.find(id='mw-normal-catlinks')
@@ -206,6 +206,7 @@ def run_summary(): #runs the bash script for generating the summary.
     termolator_dir = '..'
 
     # Get foreground articles using get_wiki_corpus_main.sh
+
 
     os.system('bash '+ termolator_dir + '/wikipedia_file_extraction/get_wiki_corpus_main.sh '+ language +' '+ subclass +' '+ intermediate_file_path +'/'+ subclass +' True  '+ num_articles +' '+ termolator_dir +'/wikipedia_file_extraction')
 
