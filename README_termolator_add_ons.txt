@@ -9,8 +9,12 @@ linux machine had more swap space.
 The following sections are below: A) Creating term map and term list
 file; B) The Summary Creation Program; C) The Question-based system
 for generating a summary from wikipedia (this last program requires
-the beautiful soup Python package); D) A program for extracting text
-categories about a topic from Wikipedia.
+installation of some Python packages); D) A program for
+extracting text categories about a topic from Wikipedia.
+
+Packages to install: 1) beautiful soup, aka bs4 (use pip or conda); 2)
+synopy (use pip or conda); 3) wikipedia (use pip or conda); 3)
+wiki-basic-stream.py (see below); 4) wikiextractor (see below).
 
 A. Creating term map and edited term list file.
 
@@ -237,9 +241,10 @@ documents to begin with, there may be no term that reaches this
 threshold.
 
 D) A program for extracting text categories about a topic from
-Wikipedia.  To run this system, you need to install
-the "wikipedia" python package if it is not already installed (pip
-install wikipedia or conda install wikipedia).
+Wikipedia.  To run this system, you need to install the "wikipedia"
+python package if it is not already installed (pip install wikipedia
+or conda install wikipedia). You also need to install synopy (for
+Chinese processing, use pip or conda).
 
 This program is found in the wikipedia_extraction_utility subdirectory
 and includes a README.  To use this program, you must find a category
