@@ -267,7 +267,9 @@ def bad_abbreviation_filter(paragraph,required_words):
             return(False)
     else:
         return(True)
-    
+
+## big_flag = True ## testing new feature
+
 def get_first_paragraph_from_wikipedia_xml_shelve(term,variants=[],paragraph_directory="wiki-extractor-output",redirect_file="wiki-basic-output/articles.csv",shelve_file = "wiki.slv", shelve_redirect_file = "swiki.slv",quiet=False,initialize=False,distribution_marker=False,trace=False): 
     ## 1) Once compiled in a file, it is very fast access 
     ## 2) However, will not work across different versions of Python
@@ -277,7 +279,7 @@ def get_first_paragraph_from_wikipedia_xml_shelve(term,variants=[],paragraph_dir
     ##    It is an error for a second process to attempt a connection
     ##    (I guess it is possible to copy shelve files though).
     global DICT_DIRECTORY
-    
+    ## global big_flag
     if paragraph_directory:
         paragraph_directory = DICT_DIRECTORY + paragraph_directory
     if redirect_file:
@@ -319,10 +321,20 @@ def get_first_paragraph_from_wikipedia_xml_shelve(term,variants=[],paragraph_dir
         if space_count == 0:
             one_word_terms.append(t)
         else:
+            big_word = ''
             for w in t.split():
+                # if not big_flag:
+                #     pass -- next elif instead of if
+                if big_word == '':
+                    big_word = w
+                else:
+                    big_word = big_word+'_'+w
                 if (not w in words_in_multi_word_terms) \
                   and (not w in closed_class_stop_words):
                     words_in_multi_word_terms.append(w)
+            ##if big_flag and (big_word != ''):
+            if (big_word != ''):
+                term_list.append(big_word)
         if t != term:
             term_list.append(t)
     for term2 in term_list:
