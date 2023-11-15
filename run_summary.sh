@@ -10,6 +10,8 @@
 ##
 ## $4 = the file type of the text files:  .txt3 is typical for Termolator files,
 ## but .txt2 or .txt is also possible
+##
+## $5 -- language acronym
 
-python3 $3/run_summary.py $1 $2 $4 False
+python3 $3/run_summary.py $1 $2 $4 False $5
 

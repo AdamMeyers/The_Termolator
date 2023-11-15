@@ -14,7 +14,8 @@ extracting text categories about a topic from Wikipedia.
 
 Packages to install: 1) beautiful soup, aka bs4 (use pip or conda); 2)
 synopy (use pip or conda); 3) wikipedia (use pip or conda); 3)
-wiki-basic-stream.py (see below); 4) wikiextractor (see below).
+wiki-basic-stream.py (see below); 4) wikiextractor (see below); 5)
+sentence_transformers
 
 A. Creating term map and edited term list file.
 
@@ -24,6 +25,7 @@ A. Creating term map and edited term list file.
    -- Argument 3: The prefix for file output
    -- Argument 4: Input file path -- path of directory containing foreground infiles
    -- Argument 5: TERMOLATOR directory
+   -- Argument 6: language acronym: en = English; zh = Chinese; fr = French
 2) output includes:
    -- A .term_instance_map file (a file indicating where terms and morphological
       variants are located inside of the foreground files) Also provides distributional
@@ -34,14 +36,14 @@ A. Creating term map and edited term list file.
       version of .out_term_list. The terms not occuring in 3 or more files are removed.
       -- this is created via the UNIX utility "grep"
 3) Files used include:
-   -- run_term_map.sh (the shell script to be run with 5 arguments)
+   -- run_term_map.sh (the shell script to be run with 6 arguments)
    -- make_io_file.py -- program used for getting various input file
       lists (also used by the main run_termolator.sh script)
    -- run_term_map.py -- the main python script for run_term_map
    -- get_term_maps.py -- the main functions used by run_term_map.py
 
 4) Sample command inside of patent-test subdirectory:
-   ../run_term_map.sh foreground.list surgery.out_term_list surgery . ..
+   ../run_term_map.sh foreground.list surgery.out_term_list surgery . .. en
    (where .. refers to the main termolator directory containing patent-test
     and . refers to patent-test).
 
@@ -49,9 +51,23 @@ B. The Summary Creation Program -- this program creates glossary-like
    information for each of a list of terms. Warning: this may require
    a lot of disk space (at least 90 gb on a linux machine).
 
-1) Before using this program, you should first download a current
-   wikipedia and two packages for reading in wikipedia into easily
-   digestable forms.
+1) This section currently applies differently to the English system on
+   the one hand and the Chinese/French systems on the other. The
+   English system includes a cache of Wikipedia data in a shelve
+   datastructure (see the .slv files discussed below). It makes it
+   possible for the English system to use this data without using an
+   Internet connection. For the summary program (see below). The
+   English system currently requires this component and the Chinese &
+   French systems are using an online version instead. We intend to
+   streamline this in the near future.
+
+   Other then the shelve part of the program, other components
+   described below may be needed for all systems. We have not done a
+   systematic check yet, but will do so in the future.
+   
+   Before using this program for English, you should first download a
+   current wikipedia and two packages for reading in wikipedia into
+   easily digestable forms.
 
    A) Get a Wikipedia .xml file:
 
@@ -119,13 +135,14 @@ following arguments:
    -- The fourth argument is the txt file type. .txt3 is typical for Termolator files,
       but .txt2 or .txt is also possible -- but note all file types must begin with a 
       period.
+   -- The fifth argument is the language acronym: en = English; zh = Chinese; fr = French
 
    For example:
        from the patent-test subdirectory (using the surgery.term_instance_map
        created when testing the term map program):
 
        
-       run_summary.sh updated_cancer pubmed_textfiles /home/meyers/Termolator2/working_copy      
+       run_summary.sh updated_cancer pubmed_textfiles /home/meyers/Termolator2/working_copy en
 
    In theory, there could be other parameters that could be set. However, for
    now the shell will assume several defaults.
@@ -133,12 +150,13 @@ following arguments:
 2.1) Some details about .slv files
 
    The first time the program is run it will create 2 shelve files:
-   swiki.slv and wiki.slv. In subsequent runs the program uses these
+   swiki.slv and wiki.slv.  In subsequent runs the program uses these
    shelve files and the system takes a much shorter time to run. For
    example, on a 3.2 Ghz i5 linux box with 8RAM, the first run took
-   2.5 hours and a subsequent run took only 1 minute. For the test case,
-   we ran the surgery term example above. It may have run a bit faster
-   on a more powerful linux machine (but I have not verified this).
+   2.5 hours and a subsequent run took only 1 minute. For the test
+   case, we ran the surgery term example above. It may have run a bit
+   faster on a more powerful linux machine (but I have not verified
+   this).
 
    Once created, the slv files store information about wikipedia in an
    efficient way and are used whenever you run the program again. If
@@ -191,7 +209,7 @@ following arguments:
        requests, re, math, time, csv, shelve
   
 C) The Question-based system for generating a summary from wikipedia.
-This program requires the beautiful soup python library. This will
+This program requires the beautifulsoup python library. This will
 generate a summary (a glossary) for a topic found in Wikipedia,
 provided that there are sufficient articles about that topic and
 superclasses of that topic.  To run this system, you need to install
@@ -203,7 +221,10 @@ command and answer all the questions.
 
    python3 auto_summary.py
 
-2) The first question is to choose the foreground topic.  You are then
+2) The first question is to choose a language. English and Chinese
+currently work. We hope to get French to work soon.
+
+3) The 2nd question is to choose the foreground topic.  You are then
      given a numbered set of choices to clarify which meaning of the
      term you prefer or to choose some similar term.  You should then
      make a choice by number.
@@ -218,7 +239,8 @@ command and answer all the questions.
 1-3) if the result is not what you want.
 
 5) You can choose a number of articles (foreground and background) to
-use for Termolator and glossary creation -- I suggest 500.
+use for Termolator and glossary creation -- I suggest a number between
+100 and 500.
 
 6) You are invited to provide a file format for the summary. I suggest .txt
 

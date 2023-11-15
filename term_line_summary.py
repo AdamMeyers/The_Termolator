@@ -1,5 +1,8 @@
 from term_summary import *
 from make_language_model import *
+from sentence_transformers import SentenceTransformer
+import numpy as np
+from sklearn.metrics.pairwise import cosine_similarity as sklearn_cosine_similarity
 
 language_model_file = DICT_DIRECTORY + 'gen2_lang.model'
 profile_file = DICT_DIRECTORY + 'OANC.profile2'
@@ -80,7 +83,7 @@ def get_term_paragraph_from_term_map(instance_triple,text_file_directory,txt_fil
         next_text = all_text[window_start:window_end]+'\n'
         return([infile,next_text])
 
-def get_most_probable_paragraphs(paragraphs,model_name=language_model_name,cutoff=-1,\
+def get_most_probable_paragraphs_en(paragraphs,model_name=language_model_name,cutoff=-1,\
                                  top_percent=.5,minimum_len=10,max_number=100):
     pairs = []
     for infile,paragraph in paragraphs:
@@ -103,6 +106,15 @@ def get_most_probable_paragraphs(paragraphs,model_name=language_model_name,cutof
         output = output[:max_number]
     return(output)
 
+def get_most_probable_paragraphs_chinese(input_list):
+    output_list = []
+    for sublist in input_list:
+        if len(sublist) == 2:
+            output_list.append([sublist[1], sublist[0]])
+        else:
+            output_list.append([])
+    return output_list
+    
 def look_up_vector(cluster,vector_dict):
     if isinstance(cluster,int):
         if cluster in vector_dict:
@@ -206,8 +218,58 @@ def make_cos_similar_clusters(vectors,cluster_num):
             stop = True
     return(clusters)
 
+def mmr_score(candidate, keyword_embedding, selected_sentence_embeddings, lambda_param=0.5):
+    keyword_similarity = sklearn_cosine_similarity([candidate], [keyword_embedding])[0][0]
+    if len(selected_sentence_embeddings) == 0:
+        return keyword_similarity
+    else:
+        selected_similarities = sklearn_cosine_similarity([candidate], selected_sentence_embeddings)[0]
+        max_selected_similarity = np.max(selected_similarities)
+        return lambda_param * keyword_similarity - (1 - lambda_param) * max_selected_similarity
 
-def choose_paragraphs_by_local_tfidf(paragraph_list,vector_size=10,cluster_num=3,cluster_sample_strategy='big_centroid_max'):
+
+def mmr_algorithm(sentence_embeddings, keyword_embedding):
+    initial_index = np.argmax(sklearn_cosine_similarity([keyword_embedding], sentence_embeddings))
+    selected_indices = [initial_index]
+    selected_sentence_embeddings = [sentence_embeddings[initial_index]]
+
+    for _ in range(2):
+        max_mmr = -float('inf')
+        selected_index = -1
+        for i, candidate in enumerate(sentence_embeddings):
+            if i not in selected_indices:
+                mmr = mmr_score(candidate, keyword_embedding, selected_sentence_embeddings)
+                if mmr > max_mmr:
+                    max_mmr = mmr
+                    selected_index = i
+
+        selected_indices.append(selected_index)
+        selected_sentence_embeddings.append(sentence_embeddings[selected_index])
+
+    return selected_indices
+
+
+def choose_paragraphs_by_pre_train(term,list_data, model_name='infgrad/stella-base-zh-v2'):
+    list_data = [sublist for sublist in list_data if len(sublist[0]) >= 10]
+    list_data = [[sublist[0].replace('\n', ''), sublist[1]] for sublist in list_data]
+    # 提取句子
+    sentences = [sublist[0] for sublist in list_data]
+
+    # 加载预训练模型
+    model = SentenceTransformer(model_name)
+
+    # 对关键词和句子进行编码并标准化
+    keyword_embedding = model.encode([term], normalize_embeddings=True).flatten()
+    sentence_embeddings = model.encode(sentences, normalize_embeddings=True)
+
+    # 执行 MMR 算法
+    selected_indices = mmr_algorithm(sentence_embeddings, keyword_embedding)
+
+    # 返回 list_data 的子列表
+    return [list_data[i] for i in selected_indices]
+    
+    
+def choose_paragraphs_by_local_tfidf(paragraph_list,vector_size=10,cluster_num=3,cluster_sample_strategy='big_centroid_max',lang_acronym='en'):
     ## 1) make vectors of N highest IDF words
     ##    that occur in at least 3 of the paragraphs
     ## 2) Dimensions filled by TFIDF scores
@@ -215,6 +277,7 @@ def choose_paragraphs_by_local_tfidf(paragraph_list,vector_size=10,cluster_num=3
     ##    4 clusters
     ## 4) Choose vector with highest sum from each
     ##    cluster
+    if lang_acronym=='zh': paragraph_list = paragraph_list[:100]
     output = []
     number_of_paragraphs = len(paragraph_list)
     distribution_marker = [] ## word_list,idf_counts,centroid
@@ -390,8 +453,19 @@ def get_term_dict_from_map_file(term_map_file):
                 keep_going = False
     return(term_dict)
 
-def write_terms(outstream,terms,text_file_directory,txt_file_list,txt_file_type,cluster_sample_strategy,trace=False):
+def filter_only_chinese(lst):
+    chinese_pattern = re.compile(r'^[\u4e00-\u9fa5]+$')
+    
+    filtered_lst = [item for item in lst if chinese_pattern.match(item)]
+    
+    return filtered_lst
+    
+def write_terms(outstream,terms,text_file_directory,txt_file_list,txt_file_type,cluster_sample_strategy,trace=False,lang_acronym='en'):
+    if lang_acronym == 'zh':
+        terms=filter_only_chinese(terms)
+    print("Terms here: ",terms)
     for term in terms:
+        print("Writing term: ",term)
         variants =term_dict[term]['variants']
         if not term in variants:
             variants = [term]+variants
@@ -399,7 +473,7 @@ def write_terms(outstream,terms,text_file_directory,txt_file_list,txt_file_type,
             print('Term',term)
         outstream.write('*************************************\n')
         outstream.write('Term Summary for "'+term+'"\n')
-        outstream.write('*************************************\n\n')
+        outstream.flush()
         entry = term_dict[term]
         selection1 = []
         distribution_marker = False
@@ -411,38 +485,59 @@ def write_terms(outstream,terms,text_file_directory,txt_file_list,txt_file_type,
         ## pairs of the form [file,paragraph]
         if len(term_paragraphs)>0:
             stages.append(1)
-        term_paragraphs = get_most_probable_paragraphs(term_paragraphs)
+        if txt_file_type==".txt":
+            term_paragraphs = get_most_probable_paragraphs_chinese(term_paragraphs)
+        else:
+            term_paragraphs = get_most_probable_paragraphs_en(term_paragraphs)
         if len(term_paragraphs)>0:
             stages.append(2)
-        selection1,distribution_marker = choose_paragraphs_by_local_tfidf(term_paragraphs,cluster_sample_strategy=cluster_sample_strategy)
+        print("tfidf...")
+        selection1,distribution_marker = choose_paragraphs_by_local_tfidf(term_paragraphs,cluster_sample_strategy=cluster_sample_strategy,lang_acronym=lang_acronym)
+        #selection1=choose_paragraphs_by_pre_train(term,term_paragraphs)
+        
         if len(selection1) == 0:
             print('No selected paragraphs for',term)
             print('stages:',stages)
             ## input('pause')
         else:
             pass
+            
         if (not ' ' in term) and one_word_filter(term):
             ## filter one word terms that are not "normal" enough
             wiki_summary = False
         else:
+            print("getting paragraph from slv...")
             wiki_summary = get_first_paragraph_from_wikipedia_xml_shelve(term,variants=variants,quiet=True,distribution_marker=distribution_marker,trace=trace)
+            
         if (not wiki_summary):
             approximate_summaries = get_approximate_summaries_shelve(term,variants,distribution_marker=distribution_marker)
         else:
             approximate_summaries = False
+            
         if wiki_summary:
             outstream.write('Wikipedia First Paragraph for "'+term+'"\n\n')
             outstream.write(wiki_summary)
             outstream.write('\n\n')
+            outstream.flush()
         elif approximate_summaries:
             outstream.write('Wikipedia First Paragraph for substrings of "'+term+'"\n\n')
             for subterm,summary in approximate_summaries:
                 outstream.write('Wikipedia First Paragraph for "'+subterm+'"\n\n')
                 outstream.write(summary)
                 outstream.write('\n\n')
+                outstream.flush()
         else:
-            outstream.write('No Wikipedia Entry Found')
-            outstream.write('\n\n')
+            print("getting paragraph online...")
+            wiki_summary=get_first_paragraph_from_wikipedia_online(term)
+            if wiki_summary:
+                outstream.write('Wikipedia First Paragraph for "'+term+'"\n\n')
+                outstream.write(wiki_summary)
+                outstream.write('\n\n')
+                outstream.flush()
+            else: 
+                outstream.write('No Wikipedia Entry Found')
+                outstream.write('\n\n')
+                outstream.flush()
         if len(selection1)> 0:
             outstream.write('Sample Passages mentioning the term:"'\
                             +term+'"\n\n')
@@ -450,8 +545,10 @@ def write_terms(outstream,terms,text_file_directory,txt_file_list,txt_file_type,
                 outstream.write('From file: '+infile+': ')
                 outstream.write(paragraph+'\n')
             outstream.write('*********************************************\n\n')
+            outstream.flush()
         else:
             outstream.write('No Sample Passages Found\n')
+            outstream.flush()
 
 def log_10_termset(terms):
     import math
@@ -470,7 +567,7 @@ def log_10_termset(terms):
     ##
 
     
-def generate_summaries_from_term_file_map(term_map_file,summary_outfile,text_file_directory,txt_file_list=False,model_file=language_model_file,profile_file=profile_file,test_on_n_terms=False,cluster_sample_strategy='big_centroid_max',choose_terms_randomly=False,fixed_term_set=False,txt_file_type='.txt3',trace=False,breakdown_by_log_10 = False):
+def generate_summaries_from_term_file_map(term_map_file,summary_outfile,text_file_directory,txt_file_list=False,model_file=language_model_file,profile_file=profile_file,test_on_n_terms=False,cluster_sample_strategy='big_centroid_max',choose_terms_randomly=False,fixed_term_set=False,txt_file_type='.txt3',trace=False,breakdown_by_log_10 = False,lang_acronym='en'):
     global term_dict
     global fixed_term_set_list
     if not txt_file_type.startswith('.'):
@@ -493,7 +590,7 @@ def generate_summaries_from_term_file_map(term_map_file,summary_outfile,text_fil
             first_item = 1 + (10**log_level)
             log_level +=1
             termset.sort()
-            write_terms(outstream,termset,text_file_directory,txt_file_list,txt_file_type,cluster_sample_strategy,trace=trace)
+            write_terms(outstream,termset,text_file_directory,txt_file_list,txt_file_type,cluster_sample_strategy,trace=trace,lang_acronym=lang_acronym)
     else:
         terms.sort()
         if test_on_n_terms:
@@ -504,7 +601,7 @@ def generate_summaries_from_term_file_map(term_map_file,summary_outfile,text_fil
                 terms = fixed_term_set_list
             else:
                terms = terms[:test_on_n_terms]
-        write_terms(outstream,terms,text_file_directory,txt_file_list,txt_file_type,cluster_sample_strategy,trace=trace)
+        write_terms(outstream,terms,text_file_directory,txt_file_list,txt_file_type,cluster_sample_strategy,trace=trace,lang_acronym=lang_acronym)
     outstream.close()        
 
     

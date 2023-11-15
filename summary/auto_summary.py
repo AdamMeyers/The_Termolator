@@ -8,6 +8,12 @@ import os
 import shutil
 import sinopy
 
+lang_acronym = 'en' ## default, but set in run_summary
+
+def msg_and_run_command(command, extra_info=""):
+    print('\033[32m' + extra_info + 'Running command: ls -1 ' + command + "\033[0m")
+    os.system(command)
+
 def get_topic(): #gets the general topic the user wants to explore
     possible_topics = wikipedia.search(input('please enter a topic:\n'))
     #make sure a topic was entered
@@ -147,7 +153,7 @@ def no_input_files(file_list):
         return(True)
 
 def run_summary(): #runs the bash script for generating the summary.
-
+    global lang_acronym
     print(
         'Glossary Creation System:\n'
         'Please follow the prompts to create a glossary.')
@@ -315,9 +321,11 @@ def run_summary(): #runs the bash script for generating the summary.
         raise Exception('Language not implemented: {}'.format(
             lang_acronym))
 
-    os.system(termolator_dir +'/run_term_map.sh '+ intermediate_file_path +'/'+ subclass +'.file_list_2 '+ intermediate_file_path +'/'+ subclass +'.out_term_list '+ subclass +' '+ intermediate_file_path +' '+ termolator_dir)
-    #
-    os.system(termolator_dir +'/run_summary.sh '+ subclass +' '+ intermediate_file_path +' '+ termolator_dir +' .txt3')
+    txt=' .txt' if lang_acronym=='zh' else ' .txt3'
+    msg_and_run_command(
+        termolator_dir + '/run_term_map.sh ' + intermediate_file_path + '/' + subclass + '.file_list_2 ' + intermediate_file_path + '/' + subclass + '.out_term_list ' + subclass + ' ' + intermediate_file_path + ' ' + termolator_dir + ' '+ lang_acronym)
+    msg_and_run_command(
+        termolator_dir + '/run_summary.sh ' + subclass + ' ' + intermediate_file_path + ' ' + termolator_dir + txt + " " + lang_acronym)
 
     return
 

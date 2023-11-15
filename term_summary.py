@@ -73,14 +73,16 @@ def get_first_paragraph_from_wikipedia_entry(entry,min_length=500):
                     new_next_p_end = paragraph_end.search(entry,end+10)
                     if new_next_p_end:
                         next_paragraph_end = new_next_p_end
-                        end = next_paragraph_end.start()                        
-                        text = remove_xml(entry[start:end])
+                        end = next_paragraph_end.start()                 
+                        text = remove_xml(entry[start:end]) 
                 if re.search('[a-z]{3}',text):
                    return(text)
                 else:
                    start = next_paragraph_end.end()
             else:
                 done = True
+        else:
+            done=True   
     return(False)
 
 def print_paragraphs_from_wikipedia_entry(entry):
@@ -118,10 +120,16 @@ def print_out_all_paragraphs_from_wikipedia_online(search_term):
         return(False)
     print_paragraphs_from_wikipedia_entry(full_page)
 
+def is_chinese(string):
+    return bool(re.match(r'^[\u4e00-\u9fff]+$', string))
+    
 def get_first_paragraph_from_wikipedia_online(search_term):
+    global basic_wikipedia_search_url
+    basic_wikipedia_search_url = "https://zh.wikipedia.org/wiki/" if is_chinese(search_term) else "https://en.wikipedia.org/wiki/"
     ## using online wikipedia instead of shelved wikipedia
     full_page = look_up_wikipedia_page_from_internet(search_term)
     if non_match(full_page):
+        print("false")
         return(False)
     return(get_first_paragraph_from_wikipedia_entry(full_page))
 
