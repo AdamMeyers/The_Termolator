@@ -17,6 +17,11 @@ synopy (use pip or conda); 3) wikipedia (use pip or conda); 3)
 wiki-basic-stream.py (see below); 4) wikiextractor (see below); 5)
 sentence_transformers
 
+Make sure a file like TERMOLATOR/summary/Config.txt is in the file
+that you run the summary program from (see section B).  It should
+contain one line in it: "use_shelve=False" (default) or
+"use_shelve=True" (English only, see below for details).
+
 A. Creating term map and edited term list file.
 
 1) use script run_term_map.sh with 5 arguments
@@ -48,26 +53,34 @@ A. Creating term map and edited term list file.
     and . refers to patent-test).
 
 B. The Summary Creation Program -- this program creates glossary-like
-   information for each of a list of terms. Warning: this may require
-   a lot of disk space (at least 90 gb on a linux machine).
+   information for each of a list of terms. The current system runs
+   for both English and Chinese. We expect that, with minor
+   adjustments, it will run for French as well.
 
-1) This section currently applies differently to the English system on
-   the one hand and the Chinese/French systems on the other. The
-   English system includes a cache of Wikipedia data in a shelve
-   datastructure (see the .slv files discussed below). It makes it
-   possible for the English system to use this data without using an
-   Internet connection. For the summary program (see below). The
-   English system currently requires this component and the Chinese &
-   French systems are using an online version instead. We intend to
-   streamline this in the near future.
+1) This first section currently applies differently for different
+   languages, although we may streamline this in the future. Please
+   include a Config.txt file in the directory from which you run this
+   program. By default there is a line in Config.txt
+   "use_shelve=False". Optionally, this can be changed to
+   "use_shelve=True". However, use of the shelve system has currently
+   only been tested for English. So this first section may not apply
+   to most users. Warning: this may require a lot of disk space (at
+   least 90 gb on a linux machine). Note that this could, in theory,
+   be added for languages other than English, but we have not done so
+   yet.
 
-   Other then the shelve part of the program, other components
-   described below may be needed for all systems. We have not done a
-   systematic check yet, but will do so in the future.
+   The English system (if use_shelf=True) includes a cache of
+   Wikipedia data in a shelve datastructure (see the .slv files
+   discussed below). It makes it possible for the English system to
+   use this data without using an Internet connection. This may make
+   it take less time to run the summary program. Note, however, that
+   the text-based user interface (see discussion of ato_summary.py)
+   still requires an Internet Connection. Note that we could
+   streamline this for other languagges as well in the future.
    
-   Before using this program for English, you should first download a
-   current wikipedia and two packages for reading in wikipedia into
-   easily digestable forms.
+   Before using the shelve program (for English), you should first
+   download a current wikipedia and two packages for reading in
+   wikipedia into easily digestable forms.
 
    A) Get a Wikipedia .xml file:
 
@@ -149,6 +162,10 @@ following arguments:
 
 2.1) Some details about .slv files
 
+   As noted above, this section reflects a component that has only
+   been tested for English and reqires a local Config.txt file to
+   contain "use_shelve=True".
+
    The first time the program is run it will create 2 shelve files:
    swiki.slv and wiki.slv.  In subsequent runs the program uses these
    shelve files and the system takes a much shorter time to run. For
@@ -206,7 +223,7 @@ following arguments:
 	  above information. These files will be loaded
 	  instead.
 4) The program calls the following python packages:
-       requests, re, math, time, csv, shelve
+       requests, re, math, time, csv, shelve (only if used)
   
 C) The Question-based system for generating a summary from wikipedia.
 This program requires the beautifulsoup python library. This will

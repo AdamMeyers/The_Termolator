@@ -166,6 +166,16 @@ def roman (string):
     else:
         return(False)
 
+#Remind: The Config.txt is inside the summary directory
+def read_config(file_path="./"):
+    config_dict = {}
+    with open(file_path+"Config.txt", 'r') as file:
+        for line in file:
+            # Strip whitespace and then split on the first '='
+            key, value = line.strip().split('=', 1)
+            config_dict[key] = value
+    return config_dict
+
 
 def evaluate_roman (string):
     total = 0

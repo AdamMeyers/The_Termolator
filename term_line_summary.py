@@ -3,6 +3,7 @@ from make_language_model import *
 from sentence_transformers import SentenceTransformer
 import numpy as np
 from sklearn.metrics.pairwise import cosine_similarity as sklearn_cosine_similarity
+import os
 
 language_model_file = DICT_DIRECTORY + 'gen2_lang.model'
 profile_file = DICT_DIRECTORY + 'OANC.profile2'
@@ -252,20 +253,20 @@ def mmr_algorithm(sentence_embeddings, keyword_embedding):
 def choose_paragraphs_by_pre_train(term,list_data, model_name='infgrad/stella-base-zh-v2'):
     list_data = [sublist for sublist in list_data if len(sublist[0]) >= 10]
     list_data = [[sublist[0].replace('\n', ''), sublist[1]] for sublist in list_data]
-    # 提取句子
+    
+    # Extract sentences
     sentences = [sublist[0] for sublist in list_data]
 
-    # 加载预训练模型
+    # load pre-train
     model = SentenceTransformer(model_name)
 
-    # 对关键词和句子进行编码并标准化
+    # encode
     keyword_embedding = model.encode([term], normalize_embeddings=True).flatten()
     sentence_embeddings = model.encode(sentences, normalize_embeddings=True)
 
-    # 执行 MMR 算法
+    # do MMR algorithm
     selected_indices = mmr_algorithm(sentence_embeddings, keyword_embedding)
 
-    # 返回 list_data 的子列表
     return [list_data[i] for i in selected_indices]
     
     
@@ -342,15 +343,17 @@ def choose_paragraphs_by_local_tfidf(paragraph_list,vector_size=10,cluster_num=3
         output.append(paragraph_list[top_paragraph])
     return(output,distribution_marker)
 
-def one_word_filter(word):
+def one_word_filter(word,lang_acronym='en'):
     ## if (word.lower() in pos_dict) and (nom_class(word.lower(),'noun') == 0):
     if (word.lower() in pos_dict):
         return(True)
     elif ordinal_pattern(word):
         return(True)
-    elif len(word) < 4:
+    elif lang_acronym=='en' and len(word) < 4:
         return(True)
-    elif not re.search('^[a-zA-Z]+$',word[:3]):
+    elif lang_acronym=='zh' and len(word) < 2:
+        return(True)
+    elif not re.search('^[a-zA-Z]+$',word[:3]) and lang_acronym=='en':
         return(True)
     else:
         return(False)
@@ -461,6 +464,7 @@ def filter_only_chinese(lst):
     return filtered_lst
     
 def write_terms(outstream,terms,text_file_directory,txt_file_list,txt_file_type,cluster_sample_strategy,trace=False,lang_acronym='en'):
+    config = read_config()
     if lang_acronym == 'zh':
         terms=filter_only_chinese(terms)
     print("Terms here: ",terms)
@@ -472,7 +476,8 @@ def write_terms(outstream,terms,text_file_directory,txt_file_list,txt_file_type,
         if trace:
             print('Term',term)
         outstream.write('*************************************\n')
-        outstream.write('Term Summary for "'+term+'"\n')
+        outstream.write('Term Summary for "'+term+'"\n')    
+        outstream.write('*************************************\n')
         outstream.flush()
         entry = term_dict[term]
         selection1 = []
@@ -502,42 +507,53 @@ def write_terms(outstream,terms,text_file_directory,txt_file_list,txt_file_type,
         else:
             pass
             
-        if (not ' ' in term) and one_word_filter(term):
-            ## filter one word terms that are not "normal" enough
-            wiki_summary = False
-        else:
-            print("getting paragraph from slv...")
-            wiki_summary = get_first_paragraph_from_wikipedia_xml_shelve(term,variants=variants,quiet=True,distribution_marker=distribution_marker,trace=trace)
-            
-        if (not wiki_summary):
-            approximate_summaries = get_approximate_summaries_shelve(term,variants,distribution_marker=distribution_marker)
-        else:
-            approximate_summaries = False
-            
-        if wiki_summary:
-            outstream.write('Wikipedia First Paragraph for "'+term+'"\n\n')
-            outstream.write(wiki_summary)
-            outstream.write('\n\n')
-            outstream.flush()
-        elif approximate_summaries:
-            outstream.write('Wikipedia First Paragraph for substrings of "'+term+'"\n\n')
-            for subterm,summary in approximate_summaries:
-                outstream.write('Wikipedia First Paragraph for "'+subterm+'"\n\n')
-                outstream.write(summary)
+        if config['use_shelve'] == 'True':
+            if (not ' ' in term) and one_word_filter(term,lang_acronym):
+                ## filter one word terms that are not "normal" enough
+                wiki_summary = False
+            else:
+                print("getting paragraph from slv...")
+                wiki_summary = get_first_paragraph_from_wikipedia_xml_shelve(term, variants=variants, quiet=True,
+                                                                             distribution_marker=distribution_marker,
+                                                                             trace=trace)
+            if (not wiki_summary):
+                print("getting approximate paragraph from slv...")
+                approximate_summaries = get_approximate_summaries_shelve(term, variants,
+                                                                         distribution_marker=distribution_marker)
+            else:
+                approximate_summaries = False
+        
+            if wiki_summary:
+                outstream.write('Wikipedia First Paragraph for "' + term + '"\n\n')
+                outstream.write(wiki_summary)
+                outstream.write('\n\n')
+                outstream.flush()
+            elif approximate_summaries:
+                #outstream.write('Wikipedia First Paragraph for substrings of "' + term + '"\n\n')
+                for subterm, summary in approximate_summaries:
+                    outstream.write('Wikipedia First Paragraph for substring "' + subterm + '"\n\n')
+                    outstream.write(summary)
+                    outstream.write('\n\n')
+                    outstream.flush()
+            else:
+                outstream.write('No Wikipedia Entry Found')
                 outstream.write('\n\n')
                 outstream.flush()
         else:
             print("getting paragraph online...")
-            wiki_summary=get_first_paragraph_from_wikipedia_online(term)
+            wiki_summary,is_subterm = get_wikipedia_approximate_summaries_online_by_API(term)
             if wiki_summary:
-                outstream.write('Wikipedia First Paragraph for "'+term+'"\n\n')
-                outstream.write(wiki_summary)
-                outstream.write('\n\n')
-                outstream.flush()
-            else: 
+                print(len(wiki_summary))
+                for subterm, summary in wiki_summary.items():
+                    outstream.write('Wikipedia First Paragraph for substring "' + subterm + '"\n\n') if is_subterm else outstream.write('Wikipedia First Paragraph for "' + subterm + '"\n\n') 
+                    outstream.write(summary)
+                    outstream.write('\n\n')
+                    outstream.flush()
+            else:
                 outstream.write('No Wikipedia Entry Found')
                 outstream.write('\n\n')
                 outstream.flush()
+                
         if len(selection1)> 0:
             outstream.write('Sample Passages mentioning the term:"'\
                             +term+'"\n\n')
