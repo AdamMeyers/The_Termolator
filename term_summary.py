@@ -5,6 +5,7 @@ import time
 from term_utilities import *
 import csv
 import shelve
+import wikipedia
 
 basic_wikipedia_search_url = "https://en.wikipedia.org/wiki/"
 
@@ -133,7 +134,59 @@ def get_first_paragraph_from_wikipedia_online(search_term):
         return(False)
     return(get_first_paragraph_from_wikipedia_entry(full_page))
 
+def get_wikipedia_approximate_summaries_online(term):
 
+    summaries = {}
+    # firstly try to get summary of term
+    summary = get_first_paragraph_from_wikipedia_online(term)
+    if summary:
+        summaries[term] = summary
+        return summaries
+    
+    # Try subterms if term does not exist in wiki
+    words = list(term) if is_chinese(term) else term.split()
+    for i in range(len(words), 0, -1):
+        for j in range(len(words) - i + 1):
+            sub_term = ''.join(words[j:j+i]) if is_chinese(term) else ' '.join(words[j:j+i])
+            summary = get_first_paragraph_from_wikipedia_online(sub_term)
+   
+            # Not allowed if sub_term is contained in other
+            if summary and not any(sub_term in longer_term for longer_term in summaries):
+                summaries[sub_term] = summary
+                    
+    return summaries
+
+def get_wikipedia_approximate_summaries_online_by_API(term):
+    summaries = {}
+    is_subterm=False
+
+    wikipedia.set_lang("zh" if is_chinese(term) else "en")
+    try:
+        summary = wikipedia.summary(term, sentences=5,auto_suggest=False)  
+        if summary:
+            summaries[term] = summary
+            return summaries,is_subterm
+    except wikipedia.exceptions.DisambiguationError:
+        pass  
+    except wikipedia.exceptions.PageError:
+        pass  
+
+    words = list(term) if is_chinese(term) else term.split()
+    for i in range(len(words), 0, -1):
+        for j in range(len(words) - i + 1):
+            sub_term = ''.join(words[j:j+i]) if is_chinese(term) else ' '.join(words[j:j+i])
+            try:
+                summary = wikipedia.summary(sub_term, auto_suggest=False)  
+                if summary and not any(sub_term in longer_term for longer_term in summaries):
+                    summaries[sub_term] = summary
+            except wikipedia.exceptions.DisambiguationError:
+                continue  
+            except wikipedia.exceptions.PageError:
+                continue
+    is_subterm = True
+    return summaries,is_subterm
+
+    
 def get_next_id_paragraph_title(instream,infile=False,minimum_length=500):
     doc_id_pattern = re.compile('<doc id="([0-9]+)".*title="([^"]*)".*>')
     doc_end_pattern = re.compile('</doc>')
