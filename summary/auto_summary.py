@@ -315,18 +315,20 @@ def run_summary(): #runs the bash script for generating the summary.
             termolator_dir,
             'True']))
     elif lang_acronym == 'fr':
-        pass
-        # TODO. To be integrated.
+        os.system(termolator_dir +'/run_termolator_fr.sh '+ subclass + ' ' + superclasses[0] + ' ' + subclass + '' +' True True True 30000 5000 '+ termolator_dir + ' ' + termolator_dir + '/TreeTaggerLinux -1')
+        os.system('python3 ' + termolator_dir +'/modified_symlink.py ' + './')
+
     else:
         raise Exception('Language not implemented: {}'.format(
             lang_acronym))
 
-    txt=' .txt' if lang_acronym=='zh' else ' .txt3'
+    #txt=' .txt' if lang_acronym=='zh' else ' .txt3'
+    txt=' .txt' if (lang_acronym=='zh' or lang_acronym=='fr') else ' .txt3'
     msg_and_run_command(
         termolator_dir + '/run_term_map.sh ' + intermediate_file_path + '/' + subclass + '.file_list_2 ' + intermediate_file_path + '/' + subclass + '.out_term_list ' + subclass + ' ' + intermediate_file_path + ' ' + termolator_dir + ' '+ lang_acronym)
     msg_and_run_command(
         termolator_dir + '/run_summary.sh ' + subclass + ' ' + intermediate_file_path + ' ' + termolator_dir + txt + " " + lang_acronym)
-
+    
     return
 
 
