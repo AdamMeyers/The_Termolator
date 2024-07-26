@@ -1,4 +1,5 @@
 #this code was written by Anand Tyagi, for questions: anand.tyagi@nyu.edu
+# and modified by others
 import wikipedia
 import sys
 import urllib.request
@@ -98,8 +99,9 @@ def get_superclass(subclass, lang_acronym): #gets a valid superclass
 
     chosen = input("Please choose all the relavent subclasses (list each number separated by a comma (Ex. 1,3,4)):\n")
 
-    if len(chosen) == 1:
+    if chosen.find(',') != 1:
         chosen_index = int(chosen)-1
+        print("chosen index:", chosen_index)
         if chosen_index == len(categories):
             return categories
         else:
