@@ -5,6 +5,8 @@ import numpy as np
 from sklearn.metrics.pairwise import cosine_similarity as sklearn_cosine_similarity
 import os
 
+Grank_order = True ## probably a better way to do this
+
 language_model_file = DICT_DIRECTORY + 'gen2_lang.model'
 profile_file = DICT_DIRECTORY + 'OANC.profile2'
 language_model_name = 'generalized_character2'
@@ -586,6 +588,11 @@ def log_10_termset(terms):
 def generate_summaries_from_term_file_map(term_map_file,summary_outfile,text_file_directory,txt_file_list=False,model_file=language_model_file,profile_file=profile_file,test_on_n_terms=False,cluster_sample_strategy='big_centroid_max',choose_terms_randomly=False,fixed_term_set=False,txt_file_type='.txt3',trace=False,breakdown_by_log_10 = False,lang_acronym='en'):
     global term_dict
     global fixed_term_set_list
+    global Grank_order
+    if Grank_order:
+        rank_order = True
+    else:
+        rank_order = False
     if not txt_file_type.startswith('.'):
         txt_file_type = "." + txt_file_type
     print('Loading term dict')
@@ -608,7 +615,8 @@ def generate_summaries_from_term_file_map(term_map_file,summary_outfile,text_fil
             termset.sort()
             write_terms(outstream,termset,text_file_directory,txt_file_list,txt_file_type,cluster_sample_strategy,trace=trace,lang_acronym=lang_acronym)
     else:
-        terms.sort()
+        if not rank_order:
+            terms.sort() 
         if test_on_n_terms:
             if choose_terms_randomly:
                terms = choose_items_randomly(terms,test_on_n_terms)
