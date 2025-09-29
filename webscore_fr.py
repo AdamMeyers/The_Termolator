@@ -36,7 +36,8 @@ def do_provider_search_fr(term,provider):
         url = url+url_suffix
     ## url_stream = urllib.request.urlopen(url)
 
-    response = requests.get(url).text
+    ## response = requests.get(url).text ## requests fix 2025
+    resonse = termolator_requests(url)
     ## data = str(url_stream.read())
     # data = url_stream.inof().get_content_charset()
     # data = url_stream.read().decode('utf-8')

@@ -85,7 +85,8 @@ def do_provider_search(term,provider):
     if url_suffix:
         url = url+url_suffix
     ## url_stream = urllib.request.urlopen(url)
-    response = requests.get(url).text
+    ## response = requests.get(url).text
+    response =  termolator_requests(url) ## modified to handle 403 errors
     ## data = str(url_stream.read())
     # data = url_stream.inof().get_content_charset()
     # data = url_stream.read().decode('utf-8')

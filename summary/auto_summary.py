@@ -3,13 +3,27 @@
 import wikipedia
 import sys
 import urllib.request
+from term_utilities import *
+## assumes term_utilities is a copy from master termolator directory
 from bs4 import BeautifulSoup
 import json
 import os
+import subprocess
 import shutil
 import sinopy
 
 lang_acronym = 'en' ## default, but set in run_summary
+
+def glossary_url_popen(url,marker=57):
+    print(url)
+    try:
+        ## return urllib.request.urlopen(url)
+        return termolator_requests(url)
+    except urllib.error.HTTPError as e:
+        print(e.reason)
+        print(marker)
+        print(e.code)        
+        ## input('pause')
 
 def msg_and_run_command(command, extra_info=""):
     print('\033[32m' + extra_info + 'Running command: ls -1 ' + command + "\033[0m")
@@ -30,7 +44,8 @@ def get_subclass(topic, lang_acronym):  # Gets a valid subclass
     url = "https://{}.wikipedia.org/wiki/{}".format(
         lang_acronym,
         urllib.parse.quote(topic_url_fmt))
-    page = urllib.request.urlopen(url)
+    print(2)
+    page = glossary_url_popen(url,marker=2)
 
     soup = BeautifulSoup(page, "lxml")
     ## soup = BeautifulSoup(page, "html5lib")
@@ -82,8 +97,7 @@ def get_superclass(subclass, lang_acronym): #gets a valid superclass
         lang_acronym,
         urllib.parse.quote(subclass))
     print(url)
-    page = urllib.request.urlopen(url)
-
+    page = glossary_url_popen(url,marker=1)
     soup = BeautifulSoup(page, "lxml")
     ## soup = BeautifulSoup(page, "html5lib")
 
@@ -210,8 +224,8 @@ def run_summary(): #runs the bash script for generating the summary.
     subclass = subclass.replace("(", "\(")
     subclass = subclass.replace(")", "\)")
 
-    intermediate_file_path = '.'
-    termolator_dir = '..'
+    intermediate_file_path = os.path.abspath('.')
+    termolator_dir = os.path.abspath('..')
 
     # Get foreground articles using get_wiki_corpus_main.sh
 
@@ -263,8 +277,8 @@ def run_summary(): #runs the bash script for generating the summary.
 
     print('##########' + termolator_dir +'/run_term_map.sh '+ intermediate_file_path +'/'+ subclass +'.file_list_2 '+ intermediate_file_path +'/'+ subclass +'.out_term_list '+ subclass +' '+ intermediate_file_path +' '+ termolator_dir)
 
-    print('##########' + termolator_dir +'/run_summary.sh '+ subclass +' '+ intermediate_file_path +' '+ termolator_dir +' .txt3')
-
+    print('##########' + termolator_dir + '/run_summary.sh ' + subclass + ' ' + intermediate_file_path + ' ' + termolator_dir + ' .txt3 ' + lang_acronym)
+    
     if lang_acronym == 'en':
         os.system(termolator_dir +'/run_termolator.sh '+ intermediate_file_path +'/'+ subclass +'.file_list_2 '+ intermediate_file_path + '/'+ subclass + '_all_background_files.file_list' +' .txt '+ subclass +' True True 30000 5000 '+ termolator_dir +' False False False wikipedia-'+subclass+'_background.pkl -1')
     elif lang_acronym == 'zh':
@@ -317,8 +331,23 @@ def run_summary(): #runs the bash script for generating the summary.
             termolator_dir,
             'True']))
     elif lang_acronym == 'fr':
-        os.system(termolator_dir +'/run_termolator_fr.sh '+ subclass + ' ' + superclasses[0] + ' ' + subclass + '' +' True True True 30000 5000 '+ termolator_dir + ' ' + termolator_dir + '/TreeTaggerLinux -1')
-        os.system('python3 ' + termolator_dir +'/modified_symlink.py ' + './')
+        subprocess.run([
+            termolator_dir + '/run_termolator_fr.sh',
+            subclass,
+            superclasses[0],
+            subclass,
+            'True',
+            'True',
+            'True',
+            '30000',
+            '5000',
+            ## termolator_dir,
+            ## termolator_dir + '/TreeTaggerLinux',
+            ## '-1'
+        ], check=True)
+        subprocess.run([
+            'python3', os.path.join(termolator_dir, 'modified_symlink.py'), './'
+        ], check=True)
 
     else:
         raise Exception('Language not implemented: {}'.format(
@@ -330,7 +359,6 @@ def run_summary(): #runs the bash script for generating the summary.
         termolator_dir + '/run_term_map.sh ' + intermediate_file_path + '/' + subclass + '.file_list_2 ' + intermediate_file_path + '/' + subclass + '.out_term_list ' + subclass + ' ' + intermediate_file_path + ' ' + termolator_dir + ' '+ lang_acronym)
     msg_and_run_command(
         termolator_dir + '/run_summary.sh ' + subclass + ' ' + intermediate_file_path + ' ' + termolator_dir + txt + " " + lang_acronym)
-    
     return
 
 

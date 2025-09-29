@@ -54,7 +54,8 @@ def replace_spaces_with_underscores(search_term):
 def look_up_wikipedia_page_from_internet(search_term):
     search_term = replace_spaces_with_underscores(search_term)
     url = basic_wikipedia_search_url+search_term
-    response = requests.get(url).text
+    response = termolator_requests(url)
+    ## response = requests.get(url).text ## requests fix 9/2025
     return(response)
 
 def get_first_paragraph_from_wikipedia_entry(entry,min_length=500):
