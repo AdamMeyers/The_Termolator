@@ -3,56 +3,43 @@ import sys
 import os
 
 
+def occurrence_groups(txt_path, input_filepath):
+    """Yield one group per chunk row, sharing positions for repeated words."""
+    with open(txt_path, encoding="utf-8") as source:
+        text = source.read()
+
+    matches = {}
+    with open(input_filepath, encoding="utf-8") as chunks:
+        for line in chunks:
+            word = line.split("\t", 1)[0].strip()
+            if not word:
+                continue
+            if word not in matches:
+                positions = []
+                start = text.find(word)
+                while start != -1:
+                    end = start + len(word)
+                    positions.append((start, end - 1))
+                    start = text.find(word, end)
+                matches[word] = positions
+            if matches[word]:
+                yield word, matches[word]
+
+
+def term_attributes(word, frequency):
+    return f'STRING="{word}" LEMMA="{word.upper()}" FREQUENCY="{frequency}"'
+
+
 def tchunk_to_terms(txt_path, input_filepath, output_dir="output_foreground", output_name="output_name.txt"):
-    txt_path = txt_path.strip()
-
-
-    # 确保输出目录存在
-    if not os.path.exists(output_dir):
-        os.makedirs(output_dir)
-
+    os.makedirs(output_dir, exist_ok=True)
     output_path = os.path.join(output_dir, output_name)
-
-    # 读取base文件内容
-    with open(txt_path, 'r', encoding='utf-8') as basefile:
-        base_content = basefile.read()
-
-    with open(output_path, 'w', encoding='utf-8') as outfile:
-        term_id = 1  # 初始化TERM ID
-
-        # 从input_filepath中读取每个original_word
-        for line in open(input_filepath, 'r', encoding='utf-8'):
-            parts = line.split('\t')
-            if not parts:
-                continue
-
-            original_word = parts[0].strip()
-            if not original_word:
-                continue
-
-            # 查找original_word在base中出现的所有位置，并记录出现次数
-            start_pos = 0
-            positions = []
-
-            while True:
-                found_pos = base_content.find(original_word, start_pos)
-                if found_pos == -1:
-                    break
-
-                start = found_pos
-                end = found_pos + len(original_word) - 1
-                positions.append((start, end))
-
-                start_pos = end + 1
-
-            frequency = len(positions)  # 计算出现次数
-
+    with open(output_path, "w", encoding="utf-8") as outfile:
+        term_id = 1
+        for word, positions in occurrence_groups(txt_path.strip(), input_filepath):
+            attributes = term_attributes(word, len(positions))
             for start, end in positions:
-                # 将信息写入terms格式
-                outfile.write(
-                    f'TERM ID="NYU_TERM_{term_id}" STRING="{original_word}" LEMMA="{original_word.upper()}" FREQUENCY="{frequency}" START={start} END={end}\n')
-                term_id += 1  # 递增TERM ID
-
+                outfile.write(f'TERM ID="NYU_TERM_{term_id}" {attributes} START={start} END={end}\n')
+                term_id += 1
     print(f"Converted {input_filepath} to {output_path}")
 
 

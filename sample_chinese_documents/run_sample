@@ -1,1 +1,9 @@
-bash ../run_Termolator_chinese.sh True sample sampleRDG sampleBackground ..
+#!/usr/bin/env bash
+set -e
+sample_dir=$(cd "$(dirname "$0")" && pwd)
+program_dir=$(cd "$sample_dir/.." && pwd)
+
+bash "$program_dir/run_Termolator_chinese.sh" True sample \
+    "$sample_dir/sampleRDG" "$sample_dir/sampleBackground" "$program_dir" False
+bash "$program_dir/run_term_map.sh" cleaned_foregroundList.txt sample.out_term_list \
+    sample . "$program_dir" zh
