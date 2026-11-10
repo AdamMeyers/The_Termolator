@@ -127,28 +127,31 @@ def get_term_substrings(string,lemma):
                 output.append(substring)
     return(output)
 
-def update_term_dict(short_file_name,term_dict,string,lemma,start,end,head_term,merge_super_string=False,all_keys=False,substring_of=False):
+def update_term_dict(short_file_name,term_dict,string,lemma,start,end,head_term,merge_super_string=False,all_keys=False,substring_of=False,positions=None):
     global lemma_dict
-    if lemma and (lemma in term_dict):
+    if not lemma:
+        return
+    if positions is None:
+        positions = ((start, end),)
+    instances = [[short_file_name, first, last, False] for first, last in positions]
+    if lemma in term_dict:
         entry = term_dict[lemma]
         if 'instances' in entry:
-            entry['instances'].append([short_file_name,start,end,False])
+            entry['instances'].extend(instances)
         else:
-            entry['instances'] = [[short_file_name,start,end,False]]
+            entry['instances'] = instances
         if (not 'variants' in entry):
             entry['variants'] = [lemma]
         if (not lemma == string) and (not string in entry['variants']):
             entry['variants'].append(string)
-    elif lemma:
+    else:
         entry = {}
-        entry['instances'] = [[short_file_name,start,end,False]]
+        entry['instances'] = instances
         entry['variants'] = [lemma]
         if not string in entry['variants']:
             entry['variants'].append(string)
         term_dict[lemma] = entry
-    else:
-        entry = False
-    if entry and substring_of:
+    if substring_of:
         if not 'substring_of' in entry:
             entry['substring_of']=[substring_of]
         elif not substring_of in entry['substring_of']:
@@ -162,7 +165,15 @@ def count_files(instances):
             files.append(tfile)
     return(len(files))
 
-def get_term_maps(term_list,file_list,outfile,input_path_prefix,remove_mismatches=True,minimum=3,json=True):
+def term_file_groups(paths, input_path_prefix):
+    for path in paths:
+        with open(path) as terms:
+            yield short_file(path, input_path_prefix=input_path_prefix), (
+                (read_in_term_line(line.strip(os.linesep).lower()), None) for line in terms
+            )
+
+
+def get_term_maps(term_list,file_list,outfile,input_path_prefix,remove_mismatches=True,minimum=3,json=True,source_groups=None):
     ## don't use abbr dict for now, but could in the future
     ## term_list consists of input terms
     ## file_list consists of .terms files
@@ -189,73 +200,48 @@ def get_term_maps(term_list,file_list,outfile,input_path_prefix,remove_mismatche
     # for form in ['lrp','lung resistance related protein','lung cancer associated resistance protein']:
     #     print(lemma_dict[form],form)
     # input('pause')
-    with open(file_list) as liststream:
-        ## first pass do whole terms
-        ## second pass just to substrings
-        infile_list = []
-        for infile in liststream:
-            infile = infile.strip(os.linesep)
-            infile = combine_path_and_file(input_path_prefix,infile)
-            infile_list.append(infile)
-            with open(infile) as instream:
-                short_file_name = short_file(infile,input_path_prefix=input_path_prefix)
-                ## print(short_file_name)
-                for line in instream:
-                    line = line.strip(os.linesep).lower()
-                    entry = read_in_term_line(line)
-                    string = entry['string']
-                    if string in lemma_dict:
-                        lemma = lemma_dict[string]
-                    elif 'lemma' in entry:
-                        lemma = entry['lemma']
-                        if (lemma in lemma_dict) and (not lemma == lemma_dict[lemma]):
-                            lemma = lemma_dict[lemma]
-                    else:
-                        lemma = False
-                    if 'head_term' in entry:
-                        head_term = entry['head_term']
-                    else:
-                        head_term = False
-                    start = entry['start']
-                    end = entry['end']
-                    if string in lemma_dict:
-                        lemma = lemma_dict[string]
-                    elif lemma in lemma_dict:
-                        lemma = lemma_dict[lemma]
-                    else:
-                        ## AM debug 8/3/2020
-                        lemma = string
-                    update_term_dict(short_file_name,term_dict,string,lemma,start,end,head_term,merge_super_string=remove_mismatches)
-        for infile in infile_list:
-            with open(infile) as instream:
-                short_file_name = short_file(infile,input_path_prefix=input_path_prefix)
-                for line in instream:
-                    line = line.strip(os.linesep).lower()
-                    entry = read_in_term_line(line)
-                    string = entry['string']
-                    if 'lemma' in entry:
-                        lemma = entry['lemma']
-                    elif string in lemma_dict:
-                        lemma = lemma_dict[string]
-                    else:
-                        lemma = False
-                    start = entry['start']
-                    end = entry['end']
-                    if lemma in lemma_dict:
-                        lemma = lemma_dict[lemma]
-                    elif string in lemma_dict:
-                        lemma = lemma_dict[string]
-                    for substring,lemma_substring in get_term_substrings(string,lemma):
-                        if substring and lemma_substring and (substring in lemma_dict) and (lemma_substring in lemma_dict[substring]):
-                            trade_key = update_term_dict(short_file_name,term_dict,substring,lemma_substring,start,end,head_term,substring_of=lemma)
-                        else:
-                             trade_key = update_term_dict(short_file_name,term_dict,substring,lemma_substring,start,end,head_term,substring_of=lemma)
-                        if trade_key and (substring in keys):
-                            position = keys.index(substring)
-                            keys[position]= trade_key
-                        elif trade_key and (lemma_substring in keys):
-                            position = keys.index(lemma_substring)
-                            keys[position] = trade_key
+    if source_groups is None:
+        with open(file_list) as liststream:
+            paths = [combine_path_and_file(input_path_prefix, line.strip(os.linesep)) for line in liststream]
+
+    def documents():
+        if source_groups is not None:
+            yield from source_groups()
+        else:
+            yield from term_file_groups(paths, input_path_prefix)
+
+    # Only ranked keys can be written. The substring pass uses lemma_dict,
+    # independently of entries accumulated for unranked terms.
+    ranked_keys = set(keys)
+    for short_file_name, groups in documents():
+        for entry, positions in groups:
+            string = entry['string']
+            lemma = entry.get('lemma', False)
+            if lemma in lemma_dict and lemma != lemma_dict[lemma]:
+                lemma = lemma_dict[lemma]
+            lemma = lemma_dict.get(string, lemma_dict.get(lemma, string))
+            if source_groups is not None and lemma not in ranked_keys:
+                continue
+            start, end = (entry['start'], entry['end']) if positions is None else (None, None)
+            update_term_dict(short_file_name, term_dict, string, lemma,
+                             start, end, entry.get('head_term', False),
+                             merge_super_string=remove_mismatches, positions=positions)
+
+    for short_file_name, groups in documents():
+        for entry, positions in groups:
+            string = entry['string']
+            lemma = entry.get('lemma', lemma_dict.get(string, False))
+            if lemma in lemma_dict:
+                lemma = lemma_dict[lemma]
+            elif string in lemma_dict:
+                lemma = lemma_dict[string]
+            start, end = (entry['start'], entry['end']) if positions is None else (None, None)
+            for substring, lemma_substring in get_term_substrings(string, lemma):
+                if source_groups is not None and lemma_substring not in ranked_keys:
+                    continue
+                update_term_dict(short_file_name, term_dict, substring, lemma_substring,
+                                 start, end, False,
+                                 substring_of=lemma, positions=positions)
     with open(outfile,'w') as outstream:
         rank = 0
         ## do not repeat (repeats can arise due to substring terms)

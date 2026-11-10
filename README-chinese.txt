@@ -6,55 +6,62 @@ combines components of the following:
 *  A Noun Chunker Generator by Leizhen Shi https://github.com/frank190/NounChunkerGenerator .
 * And other work by Yuling Gu and Echo Hong. 
 
-## USAGE
+## Usage
 
-To perform Chinese terminology extraction, run the following command:
+Use Bash, Java, and a Python 3 environment with NLTK installed. To run the
+bundled XML sample, choose a working directory for the generated files and run:
 
-bash run_Termolator_chinese.sh True/False desired_output_name foreground_directory background_directory Termolator_directory
+    bash /path/to/The_Termolator/sample_chinese_documents/run_sample
 
-* The first variable should be True if the current Chinese dictionary
-  is to be used by the system and False otherwise.
+This uses the dictionary and the 10 foreground and 10 background patents in
+sample_chinese_documents. The original sample files stay in place. The working
+directory receives sample.out_term_list, sample.term_instance_map and
+sample.edited_term_list, as well as the cleaned text and ranking inputs.
+TERMOLATOR_JAVA_HEAP can override the tagger heap limit (for example, 4g).
 
-* The second variable is the file prefix you would like to use for output.
+For a custom corpus, run:
 
-* The third variable is the directory containing foreground files (xml or txt files)
+    bash /path/to/The_Termolator/run_Termolator_chinese.sh True output foreground background /path/to/The_Termolator False
 
-* The fourth variable is the directory containing background files (xml or txt files)
+Argument 1 controls dictionary filtering. Argument 2 is the output prefix.
+Arguments 3 and 4 are input directories and argument 5 is the program
+directory. Argument 6 defaults to False for XML. Use True for plain text.
 
-* The fifth variable is the program directory (that cotains the Termolator python files)
+The extraction script cleans or copies the input, runs Brandeis segmentation
+and POS tagging, produces noun chunks, ranks candidates, and applies Accessor
+Variety. It writes output.out_term_list. To map those terms and produce
+output.edited_term_list, use:
 
-To test this program, we suggest that you look at the sample files in
-the subdirectory "sample_chinese_documents". If you run the shell
-command "run_sample" in that directory, Termolator will run using the
-foreground files ( sampleRDG) and background files (sampleBackground)
-in that directory.  These sample files are patents.  Note that this
-command sets variables 1 to 5 as follows:
+    bash /path/to/The_Termolator/run_term_map.sh cleaned_foregroundList.txt output.out_term_list output . /path/to/The_Termolator zh
 
-*  The first variable is set to "True", so the dictionary is used
-* The prefix for all output files will be "sample", as indicated by
-   the second variable
-* The third and fourth variables set foreground and background to
-   "sampleRDG" and "sampleBackground"
-* The fifth variable is set to ".." the superordinate directory, which
-   does in fact contain the program files for Termolator.
+Use the same working directory for both commands and a separate working
+directory for each corpus. Chinese mapping pairs source files with chunks by
+basename, defaults to foreground_tchunk_list, and accepts a different chunk
+list as the seventh argument. The input path prefix (the fourth argument) is
+the base for document names in the map. Chinese mapping rebuilds the map on
+each invocation.
 
-The script run_Termolator_chinese.sh processes the input files in the
-following Steps:
+## Output compatibility
 
-Step 0 : Preparation -- cleaning up text input, e.g., removing xml and creating lists of files.
+Accessor Variety still uses literal first-field matches and three distinct
+contexts on each side. The filter preserves the original punctuation rules,
+boundary offsets, and handling of the BOM on the first ranked row.
 
-Step 1 : POS Tagging using the Brandeis tagger (Thank You to Nianwen Xue)
+Chinese mapping consumes cached source matches directly, so the sample does
+not create expanded .terms files. It retains one group of matches per
+original chunk row and preserves repeated instances, total frequencies,
+zero-based inclusive character offsets, ranked order, variants and the
+minimum of three distinct documents. Unranked entries can still be used by
+the mapper's substring pass. The standalone .terms generator retains its
+record layout and sequential IDs.
 
-Step 2 : Generating Noun Chunks
+Run the regression tests from the program directory:
 
-Step 3 : Distributional ranking using the same system as the versions
-of Termolator for other languages (English and French).
+    python3 -m unittest discover -s tests -v
 
-Step 4 : Accessor Variety Filter -- uses the access variety strategy
-for removing ill-formed terms. 
-
-Step 5: Create the final term list ("sample.out_term_list") in the
-standard Termolator output format.
+For direct comparisons with the original code, set TERMOLATOR_LEGACY to a
+directory containing baseline copies of accessorvariety.py, term_generator.py
+and get_term_maps.py. The tests also run with fixed expectations without it.
 
 The Chinese Termolator uses the following files/components that are not used by
 the English or the French version:
