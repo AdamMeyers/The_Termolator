@@ -5,10 +5,35 @@ from pathlib import Path
 import sys
 from tempfile import NamedTemporaryFile
 
+from chinese_term_matching import candidate_index, candidate_spans
 from get_term_maps import get_term_maps, read_in_term_line
 
 
-def chinese_term_groups(source_list, chunk_list, input_prefix):
+def phrase_occurrences(source, chunk, phrases, lengths):
+    with chunk.open(encoding="utf-8") as chunks:
+        tokens = [line.rstrip("\n").split("\t", 1)[0] for line in chunks]
+    spans = list(candidate_spans(tokens, lengths, phrases))
+    if not spans:
+        return {}
+
+    # The segmenter preserves non-whitespace characters. Refuse to report
+    # misleading offsets if the chunk file belongs to different source text.
+    text = source.read_text(encoding="utf-8")
+    offsets = [i for i, char in enumerate(text) if not char.isspace()]
+    if "".join(text[i] for i in offsets) != "".join(tokens):
+        raise ValueError(f"Cannot align foreground chunk {chunk} with {source}")
+
+    boundaries = [0]
+    for token in tokens:
+        boundaries.append(boundaries[-1] + len(token))
+    occurrences = {}
+    for term, start, end in spans:
+        position = (offsets[boundaries[start]], offsets[boundaries[end] - 1])
+        occurrences.setdefault(term, []).append(position)
+    return occurrences
+
+
+def chinese_term_groups(source_list, chunk_list, input_prefix, phrases, lengths):
     from summary.term_generator import occurrence_groups, term_attributes
 
     chunk_paths = {}
@@ -41,6 +66,10 @@ def chinese_term_groups(source_list, chunk_list, input_prefix):
                         parsed[word] = read_in_term_line(term_attributes(word, len(positions)).lower())
                     yield parsed[word], positions
 
+                if phrases:
+                    for term, positions in phrase_occurrences(source, chunk, phrases, lengths).items():
+                        yield {"string": term, "lemma": term, "whole_only": True}, positions
+
             yield document, groups()
 
 
@@ -54,8 +83,14 @@ def main(args):
     options = parser.parse_args(args[1:])
 
     if options.chinese_chunks:
+        with open(options.term_list, encoding="utf-8-sig") as ranked:
+            phrases = {form.lower() for line in ranked for form in line.rstrip("\n").split("\t")
+                       if len(form.split()) > 1}
+        lengths = candidate_index(phrases)
+
         def source_groups():
-            return chinese_term_groups(options.file_list, options.chinese_chunks, options.input_file_path)
+            return chinese_term_groups(options.file_list, options.chinese_chunks,
+                                       options.input_file_path, phrases, lengths)
 
         destination = Path(options.term_map)
         with NamedTemporaryFile(dir=destination.parent, delete=False) as temporary:

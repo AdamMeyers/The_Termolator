@@ -43,16 +43,21 @@ each invocation.
 
 ## Output compatibility
 
-Accessor Variety still uses literal first-field matches and three distinct
-contexts on each side. The filter preserves the original punctuation rules,
-boundary offsets, and handling of the BOM on the first ranked row.
+Accessor Variety matches the complete candidate against consecutive chunk
+tokens, including candidates with multiple tokens. It reads the ranked
+file's UTF-8 BOM, compares tokens in lowercase and requires three distinct
+contexts on each side after punctuation cleanup. Contexts come from
+outside the matched span, when present in the same document.
 
 Chinese mapping consumes cached source matches directly, so the sample does
 not create expanded .terms files. It retains one group of matches per
-original chunk row and preserves repeated instances, total frequencies,
-zero-based inclusive character offsets, ranked order, variants and the
-minimum of three distinct documents. Unranked entries can still be used by
-the mapper's substring pass. The standalone .terms generator retains its
+original chunk row, preserving legacy single-token matches. Ranked phrases
+matched across chunk tokens are also mapped to the original source, one
+instance per matching token span. Offsets are zero-based and inclusive and
+include any source whitespace inside the span. Phrase mapping verifies
+that the source and chunk token stream agree after ignoring whitespace.
+The mapper preserves output format, ranked order, variants and the minimum
+of three distinct documents. The standalone .terms generator retains its
 record layout and sequential IDs.
 
 Run the regression tests from the program directory:
@@ -60,8 +65,8 @@ Run the regression tests from the program directory:
     python3 -m unittest discover -s tests -v
 
 For direct comparisons with the original code, set TERMOLATOR_LEGACY to a
-directory containing baseline copies of accessorvariety.py, term_generator.py
-and get_term_maps.py. The tests also run with fixed expectations without it.
+directory containing baseline copies of term_generator.py and
+get_term_maps.py. Phrase matching tests use the new expected behavior.
 
 The Chinese Termolator uses the following files/components that are not used by
 the English or the French version:

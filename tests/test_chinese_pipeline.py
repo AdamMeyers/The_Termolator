@@ -27,19 +27,45 @@ class ChinesePipelineTests(unittest.TestCase):
     def command(self, *args):
         return subprocess.check_output(args, cwd=self.work)
 
-    def test_accessor_variety_preserves_ranked_rows_and_context_rules(self):
-        ranked = self.write("ranked", "\ufeff候选\t10\n候选\t9\n多 词\t8\n失败\t7\n候选\t6\n末尾\t5\n")
+    def test_accessor_variety_matches_complete_token_spans(self):
+        ranked = self.write(
+            "ranked", "\ufeff音频 信号\t10\n候选\t9\n未 命中\t8\n"
+            "只有 右侧\t7\n只有 左侧\t6\n音频 信号\t5\n",
+        )
         files = []
         for index, left, right in [(1, "左一", "右一"), (2, "左二", "右二"), (3, "左三", "右三")]:
-            words = ["候选", right + '"', left, "多 词", right, left, "失败",
-                     right if index < 3 else "。", left + "!"]
+            words = ["只有", "右侧", right, left + "!", "音频", "信号", right + '"',
+                     left, "候选", right, "未", "不连续", "命中", left, "只有", "左侧"]
             files.append(self.write(f"{index}.tchunk", "".join(f"{word}\tNN\n" for word in words)))
-        files.append(self.write("end.tchunk", "甲\tNN\n末尾\tNN\n乙\tNN\n末尾\tNN\n丙\tNN\n末尾\tNN\n"))
         listing = self.write("chunks", "".join(f"{path}\n" for path in files))
         result = self.command(sys.executable, ROOT / "accessorvariety.py", ranked, listing)
-        self.assertEqual(result, "候选\t9\n多 词\t8\n候选\t6\n末尾\t5\n".encode())
-        if LEGACY:
-            self.assertEqual(result, self.command(sys.executable, Path(LEGACY) / "accessorvariety.py", ranked, listing))
+        self.assertEqual(result, "音频 信号\t10\n候选\t9\n音频 信号\t5\n".encode())
+
+    def test_chinese_map_preserves_source_offsets_for_multi_token_terms(self):
+        sources = []
+        chunks = []
+        for index in range(3):
+            # The embedded occurrence in 原音频 has the same characters but
+            # a different token boundary. The space inside the final hit
+            # still counts toward its source offsets.
+            source = self.write(f"{index}.txt", "原音频信号。音频信号。音频 信号")
+            chunk = self.write(
+                f"{source.name}.tchunk",
+                "".join(f"{word}\tNN\n" for word in
+                        ["原音频", "信号", "。", "音频", "信号", "。", "音频", "信号"]),
+            )
+            sources.append(source.name)
+            chunks.append(chunk.name)
+        self.write("sources", "\n".join(sources) + "\n")
+        self.write("chunks", "\n".join(chunks) + "\n")
+        self.write("ranked", "音频 信号\n")
+        self.command("sh", ROOT / "run_term_map.sh", "sources", "ranked", "sample", ".", ROOT, "zh", "chunks")
+        mapped = (self.work / "sample.term_instance_map").read_text(encoding="utf-8")
+        self.assertIn('number_of_files_containing_term=3 total_frequency=6', mapped)
+        self.assertIn('<instance file="0" start=6 end=9/>', mapped)
+        self.assertIn('<instance file="0" start=11 end=15/>', mapped)
+        self.assertNotIn('start=1 end=', mapped)
+        self.assertEqual((self.work / "sample.edited_term_list").read_text(encoding="utf-8"), "音频 信号\n")
 
     def test_cached_terms_keep_ids_order_frequency_and_inclusive_offsets(self):
         source = self.write("source.txt", "哈哈哈Aa哈哈")

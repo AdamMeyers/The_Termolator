@@ -229,6 +229,8 @@ def get_term_maps(term_list,file_list,outfile,input_path_prefix,remove_mismatche
 
     for short_file_name, groups in documents():
         for entry, positions in groups:
+            if entry.get('whole_only'):
+                continue
             string = entry['string']
             lemma = entry.get('lemma', lemma_dict.get(string, False))
             if lemma in lemma_dict:
